@@ -88,7 +88,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -425,7 +425,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+          "datasetsId" => URI.encode(datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -506,7 +506,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+          "datasetsId" => URI.encode(datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -770,7 +770,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+          "datasetsId" => URI.encode(datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1117,7 +1117,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
+          "annotationStoresId" =>
+            URI.encode(annotation_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1397,7 +1398,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
+          "annotationStoresId" =>
+            URI.encode(annotation_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1781,7 +1783,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
+          "annotationStoresId" =>
+            URI.encode(annotation_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2144,7 +2147,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1),
-          "annotationsId" => URI.encode(annotations_id, &URI.char_unreserved?/1)
+          "annotationsId" => URI.encode(annotations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2232,7 +2235,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1),
-          "annotationsId" => URI.encode(annotations_id, &URI.char_unreserved?/1)
+          "annotationsId" => URI.encode(annotations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2435,7 +2438,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1),
-          "annotationsId" => URI.encode(annotations_id, &URI.char_unreserved?/1)
+          "annotationsId" => URI.encode(annotations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2706,7 +2709,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
+          "dicomStoresId" => URI.encode(dicom_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2883,7 +2886,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
+          "dicomStoresId" => URI.encode(dicom_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3259,7 +3262,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
+          "dicomStoresId" => URI.encode(dicom_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3881,7 +3884,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+          "studiesId" => URI.encode(studies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4064,7 +4067,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+          "studiesId" => URI.encode(studies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4342,7 +4345,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+          "studiesId" => URI.encode(studies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4438,7 +4441,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
           "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1)
+          "seriesId" => URI.encode(series_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4629,7 +4632,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
           "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1)
+          "seriesId" => URI.encode(series_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4827,7 +4830,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
           "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
           "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+          "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4927,7 +4930,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
           "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
           "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+          "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5232,7 +5235,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
           "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
           "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "framesId" => URI.encode(frames_id, &URI.char_unreserved?/1)
+          "framesId" => URI.encode(frames_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5603,7 +5606,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
+          "fhirStoresId" => URI.encode(fhir_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5788,7 +5791,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
+          "fhirStoresId" => URI.encode(fhir_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -6229,7 +6232,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
+          "fhirStoresId" => URI.encode(fhir_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -7210,7 +7213,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1)
+          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -7337,7 +7340,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1)
+          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -7468,7 +7471,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1)
+          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -7592,7 +7595,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1)
+          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -7700,7 +7703,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
           "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &URI.char_unreserved?/1)
+          "fhirId1" => URI.encode(fhir_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -8079,7 +8082,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
           "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &URI.char_unreserved?/1)
+          "fhirId1" => URI.encode(fhir_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -8194,7 +8197,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
           "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &URI.char_unreserved?/1)
+          "fhirId1" => URI.encode(fhir_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -8462,7 +8465,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
           "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &URI.char_unreserved?/1)
+          "fhirId1" => URI.encode(fhir_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -8575,7 +8578,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
           "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
           "fhirId1" => URI.encode(fhir_id1, &URI.char_unreserved?/1),
-          "_historyId" => URI.encode(_history_id, &URI.char_unreserved?/1)
+          "_historyId" => URI.encode(_history_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -8745,7 +8748,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
+          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -8829,7 +8832,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
+          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -9232,7 +9235,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
+          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -9596,7 +9599,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1),
-          "messagesId" => URI.encode(messages_id, &URI.char_unreserved?/1)
+          "messagesId" => URI.encode(messages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -9687,7 +9690,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1),
-          "messagesId" => URI.encode(messages_id, &URI.char_unreserved?/1)
+          "messagesId" => URI.encode(messages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -10015,7 +10018,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
           "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1),
-          "messagesId" => URI.encode(messages_id, &URI.char_unreserved?/1)
+          "messagesId" => URI.encode(messages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -10196,7 +10199,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
