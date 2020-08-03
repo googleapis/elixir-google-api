@@ -21,8 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.LocalizedText do
 
   ## Attributes
 
-  *   `language` (*type:* `String.t`, *default:* `nil`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
+  *   `language` (*type:* `String.t`, *default:* `nil`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
   *   `text` (*type:* `String.t`, *default:* `nil`) - The text in the given language.
   """
 

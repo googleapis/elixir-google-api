@@ -31,10 +31,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Orders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription or in-app
-      item was purchased (for example, 'com.some.thing').
-  *   `order_id` (*type:* `String.t`) - The order ID provided to the user when the subscription or in-app order was
-      purchased.
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription or in-app item was purchased (for example, 'com.some.thing').
+  *   `order_id` (*type:* `String.t`) - The order ID provided to the user when the subscription or in-app order was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -47,10 +45,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Orders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:revoke` (*type:* `boolean()`) - Whether to revoke the purchased item. If set to true, access to the
-          subscription or in-app item will be terminated immediately. If the item is
-          a recurring subscription, all future payments will also be terminated.
-          Consumed in-app items need to be handled by developer's app. (optional).
+      *   `:revoke` (*type:* `boolean()`) - Whether to revoke the purchased item. If set to true, access to the subscription or in-app item will be terminated immediately. If the item is a recurring subscription, all future payments will also be terminated. Consumed in-app items need to be handled by developer's app. (optional).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

@@ -26,14 +26,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Uploads an APK to internal app sharing.
-  If you are using the Google API client libraries, please increase the
-  timeout of the http request before calling this endpoint
-  (a timeout of 2 minutes is recommended).
-
-  See [Timeouts and
-  Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors)
-  for an example in java.
+  Uploads an APK to internal app sharing. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
 
   ## Parameters
 
@@ -107,14 +100,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
   end
 
   @doc """
-  Uploads an APK to internal app sharing.
-  If you are using the Google API client libraries, please increase the
-  timeout of the http request before calling this endpoint
-  (a timeout of 2 minutes is recommended).
-
-  See [Timeouts and
-  Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors)
-  for an example in java.
+  Uploads an APK to internal app sharing. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
 
   ## Parameters
 
@@ -200,14 +186,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
   end
 
   @doc """
-  Uploads an APK to internal app sharing.
-  If you are using the Google API client libraries, please increase the
-  timeout of the http request before calling this endpoint
-  (a timeout of 2 minutes is recommended).
-
-  See [Timeouts and
-  Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors)
-  for an example in java.
+  Uploads an APK to internal app sharing. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
 
   ## Parameters
 
@@ -293,14 +272,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
   end
 
   @doc """
-  Uploads an app bundle to internal app sharing.
-  If you are using the Google API client libraries, please increase the
-  timeout of the http request before calling this endpoint
-  (a timeout of 2 minutes is recommended).
-
-  See [Timeouts and
-  Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors)
-  for an example in java.
+  Uploads an app bundle to internal app sharing. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
 
   ## Parameters
 
@@ -374,14 +346,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
   end
 
   @doc """
-  Uploads an app bundle to internal app sharing.
-  If you are using the Google API client libraries, please increase the
-  timeout of the http request before calling this endpoint
-  (a timeout of 2 minutes is recommended).
-
-  See [Timeouts and
-  Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors)
-  for an example in java.
+  Uploads an app bundle to internal app sharing. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
 
   ## Parameters
 
@@ -467,14 +432,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
   end
 
   @doc """
-  Uploads an app bundle to internal app sharing.
-  If you are using the Google API client libraries, please increase the
-  timeout of the http request before calling this endpoint
-  (a timeout of 2 minutes is recommended).
-
-  See [Timeouts and
-  Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors)
-  for an example in java.
+  Uploads an app bundle to internal app sharing. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
 
   ## Parameters
 

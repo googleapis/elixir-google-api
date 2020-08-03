@@ -21,8 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.CountryTargeting do
 
   ## Attributes
 
-  *   `countries` (*type:* `list(String.t)`, *default:* `nil`) - Countries to target, specified as two letter [CLDR
-      codes](https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html).
+  *   `countries` (*type:* `list(String.t)`, *default:* `nil`) - Countries to target, specified as two letter [CLDR codes](https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html).
   *   `includeRestOfWorld` (*type:* `boolean()`, *default:* `nil`) - Include "rest of world" as well as explicitly targeted countries.
   """
 

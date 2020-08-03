@@ -22,20 +22,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
   ## Attributes
 
   *   `countryTargeting` (*type:* `GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t`, *default:* `nil`) - Restricts a release to a specific set of countries.
-  *   `inAppUpdatePriority` (*type:* `integer()`, *default:* `nil`) - In-app update priority of the release. All newly added APKs in the
-      release will be considered at this priority. Can take values in the range
-      [0, 5], with 5 the highest priority. Defaults to 0.
-      in_app_update_priority can not be updated once the release is rolled out.
-      See https://developer.android.com/guide/playcore/in-app-updates.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The release name. Not required to be unique. If not set, the name is
-      generated from the APK's version_name. If the release contains multiple
-      APKs, the name is generated from the date.
+  *   `inAppUpdatePriority` (*type:* `integer()`, *default:* `nil`) - In-app update priority of the release. All newly added APKs in the release will be considered at this priority. Can take values in the range [0, 5], with 5 the highest priority. Defaults to 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The release name. Not required to be unique. If not set, the name is generated from the APK's version_name. If the release contains multiple APKs, the name is generated from the date.
   *   `releaseNotes` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t)`, *default:* `nil`) - A description of what is new in this release.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the release.
-  *   `userFraction` (*type:* `float()`, *default:* `nil`) - Fraction of users who are eligible for a staged release. 0 < fraction < 1.
-      Can only be set when status is "inProgress" or "halted".
-  *   `versionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Version codes of all APKs in the release. Must include version codes to
-      retain from previous releases.
+  *   `userFraction` (*type:* `float()`, *default:* `nil`) - Fraction of users who are eligible for a staged release. 0 < fraction < 1. Can only be set when status is "inProgress" or "halted".
+  *   `versionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Version codes of all APKs in the release. Must include version codes to retain from previous releases.
   """
 
   use GoogleApi.Gax.ModelBase

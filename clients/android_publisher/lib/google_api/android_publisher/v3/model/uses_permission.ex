@@ -21,8 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.UsesPermission do
 
   ## Attributes
 
-  *   `maxSdkVersion` (*type:* `integer()`, *default:* `nil`) - Optionally, the maximum SDK version for which the permission is
-      required.
+  *   `maxSdkVersion` (*type:* `integer()`, *default:* `nil`) - Optionally, the maximum SDK version for which the permission is required.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the permission requested.
   """
 

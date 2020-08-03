@@ -21,25 +21,16 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.UserComment do
 
   ## Attributes
 
-  *   `androidOsVersion` (*type:* `integer()`, *default:* `nil`) - Integer Android SDK version of the user's device at the time the
-      review was written, e.g. 23 is Marshmallow. May be absent.
-  *   `appVersionCode` (*type:* `integer()`, *default:* `nil`) - Integer version code of the app as installed at the time the
-      review was written. May be absent.
-  *   `appVersionName` (*type:* `String.t`, *default:* `nil`) - String version name of the app as installed at the time the
-      review was written. May be absent.
+  *   `androidOsVersion` (*type:* `integer()`, *default:* `nil`) - Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent.
+  *   `appVersionCode` (*type:* `integer()`, *default:* `nil`) - Integer version code of the app as installed at the time the review was written. May be absent.
+  *   `appVersionName` (*type:* `String.t`, *default:* `nil`) - String version name of the app as installed at the time the review was written. May be absent.
   *   `device` (*type:* `String.t`, *default:* `nil`) - Codename for the reviewer's device, e.g. klte, flounder. May be absent.
   *   `deviceMetadata` (*type:* `GoogleApi.AndroidPublisher.V3.Model.DeviceMetadata.t`, *default:* `nil`) - Information about the characteristics of the user's device.
   *   `lastModified` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Timestamp.t`, *default:* `nil`) - The last time at which this comment was updated.
-  *   `originalText` (*type:* `String.t`, *default:* `nil`) - Untranslated text of the review, where the review was translated.
-      If the review was not translated this is left blank.
-  *   `reviewerLanguage` (*type:* `String.t`, *default:* `nil`) - Language code for the reviewer. This is taken from the device
-      settings so is not guaranteed to match the language the review
-      is written in. May be absent.
+  *   `originalText` (*type:* `String.t`, *default:* `nil`) - Untranslated text of the review, where the review was translated. If the review was not translated this is left blank.
+  *   `reviewerLanguage` (*type:* `String.t`, *default:* `nil`) - Language code for the reviewer. This is taken from the device settings so is not guaranteed to match the language the review is written in. May be absent.
   *   `starRating` (*type:* `integer()`, *default:* `nil`) - The star rating associated with the review, from 1 to 5.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - The content of the comment, i.e. review body. In some cases
-      users have been able to write a review with separate title and
-      body; in those cases the title and body are concatenated and
-      separated by a tab character.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The content of the comment, i.e. review body. In some cases users have been able to write a review with separate title and body; in those cases the title and body are concatenated and separated by a tab character.
   *   `thumbsDownCount` (*type:* `integer()`, *default:* `nil`) - Number of users who have given this review a thumbs down.
   *   `thumbsUpCount` (*type:* `integer()`, *default:* `nil`) - Number of users who have given this review a thumbs up.
   """

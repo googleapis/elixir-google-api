@@ -22,9 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceSpec do
   ## Attributes
 
   *   `screenDensity` (*type:* `integer()`, *default:* `nil`) - Screen dpi.
-  *   `supportedAbis` (*type:* `list(String.t)`, *default:* `nil`) - Supported ABI architectures in the order of preference.
-      The values should be the string as reported by the platform, e.g.
-      "armeabi-v7a", "x86_64".
+  *   `supportedAbis` (*type:* `list(String.t)`, *default:* `nil`) - Supported ABI architectures in the order of preference. The values should be the string as reported by the platform, e.g. "armeabi-v7a", "x86_64".
   *   `supportedLocales` (*type:* `list(String.t)`, *default:* `nil`) - All installed locales represented as BCP-47 strings, e.g. "en-US".
   """
 
