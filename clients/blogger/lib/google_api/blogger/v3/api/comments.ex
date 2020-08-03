@@ -164,7 +164,7 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
       |> Request.url("/v3/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
-        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
+        "commentId" => URI.encode(comment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -241,7 +241,7 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
       |> Request.url("/v3/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
-        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
+        "commentId" => URI.encode(comment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

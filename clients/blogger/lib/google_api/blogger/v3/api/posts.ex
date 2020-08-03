@@ -74,7 +74,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
       |> Request.method(:delete)
       |> Request.url("/v3/blogs/{blogId}/posts/{postId}", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
-        "postId" => URI.encode(post_id, &URI.char_unreserved?/1)
+        "postId" => URI.encode(post_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -141,7 +141,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
       |> Request.method(:get)
       |> Request.url("/v3/blogs/{blogId}/posts/{postId}", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
-        "postId" => URI.encode(post_id, &URI.char_unreserved?/1)
+        "postId" => URI.encode(post_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -422,7 +422,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
       |> Request.method(:patch)
       |> Request.url("/v3/blogs/{blogId}/posts/{postId}", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
-        "postId" => URI.encode(post_id, &URI.char_unreserved?/1)
+        "postId" => URI.encode(post_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -676,7 +676,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
       |> Request.method(:put)
       |> Request.url("/v3/blogs/{blogId}/posts/{postId}", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
-        "postId" => URI.encode(post_id, &URI.char_unreserved?/1)
+        "postId" => URI.encode(post_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
