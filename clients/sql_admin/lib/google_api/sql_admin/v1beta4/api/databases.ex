@@ -94,7 +94,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-          "database" => URI.encode(database, &URI.char_unreserved?/1)
+          "database" => URI.encode(database, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -175,7 +175,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-          "database" => URI.encode(database, &URI.char_unreserved?/1)
+          "database" => URI.encode(database, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -385,7 +385,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-          "database" => URI.encode(database, &URI.char_unreserved?/1)
+          "database" => URI.encode(database, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -468,7 +468,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-          "database" => URI.encode(database, &URI.char_unreserved?/1)
+          "database" => URI.encode(database, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

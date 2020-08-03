@@ -218,7 +218,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       |> Request.method(:delete)
       |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        "instance" => URI.encode(instance, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -483,7 +483,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       |> Request.method(:get)
       |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        "instance" => URI.encode(instance, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -828,7 +828,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       |> Request.method(:patch)
       |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        "instance" => URI.encode(instance, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1462,7 +1462,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       |> Request.method(:put)
       |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        "instance" => URI.encode(instance, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
