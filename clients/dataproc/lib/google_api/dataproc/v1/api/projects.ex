@@ -166,7 +166,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
+          "autoscalingPoliciesId" =>
+            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -246,7 +247,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
+          "autoscalingPoliciesId" =>
+            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -651,7 +653,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
+          "autoscalingPoliciesId" =>
+            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -805,7 +808,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
+          "workflowTemplatesId" =>
+            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -887,7 +891,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
+          "workflowTemplatesId" =>
+            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1454,7 +1459,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
+          "workflowTemplatesId" =>
+            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1606,7 +1612,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
+          "autoscalingPoliciesId" =>
+            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1686,7 +1693,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
+          "autoscalingPoliciesId" =>
+            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2091,7 +2099,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
+          "autoscalingPoliciesId" =>
+            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2250,7 +2259,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
+        "clusterName" => URI.encode(cluster_name, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2407,7 +2416,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
+        "clusterName" => URI.encode(cluster_name, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2651,7 +2660,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/regions/{region}/clusters/{clusterName}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
+        "clusterName" => URI.encode(cluster_name, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2965,7 +2974,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3039,7 +3048,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3280,7 +3289,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs/{jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3742,7 +3751,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3819,7 +3828,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4295,7 +4304,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
+          "workflowTemplatesId" =>
+            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4377,7 +4387,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
+          "workflowTemplatesId" =>
+            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4944,7 +4955,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
+          "workflowTemplatesId" =>
+            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
