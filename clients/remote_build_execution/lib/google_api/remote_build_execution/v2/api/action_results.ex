@@ -119,7 +119,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
       |> Request.url("/v2/{+instanceName}/actionResults/{hash}/{sizeBytes}", %{
         "instanceName" => URI.encode(instance_name, &URI.char_unreserved?/1),
         "hash" => URI.encode(hash, &URI.char_unreserved?/1),
-        "sizeBytes" => URI.encode(size_bytes, &URI.char_unreserved?/1)
+        "sizeBytes" => URI.encode(size_bytes, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -234,7 +234,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
       |> Request.url("/v2/{+instanceName}/actionResults/{hash}/{sizeBytes}", %{
         "instanceName" => URI.encode(instance_name, &URI.char_unreserved?/1),
         "hash" => URI.encode(hash, &URI.char_unreserved?/1),
-        "sizeBytes" => URI.encode(size_bytes, &URI.char_unreserved?/1)
+        "sizeBytes" => URI.encode(size_bytes, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
