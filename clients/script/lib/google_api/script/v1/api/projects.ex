@@ -129,7 +129,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/projects/{scriptId}", %{
-        "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
+        "scriptId" => URI.encode(script_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -444,7 +444,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{scriptId}/deployments/{deploymentId}", %{
         "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1),
-        "deploymentId" => URI.encode(deployment_id, &URI.char_unreserved?/1)
+        "deploymentId" => URI.encode(deployment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -515,7 +515,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{scriptId}/deployments/{deploymentId}", %{
         "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1),
-        "deploymentId" => URI.encode(deployment_id, &URI.char_unreserved?/1)
+        "deploymentId" => URI.encode(deployment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -652,7 +652,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v1/projects/{scriptId}/deployments/{deploymentId}", %{
         "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1),
-        "deploymentId" => URI.encode(deployment_id, &URI.char_unreserved?/1)
+        "deploymentId" => URI.encode(deployment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
