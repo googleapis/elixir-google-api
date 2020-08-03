@@ -17,21 +17,15 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ExternallyHostedApk do
   @moduledoc """
-  Defines an APK available for this application that is hosted externally
-  and not uploaded to Google Play.
-  This function is only available to organizations using Managed Play whose
-  application is configured to restrict distribution to the organizations.
+  Defines an APK available for this application that is hosted externally and not uploaded to Google Play. This function is only available to organizations using Managed Play whose application is configured to restrict distribution to the organizations.
 
   ## Attributes
 
   *   `applicationLabel` (*type:* `String.t`, *default:* `nil`) - The application label.
-  *   `certificateBase64s` (*type:* `list(String.t)`, *default:* `nil`) - A certificate (or array of certificates if a certificate-chain is used)
-      used to sign this APK, represented as a base64 encoded byte array.
+  *   `certificateBase64s` (*type:* `list(String.t)`, *default:* `nil`) - A certificate (or array of certificates if a certificate-chain is used) used to sign this APK, represented as a base64 encoded byte array.
   *   `externallyHostedUrl` (*type:* `String.t`, *default:* `nil`) - The URL at which the APK is hosted. This must be an https URL.
-  *   `fileSha1Base64` (*type:* `String.t`, *default:* `nil`) - The sha1 checksum of this APK, represented as a base64 encoded byte
-      array.
-  *   `fileSha256Base64` (*type:* `String.t`, *default:* `nil`) - The sha256 checksum of this APK, represented as a base64 encoded byte
-      array.
+  *   `fileSha1Base64` (*type:* `String.t`, *default:* `nil`) - The sha1 checksum of this APK, represented as a base64 encoded byte array.
+  *   `fileSha256Base64` (*type:* `String.t`, *default:* `nil`) - The sha256 checksum of this APK, represented as a base64 encoded byte array.
   *   `fileSize` (*type:* `String.t`, *default:* `nil`) - The file size in bytes of this APK.
   *   `iconBase64` (*type:* `String.t`, *default:* `nil`) - The icon image from the APK, as a base64 encoded byte array.
   *   `maximumSdk` (*type:* `integer()`, *default:* `nil`) - The maximum SDK supported by this APK (optional).

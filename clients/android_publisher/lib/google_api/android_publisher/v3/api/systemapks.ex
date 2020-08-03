@@ -26,8 +26,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates an APK which is suitable for inclusion in a system image from an
-  already uploaded Android App Bundle.
+  Creates an APK which is suitable for inclusion in a system image from an already uploaded Android App Bundle.
 
   ## Parameters
 
@@ -105,8 +104,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
   end
 
   @doc """
-  Downloads a previously created system APK which is suitable for inclusion
-  in a system image.
+  Downloads a previously created system APK which is suitable for inclusion in a system image.
 
   ## Parameters
 

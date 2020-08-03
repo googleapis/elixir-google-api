@@ -22,8 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Listing do
   ## Attributes
 
   *   `fullDescription` (*type:* `String.t`, *default:* `nil`) - Full description of the app.
-  *   `language` (*type:* `String.t`, *default:* `nil`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
+  *   `language` (*type:* `String.t`, *default:* `nil`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
   *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - Short description of the app.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Localized title of the app.
   *   `video` (*type:* `String.t`, *default:* `nil`) - URL of a promotional YouTube video for the app.

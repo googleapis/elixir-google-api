@@ -31,11 +31,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application the inapp product was sold in (for
-      example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application the inapp product was sold in (for example, 'com.some.thing').
   *   `product_id` (*type:* `String.t`) - The inapp product SKU (for example, 'com.some.thing.inapp1').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the inapp product was
-      purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the inapp product was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -112,11 +110,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application the inapp product was sold in (for
-      example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application the inapp product was sold in (for example, 'com.some.thing').
   *   `product_id` (*type:* `String.t`) - The inapp product SKU (for example, 'com.some.thing.inapp1').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the inapp product was
-      purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the inapp product was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -177,7 +173,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
-          "token" => URI.encode(token, &URI.char_unreserved?/1)
+          "token" => URI.encode(token, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -194,11 +190,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
-      purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
-      purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -270,17 +264,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Cancels a user's subscription purchase. The subscription remains valid
-  until its expiration time.
+  Cancels a user's subscription purchase. The subscription remains valid until its expiration time.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
-      purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
-      purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -350,17 +341,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Defers a user's subscription purchase until a specified future expiration
-  time.
+  Defers a user's subscription purchase until a specified future expiration time.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
-      purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
-      purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -437,17 +425,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Checks whether a user's subscription purchase is valid and returns its
-  expiry time.
+  Checks whether a user's subscription purchase is valid and returns its expiry time.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
-      purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
-      purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -508,7 +493,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1),
-          "token" => URI.encode(token, &URI.char_unreserved?/1)
+          "token" => URI.encode(token, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -522,17 +507,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Refunds a user's subscription purchase, but the subscription remains valid
-  until its expiration time and it will continue to recur.
+  Refunds a user's subscription purchase, but the subscription remains valid until its expiration time and it will continue to recur.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
-      purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - "The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
-      purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -602,17 +584,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Refunds and immediately revokes a user's subscription purchase. Access to
-  the subscription will be terminated immediately and it will stop recurring.
+  Refunds and immediately revokes a user's subscription purchase. Access to the subscription will be terminated immediately and it will stop recurring.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
-      purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
-      purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -687,8 +666,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which voided purchases need to be
-      returned (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which voided purchases need to be returned (for example, 'com.some.thing').
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -701,39 +679,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:endTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the newest voided purchase
-          that you want to see in the response. The value of this parameter cannot
-          be greater than the current time and is ignored if a pagination token is
-          set. Default value is current time.
-          Note: This filter is applied on the time at which the record is seen as
-          voided by our systems and not the actual voided time returned in the
-          response.
-      *   `:maxResults` (*type:* `integer()`) - Defines how many results the list operation should return.
-          The default number depends on the resource collection.
-      *   `:startIndex` (*type:* `integer()`) - Defines the index of the first element to return.
-          This can only be used if indexed paging is enabled.
-      *   `:startTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the oldest voided purchase
-          that you want to see in the response. The value of this parameter cannot
-          be older than 30 days and is ignored if a pagination token is set.
-          Default value is current time minus 30 days.
-          Note: This filter is applied on the time at which the record is seen as
-          voided by our systems and not the actual voided time returned in the
-          response.
-      *   `:token` (*type:* `String.t`) - Defines the token of the page to return, usually taken from
-          TokenPagination.
-          This can only be used if token paging is enabled.
-      *   `:type` (*type:* `integer()`) - The type of voided purchases that you want to see in the response.
-          Possible values are:
-          0. Only voided in-app product purchases will be returned in the
-             response. This is the default value.
-          1. Both voided in-app purchases and voided subscription purchases
-             will be returned in the response.
-
-          Note: Before requesting to receive voided subscription purchases, you
-          must switch to use orderId in the response which uniquely identifies
-          one-time purchases and subscriptions. Otherwise, you will receive multiple
-          subscription orders with the same PurchaseToken, because subscription
-          renewal orders share the same PurchaseToken.
+      *   `:endTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the newest voided purchase that you want to see in the response. The value of this parameter cannot be greater than the current time and is ignored if a pagination token is set. Default value is current time. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
+      *   `:maxResults` (*type:* `integer()`) - Defines how many results the list operation should return. The default number depends on the resource collection.
+      *   `:startIndex` (*type:* `integer()`) - Defines the index of the first element to return. This can only be used if indexed paging is enabled.
+      *   `:startTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the oldest voided purchase that you want to see in the response. The value of this parameter cannot be older than 30 days and is ignored if a pagination token is set. Default value is current time minus 30 days. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
+      *   `:token` (*type:* `String.t`) - Defines the token of the page to return, usually taken from TokenPagination. This can only be used if token paging is enabled.
+      *   `:type` (*type:* `integer()`) - The type of voided purchases that you want to see in the response. Possible values are: 0. Only voided in-app product purchases will be returned in the response. This is the default value. 1. Both voided in-app purchases and voided subscription purchases will be returned in the response. Note: Before requesting to receive voided subscription purchases, you must switch to use orderId in the response which uniquely identifies one-time purchases and subscriptions. Otherwise, you will receive multiple subscription orders with the same PurchaseToken, because subscription renewal orders share the same PurchaseToken.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

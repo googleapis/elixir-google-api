@@ -21,8 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Price do
 
   ## Attributes
 
-  *   `currency` (*type:* `String.t`, *default:* `nil`) - 3 letter Currency code, as defined by ISO 4217.
-      See java/com/google/common/money/CurrencyCode.java
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - 3 letter Currency code, as defined by ISO 4217. See java/com/google/common/money/CurrencyCode.java
   *   `priceMicros` (*type:* `String.t`, *default:* `nil`) - Price in 1/million of the currency base unit, represented as a string.
   """
 

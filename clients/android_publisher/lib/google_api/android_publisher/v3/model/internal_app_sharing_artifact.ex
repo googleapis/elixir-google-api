@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact do
   @moduledoc """
-  An artifact resource which gets created when uploading an APK or Android
-  App Bundle through internal app sharing.
+  An artifact resource which gets created when uploading an APK or Android App Bundle through internal app sharing.
 
   ## Attributes
 
-  *   `certificateFingerprint` (*type:* `String.t`, *default:* `nil`) - The sha256 fingerprint of the certificate used to sign the generated
-      artifact.
-  *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - The download URL generated for the uploaded artifact.
-      Users that are authorized to download can follow the link to the Play
-      Store app to install it.
-  *   `sha256` (*type:* `String.t`, *default:* `nil`) - The sha256 hash of the artifact represented as a lowercase hexadecimal
-      number, matching the output of the sha256sum command.
+  *   `certificateFingerprint` (*type:* `String.t`, *default:* `nil`) - The sha256 fingerprint of the certificate used to sign the generated artifact.
+  *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - The download URL generated for the uploaded artifact. Users that are authorized to download can follow the link to the Play Store app to install it.
+  *   `sha256` (*type:* `String.t`, *default:* `nil`) - The sha256 hash of the artifact represented as a lowercase hexadecimal number, matching the output of the sha256sum command.
   """
 
   use GoogleApi.Gax.ModelBase

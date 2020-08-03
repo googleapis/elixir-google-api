@@ -158,7 +158,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       |> Request.method(:delete)
       |> Request.url("/androidpublisher/v3/applications/{packageName}/edits/{editId}", %{
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
-        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
+        "editId" => URI.encode(edit_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -231,7 +231,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v3/applications/{packageName}/edits/{editId}", %{
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
-        "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
+        "editId" => URI.encode(edit_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -376,10 +376,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Creates a new APK without uploading the APK itself to Google Play, instead
-  hosting the APK at a specified URL. This function is only available to
-  organizations using Managed Play whose application is configured to
-  restrict distribution to the organizations.
+  Creates a new APK without uploading the APK itself to Google Play, instead hosting the APK at a specified URL. This function is only available to organizations using Managed Play whose application is configured to restrict distribution to the organizations.
 
   ## Parameters
 
@@ -856,13 +853,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads a new Android App Bundle to this edit.
-  If you are using the Google API client libraries, please increase the
-  timeout of the http request before calling this endpoint
-  (a timeout of 2 minutes is recommended).
-  See [Timeouts and
-  Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors)
-  for an example in java.
+  Uploads a new Android App Bundle to this edit. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
 
   ## Parameters
 
@@ -881,9 +872,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on
-          user devices (for example, if installation size may be over a threshold,
-          typically 100 MB).
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -939,13 +928,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads a new Android App Bundle to this edit.
-  If you are using the Google API client libraries, please increase the
-  timeout of the http request before calling this endpoint
-  (a timeout of 2 minutes is recommended).
-  See [Timeouts and
-  Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors)
-  for an example in java.
+  Uploads a new Android App Bundle to this edit. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
 
   ## Parameters
 
@@ -967,9 +950,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on
-          user devices (for example, if installation size may be over a threshold,
-          typically 100 MB).
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1037,13 +1018,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads a new Android App Bundle to this edit.
-  If you are using the Google API client libraries, please increase the
-  timeout of the http request before calling this endpoint
-  (a timeout of 2 minutes is recommended).
-  See [Timeouts and
-  Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors)
-  for an example in java.
+  Uploads a new Android App Bundle to this edit. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
 
   ## Parameters
 
@@ -1065,9 +1040,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on
-          user devices (for example, if installation size may be over a threshold,
-          typically 100 MB).
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1142,8 +1115,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app.
   *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
-  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Deobfuscation File is being
-      uploaded.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Deobfuscation File is being uploaded.
   *   `deobfuscation_file_type` (*type:* `String.t`) - The type of the deobfuscation file.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1208,7 +1180,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "deobfuscationFileType" => URI.encode(deobfuscation_file_type, &URI.char_unreserved?/1)
+          "deobfuscationFileType" =>
+            URI.encode(deobfuscation_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1229,8 +1202,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app.
   *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
-  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Deobfuscation File is being
-      uploaded.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Deobfuscation File is being uploaded.
   *   `deobfuscation_file_type` (*type:* `String.t`) - The type of the deobfuscation file.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
@@ -1304,7 +1276,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "deobfuscationFileType" => URI.encode(deobfuscation_file_type, &URI.char_unreserved?/1)
+          "deobfuscationFileType" =>
+            URI.encode(deobfuscation_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -1328,8 +1301,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app.
   *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
-  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Deobfuscation File is being
-      uploaded.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Deobfuscation File is being uploaded.
   *   `deobfuscation_file_type` (*type:* `String.t`) - The type of the deobfuscation file.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
@@ -1403,7 +1375,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "deobfuscationFileType" => URI.encode(deobfuscation_file_type, &URI.char_unreserved?/1)
+          "deobfuscationFileType" =>
+            URI.encode(deobfuscation_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -1650,8 +1623,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being
-      read or modified.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being read or modified.
   *   `expansion_file_type` (*type:* `String.t`) - The file type of the file configuration which is being read or modified.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1716,7 +1688,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
+          "expansionFileType" =>
+            URI.encode(expansion_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1728,17 +1701,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Patches the APK's expansion file configuration to reference another APK's
-  expansion file.
-  To add a new expansion file use the Upload method.
+  Patches the APK's expansion file configuration to reference another APK's expansion file. To add a new expansion file use the Upload method.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being
-      read or modified.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being read or modified.
   *   `expansion_file_type` (*type:* `String.t`) - The file type of the expansion file configuration which is being updated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1805,7 +1775,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
+          "expansionFileType" =>
+            URI.encode(expansion_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1817,17 +1788,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Updates the APK's expansion file configuration to reference another APK's
-  expansion file.
-  To add a new expansion file use the Upload method.
+  Updates the APK's expansion file configuration to reference another APK's expansion file. To add a new expansion file use the Upload method.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being
-      read or modified.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being read or modified.
   *   `expansion_file_type` (*type:* `String.t`) - The file type of the file configuration which is being read or modified.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1894,7 +1862,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
+          "expansionFileType" =>
+            URI.encode(expansion_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1913,8 +1882,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being
-      read or modified.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being read or modified.
   *   `expansion_file_type` (*type:* `String.t`) - The file type of the expansion file configuration which is being updated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1979,7 +1947,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
+          "expansionFileType" =>
+            URI.encode(expansion_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2000,8 +1969,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being
-      read or modified.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being read or modified.
   *   `expansion_file_type` (*type:* `String.t`) - The file type of the expansion file configuration which is being updated.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
@@ -2075,7 +2043,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
+          "expansionFileType" =>
+            URI.encode(expansion_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -2099,8 +2068,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being
-      read or modified.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being read or modified.
   *   `expansion_file_type` (*type:* `String.t`) - The file type of the expansion file configuration which is being updated.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
@@ -2174,7 +2142,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "apkVersionCode" => apk_version_code,
-          "expansionFileType" => URI.encode(expansion_file_type, &URI.char_unreserved?/1)
+          "expansionFileType" =>
+            URI.encode(expansion_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -2198,8 +2167,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
   *   `image_type` (*type:* `String.t`) - Type of the Image.
   *   `image_id` (*type:* `String.t`) - Unique identifier an image within the set of images attached to this edit.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2265,7 +2233,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "language" => URI.encode(language, &URI.char_unreserved?/1),
           "imageType" => URI.encode(image_type, &URI.char_unreserved?/1),
-          "imageId" => URI.encode(image_id, &URI.char_unreserved?/1)
+          "imageId" => URI.encode(image_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2277,19 +2245,15 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Deletes all images for the specified language and image type.
-  Returns an empty response if no images are found.
+  Deletes all images for the specified language and image type. Returns an empty response if no images are found.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
-      Providing a language that is not supported by the App is a no-op.
-  *   `image_type` (*type:* `String.t`) - Type of the Image.
-      Providing an image type that refers to no images is a no-op.
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German). Providing a language that is not supported by the App is a no-op.
+  *   `image_type` (*type:* `String.t`) - Type of the Image. Providing an image type that refers to no images is a no-op.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2353,7 +2317,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "language" => URI.encode(language, &URI.char_unreserved?/1),
-          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
+          "imageType" => URI.encode(image_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2374,11 +2338,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
-      There must be a store listing for the specified language.
-  *   `image_type` (*type:* `String.t`) - Type of the Image. Providing an image type that refers to no images will
-      return an empty response.
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German). There must be a store listing for the specified language.
+  *   `image_type` (*type:* `String.t`) - Type of the Image. Providing an image type that refers to no images will return an empty response.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2442,7 +2403,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "language" => URI.encode(language, &URI.char_unreserved?/1),
-          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
+          "imageType" => URI.encode(image_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2456,17 +2417,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads an image of the specified language and image type, and adds to the
-  edit.
+  Uploads an image of the specified language and image type, and adds to the edit.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
-      Providing a language that is not supported by the App is a no-op.
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German). Providing a language that is not supported by the App is a no-op.
   *   `image_type` (*type:* `String.t`) - Type of the Image.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2531,7 +2489,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "language" => URI.encode(language, &URI.char_unreserved?/1),
-          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
+          "imageType" => URI.encode(image_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2545,17 +2503,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads an image of the specified language and image type, and adds to the
-  edit.
+  Uploads an image of the specified language and image type, and adds to the edit.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
-      Providing a language that is not supported by the App is a no-op.
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German). Providing a language that is not supported by the App is a no-op.
   *   `image_type` (*type:* `String.t`) - Type of the Image.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
@@ -2629,7 +2584,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "language" => URI.encode(language, &URI.char_unreserved?/1),
-          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
+          "imageType" => URI.encode(image_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -2646,17 +2601,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads an image of the specified language and image type, and adds to the
-  edit.
+  Uploads an image of the specified language and image type, and adds to the edit.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
-      Providing a language that is not supported by the App is a no-op.
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German). Providing a language that is not supported by the App is a no-op.
   *   `image_type` (*type:* `String.t`) - Type of the Image.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
@@ -2730,7 +2682,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
           "language" => URI.encode(language, &URI.char_unreserved?/1),
-          "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
+          "imageType" => URI.encode(image_type, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -2754,8 +2706,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2813,7 +2764,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "language" => URI.encode(language, &URI.char_unreserved?/1)
+          "language" => URI.encode(language, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2902,8 +2853,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2964,7 +2914,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "language" => URI.encode(language, &URI.char_unreserved?/1)
+          "language" => URI.encode(language, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3058,8 +3008,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3122,7 +3071,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "language" => URI.encode(language, &URI.char_unreserved?/1)
+          "language" => URI.encode(language, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3141,8 +3090,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
-  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
-      for Austrian German).
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3205,7 +3153,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "language" => URI.encode(language, &URI.char_unreserved?/1)
+          "language" => URI.encode(language, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3285,7 +3233,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "track" => URI.encode(track, &URI.char_unreserved?/1)
+          "track" => URI.encode(track, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3367,7 +3315,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "track" => URI.encode(track, &URI.char_unreserved?/1)
+          "track" => URI.encode(track, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3449,7 +3397,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "track" => URI.encode(track, &URI.char_unreserved?/1)
+          "track" => URI.encode(track, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3529,7 +3477,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "track" => URI.encode(track, &URI.char_unreserved?/1)
+          "track" => URI.encode(track, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3686,7 +3634,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "track" => URI.encode(track, &URI.char_unreserved?/1)
+          "track" => URI.encode(track, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3768,7 +3716,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
           "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
-          "track" => URI.encode(track, &URI.char_unreserved?/1)
+          "track" => URI.encode(track, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

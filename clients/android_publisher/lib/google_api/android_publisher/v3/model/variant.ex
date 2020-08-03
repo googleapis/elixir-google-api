@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Variant do
   @moduledoc """
-  APK that is suitable for inclusion in a system image. The resource of
-  SystemApksService.
+  APK that is suitable for inclusion in a system image. The resource of SystemApksService.
 
   ## Attributes
 

@@ -90,7 +90,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v3/applications/{packageName}/reviews/{reviewId}", %{
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
-        "reviewId" => URI.encode(review_id, &URI.char_unreserved?/1)
+        "reviewId" => URI.encode(review_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

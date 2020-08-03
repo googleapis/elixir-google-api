@@ -21,8 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AppEdit do
 
   ## Attributes
 
-  *   `expiryTimeSeconds` (*type:* `String.t`, *default:* `nil`) - Output only. The time (as seconds since Epoch) at which the edit will expire and
-      will be no longer valid for use.
+  *   `expiryTimeSeconds` (*type:* `String.t`, *default:* `nil`) - Output only. The time (as seconds since Epoch) at which the edit will expire and will be no longer valid for use.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier of the edit. Can be used in subsequent API calls.
   """
 

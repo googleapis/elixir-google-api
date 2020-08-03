@@ -22,26 +22,16 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
   ## Attributes
 
   *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - Default language of the localized data, as defined by BCP-47. e.g. "en-US".
-  *   `defaultPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Default price. Cannot be zero, as in-app products are never free.
-      Always in the developer's Checkout merchant currency.
-  *   `gracePeriod` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. Allows
-      developers to give their subscribers a grace period when the payment
-      for the new recurrence period is declined.
-      Acceptable values are P0D (zero days), P3D (three days), P7D (seven days),
-      P14D (14 days), and P30D (30 days).
-  *   `listings` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t}`, *default:* `nil`) - List of localized title and description data. Map key is the language of
-      the localized data, as defined by BCP-47, e.g. "en-US".
+  *   `defaultPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Default price. Cannot be zero, as in-app products are never free. Always in the developer's Checkout merchant currency.
+  *   `gracePeriod` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. Allows developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values are P0D (zero days), P3D (three days), P7D (seven days), P14D (14 days), and P30D (30 days).
+  *   `listings` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t}`, *default:* `nil`) - List of localized title and description data. Map key is the language of the localized data, as defined by BCP-47, e.g. "en-US".
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name of the parent app.
-  *   `prices` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.Price.t}`, *default:* `nil`) - Prices per buyer region. None of these can be zero, as in-app products are
-      never free. Map key is region code, as defined by ISO 3166-2.
+  *   `prices` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.Price.t}`, *default:* `nil`) - Prices per buyer region. None of these can be zero, as in-app products are never free. Map key is region code, as defined by ISO 3166-2.
   *   `purchaseType` (*type:* `String.t`, *default:* `nil`) - The type of the product, e.g. a recurring subscription.
   *   `sku` (*type:* `String.t`, *default:* `nil`) - Stock-keeping-unit (SKU) of the product, unique within an app.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the product, e.g. whether it's active.
-  *   `subscriptionPeriod` (*type:* `String.t`, *default:* `nil`) - Subscription period, specified in ISO 8601 format. Acceptable values are
-      P1W (one week), P1M (one month), P3M (three months), P6M (six months),
-      and P1Y (one year).
-  *   `trialPeriod` (*type:* `String.t`, *default:* `nil`) - Trial period, specified in ISO 8601 format. Acceptable values are anything
-      between P7D (seven days) and P999D (999 days).
+  *   `subscriptionPeriod` (*type:* `String.t`, *default:* `nil`) - Subscription period, specified in ISO 8601 format. Acceptable values are P1W (one week), P1M (one month), P3M (three months), P6M (six months), and P1Y (one year).
+  *   `trialPeriod` (*type:* `String.t`, *default:* `nil`) - Trial period, specified in ISO 8601 format. Acceptable values are anything between P7D (seven days) and P999D (999 days).
   """
 
   use GoogleApi.Gax.ModelBase

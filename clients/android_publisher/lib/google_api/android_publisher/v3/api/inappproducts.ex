@@ -85,7 +85,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
       |> Request.method(:delete)
       |> Request.url("/androidpublisher/v3/applications/{packageName}/inappproducts/{sku}", %{
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
-        "sku" => URI.encode(sku, &URI.char_unreserved?/1)
+        "sku" => URI.encode(sku, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -158,7 +158,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
       |> Request.method(:get)
       |> Request.url("/androidpublisher/v3/applications/{packageName}/inappproducts/{sku}", %{
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
-        "sku" => URI.encode(sku, &URI.char_unreserved?/1)
+        "sku" => URI.encode(sku, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -187,9 +187,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't
-          have a price specified for this in-app product will be auto converted to
-          the target currency based on the default price. Defaults to false.
+      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -335,9 +333,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't
-          have a price specified for this in-app product will be auto converted to
-          the target currency based on the default price. Defaults to false.
+      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -384,7 +380,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
       |> Request.method(:patch)
       |> Request.url("/androidpublisher/v3/applications/{packageName}/inappproducts/{sku}", %{
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
-        "sku" => URI.encode(sku, &URI.char_unreserved?/1)
+        "sku" => URI.encode(sku, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -414,9 +410,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't
-          have a price specified for this in-app product will be auto converted to
-          the target currency based on the default price. Defaults to false.
+      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -463,7 +457,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
       |> Request.method(:put)
       |> Request.url("/androidpublisher/v3/applications/{packageName}/inappproducts/{sku}", %{
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
-        "sku" => URI.encode(sku, &URI.char_unreserved?/1)
+        "sku" => URI.encode(sku, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
