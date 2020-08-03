@@ -550,7 +550,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/gmail/v1/users/{userId}/drafts/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -612,7 +612,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/gmail/v1/users/{userId}/drafts/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1046,7 +1046,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:put)
       |> Request.url("/gmail/v1/users/{userId}/drafts/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1126,7 +1126,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:put)
       |> Request.url("/upload/gmail/v1/users/{userId}/drafts/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
@@ -1205,7 +1205,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:put)
       |> Request.url("/resumable/upload/gmail/v1/users/{userId}/drafts/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1286,7 +1286,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:put)
       |> Request.url("/upload/gmail/v1/users/{userId}/drafts/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
@@ -1498,7 +1498,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/gmail/v1/users/{userId}/labels/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1558,7 +1558,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/gmail/v1/users/{userId}/labels/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1680,7 +1680,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:patch)
       |> Request.url("/gmail/v1/users/{userId}/labels/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1747,7 +1747,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:put)
       |> Request.url("/gmail/v1/users/{userId}/labels/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1934,7 +1934,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/gmail/v1/users/{userId}/messages/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1999,7 +1999,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/gmail/v1/users/{userId}/messages/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3322,7 +3322,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.url("/gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "messageId" => URI.encode(message_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4122,7 +4122,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/gmail/v1/users/{userId}/settings/delegates/{delegateEmail}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "delegateEmail" => URI.encode(delegate_email, &URI.char_unreserved?/1)
+        "delegateEmail" => URI.encode(delegate_email, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4200,7 +4200,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/gmail/v1/users/{userId}/settings/delegates/{delegateEmail}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "delegateEmail" => URI.encode(delegate_email, &URI.char_unreserved?/1)
+        "delegateEmail" => URI.encode(delegate_email, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4394,7 +4394,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/gmail/v1/users/{userId}/settings/filters/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4459,7 +4459,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/gmail/v1/users/{userId}/settings/filters/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4672,7 +4672,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "forwardingEmail" => URI.encode(forwarding_email, &URI.char_unreserved?/1)
+        "forwardingEmail" => URI.encode(forwarding_email, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4746,7 +4746,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "forwardingEmail" => URI.encode(forwarding_email, &URI.char_unreserved?/1)
+        "forwardingEmail" => URI.encode(forwarding_email, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4963,7 +4963,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
+        "sendAsEmail" => URI.encode(send_as_email, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5035,7 +5035,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
+        "sendAsEmail" => URI.encode(send_as_email, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5170,7 +5170,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:patch)
       |> Request.url("/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
+        "sendAsEmail" => URI.encode(send_as_email, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5248,7 +5248,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:put)
       |> Request.url("/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
+        "sendAsEmail" => URI.encode(send_as_email, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5399,7 +5399,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.url("/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5476,7 +5476,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.url("/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5772,7 +5772,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/gmail/v1/users/{userId}/threads/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5836,7 +5836,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/gmail/v1/users/{userId}/threads/{id}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
