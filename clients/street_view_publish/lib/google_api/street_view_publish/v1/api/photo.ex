@@ -156,7 +156,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/photo/{photoId}", %{
-        "photoId" => URI.encode(photo_id, &URI.char_unreserved?/1)
+        "photoId" => URI.encode(photo_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -234,7 +234,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/photo/{photoId}", %{
-        "photoId" => URI.encode(photo_id, &URI.char_unreserved?/1)
+        "photoId" => URI.encode(photo_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -415,7 +415,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/photo/{id}", %{
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
