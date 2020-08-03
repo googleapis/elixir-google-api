@@ -66,7 +66,7 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Api.Transfers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/transfers/{dataTransferId}", %{
-        "dataTransferId" => URI.encode(data_transfer_id, &URI.char_unreserved?/1)
+        "dataTransferId" => URI.encode(data_transfer_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

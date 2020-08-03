@@ -79,7 +79,8 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
         "/admin/directory/v1/customer/{customer}/roleassignments/{roleAssignmentId}",
         %{
           "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-          "roleAssignmentId" => URI.encode(role_assignment_id, &URI.char_unreserved?/1)
+          "roleAssignmentId" =>
+            URI.encode(role_assignment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -147,7 +148,8 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
         "/admin/directory/v1/customer/{customer}/roleassignments/{roleAssignmentId}",
         %{
           "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-          "roleAssignmentId" => URI.encode(role_assignment_id, &URI.char_unreserved?/1)
+          "roleAssignmentId" =>
+            URI.encode(role_assignment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

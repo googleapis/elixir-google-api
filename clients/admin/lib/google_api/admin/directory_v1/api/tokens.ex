@@ -66,7 +66,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Tokens do
       |> Request.method(:delete)
       |> Request.url("/admin/directory/v1/users/{userKey}/tokens/{clientId}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
-        "clientId" => URI.encode(client_id, &URI.char_unreserved?/1)
+        "clientId" => URI.encode(client_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -119,7 +119,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Tokens do
       |> Request.method(:get)
       |> Request.url("/admin/directory/v1/users/{userKey}/tokens/{clientId}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
-        "clientId" => URI.encode(client_id, &URI.char_unreserved?/1)
+        "clientId" => URI.encode(client_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

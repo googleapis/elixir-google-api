@@ -66,7 +66,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customers do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/admin/directory/v1/customers/{customerKey}", %{
-        "customerKey" => URI.encode(customer_key, &URI.char_unreserved?/1)
+        "customerKey" => URI.encode(customer_key, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -119,7 +119,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customers do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/admin/directory/v1/customers/{customerKey}", %{
-        "customerKey" => URI.encode(customer_key, &URI.char_unreserved?/1)
+        "customerKey" => URI.encode(customer_key, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -172,7 +172,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customers do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/admin/directory/v1/customers/{customerKey}", %{
-        "customerKey" => URI.encode(customer_key, &URI.char_unreserved?/1)
+        "customerKey" => URI.encode(customer_key, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
