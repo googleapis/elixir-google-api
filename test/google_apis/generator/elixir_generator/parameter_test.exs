@@ -201,6 +201,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.ParameterTest do
 
     assert ["userId", "shelf"] == Enum.map(required, & &1.name)
     assert ["source"] == Enum.map(optional, & &1.name)
+
+    assert Enum.find(optional, &(&1.name == "source")).is_path_trailer == false
+    assert Enum.find(required, &(&1.name == "userId")).is_path_trailer == false
+    assert Enum.find(required, &(&1.name == "shelf")).is_path_trailer == true
   end
 
   test "array types" do
