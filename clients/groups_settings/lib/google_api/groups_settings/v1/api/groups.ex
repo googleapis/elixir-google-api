@@ -66,7 +66,7 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/{groupUniqueId}", %{
-        "groupUniqueId" => URI.encode(group_unique_id, &URI.char_unreserved?/1)
+        "groupUniqueId" => URI.encode(group_unique_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -119,7 +119,7 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/{groupUniqueId}", %{
-        "groupUniqueId" => URI.encode(group_unique_id, &URI.char_unreserved?/1)
+        "groupUniqueId" => URI.encode(group_unique_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -177,7 +177,7 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/{groupUniqueId}", %{
-        "groupUniqueId" => URI.encode(group_unique_id, &URI.char_unreserved?/1)
+        "groupUniqueId" => URI.encode(group_unique_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
