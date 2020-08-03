@@ -1129,7 +1129,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       |> Request.method(:post)
       |> Request.url("/v1/{+parent}/{collectionId}", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1),
-        "collectionId" => URI.encode(collection_id, &URI.char_unreserved?/1)
+        "collectionId" => URI.encode(collection_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1382,7 +1382,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/{collectionId}", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1),
-        "collectionId" => URI.encode(collection_id, &URI.char_unreserved?/1)
+        "collectionId" => URI.encode(collection_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
