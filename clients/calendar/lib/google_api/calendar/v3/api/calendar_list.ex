@@ -64,7 +64,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/users/me/calendarList/{calendarId}", %{
-        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
+        "calendarId" => URI.encode(calendar_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -115,7 +115,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/users/me/calendarList/{calendarId}", %{
-        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
+        "calendarId" => URI.encode(calendar_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -286,7 +286,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/users/me/calendarList/{calendarId}", %{
-        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
+        "calendarId" => URI.encode(calendar_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -341,7 +341,7 @@ defmodule GoogleApi.Calendar.V3.Api.CalendarList do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/users/me/calendarList/{calendarId}", %{
-        "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
+        "calendarId" => URI.encode(calendar_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
