@@ -252,7 +252,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/matters/{matterId}", %{
-        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
+        "matterId" => URI.encode(matter_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -311,7 +311,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}", %{
-        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
+        "matterId" => URI.encode(matter_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -618,7 +618,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/matters/{matterId}", %{
-        "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
+        "matterId" => URI.encode(matter_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -747,7 +747,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.method(:delete)
       |> Request.url("/v1/matters/{matterId}/exports/{exportId}", %{
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
-        "exportId" => URI.encode(export_id, &URI.char_unreserved?/1)
+        "exportId" => URI.encode(export_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -817,7 +817,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/exports/{exportId}", %{
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
-        "exportId" => URI.encode(export_id, &URI.char_unreserved?/1)
+        "exportId" => URI.encode(export_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1086,7 +1086,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.method(:delete)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}", %{
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
-        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
+        "holdId" => URI.encode(hold_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1147,7 +1147,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}", %{
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
-        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
+        "holdId" => URI.encode(hold_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1366,7 +1366,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.method(:put)
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}", %{
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
-        "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
+        "holdId" => URI.encode(hold_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1516,7 +1516,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.url("/v1/matters/{matterId}/holds/{holdId}/accounts/{accountId}", %{
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
         "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1),
-        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
+        "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1723,7 +1723,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.method(:delete)
       |> Request.url("/v1/matters/{matterId}/savedQueries/{savedQueryId}", %{
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
-        "savedQueryId" => URI.encode(saved_query_id, &URI.char_unreserved?/1)
+        "savedQueryId" => URI.encode(saved_query_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1795,7 +1795,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.method(:get)
       |> Request.url("/v1/matters/{matterId}/savedQueries/{savedQueryId}", %{
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1),
-        "savedQueryId" => URI.encode(saved_query_id, &URI.char_unreserved?/1)
+        "savedQueryId" => URI.encode(saved_query_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
