@@ -74,7 +74,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.Domain do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/domain/{domainId}", %{
-        "domainId" => URI.encode(domain_id, &URI.char_unreserved?/1)
+        "domainId" => URI.encode(domain_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
