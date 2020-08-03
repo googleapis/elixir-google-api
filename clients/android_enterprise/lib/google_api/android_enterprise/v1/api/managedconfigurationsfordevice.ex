@@ -98,7 +98,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
           "managedConfigurationForDeviceId" =>
-            URI.encode(managed_configuration_for_device_id, &URI.char_unreserved?/1)
+            URI.encode(
+              managed_configuration_for_device_id,
+              &(URI.char_unreserved?(&1) || &1 == ?/)
+            )
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -184,7 +187,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
           "managedConfigurationForDeviceId" =>
-            URI.encode(managed_configuration_for_device_id, &URI.char_unreserved?/1)
+            URI.encode(
+              managed_configuration_for_device_id,
+              &(URI.char_unreserved?(&1) || &1 == ?/)
+            )
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -363,7 +369,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
           "managedConfigurationForDeviceId" =>
-            URI.encode(managed_configuration_for_device_id, &URI.char_unreserved?/1)
+            URI.encode(
+              managed_configuration_for_device_id,
+              &(URI.char_unreserved?(&1) || &1 == ?/)
+            )
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

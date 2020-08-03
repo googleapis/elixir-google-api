@@ -82,7 +82,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Permissions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/androidenterprise/v1/permissions/{permissionId}", %{
-        "permissionId" => URI.encode(permission_id, &URI.char_unreserved?/1)
+        "permissionId" => URI.encode(permission_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
