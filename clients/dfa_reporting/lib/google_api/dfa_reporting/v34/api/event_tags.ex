@@ -77,7 +77,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.EventTags do
       |> Request.method(:delete)
       |> Request.url("/dfareporting/v3.4/userprofiles/{profileId}/eventTags/{id}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -136,7 +136,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.EventTags do
       |> Request.method(:get)
       |> Request.url("/dfareporting/v3.4/userprofiles/{profileId}/eventTags/{id}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

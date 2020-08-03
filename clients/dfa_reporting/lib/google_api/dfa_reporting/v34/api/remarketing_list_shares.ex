@@ -82,7 +82,8 @@ defmodule GoogleApi.DFAReporting.V34.Api.RemarketingListShares do
         "/dfareporting/v3.4/userprofiles/{profileId}/remarketingListShares/{remarketingListId}",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "remarketingListId" => URI.encode(remarketing_list_id, &URI.char_unreserved?/1)
+          "remarketingListId" =>
+            URI.encode(remarketing_list_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

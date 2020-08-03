@@ -66,7 +66,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Ads do
       |> Request.method(:get)
       |> Request.url("/dfareporting/v3.3/userprofiles/{profileId}/ads/{id}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

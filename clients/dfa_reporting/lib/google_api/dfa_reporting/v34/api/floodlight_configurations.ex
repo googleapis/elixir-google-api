@@ -82,7 +82,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightConfigurations do
         "/dfareporting/v3.4/userprofiles/{profileId}/floodlightConfigurations/{id}",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "id" => URI.encode(id, &URI.char_unreserved?/1)
+          "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

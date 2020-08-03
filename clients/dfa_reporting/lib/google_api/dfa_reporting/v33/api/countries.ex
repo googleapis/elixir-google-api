@@ -80,7 +80,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Countries do
       |> Request.method(:get)
       |> Request.url("/dfareporting/v3.3/userprofiles/{profileId}/countries/{dartId}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "dartId" => URI.encode(dart_id, &URI.char_unreserved?/1)
+        "dartId" => URI.encode(dart_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

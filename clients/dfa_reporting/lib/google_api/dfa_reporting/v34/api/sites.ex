@@ -68,7 +68,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Sites do
       |> Request.method(:get)
       |> Request.url("/dfareporting/v3.4/userprofiles/{profileId}/sites/{id}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

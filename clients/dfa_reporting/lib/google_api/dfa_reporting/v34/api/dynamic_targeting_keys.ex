@@ -85,7 +85,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.DynamicTargetingKeys do
         "/dfareporting/v3.4/userprofiles/{profileId}/dynamicTargetingKeys/{objectId}",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "objectId" => URI.encode(object_id, &URI.char_unreserved?/1)
+          "objectId" => URI.encode(object_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_param(:query, :name, name)
