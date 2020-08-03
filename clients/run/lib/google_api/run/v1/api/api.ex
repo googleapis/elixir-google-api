@@ -72,7 +72,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/api/v1/namespaces/{namespacesId}", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+        "namespacesId" => URI.encode(namespaces_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -133,7 +133,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/api/v1/namespaces/{namespacesId}", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+        "namespacesId" => URI.encode(namespaces_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -267,7 +267,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
       |> Request.method(:get)
       |> Request.url("/api/v1/namespaces/{namespacesId}/secrets/{secretsId}", %{
         "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -339,7 +339,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
       |> Request.method(:put)
       |> Request.url("/api/v1/namespaces/{namespacesId}/secrets/{secretsId}", %{
         "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
