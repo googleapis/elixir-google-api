@@ -84,7 +84,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
       |> Request.method(:delete)
       |> Request.url("/{project}/global/targetGrpcProxies/{targetGrpcProxy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "targetGrpcProxy" => URI.encode(target_grpc_proxy, &URI.char_unreserved?/1)
+        "targetGrpcProxy" =>
+          URI.encode(target_grpc_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -149,7 +150,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
       |> Request.method(:get)
       |> Request.url("/{project}/global/targetGrpcProxies/{targetGrpcProxy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "targetGrpcProxy" => URI.encode(target_grpc_proxy, &URI.char_unreserved?/1)
+        "targetGrpcProxy" =>
+          URI.encode(target_grpc_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -346,7 +348,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
       |> Request.method(:patch)
       |> Request.url("/{project}/global/targetGrpcProxies/{targetGrpcProxy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "targetGrpcProxy" => URI.encode(target_grpc_proxy, &URI.char_unreserved?/1)
+        "targetGrpcProxy" =>
+          URI.encode(target_grpc_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

@@ -309,7 +309,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
+        "targetPool" => URI.encode(target_pool, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -378,7 +378,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
       |> Request.url("/{project}/regions/{region}/targetPools/{targetPool}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
+        "targetPool" => URI.encode(target_pool, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

@@ -84,7 +84,8 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       |> Request.method(:delete)
       |> Request.url("/{project}/global/httpsHealthChecks/{httpsHealthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "httpsHealthCheck" => URI.encode(https_health_check, &URI.char_unreserved?/1)
+        "httpsHealthCheck" =>
+          URI.encode(https_health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -149,7 +150,8 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       |> Request.method(:get)
       |> Request.url("/{project}/global/httpsHealthChecks/{httpsHealthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "httpsHealthCheck" => URI.encode(https_health_check, &URI.char_unreserved?/1)
+        "httpsHealthCheck" =>
+          URI.encode(https_health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -346,7 +348,8 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       |> Request.method(:patch)
       |> Request.url("/{project}/global/httpsHealthChecks/{httpsHealthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "httpsHealthCheck" => URI.encode(https_health_check, &URI.char_unreserved?/1)
+        "httpsHealthCheck" =>
+          URI.encode(https_health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -417,7 +420,8 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
       |> Request.method(:put)
       |> Request.url("/{project}/global/httpsHealthChecks/{httpsHealthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "httpsHealthCheck" => URI.encode(https_health_check, &URI.char_unreserved?/1)
+        "httpsHealthCheck" =>
+          URI.encode(https_health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

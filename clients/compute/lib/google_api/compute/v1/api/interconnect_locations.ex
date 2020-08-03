@@ -80,7 +80,8 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
       |> Request.method(:get)
       |> Request.url("/{project}/global/interconnectLocations/{interconnectLocation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "interconnectLocation" => URI.encode(interconnect_location, &URI.char_unreserved?/1)
+        "interconnectLocation" =>
+          URI.encode(interconnect_location, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

@@ -169,7 +169,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       |> Request.url("/{project}/regions/{region}/nodeTemplates/{nodeTemplate}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "nodeTemplate" => URI.encode(node_template, &URI.char_unreserved?/1)
+        "nodeTemplate" => URI.encode(node_template, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -238,7 +238,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
       |> Request.url("/{project}/regions/{region}/nodeTemplates/{nodeTemplate}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "nodeTemplate" => URI.encode(node_template, &URI.char_unreserved?/1)
+        "nodeTemplate" => URI.encode(node_template, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

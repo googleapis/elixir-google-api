@@ -167,7 +167,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
       |> Request.url("/{project}/zones/{zone}/acceleratorTypes/{acceleratorType}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "acceleratorType" => URI.encode(accelerator_type, &URI.char_unreserved?/1)
+        "acceleratorType" => URI.encode(accelerator_type, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

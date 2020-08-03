@@ -84,7 +84,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
       |> Request.method(:delete)
       |> Request.url("/{project}/global/interconnects/{interconnect}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "interconnect" => URI.encode(interconnect, &URI.char_unreserved?/1)
+        "interconnect" => URI.encode(interconnect, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -149,7 +149,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
       |> Request.method(:get)
       |> Request.url("/{project}/global/interconnects/{interconnect}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "interconnect" => URI.encode(interconnect, &URI.char_unreserved?/1)
+        "interconnect" => URI.encode(interconnect, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -413,7 +413,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
       |> Request.method(:patch)
       |> Request.url("/{project}/global/interconnects/{interconnect}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "interconnect" => URI.encode(interconnect, &URI.char_unreserved?/1)
+        "interconnect" => URI.encode(interconnect, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

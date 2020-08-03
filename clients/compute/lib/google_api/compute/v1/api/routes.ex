@@ -72,7 +72,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
       |> Request.method(:delete)
       |> Request.url("/{project}/global/routes/{route}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "route" => URI.encode(route, &URI.char_unreserved?/1)
+        "route" => URI.encode(route, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -123,7 +123,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
       |> Request.method(:get)
       |> Request.url("/{project}/global/routes/{route}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "route" => URI.encode(route, &URI.char_unreserved?/1)
+        "route" => URI.encode(route, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

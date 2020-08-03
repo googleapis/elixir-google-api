@@ -88,7 +88,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
       |> Request.url("/{project}/regions/{region}/healthChecks/{healthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "healthCheck" => URI.encode(health_check, &URI.char_unreserved?/1)
+        "healthCheck" => URI.encode(health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -157,7 +157,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
       |> Request.url("/{project}/regions/{region}/healthChecks/{healthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "healthCheck" => URI.encode(health_check, &URI.char_unreserved?/1)
+        "healthCheck" => URI.encode(health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -386,7 +386,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
       |> Request.url("/{project}/regions/{region}/healthChecks/{healthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "healthCheck" => URI.encode(health_check, &URI.char_unreserved?/1)
+        "healthCheck" => URI.encode(health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -461,7 +461,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
       |> Request.url("/{project}/regions/{region}/healthChecks/{healthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "healthCheck" => URI.encode(health_check, &URI.char_unreserved?/1)
+        "healthCheck" => URI.encode(health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
