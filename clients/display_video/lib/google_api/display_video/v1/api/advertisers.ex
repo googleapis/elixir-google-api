@@ -1468,7 +1468,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       |> Request.method(:patch)
       |> Request.url("/v1/advertisers/{+advertiserId}/channels/{channelId}", %{
         "advertiserId" => URI.encode(advertiser_id, &URI.char_unreserved?/1),
-        "channelId" => URI.encode(channel_id, &URI.char_unreserved?/1)
+        "channelId" => URI.encode(channel_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3721,7 +3721,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       |> Request.method(:patch)
       |> Request.url("/v1/advertisers/{+advertiserId}/locationLists/{locationListId}", %{
         "advertiserId" => URI.encode(advertiser_id, &URI.char_unreserved?/1),
-        "locationListId" => URI.encode(location_list_id, &URI.char_unreserved?/1)
+        "locationListId" => URI.encode(location_list_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4422,7 +4422,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         "/v1/advertisers/{+advertiserId}/negativeKeywordLists/{negativeKeywordListId}",
         %{
           "advertiserId" => URI.encode(advertiser_id, &URI.char_unreserved?/1),
-          "negativeKeywordListId" => URI.encode(negative_keyword_list_id, &URI.char_unreserved?/1)
+          "negativeKeywordListId" =>
+            URI.encode(negative_keyword_list_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

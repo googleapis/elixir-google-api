@@ -517,7 +517,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
       |> Request.method(:patch)
       |> Request.url("/v1/partners/{+partnerId}/channels/{channelId}", %{
         "partnerId" => URI.encode(partner_id, &URI.char_unreserved?/1),
-        "channelId" => URI.encode(channel_id, &URI.char_unreserved?/1)
+        "channelId" => URI.encode(channel_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

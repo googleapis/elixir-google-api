@@ -151,7 +151,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FloodlightGroups do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/floodlightGroups/{floodlightGroupId}", %{
-        "floodlightGroupId" => URI.encode(floodlight_group_id, &URI.char_unreserved?/1)
+        "floodlightGroupId" =>
+          URI.encode(floodlight_group_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
