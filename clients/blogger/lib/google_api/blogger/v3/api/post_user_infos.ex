@@ -94,7 +94,7 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
       |> Request.url("/v3/users/{userId}/blogs/{blogId}/posts/{postId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
-        "postId" => URI.encode(post_id, &URI.char_unreserved?/1)
+        "postId" => URI.encode(post_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
