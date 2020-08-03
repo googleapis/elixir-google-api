@@ -76,7 +76,7 @@ defmodule GoogleApi.Books.V1.Api.Bookshelves do
       |> Request.method(:get)
       |> Request.url("/books/v1/users/{userId}/bookshelves/{shelf}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
+        "shelf" => URI.encode(shelf, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

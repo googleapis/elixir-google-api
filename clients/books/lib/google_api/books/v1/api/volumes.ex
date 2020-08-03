@@ -84,7 +84,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/books/v1/volumes/{volumeId}", %{
-        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
+        "volumeId" => URI.encode(volume_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
