@@ -17,65 +17,18 @@
 
 defmodule GoogleApi.AdMob.V1.Model.NetworkReportSpec do
   @moduledoc """
-  The specification for generating an AdMob Network report.
-  For example, the specification to get clicks and estimated earnings for only
-  the 'US' and 'CN' countries can look like the following example:
-
-      {
-        'date_range': {
-          'start_date': {'year': 2018, 'month': 9, 'day': 1},
-          'end_date': {'year': 2018, 'month': 9, 'day': 30}
-        },
-        'dimensions': ['DATE', 'APP', 'COUNTRY'],
-        'metrics': ['CLICKS', 'ESTIMATED_EARNINGS'],
-        'dimension_filters': [
-          {
-            'dimension': 'COUNTRY',
-            'matches_any': {'values': [{'value': 'US', 'value': 'CN'}]}
-          }
-        ],
-        'sort_conditions': [
-          {'dimension':'APP', order: 'ASCENDING'},
-          {'metric':'CLICKS', order: 'DESCENDING'}
-        ],
-        'localization_settings': {
-          'currency_code': 'USD',
-          'language_code': 'en-US'
-        }
-      }
-
-  For a better understanding, you can treat the preceding specification like
-  the following pseudo SQL:
-
-      SELECT DATE, APP, COUNTRY, CLICKS, ESTIMATED_EARNINGS
-      FROM NETWORK_REPORT
-      WHERE DATE >= '2018-09-01' AND DATE <= '2018-09-30'
-          AND COUNTRY IN ('US', 'CN')
-      GROUP BY DATE, APP, COUNTRY
-      ORDER BY APP ASC, CLICKS DESC;
+  The specification for generating an AdMob Network report. For example, the specification to get clicks and estimated earnings for only the 'US' and 'CN' countries can look like the following example: { 'date_range': { 'start_date': {'year': 2018, 'month': 9, 'day': 1}, 'end_date': {'year': 2018, 'month': 9, 'day': 30} }, 'dimensions': ['DATE', 'APP', 'COUNTRY'], 'metrics': ['CLICKS', 'ESTIMATED_EARNINGS'], 'dimension_filters': [ { 'dimension': 'COUNTRY', 'matches_any': {'values': [{'value': 'US', 'value': 'CN'}]} } ], 'sort_conditions': [ {'dimension':'APP', order: 'ASCENDING'}, {'metric':'CLICKS', order: 'DESCENDING'} ], 'localization_settings': { 'currency_code': 'USD', 'language_code': 'en-US' } } For a better understanding, you can treat the preceding specification like the following pseudo SQL: SELECT DATE, APP, COUNTRY, CLICKS, ESTIMATED_EARNINGS FROM NETWORK_REPORT WHERE DATE >= '2018-09-01' AND DATE <= '2018-09-30' AND COUNTRY IN ('US', 'CN') GROUP BY DATE, APP, COUNTRY ORDER BY APP ASC, CLICKS DESC;
 
   ## Attributes
 
   *   `dateRange` (*type:* `GoogleApi.AdMob.V1.Model.DateRange.t`, *default:* `nil`) - The date range for which the report is generated.
   *   `dimensionFilters` (*type:* `list(GoogleApi.AdMob.V1.Model.NetworkReportSpecDimensionFilter.t)`, *default:* `nil`) - Describes which report rows to match based on their dimension values.
-  *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - List of dimensions of the report. The value combination of these dimensions
-      determines the row of the report. If no dimensions are specified, the
-      report returns a single row of requested metrics for the entire account.
+  *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - List of dimensions of the report. The value combination of these dimensions determines the row of the report. If no dimensions are specified, the report returns a single row of requested metrics for the entire account.
   *   `localizationSettings` (*type:* `GoogleApi.AdMob.V1.Model.LocalizationSettings.t`, *default:* `nil`) - Localization settings of the report.
-  *   `maxReportRows` (*type:* `integer()`, *default:* `nil`) - Maximum number of report data rows to return. If the value is not set, the
-      API returns as many rows as possible, up to 100000. Acceptable values are
-      1-100000, inclusive. Any other values are treated as 100000.
+  *   `maxReportRows` (*type:* `integer()`, *default:* `nil`) - Maximum number of report data rows to return. If the value is not set, the API returns as many rows as possible, up to 100000. Acceptable values are 1-100000, inclusive. Any other values are treated as 100000.
   *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - List of metrics of the report. A report must specify at least one metric.
-  *   `sortConditions` (*type:* `list(GoogleApi.AdMob.V1.Model.NetworkReportSpecSortCondition.t)`, *default:* `nil`) - Describes the sorting of report rows. The order of the condition in the
-      list defines its precedence; the earlier the condition, the higher its
-      precedence. If no sort conditions are specified, the row ordering is
-      undefined.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - A report time zone. Accepts an IANA TZ name values, such as
-      "America/Los_Angeles."  If no time zone is defined, the account default
-      takes effect. Check default value by the get account action.
-
-      **Warning:** The "America/Los_Angeles" is the only supported value at
-      the moment.
+  *   `sortConditions` (*type:* `list(GoogleApi.AdMob.V1.Model.NetworkReportSpecSortCondition.t)`, *default:* `nil`) - Describes the sorting of report rows. The order of the condition in the list defines its precedence; the earlier the condition, the higher its precedence. If no sort conditions are specified, the row ordering is undefined.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - A report time zone. Accepts an IANA TZ name values, such as "America/Los_Angeles." If no time zone is defined, the account default takes effect. Check default value by the get account action. **Warning:** The "America/Los_Angeles" is the only supported value at the moment.
   """
 
   use GoogleApi.Gax.ModelBase

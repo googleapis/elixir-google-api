@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.AdMob.V1.Model.ReportFooter do
   @moduledoc """
-  Groups data available after report generation, for example, warnings and row
-  counts. Always sent as the last message in the stream response.
+  Groups data available after report generation, for example, warnings and row counts. Always sent as the last message in the stream response.
 
   ## Attributes
 
-  *   `matchingRowCount` (*type:* `String.t`, *default:* `nil`) - Total number of rows that matched the request.
-
-      Warning: This count does NOT always match the number of rows in the
-      response. Do not make that assumption when processing the response.
+  *   `matchingRowCount` (*type:* `String.t`, *default:* `nil`) - Total number of rows that matched the request. Warning: This count does NOT always match the number of rows in the response. Do not make that assumption when processing the response.
   *   `warnings` (*type:* `list(GoogleApi.AdMob.V1.Model.ReportWarning.t)`, *default:* `nil`) - Warnings associated with generation of the report.
   """
 

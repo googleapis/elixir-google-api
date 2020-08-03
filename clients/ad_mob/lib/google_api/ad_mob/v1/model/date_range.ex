@@ -21,10 +21,8 @@ defmodule GoogleApi.AdMob.V1.Model.DateRange do
 
   ## Attributes
 
-  *   `endDate` (*type:* `GoogleApi.AdMob.V1.Model.Date.t`, *default:* `nil`) - End date of the date range, inclusive. Must be greater than or equal to the
-      start date.
-  *   `startDate` (*type:* `GoogleApi.AdMob.V1.Model.Date.t`, *default:* `nil`) - Start date of the date range, inclusive. Must be less than or equal to the
-      end date.
+  *   `endDate` (*type:* `GoogleApi.AdMob.V1.Model.Date.t`, *default:* `nil`) - End date of the date range, inclusive. Must be greater than or equal to the start date.
+  *   `startDate` (*type:* `GoogleApi.AdMob.V1.Model.Date.t`, *default:* `nil`) - Start date of the date range, inclusive. Must be less than or equal to the end date.
   """
 
   use GoogleApi.Gax.ModelBase

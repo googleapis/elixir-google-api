@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.AdMob.V1.Model.ReportHeader do
   @moduledoc """
-  Groups data helps to treat the generated report. Always sent as a first
-  message in the stream response.
+  Groups data helps to treat the generated report. Always sent as a first message in the stream response.
 
   ## Attributes
 
-  *   `dateRange` (*type:* `GoogleApi.AdMob.V1.Model.DateRange.t`, *default:* `nil`) - The date range for which the report is generated. This is identical to the
-      range specified in the report request.
-  *   `localizationSettings` (*type:* `GoogleApi.AdMob.V1.Model.LocalizationSettings.t`, *default:* `nil`) - Localization settings of the report. This is identical to the settings
-      in the report request.
-  *   `reportingTimeZone` (*type:* `String.t`, *default:* `nil`) - The report time zone. The value is a time-zone ID as specified by the CLDR
-      project, for example, "America/Los_Angeles".
+  *   `dateRange` (*type:* `GoogleApi.AdMob.V1.Model.DateRange.t`, *default:* `nil`) - The date range for which the report is generated. This is identical to the range specified in the report request.
+  *   `localizationSettings` (*type:* `GoogleApi.AdMob.V1.Model.LocalizationSettings.t`, *default:* `nil`) - Localization settings of the report. This is identical to the settings in the report request.
+  *   `reportingTimeZone` (*type:* `String.t`, *default:* `nil`) - The report time zone. The value is a time-zone ID as specified by the CLDR project, for example, "America/Los_Angeles".
   """
 
   use GoogleApi.Gax.ModelBase

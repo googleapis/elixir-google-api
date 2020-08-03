@@ -17,48 +17,12 @@
 
 defmodule GoogleApi.AdMob.V1.Model.GenerateMediationReportResponse do
   @moduledoc """
-  The streaming response for the AdMob Mediation report where the first
-  response contains the report header, then a stream of row responses, and
-  finally a footer as the last response message.
-
-  For example:
-
-      [{
-        "header": {
-          "date_range": {
-            "start_date": {"year": 2018, "month": 9, "day": 1},
-            "end_date": {"year": 2018, "month": 9, "day": 1}
-          },
-          "localization_settings": {
-            "currency_code": "USD",
-            "language_code": "en-US"
-          }
-        }
-      },
-      {
-        "row": {
-          "dimension_values": {
-            "DATE": {"value": "20180918"},
-            "APP": {
-              "value": "ca-app-pub-8123415297019784~1001342552",
-               "display_label": "My app name!"
-            }
-          },
-          "metric_values": {
-            "ESTIMATED_EARNINGS": {"decimal_value": "1324746"}
-          }
-        }
-      },
-      {
-        "footer": {"matching_row_count": 1}
-      }]
+  The streaming response for the AdMob Mediation report where the first response contains the report header, then a stream of row responses, and finally a footer as the last response message. For example: [{ "header": { "date_range": { "start_date": {"year": 2018, "month": 9, "day": 1}, "end_date": {"year": 2018, "month": 9, "day": 1} }, "localization_settings": { "currency_code": "USD", "language_code": "en-US" } } }, { "row": { "dimension_values": { "DATE": {"value": "20180918"}, "APP": { "value": "ca-app-pub-8123415297019784~1001342552", "display_label": "My app name!" } }, "metric_values": { "ESTIMATED_EARNINGS": {"decimal_value": "1324746"} } } }, { "footer": {"matching_row_count": 1} }]
 
   ## Attributes
 
-  *   `footer` (*type:* `GoogleApi.AdMob.V1.Model.ReportFooter.t`, *default:* `nil`) - Additional information about the generated report, such as warnings about
-      the data.
-  *   `header` (*type:* `GoogleApi.AdMob.V1.Model.ReportHeader.t`, *default:* `nil`) - Report generation settings that describes the report contents, such as
-      the report date range and localization settings.
+  *   `footer` (*type:* `GoogleApi.AdMob.V1.Model.ReportFooter.t`, *default:* `nil`) - Additional information about the generated report, such as warnings about the data.
+  *   `header` (*type:* `GoogleApi.AdMob.V1.Model.ReportHeader.t`, *default:* `nil`) - Report generation settings that describes the report contents, such as the report date range and localization settings.
   *   `row` (*type:* `GoogleApi.AdMob.V1.Model.ReportRow.t`, *default:* `nil`) - Actual report data.
   """
 
