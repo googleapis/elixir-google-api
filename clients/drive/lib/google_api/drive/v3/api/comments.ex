@@ -117,7 +117,7 @@ defmodule GoogleApi.Drive.V3.Api.Comments do
       |> Request.method(:delete)
       |> Request.url("/drive/v3/files/{fileId}/comments/{commentId}", %{
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
-        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
+        "commentId" => URI.encode(comment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -170,7 +170,7 @@ defmodule GoogleApi.Drive.V3.Api.Comments do
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}/comments/{commentId}", %{
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
-        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
+        "commentId" => URI.encode(comment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -280,7 +280,7 @@ defmodule GoogleApi.Drive.V3.Api.Comments do
       |> Request.method(:patch)
       |> Request.url("/drive/v3/files/{fileId}/comments/{commentId}", %{
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
-        "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
+        "commentId" => URI.encode(comment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

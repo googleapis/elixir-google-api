@@ -415,7 +415,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
+        "fileId" => URI.encode(file_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -629,7 +629,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
+        "fileId" => URI.encode(file_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -768,7 +768,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
+        "fileId" => URI.encode(file_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -851,7 +851,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/upload/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
+        "fileId" => URI.encode(file_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
@@ -933,7 +933,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/resumable/upload/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
+        "fileId" => URI.encode(file_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1017,7 +1017,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/upload/drive/v3/files/{fileId}", %{
-        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
+        "fileId" => URI.encode(file_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_param(:body, :metadata, metadata)
