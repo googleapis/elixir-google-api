@@ -126,7 +126,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
       |> Request.method(:get)
       |> Request.url("/{merchantId}/liasettings/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
+        "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -440,7 +440,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
         %{
           "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-          "country" => URI.encode(country, &URI.char_unreserved?/1)
+          "country" => URI.encode(country, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -674,7 +674,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
       |> Request.method(:put)
       |> Request.url("/{merchantId}/liasettings/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
+        "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
