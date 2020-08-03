@@ -84,7 +84,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedUpdates do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v4/encodedUpdates/{encodedRequest}", %{
-        "encodedRequest" => URI.encode(encoded_request, &URI.char_unreserved?/1)
+        "encodedRequest" => URI.encode(encoded_request, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
