@@ -86,7 +86,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -303,7 +303,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
+        "keyRingsId" => URI.encode(key_rings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1024,7 +1024,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1312,7 +1312,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
+          "cryptoKeysId" => URI.encode(crypto_keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2048,7 +2048,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
           "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
+          "cryptoKeyVersionsId" =>
+            URI.encode(crypto_key_versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2438,7 +2439,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
           "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
+          "cryptoKeyVersionsId" =>
+            URI.encode(crypto_key_versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2706,7 +2708,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "importJobsId" => URI.encode(import_jobs_id, &URI.char_unreserved?/1)
+          "importJobsId" => URI.encode(import_jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
