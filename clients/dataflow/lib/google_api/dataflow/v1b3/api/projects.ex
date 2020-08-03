@@ -822,7 +822,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1146,7 +1146,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1875,7 +1875,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "location" => URI.encode(location, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2219,7 +2219,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "location" => URI.encode(location, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2814,7 +2814,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/snapshots/{snapshotId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "location" => URI.encode(location, &URI.char_unreserved?/1),
-        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+        "snapshotId" => URI.encode(snapshot_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2891,7 +2891,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.url("/v1b3/projects/{projectId}/locations/{location}/snapshots/{snapshotId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "location" => URI.encode(location, &URI.char_unreserved?/1),
-        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+        "snapshotId" => URI.encode(snapshot_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3366,7 +3366,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1b3/projects/{projectId}/snapshots/{snapshotId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+        "snapshotId" => URI.encode(snapshot_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
