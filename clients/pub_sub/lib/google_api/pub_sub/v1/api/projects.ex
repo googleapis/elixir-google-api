@@ -108,7 +108,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
+        "snapshotsId" => URI.encode(snapshots_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -187,7 +187,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
+        "snapshotsId" => URI.encode(snapshots_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -263,7 +263,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
+        "snapshotsId" => URI.encode(snapshots_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -497,7 +497,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
+        "snapshotsId" => URI.encode(snapshots_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -824,7 +824,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+        "subscriptionsId" => URI.encode(subscriptions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -899,7 +899,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+        "subscriptionsId" => URI.encode(subscriptions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1050,7 +1050,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+        "subscriptionsId" => URI.encode(subscriptions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1449,7 +1449,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+        "subscriptionsId" => URI.encode(subscriptions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1847,7 +1847,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+        "topicsId" => URI.encode(topics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1922,7 +1922,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+        "topicsId" => URI.encode(topics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1993,7 +1993,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+        "topicsId" => URI.encode(topics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2223,7 +2223,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+        "topicsId" => URI.encode(topics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
