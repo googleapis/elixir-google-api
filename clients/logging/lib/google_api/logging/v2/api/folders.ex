@@ -156,7 +156,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.method(:delete)
       |> Request.url("/v2/folders/{foldersId}/exclusions/{exclusionsId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
-        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
+        "exclusionsId" => URI.encode(exclusions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -234,7 +234,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.method(:get)
       |> Request.url("/v2/folders/{foldersId}/exclusions/{exclusionsId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
-        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
+        "exclusionsId" => URI.encode(exclusions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -384,7 +384,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.method(:patch)
       |> Request.url("/v2/folders/{foldersId}/exclusions/{exclusionsId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
-        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
+        "exclusionsId" => URI.encode(exclusions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -464,7 +464,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.url("/v2/folders/{foldersId}/locations/{locationsId}/buckets/{bucketsId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+        "bucketsId" => URI.encode(buckets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -630,7 +630,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.url("/v2/folders/{foldersId}/locations/{locationsId}/buckets/{bucketsId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+        "bucketsId" => URI.encode(buckets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -705,7 +705,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.method(:delete)
       |> Request.url("/v2/folders/{foldersId}/logs/{logsId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
-        "logsId" => URI.encode(logs_id, &URI.char_unreserved?/1)
+        "logsId" => URI.encode(logs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -914,7 +914,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.method(:delete)
       |> Request.url("/v2/folders/{foldersId}/sinks/{sinksId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
+        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -990,7 +990,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.method(:get)
       |> Request.url("/v2/folders/{foldersId}/sinks/{sinksId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
+        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1143,7 +1143,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.method(:patch)
       |> Request.url("/v2/folders/{foldersId}/sinks/{sinksId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
+        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1228,7 +1228,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       |> Request.method(:put)
       |> Request.url("/v2/folders/{foldersId}/sinks/{sinksId}", %{
         "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
+        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

@@ -87,7 +87,7 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
       |> Request.url("/v2/{v2Id}/{v2Id1}/logs/{logsId}", %{
         "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
         "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "logsId" => URI.encode(logs_id, &URI.char_unreserved?/1)
+        "logsId" => URI.encode(logs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
