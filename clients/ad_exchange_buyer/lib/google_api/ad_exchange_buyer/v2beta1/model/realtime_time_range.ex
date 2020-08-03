@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.RealtimeTimeRange do
   @moduledoc """
-  An open-ended realtime time range specified by the start timestamp.
-  For filter sets that specify a realtime time range RTB metrics continue to
-  be aggregated throughout the lifetime of the filter set.
+  An open-ended realtime time range specified by the start timestamp. For filter sets that specify a realtime time range RTB metrics continue to be aggregated throughout the lifetime of the filter set.
 
   ## Attributes
 

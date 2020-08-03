@@ -66,7 +66,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/proposals/{proposalId}", %{
-        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
+        "proposalId" => URI.encode(proposal_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -189,7 +189,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
       |> Request.url("/proposals/{proposalId}/{revisionNumber}/{updateAction}", %{
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1),
         "revisionNumber" => URI.encode(revision_number, &URI.char_unreserved?/1),
-        "updateAction" => URI.encode(update_action, &URI.char_unreserved?/1)
+        "updateAction" => URI.encode(update_action, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -368,7 +368,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
       |> Request.url("/proposals/{proposalId}/{revisionNumber}/{updateAction}", %{
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1),
         "revisionNumber" => URI.encode(revision_number, &URI.char_unreserved?/1),
-        "updateAction" => URI.encode(update_action, &URI.char_unreserved?/1)
+        "updateAction" => URI.encode(update_action, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

@@ -21,11 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize do
 
   ## Attributes
 
-  *   `height` (*type:* `String.t`, *default:* `nil`) - The height of the ad slot in pixels.
-      This field will be present only when size type is `PIXEL`.
+  *   `height` (*type:* `String.t`, *default:* `nil`) - The height of the ad slot in pixels. This field will be present only when size type is `PIXEL`.
   *   `sizeType` (*type:* `String.t`, *default:* `nil`) - The size type of the ad slot.
-  *   `width` (*type:* `String.t`, *default:* `nil`) - The width of the ad slot in pixels.
-      This field will be present only when size type is `PIXEL`.
+  *   `width` (*type:* `String.t`, *default:* `nil`) - The width of the ad slot in pixels. This field will be present only when size type is `PIXEL`.
   """
 
   use GoogleApi.Gax.ModelBase

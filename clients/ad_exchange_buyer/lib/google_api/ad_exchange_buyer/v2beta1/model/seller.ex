@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller do
   @moduledoc """
-  Represents a seller of inventory. Each seller is identified by a unique
-  Ad Manager account ID.
+  Represents a seller of inventory. Each seller is identified by a unique Ad Manager account ID.
 
   ## Attributes
 
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The unique ID for the seller. The seller fills in this field.
-      The seller account ID is then available to buyer in the product.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The unique ID for the seller. The seller fills in this field. The seller account ID is then available to buyer in the product.
   *   `subAccountId` (*type:* `String.t`, *default:* `nil`) - Optional sub-account ID for the seller.
   """
 

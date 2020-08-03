@@ -21,13 +21,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListLosingBidsResponse do
 
   ## Attributes
 
-  *   `creativeStatusRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeStatusRow.t)`, *default:* `nil`) - List of rows, with counts of losing bids aggregated by loss reason (i.e.
-      creative status).
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      ListLosingBidsRequest.pageToken
-      field in the subsequent call to the losingBids.list
-      method to retrieve the next page of results.
+  *   `creativeStatusRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeStatusRow.t)`, *default:* `nil`) - List of rows, with counts of losing bids aggregated by loss reason (i.e. creative status).
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the ListLosingBidsRequest.pageToken field in the subsequent call to the losingBids.list method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

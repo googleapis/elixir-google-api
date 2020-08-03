@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PlacementTargeting do
   @moduledoc """
-  Represents targeting about where the ads can appear, e.g., certain sites or
-  mobile applications.
-  Different placement targeting types will be logically OR'ed.
+  Represents targeting about where the ads can appear, e.g., certain sites or mobile applications. Different placement targeting types will be logically OR'ed.
 
   ## Attributes
 
-  *   `mobileApplicationTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MobileApplicationTargeting.t`, *default:* `nil`) - Mobile application targeting information in a deal.
-      This doesn't apply to Auction Packages.
+  *   `mobileApplicationTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MobileApplicationTargeting.t`, *default:* `nil`) - Mobile application targeting information in a deal. This doesn't apply to Auction Packages.
   *   `urlTargeting` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.UrlTargeting.t`, *default:* `nil`) - URLs to be included/excluded.
   """
 

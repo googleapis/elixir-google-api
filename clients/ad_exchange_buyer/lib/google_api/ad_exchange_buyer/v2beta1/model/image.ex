@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Image do
   @moduledoc """
-  An image resource. You may provide a larger image than was requested,
-  so long as the aspect ratio is preserved.
+  An image resource. You may provide a larger image than was requested, so long as the aspect ratio is preserved.
 
   ## Attributes
 

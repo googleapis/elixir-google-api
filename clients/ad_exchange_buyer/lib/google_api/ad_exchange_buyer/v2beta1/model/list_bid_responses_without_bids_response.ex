@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsResponse do
   @moduledoc """
-  Response message for listing all reasons that bid responses were considered
-  to have no applicable bids.
+  Response message for listing all reasons that bid responses were considered to have no applicable bids.
 
   ## Attributes
 
-  *   `bidResponseWithoutBidsStatusRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.BidResponseWithoutBidsStatusRow.t)`, *default:* `nil`) - List of rows, with counts of bid responses without bids aggregated by
-      status.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      ListBidResponsesWithoutBidsRequest.pageToken
-      field in the subsequent call to the bidResponsesWithoutBids.list
-      method to retrieve the next page of results.
+  *   `bidResponseWithoutBidsStatusRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.BidResponseWithoutBidsStatusRow.t)`, *default:* `nil`) - List of rows, with counts of bid responses without bids aggregated by status.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the ListBidResponsesWithoutBidsRequest.pageToken field in the subsequent call to the bidResponsesWithoutBids.list method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

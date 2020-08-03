@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer do
   @moduledoc """
-  Represents a buyer of inventory. Each buyer is identified by a unique
-  Authorized Buyers account ID.
+  Represents a buyer of inventory. Each buyer is identified by a unique Authorized Buyers account ID.
 
   ## Attributes
 

@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeStatusRow do
   @moduledoc """
-  The number of bids with the specified dimension values that did not win the
-  auction (either were filtered pre-auction or lost the auction), as described
-  by the specified creative status.
+  The number of bids with the specified dimension values that did not win the auction (either were filtered pre-auction or lost the auction), as described by the specified creative status.
 
   ## Attributes
 
   *   `bidCount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids with the specified status.
-  *   `creativeStatusId` (*type:* `integer()`, *default:* `nil`) - The ID of the creative status.
-      See
-      [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+  *   `creativeStatusId` (*type:* `integer()`, *default:* `nil`) - The ID of the creative status. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
   *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
   """
 

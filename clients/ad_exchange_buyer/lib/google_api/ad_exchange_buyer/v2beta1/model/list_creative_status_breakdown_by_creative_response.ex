@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByCreativeResponse do
   @moduledoc """
-  Response message for listing all creatives associated with a given filtered
-  bid reason.
+  Response message for listing all creatives associated with a given filtered bid reason.
 
   ## Attributes
 
-  *   `filteredBidCreativeRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidCreativeRow.t)`, *default:* `nil`) - List of rows, with counts of bids with a given creative status aggregated
-      by creative.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      ListCreativeStatusBreakdownByCreativeRequest.pageToken
-      field in the subsequent call to the filteredBids.creatives.list
-      method to retrieve the next page of results.
+  *   `filteredBidCreativeRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidCreativeRow.t)`, *default:* `nil`) - List of rows, with counts of bids with a given creative status aggregated by creative.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the ListCreativeStatusBreakdownByCreativeRequest.pageToken field in the subsequent call to the filteredBids.creatives.list method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

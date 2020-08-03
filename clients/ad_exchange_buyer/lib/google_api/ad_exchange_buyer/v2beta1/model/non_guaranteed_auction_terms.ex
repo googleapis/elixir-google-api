@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedAuctionTerms do
   @moduledoc """
-  Terms for Private Auctions. Note that Private Auctions can be created only
-  by the seller, but they can be returned in a get or list request.
+  Terms for Private Auctions. Note that Private Auctions can be created only by the seller, but they can be returned in a get or list request.
 
   ## Attributes
 
-  *   `autoOptimizePrivateAuction` (*type:* `boolean()`, *default:* `nil`) - True if open auction buyers are allowed to compete with invited buyers
-      in this private auction.
+  *   `autoOptimizePrivateAuction` (*type:* `boolean()`, *default:* `nil`) - True if open auction buyers are allowed to compete with invited buyers in this private auction.
   *   `reservePricesPerBuyer` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t)`, *default:* `nil`) - Reserve price for the specified buyer.
   """
 

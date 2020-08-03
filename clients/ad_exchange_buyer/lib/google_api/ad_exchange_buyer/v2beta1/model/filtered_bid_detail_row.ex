@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidDetailRow do
   @moduledoc """
-  The number of filtered bids with the specified dimension values, among those
-  filtered due to the requested filtering reason (i.e. creative status), that
-  have the specified detail.
+  The number of filtered bids with the specified dimension values, among those filtered due to the requested filtering reason (i.e. creative status), that have the specified detail.
 
   ## Attributes
 
   *   `bidCount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids with the specified detail.
-  *   `detailId` (*type:* `integer()`, *default:* `nil`) - The ID of the detail. The associated value can be looked up in the
-      dictionary file corresponding to the DetailType in the response message.
+  *   `detailId` (*type:* `integer()`, *default:* `nil`) - The ID of the detail. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message.
   *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
   """
 

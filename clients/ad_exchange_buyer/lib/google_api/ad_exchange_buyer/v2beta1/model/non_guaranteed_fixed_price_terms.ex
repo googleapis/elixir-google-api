@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.NonGuaranteedFixedPriceTerms do
   @moduledoc """
-  Terms for Preferred Deals. Note that Preferred Deals cannot be created via
-  the API at this time, but can be returned in a get or list request.
+  Terms for Preferred Deals. Note that Preferred Deals cannot be created via the API at this time, but can be returned in a get or list request.
 
   ## Attributes
 

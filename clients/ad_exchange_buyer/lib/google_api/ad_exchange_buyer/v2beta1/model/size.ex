@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Size do
   @moduledoc """
-  Message depicting the size of the creative. The units of width and
-  height depend on the type of the targeting.
+  Message depicting the size of the creative. The units of width and height depend on the type of the targeting.
 
   ## Attributes
 

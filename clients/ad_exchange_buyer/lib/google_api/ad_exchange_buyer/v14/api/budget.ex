@@ -80,7 +80,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
       |> Request.method(:get)
       |> Request.url("/billinginfo/{accountId}/{billingId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "billingId" => URI.encode(billing_id, &URI.char_unreserved?/1)
+        "billingId" => URI.encode(billing_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -147,7 +147,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
       |> Request.method(:patch)
       |> Request.url("/billinginfo/{accountId}/{billingId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "billingId" => URI.encode(billing_id, &URI.char_unreserved?/1)
+        "billingId" => URI.encode(billing_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -214,7 +214,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
       |> Request.method(:put)
       |> Request.url("/billinginfo/{accountId}/{billingId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "billingId" => URI.encode(billing_id, &URI.char_unreserved?/1)
+        "billingId" => URI.encode(billing_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
