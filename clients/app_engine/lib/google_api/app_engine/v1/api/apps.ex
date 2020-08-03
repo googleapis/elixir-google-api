@@ -134,7 +134,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}", %{
-        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
+        "appsId" => URI.encode(apps_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -199,7 +199,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}", %{
-        "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
+        "appsId" => URI.encode(apps_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -403,7 +403,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates/{authorizedCertificatesId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
         "authorizedCertificatesId" =>
-          URI.encode(authorized_certificates_id, &URI.char_unreserved?/1)
+          URI.encode(authorized_certificates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -479,7 +479,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates/{authorizedCertificatesId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
         "authorizedCertificatesId" =>
-          URI.encode(authorized_certificates_id, &URI.char_unreserved?/1)
+          URI.encode(authorized_certificates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -634,7 +634,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/authorizedCertificates/{authorizedCertificatesId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
         "authorizedCertificatesId" =>
-          URI.encode(authorized_certificates_id, &URI.char_unreserved?/1)
+          URI.encode(authorized_certificates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -855,7 +855,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:delete)
       |> Request.url("/v1/apps/{appsId}/domainMappings/{domainMappingsId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "domainMappingsId" => URI.encode(domain_mappings_id, &URI.char_unreserved?/1)
+        "domainMappingsId" =>
+          URI.encode(domain_mappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -928,7 +929,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/domainMappings/{domainMappingsId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "domainMappingsId" => URI.encode(domain_mappings_id, &URI.char_unreserved?/1)
+        "domainMappingsId" =>
+          URI.encode(domain_mappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1070,7 +1072,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}/domainMappings/{domainMappingsId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "domainMappingsId" => URI.encode(domain_mappings_id, &URI.char_unreserved?/1)
+        "domainMappingsId" =>
+          URI.encode(domain_mappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1285,7 +1288,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:delete)
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules/{ingressRulesId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "ingressRulesId" => URI.encode(ingress_rules_id, &URI.char_unreserved?/1)
+        "ingressRulesId" => URI.encode(ingress_rules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1358,7 +1361,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules/{ingressRulesId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "ingressRulesId" => URI.encode(ingress_rules_id, &URI.char_unreserved?/1)
+        "ingressRulesId" => URI.encode(ingress_rules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1510,7 +1513,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}/firewall/ingressRules/{ingressRulesId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "ingressRulesId" => URI.encode(ingress_rules_id, &URI.char_unreserved?/1)
+        "ingressRulesId" => URI.encode(ingress_rules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1583,7 +1586,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/locations/{locationsId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1721,7 +1724,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/operations/{operationsId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1859,7 +1862,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:delete)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1930,7 +1933,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:get)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2072,7 +2075,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:patch)
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2224,7 +2227,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
         "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
+        "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2301,7 +2304,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
         "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
+        "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2476,7 +2479,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.url("/v1/apps/{appsId}/services/{servicesId}/versions/{versionsId}", %{
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
         "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
+        "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2645,7 +2648,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
           "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
           "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+          "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2729,7 +2732,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1),
           "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
           "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+          "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
