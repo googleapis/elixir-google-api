@@ -81,7 +81,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       |> Request.method(:delete)
       |> Request.url("/storage/v1/b/{bucket}/defaultObjectAcl/{entity}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
+        "entity" => URI.encode(entity, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -150,7 +150,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/defaultObjectAcl/{entity}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
+        "entity" => URI.encode(entity, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -357,7 +357,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       |> Request.method(:patch)
       |> Request.url("/storage/v1/b/{bucket}/defaultObjectAcl/{entity}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
+        "entity" => URI.encode(entity, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -428,7 +428,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
       |> Request.method(:put)
       |> Request.url("/storage/v1/b/{bucket}/defaultObjectAcl/{entity}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
+        "entity" => URI.encode(entity, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

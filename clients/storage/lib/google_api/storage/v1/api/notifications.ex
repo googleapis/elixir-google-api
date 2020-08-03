@@ -81,7 +81,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
       |> Request.method(:delete)
       |> Request.url("/storage/v1/b/{bucket}/notificationConfigs/{notification}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "notification" => URI.encode(notification, &URI.char_unreserved?/1)
+        "notification" => URI.encode(notification, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -150,7 +150,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/notificationConfigs/{notification}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "notification" => URI.encode(notification, &URI.char_unreserved?/1)
+        "notification" => URI.encode(notification, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

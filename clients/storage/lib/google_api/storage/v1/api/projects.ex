@@ -144,7 +144,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/storage/v1/projects/{projectId}/hmacKeys/{accessId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "accessId" => URI.encode(access_id, &URI.char_unreserved?/1)
+        "accessId" => URI.encode(access_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -211,7 +211,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/storage/v1/projects/{projectId}/hmacKeys/{accessId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "accessId" => URI.encode(access_id, &URI.char_unreserved?/1)
+        "accessId" => URI.encode(access_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -341,7 +341,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/storage/v1/projects/{projectId}/hmacKeys/{accessId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "accessId" => URI.encode(access_id, &URI.char_unreserved?/1)
+        "accessId" => URI.encode(access_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
