@@ -153,7 +153,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/services/{serviceName}", %{
-        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
+        "serviceName" => URI.encode(service_name, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -435,7 +435,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/services/{serviceName}", %{
-        "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
+        "serviceName" => URI.encode(service_name, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1051,7 +1051,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.method(:get)
       |> Request.url("/v1/services/{serviceName}/configs/{configId}", %{
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1),
-        "configId" => URI.encode(config_id, &URI.char_unreserved?/1)
+        "configId" => URI.encode(config_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1601,7 +1601,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.method(:get)
       |> Request.url("/v1/services/{serviceName}/rollouts/{rolloutId}", %{
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1),
-        "rolloutId" => URI.encode(rollout_id, &URI.char_unreserved?/1)
+        "rolloutId" => URI.encode(rollout_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
