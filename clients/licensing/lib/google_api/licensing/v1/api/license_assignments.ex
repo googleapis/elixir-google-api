@@ -83,7 +83,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -154,7 +154,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -438,7 +438,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -511,7 +511,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
