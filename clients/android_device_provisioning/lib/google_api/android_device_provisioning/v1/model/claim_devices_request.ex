@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDevicesRequest do
   @moduledoc """
-  Request to claim devices asynchronously in batch. Claiming a device adds the
-  device to zero-touch enrollment and shows the device in the customer's view
-  of the portal.
+  Request to claim devices asynchronously in batch. Claiming a device adds the device to zero-touch enrollment and shows the device in the customer's view of the portal.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice do
   @moduledoc """
-  A task for each device in the operation. Corresponds to each device
-  change in the request.
+  A task for each device in the operation. Corresponds to each device change in the request.
 
   ## Attributes
 

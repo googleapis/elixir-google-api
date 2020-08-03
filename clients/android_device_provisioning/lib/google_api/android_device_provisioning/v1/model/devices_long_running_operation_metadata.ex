@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperationMetadata do
   @moduledoc """
-  Tracks the status of a long-running operation to asynchronously update a
-  batch of reseller metadata attached to devices. To learn more, read
-  [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
+  Tracks the status of a long-running operation to asynchronously update a batch of reseller metadata attached to devices. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
 
   ## Attributes
 
-  *   `devicesCount` (*type:* `integer()`, *default:* `nil`) - The number of metadata updates in the operation. This might be different
-      from the number of updates in the request if the API can't parse some of
-      the updates.
+  *   `devicesCount` (*type:* `integer()`, *default:* `nil`) - The number of metadata updates in the operation. This might be different from the number of updates in the request if the API can't parse some of the updates.
   *   `processingStatus` (*type:* `String.t`, *default:* `nil`) - The processing status of the operation.
-  *   `progress` (*type:* `integer()`, *default:* `nil`) - The processing progress of the operation. Measured as a number from 0 to
-      100. A value of 10O doesnt always mean the operation completed—check for
-      the inclusion of a `done` field.
+  *   `progress` (*type:* `integer()`, *default:* `nil`) - The processing progress of the operation. Measured as a number from 0 to 100. A value of 10O doesnt always mean the operation completed—check for the inclusion of a `done` field.
   """
 
   use GoogleApi.Gax.ModelBase

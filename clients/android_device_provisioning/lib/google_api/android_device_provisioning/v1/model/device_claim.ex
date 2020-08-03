@@ -17,20 +17,15 @@
 
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
   @moduledoc """
-  A record of a device claimed by a reseller for a customer. Devices claimed
-  for zero-touch enrollment have a claim with the type
-  `SECTION_TYPE_ZERO_TOUCH`. To learn more, read
-  [Claim devices for customers](/zero-touch/guides/how-it-works#claim).
+  A record of a device claimed by a reseller for a customer. Devices claimed for zero-touch enrollment have a claim with the type `SECTION_TYPE_ZERO_TOUCH`. To learn more, read [Claim devices for customers](/zero-touch/guides/how-it-works#claim).
 
   ## Attributes
 
   *   `ownerCompanyId` (*type:* `String.t`, *default:* `nil`) - The ID of the Customer that purchased the device.
   *   `resellerId` (*type:* `String.t`, *default:* `nil`) - The ID of the reseller that claimed the device.
   *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of claim made on the device.
-  *   `vacationModeExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the device will exit ‘vacation mode’. This value is
-      present iff the device is in 'vacation mode'.
-  *   `vacationModeStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the device was put into ‘vacation mode’. This value is
-      present iff the device is in 'vacation mode'.
+  *   `vacationModeExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the device will exit ‘vacation mode’. This value is present iff the device is in 'vacation mode'.
+  *   `vacationModeStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the device was put into ‘vacation mode’. This value is present iff the device is in 'vacation mode'.
   """
 
   use GoogleApi.Gax.ModelBase

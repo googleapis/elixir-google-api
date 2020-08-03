@@ -17,23 +17,15 @@
 
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
   @moduledoc """
-  Encapsulates hardware and product IDs to identify a manufactured device.
-  To understand requirements on identifier sets, read
-  [Identifiers](https://developers.google.com/zero-touch/guides/identifiers).
+  Encapsulates hardware and product IDs to identify a manufactured device. To understand requirements on identifier sets, read [Identifiers](https://developers.google.com/zero-touch/guides/identifiers).
 
   ## Attributes
 
   *   `imei` (*type:* `String.t`, *default:* `nil`) - The device’s IMEI number. Validated on input.
-  *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The device manufacturer’s name. Matches the device's built-in
-      value returned from `android.os.Build.MANUFACTURER`. Allowed values are
-      listed in
-      [manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).
+  *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The device manufacturer’s name. Matches the device's built-in value returned from `android.os.Build.MANUFACTURER`. Allowed values are listed in [manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).
   *   `meid` (*type:* `String.t`, *default:* `nil`) - The device’s MEID number.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - The device model's name. Matches the device's built-in value returned from
-      `android.os.Build.MODEL`. Allowed values are listed in
-      [models](/zero-touch/resources/manufacturer-names#model-names).
-  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The manufacturer's serial number for the device. This value might not be
-      unique across different device models.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The device model's name. Matches the device's built-in value returned from `android.os.Build.MODEL`. Allowed values are listed in [models](/zero-touch/resources/manufacturer-names#model-names).
+  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The manufacturer's serial number for the device. This value might not be unique across different device models.
   """
 
   use GoogleApi.Gax.ModelBase
