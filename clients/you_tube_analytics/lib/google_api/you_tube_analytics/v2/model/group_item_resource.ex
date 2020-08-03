@@ -21,15 +21,8 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.GroupItemResource do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The channel, video, playlist, or asset ID that YouTube uses to uniquely
-      identify the item that is being added to the group.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies the type of resource being added to the group.
-
-      Valid values for this property are:
-       * `youtube#channel`
-       * `youtube#playlist`
-       * `youtube#video`
-       * `youtubePartner#asset`
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The channel, video, playlist, or asset ID that YouTube uses to uniquely identify the item that is being added to the group.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies the type of resource being added to the group. Valid values for this property are: * `youtube#channel` * `youtube#playlist` * `youtube#video` * `youtubePartner#asset`
   """
 
   use GoogleApi.Gax.ModelBase
