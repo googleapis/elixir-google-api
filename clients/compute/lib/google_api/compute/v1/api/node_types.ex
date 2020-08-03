@@ -153,7 +153,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
       |> Request.url("/{project}/zones/{zone}/nodeTypes/{nodeType}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "nodeType" => URI.encode(node_type, &URI.char_unreserved?/1)
+        "nodeType" => URI.encode(node_type, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

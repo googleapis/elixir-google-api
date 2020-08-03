@@ -149,7 +149,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       |> Request.method(:delete)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
+        "securityPolicy" => URI.encode(security_policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -214,7 +214,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       |> Request.method(:get)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
+        "securityPolicy" => URI.encode(security_policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -564,7 +564,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
       |> Request.method(:patch)
       |> Request.url("/{project}/global/securityPolicies/{securityPolicy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
+        "securityPolicy" => URI.encode(security_policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

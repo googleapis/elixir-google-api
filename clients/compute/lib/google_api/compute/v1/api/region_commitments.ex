@@ -165,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionCommitments do
       |> Request.url("/{project}/regions/{region}/commitments/{commitment}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "commitment" => URI.encode(commitment, &URI.char_unreserved?/1)
+        "commitment" => URI.encode(commitment, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

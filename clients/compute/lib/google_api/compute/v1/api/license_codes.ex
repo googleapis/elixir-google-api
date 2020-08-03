@@ -80,7 +80,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
       |> Request.method(:get)
       |> Request.url("/{project}/global/licenseCodes/{licenseCode}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "licenseCode" => URI.encode(license_code, &URI.char_unreserved?/1)
+        "licenseCode" => URI.encode(license_code, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

@@ -173,7 +173,8 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
-          "interconnectAttachment" => URI.encode(interconnect_attachment, &URI.char_unreserved?/1)
+          "interconnectAttachment" =>
+            URI.encode(interconnect_attachment, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -245,7 +246,8 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
-          "interconnectAttachment" => URI.encode(interconnect_attachment, &URI.char_unreserved?/1)
+          "interconnectAttachment" =>
+            URI.encode(interconnect_attachment, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -479,7 +481,8 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
-          "interconnectAttachment" => URI.encode(interconnect_attachment, &URI.char_unreserved?/1)
+          "interconnectAttachment" =>
+            URI.encode(interconnect_attachment, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

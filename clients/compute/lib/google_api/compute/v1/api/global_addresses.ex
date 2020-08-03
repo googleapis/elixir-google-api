@@ -84,7 +84,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalAddresses do
       |> Request.method(:delete)
       |> Request.url("/{project}/global/addresses/{address}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "address" => URI.encode(address, &URI.char_unreserved?/1)
+        "address" => URI.encode(address, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -147,7 +147,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalAddresses do
       |> Request.method(:get)
       |> Request.url("/{project}/global/addresses/{address}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "address" => URI.encode(address, &URI.char_unreserved?/1)
+        "address" => URI.encode(address, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

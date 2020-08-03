@@ -246,7 +246,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
       |> Request.url("/{project}/zones/{zone}/instanceGroups/{instanceGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
+        "instanceGroup" => URI.encode(instance_group, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -315,7 +315,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
       |> Request.url("/{project}/zones/{zone}/instanceGroups/{instanceGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
+        "instanceGroup" => URI.encode(instance_group, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
