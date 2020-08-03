@@ -88,7 +88,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -394,7 +394,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1beta1/projects/{projectsId}/secrets/{secretsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -467,7 +467,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/secrets/{secretsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -706,7 +706,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1beta1/projects/{projectsId}/secrets/{secretsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1300,7 +1300,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
+          "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
