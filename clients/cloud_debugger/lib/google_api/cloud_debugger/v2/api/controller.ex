@@ -264,7 +264,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
       |> Request.method(:put)
       |> Request.url("/v2/controller/debuggees/{debuggeeId}/breakpoints/{id}", %{
         "debuggeeId" => URI.encode(debuggee_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
