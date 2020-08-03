@@ -77,7 +77,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.Ip do
       |> Request.method(:get)
       |> Request.url("/v1/ip/{ipId}/{ipId1}", %{
         "ipId" => URI.encode(ip_id, &URI.char_unreserved?/1),
-        "ipId1" => URI.encode(ip_id1, &URI.char_unreserved?/1)
+        "ipId1" => URI.encode(ip_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
