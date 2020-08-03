@@ -74,7 +74,7 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/games/v1/snapshots/{snapshotId}", %{
-        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+        "snapshotId" => URI.encode(snapshot_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
