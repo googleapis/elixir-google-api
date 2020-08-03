@@ -330,7 +330,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "cloudauditlogssourcesId" =>
-            URI.encode(cloudauditlogssources_id, &URI.char_unreserved?/1)
+            URI.encode(cloudauditlogssources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -411,7 +411,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "cloudauditlogssourcesId" =>
-            URI.encode(cloudauditlogssources_id, &URI.char_unreserved?/1)
+            URI.encode(cloudauditlogssources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -669,7 +669,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "cloudpubsubsourcesId" => URI.encode(cloudpubsubsources_id, &URI.char_unreserved?/1)
+          "cloudpubsubsourcesId" =>
+            URI.encode(cloudpubsubsources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -749,7 +750,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "cloudpubsubsourcesId" => URI.encode(cloudpubsubsources_id, &URI.char_unreserved?/1)
+          "cloudpubsubsourcesId" =>
+            URI.encode(cloudpubsubsources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1008,7 +1010,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "cloudschedulersourcesId" =>
-            URI.encode(cloudschedulersources_id, &URI.char_unreserved?/1)
+            URI.encode(cloudschedulersources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1089,7 +1091,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "cloudschedulersourcesId" =>
-            URI.encode(cloudschedulersources_id, &URI.char_unreserved?/1)
+            URI.encode(cloudschedulersources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1266,7 +1268,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "cloudschedulersourcesId" =>
-            URI.encode(cloudschedulersources_id, &URI.char_unreserved?/1)
+            URI.encode(cloudschedulersources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1432,7 +1434,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "cloudstoragesourcesId" => URI.encode(cloudstoragesources_id, &URI.char_unreserved?/1)
+          "cloudstoragesourcesId" =>
+            URI.encode(cloudstoragesources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1512,7 +1515,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "cloudstoragesourcesId" => URI.encode(cloudstoragesources_id, &URI.char_unreserved?/1)
+          "cloudstoragesourcesId" =>
+            URI.encode(cloudstoragesources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1686,7 +1690,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "cloudstoragesourcesId" => URI.encode(cloudstoragesources_id, &URI.char_unreserved?/1)
+          "cloudstoragesourcesId" =>
+            URI.encode(cloudstoragesources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1766,7 +1771,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "configurationsId" => URI.encode(configurations_id, &URI.char_unreserved?/1)
+          "configurationsId" =>
+            URI.encode(configurations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2018,7 +2024,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "domainmappingsId" => URI.encode(domainmappings_id, &URI.char_unreserved?/1)
+          "domainmappingsId" =>
+            URI.encode(domainmappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2098,7 +2105,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "domainmappingsId" => URI.encode(domainmappings_id, &URI.char_unreserved?/1)
+          "domainmappingsId" =>
+            URI.encode(domainmappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2275,7 +2283,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "revisionsId" => URI.encode(revisions_id, &URI.char_unreserved?/1)
+          "revisionsId" => URI.encode(revisions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2355,7 +2363,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "revisionsId" => URI.encode(revisions_id, &URI.char_unreserved?/1)
+          "revisionsId" => URI.encode(revisions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2524,7 +2532,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "routesId" => URI.encode(routes_id, &URI.char_unreserved?/1)
+          "routesId" => URI.encode(routes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2774,7 +2782,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2854,7 +2862,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3107,7 +3115,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3434,7 +3442,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "triggersId" => URI.encode(triggers_id, &URI.char_unreserved?/1)
+          "triggersId" => URI.encode(triggers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3514,7 +3522,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "triggersId" => URI.encode(triggers_id, &URI.char_unreserved?/1)
+          "triggersId" => URI.encode(triggers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
