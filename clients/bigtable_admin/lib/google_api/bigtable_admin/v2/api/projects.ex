@@ -161,7 +161,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+        "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -235,7 +235,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+        "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -466,7 +466,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+        "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -699,7 +699,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+        "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -864,7 +864,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "appProfilesId" => URI.encode(app_profiles_id, &URI.char_unreserved?/1)
+          "appProfilesId" => URI.encode(app_profiles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -945,7 +945,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "appProfilesId" => URI.encode(app_profiles_id, &URI.char_unreserved?/1)
+          "appProfilesId" => URI.encode(app_profiles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1124,7 +1124,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "appProfilesId" => URI.encode(app_profiles_id, &URI.char_unreserved?/1)
+          "appProfilesId" => URI.encode(app_profiles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1284,7 +1284,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
+        "clustersId" => URI.encode(clusters_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1362,7 +1362,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
+        "clustersId" => URI.encode(clusters_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1520,7 +1520,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
+        "clustersId" => URI.encode(clusters_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1703,7 +1703,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
           "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
+          "backupsId" => URI.encode(backups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1789,7 +1789,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
           "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
+          "backupsId" => URI.encode(backups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2125,7 +2125,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
           "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
+          "backupsId" => URI.encode(backups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2548,7 +2548,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
+        "tablesId" => URI.encode(tables_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2805,7 +2805,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
+        "tablesId" => URI.encode(tables_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3392,7 +3392,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/locations/{locationsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
