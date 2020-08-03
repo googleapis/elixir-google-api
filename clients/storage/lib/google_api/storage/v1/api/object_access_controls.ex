@@ -87,7 +87,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl/{entity}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
         "object" => URI.encode(object, &URI.char_unreserved?/1),
-        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
+        "entity" => URI.encode(entity, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -162,7 +162,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl/{entity}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
         "object" => URI.encode(object, &URI.char_unreserved?/1),
-        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
+        "entity" => URI.encode(entity, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -383,7 +383,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl/{entity}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
         "object" => URI.encode(object, &URI.char_unreserved?/1),
-        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
+        "entity" => URI.encode(entity, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -460,7 +460,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
       |> Request.url("/storage/v1/b/{bucket}/o/{object}/acl/{entity}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
         "object" => URI.encode(object, &URI.char_unreserved?/1),
-        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
+        "entity" => URI.encode(entity, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
