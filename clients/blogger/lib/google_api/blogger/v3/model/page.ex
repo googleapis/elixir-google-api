@@ -30,8 +30,7 @@ defmodule GoogleApi.Blogger.V3.Model.Page do
   *   `published` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this Page was published.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the page for admin resources (either LIVE or DRAFT).
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this entity. This is the name displayed in the Admin user
-      interface.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this entity. This is the name displayed in the Admin user interface.
   *   `updated` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this Page was last updated.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL that this Page is displayed at.
   """
