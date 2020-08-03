@@ -147,7 +147,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/brands/{brandsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "brandsId" => URI.encode(brands_id, &URI.char_unreserved?/1)
+        "brandsId" => URI.encode(brands_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -368,7 +368,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "brandsId" => URI.encode(brands_id, &URI.char_unreserved?/1),
           "identityAwareProxyClientsId" =>
-            URI.encode(identity_aware_proxy_clients_id, &URI.char_unreserved?/1)
+            URI.encode(identity_aware_proxy_clients_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -452,7 +452,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "brandsId" => URI.encode(brands_id, &URI.char_unreserved?/1),
           "identityAwareProxyClientsId" =>
-            URI.encode(identity_aware_proxy_clients_id, &URI.char_unreserved?/1)
+            URI.encode(identity_aware_proxy_clients_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
