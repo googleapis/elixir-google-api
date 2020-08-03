@@ -23,18 +23,10 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.GroupItem do
 
   *   `errors` (*type:* `GoogleApi.YouTubeAnalytics.V2.Model.Errors.t`, *default:* `nil`) - Apiary error details
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The Etag of this resource.
-  *   `groupId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the group that contains the
-      item.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the `channel`, `video`,
-      `playlist`, or `asset` resource that is included in the group. Note that
-      this ID refers specifically to the inclusion of that resource in a
-      particular group and is different than the channel ID, video ID,
-      playlist ID, or asset ID that uniquely identifies the resource itself.
-      The `resource.id` property's value specifies the unique channel, video,
-      playlist, or asset ID.
+  *   `groupId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the group that contains the item.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the `channel`, `video`, `playlist`, or `asset` resource that is included in the group. Note that this ID refers specifically to the inclusion of that resource in a particular group and is different than the channel ID, video ID, playlist ID, or asset ID that uniquely identifies the resource itself. The `resource.id` property's value specifies the unique channel, video, playlist, or asset ID.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies the API resource's type. The value will be `youtube#groupItem`.
-  *   `resource` (*type:* `GoogleApi.YouTubeAnalytics.V2.Model.GroupItemResource.t`, *default:* `nil`) - The `resource` object contains information that identifies the item being
-      added to the group.
+  *   `resource` (*type:* `GoogleApi.YouTubeAnalytics.V2.Model.GroupItemResource.t`, *default:* `nil`) - The `resource` object contains information that identifies the item being added to the group.
   """
 
   use GoogleApi.Gax.ModelBase

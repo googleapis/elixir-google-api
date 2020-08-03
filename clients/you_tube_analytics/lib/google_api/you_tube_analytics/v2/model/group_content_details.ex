@@ -22,13 +22,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.GroupContentDetails do
   ## Attributes
 
   *   `itemCount` (*type:* `String.t`, *default:* `nil`) - The number of items in the group.
-  *   `itemType` (*type:* `String.t`, *default:* `nil`) - The type of resources that the group contains.
-
-      Valid values for this property are:
-       * `youtube#channel`
-       * `youtube#playlist`
-       * `youtube#video`
-       * `youtubePartner#asset`
+  *   `itemType` (*type:* `String.t`, *default:* `nil`) - The type of resources that the group contains. Valid values for this property are: * `youtube#channel` * `youtube#playlist` * `youtube#video` * `youtubePartner#asset`
   """
 
   use GoogleApi.Gax.ModelBase

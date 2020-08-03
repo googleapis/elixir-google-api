@@ -23,10 +23,8 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.ListGroupItemsResponse do
 
   *   `errors` (*type:* `GoogleApi.YouTubeAnalytics.V2.Model.Errors.t`, *default:* `nil`) - Apiary error details
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The Etag of this resource.
-  *   `items` (*type:* `list(GoogleApi.YouTubeAnalytics.V2.Model.GroupItem.t)`, *default:* `nil`) - A list of groups that match the API request parameters. Each item in the
-      list represents a `groupItem` resource.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies the API resource's type. The value will be
-      `youtube#groupItemListResponse`.
+  *   `items` (*type:* `list(GoogleApi.YouTubeAnalytics.V2.Model.GroupItem.t)`, *default:* `nil`) - A list of groups that match the API request parameters. Each item in the list represents a `groupItem` resource.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies the API resource's type. The value will be `youtube#groupItemListResponse`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -20,7 +20,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2 do
   API client metadata for GoogleApi.YouTubeAnalytics.V2.
   """
 
-  @discovery_revision "20200728"
+  @discovery_revision "20200801"
 
   def discovery_revision(), do: @discovery_revision
 end

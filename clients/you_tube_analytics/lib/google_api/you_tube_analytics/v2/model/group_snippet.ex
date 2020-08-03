@@ -21,8 +21,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.GroupSnippet do
 
   ## Attributes
 
-  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the group was created. The value is specified in
-      ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the group was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The group name. The value must be a non-empty string.
   """
 

@@ -21,14 +21,12 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.Group do
 
   ## Attributes
 
-  *   `contentDetails` (*type:* `GoogleApi.YouTubeAnalytics.V2.Model.GroupContentDetails.t`, *default:* `nil`) - The `contentDetails` object contains additional information about the
-      group, such as the number and type of items that it contains.
+  *   `contentDetails` (*type:* `GoogleApi.YouTubeAnalytics.V2.Model.GroupContentDetails.t`, *default:* `nil`) - The `contentDetails` object contains additional information about the group, such as the number and type of items that it contains.
   *   `errors` (*type:* `GoogleApi.YouTubeAnalytics.V2.Model.Errors.t`, *default:* `nil`) - Apiary error details
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the group.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies the API resource's type. The value will be `youtube#group`.
-  *   `snippet` (*type:* `GoogleApi.YouTubeAnalytics.V2.Model.GroupSnippet.t`, *default:* `nil`) - The `snippet` object contains basic information about the group, including
-      its creation date and name.
+  *   `snippet` (*type:* `GoogleApi.YouTubeAnalytics.V2.Model.GroupSnippet.t`, *default:* `nil`) - The `snippet` object contains basic information about the group, including its creation date and name.
   """
 
   use GoogleApi.Gax.ModelBase
