@@ -261,7 +261,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectId}/testMatrices/{testMatrixId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "testMatrixId" => URI.encode(test_matrix_id, &URI.char_unreserved?/1)
+        "testMatrixId" => URI.encode(test_matrix_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
