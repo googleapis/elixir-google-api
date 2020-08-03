@@ -87,7 +87,7 @@ defmodule GoogleApi.Testing.V1.Api.TestEnvironmentCatalog do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/testEnvironmentCatalog/{environmentType}", %{
-        "environmentType" => URI.encode(environment_type, &URI.char_unreserved?/1)
+        "environmentType" => URI.encode(environment_type, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
