@@ -132,7 +132,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/liens/{liensId}", %{
-        "liensId" => URI.encode(liens_id, &URI.char_unreserved?/1)
+        "liensId" => URI.encode(liens_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -191,7 +191,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/liens/{liensId}", %{
-        "liensId" => URI.encode(liens_id, &URI.char_unreserved?/1)
+        "liensId" => URI.encode(liens_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

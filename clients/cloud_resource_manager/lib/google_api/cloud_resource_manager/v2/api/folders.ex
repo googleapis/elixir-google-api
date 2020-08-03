@@ -139,7 +139,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v2/folders/{foldersId}", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+        "foldersId" => URI.encode(folders_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -198,7 +198,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v2/folders/{foldersId}", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+        "foldersId" => URI.encode(folders_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -464,7 +464,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/v2/folders/{foldersId}", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+        "foldersId" => URI.encode(folders_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
