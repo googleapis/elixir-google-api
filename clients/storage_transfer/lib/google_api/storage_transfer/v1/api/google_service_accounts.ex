@@ -92,7 +92,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.GoogleServiceAccounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/googleServiceAccounts/{projectId}", %{
-        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
+        "projectId" => URI.encode(project_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
