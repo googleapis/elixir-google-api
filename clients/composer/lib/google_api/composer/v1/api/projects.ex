@@ -171,7 +171,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "environmentsId" => URI.encode(environments_id, &URI.char_unreserved?/1)
+          "environmentsId" => URI.encode(environments_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -252,7 +252,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "environmentsId" => URI.encode(environments_id, &URI.char_unreserved?/1)
+          "environmentsId" => URI.encode(environments_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -547,7 +547,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "environmentsId" => URI.encode(environments_id, &URI.char_unreserved?/1)
+          "environmentsId" => URI.encode(environments_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -705,7 +705,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -787,7 +787,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
