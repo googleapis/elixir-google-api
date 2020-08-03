@@ -164,7 +164,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/civicinfo/v2/representatives/{ocdId}", %{
-        "ocdId" => URI.encode(ocd_id, &URI.char_unreserved?/1)
+        "ocdId" => URI.encode(ocd_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
