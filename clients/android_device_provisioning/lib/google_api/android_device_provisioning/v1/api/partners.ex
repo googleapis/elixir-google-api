@@ -26,17 +26,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a customer for zero-touch enrollment. After the method returns
-  successfully, admin and owner roles can manage devices and EMM configs
-  by calling API methods or using their zero-touch enrollment portal.
-  The customer receives an email that welcomes them to zero-touch enrollment
-  and explains how to sign into the portal.
+  Creates a customer for zero-touch enrollment. After the method returns successfully, admin and owner roles can manage devices and EMM configs by calling API methods or using their zero-touch enrollment portal. The customer receives an email that welcomes them to zero-touch enrollment and explains how to sign into the portal.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource ID in the format `partners/[PARTNER_ID]` that
-      identifies the reseller.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource ID in the format `partners/[PARTNER_ID]` that identifies the reseller.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -102,9 +97,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Lists the customers that are enrolled to the reseller identified by the
-  `partnerId` argument. This list includes customers that the reseller
-  created and customers that enrolled themselves using the portal.
+  Lists the customers that are enrolled to the reseller identified by the `partnerId` argument. This list includes customers that the reseller created and customers that enrolled themselves using the portal.
 
   ## Parameters
 
@@ -122,8 +115,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to be returned. If not specified or 0, all
-          the records are returned.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to be returned. If not specified or 0, all the records are returned.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results returned by the server.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -180,8 +172,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Claims a device for a customer and adds it to zero-touch enrollment. If the
-  device is already claimed by another customer, the call returns an error.
+  Claims a device for a customer and adds it to zero-touch enrollment. If the device is already claimed by another customer, the call returns an error.
 
   ## Parameters
 
@@ -254,9 +245,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Claims a batch of devices for a customer asynchronously. Adds the devices
-  to zero-touch enrollment. To learn more, read [Long‑running batch
-  operations](/zero-touch/guides/how-it-works#operations).
+  Claims a batch of devices for a customer asynchronously. Adds the devices to zero-touch enrollment. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
 
   ## Parameters
 
@@ -407,10 +396,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Finds devices claimed for customers. The results only contain devices
-  registered to the reseller that's identified by the `partnerId` argument.
-  The customer's devices purchased from other resellers don't appear in the
-  results.
+  Finds devices claimed for customers. The results only contain devices registered to the reseller that's identified by the `partnerId` argument. The customer's devices purchased from other resellers don't appear in the results.
 
   ## Parameters
 
@@ -488,8 +474,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The device API resource name in the format
-      `partners/[PARTNER_ID]/devices/[DEVICE_ID]`.
+  *   `name` (*type:* `String.t`) - Required. The device API resource name in the format `partners/[PARTNER_ID]/devices/[DEVICE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -630,8 +615,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Unclaims a device from a customer and removes it from zero-touch
-  enrollment.
+  Unclaims a device from a customer and removes it from zero-touch enrollment.
 
   ## Parameters
 
@@ -702,9 +686,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Unclaims a batch of devices for a customer asynchronously. Removes the
-  devices from zero-touch enrollment. To learn more, read [Long‑running batch
-  operations](/zero-touch/guides/how-it-works#operations).
+  Unclaims a batch of devices for a customer asynchronously. Removes the devices from zero-touch enrollment. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
 
   ## Parameters
 
@@ -777,10 +759,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   end
 
   @doc """
-  Updates the reseller metadata attached to a batch of devices. This method
-  updates devices asynchronously and returns an `Operation` that can be used
-  to track progress. Read [Long‑running batch
-  operations](/zero-touch/guides/how-it-works#operations).
+  Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
 
   ## Parameters
 
@@ -933,8 +912,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name in the format
-      `partners/[PARTNER_ID]/vendors/[VENDOR_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name in the format `partners/[PARTNER_ID]/vendors/[VENDOR_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

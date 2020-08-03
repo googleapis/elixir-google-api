@@ -22,8 +22,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesRespon
   ## Attributes
 
   *   `devices` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t)`, *default:* `nil`) - The customer's devices.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token used to access the next page of results. Omitted if no further
-      results are available.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token used to access the next page of results. Omitted if no further results are available.
   """
 
   use GoogleApi.Gax.ModelBase

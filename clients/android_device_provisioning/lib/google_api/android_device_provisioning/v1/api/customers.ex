@@ -43,8 +43,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of customers to show in a page of results.
-          A number between 1 and 100 (inclusive).
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of customers to show in a page of results. A number between 1 and 100 (inclusive).
       *   `:pageToken` (*type:* `String.t`) - A token specifying which result page to return.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -90,14 +89,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   end
 
   @doc """
-  Creates a new configuration. Once created, a customer can apply the
-  configuration to devices.
+  Creates a new configuration. Once created, a customer can apply the configuration to devices.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The customer that manages the configuration. An API resource name
-      in the format `customers/[CUSTOMER_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The customer that manages the configuration. An API resource name in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -165,15 +162,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   end
 
   @doc """
-  Deletes an unused configuration. The API call fails if the customer has
-  devices with the configuration applied.
+  Deletes an unused configuration. The API call fails if the customer has devices with the configuration applied.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The configuration to delete. An API resource name in the format
-      `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. If the
-      configuration is applied to any devices, the API call fails.
+  *   `name` (*type:* `String.t`) - Required. The configuration to delete. An API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. If the configuration is applied to any devices, the API call fails.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -242,8 +236,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The configuration to get. An API resource name in the format
-      `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`.
+  *   `name` (*type:* `String.t`) - Required. The configuration to get. An API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -314,8 +307,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The customer that manages the listed configurations. An API
-      resource name in the format `customers/[CUSTOMER_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The customer that manages the listed configurations. An API resource name in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -391,9 +383,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The API resource name in the format
-      `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by
-      the server.
+  *   `name` (*type:* `String.t`) - Output only. The API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by the server.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -406,10 +396,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The field mask applied to the target `Configuration` before
-          updating the fields. To learn more about using field masks, read
-          [FieldMask](/protocol-buffers/docs/reference/google.protobuf#fieldmask) in
-          the Protocol Buffers documentation.
+      *   `:updateMask` (*type:* `String.t`) - Required. The field mask applied to the target `Configuration` before updating the fields. To learn more about using field masks, read [FieldMask](/protocol-buffers/docs/reference/google.protobuf#fieldmask) in the Protocol Buffers documentation.
       *   `:body` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -466,15 +453,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   end
 
   @doc """
-  Applies a Configuration to the device to register the device for zero-touch
-  enrollment. After applying a configuration to a device, the device
-  automatically provisions itself on first boot, or next factory reset.
+  Applies a Configuration to the device to register the device for zero-touch enrollment. After applying a configuration to a device, the device automatically provisions itself on first boot, or next factory reset.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The customer managing the device. An API resource name in the
-      format `customers/[CUSTOMER_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The customer managing the device. An API resource name in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -545,8 +529,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The device to get. An API resource name in the format
-      `customers/[CUSTOMER_ID]/devices/[DEVICE_ID]`.
+  *   `name` (*type:* `String.t`) - Required. The device to get. An API resource name in the format `customers/[CUSTOMER_ID]/devices/[DEVICE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -615,8 +598,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The customer managing the devices. An API resource name in the
-      format `customers/[CUSTOMER_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The customer managing the devices. An API resource name in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -629,8 +611,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `String.t`) - The maximum number of devices to show in a page of results.
-          Must be between 1 and 100 inclusive.
+      *   `:pageSize` (*type:* `String.t`) - The maximum number of devices to show in a page of results. Must be between 1 and 100 inclusive.
       *   `:pageToken` (*type:* `String.t`) - A token specifying which result page to return.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -693,8 +674,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The customer managing the device in the format
-      `customers/[CUSTOMER_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The customer managing the device in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -760,17 +740,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   end
 
   @doc """
-  Unclaims a device from a customer and removes it from zero-touch
-  enrollment.
-
-  After removing a device, a customer must contact their reseller to register
-  the device into zero-touch enrollment again.
+  Unclaims a device from a customer and removes it from zero-touch enrollment. After removing a device, a customer must contact their reseller to register the device into zero-touch enrollment again.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The customer managing the device. An API resource name in the
-      format `customers/[CUSTOMER_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The customer managing the device. An API resource name in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -836,14 +811,12 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   end
 
   @doc """
-  Lists the DPCs (device policy controllers) that support zero-touch
-  enrollment.
+  Lists the DPCs (device policy controllers) that support zero-touch enrollment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The customer that can use the DPCs in configurations. An API
-      resource name in the format `customers/[CUSTOMER_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The customer that can use the DPCs in configurations. An API resource name in the format `customers/[CUSTOMER_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

@@ -24,8 +24,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerUnclaim do
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Required. Device ID of the device.
   *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. Device identifier of the device.
   *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Required. The section type of the device's provisioning record.
-  *   `vacationModeDays` (*type:* `integer()`, *default:* `nil`) - Optional. The duration of the vacation unlock starting from when the request is
-      processed. (1 day is treated as 24 hours)
+  *   `vacationModeDays` (*type:* `integer()`, *default:* `nil`) - Optional. The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours)
   *   `vacationModeExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The expiration time of the vacation unlock.
   """
 

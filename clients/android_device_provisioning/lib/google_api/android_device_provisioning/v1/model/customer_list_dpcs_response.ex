@@ -21,8 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse 
 
   ## Attributes
 
-  *   `dpcs` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Dpc.t)`, *default:* `nil`) - The list of DPCs available to the customer that support zero-touch
-      enrollment.
+  *   `dpcs` (*type:* `list(GoogleApi.AndroidDeviceProvisioning.V1.Model.Dpc.t)`, *default:* `nil`) - The list of DPCs available to the customer that support zero-touch enrollment.
   """
 
   use GoogleApi.Gax.ModelBase
