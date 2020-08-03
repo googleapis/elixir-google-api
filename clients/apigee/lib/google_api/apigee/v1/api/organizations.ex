@@ -10047,7 +10047,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       |> Request.url("/v1/{+parent}/resourcefiles/{type}/{name}", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1),
         "type" => URI.encode(type, &URI.char_unreserved?/1),
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
+        "name" => URI.encode(name, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -10131,7 +10131,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       |> Request.url("/v1/{+parent}/resourcefiles/{type}/{name}", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1),
         "type" => URI.encode(type, &URI.char_unreserved?/1),
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
+        "name" => URI.encode(name, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -10290,7 +10290,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       |> Request.method(:get)
       |> Request.url("/v1/{+parent}/resourcefiles/{type}", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1),
-        "type" => URI.encode(type, &URI.char_unreserved?/1)
+        "type" => URI.encode(type, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -10380,7 +10380,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       |> Request.url("/v1/{+parent}/resourcefiles/{type}/{name}", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1),
         "type" => URI.encode(type, &URI.char_unreserved?/1),
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
+        "name" => URI.encode(name, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
