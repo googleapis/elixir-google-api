@@ -74,7 +74,7 @@ defmodule GoogleApi.Games.V1.Api.Leaderboards do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/games/v1/leaderboards/{leaderboardId}", %{
-        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
+        "leaderboardId" => URI.encode(leaderboard_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

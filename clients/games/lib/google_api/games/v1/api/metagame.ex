@@ -154,7 +154,7 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
       |> Request.method(:get)
       |> Request.url("/games/v1/players/{playerId}/categories/{collection}", %{
         "playerId" => URI.encode(player_id, &URI.char_unreserved?/1),
-        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
+        "collection" => URI.encode(collection, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

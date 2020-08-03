@@ -112,7 +112,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
         %{
           "playerId" => URI.encode(player_id, &URI.char_unreserved?/1),
           "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1),
-          "timeSpan" => URI.encode(time_span, &URI.char_unreserved?/1)
+          "timeSpan" => URI.encode(time_span, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -199,7 +199,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       |> Request.method(:get)
       |> Request.url("/games/v1/leaderboards/{leaderboardId}/scores/{collection}", %{
         "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1),
-        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
+        "collection" => URI.encode(collection, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_param(:query, :timeSpan, time_span)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -292,7 +292,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       |> Request.method(:get)
       |> Request.url("/games/v1/leaderboards/{leaderboardId}/window/{collection}", %{
         "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1),
-        "collection" => URI.encode(collection, &URI.char_unreserved?/1)
+        "collection" => URI.encode(collection, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_param(:query, :timeSpan, time_span)
       |> Request.add_optional_params(optional_params_config, optional_params)
