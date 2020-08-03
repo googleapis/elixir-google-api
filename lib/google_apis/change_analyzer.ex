@@ -157,6 +157,10 @@ defmodule GoogleApis.ChangeAnalyzer do
     {:@, [], [{:moduledoc, [], ["."]}]}
   end
 
+  defp strip_trivial_ast({:defp, _, [{:description, _, []}, [do: str]]}, :documentation, "mix.exs") when is_binary(str) do
+    {:defp, [], [{:description, [], []}, [do: "."]]}
+  end
+
   defp strip_trivial_ast({:@, _, [{:version, _, [str]}]}, _, "mix.exs") when is_binary(str) do
     {:@, [], [{:version, [], ["."]}]}
   end
