@@ -2972,7 +2972,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
+        "clusterId" => URI.encode(cluster_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3056,7 +3056,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
+        "clusterId" => URI.encode(cluster_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4091,7 +4091,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
+        "clusterId" => URI.encode(cluster_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4363,7 +4363,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
           "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1),
-          "nodePoolId" => URI.encode(node_pool_id, &URI.char_unreserved?/1)
+          "nodePoolId" => URI.encode(node_pool_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4458,7 +4458,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
           "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1),
-          "nodePoolId" => URI.encode(node_pool_id, &URI.char_unreserved?/1)
+          "nodePoolId" => URI.encode(node_pool_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5087,7 +5087,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectId}/zones/{zone}/operations/{operationId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "operationId" => URI.encode(operation_id, &URI.char_unreserved?/1)
+        "operationId" => URI.encode(operation_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
