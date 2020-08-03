@@ -159,7 +159,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
       |> Request.url("/v1/{v1Id}/{v1Id1}/feeds/{feedsId}", %{
         "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
         "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1),
-        "feedsId" => URI.encode(feeds_id, &URI.char_unreserved?/1)
+        "feedsId" => URI.encode(feeds_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -230,7 +230,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
       |> Request.url("/v1/{v1Id}/{v1Id1}/feeds/{feedsId}", %{
         "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
         "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1),
-        "feedsId" => URI.encode(feeds_id, &URI.char_unreserved?/1)
+        "feedsId" => URI.encode(feeds_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -376,7 +376,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
       |> Request.url("/v1/{v1Id}/{v1Id1}/feeds/{feedsId}", %{
         "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
         "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1),
-        "feedsId" => URI.encode(feeds_id, &URI.char_unreserved?/1)
+        "feedsId" => URI.encode(feeds_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
