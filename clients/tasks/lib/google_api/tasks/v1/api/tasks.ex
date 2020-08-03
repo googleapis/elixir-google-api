@@ -133,7 +133,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       |> Request.method(:delete)
       |> Request.url("/tasks/v1/lists/{tasklist}/tasks/{task}", %{
         "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1),
-        "task" => URI.encode(task, &URI.char_unreserved?/1)
+        "task" => URI.encode(task, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -192,7 +192,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       |> Request.method(:get)
       |> Request.url("/tasks/v1/lists/{tasklist}/tasks/{task}", %{
         "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1),
-        "task" => URI.encode(task, &URI.char_unreserved?/1)
+        "task" => URI.encode(task, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -472,7 +472,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       |> Request.method(:patch)
       |> Request.url("/tasks/v1/lists/{tasklist}/tasks/{task}", %{
         "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1),
-        "task" => URI.encode(task, &URI.char_unreserved?/1)
+        "task" => URI.encode(task, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -533,7 +533,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       |> Request.method(:put)
       |> Request.url("/tasks/v1/lists/{tasklist}/tasks/{task}", %{
         "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1),
-        "task" => URI.encode(task, &URI.char_unreserved?/1)
+        "task" => URI.encode(task, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

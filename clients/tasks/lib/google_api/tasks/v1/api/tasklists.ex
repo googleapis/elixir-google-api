@@ -72,7 +72,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/tasks/v1/users/@me/lists/{tasklist}", %{
-        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
+        "tasklist" => URI.encode(tasklist, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -129,7 +129,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/tasks/v1/users/@me/lists/{tasklist}", %{
-        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
+        "tasklist" => URI.encode(tasklist, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -304,7 +304,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       Request.new()
       |> Request.method(:patch)
       |> Request.url("/tasks/v1/users/@me/lists/{tasklist}", %{
-        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
+        "tasklist" => URI.encode(tasklist, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -363,7 +363,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/tasks/v1/users/@me/lists/{tasklist}", %{
-        "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
+        "tasklist" => URI.encode(tasklist, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
