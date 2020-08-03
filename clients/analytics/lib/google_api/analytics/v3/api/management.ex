@@ -129,7 +129,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:delete)
       |> Request.url("/analytics/v3/management/accounts/{accountId}/entityUserLinks/{linkId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+        "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -324,7 +324,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:put)
       |> Request.url("/analytics/v3/management/accounts/{accountId}/entityUserLinks/{linkId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+        "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -569,7 +569,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "customDimensionId" => URI.encode(custom_dimension_id, &URI.char_unreserved?/1)
+          "customDimensionId" =>
+            URI.encode(custom_dimension_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -787,7 +788,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "customDimensionId" => URI.encode(custom_dimension_id, &URI.char_unreserved?/1)
+          "customDimensionId" =>
+            URI.encode(custom_dimension_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -863,7 +865,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "customDimensionId" => URI.encode(custom_dimension_id, &URI.char_unreserved?/1)
+          "customDimensionId" =>
+            URI.encode(custom_dimension_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -935,7 +938,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "customMetricId" => URI.encode(custom_metric_id, &URI.char_unreserved?/1)
+          "customMetricId" =>
+            URI.encode(custom_metric_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1153,7 +1157,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "customMetricId" => URI.encode(custom_metric_id, &URI.char_unreserved?/1)
+          "customMetricId" =>
+            URI.encode(custom_metric_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1229,7 +1234,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "customMetricId" => URI.encode(custom_metric_id, &URI.char_unreserved?/1)
+          "customMetricId" =>
+            URI.encode(custom_metric_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1302,7 +1308,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "experimentId" => URI.encode(experiment_id, &URI.char_unreserved?/1)
+          "experimentId" => URI.encode(experiment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1378,7 +1384,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "experimentId" => URI.encode(experiment_id, &URI.char_unreserved?/1)
+          "experimentId" => URI.encode(experiment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1606,7 +1612,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "experimentId" => URI.encode(experiment_id, &URI.char_unreserved?/1)
+          "experimentId" => URI.encode(experiment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1684,7 +1690,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "experimentId" => URI.encode(experiment_id, &URI.char_unreserved?/1)
+          "experimentId" => URI.encode(experiment_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1748,7 +1754,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:delete)
       |> Request.url("/analytics/v3/management/accounts/{accountId}/filters/{filterId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "filterId" => URI.encode(filter_id, &URI.char_unreserved?/1)
+        "filterId" => URI.encode(filter_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1811,7 +1817,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:get)
       |> Request.url("/analytics/v3/management/accounts/{accountId}/filters/{filterId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "filterId" => URI.encode(filter_id, &URI.char_unreserved?/1)
+        "filterId" => URI.encode(filter_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1985,7 +1991,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:patch)
       |> Request.url("/analytics/v3/management/accounts/{accountId}/filters/{filterId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "filterId" => URI.encode(filter_id, &URI.char_unreserved?/1)
+        "filterId" => URI.encode(filter_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2050,7 +2056,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:put)
       |> Request.url("/analytics/v3/management/accounts/{accountId}/filters/{filterId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "filterId" => URI.encode(filter_id, &URI.char_unreserved?/1)
+        "filterId" => URI.encode(filter_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2122,7 +2128,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "goalId" => URI.encode(goal_id, &URI.char_unreserved?/1)
+          "goalId" => URI.encode(goal_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2342,7 +2348,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "goalId" => URI.encode(goal_id, &URI.char_unreserved?/1)
+          "goalId" => URI.encode(goal_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2417,7 +2423,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "goalId" => URI.encode(goal_id, &URI.char_unreserved?/1)
+          "goalId" => URI.encode(goal_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2490,7 +2496,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+          "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2566,7 +2572,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+          "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2794,7 +2800,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+          "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2872,7 +2878,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+          "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2945,7 +2951,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+          "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3173,7 +3179,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+          "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3242,7 +3248,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
+          "profileId" => URI.encode(profile_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3312,7 +3318,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
+          "profileId" => URI.encode(profile_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3524,7 +3530,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
+          "profileId" => URI.encode(profile_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3596,7 +3602,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
+          "profileId" => URI.encode(profile_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3665,7 +3671,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "remarketingAudienceId" => URI.encode(remarketing_audience_id, &URI.char_unreserved?/1)
+          "remarketingAudienceId" =>
+            URI.encode(remarketing_audience_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3737,7 +3744,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "remarketingAudienceId" => URI.encode(remarketing_audience_id, &URI.char_unreserved?/1)
+          "remarketingAudienceId" =>
+            URI.encode(remarketing_audience_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3955,7 +3963,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "remarketingAudienceId" => URI.encode(remarketing_audience_id, &URI.char_unreserved?/1)
+          "remarketingAudienceId" =>
+            URI.encode(remarketing_audience_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4029,7 +4038,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "remarketingAudienceId" => URI.encode(remarketing_audience_id, &URI.char_unreserved?/1)
+          "remarketingAudienceId" =>
+            URI.encode(remarketing_audience_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4154,7 +4164,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "unsampledReportId" => URI.encode(unsampled_report_id, &URI.char_unreserved?/1)
+          "unsampledReportId" =>
+            URI.encode(unsampled_report_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4230,7 +4241,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "unsampledReportId" => URI.encode(unsampled_report_id, &URI.char_unreserved?/1)
+          "unsampledReportId" =>
+            URI.encode(unsampled_report_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4525,7 +4537,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "customDataSourceId" => URI.encode(custom_data_source_id, &URI.char_unreserved?/1),
-          "uploadId" => URI.encode(upload_id, &URI.char_unreserved?/1)
+          "uploadId" => URI.encode(upload_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4976,7 +4988,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "webPropertyAdWordsLinkId" =>
-            URI.encode(web_property_ad_words_link_id, &URI.char_unreserved?/1)
+            URI.encode(web_property_ad_words_link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5049,7 +5061,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "webPropertyAdWordsLinkId" =>
-            URI.encode(web_property_ad_words_link_id, &URI.char_unreserved?/1)
+            URI.encode(web_property_ad_words_link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5266,7 +5278,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "webPropertyAdWordsLinkId" =>
-            URI.encode(web_property_ad_words_link_id, &URI.char_unreserved?/1)
+            URI.encode(web_property_ad_words_link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5341,7 +5353,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
           "webPropertyAdWordsLinkId" =>
-            URI.encode(web_property_ad_words_link_id, &URI.char_unreserved?/1)
+            URI.encode(web_property_ad_words_link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5409,7 +5421,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId}",
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-          "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1)
+          "webPropertyId" => URI.encode(web_property_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5607,7 +5619,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId}",
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-          "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1)
+          "webPropertyId" => URI.encode(web_property_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5677,7 +5689,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId}",
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-          "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1)
+          "webPropertyId" => URI.encode(web_property_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5746,7 +5758,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+          "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -5962,7 +5974,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "webPropertyId" => URI.encode(web_property_id, &URI.char_unreserved?/1),
-          "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
+          "linkId" => URI.encode(link_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
