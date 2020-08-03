@@ -164,7 +164,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/configurations/{configurationsId}",
         %{
           "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "configurationsId" => URI.encode(configurations_id, &URI.char_unreserved?/1)
+          "configurationsId" =>
+            URI.encode(configurations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -385,7 +386,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         "/apis/domains.cloudrun.com/v1/namespaces/{namespacesId}/domainmappings/{domainmappingsId}",
         %{
           "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "domainmappingsId" => URI.encode(domainmappings_id, &URI.char_unreserved?/1)
+          "domainmappingsId" =>
+            URI.encode(domainmappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -459,7 +461,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         "/apis/domains.cloudrun.com/v1/namespaces/{namespacesId}/domainmappings/{domainmappingsId}",
         %{
           "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "domainmappingsId" => URI.encode(domainmappings_id, &URI.char_unreserved?/1)
+          "domainmappingsId" =>
+            URI.encode(domainmappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -616,7 +619,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/revisions/{revisionsId}",
         %{
           "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "revisionsId" => URI.encode(revisions_id, &URI.char_unreserved?/1)
+          "revisionsId" => URI.encode(revisions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -689,7 +692,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/revisions/{revisionsId}",
         %{
           "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "revisionsId" => URI.encode(revisions_id, &URI.char_unreserved?/1)
+          "revisionsId" => URI.encode(revisions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -835,7 +838,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/routes/{routesId}",
         %{
           "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "routesId" => URI.encode(routes_id, &URI.char_unreserved?/1)
+          "routesId" => URI.encode(routes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1046,7 +1049,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/services/{servicesId}",
         %{
           "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1119,7 +1122,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/services/{servicesId}",
         %{
           "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1267,7 +1270,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/services/{servicesId}",
         %{
           "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

@@ -302,7 +302,8 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "configurationsId" => URI.encode(configurations_id, &URI.char_unreserved?/1)
+          "configurationsId" =>
+            URI.encode(configurations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -545,7 +546,8 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "domainmappingsId" => URI.encode(domainmappings_id, &URI.char_unreserved?/1)
+          "domainmappingsId" =>
+            URI.encode(domainmappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -623,7 +625,8 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "domainmappingsId" => URI.encode(domainmappings_id, &URI.char_unreserved?/1)
+          "domainmappingsId" =>
+            URI.encode(domainmappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -787,7 +790,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+          "namespacesId" => URI.encode(namespaces_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -868,7 +871,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+          "namespacesId" => URI.encode(namespaces_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -951,7 +954,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "revisionsId" => URI.encode(revisions_id, &URI.char_unreserved?/1)
+          "revisionsId" => URI.encode(revisions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1028,7 +1031,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "revisionsId" => URI.encode(revisions_id, &URI.char_unreserved?/1)
+          "revisionsId" => URI.encode(revisions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1190,7 +1193,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/routes/{routesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "routesId" => URI.encode(routes_id, &URI.char_unreserved?/1)
+        "routesId" => URI.encode(routes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1423,7 +1426,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1499,7 +1502,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1651,7 +1654,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/services/{servicesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1725,7 +1728,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/services/{servicesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1967,7 +1970,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/services/{servicesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
