@@ -338,7 +338,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
+          "functionsId" => URI.encode(functions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -612,7 +612,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
+          "functionsId" => URI.encode(functions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -880,7 +880,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
+          "functionsId" => URI.encode(functions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
