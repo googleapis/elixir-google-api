@@ -66,7 +66,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}", %{
-        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
+        "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -301,7 +301,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
-        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
+        "adUnitId" => URI.encode(ad_unit_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -575,7 +575,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.method(:delete)
       |> Request.url("/accounts/{accountId}/alerts/{alertId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "alertId" => URI.encode(alert_id, &URI.char_unreserved?/1)
+        "alertId" => URI.encode(alert_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -697,7 +697,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
-          "customChannelId" => URI.encode(custom_channel_id, &URI.char_unreserved?/1)
+          "customChannelId" =>
+            URI.encode(custom_channel_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1057,7 +1058,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/reports/{savedReportId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "savedReportId" => URI.encode(saved_report_id, &URI.char_unreserved?/1)
+        "savedReportId" => URI.encode(saved_report_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1184,7 +1185,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/savedadstyles/{savedAdStyleId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "savedAdStyleId" => URI.encode(saved_ad_style_id, &URI.char_unreserved?/1)
+        "savedAdStyleId" => URI.encode(saved_ad_style_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

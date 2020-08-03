@@ -66,7 +66,7 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/savedadstyles/{savedAdStyleId}", %{
-        "savedAdStyleId" => URI.encode(saved_ad_style_id, &URI.char_unreserved?/1)
+        "savedAdStyleId" => URI.encode(saved_ad_style_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
