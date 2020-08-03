@@ -100,7 +100,7 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1),
-          "dnsKeyId" => URI.encode(dns_key_id, &URI.char_unreserved?/1)
+          "dnsKeyId" => URI.encode(dns_key_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

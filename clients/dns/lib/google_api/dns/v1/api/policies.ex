@@ -142,7 +142,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       |> Request.method(:delete)
       |> Request.url("/dns/v1/projects/{project}/policies/{policy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "policy" => URI.encode(policy, &URI.char_unreserved?/1)
+        "policy" => URI.encode(policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -205,7 +205,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       |> Request.method(:get)
       |> Request.url("/dns/v1/projects/{project}/policies/{policy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "policy" => URI.encode(policy, &URI.char_unreserved?/1)
+        "policy" => URI.encode(policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -337,7 +337,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       |> Request.method(:patch)
       |> Request.url("/dns/v1/projects/{project}/policies/{policy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "policy" => URI.encode(policy, &URI.char_unreserved?/1)
+        "policy" => URI.encode(policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -404,7 +404,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       |> Request.method(:put)
       |> Request.url("/dns/v1/projects/{project}/policies/{policy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "policy" => URI.encode(policy, &URI.char_unreserved?/1)
+        "policy" => URI.encode(policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
