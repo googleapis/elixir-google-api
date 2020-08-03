@@ -81,7 +81,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/games/v1configuration/leaderboards/{leaderboardId}", %{
-        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
+        "leaderboardId" => URI.encode(leaderboard_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -150,7 +150,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       Request.new()
       |> Request.method(:get)
       |> Request.url("/games/v1configuration/leaderboards/{leaderboardId}", %{
-        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
+        "leaderboardId" => URI.encode(leaderboard_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -380,7 +380,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       Request.new()
       |> Request.method(:put)
       |> Request.url("/games/v1configuration/leaderboards/{leaderboardId}", %{
-        "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
+        "leaderboardId" => URI.encode(leaderboard_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
