@@ -43,17 +43,10 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:includeSystemManaged` (*type:* `boolean()`) - If set to true, also system-managed report types will be returned;
-          otherwise only the report types that can be used to create new reporting
-          jobs will be returned.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - The content owner's external ID on which behalf the user is acting on. If
-          not set, the user is acting for himself (his own channel).
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer report types than requested.
-          If unspecified, server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically,
-          this is the value of
-          ListReportTypesResponse.next_page_token
-          returned in response to the previous call to the `ListReportTypes` method.
+      *   `:includeSystemManaged` (*type:* `boolean()`) - If set to true, also system-managed report types will be returned; otherwise only the report types that can be used to create new reporting jobs will be returned.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer report types than requested. If unspecified, server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the `ListReportTypes` method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
