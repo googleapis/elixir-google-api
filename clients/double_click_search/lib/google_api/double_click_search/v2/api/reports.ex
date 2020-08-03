@@ -132,7 +132,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/doubleclicksearch/v2/reports/{reportId}", %{
-        "reportId" => URI.encode(report_id, &URI.char_unreserved?/1)
+        "reportId" => URI.encode(report_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
