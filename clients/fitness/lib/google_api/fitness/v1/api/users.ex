@@ -188,7 +188,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/fitness/v1/users/{userId}/dataSources/{dataSourceId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1)
+        "dataSourceId" => URI.encode(data_source_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -263,7 +263,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/fitness/v1/users/{userId}/dataSources/{dataSourceId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1)
+        "dataSourceId" => URI.encode(data_source_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -412,7 +412,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       |> Request.method(:put)
       |> Request.url("/fitness/v1/users/{userId}/dataSources/{dataSourceId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1)
+        "dataSourceId" => URI.encode(data_source_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -585,7 +585,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         %{
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
-          "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
+          "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -682,7 +682,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         %{
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
-          "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
+          "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -773,7 +773,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
         %{
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
-          "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
+          "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -911,7 +911,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/fitness/v1/users/{userId}/sessions/{sessionId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "sessionId" => URI.encode(session_id, &URI.char_unreserved?/1)
+        "sessionId" => URI.encode(session_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1071,7 +1071,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
       |> Request.method(:put)
       |> Request.url("/fitness/v1/users/{userId}/sessions/{sessionId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "sessionId" => URI.encode(session_id, &URI.char_unreserved?/1)
+        "sessionId" => URI.encode(session_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
