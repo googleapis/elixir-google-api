@@ -170,7 +170,7 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
       |> Request.url("/v2/projects/{projectsId}/traces/{tracesId}/spans/{spansId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "tracesId" => URI.encode(traces_id, &URI.char_unreserved?/1),
-        "spansId" => URI.encode(spans_id, &URI.char_unreserved?/1)
+        "spansId" => URI.encode(spans_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
