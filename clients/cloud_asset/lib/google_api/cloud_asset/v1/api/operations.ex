@@ -98,7 +98,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Operations do
         "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
         "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1),
         "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1),
-        "operationsId1" => URI.encode(operations_id1, &URI.char_unreserved?/1)
+        "operationsId1" => URI.encode(operations_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
