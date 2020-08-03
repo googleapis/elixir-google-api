@@ -85,7 +85,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/userProfiles/{userId}", %{
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -271,7 +271,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       |> Request.method(:get)
       |> Request.url("/v1/userProfiles/{studentId}/guardianInvitations/{invitationId}", %{
         "studentId" => URI.encode(student_id, &URI.char_unreserved?/1),
-        "invitationId" => URI.encode(invitation_id, &URI.char_unreserved?/1)
+        "invitationId" => URI.encode(invitation_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -486,7 +486,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       |> Request.method(:patch)
       |> Request.url("/v1/userProfiles/{studentId}/guardianInvitations/{invitationId}", %{
         "studentId" => URI.encode(student_id, &URI.char_unreserved?/1),
-        "invitationId" => URI.encode(invitation_id, &URI.char_unreserved?/1)
+        "invitationId" => URI.encode(invitation_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -578,7 +578,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       |> Request.method(:delete)
       |> Request.url("/v1/userProfiles/{studentId}/guardians/{guardianId}", %{
         "studentId" => URI.encode(student_id, &URI.char_unreserved?/1),
-        "guardianId" => URI.encode(guardian_id, &URI.char_unreserved?/1)
+        "guardianId" => URI.encode(guardian_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -669,7 +669,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       |> Request.method(:get)
       |> Request.url("/v1/userProfiles/{studentId}/guardians/{guardianId}", %{
         "studentId" => URI.encode(student_id, &URI.char_unreserved?/1),
-        "guardianId" => URI.encode(guardian_id, &URI.char_unreserved?/1)
+        "guardianId" => URI.encode(guardian_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
