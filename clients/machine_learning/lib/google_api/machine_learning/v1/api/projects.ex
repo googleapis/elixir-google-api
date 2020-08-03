@@ -398,7 +398,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/jobs/{jobsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
+        "jobsId" => URI.encode(jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -659,7 +659,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/jobs/{jobsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
+        "jobsId" => URI.encode(jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -899,7 +899,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1147,7 +1147,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1308,7 +1308,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+        "studiesId" => URI.encode(studies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1387,7 +1387,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+        "studiesId" => URI.encode(studies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1900,7 +1900,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "trialsId" => URI.encode(trials_id, &URI.char_unreserved?/1)
+          "trialsId" => URI.encode(trials_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1986,7 +1986,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "trialsId" => URI.encode(trials_id, &URI.char_unreserved?/1)
+          "trialsId" => URI.encode(trials_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2391,7 +2391,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
+        "modelsId" => URI.encode(models_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2462,7 +2462,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
+        "modelsId" => URI.encode(models_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2721,7 +2721,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
+        "modelsId" => URI.encode(models_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3056,7 +3056,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}/versions/{versionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1),
-        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
+        "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3140,7 +3140,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}/versions/{versionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1),
-        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
+        "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3338,7 +3338,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.url("/v1/projects/{projectsId}/models/{modelsId}/versions/{versionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1),
-        "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
+        "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3592,7 +3592,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/operations/{operationsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
