@@ -23,11 +23,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Note do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp for when this note was created.
   *   `creatorRole` (*type:* `String.t`, *default:* `nil`) - Output only. The role of the person (buyer/seller) creating the note.
-  *   `note` (*type:* `String.t`, *default:* `nil`) - The actual note to attach.
-      (max-length: 1024 unicode code units)
-
-      Note: This field may be set only when creating the resource. Modifying
-      this field while updating the resource will result in an error.
+  *   `note` (*type:* `String.t`, *default:* `nil`) - The actual note to attach. (max-length: 1024 unicode code units) Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error.
   *   `noteId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID for the note.
   *   `proposalRevision` (*type:* `String.t`, *default:* `nil`) - Output only. The revision number of the proposal when the note is created.
   """

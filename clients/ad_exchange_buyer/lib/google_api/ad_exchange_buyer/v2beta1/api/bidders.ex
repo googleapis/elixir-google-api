@@ -31,16 +31,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter set to be created.
-      For example:
-
-      - For a bidder-level filter set for bidder 123: `bidders/123`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456`
+  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter set to be created. For example: - For a bidder-level filter set for bidder 123: `bidders/123` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456`
   *   `accounts_id` (*type:* `String.t`) - Part of `ownerName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -54,9 +45,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:isTransient` (*type:* `boolean()`) - Whether the filter set is transient, or should be persisted indefinitely.
-          By default, filter sets are not transient.
-          If transient, it will be available for at least 1 hour after creation.
+      *   `:isTransient` (*type:* `boolean()`) - Whether the filter set is transient, or should be persisted indefinitely. By default, filter sets are not transient. If transient, it will be available for at least 1 hour after creation.
       *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -114,23 +103,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  Deletes the requested filter set from the account with the given account
-  ID.
+  Deletes the requested filter set from the account with the given account ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource to delete.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource to delete. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -193,7 +171,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         %{
           "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
           "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
-          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
+          "filterSetsId" => URI.encode(filter_sets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -205,23 +183,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  Retrieves the requested filter set for the account with the given account
-  ID.
+  Retrieves the requested filter set for the account with the given account ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource being requested.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource being requested. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -284,7 +251,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         %{
           "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
           "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1),
-          "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
+          "filterSetsId" => URI.encode(filter_sets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -301,16 +268,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter sets to be listed.
-      For example:
-
-      - For a bidder-level filter set for bidder 123: `bidders/123`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456`
+  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter sets to be listed. For example: - For a bidder-level filter set for bidder 123: `bidders/123` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456`
   *   `accounts_id` (*type:* `String.t`) - Part of `ownerName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -324,14 +282,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListFilterSetsResponse.nextPageToken
-          returned from the previous call to the
-          accounts.filterSets.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListFilterSetsResponse.nextPageToken returned from the previous call to the accounts.filterSets.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -395,17 +347,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -420,13 +362,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListBidMetricsResponse.nextPageToken
-          returned from the previous call to the bidMetrics.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListBidMetricsResponse.nextPageToken returned from the previous call to the bidMetrics.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -491,23 +428,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all errors that occurred in bid responses, with the number of bid
-  responses affected for each reason.
+  List all errors that occurred in bid responses, with the number of bid responses affected for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -522,13 +448,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListBidResponseErrorsResponse.nextPageToken
-          returned from the previous call to the bidResponseErrors.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListBidResponseErrorsResponse.nextPageToken returned from the previous call to the bidResponseErrors.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -593,23 +514,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons for which bid responses were considered to have no
-  applicable bids, with the number of bid responses affected for each reason.
+  List all reasons for which bid responses were considered to have no applicable bids, with the number of bid responses affected for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -624,13 +534,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListBidResponsesWithoutBidsResponse.nextPageToken
-          returned from the previous call to the bidResponsesWithoutBids.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListBidResponsesWithoutBidsResponse.nextPageToken returned from the previous call to the bidResponsesWithoutBids.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -696,23 +601,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons that caused a bid request not to be sent for an
-  impression, with the number of bid requests not sent for each reason.
+  List all reasons that caused a bid request not to be sent for an impression, with the number of bid requests not sent for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -727,13 +621,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListFilteredBidRequestsResponse.nextPageToken
-          returned from the previous call to the filteredBidRequests.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListFilteredBidRequestsResponse.nextPageToken returned from the previous call to the filteredBidRequests.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -798,23 +687,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons for which bids were filtered, with the number of bids
-  filtered for each reason.
+  List all reasons for which bids were filtered, with the number of bids filtered for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -829,13 +707,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListFilteredBidsResponse.nextPageToken
-          returned from the previous call to the filteredBids.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListFilteredBidsResponse.nextPageToken returned from the previous call to the filteredBids.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -900,29 +773,15 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all creatives associated with a specific reason for which bids were
-  filtered, with the number of bids filtered for each creative.
+  List all creatives associated with a specific reason for which bids were filtered, with the number of bids filtered for each creative.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
-  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by
-      creative.
-      See
-      [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by creative. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -935,13 +794,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListCreativeStatusBreakdownByCreativeResponse.nextPageToken
-          returned from the previous call to the filteredBids.creatives.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListCreativeStatusBreakdownByCreativeResponse.nextPageToken returned from the previous call to the filteredBids.creatives.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1014,29 +868,15 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all details associated with a specific reason for which bids were
-  filtered, with the number of bids filtered for each detail.
+  List all details associated with a specific reason for which bids were filtered, with the number of bids filtered for each detail.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
-  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by detail.
-      See
-      [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
-      Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
+  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by detail. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes). Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1049,13 +889,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListCreativeStatusBreakdownByDetailResponse.nextPageToken
-          returned from the previous call to the filteredBids.details.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListCreativeStatusBreakdownByDetailResponse.nextPageToken returned from the previous call to the filteredBids.details.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1133,17 +968,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1158,13 +983,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListImpressionMetricsResponse.nextPageToken
-          returned from the previous call to the impressionMetrics.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListImpressionMetricsResponse.nextPageToken returned from the previous call to the impressionMetrics.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1229,23 +1049,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons for which bids lost in the auction, with the number of
-  bids that lost for each reason.
+  List all reasons for which bids lost in the auction, with the number of bids that lost for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1260,13 +1069,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListLosingBidsResponse.nextPageToken
-          returned from the previous call to the losingBids.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListLosingBidsResponse.nextPageToken returned from the previous call to the losingBids.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1331,23 +1135,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons for which winning bids were not billable, with the number
-  of bids not billed for each reason.
+  List all reasons for which winning bids were not billable, with the number of bids not billed for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `accounts_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1362,13 +1155,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListNonBillableWinningBidsResponse.nextPageToken
-          returned from the previous call to the nonBillableWinningBids.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListNonBillableWinningBidsResponse.nextPageToken returned from the previous call to the nonBillableWinningBids.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1439,16 +1227,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter set to be created.
-      For example:
-
-      - For a bidder-level filter set for bidder 123: `bidders/123`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456`
+  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter set to be created. For example: - For a bidder-level filter set for bidder 123: `bidders/123` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1461,9 +1240,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:isTransient` (*type:* `boolean()`) - Whether the filter set is transient, or should be persisted indefinitely.
-          By default, filter sets are not transient.
-          If transient, it will be available for at least 1 hour after creation.
+      *   `:isTransient` (*type:* `boolean()`) - Whether the filter set is transient, or should be persisted indefinitely. By default, filter sets are not transient. If transient, it will be available for at least 1 hour after creation.
       *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1518,23 +1295,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  Deletes the requested filter set from the account with the given account
-  ID.
+  Deletes the requested filter set from the account with the given account ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource to delete.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource to delete. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1591,7 +1357,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.method(:delete)
       |> Request.url("/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}", %{
         "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
-        "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
+        "filterSetsId" => URI.encode(filter_sets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1602,23 +1368,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  Retrieves the requested filter set for the account with the given account
-  ID.
+  Retrieves the requested filter set for the account with the given account ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource being requested.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `name`. Full name of the resource being requested. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1675,7 +1430,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       |> Request.method(:get)
       |> Request.url("/v2beta1/bidders/{biddersId}/filterSets/{filterSetsId}", %{
         "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1),
-        "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
+        "filterSetsId" => URI.encode(filter_sets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1691,16 +1446,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter sets to be listed.
-      For example:
-
-      - For a bidder-level filter set for bidder 123: `bidders/123`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456`
+  *   `bidders_id` (*type:* `String.t`) - Part of `ownerName`. Name of the owner (bidder or account) of the filter sets to be listed. For example: - For a bidder-level filter set for bidder 123: `bidders/123` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1713,14 +1459,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListFilterSetsResponse.nextPageToken
-          returned from the previous call to the
-          accounts.filterSets.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListFilterSetsResponse.nextPageToken returned from the previous call to the accounts.filterSets.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1781,17 +1521,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1805,13 +1535,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListBidMetricsResponse.nextPageToken
-          returned from the previous call to the bidMetrics.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListBidMetricsResponse.nextPageToken returned from the previous call to the bidMetrics.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1870,23 +1595,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all errors that occurred in bid responses, with the number of bid
-  responses affected for each reason.
+  List all errors that occurred in bid responses, with the number of bid responses affected for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1900,13 +1614,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListBidResponseErrorsResponse.nextPageToken
-          returned from the previous call to the bidResponseErrors.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListBidResponseErrorsResponse.nextPageToken returned from the previous call to the bidResponseErrors.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1968,23 +1677,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons for which bid responses were considered to have no
-  applicable bids, with the number of bid responses affected for each reason.
+  List all reasons for which bid responses were considered to have no applicable bids, with the number of bid responses affected for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1998,13 +1696,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListBidResponsesWithoutBidsResponse.nextPageToken
-          returned from the previous call to the bidResponsesWithoutBids.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListBidResponsesWithoutBidsResponse.nextPageToken returned from the previous call to the bidResponsesWithoutBids.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2067,23 +1760,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons that caused a bid request not to be sent for an
-  impression, with the number of bid requests not sent for each reason.
+  List all reasons that caused a bid request not to be sent for an impression, with the number of bid requests not sent for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2097,13 +1779,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListFilteredBidRequestsResponse.nextPageToken
-          returned from the previous call to the filteredBidRequests.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListFilteredBidRequestsResponse.nextPageToken returned from the previous call to the filteredBidRequests.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2165,23 +1842,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons for which bids were filtered, with the number of bids
-  filtered for each reason.
+  List all reasons for which bids were filtered, with the number of bids filtered for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2195,13 +1861,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListFilteredBidsResponse.nextPageToken
-          returned from the previous call to the filteredBids.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListFilteredBidsResponse.nextPageToken returned from the previous call to the filteredBids.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2260,28 +1921,14 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all creatives associated with a specific reason for which bids were
-  filtered, with the number of bids filtered for each creative.
+  List all creatives associated with a specific reason for which bids were filtered, with the number of bids filtered for each creative.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
-  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by
-      creative.
-      See
-      [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
+  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by creative. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2294,13 +1941,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListCreativeStatusBreakdownByCreativeResponse.nextPageToken
-          returned from the previous call to the filteredBids.creatives.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListCreativeStatusBreakdownByCreativeResponse.nextPageToken returned from the previous call to the filteredBids.creatives.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2370,28 +2012,14 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all details associated with a specific reason for which bids were
-  filtered, with the number of bids filtered for each detail.
+  List all details associated with a specific reason for which bids were filtered, with the number of bids filtered for each detail.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
-  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by detail.
-      See
-      [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes).
-      Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
+  *   `creative_status_id` (*type:* `integer()`) - The ID of the creative status for which to retrieve a breakdown by detail. See [creative-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/creative-status-codes). Details are only available for statuses 10, 14, 15, 17, 18, 19, 86, and 87.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2404,13 +2032,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListCreativeStatusBreakdownByDetailResponse.nextPageToken
-          returned from the previous call to the filteredBids.details.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListCreativeStatusBreakdownByDetailResponse.nextPageToken returned from the previous call to the filteredBids.details.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2485,17 +2108,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2509,13 +2122,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListImpressionMetricsResponse.nextPageToken
-          returned from the previous call to the impressionMetrics.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListImpressionMetricsResponse.nextPageToken returned from the previous call to the impressionMetrics.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2577,23 +2185,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons for which bids lost in the auction, with the number of
-  bids that lost for each reason.
+  List all reasons for which bids lost in the auction, with the number of bids that lost for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2607,13 +2204,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListLosingBidsResponse.nextPageToken
-          returned from the previous call to the losingBids.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListLosingBidsResponse.nextPageToken returned from the previous call to the losingBids.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2672,23 +2264,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   end
 
   @doc """
-  List all reasons for which winning bids were not billable, with the number
-  of bids not billed for each reason.
+  List all reasons for which winning bids were not billable, with the number of bids not billed for each reason.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics.
-      For example:
-
-      - For a bidder-level filter set for bidder 123:
-        `bidders/123/filterSets/abc`
-
-      - For an account-level filter set for the buyer account representing bidder
-        123: `bidders/123/accounts/123/filterSets/abc`
-
-      - For an account-level filter set for the child seat buyer account 456
-        whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
+  *   `bidders_id` (*type:* `String.t`) - Part of `filterSetName`. Name of the filter set that should be applied to the requested metrics. For example: - For a bidder-level filter set for bidder 123: `bidders/123/filterSets/abc` - For an account-level filter set for the buyer account representing bidder 123: `bidders/123/accounts/123/filterSets/abc` - For an account-level filter set for the child seat buyer account 456 whose bidder is 123: `bidders/123/accounts/456/filterSets/abc`
   *   `filter_sets_id` (*type:* `String.t`) - Part of `filterSetName`. See documentation of `biddersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2702,13 +2283,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListNonBillableWinningBidsResponse.nextPageToken
-          returned from the previous call to the nonBillableWinningBids.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListNonBillableWinningBidsResponse.nextPageToken returned from the previous call to the nonBillableWinningBids.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

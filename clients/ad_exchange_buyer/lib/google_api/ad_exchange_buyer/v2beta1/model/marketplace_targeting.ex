@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.MarketplaceTargeting do
   @moduledoc """
-  Targeting represents different criteria that can be used by advertisers to
-  target ad inventory. For example, they can choose to target ad requests only
-  if the user is in the US.
-  Multiple types of targeting are always applied as a logical AND, unless noted
-  otherwise.
+  Targeting represents different criteria that can be used by advertisers to target ad inventory. For example, they can choose to target ad requests only if the user is in the US. Multiple types of targeting are always applied as a logical AND, unless noted otherwise.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.NonBillableWinningBidStatusRow do
   @moduledoc """
-  The number of winning bids with the specified dimension values for which the
-  buyer was not billed, as described by the specified status.
+  The number of winning bids with the specified dimension values for which the buyer was not billed, as described by the specified status.
 
   ## Attributes
 

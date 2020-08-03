@@ -31,8 +31,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `account_id` (*type:* `String.t`) - Unique numerical account ID for the buyer of which the client buyer
-      is a customer; the sponsor buyer to create a client for. (required)
+  *   `account_id` (*type:* `String.t`) - Unique numerical account ID for the buyer of which the client buyer is a customer; the sponsor buyer to create a client for. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -160,7 +159,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
+        "clientAccountId" =>
+          URI.encode(client_account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -189,17 +189,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer clients than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListClientsResponse.nextPageToken
-          returned from the previous call to the
-          accounts.clients.list
-          method.
-      *   `:partnerClientId` (*type:* `String.t`) - Optional unique identifier (from the standpoint of an Ad Exchange sponsor
-          buyer partner) of the client to return.
-          If specified, at most one client will be returned in the response.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListClientsResponse.nextPageToken returned from the previous call to the accounts.clients.list method.
+      *   `:partnerClientId` (*type:* `String.t`) - Optional unique identifier (from the standpoint of an Ad Exchange sponsor buyer partner) of the client to return. If specified, at most one client will be returned in the response.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -261,8 +253,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `account_id` (*type:* `String.t`) - Unique numerical account ID for the buyer of which the client buyer
-      is a customer; the sponsor buyer to update a client for. (required)
+  *   `account_id` (*type:* `String.t`) - Unique numerical account ID for the buyer of which the client buyer is a customer; the sponsor buyer to update a client for. (required)
   *   `client_account_id` (*type:* `String.t`) - Unique numerical account ID of the client to update. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -321,7 +312,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.method(:put)
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
+        "clientAccountId" =>
+          URI.encode(client_account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -332,15 +324,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Creates and sends out an email invitation to access
-  an Ad Exchange client buyer account.
+  Creates and sends out an email invitation to access an Ad Exchange client buyer account.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Numerical account ID of the client's sponsor buyer. (required)
-  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer that the user
-      should be associated with. (required)
+  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer that the user should be associated with. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -417,8 +407,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Numerical account ID of the client's sponsor buyer. (required)
-  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer that the user invitation
-      to be retrieved is associated with. (required)
+  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer that the user invitation to be retrieved is associated with. (required)
   *   `invitation_id` (*type:* `String.t`) - Numerical identifier of the user invitation to retrieve. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -480,7 +469,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         %{
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
           "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1),
-          "invitationId" => URI.encode(invitation_id, &URI.char_unreserved?/1)
+          "invitationId" => URI.encode(invitation_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -494,19 +483,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Lists all the client users invitations for a client
-  with a given account ID.
+  Lists all the client users invitations for a client with a given account ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Numerical account ID of the client's sponsor buyer. (required)
-  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer to list invitations for.
-      (required)
-      You must either specify a string representation of a
-      numerical account identifier or the `-` character
-      to list all the invitations for all the clients
-      of a given sponsor buyer.
+  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer to list invitations for. (required) You must either specify a string representation of a numerical account identifier or the `-` character to list all the invitations for all the clients of a given sponsor buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -519,14 +502,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer clients than requested.
-          If unspecified, server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListClientUserInvitationsResponse.nextPageToken
-          returned from the previous call to the
-          clients.invitations.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer clients than requested. If unspecified, server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListClientUserInvitationsResponse.nextPageToken returned from the previous call to the clients.invitations.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -592,8 +569,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Numerical account ID of the client's sponsor buyer. (required)
-  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer
-      that the user to be retrieved is associated with. (required)
+  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer that the user to be retrieved is associated with. (required)
   *   `user_id` (*type:* `String.t`) - Numerical identifier of the user to retrieve. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -653,7 +629,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}/users/{userId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
         "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -664,19 +640,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Lists all the known client users for a specified
-  sponsor buyer account ID.
+  Lists all the known client users for a specified sponsor buyer account ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `account_id` (*type:* `String.t`) - Numerical account ID of the sponsor buyer of the client to list users for.
-      (required)
-  *   `client_account_id` (*type:* `String.t`) - The account ID of the client buyer to list users for. (required)
-      You must specify either a string representation of a
-      numerical account identifier or the `-` character
-      to list all the client users for all the clients
-      of a given sponsor buyer.
+  *   `account_id` (*type:* `String.t`) - Numerical account ID of the sponsor buyer of the client to list users for. (required)
+  *   `client_account_id` (*type:* `String.t`) - The account ID of the client buyer to list users for. (required) You must specify either a string representation of a numerical account identifier or the `-` character to list all the client users for all the clients of a given sponsor buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -689,14 +659,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer clients than requested.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListClientUsersResponse.nextPageToken
-          returned from the previous call to the
-          accounts.clients.users.list
-          method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer clients than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListClientUsersResponse.nextPageToken returned from the previous call to the accounts.clients.users.list method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -755,15 +719,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Updates an existing client user.
-  Only the user status can be changed on update.
+  Updates an existing client user. Only the user status can be changed on update.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - Numerical account ID of the client's sponsor buyer. (required)
-  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer that the user to be retrieved
-      is associated with. (required)
+  *   `client_account_id` (*type:* `String.t`) - Numerical account ID of the client buyer that the user to be retrieved is associated with. (required)
   *   `user_id` (*type:* `String.t`) - Numerical identifier of the user to retrieve. (required)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -825,7 +787,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.url("/v2beta1/accounts/{accountId}/clients/{clientAccountId}/users/{userId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
         "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -841,10 +803,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `account_id` (*type:* `String.t`) - The account that this creative belongs to.
-      Can be used to filter the response of the
-      creatives.list
-      method.
+  *   `account_id` (*type:* `String.t`) - The account that this creative belongs to. Can be used to filter the response of the creatives.list method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -857,8 +816,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:duplicateIdMode` (*type:* `String.t`) - Indicates if multiple creatives can share an ID or not. Default is
-          NO_DUPLICATES (one ID per creative).
+      *   `:duplicateIdMode` (*type:* `String.t`) - Indicates if multiple creatives can share an ID or not. Default is NO_DUPLICATES (one ID per creative).
       *   `:body` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -975,7 +933,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/creatives/{creativeId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
+        "creativeId" => URI.encode(creative_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -991,8 +949,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `account_id` (*type:* `String.t`) - The account to list the creatives from.
-      Specify "-" to list all creatives the current user has access to.
+  *   `account_id` (*type:* `String.t`) - The account to list the creatives from. Specify "-" to list all creatives the current user has access to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1005,30 +962,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer creatives than requested
-          (due to timeout constraint) even if more are available via another call.
-          If unspecified, server will pick an appropriate default.
-          Acceptable values are 1 to 1000, inclusive.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListCreativesResponse.next_page_token
-          returned from the previous call to 'ListCreatives' method.
-      *   `:query` (*type:* `String.t`) - An optional query string to filter creatives. If no filter is specified,
-          all active creatives will be returned.
-          <p>Supported queries are:
-          <ul>
-          <li>accountId=<i>account_id_string</i>
-          <li>creativeId=<i>creative_id_string</i>
-          <li>dealsStatus: {approved, conditionally_approved, disapproved,
-                             not_checked}
-          <li>openAuctionStatus: {approved, conditionally_approved, disapproved,
-                                    not_checked}
-          <li>attribute: {a numeric attribute from the list of attributes}
-          <li>disapprovalReason: {a reason from
-          DisapprovalReason}
-          </ul>
-          Example: 'accountId=12345 AND (dealsStatus:disapproved AND
-          disapprovalReason:unacceptable_content) OR attribute:47'
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer creatives than requested (due to timeout constraint) even if more are available via another call. If unspecified, server will pick an appropriate default. Acceptable values are 1 to 1000, inclusive.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListCreativesResponse.next_page_token returned from the previous call to 'ListCreatives' method.
+      *   `:query` (*type:* `String.t`) - An optional query string to filter creatives. If no filter is specified, all active creatives will be returned. Supported queries are: - accountId=*account_id_string* - creativeId=*creative_id_string* - dealsStatus: {approved, conditionally_approved, disapproved, not_checked} - openAuctionStatus: {approved, conditionally_approved, disapproved, not_checked} - attribute: {a numeric attribute from the list of attributes} - disapprovalReason: {a reason from DisapprovalReason} Example: 'accountId=12345 AND (dealsStatus:disapproved AND disapprovalReason:unacceptable_content) OR attribute:47'
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1085,15 +1021,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Stops watching a creative. Will stop push notifications being sent to the
-  topics when the creative changes status.
+  Stops watching a creative. Will stop push notifications being sent to the topics when the creative changes status.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - The account of the creative to stop notifications for.
-  *   `creative_id` (*type:* `String.t`) - The creative ID of the creative to stop notifications for.
-      Specify "-" to specify stopping account level notifications.
+  *   `creative_id` (*type:* `String.t`) - The creative ID of the creative to stop notifications for. Specify "-" to specify stopping account level notifications.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1167,14 +1101,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `account_id` (*type:* `String.t`) - The account that this creative belongs to.
-      Can be used to filter the response of the
-      creatives.list
-      method.
-  *   `creative_id` (*type:* `String.t`) - The buyer-defined creative ID of this creative.
-      Can be used to filter the response of the
-      creatives.list
-      method.
+  *   `account_id` (*type:* `String.t`) - The account that this creative belongs to. Can be used to filter the response of the creatives.list method.
+  *   `creative_id` (*type:* `String.t`) - The buyer-defined creative ID of this creative. Can be used to filter the response of the creatives.list method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1232,7 +1160,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.method(:put)
       |> Request.url("/v2beta1/accounts/{accountId}/creatives/{creativeId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
+        "creativeId" => URI.encode(creative_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1243,18 +1171,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Watches a creative. Will result in push notifications being sent to the
-  topic when the creative changes status.
+  Watches a creative. Will result in push notifications being sent to the topic when the creative changes status.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
   *   `account_id` (*type:* `String.t`) - The account of the creative to watch.
-  *   `creative_id` (*type:* `String.t`) - The creative ID to watch for status changes.
-      Specify "-" to watch all creatives under the above account.
-      If both creative-level and account-level notifications are
-      sent, only a single notification will be sent to the
-      creative-level notification topic.
+  *   `creative_id` (*type:* `String.t`) - The creative ID to watch for status changes. Specify "-" to watch all creatives under the above account. If both creative-level and account-level notifications are sent, only a single notification will be sent to the creative-level notification topic.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1406,10 +1329,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Connection.t`) - Connection to server
-  *   `account_id` (*type:* `String.t`) - The account to list the associations from.
-      Specify "-" to list all creatives the current user has access to.
-  *   `creative_id` (*type:* `String.t`) - The creative ID to list the associations from.
-      Specify "-" to list all creatives under the above account.
+  *   `account_id` (*type:* `String.t`) - The account to list the associations from. Specify "-" to list all creatives the current user has access to.
+  *   `creative_id` (*type:* `String.t`) - The creative ID to list the associations from. Specify "-" to list all creatives under the above account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1422,25 +1343,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer associations than requested.
-          If unspecified, server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListDealAssociationsResponse.next_page_token
-          returned from the previous call to 'ListDealAssociations' method.
-      *   `:query` (*type:* `String.t`) - An optional query string to filter deal associations. If no filter is
-          specified, all associations will be returned.
-          Supported queries are:
-          <ul>
-          <li>accountId=<i>account_id_string</i>
-          <li>creativeId=<i>creative_id_string</i>
-          <li>dealsId=<i>deals_id_string</i>
-          <li>dealsStatus:{approved, conditionally_approved, disapproved,
-                            not_checked}
-          <li>openAuctionStatus:{approved, conditionally_approved, disapproved,
-                                   not_checked}
-          </ul>
-          Example: 'dealsId=12345 AND dealsStatus:disapproved'
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer associations than requested. If unspecified, server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListDealAssociationsResponse.next_page_token returned from the previous call to 'ListDealAssociations' method.
+      *   `:query` (*type:* `String.t`) - An optional query string to filter deal associations. If no filter is specified, all associations will be returned. Supported queries are: - accountId=*account_id_string* - creativeId=*creative_id_string* - dealsId=*deals_id_string* - dealsStatus:{approved, conditionally_approved, disapproved, not_checked} - openAuctionStatus:{approved, conditionally_approved, disapproved, not_checked} Example: 'dealsId=12345 AND dealsStatus:disapproved'
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1578,9 +1483,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  List finalized proposals, regardless if a proposal is being renegotiated.
-  A filter expression (PQL query) may be specified to filter the results.
-  The notes will not be returned.
+  List finalized proposals, regardless if a proposal is being renegotiated. A filter expression (PQL query) may be specified to filter the results. The notes will not be returned.
 
   ## Parameters
 
@@ -1598,14 +1501,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - An optional PQL filter query used to query for proposals.
-
-          Nested repeated fields, such as proposal.deals.targetingCriterion,
-          cannot be filtered.
-      *   `:filterSyntax` (*type:* `String.t`) - Syntax the filter is written in. Current implementation defaults to PQL
-          but in the future it will be LIST_FILTER.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
+      *   `:filter` (*type:* `String.t`) - An optional PQL filter query used to query for proposals. Nested repeated fields, such as proposal.deals.targetingCriterion, cannot be filtered.
+      *   `:filterSyntax` (*type:* `String.t`) - Syntax the filter is written in. Current implementation defaults to PQL but in the future it will be LIST_FILTER.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - The page token as returned from ListProposalsResponse.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1726,7 +1624,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/products/{productId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
+        "productId" => URI.encode(product_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1737,8 +1635,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  List all products visible to the buyer (optionally filtered by the
-  specified PQL query).
+  List all products visible to the buyer (optionally filtered by the specified PQL query).
 
   ## Parameters
 
@@ -1756,14 +1653,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - An optional PQL query used to query for products. See
-          https://developers.google.com/ad-manager/docs/pqlreference
-          for documentation about PQL and examples.
-
-          Nested repeated fields, such as product.targetingCriterion.inclusions,
-          cannot be filtered.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
+      *   `:filter` (*type:* `String.t`) - An optional PQL query used to query for products. See https://developers.google.com/ad-manager/docs/pqlreference for documentation about PQL and examples. Nested repeated fields, such as product.targetingCriterion.inclusions, cannot be filtered.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - The page token as returned from ListProductsResponse.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1821,10 +1712,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Mark the proposal as accepted at the given revision number. If the number
-  does not match the server's revision number an `ABORTED` error message will
-  be returned. This call updates the proposal_state from `PROPOSED` to
-  `BUYER_ACCEPTED`, or from `SELLER_ACCEPTED` to `FINALIZED`.
+  Mark the proposal as accepted at the given revision number. If the number does not match the server's revision number an `ABORTED` error message will be returned. This call updates the proposal_state from `PROPOSED` to `BUYER_ACCEPTED`, or from `SELLER_ACCEPTED` to `FINALIZED`.
 
   ## Parameters
 
@@ -1899,10 +1787,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Create a new note and attach it to the proposal. The note is assigned
-  a unique ID by the server.
-  The proposal revision number will not increase when associated with a
-  new note.
+  Create a new note and attach it to the proposal. The note is assigned a unique ID by the server. The proposal revision number will not increase when associated with a new note.
 
   ## Parameters
 
@@ -1977,9 +1862,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Cancel an ongoing negotiation on a proposal. This does not cancel or end
-  serving for the deals if the proposal has been finalized, but only cancels
-  a negotiation unilaterally.
+  Cancel an ongoing negotiation on a proposal. This does not cancel or end serving for the deals if the proposal has been finalized, but only cancels a negotiation unilaterally.
 
   ## Parameters
 
@@ -2054,12 +1937,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Update the given proposal to indicate that setup has been completed.
-  This method is called by the buyer when the line items have been created
-  on their end for a finalized proposal and all the required creatives
-  have been uploaded using the creatives API. This call updates the
-  `is_setup_completed` bit on the proposal and also notifies the seller.
-  The server will advance the revision number of the most recent proposal.
+  Update the given proposal to indicate that setup has been completed. This method is called by the buyer when the line items have been created on their end for a finalized proposal and all the required creatives have been uploaded using the creatives API. This call updates the `is_setup_completed` bit on the proposal and also notifies the seller. The server will advance the revision number of the most recent proposal.
 
   ## Parameters
 
@@ -2134,8 +2012,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Create the given proposal. Each created proposal and any deals it contains
-  are assigned a unique ID by the server.
+  Create the given proposal. Each created proposal and any deals it contains are assigned a unique ID by the server.
 
   ## Parameters
 
@@ -2206,8 +2083,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Gets a proposal given its ID. The proposal is returned at its head
-  revision.
+  Gets a proposal given its ID. The proposal is returned at its head revision.
 
   ## Parameters
 
@@ -2269,7 +2145,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
+        "proposalId" => URI.encode(proposal_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2280,12 +2156,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  List proposals. A filter expression (PQL query) may be specified to
-  filter the results. To retrieve all finalized proposals, regardless if a
-  proposal is being renegotiated, see the FinalizedProposals resource.
-  Note that Bidder/ChildSeat relationships differ from the usual behavior.
-  A Bidder account can only see its child seats' proposals by specifying
-  the ChildSeat's accountId in the request path.
+  List proposals. A filter expression (PQL query) may be specified to filter the results. To retrieve all finalized proposals, regardless if a proposal is being renegotiated, see the FinalizedProposals resource. Note that Bidder/ChildSeat relationships differ from the usual behavior. A Bidder account can only see its child seats' proposals by specifying the ChildSeat's accountId in the request path.
 
   ## Parameters
 
@@ -2303,14 +2174,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - An optional PQL filter query used to query for proposals.
-
-          Nested repeated fields, such as proposal.deals.targetingCriterion,
-          cannot be filtered.
-      *   `:filterSyntax` (*type:* `String.t`) - Syntax the filter is written in. Current implementation defaults to PQL
-          but in the future it will be LIST_FILTER.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested.
-          If unspecified, the server will pick an appropriate default.
+      *   `:filter` (*type:* `String.t`) - An optional PQL filter query used to query for proposals. Nested repeated fields, such as proposal.deals.targetingCriterion, cannot be filtered.
+      *   `:filterSyntax` (*type:* `String.t`) - Syntax the filter is written in. Current implementation defaults to PQL but in the future it will be LIST_FILTER.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - The page token as returned from ListProposalsResponse.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2369,14 +2235,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Update the given proposal to pause serving.
-  This method will set the
-  `DealServingMetadata.DealPauseStatus.has_buyer_paused` bit to true for all
-  deals in the proposal.
-
-  It is a no-op to pause an already-paused proposal.
-  It is an error to call PauseProposal for a proposal that is not
-  finalized or renegotiating.
+  Update the given proposal to pause serving. This method will set the `DealServingMetadata.DealPauseStatus.has_buyer_paused` bit to true for all deals in the proposal. It is a no-op to pause an already-paused proposal. It is an error to call PauseProposal for a proposal that is not finalized or renegotiating.
 
   ## Parameters
 
@@ -2451,17 +2310,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Update the given proposal to resume serving.
-  This method will set the
-  `DealServingMetadata.DealPauseStatus.has_buyer_paused` bit to false for all
-  deals in the proposal.
-
-  Note that if the `has_seller_paused` bit is also set, serving will not
-  resume until the seller also resumes.
-
-  It is a no-op to resume an already-running proposal.
-  It is an error to call ResumeProposal for a proposal that is not
-  finalized or renegotiating.
+  Update the given proposal to resume serving. This method will set the `DealServingMetadata.DealPauseStatus.has_buyer_paused` bit to false for all deals in the proposal. Note that if the `has_seller_paused` bit is also set, serving will not resume until the seller also resumes. It is a no-op to resume an already-running proposal. It is an error to call ResumeProposal for a proposal that is not finalized or renegotiating.
 
   ## Parameters
 
@@ -2536,19 +2385,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   end
 
   @doc """
-  Update the given proposal at the client known revision number. If the
-  server revision has advanced since the passed-in
-  `proposal.proposal_revision`, an `ABORTED` error message will be returned.
-  Only the buyer-modifiable fields of the proposal will be updated.
-
-  Note that the deals in the proposal will be updated to match the passed-in
-  copy.
-  If a passed-in deal does not have a `deal_id`, the server will assign a new
-  unique ID and create the deal.
-  If passed-in deal has a `deal_id`, it will be updated to match the
-  passed-in copy.
-  Any existing deals not present in the passed-in proposal will be deleted.
-  It is an error to pass in a deal with a `deal_id` not present at head.
+  Update the given proposal at the client known revision number. If the server revision has advanced since the passed-in `proposal.proposal_revision`, an `ABORTED` error message will be returned. Only the buyer-modifiable fields of the proposal will be updated. Note that the deals in the proposal will be updated to match the passed-in copy. If a passed-in deal does not have a `deal_id`, the server will assign a new unique ID and create the deal. If passed-in deal has a `deal_id`, it will be updated to match the passed-in copy. Any existing deals not present in the passed-in proposal will be deleted. It is an error to pass in a deal with a `deal_id` not present at head.
 
   ## Parameters
 
@@ -2612,7 +2449,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.method(:put)
       |> Request.url("/v2beta1/accounts/{accountId}/proposals/{proposalId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
+        "proposalId" => URI.encode(proposal_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2685,7 +2522,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/v2beta1/accounts/{accountId}/publisherProfiles/{publisherProfileId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "publisherProfileId" => URI.encode(publisher_profile_id, &URI.char_unreserved?/1)
+        "publisherProfileId" =>
+          URI.encode(publisher_profile_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

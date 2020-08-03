@@ -21,13 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUsersResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      ListClientUsersRequest.pageToken
-      field in the subsequent call to the
-      clients.invitations.list
-      method to retrieve the next
-      page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the ListClientUsersRequest.pageToken field in the subsequent call to the clients.invitations.list method to retrieve the next page of results.
   *   `users` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser.t)`, *default:* `nil`) - The returned list of client users.
   """
 

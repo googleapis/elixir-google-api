@@ -21,12 +21,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FrequencyCap do
 
   ## Attributes
 
-  *   `maxImpressions` (*type:* `integer()`, *default:* `nil`) - The maximum number of impressions that can be served to a user within the
-      specified time period.
-  *   `numTimeUnits` (*type:* `integer()`, *default:* `nil`) - The amount of time, in the units specified by time_unit_type. Defines the
-      amount of time over which impressions per user are counted and capped.
-  *   `timeUnitType` (*type:* `String.t`, *default:* `nil`) - The time unit. Along with num_time_units defines the amount of time over
-      which impressions per user are counted and capped.
+  *   `maxImpressions` (*type:* `integer()`, *default:* `nil`) - The maximum number of impressions that can be served to a user within the specified time period.
+  *   `numTimeUnits` (*type:* `integer()`, *default:* `nil`) - The amount of time, in the units specified by time_unit_type. Defines the amount of time over which impressions per user are counted and capped.
+  *   `timeUnitType` (*type:* `String.t`, *default:* `nil`) - The time unit. Along with num_time_units defines the amount of time over which impressions per user are counted and capped.
   """
 
   use GoogleApi.Gax.ModelBase

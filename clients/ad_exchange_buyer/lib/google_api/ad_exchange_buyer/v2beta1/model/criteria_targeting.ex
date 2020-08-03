@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting do
   @moduledoc """
-  Generic targeting used for targeting dimensions that contains a list of
-  included and excluded numeric IDs.
+  Generic targeting used for targeting dimensions that contains a list of included and excluded numeric IDs.
 
   ## Attributes
 

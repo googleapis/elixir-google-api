@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation do
   @moduledoc """
-  An invitation for a new client user to get access to the Authorized Buyers
-  UI. All fields are required unless otherwise specified.
+  An invitation for a new client user to get access to the Authorized Buyers UI. All fields are required unless otherwise specified.
 
   ## Attributes
 
-  *   `clientAccountId` (*type:* `String.t`, *default:* `nil`) - Numerical account ID of the client buyer
-      that the invited user is associated with.
-      The value of this field is ignored in create operations.
-  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address to which the invitation is sent. Email
-      addresses should be unique among all client users under each sponsor
-      buyer.
-  *   `invitationId` (*type:* `String.t`, *default:* `nil`) - The unique numerical ID of the invitation that is sent to the user.
-      The value of this field is ignored in create operations.
+  *   `clientAccountId` (*type:* `String.t`, *default:* `nil`) - Numerical account ID of the client buyer that the invited user is associated with. The value of this field is ignored in create operations.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address to which the invitation is sent. Email addresses should be unique among all client users under each sponsor buyer.
+  *   `invitationId` (*type:* `String.t`, *default:* `nil`) - The unique numerical ID of the invitation that is sent to the user. The value of this field is ignored in create operations.
   """
 
   use GoogleApi.Gax.ModelBase

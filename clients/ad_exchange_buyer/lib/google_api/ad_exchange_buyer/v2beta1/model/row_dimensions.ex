@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions do
   @moduledoc """
-  A response may include multiple rows, breaking down along various dimensions.
-  Encapsulates the values of all dimensions for a given row.
+  A response may include multiple rows, breaking down along various dimensions. Encapsulates the values of all dimensions for a given row.
 
   ## Attributes
 
-  *   `publisherIdentifier` (*type:* `String.t`, *default:* `nil`) - The publisher identifier for this row, if a breakdown by
-      [BreakdownDimension.PUBLISHER_IDENTIFIER](https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets#FilterSet.BreakdownDimension)
-      was requested.
+  *   `publisherIdentifier` (*type:* `String.t`, *default:* `nil`) - The publisher identifier for this row, if a breakdown by [BreakdownDimension.PUBLISHER_IDENTIFIER](https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets#FilterSet.BreakdownDimension) was requested.
   *   `timeInterval` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeInterval.t`, *default:* `nil`) - The time interval that this row represents.
   """
 

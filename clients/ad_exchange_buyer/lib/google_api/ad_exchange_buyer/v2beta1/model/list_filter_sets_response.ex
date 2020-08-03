@@ -22,12 +22,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse do
   ## Attributes
 
   *   `filterSets` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t)`, *default:* `nil`) - The filter sets belonging to the buyer.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      ListFilterSetsRequest.pageToken
-      field in the subsequent call to the
-      accounts.filterSets.list
-      method to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the ListFilterSetsRequest.pageToken field in the subsequent call to the accounts.filterSets.list method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

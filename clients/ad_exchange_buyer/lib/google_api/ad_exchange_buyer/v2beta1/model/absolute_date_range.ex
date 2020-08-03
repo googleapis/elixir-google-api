@@ -17,20 +17,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AbsoluteDateRange do
   @moduledoc """
-  An absolute date range, specified by its start date and end date.
-  The supported range of dates begins 30 days before today and ends today.
-  Validity checked upon filter set creation. If a filter set with an absolute
-  date range is run at a later date more than 30 days after start_date, it will
-  fail.
+  An absolute date range, specified by its start date and end date. The supported range of dates begins 30 days before today and ends today. Validity checked upon filter set creation. If a filter set with an absolute date range is run at a later date more than 30 days after start_date, it will fail.
 
   ## Attributes
 
-  *   `endDate` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t`, *default:* `nil`) - The end date of the range (inclusive).
-      Must be within the 30 days leading up to current date, and must be equal to
-      or after start_date.
-  *   `startDate` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t`, *default:* `nil`) - The start date of the range (inclusive).
-      Must be within the 30 days leading up to current date, and must be equal to
-      or before end_date.
+  *   `endDate` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t`, *default:* `nil`) - The end date of the range (inclusive). Must be within the 30 days leading up to current date, and must be equal to or after start_date.
+  *   `startDate` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Date.t`, *default:* `nil`) - The start date of the range (inclusive). Must be within the 30 days leading up to current date, and must be equal to or before end_date.
   """
 
   use GoogleApi.Gax.ModelBase

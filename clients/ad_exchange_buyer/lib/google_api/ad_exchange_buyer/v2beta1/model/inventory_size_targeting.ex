@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.InventorySizeTargeting do
   @moduledoc """
-  Represents the size of an ad unit that can be targeted on an ad
-  request. It only applies to Private Auction, AdX Preferred Deals and
-  Auction Packages. This targeting does not apply to Programmatic Guaranteed
-  and Preferred Deals in Ad Manager.
+  Represents the size of an ad unit that can be targeted on an ad request. It only applies to Private Auction, AdX Preferred Deals and Auction Packages. This targeting does not apply to Programmatic Guaranteed and Preferred Deals in Ad Manager.
 
   ## Attributes
 

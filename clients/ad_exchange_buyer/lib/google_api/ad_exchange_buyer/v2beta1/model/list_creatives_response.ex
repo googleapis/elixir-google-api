@@ -22,11 +22,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativesResponse do
   ## Attributes
 
   *   `creatives` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative.t)`, *default:* `nil`) - The list of creatives.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      ListCreativesRequest.page_token
-      field in the subsequent call to `ListCreatives` method to retrieve the next
-      page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the ListCreativesRequest.page_token field in the subsequent call to `ListCreatives` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

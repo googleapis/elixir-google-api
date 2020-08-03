@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ResumeProposalRequest do
   @moduledoc """
-  Request message to resume (unpause) serving for an already-finalized
-  proposal.
+  Request message to resume (unpause) serving for an already-finalized proposal.
 
   ## Attributes
 

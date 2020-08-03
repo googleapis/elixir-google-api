@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSpecification do
   @moduledoc """
-  Represents information for a creative that is associated with a Programmatic
-  Guaranteed/Preferred Deal in Ad Manager.
+  Represents information for a creative that is associated with a Programmatic Guaranteed/Preferred Deal in Ad Manager.
 
   ## Attributes
 

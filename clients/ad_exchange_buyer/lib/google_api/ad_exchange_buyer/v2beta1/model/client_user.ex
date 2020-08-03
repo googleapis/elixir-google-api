@@ -17,30 +17,14 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser do
   @moduledoc """
-  A client user is created under a client buyer and has restricted access to
-  the Marketplace and certain other sections of the Authorized Buyers UI based
-  on the role granted to the associated client buyer.
-
-  The only way a new client user can be created is via accepting an
-  email invitation
-  (see the
-  accounts.clients.invitations.create
-  method).
-
-  All fields are required unless otherwise specified.
+  A client user is created under a client buyer and has restricted access to the Marketplace and certain other sections of the Authorized Buyers UI based on the role granted to the associated client buyer. The only way a new client user can be created is via accepting an email invitation (see the accounts.clients.invitations.create method). All fields are required unless otherwise specified.
 
   ## Attributes
 
-  *   `clientAccountId` (*type:* `String.t`, *default:* `nil`) - Numerical account ID of the client buyer
-      with which the user is associated; the
-      buyer must be a client of the current sponsor buyer.
-      The value of this field is ignored in an update operation.
-  *   `email` (*type:* `String.t`, *default:* `nil`) - User's email address. The value of this field
-      is ignored in an update operation.
+  *   `clientAccountId` (*type:* `String.t`, *default:* `nil`) - Numerical account ID of the client buyer with which the user is associated; the buyer must be a client of the current sponsor buyer. The value of this field is ignored in an update operation.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - User's email address. The value of this field is ignored in an update operation.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the client user.
-  *   `userId` (*type:* `String.t`, *default:* `nil`) - The unique numerical ID of the client user
-      that has accepted an invitation.
-      The value of this field is ignored in an update operation.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - The unique numerical ID of the client user that has accepted an invitation. The value of this field is ignored in an update operation.
   """
 
   use GoogleApi.Gax.ModelBase

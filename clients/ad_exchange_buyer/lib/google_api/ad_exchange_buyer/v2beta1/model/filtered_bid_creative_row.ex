@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidCreativeRow do
   @moduledoc """
-  The number of filtered bids with the specified dimension values that have the
-  specified creative.
+  The number of filtered bids with the specified dimension values that have the specified creative.
 
   ## Attributes
 

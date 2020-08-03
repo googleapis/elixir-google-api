@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResponse do
   @moduledoc """
-  Response message for listing all reasons for which a buyer was not billed for
-  a winning bid.
+  Response message for listing all reasons for which a buyer was not billed for a winning bid.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      ListNonBillableWinningBidsRequest.pageToken
-      field in the subsequent call to the nonBillableWinningBids.list
-      method to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the ListNonBillableWinningBidsRequest.pageToken field in the subsequent call to the nonBillableWinningBids.list method to retrieve the next page of results.
   *   `nonBillableWinningBidStatusRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.NonBillableWinningBidStatusRow.t)`, *default:* `nil`) - List of rows, with counts of bids not billed aggregated by reason.
   """
 

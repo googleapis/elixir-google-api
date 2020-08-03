@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions do
   @moduledoc """
-  Represents creative restrictions associated to Programmatic Guaranteed/
-  Preferred Deal in Ad Manager.
-  This doesn't apply to Private Auction and AdX Preferred Deals.
+  Represents creative restrictions associated to Programmatic Guaranteed/ Preferred Deal in Ad Manager. This doesn't apply to Private Auction and AdX Preferred Deals.
 
   ## Attributes
 

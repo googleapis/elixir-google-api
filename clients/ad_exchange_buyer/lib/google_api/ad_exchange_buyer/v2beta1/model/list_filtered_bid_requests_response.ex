@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsResponse do
   @moduledoc """
-  Response message for listing all reasons that bid requests were filtered and
-  not sent to the buyer.
+  Response message for listing all reasons that bid requests were filtered and not sent to the buyer.
 
   ## Attributes
 
-  *   `calloutStatusRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow.t)`, *default:* `nil`) - List of rows, with counts of filtered bid requests aggregated by callout
-      status.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      ListFilteredBidRequestsRequest.pageToken
-      field in the subsequent call to the filteredBidRequests.list
-      method to retrieve the next page of results.
+  *   `calloutStatusRows` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow.t)`, *default:* `nil`) - List of rows, with counts of filtered bid requests aggregated by callout status.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the ListFilteredBidRequestsRequest.pageToken field in the subsequent call to the filteredBidRequests.list method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms do
   ## Attributes
 
   *   `fixedPrices` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t)`, *default:* `nil`) - Fixed price for the specified buyer.
-  *   `guaranteedImpressions` (*type:* `String.t`, *default:* `nil`) - Guaranteed impressions as a percentage. This is the percentage
-      of guaranteed looks that the buyer is guaranteeing to buy.
+  *   `guaranteedImpressions` (*type:* `String.t`, *default:* `nil`) - Guaranteed impressions as a percentage. This is the percentage of guaranteed looks that the buyer is guaranteeing to buy.
   *   `guaranteedLooks` (*type:* `String.t`, *default:* `nil`) - Count of guaranteed looks. Required for deal, optional for product.
   *   `minimumDailyLooks` (*type:* `String.t`, *default:* `nil`) - Daily minimum looks for CPD deal types.
   """

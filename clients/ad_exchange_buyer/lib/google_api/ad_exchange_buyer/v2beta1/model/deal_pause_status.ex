@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DealPauseStatus do
   @moduledoc """
-  Tracks which parties (if any) have paused a deal.
-  The deal is considered paused if either hasBuyerPaused or
-  hasSellPaused is true.
+  Tracks which parties (if any) have paused a deal. The deal is considered paused if either hasBuyerPaused or hasSellPaused is true.
 
   ## Attributes
 

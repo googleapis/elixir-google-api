@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow do
   @moduledoc """
-  The number of impressions with the specified dimension values where the
-  corresponding bid request or bid response was not successful, as described by
-  the specified callout status.
+  The number of impressions with the specified dimension values where the corresponding bid request or bid response was not successful, as described by the specified callout status.
 
   ## Attributes
 
-  *   `calloutStatusId` (*type:* `integer()`, *default:* `nil`) - The ID of the callout status.
-      See
-      [callout-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/callout-status-codes).
-  *   `impressionCount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of impressions for which there was a bid request or bid response
-      with the specified callout status.
+  *   `calloutStatusId` (*type:* `integer()`, *default:* `nil`) - The ID of the callout status. See [callout-status-codes](https://developers.google.com/authorized-buyers/rtb/downloads/callout-status-codes).
+  *   `impressionCount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of impressions for which there was a bid request or bid response with the specified callout status.
   *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
   """
 

@@ -17,20 +17,12 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer do
   @moduledoc """
-  Used to specify pricing rules for buyers/advertisers. Each PricePerBuyer in
-  a product can become 0 or 1 deals. To check if there is a PricePerBuyer for
-  a particular buyer or buyer/advertiser pair, we look for the most specific
-  matching rule - we first look for a rule matching the buyer and advertiser,
-  next a rule with the buyer but an empty advertiser list, and otherwise look
-  for a matching rule where no buyer is set.
+  Used to specify pricing rules for buyers/advertisers. Each PricePerBuyer in a product can become 0 or 1 deals. To check if there is a PricePerBuyer for a particular buyer or buyer/advertiser pair, we look for the most specific matching rule - we first look for a rule matching the buyer and advertiser, next a rule with the buyer but an empty advertiser list, and otherwise look for a matching rule where no buyer is set.
 
   ## Attributes
 
-  *   `advertiserIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of advertisers for this price when associated with this buyer.
-      If empty, all advertisers with this buyer pay this price.
-  *   `buyer` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t`, *default:* `nil`) - The buyer who will pay this price. If unset, all buyers can pay this price
-      (if the
-      advertisers match, and there's no more specific rule matching the buyer).
+  *   `advertiserIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of advertisers for this price when associated with this buyer. If empty, all advertisers with this buyer pay this price.
+  *   `buyer` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Buyer.t`, *default:* `nil`) - The buyer who will pay this price. If unset, all buyers can pay this price (if the advertisers match, and there's no more specific rule matching the buyer).
   *   `price` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Price.t`, *default:* `nil`) - The specified price.
   """
 
