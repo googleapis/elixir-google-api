@@ -17,20 +17,17 @@
 
 defmodule GoogleApi.YouTubeReporting.V1.Model.Report do
   @moduledoc """
-  A report's metadata including the URL from which the report itself can be
-  downloaded.
+  A report's metadata including the URL from which the report itself can be downloaded.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The date/time when this report was created.
   *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - The URL from which the report can be downloaded (max. 1000 characters).
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end of the time period that the report instance covers. The value is
-      exclusive.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end of the time period that the report instance covers. The value is exclusive.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The server-generated ID of the report.
   *   `jobExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - The date/time when the job this report belongs to will expire/expired.
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - The ID of the job that created this report.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start of the time period that the report instance covers. The value is
-      inclusive.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start of the time period that the report instance covers. The value is inclusive.
   """
 
   use GoogleApi.Gax.ModelBase

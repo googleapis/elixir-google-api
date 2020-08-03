@@ -26,8 +26,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Method for media download. Download is supported
-  on the URI `/v1/media/{+name}?alt=media`.
+  Method for media download. Download is supported on the URI `/v1/media/{+name}?alt=media`.
 
   ## Parameters
 
