@@ -64,7 +64,7 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/alerts/{alertId}", %{
-        "alertId" => URI.encode(alert_id, &URI.char_unreserved?/1)
+        "alertId" => URI.encode(alert_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
