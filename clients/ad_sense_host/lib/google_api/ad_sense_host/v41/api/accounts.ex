@@ -66,7 +66,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}", %{
-        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
+        "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -186,7 +186,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
-        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
+        "adClientId" => URI.encode(ad_client_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -315,7 +315,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
-        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
+        "adUnitId" => URI.encode(ad_unit_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -384,7 +384,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
       |> Request.url("/accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", %{
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1),
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
-        "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
+        "adUnitId" => URI.encode(ad_unit_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

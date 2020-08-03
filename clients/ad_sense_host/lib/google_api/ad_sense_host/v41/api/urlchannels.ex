@@ -80,7 +80,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
       |> Request.method(:delete)
       |> Request.url("/adclients/{adClientId}/urlchannels/{urlChannelId}", %{
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1),
-        "urlChannelId" => URI.encode(url_channel_id, &URI.char_unreserved?/1)
+        "urlChannelId" => URI.encode(url_channel_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
