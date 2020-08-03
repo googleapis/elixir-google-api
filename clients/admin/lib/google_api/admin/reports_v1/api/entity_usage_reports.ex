@@ -112,7 +112,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.EntityUsageReports do
       |> Request.url("/admin/reports/v1/usage/{entityType}/{entityKey}/dates/{date}", %{
         "entityType" => URI.encode(entity_type, &URI.char_unreserved?/1),
         "entityKey" => URI.encode(entity_key, &URI.char_unreserved?/1),
-        "date" => URI.encode(date, &URI.char_unreserved?/1)
+        "date" => URI.encode(date, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

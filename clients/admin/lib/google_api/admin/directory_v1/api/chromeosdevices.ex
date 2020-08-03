@@ -149,7 +149,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       |> Request.method(:get)
       |> Request.url("/admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
+        "deviceId" => URI.encode(device_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -350,7 +350,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       |> Request.method(:patch)
       |> Request.url("/admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
+        "deviceId" => URI.encode(device_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -419,7 +419,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       |> Request.method(:put)
       |> Request.url("/admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
+        "deviceId" => URI.encode(device_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

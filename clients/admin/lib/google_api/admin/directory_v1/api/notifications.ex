@@ -77,7 +77,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
       |> Request.method(:delete)
       |> Request.url("/admin/directory/v1/customer/{customer}/notifications/{notificationId}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "notificationId" => URI.encode(notification_id, &URI.char_unreserved?/1)
+        "notificationId" => URI.encode(notification_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -142,7 +142,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
       |> Request.method(:get)
       |> Request.url("/admin/directory/v1/customer/{customer}/notifications/{notificationId}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "notificationId" => URI.encode(notification_id, &URI.char_unreserved?/1)
+        "notificationId" => URI.encode(notification_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -266,7 +266,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
       |> Request.method(:patch)
       |> Request.url("/admin/directory/v1/customer/{customer}/notifications/{notificationId}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "notificationId" => URI.encode(notification_id, &URI.char_unreserved?/1)
+        "notificationId" => URI.encode(notification_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -333,7 +333,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
       |> Request.method(:put)
       |> Request.url("/admin/directory/v1/customer/{customer}/notifications/{notificationId}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "notificationId" => URI.encode(notification_id, &URI.char_unreserved?/1)
+        "notificationId" => URI.encode(notification_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

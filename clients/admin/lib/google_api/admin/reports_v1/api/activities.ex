@@ -115,7 +115,8 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
         "/admin/reports/v1/activity/users/{userKey}/applications/{applicationName}",
         %{
           "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
-          "applicationName" => URI.encode(application_name, &URI.char_unreserved?/1)
+          "applicationName" =>
+            URI.encode(application_name, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

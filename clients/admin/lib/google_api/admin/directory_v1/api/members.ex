@@ -72,7 +72,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
       |> Request.method(:delete)
       |> Request.url("/admin/directory/v1/groups/{groupKey}/members/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
-        "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
+        "memberKey" => URI.encode(member_key, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -125,7 +125,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
       |> Request.method(:get)
       |> Request.url("/admin/directory/v1/groups/{groupKey}/members/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
-        "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
+        "memberKey" => URI.encode(member_key, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -190,7 +190,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
       |> Request.method(:get)
       |> Request.url("/admin/directory/v1/groups/{groupKey}/hasMember/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
-        "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
+        "memberKey" => URI.encode(member_key, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -363,7 +363,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
       |> Request.method(:patch)
       |> Request.url("/admin/directory/v1/groups/{groupKey}/members/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
-        "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
+        "memberKey" => URI.encode(member_key, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -424,7 +424,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
       |> Request.method(:put)
       |> Request.url("/admin/directory/v1/groups/{groupKey}/members/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
-        "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
+        "memberKey" => URI.encode(member_key, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
