@@ -167,7 +167,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1alpha1/projects/{projectsId}/notes/{notesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -241,7 +241,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1alpha1/projects/{projectsId}/notes/{notesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -486,7 +486,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1alpha1/projects/{projectsId}/notes/{notesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -892,7 +892,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1alpha1/projects/{projectsId}/occurrences/{occurrencesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "occurrencesId" => URI.encode(occurrences_id, &URI.char_unreserved?/1)
+        "occurrencesId" => URI.encode(occurrences_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -966,7 +966,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1alpha1/projects/{projectsId}/occurrences/{occurrencesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "occurrencesId" => URI.encode(occurrences_id, &URI.char_unreserved?/1)
+        "occurrencesId" => URI.encode(occurrences_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1364,7 +1364,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1alpha1/projects/{projectsId}/occurrences/{occurrencesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "occurrencesId" => URI.encode(occurrences_id, &URI.char_unreserved?/1)
+        "occurrencesId" => URI.encode(occurrences_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1691,7 +1691,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1alpha1/projects/{projectsId}/operations/{operationsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1765,7 +1765,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1alpha1/projects/{projectsId}/scanConfigs/{scanConfigsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "scanConfigsId" => URI.encode(scan_configs_id, &URI.char_unreserved?/1)
+        "scanConfigsId" => URI.encode(scan_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1920,7 +1920,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1alpha1/projects/{projectsId}/scanConfigs/{scanConfigsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "scanConfigsId" => URI.encode(scan_configs_id, &URI.char_unreserved?/1)
+        "scanConfigsId" => URI.encode(scan_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

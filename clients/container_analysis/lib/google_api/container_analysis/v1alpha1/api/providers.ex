@@ -167,7 +167,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
       |> Request.method(:delete)
       |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}", %{
         "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -241,7 +241,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
       |> Request.method(:get)
       |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}", %{
         "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -486,7 +486,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
       |> Request.method(:patch)
       |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}", %{
         "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
