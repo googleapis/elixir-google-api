@@ -95,7 +95,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1),
-          "operation" => URI.encode(operation, &URI.char_unreserved?/1)
+          "operation" => URI.encode(operation, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
