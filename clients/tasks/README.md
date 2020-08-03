@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at []().
+Product documentation is available at [https://cloud.google.com/](https://cloud.google.com/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_tasks](https://hexdocs.pm/google_api_tasks).
