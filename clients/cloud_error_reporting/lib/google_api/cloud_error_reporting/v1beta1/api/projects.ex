@@ -456,7 +456,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1beta1/projects/{projectsId}/groups/{groupsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
+        "groupsId" => URI.encode(groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -535,7 +535,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v1beta1/projects/{projectsId}/groups/{groupsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
+        "groupsId" => URI.encode(groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
