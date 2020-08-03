@@ -84,7 +84,7 @@ defmodule GoogleApi.HomeGraph.V1.Api.AgentUsers do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/agentUsers/{agentUsersId}", %{
-        "agentUsersId" => URI.encode(agent_users_id, &URI.char_unreserved?/1)
+        "agentUsersId" => URI.encode(agent_users_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
