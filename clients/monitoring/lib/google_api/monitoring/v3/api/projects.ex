@@ -161,7 +161,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/alertPolicies/{alertPoliciesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "alertPoliciesId" => URI.encode(alert_policies_id, &URI.char_unreserved?/1)
+        "alertPoliciesId" =>
+          URI.encode(alert_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -236,7 +237,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/alertPolicies/{alertPoliciesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "alertPoliciesId" => URI.encode(alert_policies_id, &URI.char_unreserved?/1)
+        "alertPoliciesId" =>
+          URI.encode(alert_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -398,7 +400,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v3/projects/{projectsId}/alertPolicies/{alertPoliciesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "alertPoliciesId" => URI.encode(alert_policies_id, &URI.char_unreserved?/1)
+        "alertPoliciesId" =>
+          URI.encode(alert_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -616,7 +619,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
+        "groupsId" => URI.encode(groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -689,7 +692,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
+        "groupsId" => URI.encode(groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -843,7 +846,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
+        "groupsId" => URI.encode(groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1078,7 +1081,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/metricDescriptors/{metricDescriptorsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "metricDescriptorsId" => URI.encode(metric_descriptors_id, &URI.char_unreserved?/1)
+        "metricDescriptorsId" =>
+          URI.encode(metric_descriptors_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1153,7 +1157,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/metricDescriptors/{metricDescriptorsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "metricDescriptorsId" => URI.encode(metric_descriptors_id, &URI.char_unreserved?/1)
+        "metricDescriptorsId" =>
+          URI.encode(metric_descriptors_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1312,7 +1317,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "monitoredResourceDescriptorsId" =>
-            URI.encode(monitored_resource_descriptors_id, &URI.char_unreserved?/1)
+            URI.encode(monitored_resource_descriptors_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1474,7 +1479,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "notificationChannelDescriptorsId" =>
-            URI.encode(notification_channel_descriptors_id, &URI.char_unreserved?/1)
+            URI.encode(
+              notification_channel_descriptors_id,
+              &(URI.char_unreserved?(&1) || &1 == ?/)
+            )
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1703,7 +1711,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notificationChannelsId" => URI.encode(notification_channels_id, &URI.char_unreserved?/1)
+        "notificationChannelsId" =>
+          URI.encode(notification_channels_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1778,7 +1787,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notificationChannelsId" => URI.encode(notification_channels_id, &URI.char_unreserved?/1)
+        "notificationChannelsId" =>
+          URI.encode(notification_channels_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2020,7 +2030,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notificationChannelsId" => URI.encode(notification_channels_id, &URI.char_unreserved?/1)
+        "notificationChannelsId" =>
+          URI.encode(notification_channels_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2557,7 +2568,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs/{uptimeCheckConfigsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "uptimeCheckConfigsId" => URI.encode(uptime_check_configs_id, &URI.char_unreserved?/1)
+        "uptimeCheckConfigsId" =>
+          URI.encode(uptime_check_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2632,7 +2644,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs/{uptimeCheckConfigsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "uptimeCheckConfigsId" => URI.encode(uptime_check_configs_id, &URI.char_unreserved?/1)
+        "uptimeCheckConfigsId" =>
+          URI.encode(uptime_check_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2788,7 +2801,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs/{uptimeCheckConfigsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "uptimeCheckConfigsId" => URI.encode(uptime_check_configs_id, &URI.char_unreserved?/1)
+        "uptimeCheckConfigsId" =>
+          URI.encode(uptime_check_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

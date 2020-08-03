@@ -165,7 +165,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
       |> Request.url("/v3/{v3Id}/{v3Id1}/services/{servicesId}", %{
         "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
         "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -244,7 +244,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
       |> Request.url("/v3/{v3Id}/{v3Id1}/services/{servicesId}", %{
         "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
         "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -408,7 +408,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
       |> Request.url("/v3/{v3Id}/{v3Id1}/services/{servicesId}", %{
         "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
         "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -575,7 +575,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
           "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
           "serviceLevelObjectivesId" =>
-            URI.encode(service_level_objectives_id, &URI.char_unreserved?/1)
+            URI.encode(service_level_objectives_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -664,7 +664,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
           "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
           "serviceLevelObjectivesId" =>
-            URI.encode(service_level_objectives_id, &URI.char_unreserved?/1)
+            URI.encode(service_level_objectives_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -845,7 +845,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
           "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
           "serviceLevelObjectivesId" =>
-            URI.encode(service_level_objectives_id, &URI.char_unreserved?/1)
+            URI.encode(service_level_objectives_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
