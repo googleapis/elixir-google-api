@@ -349,7 +349,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       |> Request.method(:delete)
       |> Request.url("/customers/{customerId}/subscriptions/{subscriptionId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
+        "subscriptionId" => URI.encode(subscription_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_param(:query, :deletionType, deletion_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -415,7 +415,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       |> Request.method(:get)
       |> Request.url("/customers/{customerId}/subscriptions/{subscriptionId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
+        "subscriptionId" => URI.encode(subscription_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
