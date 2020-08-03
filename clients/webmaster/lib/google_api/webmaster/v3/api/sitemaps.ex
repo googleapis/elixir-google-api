@@ -77,7 +77,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
       |> Request.method(:delete)
       |> Request.url("/sites/{siteUrl}/sitemaps/{feedpath}", %{
         "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1),
-        "feedpath" => URI.encode(feedpath, &URI.char_unreserved?/1)
+        "feedpath" => URI.encode(feedpath, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -130,7 +130,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
       |> Request.method(:get)
       |> Request.url("/sites/{siteUrl}/sitemaps/{feedpath}", %{
         "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1),
-        "feedpath" => URI.encode(feedpath, &URI.char_unreserved?/1)
+        "feedpath" => URI.encode(feedpath, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -245,7 +245,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
       |> Request.method(:put)
       |> Request.url("/sites/{siteUrl}/sitemaps/{feedpath}", %{
         "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1),
-        "feedpath" => URI.encode(feedpath, &URI.char_unreserved?/1)
+        "feedpath" => URI.encode(feedpath, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
