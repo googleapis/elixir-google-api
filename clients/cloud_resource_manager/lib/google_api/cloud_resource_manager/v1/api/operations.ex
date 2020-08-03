@@ -79,7 +79,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Operations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/operations/{operationsId}", %{
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
