@@ -142,7 +142,7 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
       |> Request.url("/{merchantId}/inventory/{storeCode}/products/{productId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "storeCode" => URI.encode(store_code, &URI.char_unreserved?/1),
-        "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
+        "productId" => URI.encode(product_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

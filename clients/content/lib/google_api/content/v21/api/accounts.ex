@@ -243,7 +243,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
       |> Request.method(:delete)
       |> Request.url("/{merchantId}/accounts/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
+        "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -294,7 +294,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/{merchantId}/accounts/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
+        "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -589,7 +589,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
       |> Request.method(:put)
       |> Request.url("/{merchantId}/accounts/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-        "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
+        "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

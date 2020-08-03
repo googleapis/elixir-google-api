@@ -128,7 +128,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
       |> Request.method(:delete)
       |> Request.url("/{merchantId}/datafeeds/{datafeedId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-        "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
+        "datafeedId" => URI.encode(datafeed_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -252,7 +252,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
       |> Request.method(:get)
       |> Request.url("/{merchantId}/datafeeds/{datafeedId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-        "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
+        "datafeedId" => URI.encode(datafeed_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -421,7 +421,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
       |> Request.method(:put)
       |> Request.url("/{merchantId}/datafeeds/{datafeedId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-        "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
+        "datafeedId" => URI.encode(datafeed_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
