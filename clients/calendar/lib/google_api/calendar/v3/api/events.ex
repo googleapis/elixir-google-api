@@ -72,7 +72,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       |> Request.method(:delete)
       |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
-        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
+        "eventId" => URI.encode(event_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -129,7 +129,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       |> Request.method(:get)
       |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
-        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
+        "eventId" => URI.encode(event_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -563,7 +563,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       |> Request.method(:patch)
       |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
-        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
+        "eventId" => URI.encode(event_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -692,7 +692,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       |> Request.method(:put)
       |> Request.url("/calendars/{calendarId}/events/{eventId}", %{
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1),
-        "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
+        "eventId" => URI.encode(event_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
