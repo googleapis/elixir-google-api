@@ -243,7 +243,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}", %{
-        "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
+        "spreadsheetId" => URI.encode(spreadsheet_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1292,7 +1292,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.method(:get)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values/{range}", %{
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1),
-        "range" => URI.encode(range, &URI.char_unreserved?/1)
+        "range" => URI.encode(range, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1387,7 +1387,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.method(:put)
       |> Request.url("/v4/spreadsheets/{spreadsheetId}/values/{range}", %{
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1),
-        "range" => URI.encode(range, &URI.char_unreserved?/1)
+        "range" => URI.encode(range, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
