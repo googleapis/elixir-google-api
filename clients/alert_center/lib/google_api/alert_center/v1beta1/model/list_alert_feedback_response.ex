@@ -21,8 +21,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ListAlertFeedbackResponse do
 
   ## Attributes
 
-  *   `feedback` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback.t)`, *default:* `nil`) - The list of alert feedback.
-      Feedback entries for each alert are ordered by creation time descending.
+  *   `feedback` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback.t)`, *default:* `nil`) - The list of alert feedback. Feedback entries for each alert are ordered by creation time descending.
   """
 
   use GoogleApi.Gax.ModelBase

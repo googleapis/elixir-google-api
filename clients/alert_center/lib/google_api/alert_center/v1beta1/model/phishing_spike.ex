@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.PhishingSpike do
   @moduledoc """
-  Alert for a spike in user reported phishing.
-  <aside class="warning"><b>Warning</b>: This type has been deprecated. Use
-  [MailPhishing](/admin-sdk/alertcenter/reference/rest/v1beta1/MailPhishing)
-  instead.</aside>
+  Alert for a spike in user reported phishing. *Warning*: This type has been deprecated. Use [MailPhishing](/admin-sdk/alertcenter/reference/rest/v1beta1/MailPhishing) instead.
 
   ## Attributes
 

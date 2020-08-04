@@ -17,16 +17,14 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.BadWhitelist do
   @moduledoc """
-  Alert for setting the domain or IP that malicious email comes from as
-  whitelisted domain or IP in Gmail advanced settings.
+  Alert for setting the domain or IP that malicious email comes from as whitelisted domain or IP in Gmail advanced settings.
 
   ## Attributes
 
   *   `domainId` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.DomainId.t`, *default:* `nil`) - The domain ID.
   *   `maliciousEntity` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity.t`, *default:* `nil`) - The entity whose actions triggered a Gmail phishing alert.
   *   `messages` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo.t)`, *default:* `nil`) - The list of messages contained by this alert.
-  *   `sourceIp` (*type:* `String.t`, *default:* `nil`) - The source IP address of the malicious email, for example,
-      `127.0.0.1`.
+  *   `sourceIp` (*type:* `String.t`, *default:* `nil`) - The source IP address of the malicious email, for example, `127.0.0.1`.
   """
 
   use GoogleApi.Gax.ModelBase

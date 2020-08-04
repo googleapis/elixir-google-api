@@ -22,13 +22,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AccountWarning do
   ## Attributes
 
   *   `email` (*type:* `String.t`, *default:* `nil`) - Required. The email of the user that this event belongs to.
-  *   `loginDetails` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.LoginDetails.t`, *default:* `nil`) - Optional. Details of the login action associated with the warning event.
-      This is only available for:
-
-      * Suspicious login
-      * Suspicious login (less secure app)
-      * Suspicious programmatic login
-      * User suspended (suspicious activity)
+  *   `loginDetails` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.LoginDetails.t`, *default:* `nil`) - Optional. Details of the login action associated with the warning event. This is only available for: * Suspicious login * Suspicious login (less secure app) * Suspicious programmatic login * User suspended (suspicious activity)
   """
 
   use GoogleApi.Gax.ModelBase

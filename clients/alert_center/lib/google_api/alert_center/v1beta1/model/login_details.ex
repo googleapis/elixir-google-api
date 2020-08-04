@@ -21,10 +21,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.LoginDetails do
 
   ## Attributes
 
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Optional. The human-readable IP address (for example,
-      `11.22.33.44`) that is associated with the warning event.
-  *   `loginTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The successful login time that is associated with the warning
-      event. This isn't present for blocked login attempts.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Optional. The human-readable IP address (for example, `11.22.33.44`) that is associated with the warning event.
+  *   `loginTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The successful login time that is associated with the warning event. This isn't present for blocked login attempts.
   """
 
   use GoogleApi.Gax.ModelBase

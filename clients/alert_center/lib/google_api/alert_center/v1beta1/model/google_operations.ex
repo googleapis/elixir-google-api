@@ -21,11 +21,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.GoogleOperations do
 
   ## Attributes
 
-  *   `affectedUserEmails` (*type:* `list(String.t)`, *default:* `nil`) - The list of emails which correspond to the users directly affected by the
-      incident.
-  *   `attachmentData` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.Attachment.t`, *default:* `nil`) - Optional. Application-specific data for an incident, provided when the
-      G Suite application which reported the incident cannot be completely
-      restored to a valid state.
+  *   `affectedUserEmails` (*type:* `list(String.t)`, *default:* `nil`) - The list of emails which correspond to the users directly affected by the incident.
+  *   `attachmentData` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.Attachment.t`, *default:* `nil`) - Optional. Application-specific data for an incident, provided when the G Suite application which reported the incident cannot be completely restored to a valid state.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A detailed, freeform incident description.
   *   `title` (*type:* `String.t`, *default:* `nil`) - A one-line incident description.
   """

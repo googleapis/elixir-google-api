@@ -22,8 +22,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.BatchDeleteAlertsRequest do
   ## Attributes
 
   *   `alertId` (*type:* `list(String.t)`, *default:* `nil`) - Required. list of alert IDs.
-  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of the G Suite organization account of the
-      customer the alerts are associated with.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of the G Suite organization account of the customer the alerts are associated with.
   """
 
   use GoogleApi.Gax.ModelBase

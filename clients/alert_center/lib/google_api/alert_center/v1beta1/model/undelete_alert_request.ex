@@ -21,9 +21,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.UndeleteAlertRequest do
 
   ## Attributes
 
-  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of the G Suite organization account of the
-      customer the alert is associated with.
-      Inferred from the caller identity if not provided.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of the G Suite organization account of the customer the alert is associated with. Inferred from the caller identity if not provided.
   """
 
   use GoogleApi.Gax.ModelBase
