@@ -22,24 +22,10 @@ defmodule GoogleApi.AbusiveExperienceReport.V1.Model.SiteSummaryResponse do
   ## Attributes
 
   *   `abusiveStatus` (*type:* `String.t`, *default:* `nil`) - The site's Abusive Experience Report status.
-  *   `enforcementTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which
-      [enforcement](https://support.google.com/webtools/answer/7538608) against
-      the site began or will begin.
-
-      Not set when the
-      filter_status
-      is OFF.
-  *   `filterStatus` (*type:* `String.t`, *default:* `nil`) - The site's [enforcement
-      status](https://support.google.com/webtools/answer/7538608).
+  *   `enforcementTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which [enforcement](https://support.google.com/webtools/answer/7538608) against the site began or will begin. Not set when the filter_status is OFF.
+  *   `filterStatus` (*type:* `String.t`, *default:* `nil`) - The site's [enforcement status](https://support.google.com/webtools/answer/7538608).
   *   `lastChangeTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the site's status last changed.
-  *   `reportUrl` (*type:* `String.t`, *default:* `nil`) - A link to the full Abusive Experience Report for the site.
-
-      Not set in
-      ViolatingSitesResponse.
-
-      Note that you must complete the [Search Console verification
-      process](https://support.google.com/webmasters/answer/9008080) for the site
-      before you can access the full report.
+  *   `reportUrl` (*type:* `String.t`, *default:* `nil`) - A link to the full Abusive Experience Report for the site. Not set in ViolatingSitesResponse. Note that you must complete the [Search Console verification process](https://support.google.com/webmasters/answer/9008080) for the site before you can access the full report.
   *   `reviewedSite` (*type:* `String.t`, *default:* `nil`) - The name of the reviewed site, e.g. `google.com`.
   *   `underReview` (*type:* `boolean()`, *default:* `nil`) - Whether the site is currently under review.
   """
