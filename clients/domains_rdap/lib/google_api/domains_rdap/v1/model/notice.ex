@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.DomainsRDAP.V1.Model.Notice do
   @moduledoc """
-  Notices object defined in [section 4.3 of RFC
-  7483](https://tools.ietf.org/html/rfc7483#section-4.3).
+  Notices object defined in [section 4.3 of RFC 7483](https://tools.ietf.org/html/rfc7483#section-4.3).
 
   ## Attributes
 
   *   `description` (*type:* `list(String.t)`, *default:* `nil`) - Description of the notice.
   *   `links` (*type:* `list(GoogleApi.DomainsRDAP.V1.Model.Link.t)`, *default:* `nil`) - Link to a document containing more information.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of a notice. Example: "Terms of Service".
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type values defined in [section 10.2.1 of RFC
-      7483](https://tools.ietf.org/html/rfc7483#section-10.2.1) specific to a
-      whole response: "result set truncated due to authorization", "result set
-      truncated due to excessive load", "result set truncated due to
-      unexplainable reasons".
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type values defined in [section 10.2.1 of RFC 7483](https://tools.ietf.org/html/rfc7483#section-10.2.1) specific to a whole response: "result set truncated due to authorization", "result set truncated due to excessive load", "result set truncated due to unexplainable reasons".
   """
 
   use GoogleApi.Gax.ModelBase

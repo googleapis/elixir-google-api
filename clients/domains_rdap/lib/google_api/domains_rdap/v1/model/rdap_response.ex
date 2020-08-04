@@ -24,8 +24,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Model.RdapResponse do
   *   `description` (*type:* `list(String.t)`, *default:* `nil`) - Error description.
   *   `errorCode` (*type:* `integer()`, *default:* `nil`) - Error HTTP code. Example: "501".
   *   `jsonResponse` (*type:* `GoogleApi.DomainsRDAP.V1.Model.HttpBody.t`, *default:* `nil`) - HTTP response with content type set to "application/json+rdap".
-  *   `lang` (*type:* `String.t`, *default:* `nil`) - Error language code. Error response info fields are defined in [section 6
-      of RFC 7483](https://tools.ietf.org/html/rfc7483#section-6).
+  *   `lang` (*type:* `String.t`, *default:* `nil`) - Error language code. Error response info fields are defined in [section 6 of RFC 7483](https://tools.ietf.org/html/rfc7483#section-6).
   *   `notices` (*type:* `list(GoogleApi.DomainsRDAP.V1.Model.Notice.t)`, *default:* `nil`) - Notices applying to this response.
   *   `rdapConformance` (*type:* `list(String.t)`, *default:* `nil`) - RDAP conformance level.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Error title.
