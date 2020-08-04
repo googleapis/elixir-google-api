@@ -17,23 +17,15 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Release do
   @moduledoc """
-  A `Release` is a particular
-  [collection of configurations and files](sites.versions)
-  that is set to be public at a particular time.
+  A `Release` is a particular [collection of configurations and files](sites.versions) that is set to be public at a particular time.
 
   ## Attributes
 
-  *   `message` (*type:* `String.t`, *default:* `nil`) - The deploy description when the release was created. The value can be up to
-      512&nbsp;characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the release, in the format:
-      <code>sites/<var>site-name</var>/releases/<var>releaseID</var></code>
-      This name is provided in the response body when you call the
-      [`CreateRelease`](sites.releases/create) endpoint.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - The deploy description when the release was created. The value can be up to 512 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the release, in the format: sites/ site-name/releases/releaseID This name is provided in the response body when you call the [`CreateRelease`](sites.releases/create) endpoint.
   *   `releaseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the version is set to be public.
   *   `releaseUser` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser.t`, *default:* `nil`) - Output only. Identifies the user who created the release.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Explains the reason for the release.
-      <br>Specify a value for this field only when creating a `SITE_DISABLE`
-      type release.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Explains the reason for the release. Specify a value for this field only when creating a `SITE_DISABLE` type release.
   *   `version` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Version.t`, *default:* `nil`) - Output only. The configuration and content that was released.
   """
 

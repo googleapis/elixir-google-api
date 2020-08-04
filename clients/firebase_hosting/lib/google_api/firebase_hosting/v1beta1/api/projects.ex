@@ -26,9 +26,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -97,8 +95,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The site for which to get the SiteConfig, in the format:
-      <code>sites/<var>site-name</var>/config</code>
+  *   `name` (*type:* `String.t`) - Required. The site for which to get the SiteConfig, in the format: sites/ site-name/config
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -167,8 +164,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The site for which to update the SiteConfig, in the format:
-      <code>sites/<var>site-name</var>/config</code>
+  *   `name` (*type:* `String.t`) - Required. The site for which to update the SiteConfig, in the format: sites/ site-name/config
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -181,11 +177,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - A set of field names from your [site configuration](../sites.SiteConfig)
-          that you want to update.
-          <br>A field will be overwritten if, and only if, it's in the mask.
-          <br>If a mask is not provided then a default mask of only
-          [`max_versions`](../sites.SiteConfig.max_versions) will be used.
+      *   `:updateMask` (*type:* `String.t`) - A set of field names from your [site configuration](../sites.SiteConfig) that you want to update. A field will be overwritten if, and only if, it's in the mask. If a mask is not provided then a default mask of only [`max_versions`](../sites.SiteConfig.max_versions) will be used.
       *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.SiteConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -240,14 +232,12 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a new release which makes the content of the specified version
-  actively display on the appropriate URL(s).
+  Creates a new release which makes the content of the specified version actively display on the appropriate URL(s).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site that the release belongs to, in the format:
-      <code>sites/<var>site-name</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The site that the release belongs to, in the format: sites/ site-name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -260,13 +250,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:versionName` (*type:* `String.t`) - The unique identifier for a version, in the format:
-          <code>/sites/<var>site-name</var>/versions/<var>versionID</var></code>
-          The <var>site-name</var> in this version identifier must match the
-          <var>site-name</var> in the `parent` parameter.
-          <br>
-          <br>This query parameter must be empty if the `type` field in the
-          request body is `SITE_DISABLE`.
+      *   `:versionName` (*type:* `String.t`) - The unique identifier for a version, in the format: /sites/site-name /versions/versionID The site-name in this version identifier must match the site-name in the `parent` parameter. This query parameter must be empty if the `type` field in the request body is `SITE_DISABLE`.
       *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Release.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -326,8 +310,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent for which to list files, in the format:
-      <code>sites/<var>site-name</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The parent for which to list files, in the format: sites/site-name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -402,8 +385,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent to create the domain association for, in the format:
-      <code>sites/<var>site-name</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The parent to create the domain association for, in the format: sites/site-name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -612,8 +594,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent for which to list domains, in the format:
-      <code>sites/<var>site-name</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The parent for which to list domains, in the format: sites/ site-name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -683,14 +664,12 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates the specified domain mapping, creating the mapping as if it does
-  not exist.
+  Updates the specified domain mapping, creating the mapping as if it does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the domain association to update or create, if an
-      association doesn't already exist.
+  *   `name` (*type:* `String.t`) - Required. The name of the domain association to update or create, if an association doesn't already exist.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -756,14 +735,12 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a new release which makes the content of the specified version
-  actively display on the appropriate URL(s).
+  Creates a new release which makes the content of the specified version actively display on the appropriate URL(s).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The site that the release belongs to, in the format:
-      <code>sites/<var>site-name</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The site that the release belongs to, in the format: sites/ site-name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -776,13 +753,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:versionName` (*type:* `String.t`) - The unique identifier for a version, in the format:
-          <code>/sites/<var>site-name</var>/versions/<var>versionID</var></code>
-          The <var>site-name</var> in this version identifier must match the
-          <var>site-name</var> in the `parent` parameter.
-          <br>
-          <br>This query parameter must be empty if the `type` field in the
-          request body is `SITE_DISABLE`.
+      *   `:versionName` (*type:* `String.t`) - The unique identifier for a version, in the format: /sites/site-name /versions/versionID The site-name in this version identifier must match the site-name in the `parent` parameter. This query parameter must be empty if the `type` field in the request body is `SITE_DISABLE`.
       *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Release.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -842,8 +813,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent for which to list files, in the format:
-      <code>sites/<var>site-name</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The parent for which to list files, in the format: sites/site-name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -918,8 +888,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent to create the version for, in the format:
-      <code>sites/<var>site-name</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The parent to create the version for, in the format: sites/ site-name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -932,10 +901,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:sizeBytes` (*type:* `String.t`) - The self-reported size of the version. This value is used for a pre-emptive
-          quota check for legacy version uploads.
-      *   `:versionId` (*type:* `String.t`) - A unique id for the new version. This is only specified for legacy version
-          creations.
+      *   `:sizeBytes` (*type:* `String.t`) - The self-reported size of the version. This value is used for a pre-emptive quota check for legacy version uploads.
+      *   `:versionId` (*type:* `String.t`) - A unique id for the new version. This is only specified for legacy version creations.
       *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Version.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -996,8 +963,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the version to be deleted, in the format:
-      <code>sites/<var>site-name</var>/versions/<var>versionID</var></code>
+  *   `name` (*type:* `String.t`) - Required. The name of the version to be deleted, in the format: sites/ site-name/versions/versionID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1061,14 +1027,12 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists the versions that have been created on the specified site.
-  Will include filtering in the future.
+  Lists the versions that have been created on the specified site. Will include filtering in the future.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent for which to list files, in the format:
-      <code>sites/<var>site-name</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The parent for which to list files, in the format: sites/site-name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1081,14 +1045,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - The filter string used to return a subset of versions in the response.
-          Currently supported fields for filtering are: name, status,
-          and create_time. Filter processing will be implemented in accordance
-          with go/filtering.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of versions to return. The service may return fewer than
-          this value.
-          If unspecified, at most 25 versions will be returned.
-          The maximum value is 100; values above 100 will be coerced to 100
+      *   `:filter` (*type:* `String.t`) - The filter string used to return a subset of versions in the response. Currently supported fields for filtering are: name, status, and create_time. Filter processing will be implemented in accordance with go/filtering.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of versions to return. The service may return fewer than this value. If unspecified, at most 25 versions will be returned. The maximum value is 100; values above 100 will be coerced to 100
       *   `:pageToken` (*type:* `String.t`) - The next_page_token from a previous request, if provided.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1146,20 +1104,12 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates the specified metadata for a version. Note that this method will
-  fail with `FAILED_PRECONDITION` in the event of an invalid state
-  transition. The only valid transition for a version is currently from a
-  `CREATED` status to a `FINALIZED` status.
-  Use [`DeleteVersion`](../sites.versions/delete) to set the status of a
-  version to `DELETED`.
+  Updates the specified metadata for a version. Note that this method will fail with `FAILED_PRECONDITION` in the event of an invalid state transition. The only valid transition for a version is currently from a `CREATED` status to a `FINALIZED` status. Use [`DeleteVersion`](../sites.versions/delete) to set the status of a version to `DELETED`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The unique identifier for a version, in the format:
-      <code>sites/<var>site-name</var>/versions/<var>versionID</var></code>
-      This name is provided in the response body when you call the
-      [`CreateVersion`](../sites.versions/create) endpoint.
+  *   `name` (*type:* `String.t`) - The unique identifier for a version, in the format: sites/site-name /versions/versionID This name is provided in the response body when you call the [`CreateVersion`](../sites.versions/create) endpoint.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1172,11 +1122,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - A set of field names from your [version](../sites.versions) that you want
-          to update.
-          <br>A field will be overwritten if, and only if, it's in the mask.
-          <br>If a mask is not provided then a default mask of only
-          [`status`](../sites.versions#Version.FIELDS.status) will be used.
+      *   `:updateMask` (*type:* `String.t`) - A set of field names from your [version](../sites.versions) that you want to update. A field will be overwritten if, and only if, it's in the mask. If a mask is not provided then a default mask of only [`status`](../sites.versions#Version.FIELDS.status) will be used.
       *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Version.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1231,14 +1177,12 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   end
 
   @doc """
-  Adds content files to a version.
-  Each file must be under 2 GB.
+  Adds content files to a version. Each file must be under 2 GB.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The version to add files to, in the format:
-      <code>sites/<var>site-name</var>/versions/<var>versionID</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The version to add files to, in the format: sites/site-name /versions/versionID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1311,8 +1255,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent to list files for, in the format:
-      <code>sites/<var>site-name</var>/versions/<var>versionID</var></code>
+  *   `parent` (*type:* `String.t`) - Required. The parent to list files for, in the format: sites/site-name /versions/versionID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1326,8 +1269,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The page size to return. Defaults to 1000.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token from a previous request, if provided. This will be the
-          encoded version of a firebase.hosting.proto.metadata.ListFilesPageToken.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token from a previous request, if provided. This will be the encoded version of a firebase.hosting.proto.metadata.ListFilesPageToken.
       *   `:status` (*type:* `String.t`) - The type of files in the version that should be listed.
   *   `opts` (*type:* `keyword()`) - Call options
 

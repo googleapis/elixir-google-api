@@ -21,10 +21,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.CertHttpChallenge do
 
   ## Attributes
 
-  *   `path` (*type:* `String.t`, *default:* `nil`) - The URL path on which to serve the specified token to satisfy the
-      certificate challenge.
-  *   `token` (*type:* `String.t`, *default:* `nil`) - The token to serve at the specified URL path to satisfy the certificate
-      challenge.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The URL path on which to serve the specified token to satisfy the certificate challenge.
+  *   `token` (*type:* `String.t`, *default:* `nil`) - The token to serve at the specified URL path to satisfy the certificate challenge.
   """
 
   use GoogleApi.Gax.ModelBase

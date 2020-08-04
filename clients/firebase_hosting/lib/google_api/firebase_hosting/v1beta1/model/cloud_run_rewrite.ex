@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.CloudRunRewrite do
   @moduledoc """
-  A configured rewrite that directs requests to a Cloud Run service. If the
-  Cloud Run service does not exist when setting or updating your Firebase
-  Hosting configuration, then the request fails. Any errors from the Cloud Run
-  service are passed to the end user (for example, if you delete a service, any
-  requests directed to that service receive a `404` error).
+  A configured rewrite that directs requests to a Cloud Run service. If the Cloud Run service does not exist when setting or updating your Firebase Hosting configuration, then the request fails. Any errors from the Cloud Run service are passed to the end user (for example, if you delete a service, any requests directed to that service receive a `404` error).
 
   ## Attributes
 
-  *   `region` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided region where the Cloud Run service is hosted.<br>
-      Defaults to `us-central1` if not supplied.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided region where the Cloud Run service is hosted. Defaults to `us-central1` if not supplied.
   *   `serviceId` (*type:* `String.t`, *default:* `nil`) - Required. User-defined ID of the Cloud Run service.
   """
 

@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser do
   @moduledoc """
-  Contains metadata about the user who performed an action, such as creating
-  a release or finalizing a version.
+  Contains metadata about the user who performed an action, such as creating a release or finalizing a version.
 
   ## Attributes
 
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the user when the user performed the action.
-  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - A profile image URL for the user. May not be present if the user has
-      changed their email address or deleted their account.
+  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - A profile image URL for the user. May not be present if the user has changed their email address or deleted their account.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.CertDnsChallenge do
   ## Attributes
 
   *   `domainName` (*type:* `String.t`, *default:* `nil`) - The domain name upon which the DNS challenge must be satisfied.
-  *   `token` (*type:* `String.t`, *default:* `nil`) - The value that must be present as a TXT record on the domain name to
-      satisfy the challenge.
+  *   `token` (*type:* `String.t`, *default:* `nil`) - The value that must be present as a TXT record on the domain name to satisfy the challenge.
   """
 
   use GoogleApi.Gax.ModelBase

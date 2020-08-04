@@ -23,8 +23,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Domain do
 
   *   `domainName` (*type:* `String.t`, *default:* `nil`) - Required. The domain name of the association.
   *   `domainRedirect` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.DomainRedirect.t`, *default:* `nil`) - If set, the domain should redirect with the provided parameters.
-  *   `provisioning` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.DomainProvisioning.t`, *default:* `nil`) - Output only. Information about the provisioning of certificates and the
-      health of the DNS resolution for the domain.
+  *   `provisioning` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.DomainProvisioning.t`, *default:* `nil`) - Output only. Information about the provisioning of certificates and the health of the DNS resolution for the domain.
   *   `site` (*type:* `String.t`, *default:* `nil`) - Required. The site name of the association.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. Additional status of the domain association.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the domain was last updated.

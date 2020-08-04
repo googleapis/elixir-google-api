@@ -23,9 +23,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.VersionFile do
 
   *   `hash` (*type:* `String.t`, *default:* `nil`) - The SHA256 content hash of the file.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The URI at which the file's content should display.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. The current status of a particular file in the specified
-      version.
-      <br>The value will be either `pending upload` or `uploaded`.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. The current status of a particular file in the specified version. The value will be either `pending upload` or `uploaded`.
   """
 
   use GoogleApi.Gax.ModelBase
