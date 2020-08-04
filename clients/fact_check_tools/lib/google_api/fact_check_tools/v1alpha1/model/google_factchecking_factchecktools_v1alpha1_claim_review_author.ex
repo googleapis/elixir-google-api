@@ -22,8 +22,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
   ## Attributes
 
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - Corresponds to `ClaimReview.author.image`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the organization that is publishing the fact check.<br>
-      Corresponds to `ClaimReview.author.name`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the organization that is publishing the fact check. Corresponds to `ClaimReview.author.name`.
   """
 
   use GoogleApi.Gax.ModelBase

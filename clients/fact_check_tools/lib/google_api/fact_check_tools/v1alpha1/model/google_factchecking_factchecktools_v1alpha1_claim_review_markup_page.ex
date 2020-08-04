@@ -21,25 +21,12 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
 
   ## Attributes
 
-  *   `claimReviewAuthor` (*type:* `GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor.t`, *default:* `nil`) - Info about the author of this claim review.
-      Similar to the above, semantically these are page-level fields, and each
-      `ClaimReview` on this page will contain the same values.
-  *   `claimReviewMarkups` (*type:* `list(GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup.t)`, *default:* `nil`) - A list of individual claim reviews for this page.
-      Each item in the list corresponds to one `ClaimReview` element.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this `ClaimReview` markup page resource, in the form of
-      `pages/{page_id}`. Except for update requests, this field is output-only
-      and should not be set by the user.
-  *   `pageUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the page associated with this `ClaimReview` markup.
-      While every individual `ClaimReview` has its own URL field, semantically
-      this is a page-level field, and each `ClaimReview` on this page will use
-      this value unless individually overridden.<br>
-      Corresponds to `ClaimReview.url`
-  *   `publishDate` (*type:* `String.t`, *default:* `nil`) - The date when the fact check was published.
-      Similar to the URL, semantically this is a page-level field, and each
-      `ClaimReview` on this page will contain the same value.<br>
-      Corresponds to `ClaimReview.datePublished`
-  *   `versionId` (*type:* `String.t`, *default:* `nil`) - The version ID for this markup. Except for update requests, this field is
-      output-only and should not be set by the user.
+  *   `claimReviewAuthor` (*type:* `GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor.t`, *default:* `nil`) - Info about the author of this claim review. Similar to the above, semantically these are page-level fields, and each `ClaimReview` on this page will contain the same values.
+  *   `claimReviewMarkups` (*type:* `list(GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup.t)`, *default:* `nil`) - A list of individual claim reviews for this page. Each item in the list corresponds to one `ClaimReview` element.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this `ClaimReview` markup page resource, in the form of `pages/{page_id}`. Except for update requests, this field is output-only and should not be set by the user.
+  *   `pageUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the page associated with this `ClaimReview` markup. While every individual `ClaimReview` has its own URL field, semantically this is a page-level field, and each `ClaimReview` on this page will use this value unless individually overridden. Corresponds to `ClaimReview.url`
+  *   `publishDate` (*type:* `String.t`, *default:* `nil`) - The date when the fact check was published. Similar to the URL, semantically this is a page-level field, and each `ClaimReview` on this page will contain the same value. Corresponds to `ClaimReview.datePublished`
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - The version ID for this markup. Except for update requests, this field is output-only and should not be set by the user.
   """
 
   use GoogleApi.Gax.ModelBase

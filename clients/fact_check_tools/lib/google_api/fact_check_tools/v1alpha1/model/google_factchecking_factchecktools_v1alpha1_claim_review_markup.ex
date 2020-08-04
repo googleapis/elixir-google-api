@@ -17,30 +17,18 @@
 
 defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup do
   @moduledoc """
-  Fields for an individual `ClaimReview` element.
-  Except for sub-messages that group fields together, each of these fields
-  correspond those in https://schema.org/ClaimReview. We list the precise
-  mapping for each field.
+  Fields for an individual `ClaimReview` element. Except for sub-messages that group fields together, each of these fields correspond those in https://schema.org/ClaimReview. We list the precise mapping for each field.
 
   ## Attributes
 
-  *   `claimAppearances` (*type:* `list(String.t)`, *default:* `nil`) - A list of links to works in which this claim appears, aside from the one
-      specified in `claim_first_appearance`.<br>
-      Corresponds to `ClaimReview.itemReviewed[@type=Claim].appearance.url`.
+  *   `claimAppearances` (*type:* `list(String.t)`, *default:* `nil`) - A list of links to works in which this claim appears, aside from the one specified in `claim_first_appearance`. Corresponds to `ClaimReview.itemReviewed[@type=Claim].appearance.url`.
   *   `claimAuthor` (*type:* `GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor.t`, *default:* `nil`) - Info about the author of this claim.
-  *   `claimDate` (*type:* `String.t`, *default:* `nil`) - The date when the claim was made or entered public discourse.<br>
-      Corresponds to `ClaimReview.itemReviewed.datePublished`.
-  *   `claimFirstAppearance` (*type:* `String.t`, *default:* `nil`) - A link to a work in which this claim first appears.<br>
-      Corresponds to `ClaimReview.itemReviewed[@type=Claim].firstAppearance.url`.
-  *   `claimLocation` (*type:* `String.t`, *default:* `nil`) - The location where this claim was made.<br>
-      Corresponds to `ClaimReview.itemReviewed.name`.
-  *   `claimReviewed` (*type:* `String.t`, *default:* `nil`) - A short summary of the claim being evaluated.<br>
-      Corresponds to `ClaimReview.claimReviewed`.
+  *   `claimDate` (*type:* `String.t`, *default:* `nil`) - The date when the claim was made or entered public discourse. Corresponds to `ClaimReview.itemReviewed.datePublished`.
+  *   `claimFirstAppearance` (*type:* `String.t`, *default:* `nil`) - A link to a work in which this claim first appears. Corresponds to `ClaimReview.itemReviewed[@type=Claim].firstAppearance.url`.
+  *   `claimLocation` (*type:* `String.t`, *default:* `nil`) - The location where this claim was made. Corresponds to `ClaimReview.itemReviewed.name`.
+  *   `claimReviewed` (*type:* `String.t`, *default:* `nil`) - A short summary of the claim being evaluated. Corresponds to `ClaimReview.claimReviewed`.
   *   `rating` (*type:* `GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating.t`, *default:* `nil`) - Info about the rating of this claim review.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - This field is optional, and will default to the page URL. We provide this
-      field to allow you the override the default value, but the only permitted
-      override is the page URL plus an optional anchor link ("page jump").<br>
-      Corresponds to `ClaimReview.url`
+  *   `url` (*type:* `String.t`, *default:* `nil`) - This field is optional, and will default to the page URL. We provide this field to allow you the override the default value, but the only permitted override is the page URL plus an optional anchor link ("page jump"). Corresponds to `ClaimReview.url`
   """
 
   use GoogleApi.Gax.ModelBase

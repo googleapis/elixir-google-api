@@ -22,9 +22,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
   ## Attributes
 
   *   `claimReviewMarkupPages` (*type:* `list(GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage.t)`, *default:* `nil`) - The result list of pages of `ClaimReview` markup.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next pagination token in the Search response. It should be used as the
-      `page_token` for the following request. An empty value means no more
-      results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next pagination token in the Search response. It should be used as the `page_token` for the following request. An empty value means no more results.
   """
 
   use GoogleApi.Gax.ModelBase

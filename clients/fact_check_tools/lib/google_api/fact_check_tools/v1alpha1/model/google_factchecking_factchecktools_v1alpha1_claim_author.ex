@@ -23,8 +23,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
 
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - Corresponds to `ClaimReview.itemReviewed.author.image`.
   *   `jobTitle` (*type:* `String.t`, *default:* `nil`) - Corresponds to `ClaimReview.itemReviewed.author.jobTitle`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A person or organization stating the claim. For instance, "John Doe".<br>
-      Corresponds to `ClaimReview.itemReviewed.author.name`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A person or organization stating the claim. For instance, "John Doe". Corresponds to `ClaimReview.itemReviewed.author.name`.
   *   `sameAs` (*type:* `String.t`, *default:* `nil`) - Corresponds to `ClaimReview.itemReviewed.author.sameAs`.
   """
 
