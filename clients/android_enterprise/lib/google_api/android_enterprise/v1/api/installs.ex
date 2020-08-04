@@ -26,9 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Requests to remove an app from a device. A call to <code>get</code> or
-  <code>list</code> will still show the app as installed on the device until
-  it is actually removed.
+  Requests to remove an app from a device. A call to get or list will still show the app as installed on the device until it is actually removed.
 
   ## Parameters
 
@@ -36,8 +34,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The Android ID of the device.
-  *   `install_id` (*type:* `String.t`) - The ID of the product represented by the install, e.g.
-      "app:com.google.android.gm".
+  *   `install_id` (*type:* `String.t`) - The ID of the product represented by the install, e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -118,8 +115,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The Android ID of the device.
-  *   `install_id` (*type:* `String.t`) - The ID of the product represented by the install, e.g.
-      "app:com.google.android.gm".
+  *   `install_id` (*type:* `String.t`) - The ID of the product represented by the install, e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -277,9 +273,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
   end
 
   @doc """
-  Requests to install the latest version of an app to a device. If the app
-  is already installed, then it is updated to the latest version if
-  necessary.
+  Requests to install the latest version of an app to a device. If the app is already installed, then it is updated to the latest version if necessary.
 
   ## Parameters
 
@@ -287,8 +281,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The Android ID of the device.
-  *   `install_id` (*type:* `String.t`) - The ID of the product represented by the install, e.g.
-      "app:com.google.android.gm".
+  *   `install_id` (*type:* `String.t`) - The ID of the product represented by the install, e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

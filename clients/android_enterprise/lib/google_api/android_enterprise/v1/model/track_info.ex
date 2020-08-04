@@ -21,11 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.TrackInfo do
 
   ## Attributes
 
-  *   `trackAlias` (*type:* `String.t`, *default:* `nil`) - A modifiable name for a track. This is the visible name in the play
-      developer console.
-  *   `trackId` (*type:* `String.t`, *default:* `nil`) - Unmodifiable, unique track identifier. This identifier is the
-      releaseTrackId in the url of the play developer console page that displays
-      the track information.
+  *   `trackAlias` (*type:* `String.t`, *default:* `nil`) - A modifiable name for a track. This is the visible name in the play developer console.
+  *   `trackId` (*type:* `String.t`, *default:* `nil`) - Unmodifiable, unique track identifier. This identifier is the releaseTrackId in the url of the play developer console page that displays the track information.
   """
 
   use GoogleApi.Gax.ModelBase

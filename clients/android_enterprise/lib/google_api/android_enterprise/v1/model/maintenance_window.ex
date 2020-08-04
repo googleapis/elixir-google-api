@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow do
   @moduledoc """
-  Maintenance window for managed Google Play Accounts.
-  This allows Play store to update the apps on the foreground in the designated
-  window.
+  Maintenance window for managed Google Play Accounts. This allows Play store to update the apps on the foreground in the designated window.
 
   ## Attributes
 
-  *   `durationMs` (*type:* `String.t`, *default:* `nil`) - Duration of the maintenance window, in milliseconds. The duration must be
-      between 30 minutes and 24 hours (inclusive).
-  *   `startTimeAfterMidnightMs` (*type:* `String.t`, *default:* `nil`) - Start time of the maintenance window, in milliseconds after midnight on the
-      device. Windows can span midnight.
+  *   `durationMs` (*type:* `String.t`, *default:* `nil`) - Duration of the maintenance window, in milliseconds. The duration must be between 30 minutes and 24 hours (inclusive).
+  *   `startTimeAfterMidnightMs` (*type:* `String.t`, *default:* `nil`) - Start time of the maintenance window, in milliseconds after midnight on the device. Windows can span midnight.
   """
 
   use GoogleApi.Gax.ModelBase

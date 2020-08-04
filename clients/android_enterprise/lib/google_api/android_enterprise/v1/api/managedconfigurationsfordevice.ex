@@ -26,8 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Removes a per-device managed configuration for an app for the specified
-  device.
+  Removes a per-device managed configuration for an app for the specified device.
 
   ## Parameters
 
@@ -35,8 +34,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The Android ID of the device.
-  *   `managed_configuration_for_device_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g.
-      "app:com.google.android.gm".
+  *   `managed_configuration_for_device_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -121,8 +119,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The Android ID of the device.
-  *   `managed_configuration_for_device_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g.
-      "app:com.google.android.gm".
+  *   `managed_configuration_for_device_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -204,8 +201,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   end
 
   @doc """
-  Lists all the per-device managed configurations for the specified device.
-  Only the ID is set.
+  Lists all the per-device managed configurations for the specified device. Only the ID is set.
 
   ## Parameters
 
@@ -292,8 +288,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   end
 
   @doc """
-  Adds or updates a per-device managed configuration for an app for the
-  specified device.
+  Adds or updates a per-device managed configuration for an app for the specified device.
 
   ## Parameters
 
@@ -301,8 +296,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The Android ID of the device.
-  *   `managed_configuration_for_device_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g.
-      "app:com.google.android.gm".
+  *   `managed_configuration_for_device_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

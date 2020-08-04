@@ -281,10 +281,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:install` (*type:* `boolean()`) - Set to true to also install the product on all the user's devices where
-          possible. Failure to install on one or more devices will not prevent
-          this operation from returning successfully, as long as the entitlement
-          was successfully assigned to the user.
+      *   `:install` (*type:* `boolean()`) - Set to true to also install the product on all the user's devices where possible. Failure to install on one or more devices will not prevent this operation from returning successfully, as long as the entitlement was successfully assigned to the user.
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

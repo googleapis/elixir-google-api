@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPermissions do
   @moduledoc """
-  Information about the permissions required by a specific app and
-  whether they have been accepted by the enterprise.
+  Information about the permissions required by a specific app and whether they have been accepted by the enterprise.
 
   ## Attributes
 
   *   `permission` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ProductPermission.t)`, *default:* `nil`) - The permissions required by the app.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the app that the permissions relate to, e.g.
-      "app:com.google.android.gm".
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the app that the permissions relate to, e.g. "app:com.google.android.gm".
   """
 
   use GoogleApi.Gax.ModelBase

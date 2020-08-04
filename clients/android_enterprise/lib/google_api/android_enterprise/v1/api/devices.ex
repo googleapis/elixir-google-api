@@ -26,11 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Uploads a report containing any changes in app states on the device since
-  the last report was generated. You can call this method up to 3 times every
-  24 hours for a given device.
-  If you exceed the quota, then the Google Play EMM API returns <code>HTTP
-  429 Too Many Requests</code>.
+  Uploads a report containing any changes in app states on the device since the last report was generated. You can call this method up to 3 times every 24 hours for a given device. If you exceed the quota, then the Google Play EMM API returns HTTP 429 Too Many Requests.
 
   ## Parameters
 
@@ -187,13 +183,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   end
 
   @doc """
-  Retrieves whether a device's access to Google services is enabled or
-  disabled.
-  The device state takes effect only if enforcing EMM policies on Android
-  devices is enabled in the Google Admin Console.
-  Otherwise, the device state is ignored and all devices are allowed access
-  to Google services.
-  This is only supported for Google-managed users.
+  Retrieves whether a device's access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.
 
   ## Parameters
 
@@ -348,12 +338,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   end
 
   @doc """
-  Sets whether a device's access to Google services is enabled or disabled.
-  The device state takes effect only if enforcing EMM policies on Android
-  devices is enabled in the Google Admin Console.
-  Otherwise, the device state is ignored and all devices are allowed access
-  to Google services.
-  This is only supported for Google-managed users.
+  Sets whether a device's access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.
 
   ## Parameters
 
@@ -455,11 +440,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields to update. If not set, all modifiable
-          fields will be modified.
-
-          When set in a query parameter, this field should be specified as
-          <code>updateMask=&lt;field1&gt;,&lt;field2&gt;,...</code>
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields to update. If not set, all modifiable fields will be modified. When set in a query parameter, this field should be specified as updateMask=<field1>,<field2>,...
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.Device.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

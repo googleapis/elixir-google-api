@@ -26,8 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Permissions do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves details of an Android app permission for display to an enterprise
-  admin.
+  Retrieves details of an Android app permission for display to an enterprise admin.
 
   ## Parameters
 

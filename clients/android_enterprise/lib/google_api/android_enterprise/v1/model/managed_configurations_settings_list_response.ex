@@ -21,8 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsList
 
   ## Attributes
 
-  *   `managedConfigurationsSettings` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings.t)`, *default:* `nil`) - A managed configurations settings for an app that may be assigned to a
-      group of users in an enterprise.
+  *   `managedConfigurationsSettings` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings.t)`, *default:* `nil`) - A managed configurations settings for an app that may be assigned to a group of users in an enterprise.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount do
   @moduledoc """
-  A service account identity, including the name and credentials that can be
-  used to authenticate as the service account.
+  A service account identity, including the name and credentials that can be used to authenticate as the service account.
 
   ## Attributes
 
   *   `key` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t`, *default:* `nil`) - Credentials that can be used to authenticate as this ServiceAccount.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The account name of the service account, in the form of an email address.
-      Assigned by the server.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The account name of the service account, in the form of an email address. Assigned by the server.
   """
 
   use GoogleApi.Gax.ModelBase
