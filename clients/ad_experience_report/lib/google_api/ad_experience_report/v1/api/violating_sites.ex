@@ -26,8 +26,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.ViolatingSites do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists sites that are failing in the Ad Experience Report on at least one
-  platform.
+  Lists sites that are failing in the Ad Experience Report on at least one platform.
 
   ## Parameters
 
