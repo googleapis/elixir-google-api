@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatInfo do
   @moduledoc """
-  The information regarding one or more threats that a client submits when
-  checking for matches in threat lists.
+  The information regarding one or more threats that a client submits when checking for matches in threat lists.
 
   ## Attributes
 

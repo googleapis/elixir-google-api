@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatEntry do
   @moduledoc """
-  An individual threat; for example, a malicious URL or its hash
-  representation. Only one of these fields should be set.
+  An individual threat; for example, a malicious URL or its hash representation. Only one of these fields should be set.
 
   ## Attributes
 
-  *   `digest` (*type:* `String.t`, *default:* `nil`) - The digest of an executable in SHA256 format. The API supports both
-      binary and hex digests. For JSON requests, digests are base64-encoded.
-  *   `hash` (*type:* `String.t`, *default:* `nil`) - A hash prefix, consisting of the most significant 4-32 bytes of a SHA256
-      hash. This field is in binary format. For JSON requests, hashes are
-      base64-encoded.
+  *   `digest` (*type:* `String.t`, *default:* `nil`) - The digest of an executable in SHA256 format. The API supports both binary and hex digests. For JSON requests, digests are base64-encoded.
+  *   `hash` (*type:* `String.t`, *default:* `nil`) - A hash prefix, consisting of the most significant 4-32 bytes of a SHA256 hash. This field is in binary format. For JSON requests, hashes are base64-encoded.
   *   `url` (*type:* `String.t`, *default:* `nil`) - A URL.
   """
 

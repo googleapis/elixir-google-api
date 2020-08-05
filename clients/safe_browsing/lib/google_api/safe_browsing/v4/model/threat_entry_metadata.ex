@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatEntryMetadata do
   @moduledoc """
-  The metadata associated with a specific threat entry. The client is expected
-  to know the metadata key/value pairs associated with each threat type.
+  The metadata associated with a specific threat entry. The client is expected to know the metadata key/value pairs associated with each threat type.
 
   ## Attributes
 

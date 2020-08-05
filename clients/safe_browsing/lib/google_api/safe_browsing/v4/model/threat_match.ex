@@ -21,8 +21,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatMatch do
 
   ## Attributes
 
-  *   `cacheDuration` (*type:* `String.t`, *default:* `nil`) - The cache lifetime for the returned match. Clients must not cache this
-      response for more than this duration to avoid false positives.
+  *   `cacheDuration` (*type:* `String.t`, *default:* `nil`) - The cache lifetime for the returned match. Clients must not cache this response for more than this duration to avoid false positives.
   *   `platformType` (*type:* `String.t`, *default:* `nil`) - The platform type matching this threat.
   *   `threat` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ThreatEntry.t`, *default:* `nil`) - The threat matching this threat.
   *   `threatEntryMetadata` (*type:* `GoogleApi.SafeBrowsing.V4.Model.ThreatEntryMetadata.t`, *default:* `nil`) - Optional metadata associated with this threat.

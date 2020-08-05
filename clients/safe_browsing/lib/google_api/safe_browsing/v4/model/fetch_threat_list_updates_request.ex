@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesRequest do
   @moduledoc """
-  Describes a Safe Browsing API update request. Clients can request updates for
-  multiple lists in a single request.
-  NOTE: Field index 2 is unused.
-  NEXT: 5
+  Describes a Safe Browsing API update request. Clients can request updates for multiple lists in a single request. NOTE: Field index 2 is unused. NEXT: 5
 
   ## Attributes
 

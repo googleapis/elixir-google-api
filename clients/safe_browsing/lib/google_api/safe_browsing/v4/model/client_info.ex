@@ -21,8 +21,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ClientInfo do
 
   ## Attributes
 
-  *   `clientId` (*type:* `String.t`, *default:* `nil`) - A client ID that (hopefully) uniquely identifies the client implementation
-      of the Safe Browsing API.
+  *   `clientId` (*type:* `String.t`, *default:* `nil`) - A client ID that (hopefully) uniquely identifies the client implementation of the Safe Browsing API.
   *   `clientVersion` (*type:* `String.t`, *default:* `nil`) - The version of the client implementation.
   """
 

@@ -21,19 +21,12 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.ListUpdateResponse do
 
   ## Attributes
 
-  *   `additions` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet.t)`, *default:* `nil`) - A set of entries to add to a local threat type's list. Repeated to allow
-      for a combination of compressed and raw data to be sent in a single
-      response.
-  *   `checksum` (*type:* `GoogleApi.SafeBrowsing.V4.Model.Checksum.t`, *default:* `nil`) - The expected SHA256 hash of the client state; that is, of the sorted list
-      of all hashes present in the database after applying the provided update.
-      If the client state doesn't match the expected state, the client must
-      disregard this update and retry later.
+  *   `additions` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet.t)`, *default:* `nil`) - A set of entries to add to a local threat type's list. Repeated to allow for a combination of compressed and raw data to be sent in a single response.
+  *   `checksum` (*type:* `GoogleApi.SafeBrowsing.V4.Model.Checksum.t`, *default:* `nil`) - The expected SHA256 hash of the client state; that is, of the sorted list of all hashes present in the database after applying the provided update. If the client state doesn't match the expected state, the client must disregard this update and retry later.
   *   `newClientState` (*type:* `String.t`, *default:* `nil`) - The new client state, in encrypted format. Opaque to clients.
   *   `platformType` (*type:* `String.t`, *default:* `nil`) - The platform type for which data is returned.
-  *   `removals` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet.t)`, *default:* `nil`) - A set of entries to remove from a local threat type's list. In practice,
-      this field is empty or contains exactly one ThreatEntrySet.
-  *   `responseType` (*type:* `String.t`, *default:* `nil`) - The type of response. This may indicate that an action is required by the
-      client when the response is received.
+  *   `removals` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ThreatEntrySet.t)`, *default:* `nil`) - A set of entries to remove from a local threat type's list. In practice, this field is empty or contains exactly one ThreatEntrySet.
+  *   `responseType` (*type:* `String.t`, *default:* `nil`) - The type of response. This may indicate that an action is required by the client when the response is received.
   *   `threatEntryType` (*type:* `String.t`, *default:* `nil`) - The format of the threats.
   *   `threatType` (*type:* `String.t`, *default:* `nil`) - The threat type for which data is returned.
   """
