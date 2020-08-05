@@ -21,8 +21,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroublesh
 
   ## Attributes
 
-  *   `accessTuple` (*type:* `GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroubleshooterV1betaAccessTuple.t`, *default:* `nil`) - The information to use for checking whether a member has a permission for a
-      resource.
+  *   `accessTuple` (*type:* `GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroubleshooterV1betaAccessTuple.t`, *default:* `nil`) - The information to use for checking whether a member has a permission for a resource.
   """
 
   use GoogleApi.Gax.ModelBase

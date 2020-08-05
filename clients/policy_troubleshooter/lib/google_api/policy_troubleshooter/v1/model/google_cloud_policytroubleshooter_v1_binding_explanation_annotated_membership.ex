@@ -22,8 +22,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshoote
   ## Attributes
 
   *   `membership` (*type:* `String.t`, *default:* `nil`) - Indicates whether the binding includes the member.
-  *   `relevance` (*type:* `String.t`, *default:* `nil`) - The relevance of the member's status to the overall determination for the
-      binding.
+  *   `relevance` (*type:* `String.t`, *default:* `nil`) - The relevance of the member's status to the overall determination for the binding.
   """
 
   use GoogleApi.Gax.ModelBase

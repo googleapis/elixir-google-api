@@ -26,8 +26,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1beta.Api.Iam do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Checks whether a member has a specific permission for a specific resource,
-  and explains why the member does or does not have that permission.
+  Checks whether a member has a specific permission for a specific resource, and explains why the member does or does not have that permission.
 
   ## Parameters
 
