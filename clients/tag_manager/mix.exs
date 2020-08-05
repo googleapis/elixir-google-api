@@ -18,7 +18,7 @@
 defmodule GoogleApi.TagManager.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.12.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.TagManager.Mixfile do
 
   defp description() do
     """
-    Tag Manager API client library. This API allows clients to access and modify container and tag
-     configuration.
+    Tag Manager API client library. This API allows clients to access and modify container and tag configuration.
     """
   end
 

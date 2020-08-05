@@ -22,76 +22,30 @@ defmodule GoogleApi.TagManager.V2.Model.Tag do
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
-  *   `blockingRuleId` (*type:* `list(String.t)`, *default:* `nil`) - Blocking rule IDs. If any of the listed rules evaluate to true, the tag
-          will not fire.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `blockingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - Blocking trigger IDs. If any of the listed triggers evaluate to true, the
-      tag will not fire.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `blockingRuleId` (*type:* `list(String.t)`, *default:* `nil`) - Blocking rule IDs. If any of the listed rules evaluate to true, the tag will not fire. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `blockingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - Blocking trigger IDs. If any of the listed triggers evaluate to true, the tag will not fire. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Tag as computed at storage time.
-      This value is recomputed whenever the tag is modified.
-  *   `firingRuleId` (*type:* `list(String.t)`, *default:* `nil`) - Firing rule IDs. A tag will fire when any of the listed rules are true and
-          all of its <code>blockingRuleIds</code> (if any specified) are false.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `firingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - Firing trigger IDs. A tag will fire when any of the listed triggers are
-      true and all of its <code>blockingTriggerIds</code> (if any specified) are
-      false.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `liveOnly` (*type:* `boolean()`, *default:* `nil`) - If set to true, this tag will only fire in the live environment (e.g. not
-      in preview or debug mode).
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `monitoringMetadata` (*type:* `GoogleApi.TagManager.V2.Model.Parameter.t`, *default:* `nil`) - A map of key-value pairs of tag metadata to be included in the event data
-      for tag monitoring.
-      Notes:<ul>
-      <li>This parameter must be type <code>MAP</code>.</li>
-      <li>Each parameter in the map are type <code>TEMPLATE</code>, however
-      cannot contain variable references.</li>
-      </ul>
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `monitoringMetadataTagNameKey` (*type:* `String.t`, *default:* `nil`) - If non-empty, then the tag display name will be included in the monitoring
-      metadata map using the key specified.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Tag display name.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this tag in the container.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The tag's parameters.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Tag as computed at storage time. This value is recomputed whenever the tag is modified.
+  *   `firingRuleId` (*type:* `list(String.t)`, *default:* `nil`) - Firing rule IDs. A tag will fire when any of the listed rules are true and all of its blockingRuleIds (if any specified) are false. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `firingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - Firing trigger IDs. A tag will fire when any of the listed triggers are true and all of its blockingTriggerIds (if any specified) are false. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `liveOnly` (*type:* `boolean()`, *default:* `nil`) - If set to true, this tag will only fire in the live environment (e.g. not in preview or debug mode). @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `monitoringMetadata` (*type:* `GoogleApi.TagManager.V2.Model.Parameter.t`, *default:* `nil`) - A map of key-value pairs of tag metadata to be included in the event data for tag monitoring. Notes: - This parameter must be type MAP. - Each parameter in the map are type TEMPLATE, however cannot contain variable references. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `monitoringMetadataTagNameKey` (*type:* `String.t`, *default:* `nil`) - If non-empty, then the tag display name will be included in the monitoring metadata map using the key specified. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Tag display name. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this tag in the container. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The tag's parameters. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `parentFolderId` (*type:* `String.t`, *default:* `nil`) - Parent folder id.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Tag's API relative path.
-  *   `paused` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the tag is paused, which prevents the tag from firing.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `priority` (*type:* `GoogleApi.TagManager.V2.Model.Parameter.t`, *default:* `nil`) - User defined numeric priority of the tag. Tags are fired asynchronously in
-      order of priority. Tags with higher numeric value fire first. A tag's
-      priority can be a positive or negative value. The default value is 0.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `scheduleEndMs` (*type:* `String.t`, *default:* `nil`) - The end timestamp in milliseconds to schedule a tag.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `scheduleStartMs` (*type:* `String.t`, *default:* `nil`) - The start timestamp in milliseconds to schedule a tag.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `paused` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the tag is paused, which prevents the tag from firing. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `priority` (*type:* `GoogleApi.TagManager.V2.Model.Parameter.t`, *default:* `nil`) - User defined numeric priority of the tag. Tags are fired asynchronously in order of priority. Tags with higher numeric value fire first. A tag's priority can be a positive or negative value. The default value is 0. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `scheduleEndMs` (*type:* `String.t`, *default:* `nil`) - The end timestamp in milliseconds to schedule a tag. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `scheduleStartMs` (*type:* `String.t`, *default:* `nil`) - The start timestamp in milliseconds to schedule a tag. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `setupTag` (*type:* `list(GoogleApi.TagManager.V2.Model.SetupTag.t)`, *default:* `nil`) - The list of setup tags. Currently we only allow one.
   *   `tagFiringOption` (*type:* `String.t`, *default:* `nil`) - Option to fire this tag.
   *   `tagId` (*type:* `String.t`, *default:* `nil`) - The Tag ID uniquely identifies the GTM Tag.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   *   `teardownTag` (*type:* `list(GoogleApi.TagManager.V2.Model.TeardownTag.t)`, *default:* `nil`) - The list of teardown tags. Currently we only allow one.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - GTM Tag Type.
-      @mutable tagmanager.accounts.containers.workspaces.tags.create
-      @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `type` (*type:* `String.t`, *default:* `nil`) - GTM Tag Type. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `workspaceId` (*type:* `String.t`, *default:* `nil`) - GTM Workspace ID.
   """
 

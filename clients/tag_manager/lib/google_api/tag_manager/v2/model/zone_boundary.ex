@@ -22,8 +22,7 @@ defmodule GoogleApi.TagManager.V2.Model.ZoneBoundary do
   ## Attributes
 
   *   `condition` (*type:* `list(GoogleApi.TagManager.V2.Model.Condition.t)`, *default:* `nil`) - The conditions that, when conjoined, make up the boundary.
-  *   `customEvaluationTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - Custom evaluation trigger IDs. A zone will evaluate its boundary
-      conditions when any of the listed triggers are true.
+  *   `customEvaluationTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - Custom evaluation trigger IDs. A zone will evaluate its boundary conditions when any of the listed triggers are true.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,17 +17,15 @@
 
 defmodule GoogleApi.TagManager.V2.Model.GalleryReference do
   @moduledoc """
-  Represents the link between a custom template and an entry on the Community
-  Template Gallery site.
+  Represents the link between a custom template and an entry on the Community Template Gallery site.
 
   ## Attributes
 
   *   `host` (*type:* `String.t`, *default:* `nil`) - The name of the host for the community gallery template.
-  *   `isModified` (*type:* `boolean()`, *default:* `nil`) - If a user has manually edited the community  gallery template.
+  *   `isModified` (*type:* `boolean()`, *default:* `nil`) - If a user has manually edited the community gallery template.
   *   `owner` (*type:* `String.t`, *default:* `nil`) - The name of the owner for the community gallery template.
   *   `repository` (*type:* `String.t`, *default:* `nil`) - The name of the repository for the community gallery template.
-  *   `signature` (*type:* `String.t`, *default:* `nil`) - The signature of the community gallery template as computed at import time.
-      This value is recomputed whenever the template is updated from the gallery.
+  *   `signature` (*type:* `String.t`, *default:* `nil`) - The signature of the community gallery template as computed at import time. This value is recomputed whenever the template is updated from the gallery.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the community gallery template.
   """
 

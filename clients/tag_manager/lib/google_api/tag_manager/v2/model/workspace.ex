@@ -23,14 +23,9 @@ defmodule GoogleApi.TagManager.V2.Model.Workspace do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Workspace description.
-      @mutable tagmanager.accounts.containers.workspaces.create
-      @mutable tagmanager.accounts.containers.workspaces.update
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Workspace as computed at storage time. This
-      value is recomputed whenever the workspace is modified.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Workspace display name.
-      @mutable tagmanager.accounts.containers.workspaces.create
-      @mutable tagmanager.accounts.containers.workspaces.update
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Workspace description. @mutable tagmanager.accounts.containers.workspaces.create @mutable tagmanager.accounts.containers.workspaces.update
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Workspace as computed at storage time. This value is recomputed whenever the workspace is modified.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Workspace display name. @mutable tagmanager.accounts.containers.workspaces.create @mutable tagmanager.accounts.containers.workspaces.update
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Workspace's API relative path.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   *   `workspaceId` (*type:* `String.t`, *default:* `nil`) - The Workspace ID uniquely identifies the GTM Workspace.

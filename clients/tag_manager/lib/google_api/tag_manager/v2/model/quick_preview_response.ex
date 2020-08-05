@@ -23,8 +23,7 @@ defmodule GoogleApi.TagManager.V2.Model.QuickPreviewResponse do
 
   *   `compilerError` (*type:* `boolean()`, *default:* `nil`) - Were there compiler errors or not.
   *   `containerVersion` (*type:* `GoogleApi.TagManager.V2.Model.ContainerVersion.t`, *default:* `nil`) - The quick previewed container version.
-  *   `syncStatus` (*type:* `GoogleApi.TagManager.V2.Model.SyncStatus.t`, *default:* `nil`) - Whether quick previewing failed when syncing the workspace to the latest
-      container version.
+  *   `syncStatus` (*type:* `GoogleApi.TagManager.V2.Model.SyncStatus.t`, *default:* `nil`) - Whether quick previewing failed when syncing the workspace to the latest container version.
   """
 
   use GoogleApi.Gax.ModelBase
