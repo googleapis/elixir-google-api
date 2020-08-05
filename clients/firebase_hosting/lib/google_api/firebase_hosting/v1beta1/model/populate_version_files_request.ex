@@ -21,10 +21,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.PopulateVersionFilesRequest do
 
   ## Attributes
 
-  *   `files` (*type:* `map()`, *default:* `nil`) - A set of file paths to the hashes corresponding to assets that should be
-      added to the version. Note that a file path to an empty hash will remove
-      the path from the version. Calculate a hash by Gzipping the file then
-      taking the SHA256 hash of the newly compressed file.
+  *   `files` (*type:* `map()`, *default:* `nil`) - A set of file paths to the hashes corresponding to assets that should be added to the version. Note that a file path to an empty hash will remove the path from the version. Calculate a hash by Gzipping the file then taking the SHA256 hash of the newly compressed file.
   """
 
   use GoogleApi.Gax.ModelBase

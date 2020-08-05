@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Header do
   @moduledoc """
-  A [`header`](/docs/hosting/full-config#headers) is an object that specifies
-  a URL pattern that, if matched to the request URL path, triggers Hosting to
-  apply the specified custom response headers.
+  A [`header`](/docs/hosting/full-config#headers) is an object that specifies a URL pattern that, if matched to the request URL path, triggers Hosting to apply the specified custom response headers.
 
   ## Attributes
 
-  *   `glob` (*type:* `String.t`, *default:* `nil`) - The user-supplied
-      [glob](/docs/hosting/full-config#glob_pattern_matching) to match
-      against the request URL path.
+  *   `glob` (*type:* `String.t`, *default:* `nil`) - The user-supplied [glob](/docs/hosting/full-config#glob_pattern_matching) to match against the request URL path.
   *   `headers` (*type:* `map()`, *default:* `nil`) - Required. The additional headers to add to the response.
-  *   `regex` (*type:* `String.t`, *default:* `nil`) - The user-supplied RE2 regular expression to match against the request
-      URL path.
+  *   `regex` (*type:* `String.t`, *default:* `nil`) - The user-supplied RE2 regular expression to match against the request URL path.
   """
 
   use GoogleApi.Gax.ModelBase

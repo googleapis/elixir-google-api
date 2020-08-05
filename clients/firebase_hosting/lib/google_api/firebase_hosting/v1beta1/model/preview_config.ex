@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.PreviewConfig do
   @moduledoc """
-  Version preview configuration. If active and unexpired,
-  this version will be accessible via a custom URL even
-  if it is not the currently released version.
+  Version preview configuration. If active and unexpired, this version will be accessible via a custom URL even if it is not the currently released version.
 
   ## Attributes
 
   *   `active` (*type:* `boolean()`, *default:* `nil`) - If true, preview URLs are enabled for this version.
-  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Indicates the expiration time for previewing this
-      version; preview URL requests received after this time will 404.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Indicates the expiration time for previewing this version; preview URL requests received after this time will 404.
   """
 
   use GoogleApi.Gax.ModelBase

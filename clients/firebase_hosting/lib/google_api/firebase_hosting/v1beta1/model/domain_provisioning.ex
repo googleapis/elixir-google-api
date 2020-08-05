@@ -21,12 +21,10 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.DomainProvisioning do
 
   ## Attributes
 
-  *   `certChallengeDiscoveredTxt` (*type:* `list(String.t)`, *default:* `nil`) - The TXT records (for the certificate challenge) that were found at the last
-      DNS fetch.
+  *   `certChallengeDiscoveredTxt` (*type:* `list(String.t)`, *default:* `nil`) - The TXT records (for the certificate challenge) that were found at the last DNS fetch.
   *   `certChallengeDns` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.CertDnsChallenge.t`, *default:* `nil`) - The DNS challenge for generating a certificate.
   *   `certChallengeHttp` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.CertHttpChallenge.t`, *default:* `nil`) - The HTTP challenge for generating a certificate.
-  *   `certStatus` (*type:* `String.t`, *default:* `nil`) - The certificate provisioning status; updated when Firebase Hosting
-      provisions an SSL certificate for the domain.
+  *   `certStatus` (*type:* `String.t`, *default:* `nil`) - The certificate provisioning status; updated when Firebase Hosting provisions an SSL certificate for the domain.
   *   `discoveredIps` (*type:* `list(String.t)`, *default:* `nil`) - The IPs found at the last DNS fetch.
   *   `dnsFetchTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the last DNS fetch occurred.
   *   `dnsStatus` (*type:* `String.t`, *default:* `nil`) - The DNS record match status as of the last DNS fetch.

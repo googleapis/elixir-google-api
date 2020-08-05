@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.DomainRedirect do
   @moduledoc """
-  Defines the behavior of a domain-level redirect. Domain redirects preserve
-  the path of the redirect but replace the requested domain with the one
-  specified in the redirect configuration.
+  Defines the behavior of a domain-level redirect. Domain redirects preserve the path of the redirect but replace the requested domain with the one specified in the redirect configuration.
 
   ## Attributes
 
