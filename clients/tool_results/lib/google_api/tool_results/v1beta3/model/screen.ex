@@ -21,14 +21,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Screen do
 
   ## Attributes
 
-  *   `fileReference` (*type:* `String.t`, *default:* `nil`) - File reference of the png file.
-      Required.
-  *   `locale` (*type:* `String.t`, *default:* `nil`) - Locale of the device that the screenshot was taken on.
-      Required.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Model of the device that the screenshot was taken on.
-      Required.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - OS version of the device that the screenshot was taken on.
-      Required.
+  *   `fileReference` (*type:* `String.t`, *default:* `nil`) - File reference of the png file. Required.
+  *   `locale` (*type:* `String.t`, *default:* `nil`) - Locale of the device that the screenshot was taken on. Required.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Model of the device that the screenshot was taken on. Required.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - OS version of the device that the screenshot was taken on. Required.
   """
 
   use GoogleApi.Gax.ModelBase

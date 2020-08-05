@@ -21,17 +21,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.InconclusiveDetail do
 
   ## Attributes
 
-  *   `abortedByUser` (*type:* `boolean()`, *default:* `nil`) - If the end user aborted the test execution before a pass or fail could be
-      determined.
-      For example, the user pressed ctrl-c which sent a kill signal to the test
-      runner while the test was running.
-  *   `hasErrorLogs` (*type:* `boolean()`, *default:* `nil`) - If results are being provided to the user in certain cases of
-      infrastructure failures
-  *   `infrastructureFailure` (*type:* `boolean()`, *default:* `nil`) - If the test runner could not determine success or failure because the test
-      depends on a component other than the system under test which failed.
-
-      For example, a mobile test requires provisioning a device where the test
-      executes, and that provisioning can fail.
+  *   `abortedByUser` (*type:* `boolean()`, *default:* `nil`) - If the end user aborted the test execution before a pass or fail could be determined. For example, the user pressed ctrl-c which sent a kill signal to the test runner while the test was running.
+  *   `hasErrorLogs` (*type:* `boolean()`, *default:* `nil`) - If results are being provided to the user in certain cases of infrastructure failures
+  *   `infrastructureFailure` (*type:* `boolean()`, *default:* `nil`) - If the test runner could not determine success or failure because the test depends on a component other than the system under test which failed. For example, a mobile test requires provisioning a device where the test executes, and that provisioning can fail.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,19 +21,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ProjectSettings do
 
   ## Attributes
 
-  *   `defaultBucket` (*type:* `String.t`, *default:* `nil`) - The name of the Google Cloud Storage bucket to which results are written.
-
-      By default, this is unset.
-
-      In update request: optional
-      In response: optional
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the project's settings.
-
-      Always of the form:
-      projects/{project-id}/settings
-
-      In update request: never set
-      In response: always set
+  *   `defaultBucket` (*type:* `String.t`, *default:* `nil`) - The name of the Google Cloud Storage bucket to which results are written. By default, this is unset. In update request: optional In response: optional
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the project's settings. Always of the form: projects/{project-id}/settings In update request: never set In response: always set
   """
 
   use GoogleApi.Gax.ModelBase

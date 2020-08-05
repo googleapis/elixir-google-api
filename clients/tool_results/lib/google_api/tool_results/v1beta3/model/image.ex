@@ -22,14 +22,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Image do
   ## Attributes
 
   *   `error` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Status.t`, *default:* `nil`) - An error explaining why the thumbnail could not be rendered.
-  *   `sourceImage` (*type:* `GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t`, *default:* `nil`) - A reference to the full-size, original image.
-
-      This is the same as the tool_outputs entry for the image under its Step.
-
-      Always set.
-  *   `stepId` (*type:* `String.t`, *default:* `nil`) - The step to which the image is attached.
-
-      Always set.
+  *   `sourceImage` (*type:* `GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t`, *default:* `nil`) - A reference to the full-size, original image. This is the same as the tool_outputs entry for the image under its Step. Always set.
+  *   `stepId` (*type:* `String.t`, *default:* `nil`) - The step to which the image is attached. Always set.
   *   `thumbnail` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Thumbnail.t`, *default:* `nil`) - The thumbnail.
   """
 

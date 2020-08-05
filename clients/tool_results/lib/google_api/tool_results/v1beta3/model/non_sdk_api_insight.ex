@@ -21,14 +21,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.NonSdkApiInsight do
 
   ## Attributes
 
-  *   `exampleTraceMessages` (*type:* `list(String.t)`, *default:* `nil`) - Optional sample stack traces, for which this insight applies (there
-      should be at least one).
-  *   `matcherId` (*type:* `String.t`, *default:* `nil`) - A unique ID, to be used for determining the effectiveness of this
-      particular insight in the context of a matcher. (required)
-  *   `pendingGoogleUpdateInsight` (*type:* `GoogleApi.ToolResults.V1beta3.Model.PendingGoogleUpdateInsight.t`, *default:* `nil`) - An insight indicating that the hidden API usage originates from a
-      Google-provided library.
-  *   `upgradeInsight` (*type:* `GoogleApi.ToolResults.V1beta3.Model.UpgradeInsight.t`, *default:* `nil`) - An insight indicating that the hidden API usage originates from the
-      use of a library that needs to be upgraded.
+  *   `exampleTraceMessages` (*type:* `list(String.t)`, *default:* `nil`) - Optional sample stack traces, for which this insight applies (there should be at least one).
+  *   `matcherId` (*type:* `String.t`, *default:* `nil`) - A unique ID, to be used for determining the effectiveness of this particular insight in the context of a matcher. (required)
+  *   `pendingGoogleUpdateInsight` (*type:* `GoogleApi.ToolResults.V1beta3.Model.PendingGoogleUpdateInsight.t`, *default:* `nil`) - An insight indicating that the hidden API usage originates from a Google-provided library.
+  *   `upgradeInsight` (*type:* `GoogleApi.ToolResults.V1beta3.Model.UpgradeInsight.t`, *default:* `nil`) - An insight indicating that the hidden API usage originates from the use of a library that needs to be upgraded.
   """
 
   use GoogleApi.Gax.ModelBase

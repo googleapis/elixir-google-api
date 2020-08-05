@@ -21,11 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PublishXunitXmlFilesRequest do
 
   ## Attributes
 
-  *   `xunitXmlFiles` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.FileReference.t)`, *default:* `nil`) - URI of the Xunit XML files to publish.
-
-      The maximum size of the file this reference is pointing to is 50MB.
-
-      Required.
+  *   `xunitXmlFiles` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.FileReference.t)`, *default:* `nil`) - URI of the Xunit XML files to publish. The maximum size of the file this reference is pointing to is 50MB. Required.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -25,8 +25,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidTest do
   *   `androidInstrumentationTest` (*type:* `GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest.t`, *default:* `nil`) - An Android instrumentation test.
   *   `androidRoboTest` (*type:* `GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest.t`, *default:* `nil`) - An Android robo test.
   *   `androidTestLoop` (*type:* `GoogleApi.ToolResults.V1beta3.Model.AndroidTestLoop.t`, *default:* `nil`) - An Android test loop.
-  *   `testTimeout` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - Max time a test is allowed to run before it is
-      automatically cancelled.
+  *   `testTimeout` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - Max time a test is allowed to run before it is automatically cancelled.
   """
 
   use GoogleApi.Gax.ModelBase

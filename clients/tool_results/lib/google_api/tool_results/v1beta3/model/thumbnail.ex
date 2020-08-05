@@ -21,22 +21,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Thumbnail do
 
   ## Attributes
 
-  *   `contentType` (*type:* `String.t`, *default:* `nil`) - The thumbnail's content type, i.e. "image/png".
-
-      Always set.
-  *   `data` (*type:* `String.t`, *default:* `nil`) - The thumbnail file itself.
-
-      That is, the bytes here are precisely the bytes that make up the thumbnail
-      file; they can be served as an image as-is (with the appropriate content
-      type.)
-
-      Always set.
-  *   `heightPx` (*type:* `integer()`, *default:* `nil`) - The height of the thumbnail, in pixels.
-
-      Always set.
-  *   `widthPx` (*type:* `integer()`, *default:* `nil`) - The width of the thumbnail, in pixels.
-
-      Always set.
+  *   `contentType` (*type:* `String.t`, *default:* `nil`) - The thumbnail's content type, i.e. "image/png". Always set.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - The thumbnail file itself. That is, the bytes here are precisely the bytes that make up the thumbnail file; they can be served as an image as-is (with the appropriate content type.) Always set.
+  *   `heightPx` (*type:* `integer()`, *default:* `nil`) - The height of the thumbnail, in pixels. Always set.
+  *   `widthPx` (*type:* `integer()`, *default:* `nil`) - The width of the thumbnail, in pixels. Always set.
   """
 
   use GoogleApi.Gax.ModelBase

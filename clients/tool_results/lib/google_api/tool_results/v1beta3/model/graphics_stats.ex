@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.GraphicsStats do
   @moduledoc """
-  Graphics statistics for the App.
-  The information is collected from 'adb shell dumpsys graphicsstats'.
-  For more info see:
-  https://developer.android.com/training/testing/performance.html
-  Statistics will only be present for API 23+.
+  Graphics statistics for the App. The information is collected from 'adb shell dumpsys graphicsstats'. For more info see: https://developer.android.com/training/testing/performance.html Statistics will only be present for API 23+.
 
   ## Attributes
 
-  *   `buckets` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket.t)`, *default:* `nil`) - Histogram of frame render times. There should be 154 buckets ranging from
-      [5ms, 6ms) to [4950ms, infinity)
+  *   `buckets` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.GraphicsStatsBucket.t)`, *default:* `nil`) - Histogram of frame render times. There should be 154 buckets ranging from [5ms, 6ms) to [4950ms, infinity)
   *   `highInputLatencyCount` (*type:* `String.t`, *default:* `nil`) - Total "high input latency" events.
   *   `jankyFrames` (*type:* `String.t`, *default:* `nil`) - Total frames with slow render time. Should be <= total_frames.
   *   `missedVsyncCount` (*type:* `String.t`, *default:* `nil`) - Total "missed vsync" events.

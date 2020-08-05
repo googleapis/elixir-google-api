@@ -21,33 +21,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Outcome do
 
   ## Attributes
 
-  *   `failureDetail` (*type:* `GoogleApi.ToolResults.V1beta3.Model.FailureDetail.t`, *default:* `nil`) - More information about a FAILURE outcome.
-
-      Returns INVALID_ARGUMENT if this field is set
-      but the summary is not FAILURE.
-
-      Optional
-  *   `inconclusiveDetail` (*type:* `GoogleApi.ToolResults.V1beta3.Model.InconclusiveDetail.t`, *default:* `nil`) - More information about an INCONCLUSIVE outcome.
-
-      Returns INVALID_ARGUMENT if this field is set
-      but the summary is not INCONCLUSIVE.
-
-      Optional
-  *   `skippedDetail` (*type:* `GoogleApi.ToolResults.V1beta3.Model.SkippedDetail.t`, *default:* `nil`) - More information about a SKIPPED outcome.
-
-      Returns INVALID_ARGUMENT if this field is set
-      but the summary is not SKIPPED.
-
-      Optional
-  *   `successDetail` (*type:* `GoogleApi.ToolResults.V1beta3.Model.SuccessDetail.t`, *default:* `nil`) - More information about a SUCCESS outcome.
-
-      Returns INVALID_ARGUMENT if this field is set
-      but the summary is not SUCCESS.
-
-      Optional
-  *   `summary` (*type:* `String.t`, *default:* `nil`) - The simplest way to interpret a result.
-
-      Required
+  *   `failureDetail` (*type:* `GoogleApi.ToolResults.V1beta3.Model.FailureDetail.t`, *default:* `nil`) - More information about a FAILURE outcome. Returns INVALID_ARGUMENT if this field is set but the summary is not FAILURE. Optional
+  *   `inconclusiveDetail` (*type:* `GoogleApi.ToolResults.V1beta3.Model.InconclusiveDetail.t`, *default:* `nil`) - More information about an INCONCLUSIVE outcome. Returns INVALID_ARGUMENT if this field is set but the summary is not INCONCLUSIVE. Optional
+  *   `skippedDetail` (*type:* `GoogleApi.ToolResults.V1beta3.Model.SkippedDetail.t`, *default:* `nil`) - More information about a SKIPPED outcome. Returns INVALID_ARGUMENT if this field is set but the summary is not SKIPPED. Optional
+  *   `successDetail` (*type:* `GoogleApi.ToolResults.V1beta3.Model.SuccessDetail.t`, *default:* `nil`) - More information about a SUCCESS outcome. Returns INVALID_ARGUMENT if this field is set but the summary is not SUCCESS. Optional
+  *   `summary` (*type:* `String.t`, *default:* `nil`) - The simplest way to interpret a result. Required
   """
 
   use GoogleApi.Gax.ModelBase

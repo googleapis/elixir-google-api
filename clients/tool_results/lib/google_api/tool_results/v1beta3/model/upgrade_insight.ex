@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.UpgradeInsight do
   @moduledoc """
-  This insight is a recommendation to upgrade a given library to the specified
-  version, in order to avoid dependencies on non-SDK APIs.
+  This insight is a recommendation to upgrade a given library to the specified version, in order to avoid dependencies on non-SDK APIs.
 
   ## Attributes
 
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - The name of the package to be upgraded.
-  *   `upgradeToVersion` (*type:* `String.t`, *default:* `nil`) - The suggested version to upgrade to.
-      Optional: In case we are not sure which version solves this problem
+  *   `upgradeToVersion` (*type:* `String.t`, *default:* `nil`) - The suggested version to upgrade to. Optional: In case we are not sure which version solves this problem
   """
 
   use GoogleApi.Gax.ModelBase

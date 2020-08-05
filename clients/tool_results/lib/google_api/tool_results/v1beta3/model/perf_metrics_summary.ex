@@ -22,18 +22,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary do
   ## Attributes
 
   *   `appStartTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.AppStartTime.t`, *default:* `nil`) - 
-  *   `executionId` (*type:* `String.t`, *default:* `nil`) - A tool results execution ID.
-      @OutputOnly
-  *   `graphicsStats` (*type:* `GoogleApi.ToolResults.V1beta3.Model.GraphicsStats.t`, *default:* `nil`) - Graphics statistics for the entire run. Statistics are reset at the
-      beginning of the run and collected at the end of the run.
-  *   `historyId` (*type:* `String.t`, *default:* `nil`) - A tool results history ID.
-      @OutputOnly
+  *   `executionId` (*type:* `String.t`, *default:* `nil`) - A tool results execution ID. @OutputOnly
+  *   `graphicsStats` (*type:* `GoogleApi.ToolResults.V1beta3.Model.GraphicsStats.t`, *default:* `nil`) - Graphics statistics for the entire run. Statistics are reset at the beginning of the run and collected at the end of the run.
+  *   `historyId` (*type:* `String.t`, *default:* `nil`) - A tool results history ID. @OutputOnly
   *   `perfEnvironment` (*type:* `GoogleApi.ToolResults.V1beta3.Model.PerfEnvironment.t`, *default:* `nil`) - Describes the environment in which the performance metrics were collected
   *   `perfMetrics` (*type:* `list(String.t)`, *default:* `nil`) - Set of resource collected
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The cloud project
-      @OutputOnly
-  *   `stepId` (*type:* `String.t`, *default:* `nil`) - A tool results step ID.
-      @OutputOnly
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The cloud project @OutputOnly
+  *   `stepId` (*type:* `String.t`, *default:* `nil`) - A tool results step ID. @OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

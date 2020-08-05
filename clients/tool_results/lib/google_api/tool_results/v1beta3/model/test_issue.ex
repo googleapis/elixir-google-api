@@ -21,17 +21,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestIssue do
 
   ## Attributes
 
-  *   `category` (*type:* `String.t`, *default:* `nil`) - Category of issue.
-      Required.
-  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - A brief human-readable message describing the issue.
-      Required.
-  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of issue.
-      Required.
+  *   `category` (*type:* `String.t`, *default:* `nil`) - Category of issue. Required.
+  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - A brief human-readable message describing the issue. Required.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of issue. Required.
   *   `stackTrace` (*type:* `GoogleApi.ToolResults.V1beta3.Model.StackTrace.t`, *default:* `nil`) - Deprecated in favor of stack trace fields inside specific warnings.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of issue.
-      Required.
-  *   `warning` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Any.t`, *default:* `nil`) - Warning message with additional details of the issue.
-      Should always be a message from com.google.devtools.toolresults.v1.warnings
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of issue. Required.
+  *   `warning` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Any.t`, *default:* `nil`) - Warning message with additional details of the issue. Should always be a message from com.google.devtools.toolresults.v1.warnings
   """
 
   use GoogleApi.Gax.ModelBase

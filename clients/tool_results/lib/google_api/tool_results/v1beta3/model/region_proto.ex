@@ -21,14 +21,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.RegionProto do
 
   ## Attributes
 
-  *   `heightPx` (*type:* `integer()`, *default:* `nil`) - The height, in pixels.
-      Always set.
-  *   `leftPx` (*type:* `integer()`, *default:* `nil`) - The left side of the rectangle, in pixels.
-      Always set.
-  *   `topPx` (*type:* `integer()`, *default:* `nil`) - The top of the rectangle, in pixels.
-      Always set.
-  *   `widthPx` (*type:* `integer()`, *default:* `nil`) - The width, in pixels.
-      Always set.
+  *   `heightPx` (*type:* `integer()`, *default:* `nil`) - The height, in pixels. Always set.
+  *   `leftPx` (*type:* `integer()`, *default:* `nil`) - The left side of the rectangle, in pixels. Always set.
+  *   `topPx` (*type:* `integer()`, *default:* `nil`) - The top of the rectangle, in pixels. Always set.
+  *   `widthPx` (*type:* `integer()`, *default:* `nil`) - The width, in pixels. Always set.
   """
 
   use GoogleApi.Gax.ModelBase

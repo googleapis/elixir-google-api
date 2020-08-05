@@ -21,8 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.IosAppInfo do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app.
-      Required
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app. Required
   """
 
   use GoogleApi.Gax.ModelBase

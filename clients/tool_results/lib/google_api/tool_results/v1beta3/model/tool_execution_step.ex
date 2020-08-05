@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.ToolExecutionStep do
   @moduledoc """
-  Generic tool step to be used for binaries we do not explicitly support.
-  For example: running cp to copy artifacts from one location to another.
+  Generic tool step to be used for binaries we do not explicitly support. For example: running cp to copy artifacts from one location to another.
 
   ## Attributes
 
-  *   `toolExecution` (*type:* `GoogleApi.ToolResults.V1beta3.Model.ToolExecution.t`, *default:* `nil`) - A Tool execution.
-
-      - In response: present if set by create/update request
-      - In create/update request: optional
+  *   `toolExecution` (*type:* `GoogleApi.ToolResults.V1beta3.Model.ToolExecution.t`, *default:* `nil`) - A Tool execution. - In response: present if set by create/update request - In create/update request: optional
   """
 
   use GoogleApi.Gax.ModelBase

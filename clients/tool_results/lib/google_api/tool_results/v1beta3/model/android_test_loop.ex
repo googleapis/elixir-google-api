@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidTestLoop do
   @moduledoc """
-  Test Loops are tests that can be launched by the app itself, determining
-  when to run by listening for an intent.
+  Test Loops are tests that can be launched by the app itself, determining when to run by listening for an intent.
 
   ## Attributes
 

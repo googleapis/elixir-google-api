@@ -21,12 +21,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListExecutionsResponse do
 
   ## Attributes
 
-  *   `executions` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.Execution.t)`, *default:* `nil`) - Executions.
-
-      Always set.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A continuation token to resume the query at the next item.
-
-      Will only be set if there are more Executions to fetch.
+  *   `executions` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.Execution.t)`, *default:* `nil`) - Executions. Always set.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A continuation token to resume the query at the next item. Will only be set if there are more Executions to fetch.
   """
 
   use GoogleApi.Gax.ModelBase

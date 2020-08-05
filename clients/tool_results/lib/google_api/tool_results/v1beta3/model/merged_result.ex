@@ -17,30 +17,13 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.MergedResult do
   @moduledoc """
-  Merged test result for environment.
-
-  If the environment has only one step (no reruns or shards), then the merged
-  result is the same as the step result. If the environment has multiple shards
-  and/or reruns, then the results of shards and reruns that belong to the same
-  environment are merged into one environment result.
+  Merged test result for environment. If the environment has only one step (no reruns or shards), then the merged result is the same as the step result. If the environment has multiple shards and/or reruns, then the results of shards and reruns that belong to the same environment are merged into one environment result.
 
   ## Attributes
 
   *   `outcome` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Outcome.t`, *default:* `nil`) - Outcome of the resource
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the resource
-  *   `testSuiteOverviews` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview.t)`, *default:* `nil`) - The combined and rolled-up result of each test suite that was run as part
-       of this environment.
-
-       Combining:
-       When the test cases from a suite are run in different steps (sharding),
-       the results are added back together in one overview. (e.g., if shard1 has
-       2 failures and shard2 has 1 failure than the overview failure_count = 3).
-
-       Rollup:
-       When test cases from the same suite are run multiple times (flaky), the
-       results are combined (e.g., if testcase1.run1 fails, testcase1.run2
-       passes, and both testcase2.run1 and testcase2.run2 fail then the overview
-       flaky_count = 1 and failure_count = 1).
+  *   `testSuiteOverviews` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview.t)`, *default:* `nil`) - The combined and rolled-up result of each test suite that was run as part of this environment. Combining: When the test cases from a suite are run in different steps (sharding), the results are added back together in one overview. (e.g., if shard1 has 2 failures and shard2 has 1 failure than the overview failure_count = 3). Rollup: When test cases from the same suite are run multiple times (flaky), the results are combined (e.g., if testcase1.run1 fails, testcase1.run2 passes, and both testcase2.run1 and testcase2.run2 fail then the overview flaky_count = 1 and failure_count = 1).
   """
 
   use GoogleApi.Gax.ModelBase

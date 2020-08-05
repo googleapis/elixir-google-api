@@ -21,8 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.InAppPurchasesFound do
 
   ## Attributes
 
-  *   `inAppPurchasesFlowsExplored` (*type:* `integer()`, *default:* `nil`) - The total number of in-app purchases flows explored: how many times the
-      robo tries to buy a SKU.
+  *   `inAppPurchasesFlowsExplored` (*type:* `integer()`, *default:* `nil`) - The total number of in-app purchases flows explored: how many times the robo tries to buy a SKU.
   *   `inAppPurchasesFlowsStarted` (*type:* `integer()`, *default:* `nil`) - The total number of in-app purchases flows started.
   """
 

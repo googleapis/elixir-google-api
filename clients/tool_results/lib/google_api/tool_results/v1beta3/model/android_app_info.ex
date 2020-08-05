@@ -21,14 +21,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app.
-      Optional
-  *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the app.
-      Required.
-  *   `versionCode` (*type:* `String.t`, *default:* `nil`) - The internal version code of the app.
-      Optional.
-  *   `versionName` (*type:* `String.t`, *default:* `nil`) - The version name of the app.
-      Optional.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app. Optional
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the app. Required.
+  *   `versionCode` (*type:* `String.t`, *default:* `nil`) - The internal version code of the app. Optional.
+  *   `versionName` (*type:* `String.t`, *default:* `nil`) - The version name of the app. Optional.
   """
 
   use GoogleApi.Gax.ModelBase

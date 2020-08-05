@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.PendingGoogleUpdateInsight do
   @moduledoc """
-  This insight indicates that the hidden API usage originates from a
-  Google-provided library. Users need not take any action.
+  This insight indicates that the hidden API usage originates from a Google-provided library. Users need not take any action.
 
   ## Attributes
 

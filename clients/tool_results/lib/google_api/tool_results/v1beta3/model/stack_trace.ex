@@ -21,9 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.StackTrace do
 
   ## Attributes
 
-  *   `exception` (*type:* `String.t`, *default:* `nil`) - The stack trace message.
-
-      Required
+  *   `exception` (*type:* `String.t`, *default:* `nil`) - The stack trace message. Required
   """
 
   use GoogleApi.Gax.ModelBase
