@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.MonitoringDestination do
   @moduledoc """
-  Configuration of a specific monitoring destination (the producer project
-  or the consumer project).
+  Configuration of a specific monitoring destination (the producer project or the consumer project).
 
   ## Attributes
 
-  *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - Types of the metrics to report to this monitoring destination.
-      Each type must be defined in Service.metrics section.
-  *   `monitoredResource` (*type:* `String.t`, *default:* `nil`) - The monitored resource type. The type must be defined in
-      Service.monitored_resources section.
+  *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - Types of the metrics to report to this monitoring destination. Each type must be defined in Service.metrics section.
+  *   `monitoredResource` (*type:* `String.t`, *default:* `nil`) - The monitored resource type. The type must be defined in Service.monitored_resources section.
   """
 
   use GoogleApi.Gax.ModelBase

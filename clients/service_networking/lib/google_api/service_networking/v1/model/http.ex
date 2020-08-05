@@ -17,21 +17,12 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.Http do
   @moduledoc """
-  Defines the HTTP configuration for an API service. It contains a list of
-  HttpRule, each specifying the mapping of an RPC method
-  to one or more HTTP REST API methods.
+  Defines the HTTP configuration for an API service. It contains a list of HttpRule, each specifying the mapping of an RPC method to one or more HTTP REST API methods.
 
   ## Attributes
 
-  *   `fullyDecodeReservedExpansion` (*type:* `boolean()`, *default:* `nil`) - When set to true, URL path parameters will be fully URI-decoded except in
-      cases of single segment matches in reserved expansion, where "%2F" will be
-      left encoded.
-
-      The default behavior is to not decode RFC 6570 reserved characters in multi
-      segment matches.
-  *   `rules` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t)`, *default:* `nil`) - A list of HTTP configuration rules that apply to individual API methods.
-
-      **NOTE:** All service configuration rules follow "last one wins" order.
+  *   `fullyDecodeReservedExpansion` (*type:* `boolean()`, *default:* `nil`) - When set to true, URL path parameters will be fully URI-decoded except in cases of single segment matches in reserved expansion, where "%2F" will be left encoded. The default behavior is to not decode RFC 6570 reserved characters in multi segment matches.
+  *   `rules` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t)`, *default:* `nil`) - A list of HTTP configuration rules that apply to individual API methods. **NOTE:** All service configuration rules follow "last one wins" order.
   """
 
   use GoogleApi.Gax.ModelBase

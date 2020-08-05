@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.Route do
   @moduledoc """
-  Represents a route that was created or discovered by a private access
-  management service.
+  Represents a route that was created or discovered by a private access management service.
 
   ## Attributes
 
   *   `destRange` (*type:* `String.t`, *default:* `nil`) - Destination CIDR range that this route applies to.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Route name. See https://cloud.google.com/vpc/docs/routes
-  *   `network` (*type:* `String.t`, *default:* `nil`) - Fully-qualified URL of the VPC network in the producer host tenant project
-      that this route applies to. For example:
-      `projects/123456/global/networks/host-network`
-  *   `nextHopGateway` (*type:* `String.t`, *default:* `nil`) - Fully-qualified URL of the gateway that should handle matching packets that
-      this route applies to. For example:
-      `projects/123456/global/gateways/default-internet-gateway`
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Fully-qualified URL of the VPC network in the producer host tenant project that this route applies to. For example: `projects/123456/global/networks/host-network`
+  *   `nextHopGateway` (*type:* `String.t`, *default:* `nil`) - Fully-qualified URL of the gateway that should handle matching packets that this route applies to. For example: `projects/123456/global/gateways/default-internet-gateway`
   """
 
   use GoogleApi.Gax.ModelBase

@@ -26,26 +26,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  For service producers, provisions a new subnet in a peered service's shared
-  VPC network in the requested region and with the requested size that's
-  expressed as a CIDR range (number of leading bits of ipV4 network mask).
-  The method checks against the assigned allocated ranges to find a
-  non-conflicting IP address range. The method will reuse a subnet if
-  subsequent calls contain the same subnet name, region, and prefix length.
-  This method will make producer's tenant project to be a shared VPC service
-  project as needed.
+  For service producers, provisions a new subnet in a peered service's shared VPC network in the requested region and with the requested size that's expressed as a CIDR range (number of leading bits of ipV4 network mask). The method checks against the assigned allocated ranges to find a non-conflicting IP address range. The method will reuse a subnet if subsequent calls contain the same subnet name, region, and prefix length. This method will make producer's tenant project to be a shared VPC service project as needed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. A tenant project in the service producer organization, in the
-      following format: services/{service}/{collection-id}/{resource-id}.
-      {collection-id} is the cloud resource collection type that represents the
-      tenant project. Only `projects` are supported.
-      {resource-id} is the tenant project numeric id, such as
-      `123456`. {service} the name of the peering service, such as
-      `service-peering.example.com`. This service must already be
-      enabled in the service consumer's project.
+  *   `parent` (*type:* `String.t`) - Required. A tenant project in the service producer organization, in the following format: services/{service}/{collection-id}/{resource-id}. {collection-id} is the cloud resource collection type that represents the tenant project. Only `projects` are supported. {resource-id} is the tenant project numeric id, such as `123456`. {service} the name of the peering service, such as `service-peering.example.com`. This service must already be enabled in the service consumer's project.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -116,9 +102,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The service that is managing peering connectivity for a service producer's
-      organization. For Google services that support this functionality, this
-      value is `services/servicenetworking.googleapis.com`.
+  *   `parent` (*type:* `String.t`) - The service that is managing peering connectivity for a service producer's organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -189,9 +173,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The service that is managing peering connectivity for a service producer's
-      organization. For Google services that support this functionality, this
-      value is `services/servicenetworking.googleapis.com`.
+  *   `parent` (*type:* `String.t`) - The service that is managing peering connectivity for a service producer's organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -257,18 +239,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Service producers can use this method to find a currently unused range
-  within consumer allocated ranges. This returned range is not reserved,
-  and not guaranteed to remain unused. It will validate previously provided
-  allocated ranges, find non-conflicting sub-range of requested size
-  (expressed in number of leading bits of ipv4 network mask, as in CIDR range
-  notation).
+  Service producers can use this method to find a currently unused range within consumer allocated ranges. This returned range is not reserved, and not guaranteed to remain unused. It will validate previously provided allocated ranges, find non-conflicting sub-range of requested size (expressed in number of leading bits of ipv4 network mask, as in CIDR range notation).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. This is in a form services/{service}. {service} the name of the private
-      access management service, for example 'service-peering.example.com'.
+  *   `parent` (*type:* `String.t`) - Required. This is in a form services/{service}. {service} the name of the private access management service, for example 'service-peering.example.com'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -334,17 +310,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Service producers use this method to validate if the consumer provided
-  network, project and requested range are valid. This allows them to use
-  a fail-fast mechanism for consumer requests, and not have to wait for
-  AddSubnetwork operation completion to determine if user request is invalid.
+  Service producers use this method to validate if the consumer provided network, project and requested range are valid. This allows them to use a fail-fast mechanism for consumer requests, and not have to wait for AddSubnetwork operation completion to determine if user request is invalid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. This is in a form services/{service} where {service} is the name of the
-      private access management service. For example
-      'service-peering.example.com'.
+  *   `parent` (*type:* `String.t`) - Required. This is in a form services/{service} where {service} is the name of the private access management service. For example 'service-peering.example.com'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -402,20 +373,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Creates a private connection that establishes a VPC Network Peering
-  connection to a VPC network in the service producer's organization.
-  The administrator of the service consumer's VPC network invokes this
-  method. The administrator must assign one or more allocated IP ranges for
-  provisioning subnetworks in the service producer's VPC network. This
-  connection is used for all supported services in the service producer's
-  organization, so it only needs to be invoked once.
+  Creates a private connection that establishes a VPC Network Peering connection to a VPC network in the service producer's organization. The administrator of the service consumer's VPC network invokes this method. The administrator must assign one or more allocated IP ranges for provisioning subnetworks in the service producer's VPC network. This connection is used for all supported services in the service producer's organization, so it only needs to be invoked once.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The service that is managing peering connectivity for a service producer's
-      organization. For Google services that support this functionality, this
-      value is `services/servicenetworking.googleapis.com`.
+  *   `parent` (*type:* `String.t`) - The service that is managing peering connectivity for a service producer's organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -481,17 +444,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  List the private connections that are configured in a service consumer's
-  VPC network.
+  List the private connections that are configured in a service consumer's VPC network.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The service that is managing peering connectivity for a service producer's
-      organization. For Google services that support this functionality, this
-      value is `services/servicenetworking.googleapis.com`.
-      If you specify `services/-` as the parameter value, all configured peering
-      services are listed.
+  *   `parent` (*type:* `String.t`) - The service that is managing peering connectivity for a service producer's organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`. If you specify `services/-` as the parameter value, all configured peering services are listed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -504,13 +462,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:network` (*type:* `String.t`) - The name of service consumer's VPC network that's connected with service
-          producer network through a private connection. The network name must be in
-          the following format:
-          `projects/{project}/global/networks/{network}`. {project} is a
-          project number, such as in `12345` that includes the VPC service
-          consumer's VPC network. {network} is the name of the service consumer's VPC
-          network.
+      *   `:network` (*type:* `String.t`) - The name of service consumer's VPC network that's connected with service producer network through a private connection. The network name must be in the following format: `projects/{project}/global/networks/{network}`. {project} is a project number, such as in `12345` that includes the VPC service consumer's VPC network. {network} is the name of the service consumer's VPC network.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -570,12 +522,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The private service connection that connects to a service producer
-      organization. The name includes both the private service name and the VPC
-      network peering name in the format of
-      `services/{peering_service_name}/connections/{vpc_peering_name}`. For
-      Google services that support this functionality, this is
-      `services/servicenetworking.googleapis.com/connections/servicenetworking-googleapis-com`.
+  *   `name` (*type:* `String.t`) - The private service connection that connects to a service producer organization. The name includes both the private service name and the VPC network peering name in the format of `services/{peering_service_name}/connections/{vpc_peering_name}`. For Google services that support this functionality, this is `services/servicenetworking.googleapis.com/connections/servicenetworking-googleapis-com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -588,10 +535,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:force` (*type:* `boolean()`) - If a previously defined allocated range is removed, force flag must be
-          set to true.
-      *   `:updateMask` (*type:* `String.t`) - The update mask. If this is omitted, it defaults to "*". You can only
-          update the listed peering ranges.
+      *   `:force` (*type:* `boolean()`) - If a previously defined allocated range is removed, force flag must be set to true.
+      *   `:updateMask` (*type:* `String.t`) - The update mask. If this is omitted, it defaults to "*". You can only update the listed peering ranges.
       *   `:body` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Connection.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -647,15 +592,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Service producers can use this method to add DNS record sets to private DNS
-  zones in the shared producer host project.
+  Service producers can use this method to add DNS record sets to private DNS zones in the shared producer host project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's
-      organization. For Google services that support this functionality, this
-      value is `services/servicenetworking.googleapis.com`.
+  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -721,15 +663,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Service producers can use this method to remove DNS record sets from
-  private DNS zones in the shared producer host project.
+  Service producers can use this method to remove DNS record sets from private DNS zones in the shared producer host project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's
-      organization. For Google services that support this functionality, this
-      value is `services/servicenetworking.googleapis.com`.
+  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -795,15 +734,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Service producers can use this method to update DNS record sets from
-  private DNS zones in the shared producer host project.
+  Service producers can use this method to update DNS record sets from private DNS zones in the shared producer host project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's
-      organization. For Google services that support this functionality, this
-      value is `services/servicenetworking.googleapis.com`.
+  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -869,16 +805,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Service producers can use this method to add private DNS zones in the
-  shared producer host project and matching peering zones in the consumer
-  project.
+  Service producers can use this method to add private DNS zones in the shared producer host project and matching peering zones in the consumer project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's
-      organization. For Google services that support this functionality, this
-      value is `services/servicenetworking.googleapis.com`.
+  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -944,16 +876,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Service producers can use this method to remove private DNS zones in the
-  shared producer host project and matching peering zones in the consumer
-  project.
+  Service producers can use this method to remove private DNS zones in the shared producer host project and matching peering zones in the consumer project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's
-      organization. For Google services that support this functionality, this
-      value is `services/servicenetworking.googleapis.com`.
+  *   `parent` (*type:* `String.t`) - Required. The service that is managing peering connectivity for a service producer's organization. For Google services that support this functionality, this value is `services/servicenetworking.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1019,17 +947,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Service producers can use this method to add roles in the shared VPC host
-  project. Each role is bound to the provided member. Each role must be
-  selected from within a whitelisted set of roles. Each role is applied at
-  only the granularity specified in the whitelist.
+  Service producers can use this method to add roles in the shared VPC host project. Each role is bound to the provided member. Each role must be selected from within a whitelisted set of roles. Each role is applied at only the granularity specified in the whitelist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceNetworking.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. This is in a form services/{service} where {service} is the name of the
-      private access management service. For example
-      'service-peering.example.com'.
+  *   `parent` (*type:* `String.t`) - Required. This is in a form services/{service} where {service} is the name of the private access management service. For example 'service-peering.example.com'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

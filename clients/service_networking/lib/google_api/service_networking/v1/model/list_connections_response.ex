@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.ListConnectionsResponse do
   @moduledoc """
-  ListConnectionsResponse is the response to list peering states for the
-  given service and consumer project.
+  ListConnectionsResponse is the response to list peering states for the given service and consumer project.
 
   ## Attributes
 

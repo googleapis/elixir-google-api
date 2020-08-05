@@ -21,16 +21,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.PolicyBinding do
 
   ## Attributes
 
-  *   `member` (*type:* `String.t`, *default:* `nil`) - Required. Member to bind the role with. See
-      /iam/docs/reference/rest/v1/Policy#Binding for how to format each member.
-      Eg.
-        - user:myuser@mydomain.com
-        - serviceAccount:my-service-account@app.gserviceaccount.com
-  *   `role` (*type:* `String.t`, *default:* `nil`) - Required. Role to apply. Only whitelisted roles can be used at the specified
-      granularity. The role must be one of the following:
-        - 'roles/container.hostServiceAgentUser' applied on the shared VPC host
-          project
-        - 'roles/compute.securityAdmin' applied on the shared VPC host project
+  *   `member` (*type:* `String.t`, *default:* `nil`) - Required. Member to bind the role with. See /iam/docs/reference/rest/v1/Policy#Binding for how to format each member. Eg. - user:myuser@mydomain.com - serviceAccount:my-service-account@app.gserviceaccount.com
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Required. Role to apply. Only whitelisted roles can be used at the specified granularity. The role must be one of the following: - 'roles/container.hostServiceAgentUser' applied on the shared VPC host project - 'roles/compute.securityAdmin' applied on the shared VPC host project
   """
 
   use GoogleApi.Gax.ModelBase
