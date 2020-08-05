@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.TransactionData do
   @moduledoc """
-  Represents details collected when the visitor performs a transaction on the
-  page.
+  Represents details collected when the visitor performs a transaction on the page.
 
   ## Attributes
 
-  *   `transactionId` (*type:* `String.t`, *default:* `nil`) - The transaction ID, supplied by the e-commerce tracking method, for the
-      purchase in the shopping cart.
+  *   `transactionId` (*type:* `String.t`, *default:* `nil`) - The transaction ID, supplied by the e-commerce tracking method, for the purchase in the shopping cart.
   *   `transactionRevenue` (*type:* `float()`, *default:* `nil`) - The total sale revenue (excluding shipping and tax) of the transaction.
   *   `transactionShipping` (*type:* `float()`, *default:* `nil`) - Total cost of shipping.
   *   `transactionTax` (*type:* `float()`, *default:* `nil`) - Total tax for the transaction.

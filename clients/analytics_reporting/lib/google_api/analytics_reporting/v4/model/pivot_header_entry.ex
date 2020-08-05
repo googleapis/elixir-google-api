@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry do
   @moduledoc """
-  The headers for the each of the metric column corresponding to the metrics
-  requested in the pivots section of the response.
+  The headers for the each of the metric column corresponding to the metrics requested in the pivots section of the response.
 
   ## Attributes
 

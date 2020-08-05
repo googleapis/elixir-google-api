@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment do
   @moduledoc """
-  A list of segment filters in the `OR` group are combined with the logical OR
-  operator.
+  A list of segment filters in the `OR` group are combined with the logical OR operator.
 
   ## Attributes
 

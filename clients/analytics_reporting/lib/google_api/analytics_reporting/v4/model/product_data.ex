@@ -22,8 +22,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ProductData do
   ## Attributes
 
   *   `itemRevenue` (*type:* `float()`, *default:* `nil`) - The total revenue from purchased product items.
-  *   `productName` (*type:* `String.t`, *default:* `nil`) - The product name, supplied by the e-commerce tracking application, for
-      the purchased items.
+  *   `productName` (*type:* `String.t`, *default:* `nil`) - The product name, supplied by the e-commerce tracking application, for the purchased items.
   *   `productQuantity` (*type:* `String.t`, *default:* `nil`) - Total number of this product units in the transaction.
   *   `productSku` (*type:* `String.t`, *default:* `nil`) - Unique code that represents the product.
   """

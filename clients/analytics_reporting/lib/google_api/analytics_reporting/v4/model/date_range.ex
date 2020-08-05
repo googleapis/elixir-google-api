@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRange do
   @moduledoc """
-  A contiguous set of days: startDate, startDate + 1 day, ..., endDate.
-  The start and end dates are specified in
-  [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date format `YYYY-MM-DD`.
+  A contiguous set of days: startDate, startDate + 1 day, ..., endDate. The start and end dates are specified in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date format `YYYY-MM-DD`.
 
   ## Attributes
 

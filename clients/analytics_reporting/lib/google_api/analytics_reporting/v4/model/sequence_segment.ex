@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment do
   @moduledoc """
-  Sequence conditions consist of one or more steps, where each step is defined
-  by one or more dimension/metric conditions. Multiple steps can be combined
-  with special sequence operators.
+  Sequence conditions consist of one or more steps, where each step is defined by one or more dimension/metric conditions. Multiple steps can be combined with special sequence operators.
 
   ## Attributes
 
-  *   `firstStepShouldMatchFirstHit` (*type:* `boolean()`, *default:* `nil`) - If set, first step condition must match the first hit of the visitor (in
-      the date range).
+  *   `firstStepShouldMatchFirstHit` (*type:* `boolean()`, *default:* `nil`) - If set, first step condition must match the first hit of the visitor (in the date range).
   *   `segmentSequenceSteps` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep.t)`, *default:* `nil`) - The list of steps in the sequence.
   """
 

@@ -21,10 +21,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.OrderBy do
 
   ## Attributes
 
-  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The field which to sort by. The default sort order is ascending. Example:
-      `ga:browser`.
-      Note, that you can only specify one field for sort here. For example,
-      `ga:browser, ga:city` is not valid.
+  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The field which to sort by. The default sort order is ascending. Example: `ga:browser`. Note, that you can only specify one field for sort here. For example, `ga:browser, ga:city` is not valid.
   *   `orderType` (*type:* `String.t`, *default:* `nil`) - The order type. The default orderType is `VALUE`.
   *   `sortOrder` (*type:* `String.t`, *default:* `nil`) - The sorting order for the field.
   """

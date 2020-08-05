@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining do
   @moduledoc """
-  The resource quota tokens remaining for the property after the request is
-  completed.
+  The resource quota tokens remaining for the property after the request is completed.
 
   ## Attributes
 

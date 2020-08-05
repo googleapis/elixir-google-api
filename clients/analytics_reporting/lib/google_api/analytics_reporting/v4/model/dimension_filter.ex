@@ -23,12 +23,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DimensionFilter do
 
   *   `caseSensitive` (*type:* `boolean()`, *default:* `nil`) - Should the match be case sensitive? Default is false.
   *   `dimensionName` (*type:* `String.t`, *default:* `nil`) - The dimension to filter on. A DimensionFilter must contain a dimension.
-  *   `expressions` (*type:* `list(String.t)`, *default:* `nil`) - Strings or regular expression to match against. Only the first value of
-      the list is used for comparison unless the operator is `IN_LIST`.
-      If `IN_LIST` operator, then the entire list is used to filter the
-      dimensions as explained in the description of the `IN_LIST` operator.
-  *   `not` (*type:* `boolean()`, *default:* `nil`) - Logical `NOT` operator. If this boolean is set to true, then the matching
-      dimension values will be excluded in the report. The default is false.
+  *   `expressions` (*type:* `list(String.t)`, *default:* `nil`) - Strings or regular expression to match against. Only the first value of the list is used for comparison unless the operator is `IN_LIST`. If `IN_LIST` operator, then the entire list is used to filter the dimensions as explained in the description of the `IN_LIST` operator.
+  *   `not` (*type:* `boolean()`, *default:* `nil`) - Logical `NOT` operator. If this boolean is set to true, then the matching dimension values will be excluded in the report. The default is false.
   *   `operator` (*type:* `String.t`, *default:* `nil`) - How to match the dimension to the expression. The default is REGEXP.
   """
 
