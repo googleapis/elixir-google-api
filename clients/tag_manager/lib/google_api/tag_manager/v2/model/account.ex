@@ -22,19 +22,10 @@ defmodule GoogleApi.TagManager.V2.Model.Account do
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The Account ID uniquely identifies the GTM Account.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Account as computed at storage time.
-      This value is recomputed whenever the account is modified.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Account display name.
-      @mutable tagmanager.accounts.create
-      @mutable tagmanager.accounts.update
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Account as computed at storage time. This value is recomputed whenever the account is modified.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Account display name. @mutable tagmanager.accounts.create @mutable tagmanager.accounts.update
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Account's API relative path.
-  *   `shareData` (*type:* `boolean()`, *default:* `nil`) - Whether the account shares data anonymously with Google and others.
-      This flag enables benchmarking by sharing your data in an anonymous form.
-      Google will remove all identifiable information about your website, combine
-      the data with hundreds of other anonymous sites and report aggregate trends
-      in the benchmarking service.
-      @mutable tagmanager.accounts.create
-      @mutable tagmanager.accounts.update
+  *   `shareData` (*type:* `boolean()`, *default:* `nil`) - Whether the account shares data anonymously with Google and others. This flag enables benchmarking by sharing your data in an anonymous form. Google will remove all identifiable information about your website, combine the data with hundreds of other anonymous sites and report aggregate trends in the benchmarking service. @mutable tagmanager.accounts.create @mutable tagmanager.accounts.update
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   """
 

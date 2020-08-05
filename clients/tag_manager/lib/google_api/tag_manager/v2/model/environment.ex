@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.TagManager.V2.Model.Environment do
   @moduledoc """
-  Represents a Google Tag Manager Environment. Note that a user can create,
-  delete and update environments of type USER, but can only update the
-  enable_debug and url fields of environments of other types.
+  Represents a Google Tag Manager Environment. Note that a user can create, delete and update environments of type USER, but can only update the enable_debug and url fields of environments of other types.
 
   ## Attributes
 
@@ -28,26 +26,15 @@ defmodule GoogleApi.TagManager.V2.Model.Environment do
   *   `authorizationTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - The last update time-stamp for the authorization code.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
   *   `containerVersionId` (*type:* `String.t`, *default:* `nil`) - Represents a link to a container version.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The environment description. Can be set or changed only on USER type
-      environments.
-      @mutable tagmanager.accounts.containers.environments.create
-      @mutable tagmanager.accounts.containers.environments.update
-  *   `enableDebug` (*type:* `boolean()`, *default:* `nil`) - Whether or not to enable debug by default for the environment.
-      @mutable tagmanager.accounts.containers.environments.create
-      @mutable tagmanager.accounts.containers.environments.update
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The environment description. Can be set or changed only on USER type environments. @mutable tagmanager.accounts.containers.environments.create @mutable tagmanager.accounts.containers.environments.update
+  *   `enableDebug` (*type:* `boolean()`, *default:* `nil`) - Whether or not to enable debug by default for the environment. @mutable tagmanager.accounts.containers.environments.create @mutable tagmanager.accounts.containers.environments.update
   *   `environmentId` (*type:* `String.t`, *default:* `nil`) - GTM Environment ID uniquely identifies the GTM Environment.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM environment as computed at storage time.
-      This value is recomputed whenever the environment is modified.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The environment display name. Can be set or changed only on USER type
-      environments.
-      @mutable tagmanager.accounts.containers.environments.create
-      @mutable tagmanager.accounts.containers.environments.update
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM environment as computed at storage time. This value is recomputed whenever the environment is modified.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The environment display name. Can be set or changed only on USER type environments. @mutable tagmanager.accounts.containers.environments.create @mutable tagmanager.accounts.containers.environments.update
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Environment's API relative path.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this environment.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - Default preview page url for the environment.
-      @mutable tagmanager.accounts.containers.environments.create
-      @mutable tagmanager.accounts.containers.environments.update
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Default preview page url for the environment. @mutable tagmanager.accounts.containers.environments.create @mutable tagmanager.accounts.containers.environments.update
   *   `workspaceId` (*type:* `String.t`, *default:* `nil`) - Represents a link to a quick preview of a workspace.
   """
 

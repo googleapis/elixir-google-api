@@ -23,11 +23,8 @@ defmodule GoogleApi.TagManager.V2.Model.CreateContainerVersionResponse do
 
   *   `compilerError` (*type:* `boolean()`, *default:* `nil`) - Compiler errors or not.
   *   `containerVersion` (*type:* `GoogleApi.TagManager.V2.Model.ContainerVersion.t`, *default:* `nil`) - The container version created.
-  *   `newWorkspacePath` (*type:* `String.t`, *default:* `nil`) - Auto generated workspace path created as a result of version creation. This
-      field should only be populated if the created version was not a quick
-      preview.
-  *   `syncStatus` (*type:* `GoogleApi.TagManager.V2.Model.SyncStatus.t`, *default:* `nil`) - Whether version creation failed when syncing the workspace to the latest
-      container version.
+  *   `newWorkspacePath` (*type:* `String.t`, *default:* `nil`) - Auto generated workspace path created as a result of version creation. This field should only be populated if the created version was not a quick preview.
+  *   `syncStatus` (*type:* `GoogleApi.TagManager.V2.Model.SyncStatus.t`, *default:* `nil`) - Whether version creation failed when syncing the workspace to the latest container version.
   """
 
   use GoogleApi.Gax.ModelBase

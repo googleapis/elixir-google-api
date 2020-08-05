@@ -21,9 +21,7 @@ defmodule GoogleApi.TagManager.V2.Model.RevertFolderResponse do
 
   ## Attributes
 
-  *   `folder` (*type:* `GoogleApi.TagManager.V2.Model.Folder.t`, *default:* `nil`) - Folder as it appears in the latest container version since the last
-      workspace synchronization operation. If no folder is present, that means
-      the folder was deleted in the latest container version.
+  *   `folder` (*type:* `GoogleApi.TagManager.V2.Model.Folder.t`, *default:* `nil`) - Folder as it appears in the latest container version since the last workspace synchronization operation. If no folder is present, that means the folder was deleted in the latest container version.
   """
 
   use GoogleApi.Gax.ModelBase

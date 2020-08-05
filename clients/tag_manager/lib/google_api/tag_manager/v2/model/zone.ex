@@ -25,8 +25,7 @@ defmodule GoogleApi.TagManager.V2.Model.Zone do
   *   `boundary` (*type:* `GoogleApi.TagManager.V2.Model.ZoneBoundary.t`, *default:* `nil`) - This Zone's boundary.
   *   `childContainer` (*type:* `list(GoogleApi.TagManager.V2.Model.ZoneChildContainer.t)`, *default:* `nil`) - Containers that are children of this Zone.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Zone as computed at storage time.
-      This value is recomputed whenever the zone is modified.
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Zone as computed at storage time. This value is recomputed whenever the zone is modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Zone display name.
   *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this zone in the container.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Zone's API relative path.

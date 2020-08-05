@@ -31,8 +31,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Accounts's API relative path.
-      Example: accounts/{account_id}
+  *   `path` (*type:* `String.t`) - GTM Accounts's API relative path. Example: accounts/{account_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -149,8 +148,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Accounts's API relative path.
-      Example: accounts/{account_id}
+  *   `path` (*type:* `String.t`) - GTM Accounts's API relative path. Example: accounts/{account_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -163,8 +161,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the account
-          in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the account in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Account.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -214,8 +211,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Account's API relative path.
-      Example: accounts/{account_id}.
+  *   `parent` (*type:* `String.t`) - GTM Account's API relative path. Example: accounts/{account_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -281,8 +277,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `path` (*type:* `String.t`) - GTM Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -343,8 +338,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `path` (*type:* `String.t`) - GTM Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -403,8 +397,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Accounts's API relative path.
-      Example: accounts/{account_id}.
+  *   `parent` (*type:* `String.t`) - GTM Accounts's API relative path. Example: accounts/{account_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -465,8 +458,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `path` (*type:* `String.t`) - GTM Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -479,8 +471,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the
-          container in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the container in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Container.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -535,8 +526,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `parent` (*type:* `String.t`) - GTM Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -607,9 +597,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Environment's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/environments/{environment_id}
+  *   `path` (*type:* `String.t`) - GTM Environment's API relative path. Example: accounts/{account_id}/containers/{container_id}/environments/{environment_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -675,9 +663,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Environment's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/environments/{environment_id}
+  *   `path` (*type:* `String.t`) - GTM Environment's API relative path. Example: accounts/{account_id}/containers/{container_id}/environments/{environment_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -746,8 +732,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `parent` (*type:* `String.t`) - GTM Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -820,9 +805,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Environment's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/environments/{environment_id}
+  *   `path` (*type:* `String.t`) - GTM Environment's API relative path. Example: accounts/{account_id}/containers/{container_id}/environments/{environment_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -893,9 +876,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Environment's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/environments/{environment_id}
+  *   `path` (*type:* `String.t`) - GTM Environment's API relative path. Example: accounts/{account_id}/containers/{container_id}/environments/{environment_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -908,8 +889,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the
-          environment in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the environment in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Environment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -969,8 +949,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `parent` (*type:* `String.t`) - GTM Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1039,8 +1018,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `parent` (*type:* `String.t`) - GTM Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1115,9 +1093,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/versions/{version_id}
+  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path. Example: accounts/{account_id}/containers/{container_id}/versions/{version_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1183,9 +1159,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/versions/{version_id}
+  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path. Example: accounts/{account_id}/containers/{container_id}/versions/{version_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1198,8 +1172,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:containerVersionId` (*type:* `String.t`) - The GTM ContainerVersion ID. Specify <code>published</code> to retrieve
-          the currently published version.
+      *   `:containerVersionId` (*type:* `String.t`) - The GTM ContainerVersion ID. Specify published to retrieve the currently published version.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1257,8 +1230,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `parent` (*type:* `String.t`) - GTM Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1327,9 +1299,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/versions/{version_id}
+  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path. Example: accounts/{account_id}/containers/{container_id}/versions/{version_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1342,8 +1312,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the
-          container version in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the container version in storage.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1398,15 +1367,12 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Sets the latest version used for synchronization of workspaces when
-  detecting conflicts and errors.
+  Sets the latest version used for synchronization of workspaces when detecting conflicts and errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/versions/{version_id}
+  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path. Example: accounts/{account_id}/containers/{container_id}/versions/{version_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1475,9 +1441,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/versions/{version_id}
+  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path. Example: accounts/{account_id}/containers/{container_id}/versions/{version_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1546,9 +1510,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/versions/{version_id}
+  *   `path` (*type:* `String.t`) - GTM ContainerVersion's API relative path. Example: accounts/{account_id}/containers/{container_id}/versions/{version_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1561,8 +1523,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the
-          container version in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the container version in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.ContainerVersion.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1622,8 +1583,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM parent Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `parent` (*type:* `String.t`) - GTM parent Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1689,16 +1649,12 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Creates a Container Version from the entities present in the workspace,
-  deletes the workspace, and sets the base container version to the newly
-  created version.
+  Creates a Container Version from the entities present in the workspace, deletes the workspace, and sets the base container version to the newly created version.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1771,9 +1727,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1839,9 +1793,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1910,9 +1862,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1983,8 +1933,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM parent Container's API relative path.
-      Example: accounts/{account_id}/containers/{container_id}
+  *   `parent` (*type:* `String.t`) - GTM parent Container's API relative path. Example: accounts/{account_id}/containers/{container_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2050,15 +1999,12 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Quick previews a workspace by creating a fake container version from all
-  entities in the provided workspace.
+  Quick previews a workspace by creating a fake container version from all entities in the provided workspace.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2122,15 +2068,12 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Resolves a merge conflict for a workspace entity by updating it to the
-  resolved entity passed in the request.
+  Resolves a merge conflict for a workspace entity by updating it to the resolved entity passed in the request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2143,8 +2086,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the
-          entity_in_workspace in the merge conflict.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the entity_in_workspace in the merge conflict.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Entity.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2196,16 +2138,12 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Syncs a workspace to the latest container version by updating all
-  unmodified workspace entities and displaying conflicts for modified
-  entities.
+  Syncs a workspace to the latest container version by updating all unmodified workspace entities and displaying conflicts for modified entities.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2274,9 +2212,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `path` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2289,8 +2225,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the
-          workspace in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the workspace in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Workspace.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2350,9 +2285,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2425,9 +2358,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM BuiltInVariable's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/built_in_variables
+  *   `path` (*type:* `String.t`) - GTM BuiltInVariable's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/built_in_variables
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2495,9 +2426,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2570,9 +2499,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM BuiltInVariable's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/built_in_variables
+  *   `path` (*type:* `String.t`) - GTM BuiltInVariable's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/built_in_variables
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2645,9 +2572,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2716,9 +2641,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Folder's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
+  *   `path` (*type:* `String.t`) - GTM Folder's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2784,9 +2707,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Folder's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
+  *   `path` (*type:* `String.t`) - GTM Folder's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2857,9 +2778,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Folder's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
+  *   `path` (*type:* `String.t`) - GTM Folder's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2926,9 +2845,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2999,9 +2916,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Folder's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
+  *   `path` (*type:* `String.t`) - GTM Folder's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3075,9 +2990,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Folder's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
+  *   `path` (*type:* `String.t`) - GTM Folder's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3090,8 +3003,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the tag
-          in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the tag in storage.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3149,9 +3061,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Folder's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
+  *   `path` (*type:* `String.t`) - GTM Folder's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/folders/{folder_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3164,8 +3074,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the folder in
-          storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the folder in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Folder.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3223,9 +3132,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3293,9 +3200,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Tag's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/tags/{tag_id}
+  *   `path` (*type:* `String.t`) - GTM Tag's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/tags/{tag_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3361,9 +3266,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Tag's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/tags/{tag_id}
+  *   `path` (*type:* `String.t`) - GTM Tag's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/tags/{tag_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3429,9 +3332,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3502,9 +3403,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Tag's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/tags/{tag_id}
+  *   `path` (*type:* `String.t`) - GTM Tag's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/tags/{tag_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3517,8 +3416,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of thetag
-          in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of thetag in storage.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3576,9 +3474,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Tag's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/tags/{tag_id}
+  *   `path` (*type:* `String.t`) - GTM Tag's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/tags/{tag_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3591,8 +3487,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the tag in
-          storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the tag in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Tag.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3649,9 +3544,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3722,9 +3615,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Custom Template's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/templates/{template_id}
+  *   `path` (*type:* `String.t`) - GTM Custom Template's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/templates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3790,9 +3681,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Custom Template's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/templates/{template_id}
+  *   `path` (*type:* `String.t`) - GTM Custom Template's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/templates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3861,9 +3750,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3934,9 +3821,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Custom Template's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/templates/{template_id}
+  *   `path` (*type:* `String.t`) - GTM Custom Template's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/templates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3949,8 +3834,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the template
-          in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the template in storage.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4008,9 +3892,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Custom Template's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/templates/{template_id}
+  *   `path` (*type:* `String.t`) - GTM Custom Template's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/templates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4023,8 +3905,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the templates
-          in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the templates in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.CustomTemplate.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4084,9 +3965,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspaces's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspaces's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4157,9 +4036,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Trigger's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/triggers/{trigger_id}
+  *   `path` (*type:* `String.t`) - GTM Trigger's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/triggers/{trigger_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4225,9 +4102,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Trigger's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/triggers/{trigger_id}
+  *   `path` (*type:* `String.t`) - GTM Trigger's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/triggers/{trigger_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4296,9 +4171,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspaces's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspaces's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4369,9 +4242,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Trigger's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/triggers/{trigger_id}
+  *   `path` (*type:* `String.t`) - GTM Trigger's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/triggers/{trigger_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4384,8 +4255,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the trigger
-          in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the trigger in storage.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4443,9 +4313,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Trigger's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/triggers/{trigger_id}
+  *   `path` (*type:* `String.t`) - GTM Trigger's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/triggers/{trigger_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4458,8 +4326,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the trigger
-          in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the trigger in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Trigger.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4519,9 +4386,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4592,9 +4457,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Variable's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
+  *   `path` (*type:* `String.t`) - GTM Variable's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4660,9 +4523,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Variable's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
+  *   `path` (*type:* `String.t`) - GTM Variable's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4731,9 +4592,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4804,9 +4663,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Variable's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
+  *   `path` (*type:* `String.t`) - GTM Variable's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4819,8 +4676,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the variable
-          in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the variable in storage.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4878,9 +4734,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Variable's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
+  *   `path` (*type:* `String.t`) - GTM Variable's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/variables/{variable_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4893,8 +4747,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the variable
-          in storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the variable in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Variable.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4954,9 +4807,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5025,9 +4876,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Zone's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/zones/{zone_id}
+  *   `path` (*type:* `String.t`) - GTM Zone's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/zones/{zone_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5093,9 +4942,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Zone's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/zones/{zone_id}
+  *   `path` (*type:* `String.t`) - GTM Zone's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/zones/{zone_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5162,9 +5009,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
+  *   `parent` (*type:* `String.t`) - GTM Workspace's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5235,9 +5080,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Zone's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/zones/{zone_id}
+  *   `path` (*type:* `String.t`) - GTM Zone's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/zones/{zone_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5250,8 +5093,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the zone in
-          storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the zone in storage.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5309,9 +5151,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM Zone's API relative path.
-      Example:
-      accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/zones/{zone_id}
+  *   `path` (*type:* `String.t`) - GTM Zone's API relative path. Example: accounts/{account_id}/containers/{container_id}/workspaces/{workspace_id}/zones/{zone_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5324,8 +5164,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the zone in
-          storage.
+      *   `:fingerprint` (*type:* `String.t`) - When provided, this fingerprint must match the fingerprint of the zone in storage.
       *   `:body` (*type:* `GoogleApi.TagManager.V2.Model.Zone.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -5383,8 +5222,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Account's API relative path.
-      Example: accounts/{account_id}
+  *   `parent` (*type:* `String.t`) - GTM Account's API relative path. Example: accounts/{account_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5450,14 +5288,12 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Removes a user from the account, revoking access to it and all of its
-  containers.
+  Removes a user from the account, revoking access to it and all of its containers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM UserPermission's API relative path.
-      Example: accounts/{account_id}/user_permissions/{user_permission_id}
+  *   `path` (*type:* `String.t`) - GTM UserPermission's API relative path. Example: accounts/{account_id}/user_permissions/{user_permission_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5523,8 +5359,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM UserPermission's API relative path.
-      Example: accounts/{account_id}/user_permissions/{user_permission_id}
+  *   `path` (*type:* `String.t`) - GTM UserPermission's API relative path. Example: accounts/{account_id}/user_permissions/{user_permission_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5588,14 +5423,12 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  List all users that have access to the account along with Account and
-  Container user access granted to each of them.
+  List all users that have access to the account along with Account and Container user access granted to each of them.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - GTM Accounts's API relative path.
-      Example: accounts/{account_id}
+  *   `parent` (*type:* `String.t`) - GTM Accounts's API relative path. Example: accounts/{account_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5668,8 +5501,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.TagManager.V2.Connection.t`) - Connection to server
-  *   `path` (*type:* `String.t`) - GTM UserPermission's API relative path.
-      Example: accounts/{account_id}/user_permissions/{user_permission_id}
+  *   `path` (*type:* `String.t`) - GTM UserPermission's API relative path. Example: accounts/{account_id}/user_permissions/{user_permission_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

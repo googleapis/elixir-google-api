@@ -21,12 +21,8 @@ defmodule GoogleApi.TagManager.V2.Model.MergeConflict do
 
   ## Attributes
 
-  *   `entityInBaseVersion` (*type:* `GoogleApi.TagManager.V2.Model.Entity.t`, *default:* `nil`) - The base version entity (since the latest sync operation) that has
-      conflicting changes compared to the workspace. If this field is missing,
-      it means the workspace entity is deleted from the base version.
-  *   `entityInWorkspace` (*type:* `GoogleApi.TagManager.V2.Model.Entity.t`, *default:* `nil`) - The workspace entity that has conflicting changes compared to the
-      base version. If an entity is deleted in a workspace, it will still
-      appear with a deleted change status.
+  *   `entityInBaseVersion` (*type:* `GoogleApi.TagManager.V2.Model.Entity.t`, *default:* `nil`) - The base version entity (since the latest sync operation) that has conflicting changes compared to the workspace. If this field is missing, it means the workspace entity is deleted from the base version.
+  *   `entityInWorkspace` (*type:* `GoogleApi.TagManager.V2.Model.Entity.t`, *default:* `nil`) - The workspace entity that has conflicting changes compared to the base version. If an entity is deleted in a workspace, it will still appear with a deleted change status.
   """
 
   use GoogleApi.Gax.ModelBase

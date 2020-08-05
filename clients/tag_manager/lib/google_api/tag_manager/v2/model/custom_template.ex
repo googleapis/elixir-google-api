@@ -23,8 +23,7 @@ defmodule GoogleApi.TagManager.V2.Model.CustomTemplate do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Custom Template as computed at storage time.
-      This value is recomputed whenever the template is modified.
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Custom Template as computed at storage time. This value is recomputed whenever the template is modified.
   *   `galleryReference` (*type:* `GoogleApi.TagManager.V2.Model.GalleryReference.t`, *default:* `nil`) - A reference to the Community Template Gallery entry.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Custom Template display name.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Custom Template's API relative path.

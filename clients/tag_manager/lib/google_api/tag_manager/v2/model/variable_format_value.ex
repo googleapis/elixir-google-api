@@ -21,8 +21,7 @@ defmodule GoogleApi.TagManager.V2.Model.VariableFormatValue do
 
   ## Attributes
 
-  *   `caseConversionType` (*type:* `String.t`, *default:* `nil`) - The option to convert a string-type variable value to either lowercase or
-      uppercase.
+  *   `caseConversionType` (*type:* `String.t`, *default:* `nil`) - The option to convert a string-type variable value to either lowercase or uppercase.
   *   `convertFalseToValue` (*type:* `GoogleApi.TagManager.V2.Model.Parameter.t`, *default:* `nil`) - The value to convert if a variable value is false.
   *   `convertNullToValue` (*type:* `GoogleApi.TagManager.V2.Model.Parameter.t`, *default:* `nil`) - The value to convert if a variable value is null.
   *   `convertTrueToValue` (*type:* `GoogleApi.TagManager.V2.Model.Parameter.t`, *default:* `nil`) - The value to convert if a variable value is true.

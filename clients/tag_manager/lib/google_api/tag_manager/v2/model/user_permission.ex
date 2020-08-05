@@ -21,15 +21,10 @@ defmodule GoogleApi.TagManager.V2.Model.UserPermission do
 
   ## Attributes
 
-  *   `accountAccess` (*type:* `GoogleApi.TagManager.V2.Model.AccountAccess.t`, *default:* `nil`) - GTM Account access permissions.
-      @mutable tagmanager.accounts.permissions.create
-      @mutable tagmanager.accounts.permissions.update
+  *   `accountAccess` (*type:* `GoogleApi.TagManager.V2.Model.AccountAccess.t`, *default:* `nil`) - GTM Account access permissions. @mutable tagmanager.accounts.permissions.create @mutable tagmanager.accounts.permissions.update
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The Account ID uniquely identifies the GTM Account.
-  *   `containerAccess` (*type:* `list(GoogleApi.TagManager.V2.Model.ContainerAccess.t)`, *default:* `nil`) - GTM Container access permissions.
-      @mutable tagmanager.accounts.permissions.create
-      @mutable tagmanager.accounts.permissions.update
-  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - User's email address.
-      @mutable tagmanager.accounts.permissions.create
+  *   `containerAccess` (*type:* `list(GoogleApi.TagManager.V2.Model.ContainerAccess.t)`, *default:* `nil`) - GTM Container access permissions. @mutable tagmanager.accounts.permissions.create @mutable tagmanager.accounts.permissions.update
+  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - User's email address. @mutable tagmanager.accounts.permissions.create
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM UserPermission's API relative path.
   """
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.TagManager.V2.Model.GetWorkspaceStatusResponse do
   @moduledoc """
-  The changes that have occurred in the workspace since the base container
-  version.
+  The changes that have occurred in the workspace since the base container version.
 
   ## Attributes
 
