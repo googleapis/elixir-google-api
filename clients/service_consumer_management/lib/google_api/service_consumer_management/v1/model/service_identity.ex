@@ -17,28 +17,13 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.ServiceIdentity do
   @moduledoc """
-  The per-product per-project service identity for a service.
-
-
-  Use this field to configure per-product per-project service identity.
-  Example of a service identity configuration.
-
-      usage:
-        service_identity:
-        - service_account_parent: "projects/123456789"
-          display_name: "Cloud XXX Service Agent"
-          description: "Used as the identity of Cloud XXX to access resources"
+  The per-product per-project service identity for a service. Use this field to configure per-product per-project service identity. Example of a service identity configuration. usage: service_identity: - service_account_parent: "projects/123456789" display_name: "Cloud XXX Service Agent" description: "Used as the identity of Cloud XXX to access resources"
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A user-specified opaque description of the service account.
-      Must be less than or equal to 256 UTF-8 bytes.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. A user-specified name for the service account.
-      Must be less than or equal to 100 UTF-8 bytes.
-  *   `serviceAccountParent` (*type:* `String.t`, *default:* `nil`) - A service account project that hosts the service accounts.
-
-      An example name would be:
-      `projects/123456789`
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A user-specified opaque description of the service account. Must be less than or equal to 256 UTF-8 bytes.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. A user-specified name for the service account. Must be less than or equal to 100 UTF-8 bytes.
+  *   `serviceAccountParent` (*type:* `String.t`, *default:* `nil`) - A service account project that hosts the service accounts. An example name would be: `projects/123456789`
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Backend do
 
   ## Attributes
 
-  *   `rules` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.BackendRule.t)`, *default:* `nil`) - A list of API backend rules that apply to individual API methods.
-
-      **NOTE:** All service configuration rules follow "last one wins" order.
+  *   `rules` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.BackendRule.t)`, *default:* `nil`) - A list of API backend rules that apply to individual API methods. **NOTE:** All service configuration rules follow "last one wins" order.
   """
 
   use GoogleApi.Gax.ModelBase

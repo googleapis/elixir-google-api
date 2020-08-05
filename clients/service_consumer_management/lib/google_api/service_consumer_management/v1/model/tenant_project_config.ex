@@ -17,25 +17,15 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig do
   @moduledoc """
-  This structure defines a tenant project to be added to the specified tenancy
-  unit and its initial configuration and properties. A project lien is created
-  for the tenant project to prevent the tenant project from being deleted
-  accidentally. The lien is deleted as part of tenant project removal.
+  This structure defines a tenant project to be added to the specified tenancy unit and its initial configuration and properties. A project lien is created for the tenant project to prevent the tenant project from being deleted accidentally. The lien is deleted as part of tenant project removal.
 
   ## Attributes
 
   *   `billingConfig` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.BillingConfig.t`, *default:* `nil`) - Billing account properties. The billing account must be specified.
-  *   `folder` (*type:* `String.t`, *default:* `nil`) - Folder where project in this tenancy unit must be located
-      This folder must have been previously created with the required
-      permissions for the caller to create and configure a project in it.
-      Valid folder resource names have the format `folders/{folder_number}`
-      (for example, `folders/123456`).
+  *   `folder` (*type:* `String.t`, *default:* `nil`) - Folder where project in this tenancy unit must be located This folder must have been previously created with the required permissions for the caller to create and configure a project in it. Valid folder resource names have the format `folders/{folder_number}` (for example, `folders/123456`).
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels that are applied to this project.
   *   `serviceAccountConfig` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.ServiceAccountConfig.t`, *default:* `nil`) - Configuration for the IAM service account on the tenant project.
-  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - Google Cloud API names of services that are activated on this project
-      during provisioning.  If any of these services can't be activated,
-      the request fails.
-      For example: 'compute.googleapis.com','cloudfunctions.googleapis.com'
+  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - Google Cloud API names of services that are activated on this project during provisioning. If any of these services can't be activated, the request fails. For example: 'compute.googleapis.com','cloudfunctions.googleapis.com'
   *   `tenantProjectPolicy` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy.t`, *default:* `nil`) - Describes ownership and policies for the new tenant project. Required.
   """
 

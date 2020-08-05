@@ -22,10 +22,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1DefaultIdentity do
   ## Attributes
 
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the default identity.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Default identity resource name.
-
-      An example name would be:
-      `services/serviceconsumermanagement.googleapis.com/projects/123/defaultIdentity`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Default identity resource name. An example name would be: `services/serviceconsumermanagement.googleapis.com/projects/123/defaultIdentity`
   *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - The unique and stable id of the default identity.
   """
 

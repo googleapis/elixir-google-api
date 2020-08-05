@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AddTenantProjectRequest do
   @moduledoc """
-  Request to add a newly created and configured tenant project to a tenancy
-  unit.
+  Request to add a newly created and configured tenant project to a tenancy unit.
 
   ## Attributes
 
-  *   `projectConfig` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig.t`, *default:* `nil`) - Configuration of the new tenant project to be added to tenancy unit
-      resources.
+  *   `projectConfig` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig.t`, *default:* `nil`) - Configuration of the new tenant project to be added to tenancy unit resources.
   *   `tag` (*type:* `String.t`, *default:* `nil`) - Tag of the added project. Must be less than 128 characters. Required.
   """
 

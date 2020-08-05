@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.SourceContext do
   @moduledoc """
-  `SourceContext` represents information about the source of a
-  protobuf element, like the file in which it is defined.
+  `SourceContext` represents information about the source of a protobuf element, like the file in which it is defined.
 
   ## Attributes
 
-  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The path-qualified name of the .proto file that contained the associated
-      protobuf element.  For example: `"google/protobuf/source_context.proto"`.
+  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The path-qualified name of the .proto file that contained the associated protobuf element. For example: `"google/protobuf/source_context.proto"`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1GenerateDefaultIdentityResponse do
   @moduledoc """
-  Response message for the `GenerateDefaultIdentity` method.
-
-  This response message is assigned to the `response` field of the returned
-  Operation when that operation is done.
+  Response message for the `GenerateDefaultIdentity` method. This response message is assigned to the `response` field of the returned Operation when that operation is done.
 
   ## Attributes
 
-  *   `attachStatus` (*type:* `String.t`, *default:* `nil`) - Status of the role attachment. Under development (go/si-attach-role),
-      currently always return ATTACH_STATUS_UNSPECIFIED)
+  *   `attachStatus` (*type:* `String.t`, *default:* `nil`) - Status of the role attachment. Under development (go/si-attach-role), currently always return ATTACH_STATUS_UNSPECIFIED)
   *   `identity` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.V1DefaultIdentity.t`, *default:* `nil`) - DefaultIdentity that was created or retrieved.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - Role attached to consumer project. Empty if not attached in this
-      request. (Under development, currently always return empty.)
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Role attached to consumer project. Empty if not attached in this request. (Under development, currently always return empty.)
   """
 
   use GoogleApi.Gax.ModelBase
