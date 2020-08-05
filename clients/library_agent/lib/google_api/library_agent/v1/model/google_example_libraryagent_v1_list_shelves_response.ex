@@ -21,11 +21,7 @@ defmodule GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1ListShelves
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results.
-      Pass this value in the
-      ListShelvesRequest.page_token
-      field in the subsequent call to `ListShelves` method to retrieve the next
-      page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in the ListShelvesRequest.page_token field in the subsequent call to `ListShelves` method to retrieve the next page of results.
   *   `shelves` (*type:* `list(GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Shelf.t)`, *default:* `nil`) - The list of shelves.
   """
 

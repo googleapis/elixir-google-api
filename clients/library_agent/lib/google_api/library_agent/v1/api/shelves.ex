@@ -87,8 +87,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
   end
 
   @doc """
-  Lists shelves. The order is unspecified but deterministic. Newly created
-  shelves will not necessarily be added to the end of this list.
+  Lists shelves. The order is unspecified but deterministic. Newly created shelves will not necessarily be added to the end of this list.
 
   ## Parameters
 
@@ -105,12 +104,8 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer shelves than requested.
-          If unspecified, server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListShelvesResponse.next_page_token
-          returned from the previous call to `ListShelves` method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer shelves than requested. If unspecified, server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListShelvesResponse.next_page_token returned from the previous call to `ListShelves` method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -159,10 +154,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
   end
 
   @doc """
-  Borrow a book from the library. Returns the book if it is borrowed
-  successfully. Returns NOT_FOUND if the book does not exist in the library.
-  Returns quota exceeded error if the amount of books borrowed exceeds
-  allocation quota in any dimensions.
+  Borrow a book from the library. Returns the book if it is borrowed successfully. Returns NOT_FOUND if the book does not exist in the library. Returns quota exceeded error if the amount of books borrowed exceeds allocation quota in any dimensions.
 
   ## Parameters
 
@@ -284,9 +276,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
   end
 
   @doc """
-  Lists books in a shelf. The order is unspecified but deterministic. Newly
-  created books will not necessarily be added to the end of this list.
-  Returns NOT_FOUND if the shelf does not exist.
+  Lists books in a shelf. The order is unspecified but deterministic. Newly created books will not necessarily be added to the end of this list. Returns NOT_FOUND if the shelf does not exist.
 
   ## Parameters
 
@@ -304,12 +294,8 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer books than requested.
-          If unspecified, server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          ListBooksResponse.next_page_token.
-          returned from the previous call to `ListBooks` method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer books than requested. If unspecified, server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListBooksResponse.next_page_token. returned from the previous call to `ListBooks` method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -356,10 +342,7 @@ defmodule GoogleApi.LibraryAgent.V1.Api.Shelves do
   end
 
   @doc """
-  Return a book to the library. Returns the book if it is returned to the
-  library successfully.
-  Returns error if the book does not belong to the library
-  or the users didn't borrow before.
+  Return a book to the library. Returns the book if it is returned to the library successfully. Returns error if the book does not belong to the library or the users didn't borrow before.
 
   ## Parameters
 

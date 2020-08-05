@@ -22,11 +22,7 @@ defmodule GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1ListBooksRe
   ## Attributes
 
   *   `books` (*type:* `list(GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Book.t)`, *default:* `nil`) - The list of books.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results.
-      Pass this value in the
-      ListBooksRequest.page_token
-      field in the subsequent call to `ListBooks` method to retrieve the next
-      page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in the ListBooksRequest.page_token field in the subsequent call to `ListBooks` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

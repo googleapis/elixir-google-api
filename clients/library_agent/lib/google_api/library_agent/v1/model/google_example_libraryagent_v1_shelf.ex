@@ -21,9 +21,7 @@ defmodule GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Shelf do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the shelf.
-      Shelf names have the form `shelves/{shelf_id}`.
-      The name is ignored when creating a shelf.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the shelf. Shelf names have the form `shelves/{shelf_id}`. The name is ignored when creating a shelf.
   *   `theme` (*type:* `String.t`, *default:* `nil`) - The theme of the shelf
   """
 
