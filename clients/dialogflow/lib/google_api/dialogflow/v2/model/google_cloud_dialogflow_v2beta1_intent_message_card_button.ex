@@ -21,8 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
 
   ## Attributes
 
-  *   `postback` (*type:* `String.t`, *default:* `nil`) - Optional. The text to send back to the Dialogflow API or a URI to
-      open.
+  *   `postback` (*type:* `String.t`, *default:* `nil`) - Optional. The text to send back to the Dialogflow API or a URI to open.
   *   `text` (*type:* `String.t`, *default:* `nil`) - Optional. The text to show on the button.
   """
 

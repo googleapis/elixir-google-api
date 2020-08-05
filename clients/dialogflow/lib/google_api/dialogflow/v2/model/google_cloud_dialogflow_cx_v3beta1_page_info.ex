@@ -21,12 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo d
 
   ## Attributes
 
-  *   `currentPage` (*type:* `String.t`, *default:* `nil`) - Always present for WebhookRequest. Ignored for WebhookResponse.
-      The unique identifier of the current page.
-      Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-      ID>/flows/<Flow ID>/pages/<Page ID>`.
-  *   `formInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfo.t`, *default:* `nil`) - Optional for both WebhookRequest and WebhookResponse.
-      Information about the form.
+  *   `currentPage` (*type:* `String.t`, *default:* `nil`) - Always present for WebhookRequest. Ignored for WebhookResponse. The unique identifier of the current page. Format: `projects//locations//agents//flows//pages/`.
+  *   `formInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfo.t`, *default:* `nil`) - Optional for both WebhookRequest and WebhookResponse. Information about the form.
   """
 
   use GoogleApi.Gax.ModelBase

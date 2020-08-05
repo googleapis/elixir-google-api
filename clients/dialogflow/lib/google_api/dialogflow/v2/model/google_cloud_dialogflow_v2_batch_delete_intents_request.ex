@@ -21,8 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteIntent
 
   ## Attributes
 
-  *   `intents` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t)`, *default:* `nil`) - Required. The collection of intents to delete. Only intent `name` must be
-      filled in.
+  *   `intents` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t)`, *default:* `nil`) - Required. The collection of intents to delete. Only intent `name` must be filled in.
   """
 
   use GoogleApi.Gax.ModelBase

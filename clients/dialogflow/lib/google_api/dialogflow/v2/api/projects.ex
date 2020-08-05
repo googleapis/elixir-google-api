@@ -31,8 +31,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project that the agent to delete is associated with.
-      Format: `projects/<Project ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The project that the agent to delete is associated with. Format: `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -91,8 +90,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project that the agent to fetch is associated with.
-      Format: `projects/<Project ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The project that the agent to fetch is associated with. Format: `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -153,8 +151,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project of this agent.
-      Format: `projects/<Project ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The project of this agent. Format: `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -214,15 +211,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Exports the specified agent to a ZIP file.
-
-  Operation <response: ExportAgentResponse>
+  Exports the specified agent to a ZIP file. Operation 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project that the agent to export is associated with.
-      Format: `projects/<Project ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The project that the agent to export is associated with. Format: `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -285,8 +279,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the fulfillment.
-      Format: `projects/<Project ID>/agent/fulfillment`.
+  *   `name` (*type:* `String.t`) - Required. The name of the fulfillment. Format: `projects//agent/fulfillment`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -352,14 +345,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Gets agent validation result. Agent validation is performed during
-  training time and is updated automatically when training is completed.
+  Gets agent validation result. Agent validation is performed during training time and is updated automatically when training is completed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project that the agent is associated with.
-      Format: `projects/<Project ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The project that the agent is associated with. Format: `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -372,11 +363,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language for which you want a validation result. If not
-          specified, the agent's default language is used. [Many
-          languages](https://cloud.google.com/dialogflow/docs/reference/language)
-          are supported. Note: languages must be enabled in the agent before they can
-          be used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language for which you want a validation result. If not specified, the agent's default language is used. [Many languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported. Note: languages must be enabled in the agent before they can be used.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -431,25 +418,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Imports the specified agent from a ZIP file.
-
-  Uploads new intents and entity types without deleting the existing ones.
-  Intents and entity types with the same name are replaced with the new
-  versions from ImportAgentRequest. After the import, the imported draft
-  agent will be trained automatically (unless disabled in agent settings).
-  However, once the import is done, training may not be completed yet. Please
-  call TrainAgent and wait for the operation it returns in order to train
-  explicitly.
-
-  Operation <response: google.protobuf.Empty>
-  An operation which tracks when importing is complete. It only tracks
-  when the draft agent is updated not when it is done training.
+  Imports the specified agent from a ZIP file. Uploads new intents and entity types without deleting the existing ones. Intents and entity types with the same name are replaced with the new versions from ImportAgentRequest. After the import, the imported draft agent will be trained automatically (unless disabled in agent settings). However, once the import is done, training may not be completed yet. Please call TrainAgent and wait for the operation it returns in order to train explicitly. Operation An operation which tracks when importing is complete. It only tracks when the draft agent is updated not when it is done training.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project that the agent to import is associated with.
-      Format: `projects/<Project ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The project that the agent to import is associated with. Format: `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -507,24 +481,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Restores the specified agent from a ZIP file.
-
-  Replaces the current agent version with a new one. All the intents and
-  entity types in the older version are deleted. After the restore, the
-  restored draft agent will be trained automatically (unless disabled in
-  agent settings). However, once the restore is done, training may not be
-  completed yet. Please call TrainAgent and wait for the operation it
-  returns in order to train explicitly.
-
-  Operation <response: google.protobuf.Empty>
-  An operation which tracks when restoring is complete. It only tracks
-  when the draft agent is updated not when it is done training.
+  Restores the specified agent from a ZIP file. Replaces the current agent version with a new one. All the intents and entity types in the older version are deleted. After the restore, the restored draft agent will be trained automatically (unless disabled in agent settings). However, once the restore is done, training may not be completed yet. Please call TrainAgent and wait for the operation it returns in order to train explicitly. Operation An operation which tracks when restoring is complete. It only tracks when the draft agent is updated not when it is done training.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project that the agent to restore is associated with.
-      Format: `projects/<Project ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The project that the agent to restore is associated with. Format: `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -582,19 +544,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Returns the list of agents.
-
-  Since there is at most one conversational agent per project, this method is
-  useful primarily for listing all agents across projects the caller has
-  access to. One can achieve that with a wildcard project collection id "-".
-  Refer to [List
-  Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
+  Returns the list of agents. Since there is at most one conversational agent per project, this method is useful primarily for listing all agents across projects the caller has access to. One can achieve that with a wildcard project collection id "-". Refer to [List Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project to list agents from.
-      Format: `projects/<Project ID or '-'>`.
+  *   `parent` (*type:* `String.t`) - Required. The project to list agents from. Format: `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -607,8 +562,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
-          default 100 and at most 1000.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -656,15 +610,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Trains the specified agent.
-
-  Operation <response: google.protobuf.Empty>
+  Trains the specified agent. Operation 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project that the agent to train is associated with.
-      Format: `projects/<Project ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The project that the agent to train is associated with. Format: `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -727,8 +678,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The unique identifier of the fulfillment.
-      Format: `projects/<Project ID>/agent/fulfillment`.
+  *   `name` (*type:* `String.t`) - Required. The unique identifier of the fulfillment. Format: `projects//agent/fulfillment`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -741,8 +691,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields get updated. If the mask is not
-          present, all fields will be updated.
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields get updated. If the mask is not present, all fields will be updated.
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -799,15 +748,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Deletes entity types in the specified agent.
-
-  Operation <response: google.protobuf.Empty>
+  Deletes entity types in the specified agent. Operation 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the agent to delete all entities types for. Format:
-      `projects/<Project ID>/agent`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the agent to delete all entities types for. Format: `projects//agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -875,15 +821,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates/Creates multiple entity types in the specified agent.
-
-  Operation <response: BatchUpdateEntityTypesResponse>
+  Updates/Creates multiple entity types in the specified agent. Operation 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the agent to update or create entity types in.
-      Format: `projects/<Project ID>/agent`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the agent to update or create entity types in. Format: `projects//agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -956,8 +899,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The agent to create a entity type for.
-      Format: `projects/<Project ID>/agent`.
+  *   `parent` (*type:* `String.t`) - Required. The agent to create a entity type for. Format: `projects//agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -970,11 +912,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
-          If not specified, the agent's default language is used.
-          For more information, see
-          [Multilingual intent and entity
-          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1036,8 +974,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the entity type to delete.
-      Format: `projects/<Project ID>/agent/entityTypes/<EntityType ID>`.
+  *   `name` (*type:* `String.t`) - Required. The name of the entity type to delete. Format: `projects//agent/entityTypes/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1106,8 +1043,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the entity type.
-      Format: `projects/<Project ID>/agent/entityTypes/<EntityType ID>`.
+  *   `name` (*type:* `String.t`) - Required. The name of the entity type. Format: `projects//agent/entityTypes/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1120,11 +1056,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
-          If not specified, the agent's default language is used.
-          For more information, see
-          [Multilingual intent and entity
-          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1184,8 +1116,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The agent to list all entity types from.
-      Format: `projects/<Project ID>/agent`.
+  *   `parent` (*type:* `String.t`) - Required. The agent to list all entity types from. Format: `projects//agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1198,13 +1129,8 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
-          If not specified, the agent's default language is used.
-          For more information, see
-          [Multilingual intent and entity
-          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
-          default 100 and at most 1000.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1268,10 +1194,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The unique identifier of the entity type.
-      Required for EntityTypes.UpdateEntityType and
-      EntityTypes.BatchUpdateEntityTypes methods.
-      Format: `projects/<Project ID>/agent/entityTypes/<Entity Type ID>`.
+  *   `name` (*type:* `String.t`) - The unique identifier of the entity type. Required for EntityTypes.UpdateEntityType and EntityTypes.BatchUpdateEntityTypes methods. Format: `projects//agent/entityTypes/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1284,11 +1207,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
-          If not specified, the agent's default language is used.
-          For more information, see
-          [Multilingual intent and entity
-          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1347,15 +1266,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Creates multiple new entities in the specified entity type.
-
-  Operation <response: google.protobuf.Empty>
+  Creates multiple new entities in the specified entity type. Operation 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the entity type to create entities in. Format:
-      `projects/<Project ID>/agent/entityTypes/<Entity Type ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the entity type to create entities in. Format: `projects//agent/entityTypes/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1423,16 +1339,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Deletes entities in the specified entity type.
-
-
-  Operation <response: google.protobuf.Empty>
+  Deletes entities in the specified entity type. Operation 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the entity type to delete entries for. Format:
-      `projects/<Project ID>/agent/entityTypes/<Entity Type ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the entity type to delete entries for. Format: `projects//agent/entityTypes/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1500,18 +1412,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates or creates multiple entities in the specified entity type. This
-  method does not affect entities in the entity type that aren't explicitly
-  specified in the request.
-
-
-  Operation <response: google.protobuf.Empty>
+  Updates or creates multiple entities in the specified entity type. This method does not affect entities in the entity type that aren't explicitly specified in the request. Operation 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the entity type to update or create entities in.
-      Format: `projects/<Project ID>/agent/entityTypes/<Entity Type ID>`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the entity type to update or create entities in. Format: `projects//agent/entityTypes/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1584,8 +1490,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The agent to list all environments from.
-      Format: `projects/<Project ID>/agent`.
+  *   `parent` (*type:* `String.t`) - Required. The agent to list all environments from. Format: `projects//agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1598,8 +1503,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and
-          at most 1000.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1662,12 +1566,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the session to delete all contexts from. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>` or `projects/<Project
-      ID>/agent/environments/<Environment ID>/users/<User ID>/sessions/<Session
-      ID>`.
-      If `Environment ID` is not specified we assume default 'draft' environment.
-      If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The name of the session to delete all contexts from. Format: `projects//agent/sessions/` or `projects//agent/environments//users//sessions/`. If `Environment ID` is not specified we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1731,26 +1630,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Processes a natural language query and returns structured, actionable data
-  as a result. This method is not idempotent, because it may cause contexts
-  and session entity types to be updated, which in turn might affect
-  results of future queries.
+  Processes a natural language query and returns structured, actionable data as a result. This method is not idempotent, because it may cause contexts and session entity types to be updated, which in turn might affect results of future queries.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `session` (*type:* `String.t`) - Required. The name of the session this query is sent to. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>`, or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>`. If `Environment ID` is not specified, we assume
-      default 'draft' environment. If `User ID` is not specified, we are using
-      "-". It's up to the API caller to choose an appropriate `Session ID` and
-      `User Id`. They can be a random number or some type of user and session
-      identifiers (preferably hashed). The length of the `Session ID` and
-      `User ID` must not exceed 36 characters.
-
-      For more information, see the [API interactions
-      guide](https://cloud.google.com/dialogflow/docs/api-overview).
+  *   `session` (*type:* `String.t`) - Required. The name of the session this query is sent to. Format: `projects//agent/sessions/`, or `projects//agent/environments//users//sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we are using "-". It's up to the API caller to choose an appropriate `Session ID` and `User Id`. They can be a random number or some type of user and session identifiers (preferably hashed). The length of the `Session ID` and `User ID` must not exceed 36 characters. For more information, see the [API interactions guide](https://cloud.google.com/dialogflow/docs/api-overview).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1819,19 +1704,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Creates a context.
-
-  If the specified context already exists, overrides the context.
+  Creates a context. If the specified context already exists, overrides the context.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The session to create a context for.
-      Format: `projects/<Project ID>/agent/sessions/<Session ID>` or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The session to create a context for. Format: `projects//agent/sessions/` or `projects//agent/environments//users//sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1904,12 +1782,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the context to delete. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`
-      or `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>/contexts/<Context ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `name` (*type:* `String.t`) - Required. The name of the context to delete. Format: `projects//agent/sessions//contexts/` or `projects//agent/environments//users//sessions//contexts/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1978,12 +1851,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the context. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`
-      or `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>/contexts/<Context ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `name` (*type:* `String.t`) - Required. The name of the context. Format: `projects//agent/sessions//contexts/` or `projects//agent/environments//users//sessions//contexts/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2054,12 +1922,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The session to list all contexts from.
-      Format: `projects/<Project ID>/agent/sessions/<Session ID>` or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The session to list all contexts from. Format: `projects//agent/sessions/` or `projects//agent/environments//users//sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2072,8 +1935,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
-          default 100 and at most 1000.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2136,23 +1998,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The unique identifier of the context. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`,
-      or `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>/contexts/<Context ID>`.
-
-      The `Context ID` is always converted to lowercase, may only contain
-      characters in a-zA-Z0-9_-% and may be at most 250 bytes long.
-
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
-
-      The following context names are reserved for internal use by Dialogflow.
-      You should not use these contexts or create contexts with these names:
-
-      * `__system_counters__`
-      * `*_id_dialog_context`
-      * `*_dialog_params_size`
+  *   `name` (*type:* `String.t`) - Required. The unique identifier of the context. Format: `projects//agent/sessions//contexts/`, or `projects//agent/environments//users//sessions//contexts/`. The `Context ID` is always converted to lowercase, may only contain characters in a-zA-Z0-9_-% and may be at most 250 bytes long. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user. The following context names are reserved for internal use by Dialogflow. You should not use these contexts or create contexts with these names: * `__system_counters__` * `*_id_dialog_context` * `*_dialog_params_size`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2222,24 +2068,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Creates a session entity type.
-
-  If the specified session entity type already exists, overrides the session
-  entity type.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Creates a session entity type. If the specified session entity type already exists, overrides the session entity type. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The session to create a session entity type for.
-      Format: `projects/<Project ID>/agent/sessions/<Session ID>` or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User ID>/
-      sessions/<Session ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The session to create a session entity type for. Format: `projects//agent/sessions/` or `projects//agent/environments//users// sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2307,22 +2141,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Deletes the specified session entity type.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Deletes the specified session entity type. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the entity type to delete. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/entityTypes/<Entity Type
-      Display Name>` or `projects/<Project ID>/agent/environments/<Environment
-      ID>/users/<User ID>/sessions/<Session ID>/entityTypes/<Entity Type Display
-      Name>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `name` (*type:* `String.t`) - Required. The name of the entity type to delete. Format: `projects//agent/sessions//entityTypes/` or `projects//agent/environments//users//sessions//entityTypes/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2386,22 +2210,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Retrieves the specified session entity type.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Retrieves the specified session entity type. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the session entity type. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/entityTypes/<Entity Type
-      Display Name>` or `projects/<Project ID>/agent/environments/<Environment
-      ID>/users/<User ID>/sessions/<Session ID>/entityTypes/<Entity Type Display
-      Name>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `name` (*type:* `String.t`) - Required. The name of the session entity type. Format: `projects//agent/sessions//entityTypes/` or `projects//agent/environments//users//sessions//entityTypes/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2467,21 +2281,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Returns the list of all session entity types in the specified session.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Returns the list of all session entity types in the specified session. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The session to list all session entity types from.
-      Format: `projects/<Project ID>/agent/sessions/<Session ID>` or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User ID>/
-      sessions/<Session ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The session to list all session entity types from. Format: `projects//agent/sessions/` or `projects//agent/environments//users// sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2494,8 +2299,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
-          default 100 and at most 1000.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2557,25 +2361,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates the specified session entity type.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Updates the specified session entity type. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The unique identifier of this session entity type. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/entityTypes/<Entity Type
-      Display Name>`, or `projects/<Project ID>/agent/environments/<Environment
-      ID>/users/<User ID>/sessions/<Session ID>/entityTypes/<Entity Type Display
-      Name>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
-
-      `<Entity Type Display Name>` must be the display name of an existing entity
-      type in the same agent that will be overridden or supplemented.
+  *   `name` (*type:* `String.t`) - Required. The unique identifier of this session entity type. Format: `projects//agent/sessions//entityTypes/`, or `projects//agent/environments//users//sessions//entityTypes/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user. `` must be the display name of an existing entity type in the same agent that will be overridden or supplemented.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2645,15 +2436,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Deletes intents in the specified agent.
-
-  Operation <response: google.protobuf.Empty>
+  Deletes intents in the specified agent. Operation 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the agent to delete all entities types for. Format:
-      `projects/<Project ID>/agent`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the agent to delete all entities types for. Format: `projects//agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2721,15 +2509,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates/Creates multiple intents in the specified agent.
-
-  Operation <response: BatchUpdateIntentsResponse>
+  Updates/Creates multiple intents in the specified agent. Operation 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the agent to update or create intents in.
-      Format: `projects/<Project ID>/agent`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the agent to update or create intents in. Format: `projects//agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2802,8 +2587,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The agent to create a intent for.
-      Format: `projects/<Project ID>/agent`.
+  *   `parent` (*type:* `String.t`) - Required. The agent to create a intent for. Format: `projects//agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2817,11 +2601,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
-          If not specified, the agent's default language is used.
-          For more information, see
-          [Multilingual intent and entity
-          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2884,9 +2664,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the intent to delete. If this intent has direct or
-      indirect followup intents, we also delete them.
-      Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
+  *   `name` (*type:* `String.t`) - Required. The name of the intent to delete. If this intent has direct or indirect followup intents, we also delete them. Format: `projects//agent/intents/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2955,8 +2733,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the intent.
-      Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
+  *   `name` (*type:* `String.t`) - Required. The name of the intent. Format: `projects//agent/intents/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2970,11 +2747,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
-          If not specified, the agent's default language is used.
-          For more information, see
-          [Multilingual intent and entity
-          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3030,8 +2803,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The agent to list all intents from.
-      Format: `projects/<Project ID>/agent`.
+  *   `parent` (*type:* `String.t`) - Required. The agent to list all intents from. Format: `projects//agent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3045,13 +2817,8 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
-          If not specified, the agent's default language is used.
-          For more information, see
-          [Multilingual intent and entity
-          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
-          default 100 and at most 1000.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3116,10 +2883,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Optional. The unique identifier of this intent.
-      Required for Intents.UpdateIntent and Intents.BatchUpdateIntents
-      methods.
-      Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
+  *   `name` (*type:* `String.t`) - Optional. The unique identifier of this intent. Required for Intents.UpdateIntent and Intents.BatchUpdateIntents methods. Format: `projects//agent/intents/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3133,11 +2897,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
-          If not specified, the agent's default language is used.
-          For more information, see
-          [Multilingual intent and entity
-          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -3197,12 +2957,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the session to delete all contexts from. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>` or `projects/<Project
-      ID>/agent/environments/<Environment ID>/users/<User ID>/sessions/<Session
-      ID>`.
-      If `Environment ID` is not specified we assume default 'draft' environment.
-      If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The name of the session to delete all contexts from. Format: `projects//agent/sessions/` or `projects//agent/environments//users//sessions/`. If `Environment ID` is not specified we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3266,26 +3021,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Processes a natural language query and returns structured, actionable data
-  as a result. This method is not idempotent, because it may cause contexts
-  and session entity types to be updated, which in turn might affect
-  results of future queries.
+  Processes a natural language query and returns structured, actionable data as a result. This method is not idempotent, because it may cause contexts and session entity types to be updated, which in turn might affect results of future queries.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `session` (*type:* `String.t`) - Required. The name of the session this query is sent to. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>`, or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>`. If `Environment ID` is not specified, we assume
-      default 'draft' environment. If `User ID` is not specified, we are using
-      "-". It's up to the API caller to choose an appropriate `Session ID` and
-      `User Id`. They can be a random number or some type of user and session
-      identifiers (preferably hashed). The length of the `Session ID` and
-      `User ID` must not exceed 36 characters.
-
-      For more information, see the [API interactions
-      guide](https://cloud.google.com/dialogflow/docs/api-overview).
+  *   `session` (*type:* `String.t`) - Required. The name of the session this query is sent to. Format: `projects//agent/sessions/`, or `projects//agent/environments//users//sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we are using "-". It's up to the API caller to choose an appropriate `Session ID` and `User Id`. They can be a random number or some type of user and session identifiers (preferably hashed). The length of the `Session ID` and `User ID` must not exceed 36 characters. For more information, see the [API interactions guide](https://cloud.google.com/dialogflow/docs/api-overview).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3354,19 +3095,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Creates a context.
-
-  If the specified context already exists, overrides the context.
+  Creates a context. If the specified context already exists, overrides the context.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The session to create a context for.
-      Format: `projects/<Project ID>/agent/sessions/<Session ID>` or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The session to create a context for. Format: `projects//agent/sessions/` or `projects//agent/environments//users//sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3439,12 +3173,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the context to delete. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`
-      or `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>/contexts/<Context ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `name` (*type:* `String.t`) - Required. The name of the context to delete. Format: `projects//agent/sessions//contexts/` or `projects//agent/environments//users//sessions//contexts/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3513,12 +3242,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the context. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`
-      or `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>/contexts/<Context ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `name` (*type:* `String.t`) - Required. The name of the context. Format: `projects//agent/sessions//contexts/` or `projects//agent/environments//users//sessions//contexts/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3589,12 +3313,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The session to list all contexts from.
-      Format: `projects/<Project ID>/agent/sessions/<Session ID>` or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The session to list all contexts from. Format: `projects//agent/sessions/` or `projects//agent/environments//users//sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3607,8 +3326,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
-          default 100 and at most 1000.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3671,23 +3389,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The unique identifier of the context. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`,
-      or `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
-      ID>/sessions/<Session ID>/contexts/<Context ID>`.
-
-      The `Context ID` is always converted to lowercase, may only contain
-      characters in a-zA-Z0-9_-% and may be at most 250 bytes long.
-
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
-
-      The following context names are reserved for internal use by Dialogflow.
-      You should not use these contexts or create contexts with these names:
-
-      * `__system_counters__`
-      * `*_id_dialog_context`
-      * `*_dialog_params_size`
+  *   `name` (*type:* `String.t`) - Required. The unique identifier of the context. Format: `projects//agent/sessions//contexts/`, or `projects//agent/environments//users//sessions//contexts/`. The `Context ID` is always converted to lowercase, may only contain characters in a-zA-Z0-9_-% and may be at most 250 bytes long. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user. The following context names are reserved for internal use by Dialogflow. You should not use these contexts or create contexts with these names: * `__system_counters__` * `*_id_dialog_context` * `*_dialog_params_size`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3757,24 +3459,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Creates a session entity type.
-
-  If the specified session entity type already exists, overrides the session
-  entity type.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Creates a session entity type. If the specified session entity type already exists, overrides the session entity type. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The session to create a session entity type for.
-      Format: `projects/<Project ID>/agent/sessions/<Session ID>` or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User ID>/
-      sessions/<Session ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The session to create a session entity type for. Format: `projects//agent/sessions/` or `projects//agent/environments//users// sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3842,22 +3532,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Deletes the specified session entity type.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Deletes the specified session entity type. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the entity type to delete. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/entityTypes/<Entity Type
-      Display Name>` or `projects/<Project ID>/agent/environments/<Environment
-      ID>/users/<User ID>/sessions/<Session ID>/entityTypes/<Entity Type Display
-      Name>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `name` (*type:* `String.t`) - Required. The name of the entity type to delete. Format: `projects//agent/sessions//entityTypes/` or `projects//agent/environments//users//sessions//entityTypes/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3921,22 +3601,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Retrieves the specified session entity type.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Retrieves the specified session entity type. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the session entity type. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/entityTypes/<Entity Type
-      Display Name>` or `projects/<Project ID>/agent/environments/<Environment
-      ID>/users/<User ID>/sessions/<Session ID>/entityTypes/<Entity Type Display
-      Name>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `name` (*type:* `String.t`) - Required. The name of the session entity type. Format: `projects//agent/sessions//entityTypes/` or `projects//agent/environments//users//sessions//entityTypes/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4002,21 +3672,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Returns the list of all session entity types in the specified session.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Returns the list of all session entity types in the specified session. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The session to list all session entity types from.
-      Format: `projects/<Project ID>/agent/sessions/<Session ID>` or
-      `projects/<Project ID>/agent/environments/<Environment ID>/users/<User ID>/
-      sessions/<Session ID>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
+  *   `parent` (*type:* `String.t`) - Required. The session to list all session entity types from. Format: `projects//agent/sessions/` or `projects//agent/environments//users// sessions/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4029,8 +3690,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
-          default 100 and at most 1000.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4092,25 +3752,12 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates the specified session entity type.
-
-  This method doesn't work with Google Assistant integration.
-  Contact Dialogflow support if you need to use session entities
-  with Google Assistant integration.
+  Updates the specified session entity type. This method doesn't work with Google Assistant integration. Contact Dialogflow support if you need to use session entities with Google Assistant integration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The unique identifier of this session entity type. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/entityTypes/<Entity Type
-      Display Name>`, or `projects/<Project ID>/agent/environments/<Environment
-      ID>/users/<User ID>/sessions/<Session ID>/entityTypes/<Entity Type Display
-      Name>`.
-      If `Environment ID` is not specified, we assume default 'draft'
-      environment. If `User ID` is not specified, we assume default '-' user.
-
-      `<Entity Type Display Name>` must be the display name of an existing entity
-      type in the same agent that will be overridden or supplemented.
+  *   `name` (*type:* `String.t`) - Required. The unique identifier of this session entity type. Format: `projects//agent/sessions//entityTypes/`, or `projects//agent/environments//users//sessions//entityTypes/`. If `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is not specified, we assume default '-' user. `` must be the display name of an existing entity type in the same agent that will be overridden or supplemented.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4180,16 +3827,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -4258,9 +3896,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -4331,16 +3967,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the
-  server doesn't support this method, it returns `UNIMPLEMENTED`.
-
-  NOTE: the `name` binding allows API services to override the binding
-  to use different resource name schemes, such as `users/*/operations`. To
-  override the binding, API services can add a binding such as
-  `"/v1/{name=users/*}/operations"` to their service configuration.
-  For backwards compatibility, the default name includes the operations
-  collection id, however overriding users must ensure the name binding
-  is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
 
   ## Parameters
 
@@ -4417,16 +4044,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -4490,9 +4108,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -4553,16 +4169,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the
-  server doesn't support this method, it returns `UNIMPLEMENTED`.
-
-  NOTE: the `name` binding allows API services to override the binding
-  to use different resource name schemes, such as `users/*/operations`. To
-  override the binding, API services can add a binding such as
-  `"/v1/{name=users/*}/operations"` to their service configuration.
-  For backwards compatibility, the default name includes the operations
-  collection id, however overriding users must ensure the name binding
-  is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
 
   ## Parameters
 

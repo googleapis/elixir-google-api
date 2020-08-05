@@ -21,27 +21,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeAns
 
   ## Attributes
 
-  *   `answer` (*type:* `String.t`, *default:* `nil`) - The piece of text from the `source` knowledge base document that answers
-      this conversational query.
-  *   `faqQuestion` (*type:* `String.t`, *default:* `nil`) - The corresponding FAQ question if the answer was extracted from a FAQ
-      Document, empty otherwise.
-  *   `matchConfidence` (*type:* `number()`, *default:* `nil`) - The system's confidence score that this Knowledge answer is a good match
-      for this conversational query.
-      The range is from 0.0 (completely uncertain) to 1.0 (completely certain).
-      Note: The confidence score is likely to vary somewhat (possibly even for
-      identical requests), as the underlying model is under constant
-      improvement. It may be deprecated in the future. We recommend using
-      `match_confidence_level` which should be generally more stable.
-  *   `matchConfidenceLevel` (*type:* `String.t`, *default:* `nil`) - The system's confidence level that this knowledge answer is a good match
-      for this conversational query.
-      NOTE: The confidence level for a given `<query, answer>` pair may change
-      without notice, as it depends on models that are constantly being
-      improved. However, it will change less frequently than the confidence
-      score below, and should be preferred for referencing the quality of an
-      answer.
-  *   `source` (*type:* `String.t`, *default:* `nil`) - Indicates which Knowledge Document this answer was extracted from.
-      Format: `projects/<Project ID>/knowledgeBases/<Knowledge Base
-      ID>/documents/<Document ID>`.
+  *   `answer` (*type:* `String.t`, *default:* `nil`) - The piece of text from the `source` knowledge base document that answers this conversational query.
+  *   `faqQuestion` (*type:* `String.t`, *default:* `nil`) - The corresponding FAQ question if the answer was extracted from a FAQ Document, empty otherwise.
+  *   `matchConfidence` (*type:* `number()`, *default:* `nil`) - The system's confidence score that this Knowledge answer is a good match for this conversational query. The range is from 0.0 (completely uncertain) to 1.0 (completely certain). Note: The confidence score is likely to vary somewhat (possibly even for identical requests), as the underlying model is under constant improvement. It may be deprecated in the future. We recommend using `match_confidence_level` which should be generally more stable.
+  *   `matchConfidenceLevel` (*type:* `String.t`, *default:* `nil`) - The system's confidence level that this knowledge answer is a good match for this conversational query. NOTE: The confidence level for a given `` pair may change without notice, as it depends on models that are constantly being improved. However, it will change less frequently than the confidence score below, and should be preferred for referencing the quality of an answer.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Indicates which Knowledge Document this answer was extracted from. Format: `projects//knowledgeBases//documents/`.
   """
 
   use GoogleApi.Gax.ModelBase

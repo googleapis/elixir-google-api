@@ -21,21 +21,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRespo
 
   ## Attributes
 
-  *   `outputAudio` (*type:* `String.t`, *default:* `nil`) - The audio data bytes encoded as specified in the request.
-      Note: The output audio is generated based on the values of default platform
-      text responses found in the `query_result.fulfillment_messages` field. If
-      multiple default text responses exist, they will be concatenated when
-      generating audio. If no default platform text responses exist, the
-      generated audio content will be empty.
-
-      In some scenarios, multiple output audio fields may be present in the
-      response structure. In these cases, only the top-most-level audio output
-      has content.
+  *   `outputAudio` (*type:* `String.t`, *default:* `nil`) - The audio data bytes encoded as specified in the request. Note: The output audio is generated based on the values of default platform text responses found in the `query_result.fulfillment_messages` field. If multiple default text responses exist, they will be concatenated when generating audio. If no default platform text responses exist, the generated audio content will be empty. In some scenarios, multiple output audio fields may be present in the response structure. In these cases, only the top-most-level audio output has content.
   *   `outputAudioConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t`, *default:* `nil`) - The config used by the speech synthesizer to generate the output audio.
-  *   `queryResult` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult.t`, *default:* `nil`) - The selected results of the conversational query or event processing.
-      See `alternative_query_results` for additional potential results.
-  *   `responseId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the response. It can be used to
-      locate a response in the training example set or for reporting issues.
+  *   `queryResult` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult.t`, *default:* `nil`) - The selected results of the conversational query or event processing. See `alternative_query_results` for additional potential results.
+  *   `responseId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the response. It can be used to locate a response in the training example set or for reporting issues.
   *   `webhookStatus` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Specifies the status of the webhook request.
   """
 

@@ -21,9 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFo
 
   ## Attributes
 
-  *   `parameterInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo.t)`, *default:* `nil`) - Optional for both WebhookRequest and WebhookResponse.
-      The parameters contained in the form. Note that the webhook cannot add
-      or remove any form parameter.
+  *   `parameterInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo.t)`, *default:* `nil`) - Optional for both WebhookRequest and WebhookResponse. The parameters contained in the form. Note that the webhook cannot add or remove any form parameter.
   """
 
   use GoogleApi.Gax.ModelBase

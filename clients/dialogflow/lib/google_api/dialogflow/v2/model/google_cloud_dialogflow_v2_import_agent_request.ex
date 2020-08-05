@@ -22,8 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ImportAgentReques
   ## Attributes
 
   *   `agentContent` (*type:* `String.t`, *default:* `nil`) - Zip compressed raw byte content for agent.
-  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The URI to a Google Cloud Storage file containing the agent to import.
-      Note: The URI must start with "gs://".
+  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The URI to a Google Cloud Storage file containing the agent to import. Note: The URI must start with "gs://".
   """
 
   use GoogleApi.Gax.ModelBase

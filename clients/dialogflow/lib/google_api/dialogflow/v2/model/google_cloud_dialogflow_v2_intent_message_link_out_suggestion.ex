@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion do
   @moduledoc """
-  The suggestion chip message that allows the user to jump out to the app
-  or website associated with this agent.
+  The suggestion chip message that allows the user to jump out to the app or website associated with this agent.
 
   ## Attributes
 
   *   `destinationName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the app or site this chip is linking to.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The URI of the app or site to open when the user taps the
-      suggestion chip.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The URI of the app or site to open when the user taps the suggestion chip.
   """
 
   use GoogleApi.Gax.ModelBase

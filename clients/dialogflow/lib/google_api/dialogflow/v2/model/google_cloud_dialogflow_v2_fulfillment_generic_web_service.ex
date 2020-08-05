@@ -17,21 +17,14 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentGenericWebService do
   @moduledoc """
-  Represents configuration for a generic web service.
-  Dialogflow supports two mechanisms for authentications:
-  - Basic authentication with username and password.
-  - Authentication with additional authentication headers.
-  More information could be found at:
-  https://cloud.google.com/dialogflow/docs/fulfillment-configure.
+  Represents configuration for a generic web service. Dialogflow supports two mechanisms for authentications: - Basic authentication with username and password. - Authentication with additional authentication headers. More information could be found at: https://cloud.google.com/dialogflow/docs/fulfillment-configure.
 
   ## Attributes
 
-  *   `isCloudFunction` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if generic web service is created through Cloud Functions
-      integration. Defaults to false.
+  *   `isCloudFunction` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if generic web service is created through Cloud Functions integration. Defaults to false.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. The password for HTTP Basic authentication.
   *   `requestHeaders` (*type:* `map()`, *default:* `nil`) - Optional. The HTTP request headers to send together with fulfillment requests.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The fulfillment URI for receiving POST requests.
-      It must use https protocol.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The fulfillment URI for receiving POST requests. It must use https protocol.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Optional. The user name for HTTP Basic authentication.
   """
 

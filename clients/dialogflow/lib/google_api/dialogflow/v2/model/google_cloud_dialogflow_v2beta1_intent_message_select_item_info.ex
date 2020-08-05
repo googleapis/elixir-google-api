@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo do
   @moduledoc """
-  Additional info about the select item for when it is triggered in a
-  dialog.
+  Additional info about the select item for when it is triggered in a dialog.
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Required. A unique key that will be sent back to the agent if this
-      response is given.
-  *   `synonyms` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of synonyms that can also be used to trigger this
-      item in dialog.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Required. A unique key that will be sent back to the agent if this response is given.
+  *   `synonyms` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of synonyms that can also be used to trigger this item in dialog.
   """
 
   use GoogleApi.Gax.ModelBase

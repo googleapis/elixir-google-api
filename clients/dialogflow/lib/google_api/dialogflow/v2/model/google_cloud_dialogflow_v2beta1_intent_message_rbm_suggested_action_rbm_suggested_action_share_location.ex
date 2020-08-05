@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedActionRbmSuggestedActionShareLocation do
   @moduledoc """
-  Opens the device's location chooser so the user can pick a location
-  to send back to the agent.
+  Opens the device's location chooser so the user can pick a location to send back to the agent.
 
   ## Attributes
 

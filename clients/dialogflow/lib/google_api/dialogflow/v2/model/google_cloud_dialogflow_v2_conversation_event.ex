@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationEvent do
   @moduledoc """
-  Represents a notification sent to Pub/Sub subscribers for conversation
-  lifecycle events.
+  Represents a notification sent to Pub/Sub subscribers for conversation lifecycle events.
 
   ## Attributes
 
-  *   `conversation` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the conversation this notification
-      refers to.
-      Format: `projects/<Project ID>/conversations/<Conversation ID>`.
-  *   `errorStatus` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - More detailed information about an error. Only set for type
-      UNRECOVERABLE_ERROR_IN_PHONE_CALL.
+  *   `conversation` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the conversation this notification refers to. Format: `projects//conversations/`.
+  *   `errorStatus` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - More detailed information about an error. Only set for type UNRECOVERABLE_ERROR_IN_PHONE_CALL.
   *   `newMessagePayload` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message.t`, *default:* `nil`) - Payload of NEW_MESSAGE event.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the event that this notification refers to.
   """

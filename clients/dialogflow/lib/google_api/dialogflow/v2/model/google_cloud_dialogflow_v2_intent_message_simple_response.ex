@@ -22,11 +22,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSimp
   ## Attributes
 
   *   `displayText` (*type:* `String.t`, *default:* `nil`) - Optional. The text to display.
-  *   `ssml` (*type:* `String.t`, *default:* `nil`) - One of text_to_speech or ssml must be provided. Structured spoken
-      response to the user in the SSML format. Mutually exclusive with
-      text_to_speech.
-  *   `textToSpeech` (*type:* `String.t`, *default:* `nil`) - One of text_to_speech or ssml must be provided. The plain text of the
-      speech output. Mutually exclusive with ssml.
+  *   `ssml` (*type:* `String.t`, *default:* `nil`) - One of text_to_speech or ssml must be provided. Structured spoken response to the user in the SSML format. Mutually exclusive with text_to_speech.
+  *   `textToSpeech` (*type:* `String.t`, *default:* `nil`) - One of text_to_speech or ssml must be provided. The plain text of the speech output. Mutually exclusive with ssml.
   """
 
   use GoogleApi.Gax.ModelBase

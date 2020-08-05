@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedReply do
   @moduledoc """
-  Rich Business Messaging (RBM) suggested reply that the user can click
-  instead of typing in their own response.
+  Rich Business Messaging (RBM) suggested reply that the user can click instead of typing in their own response.
 
   ## Attributes
 
-  *   `postbackData` (*type:* `String.t`, *default:* `nil`) - Opaque payload that the Dialogflow receives in a user event
-      when the user taps the suggested reply. This data will be also
-      forwarded to webhook to allow performing custom business logic.
+  *   `postbackData` (*type:* `String.t`, *default:* `nil`) - Opaque payload that the Dialogflow receives in a user event when the user taps the suggested reply. This data will be also forwarded to webhook to allow performing custom business logic.
   *   `text` (*type:* `String.t`, *default:* `nil`) - Suggested reply text.
   """
 

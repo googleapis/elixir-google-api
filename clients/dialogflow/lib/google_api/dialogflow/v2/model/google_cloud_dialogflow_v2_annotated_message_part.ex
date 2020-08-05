@@ -17,26 +17,12 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnnotatedMessagePart do
   @moduledoc """
-  Represents a part of a message possibly annotated with an entity. The part
-  can be an entity or purely a part of the message between two entities or
-  message start/end.
+  Represents a part of a message possibly annotated with an entity. The part can be an entity or purely a part of the message between two entities or message start/end.
 
   ## Attributes
 
-  *   `entityType` (*type:* `String.t`, *default:* `nil`) - The [Dialogflow system entity
-      type](https://cloud.google.com/dialogflow/docs/reference/system-entities)
-      of this message part. If this is empty, Dialogflow could not annotate the
-      phrase part with a system entity.
-  *   `formattedValue` (*type:* `any()`, *default:* `nil`) - The [Dialogflow system entity formatted value
-      ](https://cloud.google.com/dialogflow/docs/reference/system-entities) of
-      this message part. For example for a system entity of type
-      `@sys.unit-currency`, this may contain:
-      <pre>
-      {
-        "amount": 5,
-        "currency": "USD"
-      }
-      </pre>
+  *   `entityType` (*type:* `String.t`, *default:* `nil`) - The [Dialogflow system entity type](https://cloud.google.com/dialogflow/docs/reference/system-entities) of this message part. If this is empty, Dialogflow could not annotate the phrase part with a system entity.
+  *   `formattedValue` (*type:* `any()`, *default:* `nil`) - The [Dialogflow system entity formatted value ](https://cloud.google.com/dialogflow/docs/reference/system-entities) of this message part. For example for a system entity of type `@sys.unit-currency`, this may contain: { "amount": 5, "currency": "USD" } 
   *   `text` (*type:* `String.t`, *default:* `nil`) - A part of a message possibly annotated with an entity.
   """
 

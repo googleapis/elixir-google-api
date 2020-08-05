@@ -21,8 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
 
   ## Attributes
 
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - Always present. The tag used to identify which fulfillment is being
-      called.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Always present. The tag used to identify which fulfillment is being called.
   """
 
   use GoogleApi.Gax.ModelBase

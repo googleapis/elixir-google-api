@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard do
   @moduledoc """
-  Browse Carousel Card for Actions on Google.
-  https://developers.google.com/actions/assistant/responses#browsing_carousel
+  Browse Carousel Card for Actions on Google. https://developers.google.com/actions/assistant/responses#browsing_carousel
 
   ## Attributes
 
-  *   `imageDisplayOptions` (*type:* `String.t`, *default:* `nil`) - Optional. Settings for displaying the image. Applies to every image in
-      items.
-  *   `items` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItem.t)`, *default:* `nil`) - Required. List of items in the Browse Carousel Card. Minimum of two
-      items, maximum of ten.
+  *   `imageDisplayOptions` (*type:* `String.t`, *default:* `nil`) - Optional. Settings for displaying the image. Applies to every image in items.
+  *   `items` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItem.t)`, *default:* `nil`) - Required. List of items in the Browse Carousel Card. Minimum of two items, maximum of ten.
   """
 
   use GoogleApi.Gax.ModelBase

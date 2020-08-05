@@ -21,19 +21,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRes
 
   ## Attributes
 
-  *   `fulfillmentResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse.t`, *default:* `nil`) - The fulfillment response to send to the user. This field can be omitted by
-      the webhook if it does not intend to send any response to the user.
-  *   `pageInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo.t`, *default:* `nil`) - Information about page status. This field can be omitted by the webhook if
-      it does not intend to modify page status.
+  *   `fulfillmentResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse.t`, *default:* `nil`) - The fulfillment response to send to the user. This field can be omitted by the webhook if it does not intend to send any response to the user.
+  *   `pageInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo.t`, *default:* `nil`) - Information about page status. This field can be omitted by the webhook if it does not intend to modify page status.
   *   `payload` (*type:* `map()`, *default:* `nil`) - Value to append directly to QueryResult.webhook_payloads.
-  *   `sessionInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInfo.t`, *default:* `nil`) - Information about session status. This field can be omitted by the webhook
-      if it does not intend to modify session status.
-  *   `targetFlow` (*type:* `String.t`, *default:* `nil`) - The target flow to transition to.
-      Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-      ID>/flows/<Flow ID>`.
-  *   `targetPage` (*type:* `String.t`, *default:* `nil`) - The target page to transition to.
-      Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-      ID>/flows/<Flow ID>/pages/<Page ID>`.
+  *   `sessionInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInfo.t`, *default:* `nil`) - Information about session status. This field can be omitted by the webhook if it does not intend to modify session status.
+  *   `targetFlow` (*type:* `String.t`, *default:* `nil`) - The target flow to transition to. Format: `projects//locations//agents//flows/`.
+  *   `targetPage` (*type:* `String.t`, *default:* `nil`) - The target page to transition to. Format: `projects//locations//agents//flows//pages/`.
   """
 
   use GoogleApi.Gax.ModelBase

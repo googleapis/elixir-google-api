@@ -21,15 +21,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the card (at most 2000 bytes).
-
-      At least one of the title, description or media must be set.
-  *   `media` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia.t`, *default:* `nil`) - Optional. However at least one of the title, description or media must
-      be set. Media (image, GIF or a video) to include in the card.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the card (at most 2000 bytes). At least one of the title, description or media must be set.
+  *   `media` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia.t`, *default:* `nil`) - Optional. However at least one of the title, description or media must be set. Media (image, GIF or a video) to include in the card.
   *   `suggestions` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestion.t)`, *default:* `nil`) - Optional. List of suggestions to include in the card.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. Title of the card (at most 200 bytes).
-
-      At least one of the title, description or media must be set.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. Title of the card (at most 200 bytes). At least one of the title, description or media must be set.
   """
 
   use GoogleApi.Gax.ModelBase

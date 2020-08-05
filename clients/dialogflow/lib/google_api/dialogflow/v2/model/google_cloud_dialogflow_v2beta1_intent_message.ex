@@ -34,10 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   *   `quickReplies` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageQuickReplies.t`, *default:* `nil`) - Displays quick replies.
   *   `rbmCarouselRichCard` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard.t`, *default:* `nil`) - Rich Business Messaging (RBM) carousel rich card response.
   *   `rbmStandaloneRichCard` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard.t`, *default:* `nil`) - Standalone Rich Business Messaging (RBM) rich card response.
-  *   `rbmText` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmText.t`, *default:* `nil`) - Rich Business Messaging (RBM) text response.
-
-      RBM allows businesses to send enriched and branded versions of SMS. See
-      https://jibe.google.com/business-messaging.
+  *   `rbmText` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmText.t`, *default:* `nil`) - Rich Business Messaging (RBM) text response. RBM allows businesses to send enriched and branded versions of SMS. See https://jibe.google.com/business-messaging.
   *   `simpleResponses` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses.t`, *default:* `nil`) - Returns a voice or text-only response for Actions on Google.
   *   `suggestions` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSuggestions.t`, *default:* `nil`) - Displays suggestion chips for Actions on Google.
   *   `tableCard` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTableCard.t`, *default:* `nil`) - Table card for Actions on Google.

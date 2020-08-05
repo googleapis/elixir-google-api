@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard do
   @moduledoc """
-  Carousel Rich Business Messaging (RBM) rich card.
-
-  Rich cards allow you to respond to users with more vivid content, e.g.
-  with media and suggestions.
-
-  If you want to show a single card with more control over the layout,
-  please use RbmStandaloneCard instead.
+  Carousel Rich Business Messaging (RBM) rich card. Rich cards allow you to respond to users with more vivid content, e.g. with media and suggestions. If you want to show a single card with more control over the layout, please use RbmStandaloneCard instead.
 
   ## Attributes
 
-  *   `cardContents` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent.t)`, *default:* `nil`) - Required. The cards in the carousel. A carousel must have at least
-      2 cards and at most 10.
+  *   `cardContents` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent.t)`, *default:* `nil`) - Required. The cards in the carousel. A carousel must have at least 2 cards and at most 10.
   *   `cardWidth` (*type:* `String.t`, *default:* `nil`) - Required. The width of the cards in the carousel.
   """
 

@@ -22,9 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2MessageAnnotation
   ## Attributes
 
   *   `containEntities` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the text message contains entities.
-  *   `parts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnnotatedMessagePart.t)`, *default:* `nil`) - The collection of annotated message parts ordered by their
-      position in the message. You can recover the annotated message by
-      concatenating [AnnotatedMessagePart.text].
+  *   `parts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnnotatedMessagePart.t)`, *default:* `nil`) - The collection of annotated message parts ordered by their position in the message. You can recover the annotated message by concatenating [AnnotatedMessagePart.text].
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessageOutputAudioText do
   @moduledoc """
-  A text or ssml response that is preferentially used for TTS output audio
-  synthesis, as described in the comment on the ResponseMessage message.
+  A text or ssml response that is preferentially used for TTS output audio synthesis, as described in the comment on the ResponseMessage message.
 
   ## Attributes
 
-  *   `ssml` (*type:* `String.t`, *default:* `nil`) - The SSML text to be synthesized. For more information, see
-      [SSML](/speech/text-to-speech/docs/ssml).
+  *   `ssml` (*type:* `String.t`, *default:* `nil`) - The SSML text to be synthesized. For more information, see [SSML](/speech/text-to-speech/docs/ssml).
   *   `text` (*type:* `String.t`, *default:* `nil`) - The raw text to be synthesized.
   """
 

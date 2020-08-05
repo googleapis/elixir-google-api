@@ -21,25 +21,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
 
   ## Attributes
 
-  *   `contexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - The collection of contexts to be activated before this query is
-      executed.
+  *   `contexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - The collection of contexts to be activated before this query is executed.
   *   `geoLocation` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleTypeLatLng.t`, *default:* `nil`) - The geo location of this conversational query.
-  *   `payload` (*type:* `map()`, *default:* `nil`) - This field can be used to pass custom data to your webhook.
-      Arbitrary JSON objects are supported.
-      If supplied, the value is used to populate the
-      `WebhookRequest.original_detect_intent_request.payload`
-      field sent to your webhook.
-  *   `resetContexts` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to delete all contexts in the current session
-      before the new ones are activated.
-  *   `sentimentAnalysisRequestConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t`, *default:* `nil`) - Configures the type of sentiment analysis to perform. If not
-      provided, sentiment analysis is not performed.
-  *   `sessionEntityTypes` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t)`, *default:* `nil`) - Additional session entity types to replace or extend developer
-      entity types with. The entity synonyms apply to all languages and persist
-      for the session of this query.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of this conversational query from the
-      [time zone database](https://www.iana.org/time-zones), e.g.,
-      America/New_York, Europe/Paris. If not provided, the time zone specified in
-      agent settings is used.
+  *   `payload` (*type:* `map()`, *default:* `nil`) - This field can be used to pass custom data to your webhook. Arbitrary JSON objects are supported. If supplied, the value is used to populate the `WebhookRequest.original_detect_intent_request.payload` field sent to your webhook.
+  *   `resetContexts` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to delete all contexts in the current session before the new ones are activated.
+  *   `sentimentAnalysisRequestConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t`, *default:* `nil`) - Configures the type of sentiment analysis to perform. If not provided, sentiment analysis is not performed.
+  *   `sessionEntityTypes` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t)`, *default:* `nil`) - Additional session entity types to replace or extend developer entity types with. The entity synonyms apply to all languages and persist for the session of this query.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of this conversational query from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York, Europe/Paris. If not provided, the time zone specified in agent settings is used.
   """
 
   use GoogleApi.Gax.ModelBase

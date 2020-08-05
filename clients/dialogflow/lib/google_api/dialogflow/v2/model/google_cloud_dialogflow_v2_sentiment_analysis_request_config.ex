@@ -21,9 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysis
 
   ## Attributes
 
-  *   `analyzeQueryTextSentiment` (*type:* `boolean()`, *default:* `nil`) - Instructs the service to perform sentiment analysis on
-      `query_text`. If not provided, sentiment analysis is not performed on
-      `query_text`.
+  *   `analyzeQueryTextSentiment` (*type:* `boolean()`, *default:* `nil`) - Instructs the service to perform sentiment analysis on `query_text`. If not provided, sentiment analysis is not performed on `query_text`.
   """
 
   use GoogleApi.Gax.ModelBase

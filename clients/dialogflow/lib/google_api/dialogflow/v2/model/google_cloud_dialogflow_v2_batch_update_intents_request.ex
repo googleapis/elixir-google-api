@@ -22,15 +22,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateIntent
   ## Attributes
 
   *   `intentBatchInline` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentBatch.t`, *default:* `nil`) - The collection of intents to update or create.
-  *   `intentBatchUri` (*type:* `String.t`, *default:* `nil`) - The URI to a Google Cloud Storage file containing intents to update or
-      create. The file format can either be a serialized proto (of IntentBatch
-      type) or JSON object. Note: The URI must start with "gs://".
+  *   `intentBatchUri` (*type:* `String.t`, *default:* `nil`) - The URI to a Google Cloud Storage file containing intents to update or create. The file format can either be a serialized proto (of IntentBatch type) or JSON object. Note: The URI must start with "gs://".
   *   `intentView` (*type:* `String.t`, *default:* `nil`) - Optional. The resource view to apply to the returned intent.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language used to access language-specific data.
-      If not specified, the agent's default language is used.
-      For more information, see
-      [Multilingual intent and entity
-      data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. The mask to control which fields get updated.
   """
 

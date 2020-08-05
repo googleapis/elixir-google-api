@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestion do
   @moduledoc """
-  Rich Business Messaging (RBM) suggestion. Suggestions allow user to
-  easily select/click a predefined response or perform an action (like
-  opening a web uri).
+  Rich Business Messaging (RBM) suggestion. Suggestions allow user to easily select/click a predefined response or perform an action (like opening a web uri).
 
   ## Attributes
 

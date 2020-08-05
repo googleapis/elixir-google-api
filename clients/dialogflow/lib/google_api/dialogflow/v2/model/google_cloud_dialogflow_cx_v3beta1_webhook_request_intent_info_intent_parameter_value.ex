@@ -22,8 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
   ## Attributes
 
   *   `originalValue` (*type:* `String.t`, *default:* `nil`) - Always present. Original text value extracted from user utterance.
-  *   `resolvedValue` (*type:* `any()`, *default:* `nil`) - Always present. Structured value for the parameter extracted from user
-      utterance.
+  *   `resolvedValue` (*type:* `any()`, *default:* `nil`) - Always present. Structured value for the parameter extracted from user utterance.
   """
 
   use GoogleApi.Gax.ModelBase

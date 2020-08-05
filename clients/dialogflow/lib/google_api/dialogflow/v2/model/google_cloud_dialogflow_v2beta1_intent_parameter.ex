@@ -21,28 +21,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentParame
 
   ## Attributes
 
-  *   `defaultValue` (*type:* `String.t`, *default:* `nil`) - Optional. The default value to use when the `value` yields an empty
-      result.
-      Default values can be extracted from contexts by using the following
-      syntax: `#context_name.parameter_name`.
+  *   `defaultValue` (*type:* `String.t`, *default:* `nil`) - Optional. The default value to use when the `value` yields an empty result. Default values can be extracted from contexts by using the following syntax: `#context_name.parameter_name`.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the parameter.
-  *   `entityTypeDisplayName` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the entity type, prefixed with `@`, that
-      describes values of the parameter. If the parameter is
-      required, this must be provided.
+  *   `entityTypeDisplayName` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the entity type, prefixed with `@`, that describes values of the parameter. If the parameter is required, this must be provided.
   *   `isList` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether the parameter represents a list of values.
-  *   `mandatory` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether the parameter is required. That is,
-      whether the intent cannot be completed without collecting the parameter
-      value.
+  *   `mandatory` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether the parameter is required. That is, whether the intent cannot be completed without collecting the parameter value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of this parameter.
-  *   `prompts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The collection of prompts that the agent can present to the
-      user in order to collect a value for the parameter.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Optional. The definition of the parameter value. It can be:
-
-      - a constant string,
-      - a parameter value defined as `$parameter_name`,
-      - an original parameter value defined as `$parameter_name.original`,
-      - a parameter value from some context defined as
-        `#context_name.parameter_name`.
+  *   `prompts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The collection of prompts that the agent can present to the user in order to collect a value for the parameter.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Optional. The definition of the parameter value. It can be: - a constant string, - a parameter value defined as `$parameter_name`, - an original parameter value defined as `$parameter_name.original`, - a parameter value from some context defined as `#context_name.parameter_name`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,34 +17,13 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput do
   @moduledoc """
-  Events allow for matching intents by event name instead of the natural
-  language input. For instance, input `<event: { name: "welcome_event",
-  parameters: { name: "Sam" } }>` can trigger a personalized welcome response.
-  The parameter `name` may be used by the agent in the response:
-  `"Hello #welcome_event.name! What can I do for you today?"`.
+  Events allow for matching intents by event name instead of the natural language input. For instance, input `` can trigger a personalized welcome response. The parameter `name` may be used by the agent in the response: `"Hello #welcome_event.name! What can I do for you today?"`.
 
   ## Attributes
 
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Required. The language of this query. See [Language
-      Support](https://cloud.google.com/dialogflow/docs/reference/language)
-      for a list of the currently supported language codes. Note that queries in
-      the same session do not necessarily need to specify the same language.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Required. The language of this query. See [Language Support](https://cloud.google.com/dialogflow/docs/reference/language) for a list of the currently supported language codes. Note that queries in the same session do not necessarily need to specify the same language.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the event.
-  *   `parameters` (*type:* `map()`, *default:* `nil`) - The collection of parameters associated with the event.
-
-      Depending on your protocol or client library language, this is a
-      map, associative array, symbol table, dictionary, or JSON object
-      composed of a collection of (MapKey, MapValue) pairs:
-
-      -   MapKey type: string
-      -   MapKey value: parameter name
-      -   MapValue type:
-          -   If parameter's entity type is a composite entity: map
-          -   Else: string or number, depending on parameter value type
-      -   MapValue value:
-          -   If parameter's entity type is a composite entity:
-              map from composite entity property names to property values
-          -   Else: parameter value
+  *   `parameters` (*type:* `map()`, *default:* `nil`) - The collection of parameters associated with the event. Depending on your protocol or client library language, this is a map, associative array, symbol table, dictionary, or JSON object composed of a collection of (MapKey, MapValue) pairs: - MapKey type: string - MapKey value: parameter name - MapValue type: - If parameter's entity type is a composite entity: map - Else: string or number, depending on parameter value type - MapValue value: - If parameter's entity type is a composite entity: map from composite entity property names to property values - Else: parameter value
   """
 
   use GoogleApi.Gax.ModelBase

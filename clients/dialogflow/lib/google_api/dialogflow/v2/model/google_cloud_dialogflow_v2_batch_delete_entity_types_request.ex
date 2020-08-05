@@ -21,8 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteEntity
 
   ## Attributes
 
-  *   `entityTypeNames` (*type:* `list(String.t)`, *default:* `nil`) - Required. The names entity types to delete. All names must point to the
-      same agent as `parent`.
+  *   `entityTypeNames` (*type:* `list(String.t)`, *default:* `nil`) - Required. The names entity types to delete. All names must point to the same agent as `parent`.
   """
 
   use GoogleApi.Gax.ModelBase

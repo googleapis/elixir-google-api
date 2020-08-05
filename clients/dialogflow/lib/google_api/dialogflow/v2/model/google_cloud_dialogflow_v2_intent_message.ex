@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage do
   @moduledoc """
-  A rich response message.
-  Corresponds to the intent `Response` field in the Dialogflow console.
-  For more information, see
-  [Rich response
-  messages](https://cloud.google.com/dialogflow/docs/intents-rich-messages).
+  A rich response message. Corresponds to the intent `Response` field in the Dialogflow console. For more information, see [Rich response messages](https://cloud.google.com/dialogflow/docs/intents-rich-messages).
 
   ## Attributes
 

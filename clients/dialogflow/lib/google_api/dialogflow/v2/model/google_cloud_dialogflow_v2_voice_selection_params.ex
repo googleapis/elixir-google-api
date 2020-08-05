@@ -21,14 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2VoiceSelectionPar
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the voice. If not set, the service will choose a
-      voice based on the other parameters such as language_code and
-      ssml_gender.
-  *   `ssmlGender` (*type:* `String.t`, *default:* `nil`) - Optional. The preferred gender of the voice. If not set, the service will
-      choose a voice based on the other parameters such as language_code and
-      name. Note that this is only a preference, not requirement. If a
-      voice of the appropriate gender is not available, the synthesizer should
-      substitute a voice with a different gender rather than failing the request.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the voice. If not set, the service will choose a voice based on the other parameters such as language_code and ssml_gender.
+  *   `ssmlGender` (*type:* `String.t`, *default:* `nil`) - Optional. The preferred gender of the voice. If not set, the service will choose a voice based on the other parameters such as language_code and name. Note that this is only a preference, not requirement. If a voice of the appropriate gender is not available, the synthesizer should substitute a voice with a different gender rather than failing the request.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,11 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchCreateEntiti
   ## Attributes
 
   *   `entities` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeEntity.t)`, *default:* `nil`) - Required. The entities to create.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language used to access language-specific data.
-      If not specified, the agent's default language is used.
-      For more information, see
-      [Multilingual intent and entity
-      data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
   """
 
   use GoogleApi.Gax.ModelBase

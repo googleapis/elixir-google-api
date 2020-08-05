@@ -17,16 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment do
   @moduledoc """
-  By default, your agent responds to a matched intent with a static response.
-  As an alternative, you can provide a more dynamic response by using
-  fulfillment. When you enable fulfillment for an intent, Dialogflow responds
-  to that intent by calling a service that you define. For example, if an
-  end-user wants to schedule a haircut on Friday, your service can check your
-  database and respond to the end-user with availability information for
-  Friday.
-
-  For more information, see the [fulfillment
-  guide](https://cloud.google.com/dialogflow/docs/fulfillment-overview).
+  By default, your agent responds to a matched intent with a static response. As an alternative, you can provide a more dynamic response by using fulfillment. When you enable fulfillment for an intent, Dialogflow responds to that intent by calling a service that you define. For example, if an end-user wants to schedule a haircut on Friday, your service can check your database and respond to the end-user with availability information for Friday. For more information, see the [fulfillment guide](https://cloud.google.com/dialogflow/docs/fulfillment-overview).
 
   ## Attributes
 
@@ -34,8 +25,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment do
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether fulfillment is enabled.
   *   `features` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentFeature.t)`, *default:* `nil`) - Optional. The field defines whether the fulfillment is enabled for certain features.
   *   `genericWebService` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentGenericWebService.t`, *default:* `nil`) - Configuration for a generic web service.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the fulfillment.
-      Format: `projects/<Project ID>/agent/fulfillment`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the fulfillment. Format: `projects//agent/fulfillment`.
   """
 
   use GoogleApi.Gax.ModelBase
