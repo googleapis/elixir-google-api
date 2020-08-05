@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestResponse do
   @moduledoc """
-  Mobile-friendly test response, including mobile-friendly issues and resource
-  issues.
+  Mobile-friendly test response, including mobile-friendly issues and resource issues.
 
   ## Attributes
 
