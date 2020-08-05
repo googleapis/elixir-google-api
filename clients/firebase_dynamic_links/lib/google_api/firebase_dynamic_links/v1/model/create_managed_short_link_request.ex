@@ -21,18 +21,9 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkRequest 
 
   ## Attributes
 
-  *   `dynamicLinkInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t`, *default:* `nil`) - Information about the Dynamic Link to be shortened.
-      [Learn
-      more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
-  *   `longDynamicLink` (*type:* `String.t`, *default:* `nil`) - Full long Dynamic Link URL with desired query parameters specified.
-      For example,
-      "https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample",
-      [Learn
-      more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Link name to associate with the link. It's used for marketer to identify
-      manually-created links in the Firebase console
-      (https://console.firebase.google.com/).
-      Links must be named to be tracked.
+  *   `dynamicLinkInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t`, *default:* `nil`) - Information about the Dynamic Link to be shortened. [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
+  *   `longDynamicLink` (*type:* `String.t`, *default:* `nil`) - Full long Dynamic Link URL with desired query parameters specified. For example, "https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample", [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Link name to associate with the link. It's used for marketer to identify manually-created links in the Firebase console (https://console.firebase.google.com/). Links must be named to be tracked.
   *   `sdkVersion` (*type:* `String.t`, *default:* `nil`) - Google SDK version. Version takes the form "$major.$minor.$patch"
   *   `suffix` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix.t`, *default:* `nil`) - Short Dynamic Link suffix. Optional.
   """

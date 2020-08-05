@@ -17,23 +17,15 @@
 
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GooglePlayAnalytics do
   @moduledoc """
-  Parameters for Google Play Campaign Measurements.
-  [Learn
-  more](https://developers.google.com/analytics/devguides/collection/android/v4/campaigns#campaign-params)
+  Parameters for Google Play Campaign Measurements. [Learn more](https://developers.google.com/analytics/devguides/collection/android/v4/campaigns#campaign-params)
 
   ## Attributes
 
-  *   `gclid` (*type:* `String.t`, *default:* `nil`) - [AdWords autotagging
-      parameter](https://support.google.com/analytics/answer/1033981?hl=en); used
-      to measure Google AdWords ads. This value is generated dynamically and
-      should never be modified.
-  *   `utmCampaign` (*type:* `String.t`, *default:* `nil`) - Campaign name; used for keyword analysis to identify a specific product
-      promotion or strategic campaign.
-  *   `utmContent` (*type:* `String.t`, *default:* `nil`) - Campaign content; used for A/B testing and content-targeted ads to
-      differentiate ads or links that point to the same URL.
+  *   `gclid` (*type:* `String.t`, *default:* `nil`) - [AdWords autotagging parameter](https://support.google.com/analytics/answer/1033981?hl=en); used to measure Google AdWords ads. This value is generated dynamically and should never be modified.
+  *   `utmCampaign` (*type:* `String.t`, *default:* `nil`) - Campaign name; used for keyword analysis to identify a specific product promotion or strategic campaign.
+  *   `utmContent` (*type:* `String.t`, *default:* `nil`) - Campaign content; used for A/B testing and content-targeted ads to differentiate ads or links that point to the same URL.
   *   `utmMedium` (*type:* `String.t`, *default:* `nil`) - Campaign medium; used to identify a medium such as email or cost-per-click.
-  *   `utmSource` (*type:* `String.t`, *default:* `nil`) - Campaign source; used to identify a search engine, newsletter, or other
-      source.
+  *   `utmSource` (*type:* `String.t`, *default:* `nil`) - Campaign source; used to identify a search engine, newsletter, or other source.
   *   `utmTerm` (*type:* `String.t`, *default:* `nil`) - Campaign term; used with paid search to supply the keywords for ads.
   """
 

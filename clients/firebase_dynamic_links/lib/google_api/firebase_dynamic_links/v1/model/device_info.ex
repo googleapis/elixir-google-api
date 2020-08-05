@@ -23,12 +23,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DeviceInfo do
 
   *   `deviceModelName` (*type:* `String.t`, *default:* `nil`) - Device model name.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Device language code setting.
-  *   `languageCodeFromWebview` (*type:* `String.t`, *default:* `nil`) - Device language code setting obtained by executing JavaScript code in
-      WebView.
-  *   `languageCodeRaw` (*type:* `String.t`, *default:* `nil`) - Device language code raw setting.
-      iOS does returns language code in different format than iOS WebView.
-      For example WebView returns en_US, but iOS returns en-US.
-      Field below will return raw value returned by iOS.
+  *   `languageCodeFromWebview` (*type:* `String.t`, *default:* `nil`) - Device language code setting obtained by executing JavaScript code in WebView.
+  *   `languageCodeRaw` (*type:* `String.t`, *default:* `nil`) - Device language code raw setting. iOS does returns language code in different format than iOS WebView. For example WebView returns en_US, but iOS returns en-US. Field below will return raw value returned by iOS.
   *   `screenResolutionHeight` (*type:* `String.t`, *default:* `nil`) - Device display resolution height.
   *   `screenResolutionWidth` (*type:* `String.t`, *default:* `nil`) - Device display resolution width.
   *   `timezone` (*type:* `String.t`, *default:* `nil`) - Device timezone setting.

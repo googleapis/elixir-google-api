@@ -24,12 +24,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.ManagedShortLink do
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation timestamp of the short link.
   *   `flaggedAttribute` (*type:* `list(String.t)`, *default:* `nil`) - Attributes that have been flagged about this short url.
   *   `info` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t`, *default:* `nil`) - Full Dyamic Link info
-  *   `link` (*type:* `String.t`, *default:* `nil`) - Short durable link url, for example, "https://sample.app.goo.gl/xyz123".
-
-      Required.
-  *   `linkName` (*type:* `String.t`, *default:* `nil`) - Link name defined by the creator.
-
-      Required.
+  *   `link` (*type:* `String.t`, *default:* `nil`) - Short durable link url, for example, "https://sample.app.goo.gl/xyz123". Required.
+  *   `linkName` (*type:* `String.t`, *default:* `nil`) - Link name defined by the creator. Required.
   *   `visibility` (*type:* `String.t`, *default:* `nil`) - Visibility status of link.
   """
 

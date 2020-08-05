@@ -21,8 +21,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo do
 
   ## Attributes
 
-  *   `enableForcedRedirect` (*type:* `boolean()`, *default:* `nil`) - If this option is on, FDL click will be forced to redirect rather than
-      show an interstitial page.
+  *   `enableForcedRedirect` (*type:* `boolean()`, *default:* `nil`) - If this option is on, FDL click will be forced to redirect rather than show an interstitial page.
   """
 
   use GoogleApi.Gax.ModelBase
