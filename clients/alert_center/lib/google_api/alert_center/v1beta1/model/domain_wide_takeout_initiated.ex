@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.DomainWideTakeoutInitiated do
   @moduledoc """
-  A takeout operation for the entire domain was initiated by an admin. Derived
-  from audit logs.
+  A takeout operation for the entire domain was initiated by an admin. Derived from audit logs.
 
   ## Attributes
 

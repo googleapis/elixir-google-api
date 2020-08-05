@@ -21,8 +21,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.CsvRow do
 
   ## Attributes
 
-  *   `entries` (*type:* `list(String.t)`, *default:* `nil`) - The data entries in a CSV file row, as a string array rather than a
-      single comma-separated string.
+  *   `entries` (*type:* `list(String.t)`, *default:* `nil`) - The data entries in a CSV file row, as a string array rather than a single comma-separated string.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DeviceCompromisedSecurityDetail do
 
   ## Attributes
 
-  *   `deviceCompromisedState` (*type:* `String.t`, *default:* `nil`) - The device compromised state. Possible values are "`Compromised`" or
-      "`Not Compromised`".
+  *   `deviceCompromisedState` (*type:* `String.t`, *default:* `nil`) - The device compromised state. Possible values are "`Compromised`" or "`Not Compromised`".
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Required. The device ID.
   *   `deviceModel` (*type:* `String.t`, *default:* `nil`) - The model of the device.
   *   `deviceType` (*type:* `String.t`, *default:* `nil`) - The type of the device.

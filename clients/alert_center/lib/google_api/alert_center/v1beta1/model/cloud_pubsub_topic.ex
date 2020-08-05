@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.CloudPubsubTopic do
   @moduledoc """
-  A reference to a Cloud Pubsub topic.
-
-  To register for notifications, the owner of the topic must grant
-  `alerts-api-push-notifications@system.gserviceaccount.com` the
-   `projects.topics.publish` permission.
+  A reference to a Cloud Pubsub topic. To register for notifications, the owner of the topic must grant `alerts-api-push-notifications@system.gserviceaccount.com` the `projects.topics.publish` permission.
 
   ## Attributes
 
-  *   `payloadFormat` (*type:* `String.t`, *default:* `nil`) - Optional. The format of the payload that would be sent.
-      If not specified the format will be JSON.
-  *   `topicName` (*type:* `String.t`, *default:* `nil`) - The `name` field of a Cloud Pubsub [Topic]
-      (https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).
+  *   `payloadFormat` (*type:* `String.t`, *default:* `nil`) - Optional. The format of the payload that would be sent. If not specified the format will be JSON.
+  *   `topicName` (*type:* `String.t`, *default:* `nil`) - The `name` field of a Cloud Pubsub [Topic] (https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.Notification do
   @moduledoc """
-  Settings for callback notifications.
-  For more details see [G Suite Alert
-  Notification](/admin-sdk/alertcenter/guides/notifications).
+  Settings for callback notifications. For more details see [G Suite Alert Notification](/admin-sdk/alertcenter/guides/notifications).
 
   ## Attributes
 

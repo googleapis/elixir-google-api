@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.Csv do
   @moduledoc """
-  A representation of a CSV file attachment, as a list of column headers and
-  a list of data rows.
+  A representation of a CSV file attachment, as a list of column headers and a list of data rows.
 
   ## Attributes
 
-  *   `dataRows` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.CsvRow.t)`, *default:* `nil`) - The list of data rows in a CSV file, as string arrays rather than as a
-      single comma-separated string.
+  *   `dataRows` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.CsvRow.t)`, *default:* `nil`) - The list of data rows in a CSV file, as string arrays rather than as a single comma-separated string.
   *   `headers` (*type:* `list(String.t)`, *default:* `nil`) - The list of headers for data columns in a CSV file.
   """
 

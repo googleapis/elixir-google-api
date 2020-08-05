@@ -21,11 +21,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.RequestInfo do
 
   ## Attributes
 
-  *   `appDeveloperEmail` (*type:* `list(String.t)`, *default:* `nil`) - List of app developers who triggered notifications for above
-      application.
+  *   `appDeveloperEmail` (*type:* `list(String.t)`, *default:* `nil`) - List of app developers who triggered notifications for above application.
   *   `appKey` (*type:* `String.t`, *default:* `nil`) - Required. The application that requires the SQL setup.
-  *   `numberOfRequests` (*type:* `String.t`, *default:* `nil`) - Required. Number of requests sent for this application to set up default
-      SQL instance.
+  *   `numberOfRequests` (*type:* `String.t`, *default:* `nil`) - Required. Number of requests sent for this application to set up default SQL instance.
   """
 
   use GoogleApi.Gax.ModelBase

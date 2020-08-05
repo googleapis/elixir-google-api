@@ -22,10 +22,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ListAlertsResponse do
   ## Attributes
 
   *   `alerts` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.Alert.t)`, *default:* `nil`) - The list of alerts.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the next page. If not empty, indicates that there may be more
-      alerts that match the listing request; this value can be used in a
-      subsequent ListAlertsRequest to get alerts continuing from last result
-      of the current list call.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the next page. If not empty, indicates that there may be more alerts that match the listing request; this value can be used in a subsequent ListAlertsRequest to get alerts continuing from last result of the current list call.
   """
 
   use GoogleApi.Gax.ModelBase

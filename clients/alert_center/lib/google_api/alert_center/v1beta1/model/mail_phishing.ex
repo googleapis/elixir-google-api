@@ -17,15 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.MailPhishing do
   @moduledoc """
-  Proto for all phishing alerts with common payload.
-  Supported types are any of the following:
-
-  * User reported phishing
-  * User reported spam spike
-  * Suspicious message reported
-  * Phishing reclassification
-  * Malware reclassification
-  * Gmail potential employee spoofing
+  Proto for all phishing alerts with common payload. Supported types are any of the following: * User reported phishing * User reported spam spike * Suspicious message reported * Phishing reclassification * Malware reclassification * Gmail potential employee spoofing
 
   ## Attributes
 

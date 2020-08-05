@@ -17,29 +17,19 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo do
   @moduledoc """
-  Common alert information about violated rules that are configured by G Suite
-  administrators.
+  Common alert information about violated rules that are configured by G Suite administrators.
 
   ## Attributes
 
   *   `dataSource` (*type:* `String.t`, *default:* `nil`) - Source of the data.
   *   `matchInfo` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.MatchInfo.t)`, *default:* `nil`) - List of matches that were found in the resource content.
-  *   `recipients` (*type:* `list(String.t)`, *default:* `nil`) - Resource recipients.
-
-      For Drive, they are grantees that the Drive file was shared with at the
-      time of rule triggering. Valid values include user emails, group emails,
-      domains, or 'anyone' if the file was publicly accessible. If the file was
-      private the recipients list will be empty.
-
-      For Gmail, they are emails of the users or groups that the Gmail message
-      was sent to.
+  *   `recipients` (*type:* `list(String.t)`, *default:* `nil`) - Resource recipients. For Drive, they are grantees that the Drive file was shared with at the time of rule triggering. Valid values include user emails, group emails, domains, or 'anyone' if the file was publicly accessible. If the file was private the recipients list will be empty. For Gmail, they are emails of the users or groups that the Gmail message was sent to.
   *   `resourceInfo` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo.t`, *default:* `nil`) - Details of the resource which violated the rule.
   *   `ruleInfo` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.RuleInfo.t`, *default:* `nil`) - Details of the violated rule.
   *   `suppressedActionTypes` (*type:* `list(String.t)`, *default:* `nil`) - Actions suppressed due to other actions with higher priority.
   *   `trigger` (*type:* `String.t`, *default:* `nil`) - Trigger of the rule.
   *   `triggeredActionTypes` (*type:* `list(String.t)`, *default:* `nil`) - Actions applied as a consequence of the rule being triggered.
-  *   `triggeringUserEmail` (*type:* `String.t`, *default:* `nil`) - Email of the user who caused the violation. Value could be empty if not
-      applicable, for example, a violation found by drive continuous scan.
+  *   `triggeringUserEmail` (*type:* `String.t`, *default:* `nil`) - Email of the user who caused the violation. Value could be empty if not applicable, for example, a violation found by drive continuous scan.
   """
 
   use GoogleApi.Gax.ModelBase
