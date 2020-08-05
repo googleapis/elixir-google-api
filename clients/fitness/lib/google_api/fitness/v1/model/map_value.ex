@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Fitness.V1.Model.MapValue do
   @moduledoc """
-  Holder object for the value of an entry in a map field of a data point.
-
-  A map value supports a subset of the formats that the regular Value supports.
+  Holder object for the value of an entry in a map field of a data point. A map value supports a subset of the formats that the regular Value supports.
 
   ## Attributes
 

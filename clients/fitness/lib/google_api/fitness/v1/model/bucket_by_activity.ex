@@ -21,11 +21,8 @@ defmodule GoogleApi.Fitness.V1.Model.BucketByActivity do
 
   ## Attributes
 
-  *   `activityDataSourceId` (*type:* `String.t`, *default:* `nil`) - The default activity stream will be used if a specific activityDataSourceId
-      is not specified.
-  *   `minDurationMillis` (*type:* `String.t`, *default:* `nil`) - Specifies that only activity segments of duration longer than
-      minDurationMillis are considered and used as a container for aggregated
-      data.
+  *   `activityDataSourceId` (*type:* `String.t`, *default:* `nil`) - The default activity stream will be used if a specific activityDataSourceId is not specified.
+  *   `minDurationMillis` (*type:* `String.t`, *default:* `nil`) - Specifies that only activity segments of duration longer than minDurationMillis are considered and used as a container for aggregated data.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,16 +21,10 @@ defmodule GoogleApi.Fitness.V1.Model.ListSessionsResponse do
 
   ## Attributes
 
-  *   `deletedSession` (*type:* `list(GoogleApi.Fitness.V1.Model.Session.t)`, *default:* `nil`) - If <code>includeDeleted</code> is set to true in the request, and
-      <var>startTime</var> and <var>endTime</var> are omitted, this will include
-      sessions which were deleted since the last sync.
-  *   `hasMoreData` (*type:* `boolean()`, *default:* `nil`) - Flag to indicate server has more data to transfer.
-      DO NOT USE THIS FIELD. It is never populated in responses from the server.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The sync token which is used to sync further changes. This will only be
-      provided if both <var>startTime</var> and <var>endTime</var> are omitted
-      from the request.
-  *   `session` (*type:* `list(GoogleApi.Fitness.V1.Model.Session.t)`, *default:* `nil`) - Sessions with an end time that is between <var>startTime</var> and
-      <var>endTime</var> of the request.
+  *   `deletedSession` (*type:* `list(GoogleApi.Fitness.V1.Model.Session.t)`, *default:* `nil`) - If includeDeleted is set to true in the request, and startTime and endTime are omitted, this will include sessions which were deleted since the last sync.
+  *   `hasMoreData` (*type:* `boolean()`, *default:* `nil`) - Flag to indicate server has more data to transfer. DO NOT USE THIS FIELD. It is never populated in responses from the server.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The sync token which is used to sync further changes. This will only be provided if both startTime and endTime are omitted from the request.
+  *   `session` (*type:* `list(GoogleApi.Fitness.V1.Model.Session.t)`, *default:* `nil`) - Sessions with an end time that is between startTime and endTime of the request.
   """
 
   use GoogleApi.Gax.ModelBase

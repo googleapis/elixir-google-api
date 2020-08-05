@@ -22,16 +22,9 @@ defmodule GoogleApi.Fitness.V1.Model.Application do
   ## Attributes
 
   *   `detailsUrl` (*type:* `String.t`, *default:* `nil`) - An optional URI that can be used to link back to the application.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this application. This is required for REST clients, but we
-      do not enforce uniqueness of this name. It is provided as a matter of
-      convenience for other developers who would like to identify which REST
-      created an Application or Data Source.
-  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name for this application. This is used as a unique
-      identifier when created by Android applications, but cannot be specified
-      by REST clients. REST clients will have their developer project number
-      reflected into the Data Source data stream IDs, instead of the packageName.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Version of the application. You should update this field whenever the
-      application changes in a way that affects the computation of the data.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this application. This is required for REST clients, but we do not enforce uniqueness of this name. It is provided as a matter of convenience for other developers who would like to identify which REST created an Application or Data Source.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name for this application. This is used as a unique identifier when created by Android applications, but cannot be specified by REST clients. REST clients will have their developer project number reflected into the Data Source data stream IDs, instead of the packageName.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Version of the application. You should update this field whenever the application changes in a way that affects the computation of the data.
   """
 
   use GoogleApi.Gax.ModelBase
