@@ -26,8 +26,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.Ip do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  The RDAP API recognizes this command from the RDAP specification but
-  does not support it. The response is a formatted 501 error.
+  The RDAP API recognizes this command from the RDAP specification but does not support it. The response is a formatted 501 error.
 
   ## Parameters
 
