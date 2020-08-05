@@ -21,10 +21,8 @@ defmodule GoogleApi.Classroom.V1.Model.ModifyAnnouncementAssigneesRequest do
 
   ## Attributes
 
-  *   `assigneeMode` (*type:* `String.t`, *default:* `nil`) - Mode of the announcement describing whether it is accessible by all
-      students or specified individual students.
-  *   `modifyIndividualStudentsOptions` (*type:* `GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions.t`, *default:* `nil`) - Set which students can view or cannot view the announcement.
-      Must be specified only when `assigneeMode` is `INDIVIDUAL_STUDENTS`.
+  *   `assigneeMode` (*type:* `String.t`, *default:* `nil`) - Mode of the announcement describing whether it is accessible by all students or specified individual students.
+  *   `modifyIndividualStudentsOptions` (*type:* `GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions.t`, *default:* `nil`) - Set which students can view or cannot view the announcement. Must be specified only when `assigneeMode` is `INDIVIDUAL_STUDENTS`.
   """
 
   use GoogleApi.Gax.ModelBase

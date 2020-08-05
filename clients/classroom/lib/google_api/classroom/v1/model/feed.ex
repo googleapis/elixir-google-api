@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Classroom.V1.Model.Feed do
   @moduledoc """
-  A class of notifications that an application can register to receive.
-  For example: "all roster changes for a domain".
+  A class of notifications that an application can register to receive. For example: "all roster changes for a domain".
 
   ## Attributes
 
-  *   `courseRosterChangesInfo` (*type:* `GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo.t`, *default:* `nil`) - Information about a `Feed` with a `feed_type` of `COURSE_ROSTER_CHANGES`.
-      This field must be specified if `feed_type` is `COURSE_ROSTER_CHANGES`.
-  *   `courseWorkChangesInfo` (*type:* `GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo.t`, *default:* `nil`) - Information about a `Feed` with a `feed_type` of `COURSE_WORK_CHANGES`.
-      This field must be specified if `feed_type` is `COURSE_WORK_CHANGES`.
+  *   `courseRosterChangesInfo` (*type:* `GoogleApi.Classroom.V1.Model.CourseRosterChangesInfo.t`, *default:* `nil`) - Information about a `Feed` with a `feed_type` of `COURSE_ROSTER_CHANGES`. This field must be specified if `feed_type` is `COURSE_ROSTER_CHANGES`.
+  *   `courseWorkChangesInfo` (*type:* `GoogleApi.Classroom.V1.Model.CourseWorkChangesInfo.t`, *default:* `nil`) - Information about a `Feed` with a `feed_type` of `COURSE_WORK_CHANGES`. This field must be specified if `feed_type` is `COURSE_WORK_CHANGES`.
   *   `feedType` (*type:* `String.t`, *default:* `nil`) - The type of feed.
   """
 

@@ -26,20 +26,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Accepts an invitation, removing it and adding the invited user to the
-  teachers or students (as appropriate) of the specified course. Only the
-  invited user may accept an invitation.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to accept the
-  requested invitation or for access errors.
-  * `FAILED_PRECONDITION` for the following request errors:
-      * CourseMemberLimitReached
-      * CourseNotModifiable
-      * CourseTeacherLimitReached
-      * UserGroupsMembershipLimitReached
-  * `NOT_FOUND` if no invitation exists with the requested ID.
+  Accepts an invitation, removing it and adding the invited user to the teachers or students (as appropriate) of the specified course. Only the invited user may accept an invitation. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to accept the requested invitation or for access errors. * `FAILED_PRECONDITION` for the following request errors: * CourseMemberLimitReached * CourseNotModifiable * CourseTeacherLimitReached * UserGroupsMembershipLimitReached * `NOT_FOUND` if no invitation exists with the requested ID.
 
   ## Parameters
 
@@ -96,18 +83,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   end
 
   @doc """
-  Creates an invitation. Only one invitation for a user and course may exist
-  at a time. Delete and re-create an invitation to make changes.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to create
-  invitations for this course or for access errors.
-  * `NOT_FOUND` if the course or the user does not exist.
-  * `FAILED_PRECONDITION` if the requested user's account is disabled or if
-  the user already has this role or a role with greater permissions.
-  * `ALREADY_EXISTS` if an invitation for the specified user and course
-  already exists.
+  Creates an invitation. Only one invitation for a user and course may exist at a time. Delete and re-create an invitation to make changes. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create invitations for this course or for access errors. * `NOT_FOUND` if the course or the user does not exist. * `FAILED_PRECONDITION` if the requested user's account is disabled or if the user already has this role or a role with greater permissions. * `ALREADY_EXISTS` if an invitation for the specified user and course already exists.
 
   ## Parameters
 
@@ -165,13 +141,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   end
 
   @doc """
-  Deletes an invitation.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to delete the
-  requested invitation or for access errors.
-  * `NOT_FOUND` if no invitation exists with the requested ID.
+  Deletes an invitation. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete the requested invitation or for access errors. * `NOT_FOUND` if no invitation exists with the requested ID.
 
   ## Parameters
 
@@ -228,13 +198,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   end
 
   @doc """
-  Returns an invitation.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to view the
-  requested invitation or for access errors.
-  * `NOT_FOUND` if no invitation exists with the requested ID.
+  Returns an invitation. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to view the requested invitation or for access errors. * `NOT_FOUND` if no invitation exists with the requested ID.
 
   ## Parameters
 
@@ -293,15 +257,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   end
 
   @doc """
-  Returns a list of invitations that the requesting user is permitted to
-  view, restricted to those that match the list request.
-
-  *Note:* At least one of `user_id` or `course_id` must be supplied. Both
-  fields can be supplied.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` for access errors.
+  Returns a list of invitations that the requesting user is permitted to view, restricted to those that match the list request. *Note:* At least one of `user_id` or `course_id` must be supplied. Both fields can be supplied. This method returns the following error codes: * `PERMISSION_DENIED` for access errors.
 
   ## Parameters
 
@@ -318,25 +274,10 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:courseId` (*type:* `String.t`) - Restricts returned invitations to those for a course with the specified
-          identifier.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. The default is 500 if unspecified or
-          `0`.
-
-          The server may return fewer than the specified number of results.
-      *   `:pageToken` (*type:* `String.t`) - nextPageToken
-          value returned from a previous
-          list call, indicating
-          that the subsequent page of results should be returned.
-
-          The list request must be
-          otherwise identical to the one that resulted in this token.
-      *   `:userId` (*type:* `String.t`) - Restricts returned invitations to those for a specific user. The identifier
-          can be one of the following:
-
-          * the numeric identifier for the user
-          * the email address of the user
-          * the string literal `"me"`, indicating the requesting user
+      *   `:courseId` (*type:* `String.t`) - Restricts returned invitations to those for a course with the specified identifier.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. The default is 500 if unspecified or `0`. The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
+      *   `:userId` (*type:* `String.t`) - Restricts returned invitations to those for a specific user. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

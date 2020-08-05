@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.Classroom.V1.Model.GuardianInvitation do
   @moduledoc """
-  An invitation to become the guardian of a specified user, sent to a specified
-  email address.
+  An invitation to become the guardian of a specified user, sent to a specified email address.
 
   ## Attributes
 
-  *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that this invitation was created.
-
-      Read-only.
-  *   `invitationId` (*type:* `String.t`, *default:* `nil`) - Unique identifier for this invitation.
-
-      Read-only.
-  *   `invitedEmailAddress` (*type:* `String.t`, *default:* `nil`) - Email address that the invitation was sent to.
-      This field is only visible to domain administrators.
+  *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that this invitation was created. Read-only.
+  *   `invitationId` (*type:* `String.t`, *default:* `nil`) - Unique identifier for this invitation. Read-only.
+  *   `invitedEmailAddress` (*type:* `String.t`, *default:* `nil`) - Email address that the invitation was sent to. This field is only visible to domain administrators.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state that this invitation is in.
   *   `studentId` (*type:* `String.t`, *default:* `nil`) - ID of the student (in standard format)
   """

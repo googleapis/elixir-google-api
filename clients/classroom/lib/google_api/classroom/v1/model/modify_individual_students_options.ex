@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions do
   @moduledoc """
-  Contains fields to add or remove students from a course work or announcement
-  where the `assigneeMode` is set to `INDIVIDUAL_STUDENTS`.
+  Contains fields to add or remove students from a course work or announcement where the `assigneeMode` is set to `INDIVIDUAL_STUDENTS`.
 
   ## Attributes
 
-  *   `addStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of students to be added as having access to this
-      coursework/announcement.
-  *   `removeStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of students to be removed from having access to this
-      coursework/announcement.
+  *   `addStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of students to be added as having access to this coursework/announcement.
+  *   `removeStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of students to be removed from having access to this coursework/announcement.
   """
 
   use GoogleApi.Gax.ModelBase

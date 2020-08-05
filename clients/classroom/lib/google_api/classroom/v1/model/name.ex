@@ -21,16 +21,9 @@ defmodule GoogleApi.Classroom.V1.Model.Name do
 
   ## Attributes
 
-  *   `familyName` (*type:* `String.t`, *default:* `nil`) - The user's last name.
-
-      Read-only.
-  *   `fullName` (*type:* `String.t`, *default:* `nil`) - The user's full name formed by concatenating the first and last name
-      values.
-
-      Read-only.
-  *   `givenName` (*type:* `String.t`, *default:* `nil`) - The user's first name.
-
-      Read-only.
+  *   `familyName` (*type:* `String.t`, *default:* `nil`) - The user's last name. Read-only.
+  *   `fullName` (*type:* `String.t`, *default:* `nil`) - The user's full name formed by concatenating the first and last name values. Read-only.
+  *   `givenName` (*type:* `String.t`, *default:* `nil`) - The user's first name. Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,13 +21,9 @@ defmodule GoogleApi.Classroom.V1.Model.DriveFolder do
 
   ## Attributes
 
-  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - URL that can be used to access the Drive folder.
-
-      Read-only.
+  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - URL that can be used to access the Drive folder. Read-only.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Drive API resource ID.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the Drive folder.
-
-      Read-only.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the Drive folder. Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

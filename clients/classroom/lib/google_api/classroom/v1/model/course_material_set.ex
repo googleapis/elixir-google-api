@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Classroom.V1.Model.CourseMaterialSet do
   @moduledoc """
-  A set of materials that appears on the "About" page of the course.
-  These materials might include a syllabus, schedule, or other background
-  information relating to the course as a whole.
+  A set of materials that appears on the "About" page of the course. These materials might include a syllabus, schedule, or other background information relating to the course as a whole.
 
   ## Attributes
 

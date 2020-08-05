@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Classroom.V1.Model.SubmissionHistory do
   @moduledoc """
-  The history of the submission. This currently includes state and grade
-  histories.
+  The history of the submission. This currently includes state and grade histories.
 
   ## Attributes
 

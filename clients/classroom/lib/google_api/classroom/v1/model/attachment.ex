@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Classroom.V1.Model.Attachment do
   @moduledoc """
-  Attachment added to student assignment work.
-
-  When creating attachments, setting the `form` field is not supported.
+  Attachment added to student assignment work. When creating attachments, setting the `form` field is not supported.
 
   ## Attributes
 

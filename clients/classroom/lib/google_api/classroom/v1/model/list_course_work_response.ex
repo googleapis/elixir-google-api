@@ -22,8 +22,7 @@ defmodule GoogleApi.Classroom.V1.Model.ListCourseWorkResponse do
   ## Attributes
 
   *   `courseWork` (*type:* `list(GoogleApi.Classroom.V1.Model.CourseWork.t)`, *default:* `nil`) - Course work items that match the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
-      results are available.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further results are available.
   """
 
   use GoogleApi.Gax.ModelBase
