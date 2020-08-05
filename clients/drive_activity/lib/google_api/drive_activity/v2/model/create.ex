@@ -21,12 +21,9 @@ defmodule GoogleApi.DriveActivity.V2.Model.Create do
 
   ## Attributes
 
-  *   `copy` (*type:* `GoogleApi.DriveActivity.V2.Model.Copy.t`, *default:* `nil`) - If present, indicates the object was created by copying an existing Drive
-      object.
-  *   `new` (*type:* `GoogleApi.DriveActivity.V2.Model.New.t`, *default:* `nil`) - If present, indicates the object was newly created (e.g. as a blank
-      document), not derived from a Drive object or external object.
-  *   `upload` (*type:* `GoogleApi.DriveActivity.V2.Model.Upload.t`, *default:* `nil`) - If present, indicates the object originated externally and was uploaded
-      to Drive.
+  *   `copy` (*type:* `GoogleApi.DriveActivity.V2.Model.Copy.t`, *default:* `nil`) - If present, indicates the object was created by copying an existing Drive object.
+  *   `new` (*type:* `GoogleApi.DriveActivity.V2.Model.New.t`, *default:* `nil`) - If present, indicates the object was newly created (e.g. as a blank document), not derived from a Drive object or external object.
+  *   `upload` (*type:* `GoogleApi.DriveActivity.V2.Model.Upload.t`, *default:* `nil`) - If present, indicates the object originated externally and was uploaded to Drive.
   """
 
   use GoogleApi.Gax.ModelBase

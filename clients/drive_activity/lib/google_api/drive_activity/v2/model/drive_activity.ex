@@ -17,23 +17,14 @@
 
 defmodule GoogleApi.DriveActivity.V2.Model.DriveActivity do
   @moduledoc """
-  A single Drive activity comprising one or more Actions by one or more
-  Actors on one or more Targets. Some Action groupings occur spontaneously,
-  such as moving an item into a shared folder triggering a permission change.
-  Other groupings of related Actions, such as multiple Actors editing one item
-  or moving multiple files into a new folder, are controlled by the selection
-  of a ConsolidationStrategy in the QueryDriveActivityRequest.
+  A single Drive activity comprising one or more Actions by one or more Actors on one or more Targets. Some Action groupings occur spontaneously, such as moving an item into a shared folder triggering a permission change. Other groupings of related Actions, such as multiple Actors editing one item or moving multiple files into a new folder, are controlled by the selection of a ConsolidationStrategy in the QueryDriveActivityRequest.
 
   ## Attributes
 
   *   `actions` (*type:* `list(GoogleApi.DriveActivity.V2.Model.Action.t)`, *default:* `nil`) - Details on all actions in this activity.
   *   `actors` (*type:* `list(GoogleApi.DriveActivity.V2.Model.Actor.t)`, *default:* `nil`) - All actor(s) responsible for the activity.
-  *   `primaryActionDetail` (*type:* `GoogleApi.DriveActivity.V2.Model.ActionDetail.t`, *default:* `nil`) - Key information about the primary action for this activity. This is either
-      representative, or the most important, of all actions in the activity,
-      according to the ConsolidationStrategy in the request.
-  *   `targets` (*type:* `list(GoogleApi.DriveActivity.V2.Model.Target.t)`, *default:* `nil`) - All Google Drive objects this activity is about (e.g. file, folder, drive).
-      This represents the state of the target immediately after the actions
-      occurred.
+  *   `primaryActionDetail` (*type:* `GoogleApi.DriveActivity.V2.Model.ActionDetail.t`, *default:* `nil`) - Key information about the primary action for this activity. This is either representative, or the most important, of all actions in the activity, according to the ConsolidationStrategy in the request.
+  *   `targets` (*type:* `list(GoogleApi.DriveActivity.V2.Model.Target.t)`, *default:* `nil`) - All Google Drive objects this activity is about (e.g. file, folder, drive). This represents the state of the target immediately after the actions occurred.
   *   `timeRange` (*type:* `GoogleApi.DriveActivity.V2.Model.TimeRange.t`, *default:* `nil`) - The activity occurred over this time range.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - The activity occurred at this specific time.
   """

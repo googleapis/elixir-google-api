@@ -21,15 +21,9 @@ defmodule GoogleApi.DriveActivity.V2.Model.FileComment do
 
   ## Attributes
 
-  *   `legacyCommentId` (*type:* `String.t`, *default:* `nil`) - The comment in the discussion thread. This identifier is an opaque string
-      compatible with the Drive API; see
-      https://developers.google.com/drive/v3/reference/comments/get
-  *   `legacyDiscussionId` (*type:* `String.t`, *default:* `nil`) - The discussion thread to which the comment was added. This identifier is an
-      opaque string compatible with the Drive API and references the first
-      comment in a discussion; see
-      https://developers.google.com/drive/v3/reference/comments/get
-  *   `linkToDiscussion` (*type:* `String.t`, *default:* `nil`) - The link to the discussion thread containing this comment, for example,
-      "https://docs.google.com/DOCUMENT_ID/edit?disco=THREAD_ID".
+  *   `legacyCommentId` (*type:* `String.t`, *default:* `nil`) - The comment in the discussion thread. This identifier is an opaque string compatible with the Drive API; see https://developers.google.com/drive/v3/reference/comments/get
+  *   `legacyDiscussionId` (*type:* `String.t`, *default:* `nil`) - The discussion thread to which the comment was added. This identifier is an opaque string compatible with the Drive API and references the first comment in a discussion; see https://developers.google.com/drive/v3/reference/comments/get
+  *   `linkToDiscussion` (*type:* `String.t`, *default:* `nil`) - The link to the discussion thread containing this comment, for example, "https://docs.google.com/DOCUMENT_ID/edit?disco=THREAD_ID".
   *   `parent` (*type:* `GoogleApi.DriveActivity.V2.Model.DriveItem.t`, *default:* `nil`) - The Drive item containing this comment.
   """
 

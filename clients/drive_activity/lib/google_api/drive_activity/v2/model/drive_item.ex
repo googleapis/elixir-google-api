@@ -22,12 +22,10 @@ defmodule GoogleApi.DriveActivity.V2.Model.DriveItem do
   ## Attributes
 
   *   `driveFile` (*type:* `GoogleApi.DriveActivity.V2.Model.DriveFile.t`, *default:* `nil`) - The Drive item is a file.
-  *   `driveFolder` (*type:* `GoogleApi.DriveActivity.V2.Model.DriveFolder.t`, *default:* `nil`) - The Drive item is a folder. Includes information about the type of
-      folder.
+  *   `driveFolder` (*type:* `GoogleApi.DriveActivity.V2.Model.DriveFolder.t`, *default:* `nil`) - The Drive item is a folder. Includes information about the type of folder.
   *   `file` (*type:* `GoogleApi.DriveActivity.V2.Model.File.t`, *default:* `nil`) - This field is deprecated; please use the `driveFile` field instead.
   *   `folder` (*type:* `GoogleApi.DriveActivity.V2.Model.Folder.t`, *default:* `nil`) - This field is deprecated; please use the `driveFolder` field instead.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the Drive item.  See
-      https://developers.google.com/drive/v3/web/mime-types.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the Drive item. See https://developers.google.com/drive/v3/web/mime-types.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The target Drive item. The format is "items/ITEM_ID".
   *   `owner` (*type:* `GoogleApi.DriveActivity.V2.Model.Owner.t`, *default:* `nil`) - Information about the owner of this Drive item.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the Drive item.

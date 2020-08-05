@@ -21,15 +21,11 @@ defmodule GoogleApi.DriveActivity.V2.Model.Permission do
 
   ## Attributes
 
-  *   `allowDiscovery` (*type:* `boolean()`, *default:* `nil`) - If true, the item can be discovered (e.g. in the user's "Shared with me"
-      collection) without needing a link to the item.
+  *   `allowDiscovery` (*type:* `boolean()`, *default:* `nil`) - If true, the item can be discovered (e.g. in the user's "Shared with me" collection) without needing a link to the item.
   *   `anyone` (*type:* `GoogleApi.DriveActivity.V2.Model.Anyone.t`, *default:* `nil`) - If set, this permission applies to anyone, even logged out users.
   *   `domain` (*type:* `GoogleApi.DriveActivity.V2.Model.Domain.t`, *default:* `nil`) - The domain to whom this permission applies.
   *   `group` (*type:* `GoogleApi.DriveActivity.V2.Model.Group.t`, *default:* `nil`) - The group to whom this permission applies.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - Indicates the
-      <a href="/drive/web/manage-sharing#roles">Google Drive permissions
-      role</a>. The role determines a user's ability to read, write, and
-      comment on items.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Indicates the Google Drive permissions role. The role determines a user's ability to read, write, and comment on items.
   *   `user` (*type:* `GoogleApi.DriveActivity.V2.Model.User.t`, *default:* `nil`) - The user to whom this permission applies.
   """
 

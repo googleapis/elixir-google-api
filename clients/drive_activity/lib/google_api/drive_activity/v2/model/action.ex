@@ -21,11 +21,9 @@ defmodule GoogleApi.DriveActivity.V2.Model.Action do
 
   ## Attributes
 
-  *   `actor` (*type:* `GoogleApi.DriveActivity.V2.Model.Actor.t`, *default:* `nil`) - The actor responsible for this action (or empty if all actors are
-      responsible).
+  *   `actor` (*type:* `GoogleApi.DriveActivity.V2.Model.Actor.t`, *default:* `nil`) - The actor responsible for this action (or empty if all actors are responsible).
   *   `detail` (*type:* `GoogleApi.DriveActivity.V2.Model.ActionDetail.t`, *default:* `nil`) - The type and detailed information about the action.
-  *   `target` (*type:* `GoogleApi.DriveActivity.V2.Model.Target.t`, *default:* `nil`) - The target this action affects (or empty if affecting all targets). This
-      represents the state of the target immediately after this action occurred.
+  *   `target` (*type:* `GoogleApi.DriveActivity.V2.Model.Target.t`, *default:* `nil`) - The target this action affects (or empty if affecting all targets). This represents the state of the target immediately after this action occurred.
   *   `timeRange` (*type:* `GoogleApi.DriveActivity.V2.Model.TimeRange.t`, *default:* `nil`) - The action occurred over this time range.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - The action occurred at this specific time.
   """

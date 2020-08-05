@@ -22,9 +22,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.KnownUser do
   ## Attributes
 
   *   `isCurrentUser` (*type:* `boolean()`, *default:* `nil`) - True if this is the user making the request.
-  *   `personName` (*type:* `String.t`, *default:* `nil`) - The identifier for this user that can be used with the People API to get
-      more information. The format is "people/ACCOUNT_ID". See
-      https://developers.google.com/people/.
+  *   `personName` (*type:* `String.t`, *default:* `nil`) - The identifier for this user that can be used with the People API to get more information. The format is "people/ACCOUNT_ID". See https://developers.google.com/people/.
   """
 
   use GoogleApi.Gax.ModelBase

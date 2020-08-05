@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DriveActivity.V2.Model.AnonymousUser do
   @moduledoc """
-  Empty message representing an anonymous user or indicating the authenticated
-  user should be anonymized.
+  Empty message representing an anonymous user or indicating the authenticated user should be anonymized.
 
   ## Attributes
 
