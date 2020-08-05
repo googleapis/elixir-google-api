@@ -21,16 +21,10 @@ defmodule GoogleApi.YouTube.V3.Model.PromotedItemId do
 
   ## Attributes
 
-  *   `recentlyUploadedBy` (*type:* `String.t`, *default:* `nil`) - If type is recentUpload, this field identifies the channel from which to
-      take the recent upload. If missing, the channel is assumed to be the same
-      channel for which the invideoPromotion is set.
+  *   `recentlyUploadedBy` (*type:* `String.t`, *default:* `nil`) - If type is recentUpload, this field identifies the channel from which to take the recent upload. If missing, the channel is assumed to be the same channel for which the invideoPromotion is set.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Describes the type of the promoted item.
-  *   `videoId` (*type:* `String.t`, *default:* `nil`) - If the promoted item represents a video, this field represents the unique
-      YouTube ID identifying it. This field will be present only if
-      <code>type</code> has the value <code>video</code>.
-  *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - If the promoted item represents a website, this field represents the url
-      pointing to the website. This field will be present only if
-      <code>type</code> has the value <code>website</code>.
+  *   `videoId` (*type:* `String.t`, *default:* `nil`) - If the promoted item represents a video, this field represents the unique YouTube ID identifying it. This field will be present only if type has the value video.
+  *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - If the promoted item represents a website, this field represents the url pointing to the website. This field will be present only if type has the value website.
   """
 
   use GoogleApi.Gax.ModelBase

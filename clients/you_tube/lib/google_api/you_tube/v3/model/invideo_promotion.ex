@@ -17,21 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.InvideoPromotion do
   @moduledoc """
-  Describes an invideo promotion campaign consisting of multiple promoted
-  items. A campaign belongs to a single channel_id.
+  Describes an invideo promotion campaign consisting of multiple promoted items. A campaign belongs to a single channel_id.
 
   ## Attributes
 
-  *   `defaultTiming` (*type:* `GoogleApi.YouTube.V3.Model.InvideoTiming.t`, *default:* `nil`) - The default temporal position within the video where the promoted item will
-      be displayed. Can be overridden by more specific timing in the item.
+  *   `defaultTiming` (*type:* `GoogleApi.YouTube.V3.Model.InvideoTiming.t`, *default:* `nil`) - The default temporal position within the video where the promoted item will be displayed. Can be overridden by more specific timing in the item.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.PromotedItem.t)`, *default:* `nil`) - List of promoted items in decreasing priority.
-  *   `position` (*type:* `GoogleApi.YouTube.V3.Model.InvideoPosition.t`, *default:* `nil`) - The spatial position within the video where the promoted item will be
-      displayed.
-  *   `useSmartTiming` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the channel's promotional campaign uses "smart timing."
-      This feature attempts to show promotions at a point in the video when they
-      are more likely to be clicked and less likely to disrupt the viewing
-      experience. This feature also picks up a single promotion to show on each
-      video.
+  *   `position` (*type:* `GoogleApi.YouTube.V3.Model.InvideoPosition.t`, *default:* `nil`) - The spatial position within the video where the promoted item will be displayed.
+  *   `useSmartTiming` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the channel's promotional campaign uses "smart timing." This feature attempts to show promotions at a point in the video when they are more likely to be clicked and less likely to disrupt the viewing experience. This feature also picks up a single promotion to show on each video.
   """
 
   use GoogleApi.Gax.ModelBase

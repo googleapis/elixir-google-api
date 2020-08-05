@@ -24,13 +24,11 @@ defmodule GoogleApi.YouTube.V3.Model.CommentThreadListResponse do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.CommentThread.t)`, *default:* `nil`) - A list of comment threads that match the request criteria.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#commentThreadListResponse`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#commentThreadListResponse"</code>.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the <code>pageToken</code>
-      parameter to retrieve the next page in the result set.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#commentThreadListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#commentThreadListResponse".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.
   *   `pageInfo` (*type:* `GoogleApi.YouTube.V3.Model.PageInfo.t`, *default:* `nil`) - General pagination information.
   *   `tokenPagination` (*type:* `GoogleApi.YouTube.V3.Model.TokenPagination.t`, *default:* `nil`) - 
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

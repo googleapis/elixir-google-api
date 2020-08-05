@@ -21,13 +21,10 @@ defmodule GoogleApi.YouTube.V3.Model.LinkCard do
 
   ## Attributes
 
-  *   `customLinkText` (*type:* `String.t`, *default:* `nil`) - Custom text to show as the website link.
-      Required.
+  *   `customLinkText` (*type:* `String.t`, *default:* `nil`) - Custom text to show as the website link. Required.
   *   `externalImageUrl` (*type:* `String.t`, *default:* `nil`) - URL to an externally hosted image.
-  *   `targetUrl` (*type:* `String.t`, *default:* `nil`) - The URL to which this card points.
-      Required.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title to show on the card.
-      Required.
+  *   `targetUrl` (*type:* `String.t`, *default:* `nil`) - The URL to which this card points. Required.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title to show on the card. Required.
   *   `uploadedImage` (*type:* `GoogleApi.YouTube.V3.Model.LinkCardUploadedImage.t`, *default:* `nil`) - Previously uploaded image.
   """
 

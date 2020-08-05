@@ -21,23 +21,11 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
 
   ## Attributes
 
-  *   `endAt` (*type:* `String.t`, *default:* `nil`) - The time, measured in seconds from the start of the video, when the video
-      should stop playing. (The playlist owner can specify the times when the
-      video should start and stop playing when the video is played in the context
-      of the playlist.) By default, assume that the <code>video.endTime</code> is
-      the end of the video.
+  *   `endAt` (*type:* `String.t`, *default:* `nil`) - The time, measured in seconds from the start of the video, when the video should stop playing. (The playlist owner can specify the times when the video should start and stop playing when the video is played in the context of the playlist.) By default, assume that the video.endTime is the end of the video.
   *   `note` (*type:* `String.t`, *default:* `nil`) - A user-generated note for this item.
-  *   `startAt` (*type:* `String.t`, *default:* `nil`) - The time, measured in seconds from the start of the video, when the video
-      should start playing. (The playlist owner can specify the times when the
-      video should start and stop playing when the video is played in the context
-      of the playlist.) The default value is <code>0</code>.
-  *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify a video. To <a
-      href="/youtube/v3/docs/video/list.html">retrieve the <code>video</code>
-      resource</a>, set the <code>id</code> query parameter to this value in your
-      API request.
-  *   `videoPublishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the video was published to YouTube. The value is
-      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
-      format.
+  *   `startAt` (*type:* `String.t`, *default:* `nil`) - The time, measured in seconds from the start of the video, when the video should start playing. (The playlist owner can specify the times when the video should start and stop playing when the video is played in the context of the playlist.) The default value is 0.
+  *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify a video. To retrieve the video resource, set the id query parameter to this value in your API request.
+  *   `videoPublishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the video was published to YouTube. The value is specified in ISO 8601 format.
   """
 
   use GoogleApi.Gax.ModelBase

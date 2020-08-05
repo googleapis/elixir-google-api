@@ -31,9 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.Members do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
-      <code>member</code> resource parts that the API response will include. Set
-      the parameter value to <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the member resource parts that the API response will include. Set the parameter value to snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -46,16 +44,11 @@ defmodule GoogleApi.YouTube.V3.Api.Members do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filterByMemberChannelId` (*type:* `String.t`) - Comma separated list of channel IDs. Only data about members that are part
-          of this list will be included in the response.
+      *   `:filterByMemberChannelId` (*type:* `String.t`) - Comma separated list of channel IDs. Only data about members that are part of this list will be included in the response.
       *   `:hasAccessToLevel` (*type:* `String.t`) - Filter members in the results set to the ones that have access to a level.
-      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
-          maximum number of items that should be returned in the result set.
+      *   `:maxResults` (*type:* `integer()`) - The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
       *   `:mode` (*type:* `String.t`) - Parameter that specifies which channel members to return.
-      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
-          page in the result set that should be returned. In an API response, the
-          <code>nextPageToken</code> and <code>prevPageToken</code> properties
-          identify other pages that could be retrieved.
+      *   `:pageToken` (*type:* `String.t`) - The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

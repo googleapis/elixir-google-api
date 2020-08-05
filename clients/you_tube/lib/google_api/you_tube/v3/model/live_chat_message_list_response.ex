@@ -24,16 +24,13 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t)`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatMessageListResponse`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#liveChatMessageListResponse"</code>.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatMessageListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#liveChatMessageListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
-  *   `offlineAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the underlying stream went offline. The value is
-      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
-      format.
+  *   `offlineAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the underlying stream went offline. The value is specified in ISO 8601 format.
   *   `pageInfo` (*type:* `GoogleApi.YouTube.V3.Model.PageInfo.t`, *default:* `nil`) - General pagination information.
   *   `pollingIntervalMillis` (*type:* `integer()`, *default:* `nil`) - The amount of time the client should wait before polling again.
   *   `tokenPagination` (*type:* `GoogleApi.YouTube.V3.Model.TokenPagination.t`, *default:* `nil`) - 
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

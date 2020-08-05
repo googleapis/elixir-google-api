@@ -17,27 +17,17 @@
 
 defmodule GoogleApi.YouTube.V3.Model.LiveBroadcast do
   @moduledoc """
-  A <code><strong>liveBroadcast</strong></code> resource represents an event
-  that will be streamed, via live video, on YouTube.
+  A *liveBroadcast* resource represents an event that will be streamed, via live video, on YouTube.
 
   ## Attributes
 
-  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails.t`, *default:* `nil`) - The <code>contentDetails</code> object contains information about the
-      event's video content, such as whether the content can be shown in an
-      embedded video player or if it will be archived and therefore available
-      for viewing after the event has concluded.
+  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails.t`, *default:* `nil`) - The contentDetails object contains information about the event's video content, such as whether the content can be shown in an embedded video player or if it will be archived and therefore available for viewing after the event has concluded.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube assigns to uniquely identify the broadcast.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#liveBroadcast`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#liveBroadcast"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the event,
-      including its title, description, start time, and end time.
-  *   `statistics` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics.t`, *default:* `nil`) - The <code>statistics</code> object contains info about the event's current
-      stats. These include concurrent viewers and total chat count. Statistics
-      can change (in either direction) during the lifetime of an event.
-      Statistics are only returned while the event is live.
-  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastStatus.t`, *default:* `nil`) - The <code>status</code> object contains information about the event's
-      status.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#liveBroadcast`) - Identifies what kind of resource this is. Value: the fixed string "youtube#liveBroadcast".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the event, including its title, description, start time, and end time.
+  *   `statistics` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics.t`, *default:* `nil`) - The statistics object contains info about the event's current stats. These include concurrent viewers and total chat count. Statistics can change (in either direction) during the lifetime of an event. Statistics are only returned while the event is live.
+  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastStatus.t`, *default:* `nil`) - The status object contains information about the event's status.
   """
 
   use GoogleApi.Gax.ModelBase

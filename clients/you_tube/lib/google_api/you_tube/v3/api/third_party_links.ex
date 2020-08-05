@@ -102,10 +102,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
-      <code>thirdPartyLink</code> resource parts that the API request and
-      response will include. Supported values are <code>linkingToken</code>,
-      <code>status</code>, and <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the thirdPartyLink resource parts that the API request and response will include. Supported values are linkingToken, status, and snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -170,10 +167,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
-      <code>thirdPartyLink</code> resource parts that the API response will
-      include. Supported values are <code>linkingToken</code>,
-      <code>status</code>, and <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the thirdPartyLink resource parts that the API response will include. Supported values are linkingToken, status, and snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -235,10 +229,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
-      <code>thirdPartyLink</code> resource parts that the API request and
-      response will include. Supported values are <code>linkingToken</code>,
-      <code>status</code>, and <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the thirdPartyLink resource parts that the API request and response will include. Supported values are linkingToken, status, and snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

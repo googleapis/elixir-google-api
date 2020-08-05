@@ -87,10 +87,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
-      this operation. It identifies the properties that the write operation will
-      set as well as the properties that the API response returns. Set the
-      parameter value to <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response returns. Set the parameter value to snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -156,9 +153,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
   *   `live_chat_id` (*type:* `String.t`) - The id of the live chat for which moderators should be returned.
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
-      <code>liveChatModerator</code> resource parts that the API response will
-      include. Supported values are <code>id</code> and <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the liveChatModerator resource parts that the API response will include. Supported values are id and snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -171,12 +166,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
-          maximum number of items that should be returned in the result set.
-      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
-          page in the result set that should be returned. In an API response, the
-          <code>nextPageToken</code> and <code>prevPageToken</code> properties
-          identify other pages that could be retrieved.
+      *   `:maxResults` (*type:* `integer()`) - The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+      *   `:pageToken` (*type:* `String.t`) - The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

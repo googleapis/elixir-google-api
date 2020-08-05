@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.YouTube.V3.Model.Sponsor do
   @moduledoc """
-  A `__sponsor__` resource represents a sponsor for a YouTube channel.  A
-  sponsor provides recurring monetary support to a creator and receives special
-  benefits.
+  A `__sponsor__` resource represents a sponsor for a YouTube channel. A sponsor provides recurring monetary support to a creator and receives special benefits.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#sponsor`) - Identifies what kind of resource this is. Value: the fixed string
-      `"youtube#sponsor"`.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#sponsor`) - Identifies what kind of resource this is. Value: the fixed string `"youtube#sponsor"`.
   *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.SponsorSnippet.t`, *default:* `nil`) - The `snippet` object contains basic details about the sponsor.
   """
 

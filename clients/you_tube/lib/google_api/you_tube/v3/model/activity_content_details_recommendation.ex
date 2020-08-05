@@ -22,10 +22,8 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation do
   ## Attributes
 
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason that the resource is recommended to the user.
-  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>resourceId</code> object contains information that
-      identifies the recommended resource.
-  *   `seedResourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>seedResourceId</code> object contains information about
-      the resource that caused the recommendation.
+  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The resourceId object contains information that identifies the recommended resource.
+  *   `seedResourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The seedResourceId object contains information about the resource that caused the recommendation.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,22 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.GuideCategory do
   @moduledoc """
-  A <code><strong>guideCategory</strong></code> resource identifies a category
-  that YouTube algorithmically assigns based on a
-  channel's content or other indicators, such as the channel's popularity. The
-  list is similar to <a
-  href=\\"/youtube/v3/docs/videocategory.html\\">video categories</a>, with the
-  difference being that a video's uploader can assign a video category but only
-  YouTube can assign a channel category.
+  A *guideCategory* resource identifies a category that YouTube algorithmically assigns based on a channel's content or other indicators, such as the channel's popularity. The list is similar to video categories, with the difference being that a video's uploader can assign a video category but only YouTube can assign a channel category.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the guide category.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#guideCategory`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#guideCategory"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.GuideCategorySnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the category,
-      such as its title.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#guideCategory`) - Identifies what kind of resource this is. Value: the fixed string "youtube#guideCategory".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.GuideCategorySnippet.t`, *default:* `nil`) - The snippet object contains basic details about the category, such as its title.
   """
 
   use GoogleApi.Gax.ModelBase

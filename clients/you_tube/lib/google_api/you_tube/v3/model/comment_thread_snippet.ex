@@ -21,17 +21,12 @@ defmodule GoogleApi.YouTube.V3.Model.CommentThreadSnippet do
 
   ## Attributes
 
-  *   `canReply` (*type:* `boolean()`, *default:* `nil`) - Whether the current viewer of the thread can reply to it. This is viewer
-      specific - other viewers may see a different value for this field.
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The YouTube channel the comments in the thread refer to or the channel
-      with the video the comments refer to. If video_id isn't set the comments
-      refer to the channel itself.
-  *   `isPublic` (*type:* `boolean()`, *default:* `nil`) - Whether the thread (and therefore all its comments) is visible to all
-      YouTube users.
+  *   `canReply` (*type:* `boolean()`, *default:* `nil`) - Whether the current viewer of the thread can reply to it. This is viewer specific - other viewers may see a different value for this field.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The YouTube channel the comments in the thread refer to or the channel with the video the comments refer to. If video_id isn't set the comments refer to the channel itself.
+  *   `isPublic` (*type:* `boolean()`, *default:* `nil`) - Whether the thread (and therefore all its comments) is visible to all YouTube users.
   *   `topLevelComment` (*type:* `GoogleApi.YouTube.V3.Model.Comment.t`, *default:* `nil`) - The top level comment of this thread.
   *   `totalReplyCount` (*type:* `integer()`, *default:* `nil`) - The total number of replies (not including the top level comment).
-  *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID of the video the comments refer to, if any. No video_id implies a
-      channel discussion comment.
+  *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID of the video the comments refer to, if any. No video_id implies a channel discussion comment.
   """
 
   use GoogleApi.Gax.ModelBase

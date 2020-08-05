@@ -24,15 +24,12 @@ defmodule GoogleApi.YouTube.V3.Model.SubscriptionListResponse do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.Subscription.t)`, *default:* `nil`) - A list of subscriptions that match the request criteria.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#subscriptionListResponse`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#subscriptionListResponse"</code>.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the <code>pageToken</code>
-      parameter to retrieve the next page in the result set.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#subscriptionListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#subscriptionListResponse".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.
   *   `pageInfo` (*type:* `GoogleApi.YouTube.V3.Model.PageInfo.t`, *default:* `nil`) - 
-  *   `prevPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the <code>pageToken</code>
-      parameter to retrieve the previous page in the result set.
+  *   `prevPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.
   *   `tokenPagination` (*type:* `GoogleApi.YouTube.V3.Model.TokenPagination.t`, *default:* `nil`) - 
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

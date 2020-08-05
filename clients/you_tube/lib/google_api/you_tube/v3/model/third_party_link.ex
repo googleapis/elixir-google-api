@@ -17,21 +17,15 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ThirdPartyLink do
   @moduledoc """
-  A <code><strong>third party account link</strong></code> resource represents
-  a link between a YouTube account or a channel and an account on a
-  third-party service.
+  A *third party account link* resource represents a link between a YouTube account or a channel and an account on a third-party service.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource
-  *   `kind` (*type:* `String.t`, *default:* `youtube#thirdPartyLink`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#thirdPartyLink"</code>.
-  *   `linkingToken` (*type:* `String.t`, *default:* `nil`) - The <code>linking_token</code> identifies a YouTube account and
-      channel with which the third party account is linked.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.ThirdPartyLinkSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the third-
-      party account link.
-  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.ThirdPartyLinkStatus.t`, *default:* `nil`) - The <code>status</code> object contains information about the status
-      of the link.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#thirdPartyLink`) - Identifies what kind of resource this is. Value: the fixed string "youtube#thirdPartyLink".
+  *   `linkingToken` (*type:* `String.t`, *default:* `nil`) - The linking_token identifies a YouTube account and channel with which the third party account is linked.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.ThirdPartyLinkSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the third- party account link.
+  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.ThirdPartyLinkStatus.t`, *default:* `nil`) - The status object contains information about the status of the link.
   """
 
   use GoogleApi.Gax.ModelBase

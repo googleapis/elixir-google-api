@@ -31,15 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
-      comma-separated list of one or more <code>activity</code> resource
-      properties that the API response will include.<br><br>If the parameter
-      identifies a property that contains child properties, the child properties
-      will be included in the response. For example, in an <code>activity</code>
-      resource, the <code>snippet</code> property contains other properties that
-      identify the type of activity, a display title for the activity, and so
-      forth. If you set <code><strong>part=snippet</strong></code>, the API
-      response will also contain all of those nested properties.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in an activity resource, the snippet property contains other properties that identify the type of activity, a display title for the activity, and so forth. If you set *part=snippet*, the API response will also contain all of those nested properties.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -54,13 +46,9 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:channelId` (*type:* `String.t`) - 
       *   `:home` (*type:* `boolean()`) - 
-      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
-          maximum number of items that should be returned in the result set.
+      *   `:maxResults` (*type:* `integer()`) - The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
       *   `:mine` (*type:* `boolean()`) - 
-      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
-          page in the result set that should be returned. In an API response, the
-          <code>nextPageToken</code> and <code>prevPageToken</code> properties
-          identify other pages that could be retrieved.
+      *   `:pageToken` (*type:* `String.t`) - The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
       *   `:publishedAfter` (*type:* `DateTime.t`) - 
       *   `:publishedBefore` (*type:* `DateTime.t`) - 
       *   `:regionCode` (*type:* `String.t`) - 

@@ -17,34 +17,22 @@
 
 defmodule GoogleApi.YouTube.V3.Model.VideoSnippet do
   @moduledoc """
-  Basic details about a video, including title, description, uploader,
-  thumbnails and category.
+  Basic details about a video, including title, description, uploader, thumbnails and category.
 
   ## Attributes
 
-  *   `categoryId` (*type:* `String.t`, *default:* `nil`) - The YouTube <a href="/youtube/v3/docs/videoCategories/list">video
-      category</a> associated with the video.
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that the
-      video was uploaded to.
+  *   `categoryId` (*type:* `String.t`, *default:* `nil`) - The YouTube video category associated with the video.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that the video was uploaded to.
   *   `channelTitle` (*type:* `String.t`, *default:* `nil`) - Channel title for the channel that the video belongs to.
-  *   `defaultAudioLanguage` (*type:* `String.t`, *default:* `nil`) - The <code>default_audio_language</code> property specifies the language
-      spoken in the video's default audio track.
+  *   `defaultAudioLanguage` (*type:* `String.t`, *default:* `nil`) - The default_audio_language property specifies the language spoken in the video's default audio track.
   *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The language of the videos's default snippet.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The video's description.
-      @mutable youtube.videos.insert youtube.videos.update
-  *   `liveBroadcastContent` (*type:* `String.t`, *default:* `nil`) - Indicates if the video is an upcoming/active live broadcast.
-      Or it's "none" if the video is not an upcoming/active live broadcast.
-  *   `localized` (*type:* `GoogleApi.YouTube.V3.Model.VideoLocalization.t`, *default:* `nil`) - Localized snippet selected with the hl parameter. If no such localization
-      exists, this field is populated with the default snippet. (Read-only)
-  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the video was uploaded. The value is specified
-      in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
-      format.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The video's description. @mutable youtube.videos.insert youtube.videos.update
+  *   `liveBroadcastContent` (*type:* `String.t`, *default:* `nil`) - Indicates if the video is an upcoming/active live broadcast. Or it's "none" if the video is not an upcoming/active live broadcast.
+  *   `localized` (*type:* `GoogleApi.YouTube.V3.Model.VideoLocalization.t`, *default:* `nil`) - Localized snippet selected with the hl parameter. If no such localization exists, this field is populated with the default snippet. (Read-only)
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the video was uploaded. The value is specified in ISO 8601 format.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - A list of keyword tags associated with the video. Tags may contain spaces.
-  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the video. For each object in the
-      map, the key is the name of the thumbnail image, and the value is an object
-      that contains other information about the thumbnail.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The video's title.
-      @mutable youtube.videos.insert youtube.videos.update
+  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the video. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The video's title. @mutable youtube.videos.insert youtube.videos.update
   """
 
   use GoogleApi.Gax.ModelBase

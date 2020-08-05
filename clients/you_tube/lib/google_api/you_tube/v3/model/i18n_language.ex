@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.I18nLanguage do
   @moduledoc """
-  An <code><strong>i18nLanguage</strong></code> resource identifies a UI
-  language currently supported by YouTube.
+  An *i18nLanguage* resource identifies a UI language currently supported by YouTube.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the i18n language.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#i18nLanguage`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#i18nLanguage"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.I18nLanguageSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the i18n
-      language, such as language code and human-readable name.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#i18nLanguage`) - Identifies what kind of resource this is. Value: the fixed string "youtube#i18nLanguage".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.I18nLanguageSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the i18n language, such as language code and human-readable name.
   """
 
   use GoogleApi.Gax.ModelBase

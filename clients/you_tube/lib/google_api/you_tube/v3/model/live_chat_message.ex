@@ -17,18 +17,15 @@
 
 defmodule GoogleApi.YouTube.V3.Model.LiveChatMessage do
   @moduledoc """
-  A <code><strong>liveChatMessage</strong></code> resource represents a chat
-  message in a YouTube Live Chat.
+  A *liveChatMessage* resource represents a chat message in a YouTube Live Chat.
 
   ## Attributes
 
-  *   `authorDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails.t`, *default:* `nil`) - The <code>authorDetails</code> object contains basic details about the
-      user that posted this message.
+  *   `authorDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails.t`, *default:* `nil`) - The authorDetails object contains basic details about the user that posted this message.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube assigns to uniquely identify the message.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatMessage`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#liveChatMessage"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the message.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatMessage`) - Identifies what kind of resource this is. Value: the fixed string "youtube#liveChatMessage".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the message.
   """
 
   use GoogleApi.Gax.ModelBase

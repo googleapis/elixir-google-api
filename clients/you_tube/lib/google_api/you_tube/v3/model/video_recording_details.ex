@@ -23,9 +23,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
 
   *   `location` (*type:* `GoogleApi.YouTube.V3.Model.GeoPoint.t`, *default:* `nil`) - The geolocation information associated with the video.
   *   `locationDescription` (*type:* `String.t`, *default:* `nil`) - The text description of the location where the video was recorded.
-  *   `recordingDate` (*type:* `String.t`, *default:* `nil`) - The date and time when the video was recorded. The value is specified in <a
-      href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
-      (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>) format.
+  *   `recordingDate` (*type:* `String.t`, *default:* `nil`) - The date and time when the video was recorded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sssZ) format.
   """
 
   use GoogleApi.Gax.ModelBase

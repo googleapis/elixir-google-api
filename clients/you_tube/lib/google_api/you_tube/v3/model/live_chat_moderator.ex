@@ -17,18 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.LiveChatModerator do
   @moduledoc """
-  A <code><strong>liveChatModerator</strong></code> resource represents a
-  moderator for a YouTube live chat. A chat moderator has the ability to
-  ban/unban users from a chat, remove message, etc.
+  A *liveChatModerator* resource represents a moderator for a YouTube live chat. A chat moderator has the ability to ban/unban users from a chat, remove message, etc.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube assigns to uniquely identify the moderator.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatModerator`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#liveChatModerator"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the
-      moderator.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatModerator`) - Identifies what kind of resource this is. Value: the fixed string "youtube#liveChatModerator".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the moderator.
   """
 
   use GoogleApi.Gax.ModelBase

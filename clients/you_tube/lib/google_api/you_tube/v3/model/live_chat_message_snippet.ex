@@ -21,35 +21,18 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
 
   ## Attributes
 
-  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always
-      filled.
-      textMessageEvent - the user that wrote the message
-      fanFundingEvent - the user that funded the broadcast
-      newSponsorEvent - the user that just became a sponsor
-      messageDeletedEvent - the moderator that took the action
-      messageRetractedEvent - the author that retracted their message
-      userBannedEvent - the moderator that took the action
-      superChatEvent - the user that made the purchase
-  *   `displayMessage` (*type:* `String.t`, *default:* `nil`) - Contains a string that can be displayed to the user.
-      If this field is not present the message is silent, at the moment only
-      messages of type TOMBSTONE and CHAT_ENDED_EVENT are silent.
-  *   `fanFundingEventDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t`, *default:* `nil`) - Details about the funding event, this is only set if the type is
-      'fanFundingEvent'.
+  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase
+  *   `displayMessage` (*type:* `String.t`, *default:* `nil`) - Contains a string that can be displayed to the user. If this field is not present the message is silent, at the moment only messages of type TOMBSTONE and CHAT_ENDED_EVENT are silent.
+  *   `fanFundingEventDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t`, *default:* `nil`) - Details about the funding event, this is only set if the type is 'fanFundingEvent'.
   *   `hasDisplayContent` (*type:* `boolean()`, *default:* `nil`) - Whether the message has display content that should be displayed to users.
   *   `liveChatId` (*type:* `String.t`, *default:* `nil`) - 
   *   `messageDeletedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t`, *default:* `nil`) - 
   *   `messageRetractedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t`, *default:* `nil`) - 
-  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the message was orignally published. The value is
-      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
-      format.
-  *   `superChatDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t`, *default:* `nil`) - Details about the Super Chat event, this is only set if the type is
-      'superChatEvent'.
-  *   `superStickerDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t`, *default:* `nil`) - Details about the Super Sticker event, this is only set if the type is
-      'superStickerEvent'.
-  *   `textMessageDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t`, *default:* `nil`) - Details about the text message, this is only set if the type is
-      'textMessageEvent'.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of message, this will always be present, it determines the
-      contents of the message as well as which fields will be present.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the message was orignally published. The value is specified in ISO 8601 format.
+  *   `superChatDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t`, *default:* `nil`) - Details about the Super Chat event, this is only set if the type is 'superChatEvent'.
+  *   `superStickerDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t`, *default:* `nil`) - Details about the Super Sticker event, this is only set if the type is 'superStickerEvent'.
+  *   `textMessageDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t`, *default:* `nil`) - Details about the text message, this is only set if the type is 'textMessageEvent'.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of message, this will always be present, it determines the contents of the message as well as which fields will be present.
   *   `userBannedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails.t`, *default:* `nil`) - 
   """
 

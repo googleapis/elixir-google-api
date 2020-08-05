@@ -17,39 +17,18 @@
 
 defmodule GoogleApi.YouTube.V3.Model.VideoProcessingDetails do
   @moduledoc """
-  Describes processing status and progress and availability of some other Video
-  resource parts.
+  Describes processing status and progress and availability of some other Video resource parts.
 
   ## Attributes
 
-  *   `editorSuggestionsAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether video editing suggestions, which might
-      improve video quality or the playback experience, are available for
-      the video. You can retrieve these suggestions by requesting the
-      <code>suggestions</code> part in your <code>videos.list()</code> request.
-  *   `fileDetailsAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether file details are available for the uploaded
-      video. You can retrieve a video's file details by requesting the
-      <code>fileDetails</code> part in your <code>videos.list()</code> request.
-  *   `processingFailureReason` (*type:* `String.t`, *default:* `nil`) - The reason that YouTube failed to process the video. This property will
-      only have a value if the <code>processingStatus</code>
-      property's value is <code>failed</code>.
-  *   `processingIssuesAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether the video processing engine has generated
-      suggestions that might improve YouTube's ability to process the
-      the video, warnings that explain video processing problems, or
-      errors that cause video processing problems. You can retrieve these
-      suggestions by requesting the <code>suggestions</code> part in your
-      <code>videos.list()</code> request.
-  *   `processingProgress` (*type:* `GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress.t`, *default:* `nil`) - The <code>processingProgress</code> object contains information about the
-      progress YouTube has made in processing the video. The values are really
-      only relevant if the video's processing status is <code>processing</code>.
-  *   `processingStatus` (*type:* `String.t`, *default:* `nil`) - The video's processing status. This value indicates whether YouTube was
-      able to process the video or if the video is still being processed.
-  *   `tagSuggestionsAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether keyword (tag) suggestions are available for
-      the video. Tags can be added to a video's metadata to make it easier for
-      other users to find the video. You can retrieve these suggestions by
-      requesting the <code>suggestions</code> part in your
-      <code>videos.list()</code> request.
-  *   `thumbnailsAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether thumbnail images have been generated for
-      the video.
+  *   `editorSuggestionsAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether video editing suggestions, which might improve video quality or the playback experience, are available for the video. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request.
+  *   `fileDetailsAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether file details are available for the uploaded video. You can retrieve a video's file details by requesting the fileDetails part in your videos.list() request.
+  *   `processingFailureReason` (*type:* `String.t`, *default:* `nil`) - The reason that YouTube failed to process the video. This property will only have a value if the processingStatus property's value is failed.
+  *   `processingIssuesAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether the video processing engine has generated suggestions that might improve YouTube's ability to process the the video, warnings that explain video processing problems, or errors that cause video processing problems. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request.
+  *   `processingProgress` (*type:* `GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress.t`, *default:* `nil`) - The processingProgress object contains information about the progress YouTube has made in processing the video. The values are really only relevant if the video's processing status is processing.
+  *   `processingStatus` (*type:* `String.t`, *default:* `nil`) - The video's processing status. This value indicates whether YouTube was able to process the video or if the video is still being processed.
+  *   `tagSuggestionsAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether keyword (tag) suggestions are available for the video. Tags can be added to a video's metadata to make it easier for other users to find the video. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request.
+  *   `thumbnailsAvailability` (*type:* `String.t`, *default:* `nil`) - This value indicates whether thumbnail images have been generated for the video.
   """
 
   use GoogleApi.Gax.ModelBase

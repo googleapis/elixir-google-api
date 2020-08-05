@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ChannelConversionPings do
   @moduledoc """
-  The <code>conversionPings</code> object encapsulates information about
-  conversion pings that need to be respected by the channel.
+  The conversionPings object encapsulates information about conversion pings that need to be respected by the channel.
 
   ## Attributes
 
-  *   `pings` (*type:* `list(GoogleApi.YouTube.V3.Model.ChannelConversionPing.t)`, *default:* `nil`) - Pings that the app shall fire (authenticated by biscotti cookie). Each ping
-      has a context, in which the app must fire the ping, and a url identifying
-      the ping.
+  *   `pings` (*type:* `list(GoogleApi.YouTube.V3.Model.ChannelConversionPing.t)`, *default:* `nil`) - Pings that the app shall fire (authenticated by biscotti cookie). Each ping has a context, in which the app must fire the ping, and a url identifying the ping.
   """
 
   use GoogleApi.Gax.ModelBase

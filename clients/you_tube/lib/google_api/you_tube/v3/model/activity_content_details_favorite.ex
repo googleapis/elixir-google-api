@@ -21,8 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsFavorite do
 
   ## Attributes
 
-  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>resourceId</code> object contains information that
-      identifies the resource that was marked as a favorite.
+  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The resourceId object contains information that identifies the resource that was marked as a favorite.
   """
 
   use GoogleApi.Gax.ModelBase

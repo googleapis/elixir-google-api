@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.YouTube.V3.Model.InvideoPosition do
   @moduledoc """
-  Describes the spatial position of a visual widget inside a video. It is a
-  union of various position types, out of which only will be set one.
+  Describes the spatial position of a visual widget inside a video. It is a union of various position types, out of which only will be set one.
 
   ## Attributes
 

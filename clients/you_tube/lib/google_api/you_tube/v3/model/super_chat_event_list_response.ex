@@ -24,13 +24,11 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventListResponse do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.SuperChatEvent.t)`, *default:* `nil`) - A list of Super Chat purchases that match the request criteria.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#superChatEventListResponse`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#superChatEventListResponse"</code>.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the <code>pageToken</code>
-      parameter to retrieve the next page in the result set.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#superChatEventListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#superChatEventListResponse".
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.
   *   `pageInfo` (*type:* `GoogleApi.YouTube.V3.Model.PageInfo.t`, *default:* `nil`) - 
   *   `tokenPagination` (*type:* `GoogleApi.YouTube.V3.Model.TokenPagination.t`, *default:* `nil`) - 
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

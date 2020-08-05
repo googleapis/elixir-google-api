@@ -24,9 +24,8 @@ defmodule GoogleApi.YouTube.V3.Model.ThumbnailSetResponse do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.ThumbnailDetails.t)`, *default:* `nil`) - A list of thumbnails.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#thumbnailSetResponse`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#thumbnailSetResponse"</code>.
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#thumbnailSetResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#thumbnailSetResponse".
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

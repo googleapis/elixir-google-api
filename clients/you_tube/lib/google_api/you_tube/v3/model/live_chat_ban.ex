@@ -23,8 +23,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatBan do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube assigns to uniquely identify the ban.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatBan`) - Identifies what kind of resource this is. Value: the fixed string
-      `"youtube#liveChatBan"`.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatBan`) - Identifies what kind of resource this is. Value: the fixed string `"youtube#liveChatBan"`.
   *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatBanSnippet.t`, *default:* `nil`) - The `snippet` object contains basic details about the ban.
   """
 

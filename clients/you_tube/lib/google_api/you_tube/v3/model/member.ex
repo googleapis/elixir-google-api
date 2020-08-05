@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.YouTube.V3.Model.Member do
   @moduledoc """
-  A <code><strong>member</strong></code> resource represents a member for a
-  YouTube channel. A member provides recurring monetary support to a creator
-  and receives special benefits.
+  A *member* resource represents a member for a YouTube channel. A member provides recurring monetary support to a creator and receives special benefits.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#member`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#member"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.MemberSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the member.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#member`) - Identifies what kind of resource this is. Value: the fixed string "youtube#member".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.MemberSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the member.
   """
 
   use GoogleApi.Gax.ModelBase

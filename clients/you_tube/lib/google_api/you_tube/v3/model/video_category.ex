@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.VideoCategory do
   @moduledoc """
-  A <code><strong>videoCategory</strong></code> resource identifies a
-  category that has been or could be associated with uploaded videos.
+  A *videoCategory* resource identifies a category that has been or could be associated with uploaded videos.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the video category.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#videoCategory`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#videoCategory"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.VideoCategorySnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the video
-      category, including its title.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#videoCategory`) - Identifies what kind of resource this is. Value: the fixed string "youtube#videoCategory".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.VideoCategorySnippet.t`, *default:* `nil`) - The snippet object contains basic details about the video category, including its title.
   """
 
   use GoogleApi.Gax.ModelBase

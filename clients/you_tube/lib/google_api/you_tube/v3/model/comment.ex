@@ -17,15 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.Comment do
   @moduledoc """
-  A <code><strong>comment</strong></code> represents a single YouTube comment.
+  A *comment* represents a single YouTube comment.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the comment.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#comment`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#comment"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.CommentSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the comment.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#comment`) - Identifies what kind of resource this is. Value: the fixed string "youtube#comment".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.CommentSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the comment.
   """
 
   use GoogleApi.Gax.ModelBase

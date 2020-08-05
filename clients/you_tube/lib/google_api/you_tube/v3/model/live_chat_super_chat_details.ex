@@ -24,8 +24,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails do
   *   `amountDisplayString` (*type:* `String.t`, *default:* `nil`) - A rendered string that displays the fund amount and currency to the user.
   *   `amountMicros` (*type:* `String.t`, *default:* `nil`) - The amount purchased by the user, in micros (1,750,000 micros = 1.75).
   *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency in which the purchase was made.
-  *   `tier` (*type:* `integer()`, *default:* `nil`) - The tier in which the amount belongs. Lower amounts belong to lower
-      tiers. The lowest tier is <code>1</code>.
+  *   `tier` (*type:* `integer()`, *default:* `nil`) - The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1.
   *   `userComment` (*type:* `String.t`, *default:* `nil`) - The comment added by the user to this Super Chat event.
   """
 
