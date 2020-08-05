@@ -37,9 +37,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   *   `vm` (*type:* `boolean()`, *default:* `nil`) - Whether to deploy this version in a container on a virtual machine.
   *   `runtimeMainExecutablePath` (*type:* `String.t`, *default:* `nil`) - The path or name of the app's main executable.
   *   `envVariables` (*type:* `map()`, *default:* `nil`) - Environment variables available to the application.Only returned in GET requests if view=FULL is set.
-  *   `instanceClass` (*type:* `String.t`, *default:* `nil`) - Instance class that is used to run this version. Valid values are:
-      AutomaticScaling: F1, F2, F4, F4_1G
-      ManualScaling or BasicScaling: B1, B2, B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling or BasicScaling.
+  *   `instanceClass` (*type:* `String.t`, *default:* `nil`) - Instance class that is used to run this version. Valid values are: AutomaticScaling: F1, F2, F4, F4_1G ManualScaling or BasicScaling: B1, B2, B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling or BasicScaling.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly
   *   `runtimeChannel` (*type:* `String.t`, *default:* `nil`) - The channel of the runtime to use. Only available for some runtimes. Defaults to the default channel.
   *   `resources` (*type:* `GoogleApi.AppEngine.V1.Model.Resources.t`, *default:* `nil`) - Machine resources for this version. Only applicable in the App Engine flexible environment.
@@ -50,7 +48,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   *   `vpcAccessConnector` (*type:* `GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t`, *default:* `nil`) - Enables VPC connectivity for standard apps.
   *   `readinessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.ReadinessCheck.t`, *default:* `nil`) - Configures readiness health checking for instances. Unhealthy instances are not put into the backend traffic rotation.Only returned in GET requests if view=FULL is set.
   *   `env` (*type:* `String.t`, *default:* `nil`) - App Engine execution environment for this version.Defaults to standard.
-  *   `runtimeApiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard/<language>/config/appref
+  *   `runtimeApiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard//config/appref
   *   `deployment` (*type:* `GoogleApi.AppEngine.V1.Model.Deployment.t`, *default:* `nil`) - Code and application artifacts that make up this version.Only returned in GET requests if view=FULL is set.
   *   `entrypoint` (*type:* `GoogleApi.AppEngine.V1.Model.Entrypoint.t`, *default:* `nil`) - The entrypoint for the application.
   *   `defaultExpiration` (*type:* `String.t`, *default:* `nil`) - Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not specify its own expiration time.Only returned in GET requests if view=FULL is set.

@@ -23,6 +23,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Resources do
 
   *   `cpu` (*type:* `float()`, *default:* `nil`) - Number of CPU cores needed.
   *   `diskGb` (*type:* `float()`, *default:* `nil`) - Disk size (GB) needed.
+  *   `kmsKeyReference` (*type:* `String.t`, *default:* `nil`) - The name of the encryption key that is stored in Google Cloud KMS. Only should be used by Cloud Composer to encrypt the vm disk
   *   `memoryGb` (*type:* `float()`, *default:* `nil`) - Memory (GB) needed.
   *   `volumes` (*type:* `list(GoogleApi.AppEngine.V1.Model.Volume.t)`, *default:* `nil`) - User specified volumes.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.AppEngine.V1.Model.Resources do
   @type t :: %__MODULE__{
           :cpu => float(),
           :diskGb => float(),
+          :kmsKeyReference => String.t(),
           :memoryGb => float(),
           :volumes => list(GoogleApi.AppEngine.V1.Model.Volume.t())
         }
 
   field(:cpu)
   field(:diskGb)
+  field(:kmsKeyReference)
   field(:memoryGb)
   field(:volumes, as: GoogleApi.AppEngine.V1.Model.Volume, type: :list)
 end
