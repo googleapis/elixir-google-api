@@ -22,9 +22,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AndroidAppConfig do
   ## Attributes
 
   *   `configFileContents` (*type:* `String.t`, *default:* `nil`) - The contents of the JSON configuration file.
-  *   `configFilename` (*type:* `String.t`, *default:* `nil`) - The filename that the configuration artifact for the `AndroidApp` is
-      typically saved as.
-      <br>For example: `google-services.json`
+  *   `configFilename` (*type:* `String.t`, *default:* `nil`) - The filename that the configuration artifact for the `AndroidApp` is typically saved as. For example: `google-services.json`
   """
 
   use GoogleApi.Gax.ModelBase

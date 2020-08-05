@@ -22,22 +22,11 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebAppConfig do
   ## Attributes
 
   *   `apiKey` (*type:* `String.t`, *default:* `nil`) - The API key associated with the `WebApp`.
-  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the
-      `WebApp`.
-  *   `authDomain` (*type:* `String.t`, *default:* `nil`) - The domain Firebase Auth configures for OAuth redirects, in the format:
-      <code><var>PROJECT_ID</var>.firebaseapp.com</code>
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`.
+  *   `authDomain` (*type:* `String.t`, *default:* `nil`) - The domain Firebase Auth configures for OAuth redirects, in the format: PROJECT_ID.firebaseapp.com
   *   `databaseURL` (*type:* `String.t`, *default:* `nil`) - The default Firebase Realtime Database URL.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one
-      of the available
-      [GCP resource
-      locations](https://firebase.google.com/docs/projects/locations).
-
-      This field is omitted if the default GCP resource location has not been
-      finalized yet. To set a Project's default GCP resource location,
-      call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize)
-      after you add Firebase resources to the Project.
-  *   `measurementId` (*type:* `String.t`, *default:* `nil`) - This field will no longer be provided here. Instead, use
-      `GetAnalyticsDetails`
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one of the available [GCP resource locations](https://firebase.google.com/docs/projects/locations). This field is omitted if the default GCP resource location has not been finalized yet. To set a Project's default GCP resource location, call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize) after you add Firebase resources to the Project.
+  *   `measurementId` (*type:* `String.t`, *default:* `nil`) - The unique Google-assigned identifier of the Google Analytics web stream associated with the Firebase Web App. Firebase SDKs use this ID to interact with Google Analytics APIs. This field is only present if the App is linked to a web stream in a Google Analytics App + Web property. Learn more about this ID and Google Analytics web streams in the [Analytics documentation](https://support.google.com/analytics/topic/9303475). To generate a `measurementId` and link the Web App with a Google Analytics web stream, call [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics).
   *   `messagingSenderId` (*type:* `String.t`, *default:* `nil`) - The sender ID for use with Firebase Cloud Messaging.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier for the `FirebaseProject`.
   *   `storageBucket` (*type:* `String.t`, *default:* `nil`) - The default Cloud Storage for Firebase storage bucket name.

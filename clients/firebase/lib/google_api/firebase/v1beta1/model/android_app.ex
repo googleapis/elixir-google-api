@@ -21,29 +21,11 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AndroidApp do
 
   ## Attributes
 
-  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the
-      `AndroidApp`.
-
-      This identifier should be treated as an opaque token, as the data
-      format is not specified.
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the `AndroidApp`. This identifier should be treated as an opaque token, as the data format is not specified.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name for the `AndroidApp`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the AndroidApp, in the format:
-      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var></code>
-      * <var>PROJECT_IDENTIFIER</var>: the parent Project's
-        [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number)
-        ***(recommended)***
-        or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id).
-        Learn more about using project identifiers in
-        Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510).
-        <br>Note that the value for <var>PROJECT_IDENTIFIER</var> in any
-        response body will be the `ProjectId`.
-      * <var>APP_ID</var>: the globally unique, Firebase-assigned identifier
-        for the App
-        (see [`appId`](../projects.androidApps#AndroidApp.FIELDS.app_id)).
-  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Immutable. The canonical package name of the Android app as would appear in
-      the Google Play Developer Console.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier of the parent
-      FirebaseProject for the `AndroidApp`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the AndroidApp, in the format: projects/ PROJECT_IDENTIFIER/androidApps/APP_ID * PROJECT_IDENTIFIER: the parent Project's [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`. * APP_ID: the globally unique, Firebase-assigned identifier for the App (see [`appId`](../projects.androidApps#AndroidApp.FIELDS.app_id)).
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Immutable. The canonical package name of the Android app as would appear in the Google Play Developer Console.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `AndroidApp`.
   """
 
   use GoogleApi.Gax.ModelBase

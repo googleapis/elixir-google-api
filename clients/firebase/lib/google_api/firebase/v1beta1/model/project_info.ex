@@ -22,22 +22,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ProjectInfo do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the GCP `Project`, for example: `My App`
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one
-      of the available
-      [GCP resource
-      locations](https://firebase.google.com/docs/projects/locations).
-
-      Not all Projects will have this field populated. If it is not populated, it
-      means that the Project does not yet have a default GCP resource location.
-      To set a Project's default GCP resource location, call
-      [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize) after you
-      add Firebase resources to the Project.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The resource name of the GCP `Project` to which Firebase resources can be
-      added, in the format:
-      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
-      Refer to the `FirebaseProject`
-      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
-      about <var>PROJECT_IDENTIFIER</var> values.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one of the available [GCP resource locations](https://firebase.google.com/docs/projects/locations). Not all Projects will have this field populated. If it is not populated, it means that the Project does not yet have a default GCP resource location. To set a Project's default GCP resource location, call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize) after you add Firebase resources to the Project.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The resource name of the GCP `Project` to which Firebase resources can be added, in the format: projects/PROJECT_IDENTIFIER Refer to the `FirebaseProject` [`name`](../projects#FirebaseProject.FIELDS.name) field for details about PROJECT_IDENTIFIER values.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,19 +22,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AdminSdkConfig do
   ## Attributes
 
   *   `databaseURL` (*type:* `String.t`, *default:* `nil`) - The default Firebase Realtime Database URL.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one
-      of the available
-      [GCP resource
-      locations](https://firebase.google.com/docs/projects/locations).
-
-      This field is omitted if the default GCP resource location has not been
-      finalized yet. To set a Project's default GCP resource location,
-      call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize)
-      after you add Firebase resources to the Project.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier for the `FirebaseProject`.
-      This identifier may appear in URLs or names for some Firebase resources
-      associated with the Project, but it should generally be treated as a
-      convenience alias to reference the Project.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one of the available [GCP resource locations](https://firebase.google.com/docs/projects/locations). This field is omitted if the default GCP resource location has not been finalized yet. To set a Project's default GCP resource location, call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize) after you add Firebase resources to the Project.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier for the `FirebaseProject`. This identifier may appear in URLs or names for some Firebase resources associated with the Project, but it should generally be treated as a convenience alias to reference the Project.
   *   `storageBucket` (*type:* `String.t`, *default:* `nil`) - The default Cloud Storage for Firebase storage bucket name.
   """
 
