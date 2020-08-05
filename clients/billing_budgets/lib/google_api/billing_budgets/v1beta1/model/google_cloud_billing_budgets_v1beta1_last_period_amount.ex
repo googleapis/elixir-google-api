@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1LastPeriodAmount do
   @moduledoc """
-  Describes a budget amount targeted to last period's spend.
-  At this time, the amount is automatically 100% of last period's spend;
-  that is, there are no other options yet.
-  Future configuration will be described here (for example, configuring a
-  percentage of last period's spend).
+  Describes a budget amount targeted to last period's spend. At this time, the amount is automatically 100% of last period's spend; that is, there are no other options yet. Future configuration will be described here (for example, configuring a percentage of last period's spend).
 
   ## Attributes
 
