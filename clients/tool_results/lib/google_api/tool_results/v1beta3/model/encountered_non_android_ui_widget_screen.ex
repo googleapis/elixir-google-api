@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.EncounteredNonAndroidUiWidgetScreen do
   @moduledoc """
-  Additional details about encountered screens with elements that are not
-  Android UI widgets.
+  Additional details about encountered screens with elements that are not Android UI widgets.
 
   ## Attributes
 

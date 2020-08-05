@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.BatchCreatePerfSamplesRequest do
   @moduledoc """
-  The request must provide up to a maximum of 5000 samples to be
-  created; a larger sample size will cause an INVALID_ARGUMENT error
+  The request must provide up to a maximum of 5000 samples to be created; a larger sample size will cause an INVALID_ARGUMENT error
 
   ## Attributes
 

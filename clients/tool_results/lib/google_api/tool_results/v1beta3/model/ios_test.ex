@@ -25,8 +25,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.IosTest do
   *   `iosRoboTest` (*type:* `GoogleApi.ToolResults.V1beta3.Model.IosRoboTest.t`, *default:* `nil`) - An iOS Robo test.
   *   `iosTestLoop` (*type:* `GoogleApi.ToolResults.V1beta3.Model.IosTestLoop.t`, *default:* `nil`) - An iOS test loop.
   *   `iosXcTest` (*type:* `GoogleApi.ToolResults.V1beta3.Model.IosXcTest.t`, *default:* `nil`) - An iOS XCTest.
-  *   `testTimeout` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - Max time a test is allowed to run before it is
-      automatically cancelled.
+  *   `testTimeout` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - Max time a test is allowed to run before it is automatically cancelled.
   """
 
   use GoogleApi.Gax.ModelBase

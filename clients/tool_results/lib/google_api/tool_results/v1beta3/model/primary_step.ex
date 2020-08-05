@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.PrimaryStep do
   @moduledoc """
-  Stores rollup test status of multiple steps that were run as a group and
-  outcome of each individual step.
+  Stores rollup test status of multiple steps that were run as a group and outcome of each individual step.
 
   ## Attributes
 
   *   `individualOutcome` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.IndividualOutcome.t)`, *default:* `nil`) - Step Id and outcome of each individual step.
-  *   `rollUp` (*type:* `String.t`, *default:* `nil`) - Rollup test status of multiple steps that were run with the same
-      configuration as a group.
+  *   `rollUp` (*type:* `String.t`, *default:* `nil`) - Rollup test status of multiple steps that were run with the same configuration as a group.
   """
 
   use GoogleApi.Gax.ModelBase

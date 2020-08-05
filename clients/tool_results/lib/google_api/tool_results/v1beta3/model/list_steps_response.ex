@@ -21,10 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListStepsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A continuation token to resume the query at the next item.
-
-      If set, indicates that there are more steps to read, by calling list again
-      with this value in the page_token field.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A continuation token to resume the query at the next item. If set, indicates that there are more steps to read, by calling list again with this value in the page_token field.
   *   `steps` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.Step.t)`, *default:* `nil`) - Steps.
   """
 

@@ -21,9 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.MultiStep do
 
   ## Attributes
 
-  *   `multistepNumber` (*type:* `integer()`, *default:* `nil`) - Unique int given to each step.
-      Ranges from 0(inclusive) to total number of steps(exclusive).
-      The primary step is 0.
+  *   `multistepNumber` (*type:* `integer()`, *default:* `nil`) - Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0.
   *   `primaryStep` (*type:* `GoogleApi.ToolResults.V1beta3.Model.PrimaryStep.t`, *default:* `nil`) - Present if it is a primary (original) step.
   *   `primaryStepId` (*type:* `String.t`, *default:* `nil`) - Step Id of the primary (original) step, which might be this step.
   """

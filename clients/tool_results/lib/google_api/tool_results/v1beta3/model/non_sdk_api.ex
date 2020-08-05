@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.NonSdkApi do
   @moduledoc """
-  A non-sdk API and examples of it being called along with other metadata
-  See
-  https://developer.android.com/distribute/best-practices/develop/restrictions-non-sdk-interfaces
+  A non-sdk API and examples of it being called along with other metadata See https://developer.android.com/distribute/best-practices/develop/restrictions-non-sdk-interfaces
 
   ## Attributes
 

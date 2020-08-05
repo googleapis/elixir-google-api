@@ -21,8 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.IosAppCrashed do
 
   ## Attributes
 
-  *   `stackTrace` (*type:* `GoogleApi.ToolResults.V1beta3.Model.StackTrace.t`, *default:* `nil`) - The stack trace, if one is available.
-      Optional.
+  *   `stackTrace` (*type:* `GoogleApi.ToolResults.V1beta3.Model.StackTrace.t`, *default:* `nil`) - The stack trace, if one is available. Optional.
   """
 
   use GoogleApi.Gax.ModelBase

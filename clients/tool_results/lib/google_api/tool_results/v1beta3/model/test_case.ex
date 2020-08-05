@@ -21,30 +21,15 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestCase do
 
   ## Attributes
 
-  *   `elapsedTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - The elapsed run time of the test case.
-
-      Required.
+  *   `elapsedTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - The elapsed run time of the test case. Required.
   *   `endTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - The end time of the test case.
-  *   `skippedMessage` (*type:* `String.t`, *default:* `nil`) - Why the test case was skipped.
-
-      Present only for skipped test case
-  *   `stackTraces` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.StackTrace.t)`, *default:* `nil`) - The stack trace details if the test case failed or encountered an error.
-
-      The maximum size of the stack traces is 100KiB, beyond which the stack
-      track will be truncated.
-
-      Zero if the test case passed.
+  *   `skippedMessage` (*type:* `String.t`, *default:* `nil`) - Why the test case was skipped. Present only for skipped test case
+  *   `stackTraces` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.StackTrace.t)`, *default:* `nil`) - The stack trace details if the test case failed or encountered an error. The maximum size of the stack traces is 100KiB, beyond which the stack track will be truncated. Zero if the test case passed.
   *   `startTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - The start time of the test case.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the test case.
-
-      Required.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the test case. Required.
   *   `testCaseId` (*type:* `String.t`, *default:* `nil`) - A unique identifier within a Step for this Test Case.
-  *   `testCaseReference` (*type:* `GoogleApi.ToolResults.V1beta3.Model.TestCaseReference.t`, *default:* `nil`) - Test case reference, e.g. name, class name and test suite name.
-
-      Required.
-  *   `toolOutputs` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t)`, *default:* `nil`) - References to opaque files of any format output by the tool execution.
-
-      @OutputOnly
+  *   `testCaseReference` (*type:* `GoogleApi.ToolResults.V1beta3.Model.TestCaseReference.t`, *default:* `nil`) - Test case reference, e.g. name, class name and test suite name. Required.
+  *   `toolOutputs` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t)`, *default:* `nil`) - References to opaque files of any format output by the tool execution. @OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,39 +17,21 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.Environment do
   @moduledoc """
-  An Environment represents the set of test runs (Steps) from the parent
-  Execution that are configured with the same set of dimensions (Model,
-  Version, Locale, and Orientation). Multiple such runs occur particularly
-  because of features like sharding (splitting up a test suite to run in
-  parallel across devices) and reruns (running a test multiple times to check
-  for different outcomes).
+  An Environment represents the set of test runs (Steps) from the parent Execution that are configured with the same set of dimensions (Model, Version, Locale, and Orientation). Multiple such runs occur particularly because of features like sharding (splitting up a test suite to run in parallel across devices) and reruns (running a test multiple times to check for different outcomes).
 
   ## Attributes
 
-  *   `completionTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - Output only. The time when the Environment status was set to complete.
-
-      This value will be set automatically when state transitions to
-      COMPLETE.
+  *   `completionTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - Output only. The time when the Environment status was set to complete. This value will be set automatically when state transitions to COMPLETE.
   *   `creationTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - Output only. The time when the Environment was created.
-  *   `dimensionValue` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.EnvironmentDimensionValueEntry.t)`, *default:* `nil`) - Dimension values describing the environment. Dimension values always
-      consist of "Model", "Version", "Locale", and "Orientation".
-
-      - In response: always set
-      - In create request: always set
-      - In update request: never set
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A short human-readable name to display in the UI.
-      Maximum of 100 characters.
-      For example: Nexus 5, API 27.
+  *   `dimensionValue` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.EnvironmentDimensionValueEntry.t)`, *default:* `nil`) - Dimension values describing the environment. Dimension values always consist of "Model", "Version", "Locale", and "Orientation". - In response: always set - In create request: always set - In update request: never set
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A short human-readable name to display in the UI. Maximum of 100 characters. For example: Nexus 5, API 27.
   *   `environmentId` (*type:* `String.t`, *default:* `nil`) - Output only. An Environment id.
   *   `environmentResult` (*type:* `GoogleApi.ToolResults.V1beta3.Model.MergedResult.t`, *default:* `nil`) - Merged result of the environment.
   *   `executionId` (*type:* `String.t`, *default:* `nil`) - Output only. An Execution id.
   *   `historyId` (*type:* `String.t`, *default:* `nil`) - Output only. A History id.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. A Project id.
   *   `resultsStorage` (*type:* `GoogleApi.ToolResults.V1beta3.Model.ResultsStorage.t`, *default:* `nil`) - The location where output files are stored in the user bucket.
-  *   `shardSummaries` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.ShardSummary.t)`, *default:* `nil`) - Output only. Summaries of shards.
-
-      Only one shard will present unless sharding feature is enabled in
-      TestExecutionService.
+  *   `shardSummaries` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.ShardSummary.t)`, *default:* `nil`) - Output only. Summaries of shards. Only one shard will present unless sharding feature is enabled in TestExecutionService.
   """
 
   use GoogleApi.Gax.ModelBase

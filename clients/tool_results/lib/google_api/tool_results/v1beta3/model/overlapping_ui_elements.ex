@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.OverlappingUIElements do
   @moduledoc """
-  A warning that Robo encountered a screen that has overlapping clickable
-  elements; this may indicate a potential UI issue.
+  A warning that Robo encountered a screen that has overlapping clickable elements; this may indicate a potential UI issue.
 
   ## Attributes
 

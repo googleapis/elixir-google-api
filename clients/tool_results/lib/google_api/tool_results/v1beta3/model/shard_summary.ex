@@ -21,10 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ShardSummary do
 
   ## Attributes
 
-  *   `runs` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.StepSummary.t)`, *default:* `nil`) - Summaries of the steps belonging to the shard.
-
-      With flaky_test_attempts enabled from TestExecutionService, more than one
-      run (Step) can present. And the runs will be sorted by multistep_number.
+  *   `runs` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.StepSummary.t)`, *default:* `nil`) - Summaries of the steps belonging to the shard. With flaky_test_attempts enabled from TestExecutionService, more than one run (Step) can present. And the runs will be sorted by multistep_number.
   *   `shardResult` (*type:* `GoogleApi.ToolResults.V1beta3.Model.MergedResult.t`, *default:* `nil`) - Merged result of the shard.
   """
 

@@ -21,21 +21,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListEnvironmentsResponse do
 
   ## Attributes
 
-  *   `environments` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.Environment.t)`, *default:* `nil`) - Environments.
-
-      Always set.
-  *   `executionId` (*type:* `String.t`, *default:* `nil`) - A Execution id
-
-      Always set.
-  *   `historyId` (*type:* `String.t`, *default:* `nil`) - A History id.
-
-      Always set.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A continuation token to resume the query at the next item.
-
-      Will only be set if there are more Environments to fetch.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - A Project id.
-
-      Always set.
+  *   `environments` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.Environment.t)`, *default:* `nil`) - Environments. Always set.
+  *   `executionId` (*type:* `String.t`, *default:* `nil`) - A Execution id Always set.
+  *   `historyId` (*type:* `String.t`, *default:* `nil`) - A History id. Always set.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A continuation token to resume the query at the next item. Will only be set if there are more Environments to fetch.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - A Project id. Always set.
   """
 
   use GoogleApi.Gax.ModelBase

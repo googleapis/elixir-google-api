@@ -21,8 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListScreenshotClustersResponse do
 
   ## Attributes
 
-  *   `clusters` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster.t)`, *default:* `nil`) - The set of clusters associated with an execution
-      Always set
+  *   `clusters` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster.t)`, *default:* `nil`) - The set of clusters associated with an execution Always set
   """
 
   use GoogleApi.Gax.ModelBase

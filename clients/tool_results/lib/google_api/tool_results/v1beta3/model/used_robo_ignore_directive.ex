@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.UsedRoboIgnoreDirective do
   @moduledoc """
-  Additional details of a used Robo directive with an ignore action.
-  Note: This is a different scenario than unused directive.
+  Additional details of a used Robo directive with an ignore action. Note: This is a different scenario than unused directive.
 
   ## Attributes
 

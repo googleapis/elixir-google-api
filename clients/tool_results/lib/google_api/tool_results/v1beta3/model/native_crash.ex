@@ -21,8 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.NativeCrash do
 
   ## Attributes
 
-  *   `stackTrace` (*type:* `GoogleApi.ToolResults.V1beta3.Model.StackTrace.t`, *default:* `nil`) - The stack trace of the native crash.
-      Optional.
+  *   `stackTrace` (*type:* `GoogleApi.ToolResults.V1beta3.Model.StackTrace.t`, *default:* `nil`) - The stack trace of the native crash. Optional.
   """
 
   use GoogleApi.Gax.ModelBase

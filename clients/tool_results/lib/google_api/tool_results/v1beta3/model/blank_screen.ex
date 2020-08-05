@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.BlankScreen do
   @moduledoc """
-  A warning that Robo encountered a screen that was mostly blank; this may
-  indicate a problem with the app.
+  A warning that Robo encountered a screen that was mostly blank; this may indicate a problem with the app.
 
   ## Attributes
 

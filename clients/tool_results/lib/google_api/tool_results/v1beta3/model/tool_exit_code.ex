@@ -21,11 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ToolExitCode do
 
   ## Attributes
 
-  *   `number` (*type:* `integer()`, *default:* `nil`) - Tool execution exit code. A value of 0 means that the execution was
-      successful.
-
-      - In response: always set
-      - In create/update request: always set
+  *   `number` (*type:* `integer()`, *default:* `nil`) - Tool execution exit code. A value of 0 means that the execution was successful. - In response: always set - In create/update request: always set
   """
 
   use GoogleApi.Gax.ModelBase

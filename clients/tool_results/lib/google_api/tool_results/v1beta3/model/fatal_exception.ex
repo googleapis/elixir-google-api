@@ -21,8 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.FatalException do
 
   ## Attributes
 
-  *   `stackTrace` (*type:* `GoogleApi.ToolResults.V1beta3.Model.StackTrace.t`, *default:* `nil`) - The stack trace of the fatal exception.
-      Optional.
+  *   `stackTrace` (*type:* `GoogleApi.ToolResults.V1beta3.Model.StackTrace.t`, *default:* `nil`) - The stack trace of the fatal exception. Optional.
   """
 
   use GoogleApi.Gax.ModelBase
