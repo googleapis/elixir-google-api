@@ -22,10 +22,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterMySqlReplicaConfiguration
   ## Attributes
 
   *   `caCertificate` (*type:* `String.t`, *default:* `nil`) - PEM representation of the trusted CA's x509 certificate.
-  *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - PEM representation of the slave's x509 certificate.
-  *   `clientKey` (*type:* `String.t`, *default:* `nil`) - PEM representation of the slave's private key. The corresponsing public key
-      is encoded in the client's certificate. The format of the slave's private
-      key can be either PKCS #1 or PKCS #8.
+  *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - PEM representation of the replica's x509 certificate.
+  *   `clientKey` (*type:* `String.t`, *default:* `nil`) - PEM representation of the replica's private key. The corresponsing public
+      key is encoded in the client's certificate. The format of the replica's
+      private key can be either PKCS #1 or PKCS #8.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#demoteMasterMysqlReplicaConfiguration</b>.
   *   `password` (*type:* `String.t`, *default:* `nil`) - The password for the replication connection.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The username for the replication connection.

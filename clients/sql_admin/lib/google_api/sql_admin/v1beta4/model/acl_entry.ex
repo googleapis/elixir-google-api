@@ -26,7 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.AclEntry do
       <b>2012-11-15T16:19:00.094Z</b>.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#aclEntry</b>.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. A label to identify this entry.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The whitelisted value for the access control list.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The allowlisted value for the access control list.
   """
 
   use GoogleApi.Gax.ModelBase

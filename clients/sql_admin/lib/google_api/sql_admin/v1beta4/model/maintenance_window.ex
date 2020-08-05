@@ -17,8 +17,8 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow do
   @moduledoc """
-  Maintenance window. This specifies when a v2 Cloud SQL instance should
-  preferably be restarted for system maintenance purposes.
+  Maintenance window. This specifies when a Cloud SQL instance
+  is restarted for system maintenance purposes.
 
   ## Attributes
 
