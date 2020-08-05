@@ -21,8 +21,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.User do
 
   ## Attributes
 
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the user in the request. The field `userId` is associated with this
-      type.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the user in the request. The field `userId` is associated with this type.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Unique Id of the user for which the data is being requested.
   """
 

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment do
   @moduledoc """
-  A Simple segment conditions consist of one or more dimension/metric
-  conditions that can be combined.
+  A Simple segment conditions consist of one or more dimension/metric conditions that can be combined.
 
   ## Attributes
 
-  *   `orFiltersForSegment` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment.t)`, *default:* `nil`) - A list of segment filters groups which are combined with logical `AND`
-      operator.
+  *   `orFiltersForSegment` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment.t)`, *default:* `nil`) - A list of segment filters groups which are combined with logical `AND` operator.
   """
 
   use GoogleApi.Gax.ModelBase

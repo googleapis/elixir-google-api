@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricFilterClause do
   @moduledoc """
-  Represents a group of metric filters.
-  Set the operator value to specify how the filters are logically combined.
+  Represents a group of metric filters. Set the operator value to specify how the filters are logically combined.
 
   ## Attributes
 
-  *   `filters` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.MetricFilter.t)`, *default:* `nil`) - The repeated set of filters. They are logically combined based on the
-      operator specified.
-  *   `operator` (*type:* `String.t`, *default:* `nil`) - The operator for combining multiple metric filters. If unspecified, it is
-      treated as an `OR`.
+  *   `filters` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.MetricFilter.t)`, *default:* `nil`) - The repeated set of filters. They are logically combined based on the operator specified.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - The operator for combining multiple metric filters. If unspecified, it is treated as an `OR`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition do
   @moduledoc """
-  SegmentDefinition defines the segment to be a set of SegmentFilters which
-  are combined together with a logical `AND` operation.
+  SegmentDefinition defines the segment to be a set of SegmentFilters which are combined together with a logical `AND` operation.
 
   ## Attributes
 
-  *   `segmentFilters` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter.t)`, *default:* `nil`) - A segment is defined by a set of segment filters which are combined
-      together with a logical `AND` operation.
+  *   `segmentFilters` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter.t)`, *default:* `nil`) - A segment is defined by a set of segment filters which are combined together with a logical `AND` operation.
   """
 
   use GoogleApi.Gax.ModelBase

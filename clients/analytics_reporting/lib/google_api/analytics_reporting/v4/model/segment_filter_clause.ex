@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause do
   @moduledoc """
-  Filter Clause to be used in a segment definition, can be wither a metric or
-  a dimension filter.
+  Filter Clause to be used in a segment definition, can be wither a metric or a dimension filter.
 
   ## Attributes
 

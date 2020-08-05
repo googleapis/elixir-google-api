@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRangeValues do
   @moduledoc """
-  Used to return a list of metrics for a single DateRange / dimension
-  combination
+  Used to return a list of metrics for a single DateRange / dimension combination
 
   ## Attributes
 

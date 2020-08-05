@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause do
   @moduledoc """
-  A group of dimension filters. Set the operator value to specify how
-  the filters are logically combined.
+  A group of dimension filters. Set the operator value to specify how the filters are logically combined.
 
   ## Attributes
 
-  *   `filters` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.DimensionFilter.t)`, *default:* `nil`) - The repeated set of filters. They are logically combined based on the
-      operator specified.
-  *   `operator` (*type:* `String.t`, *default:* `nil`) - The operator for combining multiple dimension filters. If unspecified, it
-      is treated as an `OR`.
+  *   `filters` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.DimensionFilter.t)`, *default:* `nil`) - The repeated set of filters. They are logically combined based on the operator specified.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - The operator for combining multiple dimension filters. If unspecified, it is treated as an `OR`.
   """
 
   use GoogleApi.Gax.ModelBase

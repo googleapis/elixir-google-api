@@ -22,8 +22,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.CustomDimension do
   ## Attributes
 
   *   `index` (*type:* `integer()`, *default:* `nil`) - Slot number of custom dimension.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Value of the custom dimension. Default value (i.e. empty string) indicates
-      clearing sesion/visitor scope custom dimension value.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Value of the custom dimension. Default value (i.e. empty string) indicates clearing sesion/visitor scope custom dimension value.
   """
 
   use GoogleApi.Gax.ModelBase

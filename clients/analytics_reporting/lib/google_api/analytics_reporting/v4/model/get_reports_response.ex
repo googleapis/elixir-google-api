@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse do
   @moduledoc """
-  The main response class which holds the reports from the Reporting API
-  `batchGet` call.
+  The main response class which holds the reports from the Reporting API `batchGet` call.
 
   ## Attributes
 
-  *   `queryCost` (*type:* `integer()`, *default:* `nil`) - The amount of resource quota tokens deducted to execute the query. Includes
-      all responses.
+  *   `queryCost` (*type:* `integer()`, *default:* `nil`) - The amount of resource quota tokens deducted to execute the query. Includes all responses.
   *   `reports` (*type:* `list(GoogleApi.AnalyticsReporting.V4.Model.Report.t)`, *default:* `nil`) - Responses corresponding to each of the request.
   *   `resourceQuotasRemaining` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.ResourceQuotasRemaining.t`, *default:* `nil`) - The amount of resource quota remaining for the property.
   """

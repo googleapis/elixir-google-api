@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment do
   @moduledoc """
-  Dynamic segment definition for defining the segment within the request.
-  A segment can select users, sessions or both.
+  Dynamic segment definition for defining the segment within the request. A segment can select users, sessions or both.
 
   ## Attributes
 

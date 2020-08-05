@@ -17,37 +17,13 @@
 
 defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter do
   @moduledoc """
-  SegmentFilter defines the segment to be either a simple or a sequence
-  segment. A simple segment condition contains dimension and metric conditions
-  to select the sessions or users. A sequence segment condition can be used to
-  select users or sessions based on sequential conditions.
+  SegmentFilter defines the segment to be either a simple or a sequence segment. A simple segment condition contains dimension and metric conditions to select the sessions or users. A sequence segment condition can be used to select users or sessions based on sequential conditions.
 
   ## Attributes
 
-  *   `not` (*type:* `boolean()`, *default:* `nil`) - If true, match the complement of simple or sequence segment.
-      For example, to match all visits not from "New York", we can define the
-      segment as follows:
-
-            "sessionSegment": {
-              "segmentFilters": [{
-                "simpleSegment" :{
-                  "orFiltersForSegment": [{
-                    "segmentFilterClauses":[{
-                      "dimensionFilter": {
-                        "dimensionName": "ga:city",
-                        "expressions": ["New York"]
-                      }
-                    }]
-                  }]
-                },
-                "not": "True"
-              }]
-            },
-  *   `sequenceSegment` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment.t`, *default:* `nil`) - Sequence conditions consist of one or more steps, where each step is
-      defined by one or more dimension/metric conditions. Multiple steps can
-      be combined with special sequence operators.
-  *   `simpleSegment` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment.t`, *default:* `nil`) - A Simple segment conditions consist of one or more dimension/metric
-      conditions that can be combined
+  *   `not` (*type:* `boolean()`, *default:* `nil`) - If true, match the complement of simple or sequence segment. For example, to match all visits not from "New York", we can define the segment as follows: "sessionSegment": { "segmentFilters": [{ "simpleSegment" :{ "orFiltersForSegment": [{ "segmentFilterClauses":[{ "dimensionFilter": { "dimensionName": "ga:city", "expressions": ["New York"] } }] }] }, "not": "True" }] },
+  *   `sequenceSegment` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment.t`, *default:* `nil`) - Sequence conditions consist of one or more steps, where each step is defined by one or more dimension/metric conditions. Multiple steps can be combined with special sequence operators.
+  *   `simpleSegment` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment.t`, *default:* `nil`) - A Simple segment conditions consist of one or more dimension/metric conditions that can be combined
   """
 
   use GoogleApi.Gax.ModelBase
