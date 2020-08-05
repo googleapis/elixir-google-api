@@ -22,8 +22,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.ListAvailableVersionsResponse do
   ## Attributes
 
   *   `availableVersions` (*type:* `list(GoogleApi.DataFusion.V1beta1.Model.Version.t)`, *default:* `nil`) - Represents a list of versions that are supported.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more
-      results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

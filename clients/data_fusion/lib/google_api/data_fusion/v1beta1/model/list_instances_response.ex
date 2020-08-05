@@ -22,8 +22,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.ListInstancesResponse do
   ## Attributes
 
   *   `instances` (*type:* `list(GoogleApi.DataFusion.V1beta1.Model.Instance.t)`, *default:* `nil`) - Represents a list of Data Fusion instances.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more
-      results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 

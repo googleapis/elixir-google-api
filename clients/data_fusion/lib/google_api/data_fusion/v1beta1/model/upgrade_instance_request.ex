@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DataFusion.V1beta1.Model.UpgradeInstanceRequest do
   @moduledoc """
-  Request message for upgrading a Data Fusion instance.
-  To change the instance properties, instance update should be used.
+  Request message for upgrading a Data Fusion instance. To change the instance properties, instance update should be used.
 
   ## Attributes
 
