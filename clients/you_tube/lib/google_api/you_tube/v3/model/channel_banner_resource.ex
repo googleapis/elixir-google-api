@@ -22,8 +22,7 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelBannerResource do
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `youtube#channelBannerResource`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#channelBannerResource"</code>.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#channelBannerResource`) - Identifies what kind of resource this is. Value: the fixed string "youtube#channelBannerResource".
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of this banner image.
   """
 

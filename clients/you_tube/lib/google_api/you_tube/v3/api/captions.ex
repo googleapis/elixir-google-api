@@ -45,17 +45,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the request's authorization credentials identify a YouTube CMS user
-          who is acting on behalf of the content owner specified in the parameter
-          value. This parameter is intended for YouTube content partners that own and
-          manage many different YouTube channels. It allows content owners to
-          authenticate once and get access to all their video and channel data,
-          without having to provide authentication credentials for each individual
-          channel. The actual CMS account that the user authenticates with must be
-          linked to the specified YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -115,21 +105,9 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the request's authorization credentials identify a YouTube CMS user
-          who is acting on behalf of the content owner specified in the parameter
-          value. This parameter is intended for YouTube content partners that own and
-          manage many different YouTube channels. It allows content owners to
-          authenticate once and get access to all their video and channel data,
-          without having to provide authentication credentials for each individual
-          channel. The actual CMS account that the user authenticates with must be
-          linked to the specified YouTube content owner.
-      *   `:tfmt` (*type:* `String.t`) - Convert the captions into this format. Supported options are
-          sbv, srt, and vtt.
-      *   `:tlang` (*type:* `String.t`) - tlang is the language code; machine translate the captions into
-          this language.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:tfmt` (*type:* `String.t`) - Convert the captions into this format. Supported options are sbv, srt, and vtt.
+      *   `:tlang` (*type:* `String.t`) - tlang is the language code; machine translate the captions into this language.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -183,9 +161,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
-      <code>caption</code> resource parts that the API response will include. Set
-      the parameter value to <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the caption resource parts that the API response will include. Set the parameter value to snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -199,19 +175,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the request's authorization credentials identify a YouTube CMS user
-          who is acting on behalf of the content owner specified in the parameter
-          value. This parameter is intended for YouTube content partners that own and
-          manage many different YouTube channels. It allows content owners to
-          authenticate once and get access to all their video and channel data,
-          without having to provide authentication credentials for each individual
-          channel. The actual CMS account that the user authenticates with must be
-          linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
-          caption/transcript with the audio.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded caption/transcript with the audio.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -260,9 +225,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
-      <code>caption</code> resource parts that the API response will include. Set
-      the parameter value to <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the caption resource parts that the API response will include. Set the parameter value to snippet.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
@@ -279,19 +242,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the request's authorization credentials identify a YouTube CMS user
-          who is acting on behalf of the content owner specified in the parameter
-          value. This parameter is intended for YouTube content partners that own and
-          manage many different YouTube channels. It allows content owners to
-          authenticate once and get access to all their video and channel data,
-          without having to provide authentication credentials for each individual
-          channel. The actual CMS account that the user authenticates with must be
-          linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
-          caption/transcript with the audio.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded caption/transcript with the audio.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -357,9 +309,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
-      <code>caption</code> resource parts that the API response will include. Set
-      the parameter value to <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the caption resource parts that the API response will include. Set the parameter value to snippet.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
@@ -376,19 +326,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the request's authorization credentials identify a YouTube CMS user
-          who is acting on behalf of the content owner specified in the parameter
-          value. This parameter is intended for YouTube content partners that own and
-          manage many different YouTube channels. It allows content owners to
-          authenticate once and get access to all their video and channel data,
-          without having to provide authentication credentials for each individual
-          channel. The actual CMS account that the user authenticates with must be
-          linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
-          caption/transcript with the audio.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded caption/transcript with the audio.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -455,11 +394,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
   *   `video_id` (*type:* `String.t`) - Returns the captions for the specified video.
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
-      comma-separated list of one or more <code>caption</code> resource parts
-      that the API response will include. The <code>part</code> names that you
-      can include in the parameter value are <code>id</code> and
-      <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more caption resource parts that the API response will include. The part names that you can include in the parameter value are id and snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -474,17 +409,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:id` (*type:* `list(String.t)`) - Returns the captions with the given IDs for Stubby or Apiary.
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is on behalf of.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the request's authorization credentials identify a YouTube CMS user
-          who is acting on behalf of the content owner specified in the parameter
-          value. This parameter is intended for YouTube content partners that own and
-          manage many different YouTube channels. It allows content owners to
-          authenticate once and get access to all their video and channel data,
-          without having to provide authentication credentials for each individual
-          channel. The actual CMS account that the user authenticates with must be
-          linked to the specified YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -540,11 +465,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
-      comma-separated list of one or more <code>caption</code> resource parts
-      that the API response will include. The <code>part</code> names that you
-      can include in the parameter value are <code>id</code> and
-      <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more caption resource parts that the API response will include. The part names that you can include in the parameter value are id and snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -558,19 +479,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is on behalf of.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the request's authorization credentials identify a YouTube CMS user
-          who is acting on behalf of the content owner specified in the parameter
-          value. This parameter is intended for YouTube content partners that own and
-          manage many different YouTube channels. It allows content owners to
-          authenticate once and get access to all their video and channel data,
-          without having to provide authentication credentials for each individual
-          channel. The actual CMS account that the user authenticates with must be
-          linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
-          caption/transcript with the audio.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded caption/transcript with the audio.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -619,11 +529,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
-      comma-separated list of one or more <code>caption</code> resource parts
-      that the API response will include. The <code>part</code> names that you
-      can include in the parameter value are <code>id</code> and
-      <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more caption resource parts that the API response will include. The part names that you can include in the parameter value are id and snippet.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
@@ -640,19 +546,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is on behalf of.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the request's authorization credentials identify a YouTube CMS user
-          who is acting on behalf of the content owner specified in the parameter
-          value. This parameter is intended for YouTube content partners that own and
-          manage many different YouTube channels. It allows content owners to
-          authenticate once and get access to all their video and channel data,
-          without having to provide authentication credentials for each individual
-          channel. The actual CMS account that the user authenticates with must be
-          linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
-          caption/transcript with the audio.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded caption/transcript with the audio.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -718,11 +613,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
-      comma-separated list of one or more <code>caption</code> resource parts
-      that the API response will include. The <code>part</code> names that you
-      can include in the parameter value are <code>id</code> and
-      <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more caption resource parts that the API response will include. The part names that you can include in the parameter value are id and snippet.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
@@ -739,19 +630,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is on behalf of.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the request's authorization credentials identify a YouTube CMS user
-          who is acting on behalf of the content owner specified in the parameter
-          value. This parameter is intended for YouTube content partners that own and
-          manage many different YouTube channels. It allows content owners to
-          authenticate once and get access to all their video and channel data,
-          without having to provide authentication credentials for each individual
-          channel. The actual CMS account that the user authenticates with must be
-          linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
-          caption/transcript with the audio.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded caption/transcript with the audio.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

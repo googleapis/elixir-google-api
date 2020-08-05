@@ -21,12 +21,8 @@ defmodule GoogleApi.YouTube.V3.Model.InfoCardSnippetTeaser do
 
   ## Attributes
 
-  *   `teaserStartOffset` (*type:* `String.t`, *default:* `nil`) - The offset from the video start at which the teaser should be displayed
-      (activated), in milliseconds.
-      Required.
-  *   `teaserText` (*type:* `String.t`, *default:* `nil`) - The teaser text to show at the top of the player for the info-card.
-      Required for channel and link type cards.
-      Optional for video and playlist type cards.
+  *   `teaserStartOffset` (*type:* `String.t`, *default:* `nil`) - The offset from the video start at which the teaser should be displayed (activated), in milliseconds. Required.
+  *   `teaserText` (*type:* `String.t`, *default:* `nil`) - The teaser text to show at the top of the player for the info-card. Required for channel and link type cards. Optional for video and playlist type cards.
   """
 
   use GoogleApi.Gax.ModelBase

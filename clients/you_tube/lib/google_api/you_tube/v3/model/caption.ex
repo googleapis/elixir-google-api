@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.Caption do
   @moduledoc """
-  A <code><strong>caption</strong></code> resource represents a YouTube
-  caption track. A caption track is associated with exactly one YouTube
-  video.
+  A *caption* resource represents a YouTube caption track. A caption track is associated with exactly one YouTube video.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the caption track.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#caption`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#caption"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.CaptionSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the caption.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#caption`) - Identifies what kind of resource this is. Value: the fixed string "youtube#caption".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.CaptionSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the caption.
   """
 
   use GoogleApi.Gax.ModelBase

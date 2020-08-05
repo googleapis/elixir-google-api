@@ -21,21 +21,15 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
 
   ## Attributes
 
-  *   `amountMicros` (*type:* `String.t`, *default:* `nil`) - The purchase amount, in micros of the purchase currency.  e.g., 1 is
-      represented as 1000000.
+  *   `amountMicros` (*type:* `String.t`, *default:* `nil`) - The purchase amount, in micros of the purchase currency. e.g., 1 is represented as 1000000.
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - Channel id where the event occurred.
   *   `commentText` (*type:* `String.t`, *default:* `nil`) - The text contents of the comment left by the user.
-  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the event occurred. The value is
-      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
-      format.
-  *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency in which the purchase was made.  ISO 4217.
-  *   `displayString` (*type:* `String.t`, *default:* `nil`) - A rendered string that displays the purchase amount and currency
-      (e.g., "$1.00").  The string is rendered for the given language.
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the event occurred. The value is specified in ISO 8601 format.
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency in which the purchase was made. ISO 4217.
+  *   `displayString` (*type:* `String.t`, *default:* `nil`) - A rendered string that displays the purchase amount and currency (e.g., "$1.00"). The string is rendered for the given language.
   *   `isSuperStickerEvent` (*type:* `boolean()`, *default:* `nil`) - True if this event is a Super Sticker event.
-  *   `messageType` (*type:* `integer()`, *default:* `nil`) - The tier for the paid message, which is based on the amount of money spent
-      to purchase the message.
-  *   `superStickerMetadata` (*type:* `GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t`, *default:* `nil`) - If this event is a Super Sticker event, this field will contain metadata
-      about the Super Sticker.
+  *   `messageType` (*type:* `integer()`, *default:* `nil`) - The tier for the paid message, which is based on the amount of money spent to purchase the message.
+  *   `superStickerMetadata` (*type:* `GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t`, *default:* `nil`) - If this event is a Super Sticker event, this field will contain metadata about the Super Sticker.
   *   `supporterDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t`, *default:* `nil`) - Details about the supporter.
   """
 

@@ -26,9 +26,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  As this is not an insert in a strict sense (it supports uploading/setting
-  of a thumbnail for multiple videos, which doesn't result in creation of a
-  single resource), I use a custom verb here.
+  As this is not an insert in a strict sense (it supports uploading/setting of a thumbnail for multiple videos, which doesn't result in creation of a single resource), I use a custom verb here.
 
   ## Parameters
 
@@ -46,18 +44,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The actual
-          CMS account that the user authenticates with must be linked to the
-          specified YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -99,9 +86,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   end
 
   @doc """
-  As this is not an insert in a strict sense (it supports uploading/setting
-  of a thumbnail for multiple videos, which doesn't result in creation of a
-  single resource), I use a custom verb here.
+  As this is not an insert in a strict sense (it supports uploading/setting of a thumbnail for multiple videos, which doesn't result in creation of a single resource), I use a custom verb here.
 
   ## Parameters
 
@@ -122,18 +107,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The actual
-          CMS account that the user authenticates with must be linked to the
-          specified YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -194,9 +168,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   end
 
   @doc """
-  As this is not an insert in a strict sense (it supports uploading/setting
-  of a thumbnail for multiple videos, which doesn't result in creation of a
-  single resource), I use a custom verb here.
+  As this is not an insert in a strict sense (it supports uploading/setting of a thumbnail for multiple videos, which doesn't result in creation of a single resource), I use a custom verb here.
 
   ## Parameters
 
@@ -217,18 +189,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The actual
-          CMS account that the user authenticates with must be linked to the
-          specified YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

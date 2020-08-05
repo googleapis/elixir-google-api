@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do
   @moduledoc """
-  The <code>contentOwnerDetails</code> object encapsulates channel data that
-  is relevant for YouTube Partners linked with the channel.
+  The contentOwnerDetails object encapsulates channel data that is relevant for YouTube Partners linked with the channel.
 
   ## Attributes
 
   *   `contentOwner` (*type:* `String.t`, *default:* `nil`) - The ID of the content owner linked to the channel.
-  *   `timeLinked` (*type:* `String.t`, *default:* `nil`) - The date and time of when the channel was linked to the content owner.
-      The value is specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO
-      8601</a>
-      format.
+  *   `timeLinked` (*type:* `String.t`, *default:* `nil`) - The date and time of when the channel was linked to the content owner. The value is specified in ISO 8601 format.
   """
 
   use GoogleApi.Gax.ModelBase

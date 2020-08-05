@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ThirdPartyLinkSnippet do
   @moduledoc """
-  Basic information about a third party account link, including its type and
-  type-specific information.
+  Basic information about a third party account link, including its type and type-specific information.
 
   ## Attributes
 
-  *   `channelToStoreLink` (*type:* `GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails.t`, *default:* `nil`) - Information specific to a link between a channel and a store on a
-      merchandising platform.
+  *   `channelToStoreLink` (*type:* `GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails.t`, *default:* `nil`) - Information specific to a link between a channel and a store on a merchandising platform.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the link named after the entities that are being linked.
   """
 

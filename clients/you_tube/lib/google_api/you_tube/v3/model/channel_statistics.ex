@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ChannelStatistics do
   @moduledoc """
-  Statistics about a channel: number of subscribers, number of videos in the
-  channel, etc.
+  Statistics about a channel: number of subscribers, number of videos in the channel, etc.
 
   ## Attributes
 

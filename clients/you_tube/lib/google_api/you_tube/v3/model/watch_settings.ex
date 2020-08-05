@@ -22,8 +22,7 @@ defmodule GoogleApi.YouTube.V3.Model.WatchSettings do
   ## Attributes
 
   *   `backgroundColor` (*type:* `String.t`, *default:* `nil`) - The text color for the video watch page's branded area.
-  *   `featuredPlaylistId` (*type:* `String.t`, *default:* `nil`) - An ID that uniquely identifies a playlist that displays next to the video
-      player.
+  *   `featuredPlaylistId` (*type:* `String.t`, *default:* `nil`) - An ID that uniquely identifies a playlist that displays next to the video player.
   *   `textColor` (*type:* `String.t`, *default:* `nil`) - The background color for the video watch page's branded area.
   """
 

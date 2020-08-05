@@ -26,11 +26,7 @@ defmodule GoogleApi.YouTube.V3.Api.Youtube do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Updates infocards for a given video.
-  Note:
-  * If the card id is not provided, a new card will be created.
-  * If the card id is provided, that card will be updated.
-  * Existing cards will be discarded if they're not included in the request.
+  Updates infocards for a given video. Note: * If the card id is not provided, a new card will be created. * If the card id is provided, that card will be updated. * Existing cards will be discarded if they're not included in the request.
 
   ## Parameters
 

@@ -21,12 +21,9 @@ defmodule GoogleApi.YouTube.V3.Model.VideoCard do
 
   ## Attributes
 
-  *   `customMessage` (*type:* `String.t`, *default:* `nil`) - Each card can have a custom message.
-      Optional.
-  *   `playbackStartOffset` (*type:* `String.t`, *default:* `nil`) - Playback start time offset in milliseconds.
-      Optional.
-  *   `videoId` (*type:* `String.t`, *default:* `nil`) - Encrypted Video ID.
-      Required.
+  *   `customMessage` (*type:* `String.t`, *default:* `nil`) - Each card can have a custom message. Optional.
+  *   `playbackStartOffset` (*type:* `String.t`, *default:* `nil`) - Playback start time offset in milliseconds. Optional.
+  *   `videoId` (*type:* `String.t`, *default:* `nil`) - Encrypted Video ID. Required.
   """
 
   use GoogleApi.Gax.ModelBase

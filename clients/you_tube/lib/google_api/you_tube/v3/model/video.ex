@@ -17,56 +17,28 @@
 
 defmodule GoogleApi.YouTube.V3.Model.Video do
   @moduledoc """
-  A <code><strong>video</strong></code> resource represents a YouTube video.
+  A *video* resource represents a YouTube video.
 
   ## Attributes
 
-  *   `ageGating` (*type:* `GoogleApi.YouTube.V3.Model.VideoAgeGating.t`, *default:* `nil`) - Age restriction details related to a video. This data can only be retrieved
-      by the video owner.
-  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoContentDetails.t`, *default:* `nil`) - The <code>contentDetails</code> object contains information about the video
-      content, including the length of the video and its aspect ratio.
+  *   `ageGating` (*type:* `GoogleApi.YouTube.V3.Model.VideoAgeGating.t`, *default:* `nil`) - Age restriction details related to a video. This data can only be retrieved by the video owner.
+  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoContentDetails.t`, *default:* `nil`) - The contentDetails object contains information about the video content, including the length of the video and its aspect ratio.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
-  *   `fileDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoFileDetails.t`, *default:* `nil`) - The <code>fileDetails</code> object encapsulates information about the
-      video file that was uploaded to YouTube, including the file's resolution,
-      duration, audio and video codecs, stream bitrates, and more. This data can
-      only be retrieved by the video owner.
+  *   `fileDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoFileDetails.t`, *default:* `nil`) - The fileDetails object encapsulates information about the video file that was uploaded to YouTube, including the file's resolution, duration, audio and video codecs, stream bitrates, and more. This data can only be retrieved by the video owner.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the video.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#video`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#video"</code>.
-  *   `liveStreamingDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails.t`, *default:* `nil`) - The <code>liveStreamingDetails</code> object contains metadata about a live
-      video broadcast. The object will only be present in a <code>video</code>
-      resource if the video is an upcoming, live, or completed live broadcast.
-  *   `localizations` (*type:* `%{optional(String.t) => GoogleApi.YouTube.V3.Model.VideoLocalization.t}`, *default:* `nil`) - The <code>localizations</code> object contains localized versions of the
-      basic details about the video, such as its title and description.
-  *   `monetizationDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoMonetizationDetails.t`, *default:* `nil`) - The <code>monetizationDetails</code> object encapsulates information
-      about the monetization status of the video.
-  *   `player` (*type:* `GoogleApi.YouTube.V3.Model.VideoPlayer.t`, *default:* `nil`) - The <code>player</code> object contains information that you would use to
-      play the video in an embedded player.
-  *   `processingDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoProcessingDetails.t`, *default:* `nil`) - The <code>processingDetails</code> object encapsulates information about
-      YouTube's progress in processing the uploaded video file. The properties
-      in the object identify the current processing status and an estimate of
-      the time remaining until YouTube finishes processing the video. This part
-      also indicates whether different types of data or content, such as file
-      details or thumbnail images, are available for the video.<br><br>
-      The <code>processingProgress</code> object is designed to be polled so
-      that the video uploaded can track the progress that YouTube has made in
-      processing the uploaded video file. This data can only be retrieved by
-      the video owner.
-  *   `projectDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoProjectDetails.t`, *default:* `nil`) - The <code>projectDetails</code> object contains information about the
-      project specific video metadata.
-  *   `recordingDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoRecordingDetails.t`, *default:* `nil`) - The <code>recordingDetails</code> object encapsulates information about the
-      location, date and address where the video was recorded.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.VideoSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the video,
-      such as its title, description, and category.
-  *   `statistics` (*type:* `GoogleApi.YouTube.V3.Model.VideoStatistics.t`, *default:* `nil`) - The <code>statistics</code> object contains statistics about the video.
-  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.VideoStatus.t`, *default:* `nil`) - The <code>status</code> object contains information about the video's
-      uploading, processing, and privacy statuses.
-  *   `suggestions` (*type:* `GoogleApi.YouTube.V3.Model.VideoSuggestions.t`, *default:* `nil`) - The <code>suggestions</code> object encapsulates suggestions that identify
-      opportunities to improve the video quality or the metadata for the uploaded
-      video. This data can only be retrieved by the video owner.
-  *   `topicDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoTopicDetails.t`, *default:* `nil`) - The <code>topicDetails</code> object encapsulates information about <a
-      href="http://www.freebase.com">Freebase</a> topics associated with the
-      video.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#video`) - Identifies what kind of resource this is. Value: the fixed string "youtube#video".
+  *   `liveStreamingDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails.t`, *default:* `nil`) - The liveStreamingDetails object contains metadata about a live video broadcast. The object will only be present in a video resource if the video is an upcoming, live, or completed live broadcast.
+  *   `localizations` (*type:* `%{optional(String.t) => GoogleApi.YouTube.V3.Model.VideoLocalization.t}`, *default:* `nil`) - The localizations object contains localized versions of the basic details about the video, such as its title and description.
+  *   `monetizationDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoMonetizationDetails.t`, *default:* `nil`) - The monetizationDetails object encapsulates information about the monetization status of the video.
+  *   `player` (*type:* `GoogleApi.YouTube.V3.Model.VideoPlayer.t`, *default:* `nil`) - The player object contains information that you would use to play the video in an embedded player.
+  *   `processingDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoProcessingDetails.t`, *default:* `nil`) - The processingDetails object encapsulates information about YouTube's progress in processing the uploaded video file. The properties in the object identify the current processing status and an estimate of the time remaining until YouTube finishes processing the video. This part also indicates whether different types of data or content, such as file details or thumbnail images, are available for the video. The processingProgress object is designed to be polled so that the video uploaded can track the progress that YouTube has made in processing the uploaded video file. This data can only be retrieved by the video owner.
+  *   `projectDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoProjectDetails.t`, *default:* `nil`) - The projectDetails object contains information about the project specific video metadata.
+  *   `recordingDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoRecordingDetails.t`, *default:* `nil`) - The recordingDetails object encapsulates information about the location, date and address where the video was recorded.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.VideoSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the video, such as its title, description, and category.
+  *   `statistics` (*type:* `GoogleApi.YouTube.V3.Model.VideoStatistics.t`, *default:* `nil`) - The statistics object contains statistics about the video.
+  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.VideoStatus.t`, *default:* `nil`) - The status object contains information about the video's uploading, processing, and privacy statuses.
+  *   `suggestions` (*type:* `GoogleApi.YouTube.V3.Model.VideoSuggestions.t`, *default:* `nil`) - The suggestions object encapsulates suggestions that identify opportunities to improve the video quality or the metadata for the uploaded video. This data can only be retrieved by the video owner.
+  *   `topicDetails` (*type:* `GoogleApi.YouTube.V3.Model.VideoTopicDetails.t`, *default:* `nil`) - The topicDetails object encapsulates information about Freebase topics associated with the video.
   """
 
   use GoogleApi.Gax.ModelBase

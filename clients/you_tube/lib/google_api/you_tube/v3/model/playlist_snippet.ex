@@ -21,19 +21,14 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that
-      published the playlist.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that published the playlist.
   *   `channelTitle` (*type:* `String.t`, *default:* `nil`) - The channel title of the channel that the video belongs to.
   *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The language of the playlist's default title and description.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The playlist's description.
   *   `localized` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistLocalization.t`, *default:* `nil`) - Localized title and description, read-only.
-  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the playlist was created. The value is specified
-      in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
-      format.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the playlist was created. The value is specified in ISO 8601 format.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Keyword tags associated with the playlist.
-  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist. For each object
-      in the map, the key is the name of the thumbnail image, and the value
-      is an object that contains other information about the thumbnail.
+  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The playlist's title.
   """
 

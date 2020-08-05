@@ -21,10 +21,8 @@ defmodule GoogleApi.YouTube.V3.Model.SubscriptionContentDetails do
 
   ## Attributes
 
-  *   `activityType` (*type:* `String.t`, *default:* `nil`) - The type of activity this subscription is for
-      (only uploads, everything).
-  *   `newItemCount` (*type:* `integer()`, *default:* `nil`) - The number of new items in the subscription since its content was last
-      read.
+  *   `activityType` (*type:* `String.t`, *default:* `nil`) - The type of activity this subscription is for (only uploads, everything).
+  *   `newItemCount` (*type:* `integer()`, *default:* `nil`) - The number of new items in the subscription since its content was last read.
   *   `totalItemCount` (*type:* `integer()`, *default:* `nil`) - The approximate number of items that the subscription points to.
   """
 

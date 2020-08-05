@@ -24,8 +24,7 @@ defmodule GoogleApi.YouTube.V3.Model.InfoCardSnippet do
   *   `channelInfocard` (*type:* `GoogleApi.YouTube.V3.Model.ChannelCard.t`, *default:* `nil`) - 
   *   `linkInfocard` (*type:* `GoogleApi.YouTube.V3.Model.LinkCard.t`, *default:* `nil`) - 
   *   `playlistInfocard` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistCard.t`, *default:* `nil`) - 
-  *   `teaser` (*type:* `GoogleApi.YouTube.V3.Model.InfoCardSnippetTeaser.t`, *default:* `nil`) - Each card can have a teaser.
-      Required.
+  *   `teaser` (*type:* `GoogleApi.YouTube.V3.Model.InfoCardSnippetTeaser.t`, *default:* `nil`) - Each card can have a teaser. Required.
   *   `videoInfocard` (*type:* `GoogleApi.YouTube.V3.Model.VideoCard.t`, *default:* `nil`) - 
   """
 

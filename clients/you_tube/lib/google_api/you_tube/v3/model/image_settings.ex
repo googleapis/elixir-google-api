@@ -21,10 +21,8 @@ defmodule GoogleApi.YouTube.V3.Model.ImageSettings do
 
   ## Attributes
 
-  *   `backgroundImageUrl` (*type:* `GoogleApi.YouTube.V3.Model.LocalizedProperty.t`, *default:* `nil`) - The URL for the background image shown on the video watch page. The image
-      should be 1200px by 615px, with a maximum file size of 128k.
-  *   `bannerExternalUrl` (*type:* `String.t`, *default:* `nil`) - This is used only in update requests; if it's set, we use this URL to
-      generate all of the above banner URLs.
+  *   `backgroundImageUrl` (*type:* `GoogleApi.YouTube.V3.Model.LocalizedProperty.t`, *default:* `nil`) - The URL for the background image shown on the video watch page. The image should be 1200px by 615px, with a maximum file size of 128k.
+  *   `bannerExternalUrl` (*type:* `String.t`, *default:* `nil`) - This is used only in update requests; if it's set, we use this URL to generate all of the above banner URLs.
   *   `bannerImageUrl` (*type:* `String.t`, *default:* `nil`) - Banner image. Desktop size (1060x175).
   *   `bannerMobileExtraHdImageUrl` (*type:* `String.t`, *default:* `nil`) - Banner image. Mobile size high resolution (1440x395).
   *   `bannerMobileHdImageUrl` (*type:* `String.t`, *default:* `nil`) - Banner image. Mobile size high resolution (1280x360).
@@ -40,16 +38,10 @@ defmodule GoogleApi.YouTube.V3.Model.ImageSettings do
   *   `bannerTvLowImageUrl` (*type:* `String.t`, *default:* `nil`) - Banner image. TV size low resolution (854x480).
   *   `bannerTvMediumImageUrl` (*type:* `String.t`, *default:* `nil`) - Banner image. TV size medium resolution (1280x720).
   *   `largeBrandedBannerImageImapScript` (*type:* `GoogleApi.YouTube.V3.Model.LocalizedProperty.t`, *default:* `nil`) - The image map script for the large banner image.
-  *   `largeBrandedBannerImageUrl` (*type:* `GoogleApi.YouTube.V3.Model.LocalizedProperty.t`, *default:* `nil`) - The URL for the 854px by 70px image that appears below the video player in
-      the expanded video view of the video watch page.
+  *   `largeBrandedBannerImageUrl` (*type:* `GoogleApi.YouTube.V3.Model.LocalizedProperty.t`, *default:* `nil`) - The URL for the 854px by 70px image that appears below the video player in the expanded video view of the video watch page.
   *   `smallBrandedBannerImageImapScript` (*type:* `GoogleApi.YouTube.V3.Model.LocalizedProperty.t`, *default:* `nil`) - The image map script for the small banner image.
-  *   `smallBrandedBannerImageUrl` (*type:* `GoogleApi.YouTube.V3.Model.LocalizedProperty.t`, *default:* `nil`) - The URL for the 640px by 70px banner image that appears below the video
-      player in the default view of the video watch page.
-      The URL for the image that appears above the top-left corner of the video
-      player. This is a 25-pixel-high image with a flexible width that cannot
-      exceed 170 pixels.
-  *   `trackingImageUrl` (*type:* `String.t`, *default:* `nil`) - The URL for a 1px by 1px tracking pixel that can be used to collect
-      statistics for views of the channel or video pages.
+  *   `smallBrandedBannerImageUrl` (*type:* `GoogleApi.YouTube.V3.Model.LocalizedProperty.t`, *default:* `nil`) - The URL for the 640px by 70px banner image that appears below the video player in the default view of the video watch page. The URL for the image that appears above the top-left corner of the video player. This is a 25-pixel-high image with a flexible width that cannot exceed 170 pixels.
+  *   `trackingImageUrl` (*type:* `String.t`, *default:* `nil`) - The URL for a 1px by 1px tracking pixel that can be used to collect statistics for views of the channel or video pages.
   *   `watchIconImageUrl` (*type:* `String.t`, *default:* `nil`) - 
   """
 

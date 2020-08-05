@@ -17,18 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.VideoStatistics do
   @moduledoc """
-  Statistics about the video, such as the number of times the video was viewed
-  or liked.
+  Statistics about the video, such as the number of times the video was viewed or liked.
 
   ## Attributes
 
   *   `commentCount` (*type:* `String.t`, *default:* `nil`) - The number of comments for the video.
-  *   `dislikeCount` (*type:* `String.t`, *default:* `nil`) - The number of users who have indicated that they disliked the video by
-      giving it a negative rating.
-  *   `favoriteCount` (*type:* `String.t`, *default:* `nil`) - The number of users who currently have the video marked as a favorite
-      video.
-  *   `likeCount` (*type:* `String.t`, *default:* `nil`) - The number of users who have indicated that they liked the video by
-      giving it a positive rating.
+  *   `dislikeCount` (*type:* `String.t`, *default:* `nil`) - The number of users who have indicated that they disliked the video by giving it a negative rating.
+  *   `favoriteCount` (*type:* `String.t`, *default:* `nil`) - The number of users who currently have the video marked as a favorite video.
+  *   `likeCount` (*type:* `String.t`, *default:* `nil`) - The number of users who have indicated that they liked the video by giving it a positive rating.
   *   `viewCount` (*type:* `String.t`, *default:* `nil`) - The number of times the video has been viewed.
   """
 

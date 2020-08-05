@@ -21,8 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoMonetizationDetails do
 
   ## Attributes
 
-  *   `access` (*type:* `GoogleApi.YouTube.V3.Model.AccessPolicy.t`, *default:* `nil`) - The value of <code>access</code> indicates whether the video can be
-      monetized or not.
+  *   `access` (*type:* `GoogleApi.YouTube.V3.Model.AccessPolicy.t`, *default:* `nil`) - The value of access indicates whether the video can be monetized or not.
   """
 
   use GoogleApi.Gax.ModelBase

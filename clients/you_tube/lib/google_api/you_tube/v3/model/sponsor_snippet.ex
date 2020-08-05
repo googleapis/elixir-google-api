@@ -24,9 +24,7 @@ defmodule GoogleApi.YouTube.V3.Model.SponsorSnippet do
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - The id of the channel being sponsored.
   *   `cumulativeDurationMonths` (*type:* `integer()`, *default:* `nil`) - The cumulative time a user has been a sponsor in months.
   *   `sponsorDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t`, *default:* `nil`) - Details about the sponsor.
-  *   `sponsorSince` (*type:* `String.t`, *default:* `nil`) - The date and time when the user became a sponsor. The value is
-      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
-      (`YYYY-MM-DDThh:mm:ss.sZ`) format.
+  *   `sponsorSince` (*type:* `String.t`, *default:* `nil`) - The date and time when the user became a sponsor. The value is specified in ISO 8601 (`YYYY-MM-DDThh:mm:ss.sZ`) format.
   """
 
   use GoogleApi.Gax.ModelBase

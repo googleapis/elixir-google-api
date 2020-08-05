@@ -31,10 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
-      comma-separated list of one or more <code>search</code> resource properties
-      that the API response will include. Set the parameter value to
-      <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more search resource properties that the API response will include. Set the parameter value to snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -51,38 +48,21 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
       *   `:channelType` (*type:* `String.t`) - Add a filter on the channel search.
       *   `:eventType` (*type:* `String.t`) - Filter on the livestream status of the videos.
       *   `:forContentOwner` (*type:* `boolean()`) - Search owned by a content owner.
-      *   `:forDeveloper` (*type:* `boolean()`) - Restrict the search to only retrieve videos uploaded using the project id
-          of the authenticated user.
+      *   `:forDeveloper` (*type:* `boolean()`) - Restrict the search to only retrieve videos uploaded using the project id of the authenticated user.
       *   `:forMine` (*type:* `boolean()`) - Search for the private videos of the authenticated user.
       *   `:location` (*type:* `String.t`) - Filter on location of the video
       *   `:locationRadius` (*type:* `String.t`) - Filter on distance from the location (specified above).
-      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
-          maximum number of items that should be returned in the result set.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The CMS
-          account that the user authenticates with must be linked to the specified
-          YouTube content owner.
+      *   `:maxResults` (*type:* `integer()`) - The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
       *   `:order` (*type:* `String.t`) - Sort order of the results.
-      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
-          page in the result set that should be returned. In an API response, the
-          <code>nextPageToken</code> and <code>prevPageToken</code> properties
-          identify other pages that could be retrieved.
+      *   `:pageToken` (*type:* `String.t`) - The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
       *   `:publishedAfter` (*type:* `DateTime.t`) - Filter on resources published after this date.
       *   `:publishedBefore` (*type:* `DateTime.t`) - Filter on resources published before this date.
       *   `:q` (*type:* `String.t`) - Textual search terms to match.
       *   `:regionCode` (*type:* `String.t`) - Display the content as seen by viewers in this country.
       *   `:relatedToVideoId` (*type:* `String.t`) - Search related to a resource.
       *   `:relevanceLanguage` (*type:* `String.t`) - Return results relevant to this language.
-      *   `:safeSearch` (*type:* `String.t`) - Indicates whether the search results should include restricted content as
-          well as standard content.
+      *   `:safeSearch` (*type:* `String.t`) - Indicates whether the search results should include restricted content as well as standard content.
       *   `:topicId` (*type:* `String.t`) - Restrict results to a particular topic.
       *   `:type` (*type:* `list(String.t)`) - Restrict results to a particular set of resource types from One Platform.
       *   `:videoCaption` (*type:* `String.t`) - Filter on the presence of captions on the videos.

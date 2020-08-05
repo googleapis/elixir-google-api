@@ -21,19 +21,13 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStream do
 
   ## Attributes
 
-  *   `cdn` (*type:* `GoogleApi.YouTube.V3.Model.CdnSettings.t`, *default:* `nil`) - The <code>cdn</code> object defines the live stream's content delivery
-      network (CDN) settings. These settings provide details about the manner
-      in which you stream your content to YouTube.
-  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveStreamContentDetails.t`, *default:* `nil`) - The <code>content_details</code> object contains information about the
-      stream, including the closed captions ingestion URL.
+  *   `cdn` (*type:* `GoogleApi.YouTube.V3.Model.CdnSettings.t`, *default:* `nil`) - The cdn object defines the live stream's content delivery network (CDN) settings. These settings provide details about the manner in which you stream your content to YouTube.
+  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveStreamContentDetails.t`, *default:* `nil`) - The content_details object contains information about the stream, including the closed captions ingestion URL.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube assigns to uniquely identify the stream.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#liveStream`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#liveStream"</code>.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveStreamSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the
-      stream, including its channel, title, and description.
-  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.LiveStreamStatus.t`, *default:* `nil`) - The <code>status</code> object contains information about
-      live stream's status.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#liveStream`) - Identifies what kind of resource this is. Value: the fixed string "youtube#liveStream".
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveStreamSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the stream, including its channel, title, and description.
+  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.LiveStreamStatus.t`, *default:* `nil`) - The status object contains information about live stream's status.
   """
 
   use GoogleApi.Gax.ModelBase

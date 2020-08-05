@@ -22,10 +22,8 @@ defmodule GoogleApi.YouTube.V3.Model.MembershipsDurationAtLevel do
   ## Attributes
 
   *   `level` (*type:* `String.t`, *default:* `nil`) - Pricing level ID.
-  *   `memberSince` (*type:* `String.t`, *default:* `nil`) - The date and time when the user became a continuous member for the given
-      level.
-  *   `memberTotalDurationMonths` (*type:* `integer()`, *default:* `nil`) - The cumulative time the user has been a member for the given level in
-      complete months (the time is rounded down to the nearest integer).
+  *   `memberSince` (*type:* `String.t`, *default:* `nil`) - The date and time when the user became a continuous member for the given level.
+  *   `memberTotalDurationMonths` (*type:* `integer()`, *default:* `nil`) - The cumulative time the user has been a member for the given level in complete months (the time is rounded down to the nearest integer).
   """
 
   use GoogleApi.Gax.ModelBase

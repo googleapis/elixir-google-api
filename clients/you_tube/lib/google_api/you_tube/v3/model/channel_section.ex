@@ -21,18 +21,13 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSection do
 
   ## Attributes
 
-  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails.t`, *default:* `nil`) - The <code>contentDetails</code> object contains details about the channel
-      section content, such as a list of playlists or channels featured in the
-      section.
+  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails.t`, *default:* `nil`) - The contentDetails object contains details about the channel section content, such as a list of playlists or channels featured in the section.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel section.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#channelSection`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#channelSection"</code>.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#channelSection`) - Identifies what kind of resource this is. Value: the fixed string "youtube#channelSection".
   *   `localizations` (*type:* `%{optional(String.t) => GoogleApi.YouTube.V3.Model.ChannelSectionLocalization.t}`, *default:* `nil`) - Localizations for different languages
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSectionSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the channel
-      section, such as its type, style and title.
-  *   `targeting` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSectionTargeting.t`, *default:* `nil`) - The <code>targeting</code> object contains basic targeting settings about
-      the channel section.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSectionSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the channel section, such as its type, style and title.
+  *   `targeting` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSectionTargeting.t`, *default:* `nil`) - The targeting object contains basic targeting settings about the channel section.
   """
 
   use GoogleApi.Gax.ModelBase

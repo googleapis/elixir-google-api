@@ -22,22 +22,14 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem do
   ## Attributes
 
   *   `adTag` (*type:* `String.t`, *default:* `nil`) - The URL the client should fetch to request a promoted item.
-  *   `clickTrackingUrl` (*type:* `String.t`, *default:* `nil`) - The URL the client should ping to indicate that the user clicked through
-      on this promoted item.
-  *   `creativeViewUrl` (*type:* `String.t`, *default:* `nil`) - The URL the client should ping to indicate that the user was shown this
-      promoted item.
-  *   `ctaType` (*type:* `String.t`, *default:* `nil`) - The type of call-to-action, a message to the user indicating action that
-      can be taken.
-  *   `customCtaButtonText` (*type:* `String.t`, *default:* `nil`) - The custom call-to-action button text. If specified, it will override
-      the default button text for the cta_type.
+  *   `clickTrackingUrl` (*type:* `String.t`, *default:* `nil`) - The URL the client should ping to indicate that the user clicked through on this promoted item.
+  *   `creativeViewUrl` (*type:* `String.t`, *default:* `nil`) - The URL the client should ping to indicate that the user was shown this promoted item.
+  *   `ctaType` (*type:* `String.t`, *default:* `nil`) - The type of call-to-action, a message to the user indicating action that can be taken.
+  *   `customCtaButtonText` (*type:* `String.t`, *default:* `nil`) - The custom call-to-action button text. If specified, it will override the default button text for the cta_type.
   *   `descriptionText` (*type:* `String.t`, *default:* `nil`) - The text description to accompany the promoted item.
-  *   `destinationUrl` (*type:* `String.t`, *default:* `nil`) - The URL the client should direct the user to, if the user chooses to
-      visit the advertiser's website.
-  *   `forecastingUrl` (*type:* `list(String.t)`, *default:* `nil`) - The list of forecasting URLs. The client should ping all of these URLs
-      when a promoted item is not available, to indicate that a promoted item
-      could have been shown.
-  *   `impressionUrl` (*type:* `list(String.t)`, *default:* `nil`) - The list of impression URLs. The client should ping all of these URLs to
-      indicate that the user was shown this promoted item.
+  *   `destinationUrl` (*type:* `String.t`, *default:* `nil`) - The URL the client should direct the user to, if the user chooses to visit the advertiser's website.
+  *   `forecastingUrl` (*type:* `list(String.t)`, *default:* `nil`) - The list of forecasting URLs. The client should ping all of these URLs when a promoted item is not available, to indicate that a promoted item could have been shown.
+  *   `impressionUrl` (*type:* `list(String.t)`, *default:* `nil`) - The list of impression URLs. The client should ping all of these URLs to indicate that the user was shown this promoted item.
   *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the promoted video.
   """
 

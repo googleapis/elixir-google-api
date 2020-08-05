@@ -24,9 +24,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoRatingListResponse do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.VideoRating.t)`, *default:* `nil`) - A list of ratings that match the request criteria.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#videoGetRatingResponse`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#videoGetRatingResponse"</code>.
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#videoGetRatingResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#videoGetRatingResponse".
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

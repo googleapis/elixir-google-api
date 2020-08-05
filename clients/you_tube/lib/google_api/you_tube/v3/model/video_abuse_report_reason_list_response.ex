@@ -24,8 +24,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonListResponse do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.VideoAbuseReportReason.t)`, *default:* `nil`) - A list of valid abuse reasons that are used with `video.ReportAbuse`.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#videoAbuseReportReasonListResponse`) - Identifies what kind of resource this is. Value: the fixed string
-      `"youtube#videoAbuseReportReasonListResponse"`.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#videoAbuseReportReasonListResponse`) - Identifies what kind of resource this is. Value: the fixed string `"youtube#videoAbuseReportReasonListResponse"`.
   *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The `visitorId` identifies the visitor.
   """
 

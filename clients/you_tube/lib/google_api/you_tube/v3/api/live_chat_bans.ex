@@ -87,10 +87,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatBans do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
-      this operation. It identifies the properties that the write operation will
-      set as well as the properties that the API response returns. Set the
-      parameter value to <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response returns. Set the parameter value to snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

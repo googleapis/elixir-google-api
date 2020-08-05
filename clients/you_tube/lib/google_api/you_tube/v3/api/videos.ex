@@ -44,18 +44,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The actual
-          CMS account that the user authenticates with must be linked to the
-          specified YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -95,8 +84,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   end
 
   @doc """
-  Retrieves the ratings that the authorized user gave to a list of specified
-  videos.
+  Retrieves the ratings that the authorized user gave to a list of specified videos.
 
   ## Parameters
 
@@ -114,18 +102,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The CMS
-          account that the user authenticates with must be linked to the specified
-          YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -172,16 +149,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
-      this operation. It identifies the properties that the write operation will
-      set as well as the properties that the API response will
-      include.<br/><br/>Note that not all parts contain properties that can be
-      set when inserting or updating a video. For example, the
-      <code>statistics</code> object encapsulates statistics that YouTube
-      calculates for a video and does not contain values that you can set or
-      modify. If the parameter value specifies a <code>part</code> that does not
-      contain mutable values, that <code>part</code> will still be included in
-      the API response.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -195,39 +163,9 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:autoLevels` (*type:* `boolean()`) - Should auto-levels be applied to the upload.
-      *   `:notifySubscribers` (*type:* `boolean()`) - Notify the channel subscribers about the new video. As default, the
-          notification is enabled.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The CMS
-          account that the user authenticates with must be linked to the specified
-          YouTube content owner.
-      *   `:onBehalfOfContentOwnerChannel` (*type:* `String.t`) - This parameter can only be used in a properly <a
-          href="/youtube/v3/guides/authentication">authorized request</a>.
-          <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwnerChannel</strong></code> parameter
-          specifies the YouTube channel ID of the channel to which a video is being
-          added. This parameter is required when a request specifies a value for the
-          <code>onBehalfOfContentOwner</code> parameter, and it can only be used in
-          conjunction with that parameter. In addition, the request must be
-          authorized using a CMS account that is linked to the content owner that the
-          <code>onBehalfOfContentOwner</code> parameter specifies. Finally, the
-          channel that the <code>onBehalfOfContentOwnerChannel</code> parameter value
-          specifies must be linked to the content owner that the
-          <code>onBehalfOfContentOwner</code> parameter specifies.<br><br>This
-          parameter is intended for YouTube content partners that own and manage many
-          different YouTube channels. It allows content owners to authenticate once
-          and perform actions on behalf of the channel specified in the parameter
-          value, without having to provide authentication credentials for each
-          separate channel.
+      *   `:notifySubscribers` (*type:* `boolean()`) - Notify the channel subscribers about the new video. As default, the notification is enabled.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:onBehalfOfContentOwnerChannel` (*type:* `String.t`) - This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
       *   `:stabilize` (*type:* `boolean()`) - Should stabilize be applied to the upload.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Video.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -279,16 +217,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
-      this operation. It identifies the properties that the write operation will
-      set as well as the properties that the API response will
-      include.<br/><br/>Note that not all parts contain properties that can be
-      set when inserting or updating a video. For example, the
-      <code>statistics</code> object encapsulates statistics that YouTube
-      calculates for a video and does not contain values that you can set or
-      modify. If the parameter value specifies a <code>part</code> that does not
-      contain mutable values, that <code>part</code> will still be included in
-      the API response.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Video.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
@@ -305,39 +234,9 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:autoLevels` (*type:* `boolean()`) - Should auto-levels be applied to the upload.
-      *   `:notifySubscribers` (*type:* `boolean()`) - Notify the channel subscribers about the new video. As default, the
-          notification is enabled.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The CMS
-          account that the user authenticates with must be linked to the specified
-          YouTube content owner.
-      *   `:onBehalfOfContentOwnerChannel` (*type:* `String.t`) - This parameter can only be used in a properly <a
-          href="/youtube/v3/guides/authentication">authorized request</a>.
-          <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwnerChannel</strong></code> parameter
-          specifies the YouTube channel ID of the channel to which a video is being
-          added. This parameter is required when a request specifies a value for the
-          <code>onBehalfOfContentOwner</code> parameter, and it can only be used in
-          conjunction with that parameter. In addition, the request must be
-          authorized using a CMS account that is linked to the content owner that the
-          <code>onBehalfOfContentOwner</code> parameter specifies. Finally, the
-          channel that the <code>onBehalfOfContentOwnerChannel</code> parameter value
-          specifies must be linked to the content owner that the
-          <code>onBehalfOfContentOwner</code> parameter specifies.<br><br>This
-          parameter is intended for YouTube content partners that own and manage many
-          different YouTube channels. It allows content owners to authenticate once
-          and perform actions on behalf of the channel specified in the parameter
-          value, without having to provide authentication credentials for each
-          separate channel.
+      *   `:notifySubscribers` (*type:* `boolean()`) - Notify the channel subscribers about the new video. As default, the notification is enabled.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:onBehalfOfContentOwnerChannel` (*type:* `String.t`) - This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
       *   `:stabilize` (*type:* `boolean()`) - Should stabilize be applied to the upload.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -405,16 +304,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
-      this operation. It identifies the properties that the write operation will
-      set as well as the properties that the API response will
-      include.<br/><br/>Note that not all parts contain properties that can be
-      set when inserting or updating a video. For example, the
-      <code>statistics</code> object encapsulates statistics that YouTube
-      calculates for a video and does not contain values that you can set or
-      modify. If the parameter value specifies a <code>part</code> that does not
-      contain mutable values, that <code>part</code> will still be included in
-      the API response.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Video.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
@@ -431,39 +321,9 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:autoLevels` (*type:* `boolean()`) - Should auto-levels be applied to the upload.
-      *   `:notifySubscribers` (*type:* `boolean()`) - Notify the channel subscribers about the new video. As default, the
-          notification is enabled.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The CMS
-          account that the user authenticates with must be linked to the specified
-          YouTube content owner.
-      *   `:onBehalfOfContentOwnerChannel` (*type:* `String.t`) - This parameter can only be used in a properly <a
-          href="/youtube/v3/guides/authentication">authorized request</a>.
-          <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwnerChannel</strong></code> parameter
-          specifies the YouTube channel ID of the channel to which a video is being
-          added. This parameter is required when a request specifies a value for the
-          <code>onBehalfOfContentOwner</code> parameter, and it can only be used in
-          conjunction with that parameter. In addition, the request must be
-          authorized using a CMS account that is linked to the content owner that the
-          <code>onBehalfOfContentOwner</code> parameter specifies. Finally, the
-          channel that the <code>onBehalfOfContentOwnerChannel</code> parameter value
-          specifies must be linked to the content owner that the
-          <code>onBehalfOfContentOwner</code> parameter specifies.<br><br>This
-          parameter is intended for YouTube content partners that own and manage many
-          different YouTube channels. It allows content owners to authenticate once
-          and perform actions on behalf of the channel specified in the parameter
-          value, without having to provide authentication credentials for each
-          separate channel.
+      *   `:notifySubscribers` (*type:* `boolean()`) - Notify the channel subscribers about the new video. As default, the notification is enabled.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:onBehalfOfContentOwnerChannel` (*type:* `String.t`) - This parameter can only be used in a properly authorized request. *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwnerChannel* parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
       *   `:stabilize` (*type:* `boolean()`) - Should stabilize be applied to the upload.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -531,16 +391,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
-      comma-separated list of one or more <code>video</code> resource properties
-      that the API response will include.<br><br>If the parameter identifies a
-      property that contains child properties, the child properties will be
-      included in the response. For example, in a <code>video</code> resource,
-      the <code>snippet</code> property contains the <code>channelId</code>,
-      <code>title</code>, <code>description</code>, <code>tags</code>, and
-      <code>categoryId</code> properties. As such, if you set
-      <code><strong>part=snippet</strong></code>, the API response will contain
-      all of those properties.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more video resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a video resource, the snippet property contains the channelId, title, description, tags, and categoryId properties. As such, if you set *part=snippet*, the API response will contain all of those properties.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -554,44 +405,15 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:chart` (*type:* `String.t`) - Return the videos that are in the specified chart.
-      *   `:hl` (*type:* `String.t`) - Stands for "host language". Specifies the localization language of the
-          metadata to be filled into snippet.localized. The field is filled with the
-          default metadata if there is no localization in the specified language.
-          The parameter value must be a language code included in the list returned
-          by the i18nLanguages.list method (e.g. en_US, es_MX).
+      *   `:hl` (*type:* `String.t`) - Stands for "host language". Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX).
       *   `:id` (*type:* `list(String.t)`) - Return videos with the given ids.
       *   `:locale` (*type:* `String.t`) - 
       *   `:maxHeight` (*type:* `integer()`) - 
-      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
-          maximum number of items that should be returned in the result
-          set.<br><br><strong>Note:</strong> This parameter is supported for use in
-          conjunction with the <code><a href="#myRating">myRating</a></code> and
-          <code><a href="#chart">chart</a></code> parameters, but it is not supported
-          for use in conjunction with the <code><a href="#id">id</a></code>
-          parameter.
+      *   `:maxResults` (*type:* `integer()`) - The *maxResults* parameter specifies the maximum number of items that should be returned in the result set. *Note:* This parameter is supported for use in conjunction with the myRating and chart parameters, but it is not supported for use in conjunction with the id parameter.
       *   `:maxWidth` (*type:* `integer()`) - Return the player with maximum height specified in
-      *   `:myRating` (*type:* `String.t`) - Return videos liked/disliked by the authenticated user.
-          Does not support RateType.RATED_TYPE_NONE.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The CMS
-          account that the user authenticates with must be linked to the specified
-          YouTube content owner.
-      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
-          page in the result set that should be returned. In an API response, the
-          <code>nextPageToken</code> and <code>prevPageToken</code> properties
-          identify other pages that could be retrieved.<br><br><strong>Note:</strong>
-          This parameter is supported for use in conjunction with the <code><a
-          href="#myRating">myRating</a></code> and <code><a
-          href="#chart">chart</a></code> parameters, but it is not supported for use
-          in conjunction with the <code><a href="#id">id</a></code> parameter.
+      *   `:myRating` (*type:* `String.t`) - Return videos liked/disliked by the authenticated user. Does not support RateType.RATED_TYPE_NONE.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:pageToken` (*type:* `String.t`) - The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved. *Note:* This parameter is supported for use in conjunction with the myRating and chart parameters, but it is not supported for use in conjunction with the id parameter.
       *   `:regionCode` (*type:* `String.t`) - Use a chart that is specific to the specified region
       *   `:videoCategoryId` (*type:* `String.t`) - Use chart that is specific to the specified video category
   *   `opts` (*type:* `keyword()`) - Call options
@@ -721,18 +543,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The CMS
-          account that the user authenticates with must be linked to the specified
-          YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.VideoAbuseReport.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -778,26 +589,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
-      this operation. It identifies the properties that the write operation will
-      set as well as the properties that the API response will
-      include.<br/><br/>Note that this method will override the existing values
-      for all of the mutable properties that are contained in any parts that the
-      parameter value specifies. For example, a
-      video's privacy setting is contained in the <code>status</code> part. As
-      such, if your request is updating a private video, and the request's
-      <code>part</code> parameter value includes the <code>status</code> part,
-      the
-      video's privacy setting will be updated to whatever value the request body
-      specifies. If the request body does not specify a value, the existing
-      privacy setting will be removed and the video will revert to the default
-      privacy setting.<br/><br/>In addition, not all parts contain properties
-      that can be set when inserting or updating a video. For example, the
-      <code>statistics</code> object encapsulates statistics that YouTube
-      calculates for a video and does not contain values that you can set or
-      modify. If the parameter value specifies a <code>part</code> that does not
-      contain mutable values, that <code>part</code> will still be included in
-      the API response.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a video's privacy setting is contained in the status part. As such, if your request is updating a private video, and the request's part parameter value includes the status part, the video's privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the video will revert to the default privacy setting. In addition, not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -810,18 +602,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
-          content partners.<br><br>The
-          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
-          that the
-          request's authorization credentials identify a YouTube CMS user who is
-          acting on behalf of the content owner specified in the parameter value.
-          This parameter is intended for YouTube content partners that own and manage
-          many different YouTube channels. It allows content owners to authenticate
-          once and get access to all their video and channel data, without having to
-          provide authentication credentials for each individual channel. The actual
-          CMS account that the user authenticates with must be linked to the
-          specified YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - *Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Video.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

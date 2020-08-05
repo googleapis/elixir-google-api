@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ThirdPartyLinkStatus do
   @moduledoc """
-  The <code>third-party link status</code> object contains information about
-  the status of the link.
+  The third-party link status object contains information about the status of the link.
 
   ## Attributes
 

@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.InvideoBranding do
   @moduledoc """
-  LINT.IfChange
-  Describes an invideo branding.
+  LINT.IfChange Describes an invideo branding.
 
   ## Attributes
 
   *   `imageBytes` (*type:* `String.t`, *default:* `nil`) - The bytes the uploaded image. Only used in api to youtube communication.
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The url of the uploaded image. Only used in apiary to api communication.
-  *   `position` (*type:* `GoogleApi.YouTube.V3.Model.InvideoPosition.t`, *default:* `nil`) - The spatial position within the video where the branding watermark will be
-      displayed.
-  *   `targetChannelId` (*type:* `String.t`, *default:* `nil`) - The channel to which this branding links. If not present it defaults to
-      the current channel.
+  *   `position` (*type:* `GoogleApi.YouTube.V3.Model.InvideoPosition.t`, *default:* `nil`) - The spatial position within the video where the branding watermark will be displayed.
+  *   `targetChannelId` (*type:* `String.t`, *default:* `nil`) - The channel to which this branding links. If not present it defaults to the current channel.
   *   `timing` (*type:* `GoogleApi.YouTube.V3.Model.InvideoTiming.t`, *default:* `nil`) - The temporal position within the video where watermark will be displayed.
   """
 

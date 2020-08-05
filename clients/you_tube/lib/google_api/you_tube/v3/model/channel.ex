@@ -17,36 +17,24 @@
 
 defmodule GoogleApi.YouTube.V3.Model.Channel do
   @moduledoc """
-  A <code><strong>channel</strong></code> resource contains
-  information about a YouTube channel.
+  A *channel* resource contains information about a YouTube channel.
 
   ## Attributes
 
-  *   `auditDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelAuditDetails.t`, *default:* `nil`) - The <code>auditionDetails</code> object encapsulates channel data
-      that is relevant for YouTube Partners during the audition process.
-  *   `brandingSettings` (*type:* `GoogleApi.YouTube.V3.Model.ChannelBrandingSettings.t`, *default:* `nil`) - The <code>brandingSettings</code> object encapsulates information about
-      the branding of the channel.
-  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelContentDetails.t`, *default:* `nil`) - The <code>contentDetails</code> object encapsulates information about the
-      channel's content.
-  *   `contentOwnerDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails.t`, *default:* `nil`) - The <code>contentOwnerDetails</code> object encapsulates channel data
-      that is relevant for YouTube Partners linked with the channel.
-  *   `conversionPings` (*type:* `GoogleApi.YouTube.V3.Model.ChannelConversionPings.t`, *default:* `nil`) - The <code>conversionPings</code> object encapsulates information about
-      conversion pings that need to be respected by the channel.
+  *   `auditDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelAuditDetails.t`, *default:* `nil`) - The auditionDetails object encapsulates channel data that is relevant for YouTube Partners during the audition process.
+  *   `brandingSettings` (*type:* `GoogleApi.YouTube.V3.Model.ChannelBrandingSettings.t`, *default:* `nil`) - The brandingSettings object encapsulates information about the branding of the channel.
+  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelContentDetails.t`, *default:* `nil`) - The contentDetails object encapsulates information about the channel's content.
+  *   `contentOwnerDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails.t`, *default:* `nil`) - The contentOwnerDetails object encapsulates channel data that is relevant for YouTube Partners linked with the channel.
+  *   `conversionPings` (*type:* `GoogleApi.YouTube.V3.Model.ChannelConversionPings.t`, *default:* `nil`) - The conversionPings object encapsulates information about conversion pings that need to be respected by the channel.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel.
-  *   `invideoPromotion` (*type:* `GoogleApi.YouTube.V3.Model.InvideoPromotion.t`, *default:* `nil`) - The <code>invideoPromotion</code> object encapsulates information about
-      promotion campaign associated with the channel.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#channel`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"youtube#channel"</code>.
+  *   `invideoPromotion` (*type:* `GoogleApi.YouTube.V3.Model.InvideoPromotion.t`, *default:* `nil`) - The invideoPromotion object encapsulates information about promotion campaign associated with the channel.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#channel`) - Identifies what kind of resource this is. Value: the fixed string "youtube#channel".
   *   `localizations` (*type:* `%{optional(String.t) => GoogleApi.YouTube.V3.Model.ChannelLocalization.t}`, *default:* `nil`) - Localizations for different languages
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the channel,
-      such as its title, description, and thumbnail images.
-  *   `statistics` (*type:* `GoogleApi.YouTube.V3.Model.ChannelStatistics.t`, *default:* `nil`) - The <code>statistics</code> object encapsulates statistics for the channel.
-  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.ChannelStatus.t`, *default:* `nil`) - The <code>status</code> object encapsulates information about the privacy
-      status of the channel.
-  *   `topicDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelTopicDetails.t`, *default:* `nil`) - The <code>topicDetails</code> object encapsulates information about
-      <a href="http://www.freebase.com">Freebase</a> topics associated with the
-      channel.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the channel, such as its title, description, and thumbnail images.
+  *   `statistics` (*type:* `GoogleApi.YouTube.V3.Model.ChannelStatistics.t`, *default:* `nil`) - The statistics object encapsulates statistics for the channel.
+  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.ChannelStatus.t`, *default:* `nil`) - The status object encapsulates information about the privacy status of the channel.
+  *   `topicDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelTopicDetails.t`, *default:* `nil`) - The topicDetails object encapsulates information about Freebase topics associated with the channel.
   """
 
   use GoogleApi.Gax.ModelBase

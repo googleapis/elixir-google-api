@@ -21,10 +21,8 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelCard do
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - External channel ID.
-      Required.
-  *   `customMessage` (*type:* `String.t`, *default:* `nil`) - Each card can have a custom message.
-      Required.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - External channel ID. Required.
+  *   `customMessage` (*type:* `String.t`, *default:* `nil`) - Each card can have a custom message. Required.
   """
 
   use GoogleApi.Gax.ModelBase

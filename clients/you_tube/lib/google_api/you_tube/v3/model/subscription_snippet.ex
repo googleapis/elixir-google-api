@@ -17,22 +17,16 @@
 
 defmodule GoogleApi.YouTube.V3.Model.SubscriptionSnippet do
   @moduledoc """
-  Basic details about a subscription, including title, description and
-  thumbnails of the subscribed item.
+  Basic details about a subscription, including title, description and thumbnails of the subscribed item.
 
   ## Attributes
 
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the subscriber's channel.
   *   `channelTitle` (*type:* `String.t`, *default:* `nil`) - Channel title for the channel that the subscription belongs to.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The subscription's details.
-  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the subscription was created. The value is
-      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
-      format.
-  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>id</code> object contains information about the channel that
-      the user subscribed to.
-  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the video. For each object
-      in the map, the key is the name of the thumbnail image, and the value
-      is an object that contains other information about the thumbnail.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the subscription was created. The value is specified in ISO 8601 format.
+  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The id object contains information about the channel that the user subscribed to.
+  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the video. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The subscription's title.
   """
 

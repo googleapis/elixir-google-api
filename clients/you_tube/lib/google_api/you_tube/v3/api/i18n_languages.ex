@@ -31,9 +31,7 @@ defmodule GoogleApi.YouTube.V3.Api.I18nLanguages do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
-      <code>i18nLanguage</code> resource properties that the API response will
-      include. Set the parameter value to <code>snippet</code>.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the i18nLanguage resource properties that the API response will include. Set the parameter value to snippet.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

@@ -21,12 +21,9 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistCard do
 
   ## Attributes
 
-  *   `customMessage` (*type:* `String.t`, *default:* `nil`) - Each card can have a custom message.
-      Optional.
-  *   `playlistId` (*type:* `String.t`, *default:* `nil`) - External playlist ID.
-      Required.
-  *   `startVideoId` (*type:* `String.t`, *default:* `nil`) - Starting video, if not the first.
-      Optional.
+  *   `customMessage` (*type:* `String.t`, *default:* `nil`) - Each card can have a custom message. Optional.
+  *   `playlistId` (*type:* `String.t`, *default:* `nil`) - External playlist ID. Required.
+  *   `startVideoId` (*type:* `String.t`, *default:* `nil`) - Starting video, if not the first. Optional.
   """
 
   use GoogleApi.Gax.ModelBase

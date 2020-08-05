@@ -87,10 +87,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter identifies the properties
-      that the API response will include. Set the parameter value to
-      <code>snippet</code>. The <code>snippet</code> part has a quota cost of 2
-      units.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter identifies the properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -148,9 +145,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
-      comma-separated list of one or more <code>comment</code> resource
-      properties that the API response will include.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more comment resource properties that the API response will include.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -164,16 +159,9 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:id` (*type:* `list(String.t)`) - Returns the comments with the given IDs for One Platform.
-      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
-          maximum number of items that should be returned in the result set.
-      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
-          page in the result set that should be returned. In an API response, the
-          <code>nextPageToken</code> and <code>prevPageToken</code> properties
-          identify other pages that could be retrieved.
-      *   `:parentId` (*type:* `String.t`) - Returns replies to the specified comment.
-          Note, currently YouTube features only one level of replies (ie replies
-          to top level comments). However replies to replies may be supported in
-          the future.
+      *   `:maxResults` (*type:* `integer()`) - The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
+      *   `:pageToken` (*type:* `String.t`) - The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
+      *   `:parentId` (*type:* `String.t`) - Returns replies to the specified comment. Note, currently YouTube features only one level of replies (ie replies to top level comments). However replies to replies may be supported in the future.
       *   `:textFormat` (*type:* `String.t`) - The requested text format for the returned comments.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -220,8 +208,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   end
 
   @doc """
-  Expresses the caller's opinion that one or more comments should be flagged
-  as spam.
+  Expresses the caller's opinion that one or more comments should be flagged as spam.
 
   ## Parameters
 
@@ -283,11 +270,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
   *   `id` (*type:* `list(String.t)`) - Modifies the moderation status of the comments with the given IDs
-  *   `moderation_status` (*type:* `String.t`) - Specifies the requested moderation status. Note, comments can be in
-      statuses, which are not available through this call. For example, this
-      call does not allow to mark a comment as 'likely spam'.
-      Valid values: MODERATION_STATUS_PUBLISHED,
-      MODERATION_STATUS_HELD_FOR_REVIEW, MODERATION_STATUS_REJECTED.
+  *   `moderation_status` (*type:* `String.t`) - Specifies the requested moderation status. Note, comments can be in statuses, which are not available through this call. For example, this call does not allow to mark a comment as 'likely spam'. Valid values: MODERATION_STATUS_PUBLISHED, MODERATION_STATUS_HELD_FOR_REVIEW, MODERATION_STATUS_REJECTED.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -300,10 +283,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:banAuthor` (*type:* `boolean()`) - If set to true the author of the comment gets added to the ban list.
-          This means all future comments of the author will autmomatically be
-          rejected.
-          Only valid in combination with STATUS_REJECTED.
+      *   `:banAuthor` (*type:* `boolean()`) - If set to true the author of the comment gets added to the ban list. This means all future comments of the author will autmomatically be rejected. Only valid in combination with STATUS_REJECTED.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -360,10 +340,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter identifies the properties
-      that the API response will include. You must at least include the
-      <code>snippet</code> part in the parameter value since that part contains
-      all of the properties that the API request can update.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter identifies the properties that the API response will include. You must at least include the snippet part in the parameter value since that part contains all of the properties that the API request can update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

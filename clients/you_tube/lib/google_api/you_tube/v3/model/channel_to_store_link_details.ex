@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails do
   @moduledoc """
-  Information specific to a store on a merchandising platform linked to a
-  YouTube channel.
+  Information specific to a store on a merchandising platform linked to a YouTube channel.
 
   ## Attributes
 
