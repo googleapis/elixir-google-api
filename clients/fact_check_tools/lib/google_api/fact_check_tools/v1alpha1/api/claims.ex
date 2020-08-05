@@ -43,22 +43,12 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Api.Claims do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - The BCP-47 language code, such as "en-US" or "sr-Latn". Can be used to
-          restrict results by language, though we do not currently consider the
-          region.
-      *   `:maxAgeDays` (*type:* `integer()`) - The maximum age of the returned search results, in days.
-          Age is determined by either claim date or review date, whichever is newer.
-      *   `:offset` (*type:* `integer()`) - An integer that specifies the current offset (that is, starting result
-          location) in search results. This field is only considered if `page_token`
-          is unset. For example, 0 means to return results starting from the first
-          matching result, and 10 means to return from the 11th result.
-      *   `:pageSize` (*type:* `integer()`) - The pagination size. We will return up to that many results. Defaults to
-          10 if not set.
-      *   `:pageToken` (*type:* `String.t`) - The pagination token. You may provide the `next_page_token` returned from a
-          previous List request, if any, in order to get the next page. All other
-          fields must have the same values as in the previous request.
-      *   `:query` (*type:* `String.t`) - Textual query string. Required unless `review_publisher_site_filter` is
-          specified.
+      *   `:languageCode` (*type:* `String.t`) - The BCP-47 language code, such as "en-US" or "sr-Latn". Can be used to restrict results by language, though we do not currently consider the region.
+      *   `:maxAgeDays` (*type:* `integer()`) - The maximum age of the returned search results, in days. Age is determined by either claim date or review date, whichever is newer.
+      *   `:offset` (*type:* `integer()`) - An integer that specifies the current offset (that is, starting result location) in search results. This field is only considered if `page_token` is unset. For example, 0 means to return results starting from the first matching result, and 10 means to return from the 11th result.
+      *   `:pageSize` (*type:* `integer()`) - The pagination size. We will return up to that many results. Defaults to 10 if not set.
+      *   `:pageToken` (*type:* `String.t`) - The pagination token. You may provide the `next_page_token` returned from a previous List request, if any, in order to get the next page. All other fields must have the same values as in the previous request.
+      *   `:query` (*type:* `String.t`) - Textual query string. Required unless `review_publisher_site_filter` is specified.
       *   `:reviewPublisherSiteFilter` (*type:* `String.t`) - The review publisher site to filter results by, e.g. nytimes.com.
   *   `opts` (*type:* `keyword()`) - Call options
 

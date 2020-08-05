@@ -21,19 +21,12 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
 
   ## Attributes
 
-  *   `bestRating` (*type:* `integer()`, *default:* `nil`) - For numeric ratings, the best value possible in the scale from worst to
-      best.<br>
-      Corresponds to `ClaimReview.reviewRating.bestRating`.
+  *   `bestRating` (*type:* `integer()`, *default:* `nil`) - For numeric ratings, the best value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.bestRating`.
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - Corresponds to `ClaimReview.reviewRating.image`.
   *   `ratingExplanation` (*type:* `String.t`, *default:* `nil`) - Corresponds to `ClaimReview.reviewRating.ratingExplanation`.
-  *   `ratingValue` (*type:* `integer()`, *default:* `nil`) - A numeric rating of this claim, in the range worstRating — bestRating
-      inclusive.<br>
-      Corresponds to `ClaimReview.reviewRating.ratingValue`.
-  *   `textualRating` (*type:* `String.t`, *default:* `nil`) - The truthfulness rating as a human-readible short word or phrase.<br>
-      Corresponds to `ClaimReview.reviewRating.alternateName`.
-  *   `worstRating` (*type:* `integer()`, *default:* `nil`) - For numeric ratings, the worst value possible in the scale from worst to
-      best.<br>
-      Corresponds to `ClaimReview.reviewRating.worstRating`.
+  *   `ratingValue` (*type:* `integer()`, *default:* `nil`) - A numeric rating of this claim, in the range worstRating — bestRating inclusive. Corresponds to `ClaimReview.reviewRating.ratingValue`.
+  *   `textualRating` (*type:* `String.t`, *default:* `nil`) - The truthfulness rating as a human-readible short word or phrase. Corresponds to `ClaimReview.reviewRating.alternateName`.
+  *   `worstRating` (*type:* `integer()`, *default:* `nil`) - For numeric ratings, the worst value possible in the scale from worst to best. Corresponds to `ClaimReview.reviewRating.worstRating`.
   """
 
   use GoogleApi.Gax.ModelBase
