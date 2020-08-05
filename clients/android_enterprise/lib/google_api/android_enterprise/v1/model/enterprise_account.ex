@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount do
   @moduledoc """
-  A service account that can be used to authenticate as the enterprise to
-  API calls that require such authentication.
+  A service account that can be used to authenticate as the enterprise to API calls that require such authentication.
 
   ## Attributes
 

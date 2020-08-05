@@ -26,15 +26,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenseusers do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the IDs of the users who have been granted entitlements
-  under the license.
+  Retrieves the IDs of the users who have been granted entitlements under the license.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
-  *   `group_license_id` (*type:* `String.t`) - The ID of the product the group license is for, e.g.
-      "app:com.google.android.gm".
+  *   `group_license_id` (*type:* `String.t`) - The ID of the product the group license is for, e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

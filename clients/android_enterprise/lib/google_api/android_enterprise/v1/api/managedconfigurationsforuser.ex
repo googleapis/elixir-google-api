@@ -33,8 +33,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
-  *   `managed_configuration_for_user_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g.
-      "app:com.google.android.gm".
+  *   `managed_configuration_for_user_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -105,16 +104,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
   end
 
   @doc """
-  Retrieves details of a per-user managed configuration for an app for the
-  specified user.
+  Retrieves details of a per-user managed configuration for an app for the specified user.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
-  *   `managed_configuration_for_user_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g.
-      "app:com.google.android.gm".
+  *   `managed_configuration_for_user_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -190,8 +187,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
   end
 
   @doc """
-  Lists all the per-user managed configurations for the specified user. Only
-  the ID is set.
+  Lists all the per-user managed configurations for the specified user. Only the ID is set.
 
   ## Parameters
 
@@ -270,25 +266,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsforuser do
   end
 
   @doc """
-  Adds or updates the managed configuration settings for an app for the
-  specified user.
-  If you support the <a
-  href="https://developers.google.com/android/work/play/emm-api/managed-configurations-iframe">Managed
-  configurations iframe</a>,
-  you can apply managed configurations to a user by specifying an
-  <code>mcmId</code>
-  and its associated configuration variables (if any) in the request.
-  Alternatively,
-  all EMMs can apply managed configurations by passing a list of managed
-  properties.
+  Adds or updates the managed configuration settings for an app for the specified user. If you support the Managed configurations iframe, you can apply managed configurations to a user by specifying an mcmId and its associated configuration variables (if any) in the request. Alternatively, all EMMs can apply managed configurations by passing a list of managed properties.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
-  *   `managed_configuration_for_user_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g.
-      "app:com.google.android.gm".
+  *   `managed_configuration_for_user_id` (*type:* `String.t`) - The ID of the managed configuration (a product ID), e.g. "app:com.google.android.gm".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

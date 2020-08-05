@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AppUpdateEvent do
   @moduledoc """
-  An event generated when a new version of an app is uploaded to Google Play.
-  Notifications are sent for new public versions only: alpha, beta, or canary
-  versions do not generate this event. To fetch up-to-date version history for
-  an app, use Products.Get on the EMM API.
+  An event generated when a new version of an app is uploaded to Google Play. Notifications are sent for new public versions only: alpha, beta, or canary versions do not generate this event. To fetch up-to-date version history for an app, use Products.Get on the EMM API.
 
   ## Attributes
 
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") that was updated.
-      This field will always be present.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") that was updated. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

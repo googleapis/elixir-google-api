@@ -17,25 +17,15 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.KeyedAppState do
   @moduledoc """
-  Represents a keyed app state containing a key, timestamp, severity level,
-  optional description, and optional data.
+  Represents a keyed app state containing a key, timestamp, severity level, optional description, and optional data.
 
   ## Attributes
 
-  *   `data` (*type:* `String.t`, *default:* `nil`) - Additional field intended for machine-readable data. For example, a number
-      or JSON object. To prevent XSS, we recommend removing any HTML from the
-      data before displaying it.
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Key indicating what the app is providing a state for. The content of the
-      key is set by the app's developer. To prevent XSS, we recommend removing
-      any HTML from the key before displaying it.
-      This field will always be present.
-  *   `message` (*type:* `String.t`, *default:* `nil`) - Free-form, human-readable message describing the app state. For example,
-      an error message. To prevent XSS, we recommend removing any HTML from the
-      message before displaying it.
-  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of the app state.
-      This field will always be present.
-  *   `stateTimestampMillis` (*type:* `String.t`, *default:* `nil`) - Timestamp of when the app set the state in milliseconds since epoch.
-      This field will always be present.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - Additional field intended for machine-readable data. For example, a number or JSON object. To prevent XSS, we recommend removing any HTML from the data before displaying it.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Key indicating what the app is providing a state for. The content of the key is set by the app's developer. To prevent XSS, we recommend removing any HTML from the key before displaying it. This field will always be present.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Free-form, human-readable message describing the app state. For example, an error message. To prevent XSS, we recommend removing any HTML from the message before displaying it.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of the app state. This field will always be present.
+  *   `stateTimestampMillis` (*type:* `String.t`, *default:* `nil`) - Timestamp of when the app set the state in milliseconds since epoch. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -96,13 +96,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Generates an authentication token which the device policy client can use to
-  provision the given EMM-managed user account on a device.
-  The generated token is single-use and expires after a few minutes.
-
-  You can provision a maximum of 10 devices per user.
-
-  This call only works with EMM-managed accounts.
+  Generates an authentication token which the device policy client can use to provision the given EMM-managed user account on a device. The generated token is single-use and expires after a few minutes. You can provision a maximum of 10 devices per user. This call only works with EMM-managed accounts.
 
   ## Parameters
 
@@ -329,14 +323,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Creates a new EMM-managed user.
-
-  The <a href="/android/work/play/emm-api/v1/users.html">Users</a> resource
-  passed in the body of the request should include an
-  <code>accountIdentifier</code> and an <code>accountType</code>.
-  <p>If a corresponding user already exists with the same account identifier,
-  the user will be updated with the resource. In this case only the
-  <code>displayName</code> field can be changed.
+  Creates a new EMM-managed user. The Users resource passed in the body of the request should include an accountIdentifier and an accountType. If a corresponding user already exists with the same account identifier, the user will be updated with the resource. In this case only the displayName field can be changed.
 
   ## Parameters
 
@@ -397,10 +384,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Looks up a user by primary email address.
-  This is only supported for Google-managed users.  Lookup of the id is not
-  needed for EMM-managed users because the id is already returned in the
-  result of the Users.insert call.
+  Looks up a user by primary email address. This is only supported for Google-managed users. Lookup of the id is not needed for EMM-managed users because the id is already returned in the result of the Users.insert call.
 
   ## Parameters
 
@@ -475,11 +459,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Revokes access to all devices currently provisioned to the user. The user
-  will no longer be able to use the managed Play store on any of their
-  managed devices.
-
-  This call only works with EMM-managed accounts.
+  Revokes access to all devices currently provisioned to the user. The user will no longer be able to use the managed Play store on any of their managed devices. This call only works with EMM-managed accounts.
 
   ## Parameters
 
@@ -552,11 +532,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Modifies the set of products that a user is entitled to access (referred to
-  as <em>whitelisted</em> products). Only products that are
-  <a href="/android/work/play/emm-api/v1/products/approve">approved</a>
-  or products that were previously approved (products with revoked approval)
-  can be whitelisted.
+  Modifies the set of products that a user is entitled to access (referred to as *whitelisted* products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted.
 
   ## Parameters
 
@@ -634,14 +610,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Updates the details of an EMM-managed user.
-
-  Can be used with EMM-managed users only (not Google managed users).
-  Pass the new details in the
-  <a href="/android/work/play/emm-api/v1/users.html">Users</a>
-  resource in the request body. Only the <code>displayName</code> field
-  can be changed. Other fields must either be unset or have the
-  currently active value.
+  Updates the details of an EMM-managed user. Can be used with EMM-managed users only (not Google managed users). Pass the new details in the Users resource in the request body. Only the displayName field can be changed. Other fields must either be unset or have the currently active value.
 
   ## Parameters
 

@@ -21,10 +21,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent do
 
   ## Attributes
 
-  *   `approved` (*type:* `String.t`, *default:* `nil`) - Whether the product was approved or unapproved.
-      This field will always be present.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") for which the
-      approval status has changed. This field will always be present.
+  *   `approved` (*type:* `String.t`, *default:* `nil`) - Whether the product was approved or unapproved. This field will always be present.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") for which the approval status has changed. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

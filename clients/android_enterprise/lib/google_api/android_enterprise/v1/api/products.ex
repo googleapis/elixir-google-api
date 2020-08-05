@@ -26,13 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  <p>Approves the specified product and the relevant app permissions, if any.
-  The maximum number of products that you can approve per enterprise customer
-  is 1,000.</p>
-  <p>To learn how to use managed Google Play to design and create a store
-  layout to display approved products to your users,
-  see <a href="/android/work/play/emm-api/store-layout">Store Layout
-  Design</a>.</p>
+   Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. 
 
   ## Parameters
 
@@ -107,16 +101,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
   end
 
   @doc """
-  Generates a URL that can be rendered in an iframe to display the
-  permissions (if any) of a product. An enterprise admin must view these
-  permissions and accept them on behalf of their organization in order to
-  approve that product. <br><br>
-  Admins should accept the displayed permissions by
-  interacting with a separate UI element in the EMM console, which in turn
-  should trigger the use of this URL as the
-  <code>approvalUrlInfo.approvalUrl</code> property in a
-  <code>Products.approve</code> call to approve the product.
-  This URL can only be used to display permissions for up to 1 day.
+  Generates a URL that can be rendered in an iframe to display the permissions (if any) of a product. An enterprise admin must view these permissions and accept them on behalf of their organization in order to approve that product. Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day.
 
   ## Parameters
 
@@ -135,8 +120,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - The BCP 47 language code used for permission names and descriptions in
-          the returned iframe, for instance "en-US".
+      *   `:languageCode` (*type:* `String.t`) - The BCP 47 language code used for permission names and descriptions in the returned iframe, for instance "en-US".
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -273,14 +257,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
   end
 
   @doc """
-  Retrieves the schema that defines the configurable properties for this
-  product. All products have a schema, but this schema may be empty if no
-  managed configurations have been defined. This schema can be used to
-  populate a UI that allows an admin to configure the product.
-  To apply a managed configuration based on the schema obtained using this
-  API, see
-  <a href="/android/work/play/emm-api/managed-configurations">Managed
-  Configurations through Play</a>.
+  Retrieves the schema that defines the configurable properties for this product. All products have a schema, but this schema may be empty if no managed configurations have been defined. This schema can be used to populate a UI that allows an admin to configure the product. To apply a managed configuration based on the schema obtained using this API, see Managed Configurations through Play.
 
   ## Parameters
 
@@ -438,8 +415,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
   end
 
   @doc """
-  Finds approved products that match a query, or all approved products
-  if there is no query.
+  Finds approved products that match a query, or all approved products if there is no query.
 
   ## Parameters
 
@@ -457,21 +433,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:approved` (*type:* `boolean()`) - Specifies whether to search among all products (false) or among
-          only products that have been approved (true). Only "true" is
-          supported, and should be specified.
-      *   `:language` (*type:* `String.t`) - The BCP47 tag for the user's preferred language (e.g. "en-US", "de").
-          Results are returned in the language best matching the preferred
-          language.
-      *   `:maxResults` (*type:* `integer()`) - Defines how many results the list operation should return.
-          The default number depends on the resource collection.
-      *   `:query` (*type:* `String.t`) - The search query as typed in the Google Play store search box.
-          If omitted, all approved apps will be returned (using the pagination
-          parameters), including apps that are not available in the store
-          (e.g. unpublished apps).
-      *   `:token` (*type:* `String.t`) - Defines the token of the page to return, usually taken from
-          TokenPagination.
-          This can only be used if token paging is enabled.
+      *   `:approved` (*type:* `boolean()`) - Specifies whether to search among all products (false) or among only products that have been approved (true). Only "true" is supported, and should be specified.
+      *   `:language` (*type:* `String.t`) - The BCP47 tag for the user's preferred language (e.g. "en-US", "de"). Results are returned in the language best matching the preferred language.
+      *   `:maxResults` (*type:* `integer()`) - Defines how many results the list operation should return. The default number depends on the resource collection.
+      *   `:query` (*type:* `String.t`) - The search query as typed in the Google Play store search box. If omitted, all approved apps will be returned (using the pagination parameters), including apps that are not available in the store (e.g. unpublished apps).
+      *   `:token` (*type:* `String.t`) - Defines the token of the page to return, usually taken from TokenPagination. This can only be used if token paging is enabled.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

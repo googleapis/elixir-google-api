@@ -17,14 +17,7 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
   @moduledoc """
-  A Products resource represents an app in the Google Play store that is
-  available to at least some users in the enterprise. (Some apps are restricted
-  to a single enterprise, and no information about them is made available
-  outside that enterprise.)
-
-  The information provided for each product (localized name, icon, link
-  to the full Google Play details page) is intended to allow a basic
-  representation of the product within an EMM user interface.
+  A Products resource represents an app in the Google Play store that is available to at least some users in the enterprise. (Some apps are restricted to a single enterprise, and no information about them is made available outside that enterprise.) The information provided for each product (localized name, icon, link to the full Google Play details page) is intended to allow a basic representation of the product within an EMM user interface.
 
   ## Attributes
 
@@ -32,40 +25,26 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
   *   `appVersion` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppVersion.t)`, *default:* `nil`) - App versions currently available for this product.
   *   `authorName` (*type:* `String.t`, *default:* `nil`) - The name of the author of the product (for example, the app developer).
   *   `availableCountries` (*type:* `list(String.t)`, *default:* `nil`) - The countries which this app is available in.
-  *   `availableTracks` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated, use <code>appTracks</code> instead.
+  *   `availableTracks` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated, use appTracks instead.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The app category (e.g. RACING, SOCIAL, etc.)
   *   `contentRating` (*type:* `String.t`, *default:* `nil`) - The content rating for this app.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The localized promotional description, if available.
   *   `detailsUrl` (*type:* `String.t`, *default:* `nil`) - A link to the (consumer) Google Play details page for the product.
-  *   `distributionChannel` (*type:* `String.t`, *default:* `nil`) - How and to whom the package is made available.
-      The value <code>publicGoogleHosted</code> means that the package is
-      available through the Play store and not restricted to a specific
-      enterprise. The value <code>privateGoogleHosted</code> means that the
-      package is a private app (restricted to an enterprise) but hosted by
-      Google. The value <code>privateSelfHosted</code> means that the package is
-      a private app (restricted to an enterprise) and is privately hosted.
+  *   `distributionChannel` (*type:* `String.t`, *default:* `nil`) - How and to whom the package is made available. The value publicGoogleHosted means that the package is available through the Play store and not restricted to a specific enterprise. The value privateGoogleHosted means that the package is a private app (restricted to an enterprise) but hosted by Google. The value privateSelfHosted means that the package is a private app (restricted to an enterprise) and is privately hosted.
   *   `features` (*type:* `list(String.t)`, *default:* `nil`) - Noteworthy features (if any) of this product.
-  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - A link to an image that can be used as an icon for the product.
-      This image is suitable for use at up to 512px x 512px.
-  *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The approximate time (within 7 days) the app was last published, expressed
-      in milliseconds since epoch.
+  *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - A link to an image that can be used as an icon for the product. This image is suitable for use at up to 512px x 512px.
+  *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The approximate time (within 7 days) the app was last published, expressed in milliseconds since epoch.
   *   `minAndroidSdkVersion` (*type:* `integer()`, *default:* `nil`) - The minimum Android SDK necessary to run the app.
   *   `permissions` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ProductPermission.t)`, *default:* `nil`) - A list of permissions required by the app.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - A string of the form <code><em>app:&lt;package name&gt;</em></code>. For
-      example, <code>app:com.google.android.gm</code> represents the Gmail app.
-  *   `productPricing` (*type:* `String.t`, *default:* `nil`) - Whether this product is free, free with in-app purchases, or paid.
-      If the pricing is unknown, this means the product is not generally
-      available anymore (even though it might still be available to
-      people who own it).
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - A string of the form *app:<package name>*. For example, app:com.google.android.gm represents the Gmail app.
+  *   `productPricing` (*type:* `String.t`, *default:* `nil`) - Whether this product is free, free with in-app purchases, or paid. If the pricing is unknown, this means the product is not generally available anymore (even though it might still be available to people who own it).
   *   `recentChanges` (*type:* `String.t`, *default:* `nil`) - A description of the recent changes made to the app.
   *   `requiresContainerApp` (*type:* `boolean()`, *default:* `nil`) - Deprecated.
   *   `screenshotUrls` (*type:* `list(String.t)`, *default:* `nil`) - A list of screenshot links representing the app.
   *   `signingCertificate` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ProductSigningCertificate.t`, *default:* `nil`) - The certificate used to sign this product.
-  *   `smallIconUrl` (*type:* `String.t`, *default:* `nil`) - A link to a smaller image that can be used as an icon for the product.
-      This image is suitable for use at up to 128px x 128px.
+  *   `smallIconUrl` (*type:* `String.t`, *default:* `nil`) - A link to a smaller image that can be used as an icon for the product. This image is suitable for use at up to 128px x 128px.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The name of the product.
-  *   `workDetailsUrl` (*type:* `String.t`, *default:* `nil`) - A link to the managed Google Play details page for the product,
-      for use by an Enterprise admin.
+  *   `workDetailsUrl` (*type:* `String.t`, *default:* `nil`) - A link to the managed Google Play details page for the product, for use by an Enterprise admin.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo do
 
   ## Attributes
 
-  *   `approvalUrl` (*type:* `String.t`, *default:* `nil`) - A URL that displays a product's permissions and that can also be used to
-      approve the product with the <code>Products.approve</code> call.
+  *   `approvalUrl` (*type:* `String.t`, *default:* `nil`) - A URL that displays a product's permissions and that can also be used to approve the product with the Products.approve call.
   """
 
   use GoogleApi.Gax.ModelBase

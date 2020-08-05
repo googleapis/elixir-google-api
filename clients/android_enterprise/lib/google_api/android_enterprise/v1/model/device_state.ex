@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.DeviceState do
   @moduledoc """
-  The state of a user's device, as accessed by the getState and setState
-  methods on device resources.
+  The state of a user's device, as accessed by the getState and setState methods on device resources.
 
   ## Attributes
 
-  *   `accountState` (*type:* `String.t`, *default:* `nil`) - The state of the Google account on the device. "enabled" indicates that
-      the Google account on the device can be used to access Google services
-      (including Google Play), while "disabled" means that it cannot.
-      A new device is initially in the "disabled" state.
+  *   `accountState` (*type:* `String.t`, *default:* `nil`) - The state of the Google account on the device. "enabled" indicates that the Google account on the device can be used to access Google services (including Google Play), while "disabled" means that it cannot. A new device is initially in the "disabled" state.
   """
 
   use GoogleApi.Gax.ModelBase

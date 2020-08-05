@@ -26,10 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Removes and invalidates the specified credentials for the service account
-  associated with this enterprise. The calling service account must have been
-  retrieved by calling Enterprises.GetServiceAccount and must have been set
-  as the enterprise service account by calling Enterprises.SetAccount.
+  Removes and invalidates the specified credentials for the service account associated with this enterprise. The calling service account must have been retrieved by calling Enterprises.GetServiceAccount and must have been set as the enterprise service account by calling Enterprises.SetAccount.
 
   ## Parameters
 
@@ -102,12 +99,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
   end
 
   @doc """
-  Generates new credentials for the service account associated with this
-  enterprise. The calling service account must have been retrieved by calling
-  Enterprises.GetServiceAccount and must have been set as the enterprise
-  service account by calling Enterprises.SetAccount. <br><br>
-  Only the type of the key should be populated in the resource to be
-  inserted.
+  Generates new credentials for the service account associated with this enterprise. The calling service account must have been retrieved by calling Enterprises.GetServiceAccount and must have been set as the enterprise service account by calling Enterprises.SetAccount. Only the type of the key should be populated in the resource to be inserted.
 
   ## Parameters
 
@@ -180,11 +172,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
   end
 
   @doc """
-  Lists all active credentials for the service account associated with this
-  enterprise. Only the ID and key type are returned. The calling service
-  account must have been retrieved by calling Enterprises.GetServiceAccount
-  and must have been set as the enterprise service account by calling
-  Enterprises.SetAccount.
+  Lists all active credentials for the service account associated with this enterprise. Only the ID and key type are returned. The calling service account must have been retrieved by calling Enterprises.GetServiceAccount and must have been set as the enterprise service account by calling Enterprises.SetAccount.
 
   ## Parameters
 

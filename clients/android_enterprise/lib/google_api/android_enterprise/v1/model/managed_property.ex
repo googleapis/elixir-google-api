@@ -17,26 +17,17 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty do
   @moduledoc """
-  A managed property of a managed configuration. The property must match one of
-  the properties in the app restrictions schema of the product. Exactly one of
-  the value fields must be populated, and it must match the property's type in
-  the app restrictions schema.
+  A managed property of a managed configuration. The property must match one of the properties in the app restrictions schema of the product. Exactly one of the value fields must be populated, and it must match the property's type in the app restrictions schema.
 
   ## Attributes
 
   *   `key` (*type:* `String.t`, *default:* `nil`) - The unique key that identifies the property.
-  *   `valueBool` (*type:* `boolean()`, *default:* `nil`) - The boolean value - this will only be present if type of the property is
-      bool.
-  *   `valueBundle` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle.t`, *default:* `nil`) - The bundle of managed properties - this will only be present if type of the
-      property is bundle.
-  *   `valueBundleArray` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle.t)`, *default:* `nil`) - The list of bundles of properties - this will only be present if type of
-      the property is bundle_array.
-  *   `valueInteger` (*type:* `integer()`, *default:* `nil`) - The integer value - this will only be present if type of the property is
-      integer.
-  *   `valueString` (*type:* `String.t`, *default:* `nil`) - The string value - this will only be present if type of the property is
-      string, choice or hidden.
-  *   `valueStringArray` (*type:* `list(String.t)`, *default:* `nil`) - The list of string values - this will only be present if type of the
-      property is multiselect.
+  *   `valueBool` (*type:* `boolean()`, *default:* `nil`) - The boolean value - this will only be present if type of the property is bool.
+  *   `valueBundle` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle.t`, *default:* `nil`) - The bundle of managed properties - this will only be present if type of the property is bundle.
+  *   `valueBundleArray` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedPropertyBundle.t)`, *default:* `nil`) - The list of bundles of properties - this will only be present if type of the property is bundle_array.
+  *   `valueInteger` (*type:* `integer()`, *default:* `nil`) - The integer value - this will only be present if type of the property is integer.
+  *   `valueString` (*type:* `String.t`, *default:* `nil`) - The string value - this will only be present if type of the property is string, choice or hidden.
+  *   `valueStringArray` (*type:* `list(String.t)`, *default:* `nil`) - The list of string values - this will only be present if type of the property is multiselect.
   """
 
   use GoogleApi.Gax.ModelBase

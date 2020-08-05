@@ -21,9 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.InstallsListResponse do
 
   ## Attributes
 
-  *   `install` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Install.t)`, *default:* `nil`) - An installation of an app for a user on a specific device.
-      The existence of an install implies that the user must have an
-      entitlement to the app.
+  *   `install` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Install.t)`, *default:* `nil`) - An installation of an app for a user on a specific device. The existence of an install implies that the user must have an entitlement to the app.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySear
 
   ## Attributes
 
-  *   `approveApps` (*type:* `boolean()`, *default:* `nil`) - Allow access to the iframe in <a
-      href="https://developers.google.com/android/work/play/emm-api/managed-play-iframe#render">approve
-      mode</a>. Default is false.
+  *   `approveApps` (*type:* `boolean()`, *default:* `nil`) - Allow access to the iframe in approve mode. Default is false.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the managed Play Search apps page is displayed. Default is true.
   """
 

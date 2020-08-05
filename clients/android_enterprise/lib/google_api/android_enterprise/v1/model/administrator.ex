@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.Administrator do
   @moduledoc """
-  This represents an enterprise admin who can manage the enterprise
-  in the managed Google Play store.
+  This represents an enterprise admin who can manage the enterprise in the managed Google Play store.
 
   ## Attributes
 

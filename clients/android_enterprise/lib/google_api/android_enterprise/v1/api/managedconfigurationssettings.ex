@@ -32,8 +32,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationssettings do
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
-  *   `product_id` (*type:* `String.t`) - The ID of the product for which the managed configurations settings applies
-      to.
+  *   `product_id` (*type:* `String.t`) - The ID of the product for which the managed configurations settings applies to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

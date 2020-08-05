@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.PageInfo do
   @moduledoc """
-  Information about the current page.
-
-  List operations that supports paging return only one "page" of results. This
-  protocol buffer message describes the page that has been returned.
+  Information about the current page. List operations that supports paging return only one "page" of results. This protocol buffer message describes the page that has been returned.
 
   ## Attributes
 
-  *   `resultPerPage` (*type:* `integer()`, *default:* `nil`) - Maximum number of results returned in one page.
-      ! The number of results included in the API response.
+  *   `resultPerPage` (*type:* `integer()`, *default:* `nil`) - Maximum number of results returned in one page. ! The number of results included in the API response.
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - Index of the first result returned in the current page.
-  *   `totalResults` (*type:* `integer()`, *default:* `nil`) - Total number of results available on the backend
-      ! The total number of results in the result set.
+  *   `totalResults` (*type:* `integer()`, *default:* `nil`) - Total number of results available on the backend ! The total number of results in the result set.
   """
 
   use GoogleApi.Gax.ModelBase

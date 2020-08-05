@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint do
   @moduledoc """
-  The auto-install constraint. Defines a set of restrictions for installation.
-  At least one of the fields must be set.
+  The auto-install constraint. Defines a set of restrictions for installation. At least one of the fields must be set.
 
   ## Attributes
 

@@ -22,8 +22,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductsListResponse do
   ## Attributes
 
   *   `pageInfo` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.PageInfo.t`, *default:* `nil`) - General pagination information.
-  *   `product` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Product.t)`, *default:* `nil`) - Information about a product (e.g. an app) in the Google Play store, for
-      display to an enterprise admin.
+  *   `product` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Product.t)`, *default:* `nil`) - Information about a product (e.g. an app) in the Google Play store, for display to an enterprise admin.
   *   `tokenPagination` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.TokenPagination.t`, *default:* `nil`) - Pagination information for token pagination.
   """
 
