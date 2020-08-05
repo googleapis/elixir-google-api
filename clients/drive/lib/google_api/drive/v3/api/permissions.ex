@@ -227,6 +227,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of permissions to return per page. When not set for files in a shared drive, at most 100 results will be returned. When not set for files that are not in a shared drive, the entire list will be returned.
       *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
@@ -252,6 +253,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :includePermissionsForView => :query,
       :pageSize => :query,
       :pageToken => :query,
       :supportsAllDrives => :query,

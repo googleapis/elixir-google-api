@@ -99,6 +99,7 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       *   `:driveId` (*type:* `String.t`) - The shared drive from which changes are returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
       *   `:includeCorpusRemovals` (*type:* `boolean()`) - Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
       *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Whether both My Drive and shared drive items should be included in results.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:includeRemoved` (*type:* `boolean()`) - Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
       *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated use includeItemsFromAllDrives instead.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of changes to return per page.
@@ -128,6 +129,7 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       :driveId => :query,
       :includeCorpusRemovals => :query,
       :includeItemsFromAllDrives => :query,
+      :includePermissionsForView => :query,
       :includeRemoved => :query,
       :includeTeamDriveItems => :query,
       :pageSize => :query,
@@ -169,6 +171,7 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       *   `:driveId` (*type:* `String.t`) - The shared drive from which changes are returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
       *   `:includeCorpusRemovals` (*type:* `boolean()`) - Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
       *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Whether both My Drive and shared drive items should be included in results.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:includeRemoved` (*type:* `boolean()`) - Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
       *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated use includeItemsFromAllDrives instead.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of changes to return per page.
@@ -199,6 +202,7 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       :driveId => :query,
       :includeCorpusRemovals => :query,
       :includeItemsFromAllDrives => :query,
+      :includePermissionsForView => :query,
       :includeRemoved => :query,
       :includeTeamDriveItems => :query,
       :pageSize => :query,

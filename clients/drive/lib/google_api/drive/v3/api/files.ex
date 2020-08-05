@@ -42,6 +42,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
@@ -67,6 +68,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :userIp => :query,
       :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
+      :includePermissionsForView => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :supportsAllDrives => :query,
@@ -104,6 +106,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
@@ -130,6 +133,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :userIp => :query,
       :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
+      :includePermissionsForView => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :supportsAllDrives => :query,
@@ -169,6 +173,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
@@ -207,6 +212,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :userIp => :query,
       :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
+      :includePermissionsForView => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :supportsAllDrives => :query,
@@ -246,6 +252,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
@@ -272,6 +279,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :userIp => :query,
       :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
+      :includePermissionsForView => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :supportsAllDrives => :query,
@@ -312,6 +320,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
@@ -350,6 +359,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :userIp => :query,
       :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
+      :includePermissionsForView => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :supportsAllDrives => :query,
@@ -595,6 +605,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:acknowledgeAbuse` (*type:* `boolean()`) - Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when alt=media.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -621,6 +632,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :quotaUser => :query,
       :userIp => :query,
       :acknowledgeAbuse => :query,
+      :includePermissionsForView => :query,
       :supportsAllDrives => :query,
       :supportsTeamDrives => :query
     }
@@ -657,6 +669,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:corpus` (*type:* `String.t`) - The source of files to list. Deprecated: use 'corpora' instead.
       *   `:driveId` (*type:* `String.t`) - ID of the shared drive to search.
       *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Whether both My Drive and shared drive items should be included in results.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated use includeItemsFromAllDrives instead.
       *   `:orderBy` (*type:* `String.t`) - A comma-separated list of sort keys. Valid keys are 'createdTime', 'folder', 'modifiedByMeTime', 'modifiedTime', 'name', 'name_natural', 'quotaBytesUsed', 'recency', 'sharedWithMeTime', 'starred', and 'viewedByMeTime'. Each key sorts ascending by default, but may be reversed with the 'desc' modifier. Example usage: ?orderBy=folder,modifiedTime desc,name. Please note that there is a current limitation for users with approximately one million files in which the requested sort order is ignored.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of files to return per page. Partial or empty result pages are possible even before the end of the files list has been reached.
@@ -688,6 +701,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :corpus => :query,
       :driveId => :query,
       :includeItemsFromAllDrives => :query,
+      :includePermissionsForView => :query,
       :includeTeamDriveItems => :query,
       :orderBy => :query,
       :pageSize => :query,
@@ -728,6 +742,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
       *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. If the item's owner makes a request to add a single parent, the item is removed from all current folders and placed in the requested folder. Other requests that increase the number of parents fail, except when the canAddMyDriveParent file capability is true and a single parent is being added.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
@@ -755,6 +770,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :userIp => :query,
       :addParents => :query,
       :enforceSingleParent => :query,
+      :includePermissionsForView => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :removeParents => :query,
@@ -798,6 +814,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
       *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. If the item's owner makes a request to add a single parent, the item is removed from all current folders and placed in the requested folder. Other requests that increase the number of parents fail, except when the canAddMyDriveParent file capability is true and a single parent is being added.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
@@ -839,6 +856,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :userIp => :query,
       :addParents => :query,
       :enforceSingleParent => :query,
+      :includePermissionsForView => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :removeParents => :query,
@@ -882,6 +900,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
       *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. If the item's owner makes a request to add a single parent, the item is removed from all current folders and placed in the requested folder. Other requests that increase the number of parents fail, except when the canAddMyDriveParent file capability is true and a single parent is being added.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
@@ -920,6 +939,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :userIp => :query,
       :addParents => :query,
       :enforceSingleParent => :query,
+      :includePermissionsForView => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :removeParents => :query,
@@ -964,6 +984,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
       *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. If the item's owner makes a request to add a single parent, the item is removed from all current folders and placed in the requested folder. Other requests that increase the number of parents fail, except when the canAddMyDriveParent file capability is true and a single parent is being added.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
@@ -1005,6 +1026,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :userIp => :query,
       :addParents => :query,
       :enforceSingleParent => :query,
+      :includePermissionsForView => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :removeParents => :query,
@@ -1046,6 +1068,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:acknowledgeAbuse` (*type:* `boolean()`) - Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when alt=media.
+      *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
       *   `:resource` (*type:* `GoogleApi.Drive.V3.Model.Channel.t`) - 
@@ -1073,6 +1096,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :quotaUser => :query,
       :userIp => :query,
       :acknowledgeAbuse => :query,
+      :includePermissionsForView => :query,
       :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
       :resource => :body
