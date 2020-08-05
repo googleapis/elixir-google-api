@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Genomics.V1.Model.ComputeEngine do
   @moduledoc """
-  Describes a Compute Engine resource that is being managed by a running
-  pipeline.
+  Describes a Compute Engine resource that is being managed by a running pipeline.
 
   ## Attributes
 

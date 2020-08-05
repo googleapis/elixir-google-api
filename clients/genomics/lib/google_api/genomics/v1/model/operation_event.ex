@@ -22,8 +22,7 @@ defmodule GoogleApi.Genomics.V1.Model.OperationEvent do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Required description of event.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional time of when event finished. An event can have a start time and no
-      finish time. If an event has a finish time, there must be a start time.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional time of when event finished. An event can have a start time and no finish time. If an event has a finish time, there must be a start time.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional time of when event started.
   """
 

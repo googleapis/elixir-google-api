@@ -22,13 +22,8 @@ defmodule GoogleApi.Genomics.V1.Model.ContainerStartedEvent do
   ## Attributes
 
   *   `actionId` (*type:* `integer()`, *default:* `nil`) - The numeric ID of the action that started this container.
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The public IP address that can be used to connect to the container. This
-      field is only populated when at least one port mapping is present. If the
-      instance was created with a private address, this field will be empty even
-      if port mappings exist.
-  *   `portMappings` (*type:* `map()`, *default:* `nil`) - The container-to-host port mappings installed for this container. This
-      set will contain any ports exposed using the `PUBLISH_EXPOSED_PORTS` flag
-      as well as any specified in the `Action` definition.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The public IP address that can be used to connect to the container. This field is only populated when at least one port mapping is present. If the instance was created with a private address, this field will be empty even if port mappings exist.
+  *   `portMappings` (*type:* `map()`, *default:* `nil`) - The container-to-host port mappings installed for this container. This set will contain any ports exposed using the `PUBLISH_EXPOSED_PORTS` flag as well as any specified in the `Action` definition.
   """
 
   use GoogleApi.Gax.ModelBase

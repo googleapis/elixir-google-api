@@ -21,9 +21,7 @@ defmodule GoogleApi.Genomics.V1.Model.Event do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A human-readable description of the event. Note that these strings can
-      change at any time without notice. Any application logic must use the
-      information in the `details` field.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A human-readable description of the event. Note that these strings can change at any time without notice. Any application logic must use the information in the `details` field.
   *   `details` (*type:* `map()`, *default:* `nil`) - Machine-readable details about the event.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the event occurred.
   """

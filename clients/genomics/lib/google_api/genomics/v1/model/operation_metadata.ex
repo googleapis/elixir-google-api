@@ -21,19 +21,13 @@ defmodule GoogleApi.Genomics.V1.Model.OperationMetadata do
 
   ## Attributes
 
-  *   `clientId` (*type:* `String.t`, *default:* `nil`) - This field is deprecated. Use `labels` instead. Optionally provided by the
-      caller when submitting the request that creates the operation.
+  *   `clientId` (*type:* `String.t`, *default:* `nil`) - This field is deprecated. Use `labels` instead. Optionally provided by the caller when submitting the request that creates the operation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the job was submitted to the Genomics service.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the job stopped running.
-  *   `events` (*type:* `list(GoogleApi.Genomics.V1.Model.OperationEvent.t)`, *default:* `nil`) - Optional event messages that were generated during the job's execution.
-      This also contains any warnings that were generated during import
-      or export.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optionally provided by the caller when submitting the request that creates
-      the operation.
+  *   `events` (*type:* `list(GoogleApi.Genomics.V1.Model.OperationEvent.t)`, *default:* `nil`) - Optional event messages that were generated during the job's execution. This also contains any warnings that were generated during import or export.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optionally provided by the caller when submitting the request that creates the operation.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Project in which the job is scoped.
-  *   `request` (*type:* `map()`, *default:* `nil`) - The original request that started the operation. Note that this will be in
-      current version of the API. If the operation was started with v1beta2 API
-      and a GetOperation is performed on v1 API, a v1 request will be returned.
+  *   `request` (*type:* `map()`, *default:* `nil`) - The original request that started the operation. Note that this will be in current version of the API. If the operation was started with v1beta2 API and a GetOperation is performed on v1 API, a v1 request will be returned.
   *   `runtimeMetadata` (*type:* `map()`, *default:* `nil`) - Runtime metadata on this Operation.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the job began to run.
   """

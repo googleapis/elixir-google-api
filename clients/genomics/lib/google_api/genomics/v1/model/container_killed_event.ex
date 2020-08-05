@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Genomics.V1.Model.ContainerKilledEvent do
   @moduledoc """
-  An event generated when a container is forcibly terminated by the
-  worker. Currently, this only occurs when the container outlives the
-  timeout specified by the user.
+  An event generated when a container is forcibly terminated by the worker. Currently, this only occurs when the container outlives the timeout specified by the user.
 
   ## Attributes
 
