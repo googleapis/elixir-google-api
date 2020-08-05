@@ -21,8 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Notificat
 
   ## Attributes
 
-  *   `finding` (*type:* `GoogleApi.SecurityCenter.V1.Model.Finding.t`, *default:* `nil`) - If it's a Finding based notification config, this field will be
-      populated.
+  *   `finding` (*type:* `GoogleApi.SecurityCenter.V1.Model.Finding.t`, *default:* `nil`) - If it's a Finding based notification config, this field will be populated.
   *   `notificationConfigName` (*type:* `String.t`, *default:* `nil`) - Name of the notification config that generated current notification.
   *   `resource` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Resource.t`, *default:* `nil`) - The Cloud resource tied to this notification's Finding.
   """

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1TemporalAsset do
   @moduledoc """
-  Wrapper over asset object that also captures the state change for the asset
-  e.g. if it was a newly created asset vs updated or deleted asset.
+  Wrapper over asset object that also captures the state change for the asset e.g. if it was a newly created asset vs updated or deleted asset.
 
   ## Attributes
 

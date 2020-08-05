@@ -21,8 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ListSourcesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
-      results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results.
   *   `sources` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Source.t)`, *default:* `nil`) - Sources belonging to the requested parent.
   """
 

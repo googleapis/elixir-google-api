@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.IamPolicy do
   @moduledoc """
-  Cloud IAM Policy information associated with the Google Cloud resource
-  described by the Security Command Center asset. This information is managed
-  and defined by the Google Cloud resource and cannot be modified by the
-  user.
+  Cloud IAM Policy information associated with the Google Cloud resource described by the Security Command Center asset. This information is managed and defined by the Google Cloud resource and cannot be modified by the user.
 
   ## Attributes
 
-  *   `policyBlob` (*type:* `String.t`, *default:* `nil`) - The JSON representation of the Policy associated with the asset.
-      See https://cloud.google.com/iam/reference/rest/v1/Policy for format
-      details.
+  *   `policyBlob` (*type:* `String.t`, *default:* `nil`) - The JSON representation of the Policy associated with the asset. See https://cloud.google.com/iam/reference/rest/v1/Policy for format details.
   """
 
   use GoogleApi.Gax.ModelBase
