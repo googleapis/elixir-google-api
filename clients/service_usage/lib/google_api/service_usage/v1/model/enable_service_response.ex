@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.ServiceUsage.V1.Model.EnableServiceResponse do
   @moduledoc """
-  Response message for the `EnableService` method.
-  This response message is assigned to the `response` field of the returned
-  Operation when that operation is done.
+  Response message for the `EnableService` method. This response message is assigned to the `response` field of the returned Operation when that operation is done.
 
   ## Attributes
 

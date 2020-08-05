@@ -21,17 +21,11 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig d
 
   ## Attributes
 
-  *   `apis` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Api.t)`, *default:* `nil`) - A list of API interfaces exported by this service. Contains only the names,
-      versions, and method names of the interfaces.
+  *   `apis` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Api.t)`, *default:* `nil`) - A list of API interfaces exported by this service. Contains only the names, versions, and method names of the interfaces.
   *   `authentication` (*type:* `GoogleApi.ServiceUsage.V1.Model.Authentication.t`, *default:* `nil`) - Auth configuration. Contains only the OAuth rules.
-  *   `documentation` (*type:* `GoogleApi.ServiceUsage.V1.Model.Documentation.t`, *default:* `nil`) - Additional API documentation. Contains only the summary and the
-      documentation URL.
-  *   `endpoints` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Endpoint.t)`, *default:* `nil`) - Configuration for network endpoints. Contains only the names and aliases
-      of the endpoints.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The DNS address at which this service is available.
-
-      An example DNS address would be:
-      `calendar.googleapis.com`.
+  *   `documentation` (*type:* `GoogleApi.ServiceUsage.V1.Model.Documentation.t`, *default:* `nil`) - Additional API documentation. Contains only the summary and the documentation URL.
+  *   `endpoints` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Endpoint.t)`, *default:* `nil`) - Configuration for network endpoints. Contains only the names and aliases of the endpoints.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The DNS address at which this service is available. An example DNS address would be: `calendar.googleapis.com`.
   *   `quota` (*type:* `GoogleApi.ServiceUsage.V1.Model.Quota.t`, *default:* `nil`) - Quota configuration.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The product title for this service.
   *   `usage` (*type:* `GoogleApi.ServiceUsage.V1.Model.Usage.t`, *default:* `nil`) - Configuration controlling usage of this service.

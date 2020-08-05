@@ -17,20 +17,12 @@
 
 defmodule GoogleApi.ServiceUsage.V1.Model.SystemParameterRule do
   @moduledoc """
-  Define a system parameter rule mapping system parameter definitions to
-  methods.
+  Define a system parameter rule mapping system parameter definitions to methods.
 
   ## Attributes
 
-  *   `parameters` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.SystemParameter.t)`, *default:* `nil`) - Define parameters. Multiple names may be defined for a parameter.
-      For a given method call, only one of them should be used. If multiple
-      names are used the behavior is implementation-dependent.
-      If none of the specified names are present the behavior is
-      parameter-dependent.
-  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies. Use '*' to indicate all
-      methods in all APIs.
-
-      Refer to selector for syntax details.
+  *   `parameters` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.SystemParameter.t)`, *default:* `nil`) - Define parameters. Multiple names may be defined for a parameter. For a given method call, only one of them should be used. If multiple names are used the behavior is implementation-dependent. If none of the specified names are present the behavior is parameter-dependent.
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies. Use '*' to indicate all methods in all APIs. Refer to selector for syntax details.
   """
 
   use GoogleApi.Gax.ModelBase

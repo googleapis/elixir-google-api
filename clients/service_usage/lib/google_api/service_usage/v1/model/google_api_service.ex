@@ -17,92 +17,36 @@
 
 defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiService do
   @moduledoc """
-  `Service` is the root object of Google service configuration schema. It
-  describes basic information about a service, such as the name and the
-  title, and delegates other aspects to sub-sections. Each sub-section is
-  either a proto message or a repeated proto message that configures a
-  specific aspect, such as auth. See each proto message definition for details.
-
-  Example:
-
-      type: google.api.Service
-      config_version: 3
-      name: calendar.googleapis.com
-      title: Google Calendar API
-      apis:
-      - name: google.calendar.v3.Calendar
-      authentication:
-        providers:
-        - id: google_calendar_auth
-          jwks_uri: https://www.googleapis.com/oauth2/v1/certs
-          issuer: https://securetoken.google.com
-        rules:
-        - selector: "*"
-          requirements:
-            provider_id: google_calendar_auth
+  `Service` is the root object of Google service configuration schema. It describes basic information about a service, such as the name and the title, and delegates other aspects to sub-sections. Each sub-section is either a proto message or a repeated proto message that configures a specific aspect, such as auth. See each proto message definition for details. Example: type: google.api.Service config_version: 3 name: calendar.googleapis.com title: Google Calendar API apis: - name: google.calendar.v3.Calendar authentication: providers: - id: google_calendar_auth jwks_uri: https://www.googleapis.com/oauth2/v1/certs issuer: https://securetoken.google.com rules: - selector: "*" requirements: provider_id: google_calendar_auth
 
   ## Attributes
 
-  *   `apis` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Api.t)`, *default:* `nil`) - A list of API interfaces exported by this service. Only the `name` field
-      of the google.protobuf.Api needs to be provided by the configuration
-      author, as the remaining fields will be derived from the IDL during the
-      normalization process. It is an error to specify an API interface here
-      which cannot be resolved against the associated IDL files.
+  *   `apis` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Api.t)`, *default:* `nil`) - A list of API interfaces exported by this service. Only the `name` field of the google.protobuf.Api needs to be provided by the configuration author, as the remaining fields will be derived from the IDL during the normalization process. It is an error to specify an API interface here which cannot be resolved against the associated IDL files.
   *   `authentication` (*type:* `GoogleApi.ServiceUsage.V1.Model.Authentication.t`, *default:* `nil`) - Auth configuration.
   *   `backend` (*type:* `GoogleApi.ServiceUsage.V1.Model.Backend.t`, *default:* `nil`) - API backend configuration.
   *   `billing` (*type:* `GoogleApi.ServiceUsage.V1.Model.Billing.t`, *default:* `nil`) - Billing configuration.
-  *   `configVersion` (*type:* `integer()`, *default:* `nil`) - The semantic version of the service configuration. The config version
-      affects the interpretation of the service configuration. For example,
-      certain features are enabled by default for certain config versions.
-
-      The latest config version is `3`.
+  *   `configVersion` (*type:* `integer()`, *default:* `nil`) - The semantic version of the service configuration. The config version affects the interpretation of the service configuration. For example, certain features are enabled by default for certain config versions. The latest config version is `3`.
   *   `context` (*type:* `GoogleApi.ServiceUsage.V1.Model.Context.t`, *default:* `nil`) - Context configuration.
   *   `control` (*type:* `GoogleApi.ServiceUsage.V1.Model.Control.t`, *default:* `nil`) - Configuration for the service control plane.
   *   `customError` (*type:* `GoogleApi.ServiceUsage.V1.Model.CustomError.t`, *default:* `nil`) - Custom error configuration.
   *   `documentation` (*type:* `GoogleApi.ServiceUsage.V1.Model.Documentation.t`, *default:* `nil`) - Additional API documentation.
-  *   `endpoints` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Endpoint.t)`, *default:* `nil`) - Configuration for network endpoints.  If this is empty, then an endpoint
-      with the same name as the service is automatically generated to service all
-      defined APIs.
-  *   `enums` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Enum.t)`, *default:* `nil`) - A list of all enum types included in this API service.  Enums
-      referenced directly or indirectly by the `apis` are automatically
-      included.  Enums which are not referenced but shall be included
-      should be listed here by name. Example:
-
-          enums:
-          - name: google.someapi.v1.SomeEnum
+  *   `endpoints` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Endpoint.t)`, *default:* `nil`) - Configuration for network endpoints. If this is empty, then an endpoint with the same name as the service is automatically generated to service all defined APIs.
+  *   `enums` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Enum.t)`, *default:* `nil`) - A list of all enum types included in this API service. Enums referenced directly or indirectly by the `apis` are automatically included. Enums which are not referenced but shall be included should be listed here by name. Example: enums: - name: google.someapi.v1.SomeEnum
   *   `http` (*type:* `GoogleApi.ServiceUsage.V1.Model.Http.t`, *default:* `nil`) - HTTP configuration.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - A unique ID for a specific instance of this message, typically assigned
-      by the client for tracking purpose. Must be no longer than 63 characters
-      and only lower case letters, digits, '.', '_' and '-' are allowed. If
-      empty, the server may choose to generate one instead.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. Must be no longer than 63 characters and only lower case letters, digits, '.', '_' and '-' are allowed. If empty, the server may choose to generate one instead.
   *   `logging` (*type:* `GoogleApi.ServiceUsage.V1.Model.Logging.t`, *default:* `nil`) - Logging configuration.
   *   `logs` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.LogDescriptor.t)`, *default:* `nil`) - Defines the logs used by this service.
   *   `metrics` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.MetricDescriptor.t)`, *default:* `nil`) - Defines the metrics used by this service.
-  *   `monitoredResources` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.MonitoredResourceDescriptor.t)`, *default:* `nil`) - Defines the monitored resources used by this service. This is required
-      by the Service.monitoring and Service.logging configurations.
+  *   `monitoredResources` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.MonitoredResourceDescriptor.t)`, *default:* `nil`) - Defines the monitored resources used by this service. This is required by the Service.monitoring and Service.logging configurations.
   *   `monitoring` (*type:* `GoogleApi.ServiceUsage.V1.Model.Monitoring.t`, *default:* `nil`) - Monitoring configuration.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The service name, which is a DNS-like logical identifier for the
-      service, such as `calendar.googleapis.com`. The service name
-      typically goes through DNS verification to make sure the owner
-      of the service also owns the DNS name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The service name, which is a DNS-like logical identifier for the service, such as `calendar.googleapis.com`. The service name typically goes through DNS verification to make sure the owner of the service also owns the DNS name.
   *   `producerProjectId` (*type:* `String.t`, *default:* `nil`) - The Google project that owns this service.
   *   `quota` (*type:* `GoogleApi.ServiceUsage.V1.Model.Quota.t`, *default:* `nil`) - Quota configuration.
   *   `sourceInfo` (*type:* `GoogleApi.ServiceUsage.V1.Model.SourceInfo.t`, *default:* `nil`) - Output only. The source information for this configuration if available.
   *   `systemParameters` (*type:* `GoogleApi.ServiceUsage.V1.Model.SystemParameters.t`, *default:* `nil`) - System parameter configuration.
-  *   `systemTypes` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Type.t)`, *default:* `nil`) - A list of all proto message types included in this API service.
-      It serves similar purpose as [google.api.Service.types], except that
-      these types are not needed by user-defined APIs. Therefore, they will not
-      show up in the generated discovery doc. This field should only be used
-      to define system APIs in ESF.
+  *   `systemTypes` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Type.t)`, *default:* `nil`) - A list of all proto message types included in this API service. It serves similar purpose as [google.api.Service.types], except that these types are not needed by user-defined APIs. Therefore, they will not show up in the generated discovery doc. This field should only be used to define system APIs in ESF.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The product title for this service.
-  *   `types` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Type.t)`, *default:* `nil`) - A list of all proto message types included in this API service.
-      Types referenced directly or indirectly by the `apis` are
-      automatically included.  Messages which are not referenced but
-      shall be included, such as types used by the `google.protobuf.Any` type,
-      should be listed here by name. Example:
-
-          types:
-          - name: google.protobuf.Int32
+  *   `types` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Type.t)`, *default:* `nil`) - A list of all proto message types included in this API service. Types referenced directly or indirectly by the `apis` are automatically included. Messages which are not referenced but shall be included, such as types used by the `google.protobuf.Any` type, should be listed here by name. Example: types: - name: google.protobuf.Int32
   *   `usage` (*type:* `GoogleApi.ServiceUsage.V1.Model.Usage.t`, *default:* `nil`) - Configuration controlling usage of this service.
   """
 

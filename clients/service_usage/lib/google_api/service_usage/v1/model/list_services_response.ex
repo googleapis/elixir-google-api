@@ -21,8 +21,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.ListServicesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token that can be passed to `ListServices` to resume a paginated
-      query.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token that can be passed to `ListServices` to resume a paginated query.
   *   `services` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t)`, *default:* `nil`) - The available services for the requested project.
   """
 

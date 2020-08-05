@@ -21,18 +21,9 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service do
 
   ## Attributes
 
-  *   `config` (*type:* `GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig.t`, *default:* `nil`) - The service configuration of the available service.
-      Some fields may be filtered out of the configuration in responses to
-      the `ListServices` method. These fields are present only in responses to
-      the `GetService` method.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the consumer and service.
-
-      A valid name would be:
-      - projects/123/services/serviceusage.googleapis.com
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - The resource name of the consumer.
-
-      A valid name would be:
-      - projects/123
+  *   `config` (*type:* `GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig.t`, *default:* `nil`) - The service configuration of the available service. Some fields may be filtered out of the configuration in responses to the `ListServices` method. These fields are present only in responses to the `GetService` method.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the consumer and service. A valid name would be: - projects/123/services/serviceusage.googleapis.com
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - The resource name of the consumer. A valid name would be: - projects/123
   *   `state` (*type:* `String.t`, *default:* `nil`) - Whether or not the service has been enabled for use by the consumer.
   """
 

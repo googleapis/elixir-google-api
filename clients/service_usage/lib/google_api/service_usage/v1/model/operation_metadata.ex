@@ -21,8 +21,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.OperationMetadata do
 
   ## Attributes
 
-  *   `resourceNames` (*type:* `list(String.t)`, *default:* `nil`) - The full name of the resources that this operation is directly
-      associated with.
+  *   `resourceNames` (*type:* `list(String.t)`, *default:* `nil`) - The full name of the resources that this operation is directly associated with.
   """
 
   use GoogleApi.Gax.ModelBase

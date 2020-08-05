@@ -21,20 +21,9 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Usage do
 
   ## Attributes
 
-  *   `producerNotificationChannel` (*type:* `String.t`, *default:* `nil`) - The full resource name of a channel used for sending notifications to the
-      service producer.
-
-      Google Service Management currently only supports
-      [Google Cloud Pub/Sub](https://cloud.google.com/pubsub) as a notification
-      channel. To use Google Cloud Pub/Sub as the channel, this must be the name
-      of a Cloud Pub/Sub topic that uses the Cloud Pub/Sub topic name format
-      documented in https://cloud.google.com/pubsub/docs/overview.
-  *   `requirements` (*type:* `list(String.t)`, *default:* `nil`) - Requirements that must be satisfied before a consumer project can use the
-      service. Each requirement is of the form <service.name>/<requirement-id>;
-      for example 'serviceusage.googleapis.com/billing-enabled'.
-  *   `rules` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.UsageRule.t)`, *default:* `nil`) - A list of usage rules that apply to individual API methods.
-
-      **NOTE:** All service configuration rules follow "last one wins" order.
+  *   `producerNotificationChannel` (*type:* `String.t`, *default:* `nil`) - The full resource name of a channel used for sending notifications to the service producer. Google Service Management currently only supports [Google Cloud Pub/Sub](https://cloud.google.com/pubsub) as a notification channel. To use Google Cloud Pub/Sub as the channel, this must be the name of a Cloud Pub/Sub topic that uses the Cloud Pub/Sub topic name format documented in https://cloud.google.com/pubsub/docs/overview.
+  *   `requirements` (*type:* `list(String.t)`, *default:* `nil`) - Requirements that must be satisfied before a consumer project can use the service. Each requirement is of the form /; for example 'serviceusage.googleapis.com/billing-enabled'.
+  *   `rules` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.UsageRule.t)`, *default:* `nil`) - A list of usage rules that apply to individual API methods. **NOTE:** All service configuration rules follow "last one wins" order.
   *   `serviceIdentity` (*type:* `GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceIdentity.t`, *default:* `nil`) - The configuration of a per-product per-project service identity.
   """
 
