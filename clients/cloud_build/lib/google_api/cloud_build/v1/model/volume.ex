@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.Volume do
   @moduledoc """
-  Volume describes a Docker container volume which is mounted into build steps
-  in order to persist files across build step execution.
+  Volume describes a Docker container volume which is mounted into build steps in order to persist files across build step execution.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the volume to mount.
-
-      Volume names must be unique per build step and must be valid names for
-      Docker volumes. Each named volume must be used by at least two build steps.
-  *   `path` (*type:* `String.t`, *default:* `nil`) - Path at which to mount the volume.
-
-      Paths must be absolute and cannot conflict with other volume paths on the
-      same build step or with certain reserved volume paths.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the volume to mount. Volume names must be unique per build step and must be valid names for Docker volumes. Each named volume must be used by at least two build steps.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Path at which to mount the volume. Paths must be absolute and cannot conflict with other volume paths on the same build step or with certain reserved volume paths.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.SlackDelivery do
   @moduledoc """
-  SlackDelivery is the delivery configuration for delivering Slack messages via
-  webhooks. See Slack webhook documentation at:
-  https://api.slack.com/messaging/webhooks.
+  SlackDelivery is the delivery configuration for delivering Slack messages via webhooks. See Slack webhook documentation at: https://api.slack.com/messaging/webhooks.
 
   ## Attributes
 
-  *   `webhookUri` (*type:* `GoogleApi.CloudBuild.V1.Model.NotifierSecretRef.t`, *default:* `nil`) - The secret reference for the Slack webhook URI for sending messages to a
-      channel.
+  *   `webhookUri` (*type:* `GoogleApi.CloudBuild.V1.Model.NotifierSecretRef.t`, *default:* `nil`) - The secret reference for the Slack webhook URI for sending messages to a channel.
   """
 
   use GoogleApi.Gax.ModelBase

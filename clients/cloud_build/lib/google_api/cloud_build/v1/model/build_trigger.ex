@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   @moduledoc """
-  Configuration for an automated build in response to source repository
-  changes.
+  Configuration for an automated build in response to source repository changes.
 
   ## Attributes
 
@@ -26,47 +25,15 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the trigger was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human-readable description of this trigger.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, the trigger will never automatically execute a build.
-  *   `filename` (*type:* `String.t`, *default:* `nil`) - Path, from the source root, to a file whose contents is used for the
-      template.
-  *   `github` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig.t`, *default:* `nil`) - GitHubEventsConfig describes the configuration of a trigger that creates
-      a build whenever a GitHub event is received.
-
-      Mutually exclusive with `trigger_template`.
+  *   `filename` (*type:* `String.t`, *default:* `nil`) - Path, from the source root, to a file whose contents is used for the template.
+  *   `github` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig.t`, *default:* `nil`) - GitHubEventsConfig describes the configuration of a trigger that creates a build whenever a GitHub event is received. Mutually exclusive with `trigger_template`.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the trigger.
-  *   `ignoredFiles` (*type:* `list(String.t)`, *default:* `nil`) - ignored_files and included_files are file glob matches using
-      https://golang.org/pkg/path/filepath/#Match extended with support for "**".
-
-      If ignored_files and changed files are both empty, then they are
-      not used to determine whether or not to trigger a build.
-
-      If ignored_files is not empty, then we ignore any files that match
-      any of the ignored_file globs. If the change has no files that are
-      outside of the ignored_files globs, then we do not trigger a build.
-  *   `includedFiles` (*type:* `list(String.t)`, *default:* `nil`) - If any of the files altered in the commit pass the ignored_files
-      filter and included_files is empty, then as far as this filter is
-      concerned, we should trigger the build.
-
-      If any of the files altered in the commit pass the ignored_files
-      filter and included_files is not empty, then we make sure that at
-      least one of those files matches a included_files glob. If not,
-      then we do not trigger a build.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - User-assigned name of the trigger. Must be unique within the project.
-      Trigger names must meet the following requirements:
-
-      + They must contain only alphanumeric characters and dashes.
-      + They can be 1-64 characters long.
-      + They must begin and end with an alphanumeric character.
-  *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions for Build resource. The keys must match the following
-      regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
-      keys in bindings.
+  *   `ignoredFiles` (*type:* `list(String.t)`, *default:* `nil`) - ignored_files and included_files are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with support for "**". If ignored_files and changed files are both empty, then they are not used to determine whether or not to trigger a build. If ignored_files is not empty, then we ignore any files that match any of the ignored_file globs. If the change has no files that are outside of the ignored_files globs, then we do not trigger a build.
+  *   `includedFiles` (*type:* `list(String.t)`, *default:* `nil`) - If any of the files altered in the commit pass the ignored_files filter and included_files is empty, then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the ignored_files filter and included_files is not empty, then we make sure that at least one of those files matches a included_files glob. If not, then we do not trigger a build.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - User-assigned name of the trigger. Must be unique within the project. Trigger names must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character.
+  *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions for Build resource. The keys must match the following regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the keys in bindings.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for annotation of a `BuildTrigger`
-  *   `triggerTemplate` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - Template describing the types of source changes to trigger a build.
-
-      Branch and tag names in trigger templates are interpreted as regular
-      expressions. Any branch or tag change that matches that regular expression
-      will trigger a build.
-
-      Mutually exclusive with `github`.
+  *   `triggerTemplate` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - Template describing the types of source changes to trigger a build. Branch and tag names in trigger templates are interpreted as regular expressions. Any branch or tag change that matches that regular expression will trigger a build. Mutually exclusive with `github`.
   """
 
   use GoogleApi.Gax.ModelBase

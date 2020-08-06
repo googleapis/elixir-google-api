@@ -21,15 +21,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.StorageSource do
 
   ## Attributes
 
-  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket containing the source (see
-      [Bucket Name
-      Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
-  *   `generation` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage generation for the object. If the generation is
-      omitted, the latest generation will be used.
-  *   `object` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage object containing the source.
-
-      This object must be a gzipped archive file (`.tar.gz`) containing source to
-      build.
+  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket containing the source (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
+  *   `generation` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage generation for the object. If the generation is omitted, the latest generation will be used.
+  *   `object` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage object containing the source. This object must be a gzipped archive file (`.tar.gz`) containing source to build.
   """
 
   use GoogleApi.Gax.ModelBase

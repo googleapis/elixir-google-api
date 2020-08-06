@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Source do
 
   ## Attributes
 
-  *   `repoSource` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source
-      Repository.
+  *   `repoSource` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source Repository.
   *   `storageSource` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Google Cloud Storage.
   """
 

@@ -99,11 +99,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Starts a build with the specified configuration.
-
-  This method returns a long-running `Operation`, which includes the build
-  ID. Pass the build ID to `GetBuild` to determine the build status (such as
-  `SUCCESS` or `FAILURE`).
+  Starts a build with the specified configuration. This method returns a long-running `Operation`, which includes the build ID. Pass the build ID to `GetBuild` to determine the build status (such as `SUCCESS` or `FAILURE`).
 
   ## Parameters
 
@@ -164,10 +160,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Returns information about a previously requested build.
-
-  The `Build` that is returned includes its status (such as `SUCCESS`,
-  `FAILURE`, or `WORKING`), and timing information.
+  Returns information about a previously requested build. The `Build` that is returned includes its status (such as `SUCCESS`, `FAILURE`, or `WORKING`), and timing information.
 
   ## Parameters
 
@@ -238,10 +231,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Lists previously requested builds.
-
-  Previously requested builds may still be in-progress, or may have finished
-  successfully or unsuccessfully.
+  Lists previously requested builds. Previously requested builds may still be in-progress, or may have finished successfully or unsuccessfully.
 
   ## Parameters
 
@@ -306,33 +296,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Creates a new build based on the specified build.
-
-  This method creates a new build using the original build request, which may
-  or may not result in an identical build.
-
-  For triggered builds:
-
-  * Triggered builds resolve to a precise revision; therefore a retry of a
-  triggered build will result in a build that uses the same revision.
-
-  For non-triggered builds that specify `RepoSource`:
-
-  * If the original build built from the tip of a branch, the retried build
-  will build from the tip of that branch, which may not be the same revision
-  as the original build.
-  * If the original build specified a commit sha or revision ID, the retried
-  build will use the identical source.
-
-  For builds that specify `StorageSource`:
-
-  * If the original build pulled source from Google Cloud Storage without
-  specifying the generation of the object, the new build will use the current
-  object, which may be different from the original build source.
-  * If the original build pulled source from Cloud Storage and specified the
-  generation of the object, the new build will attempt to use the same
-  object, which may or may not be available depending on the bucket's
-  lifecycle management settings.
+  Creates a new build based on the specified build. This method creates a new build using the original build request, which may or may not result in an identical build. For triggered builds: * Triggered builds resolve to a precise revision; therefore a retry of a triggered build will result in a build that uses the same revision. For non-triggered builds that specify `RepoSource`: * If the original build built from the tip of a branch, the retried build will build from the tip of that branch, which may not be the same revision as the original build. * If the original build specified a commit sha or revision ID, the retried build will use the identical source. For builds that specify `StorageSource`: * If the original build pulled source from Google Cloud Storage without specifying the generation of the object, the new build will use the current object, which may be different from the original build source. * If the original build pulled source from Cloud Storage and specified the generation of the object, the new build will attempt to use the same object, which may or may not be available depending on the bucket's lifecycle management settings.
 
   ## Parameters
 
@@ -407,16 +371,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -496,9 +451,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -578,9 +531,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Creates a new `BuildTrigger`.
-
-  This API is experimental.
+  Creates a new `BuildTrigger`. This API is experimental.
 
   ## Parameters
 
@@ -646,9 +597,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a `BuildTrigger` by its project ID and trigger ID.
-
-  This API is experimental.
+  Deletes a `BuildTrigger` by its project ID and trigger ID. This API is experimental.
 
   ## Parameters
 
@@ -719,9 +668,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Returns information about a `BuildTrigger`.
-
-  This API is experimental.
+  Returns information about a `BuildTrigger`. This API is experimental.
 
   ## Parameters
 
@@ -794,9 +741,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Lists existing `BuildTrigger`s.
-
-  This API is experimental.
+  Lists existing `BuildTrigger`s. This API is experimental.
 
   ## Parameters
 
@@ -861,9 +806,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   end
 
   @doc """
-  Updates a `BuildTrigger` by its project ID and trigger ID.
-
-  This API is experimental.
+  Updates a `BuildTrigger` by its project ID and trigger ID. This API is experimental.
 
   ## Parameters
 

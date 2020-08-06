@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.ArtifactObjects do
   @moduledoc """
-  Files in the workspace to upload to Cloud Storage upon successful
-  completion of all build steps.
+  Files in the workspace to upload to Cloud Storage upon successful completion of all build steps.
 
   ## Attributes
 
-  *   `location` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket and optional object path, in the form
-      "gs://bucket/path/to/somewhere/". (see [Bucket Name
-      Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
-
-      Files in the workspace matching any path pattern will be uploaded to
-      Cloud Storage with this location as a prefix.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket and optional object path, in the form "gs://bucket/path/to/somewhere/". (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)). Files in the workspace matching any path pattern will be uploaded to Cloud Storage with this location as a prefix.
   *   `paths` (*type:* `list(String.t)`, *default:* `nil`) - Path globs used to match files in the build's workspace.
   *   `timing` (*type:* `GoogleApi.CloudBuild.V1.Model.TimeSpan.t`, *default:* `nil`) - Output only. Stores timing information for pushing all artifact objects.
   """
