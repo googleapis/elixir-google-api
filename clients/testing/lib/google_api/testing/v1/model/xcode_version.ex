@@ -21,10 +21,8 @@ defmodule GoogleApi.Testing.V1.Model.XcodeVersion do
 
   ## Attributes
 
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this Xcode version.
-      Example: "default".
-  *   `version` (*type:* `String.t`, *default:* `nil`) - The id for this version.
-      Example: "9.2".
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this Xcode version. Example: "default".
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The id for this version. Example: "9.2".
   """
 
   use GoogleApi.Gax.ModelBase

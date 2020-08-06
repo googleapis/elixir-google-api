@@ -17,14 +17,13 @@
 
 defmodule GoogleApi.Testing.V1.Model.IntentFilter do
   @moduledoc """
-  The <intent-filter> section of an <activity> tag.
-  https://developer.android.com/guide/topics/manifest/intent-filter-element.html
+  The section of an tag. https://developer.android.com/guide/topics/manifest/intent-filter-element.html
 
   ## Attributes
 
-  *   `actionNames` (*type:* `list(String.t)`, *default:* `nil`) - The android:name value of the <action> tag.
-  *   `categoryNames` (*type:* `list(String.t)`, *default:* `nil`) - The android:name value of the <category> tag.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The android:mimeType value of the <data> tag.
+  *   `actionNames` (*type:* `list(String.t)`, *default:* `nil`) - The android:name value of the tag.
+  *   `categoryNames` (*type:* `list(String.t)`, *default:* `nil`) - The android:name value of the tag.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The android:mimeType value of the tag.
   """
 
   use GoogleApi.Gax.ModelBase

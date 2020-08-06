@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.Testing.V1.Model.UniformSharding do
   @moduledoc """
-  Uniformly shards test cases given a total number of shards.
-
-  For Instrumentation test, it will be translated to “-e numShard” “-e
-  shardIndex” AndroidJUnitRunner arguments. With uniform sharding enabled,
-  specifying these sharding arguments via environment_variables is invalid.
+  Uniformly shards test cases given a total number of shards. For Instrumentation test, it will be translated to "-e numShard" "-e shardIndex" AndroidJUnitRunner arguments. With uniform sharding enabled, specifying these sharding arguments via environment_variables is invalid.
 
   ## Attributes
 
-  *   `numShards` (*type:* `integer()`, *default:* `nil`) - Required. Total number of shards. When any physical devices are selected,
-      the number must be >= 1 and <= 50. When no physical devices are selected,
-      the number must be >= 1 and <= 250.
+  *   `numShards` (*type:* `integer()`, *default:* `nil`) - Required. Total number of shards. When any physical devices are selected, the number must be >= 1 and <= 50. When no physical devices are selected, the number must be >= 1 and <= 250.
   """
 
   use GoogleApi.Gax.ModelBase

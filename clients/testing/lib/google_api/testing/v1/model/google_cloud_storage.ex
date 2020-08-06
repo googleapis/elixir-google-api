@@ -21,10 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.GoogleCloudStorage do
 
   ## Attributes
 
-  *   `gcsPath` (*type:* `String.t`, *default:* `nil`) - Required. The path to a directory in GCS that will
-      eventually contain the results for this test.
-      The requesting user must have write access on the bucket in the supplied
-      path.
+  *   `gcsPath` (*type:* `String.t`, *default:* `nil`) - Required. The path to a directory in GCS that will eventually contain the results for this test. The requesting user must have write access on the bucket in the supplied path.
   """
 
   use GoogleApi.Gax.ModelBase

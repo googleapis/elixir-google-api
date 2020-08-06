@@ -29,11 +29,8 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
   *   `iosTestLoop` (*type:* `GoogleApi.Testing.V1.Model.IosTestLoop.t`, *default:* `nil`) - An iOS application with a test loop.
   *   `iosTestSetup` (*type:* `GoogleApi.Testing.V1.Model.IosTestSetup.t`, *default:* `nil`) - Test setup requirements for iOS.
   *   `iosXcTest` (*type:* `GoogleApi.Testing.V1.Model.IosXcTest.t`, *default:* `nil`) - An iOS XCTest, via an .xctestrun file.
-  *   `testSetup` (*type:* `GoogleApi.Testing.V1.Model.TestSetup.t`, *default:* `nil`) - Test setup requirements for Android e.g. files to install, bootstrap
-      scripts.
-  *   `testTimeout` (*type:* `String.t`, *default:* `nil`) - Max time a test execution is allowed to run before it is
-      automatically cancelled.
-      The default value is 5 min.
+  *   `testSetup` (*type:* `GoogleApi.Testing.V1.Model.TestSetup.t`, *default:* `nil`) - Test setup requirements for Android e.g. files to install, bootstrap scripts.
+  *   `testTimeout` (*type:* `String.t`, *default:* `nil`) - Max time a test execution is allowed to run before it is automatically cancelled. The default value is 5 min.
   """
 
   use GoogleApi.Gax.ModelBase

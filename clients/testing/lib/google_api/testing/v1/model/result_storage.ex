@@ -24,10 +24,7 @@ defmodule GoogleApi.Testing.V1.Model.ResultStorage do
   *   `googleCloudStorage` (*type:* `GoogleApi.Testing.V1.Model.GoogleCloudStorage.t`, *default:* `nil`) - Required.
   *   `resultsUrl` (*type:* `String.t`, *default:* `nil`) - Output only. URL to the results in the Firebase Web Console.
   *   `toolResultsExecution` (*type:* `GoogleApi.Testing.V1.Model.ToolResultsExecution.t`, *default:* `nil`) - Output only. The tool results execution that results are written to.
-  *   `toolResultsHistory` (*type:* `GoogleApi.Testing.V1.Model.ToolResultsHistory.t`, *default:* `nil`) - The tool results history that contains the tool results execution that
-      results are written to.
-
-      If not provided, the service will choose an appropriate value.
+  *   `toolResultsHistory` (*type:* `GoogleApi.Testing.V1.Model.ToolResultsHistory.t`, *default:* `nil`) - The tool results history that contains the tool results execution that results are written to. If not provided, the service will choose an appropriate value.
   """
 
   use GoogleApi.Gax.ModelBase

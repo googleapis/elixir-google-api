@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.Testing.V1.Model.IosTestLoop do
   @moduledoc """
-  A test of an iOS application that implements one or more game loop scenarios.
-  This test type accepts an archived application (.ipa file) and a list of
-  integer scenarios that will be executed on the app sequentially.
+  A test of an iOS application that implements one or more game loop scenarios. This test type accepts an archived application (.ipa file) and a list of integer scenarios that will be executed on the app sequentially.
 
   ## Attributes
 
   *   `appBundleId` (*type:* `String.t`, *default:* `nil`) - Output only. The bundle id for the application under test.
   *   `appIpa` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - Required. The .ipa of the application to test.
-  *   `scenarios` (*type:* `list(integer())`, *default:* `nil`) - The list of scenarios that should be run during the test. Defaults to the
-      single scenario 0 if unspecified.
+  *   `scenarios` (*type:* `list(integer())`, *default:* `nil`) - The list of scenarios that should be run during the test. Defaults to the single scenario 0 if unspecified.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -26,15 +26,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Cancels unfinished test executions in a test matrix.
-  This call returns immediately and cancellation proceeds asychronously.
-  If the matrix is already final, this operation will have no effect.
-
-  May return any of the following canonical error codes:
-
-  - PERMISSION_DENIED - if the user is not authorized to read project
-  - INVALID_ARGUMENT - if the request is malformed
-  - NOT_FOUND - if the Test Matrix does not exist
+  Cancels unfinished test executions in a test matrix. This call returns immediately and cancellation proceeds asynchronously. If the matrix is already final, this operation will have no effect. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the Test Matrix does not exist
 
   ## Parameters
 
@@ -107,15 +99,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
   end
 
   @doc """
-  Creates and runs a matrix of tests according to the given specifications.
-  Unsupported environments will be returned in the state UNSUPPORTED.
-  Matrices are limited to at most 200 supported executions.
-
-  May return any of the following canonical error codes:
-
-  - PERMISSION_DENIED - if the user is not authorized to write to project
-  - INVALID_ARGUMENT - if the request is malformed or if the matrix expands
-                       to more than 200 supported executions
+  Creates and runs a matrix of tests according to the given specifications. Unsupported environments will be returned in the state UNSUPPORTED. Matrices are limited to at most 200 supported executions. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed or if the matrix expands to more than 200 supported executions
 
   ## Parameters
 
@@ -133,12 +117,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:requestId` (*type:* `String.t`) - A string id used to detect duplicated requests.
-          Ids are automatically scoped to a project, so
-          users should ensure the ID is unique per-project.
-          A UUID is recommended.
-
-          Optional, but strongly recommended.
+      *   `:requestId` (*type:* `String.t`) - A string id used to detect duplicated requests. Ids are automatically scoped to a project, so users should ensure the ID is unique per-project. A UUID is recommended. Optional, but strongly recommended.
       *   `:body` (*type:* `GoogleApi.Testing.V1.Model.TestMatrix.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -193,13 +172,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
   end
 
   @doc """
-  Checks the status of a test matrix.
-
-  May return any of the following canonical error codes:
-
-  - PERMISSION_DENIED - if the user is not authorized to read project
-  - INVALID_ARGUMENT - if the request is malformed
-  - NOT_FOUND - if the Test Matrix does not exist
+  Checks the status of a test matrix. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the Test Matrix does not exist
 
   ## Parameters
 

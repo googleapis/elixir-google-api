@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Testing.V1.Model.ToolResultsExecution do
   @moduledoc """
-  Represents a tool results execution resource.
-
-  This has the results of a TestMatrix.
+  Represents a tool results execution resource. This has the results of a TestMatrix.
 
   ## Attributes
 

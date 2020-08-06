@@ -21,8 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.SystraceSetup do
 
   ## Attributes
 
-  *   `durationSeconds` (*type:* `integer()`, *default:* `nil`) - Systrace duration in seconds.
-      Should be between 1 and 30 seconds. 0 disables systrace.
+  *   `durationSeconds` (*type:* `integer()`, *default:* `nil`) - Systrace duration in seconds. Should be between 1 and 30 seconds. 0 disables systrace.
   """
 
   use GoogleApi.Gax.ModelBase

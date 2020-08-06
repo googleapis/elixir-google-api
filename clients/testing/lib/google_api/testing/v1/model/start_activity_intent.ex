@@ -21,8 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.StartActivityIntent do
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - Action name.
-      Required for START_ACTIVITY.
+  *   `action` (*type:* `String.t`, *default:* `nil`) - Action name. Required for START_ACTIVITY.
   *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Intent categories to set on the intent.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI for the action.
   """

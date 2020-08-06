@@ -17,23 +17,14 @@
 
 defmodule GoogleApi.Testing.V1.Model.AndroidMatrix do
   @moduledoc """
-  A set of Android device configuration permutations is defined by the
-  the cross-product of the given axes. Internally, the given AndroidMatrix
-  will be expanded into a set of AndroidDevices.
-
-  Only supported permutations will be instantiated.  Invalid permutations
-  (e.g., incompatible models/versions) are ignored.
+  A set of Android device configuration permutations is defined by the the cross-product of the given axes. Internally, the given AndroidMatrix will be expanded into a set of AndroidDevices. Only supported permutations will be instantiated. Invalid permutations (e.g., incompatible models/versions) are ignored.
 
   ## Attributes
 
-  *   `androidModelIds` (*type:* `list(String.t)`, *default:* `nil`) - Required. The ids of the set of Android device to be used.
-      Use the TestEnvironmentDiscoveryService to get supported options.
-  *   `androidVersionIds` (*type:* `list(String.t)`, *default:* `nil`) - Required. The ids of the set of Android OS version to be used.
-      Use the TestEnvironmentDiscoveryService to get supported options.
-  *   `locales` (*type:* `list(String.t)`, *default:* `nil`) - Required. The set of locales the test device will enable for testing.
-      Use the TestEnvironmentDiscoveryService to get supported options.
-  *   `orientations` (*type:* `list(String.t)`, *default:* `nil`) - Required. The set of orientations to test with.
-      Use the TestEnvironmentDiscoveryService to get supported options.
+  *   `androidModelIds` (*type:* `list(String.t)`, *default:* `nil`) - Required. The ids of the set of Android device to be used. Use the TestEnvironmentDiscoveryService to get supported options.
+  *   `androidVersionIds` (*type:* `list(String.t)`, *default:* `nil`) - Required. The ids of the set of Android OS version to be used. Use the TestEnvironmentDiscoveryService to get supported options.
+  *   `locales` (*type:* `list(String.t)`, *default:* `nil`) - Required. The set of locales the test device will enable for testing. Use the TestEnvironmentDiscoveryService to get supported options.
+  *   `orientations` (*type:* `list(String.t)`, *default:* `nil`) - Required. The set of orientations to test with. Use the TestEnvironmentDiscoveryService to get supported options.
   """
 
   use GoogleApi.Gax.ModelBase

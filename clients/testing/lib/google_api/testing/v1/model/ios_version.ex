@@ -21,15 +21,11 @@ defmodule GoogleApi.Testing.V1.Model.IosVersion do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque id for this iOS version.
-      Use this id to invoke the TestExecutionService.
-  *   `majorVersion` (*type:* `integer()`, *default:* `nil`) - An integer representing the major iOS version.
-      Examples: "8", "9".
-  *   `minorVersion` (*type:* `integer()`, *default:* `nil`) - An integer representing the minor iOS version.
-      Examples: "1", "2".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque id for this iOS version. Use this id to invoke the TestExecutionService.
+  *   `majorVersion` (*type:* `integer()`, *default:* `nil`) - An integer representing the major iOS version. Examples: "8", "9".
+  *   `minorVersion` (*type:* `integer()`, *default:* `nil`) - An integer representing the minor iOS version. Examples: "1", "2".
   *   `supportedXcodeVersionIds` (*type:* `list(String.t)`, *default:* `nil`) - The available Xcode versions for this version.
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension.
-      Examples: "default", "preview", "deprecated".
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension. Examples: "default", "preview", "deprecated".
   """
 
   use GoogleApi.Gax.ModelBase

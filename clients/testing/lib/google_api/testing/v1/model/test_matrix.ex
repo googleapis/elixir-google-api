@@ -17,28 +17,19 @@
 
 defmodule GoogleApi.Testing.V1.Model.TestMatrix do
   @moduledoc """
-  TestMatrix captures all details about a test. It contains the environment
-  configuration, test specification, test executions and overall state and
-  outcome.
+  TestMatrix captures all details about a test. It contains the environment configuration, test specification, test executions and overall state and outcome.
 
   ## Attributes
 
   *   `clientInfo` (*type:* `GoogleApi.Testing.V1.Model.ClientInfo.t`, *default:* `nil`) - Information about the client which invoked the test.
   *   `environmentMatrix` (*type:* `GoogleApi.Testing.V1.Model.EnvironmentMatrix.t`, *default:* `nil`) - Required. The devices the tests are being executed on.
-  *   `flakyTestAttempts` (*type:* `integer()`, *default:* `nil`) - The number of times a TestExecution should be re-attempted if one or more
-      of its test cases fail for any reason.
-      The maximum number of reruns allowed is 10.
-
-      Default is 0, which implies no reruns.
-  *   `invalidMatrixDetails` (*type:* `String.t`, *default:* `nil`) - Output only. Describes why the matrix is considered invalid.
-      Only useful for matrices in the INVALID state.
-  *   `outcomeSummary` (*type:* `String.t`, *default:* `nil`) - Output Only. The overall outcome of the test.
-      Only set when the test matrix state is FINISHED.
+  *   `flakyTestAttempts` (*type:* `integer()`, *default:* `nil`) - The number of times a TestExecution should be re-attempted if one or more of its test cases fail for any reason. The maximum number of reruns allowed is 10. Default is 0, which implies no reruns.
+  *   `invalidMatrixDetails` (*type:* `String.t`, *default:* `nil`) - Output only. Describes why the matrix is considered invalid. Only useful for matrices in the INVALID state.
+  *   `outcomeSummary` (*type:* `String.t`, *default:* `nil`) - Output Only. The overall outcome of the test. Only set when the test matrix state is FINISHED.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The cloud project that owns the test matrix.
   *   `resultStorage` (*type:* `GoogleApi.Testing.V1.Model.ResultStorage.t`, *default:* `nil`) - Required. Where the results for the matrix are written.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the current progress of the test matrix.
-  *   `testExecutions` (*type:* `list(GoogleApi.Testing.V1.Model.TestExecution.t)`, *default:* `nil`) - Output only. The list of test executions that the service creates for
-      this matrix.
+  *   `testExecutions` (*type:* `list(GoogleApi.Testing.V1.Model.TestExecution.t)`, *default:* `nil`) - Output only. The list of test executions that the service creates for this matrix.
   *   `testMatrixId` (*type:* `String.t`, *default:* `nil`) - Output only. Unique id set by the service.
   *   `testSpecification` (*type:* `GoogleApi.Testing.V1.Model.TestSpecification.t`, *default:* `nil`) - Required. How to run the test.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this test matrix was initially created.

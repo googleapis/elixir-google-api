@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.Testing.V1.Model.ManualSharding do
   @moduledoc """
-  Shards test cases into the specified groups of packages, classes, and/or
-  methods.
-
-  With manual sharding enabled, specifying test targets via
-  environment_variables or in InstrumentationTest is invalid.
+  Shards test cases into the specified groups of packages, classes, and/or methods. With manual sharding enabled, specifying test targets via environment_variables or in InstrumentationTest is invalid.
 
   ## Attributes
 
-  *   `testTargetsForShard` (*type:* `list(GoogleApi.Testing.V1.Model.TestTargetsForShard.t)`, *default:* `nil`) - Required. Group of packages, classes, and/or test methods to be run for
-      each shard. When any physical devices are selected,  the number of
-      test_targets_for_shard must be >= 1 and <= 50. When no physical devices are
-      selected, the number must be >= 1 and <= 250.
+  *   `testTargetsForShard` (*type:* `list(GoogleApi.Testing.V1.Model.TestTargetsForShard.t)`, *default:* `nil`) - Required. Group of packages, classes, and/or test methods to be run for each shard. When any physical devices are selected, the number of test_targets_for_shard must be >= 1 and <= 50. When no physical devices are selected, the number must be >= 1 and <= 250.
   """
 
   use GoogleApi.Gax.ModelBase

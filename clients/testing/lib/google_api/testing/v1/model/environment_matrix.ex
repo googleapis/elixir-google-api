@@ -21,8 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.EnvironmentMatrix do
 
   ## Attributes
 
-  *   `androidDeviceList` (*type:* `GoogleApi.Testing.V1.Model.AndroidDeviceList.t`, *default:* `nil`) - A list of Android devices; the test will be run only on the specified
-      devices.
+  *   `androidDeviceList` (*type:* `GoogleApi.Testing.V1.Model.AndroidDeviceList.t`, *default:* `nil`) - A list of Android devices; the test will be run only on the specified devices.
   *   `androidMatrix` (*type:* `GoogleApi.Testing.V1.Model.AndroidMatrix.t`, *default:* `nil`) - A matrix of Android devices.
   *   `iosDeviceList` (*type:* `GoogleApi.Testing.V1.Model.IosDeviceList.t`, *default:* `nil`) - A list of iOS devices.
   """

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Testing.V1.Model.ToolResultsStep do
   @moduledoc """
-  Represents a tool results step resource.
-
-  This has the results of a TestExecution.
+  Represents a tool results step resource. This has the results of a TestExecution.
 
   ## Attributes
 

@@ -21,10 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.IosTestSetup do
 
   ## Attributes
 
-  *   `networkProfile` (*type:* `String.t`, *default:* `nil`) - The network traffic profile used for running the test.
-      Available network profiles can be queried by using the
-      NETWORK_CONFIGURATION environment type when calling
-      TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
+  *   `networkProfile` (*type:* `String.t`, *default:* `nil`) - The network traffic profile used for running the test. Available network profiles can be queried by using the NETWORK_CONFIGURATION environment type when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
   """
 
   use GoogleApi.Gax.ModelBase

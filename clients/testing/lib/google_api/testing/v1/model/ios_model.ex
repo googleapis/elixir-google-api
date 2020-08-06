@@ -17,25 +17,19 @@
 
 defmodule GoogleApi.Testing.V1.Model.IosModel do
   @moduledoc """
-  A description of an iOS device tests may be run on.
-  Next tag: 13
+  A description of an iOS device tests may be run on. Next tag: 13
 
   ## Attributes
 
-  *   `deviceCapabilities` (*type:* `list(String.t)`, *default:* `nil`) - Device capabilities.
-      Copied from
-      https://developer.apple.com/library/archive/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html
+  *   `deviceCapabilities` (*type:* `list(String.t)`, *default:* `nil`) - Device capabilities. Copied from https://developer.apple.com/library/archive/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html
   *   `formFactor` (*type:* `String.t`, *default:* `nil`) - Whether this device is a phone, tablet, wearable, etc.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique opaque id for this model.
-      Use this for invoking the TestExecutionService.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable name for this device model.
-      Examples: "iPhone 4s", "iPad Mini 2".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique opaque id for this model. Use this for invoking the TestExecutionService.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable name for this device model. Examples: "iPhone 4s", "iPad Mini 2".
   *   `screenDensity` (*type:* `integer()`, *default:* `nil`) - Screen density in DPI.
   *   `screenX` (*type:* `integer()`, *default:* `nil`) - Screen size in the horizontal (X) dimension measured in pixels.
   *   `screenY` (*type:* `integer()`, *default:* `nil`) - Screen size in the vertical (Y) dimension measured in pixels.
   *   `supportedVersionIds` (*type:* `list(String.t)`, *default:* `nil`) - The set of iOS major software versions this device supports.
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension.
-      Examples: "default", "preview", "deprecated".
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension. Examples: "default", "preview", "deprecated".
   """
 
   use GoogleApi.Gax.ModelBase
