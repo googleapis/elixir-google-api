@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudShell.Mixfile do
   use Mix.Project
 
-  @version "0.17.0"
+  @version "0.18.0"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.CloudShell.Mixfile do
 
   defp description() do
     """
-    Cloud Shell API client library. Allows users to start, configure, and connect to interactive shell sessions running in the cloud.
-
+    Cloud Shell API client library. Allows users to start, configure, and connect to interactive shell sessions running in the cloud. 
     """
   end
 

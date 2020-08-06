@@ -2,8 +2,7 @@
 
 Cloud Shell API client library.
 
-Allows users to start, configure, and connect to interactive shell sessions running in the cloud.
-
+Allows users to start, configure, and connect to interactive shell sessions running in the cloud. 
 
 ## Installation
 
@@ -12,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_shell, "~> 0.17"}]
+  [{:google_api_cloud_shell, "~> 0.18"}]
 end
 ```
 
