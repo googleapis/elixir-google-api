@@ -22,10 +22,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1MarkR
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Required. Fingerprint of the Recommendation. Provides optimistic locking.
-  *   `stateMetadata` (*type:* `map()`, *default:* `nil`) - State properties to include with this state. Overwrites any existing
-      `state_metadata`.
-      Keys must match the regex /^a-z0-9{0,62}$/.
-      Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+  *   `stateMetadata` (*type:* `map()`, *default:* `nil`) - State properties to include with this state. Overwrites any existing `state_metadata`. Keys must match the regex /^a-z0-9{0,62}$/. Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
   """
 
   use GoogleApi.Gax.ModelBase

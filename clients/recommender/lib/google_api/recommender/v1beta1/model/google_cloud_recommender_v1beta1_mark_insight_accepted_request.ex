@@ -22,8 +22,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1MarkI
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Required. Fingerprint of the Insight. Provides optimistic locking.
-  *   `stateMetadata` (*type:* `map()`, *default:* `nil`) - Optional. State properties user wish to include with this state.  Full replace of the
-      current state_metadata.
+  *   `stateMetadata` (*type:* `map()`, *default:* `nil`) - Optional. State properties user wish to include with this state. Full replace of the current state_metadata.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
 
   ## Attributes
 
-  *   `operationGroups` (*type:* `list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1OperationGroup.t)`, *default:* `nil`) - Operations to one or more Google Cloud resources grouped in such a way
-      that, all operations within one group are expected to be performed
-      atomically and in an order.
+  *   `operationGroups` (*type:* `list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1OperationGroup.t)`, *default:* `nil`) - Operations to one or more Google Cloud resources grouped in such a way that, all operations within one group are expected to be performed atomically and in an order.
   """
 
   use GoogleApi.Gax.ModelBase

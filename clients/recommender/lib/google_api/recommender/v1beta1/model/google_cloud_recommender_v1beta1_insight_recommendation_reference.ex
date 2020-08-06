@@ -21,8 +21,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Insig
 
   ## Attributes
 
-  *   `recommendation` (*type:* `String.t`, *default:* `nil`) - Recommendation resource name, e.g.
-      projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
+  *   `recommendation` (*type:* `String.t`, *default:* `nil`) - Recommendation resource name, e.g. projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
   """
 
   use GoogleApi.Gax.ModelBase
