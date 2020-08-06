@@ -21,9 +21,7 @@ defmodule GoogleApi.CommentAnalyzer.V1alpha1.Model.AttributeParameters do
 
   ## Attributes
 
-  *   `scoreThreshold` (*type:* `number()`, *default:* `nil`) - Don't return scores for this attribute that are below this threshold. If
-      unset, a default threshold will be applied. A FloatValue wrapper is used to
-      distinguish between 0 vs. default/unset.
+  *   `scoreThreshold` (*type:* `number()`, *default:* `nil`) - Don't return scores for this attribute that are below this threshold. If unset, a default threshold will be applied. A FloatValue wrapper is used to distinguish between 0 vs. default/unset.
   *   `scoreType` (*type:* `String.t`, *default:* `nil`) - What type of scores to return. If unset, defaults to probability scores.
   """
 

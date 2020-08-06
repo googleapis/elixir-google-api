@@ -21,19 +21,10 @@ defmodule GoogleApi.CommentAnalyzer.V1alpha1.Model.AnalyzeCommentResponse do
 
   ## Attributes
 
-  *   `attributeScores` (*type:* `%{optional(String.t) => GoogleApi.CommentAnalyzer.V1alpha1.Model.AttributeScores.t}`, *default:* `nil`) - Scores for the requested attributes. The map keys are attribute names (same
-      as the requested_attribute field in AnalyzeCommentRequest, for example
-      "ATTACK_ON_AUTHOR", "INFLAMMATORY", etc).
+  *   `attributeScores` (*type:* `%{optional(String.t) => GoogleApi.CommentAnalyzer.V1alpha1.Model.AttributeScores.t}`, *default:* `nil`) - Scores for the requested attributes. The map keys are attribute names (same as the requested_attribute field in AnalyzeCommentRequest, for example "ATTACK_ON_AUTHOR", "INFLAMMATORY", etc).
   *   `clientToken` (*type:* `String.t`, *default:* `nil`) - Same token from the original AnalyzeCommentRequest.
-  *   `detectedLanguages` (*type:* `list(String.t)`, *default:* `nil`) - Contains the languages detected from the text content, sorted in order of
-      likelihood.
-  *   `languages` (*type:* `list(String.t)`, *default:* `nil`) - The language(s) used by CommentAnalyzer service to choose which Model to
-      use when analyzing the comment. Might better be called
-      "effective_languages". The logic used to make the choice is as follows:
-        if !Request.languages.empty()
-          effective_languages = Request.languages
-        else
-          effective_languages = detected_languages[0]
+  *   `detectedLanguages` (*type:* `list(String.t)`, *default:* `nil`) - Contains the languages detected from the text content, sorted in order of likelihood.
+  *   `languages` (*type:* `list(String.t)`, *default:* `nil`) - The language(s) used by CommentAnalyzer service to choose which Model to use when analyzing the comment. Might better be called "effective_languages". The logic used to make the choice is as follows: if !Request.languages.empty() effective_languages = Request.languages else effective_languages = detected_languages[0]
   """
 
   use GoogleApi.Gax.ModelBase

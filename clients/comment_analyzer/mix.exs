@@ -18,7 +18,7 @@
 defmodule GoogleApi.CommentAnalyzer.Mixfile do
   use Mix.Project
 
-  @version "0.6.0"
+  @version "0.7.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.CommentAnalyzer.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/comment_analyzer",
-        "Homepage" => "https://github.com/conversationai/perspectiveapi/blob/master/README.md"
+        "Homepage" => "https://support.perspective.api.com"
       }
     ]
   end

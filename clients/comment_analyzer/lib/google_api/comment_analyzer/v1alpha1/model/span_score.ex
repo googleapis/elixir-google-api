@@ -21,12 +21,7 @@ defmodule GoogleApi.CommentAnalyzer.V1alpha1.Model.SpanScore do
 
   ## Attributes
 
-  *   `begin` (*type:* `integer()`, *default:* `nil`) - "begin" and "end" describe the span of the original text that the attribute
-      score applies to. The values are the UTF-16 codepoint range. "end" is
-      exclusive. For example, with the text "Hi there", the begin/end pair (0,2)
-      describes the text "Hi".
-
-      If "begin" and "end" are unset, the score applies to the full text.
+  *   `begin` (*type:* `integer()`, *default:* `nil`) - "begin" and "end" describe the span of the original text that the attribute score applies to. The values are the UTF-16 codepoint range. "end" is exclusive. For example, with the text "Hi there", the begin/end pair (0,2) describes the text "Hi". If "begin" and "end" are unset, the score applies to the full text.
   *   `end` (*type:* `integer()`, *default:* `nil`) - 
   *   `score` (*type:* `GoogleApi.CommentAnalyzer.V1alpha1.Model.Score.t`, *default:* `nil`) - The score value.
   """
