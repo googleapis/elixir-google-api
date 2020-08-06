@@ -18,7 +18,7 @@
 defmodule GoogleApi.Gmail.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.12.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.Gmail.Mixfile do
 
   defp description() do
     """
-    Gmail API client library. The Gmail API lets you view and manage Gmail mailbox data like
-    threads, messages, and labels.
+    Gmail API client library. The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels.
     """
   end
 

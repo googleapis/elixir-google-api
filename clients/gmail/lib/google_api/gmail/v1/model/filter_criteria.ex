@@ -24,23 +24,12 @@ defmodule GoogleApi.Gmail.V1.Model.FilterCriteria do
   *   `excludeChats` (*type:* `boolean()`, *default:* `nil`) - Whether the response should exclude chats.
   *   `from` (*type:* `String.t`, *default:* `nil`) - The sender's display name or email address.
   *   `hasAttachment` (*type:* `boolean()`, *default:* `nil`) - Whether the message has any attachment.
-  *   `negatedQuery` (*type:* `String.t`, *default:* `nil`) - Only return messages not matching the specified query. Supports the same
-      query format as the Gmail search box. For example,
-      `"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
-      is:unread"`.
-  *   `query` (*type:* `String.t`, *default:* `nil`) - Only return messages matching the specified query. Supports the same
-      query format as the Gmail search box. For example,
-      `"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
-      is:unread"`.
-  *   `size` (*type:* `integer()`, *default:* `nil`) - The size of the entire RFC822 message in bytes, including all headers and
-      attachments.
+  *   `negatedQuery` (*type:* `String.t`, *default:* `nil`) - Only return messages not matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`.
+  *   `query` (*type:* `String.t`, *default:* `nil`) - Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`.
+  *   `size` (*type:* `integer()`, *default:* `nil`) - The size of the entire RFC822 message in bytes, including all headers and attachments.
   *   `sizeComparison` (*type:* `String.t`, *default:* `nil`) - How the message size in bytes should be in relation to the size field.
-  *   `subject` (*type:* `String.t`, *default:* `nil`) - Case-insensitive phrase found in the message's subject. Trailing and
-      leading whitespace are be trimmed and adjacent spaces are collapsed.
-  *   `to` (*type:* `String.t`, *default:* `nil`) - The recipient's display name or email address. Includes recipients in the
-      "to", "cc", and "bcc" header fields. You can use simply the local part of
-      the email address. For example, "example" and "example@" both match
-      "example@gmail.com". This field is case-insensitive.
+  *   `subject` (*type:* `String.t`, *default:* `nil`) - Case-insensitive phrase found in the message's subject. Trailing and leading whitespace are be trimmed and adjacent spaces are collapsed.
+  *   `to` (*type:* `String.t`, *default:* `nil`) - The recipient's display name or email address. Includes recipients in the "to", "cc", and "bcc" header fields. You can use simply the local part of the email address. For example, "example" and "example@" both match "example@gmail.com". This field is case-insensitive.
   """
 
   use GoogleApi.Gax.ModelBase
