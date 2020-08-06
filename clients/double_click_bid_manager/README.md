@@ -2,7 +2,7 @@
 
 DoubleClick Bid Manager API client library.
 
-API for viewing and managing your reports in DoubleClick Bid Manager.
+DoubleClick Bid Manager API allows users to manage and create campaigns and reports.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_double_click_bid_manager, "~> 0.17"}]
+  [{:google_api_double_click_bid_manager, "~> 0.18"}]
 end
 ```
 

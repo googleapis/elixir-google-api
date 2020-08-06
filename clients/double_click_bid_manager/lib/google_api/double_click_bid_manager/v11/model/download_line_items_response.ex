@@ -21,7 +21,10 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.DownloadLineItemsResponse do
 
   ## Attributes
 
-  *   `lineItems` (*type:* `String.t`, *default:* `nil`) - Retrieved line items in CSV format. For more information about file formats, see  Entity Write File Format.
+  *   `lineItems` (*type:* `String.t`, *default:* `nil`) - Retrieved line items in CSV format. For more information about file
+      formats, see <a
+      href="https://developers.google.com/bid-manager/guides/entity-write/format">
+      Entity Write File Format</a>.
   """
 
   use GoogleApi.Gax.ModelBase

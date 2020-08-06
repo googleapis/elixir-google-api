@@ -18,7 +18,7 @@
 defmodule GoogleApi.DoubleClickBidManager.Mixfile do
   use Mix.Project
 
-  @version "0.17.0"
+  @version "0.18.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.DoubleClickBidManager.Mixfile do
 
   defp description() do
     """
-    DoubleClick Bid Manager API client library. API for viewing and managing your reports in DoubleClick Bid Manager.
+    DoubleClick Bid Manager API client library. DoubleClick Bid Manager API allows users to manage and create campaigns and reports.
     """
   end
 

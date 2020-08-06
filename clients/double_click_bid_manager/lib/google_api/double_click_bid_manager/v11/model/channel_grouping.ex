@@ -17,13 +17,16 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V11.Model.ChannelGrouping do
   @moduledoc """
-  A channel grouping defines a set of rules that can be used to categorize events in a path report.
+  A channel grouping defines a set of rules that can be used to categorize
+  events in a path report.
 
   ## Attributes
 
-  *   `fallbackName` (*type:* `String.t`, *default:* `nil`) - The name to apply to an event that does not match any of the rules in the channel grouping.
+  *   `fallbackName` (*type:* `String.t`, *default:* `nil`) - The name to apply to an event that does not match any of the rules in the
+      channel grouping.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Channel Grouping name.
-  *   `rules` (*type:* `list(GoogleApi.DoubleClickBidManager.V11.Model.Rule.t)`, *default:* `nil`) - Rules within Channel Grouping. There is a limit of 100 rules that can be set per channel grouping.
+  *   `rules` (*type:* `list(GoogleApi.DoubleClickBidManager.V11.Model.Rule.t)`, *default:* `nil`) - Rules within Channel Grouping. There is a limit of 100 rules that can be
+      set per channel grouping.
   """
 
   use GoogleApi.Gax.ModelBase
