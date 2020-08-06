@@ -26,11 +26,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create an `AccessPolicy`. Fails if this organization already has a
-  `AccessPolicy`. The longrunning Operation will have a successful status
-  once the `AccessPolicy` has propagated to long-lasting storage.
-  Syntactic and basic semantic errors will be returned in `metadata` as a
-  BadRequest proto.
+  Create an `AccessPolicy`. Fails if this organization already has a `AccessPolicy`. The longrunning Operation will have a successful status once the `AccessPolicy` has propagated to long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a BadRequest proto.
 
   ## Parameters
 
@@ -88,17 +84,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Delete an AccessPolicy by resource
-  name. The longrunning Operation will have a successful status once the
-  AccessPolicy
-  has been removed from long-lasting storage.
+  Delete an AccessPolicy by resource name. The longrunning Operation will have a successful status once the AccessPolicy has been removed from long-lasting storage.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the access policy to delete.
-
-      Format `accessPolicies/{policy_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the access policy to delete. Format `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -167,9 +158,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the access policy to get.
-
-      Format `accessPolicies/{policy_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the access policy to get. Format `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -233,8 +222,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  List all AccessPolicies under a
-  container.
+  List all AccessPolicies under a container.
 
   ## Parameters
 
@@ -252,13 +240,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Number of AccessPolicy instances to include in the list. Default 100.
-      *   `:pageToken` (*type:* `String.t`) - Next page token for the next batch of AccessPolicy instances. Defaults to
-          the first page of results.
-      *   `:parent` (*type:* `String.t`) - Required. Resource name for the container to list AccessPolicy instances
-          from.
-
-          Format:
-          `organizations/{org_id}`
+      *   `:pageToken` (*type:* `String.t`) - Next page token for the next batch of AccessPolicy instances. Defaults to the first page of results.
+      *   `:parent` (*type:* `String.t`) - Required. Resource name for the container to list AccessPolicy instances from. Format: `organizations/{org_id}`
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -303,17 +286,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Update an AccessPolicy. The
-  longrunning Operation from this RPC will have a successful status once the
-  changes to the AccessPolicy have propagated
-  to long-lasting storage. Syntactic and basic semantic errors will be
-  returned in `metadata` as a BadRequest proto.
+  Update an AccessPolicy. The longrunning Operation from this RPC will have a successful status once the changes to the AccessPolicy have propagated to long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a BadRequest proto.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Resource name of the `AccessPolicy`. Format:
-      `accessPolicies/{policy_id}`
+  *   `name` (*type:* `String.t`) - Output only. Resource name of the `AccessPolicy`. Format: `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -381,19 +359,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Create an Access Level. The longrunning
-  operation from this RPC will have a successful status once the Access
-  Level has
-  propagated to long-lasting storage. Access Levels containing
-  errors will result in an error response for the first error encountered.
+  Create an Access Level. The longrunning operation from this RPC will have a successful status once the Access Level has propagated to long-lasting storage. Access Levels containing errors will result in an error response for the first error encountered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns this Access
-      Level.
-
-      Format: `accessPolicies/{policy_id}`
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns this Access Level. Format: `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -459,18 +430,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Delete an Access Level by resource
-  name. The longrunning operation from this RPC will have a successful status
-  once the Access Level has been removed
-  from long-lasting storage.
+  Delete an Access Level by resource name. The longrunning operation from this RPC will have a successful status once the Access Level has been removed from long-lasting storage.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level.
-
-      Format:
-      `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level. Format: `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -534,16 +499,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Get an Access Level by resource
-  name.
+  Get an Access Level by resource name.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level.
-
-      Format:
-      `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level. Format: `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -556,13 +517,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:accessLevelFormat` (*type:* `String.t`) - Whether to return `BasicLevels` in the Cloud Common Expression
-          Language rather than as `BasicLevels`. Defaults to AS_DEFINED, where
-          Access Levels
-          are returned as `BasicLevels` or `CustomLevels` based on how they were
-          created. If set to CEL, all Access Levels are returned as
-          `CustomLevels`. In the CEL case, `BasicLevels` are translated to equivalent
-          `CustomLevels`.
+      *   `:accessLevelFormat` (*type:* `String.t`) - Whether to return `BasicLevels` in the Cloud Common Expression Language rather than as `BasicLevels`. Defaults to AS_DEFINED, where Access Levels are returned as `BasicLevels` or `CustomLevels` based on how they were created. If set to CEL, all Access Levels are returned as `CustomLevels`. In the CEL case, `BasicLevels` are translated to equivalent `CustomLevels`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -615,16 +570,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  List all Access Levels for an access
-  policy.
+  List all Access Levels for an access policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy to list Access Levels from.
-
-      Format:
-      `accessPolicies/{policy_id}`
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy to list Access Levels from. Format: `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -637,13 +588,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:accessLevelFormat` (*type:* `String.t`) - Whether to return `BasicLevels` in the Cloud Common Expression language, as
-          `CustomLevels`, rather than as `BasicLevels`. Defaults to returning
-          `AccessLevels` in the format they were defined.
-      *   `:pageSize` (*type:* `integer()`) - Number of Access Levels to include in
-          the list. Default 100.
-      *   `:pageToken` (*type:* `String.t`) - Next page token for the next batch of Access Level instances.
-          Defaults to the first page of results.
+      *   `:accessLevelFormat` (*type:* `String.t`) - Whether to return `BasicLevels` in the Cloud Common Expression language, as `CustomLevels`, rather than as `BasicLevels`. Defaults to returning `AccessLevels` in the format they were defined.
+      *   `:pageSize` (*type:* `integer()`) - Number of Access Levels to include in the list. Default 100.
+      *   `:pageToken` (*type:* `String.t`) - Next page token for the next batch of Access Level instances. Defaults to the first page of results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -700,19 +647,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Update an Access Level. The longrunning
-  operation from this RPC will have a successful status once the changes to
-  the Access Level have propagated
-  to long-lasting storage. Access Levels containing
-  errors will result in an error response for the first error encountered.
+  Update an Access Level. The longrunning operation from this RPC will have a successful status once the changes to the Access Level have propagated to long-lasting storage. Access Levels containing errors will result in an error response for the first error encountered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level. The `short_name` component
-      must begin with a letter and only include alphanumeric and '_'. Format:
-      `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
-      of the `short_name` component is 50 characters.
+  *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length of the `short_name` component is 50 characters.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -780,26 +720,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Replace all existing Access Levels in an Access
-  Policy with
-  the Access Levels provided. This
-  is done atomically. The longrunning operation from this RPC will have a
-  successful status once all replacements have propagated to long-lasting
-  storage. Replacements containing errors will result in an error response
-  for the first error encountered.  Replacement will be cancelled on error,
-  existing Access Levels will not be
-  affected. Operation.response field will contain
-  ReplaceAccessLevelsResponse. Removing Access Levels contained in existing
-  Service Perimeters will result in
-  error.
+  Replace all existing Access Levels in an Access Policy with the Access Levels provided. This is done atomically. The longrunning operation from this RPC will have a successful status once all replacements have propagated to long-lasting storage. Replacements containing errors will result in an error response for the first error encountered. Replacement will be cancelled on error, existing Access Levels will not be affected. Operation.response field will contain ReplaceAccessLevelsResponse. Removing Access Levels contained in existing Service Perimeters will result in error.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns these
-      Access Levels.
-
-      Format: `accessPolicies/{policy_id}`
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns these Access Levels. Format: `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -865,27 +791,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Commit the dry-run spec for all the Service Perimeters in an
-  Access Policy.
-  A commit operation on a Service Perimeter involves copying its `spec` field
-  to that Service Perimeter's `status` field. Only Service Perimeters with
-  `use_explicit_dry_run_spec` field set to true are affected by a commit
-  operation. The longrunning operation from this RPC will have a successful
-  status once the dry-run specs for all the Service Perimeters have been
-  committed. If a commit fails, it will cause the longrunning operation to
-  return an error response and the entire commit operation will be cancelled.
-  When successful, Operation.response field will contain
-  CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will
-  be cleared after a successful commit operation.
+  Commit the dry-run spec for all the Service Perimeters in an Access Policy. A commit operation on a Service Perimeter involves copying its `spec` field to that Service Perimeter's `status` field. Only Service Perimeters with `use_explicit_dry_run_spec` field set to true are affected by a commit operation. The longrunning operation from this RPC will have a successful status once the dry-run specs for all the Service Perimeters have been committed. If a commit fails, it will cause the longrunning operation to return an error response and the entire commit operation will be cancelled. When successful, Operation.response field will contain CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will be cleared after a successful commit operation.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Resource name for the parent Access Policy which owns all
-      Service Perimeters in scope for
-      the commit operation.
-
-      Format: `accessPolicies/{policy_id}`
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the parent Access Policy which owns all Service Perimeters in scope for the commit operation. Format: `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -951,19 +862,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Create a Service Perimeter. The
-  longrunning operation from this RPC will have a successful status once the
-  Service Perimeter has
-  propagated to long-lasting storage. Service Perimeters containing
-  errors will result in an error response for the first error encountered.
+  Create a Service Perimeter. The longrunning operation from this RPC will have a successful status once the Service Perimeter has propagated to long-lasting storage. Service Perimeters containing errors will result in an error response for the first error encountered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns this Service
-      Perimeter.
-
-      Format: `accessPolicies/{policy_id}`
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns this Service Perimeter. Format: `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1029,18 +933,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Delete a Service Perimeter by resource
-  name. The longrunning operation from this RPC will have a successful status
-  once the Service Perimeter has been
-  removed from long-lasting storage.
+  Delete a Service Perimeter by resource name. The longrunning operation from this RPC will have a successful status once the Service Perimeter has been removed from long-lasting storage.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the Service Perimeter.
-
-      Format:
-      `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the Service Perimeter. Format: `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1104,16 +1002,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Get a Service Perimeter by resource
-  name.
+  Get a Service Perimeter by resource name.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the Service Perimeter.
-
-      Format:
-      `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the Service Perimeter. Format: `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1179,16 +1073,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  List all Service Perimeters for an
-  access policy.
+  List all Service Perimeters for an access policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy to list Service Perimeters from.
-
-      Format:
-      `accessPolicies/{policy_id}`
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy to list Service Perimeters from. Format: `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1201,10 +1091,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Number of Service Perimeters to include
-          in the list. Default 100.
-      *   `:pageToken` (*type:* `String.t`) - Next page token for the next batch of Service Perimeter instances.
-          Defaults to the first page of results.
+      *   `:pageSize` (*type:* `integer()`) - Number of Service Perimeters to include in the list. Default 100.
+      *   `:pageToken` (*type:* `String.t`) - Next page token for the next batch of Service Perimeter instances. Defaults to the first page of results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1260,18 +1148,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Update a Service Perimeter. The
-  longrunning operation from this RPC will have a successful status once the
-  changes to the Service Perimeter have
-  propagated to long-lasting storage. Service Perimeter containing
-  errors will result in an error response for the first error encountered.
+  Update a Service Perimeter. The longrunning operation from this RPC will have a successful status once the changes to the Service Perimeter have propagated to long-lasting storage. Service Perimeter containing errors will result in an error response for the first error encountered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name for the ServicePerimeter.  The `short_name`
-      component must begin with a letter and only include alphanumeric and '_'.
-      Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+  *   `name` (*type:* `String.t`) - Required. Resource name for the ServicePerimeter. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1339,24 +1221,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Replace all existing Service Perimeters in an
-  Access Policy
-  with the Service Perimeters provided.
-  This is done atomically. The longrunning operation from this
-  RPC will have a successful status once all replacements have propagated to
-  long-lasting storage. Replacements containing errors will result in an
-  error response for the first error encountered. Replacement will be
-  cancelled on error, existing Service Perimeters will not be
-  affected. Operation.response field will contain
-  ReplaceServicePerimetersResponse.
+  Replace all existing Service Perimeters in an Access Policy with the Service Perimeters provided. This is done atomically. The longrunning operation from this RPC will have a successful status once all replacements have propagated to long-lasting storage. Replacements containing errors will result in an error response for the first error encountered. Replacement will be cancelled on error, existing Service Perimeters will not be affected. Operation.response field will contain ReplaceServicePerimetersResponse.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns these
-      Service Perimeters.
-
-      Format: `accessPolicies/{policy_id}`
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns these Service Perimeters. Format: `accessPolicies/{policy_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

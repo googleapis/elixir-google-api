@@ -22,8 +22,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ListAccessLevelsResponse do
   ## Attributes
 
   *   `accessLevels` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.AccessLevel.t)`, *default:* `nil`) - List of the Access Level instances.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results. If the value is
-      empty, no further results remain.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results. If the value is empty, no further results remain.
   """
 
   use GoogleApi.Gax.ModelBase
