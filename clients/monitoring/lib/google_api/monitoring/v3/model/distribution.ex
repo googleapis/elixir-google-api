@@ -27,9 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Distribution do
   *   `exemplars` (*type:* `list(GoogleApi.Monitoring.V3.Model.Exemplar.t)`, *default:* `nil`) - Must be in increasing order of value field.
   *   `mean` (*type:* `float()`, *default:* `nil`) - The arithmetic mean of the values in the population. If count is zero then this field must be zero.
   *   `range` (*type:* `GoogleApi.Monitoring.V3.Model.Range.t`, *default:* `nil`) - If specified, contains the range of the population values. The field must not be present if the count is zero. This field is presently ignored by the Cloud Monitoring API v3.
-  *   `sumOfSquaredDeviation` (*type:* `float()`, *default:* `nil`) - The sum of squared deviations from the mean of the values in the population. For values x_i this is:
-      Sum[i=1..n]((x_i - mean)^2)
-      Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition describes Welford's method for accumulating this sum in one pass.If count is zero then this field must be zero.
+  *   `sumOfSquaredDeviation` (*type:* `float()`, *default:* `nil`) - The sum of squared deviations from the mean of the values in the population. For values x_i this is: Sum[i=1..n]((x_i - mean)^2) Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition describes Welford's method for accumulating this sum in one pass.If count is zero then this field must be zero.
   """
 
   use GoogleApi.Gax.ModelBase

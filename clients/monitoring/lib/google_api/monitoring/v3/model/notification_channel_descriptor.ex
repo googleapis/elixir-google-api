@@ -25,9 +25,7 @@ defmodule GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A human-readable name for the notification channel type. This form of the name is suitable for a user interface.
   *   `labels` (*type:* `list(GoogleApi.Monitoring.V3.Model.LabelDescriptor.t)`, *default:* `nil`) - The set of labels that must be defined to identify a particular channel of the corresponding type. Each label includes a description for how that field should be populated.
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - The product launch stage for channels of this type.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The full REST resource name for this descriptor. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
-      In the above, [TYPE] is the value of the type field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The full REST resource name for this descriptor. The format is: projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE] In the above, [TYPE] is the value of the type field.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of notification channel, such as "email" and "sms". To view the full list of channels, see Channel descriptors (https://cloud.google.com/monitoring/alerts/using-channels-api#ncd). Notification channel types are globally unique.
   """
 
