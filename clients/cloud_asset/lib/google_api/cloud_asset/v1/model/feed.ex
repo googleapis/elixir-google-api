@@ -49,6 +49,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
       `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
       == true") will only publish Asset deletions. Other fields of `Expr` are
       optional.
+
+      See our [user
+      guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+      for detailed instructions.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Asset content type. If not specified, no content but the asset name and
       type will be returned.
   *   `feedOutputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.FeedOutputConfig.t`, *default:* `nil`) - Required. Feed output configuration defining where the asset updates are
