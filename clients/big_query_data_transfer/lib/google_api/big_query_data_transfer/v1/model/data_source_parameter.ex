@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
   @moduledoc """
-  Represents a data source parameter with validation rules, so that
-  parameters can be rendered in the UI. These parameters are given to us by
-  supported data sources, and include all needed information for rendering
-  and validation.
-  Thus, whoever uses this api can decide to generate either generic ui,
-  or custom data source specific forms.
+  Represents a data source parameter with validation rules, so that parameters can be rendered in the UI. These parameters are given to us by supported data sources, and include all needed information for rendering and validation. Thus, whoever uses this api can decide to generate either generic ui, or custom data source specific forms.
 
   ## Attributes
 
   *   `allowedValues` (*type:* `list(String.t)`, *default:* `nil`) - All possible values for the parameter.
-  *   `deprecated` (*type:* `boolean()`, *default:* `nil`) - If true, it should not be used in new transfers, and it should not be
-      visible to users.
+  *   `deprecated` (*type:* `boolean()`, *default:* `nil`) - If true, it should not be used in new transfers, and it should not be visible to users.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Parameter description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Parameter display name in the user interface.
   *   `fields` (*type:* `list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t)`, *default:* `nil`) - Deprecated. This field has no effect.
@@ -40,8 +34,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
   *   `repeated` (*type:* `boolean()`, *default:* `nil`) - Deprecated. This field has no effect.
   *   `required` (*type:* `boolean()`, *default:* `nil`) - Is parameter required.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Parameter type.
-  *   `validationDescription` (*type:* `String.t`, *default:* `nil`) - Description of the requirements for this field, in case the user input does
-      not fulfill the regex pattern or min/max values.
+  *   `validationDescription` (*type:* `String.t`, *default:* `nil`) - Description of the requirements for this field, in case the user input does not fulfill the regex pattern or min/max values.
   *   `validationHelpUrl` (*type:* `String.t`, *default:* `nil`) - URL to a help document to further explain the naming requirements.
   *   `validationRegex` (*type:* `String.t`, *default:* `nil`) - Regular expression which can be used for parameter validation.
   """

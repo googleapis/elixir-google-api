@@ -21,8 +21,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsRequest
 
   ## Attributes
 
-  *   `requestedRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Specific run_time for a transfer run to be started. The
-      requested_run_time must not be in the future.
+  *   `requestedRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Specific run_time for a transfer run to be started. The requested_run_time must not be in the future.
   *   `requestedTimeRange` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TimeRange.t`, *default:* `nil`) - Time range for the transfer runs that should be started.
   """
 

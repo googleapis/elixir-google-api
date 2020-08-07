@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences do
   @moduledoc """
-  Represents preferences for sending email notifications for transfer run
-  events.
+  Represents preferences for sending email notifications for transfer run events.
 
   ## Attributes
 

@@ -17,43 +17,28 @@
 
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSource do
   @moduledoc """
-  Represents data source metadata. Metadata is sufficient to
-  render UI and request proper OAuth tokens.
+  Represents data source metadata. Metadata is sufficient to render UI and request proper OAuth tokens.
 
   ## Attributes
 
   *   `authorizationType` (*type:* `String.t`, *default:* `nil`) - Indicates the type of authorization.
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - Data source client id which should be used to receive refresh token.
-  *   `dataRefreshType` (*type:* `String.t`, *default:* `nil`) - Specifies whether the data source supports automatic data refresh for the
-      past few days, and how it's supported.
-      For some data sources, data might not be complete until a few days later,
-      so it's useful to refresh data automatically.
+  *   `dataRefreshType` (*type:* `String.t`, *default:* `nil`) - Specifies whether the data source supports automatic data refresh for the past few days, and how it's supported. For some data sources, data might not be complete until a few days later, so it's useful to refresh data automatically.
   *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - Data source id.
-  *   `defaultDataRefreshWindowDays` (*type:* `integer()`, *default:* `nil`) - Default data refresh window on days.
-      Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
-  *   `defaultSchedule` (*type:* `String.t`, *default:* `nil`) - Default data transfer schedule.
-      Examples of valid schedules include:
-      `1st,3rd monday of month 15:30`,
-      `every wed,fri of jan,jun 13:15`, and
-      `first sunday of quarter 00:00`.
+  *   `defaultDataRefreshWindowDays` (*type:* `integer()`, *default:* `nil`) - Default data refresh window on days. Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
+  *   `defaultSchedule` (*type:* `String.t`, *default:* `nil`) - Default data transfer schedule. Examples of valid schedules include: `1st,3rd monday of month 15:30`, `every wed,fri of jan,jun 13:15`, and `first sunday of quarter 00:00`.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User friendly data source description string.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User friendly data source name.
   *   `helpUrl` (*type:* `String.t`, *default:* `nil`) - Url for the help document for this data source.
-  *   `manualRunsDisabled` (*type:* `boolean()`, *default:* `nil`) - Disables backfilling and manual run scheduling
-      for the data source.
+  *   `manualRunsDisabled` (*type:* `boolean()`, *default:* `nil`) - Disables backfilling and manual run scheduling for the data source.
   *   `minimumScheduleInterval` (*type:* `String.t`, *default:* `nil`) - The minimum interval for scheduler to schedule runs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Data source resource name.
   *   `parameters` (*type:* `list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t)`, *default:* `nil`) - Data source parameters.
-  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Api auth scopes for which refresh token needs to be obtained. These are
-      scopes needed by a data source to prepare data and ingest them into
-      BigQuery, e.g., https://www.googleapis.com/auth/bigquery
-  *   `supportsCustomSchedule` (*type:* `boolean()`, *default:* `nil`) - Specifies whether the data source supports a user defined schedule, or
-      operates on the default schedule.
-      When set to `true`, user can override default schedule.
+  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Api auth scopes for which refresh token needs to be obtained. These are scopes needed by a data source to prepare data and ingest them into BigQuery, e.g., https://www.googleapis.com/auth/bigquery
+  *   `supportsCustomSchedule` (*type:* `boolean()`, *default:* `nil`) - Specifies whether the data source supports a user defined schedule, or operates on the default schedule. When set to `true`, user can override default schedule.
   *   `supportsMultipleTransfers` (*type:* `boolean()`, *default:* `nil`) - Deprecated. This field has no effect.
   *   `transferType` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
-  *   `updateDeadlineSeconds` (*type:* `integer()`, *default:* `nil`) - The number of seconds to wait for an update from the data source
-      before the Data Transfer Service marks the transfer as FAILED.
+  *   `updateDeadlineSeconds` (*type:* `integer()`, *default:* `nil`) - The number of seconds to wait for an update from the data source before the Data Transfer Service marks the transfer as FAILED.
   """
 
   use GoogleApi.Gax.ModelBase
