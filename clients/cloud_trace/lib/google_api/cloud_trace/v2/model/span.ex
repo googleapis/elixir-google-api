@@ -17,54 +17,24 @@
 
 defmodule GoogleApi.CloudTrace.V2.Model.Span do
   @moduledoc """
-  A span represents a single operation within a trace. Spans can be
-  nested to form a trace tree. Often, a trace contains a root span
-  that describes the end-to-end latency, and one or more subspans for
-  its sub-operations. A trace can also contain multiple root spans,
-  or none at all. Spans do not need to be contiguous&mdash;there may be
-  gaps or overlaps between spans in a trace.
+  A span represents a single operation within a trace. Spans can be nested to form a trace tree. Often, a trace contains a root span that describes the end-to-end latency, and one or more subspans for its sub-operations. A trace can also contain multiple root spans, or none at all. Spans do not need to be contiguous—there may be gaps or overlaps between spans in a trace.
 
   ## Attributes
 
-  *   `attributes` (*type:* `GoogleApi.CloudTrace.V2.Model.Attributes.t`, *default:* `nil`) - A set of attributes on the span. You can have up to 32 attributes per
-      span.
-  *   `childSpanCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of child spans that were generated while this span
-      was active. If set, allows implementation to detect missing child spans.
-  *   `displayName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - Required. A description of the span's operation (up to 128 bytes).
-      Trace displays the description in the
-      Google Cloud Platform Console.
-      For example, the display name can be a qualified method name or a file name
-      and a line number where the operation is called. A best practice is to use
-      the same display name within an application and at the same call point.
-      This makes it easier to correlate spans in different traces.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The end time of the span. On the client side, this is the time kept by
-      the local machine where the span execution ends. On the server side, this
-      is the time when the server application handler stops running.
+  *   `attributes` (*type:* `GoogleApi.CloudTrace.V2.Model.Attributes.t`, *default:* `nil`) - A set of attributes on the span. You can have up to 32 attributes per span.
+  *   `childSpanCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of child spans that were generated while this span was active. If set, allows implementation to detect missing child spans.
+  *   `displayName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - Required. A description of the span's operation (up to 128 bytes). Trace displays the description in the Google Cloud Platform Console. For example, the display name can be a qualified method name or a file name and a line number where the operation is called. A best practice is to use the same display name within an application and at the same call point. This makes it easier to correlate spans in different traces.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The end time of the span. On the client side, this is the time kept by the local machine where the span execution ends. On the server side, this is the time when the server application handler stops running.
   *   `links` (*type:* `GoogleApi.CloudTrace.V2.Model.Links.t`, *default:* `nil`) - Links associated with the span. You can have up to 128 links per Span.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the span in the following format:
-
-          projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/SPAN_ID is a unique identifier for a trace within a project;
-      it is a 32-character hexadecimal encoding of a 16-byte array.
-
-      [SPAN_ID] is a unique identifier for a span within a trace; it
-      is a 16-character hexadecimal encoding of an 8-byte array. It should not
-      be zero.
-  *   `parentSpanId` (*type:* `String.t`, *default:* `nil`) - The [SPAN_ID] of this span's parent span. If this is a root span,
-      then this field must be empty.
-  *   `sameProcessAsParentSpan` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this parameter to indicate whether this span is in
-      the same process as its parent. If you do not set this parameter,
-      Trace is unable to take advantage of this helpful information.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the span in the following format: projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/SPAN_ID is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. [SPAN_ID] is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array. It should not be zero.
+  *   `parentSpanId` (*type:* `String.t`, *default:* `nil`) - The [SPAN_ID] of this span's parent span. If this is a root span, then this field must be empty.
+  *   `sameProcessAsParentSpan` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this parameter to indicate whether this span is in the same process as its parent. If you do not set this parameter, Trace is unable to take advantage of this helpful information.
   *   `spanId` (*type:* `String.t`, *default:* `nil`) - Required. The [SPAN_ID] portion of the span's resource name.
-  *   `spanKind` (*type:* `String.t`, *default:* `nil`) - Optional. Distinguishes between spans generated in a particular context. For example,
-      two spans with the same name may be distinguished using `CLIENT` (caller)
-      and `SERVER` (callee) to identify an RPC call.
+  *   `spanKind` (*type:* `String.t`, *default:* `nil`) - Optional. Distinguishes between spans generated in a particular context. For example, two spans with the same name may be distinguished using `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
   *   `stackTrace` (*type:* `GoogleApi.CloudTrace.V2.Model.StackTrace.t`, *default:* `nil`) - Stack trace captured at the start of the span.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The start time of the span. On the client side, this is the time kept by
-      the local machine where the span execution starts. On the server side, this
-      is the time when the server's application handler starts running.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The start time of the span. On the client side, this is the time kept by the local machine where the span execution starts. On the server side, this is the time when the server's application handler starts running.
   *   `status` (*type:* `GoogleApi.CloudTrace.V2.Model.Status.t`, *default:* `nil`) - Optional. The final status for this span.
-  *   `timeEvents` (*type:* `GoogleApi.CloudTrace.V2.Model.TimeEvents.t`, *default:* `nil`) - A set of time events. You can have up to 32 annotations and 128 message
-      events per span.
+  *   `timeEvents` (*type:* `GoogleApi.CloudTrace.V2.Model.TimeEvents.t`, *default:* `nil`) - A set of time events. You can have up to 32 annotations and 128 message events per span.
   """
 
   use GoogleApi.Gax.ModelBase

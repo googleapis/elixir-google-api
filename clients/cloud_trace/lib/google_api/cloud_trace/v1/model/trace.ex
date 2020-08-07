@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.CloudTrace.V1.Model.Trace do
   @moduledoc """
-  A trace describes how long it takes for an application to perform an
-  operation. It consists of a set of spans, each of which represent a single
-  timed event within the operation.
+  A trace describes how long it takes for an application to perform an operation. It consists of a set of spans, each of which represent a single timed event within the operation.
 
   ## Attributes
 
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID of the Cloud project where the trace data is stored.
   *   `spans` (*type:* `list(GoogleApi.CloudTrace.V1.Model.TraceSpan.t)`, *default:* `nil`) - Collection of spans in the trace.
-  *   `traceId` (*type:* `String.t`, *default:* `nil`) - Globally unique identifier for the trace. This identifier is a 128-bit
-      numeric value formatted as a 32-byte hex string. For example,
-      `382d4f4c6b7bb2f4a972559d9085001d`. The numeric value should not be zero.
+  *   `traceId` (*type:* `String.t`, *default:* `nil`) - Globally unique identifier for the trace. This identifier is a 128-bit numeric value formatted as a 32-byte hex string. For example, `382d4f4c6b7bb2f4a972559d9085001d`. The numeric value should not be zero.
   """
 
   use GoogleApi.Gax.ModelBase

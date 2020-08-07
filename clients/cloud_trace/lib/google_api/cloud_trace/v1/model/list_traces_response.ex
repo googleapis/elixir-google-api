@@ -21,9 +21,7 @@ defmodule GoogleApi.CloudTrace.V1.Model.ListTracesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If defined, indicates that there are more traces that match the request
-      and that this value should be passed to the next request to continue
-      retrieving additional traces.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If defined, indicates that there are more traces that match the request and that this value should be passed to the next request to continue retrieving additional traces.
   *   `traces` (*type:* `list(GoogleApi.CloudTrace.V1.Model.Trace.t)`, *default:* `nil`) - List of trace records as specified by the view parameter.
   """
 

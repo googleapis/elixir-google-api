@@ -21,10 +21,8 @@ defmodule GoogleApi.CloudTrace.V2.Model.Module do
 
   ## Attributes
 
-  *   `buildId` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - A unique identifier for the module, usually a hash of its
-      contents (up to 128 bytes).
-  *   `module` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - For example: main binary, kernel modules, and dynamic libraries
-      such as libc.so, sharedlib.so (up to 256 bytes).
+  *   `buildId` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - A unique identifier for the module, usually a hash of its contents (up to 128 bytes).
+  *   `module` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - For example: main binary, kernel modules, and dynamic libraries such as libc.so, sharedlib.so (up to 256 bytes).
   """
 
   use GoogleApi.Gax.ModelBase

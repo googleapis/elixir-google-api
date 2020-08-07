@@ -26,14 +26,12 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Sends new spans to new or existing traces. You cannot update
-  existing spans.
+  Sends new spans to new or existing traces. You cannot update existing spans.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTrace.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the project where the spans belong. The format is
-      `projects/[PROJECT_ID]`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the project where the spans belong. The format is `projects/[PROJECT_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -102,14 +100,7 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTrace.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the span in the following format:
-
-          projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/SPAN_ID is a unique identifier for a trace within a project;
-      it is a 32-character hexadecimal encoding of a 16-byte array.
-
-      [SPAN_ID] is a unique identifier for a span within a trace; it
-      is a 16-character hexadecimal encoding of an 8-byte array. It should not
-      be zero.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the span in the following format: projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/SPAN_ID is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. [SPAN_ID] is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array. It should not be zero.
   *   `traces_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `spans_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

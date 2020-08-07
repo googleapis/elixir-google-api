@@ -21,13 +21,9 @@ defmodule GoogleApi.CloudTrace.V2.Model.MessageEvent do
 
   ## Attributes
 
-  *   `compressedSizeBytes` (*type:* `String.t`, *default:* `nil`) - The number of compressed bytes sent or received. If missing assumed to
-      be the same size as uncompressed.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - An identifier for the MessageEvent's message that can be used to match
-      SENT and RECEIVED MessageEvents. It is recommended to be unique within
-      a Span.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of MessageEvent. Indicates whether the message was sent or
-      received.
+  *   `compressedSizeBytes` (*type:* `String.t`, *default:* `nil`) - The number of compressed bytes sent or received. If missing assumed to be the same size as uncompressed.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An identifier for the MessageEvent's message that can be used to match SENT and RECEIVED MessageEvents. It is recommended to be unique within a Span.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of MessageEvent. Indicates whether the message was sent or received.
   *   `uncompressedSizeBytes` (*type:* `String.t`, *default:* `nil`) - The number of uncompressed bytes sent or received.
   """
 

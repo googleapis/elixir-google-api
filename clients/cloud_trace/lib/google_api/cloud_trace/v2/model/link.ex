@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.CloudTrace.V2.Model.Link do
   @moduledoc """
-  A pointer from the current span to another span in the same trace or in a
-  different trace. For example, this can be used in batching operations,
-  where a single batch handler processes multiple requests from different
-  traces or when the handler receives a request from a different project.
+  A pointer from the current span to another span in the same trace or in a different trace. For example, this can be used in batching operations, where a single batch handler processes multiple requests from different traces or when the handler receives a request from a different project.
 
   ## Attributes
 
-  *   `attributes` (*type:* `GoogleApi.CloudTrace.V2.Model.Attributes.t`, *default:* `nil`) - A set of attributes on the link. You have have up to  32 attributes per
-      link.
+  *   `attributes` (*type:* `GoogleApi.CloudTrace.V2.Model.Attributes.t`, *default:* `nil`) - A set of attributes on the link. You have have up to 32 attributes per link.
   *   `spanId` (*type:* `String.t`, *default:* `nil`) - The [SPAN_ID] for a span within a trace.
   *   `traceId` (*type:* `String.t`, *default:* `nil`) - The [TRACE_ID] for a trace within a project.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The relationship of the current span relative to the linked span.

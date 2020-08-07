@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.BatchWriteSpansRequest do
 
   ## Attributes
 
-  *   `spans` (*type:* `list(GoogleApi.CloudTrace.V2.Model.Span.t)`, *default:* `nil`) - Required. A list of new spans. The span names must not match existing
-      spans, or the results are undefined.
+  *   `spans` (*type:* `list(GoogleApi.CloudTrace.V2.Model.Span.t)`, *default:* `nil`) - Required. A list of new spans. The span names must not match existing spans, or the results are undefined.
   """
 
   use GoogleApi.Gax.ModelBase

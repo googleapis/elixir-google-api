@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.CloudTrace.V2.Model.Links do
   @moduledoc """
-  A collection of links, which are references from this span to a span
-  in the same or different trace.
+  A collection of links, which are references from this span to a span in the same or different trace.
 
   ## Attributes
 
-  *   `droppedLinksCount` (*type:* `integer()`, *default:* `nil`) - The number of dropped links after the maximum size was enforced. If
-      this value is 0, then no links were dropped.
+  *   `droppedLinksCount` (*type:* `integer()`, *default:* `nil`) - The number of dropped links after the maximum size was enforced. If this value is 0, then no links were dropped.
   *   `link` (*type:* `list(GoogleApi.CloudTrace.V2.Model.Link.t)`, *default:* `nil`) - A collection of links.
   """
 
