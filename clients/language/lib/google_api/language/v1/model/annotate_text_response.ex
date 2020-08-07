@@ -22,19 +22,11 @@ defmodule GoogleApi.Language.V1.Model.AnnotateTextResponse do
   ## Attributes
 
   *   `categories` (*type:* `list(GoogleApi.Language.V1.Model.ClassificationCategory.t)`, *default:* `nil`) - Categories identified in the input document.
-  *   `documentSentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - The overall sentiment for the document. Populated if the user enables
-      AnnotateTextRequest.Features.extract_document_sentiment.
-  *   `entities` (*type:* `list(GoogleApi.Language.V1.Model.Entity.t)`, *default:* `nil`) - Entities, along with their semantic information, in the input document.
-      Populated if the user enables
-      AnnotateTextRequest.Features.extract_entities.
-  *   `language` (*type:* `String.t`, *default:* `nil`) - The language of the text, which will be the same as the language specified
-      in the request or, if not specified, the automatically-detected language.
-      See Document.language field for more details.
-  *   `sentences` (*type:* `list(GoogleApi.Language.V1.Model.Sentence.t)`, *default:* `nil`) - Sentences in the input document. Populated if the user enables
-      AnnotateTextRequest.Features.extract_syntax.
-  *   `tokens` (*type:* `list(GoogleApi.Language.V1.Model.Token.t)`, *default:* `nil`) - Tokens, along with their syntactic information, in the input document.
-      Populated if the user enables
-      AnnotateTextRequest.Features.extract_syntax.
+  *   `documentSentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - The overall sentiment for the document. Populated if the user enables AnnotateTextRequest.Features.extract_document_sentiment.
+  *   `entities` (*type:* `list(GoogleApi.Language.V1.Model.Entity.t)`, *default:* `nil`) - Entities, along with their semantic information, in the input document. Populated if the user enables AnnotateTextRequest.Features.extract_entities.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language of the text, which will be the same as the language specified in the request or, if not specified, the automatically-detected language. See Document.language field for more details.
+  *   `sentences` (*type:* `list(GoogleApi.Language.V1.Model.Sentence.t)`, *default:* `nil`) - Sentences in the input document. Populated if the user enables AnnotateTextRequest.Features.extract_syntax.
+  *   `tokens` (*type:* `list(GoogleApi.Language.V1.Model.Token.t)`, *default:* `nil`) - Tokens, along with their syntactic information, in the input document. Populated if the user enables AnnotateTextRequest.Features.extract_syntax.
   """
 
   use GoogleApi.Gax.ModelBase

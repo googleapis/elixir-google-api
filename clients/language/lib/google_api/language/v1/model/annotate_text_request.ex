@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Language.V1.Model.AnnotateTextRequest do
   @moduledoc """
-  The request message for the text annotation API, which can perform multiple
-  analysis types (sentiment, entities, and syntax) in one call.
+  The request message for the text annotation API, which can perform multiple analysis types (sentiment, entities, and syntax) in one call.
 
   ## Attributes
 

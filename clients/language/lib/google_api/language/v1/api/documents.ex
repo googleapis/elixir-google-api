@@ -26,9 +26,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Finds named entities (currently proper names and common nouns) in the text
-  along with entity types, salience, mentions for each entity, and
-  other properties.
+  Finds named entities (currently proper names and common nouns) in the text along with entity types, salience, mentions for each entity, and other properties.
 
   ## Parameters
 
@@ -86,8 +84,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   end
 
   @doc """
-  Finds entities, similar to AnalyzeEntities in the text and analyzes
-  sentiment associated with each entity and its mentions.
+  Finds entities, similar to AnalyzeEntities in the text and analyzes sentiment associated with each entity and its mentions.
 
   ## Parameters
 
@@ -205,9 +202,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   end
 
   @doc """
-  Analyzes the syntax of the text and provides sentence boundaries and
-  tokenization along with part of speech tags, dependency trees, and other
-  properties.
+  Analyzes the syntax of the text and provides sentence boundaries and tokenization along with part of speech tags, dependency trees, and other properties.
 
   ## Parameters
 
@@ -265,8 +260,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   end
 
   @doc """
-  A convenience method that provides all the features that analyzeSentiment,
-  analyzeEntities, and analyzeSyntax provide in one call.
+  A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and analyzeSyntax provide in one call.
 
   ## Parameters
 

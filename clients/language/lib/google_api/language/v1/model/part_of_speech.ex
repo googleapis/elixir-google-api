@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Language.V1.Model.PartOfSpeech do
   @moduledoc """
-  Represents part of speech information for a token. Parts of speech
-  are as defined in
-  http://www.lrec-conf.org/proceedings/lrec2012/pdf/274_Paper.pdf
+  Represents part of speech information for a token. Parts of speech are as defined in http://www.lrec-conf.org/proceedings/lrec2012/pdf/274_Paper.pdf
 
   ## Attributes
 
