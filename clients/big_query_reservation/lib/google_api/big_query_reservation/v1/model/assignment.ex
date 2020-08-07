@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.BigQueryReservation.V1.Model.Assignment do
   @moduledoc """
-  A Assignment allows a project to submit jobs
-  of a certain type using slots from the specified reservation.
+  A Assignment allows a project to submit jobs of a certain type using slots from the specified reservation.
 
   ## Attributes
 
-  *   `assignee` (*type:* `String.t`, *default:* `nil`) - The resource which will use the reservation. E.g.
-      `projects/myproject`, `folders/123`, or `organizations/456`.
+  *   `assignee` (*type:* `String.t`, *default:* `nil`) - The resource which will use the reservation. E.g. `projects/myproject`, `folders/123`, or `organizations/456`.
   *   `jobType` (*type:* `String.t`, *default:* `nil`) - Which type of jobs will use the reservation.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the resource. E.g.:
-      `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the resource. E.g.: `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the assignment.
   """
 

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.BigQueryReservation.V1.Model.CreateSlotPoolMetadata do
   @moduledoc """
-  The metadata for operation returned from
-  ReservationService.CreateSlotPool.
+  The metadata for operation returned from ReservationService.CreateSlotPool.
 
   ## Attributes
 
-  *   `slotPool` (*type:* `String.t`, *default:* `nil`) - Resource name of the slot pool that is being created. E.g.,
-      projects/myproject/locations/us-central1/reservations/foo/slotPools/123
+  *   `slotPool` (*type:* `String.t`, *default:* `nil`) - Resource name of the slot pool that is being created. E.g., projects/myproject/locations/us-central1/reservations/foo/slotPools/123
   """
 
   use GoogleApi.Gax.ModelBase
