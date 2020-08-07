@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.CloudKMS.V1.Model.WrappingPublicKey do
   @moduledoc """
-  The public key component of the wrapping key. For details of the type of
-  key this public key corresponds to, see the ImportMethod.
+  The public key component of the wrapping key. For details of the type of key this public key corresponds to, see the ImportMethod.
 
   ## Attributes
 
-  *   `pem` (*type:* `String.t`, *default:* `nil`) - The public key, encoded in PEM format. For more information, see the [RFC
-      7468](https://tools.ietf.org/html/rfc7468) sections for [General
-      Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
-      [Textual Encoding of Subject Public Key Info]
-      (https://tools.ietf.org/html/rfc7468#section-13).
+  *   `pem` (*type:* `String.t`, *default:* `nil`) - The public key, encoded in PEM format. For more information, see the [RFC 7468](https://tools.ietf.org/html/rfc7468) sections for [General Considerations](https://tools.ietf.org/html/rfc7468#section-2) and [Textual Encoding of Subject Public Key Info] (https://tools.ietf.org/html/rfc7468#section-13).
   """
 
   use GoogleApi.Gax.ModelBase

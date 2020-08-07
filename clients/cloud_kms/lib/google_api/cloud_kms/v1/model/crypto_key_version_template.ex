@@ -17,21 +17,12 @@
 
 defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersionTemplate do
   @moduledoc """
-  A CryptoKeyVersionTemplate specifies the properties to use when creating
-  a new CryptoKeyVersion, either manually with
-  CreateCryptoKeyVersion or
-  automatically as a result of auto-rotation.
+  A CryptoKeyVersionTemplate specifies the properties to use when creating a new CryptoKeyVersion, either manually with CreateCryptoKeyVersion or automatically as a result of auto-rotation.
 
   ## Attributes
 
-  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - Required. Algorithm to use
-      when creating a CryptoKeyVersion based on this template.
-
-      For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-      this field is omitted and CryptoKey.purpose is
-      ENCRYPT_DECRYPT.
-  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - ProtectionLevel to use when creating a CryptoKeyVersion based on
-      this template. Immutable. Defaults to SOFTWARE.
+  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - Required. Algorithm to use when creating a CryptoKeyVersion based on this template. For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both this field is omitted and CryptoKey.purpose is ENCRYPT_DECRYPT.
+  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - ProtectionLevel to use when creating a CryptoKeyVersion based on this template. Immutable. Defaults to SOFTWARE.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,49 +17,22 @@
 
 defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   @moduledoc """
-  A CryptoKeyVersion represents an individual cryptographic key, and the
-  associated key material.
-
-  An ENABLED version can be
-  used for cryptographic operations.
-
-  For security reasons, the raw cryptographic key material represented by a
-  CryptoKeyVersion can never be viewed or exported. It can only be used to
-  encrypt, decrypt, or sign data when an authorized user or application invokes
-  Cloud KMS.
+  A CryptoKeyVersion represents an individual cryptographic key, and the associated key material. An ENABLED version can be used for cryptographic operations. For security reasons, the raw cryptographic key material represented by a CryptoKeyVersion can never be viewed or exported. It can only be used to encrypt, decrypt, or sign data when an authorized user or application invokes Cloud KMS.
 
   ## Attributes
 
-  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - Output only. The CryptoKeyVersionAlgorithm that this
-      CryptoKeyVersion supports.
-  *   `attestation` (*type:* `GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation.t`, *default:* `nil`) - Output only. Statement that was generated and signed by the HSM at key
-      creation time. Use this statement to verify attributes of the key as stored
-      on the HSM, independently of Google. Only provided for key versions with
-      protection_level HSM.
+  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - Output only. The CryptoKeyVersionAlgorithm that this CryptoKeyVersion supports.
+  *   `attestation` (*type:* `GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation.t`, *default:* `nil`) - Output only. Statement that was generated and signed by the HSM at key creation time. Use this statement to verify attributes of the key as stored on the HSM, independently of Google. Only provided for key versions with protection_level HSM.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion was created.
-  *   `destroyEventTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was
-      destroyed. Only present if state is
-      DESTROYED.
-  *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material is scheduled
-      for destruction. Only present if state is
-      DESTROY_SCHEDULED.
-  *   `externalProtectionLevelOptions` (*type:* `GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t`, *default:* `nil`) - ExternalProtectionLevelOptions stores a group of additional fields for
-      configuring a CryptoKeyVersion that are specific to the
-      EXTERNAL protection level.
-  *   `generateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was
-      generated.
-  *   `importFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of an import failure. Only present if
-      state is
-      IMPORT_FAILED.
-  *   `importJob` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the ImportJob used to import this
-      CryptoKeyVersion. Only present if the underlying key material was
-      imported.
-  *   `importTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion's key material
-      was imported.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CryptoKeyVersion in the format
-      `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
-  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - Output only. The ProtectionLevel describing how crypto operations are
-      performed with this CryptoKeyVersion.
+  *   `destroyEventTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was destroyed. Only present if state is DESTROYED.
+  *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material is scheduled for destruction. Only present if state is DESTROY_SCHEDULED.
+  *   `externalProtectionLevelOptions` (*type:* `GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t`, *default:* `nil`) - ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level.
+  *   `generateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was generated.
+  *   `importFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of an import failure. Only present if state is IMPORT_FAILED.
+  *   `importJob` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the ImportJob used to import this CryptoKeyVersion. Only present if the underlying key material was imported.
+  *   `importTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion's key material was imported.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CryptoKeyVersion in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
+  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - Output only. The ProtectionLevel describing how crypto operations are performed with this CryptoKeyVersion.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the CryptoKeyVersion.
   """
 

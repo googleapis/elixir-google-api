@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation do
   @moduledoc """
-  Contains an HSM-generated attestation about a key operation. For more
-  information, see [Verifying attestations]
-  (https://cloud.google.com/kms/docs/attest-key).
+  Contains an HSM-generated attestation about a key operation. For more information, see [Verifying attestations] (https://cloud.google.com/kms/docs/attest-key).
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - Output only. The attestation data provided by the HSM when the key
-      operation was performed.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - Output only. The attestation data provided by the HSM when the key operation was performed.
   *   `format` (*type:* `String.t`, *default:* `nil`) - Output only. The format of the attestation data.
   """
 
