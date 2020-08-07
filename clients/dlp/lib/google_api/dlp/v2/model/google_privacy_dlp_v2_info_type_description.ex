@@ -21,8 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the infotype. Translated when language is provided in the
-      request.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the infotype. Translated when language is provided in the request.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human readable form of the infoType name.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Internal name of the infoType.
   *   `supportedBy` (*type:* `list(String.t)`, *default:* `nil`) - Which parts of the API supports this InfoType.

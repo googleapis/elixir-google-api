@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Manual do
   @moduledoc """
-  Job trigger option for hybrid jobs. Jobs must be manually created
-  and finished.
+  Job trigger option for hybrid jobs. Jobs must be manually created and finished.
 
   ## Attributes
 

@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate do
   @moduledoc """
-  The inspectTemplate contains a configuration (set of types of sensitive data
-  to be detected) to be used anywhere you otherwise would normally specify
-  InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates
-  to learn more.
+  The inspectTemplate contains a configuration (set of types of sensitive data to be detected) to be used anywhere you otherwise would normally specify InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates to learn more.
 
   ## Attributes
 
@@ -28,11 +25,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Short description (max 256 chars).
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name (max 256 chars).
   *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - The core content of the template. Configuration of the scanning process.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The template name.
-
-      The template will have one of the following formats:
-      `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-      `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The template name. The template will have one of the following formats: `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of an inspectTemplate.
   """
 

@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation do
   @moduledoc """
-  A transformation to apply to text that is identified as a specific
-  info_type.
+  A transformation to apply to text that is identified as a specific info_type.
 
   ## Attributes
 
-  *   `infoTypes` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t)`, *default:* `nil`) - InfoTypes to apply the transformation to. An empty list will cause
-      this transformation to apply to all findings that correspond to
-      infoTypes that were requested in `InspectConfig`.
+  *   `infoTypes` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t)`, *default:* `nil`) - InfoTypes to apply the transformation to. An empty list will cause this transformation to apply to all findings that correspond to infoTypes that were requested in `InspectConfig`.
   *   `primitiveTransformation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t`, *default:* `nil`) - Required. Primitive transformation to apply to the infoType.
   """
 

@@ -22,8 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions do
   ## Attributes
 
   *   `kind` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KindExpression.t`, *default:* `nil`) - The kind to process.
-  *   `partitionId` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId.t`, *default:* `nil`) - A partition ID identifies a grouping of entities. The grouping is always
-      by project and namespace, however the namespace ID may be empty.
+  *   `partitionId` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId.t`, *default:* `nil`) - A partition ID identifies a grouping of entities. The grouping is always by project and namespace, however the namespace ID may be empty.
   """
 
   use GoogleApi.Gax.ModelBase

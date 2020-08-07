@@ -21,9 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2WordList do
 
   ## Attributes
 
-  *   `words` (*type:* `list(String.t)`, *default:* `nil`) - Words or phrases defining the dictionary. The dictionary must contain
-      at least one phrase and every phrase must contain at least 2 characters
-      that are letters or digits. [required]
+  *   `words` (*type:* `list(String.t)`, *default:* `nil`) - Words or phrases defining the dictionary. The dictionary must contain at least one phrase and every phrase must contain at least 2 characters that are letters or digits. [required]
   """
 
   use GoogleApi.Gax.ModelBase

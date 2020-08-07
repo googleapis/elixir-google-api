@@ -23,8 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsResult do
 
   *   `maxValue` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Maximum value appearing in the column.
   *   `minValue` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Minimum value appearing in the column.
-  *   `quantileValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t)`, *default:* `nil`) - List of 99 values that partition the set of field values into 100 equal
-      sized buckets.
+  *   `quantileValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t)`, *default:* `nil`) - List of 99 values that partition the set of field values into 100 equal sized buckets.
   """
 
   use GoogleApi.Gax.ModelBase

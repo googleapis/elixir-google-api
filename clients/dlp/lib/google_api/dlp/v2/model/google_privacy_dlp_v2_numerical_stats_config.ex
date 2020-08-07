@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsConfig do
   @moduledoc """
-  Compute numerical stats over an individual column, including
-  min, max, and quantiles.
+  Compute numerical stats over an individual column, including min, max, and quantiles.
 
   ## Attributes
 
-  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Field to compute numerical stats on. Supported types are
-      integer, float, date, datetime, timestamp, time.
+  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Field to compute numerical stats on. Supported types are integer, float, date, datetime, timestamp, time.
   """
 
   use GoogleApi.Gax.ModelBase

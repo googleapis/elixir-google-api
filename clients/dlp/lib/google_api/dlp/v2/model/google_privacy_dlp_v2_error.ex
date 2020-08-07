@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error do
   @moduledoc """
-  Details information about an error encountered during job execution or
-  the results of an unsuccessful activation of the JobTrigger.
+  Details information about an error encountered during job execution or the results of an unsuccessful activation of the JobTrigger.
 
   ## Attributes
 

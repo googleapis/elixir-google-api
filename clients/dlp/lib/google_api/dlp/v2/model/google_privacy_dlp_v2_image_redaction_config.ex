@@ -21,14 +21,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageRedactionConfig do
 
   ## Attributes
 
-  *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - Only one per info_type should be provided per request. If not
-      specified, and redact_all_text is false, the DLP API will redact all
-      text that it matches against all info_types that are found, but not
-      specified in another ImageRedactionConfig.
-  *   `redactAllText` (*type:* `boolean()`, *default:* `nil`) - If true, all text found in the image, regardless whether it matches an
-      info_type, is redacted. Only one should be provided.
-  *   `redactionColor` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Color.t`, *default:* `nil`) - The color to use when redacting content from an image. If not specified,
-      the default is black.
+  *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - Only one per info_type should be provided per request. If not specified, and redact_all_text is false, the DLP API will redact all text that it matches against all info_types that are found, but not specified in another ImageRedactionConfig.
+  *   `redactAllText` (*type:* `boolean()`, *default:* `nil`) - If true, all text found in the image, regardless whether it matches an info_type, is redacted. Only one should be provided.
+  *   `redactionColor` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Color.t`, *default:* `nil`) - The color to use when redacting content from an image. If not specified, the default is black.
   """
 
   use GoogleApi.Gax.ModelBase

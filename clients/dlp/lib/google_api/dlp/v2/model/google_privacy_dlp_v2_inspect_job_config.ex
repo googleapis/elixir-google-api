@@ -23,9 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig do
 
   *   `actions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action.t)`, *default:* `nil`) - Actions to execute at the completion of the job.
   *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - How and what to scan for.
-  *   `inspectTemplateName` (*type:* `String.t`, *default:* `nil`) - If provided, will be used as the default for all values in InspectConfig.
-      `inspect_config` will be merged into the values persisted as part of the
-      template.
+  *   `inspectTemplateName` (*type:* `String.t`, *default:* `nil`) - If provided, will be used as the default for all values in InspectConfig. `inspect_config` will be merged into the values persisted as part of the template.
   *   `storageConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageConfig.t`, *default:* `nil`) - The data to scan.
   """
 

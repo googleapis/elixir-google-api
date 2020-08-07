@@ -21,8 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageFileSet do
 
   ## Attributes
 
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The url, in the format `gs://<bucket>/<path>`. Trailing wildcard in the
-      path is allowed.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The url, in the format `gs:///`. Trailing wildcard in the path is allowed.
   """
 
   use GoogleApi.Gax.ModelBase

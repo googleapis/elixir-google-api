@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExclusionRule do
   @moduledoc """
-  The rule that specifies conditions when findings of infoTypes specified in
-  `InspectionRuleSet` are removed from results.
+  The rule that specifies conditions when findings of infoTypes specified in `InspectionRuleSet` are removed from results.
 
   ## Attributes
 

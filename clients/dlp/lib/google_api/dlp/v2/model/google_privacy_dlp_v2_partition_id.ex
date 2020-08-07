@@ -17,12 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId do
   @moduledoc """
-  Datastore partition ID.
-  A partition ID identifies a grouping of entities. The grouping is always
-  by project and namespace, however the namespace ID may be empty.
-
-  A partition ID contains several dimensions:
-  project ID and namespace ID.
+  Datastore partition ID. A partition ID identifies a grouping of entities. The grouping is always by project and namespace, however the namespace ID may be empty. A partition ID contains several dimensions: project ID and namespace ID.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectionRuleSet do
   @moduledoc """
-  Rule set for modifying a set of infoTypes to alter behavior under certain
-  circumstances, depending on the specific details of the rules within the set.
+  Rule set for modifying a set of infoTypes to alter behavior under certain circumstances, depending on the specific details of the rules within the set.
 
   ## Attributes
 

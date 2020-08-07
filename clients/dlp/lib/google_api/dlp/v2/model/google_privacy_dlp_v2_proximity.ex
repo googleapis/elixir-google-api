@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Proximity do
   @moduledoc """
-  Message for specifying a window around a finding to apply a detection
-  rule.
+  Message for specifying a window around a finding to apply a detection rule.
 
   ## Attributes
 

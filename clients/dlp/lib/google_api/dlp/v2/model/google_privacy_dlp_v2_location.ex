@@ -21,17 +21,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location do
 
   ## Attributes
 
-  *   `byteRange` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t`, *default:* `nil`) - Zero-based byte offsets delimiting the finding.
-      These are relative to the finding's containing element.
-      Note that when the content is not textual, this references
-      the UTF-8 encoded textual representation of the content.
-      Omitted if content is an image.
-  *   `codepointRange` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t`, *default:* `nil`) - Unicode character offsets delimiting the finding.
-      These are relative to the finding's containing element.
-      Provided when the content is text.
+  *   `byteRange` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t`, *default:* `nil`) - Zero-based byte offsets delimiting the finding. These are relative to the finding's containing element. Note that when the content is not textual, this references the UTF-8 encoded textual representation of the content. Omitted if content is an image.
+  *   `codepointRange` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t`, *default:* `nil`) - Unicode character offsets delimiting the finding. These are relative to the finding's containing element. Provided when the content is text.
   *   `container` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container.t`, *default:* `nil`) - Information about the container where this finding occurred, if available.
-  *   `contentLocations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation.t)`, *default:* `nil`) - List of nested objects pointing to the precise location of the finding
-      within the file or record.
+  *   `contentLocations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation.t)`, *default:* `nil`) - List of nested objects pointing to the precise location of the finding within the file or record.
   """
 
   use GoogleApi.Gax.ModelBase

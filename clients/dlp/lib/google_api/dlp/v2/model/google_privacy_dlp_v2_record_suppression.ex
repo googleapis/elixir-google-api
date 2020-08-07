@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression do
   @moduledoc """
-  Configuration to suppress records whose suppression conditions evaluate to
-  true.
+  Configuration to suppress records whose suppression conditions evaluate to true.
 
   ## Attributes
 
-  *   `condition` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition.t`, *default:* `nil`) - A condition that when it evaluates to true will result in the record being
-      evaluated to be suppressed from the transformed content.
+  *   `condition` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition.t`, *default:* `nil`) - A condition that when it evaluates to true will result in the record being evaluated to be suppressed from the transformed content.
   """
 
   use GoogleApi.Gax.ModelBase

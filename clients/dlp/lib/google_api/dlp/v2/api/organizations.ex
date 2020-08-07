@@ -26,19 +26,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a DeidentifyTemplate for re-using frequently used configuration
-  for de-identifying content, images, and storage.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -106,16 +99,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Deletes a DeidentifyTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be deleted,
-      for example `organizations/433245324/deidentifyTemplates/432452342` or
-      projects/project-id/deidentifyTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be deleted, for example `organizations/433245324/deidentifyTemplates/432452342` or projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -179,16 +168,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Gets a DeidentifyTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be read, for
-      example `organizations/433245324/deidentifyTemplates/432452342` or
-      projects/project-id/deidentifyTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be read, for example `organizations/433245324/deidentifyTemplates/432452342` or projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -254,18 +239,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Lists DeidentifyTemplates.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -279,23 +258,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
-          followed by `asc` or `desc` postfix. This list is case-insensitive,
-          default sorting order is ascending, redundant space characters are
-          insignificant.
-
-          Example: `name asc,update_time, create_time desc`
-
-          Supported fields are:
-
-          - `create_time`: corresponds to time the template was created.
-          - `update_time`: corresponds to time the template was last updated.
-          - `name`: corresponds to template's name.
-          - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
-          a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
-          to `ListDeidentifyTemplates`.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template's name. - `display_name`: corresponds to template's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListDeidentifyTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -354,16 +319,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Updates the DeidentifyTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of organization and deidentify template to be updated, for
-      example `organizations/433245324/deidentifyTemplates/432452342` or
-      projects/project-id/deidentifyTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of organization and deidentify template to be updated, for example `organizations/433245324/deidentifyTemplates/432452342` or projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -431,18 +392,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Creates an InspectTemplate for re-using frequently used configuration
-  for inspecting content, images, and storage.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -510,15 +465,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Deletes an InspectTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be deleted, for
-      example `organizations/433245324/inspectTemplates/432452342` or
-      projects/project-id/inspectTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be deleted, for example `organizations/433245324/inspectTemplates/432452342` or projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -582,15 +534,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Gets an InspectTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be read, for
-      example `organizations/433245324/inspectTemplates/432452342` or
-      projects/project-id/inspectTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be read, for example `organizations/433245324/inspectTemplates/432452342` or projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -651,17 +600,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Lists InspectTemplates.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -675,23 +619,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
-          followed by `asc` or `desc` postfix. This list is case-insensitive,
-          default sorting order is ascending, redundant space characters are
-          insignificant.
-
-          Example: `name asc,update_time, create_time desc`
-
-          Supported fields are:
-
-          - `create_time`: corresponds to time the template was created.
-          - `update_time`: corresponds to time the template was last updated.
-          - `name`: corresponds to template's name.
-          - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
-          a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
-          to `ListInspectTemplates`.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template's name. - `display_name`: corresponds to template's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListInspectTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -749,15 +679,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Updates the InspectTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of organization and inspectTemplate to be updated, for
-      example `organizations/433245324/inspectTemplates/432452342` or
-      projects/project-id/inspectTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of organization and inspectTemplate to be updated, for example `organizations/433245324/inspectTemplates/432452342` or projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -825,19 +752,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Creates a DeidentifyTemplate for re-using frequently used configuration
-  for de-identifying content, images, and storage.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -905,16 +825,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Deletes a DeidentifyTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be deleted,
-      for example `organizations/433245324/deidentifyTemplates/432452342` or
-      projects/project-id/deidentifyTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be deleted, for example `organizations/433245324/deidentifyTemplates/432452342` or projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -978,16 +894,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Gets a DeidentifyTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be read, for
-      example `organizations/433245324/deidentifyTemplates/432452342` or
-      projects/project-id/deidentifyTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be read, for example `organizations/433245324/deidentifyTemplates/432452342` or projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1053,18 +965,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Lists DeidentifyTemplates.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1078,23 +984,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
-          followed by `asc` or `desc` postfix. This list is case-insensitive,
-          default sorting order is ascending, redundant space characters are
-          insignificant.
-
-          Example: `name asc,update_time, create_time desc`
-
-          Supported fields are:
-
-          - `create_time`: corresponds to time the template was created.
-          - `update_time`: corresponds to time the template was last updated.
-          - `name`: corresponds to template's name.
-          - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
-          a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
-          to `ListDeidentifyTemplates`.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template's name. - `display_name`: corresponds to template's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListDeidentifyTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1153,16 +1045,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Updates the DeidentifyTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates-deid to learn
-  more.
+  Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of organization and deidentify template to be updated, for
-      example `organizations/433245324/deidentifyTemplates/432452342` or
-      projects/project-id/deidentifyTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of organization and deidentify template to be updated, for example `organizations/433245324/deidentifyTemplates/432452342` or projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1230,18 +1118,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Creates an InspectTemplate for re-using frequently used configuration
-  for inspecting content, images, and storage.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1309,15 +1191,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Deletes an InspectTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be deleted, for
-      example `organizations/433245324/inspectTemplates/432452342` or
-      projects/project-id/inspectTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be deleted, for example `organizations/433245324/inspectTemplates/432452342` or projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1381,15 +1260,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Gets an InspectTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be read, for
-      example `organizations/433245324/inspectTemplates/432452342` or
-      projects/project-id/inspectTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be read, for example `organizations/433245324/inspectTemplates/432452342` or projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1455,17 +1331,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Lists InspectTemplates.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1479,23 +1350,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
-          followed by `asc` or `desc` postfix. This list is case-insensitive,
-          default sorting order is ascending, redundant space characters are
-          insignificant.
-
-          Example: `name asc,update_time, create_time desc`
-
-          Supported fields are:
-
-          - `create_time`: corresponds to time the template was created.
-          - `update_time`: corresponds to time the template was last updated.
-          - `name`: corresponds to template's name.
-          - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
-          a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
-          to `ListInspectTemplates`.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template's name. - `display_name`: corresponds to template's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListInspectTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1553,15 +1410,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Updates the InspectTemplate.
-  See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+  Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of organization and inspectTemplate to be updated, for
-      example `organizations/433245324/inspectTemplates/432452342` or
-      projects/project-id/inspectTemplates/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of organization and inspectTemplate to be updated, for example `organizations/433245324/inspectTemplates/432452342` or projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1629,18 +1483,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Creates a pre-built stored infoType to be used for inspection.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Creates a pre-built stored infoType to be used for inspection. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1708,16 +1556,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Deletes a stored infoType.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be deleted, for
-      example `organizations/433245324/storedInfoTypes/432452342` or
-      projects/project-id/storedInfoTypes/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be deleted, for example `organizations/433245324/storedInfoTypes/432452342` or projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1781,16 +1625,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Gets a stored infoType.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be read, for
-      example `organizations/433245324/storedInfoTypes/432452342` or
-      projects/project-id/storedInfoTypes/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be read, for example `organizations/433245324/storedInfoTypes/432452342` or projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1856,18 +1696,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Lists stored infoTypes.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1881,24 +1715,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
-          followed by `asc` or `desc` postfix. This list is case-insensitive,
-          default sorting order is ascending, redundant space characters are
-          insignificant.
-
-          Example: `name asc, display_name, create_time desc`
-
-          Supported fields are:
-
-          - `create_time`: corresponds to time the most recent version of the
-          resource was created.
-          - `state`: corresponds to the state of the resource.
-          - `name`: corresponds to resource name.
-          - `display_name`: corresponds to info type's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
-          a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
-          to `ListStoredInfoTypes`.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListStoredInfoTypes`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1956,17 +1775,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Updates the stored infoType by creating a new version. The existing version
-  will continue to be used until the new version is ready.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Updates the stored infoType by creating a new version. The existing version will continue to be used until the new version is ready. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of organization and storedInfoType to be updated, for
-      example `organizations/433245324/storedInfoTypes/432452342` or
-      projects/project-id/storedInfoTypes/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of organization and storedInfoType to be updated, for example `organizations/433245324/storedInfoTypes/432452342` or projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2034,18 +1848,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Creates a pre-built stored infoType to be used for inspection.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Creates a pre-built stored infoType to be used for inspection. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2113,16 +1921,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Deletes a stored infoType.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be deleted, for
-      example `organizations/433245324/storedInfoTypes/432452342` or
-      projects/project-id/storedInfoTypes/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be deleted, for example `organizations/433245324/storedInfoTypes/432452342` or projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2186,16 +1990,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Gets a stored infoType.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be read, for
-      example `organizations/433245324/storedInfoTypes/432452342` or
-      projects/project-id/storedInfoTypes/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be read, for example `organizations/433245324/storedInfoTypes/432452342` or projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2256,18 +2056,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Lists stored infoTypes.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      - Format:projects/[PROJECT-ID]
-      - Format:organizations/[ORGANIZATION-ID]
-      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
-      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. - Format:projects/[PROJECT-ID] - Format:organizations/[ORGANIZATION-ID] - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2281,24 +2075,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
-          followed by `asc` or `desc` postfix. This list is case-insensitive,
-          default sorting order is ascending, redundant space characters are
-          insignificant.
-
-          Example: `name asc, display_name, create_time desc`
-
-          Supported fields are:
-
-          - `create_time`: corresponds to time the most recent version of the
-          resource was created.
-          - `state`: corresponds to the state of the resource.
-          - `name`: corresponds to resource name.
-          - `display_name`: corresponds to info type's display name.
-      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
-          a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
-          to `ListStoredInfoTypes`.
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type's display name.
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns a page of max size 100.
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call to `ListStoredInfoTypes`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2356,17 +2135,12 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   end
 
   @doc """
-  Updates the stored infoType by creating a new version. The existing version
-  will continue to be used until the new version is ready.
-  See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-  learn more.
+  Updates the stored infoType by creating a new version. The existing version will continue to be used until the new version is ready. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of organization and storedInfoType to be updated, for
-      example `organizations/433245324/storedInfoTypes/432452342` or
-      projects/project-id/storedInfoTypes/432452342.
+  *   `name` (*type:* `String.t`) - Required. Resource name of organization and storedInfoType to be updated, for example `organizations/433245324/storedInfoTypes/432452342` or projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

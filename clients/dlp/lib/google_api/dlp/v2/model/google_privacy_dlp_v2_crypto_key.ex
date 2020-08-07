@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey do
   @moduledoc """
-  This is a data encryption key (DEK) (as opposed to
-  a key encryption key (KEK) stored by KMS).
-  When using KMS to wrap/unwrap DEKs, be sure to set an appropriate
-  IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot
-  unwrap the data crypto key.
+  This is a data encryption key (DEK) (as opposed to a key encryption key (KEK) stored by KMS). When using KMS to wrap/unwrap DEKs, be sure to set an appropriate IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot unwrap the data crypto key.
 
   ## Attributes
 

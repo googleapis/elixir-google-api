@@ -21,11 +21,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp indicating when the version of the `StoredInfoType` used for
-      inspection was created. Output-only field, populated by the system.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the requested `StoredInfoType`, for example
-      `organizations/433245324/storedInfoTypes/432452342` or
-      `projects/project-id/storedInfoTypes/432452342`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp indicating when the version of the `StoredInfoType` used for inspection was created. Output-only field, populated by the system.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the requested `StoredInfoType`, for example `organizations/433245324/storedInfoTypes/432452342` or `projects/project-id/storedInfoTypes/432452342`.
   """
 
   use GoogleApi.Gax.ModelBase

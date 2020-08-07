@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeLimit do
   @moduledoc """
-  Max findings configuration per infoType, per content item or long
-  running DlpJob.
+  Max findings configuration per infoType, per content item or long running DlpJob.
 
   ## Attributes
 
-  *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - Type of information the findings limit applies to. Only one limit per
-      info_type should be provided. If InfoTypeLimit does not have an
-      info_type, the DLP API applies the limit against all info_types that
-      are found but not specified in another InfoTypeLimit.
+  *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - Type of information the findings limit applies to. Only one limit per info_type should be provided. If InfoTypeLimit does not have an info_type, the DLP API applies the limit against all info_types that are found but not specified in another InfoTypeLimit.
   *   `maxFindings` (*type:* `integer()`, *default:* `nil`) - Max findings limit for the given infoType.
   """
 

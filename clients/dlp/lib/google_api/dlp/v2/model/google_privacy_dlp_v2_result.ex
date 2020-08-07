@@ -21,12 +21,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Result do
 
   ## Attributes
 
-  *   `hybridStats` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics.t`, *default:* `nil`) - Statistics related to the processing of hybrid inspect.
-      Early access feature is in a pre-release state and might change or have
-      limited support. For more information, see
-      https://cloud.google.com/products#product-launch-stages.
-  *   `infoTypeStats` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeStats.t)`, *default:* `nil`) - Statistics of how many instances of each info type were found during
-      inspect job.
+  *   `hybridStats` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics.t`, *default:* `nil`) - Statistics related to the processing of hybrid inspect. Early access feature is in a pre-release state and might change or have limited support. For more information, see https://cloud.google.com/products#product-launch-stages.
+  *   `infoTypeStats` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeStats.t)`, *default:* `nil`) - Statistics of how many instances of each info type were found during inspect job.
   *   `processedBytes` (*type:* `String.t`, *default:* `nil`) - Total size in bytes that were processed.
   *   `totalEstimatedBytes` (*type:* `String.t`, *default:* `nil`) - Estimate of the number of bytes to process.
   """

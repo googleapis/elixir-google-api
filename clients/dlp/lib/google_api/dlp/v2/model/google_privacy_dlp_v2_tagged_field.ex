@@ -21,17 +21,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TaggedField do
 
   ## Attributes
 
-  *   `customTag` (*type:* `String.t`, *default:* `nil`) - A column can be tagged with a custom tag. In this case, the user must
-      indicate an auxiliary table that contains statistical information on
-      the possible values of this column (below).
+  *   `customTag` (*type:* `String.t`, *default:* `nil`) - A column can be tagged with a custom tag. In this case, the user must indicate an auxiliary table that contains statistical information on the possible values of this column (below).
   *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Required. Identifies the column.
-  *   `inferred` (*type:* `GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t`, *default:* `nil`) - If no semantic tag is indicated, we infer the statistical model from
-      the distribution of values in the input data
-  *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - A column can be tagged with a InfoType to use the relevant public
-      dataset as a statistical model of population, if available. We
-      currently support US ZIP codes, region codes, ages and genders.
-      To programmatically obtain the list of supported InfoTypes, use
-      ListInfoTypes with the supported_by=RISK_ANALYSIS filter.
+  *   `inferred` (*type:* `GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t`, *default:* `nil`) - If no semantic tag is indicated, we infer the statistical model from the distribution of values in the input data
+  *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - A column can be tagged with a InfoType to use the relevant public dataset as a statistical model of population, if available. We currently support US ZIP codes, region codes, ages and genders. To programmatically obtain the list of supported InfoTypes, use ListInfoTypes with the supported_by=RISK_ANALYSIS filter.
   """
 
   use GoogleApi.Gax.ModelBase

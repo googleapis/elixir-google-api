@@ -21,9 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityConfig do
 
   ## Attributes
 
-  *   `quasiIds` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - Set of quasi-identifiers indicating how equivalence classes are
-      defined for the l-diversity computation. When multiple fields are
-      specified, they are considered a single composite key.
+  *   `quasiIds` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - Set of quasi-identifiers indicating how equivalence classes are defined for the l-diversity computation. When multiple fields are specified, they are considered a single composite key.
   *   `sensitiveAttribute` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Sensitive field for computing the l-value.
   """
 

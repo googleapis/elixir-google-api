@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails do
   @moduledoc """
-  Enable email notification to project owners and editors on jobs's
-  completion/failure.
+  Enable email notification to project owners and editors on jobs's completion/failure.
 
   ## Attributes
 

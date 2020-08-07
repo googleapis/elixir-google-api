@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SummaryResult do
   @moduledoc """
-  A collection that informs the user the number of times a particular
-  `TransformationResultCode` and error details occurred.
+  A collection that informs the user the number of times a particular `TransformationResultCode` and error details occurred.
 
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - Outcome of the transformation.
   *   `count` (*type:* `String.t`, *default:* `nil`) - Number of transformations counted by this result.
-  *   `details` (*type:* `String.t`, *default:* `nil`) - A place for warnings or errors to show up if a transformation didn't
-      work as expected.
+  *   `details` (*type:* `String.t`, *default:* `nil`) - A place for warnings or errors to show up if a transformation didn't work as expected.
   """
 
   use GoogleApi.Gax.ModelBase

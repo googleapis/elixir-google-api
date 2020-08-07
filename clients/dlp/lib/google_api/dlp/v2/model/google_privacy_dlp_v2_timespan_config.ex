@@ -17,32 +17,14 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig do
   @moduledoc """
-  Configuration of the timespan of the items to include in scanning.
-  Currently only supported when inspecting Google Cloud Storage and BigQuery.
+  Configuration of the timespan of the items to include in scanning. Currently only supported when inspecting Google Cloud Storage and BigQuery.
 
   ## Attributes
 
-  *   `enableAutoPopulationOfTimespanConfig` (*type:* `boolean()`, *default:* `nil`) - When the job is started by a JobTrigger we will automatically figure out
-      a valid start_time to avoid scanning files that have not been modified
-      since the last time the JobTrigger executed. This will be based on the
-      time of the execution of the last run of the JobTrigger.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Exclude files or rows newer than this value.
-      If set to zero, no upper time limit is applied.
+  *   `enableAutoPopulationOfTimespanConfig` (*type:* `boolean()`, *default:* `nil`) - When the job is started by a JobTrigger we will automatically figure out a valid start_time to avoid scanning files that have not been modified since the last time the JobTrigger executed. This will be based on the time of the execution of the last run of the JobTrigger.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Exclude files or rows newer than this value. If set to zero, no upper time limit is applied.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Exclude files or rows older than this value.
-  *   `timestampField` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Specification of the field containing the timestamp of scanned items.
-      Used for data sources like Datastore and BigQuery.
-
-      For BigQuery:
-      Required to filter out rows based on the given start and
-      end times. If not specified and the table was modified between the given
-      start and end times, the entire table will be scanned.
-      The valid data types of the timestamp field are: `INTEGER`, `DATE`,
-      `TIMESTAMP`, or `DATETIME` BigQuery column.
-
-      For Datastore.
-      Valid data types of the timestamp field are: `TIMESTAMP`.
-      Datastore entity will be scanned if the timestamp property does not
-      exist or its value is empty or invalid.
+  *   `timestampField` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Specification of the field containing the timestamp of scanned items. Used for data sources like Datastore and BigQuery. For BigQuery: Required to filter out rows based on the given start and end times. If not specified and the table was modified between the given start and end times, the entire table will be scanned. The valid data types of the timestamp field are: `INTEGER`, `DATE`, `TIMESTAMP`, or `DATETIME` BigQuery column. For Datastore. Valid data types of the timestamp field are: `TIMESTAMP`. Datastore entity will be scanned if the timestamp property does not exist or its value is empty or invalid.
   """
 
   use GoogleApi.Gax.ModelBase

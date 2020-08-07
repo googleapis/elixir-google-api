@@ -21,11 +21,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex do
 
   ## Attributes
 
-  *   `groupIndexes` (*type:* `list(integer())`, *default:* `nil`) - The index of the submatch to extract as findings. When not
-      specified, the entire match is returned. No more than 3 may be included.
-  *   `pattern` (*type:* `String.t`, *default:* `nil`) - Pattern defining the regular expression. Its syntax
-      (https://github.com/google/re2/wiki/Syntax) can be found under the
-      google/re2 repository on GitHub.
+  *   `groupIndexes` (*type:* `list(integer())`, *default:* `nil`) - The index of the submatch to extract as findings. When not specified, the entire match is returned. No more than 3 may be included.
+  *   `pattern` (*type:* `String.t`, *default:* `nil`) - Pattern defining the regular expression. Its syntax (https://github.com/google/re2/wiki/Syntax) can be found under the google/re2 repository on GitHub.
   """
 
   use GoogleApi.Gax.ModelBase

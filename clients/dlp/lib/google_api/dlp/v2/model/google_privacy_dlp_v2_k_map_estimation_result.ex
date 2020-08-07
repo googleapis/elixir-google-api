@@ -17,19 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationResult do
   @moduledoc """
-  Result of the reidentifiability analysis. Note that these results are an
-  estimation, not exact values.
+  Result of the reidentifiability analysis. Note that these results are an estimation, not exact values.
 
   ## Attributes
 
-  *   `kMapEstimationHistogram` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationHistogramBucket.t)`, *default:* `nil`) - The intervals [min_anonymity, max_anonymity] do not overlap. If a value
-      doesn't correspond to any such interval, the associated frequency is
-      zero. For example, the following records:
-        {min_anonymity: 1, max_anonymity: 1, frequency: 17}
-        {min_anonymity: 2, max_anonymity: 3, frequency: 42}
-        {min_anonymity: 5, max_anonymity: 10, frequency: 99}
-      mean that there are no record with an estimated anonymity of 4, 5, or
-      larger than 10.
+  *   `kMapEstimationHistogram` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationHistogramBucket.t)`, *default:* `nil`) - The intervals [min_anonymity, max_anonymity] do not overlap. If a value doesn't correspond to any such interval, the associated frequency is zero. For example, the following records: {min_anonymity: 1, max_anonymity: 1, frequency: 17} {min_anonymity: 2, max_anonymity: 3, frequency: 42} {min_anonymity: 5, max_anonymity: 10, frequency: 99} mean that there are no record with an estimated anonymity of 4, 5, or larger than 10.
   """
 
   use GoogleApi.Gax.ModelBase

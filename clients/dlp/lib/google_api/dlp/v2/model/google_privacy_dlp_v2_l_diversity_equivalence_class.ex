@@ -23,8 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityEquivalenceClass do
 
   *   `equivalenceClassSize` (*type:* `String.t`, *default:* `nil`) - Size of the k-anonymity equivalence class.
   *   `numDistinctSensitiveValues` (*type:* `String.t`, *default:* `nil`) - Number of distinct sensitive values in this equivalence class.
-  *   `quasiIdsValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t)`, *default:* `nil`) - Quasi-identifier values defining the k-anonymity equivalence
-      class. The order is always the same as the original request.
+  *   `quasiIdsValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t)`, *default:* `nil`) - Quasi-identifier values defining the k-anonymity equivalence class. The order is always the same as the original request.
   *   `topSensitiveValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ValueFrequency.t)`, *default:* `nil`) - Estimated frequencies of top sensitive values.
   """
 

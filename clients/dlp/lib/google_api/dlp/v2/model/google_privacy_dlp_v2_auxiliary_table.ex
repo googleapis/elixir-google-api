@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AuxiliaryTable do
   @moduledoc """
-  An auxiliary table contains statistical information on the relative
-  frequency of different quasi-identifiers values. It has one or several
-  quasi-identifiers columns, and one column that indicates the relative
-  frequency of each quasi-identifier tuple.
-  If a tuple is present in the data but not in the auxiliary table, the
-  corresponding relative frequency is assumed to be zero (and thus, the
-  tuple is highly reidentifiable).
+  An auxiliary table contains statistical information on the relative frequency of different quasi-identifiers values. It has one or several quasi-identifiers columns, and one column that indicates the relative frequency of each quasi-identifier tuple. If a tuple is present in the data but not in the auxiliary table, the corresponding relative frequency is assumed to be zero (and thus, the tuple is highly reidentifiable).
 
   ## Attributes
 
   *   `quasiIds` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiIdField.t)`, *default:* `nil`) - Required. Quasi-identifier columns.
-  *   `relativeFrequency` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Required. The relative frequency column must contain a floating-point number
-      between 0 and 1 (inclusive). Null values are assumed to be zero.
+  *   `relativeFrequency` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Required. The relative frequency column must contain a floating-point number between 0 and 1 (inclusive). Null values are assumed to be zero.
   *   `table` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - Required. Auxiliary table location.
   """
 

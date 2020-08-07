@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationSummary do
   @moduledoc """
-  Summary of a single transformation.
-  Only one of 'transformation', 'field_transformation', or 'record_suppress'
-  will be set.
+  Summary of a single transformation. Only one of 'transformation', 'field_transformation', or 'record_suppress' will be set.
 
   ## Attributes
 
   *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Set if the transformation was limited to a specific FieldId.
-  *   `fieldTransformations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation.t)`, *default:* `nil`) - The field transformation that was applied.
-      If multiple field transformations are requested for a single field,
-      this list will contain all of them; otherwise, only one is supplied.
+  *   `fieldTransformations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation.t)`, *default:* `nil`) - The field transformation that was applied. If multiple field transformations are requested for a single field, this list will contain all of them; otherwise, only one is supplied.
   *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - Set if the transformation was limited to a specific InfoType.
   *   `recordSuppress` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t`, *default:* `nil`) - The specific suppression option these stats apply to.
   *   `results` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SummaryResult.t)`, *default:* `nil`) - Collection of all transformations that took place or had an error.

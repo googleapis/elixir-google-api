@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations do
   @moduledoc """
-  A type of transformation that is applied over structured data such as a
-  table.
+  A type of transformation that is applied over structured data such as a table.
 
   ## Attributes
 
   *   `fieldTransformations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation.t)`, *default:* `nil`) - Transform the record by applying various field transformations.
-  *   `recordSuppressions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t)`, *default:* `nil`) - Configuration defining which records get suppressed entirely. Records that
-      match any suppression rule are omitted from the output.
+  *   `recordSuppressions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t)`, *default:* `nil`) - Configuration defining which records get suppressed entirely. Records that match any suppression rule are omitted from the output.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimeZone do
 
   ## Attributes
 
-  *   `offsetMinutes` (*type:* `integer()`, *default:* `nil`) - Set only if the offset can be determined. Positive for time ahead of UTC.
-      E.g. For "UTC-9", this value is -540.
+  *   `offsetMinutes` (*type:* `integer()`, *default:* `nil`) - Set only if the offset can be determined. Positive for time ahead of UTC. E.g. For "UTC-9", this value is -540.
   """
 
   use GoogleApi.Gax.ModelBase

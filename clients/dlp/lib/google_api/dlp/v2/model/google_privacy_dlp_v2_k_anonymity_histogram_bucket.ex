@@ -23,8 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityHistogramBucket do
 
   *   `bucketSize` (*type:* `String.t`, *default:* `nil`) - Total number of equivalence classes in this bucket.
   *   `bucketValueCount` (*type:* `String.t`, *default:* `nil`) - Total number of distinct equivalence classes in this bucket.
-  *   `bucketValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityEquivalenceClass.t)`, *default:* `nil`) - Sample of equivalence classes in this bucket. The total number of
-      classes returned per bucket is capped at 20.
+  *   `bucketValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityEquivalenceClass.t)`, *default:* `nil`) - Sample of equivalence classes in this bucket. The total number of classes returned per bucket is capped at 20.
   *   `equivalenceClassSizeLowerBound` (*type:* `String.t`, *default:* `nil`) - Lower bound on the size of the equivalence classes in this bucket.
   *   `equivalenceClassSizeUpperBound` (*type:* `String.t`, *default:* `nil`) - Upper bound on the size of the equivalence classes in this bucket.
   """

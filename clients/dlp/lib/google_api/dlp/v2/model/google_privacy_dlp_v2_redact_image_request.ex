@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageRequest do
   @moduledoc """
-  Request to search for potentially sensitive info in an image and redact it
-  by covering it with a colored rectangle.
+  Request to search for potentially sensitive info in an image and redact it by covering it with a colored rectangle.
 
   ## Attributes
 
   *   `byteItem` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem.t`, *default:* `nil`) - The content must be PNG, JPEG, SVG or BMP.
   *   `imageRedactionConfigs` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageRedactionConfig.t)`, *default:* `nil`) - The configuration for specifying what content to redact from images.
-  *   `includeFindings` (*type:* `boolean()`, *default:* `nil`) - Whether the response should include findings along with the redacted
-      image.
+  *   `includeFindings` (*type:* `boolean()`, *default:* `nil`) - Whether the response should include findings along with the redacted image.
   *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - Configuration for the inspector.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   """

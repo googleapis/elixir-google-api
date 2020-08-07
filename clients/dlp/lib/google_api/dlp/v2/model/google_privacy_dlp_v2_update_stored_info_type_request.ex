@@ -21,9 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UpdateStoredInfoTypeRequest d
 
   ## Attributes
 
-  *   `config` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t`, *default:* `nil`) - Updated configuration for the storedInfoType. If not provided, a new
-      version of the storedInfoType will be created with the existing
-      configuration.
+  *   `config` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t`, *default:* `nil`) - Updated configuration for the storedInfoType. If not provided, a new version of the storedInfoType will be created with the existing configuration.
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Mask to control which fields get updated.
   """
 

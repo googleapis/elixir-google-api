@@ -17,21 +17,13 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationHistogramBucket do
   @moduledoc """
-  A KMapEstimationHistogramBucket message with the following values:
-    min_anonymity: 3
-    max_anonymity: 5
-    frequency: 42
-  means that there are 42 records whose quasi-identifier values correspond
-  to 3, 4 or 5 people in the overlying population. An important particular
-  case is when min_anonymity = max_anonymity = 1: the frequency field then
-  corresponds to the number of uniquely identifiable records.
+  A KMapEstimationHistogramBucket message with the following values: min_anonymity: 3 max_anonymity: 5 frequency: 42 means that there are 42 records whose quasi-identifier values correspond to 3, 4 or 5 people in the overlying population. An important particular case is when min_anonymity = max_anonymity = 1: the frequency field then corresponds to the number of uniquely identifiable records.
 
   ## Attributes
 
   *   `bucketSize` (*type:* `String.t`, *default:* `nil`) - Number of records within these anonymity bounds.
   *   `bucketValueCount` (*type:* `String.t`, *default:* `nil`) - Total number of distinct quasi-identifier tuple values in this bucket.
-  *   `bucketValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationQuasiIdValues.t)`, *default:* `nil`) - Sample of quasi-identifier tuple values in this bucket. The total
-      number of classes returned per bucket is capped at 20.
+  *   `bucketValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationQuasiIdValues.t)`, *default:* `nil`) - Sample of quasi-identifier tuple values in this bucket. The total number of classes returned per bucket is capped at 20.
   *   `maxAnonymity` (*type:* `String.t`, *default:* `nil`) - Always greater than or equal to min_anonymity.
   *   `minAnonymity` (*type:* `String.t`, *default:* `nil`) - Always positive.
   """

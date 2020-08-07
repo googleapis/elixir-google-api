@@ -17,31 +17,18 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType do
   @moduledoc """
-  Custom information type provided by the user. Used to find domain-specific
-  sensitive information configurable to the data in question.
+  Custom information type provided by the user. Used to find domain-specific sensitive information configurable to the data in question.
 
   ## Attributes
 
-  *   `detectionRules` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DetectionRule.t)`, *default:* `nil`) - Set of detection rules to apply to all findings of this CustomInfoType.
-      Rules are applied in order that they are specified. Not supported for the
-      `surrogate_type` CustomInfoType.
+  *   `detectionRules` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DetectionRule.t)`, *default:* `nil`) - Set of detection rules to apply to all findings of this CustomInfoType. Rules are applied in order that they are specified. Not supported for the `surrogate_type` CustomInfoType.
   *   `dictionary` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t`, *default:* `nil`) - A list of phrases to detect as a CustomInfoType.
-  *   `exclusionType` (*type:* `String.t`, *default:* `nil`) - If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-      to be returned. It still can be used for rules matching.
-  *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - CustomInfoType can either be a new infoType, or an extension of built-in
-      infoType, when the name matches one of existing infoTypes and that infoType
-      is specified in `InspectContent.info_types` field. Specifying the latter
-      adds findings to the one detected by the system. If built-in info type is
-      not specified in `InspectContent.info_types` list then the name is treated
-      as a custom info type.
-  *   `likelihood` (*type:* `String.t`, *default:* `nil`) - Likelihood to return for this CustomInfoType. This base value can be
-      altered by a detection rule if the finding meets the criteria specified by
-      the rule. Defaults to `VERY_LIKELY` if not specified.
+  *   `exclusionType` (*type:* `String.t`, *default:* `nil`) - If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding to be returned. It still can be used for rules matching.
+  *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - CustomInfoType can either be a new infoType, or an extension of built-in infoType, when the name matches one of existing infoTypes and that infoType is specified in `InspectContent.info_types` field. Specifying the latter adds findings to the one detected by the system. If built-in info type is not specified in `InspectContent.info_types` list then the name is treated as a custom info type.
+  *   `likelihood` (*type:* `String.t`, *default:* `nil`) - Likelihood to return for this CustomInfoType. This base value can be altered by a detection rule if the finding meets the criteria specified by the rule. Defaults to `VERY_LIKELY` if not specified.
   *   `regex` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t`, *default:* `nil`) - Regular expression based CustomInfoType.
-  *   `storedType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType.t`, *default:* `nil`) - Load an existing `StoredInfoType` resource for use in
-      `InspectDataSource`. Not currently supported in `InspectContent`.
-  *   `surrogateType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SurrogateType.t`, *default:* `nil`) - Message for detecting output from deidentification transformations that
-      support reversing.
+  *   `storedType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType.t`, *default:* `nil`) - Load an existing `StoredInfoType` resource for use in `InspectDataSource`. Not currently supported in `InspectContent`.
+  *   `surrogateType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SurrogateType.t`, *default:* `nil`) - Message for detecting output from deidentification transformations that support reversing.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,27 +17,19 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger do
   @moduledoc """
-  Contains a configuration to make dlp api calls on a repeating basis.
-  See https://cloud.google.com/dlp/docs/concepts-job-triggers to learn more.
+  Contains a configuration to make dlp api calls on a repeating basis. See https://cloud.google.com/dlp/docs/concepts-job-triggers to learn more.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of a triggeredJob.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User provided description (max 256 chars)
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name (max 100 chars)
-  *   `errors` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error.t)`, *default:* `nil`) - Output only. A stream of errors encountered when the trigger was activated. Repeated
-      errors may result in the JobTrigger automatically being paused.
-      Will return the last 100 errors. Whenever the JobTrigger is modified
-      this list will be cleared.
+  *   `errors` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error.t)`, *default:* `nil`) - Output only. A stream of errors encountered when the trigger was activated. Repeated errors may result in the JobTrigger automatically being paused. Will return the last 100 errors. Whenever the JobTrigger is modified this list will be cleared.
   *   `inspectJob` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig.t`, *default:* `nil`) - For inspect jobs, a snapshot of the configuration.
   *   `lastRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of the last time this trigger executed.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Unique resource name for the triggeredJob, assigned by the service when the
-      triggeredJob is created, for example
-      `projects/dlp-test-project/jobTriggers/53234423`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Unique resource name for the triggeredJob, assigned by the service when the triggeredJob is created, for example `projects/dlp-test-project/jobTriggers/53234423`.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Required. A status for this trigger.
-  *   `triggers` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Trigger.t)`, *default:* `nil`) - A list of triggers which will be OR'ed together. Only one in the list
-      needs to trigger for a job to be started. The list may contain only
-      a single Schedule trigger and must have at least one object.
+  *   `triggers` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Trigger.t)`, *default:* `nil`) - A list of triggers which will be OR'ed together. Only one in the list needs to trigger for a job to be started. The list may contain only a single Schedule trigger and must have at least one object.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a triggeredJob.
   """
 
