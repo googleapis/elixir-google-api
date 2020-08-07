@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.KeyValue do
   @moduledoc """
-  A UI element contains a key (label) and a value (content). And this
-  element may also contain some actions such as onclick button.
+  A UI element contains a key (label) and a value (content). And this element may also contain some actions such as onclick button.
 
   ## Attributes
 
@@ -26,11 +25,9 @@ defmodule GoogleApi.Chat.V1.Model.KeyValue do
   *   `button` (*type:* `GoogleApi.Chat.V1.Model.Button.t`, *default:* `nil`) - A button that can be clicked to trigger an action.
   *   `content` (*type:* `String.t`, *default:* `nil`) - The text of the content. Formatted text supported and always required.
   *   `contentMultiline` (*type:* `boolean()`, *default:* `nil`) - If the content should be multiline.
-  *   `icon` (*type:* `String.t`, *default:* `nil`) - An enum value that will be replaced by the Chat API with the
-      corresponding icon image.
+  *   `icon` (*type:* `String.t`, *default:* `nil`) - An enum value that will be replaced by the Chat API with the corresponding icon image.
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - The icon specified by a URL.
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The onclick action. Only the top label, bottom label and content region
-      are clickable.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The onclick action. Only the top label, bottom label and content region are clickable.
   *   `topLabel` (*type:* `String.t`, *default:* `nil`) - The text of the top label. Formatted text supported.
   """
 

@@ -24,9 +24,7 @@ defmodule GoogleApi.Chat.V1.Model.CardHeader do
   *   `imageStyle` (*type:* `String.t`, *default:* `nil`) - The image's type (e.g. square border or circular border).
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the image in the card header.
   *   `subtitle` (*type:* `String.t`, *default:* `nil`) - The subtitle of the card header.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title must be specified. The header has a fixed height: if both a
-      title and subtitle is specified, each will take up 1 line. If only the
-      title is specified, it will take up both lines.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title must be specified. The header has a fixed height: if both a title and subtitle is specified, each will take up 1 line. If only the title is specified, it will take up both lines.
   """
 
   use GoogleApi.Gax.ModelBase
