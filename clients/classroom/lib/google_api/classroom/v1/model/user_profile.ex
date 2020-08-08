@@ -21,26 +21,12 @@ defmodule GoogleApi.Classroom.V1.Model.UserProfile do
 
   ## Attributes
 
-  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - Email address of the user.
-
-      Read-only.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the user.
-
-      Read-only.
-  *   `name` (*type:* `GoogleApi.Classroom.V1.Model.Name.t`, *default:* `nil`) - Name of the user.
-
-      Read-only.
-  *   `permissions` (*type:* `list(GoogleApi.Classroom.V1.Model.GlobalPermission.t)`, *default:* `nil`) - Global permissions of the user.
-
-      Read-only.
-  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - URL of user's profile photo.
-
-      Read-only.
-  *   `verifiedTeacher` (*type:* `boolean()`, *default:* `nil`) - Represents whether a G Suite for Education user's domain administrator has
-      explicitly verified them as being a teacher. If the user is not a member of
-      a G Suite for Education domain, than this field is always false.
-
-      Read-only
+  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - Email address of the user. Read-only.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the user. Read-only.
+  *   `name` (*type:* `GoogleApi.Classroom.V1.Model.Name.t`, *default:* `nil`) - Name of the user. Read-only.
+  *   `permissions` (*type:* `list(GoogleApi.Classroom.V1.Model.GlobalPermission.t)`, *default:* `nil`) - Global permissions of the user. Read-only.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - URL of user's profile photo. Read-only.
+  *   `verifiedTeacher` (*type:* `boolean()`, *default:* `nil`) - Represents whether a G Suite for Education user's domain administrator has explicitly verified them as being a teacher. If the user is not a member of a G Suite for Education domain, than this field is always false. Read-only
   """
 
   use GoogleApi.Gax.ModelBase

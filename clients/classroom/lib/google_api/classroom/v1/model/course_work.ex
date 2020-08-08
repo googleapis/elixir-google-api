@@ -21,75 +21,28 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
 
   ## Attributes
 
-  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - Absolute link to this course work in the Classroom web UI.
-      This is only populated if `state` is `PUBLISHED`.
-
-      Read-only.
-  *   `assigneeMode` (*type:* `String.t`, *default:* `nil`) - Assignee mode of the coursework.
-      If unspecified, the default value is `ALL_STUDENTS`.
-  *   `assignment` (*type:* `GoogleApi.Classroom.V1.Model.Assignment.t`, *default:* `nil`) - Assignment details.
-      This is populated only when `work_type` is `ASSIGNMENT`.
-
-      Read-only.
-  *   `associatedWithDeveloper` (*type:* `boolean()`, *default:* `nil`) - Whether this course work item is associated with the Developer Console
-      project making the request.
-
-      See CreateCourseWork for more
-      details.
-
-      Read-only.
-  *   `courseId` (*type:* `String.t`, *default:* `nil`) - Identifier of the course.
-
-      Read-only.
-  *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when this course work was created.
-
-      Read-only.
-  *   `creatorUserId` (*type:* `String.t`, *default:* `nil`) - Identifier for the user that created the coursework.
-
-      Read-only.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional description of this course work.
-      If set, the description must be a valid UTF-8 string containing no more
-      than 30,000 characters.
-  *   `dueDate` (*type:* `GoogleApi.Classroom.V1.Model.Date.t`, *default:* `nil`) - Optional date, in UTC, that submissions for this course work are due.
-      This must be specified if `due_time` is specified.
-  *   `dueTime` (*type:* `GoogleApi.Classroom.V1.Model.TimeOfDay.t`, *default:* `nil`) - Optional time of day, in UTC, that submissions for this course work
-      are due.
-      This must be specified if `due_date` is specified.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Classroom-assigned identifier of this course work, unique per course.
-
-      Read-only.
-  *   `individualStudentsOptions` (*type:* `GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t`, *default:* `nil`) - Identifiers of students with access to the coursework.
-      This field is set only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
-      If the `assigneeMode` is `INDIVIDUAL_STUDENTS`, then only students
-      specified in this field are assigned the coursework.
-  *   `materials` (*type:* `list(GoogleApi.Classroom.V1.Model.Material.t)`, *default:* `nil`) - Additional materials.
-
-      CourseWork must have no more than 20 material items.
-  *   `maxPoints` (*type:* `float()`, *default:* `nil`) - Maximum grade for this course work.
-      If zero or unspecified, this assignment is considered ungraded.
-      This must be a non-negative integer value.
-  *   `multipleChoiceQuestion` (*type:* `GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion.t`, *default:* `nil`) - Multiple choice question details.
-      For read operations, this field is populated only when `work_type` is
-      `MULTIPLE_CHOICE_QUESTION`.
-      For write operations, this field must be specified when creating course
-      work with a `work_type` of `MULTIPLE_CHOICE_QUESTION`, and it must not be
-      set otherwise.
+  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - Absolute link to this course work in the Classroom web UI. This is only populated if `state` is `PUBLISHED`. Read-only.
+  *   `assigneeMode` (*type:* `String.t`, *default:* `nil`) - Assignee mode of the coursework. If unspecified, the default value is `ALL_STUDENTS`.
+  *   `assignment` (*type:* `GoogleApi.Classroom.V1.Model.Assignment.t`, *default:* `nil`) - Assignment details. This is populated only when `work_type` is `ASSIGNMENT`. Read-only.
+  *   `associatedWithDeveloper` (*type:* `boolean()`, *default:* `nil`) - Whether this course work item is associated with the Developer Console project making the request. See CreateCourseWork for more details. Read-only.
+  *   `courseId` (*type:* `String.t`, *default:* `nil`) - Identifier of the course. Read-only.
+  *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when this course work was created. Read-only.
+  *   `creatorUserId` (*type:* `String.t`, *default:* `nil`) - Identifier for the user that created the coursework. Read-only.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional description of this course work. If set, the description must be a valid UTF-8 string containing no more than 30,000 characters.
+  *   `dueDate` (*type:* `GoogleApi.Classroom.V1.Model.Date.t`, *default:* `nil`) - Optional date, in UTC, that submissions for this course work are due. This must be specified if `due_time` is specified.
+  *   `dueTime` (*type:* `GoogleApi.Classroom.V1.Model.TimeOfDay.t`, *default:* `nil`) - Optional time of day, in UTC, that submissions for this course work are due. This must be specified if `due_date` is specified.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Classroom-assigned identifier of this course work, unique per course. Read-only.
+  *   `individualStudentsOptions` (*type:* `GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t`, *default:* `nil`) - Identifiers of students with access to the coursework. This field is set only if `assigneeMode` is `INDIVIDUAL_STUDENTS`. If the `assigneeMode` is `INDIVIDUAL_STUDENTS`, then only students specified in this field are assigned the coursework.
+  *   `materials` (*type:* `list(GoogleApi.Classroom.V1.Model.Material.t)`, *default:* `nil`) - Additional materials. CourseWork must have no more than 20 material items.
+  *   `maxPoints` (*type:* `float()`, *default:* `nil`) - Maximum grade for this course work. If zero or unspecified, this assignment is considered ungraded. This must be a non-negative integer value.
+  *   `multipleChoiceQuestion` (*type:* `GoogleApi.Classroom.V1.Model.MultipleChoiceQuestion.t`, *default:* `nil`) - Multiple choice question details. For read operations, this field is populated only when `work_type` is `MULTIPLE_CHOICE_QUESTION`. For write operations, this field must be specified when creating course work with a `work_type` of `MULTIPLE_CHOICE_QUESTION`, and it must not be set otherwise.
   *   `scheduledTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional timestamp when this course work is scheduled to be published.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Status of this course work.
-      If unspecified, the default state is `DRAFT`.
-  *   `submissionModificationMode` (*type:* `String.t`, *default:* `nil`) - Setting to determine when students are allowed to modify submissions.
-      If unspecified, the default value is `MODIFIABLE_UNTIL_TURNED_IN`.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of this course work.
-      The title must be a valid UTF-8 string containing between 1 and 3000
-      characters.
-  *   `topicId` (*type:* `String.t`, *default:* `nil`) - Identifier for the topic that this coursework is associated with.
-      Must match an existing topic in the course.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the most recent change to this course work.
-
-      Read-only.
-  *   `workType` (*type:* `String.t`, *default:* `nil`) - Type of this course work.
-
-      The type is set when the course work is created and cannot be changed.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Status of this course work. If unspecified, the default state is `DRAFT`.
+  *   `submissionModificationMode` (*type:* `String.t`, *default:* `nil`) - Setting to determine when students are allowed to modify submissions. If unspecified, the default value is `MODIFIABLE_UNTIL_TURNED_IN`.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of this course work. The title must be a valid UTF-8 string containing between 1 and 3000 characters.
+  *   `topicId` (*type:* `String.t`, *default:* `nil`) - Identifier for the topic that this coursework is associated with. Must match an existing topic in the course.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the most recent change to this course work. Read-only.
+  *   `workType` (*type:* `String.t`, *default:* `nil`) - Type of this course work. The type is set when the course work is created and cannot be changed.
   """
 
   use GoogleApi.Gax.ModelBase

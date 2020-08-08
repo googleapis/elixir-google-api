@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.Classroom.V1.Model.Guardian do
   @moduledoc """
-  Association between a student and a guardian of that student. The guardian
-  may receive information about the student's course work.
+  Association between a student and a guardian of that student. The guardian may receive information about the student's course work.
 
   ## Attributes
 
   *   `guardianId` (*type:* `String.t`, *default:* `nil`) - Identifier for the guardian.
   *   `guardianProfile` (*type:* `GoogleApi.Classroom.V1.Model.UserProfile.t`, *default:* `nil`) - User profile for the guardian.
-  *   `invitedEmailAddress` (*type:* `String.t`, *default:* `nil`) - The email address to which the initial guardian invitation was sent.
-      This field is only visible to domain administrators.
+  *   `invitedEmailAddress` (*type:* `String.t`, *default:* `nil`) - The email address to which the initial guardian invitation was sent. This field is only visible to domain administrators.
   *   `studentId` (*type:* `String.t`, *default:* `nil`) - Identifier for the student to whom the guardian relationship applies.
   """
 

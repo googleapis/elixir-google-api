@@ -26,21 +26,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a course.
-
-  The user specified in `ownerId` is the owner of the created course
-  and added as a teacher.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to create
-  courses or for access errors.
-  * `NOT_FOUND` if the primary teacher is not a valid user.
-  * `FAILED_PRECONDITION` if the course owner's account is disabled or for
-  the following request errors:
-      * UserGroupsMembershipLimitReached
-  * `ALREADY_EXISTS` if an alias was specified in the `id` and
-  already exists.
+  Creates a course. The user specified in `ownerId` is the owner of the created course and added as a teacher. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create courses or for access errors. * `NOT_FOUND` if the primary teacher is not a valid user. * `FAILED_PRECONDITION` if the course owner's account is disabled or for the following request errors: * UserGroupsMembershipLimitReached * `ALREADY_EXISTS` if an alias was specified in the `id` and already exists.
 
   ## Parameters
 
@@ -96,20 +82,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Deletes a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to delete the
-  requested course or for access errors.
-  * `NOT_FOUND` if no course exists with the requested ID.
+  Deletes a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete the requested course or for access errors. * `NOT_FOUND` if no course exists with the requested ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - Identifier of the course to delete.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the course to delete. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -161,20 +139,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or for access errors.
-  * `NOT_FOUND` if no course exists with the requested ID.
+  Returns a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or for access errors. * `NOT_FOUND` if no course exists with the requested ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - Identifier of the course to return.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the course to return. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -226,15 +196,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a list of courses that the requesting user is permitted to view,
-  restricted to those that match the request. Returned courses are ordered by
-  creation time, with the most recently created coming first.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` for access errors.
-  * `INVALID_ARGUMENT` if the query argument is malformed.
-  * `NOT_FOUND` if any users specified in the query arguments do not exist.
+  Returns a list of courses that the requesting user is permitted to view, restricted to those that match the request. Returned courses are ordered by creation time, with the most recently created coming first. This method returns the following error codes: * `PERMISSION_DENIED` for access errors. * `INVALID_ARGUMENT` if the query argument is malformed. * `NOT_FOUND` if any users specified in the query arguments do not exist.
 
   ## Parameters
 
@@ -251,31 +213,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:courseStates` (*type:* `list(String.t)`) - Restricts returned courses to those in one of the specified states
-          The default value is ACTIVE, ARCHIVED, PROVISIONED, DECLINED.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
-          server may assign a maximum.
-
-          The server may return fewer than the specified number of results.
-      *   `:pageToken` (*type:* `String.t`) - nextPageToken
-          value returned from a previous
-          list call,
-          indicating that the subsequent page of results should be returned.
-
-          The list request must be
-          otherwise identical to the one that resulted in this token.
-      *   `:studentId` (*type:* `String.t`) - Restricts returned courses to those having a student with the specified
-          identifier. The identifier can be one of the following:
-
-          * the numeric identifier for the user
-          * the email address of the user
-          * the string literal `"me"`, indicating the requesting user
-      *   `:teacherId` (*type:* `String.t`) - Restricts returned courses to those having a teacher with the specified
-          identifier. The identifier can be one of the following:
-
-          * the numeric identifier for the user
-          * the email address of the user
-          * the string literal `"me"`, indicating the requesting user
+      *   `:courseStates` (*type:* `list(String.t)`) - Restricts returned courses to those in one of the specified states The default value is ACTIVE, ARCHIVED, PROVISIONED, DECLINED.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
+      *   `:studentId` (*type:* `String.t`) - Restricts returned courses to those having a student with the specified identifier. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
+      *   `:teacherId` (*type:* `String.t`) - Restricts returned courses to those having a teacher with the specified identifier. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -320,24 +262,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Updates one or more fields in a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to modify the
-  requested course or for access errors.
-  * `NOT_FOUND` if no course exists with the requested ID.
-  * `INVALID_ARGUMENT` if invalid fields are specified in the update mask or
-  if no update mask is supplied.
-  * `FAILED_PRECONDITION` for the following request errors:
-      * CourseNotModifiable
+  Updates one or more fields in a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to modify the requested course or for access errors. * `NOT_FOUND` if no course exists with the requested ID. * `INVALID_ARGUMENT` if invalid fields are specified in the update mask or if no update mask is supplied. * `FAILED_PRECONDITION` for the following request errors: * CourseNotModifiable
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - Identifier of the course to update.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the course to update. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -350,25 +280,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the course to update.
-          This field is required to do an update. The update will fail if invalid
-          fields are specified. The following fields are valid:
-
-          * `name`
-          * `section`
-          * `descriptionHeading`
-          * `description`
-          * `room`
-          * `courseState`
-          * `ownerId`
-
-          Note: patches to ownerId are treated as being effective immediately, but in
-          practice it may take some time for the ownership transfer of all affected
-          resources to complete.
-
-          When set in a query parameter, this field should be specified as
-
-          `updateMask=<field1>,<field2>,...`
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the course to update. This field is required to do an update. The update will fail if invalid fields are specified. The following fields are valid: * `name` * `section` * `descriptionHeading` * `description` * `room` * `courseState` * `ownerId` Note: patches to ownerId are treated as being effective immediately, but in practice it may take some time for the ownership transfer of all affected resources to complete. When set in a query parameter, this field should be specified as `updateMask=,,...`
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Course.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -411,22 +323,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Updates a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to modify the
-  requested course or for access errors.
-  * `NOT_FOUND` if no course exists with the requested ID.
-  * `FAILED_PRECONDITION` for the following request errors:
-      * CourseNotModifiable
+  Updates a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to modify the requested course or for access errors. * `NOT_FOUND` if no course exists with the requested ID. * `FAILED_PRECONDITION` for the following request errors: * CourseNotModifiable
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - Identifier of the course to update.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `id` (*type:* `String.t`) - Identifier of the course to update. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -480,24 +382,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Creates an alias for a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to create the
-  alias or for access errors.
-  * `NOT_FOUND` if the course does not exist.
-  * `ALREADY_EXISTS` if the alias already exists.
-  * `FAILED_PRECONDITION` if the alias requested does not make sense for the
-    requesting user or course (for example, if a user not in a domain
-    attempts to access a domain-scoped alias).
+  Creates an alias for a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create the alias or for access errors. * `NOT_FOUND` if the course does not exist. * `ALREADY_EXISTS` if the alias already exists. * `FAILED_PRECONDITION` if the alias requested does not make sense for the requesting user or course (for example, if a user not in a domain attempts to access a domain-scoped alias).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course to alias.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course to alias. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -553,25 +443,13 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Deletes an alias of a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to remove the
-  alias or for access errors.
-  * `NOT_FOUND` if the alias does not exist.
-  * `FAILED_PRECONDITION` if the alias requested does not make sense for the
-    requesting user or course (for example, if a user not in a domain
-    attempts to delete a domain-scoped alias).
+  Deletes an alias of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to remove the alias or for access errors. * `NOT_FOUND` if the alias does not exist. * `FAILED_PRECONDITION` if the alias requested does not make sense for the requesting user or course (for example, if a user not in a domain attempts to delete a domain-scoped alias).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course whose alias should be deleted.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
-  *   `alias` (*type:* `String.t`) - Alias to delete.
-      This may not be the Classroom-assigned identifier.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course whose alias should be deleted. This identifier can be either the Classroom-assigned identifier or an alias.
+  *   `alias` (*type:* `String.t`) - Alias to delete. This may not be the Classroom-assigned identifier.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -636,20 +514,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a list of aliases for a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  course or for access errors.
-  * `NOT_FOUND` if the course does not exist.
+  Returns a list of aliases for a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the course or for access errors. * `NOT_FOUND` if the course does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - The identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - The identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -662,17 +532,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
-          server may assign a maximum.
-
-          The server may return fewer than the specified number of results.
-      *   `:pageToken` (*type:* `String.t`) - nextPageToken
-          value returned from a previous
-          list call,
-          indicating that the subsequent page of results should be returned.
-
-          The list request
-          must be otherwise identical to the one that resulted in this token.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -718,24 +579,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Creates an announcement.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course, create announcements in the requested course, share a
-  Drive attachment, or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course does not exist.
-  * `FAILED_PRECONDITION` for the following request error:
-      * AttachmentNotVisible
+  Creates an announcement. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course, create announcements in the requested course, share a Drive attachment, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course does not exist. * `FAILED_PRECONDITION` for the following request error: * AttachmentNotVisible
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -801,29 +650,13 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Deletes an announcement.
-
-  This request must be made by the Developer Console project of the
-  [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
-  create the corresponding announcement item.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting developer project did not create
-  the corresponding announcement, if the requesting user is not permitted
-  to delete the requested course or for access errors.
-  * `FAILED_PRECONDITION` if the requested announcement has already been
-  deleted.
-  * `NOT_FOUND` if no course exists with the requested ID.
+  Deletes an announcement. This request must be made by the Developer Console project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to create the corresponding announcement item. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting developer project did not create the corresponding announcement, if the requesting user is not permitted to delete the requested course or for access errors. * `FAILED_PRECONDITION` if the requested announcement has already been deleted. * `NOT_FOUND` if no course exists with the requested ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
-  *   `id` (*type:* `String.t`) - Identifier of the announcement to delete.
-      This identifier is a Classroom-assigned identifier.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  *   `id` (*type:* `String.t`) - Identifier of the announcement to delete. This identifier is a Classroom-assigned identifier.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -888,21 +721,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns an announcement.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or announcement, or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course or announcement does not exist.
+  Returns an announcement. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or announcement, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course or announcement does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `id` (*type:* `String.t`) - Identifier of the announcement.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -970,24 +794,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a list of announcements that the requester is permitted to view.
-
-  Course students may only view `PUBLISHED` announcements. Course teachers
-  and domain administrators may view all announcements.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access
-  the requested course or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course does not exist.
+  Returns a list of announcements that the requester is permitted to view. Course students may only view `PUBLISHED` announcements. Course teachers and domain administrators may view all announcements. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1000,24 +812,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:announcementStates` (*type:* `list(String.t)`) - Restriction on the `state` of announcements returned.
-          If this argument is left unspecified, the default value is `PUBLISHED`.
-      *   `:orderBy` (*type:* `String.t`) - Optional sort ordering for results. A comma-separated list of fields with
-          an optional sort direction keyword. Supported field is `updateTime`.
-          Supported direction keywords are `asc` and `desc`.
-          If not specified, `updateTime desc` is the default behavior.
-          Examples: `updateTime asc`, `updateTime`
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
-          server may assign a maximum.
-
-          The server may return fewer than the specified number of results.
-      *   `:pageToken` (*type:* `String.t`) - nextPageToken
-          value returned from a previous
-          list call,
-          indicating that the subsequent page of results should be returned.
-
-          The list request
-          must be otherwise identical to the one that resulted in this token.
+      *   `:announcementStates` (*type:* `list(String.t)`) - Restriction on the `state` of announcements returned. If this argument is left unspecified, the default value is `PUBLISHED`.
+      *   `:orderBy` (*type:* `String.t`) - Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported field is `updateTime`. Supported direction keywords are `asc` and `desc`. If not specified, `updateTime desc` is the default behavior. Examples: `updateTime asc`, `updateTime`
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1070,24 +868,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Modifies assignee mode and options of an announcement.
-
-  Only a teacher of the course that contains the announcement may
-  call this method.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or course work or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course or course work does not exist.
+  Modifies assignee mode and options of an announcement. Only a teacher of the course that contains the announcement may call this method. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or course work or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course or course work does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `id` (*type:* `String.t`) - Identifier of the announcement.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1157,23 +943,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Updates one or more fields of an announcement.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting developer project did not create
-  the corresponding announcement or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `FAILED_PRECONDITION` if the requested announcement has already been
-  deleted.
-  * `NOT_FOUND` if the requested course or announcement does not exist
+  Updates one or more fields of an announcement. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting developer project did not create the corresponding announcement or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `FAILED_PRECONDITION` if the requested announcement has already been deleted. * `NOT_FOUND` if the requested course or announcement does not exist
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `id` (*type:* `String.t`) - Identifier of the announcement.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1187,19 +962,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the announcement to update.
-          This field is required to do an update. The update fails if invalid
-          fields are specified. If a field supports empty values, it can be cleared
-          by specifying it in the update mask and not in the Announcement object. If
-          a field that does not support empty values is included in the update mask
-          and not set in the Announcement object, an `INVALID_ARGUMENT` error is
-          returned.
-
-          The following fields may be specified by teachers:
-
-          * `text`
-          * `state`
-          * `scheduled_time`
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the announcement to update. This field is required to do an update. The update fails if invalid fields are specified. If a field supports empty values, it can be cleared by specifying it in the update mask and not in the Announcement object. If a field that does not support empty values is included in the update mask and not set in the Announcement object, an `INVALID_ARGUMENT` error is returned. The following fields may be specified by teachers: * `text` * `state` * `scheduled_time`
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Announcement.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1257,31 +1020,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Creates course work.
-
-  The resulting course work (and corresponding student submissions) are
-  associated with the Developer Console project of the
-  [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
-  make the request. Classroom API requests to modify course work and student
-  submissions must be made with an OAuth client ID from the associated
-  Developer Console project.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course, create course work in the requested course, share a
-  Drive attachment, or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course does not exist.
-  * `FAILED_PRECONDITION` for the following request error:
-      * AttachmentNotVisible
+  Creates course work. The resulting course work (and corresponding student submissions) are associated with the Developer Console project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to make the request. Classroom API requests to modify course work and student submissions must be made with an OAuth client ID from the associated Developer Console project. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course, create course work in the requested course, share a Drive attachment, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course does not exist. * `FAILED_PRECONDITION` for the following request error: * AttachmentNotVisible
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1342,29 +1086,13 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Deletes a course work.
-
-  This request must be made by the Developer Console project of the
-  [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
-  create the corresponding course work item.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting developer project did not create
-  the corresponding course work, if the requesting user is not permitted
-  to delete the requested course or for access errors.
-  * `FAILED_PRECONDITION` if the requested course work has already been
-  deleted.
-  * `NOT_FOUND` if no course exists with the requested ID.
+  Deletes a course work. This request must be made by the Developer Console project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to create the corresponding course work item. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting developer project did not create the corresponding course work, if the requesting user is not permitted to delete the requested course or for access errors. * `FAILED_PRECONDITION` if the requested course work has already been deleted. * `NOT_FOUND` if no course exists with the requested ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
-  *   `id` (*type:* `String.t`) - Identifier of the course work to delete.
-      This identifier is a Classroom-assigned identifier.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  *   `id` (*type:* `String.t`) - Identifier of the course work to delete. This identifier is a Classroom-assigned identifier.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1429,21 +1157,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns course work.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or course work, or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course or course work does not exist.
+  Returns course work. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or course work, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course or course work does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `id` (*type:* `String.t`) - Identifier of the course work.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1511,24 +1230,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a list of course work that the requester is permitted to view.
-
-  Course students may only view `PUBLISHED` course work. Course teachers
-  and domain administrators may view all course work.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access
-  the requested course or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course does not exist.
+  Returns a list of course work that the requester is permitted to view. Course students may only view `PUBLISHED` course work. Course teachers and domain administrators may view all course work. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1541,25 +1248,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:courseWorkStates` (*type:* `list(String.t)`) - Restriction on the work status to return. Only courseWork that matches
-          is returned. If unspecified, items with a work status of `PUBLISHED`
-          is returned.
-      *   `:orderBy` (*type:* `String.t`) - Optional sort ordering for results. A comma-separated list of fields with
-          an optional sort direction keyword. Supported fields are `updateTime`
-          and `dueDate`. Supported direction keywords are `asc` and `desc`.
-          If not specified, `updateTime desc` is the default behavior.
-          Examples: `dueDate asc,updateTime desc`, `updateTime,dueDate desc`
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
-          server may assign a maximum.
-
-          The server may return fewer than the specified number of results.
-      *   `:pageToken` (*type:* `String.t`) - nextPageToken
-          value returned from a previous
-          list call,
-          indicating that the subsequent page of results should be returned.
-
-          The list request
-          must be otherwise identical to the one that resulted in this token.
+      *   `:courseWorkStates` (*type:* `list(String.t)`) - Restriction on the work status to return. Only courseWork that matches is returned. If unspecified, items with a work status of `PUBLISHED` is returned.
+      *   `:orderBy` (*type:* `String.t`) - Optional sort ordering for results. A comma-separated list of fields with an optional sort direction keyword. Supported fields are `updateTime` and `dueDate`. Supported direction keywords are `asc` and `desc`. If not specified, `updateTime desc` is the default behavior. Examples: `dueDate asc,updateTime desc`, `updateTime,dueDate desc`
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1605,24 +1297,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Modifies assignee mode and options of a coursework.
-
-  Only a teacher of the course that contains the coursework may
-  call this method.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or course work or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course or course work does not exist.
+  Modifies assignee mode and options of a coursework. Only a teacher of the course that contains the coursework may call this method. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or course work or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course or course work does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `id` (*type:* `String.t`) - Identifier of the coursework.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1692,33 +1372,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Updates one or more fields of a course work.
-
-  See google.classroom.v1.CourseWork for details
-  of which fields may be updated and who may change them.
-
-  This request must be made by the Developer Console project of the
-  [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
-  create the corresponding course work item.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting developer project did not create
-  the corresponding course work, if the user is not permitted to make the
-  requested modification to the student submission, or for
-  access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `FAILED_PRECONDITION` if the requested course work has already been
-  deleted.
-  * `NOT_FOUND` if the requested course, course work, or student submission
-  does not exist.
+  Updates one or more fields of a course work. See google.classroom.v1.CourseWork for details of which fields may be updated and who may change them. This request must be made by the Developer Console project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to create the corresponding course work item. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting developer project did not create the corresponding course work, if the user is not permitted to make the requested modification to the student submission, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `FAILED_PRECONDITION` if the requested course work has already been deleted. * `NOT_FOUND` if the requested course, course work, or student submission does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `id` (*type:* `String.t`) - Identifier of the course work.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1732,25 +1391,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the course work to update.
-          This field is required to do an update. The update fails if invalid
-          fields are specified. If a field supports empty values, it can be cleared
-          by specifying it in the update mask and not in the CourseWork object. If a
-          field that does not support empty values is included in the update mask and
-          not set in the CourseWork object, an `INVALID_ARGUMENT` error is
-          returned.
-
-          The following fields may be specified by teachers:
-
-          * `title`
-          * `description`
-          * `state`
-          * `due_date`
-          * `due_time`
-          * `max_points`
-          * `scheduled_time`
-          * `submission_modification_mode`
-          * `topic_id`
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the course work to update. This field is required to do an update. The update fails if invalid fields are specified. If a field supports empty values, it can be cleared by specifying it in the update mask and not in the CourseWork object. If a field that does not support empty values is included in the update mask and not set in the CourseWork object, an `INVALID_ARGUMENT` error is returned. The following fields may be specified by teachers: * `title` * `description` * `state` * `due_date` * `due_time` * `max_points` * `scheduled_time` * `submission_modification_mode` * `topic_id`
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.CourseWork.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1808,21 +1449,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a student submission.
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course, course work, or student submission or for
-  access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course, course work, or student submission
-  does not exist.
+  Returns a student submission. * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course, course work, or student submission or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course, course work, or student submission does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
   *   `id` (*type:* `String.t`) - Identifier of the student submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1897,30 +1529,13 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a list of student submissions that the requester is permitted to
-  view, factoring in the OAuth scopes of the request.
-  `-` may be specified as the `course_work_id` to include student
-  submissions for multiple course work items.
-
-  Course students may only view their own work. Course teachers
-  and domain administrators may view all student submissions.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or course work, or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course does not exist.
+  Returns a list of student submissions that the requester is permitted to view, factoring in the OAuth scopes of the request. `-` may be specified as the `course_work_id` to include student submissions for multiple course work items. Course students may only view their own work. Course teachers and domain administrators may view all student submissions. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or course work, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
-  *   `course_work_id` (*type:* `String.t`) - Identifier of the student work to request.
-      This may be set to the string literal `"-"` to request student work for
-      all course work in the specified course.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  *   `course_work_id` (*type:* `String.t`) - Identifier of the student work to request. This may be set to the string literal `"-"` to request student work for all course work in the specified course.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1933,29 +1548,11 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:late` (*type:* `String.t`) - Requested lateness value. If specified, returned student submissions are
-          restricted by the requested value.
-          If unspecified, submissions are returned regardless of `late` value.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
-          server may assign a maximum.
-
-          The server may return fewer than the specified number of results.
-      *   `:pageToken` (*type:* `String.t`) - nextPageToken
-          value returned from a previous
-          list call,
-          indicating that the subsequent page of results should be returned.
-
-          The list request
-          must be otherwise identical to the one that resulted in this token.
-      *   `:states` (*type:* `list(String.t)`) - Requested submission states. If specified, returned student submissions
-          match one of the specified submission states.
-      *   `:userId` (*type:* `String.t`) - Optional argument to restrict returned student work to those owned by the
-          student with the specified identifier. The identifier can be one of the
-          following:
-
-          * the numeric identifier for the user
-          * the email address of the user
-          * the string literal `"me"`, indicating the requesting user
+      *   `:late` (*type:* `String.t`) - Requested lateness value. If specified, returned student submissions are restricted by the requested value. If unspecified, submissions are returned regardless of `late` value.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
+      *   `:states` (*type:* `list(String.t)`) - Requested submission states. If specified, returned student submissions match one of the specified submission states.
+      *   `:userId` (*type:* `String.t`) - Optional argument to restrict returned student work to those owned by the student with the specified identifier. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2017,31 +1614,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Modifies attachments of student submission.
-
-  Attachments may only be added to student submissions belonging to course
-  work objects with a `workType` of `ASSIGNMENT`.
-
-  This request must be made by the Developer Console project of the
-  [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
-  create the corresponding course work item.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or course work, if the user is not permitted to modify
-  attachments on the requested student submission, or for
-  access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course, course work, or student submission
-  does not exist.
+  Modifies attachments of student submission. Attachments may only be added to student submissions belonging to course work objects with a `workType` of `ASSIGNMENT`. This request must be made by the Developer Console project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to create the corresponding course work item. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or course work, if the user is not permitted to modify attachments on the requested student submission, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course, course work, or student submission does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
   *   `id` (*type:* `String.t`) - Identifier of the student submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2118,31 +1696,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Updates one or more fields of a student submission.
-
-  See google.classroom.v1.StudentSubmission for details
-  of which fields may be updated and who may change them.
-
-  This request must be made by the Developer Console project of the
-  [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
-  create the corresponding course work item.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting developer project did not create
-  the corresponding course work, if the user is not permitted to make the
-  requested modification to the student submission, or for
-  access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course, course work, or student submission
-  does not exist.
+  Updates one or more fields of a student submission. See google.classroom.v1.StudentSubmission for details of which fields may be updated and who may change them. This request must be made by the Developer Console project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to create the corresponding course work item. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting developer project did not create the corresponding course work, if the user is not permitted to make the requested modification to the student submission, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course, course work, or student submission does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
   *   `id` (*type:* `String.t`) - Identifier of the student submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2157,14 +1716,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the student submission to update.
-          This field is required to do an update. The update fails if invalid
-          fields are specified.
-
-          The following fields may be specified by teachers:
-
-          * `draft_grade`
-          * `assigned_grade`
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the student submission to update. This field is required to do an update. The update fails if invalid fields are specified. The following fields may be specified by teachers: * `draft_grade` * `assigned_grade`
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.StudentSubmission.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2228,34 +1780,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Reclaims a student submission on behalf of the student that owns it.
-
-  Reclaiming a student submission transfers ownership of attached Drive
-  files to the student and updates the submission state.
-
-  Only the student that owns the requested student submission may call this
-  method, and only for a student submission that has been turned in.
-
-  This request must be made by the Developer Console project of the
-  [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
-  create the corresponding course work item.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or course work, unsubmit the requested student submission,
-  or for access errors.
-  * `FAILED_PRECONDITION` if the student submission has not been turned in.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course, course work, or student submission
-  does not exist.
+  Reclaims a student submission on behalf of the student that owns it. Reclaiming a student submission transfers ownership of attached Drive files to the student and updates the submission state. Only the student that owns the requested student submission may call this method, and only for a student submission that has been turned in. This request must be made by the Developer Console project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to create the corresponding course work item. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or course work, unsubmit the requested student submission, or for access errors. * `FAILED_PRECONDITION` if the student submission has not been turned in. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course, course work, or student submission does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
   *   `id` (*type:* `String.t`) - Identifier of the student submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2330,35 +1860,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a student submission.
-
-  Returning a student submission transfers ownership of attached Drive
-  files to the student and may also update the submission state.
-  Unlike the Classroom application, returning a student submission does not
-  set assignedGrade to the draftGrade value.
-
-  Only a teacher of the course that contains the requested student submission
-  may call this method.
-
-  This request must be made by the Developer Console project of the
-  [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
-  create the corresponding course work item.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or course work, return the requested student submission,
-  or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course, course work, or student submission
-  does not exist.
+  Returns a student submission. Returning a student submission transfers ownership of attached Drive files to the student and may also update the submission state. Unlike the Classroom application, returning a student submission does not set assignedGrade to the draftGrade value. Only a teacher of the course that contains the requested student submission may call this method. This request must be made by the Developer Console project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to create the corresponding course work item. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or course work, return the requested student submission, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course, course work, or student submission does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
   *   `id` (*type:* `String.t`) - Identifier of the student submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2433,33 +1940,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Turns in a student submission.
-
-  Turning in a student submission transfers ownership of attached Drive
-  files to the teacher and may also update the submission state.
-
-  This may only be called by the student that owns the specified student
-  submission.
-
-  This request must be made by the Developer Console project of the
-  [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to
-  create the corresponding course work item.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or course work, turn in the requested student submission,
-  or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course, course work, or student submission
-  does not exist.
+  Turns in a student submission. Turning in a student submission transfers ownership of attached Drive files to the teacher and may also update the submission state. This may only be called by the student that owns the specified student submission. This request must be made by the Developer Console project of the [OAuth client ID](https://support.google.com/cloud/answer/6158849) used to create the corresponding course work item. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or course work, turn in the requested student submission, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course, course work, or student submission does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `course_work_id` (*type:* `String.t`) - Identifier of the course work.
   *   `id` (*type:* `String.t`) - Identifier of the student submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2534,27 +2020,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Adds a user as a student of a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to create
-  students in this course or for access errors.
-  * `NOT_FOUND` if the requested course ID does not exist.
-  * `FAILED_PRECONDITION` if the requested user's account is disabled,
-  for the following request errors:
-      * CourseMemberLimitReached
-      * CourseNotModifiable
-      * UserGroupsMembershipLimitReached
-  * `ALREADY_EXISTS` if the user is already a student or teacher in the
-  course.
+  Adds a user as a student of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create students in this course or for access errors. * `NOT_FOUND` if the requested course ID does not exist. * `FAILED_PRECONDITION` if the requested user's account is disabled, for the following request errors: * CourseMemberLimitReached * CourseNotModifiable * UserGroupsMembershipLimitReached * `ALREADY_EXISTS` if the user is already a student or teacher in the course.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course to create the student in.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course to create the student in. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2567,10 +2038,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:enrollmentCode` (*type:* `String.t`) - Enrollment code of the course to create the student in.
-          This code is required if userId
-          corresponds to the requesting user; it may be omitted if the requesting
-          user has administrative permissions to create students for any user.
+      *   `:enrollmentCode` (*type:* `String.t`) - Enrollment code of the course to create the student in. This code is required if userId corresponds to the requesting user; it may be omitted if the requesting user has administrative permissions to create students for any user.
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Student.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2613,27 +2081,13 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Deletes a student of a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to delete
-  students of this course or for access errors.
-  * `NOT_FOUND` if no student of this course has the requested ID or if the
-  course does not exist.
+  Deletes a student of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete students of this course or for access errors. * `NOT_FOUND` if no student of this course has the requested ID or if the course does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
-  *   `user_id` (*type:* `String.t`) - Identifier of the student to delete. The identifier can be one of the
-      following:
-
-      * the numeric identifier for the user
-      * the email address of the user
-      * the string literal `"me"`, indicating the requesting user
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  *   `user_id` (*type:* `String.t`) - Identifier of the student to delete. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2698,27 +2152,13 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a student of a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to view
-  students of this course or for access errors.
-  * `NOT_FOUND` if no student of this course has the requested ID or if the
-  course does not exist.
+  Returns a student of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to view students of this course or for access errors. * `NOT_FOUND` if no student of this course has the requested ID or if the course does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
-  *   `user_id` (*type:* `String.t`) - Identifier of the student to return. The identifier can be one of the
-      following:
-
-      * the numeric identifier for the user
-      * the email address of the user
-      * the string literal `"me"`, indicating the requesting user
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  *   `user_id` (*type:* `String.t`) - Identifier of the student to return. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2783,20 +2223,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a list of students of this course that the requester
-  is permitted to view.
-
-  This method returns the following error codes:
-
-  * `NOT_FOUND` if the course does not exist.
-  * `PERMISSION_DENIED` for access errors.
+  Returns a list of students of this course that the requester is permitted to view. This method returns the following error codes: * `NOT_FOUND` if the course does not exist. * `PERMISSION_DENIED` for access errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2809,16 +2241,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. The default is 30 if unspecified or `0`.
-
-          The server may return fewer than the specified number of results.
-      *   `:pageToken` (*type:* `String.t`) - nextPageToken
-          value returned from a previous
-          list call, indicating that
-          the subsequent page of results should be returned.
-
-          The list request must be
-          otherwise identical to the one that resulted in this token.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. The default is 30 if unspecified or `0`. The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2862,28 +2286,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Creates a teacher of a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not  permitted to create
-  teachers in this course or for access errors.
-  * `NOT_FOUND` if the requested course ID does not exist.
-  * `FAILED_PRECONDITION` if the requested user's account is disabled,
-  for the following request errors:
-      * CourseMemberLimitReached
-      * CourseNotModifiable
-      * CourseTeacherLimitReached
-      * UserGroupsMembershipLimitReached
-  * `ALREADY_EXISTS` if the user is already a teacher or student in the
-  course.
+  Creates a teacher of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create teachers in this course or for access errors. * `NOT_FOUND` if the requested course ID does not exist. * `FAILED_PRECONDITION` if the requested user's account is disabled, for the following request errors: * CourseMemberLimitReached * CourseNotModifiable * CourseTeacherLimitReached * UserGroupsMembershipLimitReached * `ALREADY_EXISTS` if the user is already a teacher or student in the course.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2937,29 +2345,13 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Deletes a teacher of a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to delete
-  teachers of this course or for access errors.
-  * `NOT_FOUND` if no teacher of this course has the requested ID or if the
-  course does not exist.
-  * `FAILED_PRECONDITION` if the requested ID belongs to the primary teacher
-  of this course.
+  Deletes a teacher of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete teachers of this course or for access errors. * `NOT_FOUND` if no teacher of this course has the requested ID or if the course does not exist. * `FAILED_PRECONDITION` if the requested ID belongs to the primary teacher of this course.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
-  *   `user_id` (*type:* `String.t`) - Identifier of the teacher to delete. The identifier can be one of the
-      following:
-
-      * the numeric identifier for the user
-      * the email address of the user
-      * the string literal `"me"`, indicating the requesting user
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  *   `user_id` (*type:* `String.t`) - Identifier of the teacher to delete. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3024,27 +2416,13 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a teacher of a course.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to view
-  teachers of this course or for access errors.
-  * `NOT_FOUND` if no teacher of this course has the requested ID or if the
-  course does not exist.
+  Returns a teacher of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to view teachers of this course or for access errors. * `NOT_FOUND` if no teacher of this course has the requested ID or if the course does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
-  *   `user_id` (*type:* `String.t`) - Identifier of the teacher to return. The identifier can be one of the
-      following:
-
-      * the numeric identifier for the user
-      * the email address of the user
-      * the string literal `"me"`, indicating the requesting user
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
+  *   `user_id` (*type:* `String.t`) - Identifier of the teacher to return. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `"me"`, indicating the requesting user
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3109,20 +2487,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a list of teachers of this course that the requester
-  is permitted to view.
-
-  This method returns the following error codes:
-
-  * `NOT_FOUND` if the course does not exist.
-  * `PERMISSION_DENIED` for access errors.
+  Returns a list of teachers of this course that the requester is permitted to view. This method returns the following error codes: * `NOT_FOUND` if the course does not exist. * `PERMISSION_DENIED` for access errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3135,16 +2505,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. The default is 30 if unspecified or `0`.
-
-          The server may return fewer than the specified number of results.
-      *   `:pageToken` (*type:* `String.t`) - nextPageToken
-          value returned from a previous
-          list call, indicating that
-          the subsequent page of results should be returned.
-
-          The list request must be
-          otherwise identical to the one that resulted in this token.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. The default is 30 if unspecified or `0`. The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3188,22 +2550,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Creates a topic.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course, create a topic in the requested course,
-  or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course does not exist.
+  Creates a topic. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course, create a topic in the requested course, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3257,22 +2609,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Deletes a topic.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not allowed to delete the
-  requested topic or for access errors.
-  * `FAILED_PRECONDITION` if the requested topic has already been
-  deleted.
-  * `NOT_FOUND` if no course or topic exists with the requested ID.
+  Deletes a topic. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not allowed to delete the requested topic or for access errors. * `FAILED_PRECONDITION` if the requested topic has already been deleted. * `NOT_FOUND` if no course or topic exists with the requested ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `id` (*type:* `String.t`) - Identifier of the topic to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3338,14 +2680,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns a topic.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access the
-  requested course or topic, or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course or topic does not exist.
+  Returns a topic. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or topic, or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course or topic does not exist.
 
   ## Parameters
 
@@ -3410,21 +2745,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Returns the list of topics that the requester is permitted to view.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting user is not permitted to access
-  the requested course or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course does not exist.
+  Returns the list of topics that the requester is permitted to view. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the requested course or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3437,17 +2763,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
-          server may assign a maximum.
-
-          The server may return fewer than the specified number of results.
-      *   `:pageToken` (*type:* `String.t`) - nextPageToken
-          value returned from a previous
-          list call,
-          indicating that the subsequent page of results should be returned.
-
-          The list request
-          must be otherwise identical to the one that resulted in this token.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.
+      *   `:pageToken` (*type:* `String.t`) - nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3491,21 +2808,12 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   end
 
   @doc """
-  Updates one or more fields of a topic.
-
-  This method returns the following error codes:
-
-  * `PERMISSION_DENIED` if the requesting developer project did not create
-  the corresponding topic or for access errors.
-  * `INVALID_ARGUMENT` if the request is malformed.
-  * `NOT_FOUND` if the requested course or topic does not exist
+  Updates one or more fields of a topic. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting developer project did not create the corresponding topic or for access errors. * `INVALID_ARGUMENT` if the request is malformed. * `NOT_FOUND` if the requested course or topic does not exist
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
-  *   `course_id` (*type:* `String.t`) - Identifier of the course.
-      This identifier can be either the Classroom-assigned identifier or an
-      alias.
+  *   `course_id` (*type:* `String.t`) - Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.
   *   `id` (*type:* `String.t`) - Identifier of the topic.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3519,17 +2827,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the topic to update.
-          This field is required to do an update. The update fails if invalid
-          fields are specified. If a field supports empty values, it can be cleared
-          by specifying it in the update mask and not in the Topic object. If a
-          field that does not support empty values is included in the update mask and
-          not set in the Topic object, an `INVALID_ARGUMENT` error is
-          returned.
-
-          The following fields may be specified:
-
-          * `name`
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the topic to update. This field is required to do an update. The update fails if invalid fields are specified. If a field supports empty values, it can be cleared by specifying it in the update mask and not in the Topic object. If a field that does not support empty values is included in the update mask and not set in the Topic object, an `INVALID_ARGUMENT` error is returned. The following fields may be specified: * `name`
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.Topic.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

@@ -21,8 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.ListTeachersResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
-      results are available.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further results are available.
   *   `teachers` (*type:* `list(GoogleApi.Classroom.V1.Model.Teacher.t)`, *default:* `nil`) - Teachers who match the list request.
   """
 

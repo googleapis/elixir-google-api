@@ -22,8 +22,7 @@ defmodule GoogleApi.Classroom.V1.Model.ListCourseAliasesResponse do
   ## Attributes
 
   *   `aliases` (*type:* `list(GoogleApi.Classroom.V1.Model.CourseAlias.t)`, *default:* `nil`) - The course aliases.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
-      results are available.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further results are available.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.Classroom.V1.Model.CloudPubsubTopic do
   @moduledoc """
-  A reference to a Cloud Pub/Sub topic.
-
-  To register for notifications, the owner of the topic must grant
-  `classroom-notifications@system.gserviceaccount.com` the
-   `projects.topics.publish` permission.
+  A reference to a Cloud Pub/Sub topic. To register for notifications, the owner of the topic must grant `classroom-notifications@system.gserviceaccount.com` the `projects.topics.publish` permission.
 
   ## Attributes
 
-  *   `topicName` (*type:* `String.t`, *default:* `nil`) - The `name` field of a Cloud Pub/Sub
-      [Topic](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).
+  *   `topicName` (*type:* `String.t`, *default:* `nil`) - The `name` field of a Cloud Pub/Sub [Topic](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).
   """
 
   use GoogleApi.Gax.ModelBase

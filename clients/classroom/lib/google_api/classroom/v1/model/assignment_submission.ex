@@ -21,14 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.AssignmentSubmission do
 
   ## Attributes
 
-  *   `attachments` (*type:* `list(GoogleApi.Classroom.V1.Model.Attachment.t)`, *default:* `nil`) - Attachments added by the student.
-      Drive files that correspond to materials with a share mode of
-      STUDENT_COPY may not exist yet if the student has not accessed the
-      assignment in Classroom.
-
-      Some attachment metadata is only populated if the requesting user has
-      permission to access it. Identifier and alternate_link fields are always
-      available, but others (for example, title) may not be.
+  *   `attachments` (*type:* `list(GoogleApi.Classroom.V1.Model.Attachment.t)`, *default:* `nil`) - Attachments added by the student. Drive files that correspond to materials with a share mode of STUDENT_COPY may not exist yet if the student has not accessed the assignment in Classroom. Some attachment metadata is only populated if the requesting user has permission to access it. Identifier and alternate_link fields are always available, but others (for example, title) may not be.
   """
 
   use GoogleApi.Gax.ModelBase

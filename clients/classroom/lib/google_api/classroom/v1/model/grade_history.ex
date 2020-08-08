@@ -24,8 +24,7 @@ defmodule GoogleApi.Classroom.V1.Model.GradeHistory do
   *   `actorUserId` (*type:* `String.t`, *default:* `nil`) - The teacher who made the grade change.
   *   `gradeChangeType` (*type:* `String.t`, *default:* `nil`) - The type of grade change at this time in the submission grade history.
   *   `gradeTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - When the grade of the submission was changed.
-  *   `maxPoints` (*type:* `float()`, *default:* `nil`) - The denominator of the grade at this time in the submission grade
-      history.
+  *   `maxPoints` (*type:* `float()`, *default:* `nil`) - The denominator of the grade at this time in the submission grade history.
   *   `pointsEarned` (*type:* `float()`, *default:* `nil`) - The numerator of the grade at this time in the submission grade history.
   """
 

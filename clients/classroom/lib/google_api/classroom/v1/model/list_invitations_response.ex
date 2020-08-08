@@ -22,8 +22,7 @@ defmodule GoogleApi.Classroom.V1.Model.ListInvitationsResponse do
   ## Attributes
 
   *   `invitations` (*type:* `list(GoogleApi.Classroom.V1.Model.Invitation.t)`, *default:* `nil`) - Invitations that match the list request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
-      results are available.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further results are available.
   """
 
   use GoogleApi.Gax.ModelBase

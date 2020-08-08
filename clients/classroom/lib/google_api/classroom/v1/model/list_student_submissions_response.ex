@@ -21,8 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
-      results are available.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further results are available.
   *   `studentSubmissions` (*type:* `list(GoogleApi.Classroom.V1.Model.StudentSubmission.t)`, *default:* `nil`) - Student work that matches the request.
   """
 

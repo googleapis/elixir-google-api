@@ -21,16 +21,10 @@ defmodule GoogleApi.Classroom.V1.Model.DriveFile do
 
   ## Attributes
 
-  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - URL that can be used to access the Drive item.
-
-      Read-only.
+  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - URL that can be used to access the Drive item. Read-only.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Drive API resource ID.
-  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the Drive item.
-
-      Read-only.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the Drive item.
-
-      Read-only.
+  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the Drive item. Read-only.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the Drive item. Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

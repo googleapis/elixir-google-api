@@ -21,16 +21,10 @@ defmodule GoogleApi.Classroom.V1.Model.YouTubeVideo do
 
   ## Attributes
 
-  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - URL that can be used to view the YouTube video.
-
-      Read-only.
+  *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - URL that can be used to view the YouTube video. Read-only.
   *   `id` (*type:* `String.t`, *default:* `nil`) - YouTube API resource ID.
-  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the YouTube video.
-
-      Read-only.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the YouTube video.
-
-      Read-only.
+  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the YouTube video. Read-only.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the YouTube video. Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

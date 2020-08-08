@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Classroom.V1.Model.IndividualStudentsOptions do
   @moduledoc """
-  Assignee details about a coursework/announcement.
-  This field is set if and only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
+  Assignee details about a coursework/announcement. This field is set if and only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
 
   ## Attributes
 
-  *   `studentIds` (*type:* `list(String.t)`, *default:* `nil`) - Identifiers for the students that have access to the
-      coursework/announcement.
+  *   `studentIds` (*type:* `list(String.t)`, *default:* `nil`) - Identifiers for the students that have access to the coursework/announcement.
   """
 
   use GoogleApi.Gax.ModelBase

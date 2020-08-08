@@ -21,8 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.ListTopicResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
-      results are available.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further results are available.
   *   `topic` (*type:* `list(GoogleApi.Classroom.V1.Model.Topic.t)`, *default:* `nil`) - Topic items that match the request.
   """
 

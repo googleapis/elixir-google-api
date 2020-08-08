@@ -17,20 +17,14 @@
 
 defmodule GoogleApi.Classroom.V1.Model.Registration do
   @moduledoc """
-  An instruction to Classroom to send notifications from the `feed` to the
-  provided destination.
+  An instruction to Classroom to send notifications from the `feed` to the provided destination.
 
   ## Attributes
 
   *   `cloudPubsubTopic` (*type:* `GoogleApi.Classroom.V1.Model.CloudPubsubTopic.t`, *default:* `nil`) - The Cloud Pub/Sub topic that notifications are to be sent to.
-  *   `expiryTime` (*type:* `DateTime.t`, *default:* `nil`) - The time until which the `Registration` is effective.
-
-      This is a read-only field assigned by the server.
-  *   `feed` (*type:* `GoogleApi.Classroom.V1.Model.Feed.t`, *default:* `nil`) - Specification for the class of notifications that Classroom should deliver
-      to the destination.
-  *   `registrationId` (*type:* `String.t`, *default:* `nil`) - A server-generated unique identifier for this `Registration`.
-
-      Read-only.
+  *   `expiryTime` (*type:* `DateTime.t`, *default:* `nil`) - The time until which the `Registration` is effective. This is a read-only field assigned by the server.
+  *   `feed` (*type:* `GoogleApi.Classroom.V1.Model.Feed.t`, *default:* `nil`) - Specification for the class of notifications that Classroom should deliver to the destination.
+  *   `registrationId` (*type:* `String.t`, *default:* `nil`) - A server-generated unique identifier for this `Registration`. Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

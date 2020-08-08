@@ -21,14 +21,9 @@ defmodule GoogleApi.Classroom.V1.Model.Link do
 
   ## Attributes
 
-  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the target URL.
-
-      Read-only.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the target of the URL.
-
-      Read-only.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - URL to link to.
-      This must be a valid UTF-8 string containing between 1 and 2024 characters.
+  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the target URL. Read-only.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the target of the URL. Read-only.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL to link to. This must be a valid UTF-8 string containing between 1 and 2024 characters.
   """
 
   use GoogleApi.Gax.ModelBase

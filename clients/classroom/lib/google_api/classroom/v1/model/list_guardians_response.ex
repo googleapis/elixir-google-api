@@ -21,10 +21,8 @@ defmodule GoogleApi.Classroom.V1.Model.ListGuardiansResponse do
 
   ## Attributes
 
-  *   `guardians` (*type:* `list(GoogleApi.Classroom.V1.Model.Guardian.t)`, *default:* `nil`) - Guardians on this page of results that met the criteria specified in
-      the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further
-      results are available.
+  *   `guardians` (*type:* `list(GoogleApi.Classroom.V1.Model.Guardian.t)`, *default:* `nil`) - Guardians on this page of results that met the criteria specified in the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token identifying the next page of results to return. If empty, no further results are available.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,17 +22,9 @@ defmodule GoogleApi.Classroom.V1.Model.Form do
   ## Attributes
 
   *   `formUrl` (*type:* `String.t`, *default:* `nil`) - URL of the form.
-  *   `responseUrl` (*type:* `String.t`, *default:* `nil`) - URL of the form responses document.
-      Only set if respsonses have been recorded and only when the
-      requesting user is an editor of the form.
-
-      Read-only.
-  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the Form.
-
-      Read-only.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the Form.
-
-      Read-only.
+  *   `responseUrl` (*type:* `String.t`, *default:* `nil`) - URL of the form responses document. Only set if respsonses have been recorded and only when the requesting user is an editor of the form. Read-only.
+  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the Form. Read-only.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the Form. Read-only.
   """
 
   use GoogleApi.Gax.ModelBase
