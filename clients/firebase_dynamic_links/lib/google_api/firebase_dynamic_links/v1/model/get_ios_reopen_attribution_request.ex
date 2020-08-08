@@ -17,20 +17,12 @@
 
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRequest do
   @moduledoc """
-  Request for iSDK to get reopen attribution for app universal link open
-  deeplinking. This endpoint is meant for only iOS requests.
+  Request for iSDK to get reopen attribution for app universal link open deeplinking. This endpoint is meant for only iOS requests.
 
   ## Attributes
 
   *   `bundleId` (*type:* `String.t`, *default:* `nil`) - APP bundle ID.
-  *   `requestedLink` (*type:* `String.t`, *default:* `nil`) - FDL link to be verified from an app universal link open.
-      The FDL link can be one of:
-      1) short FDL.
-      e.g. <app_code>.page.link/<ddl_id>, or
-      2) long FDL.
-      e.g. <app_code>.page.link/?{query params}, or
-      3) Invite FDL.
-      e.g. <app_code>.page.link/i/<invite_id_or_alias>
+  *   `requestedLink` (*type:* `String.t`, *default:* `nil`) - FDL link to be verified from an app universal link open. The FDL link can be one of: 1) short FDL. e.g. .page.link/, or 2) long FDL. e.g. .page.link/?{query params}, or 3) Invite FDL. e.g. .page.link/i/
   *   `sdkVersion` (*type:* `String.t`, *default:* `nil`) - Google SDK version. Version takes the form "$major.$minor.$patch"
   """
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo do
   @moduledoc """
-  Parameters for social meta tag params.
-  Used to set meta tag data for link previews on social sites.
+  Parameters for social meta tag params. Used to set meta tag data for link previews on social sites.
 
   ## Attributes
 

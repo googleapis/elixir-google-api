@@ -26,15 +26,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.ShortLinks do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a short Dynamic Link given either a valid long Dynamic Link or
-  details such as Dynamic Link domain, Android and iOS app information.
-  The created short Dynamic Link will not expire.
-
-  Repeated calls with the same long Dynamic Link or Dynamic Link information
-  will produce the same short Dynamic Link.
-
-  The Dynamic Link domain in the request must be owned by requester's
-  Firebase project.
+  Creates a short Dynamic Link given either a valid long Dynamic Link or details such as Dynamic Link domain, Android and iOS app information. The created short Dynamic Link will not expire. Repeated calls with the same long Dynamic Link or Dynamic Link information will produce the same short Dynamic Link. The Dynamic Link domain in the request must be owned by requester's Firebase project.
 
   ## Parameters
 

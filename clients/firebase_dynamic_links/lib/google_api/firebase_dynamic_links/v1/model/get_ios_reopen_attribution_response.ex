@@ -17,18 +17,14 @@
 
 defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionResponse do
   @moduledoc """
-  Response for iSDK to get reopen attribution for app universal link open
-  deeplinking. This endpoint is meant for only iOS requests.
+  Response for iSDK to get reopen attribution for app universal link open deeplinking. This endpoint is meant for only iOS requests.
 
   ## Attributes
 
-  *   `deepLink` (*type:* `String.t`, *default:* `nil`) - The deep-link attributed the app universal link open. For both regular
-      FDL links and invite FDL links.
+  *   `deepLink` (*type:* `String.t`, *default:* `nil`) - The deep-link attributed the app universal link open. For both regular FDL links and invite FDL links.
   *   `invitationId` (*type:* `String.t`, *default:* `nil`) - Optional invitation ID, for only invite typed requested FDL links.
-  *   `iosMinAppVersion` (*type:* `String.t`, *default:* `nil`) - FDL input value of the "&imv=" parameter, minimum app version to be
-      returned to Google Firebase SDK running on iOS-9.
-  *   `resolvedLink` (*type:* `String.t`, *default:* `nil`) - The entire FDL, expanded from a short link. It is the same as the
-      requested_link, if it is long.
+  *   `iosMinAppVersion` (*type:* `String.t`, *default:* `nil`) - FDL input value of the "&imv=" parameter, minimum app version to be returned to Google Firebase SDK running on iOS-9.
+  *   `resolvedLink` (*type:* `String.t`, *default:* `nil`) - The entire FDL, expanded from a short link. It is the same as the requested_link, if it is long.
   *   `utmCampaign` (*type:* `String.t`, *default:* `nil`) - Scion campaign value to be propagated by iSDK to Scion at app-reopen.
   *   `utmContent` (*type:* `String.t`, *default:* `nil`) - Scion content value to be propagated by iSDK to Scion at app-reopen.
   *   `utmMedium` (*type:* `String.t`, *default:* `nil`) - Scion medium value to be propagated by iSDK to Scion at app-reopen.

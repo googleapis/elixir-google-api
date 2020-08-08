@@ -23,8 +23,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo do
 
   *   `androidFallbackLink` (*type:* `String.t`, *default:* `nil`) - Link to open on Android if the app is not installed.
   *   `androidLink` (*type:* `String.t`, *default:* `nil`) - If specified, this overrides the ‘link’ parameter on Android.
-  *   `androidMinPackageVersionCode` (*type:* `String.t`, *default:* `nil`) - Minimum version code for the Android app. If the installed app’s version
-      code is lower, then the user is taken to the Play Store.
+  *   `androidMinPackageVersionCode` (*type:* `String.t`, *default:* `nil`) - Minimum version code for the Android app. If the installed app’s version code is lower, then the user is taken to the Play Store.
   *   `androidPackageName` (*type:* `String.t`, *default:* `nil`) - Android package name of the app.
   """
 

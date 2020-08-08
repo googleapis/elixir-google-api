@@ -21,34 +21,15 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo do
 
   ## Attributes
 
-  *   `analyticsInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo.t`, *default:* `nil`) - Parameters used for tracking. See all tracking parameters in the
-      [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
-  *   `androidInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo.t`, *default:* `nil`) - Android related information. See Android related parameters in the
-      [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
-  *   `desktopInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo.t`, *default:* `nil`) - Desktop related information. See desktop related parameters in the
-      [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
-  *   `domainUriPrefix` (*type:* `String.t`, *default:* `nil`) - E.g. https://maps.app.goo.gl, https://maps.page.link, https://g.co/maps
-      More examples can be found in description of getNormalizedUriPrefix in
-      j/c/g/firebase/dynamiclinks/uri/DdlDomain.java
-
-      Will fallback to dynamic_link_domain is this field is missing
-  *   `dynamicLinkDomain` (*type:* `String.t`, *default:* `nil`) - Dynamic Links domain that the project owns, e.g. abcd.app.goo.gl
-      [Learn
-      more](https://firebase.google.com/docs/dynamic-links/android/receive) on
-      how to set up Dynamic Link domain associated with your Firebase project.
-
-      Required if missing domain_uri_prefix.
-  *   `iosInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo.t`, *default:* `nil`) - iOS related information. See iOS related parameters in the
-      [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
-  *   `link` (*type:* `String.t`, *default:* `nil`) - The link your app will open, You can specify any URL your app can handle.
-      This link must be a well-formatted URL, be properly URL-encoded, and use
-      the HTTP or HTTPS scheme. See 'link' parameters in the
-      [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
-
-      Required.
+  *   `analyticsInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.AnalyticsInfo.t`, *default:* `nil`) - Parameters used for tracking. See all tracking parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
+  *   `androidInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.AndroidInfo.t`, *default:* `nil`) - Android related information. See Android related parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
+  *   `desktopInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.DesktopInfo.t`, *default:* `nil`) - Desktop related information. See desktop related parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
+  *   `domainUriPrefix` (*type:* `String.t`, *default:* `nil`) - E.g. https://maps.app.goo.gl, https://maps.page.link, https://g.co/maps More examples can be found in description of getNormalizedUriPrefix in j/c/g/firebase/dynamiclinks/uri/DdlDomain.java Will fallback to dynamic_link_domain is this field is missing
+  *   `dynamicLinkDomain` (*type:* `String.t`, *default:* `nil`) - Dynamic Links domain that the project owns, e.g. abcd.app.goo.gl [Learn more](https://firebase.google.com/docs/dynamic-links/android/receive) on how to set up Dynamic Link domain associated with your Firebase project. Required if missing domain_uri_prefix.
+  *   `iosInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo.t`, *default:* `nil`) - iOS related information. See iOS related parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
+  *   `link` (*type:* `String.t`, *default:* `nil`) - The link your app will open, You can specify any URL your app can handle. This link must be a well-formatted URL, be properly URL-encoded, and use the HTTP or HTTPS scheme. See 'link' parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually). Required.
   *   `navigationInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.NavigationInfo.t`, *default:* `nil`) - Information of navigation behavior of a Firebase Dynamic Links.
-  *   `socialMetaTagInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo.t`, *default:* `nil`) - Parameters for social meta tag params.
-      Used to set meta tag data for link previews on social sites.
+  *   `socialMetaTagInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.SocialMetaTagInfo.t`, *default:* `nil`) - Parameters for social meta tag params. Used to set meta tag data for link previews on social sites.
   """
 
   use GoogleApi.Gax.ModelBase

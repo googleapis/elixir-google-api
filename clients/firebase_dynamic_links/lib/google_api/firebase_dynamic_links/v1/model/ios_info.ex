@@ -23,9 +23,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.IosInfo do
 
   *   `iosAppStoreId` (*type:* `String.t`, *default:* `nil`) - iOS App Store ID.
   *   `iosBundleId` (*type:* `String.t`, *default:* `nil`) - iOS bundle ID of the app.
-  *   `iosCustomScheme` (*type:* `String.t`, *default:* `nil`) - Custom (destination) scheme to use for iOS. By default, we’ll use the
-      bundle ID as the custom scheme. Developer can override this behavior using
-      this param.
+  *   `iosCustomScheme` (*type:* `String.t`, *default:* `nil`) - Custom (destination) scheme to use for iOS. By default, we’ll use the bundle ID as the custom scheme. Developer can override this behavior using this param.
   *   `iosFallbackLink` (*type:* `String.t`, *default:* `nil`) - Link to open on iOS if the app is not installed.
   *   `iosIpadBundleId` (*type:* `String.t`, *default:* `nil`) - iPad bundle ID of the app.
   *   `iosIpadFallbackLink` (*type:* `String.t`, *default:* `nil`) - If specified, this overrides the ios_fallback_link value on iPads.

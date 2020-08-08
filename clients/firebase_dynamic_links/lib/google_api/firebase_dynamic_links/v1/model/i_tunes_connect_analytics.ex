@@ -22,11 +22,9 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.ITunesConnectAnalytics do
   ## Attributes
 
   *   `at` (*type:* `String.t`, *default:* `nil`) - Affiliate token used to create affiliate-coded links.
-  *   `ct` (*type:* `String.t`, *default:* `nil`) - Campaign text that developers can optionally add to any link in order to
-      track sales from a specific marketing campaign.
+  *   `ct` (*type:* `String.t`, *default:* `nil`) - Campaign text that developers can optionally add to any link in order to track sales from a specific marketing campaign.
   *   `mt` (*type:* `String.t`, *default:* `nil`) - iTune media types, including music, podcasts, audiobooks and so on.
-  *   `pt` (*type:* `String.t`, *default:* `nil`) - Provider token that enables analytics for Dynamic Links from within iTunes
-      Connect.
+  *   `pt` (*type:* `String.t`, *default:* `nil`) - Provider token that enables analytics for Dynamic Links from within iTunes Connect.
   """
 
   use GoogleApi.Gax.ModelBase

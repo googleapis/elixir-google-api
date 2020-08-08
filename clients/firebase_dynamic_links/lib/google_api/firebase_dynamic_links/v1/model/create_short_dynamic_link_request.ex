@@ -21,14 +21,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkRequest 
 
   ## Attributes
 
-  *   `dynamicLinkInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t`, *default:* `nil`) - Information about the Dynamic Link to be shortened.
-      [Learn
-      more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
-  *   `longDynamicLink` (*type:* `String.t`, *default:* `nil`) - Full long Dynamic Link URL with desired query parameters specified.
-      For example,
-      "https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample",
-      [Learn
-      more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
+  *   `dynamicLinkInfo` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkInfo.t`, *default:* `nil`) - Information about the Dynamic Link to be shortened. [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
+  *   `longDynamicLink` (*type:* `String.t`, *default:* `nil`) - Full long Dynamic Link URL with desired query parameters specified. For example, "https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample", [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
   *   `sdkVersion` (*type:* `String.t`, *default:* `nil`) - Google SDK version. Version takes the form "$major.$minor.$patch"
   *   `suffix` (*type:* `GoogleApi.FirebaseDynamicLinks.V1.Model.Suffix.t`, *default:* `nil`) - Short Dynamic Link suffix. Optional.
   """

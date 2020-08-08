@@ -26,9 +26,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Fetches analytics stats of a short Dynamic Link for a given
-  duration. Metrics include number of clicks, redirects, installs,
-  app first opens, and app reopens.
+  Fetches analytics stats of a short Dynamic Link for a given duration. Metrics include number of clicks, redirects, installs, app first opens, and app reopens.
 
   ## Parameters
 
