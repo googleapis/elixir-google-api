@@ -26,22 +26,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.AvailableProjects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists each [Google Cloud Platform (GCP) `Project`]
-  (https://cloud.google.com/resource-manager/reference/rest/v1/projects)
-  that can have Firebase resources added to it.
-
-  A Project will only be listed if:
-  <ul>
-  <li>The caller has sufficient
-    [Google IAM](https://cloud.google.com/iam) permissions to call
-    AddFirebase.
-  </li>
-  <li>The Project is not already a FirebaseProject.
-  </li>
-  <li>The Project is not in an Organization which has policies
-    that prevent Firebase resources from being added.
-  </li>
-  </ul>
+  Lists each [Google Cloud Platform (GCP) `Project`] (https://cloud.google.com/resource-manager/reference/rest/v1/projects) that can have Firebase resources added to it. A Project will only be listed if: - The caller has sufficient [Google IAM](https://cloud.google.com/iam) permissions to call AddFirebase. - The Project is not already a FirebaseProject. - The Project is not in an Organization which has policies that prevent Firebase resources from being added. 
 
   ## Parameters
 
@@ -58,15 +43,8 @@ defmodule GoogleApi.Firebase.V1beta1.Api.AvailableProjects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of Projects to return in the response.
-
-          The server may return fewer than this value at its discretion.
-          If no value is specified (or too large a value is specified), the server
-          will impose its own limit.
-
-          This value cannot be negative.
-      *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListAvailableProjects`
-          indicating where in the set of Projects to resume listing.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of Projects to return in the response. The server may return fewer than this value at its discretion. If no value is specified (or too large a value is specified), the server will impose its own limit. This value cannot be negative.
+      *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListAvailableProjects` indicating where in the set of Projects to resume listing.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

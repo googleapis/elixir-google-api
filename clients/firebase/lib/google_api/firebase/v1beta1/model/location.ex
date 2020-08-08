@@ -22,13 +22,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.Location do
   ## Attributes
 
   *   `features` (*type:* `list(String.t)`, *default:* `nil`) - Products and services that are available in the GCP resource location.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the GCP resource location. It will be one of the available [GCP
-      resource
-      locations](https://firebase.google.com/docs/projects/locations#types).
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Indicates whether the GCP resource location is a [regional or
-      multi-regional
-      location](https://firebase.google.com/docs/projects/locations#types)
-      for data replication.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the GCP resource location. It will be one of the available [GCP resource locations](https://firebase.google.com/docs/projects/locations#types).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Indicates whether the GCP resource location is a [regional or multi-regional location](https://firebase.google.com/docs/projects/locations#types) for data replication.
   """
 
   use GoogleApi.Gax.ModelBase

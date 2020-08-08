@@ -22,9 +22,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.IosAppConfig do
   ## Attributes
 
   *   `configFileContents` (*type:* `String.t`, *default:* `nil`) - The content of the XML configuration file.
-  *   `configFilename` (*type:* `String.t`, *default:* `nil`) - The filename that the configuration artifact for the `IosApp` is typically
-      saved as.
-      <br>For example: `GoogleService-Info.plist`
+  *   `configFilename` (*type:* `String.t`, *default:* `nil`) - The filename that the configuration artifact for the `IosApp` is typically saved as. For example: `GoogleService-Info.plist`
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,17 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.RemoveAnalyticsRequest do
 
   ## Attributes
 
-  *   `analyticsPropertyId` (*type:* `String.t`, *default:* `nil`) - Optional. The ID of the Google Analytics property associated with the
-      specified `FirebaseProject`.
-      <ul>
-      <li>If not set, then the Google Analytics property that is currently
-        associated with the specified `FirebaseProject` is removed.
-      </li>
-      <li>If set, and the specified `FirebaseProject` is currently associated
-        with a *different* Google Analytics property, then the response
-        is a `412 Precondition Failed` error.
-      </li>
-      </ul>
+  *   `analyticsPropertyId` (*type:* `String.t`, *default:* `nil`) - Optional. The ID of the Google Analytics property associated with the specified `FirebaseProject`. - If not set, then the Google Analytics property that is currently associated with the specified `FirebaseProject` is removed. - If set, and the specified `FirebaseProject` is currently associated with a *different* Google Analytics property, then the response is a `412 Precondition Failed` error. 
   """
 
   use GoogleApi.Gax.ModelBase

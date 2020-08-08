@@ -21,31 +21,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StreamMapping do
 
   ## Attributes
 
-  *   `app` (*type:* `String.t`, *default:* `nil`) - The resource name of the Firebase App associated with the
-      Google Analytics data stream, in the format:
-      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var></code>
-      or
-      <code>projects/<var>PROJECT_IDENTIFIER</var>/iosApps/<var>APP_ID</var></code>
-      or
-      <code>projects/<var>PROJECT_IDENTIFIER</var>/webApps/<var>APP_ID</var></code>
-      Refer to the `FirebaseProject`
-      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
-      about <var>PROJECT_IDENTIFIER</var> values.
-  *   `measurementId` (*type:* `String.t`, *default:* `nil`) - Applicable for Firebase Web Apps only.
-
-      The unique Google-assigned identifier of the Google Analytics web
-      stream associated with the Firebase Web App. Firebase SDKs use this ID to
-      interact with Google Analytics APIs.
-
-      Learn more about this ID and Google Analytics web streams in the
-      [Analytics
-      documentation](https://support.google.com/analytics/topic/9303475).
-  *   `streamId` (*type:* `String.t`, *default:* `nil`) - The unique Google-assigned identifier of the Google Analytics data stream
-      associated with the Firebase App.
-
-      Learn more about Google Analytics data streams in the
-      [Analytics
-      documentation](https://support.google.com/analytics/answer/9303323).
+  *   `app` (*type:* `String.t`, *default:* `nil`) - The resource name of the Firebase App associated with the Google Analytics data stream, in the format: projects/PROJECT_IDENTIFIER/androidApps/APP_ID or projects/PROJECT_IDENTIFIER/iosApps/APP_ID or projects/PROJECT_IDENTIFIER /webApps/APP_ID Refer to the `FirebaseProject` [`name`](../projects#FirebaseProject.FIELDS.name) field for details about PROJECT_IDENTIFIER values.
+  *   `measurementId` (*type:* `String.t`, *default:* `nil`) - Applicable for Firebase Web Apps only. The unique Google-assigned identifier of the Google Analytics web stream associated with the Firebase Web App. Firebase SDKs use this ID to interact with Google Analytics APIs. Learn more about this ID and Google Analytics web streams in the [Analytics documentation](https://support.google.com/analytics/topic/9303475).
+  *   `streamId` (*type:* `String.t`, *default:* `nil`) - The unique Google-assigned identifier of the Google Analytics data stream associated with the Firebase App. Learn more about Google Analytics data streams in the [Analytics documentation](https://support.google.com/analytics/answer/9303323).
   """
 
   use GoogleApi.Gax.ModelBase

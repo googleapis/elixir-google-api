@@ -22,14 +22,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ListAndroidAppsResponse do
   ## Attributes
 
   *   `apps` (*type:* `list(GoogleApi.Firebase.V1beta1.Model.AndroidApp.t)`, *default:* `nil`) - List of each `AndroidApp` associated with the specified `FirebaseProject`.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the result list is too large to fit in a single response, then a token
-      is returned. If the string is empty, then this response is the last page of
-      results.
-
-      This token can be used in a subsequent call to `ListAndroidApps` to
-      find the next group of Apps.
-
-      Page tokens are short-lived and should not be persisted.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the result list is too large to fit in a single response, then a token is returned. If the string is empty, then this response is the last page of results. This token can be used in a subsequent call to `ListAndroidApps` to find the next group of Apps. Page tokens are short-lived and should not be persisted.
   """
 
   use GoogleApi.Gax.ModelBase

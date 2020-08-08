@@ -17,19 +17,7 @@
 
 defmodule GoogleApi.Firebase.V1beta1.Model.TypedMessage do
   @moduledoc """
-  Message that groups a protocol type_id (as defined by MessageSet),
-  with an encoded message of that type.  Its use is similar to
-  MessageSet, except it represents a single (type, encoded message)
-  instead of a set.
-
-  To embed "proto" inside "typed_msg":
-    MyProtoMessage proto;
-    TypedMessage typed_msg;
-    typed_msg.set_type_id(proto2::bridge::GetTypeId(proto));
-    proto.AppendToCord(typed_msg.mutable_message());
-
-  Error handling is omitted from the sample code above. GetTypeId() will return
-  0 for messages that don't have a TypeId specified.
+  Message that groups a protocol type_id (as defined by MessageSet), with an encoded message of that type. Its use is similar to MessageSet, except it represents a single (type, encoded message) instead of a set. To embed "proto" inside "typed_msg": MyProtoMessage proto; TypedMessage typed_msg; typed_msg.set_type_id(proto2::bridge::GetTypeId(proto)); proto.AppendToCord(typed_msg.mutable_message()); Error handling is omitted from the sample code above. GetTypeId() will return 0 for messages that don't have a TypeId specified.
 
   ## Attributes
 
