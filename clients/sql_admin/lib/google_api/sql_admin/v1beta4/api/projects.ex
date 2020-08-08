@@ -109,7 +109,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - ID of the project that contains the first generation instance.
+  *   `project` (*type:* `String.t`) - ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

@@ -29,7 +29,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
       the database type.
   *   `connectionName` (*type:* `String.t`, *default:* `nil`) - Connection name of the Cloud SQL instance used in connection strings.
   *   `currentDiskSize` (*type:* `String.t`, *default:* `nil`) - The current disk usage of the instance in bytes. This property has been
-      deprecated. Users should use the
+      deprecated. Use the
       "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud
       Monitoring API instead. Please see <a
       href="https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ">this
