@@ -21,18 +21,8 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshoote
 
   ## Attributes
 
-  *   `access` (*type:* `String.t`, *default:* `nil`) - Indicates whether the member has the specified permission for the specified
-      resource, based on evaluating all of the applicable IAM policies.
-  *   `explainedPolicies` (*type:* `list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1ExplainedPolicy.t)`, *default:* `nil`) - List of IAM policies that were evaluated to check the member's permissions,
-      with annotations to indicate how each policy contributed to the final
-      result.
-
-      The list of policies can include the policy for the resource itself. It can
-      also include policies that are inherited from higher levels of the resource
-      hierarchy, including the organization, the folder, and the project.
-
-      To learn more about the resource hierarchy, see
-      https://cloud.google.com/iam/help/resource-hierarchy.
+  *   `access` (*type:* `String.t`, *default:* `nil`) - Indicates whether the member has the specified permission for the specified resource, based on evaluating all of the applicable IAM policies.
+  *   `explainedPolicies` (*type:* `list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1ExplainedPolicy.t)`, *default:* `nil`) - List of IAM policies that were evaluated to check the member's permissions, with annotations to indicate how each policy contributed to the final result. The list of policies can include the policy for the resource itself. It can also include policies that are inherited from higher levels of the resource hierarchy, including the organization, the folder, and the project. To learn more about the resource hierarchy, see https://cloud.google.com/iam/help/resource-hierarchy.
   """
 
   use GoogleApi.Gax.ModelBase

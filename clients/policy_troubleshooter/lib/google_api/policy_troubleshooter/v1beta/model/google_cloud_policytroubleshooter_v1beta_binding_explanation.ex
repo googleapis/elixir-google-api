@@ -17,55 +17,17 @@
 
 defmodule GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroubleshooterV1betaBindingExplanation do
   @moduledoc """
-  Details about how a binding in a policy affects a member's ability to use a
-  permission.
+  Details about how a binding in a policy affects a member's ability to use a permission.
 
   ## Attributes
 
-  *   `access` (*type:* `String.t`, *default:* `nil`) - Indicates whether _this binding_ provides the specified permission to the
-      specified member for the specified resource.
-
-      This field does _not_ indicate whether the member actually has the
-      permission for the resource. There might be another binding that overrides
-      this binding. To determine whether the member actually has the permission,
-      use the `access` field in the
-      TroubleshootIamPolicyResponse.
-  *   `condition` (*type:* `GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleTypeExpr.t`, *default:* `nil`) - A condition expression that prevents access unless the expression evaluates
-      to `true`.
-
-      To learn about IAM Conditions, see
-      http://cloud.google.com/iam/help/conditions/overview.
-  *   `memberships` (*type:* `%{optional(String.t) => GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembership.t}`, *default:* `nil`) - Indicates whether each member in the binding includes the member specified
-      in the request, either directly or indirectly. Each key identifies a member
-      in the binding, and each value indicates whether the member in the binding
-      includes the member in the request.
-
-      For example, suppose that a binding includes the following members:
-
-      * `user:alice@example.com`
-      * `group:product-eng@example.com`
-
-      You want to troubleshoot access for `user:bob@example.com`. This user is a
-      member of the group `group:product-eng@example.com`.
-
-      For the first member in the binding, the key is `user:alice@example.com`,
-      and the `membership` field in the value is set to
-      `MEMBERSHIP_NOT_INCLUDED`.
-
-      For the second member in the binding, the key is
-      `group:product-eng@example.com`, and the `membership` field in the value is
-      set to `MEMBERSHIP_INCLUDED`.
-  *   `relevance` (*type:* `String.t`, *default:* `nil`) - The relevance of this binding to the overall determination for the entire
-      policy.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - The role that this binding grants. For example,
-      `roles/compute.serviceAgent`.
-
-      For a complete list of predefined IAM roles, as well as the permissions in
-      each role, see https://cloud.google.com/iam/help/roles/reference.
-  *   `rolePermission` (*type:* `String.t`, *default:* `nil`) - Indicates whether the role granted by this binding contains the specified
-      permission.
-  *   `rolePermissionRelevance` (*type:* `String.t`, *default:* `nil`) - The relevance of the permission's existence, or nonexistence, in the role
-      to the overall determination for the entire policy.
+  *   `access` (*type:* `String.t`, *default:* `nil`) - Indicates whether _this binding_ provides the specified permission to the specified member for the specified resource. This field does _not_ indicate whether the member actually has the permission for the resource. There might be another binding that overrides this binding. To determine whether the member actually has the permission, use the `access` field in the TroubleshootIamPolicyResponse.
+  *   `condition` (*type:* `GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleTypeExpr.t`, *default:* `nil`) - A condition expression that prevents access unless the expression evaluates to `true`. To learn about IAM Conditions, see http://cloud.google.com/iam/help/conditions/overview.
+  *   `memberships` (*type:* `%{optional(String.t) => GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembership.t}`, *default:* `nil`) - Indicates whether each member in the binding includes the member specified in the request, either directly or indirectly. Each key identifies a member in the binding, and each value indicates whether the member in the binding includes the member in the request. For example, suppose that a binding includes the following members: * `user:alice@example.com` * `group:product-eng@example.com` You want to troubleshoot access for `user:bob@example.com`. This user is a member of the group `group:product-eng@example.com`. For the first member in the binding, the key is `user:alice@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_NOT_INCLUDED`. For the second member in the binding, the key is `group:product-eng@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_INCLUDED`.
+  *   `relevance` (*type:* `String.t`, *default:* `nil`) - The relevance of this binding to the overall determination for the entire policy.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The role that this binding grants. For example, `roles/compute.serviceAgent`. For a complete list of predefined IAM roles, as well as the permissions in each role, see https://cloud.google.com/iam/help/roles/reference.
+  *   `rolePermission` (*type:* `String.t`, *default:* `nil`) - Indicates whether the role granted by this binding contains the specified permission.
+  *   `rolePermissionRelevance` (*type:* `String.t`, *default:* `nil`) - The relevance of the permission's existence, or nonexistence, in the role to the overall determination for the entire policy.
   """
 
   use GoogleApi.Gax.ModelBase

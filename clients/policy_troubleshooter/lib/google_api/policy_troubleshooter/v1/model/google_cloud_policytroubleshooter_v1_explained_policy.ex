@@ -17,41 +17,15 @@
 
 defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1ExplainedPolicy do
   @moduledoc """
-  Details about how a specific IAM Policy contributed
-  to the access check.
+  Details about how a specific IAM Policy contributed to the access check.
 
   ## Attributes
 
-  *   `access` (*type:* `String.t`, *default:* `nil`) - Indicates whether _this policy_ provides the specified permission to the
-      specified member for the specified resource.
-
-      This field does _not_ indicate whether the member actually has the
-      permission for the resource. There might be another policy that overrides
-      this policy. To determine whether the member actually has the permission,
-      use the `access` field in the
-      TroubleshootIamPolicyResponse.
-  *   `bindingExplanations` (*type:* `list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1BindingExplanation.t)`, *default:* `nil`) - Details about how each binding in the policy affects the member's ability,
-      or inability, to use the permission for the resource.
-
-      If the sender of the request does not have access to the policy, this field
-      is omitted.
-  *   `fullResourceName` (*type:* `String.t`, *default:* `nil`) - The full resource name that identifies the resource. For example,
-      `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`.
-
-      If the sender of the request does not have access to the policy, this field
-      is omitted.
-
-      For examples of full resource names for Google Cloud services, see
-      https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
-  *   `policy` (*type:* `GoogleApi.PolicyTroubleshooter.V1.Model.GoogleIamV1Policy.t`, *default:* `nil`) - The IAM policy attached to the resource.
-
-      If the sender of the request does not have access to the policy, this field
-      is empty.
-  *   `relevance` (*type:* `String.t`, *default:* `nil`) - The relevance of this policy to the overall determination in the
-      TroubleshootIamPolicyResponse.
-
-      If the sender of the request does not have access to the policy, this field
-      is omitted.
+  *   `access` (*type:* `String.t`, *default:* `nil`) - Indicates whether _this policy_ provides the specified permission to the specified member for the specified resource. This field does _not_ indicate whether the member actually has the permission for the resource. There might be another policy that overrides this policy. To determine whether the member actually has the permission, use the `access` field in the TroubleshootIamPolicyResponse.
+  *   `bindingExplanations` (*type:* `list(GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1BindingExplanation.t)`, *default:* `nil`) - Details about how each binding in the policy affects the member's ability, or inability, to use the permission for the resource. If the sender of the request does not have access to the policy, this field is omitted.
+  *   `fullResourceName` (*type:* `String.t`, *default:* `nil`) - The full resource name that identifies the resource. For example, `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`. If the sender of the request does not have access to the policy, this field is omitted. For examples of full resource names for Google Cloud services, see https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
+  *   `policy` (*type:* `GoogleApi.PolicyTroubleshooter.V1.Model.GoogleIamV1Policy.t`, *default:* `nil`) - The IAM policy attached to the resource. If the sender of the request does not have access to the policy, this field is empty.
+  *   `relevance` (*type:* `String.t`, *default:* `nil`) - The relevance of this policy to the overall determination in the TroubleshootIamPolicyResponse. If the sender of the request does not have access to the policy, this field is omitted.
   """
 
   use GoogleApi.Gax.ModelBase
