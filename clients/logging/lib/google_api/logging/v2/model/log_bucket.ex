@@ -24,7 +24,8 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the bucket. This is not set for any of the default buckets.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Describes this bucket.
   *   `lifecycleState` (*type:* `String.t`, *default:* `nil`) - Output only. The bucket lifecycle state.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the bucket. For example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id The supported locations are:  "global"  "us-central1"For the location of global it is unspecified where logs are actually stored. Once a bucket has been created, the location can not be changed.
+  *   `locked` (*type:* `boolean()`, *default:* `nil`) - Whether the bucket has been locked. The retention period on a locked bucket may not be changed. Locked buckets may only be deleted if they are empty.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the bucket. For example: "projects/my-project-id/locations/my-location/buckets/my-bucket-id The supported locations are: "global"For the location of global it is unspecified where logs are actually stored. Once a bucket has been created, the location can not be changed.
   *   `retentionDays` (*type:* `integer()`, *default:* `nil`) - Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the bucket.
   """
@@ -35,6 +36,7 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
           :createTime => DateTime.t(),
           :description => String.t(),
           :lifecycleState => String.t(),
+          :locked => boolean(),
           :name => String.t(),
           :retentionDays => integer(),
           :updateTime => DateTime.t()
@@ -43,6 +45,7 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
   field(:createTime, as: DateTime)
   field(:description)
   field(:lifecycleState)
+  field(:locked)
   field(:name)
   field(:retentionDays)
   field(:updateTime, as: DateTime)

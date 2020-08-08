@@ -31,12 +31,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource in which to create the exclusion:
-      "projects/[PROJECT_ID]"
-      "organizations/[ORGANIZATION_ID]"
-      "billingAccounts/[BILLING_ACCOUNT_ID]"
-      "folders/[FOLDER_ID]"
-      Examples: "projects/my-logging-project", "organizations/123456789".
+  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource in which to create the exclusion: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" Examples: "projects/my-logging-project", "organizations/123456789".
   *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -105,12 +100,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion to delete:
-      "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-      "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-      "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-      "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-      Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion to delete: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" Example: "projects/my-project-id/exclusions/my-exclusion-id".
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -184,12 +174,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion:
-      "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-      "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-      "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-      "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-      Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" Example: "projects/my-project-id/exclusions/my-exclusion-id".
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -266,12 +251,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource whose exclusions are to be listed.
-      "projects/[PROJECT_ID]"
-      "organizations/[ORGANIZATION_ID]"
-      "billingAccounts/[BILLING_ACCOUNT_ID]"
-      "folders/[FOLDER_ID]"
-
+  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource whose exclusions are to be listed. "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" 
   *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -336,12 +316,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the exclusion to update:
-      "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-      "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-      "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-      "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-      Example: "projects/my-project-id/exclusions/my-exclusion-id".
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the exclusion to update: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" Example: "projects/my-project-id/exclusions/my-exclusion-id".
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

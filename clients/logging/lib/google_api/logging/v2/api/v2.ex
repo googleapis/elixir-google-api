@@ -31,12 +31,7 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource for which to retrieve CMEK settings.
-      "projects/[PROJECT_ID]/cmekSettings"
-      "organizations/[ORGANIZATION_ID]/cmekSettings"
-      "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
-      "folders/[FOLDER_ID]/cmekSettings"
-      Example: "organizations/12345/cmekSettings".Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once configured, it applies to all projects and folders in the GCP organization.
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource for which to retrieve CMEK settings. "projects/[PROJECT_ID]/cmekSettings" "organizations/[ORGANIZATION_ID]/cmekSettings" "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings" "folders/[FOLDER_ID]/cmekSettings" Example: "organizations/12345/cmekSettings".Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once configured, it applies to all projects and folders in the GCP organization.
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -103,12 +98,7 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name for the CMEK settings to update.
-      "projects/[PROJECT_ID]/cmekSettings"
-      "organizations/[ORGANIZATION_ID]/cmekSettings"
-      "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings"
-      "folders/[FOLDER_ID]/cmekSettings"
-      Example: "organizations/12345/cmekSettings".Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once configured, it applies to all projects and folders in the GCP organization.
+  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name for the CMEK settings to update. "projects/[PROJECT_ID]/cmekSettings" "organizations/[ORGANIZATION_ID]/cmekSettings" "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings" "folders/[FOLDER_ID]/cmekSettings" Example: "organizations/12345/cmekSettings".Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once configured, it applies to all projects and folders in the GCP organization.
   *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

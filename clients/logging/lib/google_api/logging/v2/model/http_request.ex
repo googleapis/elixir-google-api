@@ -35,8 +35,7 @@ defmodule GoogleApi.Logging.V2.Model.HttpRequest do
   *   `responseSize` (*type:* `String.t`, *default:* `nil`) - The size of the HTTP response message sent back to the client, in bytes, including the response headers and the response body.
   *   `serverIp` (*type:* `String.t`, *default:* `nil`) - The IP address (IPv4 or IPv6) of the origin server that the request was sent to.
   *   `status` (*type:* `integer()`, *default:* `nil`) - The response code indicating the status of response. Examples: 200, 404.
-  *   `userAgent` (*type:* `String.t`, *default:* `nil`) - The user agent sent by the client. Example: "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
-      CLR 1.0.3705)".
+  *   `userAgent` (*type:* `String.t`, *default:* `nil`) - The user agent sent by the client. Example: "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)".
   """
 
   use GoogleApi.Gax.ModelBase
