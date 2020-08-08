@@ -21,10 +21,8 @@ defmodule GoogleApi.CloudTrace.V2.Model.Annotation do
 
   ## Attributes
 
-  *   `attributes` (*type:* `GoogleApi.CloudTrace.V2.Model.Attributes.t`, *default:* `nil`) - A set of attributes on the annotation. You can have up to 4 attributes
-      per Annotation.
-  *   `description` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - A user-supplied message describing the event. The maximum length for
-      the description is 256 bytes.
+  *   `attributes` (*type:* `GoogleApi.CloudTrace.V2.Model.Attributes.t`, *default:* `nil`) - A set of attributes on the annotation. You can have up to 4 attributes per Annotation.
+  *   `description` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - A user-supplied message describing the event. The maximum length for the description is 256 bytes.
   """
 
   use GoogleApi.Gax.ModelBase

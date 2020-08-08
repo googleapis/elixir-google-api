@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.CloudTrace.V2.Model.TimeEvents do
   @moduledoc """
-  A collection of `TimeEvent`s. A `TimeEvent` is a time-stamped annotation
-  on the span, consisting of either user-supplied key:value pairs, or
-  details of a message sent/received between Spans.
+  A collection of `TimeEvent`s. A `TimeEvent` is a time-stamped annotation on the span, consisting of either user-supplied key:value pairs, or details of a message sent/received between Spans.
 
   ## Attributes
 
-  *   `droppedAnnotationsCount` (*type:* `integer()`, *default:* `nil`) - The number of dropped annotations in all the included time events.
-      If the value is 0, then no annotations were dropped.
-  *   `droppedMessageEventsCount` (*type:* `integer()`, *default:* `nil`) - The number of dropped message events in all the included time events.
-      If the value is 0, then no message events were dropped.
+  *   `droppedAnnotationsCount` (*type:* `integer()`, *default:* `nil`) - The number of dropped annotations in all the included time events. If the value is 0, then no annotations were dropped.
+  *   `droppedMessageEventsCount` (*type:* `integer()`, *default:* `nil`) - The number of dropped message events in all the included time events. If the value is 0, then no message events were dropped.
   *   `timeEvent` (*type:* `list(GoogleApi.CloudTrace.V2.Model.TimeEvent.t)`, *default:* `nil`) - A collection of `TimeEvent`s.
   """
 

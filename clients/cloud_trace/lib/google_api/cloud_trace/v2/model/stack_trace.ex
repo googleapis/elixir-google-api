@@ -22,15 +22,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.StackTrace do
   ## Attributes
 
   *   `stackFrames` (*type:* `GoogleApi.CloudTrace.V2.Model.StackFrames.t`, *default:* `nil`) - Stack frames in this stack trace. A maximum of 128 frames are allowed.
-  *   `stackTraceHashId` (*type:* `String.t`, *default:* `nil`) - The hash ID is used to conserve network bandwidth for duplicate
-      stack traces within a single trace.
-
-      Often multiple spans will have identical stack traces.
-      The first occurrence of a stack trace should contain both the
-      `stackFrame` content and a value in `stackTraceHashId`.
-
-      Subsequent spans within the same request can refer
-      to that stack trace by only setting `stackTraceHashId`.
+  *   `stackTraceHashId` (*type:* `String.t`, *default:* `nil`) - The hash ID is used to conserve network bandwidth for duplicate stack traces within a single trace. Often multiple spans will have identical stack traces. The first occurrence of a stack trace should contain both the `stackFrame` content and a value in `stackTraceHashId`. Subsequent spans within the same request can refer to that stack trace by only setting `stackTraceHashId`.
   """
 
   use GoogleApi.Gax.ModelBase

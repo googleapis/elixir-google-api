@@ -21,17 +21,12 @@ defmodule GoogleApi.CloudTrace.V2.Model.StackFrame do
 
   ## Attributes
 
-  *   `columnNumber` (*type:* `String.t`, *default:* `nil`) - The column number where the function call appears, if available.
-      This is important in JavaScript because of its anonymous functions.
-  *   `fileName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - The name of the source file where the function call appears (up to 256
-      bytes).
-  *   `functionName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - The fully-qualified name that uniquely identifies the function or
-      method that is active in this frame (up to 1024 bytes).
+  *   `columnNumber` (*type:* `String.t`, *default:* `nil`) - The column number where the function call appears, if available. This is important in JavaScript because of its anonymous functions.
+  *   `fileName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - The name of the source file where the function call appears (up to 256 bytes).
+  *   `functionName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - The fully-qualified name that uniquely identifies the function or method that is active in this frame (up to 1024 bytes).
   *   `lineNumber` (*type:* `String.t`, *default:* `nil`) - The line number in `file_name` where the function call appears.
   *   `loadModule` (*type:* `GoogleApi.CloudTrace.V2.Model.Module.t`, *default:* `nil`) - The binary module from where the code was loaded.
-  *   `originalFunctionName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - An un-mangled function name, if `function_name` is
-      [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-      be fully-qualified (up to 1024 bytes).
+  *   `originalFunctionName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - An un-mangled function name, if `function_name` is [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can be fully-qualified (up to 1024 bytes).
   *   `sourceVersion` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - The version of the deployed source code (up to 128 bytes).
   """
 

@@ -21,9 +21,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.StackFrames do
 
   ## Attributes
 
-  *   `droppedFramesCount` (*type:* `integer()`, *default:* `nil`) - The number of stack frames that were dropped because there
-      were too many stack frames.
-      If this value is 0, then no stack frames were dropped.
+  *   `droppedFramesCount` (*type:* `integer()`, *default:* `nil`) - The number of stack frames that were dropped because there were too many stack frames. If this value is 0, then no stack frames were dropped.
   *   `frame` (*type:* `list(GoogleApi.CloudTrace.V2.Model.StackFrame.t)`, *default:* `nil`) - Stack frames in this call stack.
   """
 
