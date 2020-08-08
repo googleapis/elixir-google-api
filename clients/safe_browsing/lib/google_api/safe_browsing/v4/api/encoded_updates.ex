@@ -44,8 +44,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedUpdates do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientId` (*type:* `String.t`) - A client ID that uniquely identifies the client implementation of the Safe
-          Browsing API.
+      *   `:clientId` (*type:* `String.t`) - A client ID that uniquely identifies the client implementation of the Safe Browsing API.
       *   `:clientVersion` (*type:* `String.t`) - The version of the client implementation.
   *   `opts` (*type:* `keyword()`) - Call options
 

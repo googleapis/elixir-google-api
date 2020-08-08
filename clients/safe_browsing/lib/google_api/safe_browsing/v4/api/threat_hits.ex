@@ -26,8 +26,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatHits do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Reports a Safe Browsing threat list hit to Google. Only projects with
-  TRUSTED_REPORTER visibility can use this method.
+  Reports a Safe Browsing threat list hit to Google. Only projects with TRUSTED_REPORTER visibility can use this method.
 
   ## Parameters
 

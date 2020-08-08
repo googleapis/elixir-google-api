@@ -22,8 +22,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesResponse do
   ## Attributes
 
   *   `listUpdateResponses` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ListUpdateResponse.t)`, *default:* `nil`) - The list updates requested by the clients.
-  *   `minimumWaitDuration` (*type:* `String.t`, *default:* `nil`) - The minimum duration the client must wait before issuing any update
-      request. If this field is not set clients may update as soon as they want.
+  *   `minimumWaitDuration` (*type:* `String.t`, *default:* `nil`) - The minimum duration the client must wait before issuing any update request. If this field is not set clients may update as soon as they want.
   """
 
   use GoogleApi.Gax.ModelBase

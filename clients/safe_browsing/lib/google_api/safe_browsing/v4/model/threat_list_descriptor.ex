@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.SafeBrowsing.V4.Model.ThreatListDescriptor do
   @moduledoc """
-  Describes an individual threat list. A list is defined by three parameters:
-  the type of threat posed, the type of platform targeted by the threat, and
-  the type of entries in the list.
+  Describes an individual threat list. A list is defined by three parameters: the type of threat posed, the type of platform targeted by the threat, and the type of entries in the list.
 
   ## Attributes
 

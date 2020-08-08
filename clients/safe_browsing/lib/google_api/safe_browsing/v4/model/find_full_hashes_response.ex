@@ -22,11 +22,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse do
   ## Attributes
 
   *   `matches` (*type:* `list(GoogleApi.SafeBrowsing.V4.Model.ThreatMatch.t)`, *default:* `nil`) - The full hashes that matched the requested prefixes.
-  *   `minimumWaitDuration` (*type:* `String.t`, *default:* `nil`) - The minimum duration the client must wait before issuing any find hashes
-      request. If this field is not set, clients can issue a request as soon as
-      they want.
-  *   `negativeCacheDuration` (*type:* `String.t`, *default:* `nil`) - For requested entities that did not match the threat list, how long to
-      cache the response.
+  *   `minimumWaitDuration` (*type:* `String.t`, *default:* `nil`) - The minimum duration the client must wait before issuing any find hashes request. If this field is not set, clients can issue a request as soon as they want.
+  *   `negativeCacheDuration` (*type:* `String.t`, *default:* `nil`) - For requested entities that did not match the threat list, how long to cache the response.
   """
 
   use GoogleApi.Gax.ModelBase

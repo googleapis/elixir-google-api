@@ -26,8 +26,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatListUpdates do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Fetches the most recent threat list updates. A client can request updates
-  for multiple lists at once.
+  Fetches the most recent threat list updates. A client can request updates for multiple lists at once.
 
   ## Parameters
 

@@ -20,7 +20,7 @@ defmodule GoogleApi.SafeBrowsing.V4 do
   API client metadata for GoogleApi.SafeBrowsing.V4.
   """
 
-  @discovery_revision "20200728"
+  @discovery_revision "20200801"
 
   def discovery_revision(), do: @discovery_revision
 end
