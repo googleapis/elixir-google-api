@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.DistributionCut do
   @moduledoc """
-  A DistributionCut defines a TimeSeries and thresholds used for measuring good service and total service. The TimeSeries must have ValueType =
-  DISTRIBUTION and MetricKind = DELTA or MetricKind = CUMULATIVE. The computed good_service will be the count of values x in the Distribution such that range.min <= x < range.max.
+  A DistributionCut defines a TimeSeries and thresholds used for measuring good service and total service. The TimeSeries must have ValueType = DISTRIBUTION and MetricKind = DELTA or MetricKind = CUMULATIVE. The computed good_service will be the count of values x in the Distribution such that range.min <= x < range.max.
 
   ## Attributes
 
-  *   `distributionFilter` (*type:* `String.t`, *default:* `nil`) - A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters) specifying a TimeSeries aggregating values. Must have ValueType =
-      DISTRIBUTION and MetricKind = DELTA or MetricKind = CUMULATIVE.
+  *   `distributionFilter` (*type:* `String.t`, *default:* `nil`) - A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters) specifying a TimeSeries aggregating values. Must have ValueType = DISTRIBUTION and MetricKind = DELTA or MetricKind = CUMULATIVE.
   *   `range` (*type:* `GoogleApi.Monitoring.V3.Model.GoogleMonitoringV3Range.t`, *default:* `nil`) - Range of values considered "good." For a one-sided range, set one bound to an infinite value.
   """
 

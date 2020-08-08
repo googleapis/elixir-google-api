@@ -21,11 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.MonitoredResourceMetadata do
 
   ## Attributes
 
-  *   `systemLabels` (*type:* `map()`, *default:* `nil`) - Output only. Values for predefined system metadata labels. System labels are a kind of metadata extracted by Google, including "machine_image", "vpc", "subnet_id", "security_group", "name", etc. System label values can be only strings, Boolean values, or a list of strings. For example:
-      { "name": "my-test-instance",
-        "security_group": ["a", "b", "c"],
-        "spot_instance": false }
-
+  *   `systemLabels` (*type:* `map()`, *default:* `nil`) - Output only. Values for predefined system metadata labels. System labels are a kind of metadata extracted by Google, including "machine_image", "vpc", "subnet_id", "security_group", "name", etc. System label values can be only strings, Boolean values, or a list of strings. For example: { "name": "my-test-instance", "security_group": ["a", "b", "c"], "spot_instance": false } 
   *   `userLabels` (*type:* `map()`, *default:* `nil`) - Output only. A map of user-defined metadata labels.
   """
 

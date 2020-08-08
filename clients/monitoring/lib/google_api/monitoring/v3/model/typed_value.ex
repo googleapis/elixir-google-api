@@ -23,8 +23,8 @@ defmodule GoogleApi.Monitoring.V3.Model.TypedValue do
 
   *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - A Boolean value: true or false.
   *   `distributionValue` (*type:* `GoogleApi.Monitoring.V3.Model.Distribution.t`, *default:* `nil`) - A distribution value.
-  *   `doubleValue` (*type:* `float()`, *default:* `nil`) - A 64-bit double-precision floating-point number. Its magnitude is approximately &plusmn;10<sup>&plusmn;300</sup> and it has 16 significant digits of precision.
-  *   `int64Value` (*type:* `String.t`, *default:* `nil`) - A 64-bit integer. Its range is approximately &plusmn;9.2x10<sup>18</sup>.
+  *   `doubleValue` (*type:* `float()`, *default:* `nil`) - A 64-bit double-precision floating-point number. Its magnitude is approximately ±10±300 and it has 16 significant digits of precision.
+  *   `int64Value` (*type:* `String.t`, *default:* `nil`) - A 64-bit integer. Its range is approximately ±9.2x1018.
   *   `stringValue` (*type:* `String.t`, *default:* `nil`) - A variable-length string value.
   """
 

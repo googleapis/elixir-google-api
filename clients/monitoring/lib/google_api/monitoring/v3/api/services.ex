@@ -31,9 +31,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent workspace. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]
-
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent workspace. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -104,9 +102,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service to delete. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -181,9 +177,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -260,10 +254,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed services, either a project or a Monitoring Workspace. The formats are:
-      projects/[PROJECT_ID_OR_NUMBER]
-      workspaces/[HOST_PROJECT_ID_OR_NUMBER]
-
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed services, either a project or a Monitoring Workspace. The formats are: projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER] 
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -277,18 +268,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A filter specifying what Services to return. The filter currently supports the following fields:
-          - `identifier_case`
-          - `app_engine.module_id`
-          - `cloud_endpoints.service`
-          - `mesh_istio.mesh_uid`
-          - `mesh_istio.service_namespace`
-          - `mesh_istio.service_name`
-          - `cluster_istio.location` (deprecated)
-          - `cluster_istio.cluster_name` (deprecated)
-          - `cluster_istio.service_namespace` (deprecated)
-          - `cluster_istio.service_name` (deprecated)
-          identifier_case refers to which option in the identifier oneof is populated. For example, the filter identifier_case = "CUSTOM" would match all services with a value for the custom field. Valid options are "CUSTOM", "APP_ENGINE", "CLOUD_ENDPOINTS", "MESH_ISTIO", and "CLUSTER_ISTIO" (deprecated),
+      *   `:filter` (*type:* `String.t`) - A filter specifying what Services to return. The filter currently supports the following fields: - `identifier_case` - `app_engine.module_id` - `cloud_endpoints.service` - `mesh_istio.mesh_uid` - `mesh_istio.service_namespace` - `mesh_istio.service_name` - `cluster_istio.location` (deprecated) - `cluster_istio.cluster_name` (deprecated) - `cluster_istio.service_namespace` (deprecated) - `cluster_istio.service_name` (deprecated) identifier_case refers to which option in the identifier oneof is populated. For example, the filter identifier_case = "CUSTOM" would match all services with a value for the custom field. Valid options are "CUSTOM", "APP_ENGINE", "CLOUD_ENDPOINTS", "MESH_ISTIO", and "CLUSTER_ISTIO" (deprecated),
       *   `:pageSize` (*type:* `integer()`) - A non-negative number that is the maximum number of results to return. When 0, use default page size.
       *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -341,9 +321,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `service.name`. Resource name for this Service. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-
+  *   `v3_id` (*type:* `String.t`) - Part of `service.name`. Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `v3_id1` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -424,9 +402,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent Service. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -507,9 +483,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to delete. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
-
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `service_level_objectives_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
@@ -592,9 +566,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to get. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
-
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to get. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `service_level_objectives_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
@@ -681,10 +653,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed SLOs, either a project or a Monitoring Workspace. The formats are:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-      workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
-
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed SLOs, either a project or a Monitoring Workspace. The formats are: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/- 
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -771,9 +740,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. Resource name for this ServiceLevelObjective. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
-
+  *   `v3_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. Resource name for this ServiceLevelObjective. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
   *   `v3_id1` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
   *   `service_level_objectives_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.

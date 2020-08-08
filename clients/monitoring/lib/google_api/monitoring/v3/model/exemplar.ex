@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Exemplar do
 
   ## Attributes
 
-  *   `attachments` (*type:* `list(map())`, *default:* `nil`) - Contextual information about the example value. Examples are:Trace: type.googleapis.com/google.monitoring.v3.SpanContextLiteral string: type.googleapis.com/google.protobuf.StringValueLabels dropped during aggregation:  type.googleapis.com/google.monitoring.v3.DroppedLabelsThere may be only a single attachment of any given message type in a single exemplar, and this is enforced by the system.
+  *   `attachments` (*type:* `list(map())`, *default:* `nil`) - Contextual information about the example value. Examples are:Trace: type.googleapis.com/google.monitoring.v3.SpanContextLiteral string: type.googleapis.com/google.protobuf.StringValueLabels dropped during aggregation: type.googleapis.com/google.monitoring.v3.DroppedLabelsThere may be only a single attachment of any given message type in a single exemplar, and this is enforced by the system.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - The observation (sampling) time of the above value.
   *   `value` (*type:* `float()`, *default:* `nil`) - Value of the exemplar point. This value determines to which bucket the exemplar belongs.
   """

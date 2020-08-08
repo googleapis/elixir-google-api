@@ -27,9 +27,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   *   `custom` (*type:* `GoogleApi.Monitoring.V3.Model.Custom.t`, *default:* `nil`) - Custom service type.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name used for UI elements listing this Service.
   *   `meshIstio` (*type:* `GoogleApi.Monitoring.V3.Model.MeshIstio.t`, *default:* `nil`) - Type used for Istio services scoped to an Istio mesh.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for this Service. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `telemetry` (*type:* `GoogleApi.Monitoring.V3.Model.Telemetry.t`, *default:* `nil`) - Configuration for how to query telemetry on a Service.
   """
 
