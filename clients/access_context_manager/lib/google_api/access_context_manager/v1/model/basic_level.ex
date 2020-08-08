@@ -21,11 +21,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.BasicLevel do
 
   ## Attributes
 
-  *   `combiningFunction` (*type:* `String.t`, *default:* `nil`) - How the `conditions` list should be combined to determine if a request is
-      granted this `AccessLevel`. If AND is used, each `Condition` in
-      `conditions` must be satisfied for the `AccessLevel` to be applied. If OR
-      is used, at least one `Condition` in `conditions` must be satisfied for the
-      `AccessLevel` to be applied. Default behavior is AND.
+  *   `combiningFunction` (*type:* `String.t`, *default:* `nil`) - How the `conditions` list should be combined to determine if a request is granted this `AccessLevel`. If AND is used, each `Condition` in `conditions` must be satisfied for the `AccessLevel` to be applied. If OR is used, at least one `Condition` in `conditions` must be satisfied for the `AccessLevel` to be applied. Default behavior is AND.
   *   `conditions` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.Condition.t)`, *default:* `nil`) - Required. A list of requirements for the `AccessLevel` to be granted.
   """
 

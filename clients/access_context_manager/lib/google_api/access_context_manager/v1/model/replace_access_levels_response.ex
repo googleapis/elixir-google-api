@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AccessContextManager.V1.Model.ReplaceAccessLevelsResponse do
   @moduledoc """
-  A response to ReplaceAccessLevelsRequest. This will be put inside of
-  Operation.response field.
+  A response to ReplaceAccessLevelsRequest. This will be put inside of Operation.response field.
 
   ## Attributes
 

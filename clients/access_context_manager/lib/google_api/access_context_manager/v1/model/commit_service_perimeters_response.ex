@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.AccessContextManager.V1.Model.CommitServicePerimetersResponse do
   @moduledoc """
-  A response to CommitServicePerimetersRequest. This will be put inside of
-  Operation.response field.
+  A response to CommitServicePerimetersRequest. This will be put inside of Operation.response field.
 
   ## Attributes
 
-  *   `servicePerimeters` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t)`, *default:* `nil`) - List of all the Service Perimeter instances in
-      the Access Policy.
+  *   `servicePerimeters` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t)`, *default:* `nil`) - List of all the Service Perimeter instances in the Access Policy.
   """
 
   use GoogleApi.Gax.ModelBase

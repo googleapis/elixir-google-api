@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.AccessContextManager.V1.Model.ReplaceServicePerimetersResponse do
   @moduledoc """
-  A response to ReplaceServicePerimetersRequest. This will be put inside of
-  Operation.response field.
+  A response to ReplaceServicePerimetersRequest. This will be put inside of Operation.response field.
 
   ## Attributes
 

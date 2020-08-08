@@ -22,8 +22,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ListAccessPoliciesResponse do
   ## Attributes
 
   *   `accessPolicies` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.AccessPolicy.t)`, *default:* `nil`) - List of the AccessPolicy instances.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results. If the value is
-      empty, no further results remain.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results. If the value is empty, no further results remain.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,14 +21,9 @@ defmodule GoogleApi.AccessContextManager.V1.Model.OsConstraint do
 
   ## Attributes
 
-  *   `minimumVersion` (*type:* `String.t`, *default:* `nil`) - The minimum allowed OS version. If not set, any version of this OS
-      satisfies the constraint. Format: `"major.minor.patch"`.
-      Examples: `"10.5.301"`, `"9.2.1"`.
+  *   `minimumVersion` (*type:* `String.t`, *default:* `nil`) - The minimum allowed OS version. If not set, any version of this OS satisfies the constraint. Format: `"major.minor.patch"`. Examples: `"10.5.301"`, `"9.2.1"`.
   *   `osType` (*type:* `String.t`, *default:* `nil`) - Required. The allowed OS type.
-  *   `requireVerifiedChromeOs` (*type:* `boolean()`, *default:* `nil`) - Only allows requests from devices with a verified Chrome OS.
-      Verifications includes requirements that the device is enterprise-managed,
-      conformant to domain policies, and the caller has permission to call
-      the API targeted by the request.
+  *   `requireVerifiedChromeOs` (*type:* `boolean()`, *default:* `nil`) - Only allows requests from devices with a verified Chrome OS. Verifications includes requirements that the device is enterprise-managed, conformant to domain policies, and the caller has permission to call the API targeted by the request.
   """
 
   use GoogleApi.Gax.ModelBase

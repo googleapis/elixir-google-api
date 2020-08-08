@@ -21,8 +21,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ListServicePerimetersResponse 
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results. If the value is
-      empty, no further results remain.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results. If the value is empty, no further results remain.
   *   `servicePerimeters` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t)`, *default:* `nil`) - List of the Service Perimeter instances.
   """
 

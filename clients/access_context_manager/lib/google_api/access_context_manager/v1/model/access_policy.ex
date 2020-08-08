@@ -17,23 +17,13 @@
 
 defmodule GoogleApi.AccessContextManager.V1.Model.AccessPolicy do
   @moduledoc """
-  `AccessPolicy` is a container for `AccessLevels` (which define the necessary
-  attributes to use Google Cloud services) and `ServicePerimeters` (which
-  define regions of services able to freely pass data within a perimeter). An
-  access policy is globally visible within an organization, and the
-  restrictions it specifies apply to all projects within an organization.
+  `AccessPolicy` is a container for `AccessLevels` (which define the necessary attributes to use Google Cloud services) and `ServicePerimeters` (which define regions of services able to freely pass data within a perimeter). An access policy is globally visible within an organization, and the restrictions it specifies apply to all projects within an organization.
 
   ## Attributes
 
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. An opaque identifier for the current version of the
-      `AccessPolicy`. This will always be a strongly validated etag, meaning that
-      two Access Polices will be identical if and only if their etags are
-      identical. Clients should not expect this to be in any specific format.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the `AccessPolicy`. Format:
-      `accessPolicies/{policy_id}`
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The parent of this `AccessPolicy` in the Cloud Resource
-      Hierarchy. Currently immutable once created. Format:
-      `organizations/{organization_id}`
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. An opaque identifier for the current version of the `AccessPolicy`. This will always be a strongly validated etag, meaning that two Access Polices will be identical if and only if their etags are identical. Clients should not expect this to be in any specific format.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the `AccessPolicy`. Format: `accessPolicies/{policy_id}`
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The parent of this `AccessPolicy` in the Cloud Resource Hierarchy. Currently immutable once created. Format: `organizations/{organization_id}`
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. Human readable title. Does not affect behavior.
   """
 
