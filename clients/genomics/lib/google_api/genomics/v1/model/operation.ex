@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.Genomics.V1.Model.Operation do
   @moduledoc """
-  This resource represents a long-running operation that is the result of a
-  network API call.
+  This resource represents a long-running operation that is the result of a network API call.
 
   ## Attributes
 
-  *   `done` (*type:* `boolean()`, *default:* `nil`) - If the value is `false`, it means the operation is still in progress.
-      If `true`, the operation is completed, and either `error` or `response` is
-      available.
+  *   `done` (*type:* `boolean()`, *default:* `nil`) - If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available.
   *   `error` (*type:* `GoogleApi.Genomics.V1.Model.Status.t`, *default:* `nil`) - The error result of the operation in case of failure or cancellation.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - An OperationMetadata or Metadata object. This will always be returned with the Operation.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned name, which is only unique within the same service that originally returns it. For example&#58; `operations/CJHU7Oi_ChDrveSpBRjfuL-qzoWAgEw`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned name, which is only unique within the same service that originally returns it. For example: `operations/CJHU7Oi_ChDrveSpBRjfuL-qzoWAgEw`
   *   `response` (*type:* `map()`, *default:* `nil`) - An Empty object.
   """
 

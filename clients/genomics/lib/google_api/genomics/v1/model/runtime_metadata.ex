@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Genomics.V1.Model.RuntimeMetadata do
   @moduledoc """
-  Runtime metadata that will be populated in the
-  runtimeMetadata
-  field of the Operation associated with a RunPipeline execution.
+  Runtime metadata that will be populated in the runtimeMetadata field of the Operation associated with a RunPipeline execution.
 
   ## Attributes
 
