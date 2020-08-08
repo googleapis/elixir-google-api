@@ -26,19 +26,7 @@ defmodule GoogleApi.CloudProfiler.V2.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  CreateProfile creates a new profile resource in the online mode.
-
-  The server ensures that the new profiles are created at a constant rate per
-  deployment, so the creation request may hang for some time until the next
-  profile session is available.
-
-  The request may fail with ABORTED error if the creation is not available
-  within ~1m, the response will indicate the duration of the backoff the
-  client should take before attempting creating a profile again. The backoff
-  duration is returned in google.rpc.RetryInfo extension on the response
-  status. To a gRPC client, the extension will be return as a
-  binary-serialized proto in the trailing metadata item named
-  "google.rpc.retryinfo-bin".
+  CreateProfile creates a new profile resource in the online mode. The server ensures that the new profiles are created at a constant rate per deployment, so the creation request may hang for some time until the next profile session is available. The request may fail with ABORTED error if the creation is not available within ~1m, the response will indicate the duration of the backoff the client should take before attempting creating a profile again. The backoff duration is returned in google.rpc.RetryInfo extension on the response status. To a gRPC client, the extension will be return as a binary-serialized proto in the trailing metadata item named "google.rpc.retryinfo-bin".
 
   ## Parameters
 
@@ -109,9 +97,7 @@ defmodule GoogleApi.CloudProfiler.V2.Api.Projects do
   end
 
   @doc """
-  CreateOfflineProfile creates a new profile resource in the offline mode.
-  The client provides the profile to create along with the profile bytes, the
-  server records it.
+  CreateOfflineProfile creates a new profile resource in the offline mode. The client provides the profile to create along with the profile bytes, the server records it.
 
   ## Parameters
 
@@ -182,10 +168,7 @@ defmodule GoogleApi.CloudProfiler.V2.Api.Projects do
   end
 
   @doc """
-  UpdateProfile updates the profile bytes and labels on the profile resource
-  created in the online mode. Updating the bytes for profiles created in the
-  offline mode is currently not supported: the profile content must be
-  provided at the time of the profile creation.
+  UpdateProfile updates the profile bytes and labels on the profile resource created in the online mode. Updating the bytes for profiles created in the offline mode is currently not supported: the profile content must be provided at the time of the profile creation.
 
   ## Parameters
 
@@ -203,10 +186,7 @@ defmodule GoogleApi.CloudProfiler.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Field mask used to specify the fields to be overwritten. Currently only
-          profile_bytes and labels fields are supported by UpdateProfile, so only
-          those fields can be specified in the mask. When no mask is provided, all
-          fields are overwritten.
+      *   `:updateMask` (*type:* `String.t`) - Field mask used to specify the fields to be overwritten. Currently only profile_bytes and labels fields are supported by UpdateProfile, so only those fields can be specified in the mask. When no mask is provided, all fields are overwritten.
       *   `:body` (*type:* `GoogleApi.CloudProfiler.V2.Model.Profile.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
