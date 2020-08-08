@@ -26,15 +26,12 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new budget. See
-  <a href="https://cloud.google.com/billing/quotas">Quotas and limits</a>
-  for more information on the limits of the number of budgets you can create.
+  Creates a new budget. See Quotas and limits for more information on the limits of the number of budgets you can create.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BillingBudgets.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the billing account to create the budget in. Values
-      are of the form `billingAccounts/{billingAccountId}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the billing account to create the budget in. Values are of the form `billingAccounts/{billingAccountId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -108,8 +105,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BillingBudgets.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the budget to delete. Values are of the form
-      `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the budget to delete. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -175,18 +171,12 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   end
 
   @doc """
-  Returns a budget.
-
-  WARNING: There are some fields exposed on the Google Cloud Console that
-  aren't available on this API. When reading from the API, you will not
-  see these fields in the return value, though they may have been set
-  in the Cloud Console.
+  Returns a budget. WARNING: There are some fields exposed on the Google Cloud Console that aren't available on this API. When reading from the API, you will not see these fields in the return value, though they may have been set in the Cloud Console.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BillingBudgets.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of budget to get. Values are of the form
-      `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
+  *   `name` (*type:* `String.t`) - Required. Name of budget to get. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -253,18 +243,12 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   end
 
   @doc """
-  Returns a list of budgets for a billing account.
-
-  WARNING: There are some fields exposed on the Google Cloud Console that
-  aren't available on this API. When reading from the API, you will not
-  see these fields in the return value, though they may have been set
-  in the Cloud Console.
+  Returns a list of budgets for a billing account. WARNING: There are some fields exposed on the Google Cloud Console that aren't available on this API. When reading from the API, you will not see these fields in the return value, though they may have been set in the Cloud Console.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BillingBudgets.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of billing account to list budgets under. Values
-      are of the form `billingAccounts/{billingAccountId}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of billing account to list budgets under. Values are of the form `billingAccounts/{billingAccountId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -277,11 +261,8 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of budgets to return per page.
-          The default and maximum value are 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The value returned by the last `ListBudgetsResponse` which
-          indicates that this is a continuation of a prior `ListBudgets` call,
-          and that the system should return the next page of data.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of budgets to return per page. The default and maximum value are 100.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value returned by the last `ListBudgetsResponse` which indicates that this is a continuation of a prior `ListBudgets` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -342,18 +323,12 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   end
 
   @doc """
-  Updates a budget and returns the updated budget.
-
-  WARNING: There are some fields exposed on the Google Cloud Console that
-  aren't available on this API. Budget fields that are not exposed in
-  this API will not be changed by this method.
+  Updates a budget and returns the updated budget. WARNING: There are some fields exposed on the Google Cloud Console that aren't available on this API. Budget fields that are not exposed in this API will not be changed by this method.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BillingBudgets.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Resource name of the budget.
-      The resource name implies the scope of a budget. Values are of the form
-      `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
+  *   `name` (*type:* `String.t`) - Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

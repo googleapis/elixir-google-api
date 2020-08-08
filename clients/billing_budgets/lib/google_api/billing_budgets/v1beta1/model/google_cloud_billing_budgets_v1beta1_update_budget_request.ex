@@ -21,14 +21,8 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
 
   ## Attributes
 
-  *   `budget` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1Budget.t`, *default:* `nil`) - Required. The updated budget object.
-      The budget to update is specified by the budget name in the budget.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates which fields in the provided budget to update.
-      Read-only fields (such as `name`) cannot be changed. If this is not
-      provided, then only fields with non-default values from the request are
-      updated. See
-      https://developers.google.com/protocol-buffers/docs/proto3#default for more
-      details about default values.
+  *   `budget` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1Budget.t`, *default:* `nil`) - Required. The updated budget object. The budget to update is specified by the budget name in the budget.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates which fields in the provided budget to update. Read-only fields (such as `name`) cannot be changed. If this is not provided, then only fields with non-default values from the request are updated. See https://developers.google.com/protocol-buffers/docs/proto3#default for more details about default values.
   """
 
   use GoogleApi.Gax.ModelBase

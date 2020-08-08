@@ -22,10 +22,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   ## Attributes
 
   *   `lastPeriodAmount` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1LastPeriodAmount.t`, *default:* `nil`) - Use the last period's actual spend as the budget for the present period.
-  *   `specifiedAmount` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleTypeMoney.t`, *default:* `nil`) - A specified amount to use as the budget.
-      `currency_code` is optional. If specified, it must match the
-      currency of the billing account. The `currency_code` is provided on
-      output.
+  *   `specifiedAmount` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleTypeMoney.t`, *default:* `nil`) - A specified amount to use as the budget. `currency_code` is optional. If specified, it must match the currency of the billing account. The `currency_code` is provided on output.
   """
 
   use GoogleApi.Gax.ModelBase

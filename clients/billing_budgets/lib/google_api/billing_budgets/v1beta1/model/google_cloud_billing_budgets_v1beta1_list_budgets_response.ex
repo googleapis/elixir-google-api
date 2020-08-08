@@ -22,8 +22,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   ## Attributes
 
   *   `budgets` (*type:* `list(GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1Budget.t)`, *default:* `nil`) - List of the budgets owned by the requested billing account.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more budgets that match the
-      request; this value should be passed in a new `ListBudgetsRequest`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more budgets that match the request; this value should be passed in a new `ListBudgetsRequest`.
   """
 
   use GoogleApi.Gax.ModelBase
