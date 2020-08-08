@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListCustomBiddingAlgorithmsResponse do
   @moduledoc """
-  Response message for CustomBiddingAlgorithmService.ListCustomBiddingAlgorithms.
+
 
   ## Attributes
 

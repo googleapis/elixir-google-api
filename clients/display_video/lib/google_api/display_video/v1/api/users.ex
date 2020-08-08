@@ -26,7 +26,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Users do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Bulk edits user roles for a user. The operation will delete the assigned user roles provided in BulkEditAssignedUserRolesRequest.deleted_assigned_user_roles and then assign the user roles provided in BulkEditAssignedUserRolesRequest.created_assigned_user_roles.
+  Bulk edits user roles for a user. The operation will delete the assigned user roles provided in BulkEditAssignedUserRolesRequest.deletedAssignedUserRoles and then assign the user roles provided in BulkEditAssignedUserRolesRequest.createdAssignedUserRoles.
 
   ## Parameters
 
