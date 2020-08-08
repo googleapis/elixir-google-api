@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1beta1ServiceIdentity do
   @moduledoc """
-  Service identity for a service. This is the identity that service producer
-  should use to access consumer resources.
+  Service identity for a service. This is the identity that service producer should use to access consumer resources.
 
   ## Attributes
 
-  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the service account that a service producer would use
-      to access consumer resources.
-  *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - The unique and stable id of the service account.
-      https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts#ServiceAccount
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the service account that a service producer would use to access consumer resources.
+  *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - The unique and stable id of the service account. https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts#ServiceAccount
   """
 
   use GoogleApi.Gax.ModelBase

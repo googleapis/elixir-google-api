@@ -17,22 +17,11 @@
 
 defmodule GoogleApi.ServiceUsage.V1.Model.CustomError do
   @moduledoc """
-  Customize service error responses.  For example, list any service
-  specific protobuf types that can appear in error detail lists of
-  error responses.
-
-  Example:
-
-      custom_error:
-        types:
-        - google.foo.v1.CustomError
-        - google.foo.v1.AnotherError
+  Customize service error responses. For example, list any service specific protobuf types that can appear in error detail lists of error responses. Example: custom_error: types: - google.foo.v1.CustomError - google.foo.v1.AnotherError
 
   ## Attributes
 
-  *   `rules` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.CustomErrorRule.t)`, *default:* `nil`) - The list of custom error rules that apply to individual API messages.
-
-      **NOTE:** All service configuration rules follow "last one wins" order.
+  *   `rules` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.CustomErrorRule.t)`, *default:* `nil`) - The list of custom error rules that apply to individual API messages. **NOTE:** All service configuration rules follow "last one wins" order.
   *   `types` (*type:* `list(String.t)`, *default:* `nil`) - The list of custom error detail types, e.g. 'google.foo.v1.CustomError'.
   """
 

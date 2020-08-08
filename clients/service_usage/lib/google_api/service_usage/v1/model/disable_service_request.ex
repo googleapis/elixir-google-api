@@ -22,11 +22,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.DisableServiceRequest do
   ## Attributes
 
   *   `checkIfServiceHasUsage` (*type:* `String.t`, *default:* `nil`) - Defines the behavior for checking service usage when disabling a service.
-  *   `disableDependentServices` (*type:* `boolean()`, *default:* `nil`) - Indicates if services that are enabled and which depend on this service
-      should also be disabled. If not set, an error will be generated if any
-      enabled services depend on the service to be disabled. When set, the
-      service, and any enabled services that depend on it, will be disabled
-      together.
+  *   `disableDependentServices` (*type:* `boolean()`, *default:* `nil`) - Indicates if services that are enabled and which depend on this service should also be disabled. If not set, an error will be generated if any enabled services depend on the service to be disabled. When set, the service, and any enabled services that depend on it, will be disabled together.
   """
 
   use GoogleApi.Gax.ModelBase

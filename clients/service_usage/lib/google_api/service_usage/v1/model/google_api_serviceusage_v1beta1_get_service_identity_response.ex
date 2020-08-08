@@ -21,9 +21,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1beta1GetService
 
   ## Attributes
 
-  *   `identity` (*type:* `GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1beta1ServiceIdentity.t`, *default:* `nil`) - Service identity that service producer can use to access consumer
-      resources. If exists is true, it contains email and unique_id. If exists is
-      false, it contains pre-constructed email and empty unique_id.
+  *   `identity` (*type:* `GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1beta1ServiceIdentity.t`, *default:* `nil`) - Service identity that service producer can use to access consumer resources. If exists is true, it contains email and unique_id. If exists is false, it contains pre-constructed email and empty unique_id.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Service identity state.
   """
 

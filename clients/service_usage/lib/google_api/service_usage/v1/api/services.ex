@@ -26,19 +26,12 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Enable multiple services on a project. The operation is atomic: if enabling
-  any service fails, then the entire batch fails, and no state changes occur.
-  To enable a single service, use the `EnableService` method instead.
+  Enable multiple services on a project. The operation is atomic: if enabling any service fails, then the entire batch fails, and no state changes occur. To enable a single service, use the `EnableService` method instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceUsage.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Parent to enable services on.
-
-      An example name would be:
-      `projects/123` where `123` is the project number.
-
-      The `BatchEnableServices` method currently only supports projects.
+  *   `parent` (*type:* `String.t`) - Parent to enable services on. An example name would be: `projects/123` where `123` is the project number. The `BatchEnableServices` method currently only supports projects.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -94,17 +87,12 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   end
 
   @doc """
-  Returns the service configurations and enabled states for a given list of
-  services.
+  Returns the service configurations and enabled states for a given list of services.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceUsage.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Parent to retrieve services from.
-      If this is set, the parent of all of the services specified in `names` must
-      match this field. An example name would be: `projects/123` where `123` is
-      the project number. The `BatchGetServices` method currently only supports
-      projects.
+  *   `parent` (*type:* `String.t`) - Parent to retrieve services from. If this is set, the parent of all of the services specified in `names` must match this field. An example name would be: `projects/123` where `123` is the project number. The `BatchGetServices` method currently only supports projects.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -117,12 +105,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:names` (*type:* `list(String.t)`) - Names of the services to retrieve.
-
-          An example name would be:
-          `projects/123/services/serviceusage.googleapis.com` where `123` is the
-          project number.
-          A single request can get a maximum of 30 services at a time.
+      *   `:names` (*type:* `list(String.t)`) - Names of the services to retrieve. An example name would be: `projects/123/services/serviceusage.googleapis.com` where `123` is the project number. A single request can get a maximum of 30 services at a time.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -167,24 +150,12 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   end
 
   @doc """
-  Disable a service so that it can no longer be used with a project.
-  This prevents unintended usage that may cause unexpected billing
-  charges or security leaks.
-
-  It is not valid to call the disable method on a service that is not
-  currently enabled. Callers will receive a `FAILED_PRECONDITION` status if
-  the target service is not currently enabled.
+  Disable a service so that it can no longer be used with a project. This prevents unintended usage that may cause unexpected billing charges or security leaks. It is not valid to call the disable method on a service that is not currently enabled. Callers will receive a `FAILED_PRECONDITION` status if the target service is not currently enabled.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceUsage.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the consumer and service to disable the service on.
-
-      The enable and disable methods currently only support projects.
-
-      An example name would be:
-      `projects/123/services/serviceusage.googleapis.com` where `123` is the
-      project number.
+  *   `name` (*type:* `String.t`) - Name of the consumer and service to disable the service on. The enable and disable methods currently only support projects. An example name would be: `projects/123/services/serviceusage.googleapis.com` where `123` is the project number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -245,17 +216,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceUsage.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the consumer and service to enable the service on.
-
-      The `EnableService` and `DisableService` methods currently only support
-      projects.
-
-      Enabling a service requires that the service is public or is shared with
-      the user enabling the service.
-
-      An example name would be:
-      `projects/123/services/serviceusage.googleapis.com` where `123` is the
-      project number.
+  *   `name` (*type:* `String.t`) - Name of the consumer and service to enable the service on. The `EnableService` and `DisableService` methods currently only support projects. Enabling a service requires that the service is public or is shared with the user enabling the service. An example name would be: `projects/123/services/serviceusage.googleapis.com` where `123` is the project number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -316,11 +277,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceUsage.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the consumer and service to get the `ConsumerState` for.
-
-      An example name would be:
-      `projects/123/services/serviceusage.googleapis.com` where `123` is the
-      project number.
+  *   `name` (*type:* `String.t`) - Name of the consumer and service to get the `ConsumerState` for. An example name would be: `projects/123/services/serviceusage.googleapis.com` where `123` is the project number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -376,21 +333,12 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   end
 
   @doc """
-  List all services available to the specified project, and the current
-  state of those services with respect to the project. The list includes
-  all public services, all services for which the calling user has the
-  `servicemanagement.services.bind` permission, and all services that have
-  already been enabled on the project. The list can be filtered to
-  only include services in a specific state, for example to only include
-  services enabled on the project.
+  List all services available to the specified project, and the current state of those services with respect to the project. The list includes all public services, all services for which the calling user has the `servicemanagement.services.bind` permission, and all services that have already been enabled on the project. The list can be filtered to only include services in a specific state, for example to only include services enabled on the project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceUsage.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Parent to search for services on.
-
-      An example name would be:
-      `projects/123` where `123` is the project number.
+  *   `parent` (*type:* `String.t`) - Parent to search for services on. An example name would be: `projects/123` where `123` is the project number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -403,13 +351,9 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Only list services that conform to the given filter.
-          The allowed filter strings are `state:ENABLED` and `state:DISABLED`.
-      *   `:pageSize` (*type:* `integer()`) - Requested size of the next page of data.
-          Requested page size cannot exceed 200.
-           If not set, the default page size is 50.
-      *   `:pageToken` (*type:* `String.t`) - Token identifying which result to start with, which is returned by a
-          previous list call.
+      *   `:filter` (*type:* `String.t`) - Only list services that conform to the given filter. The allowed filter strings are `state:ENABLED` and `state:DISABLED`.
+      *   `:pageSize` (*type:* `integer()`) - Requested size of the next page of data. Requested page size cannot exceed 200. If not set, the default page size is 50.
+      *   `:pageToken` (*type:* `String.t`) - Token identifying which result to start with, which is returned by a previous list call.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.ServiceUsage.V1.Model.BatchEnableServicesResponse do
   @moduledoc """
-  Response message for the `BatchEnableServices` method.
-  This response message is assigned to the `response` field of the returned
-  Operation when that operation is done.
+  Response message for the `BatchEnableServices` method. This response message is assigned to the `response` field of the returned Operation when that operation is done.
 
   ## Attributes
 
-  *   `failures` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.EnableFailure.t)`, *default:* `nil`) - If allow_partial_success is true, and one or more services could not be
-      enabled, this field contains the details about each failure.
+  *   `failures` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.EnableFailure.t)`, *default:* `nil`) - If allow_partial_success is true, and one or more services could not be enabled, this field contains the details about each failure.
   *   `services` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t)`, *default:* `nil`) - The new state of the services after enabling.
   """
 
