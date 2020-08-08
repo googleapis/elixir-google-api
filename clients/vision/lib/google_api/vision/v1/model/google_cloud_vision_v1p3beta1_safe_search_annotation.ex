@@ -17,23 +17,14 @@
 
 defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1SafeSearchAnnotation do
   @moduledoc """
-  Set of features pertaining to the image, computed by computer vision
-  methods over safe-search verticals (for example, adult, spoof, medical,
-  violence).
+  Set of features pertaining to the image, computed by computer vision methods over safe-search verticals (for example, adult, spoof, medical, violence).
 
   ## Attributes
 
-  *   `adult` (*type:* `String.t`, *default:* `nil`) - Represents the adult content likelihood for the image. Adult content may
-      contain elements such as nudity, pornographic images or cartoons, or
-      sexual activities.
+  *   `adult` (*type:* `String.t`, *default:* `nil`) - Represents the adult content likelihood for the image. Adult content may contain elements such as nudity, pornographic images or cartoons, or sexual activities.
   *   `medical` (*type:* `String.t`, *default:* `nil`) - Likelihood that this is a medical image.
-  *   `racy` (*type:* `String.t`, *default:* `nil`) - Likelihood that the request image contains racy content. Racy content may
-      include (but is not limited to) skimpy or sheer clothing, strategically
-      covered nudity, lewd or provocative poses, or close-ups of sensitive
-      body areas.
-  *   `spoof` (*type:* `String.t`, *default:* `nil`) - Spoof likelihood. The likelihood that an modification
-      was made to the image's canonical version to make it appear
-      funny or offensive.
+  *   `racy` (*type:* `String.t`, *default:* `nil`) - Likelihood that the request image contains racy content. Racy content may include (but is not limited to) skimpy or sheer clothing, strategically covered nudity, lewd or provocative poses, or close-ups of sensitive body areas.
+  *   `spoof` (*type:* `String.t`, *default:* `nil`) - Spoof likelihood. The likelihood that an modification was made to the image's canonical version to make it appear funny or offensive.
   *   `violence` (*type:* `String.t`, *default:* `nil`) - Likelihood that this image contains violent content.
   """
 

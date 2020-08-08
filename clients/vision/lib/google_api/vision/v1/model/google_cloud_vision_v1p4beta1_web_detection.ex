@@ -21,14 +21,10 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetection do
 
   ## Attributes
 
-  *   `bestGuessLabels` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebLabel.t)`, *default:* `nil`) - The service's best guess as to the topic of the request image.
-      Inferred from similar images on the open web.
-  *   `fullMatchingImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t)`, *default:* `nil`) - Fully matching images from the Internet.
-      Can include resized copies of the query image.
+  *   `bestGuessLabels` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebLabel.t)`, *default:* `nil`) - The service's best guess as to the topic of the request image. Inferred from similar images on the open web.
+  *   `fullMatchingImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t)`, *default:* `nil`) - Fully matching images from the Internet. Can include resized copies of the query image.
   *   `pagesWithMatchingImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebPage.t)`, *default:* `nil`) - Web pages containing the matching images from the Internet.
-  *   `partialMatchingImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t)`, *default:* `nil`) - Partial matching images from the Internet.
-      Those images are similar enough to share some key-point features. For
-      example an original image will likely have partial matching for its crops.
+  *   `partialMatchingImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t)`, *default:* `nil`) - Partial matching images from the Internet. Those images are similar enough to share some key-point features. For example an original image will likely have partial matching for its crops.
   *   `visuallySimilarImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebImage.t)`, *default:* `nil`) - The visually similar image results.
   *   `webEntities` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1WebDetectionWebEntity.t)`, *default:* `nil`) - Deduced entities from similar images on the Internet.
   """

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageAnnotationContext do
   @moduledoc """
-  If an image was produced from a file (e.g. a PDF), this message gives
-  information about the source of that image.
+  If an image was produced from a file (e.g. a PDF), this message gives information about the source of that image.
 
   ## Attributes
 
-  *   `pageNumber` (*type:* `integer()`, *default:* `nil`) - If the file was a PDF or TIFF, this field gives the page number within
-      the file used to produce the image.
+  *   `pageNumber` (*type:* `integer()`, *default:* `nil`) - If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the file used to produce the image.
   """
 

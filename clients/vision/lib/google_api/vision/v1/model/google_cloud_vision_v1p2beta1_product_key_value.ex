@@ -21,10 +21,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1ProductKeyValue do
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - The key of the label attached to the product. Cannot be empty and cannot
-      exceed 128 bytes.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the label attached to the product. Cannot be empty and
-      cannot exceed 128 bytes.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The key of the label attached to the product. Cannot be empty and cannot exceed 128 bytes.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the label attached to the product. Cannot be empty and cannot exceed 128 bytes.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,8 @@ defmodule GoogleApi.Vision.V1.Model.PurgeProductsRequest do
 
   ## Attributes
 
-  *   `deleteOrphanProducts` (*type:* `boolean()`, *default:* `nil`) - If delete_orphan_products is true, all Products that are not in any
-      ProductSet will be deleted.
-  *   `force` (*type:* `boolean()`, *default:* `nil`) - The default value is false. Override this value to true to actually perform
-      the purge.
+  *   `deleteOrphanProducts` (*type:* `boolean()`, *default:* `nil`) - If delete_orphan_products is true, all Products that are not in any ProductSet will be deleted.
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - The default value is false. Override this value to true to actually perform the purge.
   *   `productSetPurgeConfig` (*type:* `GoogleApi.Vision.V1.Model.ProductSetPurgeConfig.t`, *default:* `nil`) - Specify which ProductSet contains the Products to be deleted.
   """
 

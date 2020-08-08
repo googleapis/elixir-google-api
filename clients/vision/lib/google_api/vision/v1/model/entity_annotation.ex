@@ -21,32 +21,15 @@ defmodule GoogleApi.Vision.V1.Model.EntityAnnotation do
 
   ## Attributes
 
-  *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.BoundingPoly.t`, *default:* `nil`) - Image region to which this entity belongs. Not produced
-      for `LABEL_DETECTION` features.
-  *   `confidence` (*type:* `number()`, *default:* `nil`) - **Deprecated. Use `score` instead.**
-      The accuracy of the entity detection in an image.
-      For example, for an image in which the "Eiffel Tower" entity is detected,
-      this field represents the confidence that there is a tower in the query
-      image. Range [0, 1].
+  *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.BoundingPoly.t`, *default:* `nil`) - Image region to which this entity belongs. Not produced for `LABEL_DETECTION` features.
+  *   `confidence` (*type:* `number()`, *default:* `nil`) - **Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the "Eiffel Tower" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].
   *   `description` (*type:* `String.t`, *default:* `nil`) - Entity textual description, expressed in its `locale` language.
-  *   `locale` (*type:* `String.t`, *default:* `nil`) - The language code for the locale in which the entity textual
-      `description` is expressed.
-  *   `locations` (*type:* `list(GoogleApi.Vision.V1.Model.LocationInfo.t)`, *default:* `nil`) - The location information for the detected entity. Multiple
-      `LocationInfo` elements can be present because one location may
-      indicate the location of the scene in the image, and another location
-      may indicate the location of the place where the image was taken.
-      Location information is usually present for landmarks.
-  *   `mid` (*type:* `String.t`, *default:* `nil`) - Opaque entity ID. Some IDs may be available in
-      [Google Knowledge Graph Search
-      API](https://developers.google.com/knowledge-graph/).
-  *   `properties` (*type:* `list(GoogleApi.Vision.V1.Model.Property.t)`, *default:* `nil`) - Some entities may have optional user-supplied `Property` (name/value)
-      fields, such a score or string that qualifies the entity.
+  *   `locale` (*type:* `String.t`, *default:* `nil`) - The language code for the locale in which the entity textual `description` is expressed.
+  *   `locations` (*type:* `list(GoogleApi.Vision.V1.Model.LocationInfo.t)`, *default:* `nil`) - The location information for the detected entity. Multiple `LocationInfo` elements can be present because one location may indicate the location of the scene in the image, and another location may indicate the location of the place where the image was taken. Location information is usually present for landmarks.
+  *   `mid` (*type:* `String.t`, *default:* `nil`) - Opaque entity ID. Some IDs may be available in [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
+  *   `properties` (*type:* `list(GoogleApi.Vision.V1.Model.Property.t)`, *default:* `nil`) - Some entities may have optional user-supplied `Property` (name/value) fields, such a score or string that qualifies the entity.
   *   `score` (*type:* `number()`, *default:* `nil`) - Overall score of the result. Range [0, 1].
-  *   `topicality` (*type:* `number()`, *default:* `nil`) - The relevancy of the ICA (Image Content Annotation) label to the
-      image. For example, the relevancy of "tower" is likely higher to an image
-      containing the detected "Eiffel Tower" than to an image containing a
-      detected distant towering building, even though the confidence that
-      there is a tower in each image may be the same. Range [0, 1].
+  *   `topicality` (*type:* `number()`, *default:* `nil`) - The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of "tower" is likely higher to an image containing the detected "Eiffel Tower" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].
   """
 
   use GoogleApi.Gax.ModelBase

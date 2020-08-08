@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Vision.V1.Model.AnnotateImageRequest do
   @moduledoc """
-  Request for performing Google Cloud Vision API tasks over a user-provided
-  image, with user-requested features, and with context information.
+  Request for performing Google Cloud Vision API tasks over a user-provided image, with user-requested features, and with context information.
 
   ## Attributes
 

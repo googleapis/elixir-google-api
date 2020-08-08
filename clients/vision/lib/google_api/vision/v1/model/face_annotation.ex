@@ -23,34 +23,18 @@ defmodule GoogleApi.Vision.V1.Model.FaceAnnotation do
 
   *   `angerLikelihood` (*type:* `String.t`, *default:* `nil`) - Anger likelihood.
   *   `blurredLikelihood` (*type:* `String.t`, *default:* `nil`) - Blurred likelihood.
-  *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.BoundingPoly.t`, *default:* `nil`) - The bounding polygon around the face. The coordinates of the bounding box
-      are in the original image's scale.
-      The bounding box is computed to "frame" the face in accordance with human
-      expectations. It is based on the landmarker results.
-      Note that one or more x and/or y coordinates may not be generated in the
-      `BoundingPoly` (the polygon will be unbounded) if only a partial face
-      appears in the image to be annotated.
+  *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.BoundingPoly.t`, *default:* `nil`) - The bounding polygon around the face. The coordinates of the bounding box are in the original image's scale. The bounding box is computed to "frame" the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated.
   *   `detectionConfidence` (*type:* `number()`, *default:* `nil`) - Detection confidence. Range [0, 1].
-  *   `fdBoundingPoly` (*type:* `GoogleApi.Vision.V1.Model.BoundingPoly.t`, *default:* `nil`) - The `fd_bounding_poly` bounding polygon is tighter than the
-      `boundingPoly`, and encloses only the skin part of the face. Typically, it
-      is used to eliminate the face from any image analysis that detects the
-      "amount of skin" visible in an image. It is not based on the
-      landmarker results, only on the initial face detection, hence
-      the <code>fd</code> (face detection) prefix.
+  *   `fdBoundingPoly` (*type:* `GoogleApi.Vision.V1.Model.BoundingPoly.t`, *default:* `nil`) - The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the "amount of skin" visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix.
   *   `headwearLikelihood` (*type:* `String.t`, *default:* `nil`) - Headwear likelihood.
   *   `joyLikelihood` (*type:* `String.t`, *default:* `nil`) - Joy likelihood.
   *   `landmarkingConfidence` (*type:* `number()`, *default:* `nil`) - Face landmarking confidence. Range [0, 1].
   *   `landmarks` (*type:* `list(GoogleApi.Vision.V1.Model.Landmark.t)`, *default:* `nil`) - Detected face landmarks.
-  *   `panAngle` (*type:* `number()`, *default:* `nil`) - Yaw angle, which indicates the leftward/rightward angle that the face is
-      pointing relative to the vertical plane perpendicular to the image. Range
-      [-180,180].
-  *   `rollAngle` (*type:* `number()`, *default:* `nil`) - Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
-      of the face relative to the image vertical about the axis perpendicular to
-      the face. Range [-180,180].
+  *   `panAngle` (*type:* `number()`, *default:* `nil`) - Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].
+  *   `rollAngle` (*type:* `number()`, *default:* `nil`) - Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].
   *   `sorrowLikelihood` (*type:* `String.t`, *default:* `nil`) - Sorrow likelihood.
   *   `surpriseLikelihood` (*type:* `String.t`, *default:* `nil`) - Surprise likelihood.
-  *   `tiltAngle` (*type:* `number()`, *default:* `nil`) - Pitch angle, which indicates the upwards/downwards angle that the face is
-      pointing relative to the image's horizontal plane. Range [-180,180].
+  *   `tiltAngle` (*type:* `number()`, *default:* `nil`) - Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180].
   *   `underExposedLikelihood` (*type:* `String.t`, *default:* `nil`) - Under-exposed likelihood.
   """
 

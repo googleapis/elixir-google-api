@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Vision.V1.Model.BatchOperationMetadata do
   @moduledoc """
-  Metadata for the batch operations such as the current state.
-
-  This is included in the `metadata` field of the `Operation` returned by the
-  `GetOperation` call of the `google::longrunning::Operations` service.
+  Metadata for the batch operations such as the current state. This is included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the batch request is finished and
-      google.longrunning.Operation.done is set to true.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the batch request is finished and google.longrunning.Operation.done is set to true.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the batch operation.
   *   `submitTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the batch request was submitted to the server.
   """

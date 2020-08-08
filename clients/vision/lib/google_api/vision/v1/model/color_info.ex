@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Vision.V1.Model.ColorInfo do
   @moduledoc """
-  Color information consists of RGB channels, score, and the fraction of
-  the image that the color occupies in the image.
+  Color information consists of RGB channels, score, and the fraction of the image that the color occupies in the image.
 
   ## Attributes
 
   *   `color` (*type:* `GoogleApi.Vision.V1.Model.Color.t`, *default:* `nil`) - RGB components of the color.
-  *   `pixelFraction` (*type:* `number()`, *default:* `nil`) - The fraction of pixels the color occupies in the image.
-      Value in range [0, 1].
+  *   `pixelFraction` (*type:* `number()`, *default:* `nil`) - The fraction of pixels the color occupies in the image. Value in range [0, 1].
   *   `score` (*type:* `number()`, *default:* `nil`) - Image-specific score for this color. Value in range [0, 1].
   """
 

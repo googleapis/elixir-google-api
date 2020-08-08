@@ -23,8 +23,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p2beta1WebDetectionWebEnt
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Canonical description of the entity, in English.
   *   `entityId` (*type:* `String.t`, *default:* `nil`) - Opaque entity ID.
-  *   `score` (*type:* `number()`, *default:* `nil`) - Overall relevancy score for the entity.
-      Not normalized and not comparable across different image queries.
+  *   `score` (*type:* `number()`, *default:* `nil`) - Overall relevancy score for the entity. Not normalized and not comparable across different image queries.
   """
 
   use GoogleApi.Gax.ModelBase

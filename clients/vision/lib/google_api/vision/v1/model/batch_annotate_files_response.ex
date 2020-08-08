@@ -21,8 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.BatchAnnotateFilesResponse do
 
   ## Attributes
 
-  *   `responses` (*type:* `list(GoogleApi.Vision.V1.Model.AnnotateFileResponse.t)`, *default:* `nil`) - The list of file annotation responses, each response corresponding to each
-      AnnotateFileRequest in BatchAnnotateFilesRequest.
+  *   `responses` (*type:* `list(GoogleApi.Vision.V1.Model.AnnotateFileResponse.t)`, *default:* `nil`) - The list of file annotation responses, each response corresponding to each AnnotateFileRequest in BatchAnnotateFilesRequest.
   """
 
   use GoogleApi.Gax.ModelBase

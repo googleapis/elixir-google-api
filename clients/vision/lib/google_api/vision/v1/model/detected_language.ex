@@ -22,9 +22,7 @@ defmodule GoogleApi.Vision.V1.Model.DetectedLanguage do
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of detected language. Range [0, 1].
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-      information, see
-      http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
   """
 
   use GoogleApi.Gax.ModelBase

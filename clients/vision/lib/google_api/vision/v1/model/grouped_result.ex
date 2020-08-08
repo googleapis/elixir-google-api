@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Vision.V1.Model.GroupedResult do
   @moduledoc """
-  Information about the products similar to a single product in a query
-  image.
+  Information about the products similar to a single product in a query image.
 
   ## Attributes
 

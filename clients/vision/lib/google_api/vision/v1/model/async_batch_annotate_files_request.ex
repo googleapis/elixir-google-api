@@ -17,23 +17,11 @@
 
 defmodule GoogleApi.Vision.V1.Model.AsyncBatchAnnotateFilesRequest do
   @moduledoc """
-  Multiple async file annotation requests are batched into a single service
-  call.
+  Multiple async file annotation requests are batched into a single service call.
 
   ## Attributes
 
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Optional. Target project and location to make a call.
-
-      Format: `projects/{project-id}/locations/{location-id}`.
-
-      If no parent is specified, a region will be chosen automatically.
-
-      Supported location-ids:
-          `us`: USA country only,
-          `asia`: East asia areas, like Japan, Taiwan,
-          `eu`: The European Union.
-
-      Example: `projects/project-A/locations/eu`.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Optional. Target project and location to make a call. Format: `projects/{project-id}/locations/{location-id}`. If no parent is specified, a region will be chosen automatically. Supported location-ids: `us`: USA country only, `asia`: East asia areas, like Japan, Taiwan, `eu`: The European Union. Example: `projects/project-A/locations/eu`.
   *   `requests` (*type:* `list(GoogleApi.Vision.V1.Model.AsyncAnnotateFileRequest.t)`, *default:* `nil`) - Required. Individual async file annotation requests for this batch.
   """
 

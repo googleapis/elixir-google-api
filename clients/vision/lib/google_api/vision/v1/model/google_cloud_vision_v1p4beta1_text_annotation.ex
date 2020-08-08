@@ -17,13 +17,7 @@
 
 defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1TextAnnotation do
   @moduledoc """
-  TextAnnotation contains a structured representation of OCR extracted text.
-  The hierarchy of an OCR extracted text structure is like this:
-      TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol
-  Each structural component, starting from Page, may further have their own
-  properties. Properties describe detected languages, breaks etc.. Please refer
-  to the TextAnnotation.TextProperty message definition below for more
-  detail.
+  TextAnnotation contains a structured representation of OCR extracted text. The hierarchy of an OCR extracted text structure is like this: TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol Each structural component, starting from Page, may further have their own properties. Properties describe detected languages, breaks etc.. Please refer to the TextAnnotation.TextProperty message definition below for more detail.
 
   ## Attributes
 

@@ -21,15 +21,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1InputConfig do
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - File content, represented as a stream of bytes.
-      Note: As with all `bytes` fields, protobuffers use a pure binary
-      representation, whereas JSON representations use base64.
-
-      Currently, this field only works for BatchAnnotateFiles requests. It does
-      not work for AsyncBatchAnnotateFiles requests.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - File content, represented as a stream of bytes. Note: As with all `bytes` fields, protobuffers use a pure binary representation, whereas JSON representations use base64. Currently, this field only works for BatchAnnotateFiles requests. It does not work for AsyncBatchAnnotateFiles requests.
   *   `gcsSource` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1GcsSource.t`, *default:* `nil`) - The Google Cloud Storage location to read the input from.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The type of the file. Currently only "application/pdf", "image/tiff" and
-      "image/gif" are supported. Wildcards are not supported.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The type of the file. Currently only "application/pdf", "image/tiff" and "image/gif" are supported. Wildcards are not supported.
   """
 
   use GoogleApi.Gax.ModelBase

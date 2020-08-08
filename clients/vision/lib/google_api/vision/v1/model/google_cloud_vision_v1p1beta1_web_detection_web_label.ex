@@ -22,9 +22,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1WebDetectionWebLab
   ## Attributes
 
   *   `label` (*type:* `String.t`, *default:* `nil`) - Label for extra metadata.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
-      For more information, see
-      http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code for `label`, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
   """
 
   use GoogleApi.Gax.ModelBase
