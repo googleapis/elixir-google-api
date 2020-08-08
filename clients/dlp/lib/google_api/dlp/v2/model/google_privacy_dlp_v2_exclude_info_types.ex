@@ -21,14 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ExcludeInfoTypes do
 
   ## Attributes
 
-  *   `infoTypes` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t)`, *default:* `nil`) - InfoType list in ExclusionRule rule drops a finding when it overlaps or
-      contained within with a finding of an infoType from this list. For
-      example, for `InspectionRuleSet.info_types` containing "PHONE_NUMBER"` and
-      `exclusion_rule` containing `exclude_info_types.info_types` with
-      "EMAIL_ADDRESS" the phone number findings are dropped if they overlap
-      with EMAIL_ADDRESS finding.
-      That leads to "555-222-2222@example.org" to generate only a single
-      finding, namely email address.
+  *   `infoTypes` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t)`, *default:* `nil`) - InfoType list in ExclusionRule rule drops a finding when it overlaps or contained within with a finding of an infoType from this list. For example, for `InspectionRuleSet.info_types` containing "PHONE_NUMBER"` and `exclusion_rule` containing `exclude_info_types.info_types` with "EMAIL_ADDRESS" the phone number findings are dropped if they overlap with EMAIL_ADDRESS finding. That leads to "555-222-2222@example.org" to generate only a single finding, namely email address.
   """
 
   use GoogleApi.Gax.ModelBase

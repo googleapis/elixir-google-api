@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateTime do
   @moduledoc """
-  Message for a date time object.
-  e.g. 2018-01-01, 5th August.
+  Message for a date time object. e.g. 2018-01-01, 5th August.
 
   ## Attributes
 
-  *   `date` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeDate.t`, *default:* `nil`) - One or more of the following must be set.
-      Must be a valid date or time value.
+  *   `date` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeDate.t`, *default:* `nil`) - One or more of the following must be set. Must be a valid date or time value.
   *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - Day of week
   *   `time` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeTimeOfDay.t`, *default:* `nil`) - Time of day
   *   `timeZone` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimeZone.t`, *default:* `nil`) - Time zone

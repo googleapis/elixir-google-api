@@ -23,12 +23,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityHistogramBucket do
 
   *   `bucketSize` (*type:* `String.t`, *default:* `nil`) - Total number of equivalence classes in this bucket.
   *   `bucketValueCount` (*type:* `String.t`, *default:* `nil`) - Total number of distinct equivalence classes in this bucket.
-  *   `bucketValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityEquivalenceClass.t)`, *default:* `nil`) - Sample of equivalence classes in this bucket. The total number of
-      classes returned per bucket is capped at 20.
-  *   `sensitiveValueFrequencyLowerBound` (*type:* `String.t`, *default:* `nil`) - Lower bound on the sensitive value frequencies of the equivalence
-      classes in this bucket.
-  *   `sensitiveValueFrequencyUpperBound` (*type:* `String.t`, *default:* `nil`) - Upper bound on the sensitive value frequencies of the equivalence
-      classes in this bucket.
+  *   `bucketValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityEquivalenceClass.t)`, *default:* `nil`) - Sample of equivalence classes in this bucket. The total number of classes returned per bucket is capped at 20.
+  *   `sensitiveValueFrequencyLowerBound` (*type:* `String.t`, *default:* `nil`) - Lower bound on the sensitive value frequencies of the equivalence classes in this bucket.
+  *   `sensitiveValueFrequencyUpperBound` (*type:* `String.t`, *default:* `nil`) - Upper bound on the sensitive value frequencies of the equivalence classes in this bucket.
   """
 
   use GoogleApi.Gax.ModelBase

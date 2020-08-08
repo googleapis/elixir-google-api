@@ -22,12 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectResult do
   ## Attributes
 
   *   `findings` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding.t)`, *default:* `nil`) - List of findings for an item.
-  *   `findingsTruncated` (*type:* `boolean()`, *default:* `nil`) - If true, then this item might have more findings than were returned,
-      and the findings returned are an arbitrary subset of all findings.
-      The findings list might be truncated because the input items were too
-      large, or because the server reached the maximum amount of resources
-      allowed for a single API call. For best results, divide the input into
-      smaller batches.
+  *   `findingsTruncated` (*type:* `boolean()`, *default:* `nil`) - If true, then this item might have more findings than were returned, and the findings returned are an arbitrary subset of all findings. The findings list might be truncated because the input items were too large, or because the server reached the maximum amount of resources allowed for a single API call. For best results, divide the input into smaller batches.
   """
 
   use GoogleApi.Gax.ModelBase

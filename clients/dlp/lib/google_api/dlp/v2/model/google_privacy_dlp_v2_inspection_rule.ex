@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectionRule do
   @moduledoc """
-  A single inspection rule to be applied to infoTypes, specified in
-  `InspectionRuleSet`.
+  A single inspection rule to be applied to infoTypes, specified in `InspectionRuleSet`.
 
   ## Attributes
 

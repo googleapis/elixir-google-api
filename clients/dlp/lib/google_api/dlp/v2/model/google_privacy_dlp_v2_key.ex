@@ -17,25 +17,12 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Key do
   @moduledoc """
-  A unique identifier for a Datastore entity.
-  If a key's partition ID or any of its path kinds or names are
-  reserved/read-only, the key is reserved/read-only.
-  A reserved/read-only key is forbidden in certain documented contexts.
+  A unique identifier for a Datastore entity. If a key's partition ID or any of its path kinds or names are reserved/read-only, the key is reserved/read-only. A reserved/read-only key is forbidden in certain documented contexts.
 
   ## Attributes
 
-  *   `partitionId` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId.t`, *default:* `nil`) - Entities are partitioned into subsets, currently identified by a project
-      ID and namespace ID.
-      Queries are scoped to a single partition.
-  *   `path` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PathElement.t)`, *default:* `nil`) - The entity path.
-      An entity path consists of one or more elements composed of a kind and a
-      string or numerical identifier, which identify entities. The first
-      element identifies a _root entity_, the second element identifies
-      a _child_ of the root entity, the third element identifies a child of the
-      second entity, and so forth. The entities identified by all prefixes of
-      the path are called the element's _ancestors_.
-
-      A path can never be empty, and a path can have at most 100 elements.
+  *   `partitionId` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PartitionId.t`, *default:* `nil`) - Entities are partitioned into subsets, currently identified by a project ID and namespace ID. Queries are scoped to a single partition.
+  *   `path` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PathElement.t)`, *default:* `nil`) - The entity path. An entity path consists of one or more elements composed of a kind and a string or numerical identifier, which identify entities. The first element identifies a _root entity_, the second element identifies a _child_ of the root entity, the third element identifies a child of the second entity, and so forth. The entities identified by all prefixes of the path are called the element's _ancestors_. A path can never be empty, and a path can have at most 100 elements.
   """
 
   use GoogleApi.Gax.ModelBase

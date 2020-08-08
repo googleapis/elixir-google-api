@@ -21,10 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableOptions do
 
   ## Attributes
 
-  *   `identifyingFields` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - The columns that are the primary keys for table objects included in
-      ContentItem. A copy of this cell's value will stored alongside alongside
-      each finding so that the finding can be traced to the specific row it came
-      from. No more than 3 may be provided.
+  *   `identifyingFields` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - The columns that are the primary keys for table objects included in ContentItem. A copy of this cell's value will stored alongside alongside each finding so that the finding can be traced to the specific row it came from. No more than 3 may be provided.
   """
 
   use GoogleApi.Gax.ModelBase

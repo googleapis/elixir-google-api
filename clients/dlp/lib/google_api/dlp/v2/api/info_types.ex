@@ -26,9 +26,7 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns a list of the sensitive information types that the DLP API
-  supports. See https://cloud.google.com/dlp/docs/infotypes-reference to
-  learn more.
+  Returns a list of the sensitive information types that the DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
 
   ## Parameters
 
@@ -45,14 +43,10 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - filter to only return infoTypes supported by certain parts of the
-          API. Defaults to supported_by=INSPECT.
-      *   `:languageCode` (*type:* `String.t`) - BCP-47 language code for localized infoType friendly
-          names. If omitted, or if localized strings are not available,
-          en-US strings will be returned.
+      *   `:filter` (*type:* `String.t`) - filter to only return infoTypes supported by certain parts of the API. Defaults to supported_by=INSPECT.
+      *   `:languageCode` (*type:* `String.t`) - BCP-47 language code for localized infoType friendly names. If omitted, or if localized strings are not available, en-US strings will be returned.
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:parent` (*type:* `String.t`) - The parent resource name.
-          - Format:locations/[LOCATION-ID]
+      *   `:parent` (*type:* `String.t`) - The parent resource name. - Format:locations/[LOCATION-ID]
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

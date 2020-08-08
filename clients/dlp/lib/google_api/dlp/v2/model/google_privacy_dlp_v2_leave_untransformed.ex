@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LeaveUntransformed do
   @moduledoc """
-  Skips the data without modifying it if the requested transformation would
-  cause an error. For example, if a `DateShift` transformation were applied
-  an an IP address, this mode would leave the IP address unchanged in the
-  response.
+  Skips the data without modifying it if the requested transformation would cause an error. For example, if a `DateShift` transformation were applied an an IP address, this mode would leave the IP address unchanged in the response.
 
   ## Attributes
 

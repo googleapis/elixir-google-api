@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations do
   @moduledoc """
-  A type of transformation that will scan unstructured text and
-  apply various `PrimitiveTransformation`s to each finding, where the
-  transformation is applied to only values that were identified as a specific
-  info_type.
+  A type of transformation that will scan unstructured text and apply various `PrimitiveTransformation`s to each finding, where the transformation is applied to only values that were identified as a specific info_type.
 
   ## Attributes
 
-  *   `transformations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation.t)`, *default:* `nil`) - Required. Transformation for each infoType. Cannot specify more than one
-      for a given infoType.
+  *   `transformations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation.t)`, *default:* `nil`) - Required. Transformation for each infoType. Cannot specify more than one for a given infoType.
   """
 
   use GoogleApi.Gax.ModelBase

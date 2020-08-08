@@ -17,27 +17,13 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
   @moduledoc """
-  Precise location of the finding within a document, record, image, or metadata
-  container.
+  Precise location of the finding within a document, record, image, or metadata container.
 
   ## Attributes
 
-  *   `containerName` (*type:* `String.t`, *default:* `nil`) - Name of the container where the finding is located.
-      The top level name is the source file name or table name. Names of some
-      common storage containers are formatted as follows:
-
-      * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
-      * Cloud Storage files: `gs://{bucket}/{path}`
-      * Datastore namespace: {namespace}
-
-      Nested names could be absent if the embedded object has no string
-      identifier (for an example an image contained within a document).
-  *   `containerTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Findings container modification timestamp, if applicable.
-      For Google Cloud Storage contains last file modification timestamp.
-      For BigQuery table contains last_modified_time property.
-      For Datastore - not populated.
-  *   `containerVersion` (*type:* `String.t`, *default:* `nil`) - Findings container version, if available
-      ("generation" for Google Cloud Storage).
+  *   `containerName` (*type:* `String.t`, *default:* `nil`) - Name of the container where the finding is located. The top level name is the source file name or table name. Names of some common storage containers are formatted as follows: * BigQuery tables: `{project_id}:{dataset_id}.{table_id}` * Cloud Storage files: `gs://{bucket}/{path}` * Datastore namespace: {namespace} Nested names could be absent if the embedded object has no string identifier (for an example an image contained within a document).
+  *   `containerTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Findings container modification timestamp, if applicable. For Google Cloud Storage contains last file modification timestamp. For BigQuery table contains last_modified_time property. For Datastore - not populated.
+  *   `containerVersion` (*type:* `String.t`, *default:* `nil`) - Findings container version, if available ("generation" for Google Cloud Storage).
   *   `documentLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DocumentLocation.t`, *default:* `nil`) - Location data for document files.
   *   `imageLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageLocation.t`, *default:* `nil`) - Location within an image's pixels.
   *   `metadataLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2MetadataLocation.t`, *default:* `nil`) - Location within the metadata for inspected content.

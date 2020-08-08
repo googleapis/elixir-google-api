@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable do
   @moduledoc """
-  Message defining the location of a BigQuery table. A table is uniquely
-  identified  by its project_id, dataset_id, and table_name. Within a query
-  a table is often referenced with a string in the format of:
-  `<project_id>:<dataset_id>.<table_id>` or
-  `<project_id>.<dataset_id>.<table_id>`.
+  Message defining the location of a BigQuery table. A table is uniquely identified by its project_id, dataset_id, and table_name. Within a query a table is often referenced with a string in the format of: `:.` or `..`.
 
   ## Attributes
 
   *   `datasetId` (*type:* `String.t`, *default:* `nil`) - Dataset ID of the table.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform project ID of the project containing the table.
-      If omitted, project ID is inferred from the API call.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform project ID of the project containing the table. If omitted, project ID is inferred from the API call.
   *   `tableId` (*type:* `String.t`, *default:* `nil`) - Name of the table.
   """
 

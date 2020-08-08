@@ -25,8 +25,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob do
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the job finished.
   *   `errors` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error.t)`, *default:* `nil`) - A stream of errors encountered running the job.
   *   `inspectDetails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails.t`, *default:* `nil`) - Results from inspecting a data source.
-  *   `jobTriggerName` (*type:* `String.t`, *default:* `nil`) - If created by a job trigger, the resource name of the trigger that
-      instantiated the job.
+  *   `jobTriggerName` (*type:* `String.t`, *default:* `nil`) - If created by a job trigger, the resource name of the trigger that instantiated the job.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned name.
   *   `riskDetails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails.t`, *default:* `nil`) - Results from analyzing risk of a data source.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the job started.

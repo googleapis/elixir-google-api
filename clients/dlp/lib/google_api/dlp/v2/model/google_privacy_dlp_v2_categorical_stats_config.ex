@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsConfig do
   @moduledoc """
-  Compute numerical stats over an individual column, including
-  number of distinct values and value count distribution.
+  Compute numerical stats over an individual column, including number of distinct values and value count distribution.
 
   ## Attributes
 
-  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Field to compute categorical stats on. All column types are
-      supported except for arrays and structs. However, it may be more
-      informative to use NumericalStats when the field type is supported,
-      depending on the data.
+  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Field to compute categorical stats on. All column types are supported except for arrays and structs. However, it may be more informative to use NumericalStats when the field type is supported, depending on the data.
   """
 
   use GoogleApi.Gax.ModelBase

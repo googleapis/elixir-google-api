@@ -21,8 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DocumentLocation do
 
   ## Attributes
 
-  *   `fileOffset` (*type:* `String.t`, *default:* `nil`) - Offset of the line, from the beginning of the file, where the finding
-      is located.
+  *   `fileOffset` (*type:* `String.t`, *default:* `nil`) - Offset of the line, from the beginning of the file, where the finding is located.
   """
 
   use GoogleApi.Gax.ModelBase

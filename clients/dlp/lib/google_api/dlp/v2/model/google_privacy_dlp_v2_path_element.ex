@@ -17,24 +17,13 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PathElement do
   @moduledoc """
-  A (kind, ID/name) pair used to construct a key path.
-
-  If either name or ID is set, the element is complete.
-  If neither is set, the element is incomplete.
+  A (kind, ID/name) pair used to construct a key path. If either name or ID is set, the element is complete. If neither is set, the element is incomplete.
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The auto-allocated ID of the entity.
-      Never equal to zero. Values less than zero are discouraged and may not
-      be supported in the future.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of the entity.
-      A kind matching regex `__.*__` is reserved/read-only.
-      A kind must not contain more than 1500 bytes when UTF-8 encoded.
-      Cannot be `""`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the entity.
-      A name matching regex `__.*__` is reserved/read-only.
-      A name must not be more than 1500 bytes when UTF-8 encoded.
-      Cannot be `""`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The auto-allocated ID of the entity. Never equal to zero. Values less than zero are discouraged and may not be supported in the future.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of the entity. A kind matching regex `__.*__` is reserved/read-only. A kind must not contain more than 1500 bytes when UTF-8 encoded. Cannot be `""`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the entity. A name matching regex `__.*__` is reserved/read-only. A name must not be more than 1500 bytes when UTF-8 encoded. Cannot be `""`.
   """
 
   use GoogleApi.Gax.ModelBase

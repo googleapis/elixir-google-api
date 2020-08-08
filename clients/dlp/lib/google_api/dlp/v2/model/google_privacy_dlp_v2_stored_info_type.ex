@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType do
   @moduledoc """
-  StoredInfoType resource message that contains information about the current
-  version and any pending updates.
+  StoredInfoType resource message that contains information about the current version and any pending updates.
 
   ## Attributes
 
   *   `currentVersion` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion.t`, *default:* `nil`) - Current version of the stored info type.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name.
-  *   `pendingVersions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion.t)`, *default:* `nil`) - Pending versions of the stored info type. Empty if no versions are
-      pending.
+  *   `pendingVersions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeVersion.t)`, *default:* `nil`) - Pending versions of the stored info type. Empty if no versions are pending.
   """
 
   use GoogleApi.Gax.ModelBase

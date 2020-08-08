@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharsToIgnore do
   @moduledoc """
-  Characters to skip when doing deidentification of a value. These will be left
-  alone and skipped.
+  Characters to skip when doing deidentification of a value. These will be left alone and skipped.
 
   ## Attributes
 
   *   `charactersToSkip` (*type:* `String.t`, *default:* `nil`) - Characters to not transform when masking.
-  *   `commonCharactersToIgnore` (*type:* `String.t`, *default:* `nil`) - Common characters to not transform when masking. Useful to avoid removing
-      punctuation.
+  *   `commonCharactersToIgnore` (*type:* `String.t`, *default:* `nil`) - Common characters to not transform when masking. Useful to avoid removing punctuation.
   """
 
   use GoogleApi.Gax.ModelBase

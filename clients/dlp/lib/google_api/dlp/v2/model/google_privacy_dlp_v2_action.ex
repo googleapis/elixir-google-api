@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
   @moduledoc """
-  A task to execute on the completion of a job.
-  See https://cloud.google.com/dlp/docs/concepts-actions to learn more.
+  A task to execute on the completion of a job. See https://cloud.google.com/dlp/docs/concepts-actions to learn more.
 
   ## Attributes
 
-  *   `jobNotificationEmails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t`, *default:* `nil`) - Enable email notification for project owners and editors on job's
-      completion/failure.
+  *   `jobNotificationEmails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t`, *default:* `nil`) - Enable email notification for project owners and editors on job's completion/failure.
   *   `pubSub` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub.t`, *default:* `nil`) - Publish a notification to a pubsub topic.
   *   `publishFindingsToCloudDataCatalog` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog.t`, *default:* `nil`) - Publish findings to Cloud Datahub.
   *   `publishSummaryToCscc` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc.t`, *default:* `nil`) - Publish summary to Cloud Security Command Center (Alpha).

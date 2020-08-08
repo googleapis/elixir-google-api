@@ -21,13 +21,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentRequest do
 
   ## Attributes
 
-  *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - Configuration for the inspector. What specified here will override
-      the template referenced by the inspect_template_name argument.
-  *   `inspectTemplateName` (*type:* `String.t`, *default:* `nil`) - Template to use. Any configuration directly specified in
-      inspect_config will override those set in the template. Singular fields
-      that are set in this request will replace their corresponding fields in the
-      template. Repeated fields are appended. Singular sub-messages and groups
-      are recursively merged.
+  *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - Configuration for the inspector. What specified here will override the template referenced by the inspect_template_name argument.
+  *   `inspectTemplateName` (*type:* `String.t`, *default:* `nil`) - Template to use. Any configuration directly specified in inspect_config will override those set in the template. Singular fields that are set in this request will replace their corresponding fields in the template. Repeated fields are appended. Singular sub-messages and groups are recursively merged.
   *   `item` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t`, *default:* `nil`) - The item to inspect.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   """

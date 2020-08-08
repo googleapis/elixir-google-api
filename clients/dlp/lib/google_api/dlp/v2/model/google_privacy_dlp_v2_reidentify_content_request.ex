@@ -22,30 +22,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReidentifyContentRequest do
   ## Attributes
 
   *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - Configuration for the inspector.
-  *   `inspectTemplateName` (*type:* `String.t`, *default:* `nil`) - Template to use. Any configuration directly specified in
-      `inspect_config` will override those set in the template. Singular fields
-      that are set in this request will replace their corresponding fields in the
-      template. Repeated fields are appended. Singular sub-messages and groups
-      are recursively merged.
+  *   `inspectTemplateName` (*type:* `String.t`, *default:* `nil`) - Template to use. Any configuration directly specified in `inspect_config` will override those set in the template. Singular fields that are set in this request will replace their corresponding fields in the template. Repeated fields are appended. Singular sub-messages and groups are recursively merged.
   *   `item` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t`, *default:* `nil`) - The item to re-identify. Will be treated as text.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
-  *   `reidentifyConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig.t`, *default:* `nil`) - Configuration for the re-identification of the content item.
-      This field shares the same proto message type that is used for
-      de-identification, however its usage here is for the reversal of the
-      previous de-identification. Re-identification is performed by examining
-      the transformations used to de-identify the items and executing the
-      reverse. This requires that only reversible transformations
-      be provided here. The reversible transformations are:
-
-       - `CryptoDeterministicConfig`
-       - `CryptoReplaceFfxFpeConfig`
-  *   `reidentifyTemplateName` (*type:* `String.t`, *default:* `nil`) - Template to use. References an instance of `DeidentifyTemplate`.
-      Any configuration directly specified in `reidentify_config` or
-      `inspect_config` will override those set in the template. The
-      `DeidentifyTemplate` used must include only reversible transformations.
-      Singular fields that are set in this request will replace their
-      corresponding fields in the template. Repeated fields are appended.
-      Singular sub-messages and groups are recursively merged.
+  *   `reidentifyConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig.t`, *default:* `nil`) - Configuration for the re-identification of the content item. This field shares the same proto message type that is used for de-identification, however its usage here is for the reversal of the previous de-identification. Re-identification is performed by examining the transformations used to de-identify the items and executing the reverse. This requires that only reversible transformations be provided here. The reversible transformations are: - `CryptoDeterministicConfig` - `CryptoReplaceFfxFpeConfig`
+  *   `reidentifyTemplateName` (*type:* `String.t`, *default:* `nil`) - Template to use. References an instance of `DeidentifyTemplate`. Any configuration directly specified in `reidentify_config` or `inspect_config` will override those set in the template. The `DeidentifyTemplate` used must include only reversible transformations. Singular fields that are set in this request will replace their corresponding fields in the template. Repeated fields are appended. Singular sub-messages and groups are recursively merged.
   """
 
   use GoogleApi.Gax.ModelBase

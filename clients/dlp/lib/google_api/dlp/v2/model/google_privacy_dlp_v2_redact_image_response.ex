@@ -21,9 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageResponse do
 
   ## Attributes
 
-  *   `extractedText` (*type:* `String.t`, *default:* `nil`) - If an image was being inspected and the InspectConfig's include_quote was
-      set to true, then this field will include all text, if any, that was found
-      in the image.
+  *   `extractedText` (*type:* `String.t`, *default:* `nil`) - If an image was being inspected and the InspectConfig's include_quote was set to true, then this field will include all text, if any, that was found in the image.
   *   `inspectResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectResult.t`, *default:* `nil`) - The findings. Populated when include_findings in the request is true.
   *   `redactedImage` (*type:* `String.t`, *default:* `nil`) - The redacted image. The type will be the same as the original image.
   """

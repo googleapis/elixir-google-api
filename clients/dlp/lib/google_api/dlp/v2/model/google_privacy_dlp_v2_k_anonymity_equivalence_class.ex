@@ -21,11 +21,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityEquivalenceClass do
 
   ## Attributes
 
-  *   `equivalenceClassSize` (*type:* `String.t`, *default:* `nil`) - Size of the equivalence class, for example number of rows with the
-      above set of values.
-  *   `quasiIdsValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t)`, *default:* `nil`) - Set of values defining the equivalence class. One value per
-      quasi-identifier column in the original KAnonymity metric message.
-      The order is always the same as the original request.
+  *   `equivalenceClassSize` (*type:* `String.t`, *default:* `nil`) - Size of the equivalence class, for example number of rows with the above set of values.
+  *   `quasiIdsValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t)`, *default:* `nil`) - Set of values defining the equivalence class. One value per quasi-identifier column in the original KAnonymity metric message. The order is always the same as the original request.
   """
 
   use GoogleApi.Gax.ModelBase

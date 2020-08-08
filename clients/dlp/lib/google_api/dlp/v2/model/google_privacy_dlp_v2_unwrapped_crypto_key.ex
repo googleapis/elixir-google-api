@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UnwrappedCryptoKey do
   @moduledoc """
-  Using raw keys is prone to security risks due to accidentally
-  leaking the key. Choose another type of key if possible.
+  Using raw keys is prone to security risks due to accidentally leaking the key. Choose another type of key if possible.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig do
   @moduledoc """
-  For use with `Date`, `Timestamp`, and `TimeOfDay`, extract or preserve a
-  portion of the value.
+  For use with `Date`, `Timestamp`, and `TimeOfDay`, extract or preserve a portion of the value.
 
   ## Attributes
 

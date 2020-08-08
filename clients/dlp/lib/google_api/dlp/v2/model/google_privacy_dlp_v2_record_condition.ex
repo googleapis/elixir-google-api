@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition do
   @moduledoc """
-  A condition for determining whether a transformation should be applied to
-  a field.
+  A condition for determining whether a transformation should be applied to a field.
 
   ## Attributes
 

@@ -21,13 +21,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
 
   ## Attributes
 
-  *   `infoTypeTransformations` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t`, *default:* `nil`) - Treat the dataset as free-form text and apply the same free text
-      transformation everywhere.
-  *   `recordTransformations` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations.t`, *default:* `nil`) - Treat the dataset as structured. Transformations can be applied to
-      specific locations within structured datasets, such as transforming
-      a column within a table.
-  *   `transformationErrorHandling` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling.t`, *default:* `nil`) - Mode for handling transformation errors. If left unspecified, the default
-      mode is `TransformationErrorHandling.ThrowError`.
+  *   `infoTypeTransformations` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t`, *default:* `nil`) - Treat the dataset as free-form text and apply the same free text transformation everywhere.
+  *   `recordTransformations` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations.t`, *default:* `nil`) - Treat the dataset as structured. Transformations can be applied to specific locations within structured datasets, such as transforming a column within a table.
+  *   `transformationErrorHandling` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling.t`, *default:* `nil`) - Mode for handling transformation errors. If left unspecified, the default mode is `TransformationErrorHandling.ThrowError`.
   """
 
   use GoogleApi.Gax.ModelBase

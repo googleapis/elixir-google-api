@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridContentItem do
   @moduledoc """
-  An individual hybrid item to inspect. Will be stored temporarily during
-  processing.
+  An individual hybrid item to inspect. Will be stored temporarily during processing.
 
   ## Attributes
 

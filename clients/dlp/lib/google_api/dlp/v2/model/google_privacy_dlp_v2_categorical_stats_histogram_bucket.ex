@@ -23,8 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsHistogramBuck
 
   *   `bucketSize` (*type:* `String.t`, *default:* `nil`) - Total number of values in this bucket.
   *   `bucketValueCount` (*type:* `String.t`, *default:* `nil`) - Total number of distinct values in this bucket.
-  *   `bucketValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ValueFrequency.t)`, *default:* `nil`) - Sample of value frequencies in this bucket. The total number of
-      values returned per bucket is capped at 20.
+  *   `bucketValues` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ValueFrequency.t)`, *default:* `nil`) - Sample of value frequencies in this bucket. The total number of values returned per bucket is capped at 20.
   *   `valueFrequencyLowerBound` (*type:* `String.t`, *default:* `nil`) - Lower bound on the value frequency of the values in this bucket.
   *   `valueFrequencyUpperBound` (*type:* `String.t`, *default:* `nil`) - Upper bound on the value frequency of the values in this bucket.
   """

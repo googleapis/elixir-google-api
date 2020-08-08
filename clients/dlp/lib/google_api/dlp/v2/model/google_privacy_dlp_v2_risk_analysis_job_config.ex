@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RiskAnalysisJobConfig do
   @moduledoc """
-  Configuration for a risk analysis job. See
-  https://cloud.google.com/dlp/docs/concepts-risk-analysis to learn more.
+  Configuration for a risk analysis job. See https://cloud.google.com/dlp/docs/concepts-risk-analysis to learn more.
 
   ## Attributes
 
-  *   `actions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action.t)`, *default:* `nil`) - Actions to execute at the completion of the job. Are executed in the order
-      provided.
+  *   `actions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action.t)`, *default:* `nil`) - Actions to execute at the completion of the job. Are executed in the order provided.
   *   `privacyMetric` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric.t`, *default:* `nil`) - Privacy metric to compute.
   *   `sourceTable` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - Input dataset to compute metrics over.
   """
