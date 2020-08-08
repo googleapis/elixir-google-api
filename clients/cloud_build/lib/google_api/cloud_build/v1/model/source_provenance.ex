@@ -17,25 +17,13 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.SourceProvenance do
   @moduledoc """
-  Provenance of the source. Ways to find the original source, or verify that
-  some source was used for this build.
+  Provenance of the source. Ways to find the original source, or verify that some source was used for this build.
 
   ## Attributes
 
-  *   `fileHashes` (*type:* `%{optional(String.t) => GoogleApi.CloudBuild.V1.Model.FileHashes.t}`, *default:* `nil`) - Output only. Hash(es) of the build source, which can be used to verify that
-      the original source integrity was maintained in the build. Note that
-      `FileHashes` will only be populated if `BuildOptions` has requested a
-      `SourceProvenanceHash`.
-
-      The keys to this map are file paths used as build source and the values
-      contain the hash values for those files.
-
-      If the build source came in a single package such as a gzipped tarfile
-      (`.tar.gz`), the `FileHash` will be for the single path to that file.
-  *   `resolvedRepoSource` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - A copy of the build's `source.repo_source`, if exists, with any
-      revisions resolved.
-  *   `resolvedStorageSource` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSource.t`, *default:* `nil`) - A copy of the build's `source.storage_source`, if exists, with any
-      generations resolved.
+  *   `fileHashes` (*type:* `%{optional(String.t) => GoogleApi.CloudBuild.V1.Model.FileHashes.t}`, *default:* `nil`) - Output only. Hash(es) of the build source, which can be used to verify that the original source integrity was maintained in the build. Note that `FileHashes` will only be populated if `BuildOptions` has requested a `SourceProvenanceHash`. The keys to this map are file paths used as build source and the values contain the hash values for those files. If the build source came in a single package such as a gzipped tarfile (`.tar.gz`), the `FileHash` will be for the single path to that file.
+  *   `resolvedRepoSource` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - A copy of the build's `source.repo_source`, if exists, with any revisions resolved.
+  *   `resolvedStorageSource` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSource.t`, *default:* `nil`) - A copy of the build's `source.storage_source`, if exists, with any generations resolved.
   """
 
   use GoogleApi.Gax.ModelBase

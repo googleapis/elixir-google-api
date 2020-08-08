@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.NotifierSecret do
   @moduledoc """
-  NotifierSecret is the container that maps a secret name (reference) to its
-  Google Cloud Secret Manager resource path.
+  NotifierSecret is the container that maps a secret name (reference) to its Google Cloud Secret Manager resource path.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name is the local name of the secret, such as the verbatim string
-      "my-smtp-password".
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Value is interpreted to be a resource path for fetching the actual
-      (versioned) secret data for this secret. For example, this would be a
-      Google Cloud Secret Manager secret version resource path like:
-      "projects/my-project/secrets/my-secret/versions/latest".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name is the local name of the secret, such as the verbatim string "my-smtp-password".
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Value is interpreted to be a resource path for fetching the actual (versioned) secret data for this secret. For example, this would be a Google Cloud Secret Manager secret version resource path like: "projects/my-project/secrets/my-secret/versions/latest".
   """
 
   use GoogleApi.Gax.ModelBase

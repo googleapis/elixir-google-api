@@ -21,12 +21,10 @@ defmodule GoogleApi.CloudBuild.V1.Model.SMTPDelivery do
 
   ## Attributes
 
-  *   `fromAddress` (*type:* `String.t`, *default:* `nil`) - This is the SMTP account/email that appears in the `From:` of the email.
-      If empty, it is assumed to be sender.
+  *   `fromAddress` (*type:* `String.t`, *default:* `nil`) - This is the SMTP account/email that appears in the `From:` of the email. If empty, it is assumed to be sender.
   *   `password` (*type:* `GoogleApi.CloudBuild.V1.Model.NotifierSecretRef.t`, *default:* `nil`) - The SMTP sender's password.
   *   `port` (*type:* `String.t`, *default:* `nil`) - The SMTP port of the server.
-  *   `recipientAddresses` (*type:* `list(String.t)`, *default:* `nil`) - This is the list of addresses to which we send the email (i.e. in the `To:`
-      of the email).
+  *   `recipientAddresses` (*type:* `list(String.t)`, *default:* `nil`) - This is the list of addresses to which we send the email (i.e. in the `To:` of the email).
   *   `senderAddress` (*type:* `String.t`, *default:* `nil`) - This is the SMTP account/email that is used to send the message.
   *   `server` (*type:* `String.t`, *default:* `nil`) - The address of the SMTP server.
   """

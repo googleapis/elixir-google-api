@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.NotifierMetadata do
   @moduledoc """
-  NotifierMetadata contains the data which can be used to reference or describe
-  this notifier.
+  NotifierMetadata contains the data which can be used to reference or describe this notifier.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable and user-given name for the notifier.
-      For example: "repo-merge-email-notifier".
-  *   `notifier` (*type:* `String.t`, *default:* `nil`) - The string representing the name and version of notifier to deploy.
-      Expected to be of the form of "<registry-path>/<name>:<version>".
-      For example: "gcr.io/my-project/notifiers/smtp:1.2.34".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable and user-given name for the notifier. For example: "repo-merge-email-notifier".
+  *   `notifier` (*type:* `String.t`, *default:* `nil`) - The string representing the name and version of notifier to deploy. Expected to be of the form of "/:". For example: "gcr.io/my-project/notifiers/smtp:1.2.34".
   """
 
   use GoogleApi.Gax.ModelBase

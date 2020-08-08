@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.Notification do
   @moduledoc """
-  Notification is the container which holds the data that is relevant to this
-  particular notification.
+  Notification is the container which holds the data that is relevant to this particular notification.
 
   ## Attributes
 
-  *   `filter` (*type:* `String.t`, *default:* `nil`) - The filter string to use for notification filtering.
-      Currently, this is assumed to be a CEL program.
-      See https://opensource.google/projects/cel for more.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - The filter string to use for notification filtering. Currently, this is assumed to be a CEL program. See https://opensource.google/projects/cel for more.
   *   `httpDelivery` (*type:* `GoogleApi.CloudBuild.V1.Model.HTTPDelivery.t`, *default:* `nil`) - Configuration for HTTP delivery.
   *   `slackDelivery` (*type:* `GoogleApi.CloudBuild.V1.Model.SlackDelivery.t`, *default:* `nil`) - Configuration for Slack delivery.
   *   `smtpDelivery` (*type:* `GoogleApi.CloudBuild.V1.Model.SMTPDelivery.t`, *default:* `nil`) - Configuration for SMTP (email) delivery.

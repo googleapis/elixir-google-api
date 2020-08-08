@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
   @moduledoc """
-  GitHubEventsConfig describes the configuration of a trigger that creates a
-  build whenever a GitHub event is received.
-
-  This message is experimental.
+  GitHubEventsConfig describes the configuration of a trigger that creates a build whenever a GitHub event is received. This message is experimental.
 
   ## Attributes
 
   *   `installationId` (*type:* `String.t`, *default:* `nil`) - The installationID that emits the GitHub event.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the repository. For example: The name for
-      https://github.com/googlecloudplatform/cloud-builders is "cloud-builders".
-  *   `owner` (*type:* `String.t`, *default:* `nil`) - Owner of the repository. For example: The owner for
-      https://github.com/googlecloudplatform/cloud-builders is
-      "googlecloudplatform".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the repository. For example: The name for https://github.com/googlecloudplatform/cloud-builders is "cloud-builders".
+  *   `owner` (*type:* `String.t`, *default:* `nil`) - Owner of the repository. For example: The owner for https://github.com/googlecloudplatform/cloud-builders is "googlecloudplatform".
   *   `pullRequest` (*type:* `GoogleApi.CloudBuild.V1.Model.PullRequestFilter.t`, *default:* `nil`) - filter to match changes in pull requests.
   *   `push` (*type:* `GoogleApi.CloudBuild.V1.Model.PushFilter.t`, *default:* `nil`) - filter to match changes in refs like branches, tags.
   """

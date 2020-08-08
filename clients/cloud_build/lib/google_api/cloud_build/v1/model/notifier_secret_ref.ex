@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.NotifierSecretRef do
   @moduledoc """
-  NotifierSecretRef contains the reference to a secret stored in the
-  corresponding NotifierSpec.
+  NotifierSecretRef contains the reference to a secret stored in the corresponding NotifierSpec.
 
   ## Attributes
 
-  *   `secretRef` (*type:* `String.t`, *default:* `nil`) - The value of `secret_ref` should be a `name` that is registered in a
-      `Secret` in the `secrets` list of the `Spec`.
+  *   `secretRef` (*type:* `String.t`, *default:* `nil`) - The value of `secret_ref` should be a `name` that is registered in a `Secret` in the `secrets` list of the `Spec`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,14 +23,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
 
   *   `artifactManifest` (*type:* `String.t`, *default:* `nil`) - Path to the artifact manifest. Only populated when artifacts are uploaded.
   *   `artifactTiming` (*type:* `GoogleApi.CloudBuild.V1.Model.TimeSpan.t`, *default:* `nil`) - Time to push all non-container artifacts.
-  *   `buildStepImages` (*type:* `list(String.t)`, *default:* `nil`) - List of build step digests, in the order corresponding to build step
-      indices.
-  *   `buildStepOutputs` (*type:* `list(String.t)`, *default:* `nil`) - List of build step outputs, produced by builder images, in the order
-      corresponding to build step indices.
-
-      [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
-      can produce this output by writing to `$BUILDER_OUTPUT/output`.
-      Only the first 4KB of data is stored.
+  *   `buildStepImages` (*type:* `list(String.t)`, *default:* `nil`) - List of build step digests, in the order corresponding to build step indices.
+  *   `buildStepOutputs` (*type:* `list(String.t)`, *default:* `nil`) - List of build step outputs, produced by builder images, in the order corresponding to build step indices. [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders) can produce this output by writing to `$BUILDER_OUTPUT/output`. Only the first 4KB of data is stored.
   *   `images` (*type:* `list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t)`, *default:* `nil`) - Container images that were built as a part of the build.
   *   `numArtifacts` (*type:* `String.t`, *default:* `nil`) - Number of artifacts uploaded. Only populated when artifacts are uploaded.
   """

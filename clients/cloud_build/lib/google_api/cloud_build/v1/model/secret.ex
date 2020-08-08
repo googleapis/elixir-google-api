@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.CloudBuild.V1.Model.Secret do
   @moduledoc """
-  Pairs a set of secret environment variables containing encrypted
-  values with the Cloud KMS key to use to decrypt the value.
+  Pairs a set of secret environment variables containing encrypted values with the Cloud KMS key to use to decrypt the value.
 
   ## Attributes
 
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Cloud KMS key name to use to decrypt these envs.
-  *   `secretEnv` (*type:* `map()`, *default:* `nil`) - Map of environment variable name to its encrypted value.
-
-      Secret environment variables must be unique across all of a build's
-      secrets, and must be used by at least one build step. Values can be at most
-      64 KB in size. There can be at most 100 secret values across all of a
-      build's secrets.
+  *   `secretEnv` (*type:* `map()`, *default:* `nil`) - Map of environment variable name to its encrypted value. Secret environment variables must be unique across all of a build's secrets, and must be used by at least one build step. Values can be at most 64 KB in size. There can be at most 100 secret values across all of a build's secrets.
   """
 
   use GoogleApi.Gax.ModelBase
