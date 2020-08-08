@@ -24,10 +24,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Creation time of this environment as milliseconds since epoch.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the environment.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name for this environment.
-  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Last modification time of this environment as milliseconds
-      since epoch.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the environment. Values must match the
-      regular expression `^[.\\\\p{Alnum}-_]{1,255}$`
+  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Last modification time of this environment as milliseconds since epoch.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the environment. Values must match the regular expression `^[.\\\\p{Alnum}-_]{1,255}$`
   *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t`, *default:* `nil`) - Optional. Key-value pairs that may be used for customizing the environment.
   """
 

@@ -22,10 +22,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Schema do
   ## Attributes
 
   *   `dimensions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaElement.t)`, *default:* `nil`) - List of schema fiels grouped as dimensions.
-  *   `meta` (*type:* `list(String.t)`, *default:* `nil`) - Additional metadata associated with schema. This is
-      a legacy field and usually consists of an empty array of strings.
-  *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaElement.t)`, *default:* `nil`) - List of schema fields grouped as dimensions. These are fields
-      that can be used with an aggregate function such as sum, avg, min, max.
+  *   `meta` (*type:* `list(String.t)`, *default:* `nil`) - Additional metadata associated with schema. This is a legacy field and usually consists of an empty array of strings.
+  *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaElement.t)`, *default:* `nil`) - List of schema fields grouped as dimensions. These are fields that can be used with an aggregate function such as sum, avg, min, max.
   """
 
   use GoogleApi.Gax.ModelBase

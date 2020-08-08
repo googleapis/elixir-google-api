@@ -25,21 +25,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperApp do
   *   `appFamily` (*type:* `String.t`, *default:* `nil`) - Developer app family.
   *   `appId` (*type:* `String.t`, *default:* `nil`) - ID of the developer app.
   *   `attributes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t)`, *default:* `nil`) - List of attributes for the developer app.
-  *   `callbackUrl` (*type:* `String.t`, *default:* `nil`) - Callback URL used by OAuth 2.0 authorization servers to communicate
-      authorization codes back to developer apps.
+  *   `callbackUrl` (*type:* `String.t`, *default:* `nil`) - Callback URL used by OAuth 2.0 authorization servers to communicate authorization codes back to developer apps.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time the developer app was created in milliseconds since epoch.
-  *   `credentials` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Credential.t)`, *default:* `nil`) - Output only. Set of credentials for the developer app consisting of the
-      consumer key/secret pairs associated with the API products.
+  *   `credentials` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Credential.t)`, *default:* `nil`) - Output only. Set of credentials for the developer app consisting of the consumer key/secret pairs associated with the API products.
   *   `developerId` (*type:* `String.t`, *default:* `nil`) - ID of the developer.
-  *   `keyExpiresIn` (*type:* `String.t`, *default:* `nil`) - Expiration time, in milliseconds, for the consumer key that
-      is generated for the developer app. If not set or left to the default
-      value of `-1`, the API key never expires.
-      The expiration time can't be updated after it is set.
+  *   `keyExpiresIn` (*type:* `String.t`, *default:* `nil`) - Expiration time, in milliseconds, for the consumer key that is generated for the developer app. If not set or left to the default value of `-1`, the API key never expires. The expiration time can't be updated after it is set.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time the developer app was modified in milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the developer app.
-  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Scopes to apply to the developer app. The specified scopes must
-      already exist for the API product that you associate with the developer
-      app.
+  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Scopes to apply to the developer app. The specified scopes must already exist for the API product that you associate with the developer app.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the credential. Valid values include `approved` or `revoked`.
   """
 

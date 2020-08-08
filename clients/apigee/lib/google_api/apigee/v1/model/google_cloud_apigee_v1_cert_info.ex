@@ -23,16 +23,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CertInfo do
 
   *   `basicConstraints` (*type:* `String.t`, *default:* `nil`) - The X.509 basic constraints extension.
   *   `expiryDate` (*type:* `String.t`, *default:* `nil`) - The X.509 validity / notAfter in milliseconds since the epoch.
-  *   `isValid` (*type:* `String.t`, *default:* `nil`) - "Yes" if certificate is valid, "No" if expired and "Not yet"
-      if not yet valid.
+  *   `isValid` (*type:* `String.t`, *default:* `nil`) - "Yes" if certificate is valid, "No" if expired and "Not yet" if not yet valid.
   *   `issuer` (*type:* `String.t`, *default:* `nil`) - The X.509 issuer.
   *   `publicKey` (*type:* `String.t`, *default:* `nil`) - The public key component of the X.509 subject public key info.
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The X.509 serial number.
   *   `sigAlgName` (*type:* `String.t`, *default:* `nil`) - The X.509 signatureAlgorithm.
   *   `subject` (*type:* `String.t`, *default:* `nil`) - The X.509 subject.
   *   `subjectAlternativeNames` (*type:* `list(String.t)`, *default:* `nil`) - The X.509 subject alternative names (SANs) extension.
-  *   `validFrom` (*type:* `String.t`, *default:* `nil`) - The X.509 validity / notBefore in milliseconds since the
-      epoch.
+  *   `validFrom` (*type:* `String.t`, *default:* `nil`) - The X.509 validity / notBefore in milliseconds since the epoch.
   *   `version` (*type:* `integer()`, *default:* `nil`) - The X.509 version.
   """
 

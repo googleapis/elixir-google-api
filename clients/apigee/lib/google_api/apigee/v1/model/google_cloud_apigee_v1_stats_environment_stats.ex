@@ -17,64 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats do
   @moduledoc """
-  This message type encapsulates the environment wrapper:
-      "environments": [
-       {
-           "metrics": [
-               {
-                   "name": "sum(message_count)",
-                   "values": [
-                       "2.52056245E8"
-                   ]
-               }
-           ],
-           "name": "prod"
-       }
-   ]
+  This message type encapsulates the environment wrapper: "environments": [ { "metrics": [ { "name": "sum(message_count)", "values": [ "2.52056245E8" ] } ], "name": "prod" } ]
 
   ## Attributes
 
   *   `dimensions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DimensionMetric.t)`, *default:* `nil`) - This field contains the list of metrics grouped under dimensions.
-  *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t)`, *default:* `nil`) - In the final response, only one of the following fields will be present
-      based on the dimensions provided. If no dimensions are provided, then
-      only a top level metrics is provided. If dimensions are included, then
-      there will be a top level dimensions field under environments which will
-      contain metrics values and the dimension name.
-      Example:
-           "environments": [
-            {
-               "dimensions": [
-                   {
-                       "metrics": [
-                           {
-                               "name": "sum(message_count)",
-                               "values": [
-                                   "2.14049521E8"
-                               ]
-                           }
-                       ],
-                       "name": "nit_proxy"
-                   }
-                 ],
-                 "name": "prod"
-             }
-          ]
-
-          OR
-          "environments": [
-                 {
-                     "metrics": [
-                         {
-                             "name": "sum(message_count)",
-                              "values": [
-                                 "2.19026331E8"
-                             ]
-                         }
-                     ],
-                     "name": "prod"
-                 }
-             ]
-      This field contains the list of metric values.
+  *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t)`, *default:* `nil`) - In the final response, only one of the following fields will be present based on the dimensions provided. If no dimensions are provided, then only a top level metrics is provided. If dimensions are included, then there will be a top level dimensions field under environments which will contain metrics values and the dimension name. Example: "environments": [ { "dimensions": [ { "metrics": [ { "name": "sum(message_count)", "values": [ "2.14049521E8" ] } ], "name": "nit_proxy" } ], "name": "prod" } ] OR "environments": [ { "metrics": [ { "name": "sum(message_count)", "values": [ "2.19026331E8" ] } ], "name": "prod" } ] This field contains the list of metric values.
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   """
 

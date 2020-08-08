@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Reference do
   @moduledoc """
-  A Reference configuration. References must refer to a keystore
-  that also exists in the parent environment.
+  A Reference configuration. References must refer to a keystore that also exists in the parent environment.
 
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A human-readable description of this reference.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource id of this reference. Values must match the
-      regular expression [\\w\\s\\-.]+.
-  *   `refers` (*type:* `String.t`, *default:* `nil`) - Required. The id of the resource to which this reference refers.
-      Must be the id of a resource that exists in the parent environment and is
-      of the given resource_type.
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The type of resource referred to by this reference. Valid values
-      are 'KeyStore' or 'TrustStore'.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource id of this reference. Values must match the regular expression [\\w\\s\\-.]+.
+  *   `refers` (*type:* `String.t`, *default:* `nil`) - Required. The id of the resource to which this reference refers. Must be the id of a resource that exists in the parent environment and is of the given resource_type.
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The type of resource referred to by this reference. Valid values are 'KeyStore' or 'TrustStore'.
   """
 
   use GoogleApi.Gax.ModelBase

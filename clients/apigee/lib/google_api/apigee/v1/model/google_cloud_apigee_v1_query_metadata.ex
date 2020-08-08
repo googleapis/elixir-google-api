@@ -23,9 +23,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetadata do
 
   *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - Dimensions of the AsyncQuery.
   *   `endTimestamp` (*type:* `String.t`, *default:* `nil`) - End timestamp of the query range.
-  *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - Metrics of the AsyncQuery.
-
-      Example: ["name:message_count,func:sum,alias:sum_message_count"]
+  *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - Metrics of the AsyncQuery. Example: ["name:message_count,func:sum,alias:sum_message_count"]
   *   `outputFormat` (*type:* `String.t`, *default:* `nil`) - Output format.
   *   `startTimestamp` (*type:* `String.t`, *default:* `nil`) - Start timestamp of the query range.
   *   `timeUnit` (*type:* `String.t`, *default:* `nil`) - Query GroupBy time unit.

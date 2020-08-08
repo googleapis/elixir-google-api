@@ -22,8 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListInstancesResponse do
   ## Attributes
 
   *   `instances` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance.t)`, *default:* `nil`) - Instances in the specified organization.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListInstance request to retrieve
-      the next page of content. If omitted, no subsequent pages exist.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListInstance request to retrieve the next page of content. If omitted, no subsequent pages exist.
   """
 
   use GoogleApi.Gax.ModelBase

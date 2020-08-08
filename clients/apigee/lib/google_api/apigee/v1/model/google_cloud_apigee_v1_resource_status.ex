@@ -21,15 +21,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceStatus do
 
   ## Attributes
 
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - The resource name. Currently only two resources are supported:
-      EnvironmentGroup - organizations/{org}/envgroups/{envgroup}
-      EnvironmentConfig -
-      organizations/{org}/environments/{environment}/deployedConfig
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - The resource name. Currently only two resources are supported: EnvironmentGroup - organizations/{org}/envgroups/{envgroup} EnvironmentConfig - organizations/{org}/environments/{environment}/deployedConfig
   *   `revisions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RevisionStatus.t)`, *default:* `nil`) - Revisions of the resource currently deployed in the instance.
   *   `totalReplicas` (*type:* `integer()`, *default:* `nil`) - The total number of replicas that should have this resource.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - The uid of the resource. In the unexpected case that the instance has
-      multiple uids for the same name, they should be reported under separate
-      ResourceStatuses.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - The uid of the resource. In the unexpected case that the instance has multiple uids for the same name, they should be reported under separate ResourceStatuses.
   """
 
   use GoogleApi.Gax.ModelBase

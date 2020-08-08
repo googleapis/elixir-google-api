@@ -22,8 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Keystore do
   ## Attributes
 
   *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The aliases in this keystore.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource ID for this keystore.  Values must match the
-      regular expression `[\\w[:space:]-.]{1,255}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource ID for this keystore. Values must match the regular expression `[\\w[:space:]-.]{1,255}`.
   """
 
   use GoogleApi.Gax.ModelBase

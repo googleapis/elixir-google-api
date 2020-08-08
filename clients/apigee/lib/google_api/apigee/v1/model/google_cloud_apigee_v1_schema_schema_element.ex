@@ -22,13 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaElement do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the field
-  *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaProperty.t`, *default:* `nil`) - Property of the schema field
-      E.g.
-      {
-         "createTime": "2016-02-26T10:23:09.592Z",
-         "custom": "false",
-         "type": "string"
-      }
+  *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaProperty.t`, *default:* `nil`) - Property of the schema field E.g. { "createTime": "2016-02-26T10:23:09.592Z", "custom": "false", "type": "string" }
   """
 
   use GoogleApi.Gax.ModelBase

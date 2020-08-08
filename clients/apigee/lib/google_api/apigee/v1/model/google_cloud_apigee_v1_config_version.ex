@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion do
   @moduledoc """
-  Version of the API proxy configuration schema. Currently, only 4.0 is
-  supported.
+  Version of the API proxy configuration schema. Currently, only 4.0 is supported.
 
   ## Attributes
 

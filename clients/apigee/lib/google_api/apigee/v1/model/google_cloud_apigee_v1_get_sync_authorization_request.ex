@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GetSyncAuthorizationRequest do
   @moduledoc """
-  Request for
-  GetSyncAuthorization.
+  Request for GetSyncAuthorization.
 
   ## Attributes
 

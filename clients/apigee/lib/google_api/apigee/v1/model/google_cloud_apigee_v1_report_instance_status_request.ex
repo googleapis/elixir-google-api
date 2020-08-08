@@ -21,11 +21,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReportInstanceStatusReque
 
   ## Attributes
 
-  *   `instanceUid` (*type:* `String.t`, *default:* `nil`) - A unique ID for the instance which is guaranteed to be unique in case the
-      user installs multiple hybrid runtimes with the same instance ID.
-  *   `reportTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the report was generated in the runtime. Used to prevent an old
-      status from overwriting a newer one. An instance should space out it's
-      status reports so that clock skew does not play a factor.
+  *   `instanceUid` (*type:* `String.t`, *default:* `nil`) - A unique ID for the instance which is guaranteed to be unique in case the user installs multiple hybrid runtimes with the same instance ID.
+  *   `reportTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the report was generated in the runtime. Used to prevent an old status from overwriting a newer one. An instance should space out it's status reports so that clock skew does not play a factor.
   *   `resources` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceStatus.t)`, *default:* `nil`) - Status for config resources
   """
 

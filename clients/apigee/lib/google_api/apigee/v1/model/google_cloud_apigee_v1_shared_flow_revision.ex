@@ -21,23 +21,17 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlowRevision do
 
   ## Attributes
 
-  *   `configurationVersion` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion.t`, *default:* `nil`) - The version of the configuration schema to which this shared flow conforms.
-      The only supported value currently is majorVersion 4 and minorVersion 0.
-      This setting may be used in the future to enable evolution of the shared
-      flow format.
+  *   `configurationVersion` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion.t`, *default:* `nil`) - The version of the configuration schema to which this shared flow conforms. The only supported value currently is majorVersion 4 and minorVersion 0. This setting may be used in the future to enable evolution of the shared flow format.
   *   `contextInfo` (*type:* `String.t`, *default:* `nil`) - A textual description of the shared flow revision.
-  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Time at which this shared flow revision was created, in milliseconds since
-      epoch.
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Time at which this shared flow revision was created, in milliseconds since epoch.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the shared flow revision.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of this shared flow.
   *   `entityMetaDataAsProperties` (*type:* `map()`, *default:* `nil`) - A Key-Value map of metadata about this shared flow revision.
-  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Time at which this shared flow revision was most recently modified, in
-      milliseconds since epoch.
+  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Time at which this shared flow revision was most recently modified, in milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource ID of the parent shared flow.
   *   `policies` (*type:* `list(String.t)`, *default:* `nil`) - A list of policy names included in this shared flow revision.
   *   `resourceFiles` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceFiles.t`, *default:* `nil`) - The resource files included in this shared flow revision.
-  *   `resources` (*type:* `list(String.t)`, *default:* `nil`) - A list of the resources included in this shared flow revision formatted as
-      "{type}://{name}".
+  *   `resources` (*type:* `list(String.t)`, *default:* `nil`) - A list of the resources included in this shared flow revision formatted as "{type}://{name}".
   *   `revision` (*type:* `String.t`, *default:* `nil`) - The resource ID of this revision.
   *   `sharedFlows` (*type:* `list(String.t)`, *default:* `nil`) - A list of the shared flow names included in this shared flow revision.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The string "Application"

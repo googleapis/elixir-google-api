@@ -21,11 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsResponse do
 
   ## Attributes
 
-  *   `TimeUnit` (*type:* `list(String.t)`, *default:* `nil`) - This field contains a list of time unit values. Time unit refers to
-      an epoch timestamp value.
+  *   `TimeUnit` (*type:* `list(String.t)`, *default:* `nil`) - This field contains a list of time unit values. Time unit refers to an epoch timestamp value.
   *   `metaData` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t`, *default:* `nil`) - This field contains metadata information about the query executed
-  *   `resultTruncated` (*type:* `boolean()`, *default:* `nil`) - This ia a boolean field to indicate if the results were truncated
-      based on the limit parameter.
+  *   `resultTruncated` (*type:* `boolean()`, *default:* `nil`) - This ia a boolean field to indicate if the results were truncated based on the limit parameter.
   *   `stats` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsNode.t`, *default:* `nil`) - This field contains a stats results.
   """
 

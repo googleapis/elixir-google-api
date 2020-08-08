@@ -17,34 +17,13 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReport do
   @moduledoc """
-  Response for
-  GenerateDeployChangeReport
-  and
-  GenerateUndeployChangeReport.
-
-  This report contains any validation failures that would cause the deployment
-  to be rejected, as well changes and conflicts in routing that may occur due
-  to the new deployment.
-
-  The existence of a routing warning does not necessarily imply that the
-  deployment request is bad, if the desired state of the deployment request is
-  to effect a routing change. The primary purposes of the routing messages are:
-
-  1) To inform users of routing changes that may have an effect on traffic
-  currently being routed to other existing deployments.
-
-  2) To warn users if some basepath in the proxy will not receive traffic due
-  to an existing deployment having already claimed that basepath.
-
-  The presence of routing conflicts/changes will not cause non-dry-run
-  DeployApiProxy/UndeployApiProxy requests to be rejected.
+  Response for GenerateDeployChangeReport and GenerateUndeployChangeReport. This report contains any validation failures that would cause the deployment to be rejected, as well changes and conflicts in routing that may occur due to the new deployment. The existence of a routing warning does not necessarily imply that the deployment request is bad, if the desired state of the deployment request is to effect a routing change. The primary purposes of the routing messages are: 1) To inform users of routing changes that may have an effect on traffic currently being routed to other existing deployments. 2) To warn users if some basepath in the proxy will not receive traffic due to an existing deployment having already claimed that basepath. The presence of routing conflicts/changes will not cause non-dry-run DeployApiProxy/UndeployApiProxy requests to be rejected.
 
   ## Attributes
 
   *   `routingChanges` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingChange.t)`, *default:* `nil`) - All routing changes that may result from a deployment request.
   *   `routingConflicts` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingConflict.t)`, *default:* `nil`) - All basepath conflicts detected for a deployment request.
-  *   `validationErrors` (*type:* `GoogleApi.Apigee.V1.Model.GoogleRpcPreconditionFailure.t`, *default:* `nil`) - Validation errors that would cause the deployment change request to be
-      rejected.
+  *   `validationErrors` (*type:* `GoogleApi.Apigee.V1.Model.GoogleRpcPreconditionFailure.t`, *default:* `nil`) - Validation errors that would cause the deployment change request to be rejected.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,9 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AliasRevisionConfig do
   ## Attributes
 
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the alias file, e.g. a GCS URI.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the alias revision included in the keystore. Must be of the
-      form:
-      'organizations/{org}/environments/{env}/keystores/{keystore}/aliases/{alias}/revisions/{rev}'.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the alias revision included in the keystore. Must be of the form: 'organizations/{org}/environments/{env}/keystores/{keystore}/aliases/{alias}/revisions/{rev}'.
   *   `type` (*type:* `String.t`, *default:* `nil`) - 
   """
 

@@ -17,24 +17,17 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Datastore do
   @moduledoc """
-  The data store defines the connection to export data repository
-  (Cloud Storage, BigQuery), including the credentials used to access the data
-  repository.
+  The data store defines the connection to export data repository (Cloud Storage, BigQuery), including the credentials used to access the data repository.
 
   ## Attributes
 
-  *   `createTime` (*type:* `String.t`, *default:* `nil`) - Output only. Datastore create time, in milliseconds since the epoch
-      of 1970-01-01T00:00:00Z
+  *   `createTime` (*type:* `String.t`, *default:* `nil`) - Output only. Datastore create time, in milliseconds since the epoch of 1970-01-01T00:00:00Z
   *   `datastoreConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DatastoreConfig.t`, *default:* `nil`) - Datastore Configurations.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name in UI
-  *   `lastUpdateTime` (*type:* `String.t`, *default:* `nil`) - Output only. Datastore last update time, in milliseconds since the epoch
-      of 1970-01-01T00:00:00Z
+  *   `lastUpdateTime` (*type:* `String.t`, *default:* `nil`) - Output only. Datastore last update time, in milliseconds since the epoch of 1970-01-01T00:00:00Z
   *   `org` (*type:* `String.t`, *default:* `nil`) - Output only. Organization that the datastore belongs to
-  *   `self` (*type:* `String.t`, *default:* `nil`) - Output only. Resource link of Datastore.
-
-      Example: `/organizations/{org}/analytics/datastores/{uuid}`
-  *   `targetType` (*type:* `String.t`, *default:* `nil`) - Destination storage type.
-      Supported types `gcs` or `bigquery`.
+  *   `self` (*type:* `String.t`, *default:* `nil`) - Output only. Resource link of Datastore. Example: `/organizations/{org}/analytics/datastores/{uuid}`
+  *   `targetType` (*type:* `String.t`, *default:* `nil`) - Destination storage type. Supported types `gcs` or `bigquery`.
   """
 
   use GoogleApi.Gax.ModelBase

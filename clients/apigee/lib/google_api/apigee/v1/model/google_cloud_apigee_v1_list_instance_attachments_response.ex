@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListInstanceAttachmentsResponse do
   @moduledoc """
-  Response for
-  ListInstanceAttachments.
+  Response for ListInstanceAttachments.
 
   ## Attributes
 
   *   `attachments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceAttachment.t)`, *default:* `nil`) - Attachments for the instance.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListInstanceAttachments request to
-      retrieve the next page of content. If omitted, no subsequent pages exist.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListInstanceAttachments request to retrieve the next page of content. If omitted, no subsequent pages exist.
   """
 
   use GoogleApi.Gax.ModelBase

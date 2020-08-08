@@ -26,14 +26,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig do
   *   `commonName` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CommonNameConfig.t`, *default:* `nil`) - Common name to validate the target against.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enables one-way TLS.
   *   `ignoreValidationErrors` (*type:* `boolean()`, *default:* `nil`) - If true, ignore TLS certificate validation errors.
-  *   `keyAlias` (*type:* `String.t`, *default:* `nil`) - The name of the Alias used for client side auth. It must be of the form:
-      organizations/{org}/environments/{env}/keystores/{keystore}/aliases/{alias}
+  *   `keyAlias` (*type:* `String.t`, *default:* `nil`) - The name of the Alias used for client side auth. It must be of the form: organizations/{org}/environments/{env}/keystores/{keystore}/aliases/{alias}
   *   `keyAliasReference` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyAliasReference.t`, *default:* `nil`) - A pair of reference name and alias to use for client side auth.
   *   `protocols` (*type:* `list(String.t)`, *default:* `nil`) - Whitelist of supported TLS protocols.
-  *   `trustStore` (*type:* `String.t`, *default:* `nil`) - The name of the Keystore or keystore reference containing trusted
-      certificates for the server. It must be of either the form
-      organizations/{org}/environments/{env}/keystores/{keystore} or
-      organizations/{org}/environments/{env}/references/{reference}.
+  *   `trustStore` (*type:* `String.t`, *default:* `nil`) - The name of the Keystore or keystore reference containing trusted certificates for the server. It must be of either the form organizations/{org}/environments/{env}/keystores/{keystore} or organizations/{org}/environments/{env}/references/{reference}.
   """
 
   use GoogleApi.Gax.ModelBase

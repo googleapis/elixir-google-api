@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReportMetric do
   @moduledoc """
-  This encapsulates a metric property of the form sum(message_count)
-  where name is message_count and function is sum
+  This encapsulates a metric property of the form sum(message_count) where name is message_count and function is sum
 
   ## Attributes
 

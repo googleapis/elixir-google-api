@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListEnvironmentGroupAttachmentsResponse do
   @moduledoc """
-  Response for
-  ListEnvironmentGroupAttachments.
+  Response for ListEnvironmentGroupAttachments.
 
   ## Attributes
 
   *   `environmentGroupAttachments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupAttachment.t)`, *default:* `nil`) - EnvironmentGroupAttachments for the specified environment group.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListEnvironmentGroupAttachments
-      request to retrieve the next page. If omitted, no subsequent pages exist.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListEnvironmentGroupAttachments request to retrieve the next page. If omitted, no subsequent pages exist.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -30,10 +30,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQuery do
   *   `result` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQueryResult.t`, *default:* `nil`) - Result is available only after the query is completed.
   *   `resultFileSize` (*type:* `String.t`, *default:* `nil`) - ResultFileSize is available only after the query is completed.
   *   `resultRows` (*type:* `String.t`, *default:* `nil`) - ResultRows is available only after the query is completed.
-  *   `self` (*type:* `String.t`, *default:* `nil`) - Self link of the query.
-
-      Example:
-      `/organizations/myorg/environments/myenv/queries/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd`
+  *   `self` (*type:* `String.t`, *default:* `nil`) - Self link of the query. Example: `/organizations/myorg/environments/myenv/queries/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Query state could be "enqueued", "running", "completed", "failed".
   *   `updated` (*type:* `String.t`, *default:* `nil`) - Last updated timestamp for the query.
   """

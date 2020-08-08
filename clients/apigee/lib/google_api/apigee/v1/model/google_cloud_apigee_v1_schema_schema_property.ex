@@ -22,8 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaProperty do
   ## Attributes
 
   *   `createTime` (*type:* `String.t`, *default:* `nil`) - Creation time of the field
-  *   `custom` (*type:* `String.t`, *default:* `nil`) - Custom is a flag signifying if the field was provided as
-      part of the standard dataset or a custom field created by the customer
+  *   `custom` (*type:* `String.t`, *default:* `nil`) - Custom is a flag signifying if the field was provided as part of the standard dataset or a custom field created by the customer
   *   `type` (*type:* `String.t`, *default:* `nil`) - Data type of the field.
   """
 

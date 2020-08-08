@@ -22,34 +22,27 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReport do
   ## Attributes
 
   *   `chartType` (*type:* `String.t`, *default:* `nil`) - This field contains the chart type for the report
-  *   `comments` (*type:* `list(String.t)`, *default:* `nil`) - Legacy field: not used. This field contains a list of comments associated
-      with custom report
-  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Unix time when the app was created
-      json key: createdAt
+  *   `comments` (*type:* `list(String.t)`, *default:* `nil`) - Legacy field: not used. This field contains a list of comments associated with custom report
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Unix time when the app was created json key: createdAt
   *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - This contains the list of dimensions for the report
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - This is the display name for the report
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Output only. Environment name
   *   `filter` (*type:* `String.t`, *default:* `nil`) - This field contains the filter expression
   *   `fromTime` (*type:* `String.t`, *default:* `nil`) - Legacy field: not used. Contains the from time for the report
-  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Modified time of this entity as milliseconds since epoch.
-      json key: lastModifiedAt
+  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Modified time of this entity as milliseconds since epoch. json key: lastModifiedAt
   *   `lastViewedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Last viewed time of this entity as milliseconds since epoch
-  *   `limit` (*type:* `String.t`, *default:* `nil`) - Legacy field: not used This field contains the limit for the result
-      retrieved
+  *   `limit` (*type:* `String.t`, *default:* `nil`) - Legacy field: not used This field contains the limit for the result retrieved
   *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReportMetric.t)`, *default:* `nil`) - Required. This contains the list of metrics
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique identifier for the report
-      T his is a legacy field used to encode custom report unique id
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique identifier for the report T his is a legacy field used to encode custom report unique id
   *   `offset` (*type:* `String.t`, *default:* `nil`) - Legacy field: not used. This field contains the offset for the data
   *   `organization` (*type:* `String.t`, *default:* `nil`) - Output only. Organization name
   *   `properties` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReportProperty.t)`, *default:* `nil`) - This field contains report properties such as ui metadata etc.
   *   `sortByCols` (*type:* `list(String.t)`, *default:* `nil`) - Legacy field: not used much. Contains the list of sort by columns
   *   `sortOrder` (*type:* `String.t`, *default:* `nil`) - Legacy field: not used much. Contains the sort order for the sort columns
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Legacy field: not used. This field contains a list of tags associated with
-      custom report
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Legacy field: not used. This field contains a list of tags associated with custom report
   *   `timeUnit` (*type:* `String.t`, *default:* `nil`) - This field contains the time unit of aggregation for the report
   *   `toTime` (*type:* `String.t`, *default:* `nil`) - Legacy field: not used. Contains the end time for the report
-  *   `topk` (*type:* `String.t`, *default:* `nil`) - Legacy field: not used. This field contains the top k parameter value
-      for restricting the result
+  *   `topk` (*type:* `String.t`, *default:* `nil`) - Legacy field: not used. This field contains the top k parameter value for restricting the result
   """
 
   use GoogleApi.Gax.ModelBase

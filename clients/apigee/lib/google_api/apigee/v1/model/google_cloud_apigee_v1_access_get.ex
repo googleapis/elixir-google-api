@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessGet do
   @moduledoc """
-  Get action. For example,
-  "Get" : {
-    "name" : "target.name",
-    "value" : "default"
-  }
+  Get action. For example, "Get" : { "name" : "target.name", "value" : "default" }
 
   ## Attributes
 

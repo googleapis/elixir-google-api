@@ -22,8 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata do
   ## Attributes
 
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Time at which the API proxy was created, in milliseconds since epoch.
-  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Time at which the API proxy was most recently modified, in milliseconds
-      since epoch.
+  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Time at which the API proxy was most recently modified, in milliseconds since epoch.
   *   `subType` (*type:* `String.t`, *default:* `nil`) - The type of entity described
   """
 

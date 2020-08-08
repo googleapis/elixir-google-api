@@ -21,14 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHook do
 
   ## Attributes
 
-  *   `continueOnError` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag that specifies whether execution should continue if the flow hook
-      throws an exception. Set to `true` to continue execution. Set to
-      `false` to stop execution if the flow hook throws an exception.Defaults
-      to `true`.
+  *   `continueOnError` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag that specifies whether execution should continue if the flow hook throws an exception. Set to `true` to continue execution. Set to `false` to stop execution if the flow hook throws an exception.Defaults to `true`.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the flow hook.
-  *   `flowHookPoint` (*type:* `String.t`, *default:* `nil`) - Output only. Where in the API call flow the flow hook is invoked. Must be one of
-      `PreProxyFlowHook`, `PostProxyFlowHook`, `PreTargetFlowHook`, or
-      `PostTargetFlowHook`.
+  *   `flowHookPoint` (*type:* `String.t`, *default:* `nil`) - Output only. Where in the API call flow the flow hook is invoked. Must be one of `PreProxyFlowHook`, `PostProxyFlowHook`, `PreTargetFlowHook`, or `PostTargetFlowHook`.
   *   `sharedFlow` (*type:* `String.t`, *default:* `nil`) - Shared flow attached to this flow hook, or empty if there is none attached.
   """
 

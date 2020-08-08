@@ -21,16 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleRpcPreconditionFailureViolation do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of how the precondition failed. Developers can use this
-      description to understand how to fix the failure.
-
-      For example: "Terms of service not accepted".
-  *   `subject` (*type:* `String.t`, *default:* `nil`) - The subject, relative to the type, that failed.
-      For example, "google.com/cloud" relative to the "TOS" type would indicate
-      which terms of service is being referenced.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of PreconditionFailure. We recommend using a service-specific
-      enum type to define the supported precondition violation subjects. For
-      example, "TOS" for "Terms of Service violation".
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of how the precondition failed. Developers can use this description to understand how to fix the failure. For example: "Terms of service not accepted".
+  *   `subject` (*type:* `String.t`, *default:* `nil`) - The subject, relative to the type, that failed. For example, "google.com/cloud" relative to the "TOS" type would indicate which terms of service is being referenced.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of PreconditionFailure. We recommend using a service-specific enum type to define the supported precondition violation subjects. For example, "TOS" for "Terms of Service violation".
   """
 
   use GoogleApi.Gax.ModelBase

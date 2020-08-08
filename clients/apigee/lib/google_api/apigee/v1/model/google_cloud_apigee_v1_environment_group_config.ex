@@ -17,21 +17,15 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig do
   @moduledoc """
-  EnvironmentGroupConfig is a revisioned snapshot of an EnvironmentGroup and
-  its associated routing rules.
+  EnvironmentGroupConfig is a revisioned snapshot of an EnvironmentGroup and its associated routing rules.
 
   ## Attributes
 
   *   `hostnames` (*type:* `list(String.t)`, *default:* `nil`) - Host names for the environment group.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the environment group in the following format:
-      `organizations/{org}/envgroups/{envgroup}`.
-  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision id that defines the ordering of the EnvironmentGroupConfig
-      resource. The higher the revision, the more recently the
-      configuration was deployed.
-  *   `routingRules` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule.t)`, *default:* `nil`) - Ordered list of routing rules defining how traffic to this environment
-      group's hostnames should be routed to different environments.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id for the environment group config that will only change if
-      the environment group is deleted and recreated.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the environment group in the following format: `organizations/{org}/envgroups/{envgroup}`.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision id that defines the ordering of the EnvironmentGroupConfig resource. The higher the revision, the more recently the configuration was deployed.
+  *   `routingRules` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule.t)`, *default:* `nil`) - Ordered list of routing rules defining how traffic to this environment group's hostnames should be routed to different environments.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id for the environment group config that will only change if the environment group is deleted and recreated.
   """
 
   use GoogleApi.Gax.ModelBase

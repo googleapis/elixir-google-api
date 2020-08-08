@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupAttachment do
   @moduledoc """
-  EnvironmentGroupAttachment is a resource which defines an attachment of an
-  environment to an environment group.
+  EnvironmentGroupAttachment is a resource which defines an attachment of an environment to an environment group.
 
   ## Attributes
 
-  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the environment group attachment was created as
-      milliseconds since epoch.
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the environment group attachment was created as milliseconds since epoch.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Required. ID of the attached environment.
   *   `name` (*type:* `String.t`, *default:* `nil`) - ID of the environment group attachment.
   """

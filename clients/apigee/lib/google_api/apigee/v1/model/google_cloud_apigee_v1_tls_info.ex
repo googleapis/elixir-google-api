@@ -17,33 +17,19 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo do
   @moduledoc """
-  TLS configuration information for
-  VirtualHosts and
-  TargetServers.
+  TLS configuration information for VirtualHosts and TargetServers.
 
   ## Attributes
 
-  *   `ciphers` (*type:* `list(String.t)`, *default:* `nil`) - The SSL/TLS cipher suites to be used. Must be one of the cipher suite names
-      listed in:
-      http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#ciphersuites
+  *   `ciphers` (*type:* `list(String.t)`, *default:* `nil`) - The SSL/TLS cipher suites to be used. Must be one of the cipher suite names listed in: http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#ciphersuites
   *   `clientAuthEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enables two-way TLS.
   *   `commonName` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoCommonName.t`, *default:* `nil`) - The TLS Common Name of the certificate.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Required. Enables one-way TLS.
-  *   `ignoreValidationErrors` (*type:* `boolean()`, *default:* `nil`) - If true, Edge ignores TLS certificate errors. Valid when configuring TLS
-      for target servers and target endpoints, and when configuring virtual hosts
-      that use 2-way TLS.
-
-      When used with a target endpoint/target server, if the backend system uses
-      SNI and returns a cert with a subject Distinguished Name (DN) that does not
-      match the hostname, there is no way to ignore the error and the connection
-      fails.
-  *   `keyAlias` (*type:* `String.t`, *default:* `nil`) - Required if `client_auth_enabled` is true. The resource ID for the
-      alias containing the private key and cert.
-  *   `keyStore` (*type:* `String.t`, *default:* `nil`) - Required if `client_auth_enabled` is true. The resource ID of the
-      keystore. References not yet supported.
+  *   `ignoreValidationErrors` (*type:* `boolean()`, *default:* `nil`) - If true, Edge ignores TLS certificate errors. Valid when configuring TLS for target servers and target endpoints, and when configuring virtual hosts that use 2-way TLS. When used with a target endpoint/target server, if the backend system uses SNI and returns a cert with a subject Distinguished Name (DN) that does not match the hostname, there is no way to ignore the error and the connection fails.
+  *   `keyAlias` (*type:* `String.t`, *default:* `nil`) - Required if `client_auth_enabled` is true. The resource ID for the alias containing the private key and cert.
+  *   `keyStore` (*type:* `String.t`, *default:* `nil`) - Required if `client_auth_enabled` is true. The resource ID of the keystore. References not yet supported.
   *   `protocols` (*type:* `list(String.t)`, *default:* `nil`) - The TLS versioins to be used.
-  *   `trustStore` (*type:* `String.t`, *default:* `nil`) - The resource ID of the truststore.
-      References not yet supported.
+  *   `trustStore` (*type:* `String.t`, *default:* `nil`) - The resource ID of the truststore. References not yet supported.
   """
 
   use GoogleApi.Gax.ModelBase

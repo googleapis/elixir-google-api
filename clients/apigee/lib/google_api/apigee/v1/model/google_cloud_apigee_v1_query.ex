@@ -21,48 +21,16 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Query do
 
   ## Attributes
 
-  *   `csvDelimiter` (*type:* `String.t`, *default:* `nil`) - Delimiter used in the CSV file, if `outputFormat` is set
-      to `csv`. Defaults to the `,` (comma) character.
-      Supported delimiter characters include comma (`,`), pipe (`|`),
-      and tab (`\\t`).
-  *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of dimensions.
-      https://docs.apigee.com/api-platform/analytics/analytics-reference#dimensions
-  *   `filter` (*type:* `String.t`, *default:* `nil`) - Boolean expression that can be used to filter data.
-      Filter expressions can be combined using AND/OR terms and should be fully
-      parenthesized to avoid ambiguity. See Analytics metrics, dimensions, and
-      filters reference
-      https://docs.apigee.com/api-platform/analytics/analytics-reference
-      for more information on the fields available to filter
-      on. For more information on the tokens that you use to build filter
-      expressions, see Filter expression syntax.
-      https://docs.apigee.com/api-platform/analytics/asynch-reports-api#filter-expression-syntax
-  *   `groupByTimeUnit` (*type:* `String.t`, *default:* `nil`) - Time unit used to group the result set.
-      Valid values include: second, minute, hour, day, week, or month.
-      If a query includes groupByTimeUnit, then the result is an aggregation
-      based on the specified time unit and the resultant timestamp does not
-      include milliseconds precision.
-      If a query omits groupByTimeUnit, then the resultant timestamp includes
-      milliseconds precision.
+  *   `csvDelimiter` (*type:* `String.t`, *default:* `nil`) - Delimiter used in the CSV file, if `outputFormat` is set to `csv`. Defaults to the `,` (comma) character. Supported delimiter characters include comma (`,`), pipe (`|`), and tab (`\\t`).
+  *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of dimensions. https://docs.apigee.com/api-platform/analytics/analytics-reference#dimensions
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - Boolean expression that can be used to filter data. Filter expressions can be combined using AND/OR terms and should be fully parenthesized to avoid ambiguity. See Analytics metrics, dimensions, and filters reference https://docs.apigee.com/api-platform/analytics/analytics-reference for more information on the fields available to filter on. For more information on the tokens that you use to build filter expressions, see Filter expression syntax. https://docs.apigee.com/api-platform/analytics/asynch-reports-api#filter-expression-syntax
+  *   `groupByTimeUnit` (*type:* `String.t`, *default:* `nil`) - Time unit used to group the result set. Valid values include: second, minute, hour, day, week, or month. If a query includes groupByTimeUnit, then the result is an aggregation based on the specified time unit and the resultant timestamp does not include milliseconds precision. If a query omits groupByTimeUnit, then the resultant timestamp includes milliseconds precision.
   *   `limit` (*type:* `integer()`, *default:* `nil`) - Maximum number of rows that can be returned in the result.
   *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetric.t)`, *default:* `nil`) - A list of Metrics.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Asynchronous Query Name.
-  *   `outputFormat` (*type:* `String.t`, *default:* `nil`) - Valid values include: `csv` or `json`. Defaults to `json`.
-      Note: Configure the delimiter for CSV output using the csvDelimiter
-      property.
+  *   `outputFormat` (*type:* `String.t`, *default:* `nil`) - Valid values include: `csv` or `json`. Defaults to `json`. Note: Configure the delimiter for CSV output using the csvDelimiter property.
   *   `reportDefinitionId` (*type:* `String.t`, *default:* `nil`) - Asynchronous Report ID.
-  *   `timeRange` (*type:* `any()`, *default:* `nil`) - Required. Time range for the query.
-      Can use the following predefined strings to specify the time range:
-        `last60minutes`
-        `last24hours`
-        `last7days`
-      Or, specify the timeRange as a structure describing start and end
-      timestamps in the ISO format: yyyy-mm-ddThh:mm:ssZ.
-
-      Example:
-        "timeRange": {
-          "start": "2018-07-29T00:13:00Z",
-          "end": "2018-08-01T00:18:00Z"
-        }
+  *   `timeRange` (*type:* `any()`, *default:* `nil`) - Required. Time range for the query. Can use the following predefined strings to specify the time range: `last60minutes` `last24hours` `last7days` Or, specify the timeRange as a structure describing start and end timestamps in the ISO format: yyyy-mm-ddThh:mm:ssZ. Example: "timeRange": { "start": "2018-07-29T00:13:00Z", "end": "2018-08-01T00:18:00Z" }
   """
 
   use GoogleApi.Gax.ModelBase

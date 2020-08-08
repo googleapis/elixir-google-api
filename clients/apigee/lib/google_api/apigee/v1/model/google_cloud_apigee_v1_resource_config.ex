@@ -22,9 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceConfig do
   ## Attributes
 
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the resource as a URI.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name. Only environment-scoped resource files are supported.
-      Must be of the form
-      'organizations/{org}/environments/{env}/resourcefiles/{type}/{file}/revisions/{rev}'.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name. Only environment-scoped resource files are supported. Must be of the form 'organizations/{org}/environments/{env}/resourcefiles/{type}/{file}/revisions/{rev}'.
   """
 
   use GoogleApi.Gax.ModelBase

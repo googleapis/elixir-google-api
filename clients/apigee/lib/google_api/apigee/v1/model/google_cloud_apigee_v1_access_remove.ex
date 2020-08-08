@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessRemove do
   @moduledoc """
-  Remove action. For example,
-  "Remove" : {
-    "name" : "target.name",
-    "success" : true
-  }
+  Remove action. For example, "Remove" : { "name" : "target.name", "success" : true }
 
   ## Attributes
 

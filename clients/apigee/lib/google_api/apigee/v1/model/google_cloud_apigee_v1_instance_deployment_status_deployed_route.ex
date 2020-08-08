@@ -23,8 +23,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusD
 
   *   `basepath` (*type:* `String.t`, *default:* `nil`) - The basepath in the routing table.
   *   `envgroup` (*type:* `String.t`, *default:* `nil`) - The envgroup where this route is installed.
-  *   `environment` (*type:* `String.t`, *default:* `nil`) - The destination environment. This will be empty if the route is not yet
-      reported.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - The destination environment. This will be empty if the route is not yet reported.
   *   `percentage` (*type:* `integer()`, *default:* `nil`) - The percentage of ingress replicas reporting this route.
   """
 
