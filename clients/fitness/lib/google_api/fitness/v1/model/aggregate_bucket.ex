@@ -23,13 +23,10 @@ defmodule GoogleApi.Fitness.V1.Model.AggregateBucket do
 
   *   `activity` (*type:* `integer()`, *default:* `nil`) - Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT
   *   `dataset` (*type:* `list(GoogleApi.Fitness.V1.Model.Dataset.t)`, *default:* `nil`) - There will be one dataset per AggregateBy in the request.
-  *   `endTimeMillis` (*type:* `String.t`, *default:* `nil`) - The end time for the aggregated data, in milliseconds since epoch,
-      inclusive.
+  *   `endTimeMillis` (*type:* `String.t`, *default:* `nil`) - The end time for the aggregated data, in milliseconds since epoch, inclusive.
   *   `session` (*type:* `GoogleApi.Fitness.V1.Model.Session.t`, *default:* `nil`) - Available for Bucket.Type.SESSION
-  *   `startTimeMillis` (*type:* `String.t`, *default:* `nil`) - The start time for the aggregated data, in milliseconds since epoch,
-      inclusive.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of a bucket signifies how the data aggregation is performed in the
-      bucket.
+  *   `startTimeMillis` (*type:* `String.t`, *default:* `nil`) - The start time for the aggregated data, in milliseconds since epoch, inclusive.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of a bucket signifies how the data aggregation is performed in the bucket.
   """
 
   use GoogleApi.Gax.ModelBase
