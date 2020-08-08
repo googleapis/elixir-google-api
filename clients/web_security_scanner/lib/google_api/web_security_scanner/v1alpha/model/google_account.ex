@@ -21,8 +21,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.GoogleAccount do
 
   ## Attributes
 
-  *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The password of the Google account. The credential is stored encrypted
-      and not returned in any response nor included in audit logs.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The password of the Google account. The credential is stored encrypted and not returned in any response nor included in audit logs.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. The user name of the Google account.
   """
 

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanRunWarningTrace do
   @moduledoc """
-  Output only.
-  Defines a warning trace message for ScanRun. Warning traces provide customers
-  with useful information that helps make the scanning process more effective.
+  Output only. Defines a warning trace message for ScanRun. Warning traces provide customers with useful information that helps make the scanning process more effective.
 
   ## Attributes
 

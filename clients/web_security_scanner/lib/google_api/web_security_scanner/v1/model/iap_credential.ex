@@ -21,8 +21,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.IapCredential do
 
   ## Attributes
 
-  *   `iapTestServiceAccountInfo` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.IapTestServiceAccountInfo.t`, *default:* `nil`) - Authentication configuration when Web-Security-Scanner service
-      account is added in Identity-Aware-Proxy (IAP) access policies.
+  *   `iapTestServiceAccountInfo` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.IapTestServiceAccountInfo.t`, *default:* `nil`) - Authentication configuration when Web-Security-Scanner service account is added in Identity-Aware-Proxy (IAP) access policies.
   """
 
   use GoogleApi.Gax.ModelBase

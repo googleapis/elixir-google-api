@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanRunErrorTrace do
   @moduledoc """
-  Output only.
-  Defines an error trace message for a ScanRun.
+  Output only. Defines an error trace message for a ScanRun.
 
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the error reason code.
-  *   `mostCommonHttpErrorCode` (*type:* `integer()`, *default:* `nil`) - Output only. If the scan encounters TOO_MANY_HTTP_ERRORS, this field indicates the most
-      common HTTP error code, if such is available. For example, if this code is
-      404, the scan has encountered too many NOT_FOUND responses.
-  *   `scanConfigError` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.ScanConfigError.t`, *default:* `nil`) - Output only. If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
-      message encountered during scan configuration validation that is performed
-      before each scan run.
+  *   `mostCommonHttpErrorCode` (*type:* `integer()`, *default:* `nil`) - Output only. If the scan encounters TOO_MANY_HTTP_ERRORS, this field indicates the most common HTTP error code, if such is available. For example, if this code is 404, the scan has encountered too many NOT_FOUND responses.
+  *   `scanConfigError` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.ScanConfigError.t`, *default:* `nil`) - Output only. If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error message encountered during scan configuration validation that is performed before each scan run.
   """
 
   use GoogleApi.Gax.ModelBase

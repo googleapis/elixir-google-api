@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.CrawledUrl do
   @moduledoc """
-  A CrawledUrl resource represents a URL that was crawled during a ScanRun. Web
-  Security Scanner Service crawls the web applications, following all links
-  within the scope of sites, to find the URLs to test against.
+  A CrawledUrl resource represents a URL that was crawled during a ScanRun. Web Security Scanner Service crawls the web applications, following all links within the scope of sites, to find the URLs to test against.
 
   ## Attributes
 
   *   `body` (*type:* `String.t`, *default:* `nil`) - Output only. The body of the request that was used to visit the URL.
-  *   `httpMethod` (*type:* `String.t`, *default:* `nil`) - Output only. The http method of the request that was used to visit the URL, in
-      uppercase.
+  *   `httpMethod` (*type:* `String.t`, *default:* `nil`) - Output only. The http method of the request that was used to visit the URL, in uppercase.
   *   `url` (*type:* `String.t`, *default:* `nil`) - Output only. The URL that was crawled.
   """
 
