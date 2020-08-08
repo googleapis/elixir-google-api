@@ -22,9 +22,7 @@ defmodule GoogleApi.LibraryAgent.V1.Model.GoogleExampleLibraryagentV1Book do
   ## Attributes
 
   *   `author` (*type:* `String.t`, *default:* `nil`) - The name of the book author.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the book.
-      Book names have the form `shelves/{shelf_id}/books/{book_id}`.
-      The name is ignored when creating a book.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the book. Book names have the form `shelves/{shelf_id}/books/{book_id}`. The name is ignored when creating a book.
   *   `read` (*type:* `boolean()`, *default:* `nil`) - Value indicating whether the book has been read.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the book.
   """
