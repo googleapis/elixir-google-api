@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1GenerateServiceAccountResponse do
   @moduledoc """
-  Response message for the `GenerateServiceAccount` method.
-
-  This response message is assigned to the `response` field of the returned
-  Operation when that operation is done.
+  Response message for the `GenerateServiceAccount` method. This response message is assigned to the `response` field of the returned Operation when that operation is done.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ServiceConsumerManagement.V1.Model.UndeleteTenantProjectRequest do
   @moduledoc """
-  Request message to undelete tenant project resource previously deleted from
-  the tenancy unit.
+  Request message to undelete tenant project resource previously deleted from the tenancy unit.
 
   ## Attributes
 

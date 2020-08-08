@@ -23,12 +23,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1ServiceAccount do
 
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the service account.
   *   `iamAccountName` (*type:* `String.t`, *default:* `nil`) - Deprecated. See b/136209818.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - P4 SA resource name.
-
-      An example name would be:
-      `services/serviceconsumermanagement.googleapis.com/projects/123/serviceAccounts/default`
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - The P4 SA configuration tag. This must be defined in activation_grants.
-      If not specified when creating the account, the tag is set to "default".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - P4 SA resource name. An example name would be: `services/serviceconsumermanagement.googleapis.com/projects/123/serviceAccounts/default`
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - The P4 SA configuration tag. This must be defined in activation_grants. If not specified when creating the account, the tag is set to "default".
   *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - The unique and stable id of the service account.
   """
 

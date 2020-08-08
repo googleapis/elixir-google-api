@@ -21,8 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BillingConfig do
 
   ## Attributes
 
-  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Name of the billing account.
-      For example `billingAccounts/012345-567890-ABCDEF`.
+  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Name of the billing account. For example `billingAccounts/012345-567890-ABCDEF`.
   """
 
   use GoogleApi.Gax.ModelBase
