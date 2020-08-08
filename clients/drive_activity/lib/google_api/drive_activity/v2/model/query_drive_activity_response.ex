@@ -22,8 +22,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.QueryDriveActivityResponse do
   ## Attributes
 
   *   `activities` (*type:* `list(GoogleApi.DriveActivity.V2.Model.DriveActivity.t)`, *default:* `nil`) - List of activity requested.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or
-      empty if there are no more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

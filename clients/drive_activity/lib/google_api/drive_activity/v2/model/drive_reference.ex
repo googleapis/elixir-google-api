@@ -21,9 +21,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.DriveReference do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the shared drive. The format is
-      "COLLECTION_ID/DRIVE_ID". Clients should not assume a specific collection
-      ID for this resource name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the shared drive. The format is "COLLECTION_ID/DRIVE_ID". Clients should not assume a specific collection ID for this resource name.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the shared drive.
   """
 

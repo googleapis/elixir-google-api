@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DriveActivity.V2.Model.Impersonation do
   @moduledoc """
-  Information about an impersonation, where an admin acts on behalf of an end
-  user. Information about the acting admin is not currently available.
+  Information about an impersonation, where an admin acts on behalf of an end user. Information about the acting admin is not currently available.
 
   ## Attributes
 

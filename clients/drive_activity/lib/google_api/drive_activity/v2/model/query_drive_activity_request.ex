@@ -21,39 +21,12 @@ defmodule GoogleApi.DriveActivity.V2.Model.QueryDriveActivityRequest do
 
   ## Attributes
 
-  *   `ancestorName` (*type:* `String.t`, *default:* `nil`) - Return activities for this Drive folder and all children and descendants.
-      The format is "items/ITEM_ID".
-  *   `consolidationStrategy` (*type:* `GoogleApi.DriveActivity.V2.Model.ConsolidationStrategy.t`, *default:* `nil`) - Details on how to consolidate related actions that make up the activity. If
-      not set, then related actions are not consolidated.
-  *   `filter` (*type:* `String.t`, *default:* `nil`) - The filtering for items returned from this query request. The format of the
-      filter string is a sequence of expressions, joined by an optional "AND",
-      where each expression is of the form "field operator value".
-
-      Supported fields:
-
-        - <tt>time</tt>: Uses numerical operators on date values either in
-          terms of milliseconds since Jan 1, 1970 or in RFC 3339 format.
-          Examples:
-            - <tt>time > 1452409200000 AND time <= 1492812924310</tt>
-            - <tt>time >= "2016-01-10T01:02:03-05:00"</tt>
-
-        - <tt>detail.action_detail_case</tt>: Uses the "has" operator (:) and
-          either a singular value or a list of allowed action types enclosed in
-          parentheses.
-          Examples:
-            - <tt>detail.action_detail_case: RENAME</tt>
-            - <tt>detail.action_detail_case:(CREATE EDIT)</tt>
-            - <tt>-detail.action_detail_case:MOVE</tt>
-  *   `itemName` (*type:* `String.t`, *default:* `nil`) - Return activities for this Drive item. The format is
-      "items/ITEM_ID".
-  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The miminum number of activities desired in the response; the server will
-      attempt to return at least this quanitity. The server may also return fewer
-      activities if it has a partial response ready before the request times out.
-      If not set, a default value is used.
-  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - The token identifying which page of results to return. Set this to the
-      next_page_token value returned from a previous query to obtain the
-      following page of results. If not set, the first page of results will be
-      returned.
+  *   `ancestorName` (*type:* `String.t`, *default:* `nil`) - Return activities for this Drive folder and all children and descendants. The format is "items/ITEM_ID".
+  *   `consolidationStrategy` (*type:* `GoogleApi.DriveActivity.V2.Model.ConsolidationStrategy.t`, *default:* `nil`) - Details on how to consolidate related actions that make up the activity. If not set, then related actions are not consolidated.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - The filtering for items returned from this query request. The format of the filter string is a sequence of expressions, joined by an optional "AND", where each expression is of the form "field operator value". Supported fields: - time: Uses numerical operators on date values either in terms of milliseconds since Jan 1, 1970 or in RFC 3339 format. Examples: - time > 1452409200000 AND time <= 1492812924310 - time >= "2016-01-10T01:02:03-05:00" - detail.action_detail_case: Uses the "has" operator (:) and either a singular value or a list of allowed action types enclosed in parentheses. Examples: - detail.action_detail_case: RENAME - detail.action_detail_case:(CREATE EDIT) - -detail.action_detail_case:MOVE
+  *   `itemName` (*type:* `String.t`, *default:* `nil`) - Return activities for this Drive item. The format is "items/ITEM_ID".
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The miminum number of activities desired in the response; the server will attempt to return at least this quanitity. The server may also return fewer activities if it has a partial response ready before the request times out. If not set, a default value is used.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - The token identifying which page of results to return. Set this to the next_page_token value returned from a previous query to obtain the following page of results. If not set, the first page of results will be returned.
   """
 
   use GoogleApi.Gax.ModelBase
