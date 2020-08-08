@@ -51,6 +51,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
       - group 
       - domain 
       - anyone  When creating a permission, if type is user or group, you must provide an emailAddress for the user or group. When type is domain, you must provide a domain. There isn't extra information required for a anyone type.
+  *   `view` (*type:* `String.t`, *default:* `nil`) - Indicates the view for this permission. Only populated for permissions that belong to a view. published is the only supported value.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -69,7 +70,8 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
           :role => String.t(),
           :teamDrivePermissionDetails =>
             list(GoogleApi.Drive.V3.Model.PermissionTeamDrivePermissionDetails.t()),
-          :type => String.t()
+          :type => String.t(),
+          :view => String.t()
         }
 
   field(:allowFileDiscovery)
@@ -90,6 +92,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
   )
 
   field(:type)
+  field(:view)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.Permission do
