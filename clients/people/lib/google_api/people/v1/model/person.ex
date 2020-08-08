@@ -34,6 +34,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `occupations` (*type:* `list(GoogleApi.People.V1.Model.Occupation.t)`, *default:* `nil`) - The person's occupations.
   *   `imClients` (*type:* `list(GoogleApi.People.V1.Model.ImClient.t)`, *default:* `nil`) - The person's instant messaging clients.
   *   `addresses` (*type:* `list(GoogleApi.People.V1.Model.Address.t)`, *default:* `nil`) - The person's street addresses.
+  *   `clientData` (*type:* `list(GoogleApi.People.V1.Model.ClientData.t)`, *default:* `nil`) - The person's client data.
   *   `skills` (*type:* `list(GoogleApi.People.V1.Model.Skill.t)`, *default:* `nil`) - The person's skills.
   *   `phoneNumbers` (*type:* `list(GoogleApi.People.V1.Model.PhoneNumber.t)`, *default:* `nil`) - The person's phone numbers.
   *   `relations` (*type:* `list(GoogleApi.People.V1.Model.Relation.t)`, *default:* `nil`) - The person's relations.
@@ -75,6 +76,7 @@ defmodule GoogleApi.People.V1.Model.Person do
           :occupations => list(GoogleApi.People.V1.Model.Occupation.t()),
           :imClients => list(GoogleApi.People.V1.Model.ImClient.t()),
           :addresses => list(GoogleApi.People.V1.Model.Address.t()),
+          :clientData => list(GoogleApi.People.V1.Model.ClientData.t()),
           :skills => list(GoogleApi.People.V1.Model.Skill.t()),
           :phoneNumbers => list(GoogleApi.People.V1.Model.PhoneNumber.t()),
           :relations => list(GoogleApi.People.V1.Model.Relation.t()),
@@ -113,6 +115,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   field(:occupations, as: GoogleApi.People.V1.Model.Occupation, type: :list)
   field(:imClients, as: GoogleApi.People.V1.Model.ImClient, type: :list)
   field(:addresses, as: GoogleApi.People.V1.Model.Address, type: :list)
+  field(:clientData, as: GoogleApi.People.V1.Model.ClientData, type: :list)
   field(:skills, as: GoogleApi.People.V1.Model.Skill, type: :list)
   field(:phoneNumbers, as: GoogleApi.People.V1.Model.PhoneNumber, type: :list)
   field(:relations, as: GoogleApi.People.V1.Model.Relation, type: :list)
