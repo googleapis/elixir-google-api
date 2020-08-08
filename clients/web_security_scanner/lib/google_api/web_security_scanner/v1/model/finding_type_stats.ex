@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.WebSecurityScanner.V1.Model.FindingTypeStats do
   @moduledoc """
-  A FindingTypeStats resource represents stats regarding a specific FindingType
-  of Findings under a given ScanRun.
+  A FindingTypeStats resource represents stats regarding a specific FindingType of Findings under a given ScanRun.
 
   ## Attributes
 

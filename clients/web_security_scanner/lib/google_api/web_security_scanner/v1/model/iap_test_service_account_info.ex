@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.WebSecurityScanner.V1.Model.IapTestServiceAccountInfo do
   @moduledoc """
-  Describes authentication configuration when Web-Security-Scanner
-  service account is added in Identity-Aware-Proxy (IAP) access policies.
+  Describes authentication configuration when Web-Security-Scanner service account is added in Identity-Aware-Proxy (IAP) access policies.
 
   ## Attributes
 
-  *   `targetAudienceClientId` (*type:* `String.t`, *default:* `nil`) - Required. Describes OAuth2 client id of resources protected by
-      Identity-Aware-Proxy (IAP).
+  *   `targetAudienceClientId` (*type:* `String.t`, *default:* `nil`) - Required. Describes OAuth2 client id of resources protected by Identity-Aware-Proxy (IAP).
   """
 
   use GoogleApi.Gax.ModelBase

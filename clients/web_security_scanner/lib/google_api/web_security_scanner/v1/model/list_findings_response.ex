@@ -22,8 +22,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ListFindingsResponse do
   ## Attributes
 
   *   `findings` (*type:* `list(GoogleApi.WebSecurityScanner.V1.Model.Finding.t)`, *default:* `nil`) - The list of Findings returned.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

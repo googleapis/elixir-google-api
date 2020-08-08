@@ -21,8 +21,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.ListScanConfigsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   *   `scanConfigs` (*type:* `list(GoogleApi.WebSecurityScanner.V1alpha.Model.ScanConfig.t)`, *default:* `nil`) - The list of ScanConfigs returned.
   """
 

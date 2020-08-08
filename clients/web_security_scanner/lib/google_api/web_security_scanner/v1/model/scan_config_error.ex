@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanConfigError do
   @moduledoc """
-  Defines a custom error message used by CreateScanConfig and UpdateScanConfig
-  APIs when scan configuration validation fails. It is also reported as part of
-  a ScanRunErrorTrace message if scan validation fails due to a scan
-  configuration error.
+  Defines a custom error message used by CreateScanConfig and UpdateScanConfig APIs when scan configuration validation fails. It is also reported as part of a ScanRunErrorTrace message if scan validation fails due to a scan configuration error.
 
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the reason code for a configuration failure.
-  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the full name of the ScanConfig field that triggers this error,
-      for example "scan_config.max_qps". This field is provided for
-      troubleshooting purposes only and its actual value can change in the
-      future.
+  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the full name of the ScanConfig field that triggers this error, for example "scan_config.max_qps". This field is provided for troubleshooting purposes only and its actual value can change in the future.
   """
 
   use GoogleApi.Gax.ModelBase

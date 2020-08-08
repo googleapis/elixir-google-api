@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.WebSecurityScanner.V1.Model.ViolatingResource do
   @moduledoc """
-  Information regarding any resource causing the vulnerability such
-  as JavaScript sources, image, audio files, etc.
+  Information regarding any resource causing the vulnerability such as JavaScript sources, image, audio files, etc.
 
   ## Attributes
 

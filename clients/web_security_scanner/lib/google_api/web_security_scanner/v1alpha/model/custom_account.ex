@@ -22,8 +22,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.CustomAccount do
   ## Attributes
 
   *   `loginUrl` (*type:* `String.t`, *default:* `nil`) - Required. The login form URL of the website.
-  *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The password of the custom account. The credential is stored encrypted
-      and not returned in any response nor included in audit logs.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The password of the custom account. The credential is stored encrypted and not returned in any response nor included in audit logs.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. The user name of the custom account.
   """
 
