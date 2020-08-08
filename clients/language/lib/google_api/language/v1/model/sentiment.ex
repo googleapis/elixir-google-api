@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.Language.V1.Model.Sentiment do
   @moduledoc """
-  Represents the feeling associated with the entire text or entities in
-  the text.
+  Represents the feeling associated with the entire text or entities in the text.
 
   ## Attributes
 
-  *   `magnitude` (*type:* `number()`, *default:* `nil`) - A non-negative number in the [0, +inf) range, which represents
-      the absolute magnitude of sentiment regardless of score (positive or
-      negative).
-  *   `score` (*type:* `number()`, *default:* `nil`) - Sentiment score between -1.0 (negative sentiment) and 1.0
-      (positive sentiment).
+  *   `magnitude` (*type:* `number()`, *default:* `nil`) - A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment regardless of score (positive or negative).
+  *   `score` (*type:* `number()`, *default:* `nil`) - Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
   """
 
   use GoogleApi.Gax.ModelBase

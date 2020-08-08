@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Language.V1.Model.Features do
   @moduledoc """
-  All available features for sentiment, syntax, and semantic analysis.
-  Setting each one to true will enable that specific analysis for the input.
+  All available features for sentiment, syntax, and semantic analysis. Setting each one to true will enable that specific analysis for the input.
 
   ## Attributes
 

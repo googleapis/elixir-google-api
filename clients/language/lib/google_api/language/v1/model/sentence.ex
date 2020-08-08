@@ -21,9 +21,7 @@ defmodule GoogleApi.Language.V1.Model.Sentence do
 
   ## Attributes
 
-  *   `sentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeSentiment or if
-      AnnotateTextRequest.Features.extract_document_sentiment is set to
-      true, this field will contain the sentiment for the sentence.
+  *   `sentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeSentiment or if AnnotateTextRequest.Features.extract_document_sentiment is set to true, this field will contain the sentiment for the sentence.
   *   `text` (*type:* `GoogleApi.Language.V1.Model.TextSpan.t`, *default:* `nil`) - The sentence text.
   """
 

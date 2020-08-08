@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Language.V1.Model.EntityMention do
   @moduledoc """
-  Represents a mention for an entity in the text. Currently, proper noun
-  mentions are supported.
+  Represents a mention for an entity in the text. Currently, proper noun mentions are supported.
 
   ## Attributes
 
-  *   `sentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeEntitySentiment or if
-      AnnotateTextRequest.Features.extract_entity_sentiment is set to
-      true, this field will contain the sentiment expressed for this mention of
-      the entity in the provided document.
+  *   `sentiment` (*type:* `GoogleApi.Language.V1.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeEntitySentiment or if AnnotateTextRequest.Features.extract_entity_sentiment is set to true, this field will contain the sentiment expressed for this mention of the entity in the provided document.
   *   `text` (*type:* `GoogleApi.Language.V1.Model.TextSpan.t`, *default:* `nil`) - The mention text.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the entity mention.
   """
