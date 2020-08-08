@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig d
 
   *   `integratedGradientsAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution.t`, *default:* `nil`) - Attributes credit by computing the Aumann-Shapley value taking advantage
       of the model's fully differentiable structure. Refer to this paper for
-      more details: http://proceedings.mlr.press/v70/sundararajan17a.html
+      more details: https://arxiv.org/abs/1703.01365
   *   `sampledShapleyAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttribution.t`, *default:* `nil`) - An attribution method that approximates Shapley values for features that
       contribute to the label being predicted. A sampling strategy is used to
       approximate the value rather than considering all subsets of features.

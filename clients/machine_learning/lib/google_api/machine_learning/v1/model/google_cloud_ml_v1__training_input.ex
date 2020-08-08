@@ -137,16 +137,15 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
       field. Learn more about the [special configuration options for training
       with
       TPUs](/ml-engine/docs/tensorflow/using-tpus#configuring_a_custom_tpu_machine).
-  *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Google Compute Engine
-      [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-      is peered. For example, projects/12345/global/networks/myVPC. Format is of
-      the form projects/{project}/global/networks/{network}. Where {project} is a
-      project number, as in '12345', and {network} is network name.".
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the [Compute Engine network](/vpc/docs/vpc) to which the
+      Job is peered. For example, `projects/12345/global/networks/myVPC`. The
+      format of this field is `projects/{project}/global/networks/{network}`,
+      where {project} is a project number (like `12345`) and {network} is network
+      name.
 
       Private services access must already be configured for the network. If left
-      unspecified, the Job is not peered with any network. Learn more -
-      Connecting Job to user network over private
-      IP.
+      unspecified, the Job is not peered with any network. [Learn about using VPC
+      Network Peering.](/ai-platform/training/docs/vpc-peering).
   *   `packageUris` (*type:* `list(String.t)`, *default:* `nil`) - Required. The Google Cloud Storage location of the packages with
       the training program and any additional dependencies.
       The maximum number of package URIs is 100.
@@ -207,9 +206,16 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   *   `scaleTier` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the machine types, the number of replicas for workers
       and parameter servers.
   *   `scheduling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling.t`, *default:* `nil`) - Optional. Scheduling options for a training job.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the service account for workload run-as account.
-      Users submitting jobs must have act-as permission on this run-as account.
-      If not specified, then CMLE P4SA will be used by default.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The email address of a service account to use when running the
+      training appplication. You must have the `iam.serviceAccounts.actAs`
+      permission for the specified service account. In addition, the AI Platform
+      Training Google-managed service account must have the
+      `roles/iam.serviceAccountAdmin` role for the specified service account.
+      [Learn more about configuring a service
+      account.](/ai-platform/training/docs/custom-service-account)
+
+      If not specified, the AI Platform Training Google-managed service account
+      is used by default.
   *   `useChiefInTfConfig` (*type:* `boolean()`, *default:* `nil`) - Optional. Use `chief` instead of `master` in the `TF_CONFIG` environment
       variable when training with a custom container. Defaults to `false`. [Learn
       more about this
