@@ -22,21 +22,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1PodStatus do
   ## Attributes
 
   *   `appVersion` (*type:* `String.t`, *default:* `nil`) - Version of the application running in the pod.
-  *   `deploymentStatus` (*type:* `String.t`, *default:* `nil`) - Status of the deployment. Valid values
-      include:
-      - `deployed`: Successful.
-      - `error` : Failed.
-      - `pending` : Pod has not yet reported on the deployment.
+  *   `deploymentStatus` (*type:* `String.t`, *default:* `nil`) - Status of the deployment. Valid values include: - `deployed`: Successful. - `error` : Failed. - `pending` : Pod has not yet reported on the deployment.
   *   `deploymentStatusTime` (*type:* `String.t`, *default:* `nil`) - Time the deployment status was reported in milliseconds since epoch.
   *   `deploymentTime` (*type:* `String.t`, *default:* `nil`) - Time the proxy was deployed in milliseconds since epoch.
   *   `podName` (*type:* `String.t`, *default:* `nil`) - Name of the pod which is reporting the status.
-  *   `podStatus` (*type:* `String.t`, *default:* `nil`) - Overall status of the pod (not this specific deployment). Valid values
-      include:
-      - `active`: Up to date.
-      - `stale` : Recently out of date.
-
-      Pods that have not reported status in a
-      long time are excluded from the output.
+  *   `podStatus` (*type:* `String.t`, *default:* `nil`) - Overall status of the pod (not this specific deployment). Valid values include: - `active`: Up to date. - `stale` : Recently out of date. Pods that have not reported status in a long time are excluded from the output.
   *   `podStatusTime` (*type:* `String.t`, *default:* `nil`) - Time the pod status was reported in milliseconds since epoch.
   *   `statusCode` (*type:* `String.t`, *default:* `nil`) - Code associated with the deployment status.
   *   `statusCodeDetails` (*type:* `String.t`, *default:* `nil`) - Human-readable message associated with the status code.

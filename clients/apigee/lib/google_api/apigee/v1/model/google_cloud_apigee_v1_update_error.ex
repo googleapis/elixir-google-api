@@ -23,10 +23,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1UpdateError do
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - Status code.
   *   `message` (*type:* `String.t`, *default:* `nil`) - User-friendly error message.
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - The sub resource specific to this error (e.g. a proxy deployed within the
-      EnvironmentConfig). If empty the error refers to the top level resource.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - A string that uniquely identifies the type of error. This provides a
-      more reliable means to deduplicate errors across revisions and instances.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - The sub resource specific to this error (e.g. a proxy deployed within the EnvironmentConfig). If empty the error refers to the top level resource.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - A string that uniquely identifies the type of error. This provides a more reliable means to deduplicate errors across revisions and instances.
   """
 
   use GoogleApi.Gax.ModelBase

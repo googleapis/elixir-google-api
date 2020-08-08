@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetric do
   @moduledoc """
-  More info about Metric:
-  https://docs.apigee.com/api-platform/analytics/analytics-reference#metrics
+  More info about Metric: https://docs.apigee.com/api-platform/analytics/analytics-reference#metrics
 
   ## Attributes
 
-  *   `alias` (*type:* `String.t`, *default:* `nil`) - Alias for the metric. Alias will be used to replace metric name
-      in query results.
+  *   `alias` (*type:* `String.t`, *default:* `nil`) - Alias for the metric. Alias will be used to replace metric name in query results.
   *   `function` (*type:* `String.t`, *default:* `nil`) - Aggregation function: avg, min, max, or sum.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Metric name.
   *   `operator` (*type:* `String.t`, *default:* `nil`) - One of `+`, `-`, `/`, `%`, `*`.

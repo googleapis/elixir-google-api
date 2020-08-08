@@ -17,24 +17,16 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServer do
   @moduledoc """
-  TargetServer configuration. TargetServers are used to decouple a proxy's
-  TargetEndpoint HTTPTargetConnections from concrete URLs for backend services.
+  TargetServer configuration. TargetServers are used to decouple a proxy's TargetEndpoint HTTPTargetConnections from concrete URLs for backend services.
 
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A human-readable description of this TargetServer.
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Required. The host name this target connects to. Value must be a valid
-      hostname as described by RFC-1123.
-  *   `isEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enabling/disabling a TargetServer is useful when TargetServers
-      are used in load balancing configurations, and one or more TargetServers
-      need to taken out of rotation periodically. Defaults to true.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource id of this target server. Values must match the
-      regular expression 
-  *   `port` (*type:* `integer()`, *default:* `nil`) - Required. The port number this target connects to on the given host. Value
-      must be between 1 and 65535, inclusive.
-  *   `sSLInfo` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo.t`, *default:* `nil`) - Optional. Specifies TLS configuration info for this TargetServer. The JSON
-      name is `sSLInfo` for legacy/backwards compatibility reasons -- Edge
-      originally supported SSL, and the name is still used for TLS configuration.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Required. The host name this target connects to. Value must be a valid hostname as described by RFC-1123.
+  *   `isEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enabling/disabling a TargetServer is useful when TargetServers are used in load balancing configurations, and one or more TargetServers need to taken out of rotation periodically. Defaults to true.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource id of this target server. Values must match the regular expression 
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Required. The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive.
+  *   `sSLInfo` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo.t`, *default:* `nil`) - Optional. Specifies TLS configuration info for this TargetServer. The JSON name is `sSLInfo` for legacy/backwards compatibility reasons -- Edge originally supported SSL, and the name is still used for TLS configuration.
   """
 
   use GoogleApi.Gax.ModelBase

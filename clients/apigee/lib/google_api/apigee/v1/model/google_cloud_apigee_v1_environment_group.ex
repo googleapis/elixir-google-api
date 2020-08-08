@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroup do
   @moduledoc """
-  EnvironmentGroup configuration. An environment group is used to group one or
-  more Apigee environments under a single host name.
+  EnvironmentGroup configuration. An environment group is used to group one or more Apigee environments under a single host name.
 
   ## Attributes
 
-  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the environment group was created as milliseconds since
-      epoch.
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the environment group was created as milliseconds since epoch.
   *   `hostnames` (*type:* `list(String.t)`, *default:* `nil`) - Required. Host names for this environment group.
-  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the environment group was last updated as milliseconds
-      since epoch.
+  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the environment group was last updated as milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - ID of the environment group.
   """
 

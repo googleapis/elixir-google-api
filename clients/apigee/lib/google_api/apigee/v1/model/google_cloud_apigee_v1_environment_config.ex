@@ -28,22 +28,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
   *   `featureFlags` (*type:* `map()`, *default:* `nil`) - Feature flags inherited from the org and environment parents.
   *   `flowhooks` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig.t)`, *default:* `nil`) - A list of flow hooks in the environment.
   *   `keystores` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig.t)`, *default:* `nil`) - A list of keystores in the environment.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the environment config. Must be of the form
-      'organizations/{org}/environments/{env}/configs/{config_id}
-  *   `provider` (*type:* `String.t`, *default:* `nil`) - This field can be used by the control plane to add some context
-      information about itself. This information could help detect the source of
-      the document during diagnostics and debugging.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the environment config. Must be of the form 'organizations/{org}/environments/{env}/configs/{config_id}
+  *   `provider` (*type:* `String.t`, *default:* `nil`) - This field can be used by the control plane to add some context information about itself. This information could help detect the source of the document during diagnostics and debugging.
   *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - Name of the pubsub topic for this environment.
   *   `resourceReferences` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReferenceConfig.t)`, *default:* `nil`) - A list of resource references in the environment.
   *   `resources` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceConfig.t)`, *default:* `nil`) - A list of resource versions in the environment.
-  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision id that defines the ordering on the environment config.
-      The higher the revision, the more recently the configuration
-      was deployed.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision id that defines the ordering on the environment config. The higher the revision, the more recently the configuration was deployed.
   *   `sequenceNumber` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: use revision_id
-  *   `targets` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig.t)`, *default:* `nil`) - A list of target servers in the environment. Disabled target servers are
-      not included.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id for the environment config that will only change if the
-      environment is deleted and recreated.
+  *   `targets` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig.t)`, *default:* `nil`) - A list of target servers in the environment. Disabled target servers are not included.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id for the environment config that will only change if the environment is deleted and recreated.
   """
 
   use GoogleApi.Gax.ModelBase

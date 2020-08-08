@@ -21,11 +21,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule do
 
   ## Attributes
 
-  *   `basepath` (*type:* `String.t`, *default:* `nil`) - URI path prefix used to route to the specified environment. May contain
-      one or more wildcards. For example, path segments consisting of a single
-      `*` character will match any string.
-  *   `environment` (*type:* `String.t`, *default:* `nil`) - Name of an environment bound to the environment group in the following
-      format: `organizations/{org}/environments/{env}`.
+  *   `basepath` (*type:* `String.t`, *default:* `nil`) - URI path prefix used to route to the specified environment. May contain one or more wildcards. For example, path segments consisting of a single `*` character will match any string.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - Name of an environment bound to the environment group in the following format: `organizations/{org}/environments/{env}`.
   """
 
   use GoogleApi.Gax.ModelBase

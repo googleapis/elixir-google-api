@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListEnvironmentResourcesResponse do
   @moduledoc """
-  Response for
-  ListEnvironmentResources
+  Response for ListEnvironmentResources
 
   ## Attributes
 

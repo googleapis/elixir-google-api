@@ -22,15 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata do
   ## Attributes
 
   *   `errors` (*type:* `list(String.t)`, *default:* `nil`) - List of error messages as strings.
-  *   `notices` (*type:* `list(String.t)`, *default:* `nil`) - List of additional information such as data source, if result was
-      truncated etc.
-      E.g
-      "notices": [
-                   "Source:Postgres",
-                   "PG Host:uappg0rw.e2e.apigeeks.net",
-                   "query served by:4b64601e-40de-4eb1-bfb9-eeee7ac929ed",
-                   "Table used: edge.api.uapgroup2.agg_api"
-        ]
+  *   `notices` (*type:* `list(String.t)`, *default:* `nil`) - List of additional information such as data source, if result was truncated etc. E.g "notices": [ "Source:Postgres", "PG Host:uappg0rw.e2e.apigeeks.net", "query served by:4b64601e-40de-4eb1-bfb9-eeee7ac929ed", "Table used: edge.api.uapgroup2.agg_api" ]
   """
 
   use GoogleApi.Gax.ModelBase

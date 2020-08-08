@@ -27,8 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Credential do
   *   `consumerSecret` (*type:* `String.t`, *default:* `nil`) - Secret key.
   *   `expiresAt` (*type:* `String.t`, *default:* `nil`) - Time the credential will expire in milliseconds since epoch.
   *   `issuedAt` (*type:* `String.t`, *default:* `nil`) - Time the credential was issued in milliseconds since epoch.
-  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - List of scopes to apply to the app. Specified scopes must already
-      exist on the API product that you associate with the app.
+  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - List of scopes to apply to the app. Specified scopes must already exist on the API product that you associate with the app.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the credential.
   """
 

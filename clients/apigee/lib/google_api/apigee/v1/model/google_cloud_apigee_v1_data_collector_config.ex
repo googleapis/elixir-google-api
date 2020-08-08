@@ -21,8 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the data collector. Must be of the form
-      'organizations/{org}/datacollectors/{dc}'.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the data collector. Must be of the form 'organizations/{org}/datacollectors/{dc}'.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The data type this DataCollector accepts.
   """
 

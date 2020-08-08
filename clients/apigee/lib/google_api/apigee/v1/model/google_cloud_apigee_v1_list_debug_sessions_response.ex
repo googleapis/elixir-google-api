@@ -21,10 +21,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListDebugSessionsResponse
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListDebugSessionsRequest to
-      retrieve the next page. If omitted, no subsequent pages exist.
-  *   `sessions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session.t)`, *default:* `nil`) - Session info that includes debug session ID and the first transaction
-      creation timestamp.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListDebugSessionsRequest to retrieve the next page. If omitted, no subsequent pages exist.
+  *   `sessions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session.t)`, *default:* `nil`) - Session info that includes debug session ID and the first transaction creation timestamp.
   """
 
   use GoogleApi.Gax.ModelBase

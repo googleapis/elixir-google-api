@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties do
   @moduledoc """
-  Message for compatibility with legacy Edge specification for Java Properties
-  object in JSON.
+  Message for compatibility with legacy Edge specification for Java Properties object in JSON.
 
   ## Attributes
 

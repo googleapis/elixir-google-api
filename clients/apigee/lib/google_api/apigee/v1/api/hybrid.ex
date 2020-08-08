@@ -26,10 +26,7 @@ defmodule GoogleApi.Apigee.V1.Api.Hybrid do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists hybrid services and its trusted issuers service account ids.
-  This api is authenticated and unauthorized(allow all the users) and used by
-  runtime authn-authz service to query control plane's issuer service account
-  ids.
+  Lists hybrid services and its trusted issuers service account ids. This api is authenticated and unauthorized(allow all the users) and used by runtime authn-authz service to query control plane's issuer service account ids.
 
   ## Parameters
 

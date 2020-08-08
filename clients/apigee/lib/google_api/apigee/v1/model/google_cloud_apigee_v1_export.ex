@@ -25,18 +25,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Export do
   *   `datastoreName` (*type:* `String.t`, *default:* `nil`) - Name of the datastore that is the destination of the export job [datastore]
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the export job.
   *   `error` (*type:* `String.t`, *default:* `nil`) - Output only. Error is set when export fails
-  *   `executionTime` (*type:* `String.t`, *default:* `nil`) - Output only. Execution time for this export job.
-      If the job is still in progress, it will be set to the amount of time that
-      has elapsed since`created`, in seconds.
-      Else, it will set to (`updated` - `created`), in seconds.
+  *   `executionTime` (*type:* `String.t`, *default:* `nil`) - Output only. Execution time for this export job. If the job is still in progress, it will be set to the amount of time that has elapsed since`created`, in seconds. Else, it will set to (`updated` - `created`), in seconds.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Display name of the export job.
-  *   `self` (*type:* `String.t`, *default:* `nil`) - Output only. Self link of the export job.
-      A URI that can be used to retrieve the status of an export job.
-
-      Example:
-      `/organizations/myorg/environments/myenv/analytics/exports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd`
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the export job.
-      Valid values include `enqueued`, `running`, `completed`, and `failed`.
+  *   `self` (*type:* `String.t`, *default:* `nil`) - Output only. Self link of the export job. A URI that can be used to retrieve the status of an export job. Example: `/organizations/myorg/environments/myenv/analytics/exports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd`
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the export job. Valid values include `enqueued`, `running`, `completed`, and `failed`.
   *   `updated` (*type:* `String.t`, *default:* `nil`) - Output only. Time the export job was last updated.
   """
 

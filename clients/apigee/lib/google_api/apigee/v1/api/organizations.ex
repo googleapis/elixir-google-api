@@ -26,9 +26,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates an Apigee organization. See
-  [Create an
-  organization](https://docs.apigee.com/hybrid/latest/precog-provision).
+  Creates an Apigee organization. See [Create an organization](https://docs.apigee.com/hybrid/latest/precog-provision).
 
   ## Parameters
 
@@ -45,10 +43,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - Required. Name of the GCP project in which to associate the Apigee organization.
-          Pass the information as a query parameter using the following structure
-          in your request:
-            `projects/<project>`
+      *   `:parent` (*type:* `String.t`) - Required. Name of the GCP project in which to associate the Apigee organization. Pass the information as a query parameter using the following structure in your request: `projects/`
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -91,15 +86,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the profile for an Apigee organization.
-  See
-  [Organizations](https://docs.apigee.com/hybrid/latest/terminology#organizations).
+  Gets the profile for an Apigee organization. See [Organizations](https://docs.apigee.com/hybrid/latest/terminology#organizations).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Apigee organization name in the following format:
-        `organizations/{org}`
+  *   `name` (*type:* `String.t`) - Required. Apigee organization name in the following format: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -160,8 +152,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the deployed configuration for the organization in the following
-      format: 'organizations/{org}/deployedIngressConfig'.
+  *   `name` (*type:* `String.t`) - Required. Name of the deployed configuration for the organization in the following format: 'organizations/{org}/deployedIngressConfig'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -227,27 +218,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists the service accounts with the permissions required to allow
-  the Synchronizer to download environment data from the control plane.
-
-  An ETag is returned in the response to `getSyncAuthorization`.
-  Pass that ETag when calling [setSyncAuthorization](setSyncAuthorization)
-  to ensure that you are updating the correct version. If you don't pass the
-  ETag in the call to `setSyncAuthorization`, then the existing authorization
-  is overwritten indiscriminately.
-
-  For more information, see
-  [Enable Synchronizer
-  access](https://docs.apigee.com/hybrid/latest/synchronizer-access#enable-synchronizer-access).
-
-  **Note**: Available to Apigee hybrid only.
+  Lists the service accounts with the permissions required to allow the Synchronizer to download environment data from the control plane. An ETag is returned in the response to `getSyncAuthorization`. Pass that ETag when calling [setSyncAuthorization](setSyncAuthorization) to ensure that you are updating the correct version. If you don't pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Enable Synchronizer access](https://docs.apigee.com/hybrid/latest/synchronizer-access#enable-synchronizer-access). **Note**: Available to Apigee hybrid only.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Apigee organization. Use the following structure in your
-      request:
-       `organizations/{org}`
+  *   `name` (*type:* `String.t`) - Required. Name of the Apigee organization. Use the following structure in your request: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -315,15 +291,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists the Apigee organizations and associated GCP projects that you have
-  permission to access. See
-  [Organizations](https://docs.apigee.com/hybrid/latest/terminology#organizations).
+  Lists the Apigee organizations and associated GCP projects that you have permission to access. See [Organizations](https://docs.apigee.com/hybrid/latest/terminology#organizations).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Use the following structure in your request:
-        `organizations`
+  *   `parent` (*type:* `String.t`) - Required. Use the following structure in your request: `organizations`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -379,28 +352,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Sets the permissions required to allow the Synchronizer to download
-  environment data from the control plane. You must call this API to enable
-  proper functioning of hybrid.
-
-  Pass the ETag when calling `setSyncAuthorization` to ensure that
-  you are updating the correct version. To get an ETag,
-  call [getSyncAuthorization](getSyncAuthorization).
-  If you don't pass the ETag in the call to `setSyncAuthorization`, then the
-  existing authorization is overwritten indiscriminately.
-
-  For more information, see
-  [Enable Synchronizer
-  access](https://docs.apigee.com/hybrid/latest/synchronizer-access#enable-synchronizer-access).
-
-  **Note**: Available to Apigee hybrid only.
+  Sets the permissions required to allow the Synchronizer to download environment data from the control plane. You must call this API to enable proper functioning of hybrid. Pass the ETag when calling `setSyncAuthorization` to ensure that you are updating the correct version. To get an ETag, call [getSyncAuthorization](getSyncAuthorization). If you don't pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Enable Synchronizer access](https://docs.apigee.com/hybrid/latest/synchronizer-access#enable-synchronizer-access). **Note**: Available to Apigee hybrid only.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Apigee organization. Use the following structure in your
-      request:
-       `organizations/{org}`
+  *   `name` (*type:* `String.t`) - Required. Name of the Apigee organization. Use the following structure in your request: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -468,14 +425,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates the properties for an Apigee organization. No other fields in the
-  organization profile will be updated.
+  Updates the properties for an Apigee organization. No other fields in the organization profile will be updated.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Apigee organization name in the following format:
-        `organizations/{org}`
+  *   `name` (*type:* `String.t`) - Required. Apigee organization name in the following format: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -538,8 +493,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent organization name.
-      Must be of the form `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent organization name. Must be of the form `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -612,8 +566,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the Datastore to be deleted. Must be of the
-      form `organizations/{org}/analytics/datastores/{datastoreId}`
+  *   `name` (*type:* `String.t`) - Required. Resource name of the Datastore to be deleted. Must be of the form `organizations/{org}/analytics/datastores/{datastoreId}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -682,8 +635,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the Datastore to be get. Must be of the
-      form `organizations/{org}/analytics/datastores/{datastoreId}`
+  *   `name` (*type:* `String.t`) - Required. Resource name of the Datastore to be get. Must be of the form `organizations/{org}/analytics/datastores/{datastoreId}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -754,8 +706,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent organization name.
-      Must be of the form `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent organization name. Must be of the form `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -823,15 +774,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Test if Datastore configuration is correct. This includes checking
-  if credentials provided by customer have required permissions in target
-  destination storage
+  Test if Datastore configuration is correct. This includes checking if credentials provided by customer have required permissions in target destination storage
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent organization name
-      Must be of the form `organizations/{org}`
+  *   `parent` (*type:* `String.t`) - Required. The parent organization name Must be of the form `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -904,8 +852,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of datastore to be updated. Must be of the
-      form `organizations/{org}/analytics/datastores/{datastoreId}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of datastore to be updated. Must be of the form `organizations/{org}/analytics/datastores/{datastoreId}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -973,23 +920,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates or creates API product attributes. This API **replaces** the
-  current list of attributes with the attributes specified in the request
-  body. In this way, you can update existing attributes, add new attributes,
-  or delete existing attributes by omitting them from the request body.
-
-  OAuth access tokens and Key Management Service (KMS) entities (apps,
-  developers, and API products) are cached for 180 seconds (current default).
-  Any custom attributes associated with entities also get cached for at least
-  180 seconds after entity is accessed during runtime.
-  In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able
-  to expire an access token in less than 180 seconds.
+  Updates or creates API product attributes. This API **replaces** the current list of attributes with the attributes specified in the request body. In this way, you can update existing attributes, add new attributes, or delete existing attributes by omitting them from the request body. OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form:
-      <pre>organizations/<var>organization_ID</var>/apiproducts/<var>api_product_name</var></pre>
+  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form: organizations/organization_ID/apiproducts/api_product_name 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1057,48 +993,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates an API product in an organization.
-  You create API products after
-  you have proxied backend services using API proxies.
-  An API product is a
-  collection of API resources combined with quota settings and metadata that
-  you can use to deliver customized and productized API bundles to your
-  developer community. This metadata can include:
-
-  - Scope
-  - Environments
-  - API proxies
-  - Extensible profile
-
-  API products enable you repackage APIs
-  on-the-fly, without having to do any additional coding or configuration.
-  Apigee recommends that you start with a simple API product including only
-  required elements. You then provision credentials to apps to enable them to
-  start testing your APIs.
-
-  After you have authentication and authorization
-  working against a simple API product, you can iterate to create finer
-  grained API products, defining different sets of API resources for each API
-  product.
-
-  <aside class="warning"><strong>WARNING:</strong>
-
-  - If you don't specify an API proxy in the request body, <em>any</em> app
-  associated with the product can make calls to <em>any</em> API in your
-  entire organization.
-  - If you don't specify an environment in the request body, the product
-  allows access to all environments.
-
-  </aside>
-
-  For more information, see {{what_api_product}}
+  Creates an API product in an organization. You create API products after you have proxied backend services using API proxies. An API product is a collection of API resources combined with quota settings and metadata that you can use to deliver customized and productized API bundles to your developer community. This metadata can include: - Scope - Environments - API proxies - Extensible profile API products enable you repackage APIs on-the-fly, without having to do any additional coding or configuration. Apigee recommends that you start with a simple API product including only required elements. You then provision credentials to apps to enable them to start testing your APIs. After you have authentication and authorization working against a simple API product, you can iterate to create finer grained API products, defining different sets of API resources for each API product. *WARNING:* - If you don't specify an API proxy in the request body, *any* app associated with the product can make calls to *any* API in your entire organization. - If you don't specify an environment in the request body, the product allows access to all environments. For more information, see {{what_api_product}}
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent organization name under which the API product will
-      be created. Must be in the following form:
-      <pre>organizations/<var>organization_ID</var></pre>
+  *   `parent` (*type:* `String.t`) - Required. The parent organization name under which the API product will be created. Must be in the following form: organizations/organization_ID 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1166,26 +1066,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes an API product from an organization.
-
-  Deleting an API product
-  causes app requests to the resource URIs defined in the API product to
-  fail.
-
-  Ensure that you create a new API product to serve existing apps, unless
-  your intention is to disable access to the resources defined in the API
-  product.
-
-  The API product name required in the request URL is the internal name of
-  the product, not the display name. While they may be the same, it depends
-  on whether the API product was created via the UI or the API. View the list
-  of API products to verify the internal name.
+  Deletes an API product from an organization. Deleting an API product causes app requests to the resource URIs defined in the API product to fail. Ensure that you create a new API product to serve existing apps, unless your intention is to disable access to the resources defined in the API product. The API product name required in the request URL is the internal name of the product, not the display name. While they may be the same, it depends on whether the API product was created via the UI or the API. View the list of API products to verify the internal name.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. API product name in the following form:
-      <pre>organizations/<var>organization_ID</var>/apiproducts/<var>api_product_name</var></pre>
+  *   `name` (*type:* `String.t`) - Required. API product name in the following form: organizations/organization_ID/apiproducts/api_product_name 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1246,18 +1132,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets configuration details for an API product.
-
-  The API product name required in the request URL is the internal name of
-  the product, not the display name. While they may be the same, it depends
-  on whether the API product was created via the UI or the API. View the list
-  of API products to verify the internal name.
+  Gets configuration details for an API product. The API product name required in the request URL is the internal name of the product, not the display name. While they may be the same, it depends on whether the API product was created via the UI or the API. View the list of API products to verify the internal name.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form:
-      <pre>organizations/<var>organization_ID</var>/apiproducts/<var>api_product_name</var></pre>
+  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form: organizations/organization_ID/apiproducts/api_product_name 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1313,18 +1193,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all API product names for an organization.
-  Filter the list by passing an `attributename` and `attibutevalue`.
-
-  The limit on the number of API products returned by the API is 1000. You
-  can paginate the list of API products returned using the `startKey` and
-  `count` query parameters.
+  Lists all API product names for an organization. Filter the list by passing an `attributename` and `attibutevalue`. The limit on the number of API products returned by the API is 1000. You can paginate the list of API products returned using the `startKey` and `count` query parameters.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - **Required.** The parent organization name in the following form:
-      <pre>organizations/<var>organization_ID</var></pre>
+  *   `parent` (*type:* `String.t`) - **Required.** The parent organization name in the following form: organizations/organization_ID 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1339,14 +1213,9 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:attributename` (*type:* `String.t`) - The name of the attribute to search.
       *   `:attributevalue` (*type:* `String.t`) - The value of the attribute.
-      *   `:count` (*type:* `String.t`) - Enter the number of API products you want returned in the API call. The
-          limit is 1000.
+      *   `:count` (*type:* `String.t`) - Enter the number of API products you want returned in the API call. The limit is 1000.
       *   `:expand` (*type:* `boolean()`) - Set to `true` to get expanded details about each API.
-      *   `:startKey` (*type:* `String.t`) - Gets a list of API products starting with a specific API product in the
-          list. For example, if you're returning 50 API products at a time (using the
-          `count` query parameter), you can view products 50-99 by entering the name
-          of the 50th API product in the first API (without using `startKey`).
-          Product name is case sensitive.
+      *   `:startKey` (*type:* `String.t`) - Gets a list of API products starting with a specific API product in the list. For example, if you're returning 50 API products at a time (using the `count` query parameter), you can view products 50-99 by entering the name of the 50th API product in the first API (without using `startKey`). Product name is case sensitive.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1400,20 +1269,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates an existing API product. You must include all required values,
-  whether or not you are updating them, as well as any optional values that
-  you are updating.
-
-  The API product name required in the request URL is the
-  internal name of the product, not the Display Name. While they may be the
-  same, it depends on whether the API product was created via UI or API. View
-  the list of API products to identify their internal names.
+  Updates an existing API product. You must include all required values, whether or not you are updating them, as well as any optional values that you are updating. The API product name required in the request URL is the internal name of the product, not the Display Name. While they may be the same, it depends on whether the API product was created via UI or API. View the list of API products to identify their internal names.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form:
-      <pre>organizations/<var>organization_ID</var>/apiproducts/<var>api_product_name</var></pre>
+  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form: organizations/organization_ID/apiproducts/api_product_name 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1481,8 +1342,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form:
-      <pre>organizations/<var>organization_ID</var>/apiproducts/<var>api_product_name</var>/attributes/<var>attribute_name</var></pre>
+  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form: organizations/organization_ID/apiproducts/api_product_name/attributes/attribute_name 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1553,8 +1413,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form:
-      <pre>organizations/<var>organization_ID</var>/apiproducts/<var>api_product_name</var>/attributes/<var>attribute_name</var></pre>
+  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form: organizations/organization_ID/apiproducts/api_product_name/attributes/attribute_name 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1625,8 +1484,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent organization name. Must be in the following form:
-      <pre>organizations/<var>organization_ID</var>/apiproducts/<var>api_product_name</var></pre>
+  *   `parent` (*type:* `String.t`) - Required. The parent organization name. Must be in the following form: organizations/organization_ID/apiproducts/api_product_name 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1692,20 +1550,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates the value of an API product attribute. Limitations are:
-
-  OAuth access tokens and Key Management Service (KMS) entities (apps,
-  developers, and API products) are cached for 180 seconds (current default).
-  Any custom attributes associated with entities also get cached for at least
-  180 seconds after entity is accessed during runtime.
-  In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able
-  to expire an access token in less than 180 seconds.
+  Updates the value of an API product attribute. Limitations are: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form:
-      <pre>organizations/<var>organization_ID</var>/apiproducts/<var>api_product_name</var></pre>
+  *   `name` (*type:* `String.t`) - **Required.** API product name in the following form: organizations/organization_ID/apiproducts/api_product_name 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1773,38 +1623,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates an API proxy.
-  The API proxy created will not be accessible at runtime until it is
-  deployed to an environment.
-
-  Create a new API proxy by setting the `name` query parameter to the
-  name of the API proxy.
-
-  Import an API proxy configuration bundle stored in zip format
-  on your local machine to your organization by doing the following:
-
-  * Set the `name` query parameter to the name of the API proxy.
-  * Set the `action` query parameter to `import`.
-  * Set the `Content-Type` header to `multipart/form-data`.
-  * Pass as a file the name of API proxy
-    configuration bundle stored in zip format on your local machine using
-    the `file` form field.
-
-  **Note**: To validate the API proxy configuration bundle only
-    without importing it, set the `action` query
-    parameter to `validate`.
-
-  When importing an API proxy configuration bundle, if the API proxy
-  does not exist, it will be created.
-  If the API proxy exists, then a new revision is created. Invalid API
-  proxy configurations are rejected, and a list of validation errors is
-  returned to the client.
+  Creates an API proxy. The API proxy created will not be accessible at runtime until it is deployed to an environment. Create a new API proxy by setting the `name` query parameter to the name of the API proxy. Import an API proxy configuration bundle stored in zip format on your local machine to your organization by doing the following: * Set the `name` query parameter to the name of the API proxy. * Set the `action` query parameter to `import`. * Set the `Content-Type` header to `multipart/form-data`. * Pass as a file the name of API proxy configuration bundle stored in zip format on your local machine using the `file` form field. **Note**: To validate the API proxy configuration bundle only without importing it, set the `action` query parameter to `validate`. When importing an API proxy configuration bundle, if the API proxy does not exist, it will be created. If the API proxy exists, then a new revision is created. Invalid API proxy configurations are rejected, and a list of validation errors is returned to the client.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization in the following format:
-        `organizations/{org}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization in the following format: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1817,15 +1641,9 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:action` (*type:* `String.t`) - Action to perform when importing an API proxy configuration bundle. Set
-          this parameter to one of the following values:
-
-          * `import` to import the API proxy configuration bundle.
-          * `validate` to validate the API proxy configuration bundle without
-             importing it.
+      *   `:action` (*type:* `String.t`) - Action to perform when importing an API proxy configuration bundle. Set this parameter to one of the following values: * `import` to import the API proxy configuration bundle. * `validate` to validate the API proxy configuration bundle without importing it.
       *   `:name` (*type:* `String.t`) - Name of the API proxy. Restrict the characters used to: A-Za-z0-9._-
-      *   `:validate` (*type:* `boolean()`) - Ignored. All uploads are validated regardless of the value of this
-          field. Maintained for compatibility with Apigee Edge API.
+      *   `:validate` (*type:* `boolean()`) - Ignored. All uploads are validated regardless of the value of this field. Maintained for compatibility with Apigee Edge API.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleApiHttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1874,14 +1692,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes an API proxy and all associated endpoints, policies, resources, and
-  revisions. The API proxy must be undeployed before you can delete it.
+  Deletes an API proxy and all associated endpoints, policies, resources, and revisions. The API proxy must be undeployed before you can delete it.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the API proxy in the following format:
-        `organizations/{org}/apis/{api}`
+  *   `name` (*type:* `String.t`) - Required. Name of the API proxy in the following format: `organizations/{org}/apis/{api}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1940,8 +1756,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the API proxy in the following format:
-        `organizations/{org}/apis/{api}`
+  *   `name` (*type:* `String.t`) - Required. Name of the API proxy in the following format: `organizations/{org}/apis/{api}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1995,15 +1810,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists the names of all API proxies in an organization. The names returned
-  correspond to the names defined in the configuration files for each API
-  proxy.
+  Lists the names of all API proxies in an organization. The names returned correspond to the names defined in the configuration files for each API proxy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization in the following format:
-        `organizations/{org}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization in the following format: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2068,9 +1880,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the API proxy for which to return deployment information in the
-      following format:
-       `organizations/{org}/apis/{api}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the API proxy for which to return deployment information in the following format: `organizations/{org}/apis/{api}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2141,9 +1951,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the environment in which to create the key value map.
-      Must be of the form
-      `organizations/{organization}/apis/{api}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the environment in which to create the key value map. Must be of the form `organizations/{organization}/apis/{api}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2216,9 +2024,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the key value map.
-      Must be of the form
-      `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the key value map. Must be of the form `organizations/{organization}/apis/{api}/keyvaluemaps/{keyvaluemap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2284,15 +2090,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes an API proxy revision and all policies, resources, endpoints,
-  and revisions associated with it. The API proxy revision must be undeployed
-  before you can delete it.
+  Deletes an API proxy revision and all policies, resources, endpoints, and revisions associated with it. The API proxy revision must be undeployed before you can delete it.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. API proxy revision in the following format:
-        `organizations/{org}/apis/{api}/revisions/{rev}`
+  *   `name` (*type:* `String.t`) - Required. API proxy revision in the following format: `organizations/{org}/apis/{api}/revisions/{rev}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2358,25 +2161,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets an API proxy revision.
-
-  To download the API proxy configuration bundle for the specified revision
-  as a zip file, do the following:
-
-   * Set the `format` query parameter to `bundle`.
-   * Set the `Accept` header to `application/zip`.
-
-  If you are using curl, specify `-o filename.zip` to save the output to a
-  file; otherwise, it displays to `stdout`. Then, develop the API proxy
-  configuration locally and upload the updated API proxy configuration
-  revision, as described in
-  [updateApiProxyRevision](updateApiProxyRevision).
+  Gets an API proxy revision. To download the API proxy configuration bundle for the specified revision as a zip file, do the following: * Set the `format` query parameter to `bundle`. * Set the `Accept` header to `application/zip`. If you are using curl, specify `-o filename.zip` to save the output to a file; otherwise, it displays to `stdout`. Then, develop the API proxy configuration locally and upload the updated API proxy configuration revision, as described in [updateApiProxyRevision](updateApiProxyRevision).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. API proxy revision in the following format:
-        `organizations/{org}/apis/{api}/revisions/{rev}`
+  *   `name` (*type:* `String.t`) - Required. API proxy revision in the following format: `organizations/{org}/apis/{api}/revisions/{rev}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2389,9 +2179,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:format` (*type:* `String.t`) - Format used when downloading the API proxy configuration revision.
-          Set to `bundle` to download the API proxy configuration revision as a zip
-          file.
+      *   `:format` (*type:* `String.t`) - Format used when downloading the API proxy configuration revision. Set to `bundle` to download the API proxy configuration revision as a zip file.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2439,21 +2227,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates an existing API proxy revision by uploading the API proxy
-  configuration bundle as a zip file from your local machine.
-
-  You can update only API proxy revisions
-  that have never been deployed. After deployment, an API proxy revision
-  becomes immutable, even if it is undeployed.
-
-  Set the `Content-Type` header to either
-  `multipart/form-data` or `application/octet-stream`.
+  Updates an existing API proxy revision by uploading the API proxy configuration bundle as a zip file from your local machine. You can update only API proxy revisions that have never been deployed. After deployment, an API proxy revision becomes immutable, even if it is undeployed. Set the `Content-Type` header to either `multipart/form-data` or `application/octet-stream`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. API proxy revision to update in the following format:
-        `organizations/{org}/apis/{api}/revisions/{rev}`
+  *   `name` (*type:* `String.t`) - Required. API proxy revision to update in the following format: `organizations/{org}/apis/{api}/revisions/{rev}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2466,8 +2245,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:validate` (*type:* `boolean()`) - Ignored. All uploads are validated regardless of the value of this field.
-          Maintained for compatibility with Apigee Edge API.
+      *   `:validate` (*type:* `boolean()`) - Ignored. All uploads are validated regardless of the value of this field. Maintained for compatibility with Apigee Edge API.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleApiHttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2529,9 +2307,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the API proxy revision for which to return deployment information
-      in the following format:
-        `organizations/{org}/apis/{api}/revisions/{rev}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the API proxy revision for which to return deployment information in the following format: `organizations/{org}/apis/{api}/revisions/{rev}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2602,8 +2378,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. App ID in the following format:
-       `organizations/{org}/apps/{app}`
+  *   `name` (*type:* `String.t`) - Required. App ID in the following format: `organizations/{org}/apps/{app}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2657,15 +2432,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists IDs of apps within an organization that have the specified app status
-  (approved or revoked) or are of the specified app type
-  (developer or company).
+  Lists IDs of apps within an organization that have the specified app status (approved or revoked) or are of the specified app type (developer or company).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Resource path of the parent in the following format:
-       `organizations/{org}`
+  *   `parent` (*type:* `String.t`) - Required. Resource path of the parent in the following format: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2679,19 +2451,14 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiProduct` (*type:* `String.t`) - API product.
-      *   `:apptype` (*type:* `String.t`) - Optional. Filter by the type of the app. Valid values are `company` or
-          `developer`. Defaults to `developer`.
-      *   `:expand` (*type:* `boolean()`) - Optional. Flag that specifies whether to return an expanded list of
-          apps for the organization. Defaults to `false`.
+      *   `:apptype` (*type:* `String.t`) - Optional. Filter by the type of the app. Valid values are `company` or `developer`. Defaults to `developer`.
+      *   `:expand` (*type:* `boolean()`) - Optional. Flag that specifies whether to return an expanded list of apps for the organization. Defaults to `false`.
       *   `:ids` (*type:* `String.t`) - Optional. Comma-separated list of app IDs on which to filter.
-      *   `:includeCred` (*type:* `boolean()`) - Optional. Flag that specifies whether to include credentials in the
-          response.
-      *   `:keyStatus` (*type:* `String.t`) - Optional. Key status of the app. Valid values include `approved` or
-          `revoked`. Defaults to `approved`.
+      *   `:includeCred` (*type:* `boolean()`) - Optional. Flag that specifies whether to include credentials in the response.
+      *   `:keyStatus` (*type:* `String.t`) - Optional. Key status of the app. Valid values include `approved` or `revoked`. Defaults to `approved`.
       *   `:rows` (*type:* `String.t`) - Optional. Maximum number of app IDs to return. Defaults to 10000.
       *   `:startKey` (*type:* `String.t`) - Returns the list of apps starting from the specified app ID.
-      *   `:status` (*type:* `String.t`) - Optional. Filter by the status of the app. Valid values are `approved`
-          or `revoked`. Defaults to `approved`.
+      *   `:status` (*type:* `String.t`) - Optional. Filter by the status of the app. Valid values are `approved` or `revoked`. Defaults to `approved`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2749,9 +2516,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization for which to return deployment information in the
-      following format:
-       `organizations/{org}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization for which to return deployment information in the following format: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2764,9 +2529,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:sharedFlows` (*type:* `boolean()`) - Optional. Flag that specifies whether to return shared flow or API proxy deployments.
-          Set to `true` to return shared flow deployments; set to `false`
-          to return API proxy deployments. Defaults to `false`.
+      *   `:sharedFlows` (*type:* `boolean()`) - Optional. Flag that specifies whether to return shared flow or API proxy deployments. Set to `true` to return shared flow deployments; set to `false` to return API proxy deployments. Defaults to `false`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2816,29 +2579,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates developer attributes.
-
-  This API replaces the
-  existing attributes with those specified in the request.
-  Add new attributes, and include or exclude any existing
-  attributes that you want to retain or
-  remove, respectively.
-
-  The custom attribute limit is 18.
-
-  **Note**: OAuth access tokens and Key Management Service (KMS) entities
-  (apps, developers, and API products) are cached for 180 seconds
-  (default). Any custom attributes associated with these entities
-  are cached for at least 180 seconds after the entity is accessed at
-  runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy
-  won't be able to expire an access token in less than 180 seconds.
+  Updates developer attributes. This API replaces the existing attributes with those specified in the request. Add new attributes, and include or exclude any existing attributes that you want to retain or remove, respectively. The custom attribute limit is 18. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Email address of the developer for which attributes are being updated in
-      the following format:
-        `organizations/{org}/developers/{developer_email}`
+  *   `parent` (*type:* `String.t`) - Required. Email address of the developer for which attributes are being updated in the following format: `organizations/{org}/developers/{developer_email}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2906,18 +2652,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a developer. Once created,
-  the developer can register an app and obtain an API key.
-
-  At creation time, a developer is set as `active`. To change the developer
-  status, use the SetDeveloperStatus API.
+  Creates a developer. Once created, the developer can register an app and obtain an API key. At creation time, a developer is set as `active`. To change the developer status, use the SetDeveloperStatus API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the Apigee organization in which the developer is created.
-      Use the following structure in your request:
-        `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the Apigee organization in which the developer is created. Use the following structure in your request: `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2985,27 +2725,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a developer. All apps and API keys associated
-  with the developer are also removed.
-
-  **Warning**: This API will permanently delete the developer
-  and related artifacts.
-
-  To avoid permanently deleting developers and their artifacts,
-  set the developer status to `inactive` using
-  the SetDeveloperStatus API.
-
-  **Note**: The delete operation is asynchronous. The developer app is
-  deleted immediately,
-  but its associated resources, such as apps and API keys, may take anywhere
-  from a few seconds to a few minutes to be deleted.
+  Deletes a developer. All apps and API keys associated with the developer are also removed. **Warning**: This API will permanently delete the developer and related artifacts. To avoid permanently deleting developers and their artifacts, set the developer status to `inactive` using the SetDeveloperStatus API. **Note**: The delete operation is asynchronous. The developer app is deleted immediately, but its associated resources, such as apps and API keys, may take anywhere from a few seconds to a few minutes to be deleted.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Email address of the developer. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}`
+  *   `name` (*type:* `String.t`) - Required. Email address of the developer. Use the following structure in your request: `organizations/{org}/developers/{developer_email}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3066,17 +2791,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Returns the developer details, including the
-  developer's name, email address, apps, and other information.
-
-  **Note**: The response includes only the first 100 developer apps.
+  Returns the developer details, including the developer's name, email address, apps, and other information. **Note**: The response includes only the first 100 developer apps.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Email address of the developer. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}`
+  *   `name` (*type:* `String.t`) - Required. Email address of the developer. Use the following structure in your request: `organizations/{org}/developers/{developer_email}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3134,22 +2854,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all developers in an organization by email address.
-
-  By default,
-  the response does not include company developers. Set the `includeCompany`
-  query parameter to `true` to include company developers.
-
-  **Note**: A maximum of 1000 developers are returned in the response. You
-  paginate the list of developers returned using the `startKey` and `count`
-  query parameters.
+  Lists all developers in an organization by email address. By default, the response does not include company developers. Set the `includeCompany` query parameter to `true` to include company developers. **Note**: A maximum of 1000 developers are returned in the response. You paginate the list of developers returned using the `startKey` and `count` query parameters.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the Apigee organization. Use the following structure in your
-      request:
-        `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the Apigee organization. Use the following structure in your request: `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3162,31 +2872,11 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:count` (*type:* `String.t`) - Optional. Number of developers to return in the API call. Use with the `startKey`
-          parameter to provide more targeted filtering.
-          The limit is 1000.
-      *   `:expand` (*type:* `boolean()`) - Specifies whether to expand the results. Set to `true`
-          to expand the results. This query parameter is not valid if you use
-          the `count` or `startKey` query parameters.
+      *   `:count` (*type:* `String.t`) - Optional. Number of developers to return in the API call. Use with the `startKey` parameter to provide more targeted filtering. The limit is 1000.
+      *   `:expand` (*type:* `boolean()`) - Specifies whether to expand the results. Set to `true` to expand the results. This query parameter is not valid if you use the `count` or `startKey` query parameters.
       *   `:ids` (*type:* `String.t`) - Optional. List of IDs to include, separated by commas.
       *   `:includeCompany` (*type:* `boolean()`) - Flag that specifies whether to include company details in the response.
-      *   `:startKey` (*type:* `String.t`) - **Note**: Must be used in conjunction with the `count` parameter.
-
-          Email address of the developer from which to start displaying the list of
-          developers. For example, if the an unfiltered list returns:
-
-          ```
-          westley@example.com
-          fezzik@example.com
-          buttercup@example.com
-          ```
-
-          and your `startKey` is `fezzik@example.com`, the list returned will be
-
-          ```
-          fezzik@example.com
-          buttercup@example.com
-          ```
+      *   `:startKey` (*type:* `String.t`) - **Note**: Must be used in conjunction with the `count` parameter. Email address of the developer from which to start displaying the list of developers. For example, if the an unfiltered list returns: ``` westley@example.com fezzik@example.com buttercup@example.com ``` and your `startKey` is `fezzik@example.com`, the list returned will be ``` fezzik@example.com buttercup@example.com ```
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3235,23 +2925,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Sets the status of a developer. Valid values are `active` or `inactive`.
-
-  A developer is `active` by default. If you set a developer's status to
-  `inactive`, the API keys assigned to the developer apps are no longer valid
-  even though the API keys are set to `approved`. Inactive developers
-  can still sign in to the developer portal and create apps; however, any
-  new API keys generated during app creation won't work.
-
-  If successful, the API call returns the
-  following HTTP status code: `204 No Content`
+  Sets the status of a developer. Valid values are `active` or `inactive`. A developer is `active` by default. If you set a developer's status to `inactive`, the API keys assigned to the developer apps are no longer valid even though the API keys are set to `approved`. Inactive developers can still sign in to the developer portal and create apps; however, any new API keys generated during app creation won't work. If successful, the API call returns the following HTTP status code: `204 No Content`
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Email address of the developer. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}`
+  *   `name` (*type:* `String.t`) - Required. Email address of the developer. Use the following structure in your request: `organizations/{org}/developers/{developer_email}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3317,27 +2996,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates a developer.
-
-  This API replaces the existing developer details with those specified
-  in the request. Include or exclude any existing details that
-  you want to retain or delete, respectively.
-
-  The custom attribute limit is 18.
-
-  **Note**: OAuth access tokens and Key Management Service (KMS) entities
-  (apps, developers, and API products) are cached for 180 seconds
-  (current default). Any custom attributes associated with these entities
-  are cached for at least 180 seconds after the entity is accessed at
-  runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy
-  won't be able to expire an access token in less than 180 seconds.
+  Updates a developer. This API replaces the existing developer details with those specified in the request. Include or exclude any existing details that you want to retain or delete, respectively. The custom attribute limit is 18. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Email address of the developer. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}`
+  *   `name` (*type:* `String.t`) - Required. Email address of the developer. Use the following structure in your request: `organizations/{org}/developers/{developer_email}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3400,14 +3064,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates attributes for a developer app. This API replaces the
-  current attributes with those specified in the request.
+  Updates attributes for a developer app. This API replaces the current attributes with those specified in the request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3475,21 +3137,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates an app associated with a developer. This API associates the
-  developer app with the specified API
-  product and auto-generates an API key for the app to use in calls to API
-  proxies inside that API product.
-
-  The `name` is the unique ID of the app
-  that you can use in API calls. The `DisplayName` (set as an
-  attribute) appears in the UI. If you don't set the
-  `DisplayName` attribute, the `name` appears in the UI.
+  Creates an app associated with a developer. This API associates the developer app with the specified API product and auto-generates an API key for the app to use in calls to API proxies inside that API product. The `name` is the unique ID of the app that you can use in API calls. The `DisplayName` (set as an attribute) appears in the UI. If you don't set the `DisplayName` attribute, the `name` appears in the UI.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the developer. Use the following structure in your request:
-         `organizations/{org}/developers/{developer_email}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the developer. Use the following structure in your request: `organizations/{org}/developers/{developer_email}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3557,19 +3210,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a developer app.
-
-  **Note**: The delete operation is asynchronous. The developer app is
-  deleted immediately,
-  but its associated resources, such as app
-  keys or access tokens, may take anywhere from a few seconds to a
-  few minutes to be deleted.
+  Deletes a developer app. **Note**: The delete operation is asynchronous. The developer app is deleted immediately, but its associated resources, such as app keys or access tokens, may take anywhere from a few seconds to a few minutes to be deleted.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3635,50 +3281,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Manages access to a developer app by enabling you to:
-
-  * Approve or revoke a developer app
-  * Generate a new consumer key and secret for a developer app
-
-  To approve or revoke a developer app, set the `action` query parameter to
-  `approved` or `revoked`, respectively, and the
-  `Content-Type` header to `application/octet-stream`. If a developer app is
-  revoked, none of its API keys are valid for API calls even though
-  the keys are still `approved`. If successful, the API call returns the
-  following HTTP status code: `204 No Content`
-
-  To generate a new consumer key and secret for a developer
-  app, pass the new key/secret details. Rather than
-  replace an existing key, this API generates a new
-  key. In this case, multiple key
-  pairs may be associated with a single developer app. Each key pair has an
-  independent status (`approved` or `revoked`) and expiration time.
-  Any approved, non-expired key can be used in an API call.
-
-  For example, if you're using API key rotation, you can generate new
-  keys with expiration times that overlap keys that are going to expire.
-  You might also generate a new consumer key/secret if the security of the
-  original key/secret is compromised.
-
-  The `keyExpiresIn` property defines the
-  expiration time for the API key in milliseconds. If you don't set
-  this property or set it to `-1`, the API key never expires.
-
-  **Notes**:
-
-  * When generating a new key/secret, this API replaces the
-  existing attributes, notes, and callback URLs with those specified in the
-  request. Include or exclude any existing information that you want to
-  retain or delete, respectively.
-  * To migrate existing consumer keys and secrets to hybrid from another
-  system, see the
-  CreateDeveloperAppKey API.
+  Manages access to a developer app by enabling you to: * Approve or revoke a developer app * Generate a new consumer key and secret for a developer app To approve or revoke a developer app, set the `action` query parameter to `approved` or `revoked`, respectively, and the `Content-Type` header to `application/octet-stream`. If a developer app is revoked, none of its API keys are valid for API calls even though the keys are still `approved`. If successful, the API call returns the following HTTP status code: `204 No Content` To generate a new consumer key and secret for a developer app, pass the new key/secret details. Rather than replace an existing key, this API generates a new key. In this case, multiple key pairs may be associated with a single developer app. Each key pair has an independent status (`approved` or `revoked`) and expiration time. Any approved, non-expired key can be used in an API call. For example, if you're using API key rotation, you can generate new keys with expiration times that overlap keys that are going to expire. You might also generate a new consumer key/secret if the security of the original key/secret is compromised. The `keyExpiresIn` property defines the expiration time for the API key in milliseconds. If you don't set this property or set it to `-1`, the API key never expires. **Notes**: * When generating a new key/secret, this API replaces the existing attributes, notes, and callback URLs with those specified in the request. Include or exclude any existing information that you want to retain or delete, respectively. * To migrate existing consumer keys and secrets to hybrid from another system, see the CreateDeveloperAppKey API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3753,8 +3361,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3767,17 +3374,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:entity` (*type:* `String.t`) - **Note**: Must be used in conjunction with the `query` parameter.
-
-          Set to `apiresources`
-          to return the number of API resources
-          that have been approved for access by a developer app in the
-          specified Apigee organization.
-      *   `:query` (*type:* `String.t`) - **Note**: Must be used in conjunction with the `entity` parameter.
-
-          Set to `count` to return the number of API resources
-          that have been approved for access by a developer app in the
-          specified Apigee organization.
+      *   `:entity` (*type:* `String.t`) - **Note**: Must be used in conjunction with the `query` parameter. Set to `apiresources` to return the number of API resources that have been approved for access by a developer app in the specified Apigee organization.
+      *   `:query` (*type:* `String.t`) - **Note**: Must be used in conjunction with the `entity` parameter. Set to `count` to return the number of API resources that have been approved for access by a developer app in the specified Apigee organization.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3833,18 +3431,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all apps created by a developer in an Apigee organization.
-  Optionally, you can request an expanded view of the developer apps.
-
-  A maximum of 100 developer apps are returned per API call. You can paginate
-  the list of deveoper apps returned using the `startKey` and `count` query
-  parameters.
+  Lists all apps created by a developer in an Apigee organization. Optionally, you can request an expanded view of the developer apps. A maximum of 100 developer apps are returned per API call. You can paginate the list of deveoper apps returned using the `startKey` and `count` query parameters.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the developer. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the developer. Use the following structure in your request: `organizations/{org}/developers/{developer_email}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3857,21 +3449,10 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:count` (*type:* `String.t`) - Number of developer apps to return in the API call. Use with the `startKey`
-          parameter to provide more targeted filtering.
-          The limit is 1000.
-      *   `:expand` (*type:* `boolean()`) - Optional. Specifies whether to expand the results. Set to `true`
-          to expand the results. This query parameter is not valid if you use
-          the `count` or `startKey` query parameters.
-      *   `:shallowExpand` (*type:* `boolean()`) - Optional. Specifies whether to expand the results in shallow mode.
-          Set to `true` to expand the results in shallow mode.
-      *   `:startKey` (*type:* `String.t`) - **Note**: Must be used in conjunction with the `count` parameter.
-
-          Name of the developer app from which to start displaying the list of
-          developer apps. For example, if you're returning 50 developer apps at
-          a time (using the `count` query parameter), you can view developer apps
-          50-99 by entering the name of the 50th developer app.
-          The developer app name is case sensitive.
+      *   `:count` (*type:* `String.t`) - Number of developer apps to return in the API call. Use with the `startKey` parameter to provide more targeted filtering. The limit is 1000.
+      *   `:expand` (*type:* `boolean()`) - Optional. Specifies whether to expand the results. Set to `true` to expand the results. This query parameter is not valid if you use the `count` or `startKey` query parameters.
+      *   `:shallowExpand` (*type:* `boolean()`) - Optional. Specifies whether to expand the results in shallow mode. Set to `true` to expand the results in shallow mode.
+      *   `:startKey` (*type:* `String.t`) - **Note**: Must be used in conjunction with the `count` parameter. Name of the developer app from which to start displaying the list of developer apps. For example, if you're returning 50 developer apps at a time (using the `count` query parameter), you can view developer apps 50-99 by entering the name of the 50th developer app. The developer app name is case sensitive.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3929,32 +3510,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates the details for a developer app. In addition, you can
-  add an API product to a developer app and automatically generate
-  an API key for the app to use when calling APIs in the API product.
-
-  If you want to use an existing API key for the API product,
-  add the API product to the API key using the
-  UpdateDeveloperAppKey
-  API.
-
-  Using this API, you cannot update the following:
-
-  * App name as it is the primary key used to identify the app and cannot
-    be changed.
-  * Scopes associated with the app. Instead, use the
-    ReplaceDeveloperAppKey API.
-
-  This API replaces the
-  existing attributes with those specified in the request.
-  Include or exclude any existing attributes that you want to retain or
-  delete, respectively.
+  Updates the details for a developer app. In addition, you can add an API product to a developer app and automatically generate an API key for the app to use when calling APIs in the API product. If you want to use an existing API key for the API product, add the API product to the API key using the UpdateDeveloperAppKey API. Using this API, you cannot update the following: * App name as it is the primary key used to identify the app and cannot be changed. * Scopes associated with the app. Instead, use the ReplaceDeveloperAppKey API. This API replaces the existing attributes with those specified in the request. Include or exclude any existing attributes that you want to retain or delete, respectively.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4027,9 +3588,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer app attribute. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}/attributes/{attribute}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer app attribute. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}/attributes/{attribute}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4100,9 +3659,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer app attribute. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}/attributes/{attribute}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer app attribute. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}/attributes/{attribute}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4173,8 +3730,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the developer app. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4240,21 +3796,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates a developer app attribute.
-
-  **Note**: OAuth access tokens and Key Management Service (KMS) entities
-  (apps, developers, and API products) are cached for 180 seconds
-  (current default). Any custom attributes associated with these entities
-  are cached for at least 180 seconds after the entity is accessed at
-  runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy
-  won't be able to expire an access token in less than 180 seconds.
+  Updates a developer app attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer app attribute. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}/attributes/{attribute}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer app attribute. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}/attributes/{attribute}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4322,30 +3869,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a custom consumer key and secret for a developer app. This is
-  particularly useful if you want to migrate existing consumer keys and
-  secrets to Apigee hybrid from another system.
-
-  Consumer keys and secrets can contain letters, numbers, underscores, and
-  hyphens. No other special characters are allowed. To avoid service
-  disruptions, a consumer key and secret should not exceed 2 KBs each.
-
-  **Note**: When creating the consumer key and secret, an association to
-  API products will not be made. Therefore, you should not specify the
-  associated API products in your request. Instead, use the
-  UpdateDeveloperAppKey API to
-  make the association after the consumer key and secret are created.
-
-  If a consumer key and secret already exist, you can keep them or
-  delete them using the
-  DeleteDeveloperAppKey API.
+  Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee hybrid from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Parent of the developer app key. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}/apps`
+  *   `parent` (*type:* `String.t`) - Parent of the developer app key. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4413,22 +3942,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes an app's consumer key and removes all API products
-  associated with the app. After the consumer key is deleted,
-  it cannot be used to access any APIs.
-
-  **Note**: After you delete a consumer key, you may want to:
-  1. Create a new consumer key and secret for the developer app using the
-  CreateDeveloperAppKey API, and
-  subsequently add an API product to the key using the
-  UpdateDeveloperAppKey API.
-  2. Delete the developer app, if it is no longer required.
+  Deletes an app's consumer key and removes all API products associated with the app. After the consumer key is deleted, it cannot be used to access any APIs. **Note**: After you delete a consumer key, you may want to: 1. Create a new consumer key and secret for the developer app using the CreateDeveloperAppKey API, and subsequently add an API product to the key using the UpdateDeveloperAppKey API. 2. Delete the developer app, if it is no longer required.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the developer app key. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}`
+  *   `name` (*type:* `String.t`) - Name of the developer app key. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4494,14 +4013,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Returns details for a consumer key for a developer app, including the key
-  and secret value, associated API products, and other information.
+  Returns details for a consumer key for a developer app, including the key and secret value, associated API products, and other information.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the developer app key. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}`
+  *   `name` (*type:* `String.t`) - Name of the developer app key. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4567,22 +4084,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates the scope of an app.
-
-  This API replaces the
-  existing scopes with those specified in the request.
-  Include or exclude any existing scopes that you want to retain or
-  delete, respectively. The specified scopes must already
-  be defined for the API products associated with the app.
-
-  This API sets the `scopes` element
-  under the `apiProducts` element in the attributes of the app.
+  Updates the scope of an app. This API replaces the existing scopes with those specified in the request. Include or exclude any existing scopes that you want to retain or delete, respectively. The specified scopes must already be defined for the API products associated with the app. This API sets the `scopes` element under the `apiProducts` element in the attributes of the app.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the developer app key. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}`
+  *   `name` (*type:* `String.t`) - Name of the developer app key. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4650,23 +4157,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Adds an API product to a developer app key, enabling the app that holds
-  the key to access the API resources bundled in the API product.
-
-  In addition, you can add
-  attributes to a developer app key. This API replaces the
-  existing attributes with those specified in the request.
-  Include or exclude any existing attributes that you want to retain or
-  delete, respectively.
-
-  You can use the same key to access all API products
-  associated with the app.
+  Adds an API product to a developer app key, enabling the app that holds the key to access the API resources bundled in the API product. In addition, you can add attributes to a developer app key. This API replaces the existing attributes with those specified in the request. Include or exclude any existing attributes that you want to retain or delete, respectively. You can use the same key to access all API products associated with the app.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the developer app key. Use the following structure in your request:
-        `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}`
+  *   `name` (*type:* `String.t`) - Name of the developer app key. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4679,8 +4175,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:action` (*type:* `String.t`) - Approve or revoke the consumer key by setting this value to
-          `approve` or `revoke`, respectively.
+      *   `:action` (*type:* `String.t`) - Approve or revoke the consumer key by setting this value to `approve` or `revoke`, respectively.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperAppKey.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4737,19 +4232,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Removes an API product from an app's consumer key. After the API product is
-  removed, the app cannot access the API resources defined in
-  that API product.
-
-  **Note**: The consumer key is not removed, only its association with the
-  API product.
+  Removes an API product from an app's consumer key. After the API product is removed, the app cannot access the API resources defined in that API product. **Note**: The consumer key is not removed, only its association with the API product.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the API product in the developer app key in the following
-      format:
-        `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}/apiproducts/{apiproduct}`
+  *   `name` (*type:* `String.t`) - Name of the API product in the developer app key in the following format: `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}/apiproducts/{apiproduct}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4815,20 +4303,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Approve or revoke an app's consumer key. After a consumer key is approved,
-  the app can use it to access APIs.
-
-  A consumer key that is revoked or pending cannot be used to access an API.
-  Any access tokens associated with a revoked consumer key will remain
-  active. However, Apigee hybrid checks the status of the consumer key and
-  if set to `revoked` will not allow access to the API.
+  Approve or revoke an app's consumer key. After a consumer key is approved, the app can use it to access APIs. A consumer key that is revoked or pending cannot be used to access an API. Any access tokens associated with a revoked consumer key will remain active. However, Apigee hybrid checks the status of the consumer key and if set to `revoked` will not allow access to the API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the API product in the developer app key in the following
-      format:
-        `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}/apiproducts/{apiproduct}`
+  *   `name` (*type:* `String.t`) - Name of the API product in the developer app key in the following format: `organizations/{org}/developers/{developer_email}/apps/{app}/keys/{key}/apiproducts/{apiproduct}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4841,8 +4321,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:action` (*type:* `String.t`) - Approve or revoke the consumer key by setting this value to
-          `approve` or `revoke`, respectively.
+      *   `:action` (*type:* `String.t`) - Approve or revoke the consumer key by setting this value to `approve` or `revoke`, respectively.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4895,30 +4374,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a custom consumer key and secret for a developer app. This is
-  particularly useful if you want to migrate existing consumer keys and
-  secrets to Apigee hybrid from another system.
-
-  Consumer keys and secrets can contain letters, numbers, underscores, and
-  hyphens. No other special characters are allowed. To avoid service
-  disruptions, a consumer key and secret should not exceed 2 KBs each.
-
-  **Note**: When creating the consumer key and secret, an association to
-  API products will not be made. Therefore, you should not specify the
-  associated API products in your request. Instead, use the
-  UpdateDeveloperAppKey API to
-  make the association after the consumer key and secret are created.
-
-  If a consumer key and secret already exist, you can keep them or
-  delete them using the
-  DeleteDeveloperAppKey API.
+  Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee hybrid from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Parent of the developer app key. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}/apps`
+  *   `parent` (*type:* `String.t`) - Parent of the developer app key. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/apps`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4991,9 +4452,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer attribute. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}/attributes/{attribute}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer attribute. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/attributes/{attribute}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5064,9 +4523,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer attribute. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}/attributes/{attribute}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer attribute. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/attributes/{attribute}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5137,9 +4594,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Email address of the developer for which attributes are being listed in the
-      following format:
-        `organizations/{org}/developers/{developer_email}`
+  *   `parent` (*type:* `String.t`) - Required. Email address of the developer for which attributes are being listed in the following format: `organizations/{org}/developers/{developer_email}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5205,21 +4660,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates a developer attribute.
-
-  **Note**: OAuth access tokens and Key Management Service (KMS) entities
-  (apps, developers, and API products) are cached for 180 seconds
-  (default). Any custom attributes associated with these entities
-  are cached for at least 180 seconds after the entity is accessed at
-  runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy
-  won't be able to expire an access token in less than 180 seconds.
+  Updates a developer attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the developer attribute. Use the following structure in your
-      request:
-        `organizations/{org}/developers/{developer_email}/attributes/{attribute}`
+  *   `name` (*type:* `String.t`) - Required. Name of the developer attribute. Use the following structure in your request: `organizations/{org}/developers/{developer_email}/attributes/{attribute}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5292,8 +4738,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization in which to create the environment group in the
-      following format: `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization in which to create the environment group in the following format: `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5306,8 +4751,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:name` (*type:* `String.t`) - ID of the environment group. Overrides any ID in the environment_group
-          resource.
+      *   `:name` (*type:* `String.t`) - ID of the environment group. Overrides any ID in the environment_group resource.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -5362,8 +4806,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment group in the following format:
-      `organizations/{org}/envgroups/{envgroup}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the environment group in the following format: `organizations/{org}/envgroups/{envgroup}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5427,8 +4870,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment group in the following format:
-      `organizations/{org}/envgroups/{envgroup}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the environment group in the following format: `organizations/{org}/envgroups/{envgroup}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5489,8 +4931,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization for which to list environment groups in the
-      following format: `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization for which to list environment groups in the following format: `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5503,10 +4944,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of environment groups to return. The page size defaults
-          to 25.
-      *   `:pageToken` (*type:* `String.t`) - Page token, returned from a previous ListEnvironmentGroups call, that you
-          can use to retrieve the next page.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of environment groups to return. The page size defaults to 25.
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned from a previous ListEnvironmentGroups call, that you can use to retrieve the next page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5558,8 +4997,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment group to update in the format:
-      `organizations/{org}/envgroups/{envgroup}.
+  *   `name` (*type:* `String.t`) - Required. Name of the environment group to update in the format: `organizations/{org}/envgroups/{envgroup}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5622,8 +5060,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. EnvironmentGroup under which to create the attachment in the following
-      format: `organizations/{org}/envgroups/{envgroup}`.
+  *   `parent` (*type:* `String.t`) - Required. EnvironmentGroup under which to create the attachment in the following format: `organizations/{org}/envgroups/{envgroup}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5694,8 +5131,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment group attachment to delete in the following format:
-      `organizations/{org}/envgroups/{envgroup}/attachments/{attachment}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the environment group attachment to delete in the following format: `organizations/{org}/envgroups/{envgroup}/attachments/{attachment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5764,8 +5200,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment group attachment in the following format:
-      `organizations/{org}/envgroups/{envgroup}/attachments/{attachment}`
+  *   `name` (*type:* `String.t`) - Required. Name of the environment group attachment in the following format: `organizations/{org}/envgroups/{envgroup}/attachments/{attachment}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5849,10 +5284,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of environment group attachments to return. The page size
-          defaults to 25.
-      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous ListEnvironmentGroupAttachments call,
-          that you can use to retrieve the next page.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of environment group attachments to return. The page size defaults to 25.
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous ListEnvironmentGroupAttachments call, that you can use to retrieve the next page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5918,9 +5351,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization in which the environment will
-      be created. Use the following structure in your request:
-       `organizations/{org}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization in which the environment will be created. Use the following structure in your request: `organizations/{org}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5933,9 +5364,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:name` (*type:* `String.t`) - Optional. Name of the environment. Alternatively, the name may
-          be specified in the request body in the
-          name field.
+      *   `:name` (*type:* `String.t`) - Optional. Name of the environment. Alternatively, the name may be specified in the request body in the name field.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -5995,9 +5424,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your
-      request:
-       `organizations/{org}/environments/{env}`
+  *   `name` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request: `organizations/{org}/environments/{env}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6066,8 +5493,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request:
-       `organizations/{org}/environments/{env}`
+  *   `name` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request: `organizations/{org}/environments/{env}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6133,8 +5559,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the debug mask. Use the following structure in your request:
-        `organizations/{org}/environments/{env}/debugmask`.
+  *   `name` (*type:* `String.t`) - Required. Name of the debug mask. Use the following structure in your request: `organizations/{org}/environments/{env}/debugmask`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6205,9 +5630,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment deployed configuration resource. Use the following
-      structure in your request:
-       `organizations/{org}/environments/{env}/deployedConfig`
+  *   `name` (*type:* `String.t`) - Required. Name of the environment deployed configuration resource. Use the following structure in your request: `organizations/{org}/environments/{env}/deployedConfig`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6273,18 +5696,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the IAM policy on an environment. For more information, see
-  [Manage users, roles, and permissions
-  using the API](https://docs.apigee.com/hybrid/latest/manage-users-roles).
-
-  You must have the `apigee.environments.getIamPolicy` permission to call
-  this API.
+  Gets the IAM policy on an environment. For more information, see [Manage users, roles, and permissions using the API](https://docs.apigee.com/hybrid/latest/manage-users-roles). You must have the `apigee.environments.getIamPolicy` permission to call this API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6297,18 +5714,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -6361,19 +5767,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Sets the IAM policy on an environment, if the policy already
-  exists it will be replaced. For more information, see
-  [Manage users, roles, and permissions
-  using the API](https://docs.apigee.com/hybrid/latest/manage-users-roles).
-
-  You must have the `apigee.environments.setIamPolicy` permission to
-  call this API.
+  Sets the IAM policy on an environment, if the policy already exists it will be replaced. For more information, see [Manage users, roles, and permissions using the API](https://docs.apigee.com/hybrid/latest/manage-users-roles). You must have the `apigee.environments.setIamPolicy` permission to call this API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6439,15 +5838,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a subscription for the environment's Pub/Sub topic.
-  The server will assign a random name for this subscription.
-  The "name" and "push_config" must *not* be specified.
+  Creates a subscription for the environment's Pub/Sub topic. The server will assign a random name for this subscription. The "name" and "push_config" must *not* be specified.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request:
-       `organizations/{org}/environments/{env}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request: `organizations/{org}/environments/{env}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6513,16 +5909,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Tests the permissions of a user on an environment,
-  and returns a subset of permissions that the user has on the environment.
-  If the environment does not exist, an empty permission set is returned
-  (a NOT_FOUND error is not returned).
+  Tests the permissions of a user on an environment, and returns a subset of permissions that the user has on the environment. If the environment does not exist, an empty permission set is returned (a NOT_FOUND error is not returned).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6595,8 +5987,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request:
-       `organizations/{org}/environments/{env}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request: `organizations/{org}/environments/{env}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6662,18 +6053,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates an existing environment.
-
-  When updating properties, you must pass all existing properties to the API,
-  even if they are not being changed. If you omit properties from the
-  payload, the properties are removed. To get the current list of
-  properties for the environment, use the [Get Environment API](get).
+  Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request:
-       `organizations/{org}/environments/{env}`
+  *   `name` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request: `organizations/{org}/environments/{env}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6759,9 +6144,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:replaceRepeatedFields` (*type:* `boolean()`) - Boolean flag that specifies whether to replace existing values in the debug
-          mask when doing an update. Set to true to replace existing values.
-          The default behavior is to append the values (false).
+      *   `:replaceRepeatedFields` (*type:* `boolean()`) - Boolean flag that specifies whether to replace existing values in the debug mask when doing an update. Set to true to replace existing values. The default behavior is to append the values (false).
       *   `:updateMask` (*type:* `String.t`) - Field debug mask to support partial updates.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -6820,18 +6203,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates an existing environment.
-
-  When updating properties, you must pass all existing properties to the API,
-  even if they are not being changed. If you omit properties from the
-  payload, the properties are removed. To get the current list of
-  properties for the environment, use the [Get Environment API](get).
+  Updates an existing environment. When updating properties, you must pass all existing properties to the API, even if they are not being changed. If you omit properties from the payload, the properties are removed. To get the current list of properties for the environment, use the [Get Environment API](get).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request:
-       `organizations/{org}/environments/{env}`
+  *   `name` (*type:* `String.t`) - Required. Name of the environment. Use the following structure in your request: `organizations/{org}/environments/{env}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6899,16 +6276,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Get a list of metrics and dimensions which can be used for creating
-  analytics queries and reports.
-  Each schema element contains the name of the field with its associated type
-  and if it is either custom field or standard field.
+  Get a list of metrics and dimensions which can be used for creating analytics queries and reports. Each schema element contains the name of the field with its associated type and if it is either custom field or standard field.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The parent organization and environment names. Must be of the
-      form `organizations/{org}/environments/{env}/analytics/admin/schemav2`.
+  *   `name` (*type:* `String.t`) - Required. The parent organization and environment names. Must be of the form `organizations/{org}/environments/{env}/analytics/admin/schemav2`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6921,8 +6294,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:type` (*type:* `String.t`) - Required. Type refers to the dataset name whose schema needs to be
-          retrieved E.g. type=fact or type=agg_cus1
+      *   `:type` (*type:* `String.t`) - Required. Type refers to the dataset name whose schema needs to be retrieved E.g. type=fact or type=agg_cus1
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -6975,16 +6347,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Submit a data export job to be processed in the background.
-  If the request is successful, the API returns a 201 status, a URI that can
-  be used to retrieve the status of the export job, and the `state` value of
-  "enqueued".
+  Submit a data export job to be processed in the background. If the request is successful, the API returns a 201 status, a URI that can be used to retrieve the status of the export job, and the `state` value of "enqueued".
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Names of the parent organization and environment.
-      Must be of the form `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. Names of the parent organization and environment. Must be of the form `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7050,11 +6418,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the details and status of an analytics export job.
-  If the export job is still in progress, its `state` is set to "running".
-  After the export job has completed successfully, its `state` is set to
-  "completed".
-  If the export job fails, its `state` is set to `failed`.
+  Gets the details and status of an analytics export job. If the export job is still in progress, its `state` is set to "running". After the export job has completed successfully, its `state` is set to "completed". If the export job fails, its `state` is set to `failed`.
 
   ## Parameters
 
@@ -7123,14 +6487,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists the details and status of all analytics export jobs belonging to the
-  parent organization and environment.
+  Lists the details and status of all analytics export jobs belonging to the parent organization and environment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Names of the parent organization and environment.
-      Must be of the form `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. Names of the parent organization and environment. Must be of the form `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7201,9 +6563,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name representing an API proxy in an environment in the following
-      format:
-        `organizations/{org}/environments/{env}/apis/{api}`
+  *   `parent` (*type:* `String.t`) - Required. Name representing an API proxy in an environment in the following format: `organizations/{org}/environments/{env}/apis/{api}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7269,17 +6629,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Undeploys an API proxy revision from an environment.
-
-  Because multiple revisions of the same API proxy can be deployed in
-  the same environment if the base paths are different, you must specify the
-  revision number of the API proxy.
+  Undeploys an API proxy revision from an environment. Because multiple revisions of the same API proxy can be deployed in the same environment if the base paths are different, you must specify the revision number of the API proxy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the API proxy revision deployment in the following format:
-        `organizations/{org}/environments/{env}/apis/{api}/revisions/{rev}`
+  *   `name` (*type:* `String.t`) - Required. Name of the API proxy revision deployment in the following format: `organizations/{org}/environments/{env}/apis/{api}/revisions/{rev}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7292,15 +6647,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:sequencedRollout` (*type:* `boolean()`) - If true, a best-effort attempt will be made to remove the environment group
-          routing rules corresponding to this deployment before removing the
-          deployment from the runtime. This is likely to be a rare use case; it is
-          only needed when the intended effect of undeploying this proxy is to cause
-          the traffic it currently handles to be rerouted to some other existing
-          proxy in the environment group. The GenerateUndeployChangeReport API may be
-          used to examine routing changes before issuing the undeployment request,
-          and its response will indicate if a sequenced rollout is recommended for
-          the undeployment.
+      *   `:sequencedRollout` (*type:* `boolean()`) - If true, a best-effort attempt will be made to remove the environment group routing rules corresponding to this deployment before removing the deployment from the runtime. This is likely to be a rare use case; it is only needed when the intended effect of undeploying this proxy is to cause the traffic it currently handles to be rerouted to some other existing proxy in the environment group. The GenerateUndeployChangeReport API may be used to examine routing changes before issuing the undeployment request, and its response will indicate if a sequenced rollout is recommended for the undeployment.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7353,15 +6700,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the deployment of an API proxy revision and actual state reported by
-  runtime pods.
+  Gets the deployment of an API proxy revision and actual state reported by runtime pods.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name representing an API proxy revision in an
-      environment in the following format:
-        `organizations/{org}/environments/{env}/apis/{api}/revisions/{rev}`
+  *   `name` (*type:* `String.t`) - Required. Name representing an API proxy revision in an environment in the following format: `organizations/{org}/environments/{env}/apis/{api}/revisions/{rev}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7432,9 +6776,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the API Proxy revision deployment for which
-      to create the DebugSession. Must be of the form
-       `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the API Proxy revision deployment for which to create the DebugSession. Must be of the form `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7447,8 +6789,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:timeout` (*type:* `String.t`) - Optional. The time in seconds after which this DebugSession should end.
-          A timeout specified in DebugSession will overwrite this value.
+      *   `:timeout` (*type:* `String.t`) - Optional. The time in seconds after which this DebugSession should end. A timeout specified in DebugSession will overwrite this value.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugSession.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -7505,16 +6846,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes the data from a debug session. This does not cancel the debug
-  session or prevent further data from being collected if the session is
-  still active in runtime pods.
+  Deletes the data from a debug session. This does not cancel the debug session or prevent further data from being collected if the session is still active in runtime pods.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the debug session to delete.
-      Must be of the form:
-       `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/debugsessions/{debugsession}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the debug session to delete. Must be of the form: `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/debugsessions/{debugsession}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7583,9 +6920,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the debug session to retrieve.
-      Must be of the form:
-       `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/debugsessions/{session}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the debug session to retrieve. Must be of the form: `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/debugsessions/{session}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7651,15 +6986,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists debug sessions that are currently active in the given API Proxy
-  revision.
+  Lists debug sessions that are currently active in the given API Proxy revision.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the API Proxy revision deployment for which
-      to list debug sessions. Must be of the form:
-       `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the API Proxy revision deployment for which to list debug sessions. Must be of the form: `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7672,10 +7004,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of debug sessions to return. The page size defaults
-          to 25.
-      *   `:pageToken` (*type:* `String.t`) - Page token, returned from a previous ListDebugSessions call, that you
-          can use to retrieve the next page.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of debug sessions to return. The page size defaults to 25.
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned from a previous ListDebugSessions call, that you can use to retrieve the next page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7736,8 +7066,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the debug session transaction. Must be of the form:
-       `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/debugsessions/{session}/data/{transaction}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the debug session transaction. Must be of the form: `organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/debugsessions/{session}/data/{transaction}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7803,20 +7132,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Generates a report for a dry run analysis of a DeployApiProxy request
-  without committing the deployment.
-
-  In addition to the standard validations performed when adding deployments,
-  additional analysis will be done to detect possible traffic routing changes
-  that would result from this deployment being created. Any potential routing
-  conflicts or unsafe changes will be reported in the response. This routing
-  analysis is not performed for a non-dry-run DeployApiProxy request.
+  Generates a report for a dry run analysis of a DeployApiProxy request without committing the deployment. In addition to the standard validations performed when adding deployments, additional analysis will be done to detect possible traffic routing changes that would result from this deployment being created. Any potential routing conflicts or unsafe changes will be reported in the response. This routing analysis is not performed for a non-dry-run DeployApiProxy request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the API proxy revision deployment in the following format:
-        `organizations/{org}/environments/{env}/apis/{api}/revisions/{rev}`
+  *   `name` (*type:* `String.t`) - Name of the API proxy revision deployment in the following format: `organizations/{org}/environments/{env}/apis/{api}/revisions/{rev}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7829,10 +7150,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:basepath` (*type:* `String.t`) - Base path where the API proxy revision should be deployed. Defaults to '/'
-          if not provided.
-      *   `:override` (*type:* `boolean()`) - Flag that specifies whether to force the deployment of the new revision
-          over the currently deployed revision by overriding conflict checks.
+      *   `:basepath` (*type:* `String.t`) - Base path where the API proxy revision should be deployed. Defaults to '/' if not provided.
+      *   `:override` (*type:* `boolean()`) - Flag that specifies whether to force the deployment of the new revision over the currently deployed revision by overriding conflict checks.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7888,21 +7207,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Generates a report for a dry run analysis of an UndeployApiProxy request
-  without committing the undeploy.
-
-  In addition to the standard validations performed when removing
-  deployments, additional analysis will be done to detect possible traffic
-  routing changes that would result from this deployment being removed. Any
-  potential routing conflicts or unsafe changes will be reported in the
-  response. This routing analysis is not performed for a non-dry-run
-  UndeployApiProxy request.
+  Generates a report for a dry run analysis of an UndeployApiProxy request without committing the undeploy. In addition to the standard validations performed when removing deployments, additional analysis will be done to detect possible traffic routing changes that would result from this deployment being removed. Any potential routing conflicts or unsafe changes will be reported in the response. This routing analysis is not performed for a non-dry-run UndeployApiProxy request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the API proxy revision deployment in the following format:
-        `organizations/{org}/environments/{env}/apis/{api}/revisions/{rev}`
+  *   `name` (*type:* `String.t`) - Name of the API proxy revision deployment in the following format: `organizations/{org}/environments/{env}/apis/{api}/revisions/{rev}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7973,8 +7283,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Cache resource name of the form:
-          `organizations/{organization_id}/environments/{environment_id}/caches/{cache_id}`
+  *   `name` (*type:* `String.t`) - Required. Cache resource name of the form: `organizations/{organization_id}/environments/{environment_id}/caches/{cache_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8043,9 +7352,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the environment for which to return deployment information in the
-      following format:
-        `organizations/{org}/environments/{env}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment for which to return deployment information in the following format: `organizations/{org}/environments/{env}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8058,9 +7365,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:sharedFlows` (*type:* `boolean()`) - Optional. Flag that specifies whether to return shared flow or API proxy deployments.
-          Set to `true` to return shared flow deployments; set to `false`
-          to return API proxy deployments. Defaults to `false`.
+      *   `:sharedFlows` (*type:* `boolean()`) - Optional. Flag that specifies whether to return shared flow or API proxy deployments. Set to `true` to return shared flow deployments; set to `false` to return API proxy deployments. Defaults to `false`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -8120,9 +7425,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the flow hook to which the shared flow should be
-      attached in the following format:
-        `organizations/{org}/environments/{env}/flowhooks/{flowhook}`
+  *   `name` (*type:* `String.t`) - Required. Name of the flow hook to which the shared flow should be attached in the following format: `organizations/{org}/environments/{env}/flowhooks/{flowhook}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8193,8 +7496,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the flow hook to detach in the following format:
-        `organizations/{org}/environments/{env}/flowhooks/{flowhook}`
+  *   `name` (*type:* `String.t`) - Required. Name of the flow hook to detach in the following format: `organizations/{org}/environments/{env}/flowhooks/{flowhook}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8258,15 +7560,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Returns the name of the shared flow attached to the specified flow hook. If
-  there's no shared flow attached to the flow hook, the API does not return
-  an error; it simply does not return a name in the response.
+  Returns the name of the shared flow attached to the specified flow hook. If there's no shared flow attached to the flow hook, the API does not return an error; it simply does not return a name in the response.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the flow hook in the following format:
-        `organizations/{org}/environments/{env}/flowhooks/{flowhook}`
+  *   `name` (*type:* `String.t`) - Required. Name of the flow hook in the following format: `organizations/{org}/environments/{env}/flowhooks/{flowhook}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8330,18 +7629,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a keystore or truststore:
-   * Keystore: Contains certificates and their associated keys.
-   * Truststore: Contains trusted certificates used to validate a
-   server's certificate. These certificates are typically self-signed
-   certificates or certificates that are not signed by a trusted CA.
+  Creates a keystore or truststore: * Keystore: Contains certificates and their associated keys. * Truststore: Contains trusted certificates used to validate a server's certificate. These certificates are typically self-signed certificates or certificates that are not signed by a trusted CA.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the environment in which to create the keystore.
-      Must be of the form
-      `organizations/{organization}/environments/{environment}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the environment in which to create the keystore. Must be of the form `organizations/{organization}/environments/{environment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8414,8 +7707,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of keystore to delete. Must be of the form
-      `organizations/{organization}/environments/{environment}/keystores/{keystore}`.
+  *   `name` (*type:* `String.t`) - Required. The name of keystore to delete. Must be of the form `organizations/{organization}/environments/{environment}/keystores/{keystore}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8484,8 +7776,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of keystore. Must be of the form
-      `organizations/{organization}/environments/{environment}/keystores/{keystore}`.
+  *   `name` (*type:* `String.t`) - Required. The name of keystore. Must be of the form `organizations/{organization}/environments/{environment}/keystores/{keystore}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8549,24 +7840,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates an alias from a key, certificate pair.
-  The structure of the request is controlled by the `format` query parameter:
-   * `keycertfile` - Separate PEM-encoded key and certificate files are
-   uploaded. The request must have `Content-Type: multipart/form-data` and
-   include fields `keyFile` and `certFile`. If uploading to a truststore,
-   omit `keyFile`.
-  * `pkcs12` - A PKCS12 file is uploaded. The request must have
-  `Content-Type: multipart/form-data` with the file provided in the only
-  field.
-  * `selfsignedcert` - A new private key and certificate are generated. The
-  request must have `Content-Type: application/json` and a body of
-  CertificateGenerationSpec.
+  Creates an alias from a key, certificate pair. The structure of the request is controlled by the `format` query parameter: * `keycertfile` - Separate PEM-encoded key and certificate files are uploaded. The request must have `Content-Type: multipart/form-data` and include fields `keyFile` and `certFile`. If uploading to a truststore, omit `keyFile`. * `pkcs12` - A PKCS12 file is uploaded. The request must have `Content-Type: multipart/form-data` with the file provided in the only field. * `selfsignedcert` - A new private key and certificate are generated. The request must have `Content-Type: application/json` and a body of CertificateGenerationSpec.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the keystore. Must be of the form
-      `organizations/{organization}/environments/{environment}/keystores/{keystore}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the keystore. Must be of the form `organizations/{organization}/environments/{environment}/keystores/{keystore}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8580,16 +7859,10 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:_password` (*type:* `String.t`) - The password for the private key file, if it exists.
-      *   `:alias` (*type:* `String.t`) - The alias for the key, certificate pair. Values must match
-          regular expression `[\\w\\s-.]{1,255}`. This must be provided for all formats
-          except 'selfsignedcert'; self-signed certs may specify the alias in either
-          this parameter or the JSON body.
-      *   `:format` (*type:* `String.t`) - Required. The format of the data. Must be either `selfsignedcert`,
-          `keycertfile`, or `pkcs12`.
+      *   `:alias` (*type:* `String.t`) - The alias for the key, certificate pair. Values must match regular expression `[\\w\\s-.]{1,255}`. This must be provided for all formats except 'selfsignedcert'; self-signed certs may specify the alias in either this parameter or the JSON body.
+      *   `:format` (*type:* `String.t`) - Required. The format of the data. Must be either `selfsignedcert`, `keycertfile`, or `pkcs12`.
       *   `:ignoreExpiryValidation` (*type:* `boolean()`) - If `true`, no expiry validation will be performed.
-      *   `:ignoreNewlineValidation` (*type:* `boolean()`) - If `true`, do not throw an error when the file contains a chain with no
-          newline between each certificate. By default, a newline is needed between
-          each certificate in a chain.
+      *   `:ignoreNewlineValidation` (*type:* `boolean()`) - If `true`, do not throw an error when the file contains a chain with no newline between each certificate. By default, a newline is needed between each certificate in a chain.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleApiHttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -8648,14 +7921,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Generates a PKCS #10 Certificate Signing Request for the private key in
-  an alias.
+  Generates a PKCS #10 Certificate Signing Request for the private key in an alias.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form
-      `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8724,8 +7995,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form
-      `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8794,8 +8064,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form
-      `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8864,8 +8133,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form
-      `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8934,8 +8202,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form
-      `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the alias. Must be of the form `organizations/{organization}/environments/{environment}/keystores/{keystore}/aliases/{alias}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8949,9 +8216,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:ignoreExpiryValidation` (*type:* `boolean()`) - Required. If `true`, no expiry validation will be performed.
-      *   `:ignoreNewlineValidation` (*type:* `boolean()`) - If `true`, do not throw an error when the file contains a chain with no
-          newline between each certificate. By default, a newline is needed between
-          each certificate in a chain.
+      *   `:ignoreNewlineValidation` (*type:* `boolean()`) - If `true`, do not throw an error when the file contains a chain with no newline between each certificate. By default, a newline is needed between each certificate in a chain.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleApiHttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -9012,9 +8277,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the environment in which to create the key value map.
-      Must be of the form
-      `organizations/{organization}/environments/{environment}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the environment in which to create the key value map. Must be of the form `organizations/{organization}/environments/{environment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9087,9 +8350,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the key value map.
-      Must be of the form
-      `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the key value map. Must be of the form `organizations/{organization}/environments/{environment}/keyvaluemaps/{keyvaluemap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9155,23 +8416,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  This api is similar to GetStats
-  except that the response is less verbose.
-  In the current scheme, a query parameter _optimized instructs
-  Edge Analytics to change the response but since this behavior
-  is not possible with protocol buffer and since this parameter is
-  predominantly used by Edge UI, we are introducing a separate api.
+  This api is similar to GetStats except that the response is less verbose. In the current scheme, a query parameter _optimized instructs Edge Analytics to change the response but since this behavior is not possible with protocol buffer and since this parameter is predominantly used by Edge UI, we are introducing a separate api.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed.
-      Must be of the form
-        `organizations/{organization_id}/environments/{environment_id/stats/{dimensions}`
-      Dimensions let you view metrics in meaningful groupings. E.g. apiproxy,
-      target_host. The value of dimensions should be comma separated list as
-      shown below
-      `organizations/{org}/environments/{env}/stats/apiproxy,request_verb`
+  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed. Must be of the form `organizations/{organization_id}/environments/{environment_id/stats/{dimensions}` Dimensions let you view metrics in meaningful groupings. E.g. apiproxy, target_host. The value of dimensions should be comma separated list as shown below `organizations/{org}/environments/{env}/stats/apiproxy,request_verb`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9185,30 +8435,19 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:accuracy` (*type:* `String.t`) - Legacy field: not used anymore.
-      *   `:aggTable` (*type:* `String.t`) - If customers want to query custom aggregate tables, then this parameter
-          can be used to specify the table name. If this parameter is skipped, then
-          Edge Query will try to retrieve the data from fact tables which will be
-          expensive.
+      *   `:aggTable` (*type:* `String.t`) - If customers want to query custom aggregate tables, then this parameter can be used to specify the table name. If this parameter is skipped, then Edge Query will try to retrieve the data from fact tables which will be expensive.
       *   `:filter` (*type:* `String.t`) - Enables drill-down on specific dimension values.
-      *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items.
-          Default and the max value is 14400.
-      *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example,
-          to display results 11-20, set limit to '10' and offset to '10'.
+      *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items. Default and the max value is 14400.
+      *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example, to display results 11-20, set limit to '10' and offset to '10'.
       *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore.
-      *   `:select` (*type:* `String.t`) - Required. The select parameter contains a comma separated list of metrics.
-          E.g. sum(message_count),sum(error_count)
+      *   `:select` (*type:* `String.t`) - Required. The select parameter contains a comma separated list of metrics. E.g. sum(message_count),sum(error_count)
       *   `:sonar` (*type:* `boolean()`) - This parameter routes the query to api monitoring service for last hour.
-      *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or
-          descending Supported values are DESC and ASC.
+      *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or descending Supported values are DESC and ASC.
       *   `:sortby` (*type:* `String.t`) - Comma separated list of columns to sort the final result.
-      *   `:timeRange` (*type:* `String.t`) - Required. Time interval for the interactive query.
-          Time range is specified as start~end E.g. 04/15/2017 00:00~05/15/2017 23:59
-      *   `:timeUnit` (*type:* `String.t`) - A value of second, minute, hour, day, week, month.
-          Time Unit specifies the granularity of metrics returned.
-      *   `:topk` (*type:* `String.t`) - Take 'top k' results from results, for example, to return the top 5
-          results 'topk=5'.
-      *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting
-          this value to true if you are using sortby with sort=DESC.
+      *   `:timeRange` (*type:* `String.t`) - Required. Time interval for the interactive query. Time range is specified as start~end E.g. 04/15/2017 00:00~05/15/2017 23:59
+      *   `:timeUnit` (*type:* `String.t`) - A value of second, minute, hour, day, week, month. Time Unit specifies the granularity of metrics returned.
+      *   `:topk` (*type:* `String.t`) - Take 'top k' results from results, for example, to return the top 5 results 'topk=5'.
+      *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting this value to true if you are using sortby with sort=DESC.
       *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -9278,16 +8517,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Submit a query to be processed in the background.
-  If the submission of the query succeeds, the API returns a 201 status and
-  an ID that refer to the query. In addition to the HTTP status 201, the
-  `state` of "enqueued" means that the request succeeded.
+  Submit a query to be processed in the background. If the submission of the query succeeds, the API returns a 201 status and an ID that refer to the query. In addition to the HTTP status 201, the `state` of "enqueued" means that the request succeeded.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name.
-      Must be of the form `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Must be of the form `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9355,15 +8590,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Get query status
-  If the query is still in progress, the `state` is set to "running"
-  After the query has completed successfully, `state` is set to "completed"
+  Get query status If the query is still in progress, the `state` is set to "running" After the query has completed successfully, `state` is set to "completed"
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the asynchronous query to get. Must be of the form
-      `organizations/{org}/environments/{env}/queries/{queryId}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the asynchronous query to get. Must be of the form `organizations/{org}/environments/{env}/queries/{queryId}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9429,19 +8661,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  After the query is completed, use this API to retrieve the results.
-  If the request succeeds, and there is a non-zero result set, the result is
-  downloaded to the client as a zipped JSON file.
-  The name of the downloaded file will be:
-    OfflineQueryResult-<query-id>.zip
-
-  Example: `OfflineQueryResult-9cfc0d85-0f30-46d6-ae6f-318d0cb961bd.zip`
+  After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is downloaded to the client as a zipped JSON file. The name of the downloaded file will be: OfflineQueryResult-.zip Example: `OfflineQueryResult-9cfc0d85-0f30-46d6-ae6f-318d0cb961bd.zip`
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the asynchronous query result to get. Must be of the
-      form `organizations/{org}/environments/{env}/queries/{queryId}/result`.
+  *   `name` (*type:* `String.t`) - Required. Name of the asynchronous query result to get. Must be of the form `organizations/{org}/environments/{env}/queries/{queryId}/result`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9510,8 +8735,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name.
-      Must be of the form `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Must be of the form `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9524,18 +8748,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dataset` (*type:* `String.t`) - Filter response list by dataset.
-
-          Example: `api`, `mint`
-      *   `:from` (*type:* `String.t`) - Filter response list by returning asynchronous queries that
-          created after this date time.
-          Time must be in ISO date-time format like '2011-12-03T10:15:30Z'.
+      *   `:dataset` (*type:* `String.t`) - Filter response list by dataset. Example: `api`, `mint`
+      *   `:from` (*type:* `String.t`) - Filter response list by returning asynchronous queries that created after this date time. Time must be in ISO date-time format like '2011-12-03T10:15:30Z'.
       *   `:inclQueriesWithoutReport` (*type:* `String.t`) - Flag to include asynchronous queries that don't have a report denifition.
       *   `:status` (*type:* `String.t`) - Filter response list by asynchronous query status.
       *   `:submittedBy` (*type:* `String.t`) - Filter response list by user who submitted queries.
-      *   `:to` (*type:* `String.t`) - Filter response list by returning asynchronous queries that
-          created before this date time.
-          Time must be in ISO date-time format like '2011-12-03T10:16:30Z'.
+      *   `:to` (*type:* `String.t`) - Filter response list by returning asynchronous queries that created before this date time. Time must be in ISO date-time format like '2011-12-03T10:16:30Z'.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -9600,8 +8818,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent environment name under which the Reference will
-      be created. Must be of the form `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent environment name under which the Reference will be created. Must be of the form `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9669,14 +8886,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a Reference from an environment. Returns the deleted
-  Reference resource.
+  Deletes a Reference from an environment. Returns the deleted Reference resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Reference to delete. Must be
-      of the form `organizations/{org}/environments/{env}/references/{ref}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the Reference to delete. Must be of the form `organizations/{org}/environments/{env}/references/{ref}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9747,8 +8962,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Reference to get. Must be of the form
-      `organizations/{org}/environments/{env}/references/{ref}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the Reference to get. Must be of the form `organizations/{org}/environments/{env}/references/{ref}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9814,15 +9028,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates an existing Reference. Note that this operation has PUT
-  semantics; it will replace the entirety of the existing Reference with
-  the resource in the request body.
+  Updates an existing Reference. Note that this operation has PUT semantics; it will replace the entirety of the existing Reference with the resource in the request body.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Reference to update. Must be of the form
-      `organizations/{org}/environments/{env}/references/{ref}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the Reference to update. Must be of the form `organizations/{org}/environments/{env}/references/{ref}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9890,20 +9101,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a resource file.
-
-  Specify the `Content-Type` as `application/octet-stream` or
-  `multipart/form-data`.
-
-  For more information about resource files, see
-  [Resource files](/api-platform/develop/resource-files).
+  Creates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the environment in which to create the resource file in the
-      following format:
-        `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment in which to create the resource file in the following format: `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9916,8 +9119,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:name` (*type:* `String.t`) - Required. Name of the resource file.  Must match the regular expression:
-          <var>[a-zA-Z0-9:/\\\\!@#$%^&{}\\[\\]()+\\-=,.~'` ]{1,255}</var>
+      *   `:name` (*type:* `String.t`) - Required. Name of the resource file. Must match the regular expression: [a-zA-Z0-9:/\\\\!@#$%^&{}\\[\\]()+\\-=,.~'` ]{1,255}
       *   `:type` (*type:* `String.t`) - Required. Resource file type. {{ resource_file_type }}
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleApiHttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -9976,19 +9178,14 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a resource file.
-
-  For more information about resource files, see
-  [Resource files](/api-platform/develop/resource-files).
+  Deletes a resource file. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the environment in the following format:
-        `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment in the following format: `organizations/{org}/environments/{env}`.
   *   `type` (*type:* `String.t`) - Required. Resource file type. {{ resource_file_type }}
-  *   `name` (*type:* `String.t`) - Required. ID of the resource file to delete. Must match the regular
-      expression: <var>[a-zA-Z0-9:/\\\\!@#$%^&{}\\[\\]()+\\-=,.~'` ]{1,255}</var>
+  *   `name` (*type:* `String.t`) - Required. ID of the resource file to delete. Must match the regular expression: [a-zA-Z0-9:/\\\\!@#$%^&{}\\[\\]()+\\-=,.~'` ]{1,255}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10060,19 +9257,14 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the contents of a resource file.
-
-  For more information about resource files, see
-  [Resource files](/api-platform/develop/resource-files).
+  Gets the contents of a resource file. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the environment in the following format:
-        `organizations/{org}/environments/{env}`.
-  *   `type` (*type:* `String.t`) - Required. Resource file type.  {{ resource_file_type }}
-  *   `name` (*type:* `String.t`) - Required. ID of the resource file. Must match the regular
-      expression: <var>[a-zA-Z0-9:/\\\\!@#$%^&{}\\[\\]()+\\-=,.~'` ]{1,255}</var>
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment in the following format: `organizations/{org}/environments/{env}`.
+  *   `type` (*type:* `String.t`) - Required. Resource file type. {{ resource_file_type }}
+  *   `name` (*type:* `String.t`) - Required. ID of the resource file. Must match the regular expression: [a-zA-Z0-9:/\\\\!@#$%^&{}\\[\\]()+\\-=,.~'` ]{1,255}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10142,17 +9334,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all resource files.
-
-  For more information about resource files, see
-  [Resource files](/api-platform/develop/resource-files).
+  Lists all resource files. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the environment in which to list resource files in the following
-      format:
-        `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment in which to list resource files in the following format: `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10165,8 +9352,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:type` (*type:* `String.t`) - Optional. Type of resource files to list.
-          {{ resource_file_type }}
+      *   `:type` (*type:* `String.t`) - Optional. Type of resource files to list. {{ resource_file_type }}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -10222,19 +9408,13 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all resource files.
-
-  For more information about resource files, see
-  [Resource files](/api-platform/develop/resource-files).
+  Lists all resource files. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the environment in which to list resource files in the following
-      format:
-        `organizations/{org}/environments/{env}`.
-  *   `type` (*type:* `String.t`) - Optional. Type of resource files to list.
-      {{ resource_file_type }}
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment in which to list resource files in the following format: `organizations/{org}/environments/{env}`.
+  *   `type` (*type:* `String.t`) - Optional. Type of resource files to list. {{ resource_file_type }}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10304,22 +9484,14 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates a resource file.
-
-  Specify the `Content-Type` as `application/octet-stream` or
-  `multipart/form-data`.
-
-  For more information about resource files, see
-  [Resource files](/api-platform/develop/resource-files).
+  Updates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the environment in the following format:
-        `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment in the following format: `organizations/{org}/environments/{env}`.
   *   `type` (*type:* `String.t`) - Required. Resource file type. {{ resource_file_type }}
-  *   `name` (*type:* `String.t`) - Required. ID of the resource file to update. Must match the regular
-      expression: <var>[a-zA-Z0-9:/\\\\!@#$%^&{}\\[\\]()+\\-=,.~'` ]{1,255}</var>
+  *   `name` (*type:* `String.t`) - Required. ID of the resource file to update. Must match the regular expression: [a-zA-Z0-9:/\\\\!@#$%^&{}\\[\\]()+\\-=,.~'` ]{1,255}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10398,9 +9570,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name representing a shared flow in an environment in the following
-      format:
-        `organizations/{org}/environments/{env}/sharedflows/{sharedflow}`
+  *   `parent` (*type:* `String.t`) - Required. Name representing a shared flow in an environment in the following format: `organizations/{org}/environments/{env}/sharedflows/{sharedflow}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10471,8 +9641,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the shared flow revision to undeploy in the following format:
-        `organizations/{org}/environments/{env}/sharedflows/{sharedflow}/revisions/{rev}`
+  *   `name` (*type:* `String.t`) - Required. Name of the shared flow revision to undeploy in the following format: `organizations/{org}/environments/{env}/sharedflows/{sharedflow}/revisions/{rev}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10536,15 +9705,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the deployment of a shared flow revision and actual state reported by
-  runtime pods.
+  Gets the deployment of a shared flow revision and actual state reported by runtime pods.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name representing a shared flow in an environment in the following
-      format:
-        `organizations/{org}/environments/{env}/sharedflows/{sharedflow}/revisions/{rev}`
+  *   `name` (*type:* `String.t`) - Required. Name representing a shared flow in an environment in the following format: `organizations/{org}/environments/{env}/sharedflows/{sharedflow}/revisions/{rev}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10610,24 +9776,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Retrieve metrics grouped by dimensions.
-  The types of metrics you can retrieve include traffic, message counts,
-  API call latency, response size, and cache hits and counts.
-  Dimensions let you view metrics in meaningful groups.
-  The stats api does accept dimensions as path params. The dimensions are
-  optional in which case the metrics are computed on the entire data
-  for the given timerange.
+  Retrieve metrics grouped by dimensions. The types of metrics you can retrieve include traffic, message counts, API call latency, response size, and cache hits and counts. Dimensions let you view metrics in meaningful groups. The stats api does accept dimensions as path params. The dimensions are optional in which case the metrics are computed on the entire data for the given timerange.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed.
-      Must be of the form
-        `organizations/{organization_id}/environments/{environment_id/stats/{dimensions}`
-      Dimensions let you view metrics in meaningful groupings. E.g. apiproxy,
-      target_host. The value of dimensions should be comma separated list as
-      shown below
-      `organizations/{org}/environments/{env}/stats/apiproxy,request_verb`
+  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed. Must be of the form `organizations/{organization_id}/environments/{environment_id/stats/{dimensions}` Dimensions let you view metrics in meaningful groupings. E.g. apiproxy, target_host. The value of dimensions should be comma separated list as shown below `organizations/{org}/environments/{env}/stats/apiproxy,request_verb`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10640,32 +9794,20 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:accuracy` (*type:* `String.t`) - Legacy field: not used anymore.
-          This field is present to support UI calls which still use this parameter.
-      *   `:aggTable` (*type:* `String.t`) - If customers want to query custom aggregate tables, then this parameter
-          can be used to specify the table name. If this parameter is skipped, then
-          Edge Query will try to retrieve the data from fact tables which will be
-          expensive.
+      *   `:accuracy` (*type:* `String.t`) - Legacy field: not used anymore. This field is present to support UI calls which still use this parameter.
+      *   `:aggTable` (*type:* `String.t`) - If customers want to query custom aggregate tables, then this parameter can be used to specify the table name. If this parameter is skipped, then Edge Query will try to retrieve the data from fact tables which will be expensive.
       *   `:filter` (*type:* `String.t`) - Enables drill-down on specific dimension values
-      *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items.
-          Default and the max value is 14400.
-      *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example,
-          to display results 11-20, set limit to '10' and offset to '10'.
+      *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items. Default and the max value is 14400.
+      *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example, to display results 11-20, set limit to '10' and offset to '10'.
       *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore.
-      *   `:select` (*type:* `String.t`) - The select parameter contains a comma separated list of metrics.
-          E.g. sum(message_count),sum(error_count)
+      *   `:select` (*type:* `String.t`) - The select parameter contains a comma separated list of metrics. E.g. sum(message_count),sum(error_count)
       *   `:sonar` (*type:* `boolean()`) - This parameter routes the query to api monitoring service for last hour.
-      *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or
-          descending Supported values are DESC and ASC.
+      *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or descending Supported values are DESC and ASC.
       *   `:sortby` (*type:* `String.t`) - Comma separated list of columns to sort the final result.
-      *   `:timeRange` (*type:* `String.t`) - Time interval for the interactive query.
-          Time range is specified as start~end E.g. 04/15/2017 00:00~05/15/2017 23:59
-      *   `:timeUnit` (*type:* `String.t`) - A value of second, minute, hour, day, week, month.
-          Time Unit specifies the granularity of metrics returned.
-      *   `:topk` (*type:* `String.t`) - Take 'top k' results from results, for example, to return the top 5
-          results 'topk=5'.
-      *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting
-          this value to true if you are using sortby with sort=DESC.
+      *   `:timeRange` (*type:* `String.t`) - Time interval for the interactive query. Time range is specified as start~end E.g. 04/15/2017 00:00~05/15/2017 23:59
+      *   `:timeUnit` (*type:* `String.t`) - A value of second, minute, hour, day, week, month. Time Unit specifies the granularity of metrics returned.
+      *   `:topk` (*type:* `String.t`) - Take 'top k' results from results, for example, to return the top 5 results 'topk=5'.
+      *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting this value to true if you are using sortby with sort=DESC.
       *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -10738,8 +9880,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent environment name under which the TargetServer will
-      be created. Must be of the form `organizations/{org}/environments/{env}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent environment name under which the TargetServer will be created. Must be of the form `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10752,8 +9893,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:name` (*type:* `String.t`) - Optional. The ID to give the TargetServer. This will overwrite the
-          value in TargetServer.
+      *   `:name` (*type:* `String.t`) - Optional. The ID to give the TargetServer. This will overwrite the value in TargetServer.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServer.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -10810,15 +9950,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a TargetServer from an environment. Returns the deleted
-  TargetServer resource.
+  Deletes a TargetServer from an environment. Returns the deleted TargetServer resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the TargetServer to delete. Must be
-      of the form
-      `organizations/{org}/environments/{env}/targetservers/{target_server_id}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the TargetServer to delete. Must be of the form `organizations/{org}/environments/{env}/targetservers/{target_server_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10889,8 +10026,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the TargetServer to get. Must be of the form
-      `organizations/{org}/environments/{env}/targetservers/{target_server_id}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the TargetServer to get. Must be of the form `organizations/{org}/environments/{env}/targetservers/{target_server_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10956,15 +10092,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates an existing TargetServer. Note that this operation has PUT
-  semantics; it will replace the entirety of the existing TargetServer with
-  the resource in the request body.
+  Updates an existing TargetServer. Note that this operation has PUT semantics; it will replace the entirety of the existing TargetServer with the resource in the request body.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the TargetServer to replace. Must be of the form
-      `organizations/{org}/environments/{env}/targetservers/{target_server_id}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the TargetServer to replace. Must be of the form `organizations/{org}/environments/{env}/targetservers/{target_server_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11032,16 +10165,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates an Apigee runtime instance. The instance is accessible from the
-  authorized network configured on the organization.
-
-  **Note:** Not supported for Apigee hybrid.
+  Creates an Apigee runtime instance. The instance is accessible from the authorized network configured on the organization. **Note:** Not supported for Apigee hybrid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization. Use the following structure in your request:
-        `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization. Use the following structure in your request: `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11102,16 +10231,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes an Apigee runtime instance. The instance stops serving
-  requests and the runtime data is deleted.
-
-  **Note:** Not supported for Apigee hybrid.
+  Deletes an Apigee runtime instance. The instance stops serving requests and the runtime data is deleted. **Note:** Not supported for Apigee hybrid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the instance. Use the following structure in your request:
-        `organizations/{org}/instance/{instance}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the instance. Use the following structure in your request: `organizations/{org}/instance/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11170,15 +10295,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the details for an Apigee runtime instance.
-
-  **Note:** Not supported for Apigee hybrid.
+  Gets the details for an Apigee runtime instance. **Note:** Not supported for Apigee hybrid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the instance. Use the following structure in your request:
-        `organizations/{org}/instances/{instance}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the instance. Use the following structure in your request: `organizations/{org}/instances/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11232,15 +10354,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all Apigee runtime instances for the organization.
-
-  **Note:** Not supported for Apigee hybrid.
+  Lists all Apigee runtime instances for the organization. **Note:** Not supported for Apigee hybrid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization. Use the following structure in your request:
-        `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization. Use the following structure in your request: `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11254,8 +10373,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of instances to return. Defaults to 25.
-      *   `:pageToken` (*type:* `String.t`) - Page token, returned from a previous ListInstances call, that you can
-          use to retrieve the next page of content.
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned from a previous ListInstances call, that you can use to retrieve the next page of content.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -11306,9 +10424,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `instance` (*type:* `String.t`) - The name of the instance reporting this status. For SaaS the request
-      will be rejected if no instance exists under this name.
-      Format is organizations/{org}/instances/{instance}
+  *   `instance` (*type:* `String.t`) - The name of the instance reporting this status. For SaaS the request will be rejected if no instance exists under this name. Format is organizations/{org}/instances/{instance}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11377,15 +10493,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a new attachment of an environment to an instance.
-
-  **Note:** Not supported for Apigee hybrid.
+  Creates a new attachment of an environment to an instance. **Note:** Not supported for Apigee hybrid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the instance. Use the following structure in your request:
-        `organizations/{org}/instances/{instance}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the instance. Use the following structure in your request: `organizations/{org}/instances/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11451,15 +10564,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes an attachment.
-
-  **Note:** Not supported for Apigee hybrid.
+  Deletes an attachment. **Note:** Not supported for Apigee hybrid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the attachment. Use the following structure in your request:
-        `organizations/{org}/instances/{instance}/attachments/{attachment}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the attachment. Use the following structure in your request: `organizations/{org}/instances/{instance}/attachments/{attachment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11523,15 +10633,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets an attachment.
-
-  **Note:** Not supported for Apigee hybrid.
+  Gets an attachment. **Note:** Not supported for Apigee hybrid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the attachment. Use the following structure in your request:
-        `organizations/{org}/instances/{instance}/attachments/{attachment}`
+  *   `name` (*type:* `String.t`) - Required. Name of the attachment. Use the following structure in your request: `organizations/{org}/instances/{instance}/attachments/{attachment}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11597,15 +10704,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all attachments to an instance.
-
-  **Note:** Not supported for Apigee hybrid.
+  Lists all attachments to an instance. **Note:** Not supported for Apigee hybrid.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization. Use the following structure in your request:
-        `organizations/{org}/instances/{instance}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization. Use the following structure in your request: `organizations/{org}/instances/{instance}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11619,8 +10723,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of instance attachments to return. Defaults to 25.
-      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous ListInstanceAttachments call, that you
-          can use to retrieve the next page of content.
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous ListInstanceAttachments call, that you can use to retrieve the next page of content.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -11682,8 +10785,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the organization in which to create the key value map
-      file. Must be of the form `organizations/{organization}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the organization in which to create the key value map file. Must be of the form `organizations/{organization}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11756,9 +10858,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the key value map.
-      Must be of the form
-      `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the key value map. Must be of the form `organizations/{organization}/keyvaluemaps/{keyvaluemap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11824,9 +10924,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -11885,16 +10983,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the
-  server doesn't support this method, it returns `UNIMPLEMENTED`.
-
-  NOTE: the `name` binding allows API services to override the binding
-  to use different resource name schemes, such as `users/*/operations`. To
-  override the binding, API services can add a binding such as
-  `"/v1/{name=users/*}/operations"` to their service configuration.
-  For backwards compatibility, the default name includes the operations
-  collection id, however overriding users must ensure the name binding
-  is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
 
   ## Parameters
 
@@ -11961,20 +11050,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a Custom Report for an Organization. A Custom Report
-  provides Apigee Customers to create custom dashboards in addition
-  to the standard dashboards which are provided. The Custom Report in its
-  simplest form contains specifications about metrics, dimensions and
-  filters. It is important to note that the custom report by itself does not
-  provide an executable entity. The Edge UI converts the custom report
-  definition into an analytics query and displays the result in a chart.
+  Creates a Custom Report for an Organization. A Custom Report provides Apigee Customers to create custom dashboards in addition to the standard dashboards which are provided. The Custom Report in its simplest form contains specifications about metrics, dimensions and filters. It is important to note that the custom report by itself does not provide an executable entity. The Edge UI converts the custom report definition into an analytics query and displays the result in a chart.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent organization name under which the Custom Report will
-      be created. Must be of the form:
-        `organizations/{organization_id}/reports`
+  *   `parent` (*type:* `String.t`) - Required. The parent organization name under which the Custom Report will be created. Must be of the form: `organizations/{organization_id}/reports`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12037,8 +11118,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Custom Report name of the form:
-        `organizations/{organization_id}/reports/{report_name}`
+  *   `name` (*type:* `String.t`) - Required. Custom Report name of the form: `organizations/{organization_id}/reports/{report_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12099,8 +11179,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Custom Report name of the form:
-        `organizations/{organization_id}/reports/{report_name}`
+  *   `name` (*type:* `String.t`) - Required. Custom Report name of the form: `organizations/{organization_id}/reports/{report_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12161,9 +11240,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent organization name under which the API product will
-      be listed
-        `organizations/{organization_id}/reports`
+  *   `parent` (*type:* `String.t`) - Required. The parent organization name under which the API product will be listed `organizations/{organization_id}/reports`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12226,8 +11303,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Custom Report name of the form:
-        `organizations/{organization_id}/reports/{report_name}`
+  *   `name` (*type:* `String.t`) - Required. Custom Report name of the form: `organizations/{organization_id}/reports/{report_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12285,21 +11361,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Uploads a ZIP-formatted shared flow configuration bundle to an
-  organization. If the shared flow already exists, this creates a new
-  revision of it. If the shared flow does not exist, this creates it.
-
-  Once imported, the shared flow revision must be deployed before it can be
-  accessed at runtime.
-
-  The size limit of a shared flow bundle is 15 MB.
+  Uploads a ZIP-formatted shared flow configuration bundle to an organization. If the shared flow already exists, this creates a new revision of it. If the shared flow does not exist, this creates it. Once imported, the shared flow revision must be deployed before it can be accessed at runtime. The size limit of a shared flow bundle is 15 MB.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the parent organization under which to create the
-      shared flow. Must be of the form:
-        `organizations/{organization_id}`
+  *   `parent` (*type:* `String.t`) - Required. The name of the parent organization under which to create the shared flow. Must be of the form: `organizations/{organization_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12371,14 +11438,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a shared flow and all it's revisions. The shared flow must be
-  undeployed before you can delete it.
+  Deletes a shared flow and all it's revisions. The shared flow must be undeployed before you can delete it.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. shared flow name of the form:
-        `organizations/{organization_id}/sharedflows/{shared_flow_id}`
+  *   `name` (*type:* `String.t`) - Required. shared flow name of the form: `organizations/{organization_id}/sharedflows/{shared_flow_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12444,9 +11509,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the shared flow to get. Must be of the
-      form:
-        `organizations/{organization_id}/sharedflows/{shared_flow_id}`
+  *   `name` (*type:* `String.t`) - Required. The name of the shared flow to get. Must be of the form: `organizations/{organization_id}/sharedflows/{shared_flow_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12507,9 +11570,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the parent organization under which to get shared
-      flows. Must be of the form:
-        `organizations/{organization_id}`
+  *   `parent` (*type:* `String.t`) - Required. The name of the parent organization under which to get shared flows. Must be of the form: `organizations/{organization_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12579,9 +11640,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the shared flow for which to return deployment information in the
-      following format:
-        `organizations/{org}/sharedflows/{sharedflow}`
+  *   `parent` (*type:* `String.t`) - Required. Name of the shared flow for which to return deployment information in the following format: `organizations/{org}/sharedflows/{sharedflow}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12647,15 +11706,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a shared flow and all associated policies, resources, and
-  revisions. You must undeploy the shared flow before deleting it.
+  Deletes a shared flow and all associated policies, resources, and revisions. You must undeploy the shared flow before deleting it.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the shared flow revision to delete. Must be of the
-      form:
-        `organizations/{organization_id}/sharedflows/{shared_flow_id}/revisions/{revision_id}`
+  *   `name` (*type:* `String.t`) - Required. The name of the shared flow revision to delete. Must be of the form: `organizations/{organization_id}/sharedflows/{shared_flow_id}/revisions/{revision_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12721,17 +11777,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets a revision of a shared flow.
-
-  If `format=bundle` is passed, it instead outputs a shared flow revision as
-  a ZIP-formatted bundle of code and config files.
+  Gets a revision of a shared flow. If `format=bundle` is passed, it instead outputs a shared flow revision as a ZIP-formatted bundle of code and config files.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the shared flow revision to get. Must be of the
-      form:
-        `organizations/{organization_id}/sharedflows/{shared_flow_id}/revisions/{revision_id}`
+  *   `name` (*type:* `String.t`) - Required. The name of the shared flow revision to get. Must be of the form: `organizations/{organization_id}/sharedflows/{shared_flow_id}/revisions/{revision_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12744,8 +11795,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:format` (*type:* `String.t`) - Specify `bundle` to export the contents of the shared flow bundle.
-          Otherwise, the bundle metadata is returned.
+      *   `:format` (*type:* `String.t`) - Specify `bundle` to export the contents of the shared flow bundle. Otherwise, the bundle metadata is returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -12798,19 +11848,12 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates a shared flow revision. This operation is only allowed on revisions
-  which have never been deployed. After deployment a revision becomes
-  immutable, even if it becomes undeployed.
-
-  The payload is a ZIP-formatted shared flow.  Content type must be either
-  multipart/form-data or application/octet-stream.
+  Updates a shared flow revision. This operation is only allowed on revisions which have never been deployed. After deployment a revision becomes immutable, even if it becomes undeployed. The payload is a ZIP-formatted shared flow. Content type must be either multipart/form-data or application/octet-stream.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the shared flow revision to update.
-      Must be of the form:
-        `organizations/{organization_id}/sharedflows/{shared_flow_id}/revisions/{revision_id}`
+  *   `name` (*type:* `String.t`) - Required. The name of the shared flow revision to update. Must be of the form: `organizations/{organization_id}/sharedflows/{shared_flow_id}/revisions/{revision_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12823,9 +11866,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:validate` (*type:* `boolean()`) - Ignored. All uploads are validated regardless of the value of this field.
-          It is kept for compatibility with existing APIs. Must be `true` or `false`
-          if provided.
+      *   `:validate` (*type:* `boolean()`) - Ignored. All uploads are validated regardless of the value of this field. It is kept for compatibility with existing APIs. Must be `true` or `false` if provided.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleApiHttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -12887,9 +11928,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the API proxy revision for which to return deployment information
-      in the following format:
-        `organizations/{org}/sharedflows/{sharedflow}/revisions/{rev}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the API proxy revision for which to return deployment information in the following format: `organizations/{org}/sharedflows/{sharedflow}/revisions/{rev}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

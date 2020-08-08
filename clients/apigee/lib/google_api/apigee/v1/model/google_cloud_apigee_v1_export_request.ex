@@ -21,18 +21,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ExportRequest do
 
   ## Attributes
 
-  *   `csvDelimiter` (*type:* `String.t`, *default:* `nil`) - Optional. Delimiter used in the CSV file, if `outputFormat` is set
-      to `csv`. Defaults to the `,` (comma) character.
-      Supported delimiter characters include comma (`,`), pipe (`|`),
-      and tab (`\\t`).
+  *   `csvDelimiter` (*type:* `String.t`, *default:* `nil`) - Optional. Delimiter used in the CSV file, if `outputFormat` is set to `csv`. Defaults to the `,` (comma) character. Supported delimiter characters include comma (`,`), pipe (`|`), and tab (`\\t`).
   *   `datastoreName` (*type:* `String.t`, *default:* `nil`) - Required. Name of the preconfigured datastore.
   *   `dateRange` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DateRange.t`, *default:* `nil`) - Required. Date range of the data to export.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the export job.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the export job.
-  *   `outputFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Output format of the export.
-      Valid values include: `csv` or `json`. Defaults to `json`.
-      Note: Configure the delimiter for CSV output using the `csvDelimiter`
-      property.
+  *   `outputFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Output format of the export. Valid values include: `csv` or `json`. Defaults to `json`. Note: Configure the delimiter for CSV output using the `csvDelimiter` property.
   """
 
   use GoogleApi.Gax.ModelBase

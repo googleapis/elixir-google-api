@@ -21,19 +21,13 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperAppKey do
 
   ## Attributes
 
-  *   `apiProducts` (*type:* `list(any())`, *default:* `nil`) - List of API products for which the credential can be used.
-
-      **Note**: Do not specify the list of API products when creating a consumer
-      key and secret for a developer app. Instead, use the
-      UpdateDeveloperAppKey API to
-      make the association after the consumer key and secret are created.
+  *   `apiProducts` (*type:* `list(any())`, *default:* `nil`) - List of API products for which the credential can be used. **Note**: Do not specify the list of API products when creating a consumer key and secret for a developer app. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created.
   *   `attributes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t)`, *default:* `nil`) - List of attributes associated with the credential.
   *   `consumerKey` (*type:* `String.t`, *default:* `nil`) - Consumer key.
   *   `consumerSecret` (*type:* `String.t`, *default:* `nil`) - Secret key.
   *   `expiresAt` (*type:* `String.t`, *default:* `nil`) - Time the developer app expires in milliseconds since epoch.
   *   `issuedAt` (*type:* `String.t`, *default:* `nil`) - Time the developer app was created in milliseconds since epoch.
-  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Scopes to apply to the app. The specified scope names must already
-      be defined for the API product that you associate with the app.
+  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Scopes to apply to the app. The specified scope names must already be defined for the API product that you associate with the app.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the credential. Valid values include `approved` or `revoked`.
   """
 

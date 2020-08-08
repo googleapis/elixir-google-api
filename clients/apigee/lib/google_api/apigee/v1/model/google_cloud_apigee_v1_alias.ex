@@ -21,8 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Alias do
 
   ## Attributes
 
-  *   `alias` (*type:* `String.t`, *default:* `nil`) - The resource ID for this alias. Values must match regular expression
-      `[^/]{1,255}`.
+  *   `alias` (*type:* `String.t`, *default:* `nil`) - The resource ID for this alias. Values must match regular expression `[^/]{1,255}`.
   *   `certsInfo` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Certificate.t`, *default:* `nil`) - The chain of certificates under this alias.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of alias.
   """

@@ -26,17 +26,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Developer do
   *   `apps` (*type:* `list(String.t)`, *default:* `nil`) - List of apps associated with the developer.
   *   `attributes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t)`, *default:* `nil`) - Optional. Developer attributes (name/value pairs). The custom attribute limit is 18.
   *   `companies` (*type:* `list(String.t)`, *default:* `nil`) - List of companies associated with the developer.
-  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time at which the developer was created in milliseconds
-      since epoch.
-  *   `developerId` (*type:* `String.t`, *default:* `nil`) - ID of the developer.
-
-      **Note**: IDs are generated internally by Apigee and are not
-      guaranteed to stay the same over time.
-  *   `email` (*type:* `String.t`, *default:* `nil`) - Required. Email address of the developer. This value is used to uniquely identify
-      the developer in Apigee hybrid.
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time at which the developer was created in milliseconds since epoch.
+  *   `developerId` (*type:* `String.t`, *default:* `nil`) - ID of the developer. **Note**: IDs are generated internally by Apigee and are not guaranteed to stay the same over time.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Required. Email address of the developer. This value is used to uniquely identify the developer in Apigee hybrid.
   *   `firstName` (*type:* `String.t`, *default:* `nil`) - Required. First name of the developer.
-  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time at which the developer was last modified in
-      milliseconds since epoch.
+  *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time at which the developer was last modified in milliseconds since epoch.
   *   `lastName` (*type:* `String.t`, *default:* `nil`) - Required. Last name of the developer.
   *   `organizationName` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Apigee organization in which the developer resides.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the developer. Valid values are `active` and `inactive`.

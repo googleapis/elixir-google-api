@@ -22,14 +22,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IngressConfig do
   ## Attributes
 
   *   `environmentGroups` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig.t)`, *default:* `nil`) - List of environment groups in the organization.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource in the following format:
-      `organizations/{org}/deployedIngressConfig`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource in the following format: `organizations/{org}/deployedIngressConfig`.
   *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time at which the IngressConfig revision was created.
-  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision id that defines the ordering on IngressConfig resources.
-      The higher the revision, the more recently the configuration
-      was deployed.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id for the ingress config that will only change if the
-      organization is deleted and recreated.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision id that defines the ordering on IngressConfig resources. The higher the revision, the more recently the configuration was deployed.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id for the ingress config that will only change if the organization is deleted and recreated.
   """
 
   use GoogleApi.Gax.ModelBase

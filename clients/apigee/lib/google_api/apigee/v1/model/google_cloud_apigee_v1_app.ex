@@ -24,21 +24,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1App do
   *   `apiProducts` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProductRef.t)`, *default:* `nil`) - List of API products associated with the app.
   *   `appId` (*type:* `String.t`, *default:* `nil`) - ID of the app.
   *   `attributes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t)`, *default:* `nil`) - List of attributes.
-  *   `callbackUrl` (*type:* `String.t`, *default:* `nil`) - Callback URL used by OAuth 2.0 authorization servers to communicate
-      authorization codes back to apps.
+  *   `callbackUrl` (*type:* `String.t`, *default:* `nil`) - Callback URL used by OAuth 2.0 authorization servers to communicate authorization codes back to apps.
   *   `companyName` (*type:* `String.t`, *default:* `nil`) - Name of the company that owns the app.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Unix time when the app was created.
-  *   `credentials` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Credential.t)`, *default:* `nil`) - Output only. Set of credentials for the app. Credentials are API
-      key/secret pairs associated with API products.
-  *   `developerId` (*type:* `String.t`, *default:* `nil`) - ID  of the developer.
-  *   `keyExpiresIn` (*type:* `String.t`, *default:* `nil`) - Duration, in milliseconds, of the consumer key that will
-      be generated for the app. The default value, -1, indicates an
-      infinite validity period. Once set, the expiration can't be updated.
-      json key: keyExpiresIn
+  *   `credentials` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Credential.t)`, *default:* `nil`) - Output only. Set of credentials for the app. Credentials are API key/secret pairs associated with API products.
+  *   `developerId` (*type:* `String.t`, *default:* `nil`) - ID of the developer.
+  *   `keyExpiresIn` (*type:* `String.t`, *default:* `nil`) - Duration, in milliseconds, of the consumer key that will be generated for the app. The default value, -1, indicates an infinite validity period. Once set, the expiration can't be updated. json key: keyExpiresIn
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Last modified time as milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the app.
-  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Scopes to apply to the app. The specified scope names must already
-      exist on the API product that you associate with the app.
+  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Scopes to apply to the app. The specified scope names must already exist on the API product that you associate with the app.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the credential.
   """
 

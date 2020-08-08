@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListEnvironmentGroupsResponse do
   @moduledoc """
-  Response for
-  ListEnvironmentGroups.
+  Response for ListEnvironmentGroups.
 
   ## Attributes
 
   *   `environmentGroups` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroup.t)`, *default:* `nil`) - EnvironmentGroups in the specified organization.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListEnvironmentGroups request to
-      retrieve the next page. If omitted, no subsequent pages exist.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListEnvironmentGroups request to retrieve the next page. If omitted, no subsequent pages exist.
   """
 
   use GoogleApi.Gax.ModelBase

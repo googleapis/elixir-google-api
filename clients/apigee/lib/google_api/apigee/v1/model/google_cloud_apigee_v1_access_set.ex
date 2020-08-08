@@ -17,12 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessSet do
   @moduledoc """
-  Set action. For example,
-  "Set" : {
-    "name" : "target.name",
-    "success" : true,
-    "value" : "default"
-  }
+  Set action. For example, "Set" : { "name" : "target.name", "success" : true, "value" : "default" }
 
   ## Attributes
 

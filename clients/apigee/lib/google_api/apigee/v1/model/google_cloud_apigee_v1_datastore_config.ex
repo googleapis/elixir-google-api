@@ -21,15 +21,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DatastoreConfig do
 
   ## Attributes
 
-  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Storage bucket.
-      Required for `gcs` target_type.
-  *   `datasetName` (*type:* `String.t`, *default:* `nil`) - BigQuery dataset name
-      Required for `bigquery` target_type.
-  *   `path` (*type:* `String.t`, *default:* `nil`) - Path of Cloud Storage bucket
-      Required for `gcs` target_type.
+  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Storage bucket. Required for `gcs` target_type.
+  *   `datasetName` (*type:* `String.t`, *default:* `nil`) - BigQuery dataset name Required for `bigquery` target_type.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Path of Cloud Storage bucket Required for `gcs` target_type.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. GCP project in which the datastore exists
-  *   `tablePrefix` (*type:* `String.t`, *default:* `nil`) - Prefix of BigQuery table
-      Required for `bigquery` target_type.
+  *   `tablePrefix` (*type:* `String.t`, *default:* `nil`) - Prefix of BigQuery table Required for `bigquery` target_type.
   """
 
   use GoogleApi.Gax.ModelBase

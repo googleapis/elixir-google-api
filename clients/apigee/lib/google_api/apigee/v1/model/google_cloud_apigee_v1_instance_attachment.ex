@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceAttachment do
   @moduledoc """
-  InstanceAttachment represents the installation of an environment onto an
-  instance.
+  InstanceAttachment represents the installation of an environment onto an instance.
 
   ## Attributes
 

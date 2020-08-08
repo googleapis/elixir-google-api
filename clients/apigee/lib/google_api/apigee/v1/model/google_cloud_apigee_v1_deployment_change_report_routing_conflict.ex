@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingConflict do
   @moduledoc """
-  Describes a routing conflict that may cause a deployment not to receive
-  traffic at some basepath.
+  Describes a routing conflict that may cause a deployment not to receive traffic at some basepath.
 
   ## Attributes
 

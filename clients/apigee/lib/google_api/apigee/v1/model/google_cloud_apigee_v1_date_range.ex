@@ -21,11 +21,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DateRange do
 
   ## Attributes
 
-  *   `end` (*type:* `String.t`, *default:* `nil`) - Required. End date (exclusive) of the data to export in the format `yyyy-mm-dd`.
-      The date range ends at 00:00:00 UTC on the end date- which will not be in
-      the output.
-  *   `start` (*type:* `String.t`, *default:* `nil`) - Required. Start date of the data to export in the format `yyyy-mm-dd`.
-      The date range begins at 00:00:00 UTC on the start date.
+  *   `end` (*type:* `String.t`, *default:* `nil`) - Required. End date (exclusive) of the data to export in the format `yyyy-mm-dd`. The date range ends at 00:00:00 UTC on the end date- which will not be in the output.
+  *   `start` (*type:* `String.t`, *default:* `nil`) - Required. Start date of the data to export in the format `yyyy-mm-dd`. The date range begins at 00:00:00 UTC on the start date.
   """
 
   use GoogleApi.Gax.ModelBase
