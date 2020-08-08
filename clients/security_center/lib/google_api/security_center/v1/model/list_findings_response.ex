@@ -22,8 +22,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ListFindingsResponse do
   ## Attributes
 
   *   `listFindingsResults` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ListFindingsResult.t)`, *default:* `nil`) - Findings matching the list request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
-      results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Time used for executing the list request.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of findings matching the query.
   """

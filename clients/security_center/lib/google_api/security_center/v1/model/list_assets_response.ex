@@ -22,8 +22,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ListAssetsResponse do
   ## Attributes
 
   *   `listAssetsResults` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ListAssetsResult.t)`, *default:* `nil`) - Assets matching the list request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
-      results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Time used for executing the list request.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of assets matching the query.
   """

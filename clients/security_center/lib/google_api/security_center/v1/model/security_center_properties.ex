@@ -17,26 +17,18 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties do
   @moduledoc """
-  Security Command Center managed properties. These properties are managed by
-  Security Command Center and cannot be modified by the user.
+  Security Command Center managed properties. These properties are managed by Security Command Center and cannot be modified by the user.
 
   ## Attributes
 
   *   `resourceDisplayName` (*type:* `String.t`, *default:* `nil`) - The user defined display name for this resource.
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The full resource name of the Google Cloud resource this asset
-      represents. This field is immutable after create time. See:
-      https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The full resource name of the Google Cloud resource this asset represents. This field is immutable after create time. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `resourceOwners` (*type:* `list(String.t)`, *default:* `nil`) - Owners of the Google Cloud resource.
-  *   `resourceParent` (*type:* `String.t`, *default:* `nil`) - The full resource name of the immediate parent of the resource. See:
-      https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `resourceParent` (*type:* `String.t`, *default:* `nil`) - The full resource name of the immediate parent of the resource. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `resourceParentDisplayName` (*type:* `String.t`, *default:* `nil`) - The user defined display name for the parent of this resource.
-  *   `resourceProject` (*type:* `String.t`, *default:* `nil`) - The full resource name of the project the resource belongs to. See:
-      https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `resourceProject` (*type:* `String.t`, *default:* `nil`) - The full resource name of the project the resource belongs to. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `resourceProjectDisplayName` (*type:* `String.t`, *default:* `nil`) - The user defined display name for the project of this resource.
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The type of the Google Cloud resource. Examples include: APPLICATION,
-      PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-      Security Command Center and/or the producer of the resource and is
-      immutable after create time.
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The type of the Google Cloud resource. Examples include: APPLICATION, PROJECT, and ORGANIZATION. This is a case insensitive field defined by Security Command Center and/or the producer of the resource and is immutable after create time.
   """
 
   use GoogleApi.Gax.ModelBase

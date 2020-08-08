@@ -17,19 +17,15 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Resource do
   @moduledoc """
-
-  Information related to the Google Cloud resource.
+   Information related to the Google Cloud resource.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource. See:
-      https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The full resource name of resource's parent.
-  *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) - 
-      The human readable name of resource's parent.
+  *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) -  The human readable name of resource's parent.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The full resource name of project that the resource belongs to.
-  *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - 
-      The human readable name of project that the resource belongs to.
+  *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) -  The human readable name of project that the resource belongs to.
   """
 
   use GoogleApi.Gax.ModelBase

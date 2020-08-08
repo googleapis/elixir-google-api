@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Resource do
   @moduledoc """
-  Information related to the Google Cloud resource that is
-  associated with this finding.
+  Information related to the Google Cloud resource that is associated with this finding. LINT.IfChange
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource. See:
-      https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of resource's parent.
   *   `parentName` (*type:* `String.t`, *default:* `nil`) - The full resource name of resource's parent.
   *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of project that the resource belongs to.

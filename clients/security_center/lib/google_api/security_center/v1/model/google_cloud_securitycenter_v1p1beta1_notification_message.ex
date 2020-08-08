@@ -21,12 +21,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1No
 
   ## Attributes
 
-  *   `finding` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Finding.t`, *default:* `nil`) - If it's a Finding based notification config, this field will be
-      populated.
+  *   `finding` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Finding.t`, *default:* `nil`) - If it's a Finding based notification config, this field will be populated.
   *   `notificationConfigName` (*type:* `String.t`, *default:* `nil`) - Name of the notification config that generated current notification.
   *   `resource` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Resource.t`, *default:* `nil`) - The Cloud resource tied to the notification.
-  *   `temporalAsset` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1TemporalAsset.t`, *default:* `nil`) - If it's an asset based notification config, this field will be
-      populated.
+  *   `temporalAsset` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1TemporalAsset.t`, *default:* `nil`) - If it's an asset based notification config, this field will be populated.
   """
 
   use GoogleApi.Gax.ModelBase

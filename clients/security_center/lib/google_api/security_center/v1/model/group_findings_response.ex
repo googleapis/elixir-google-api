@@ -21,11 +21,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupFindingsResponse do
 
   ## Attributes
 
-  *   `groupByResults` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GroupResult.t)`, *default:* `nil`) - Group results. There exists an element for each existing unique
-      combination of property/values. The element contains a count for the number
-      of times those specific property/values appear.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
-      results.
+  *   `groupByResults` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GroupResult.t)`, *default:* `nil`) - Group results. There exists an element for each existing unique combination of property/values. The element contains a count for the number of times those specific property/values appear.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Time used for executing the groupBy request.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of results matching the query.
   """
