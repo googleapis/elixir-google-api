@@ -22,8 +22,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.ListImportJobsResponse do
   ## Attributes
 
   *   `importJobs` (*type:* `list(GoogleApi.CloudKMS.V1.Model.ImportJob.t)`, *default:* `nil`) - The list of ImportJobs.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in
-      ListImportJobsRequest.page_token to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in ListImportJobsRequest.page_token to retrieve the next page of results.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of ImportJobs that matched the query.
   """
 

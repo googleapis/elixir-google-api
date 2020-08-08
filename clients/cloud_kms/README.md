@@ -2,8 +2,7 @@
 
 Cloud Key Management Service (KMS) API client library.
 
-Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications.
-
+Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications. 
 
 ## Installation
 

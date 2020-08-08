@@ -22,8 +22,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.ListCryptoKeysResponse do
   ## Attributes
 
   *   `cryptoKeys` (*type:* `list(GoogleApi.CloudKMS.V1.Model.CryptoKey.t)`, *default:* `nil`) - The list of CryptoKeys.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in
-      ListCryptoKeysRequest.page_token to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in ListCryptoKeysRequest.page_token to retrieve the next page of results.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of CryptoKeys that matched the query.
   """
 

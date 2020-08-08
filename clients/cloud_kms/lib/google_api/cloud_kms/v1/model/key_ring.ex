@@ -22,8 +22,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.KeyRing do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this KeyRing was created.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for the KeyRing in the format
-      `projects/*/locations/*/keyRings/*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for the KeyRing in the format `projects/*/locations/*/keyRings/*`.
   """
 
   use GoogleApi.Gax.ModelBase

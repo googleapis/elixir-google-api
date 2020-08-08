@@ -167,8 +167,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the
-      KeyRings, in the format `projects/*/locations/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the KeyRings, in the format `projects/*/locations/*`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -182,8 +181,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:keyRingId` (*type:* `String.t`) - Required. It must be unique within a location and match the regular
-          expression `[a-zA-Z0-9_-]{1,63}`
+      *   `:keyRingId` (*type:* `String.t`) - Required. It must be unique within a location and match the regular expression `[a-zA-Z0-9_-]{1,63}`
       *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.KeyRing.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -314,15 +312,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -337,18 +332,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -413,8 +397,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the
-      KeyRings, in the format `projects/*/locations/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the KeyRings, in the format `projects/*/locations/*`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -428,20 +411,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For
-          more information, see
-          [Sorting and filtering list
-          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
-          results will be sorted in the default order.  For more information, see
-          [Sorting and filtering list
-          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of KeyRings to include in the
-          response.  Further KeyRings can subsequently be obtained by
-          including the ListKeyRingsResponse.next_page_token in a subsequent
-          request.  If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via
-          ListKeyRingsResponse.next_page_token.
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of KeyRings to include in the response. Further KeyRings can subsequently be obtained by including the ListKeyRingsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via ListKeyRingsResponse.next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -500,16 +473,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
-
-  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -584,19 +553,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a `NOT_FOUND` error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -675,17 +637,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Create a new CryptoKey within a KeyRing.
-
-  CryptoKey.purpose and
-  CryptoKey.version_template.algorithm
-  are required.
+  Create a new CryptoKey within a KeyRing. CryptoKey.purpose and CryptoKey.version_template.algorithm are required.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the KeyRing associated with the
-      CryptoKeys.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the KeyRing associated with the CryptoKeys.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -700,13 +657,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:cryptoKeyId` (*type:* `String.t`) - Required. It must be unique within a KeyRing and match the regular
-          expression `[a-zA-Z0-9_-]{1,63}`
-      *   `:skipInitialVersionCreation` (*type:* `boolean()`) - If set to true, the request will create a CryptoKey without any
-          CryptoKeyVersions. You must manually call
-          CreateCryptoKeyVersion or
-          ImportCryptoKeyVersion
-          before you can use this CryptoKey.
+      *   `:cryptoKeyId` (*type:* `String.t`) - Required. It must be unique within a KeyRing and match the regular expression `[a-zA-Z0-9_-]{1,63}`
+      *   `:skipInitialVersionCreation` (*type:* `boolean()`) - If set to true, the request will create a CryptoKey without any CryptoKeyVersions. You must manually call CreateCryptoKeyVersion or ImportCryptoKeyVersion before you can use this CryptoKey.
       *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKey.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -771,14 +723,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Decrypts data that was protected by Encrypt. The CryptoKey.purpose
-  must be ENCRYPT_DECRYPT.
+  Decrypts data that was protected by Encrypt. The CryptoKey.purpose must be ENCRYPT_DECRYPT.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey to use for decryption.
-      The server will choose the appropriate version.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey to use for decryption. The server will choose the appropriate version.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -859,18 +809,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Encrypts data, so that it can only be recovered by a call to Decrypt.
-  The CryptoKey.purpose must be
-  ENCRYPT_DECRYPT.
+  Encrypts data, so that it can only be recovered by a call to Decrypt. The CryptoKey.purpose must be ENCRYPT_DECRYPT.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey or CryptoKeyVersion
-      to use for encryption.
-
-      If a CryptoKey is specified, the server will use its
-      primary version.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey or CryptoKeyVersion to use for encryption. If a CryptoKey is specified, the server will use its primary version.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -951,8 +895,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Returns metadata for a given CryptoKey, as well as its
-  primary CryptoKeyVersion.
+  Returns metadata for a given CryptoKey, as well as its primary CryptoKeyVersion.
 
   ## Parameters
 
@@ -1036,15 +979,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1060,18 +1000,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1139,8 +1068,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the KeyRing to list, in the format
-      `projects/*/locations/*/keyRings/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the KeyRing to list, in the format `projects/*/locations/*/keyRings/*`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1155,20 +1083,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For
-          more information, see
-          [Sorting and filtering list
-          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
-          results will be sorted in the default order. For more information, see
-          [Sorting and filtering list
-          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of CryptoKeys to include in the
-          response.  Further CryptoKeys can subsequently be obtained by
-          including the ListCryptoKeysResponse.next_page_token in a subsequent
-          request.  If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via
-          ListCryptoKeysResponse.next_page_token.
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of CryptoKeys to include in the response. Further CryptoKeys can subsequently be obtained by including the ListCryptoKeysResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via ListCryptoKeysResponse.next_page_token.
       *   `:versionView` (*type:* `String.t`) - The fields of the primary version to include in the response.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1240,8 +1158,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `cryptoKey.name`. Output only. The resource name for this CryptoKey in the format
-      `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `cryptoKey.name`. Output only. The resource name for this CryptoKey in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   *   `locations_id` (*type:* `String.t`) - Part of `cryptoKey.name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `cryptoKey.name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `cryptoKey.name`. See documentation of `projectsId`.
@@ -1324,16 +1241,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
-
-  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1412,19 +1325,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a `NOT_FOUND` error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1507,9 +1413,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Update the version of a CryptoKey that will be used in Encrypt.
-
-  Returns an error if called on an asymmetric key.
+  Update the version of a CryptoKey that will be used in Encrypt. Returns an error if called on an asymmetric key.
 
   ## Parameters
 
@@ -1595,15 +1499,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Decrypts data that was encrypted with a public key retrieved from
-  GetPublicKey corresponding to a CryptoKeyVersion with
-  CryptoKey.purpose ASYMMETRIC_DECRYPT.
+  Decrypts data that was encrypted with a public key retrieved from GetPublicKey corresponding to a CryptoKeyVersion with CryptoKey.purpose ASYMMETRIC_DECRYPT.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for
-      decryption.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for decryption.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1688,9 +1589,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Signs data using a CryptoKeyVersion with CryptoKey.purpose
-  ASYMMETRIC_SIGN, producing a signature that can be verified with the public
-  key retrieved from GetPublicKey.
+  Signs data using a CryptoKeyVersion with CryptoKey.purpose ASYMMETRIC_SIGN, producing a signature that can be verified with the public key retrieved from GetPublicKey.
 
   ## Parameters
 
@@ -1780,17 +1679,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Create a new CryptoKeyVersion in a CryptoKey.
-
-  The server will assign the next sequential id. If unset,
-  state will be set to
-  ENABLED.
+  Create a new CryptoKeyVersion in a CryptoKey. The server will assign the next sequential id. If unset, state will be set to ENABLED.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey associated with
-      the CryptoKeyVersions.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey associated with the CryptoKeyVersions.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -1871,18 +1765,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Schedule a CryptoKeyVersion for destruction.
-
-  Upon calling this method, CryptoKeyVersion.state will be set to
-  DESTROY_SCHEDULED
-  and destroy_time will be set to a time 24
-  hours in the future, at which point the state
-  will be changed to
-  DESTROYED, and the key
-  material will be irrevocably destroyed.
-
-  Before the destroy_time is reached,
-  RestoreCryptoKeyVersion may be called to reverse the process.
+  Schedule a CryptoKeyVersion for destruction. Upon calling this method, CryptoKeyVersion.state will be set to DESTROY_SCHEDULED and destroy_time will be set to a time 24 hours in the future, at which point the state will be changed to DESTROYED, and the key material will be irrevocably destroyed. Before the destroy_time is reached, RestoreCryptoKeyVersion may be called to reverse the process.
 
   ## Parameters
 
@@ -2061,16 +1944,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Returns the public key for the given CryptoKeyVersion. The
-  CryptoKey.purpose must be
-  ASYMMETRIC_SIGN or
-  ASYMMETRIC_DECRYPT.
+  Returns the public key for the given CryptoKeyVersion. The CryptoKey.purpose must be ASYMMETRIC_SIGN or ASYMMETRIC_DECRYPT.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the CryptoKeyVersion public key to
-      get.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the CryptoKeyVersion public key to get.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -2153,17 +2032,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Imports a new CryptoKeyVersion into an existing CryptoKey using the
-  wrapped key material provided in the request.
-
-  The version ID will be assigned the next sequential id within the
-  CryptoKey.
+  Imports a new CryptoKeyVersion into an existing CryptoKey using the wrapped key material provided in the request. The version ID will be assigned the next sequential id within the CryptoKey.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey to
-      be imported into.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey to be imported into.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -2249,8 +2123,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the CryptoKey to list, in the format
-      `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the CryptoKey to list, in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -2266,21 +2139,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For
-          more information, see
-          [Sorting and filtering list
-          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
-          results will be sorted in the default order. For more information, see
-          [Sorting and filtering list
-          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of CryptoKeyVersions to
-          include in the response. Further CryptoKeyVersions can
-          subsequently be obtained by including the
-          ListCryptoKeyVersionsResponse.next_page_token in a subsequent request.
-          If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via
-          ListCryptoKeyVersionsResponse.next_page_token.
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of CryptoKeyVersions to include in the response. Further CryptoKeyVersions can subsequently be obtained by including the ListCryptoKeyVersionsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via ListCryptoKeyVersionsResponse.next_page_token.
       *   `:view` (*type:* `String.t`) - The fields to include in the response.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2352,19 +2214,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Update a CryptoKeyVersion's metadata.
-
-  state may be changed between
-  ENABLED and
-  DISABLED using this
-  method. See DestroyCryptoKeyVersion and RestoreCryptoKeyVersion to
-  move between other states.
+  Update a CryptoKeyVersion's metadata. state may be changed between ENABLED and DISABLED using this method. See DestroyCryptoKeyVersion and RestoreCryptoKeyVersion to move between other states.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. Output only. The resource name for this CryptoKeyVersion in the format
-      `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. Output only. The resource name for this CryptoKeyVersion in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
   *   `locations_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
@@ -2452,13 +2307,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Restore a CryptoKeyVersion in the
-  DESTROY_SCHEDULED
-  state.
-
-  Upon restoration of the CryptoKeyVersion, state
-  will be set to DISABLED,
-  and destroy_time will be cleared.
+  Restore a CryptoKeyVersion in the DESTROY_SCHEDULED state. Upon restoration of the CryptoKeyVersion, state will be set to DISABLED, and destroy_time will be cleared.
 
   ## Parameters
 
@@ -2548,15 +2397,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Create a new ImportJob within a KeyRing.
-
-  ImportJob.import_method is required.
+  Create a new ImportJob within a KeyRing. ImportJob.import_method is required.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the KeyRing associated with the
-      ImportJobs.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the KeyRing associated with the ImportJobs.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2571,8 +2417,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:importJobId` (*type:* `String.t`) - Required. It must be unique within a KeyRing and match the regular
-          expression `[a-zA-Z0-9_-]{1,63}`
+      *   `:importJobId` (*type:* `String.t`) - Required. It must be unique within a KeyRing and match the regular expression `[a-zA-Z0-9_-]{1,63}`
       *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.ImportJob.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2720,15 +2565,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -2744,18 +2586,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2823,8 +2654,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the KeyRing to list, in the format
-      `projects/*/locations/*/keyRings/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the KeyRing to list, in the format `projects/*/locations/*/keyRings/*`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2839,20 +2669,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For
-          more information, see
-          [Sorting and filtering list
-          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the
-          results will be sorted in the default order. For more information, see
-          [Sorting and filtering list
-          results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of ImportJobs to include in the
-          response. Further ImportJobs can subsequently be obtained by
-          including the ListImportJobsResponse.next_page_token in a subsequent
-          request. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via
-          ListImportJobsResponse.next_page_token.
+      *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of ImportJobs to include in the response. Further ImportJobs can subsequently be obtained by including the ListImportJobsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via ListImportJobsResponse.next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2917,16 +2737,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
-
-  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -3005,19 +2821,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a `NOT_FOUND` error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.

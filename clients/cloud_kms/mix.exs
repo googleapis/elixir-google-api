@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudKMS.Mixfile do
   use Mix.Project
 
-  @version "0.28.0"
+  @version "0.28.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.CloudKMS.Mixfile do
 
   defp description() do
     """
-    Cloud Key Management Service (KMS) API client library. Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications.
-
+    Cloud Key Management Service (KMS) API client library. Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications. 
     """
   end
 
