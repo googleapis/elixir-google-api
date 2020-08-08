@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.Subnetwork do
   @moduledoc """
-  Represents a subnet that was created or discovered by a private access
-  management service.
+  Represents a subnet that was created or discovered by a private access management service.
 
   ## Attributes
 
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - Subnetwork CIDR range in `10.x.x.x/y` format.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Subnetwork name.
-      See https://cloud.google.com/compute/docs/vpc/
-  *   `network` (*type:* `String.t`, *default:* `nil`) - In the Shared VPC host project, the VPC network that's peered with the
-      consumer network. For example:
-      `projects/1234321/global/networks/host-network`
-  *   `outsideAllocation` (*type:* `boolean()`, *default:* `nil`) - This is a discovered subnet that is not within the current consumer
-      allocated ranges.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Subnetwork name. See https://cloud.google.com/compute/docs/vpc/
+  *   `network` (*type:* `String.t`, *default:* `nil`) - In the Shared VPC host project, the VPC network that's peered with the consumer network. For example: `projects/1234321/global/networks/host-network`
+  *   `outsideAllocation` (*type:* `boolean()`, *default:* `nil`) - This is a discovered subnet that is not within the current consumer allocated ranges.
   """
 
   use GoogleApi.Gax.ModelBase

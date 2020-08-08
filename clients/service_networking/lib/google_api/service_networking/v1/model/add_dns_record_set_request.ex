@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.AddDnsRecordSetRequest do
   @moduledoc """
-  Request to add a record set to a private managed DNS zone in the shared
-  producer host project.
+  Request to add a record set to a private managed DNS zone in the shared producer host project.
 
   ## Attributes
 
-  *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The network that the consumer is using to connect with services.
-      Must be in the form of projects/{project}/global/networks/{network}
-      {project} is the project number, as in '12345'
-      {network} is the network name.
+  *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The network that the consumer is using to connect with services. Must be in the form of projects/{project}/global/networks/{network} {project} is the project number, as in '12345' {network} is the network name.
   *   `dnsRecordSet` (*type:* `GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet.t`, *default:* `nil`) - Required. The DNS record set to add.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. The name of the private DNS zone in the shared producer host project to
-      which the record set will be added.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. The name of the private DNS zone in the shared producer host project to which the record set will be added.
   """
 
   use GoogleApi.Gax.ModelBase

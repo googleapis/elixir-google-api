@@ -17,21 +17,14 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.UpdateDnsRecordSetRequest do
   @moduledoc """
-  Request to update a record set from a private managed DNS zone in the shared
-  producer host project. The name, type, ttl, and data values of the existing
-  record set must all exactly match an existing record set in the specified
-  zone.
+  Request to update a record set from a private managed DNS zone in the shared producer host project. The name, type, ttl, and data values of the existing record set must all exactly match an existing record set in the specified zone.
 
   ## Attributes
 
-  *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The network that the consumer is using to connect with services.
-      Must be in the form of projects/{project}/global/networks/{network}
-      {project} is the project number, as in '12345'
-      {network} is the network name.
+  *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The network that the consumer is using to connect with services. Must be in the form of projects/{project}/global/networks/{network} {project} is the project number, as in '12345' {network} is the network name.
   *   `existingDnsRecordSet` (*type:* `GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet.t`, *default:* `nil`) - Required. The existing DNS record set to update.
   *   `newDnsRecordSet` (*type:* `GoogleApi.ServiceNetworking.V1.Model.DnsRecordSet.t`, *default:* `nil`) - Required. The new values that the DNS record set should be updated to hold.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. The name of the private DNS zone in the shared producer host project from
-      which the record set will be removed.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. The name of the private DNS zone in the shared producer host project from which the record set will be removed.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,24 +17,14 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.AuthenticationRule do
   @moduledoc """
-  Authentication rules for the service.
-
-  By default, if a method has any authentication requirements, every request
-  must include a valid credential matching one of the requirements.
-  It's an error to include more than one kind of credential in a single
-  request.
-
-  If a method doesn't have any auth requirements, request credentials will be
-  ignored.
+  Authentication rules for the service. By default, if a method has any authentication requirements, every request must include a valid credential matching one of the requirements. It's an error to include more than one kind of credential in a single request. If a method doesn't have any auth requirements, request credentials will be ignored.
 
   ## Attributes
 
   *   `allowWithoutCredential` (*type:* `boolean()`, *default:* `nil`) - If true, the service accepts API keys without any other credential.
   *   `oauth` (*type:* `GoogleApi.ServiceNetworking.V1.Model.OAuthRequirements.t`, *default:* `nil`) - The requirements for OAuth credentials.
   *   `requirements` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.AuthRequirement.t)`, *default:* `nil`) - Requirements for additional authentication providers.
-  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies.
-
-      Refer to selector for syntax details.
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies. Refer to selector for syntax details.
   """
 
   use GoogleApi.Gax.ModelBase

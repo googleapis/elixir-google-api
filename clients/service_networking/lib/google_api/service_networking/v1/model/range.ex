@@ -21,11 +21,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Range do
 
   ## Attributes
 
-  *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - CIDR range in "10.x.x.x/y" format that is within the
-      allocated ranges and currently unused.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - In the Shared VPC host project, the VPC network that's peered with the
-      consumer network. For example:
-      `projects/1234321/global/networks/host-network`
+  *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - CIDR range in "10.x.x.x/y" format that is within the allocated ranges and currently unused.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - In the Shared VPC host project, the VPC network that's peered with the consumer network. For example: `projects/1234321/global/networks/host-network`
   """
 
   use GoogleApi.Gax.ModelBase

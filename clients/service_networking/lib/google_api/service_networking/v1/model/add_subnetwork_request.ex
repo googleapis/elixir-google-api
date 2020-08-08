@@ -21,38 +21,15 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
 
   ## Attributes
 
-  *   `consumer` (*type:* `String.t`, *default:* `nil`) - Required. A resource that represents the service consumer, such as
-      `projects/123456`. The project number can be different from the
-      value in the consumer network parameter. For example, the network might be
-      part of a Shared VPC network. In those cases, Service Networking validates
-      that this resource belongs to that Shared VPC.
-  *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The name of the service consumer's VPC network. The network
-      must have an existing private connection that was provisioned through the
-      connections.create method. The name must be in the following format:
-      `projects/{project}/global/networks/{network}`, where {project}
-      is a project number, such as `12345`. {network} is the name of a
-      VPC network in the project.
+  *   `consumer` (*type:* `String.t`, *default:* `nil`) - Required. A resource that represents the service consumer, such as `projects/123456`. The project number can be different from the value in the consumer network parameter. For example, the network might be part of a Shared VPC network. In those cases, Service Networking validates that this resource belongs to that Shared VPC.
+  *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The name of the service consumer's VPC network. The network must have an existing private connection that was provisioned through the connections.create method. The name must be in the following format: `projects/{project}/global/networks/{network}`, where {project} is a project number, such as `12345`. {network} is the name of a VPC network in the project.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the subnet.
-  *   `ipPrefixLength` (*type:* `integer()`, *default:* `nil`) - Required. The prefix length of the subnet's IP address range.  Use CIDR
-      range notation, such as `30` to provision a subnet with an
-      `x.x.x.x/30` CIDR range. The IP address range is drawn from a
-      pool of available ranges in the service consumer's allocated range.
-  *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - Optional. The private IPv6 google access type for the VMs in this subnet.
-      For information about the access types that can be set using this field,
-      see [subnetwork](/compute/docs/reference/rest/v1/subnetworks)
-      in the Compute API documentation.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - Required. The name of a [region](/compute/docs/regions-zones)
-      for the subnet, such `europe-west1`.
-  *   `requestedAddress` (*type:* `String.t`, *default:* `nil`) - Optional. The starting address of a range. The address must be a valid
-      IPv4 address in the x.x.x.x format. This value combined with the IP prefix
-      range is the CIDR range for the subnet. The range must be within the
-      allocated range that is assigned to the private connection. If the CIDR
-      range isn't available, the call fails.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Required. A name for the new subnet. For information about the naming
-      requirements, see [subnetwork](/compute/docs/reference/rest/v1/subnetworks)
-      in the Compute API documentation.
-  *   `subnetworkUsers` (*type:* `list(String.t)`, *default:* `nil`) - A list of members that are granted the `compute.networkUser`
-      role on the subnet.
+  *   `ipPrefixLength` (*type:* `integer()`, *default:* `nil`) - Required. The prefix length of the subnet's IP address range. Use CIDR range notation, such as `30` to provision a subnet with an `x.x.x.x/30` CIDR range. The IP address range is drawn from a pool of available ranges in the service consumer's allocated range.
+  *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - Optional. The private IPv6 google access type for the VMs in this subnet. For information about the access types that can be set using this field, see [subnetwork](/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Required. The name of a [region](/compute/docs/regions-zones) for the subnet, such `europe-west1`.
+  *   `requestedAddress` (*type:* `String.t`, *default:* `nil`) - Optional. The starting address of a range. The address must be a valid IPv4 address in the x.x.x.x format. This value combined with the IP prefix range is the CIDR range for the subnet. The range must be within the allocated range that is assigned to the private connection. If the CIDR range isn't available, the call fails.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Required. A name for the new subnet. For information about the naming requirements, see [subnetwork](/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
+  *   `subnetworkUsers` (*type:* `list(String.t)`, *default:* `nil`) - A list of members that are granted the `compute.networkUser` role on the subnet.
   """
 
   use GoogleApi.Gax.ModelBase

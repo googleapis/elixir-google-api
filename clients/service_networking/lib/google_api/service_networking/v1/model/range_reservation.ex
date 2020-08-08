@@ -21,15 +21,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.RangeReservation do
 
   ## Attributes
 
-  *   `ipPrefixLength` (*type:* `integer()`, *default:* `nil`) - Required. The size of the desired subnet. Use usual CIDR range notation. For example,
-      '30' to find unused x.x.x.x/30 CIDR range. The goal is to determine if one
-      of the allocated ranges has enough free space for a subnet of the requested
-      size.
-  *   `secondaryRangeIpPrefixLengths` (*type:* `list(integer())`, *default:* `nil`) - Optional. DO NOT USE - Under development.
-      The size of the desired secondary ranges for the subnet. Use usual CIDR
-      range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. The
-      goal is to determine that the allocated ranges have enough free space for
-      all the requested secondary ranges.
+  *   `ipPrefixLength` (*type:* `integer()`, *default:* `nil`) - Required. The size of the desired subnet. Use usual CIDR range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. The goal is to determine if one of the allocated ranges has enough free space for a subnet of the requested size.
+  *   `secondaryRangeIpPrefixLengths` (*type:* `list(integer())`, *default:* `nil`) - Optional. DO NOT USE - Under development. The size of the desired secondary ranges for the subnet. Use usual CIDR range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. The goal is to determine that the allocated ranges have enough free space for all the requested secondary ranges.
   """
 
   use GoogleApi.Gax.ModelBase

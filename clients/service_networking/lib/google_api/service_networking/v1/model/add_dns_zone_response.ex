@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.AddDnsZoneResponse do
   @moduledoc """
-  Represents managed DNS zones created in the shared producer host and consumer
-  projects.
+  Represents managed DNS zones created in the shared producer host and consumer projects.
 
   ## Attributes
 

@@ -17,20 +17,15 @@
 
 defmodule GoogleApi.ServiceNetworking.V1.Model.ContextRule do
   @moduledoc """
-  A context rule provides information about the context for an individual API
-  element.
+  A context rule provides information about the context for an individual API element.
 
   ## Attributes
 
-  *   `allowedRequestExtensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names or extension IDs of extensions allowed in grpc
-      side channel from client to backend.
-  *   `allowedResponseExtensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names or extension IDs of extensions allowed in grpc
-      side channel from backend to client.
+  *   `allowedRequestExtensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names or extension IDs of extensions allowed in grpc side channel from client to backend.
+  *   `allowedResponseExtensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names or extension IDs of extensions allowed in grpc side channel from backend to client.
   *   `provided` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names of provided contexts.
   *   `requested` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names of requested contexts.
-  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies.
-
-      Refer to selector for syntax details.
+  *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies. Refer to selector for syntax details.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.DisableVpcServiceControlsRequest 
 
   ## Attributes
 
-  *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The network that the consumer is using to connect with services.
-      Must be in the form of projects/{project}/global/networks/{network}
-      {project} is a project number, as in '12345'
-      {network} is network name.
+  *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The network that the consumer is using to connect with services. Must be in the form of projects/{project}/global/networks/{network} {project} is a project number, as in '12345' {network} is network name.
   """
 
   use GoogleApi.Gax.ModelBase
