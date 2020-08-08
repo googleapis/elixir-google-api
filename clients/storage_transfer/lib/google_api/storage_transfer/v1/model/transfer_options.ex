@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.TransferOptions do
   @moduledoc """
-  TransferOptions uses three boolean parameters to define the actions
-  to be performed on objects in a transfer.
+  TransferOptions define the actions to be performed on objects in a transfer.
 
   ## Attributes
 
