@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedUserRolesResponse do
   @moduledoc """
-  Response message for BulkEditAssignedUserRoles.
+
 
   ## Attributes
 

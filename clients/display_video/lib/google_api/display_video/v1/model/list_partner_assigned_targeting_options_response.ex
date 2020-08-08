@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListPartnerAssignedTargetingOptionsResponse do
   @moduledoc """
-  Response message for ListPartnerAssignedTargetingOptions.
+
 
   ## Attributes
 

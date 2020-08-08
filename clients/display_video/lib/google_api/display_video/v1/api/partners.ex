@@ -26,7 +26,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Bulk edits targeting options under a single partner. The operation will delete the assigned targeting options provided in BulkEditPartnerAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditPartnerAssignedTargetingOptionsRequest.create_requests .
+  Bulk edits targeting options under a single partner. The operation will delete the assigned targeting options provided in BulkEditPartnerAssignedTargetingOptionsRequest.deleteRequests and then create the assigned targeting options provided in BulkEditPartnerAssignedTargetingOptionsRequest.createRequests .
 
   ## Parameters
 

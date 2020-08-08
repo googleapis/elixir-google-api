@@ -21,9 +21,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AuditAdvertiserResponse do
 
   ## Attributes
 
-  *   `usedCampaignsCount` (*type:* `String.t`, *default:* `nil`) - The number of ACTIVE and PAUSED campaigns under this advertiser. These campaigns count towards the limit of 9,999 campaigns per advertiser.
-  *   `usedInsertionOrdersCount` (*type:* `String.t`, *default:* `nil`) - The number of ACTIVE, PAUSED and DRAFT insertion orders under this advertiser. These insertion orders count towards the limit of 9,999 insertion orders per advertiser.
-  *   `usedLineItemsCount` (*type:* `String.t`, *default:* `nil`) - The number of ACTIVE, PAUSED, and DRAFT line items under this advertiser. These line items count towards the limit of 9,999 line items per advertiser.
+  *   `usedCampaignsCount` (*type:* `String.t`, *default:* `nil`) - The number of ACTIVE and PAUSED campaigns under this advertiser. These campaigns count towards the limit of 9999 campaigns per advertiser.
+  *   `usedInsertionOrdersCount` (*type:* `String.t`, *default:* `nil`) - The number of ACTIVE, PAUSED and DRAFT insertion orders under this advertiser. These insertion orders count towards the limit of 9999 insertion orders per advertiser.
+  *   `usedLineItemsCount` (*type:* `String.t`, *default:* `nil`) - The number of ACTIVE, PAUSED, and DRAFT line items under this advertiser. These line items count towards the limit of 9999 line items per advertiser.
   """
 
   use GoogleApi.Gax.ModelBase

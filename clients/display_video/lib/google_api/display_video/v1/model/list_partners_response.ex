@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListPartnersResponse do
   @moduledoc """
-  Response message for ListPartners.
+
 
   ## Attributes
 

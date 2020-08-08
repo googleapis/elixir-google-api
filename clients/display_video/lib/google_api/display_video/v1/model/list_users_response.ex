@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListUsersResponse do
   @moduledoc """
-  Response message for ListUsers.
+
 
   ## Attributes
 

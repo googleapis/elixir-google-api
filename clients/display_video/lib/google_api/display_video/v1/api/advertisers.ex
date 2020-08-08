@@ -26,7 +26,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Audits an advertiser. Returns the counts of used entities per resource type under the advertiser provided. Used entities count towards their [respective resource limit]: (https://support.google.com/displayvideo/answer/6071450?hl=en)
+  Audits an advertiser. Returns the counts of used entities per resource type under the advertiser provided. Used entities count towards their respective resource limit. See https://support.google.com/displayvideo/answer/6071450.
 
   ## Parameters
 
