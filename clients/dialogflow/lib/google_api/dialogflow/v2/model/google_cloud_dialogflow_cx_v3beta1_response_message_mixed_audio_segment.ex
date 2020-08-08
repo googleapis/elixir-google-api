@@ -21,13 +21,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
 
   ## Attributes
 
-  *   `allowPlaybackInterruption` (*type:* `boolean()`, *default:* `nil`) - Whether the playback of this segment can be interrupted by the end
-      user's speech and the client should then start the next Dialogflow
-      request.
-  *   `audio` (*type:* `String.t`, *default:* `nil`) - Raw audio synthesized from the Dialogflow agent's response using
-      the output config specified in the request.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Client-specific URI that points to an audio clip accessible to the
-      client. Dialogflow does not impose any validation on it.
+  *   `allowPlaybackInterruption` (*type:* `boolean()`, *default:* `nil`) - Whether the playback of this segment can be interrupted by the end user's speech and the client should then start the next Dialogflow request.
+  *   `audio` (*type:* `String.t`, *default:* `nil`) - Raw audio synthesized from the Dialogflow agent's response using the output config specified in the request.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Client-specific URI that points to an audio clip accessible to the client. Dialogflow does not impose any validation on it.
   """
 
   use GoogleApi.Gax.ModelBase

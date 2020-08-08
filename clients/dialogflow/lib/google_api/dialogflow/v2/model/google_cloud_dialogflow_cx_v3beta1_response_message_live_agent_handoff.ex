@@ -17,23 +17,11 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessageLiveAgentHandoff do
   @moduledoc """
-  Indicates that the conversation should be handed off to a live agent.
-
-  Dialogflow only uses this to determine which conversations were handed off
-  to a human agent for measurement purposes. What else to do with this signal
-  is up to you and your handoff procedures.
-
-  You may set this, for example:
-  * In the entry_fulfillment of a Page if
-    entering the page indicates something went extremely wrong in the
-    conversation.
-  * In a webhook response when you determine that the customer issue can only
-    be handled by a human.
+  Indicates that the conversation should be handed off to a live agent. Dialogflow only uses this to determine which conversations were handed off to a human agent for measurement purposes. What else to do with this signal is up to you and your handoff procedures. You may set this, for example: * In the entry_fulfillment of a Page if entering the page indicates something went extremely wrong in the conversation. * In a webhook response when you determine that the customer issue can only be handled by a human.
 
   ## Attributes
 
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Custom metadata for your handoff procedure. Dialogflow doesn't impose
-      any structure on this.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Custom metadata for your handoff procedure. Dialogflow doesn't impose any structure on this.
   """
 
   use GoogleApi.Gax.ModelBase

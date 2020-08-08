@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedActionRbmSuggestedActionDial do
   @moduledoc """
-  Opens the user's default dialer app with the specified phone number
-  but does not dial automatically.
+  Opens the user's default dialer app with the specified phone number but does not dial automatically.
 
   ## Attributes
 
-  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - Required. The phone number to fill in the default dialer app.
-      This field should be in [E.164](https://en.wikipedia.org/wiki/E.164)
-      format. An example of a correctly formatted phone number:
-      +15556767888.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - Required. The phone number to fill in the default dialer app. This field should be in [E.164](https://en.wikipedia.org/wiki/E.164) format. An example of a correctly formatted phone number: +15556767888.
   """
 
   use GoogleApi.Gax.ModelBase

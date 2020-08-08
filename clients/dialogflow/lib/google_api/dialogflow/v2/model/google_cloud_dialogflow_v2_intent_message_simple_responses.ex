@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSimpleResponses do
   @moduledoc """
-  The collection of simple response candidates.
-  This message in `QueryResult.fulfillment_messages` and
-  `WebhookResponse.fulfillment_messages` should contain only one
-  `SimpleResponse`.
+  The collection of simple response candidates. This message in `QueryResult.fulfillment_messages` and `WebhookResponse.fulfillment_messages` should contain only one `SimpleResponse`.
 
   ## Attributes
 

@@ -21,13 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
 
   ## Attributes
 
-  *   `lastMatchedIntent` (*type:* `String.t`, *default:* `nil`) - Always present. The unique identifier of the last matched
-      intent. Format: `projects/<Project ID>/locations/<Location
-      ID>/agents/<Agent ID>/intents/<Intent ID>`.
-  *   `parameters` (*type:* `%{optional(String.t) => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestIntentInfoIntentParameterValue.t}`, *default:* `nil`) - Parameters identified as a result of intent matching. This is a map of
-      the name of the identified parameter to the value of the parameter
-      identified from the user's utterance. All parameters defined in the
-      matched intent that are identified will be surfaced here.
+  *   `lastMatchedIntent` (*type:* `String.t`, *default:* `nil`) - Always present. The unique identifier of the last matched intent. Format: `projects//locations//agents//intents/`.
+  *   `parameters` (*type:* `%{optional(String.t) => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestIntentInfoIntentParameterValue.t}`, *default:* `nil`) - Parameters identified as a result of intent matching. This is a map of the name of the identified parameter to the value of the parameter identified from the user's utterance. All parameters defined in the matched intent that are identified will be surfaced here.
   """
 
   use GoogleApi.Gax.ModelBase

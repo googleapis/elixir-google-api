@@ -21,8 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
 
   ## Attributes
 
-  *   `accessibilityText` (*type:* `String.t`, *default:* `nil`) - A text description of the image to be used for accessibility,
-      e.g., screen readers. Required if image_uri is set for CarouselSelect.
+  *   `accessibilityText` (*type:* `String.t`, *default:* `nil`) - A text description of the image to be used for accessibility, e.g., screen readers. Required if image_uri is set for CarouselSelect.
   *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The public URI to an image file.
   """
 

@@ -21,10 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListEntityTypesRe
 
   ## Attributes
 
-  *   `entityTypes` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t)`, *default:* `nil`) - The list of agent entity types. There will be a maximum number of items
-      returned based on the page_size field in the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `entityTypes` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t)`, *default:* `nil`) - The list of agent entity types. There will be a maximum number of items returned based on the page_size field in the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

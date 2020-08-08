@@ -21,10 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrow
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the carousel item. Maximum of four lines of
-      text.
-  *   `footer` (*type:* `String.t`, *default:* `nil`) - Optional. Text that appears at the bottom of the Browse Carousel
-      Card. Maximum of one line of text.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the carousel item. Maximum of four lines of text.
+  *   `footer` (*type:* `String.t`, *default:* `nil`) - Optional. Text that appears at the bottom of the Browse Carousel Card. Maximum of one line of text.
   *   `image` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage.t`, *default:* `nil`) - Optional. Hero image for the carousel item.
   *   `openUriAction` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction.t`, *default:* `nil`) - Required. Action to present to the user.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. Title of the carousel item. Maximum of two lines of text.

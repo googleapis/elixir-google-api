@@ -17,29 +17,17 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1AnnotatedConversationDataset do
   @moduledoc """
-  Represents an annotated conversation dataset.
-  ConversationDataset can have multiple AnnotatedConversationDataset, each of
-  them represents one result from one annotation task.
-  AnnotatedConversationDataset can only be generated from annotation task,
-  which will be triggered by LabelConversation.
+  Represents an annotated conversation dataset. ConversationDataset can have multiple AnnotatedConversationDataset, each of them represents one result from one annotation task. AnnotatedConversationDataset can only be generated from annotation task, which will be triggered by LabelConversation.
 
   ## Attributes
 
-  *   `completedExampleCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of examples that have annotations in the annotated
-      conversation dataset.
+  *   `completedExampleCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of examples that have annotations in the annotated conversation dataset.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of this annotated conversation dataset.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the annotated conversation dataset.
-      Maximum of 10000 bytes.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the annotated conversation dataset.
-      It's specified when user starts an annotation task. Maximum of 64 bytes.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the annotated conversation dataset. Maximum of 10000 bytes.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the annotated conversation dataset. It's specified when user starts an annotation task. Maximum of 64 bytes.
   *   `exampleCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of examples in the annotated conversation dataset.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. AnnotatedConversationDataset resource name. Format:
-      `projects/<Project ID>/conversationDatasets/<Conversation Dataset
-      ID>/annotatedConversationDatasets/<Annotated Conversation Dataset ID>`
-  *   `questionTypeName` (*type:* `String.t`, *default:* `nil`) - Output only. Question type name that identifies a labeling task.
-      A question is a single task that a worker answers. A question type is set
-      of related questions. Each question belongs to a particular question type.
-      It can be used in CrowdCompute UI to filter and manage labeling tasks.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. AnnotatedConversationDataset resource name. Format: `projects//conversationDatasets//annotatedConversationDatasets/`
+  *   `questionTypeName` (*type:* `String.t`, *default:* `nil`) - Output only. Question type name that identifies a labeling task. A question is a single task that a worker answers. A question type is set of related questions. Each question belongs to a particular question type. It can be used in CrowdCompute UI to filter and manage labeling tasks.
   """
 
   use GoogleApi.Gax.ModelBase

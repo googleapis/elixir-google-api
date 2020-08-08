@@ -21,9 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
 
   ## Attributes
 
-  *   `allowPlaybackInterruption` (*type:* `boolean()`, *default:* `nil`) - Whether the playback of this message can be interrupted by the end
-      user's speech and the client can then starts the next Dialogflow
-      request.
+  *   `allowPlaybackInterruption` (*type:* `boolean()`, *default:* `nil`) - Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
   *   `text` (*type:* `list(String.t)`, *default:* `nil`) - Required. A collection of text responses.
   """
 

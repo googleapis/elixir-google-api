@@ -21,10 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListIntentsRespon
 
   ## Attributes
 
-  *   `intents` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t)`, *default:* `nil`) - The list of agent intents. There will be a maximum number of items
-      returned based on the page_size field in the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `intents` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t)`, *default:* `nil`) - The list of agent intents. There will be a maximum number of items returned based on the page_size field in the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

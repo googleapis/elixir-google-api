@@ -22,8 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ExportAgen
   ## Attributes
 
   *   `agentContent` (*type:* `String.t`, *default:* `nil`) - Uncompressed raw byte content for agent.
-  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The URI to a file containing the exported agent. This field is populated
-      only if `agent_uri` is specified in ExportAgentRequest.
+  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The URI to a file containing the exported agent. This field is populated only if `agent_uri` is specified in ExportAgentRequest.
   """
 
   use GoogleApi.Gax.ModelBase

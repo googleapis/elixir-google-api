@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1LabelConversationResponse do
   @moduledoc """
-  The response for
-  ConversationDatasets.LabelConversation.
+  The response for ConversationDatasets.LabelConversation.
 
   ## Attributes
 

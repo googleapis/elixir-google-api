@@ -22,8 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrow
   ## Attributes
 
   *   `url` (*type:* `String.t`, *default:* `nil`) - Required. URL
-  *   `urlTypeHint` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the type of viewer that is used when opening
-      the URL. Defaults to opening via web browser.
+  *   `urlTypeHint` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the type of viewer that is used when opening the URL. Defaults to opening via web browser.
   """
 
   use GoogleApi.Gax.ModelBase

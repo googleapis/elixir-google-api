@@ -21,10 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentFollowupInt
 
   ## Attributes
 
-  *   `followupIntentName` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the followup intent.
-      Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
-  *   `parentFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the followup intent's parent.
-      Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
+  *   `followupIntentName` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the followup intent. Format: `projects//agent/intents/`.
+  *   `parentFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the followup intent's parent. Format: `projects//agent/intents/`.
   """
 
   use GoogleApi.Gax.ModelBase

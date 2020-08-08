@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedAction do
   @moduledoc """
-  Rich Business Messaging (RBM) suggested client-side action that the user
-  can choose from the card.
+  Rich Business Messaging (RBM) suggested client-side action that the user can choose from the card.
 
   ## Attributes
 
   *   `dial` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedActionRbmSuggestedActionDial.t`, *default:* `nil`) - Suggested client side action: Dial a phone number
   *   `openUrl` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedActionRbmSuggestedActionOpenUri.t`, *default:* `nil`) - Suggested client side action: Open a URI on device
-  *   `postbackData` (*type:* `String.t`, *default:* `nil`) - Opaque payload that the Dialogflow receives in a user event
-      when the user taps the suggested action. This data will be also
-      forwarded to webhook to allow performing custom business logic.
+  *   `postbackData` (*type:* `String.t`, *default:* `nil`) - Opaque payload that the Dialogflow receives in a user event when the user taps the suggested action. This data will be also forwarded to webhook to allow performing custom business logic.
   *   `shareLocation` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedActionRbmSuggestedActionShareLocation.t`, *default:* `nil`) - Suggested client side action: Share user location
   *   `text` (*type:* `String.t`, *default:* `nil`) - Text to display alongside the action.
   """

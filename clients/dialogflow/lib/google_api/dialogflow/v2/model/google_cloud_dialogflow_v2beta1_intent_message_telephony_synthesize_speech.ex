@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech do
   @moduledoc """
-  Synthesizes speech and plays back the synthesized audio to the caller in
-  Telephony Gateway.
-
-  Telephony Gateway takes the synthesizer settings from
-  `DetectIntentResponse.output_audio_config` which can either be set
-  at request-level or can come from the agent-level synthesizer config.
+  Synthesizes speech and plays back the synthesized audio to the caller in Telephony Gateway. Telephony Gateway takes the synthesizer settings from `DetectIntentResponse.output_audio_config` which can either be set at request-level or can come from the agent-level synthesizer config.
 
   ## Attributes
 
-  *   `ssml` (*type:* `String.t`, *default:* `nil`) - The SSML to be synthesized. For more information, see
-      [SSML](https://developers.google.com/actions/reference/ssml).
+  *   `ssml` (*type:* `String.t`, *default:* `nil`) - The SSML to be synthesized. For more information, see [SSML](https://developers.google.com/actions/reference/ssml).
   *   `text` (*type:* `String.t`, *default:* `nil`) - The raw text to be synthesized.
   """
 

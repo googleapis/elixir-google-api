@@ -22,15 +22,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateEntity
   ## Attributes
 
   *   `entityTypeBatchInline` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeBatch.t`, *default:* `nil`) - The collection of entity types to update or create.
-  *   `entityTypeBatchUri` (*type:* `String.t`, *default:* `nil`) - The URI to a Google Cloud Storage file containing entity types to update
-      or create. The file format can either be a serialized proto (of
-      EntityBatch type) or a JSON object. Note: The URI must start with
-      "gs://".
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language used to access language-specific data.
-      If not specified, the agent's default language is used.
-      For more information, see
-      [Multilingual intent and entity
-      data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+  *   `entityTypeBatchUri` (*type:* `String.t`, *default:* `nil`) - The URI to a Google Cloud Storage file containing entity types to update or create. The file format can either be a serialized proto (of EntityBatch type) or a JSON object. Note: The URI must start with "gs://".
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. The mask to control which fields get updated.
   """
 

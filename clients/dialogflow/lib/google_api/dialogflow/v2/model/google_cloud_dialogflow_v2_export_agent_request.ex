@@ -21,10 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ExportAgentReques
 
   ## Attributes
 
-  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
-      URI to export the agent to.
-      The format of this URI must be `gs://<bucket-name>/<object-name>`.
-      If left unspecified, the serialized agent is returned inline.
+  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to export the agent to. The format of this URI must be `gs:///`. If left unspecified, the serialized agent is returned inline.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
 
   ## Attributes
 
-  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - Required. The phone number to transfer the call to
-      in [E.164 format](https://en.wikipedia.org/wiki/E.164).
-
-      We currently only allow transferring to US numbers (+1xxxyyyzzzz).
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - Required. The phone number to transfer the call to in [E.164 format](https://en.wikipedia.org/wiki/E.164). We currently only allow transferring to US numbers (+1xxxyyyzzzz).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Sentiment do
   @moduledoc """
-  The sentiment, such as positive/negative feeling or association, for a unit
-  of analysis, such as the query text.
+  The sentiment, such as positive/negative feeling or association, for a unit of analysis, such as the query text.
 
   ## Attributes
 
-  *   `magnitude` (*type:* `number()`, *default:* `nil`) - A non-negative number in the [0, +inf) range, which represents the absolute
-      magnitude of sentiment, regardless of score (positive or negative).
-  *   `score` (*type:* `number()`, *default:* `nil`) - Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-      sentiment).
+  *   `magnitude` (*type:* `number()`, *default:* `nil`) - A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment, regardless of score (positive or negative).
+  *   `score` (*type:* `number()`, *default:* `nil`) - Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
   """
 
   use GoogleApi.Gax.ModelBase

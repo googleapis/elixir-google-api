@@ -17,74 +17,27 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   @moduledoc """
-  An intent categorizes an end-user's intention for one conversation turn. For
-  each agent, you define many intents, where your combined intents can handle a
-  complete conversation. When an end-user writes or says something, referred to
-  as an end-user expression or end-user input, Dialogflow matches the end-user
-  input to the best intent in your agent. Matching an intent is also known as
-  intent classification.
-
-  For more information, see the [intent
-  guide](https://cloud.google.com/dialogflow/docs/intents-overview).
+  An intent categorizes an end-user's intention for one conversation turn. For each agent, you define many intents, where your combined intents can handle a complete conversation. When an end-user writes or says something, referred to as an end-user expression or end-user input, Dialogflow matches the end-user input to the best intent in your agent. Matching an intent is also known as intent classification. For more information, see the [intent guide](https://cloud.google.com/dialogflow/docs/intents-overview).
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the action associated with the intent.
-      Note: The action name must not contain whitespaces.
-  *   `defaultResponsePlatforms` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of platforms for which the first responses will be
-      copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
+  *   `action` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the action associated with the intent. Note: The action name must not contain whitespaces.
+  *   `defaultResponsePlatforms` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of platforms for which the first responses will be copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The name of this intent.
-  *   `events` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The collection of event names that trigger the intent.
-      If the collection of input contexts is not empty, all of the contexts must
-      be present in the active user session for an event to trigger this intent.
-      Event names are limited to 150 characters.
-  *   `followupIntentInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentFollowupIntentInfo.t)`, *default:* `nil`) - Read-only. Information about all followup intents that have this intent as
-      a direct or indirect parent. We populate this field only in the output.
-  *   `inputContextNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of context names required for this intent to be
-      triggered.
-      Format: `projects/<Project ID>/agent/sessions/-/contexts/<Context ID>`.
+  *   `events` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The collection of event names that trigger the intent. If the collection of input contexts is not empty, all of the contexts must be present in the active user session for an event to trigger this intent. Event names are limited to 150 characters.
+  *   `followupIntentInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentFollowupIntentInfo.t)`, *default:* `nil`) - Read-only. Information about all followup intents that have this intent as a direct or indirect parent. We populate this field only in the output.
+  *   `inputContextNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of context names required for this intent to be triggered. Format: `projects//agent/sessions/-/contexts/`.
   *   `isFallback` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether this is a fallback intent.
-  *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage.t)`, *default:* `nil`) - Optional. The collection of rich messages corresponding to the
-      `Response` field in the Dialogflow console.
-  *   `mlDisabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether Machine Learning is disabled for the intent.
-      Note: If `ml_disabled` setting is set to true, then this intent is not
-      taken into account during inference in `ML ONLY` match mode. Also,
-      auto-markup in the UI is turned off.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of this intent.
-      Required for Intents.UpdateIntent and Intents.BatchUpdateIntents
-      methods.
-      Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
-  *   `outputContexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - Optional. The collection of contexts that are activated when the intent
-      is matched. Context messages in this collection should not set the
-      parameters field. Setting the `lifespan_count` to 0 will reset the context
-      when the intent is matched.
-      Format: `projects/<Project ID>/agent/sessions/-/contexts/<Context ID>`.
+  *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage.t)`, *default:* `nil`) - Optional. The collection of rich messages corresponding to the `Response` field in the Dialogflow console.
+  *   `mlDisabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether Machine Learning is disabled for the intent. Note: If `ml_disabled` setting is set to true, then this intent is not taken into account during inference in `ML ONLY` match mode. Also, auto-markup in the UI is turned off.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of this intent. Required for Intents.UpdateIntent and Intents.BatchUpdateIntents methods. Format: `projects//agent/intents/`.
+  *   `outputContexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - Optional. The collection of contexts that are activated when the intent is matched. Context messages in this collection should not set the parameters field. Setting the `lifespan_count` to 0 will reset the context when the intent is matched. Format: `projects//agent/sessions/-/contexts/`.
   *   `parameters` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentParameter.t)`, *default:* `nil`) - Optional. The collection of parameters associated with the intent.
-  *   `parentFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Read-only after creation. The unique identifier of the parent intent in the
-      chain of followup intents. You can set this field when creating an intent,
-      for example with CreateIntent or
-      BatchUpdateIntents, in order to make this
-      intent a followup intent.
-
-      It identifies the parent followup intent.
-      Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
-  *   `priority` (*type:* `integer()`, *default:* `nil`) - Optional. The priority of this intent. Higher numbers represent higher
-      priorities.
-
-      - If the supplied value is unspecified or 0, the service
-        translates the value to 500,000, which corresponds to the
-        `Normal` priority in the console.
-      - If the supplied value is negative, the intent is ignored
-        in runtime detect intent requests.
-  *   `resetContexts` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to delete all contexts in the current
-      session when this intent is matched.
-  *   `rootFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Read-only. The unique identifier of the root intent in the chain of
-      followup intents. It identifies the correct followup intents chain for
-      this intent. We populate this field only in the output.
-
-      Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
-  *   `trainingPhrases` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentTrainingPhrase.t)`, *default:* `nil`) - Optional. The collection of examples that the agent is
-      trained on.
+  *   `parentFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Read-only after creation. The unique identifier of the parent intent in the chain of followup intents. You can set this field when creating an intent, for example with CreateIntent or BatchUpdateIntents, in order to make this intent a followup intent. It identifies the parent followup intent. Format: `projects//agent/intents/`.
+  *   `priority` (*type:* `integer()`, *default:* `nil`) - Optional. The priority of this intent. Higher numbers represent higher priorities. - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds to the `Normal` priority in the console. - If the supplied value is negative, the intent is ignored in runtime detect intent requests.
+  *   `resetContexts` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to delete all contexts in the current session when this intent is matched.
+  *   `rootFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Read-only. The unique identifier of the root intent in the chain of followup intents. It identifies the correct followup intents chain for this intent. We populate this field only in the output. Format: `projects//agent/intents/`.
+  *   `trainingPhrases` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentTrainingPhrase.t)`, *default:* `nil`) - Optional. The collection of examples that the agent is trained on.
   *   `webhookState` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates whether webhooks are enabled for the intent.
   """
 

@@ -21,14 +21,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
 
   ## Attributes
 
-  *   `detectIntentResponseId` (*type:* `String.t`, *default:* `nil`) - Always present. The unique identifier of the DetectIntentResponse that
-      will be returned to the API caller.
-  *   `fulfillmentInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestFulfillmentInfo.t`, *default:* `nil`) - Always present. Information about the fulfillment that triggered this
-      webhook call.
+  *   `detectIntentResponseId` (*type:* `String.t`, *default:* `nil`) - Always present. The unique identifier of the DetectIntentResponse that will be returned to the API caller.
+  *   `fulfillmentInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestFulfillmentInfo.t`, *default:* `nil`) - Always present. Information about the fulfillment that triggered this webhook call.
   *   `intentInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestIntentInfo.t`, *default:* `nil`) - Information about the last matched intent.
-  *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t)`, *default:* `nil`) - The list of rich message responses to present to the user. Webhook can
-      choose to append or replace this list in
-      WebhookResponse.fulfillment_response;
+  *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t)`, *default:* `nil`) - The list of rich message responses to present to the user. Webhook can choose to append or replace this list in WebhookResponse.fulfillment_response;
   *   `pageInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo.t`, *default:* `nil`) - Information about page status.
   *   `payload` (*type:* `map()`, *default:* `nil`) - Custom data set in QueryParameters.payload.
   *   `sessionInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInfo.t`, *default:* `nil`) - Information about session status.

@@ -21,10 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ListContextsRespo
 
   ## Attributes
 
-  *   `contexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - The list of contexts. There will be a maximum number of items
-      returned based on the page_size field in the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `contexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - The list of contexts. There will be a maximum number of items returned based on the page_size field in the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

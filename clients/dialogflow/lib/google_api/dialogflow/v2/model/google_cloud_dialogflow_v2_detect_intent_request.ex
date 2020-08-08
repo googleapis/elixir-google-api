@@ -21,26 +21,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentReque
 
   ## Attributes
 
-  *   `inputAudio` (*type:* `String.t`, *default:* `nil`) - The natural language speech audio to be processed. This field
-      should be populated iff `query_input` is set to an input audio config.
-      A single request can contain up to 1 minute of speech audio data.
-  *   `outputAudioConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t`, *default:* `nil`) - Instructs the speech synthesizer how to generate the output
-      audio. If this field is not set and agent-level speech synthesizer is not
-      configured, no output audio is generated.
-  *   `outputAudioConfigMask` (*type:* `String.t`, *default:* `nil`) - Mask for output_audio_config indicating which settings in this
-      request-level config should override speech synthesizer settings defined at
-      agent-level.
-
-      If unspecified or empty, output_audio_config replaces the agent-level
-      config in its entirety.
-  *   `queryInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput.t`, *default:* `nil`) - Required. The input specification. It can be set to:
-
-      1.  an audio config
-          which instructs the speech recognizer how to process the speech audio,
-
-      2.  a conversational query in the form of text, or
-
-      3.  an event that specifies which intent to trigger.
+  *   `inputAudio` (*type:* `String.t`, *default:* `nil`) - The natural language speech audio to be processed. This field should be populated iff `query_input` is set to an input audio config. A single request can contain up to 1 minute of speech audio data.
+  *   `outputAudioConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t`, *default:* `nil`) - Instructs the speech synthesizer how to generate the output audio. If this field is not set and agent-level speech synthesizer is not configured, no output audio is generated.
+  *   `outputAudioConfigMask` (*type:* `String.t`, *default:* `nil`) - Mask for output_audio_config indicating which settings in this request-level config should override speech synthesizer settings defined at agent-level. If unspecified or empty, output_audio_config replaces the agent-level config in its entirety.
+  *   `queryInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput.t`, *default:* `nil`) - Required. The input specification. It can be set to: 1. an audio config which instructs the speech recognizer how to process the speech audio, 2. a conversational query in the form of text, or 3. an event that specifies which intent to trigger.
   *   `queryParams` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t`, *default:* `nil`) - The parameters of this query.
   """
 

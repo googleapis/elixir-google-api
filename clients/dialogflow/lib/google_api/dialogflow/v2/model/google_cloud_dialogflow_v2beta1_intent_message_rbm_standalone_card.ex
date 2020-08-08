@@ -17,20 +17,13 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard do
   @moduledoc """
-  Standalone Rich Business Messaging (RBM) rich card.
-
-  Rich cards allow you to respond to users with more vivid content, e.g.
-  with media and suggestions.
-
-  You can group multiple rich cards into one using RbmCarouselCard but
-  carousel cards will give you less control over the card layout.
+  Standalone Rich Business Messaging (RBM) rich card. Rich cards allow you to respond to users with more vivid content, e.g. with media and suggestions. You can group multiple rich cards into one using RbmCarouselCard but carousel cards will give you less control over the card layout.
 
   ## Attributes
 
   *   `cardContent` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent.t`, *default:* `nil`) - Required. Card content.
   *   `cardOrientation` (*type:* `String.t`, *default:* `nil`) - Required. Orientation of the card.
-  *   `thumbnailImageAlignment` (*type:* `String.t`, *default:* `nil`) - Required if orientation is horizontal.
-      Image preview alignment for standalone cards with horizontal layout.
+  *   `thumbnailImageAlignment` (*type:* `String.t`, *default:* `nil`) - Required if orientation is horizontal. Image preview alignment for standalone cards with horizontal layout.
   """
 
   use GoogleApi.Gax.ModelBase

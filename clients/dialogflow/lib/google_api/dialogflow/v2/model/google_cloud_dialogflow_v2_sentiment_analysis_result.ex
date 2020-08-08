@@ -17,16 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisResult do
   @moduledoc """
-  The result of sentiment analysis. Sentiment analysis inspects user input
-  and identifies the prevailing subjective opinion, especially to determine a
-  user's attitude as positive, negative, or neutral.
-  For Participants.AnalyzeContent, it needs to be configured in
-  DetectIntentRequest.query_params. For
-  Participants.StreamingAnalyzeContent, it needs to be configured in
-  StreamingDetectIntentRequest.query_params.
-  And for Participants.AnalyzeContent and
-  Participants.StreamingAnalyzeContent, it needs to be configured in
-  ConversationProfile.human_agent_assistant_config
+  The result of sentiment analysis. Sentiment analysis inspects user input and identifies the prevailing subjective opinion, especially to determine a user's attitude as positive, negative, or neutral. For Participants.AnalyzeContent, it needs to be configured in DetectIntentRequest.query_params. For Participants.StreamingAnalyzeContent, it needs to be configured in StreamingDetectIntentRequest.query_params. And for Participants.AnalyzeContent and Participants.StreamingAnalyzeContent, it needs to be configured in ConversationProfile.human_agent_assistant_config
 
   ## Attributes
 

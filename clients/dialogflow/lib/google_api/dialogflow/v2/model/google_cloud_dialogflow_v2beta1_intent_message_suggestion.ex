@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSuggestion do
   @moduledoc """
-  The suggestion chip message that the user can tap to quickly post a reply
-  to the conversation.
+  The suggestion chip message that the user can tap to quickly post a reply to the conversation.
 
   ## Attributes
 
