@@ -31,12 +31,7 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `logName`. Required. The resource name of the log to delete:
-      "projects/[PROJECT_ID]/logs/[LOG_ID]"
-      "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-      "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-      "folders/[FOLDER_ID]/logs/[LOG_ID]"
-      [LOG_ID] must be URL-encoded. For example, "projects/my-project-id/logs/syslog", "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity". For more information about log names, see LogEntry.
+  *   `v2_id` (*type:* `String.t`) - Part of `logName`. Required. The resource name of the log to delete: "projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]" [LOG_ID] must be URL-encoded. For example, "projects/my-project-id/logs/syslog", "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity". For more information about log names, see LogEntry.
   *   `v2_id1` (*type:* `String.t`) - Part of `logName`. See documentation of `v2Id`.
   *   `logs_id` (*type:* `String.t`) - Part of `logName`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -103,12 +98,7 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name that owns the logs:
-      "projects/[PROJECT_ID]"
-      "organizations/[ORGANIZATION_ID]"
-      "billingAccounts/[BILLING_ACCOUNT_ID]"
-      "folders/[FOLDER_ID]"
-
+  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name that owns the logs: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" 
   *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
