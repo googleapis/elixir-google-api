@@ -22,9 +22,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1LocalizedObjectAnn
   ## Attributes
 
   *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t`, *default:* `nil`) - Image region to which this object belongs. This must be populated.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-      information, see
-      http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
   *   `mid` (*type:* `String.t`, *default:* `nil`) - Object ID that should align with EntityAnnotation mid.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Object name, expressed in its `language_code` language.
   *   `score` (*type:* `number()`, *default:* `nil`) - Score of the result. Range [0, 1].

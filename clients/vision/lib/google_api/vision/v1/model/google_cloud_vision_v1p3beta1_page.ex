@@ -23,11 +23,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Page do
 
   *   `blocks` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Block.t)`, *default:* `nil`) - List of blocks of text, images etc on this page.
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of the OCR results on the page. Range [0, 1].
-  *   `height` (*type:* `integer()`, *default:* `nil`) - Page height. For PDFs the unit is points. For images (including
-      TIFFs) the unit is pixels.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - Page height. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
   *   `property` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1TextAnnotationTextProperty.t`, *default:* `nil`) - Additional information detected on the page.
-  *   `width` (*type:* `integer()`, *default:* `nil`) - Page width. For PDFs the unit is points. For images (including
-      TIFFs) the unit is pixels.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - Page width. For PDFs the unit is points. For images (including TIFFs) the unit is pixels.
   """
 
   use GoogleApi.Gax.ModelBase

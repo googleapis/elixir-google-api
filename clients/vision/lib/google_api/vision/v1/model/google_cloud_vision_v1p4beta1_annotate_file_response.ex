@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateFileResponse do
   @moduledoc """
-  Response to a single file annotation request. A file may contain one or more
-  images, which individually have their own responses.
+  Response to a single file annotation request. A file may contain one or more images, which individually have their own responses.
 
   ## Attributes
 
-  *   `error` (*type:* `GoogleApi.Vision.V1.Model.Status.t`, *default:* `nil`) - If set, represents the error message for the failed request. The
-      `responses` field will not be set in this case.
+  *   `error` (*type:* `GoogleApi.Vision.V1.Model.Status.t`, *default:* `nil`) - If set, represents the error message for the failed request. The `responses` field will not be set in this case.
   *   `inputConfig` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1InputConfig.t`, *default:* `nil`) - Information about the file for which this response is generated.
-  *   `responses` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateImageResponse.t)`, *default:* `nil`) - Individual responses to images found within the file. This field will be
-      empty if the `error` field is set.
+  *   `responses` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateImageResponse.t)`, *default:* `nil`) - Individual responses to images found within the file. This field will be empty if the `error` field is set.
   *   `totalPages` (*type:* `integer()`, *default:* `nil`) - This field gives the total number of pages in the file.
   """
 

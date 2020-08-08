@@ -21,11 +21,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1CropHint do
 
   ## Attributes
 
-  *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t`, *default:* `nil`) - The bounding polygon for the crop region. The coordinates of the bounding
-      box are in the original image's scale.
-  *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of this being a salient region.  Range [0, 1].
-  *   `importanceFraction` (*type:* `number()`, *default:* `nil`) - Fraction of importance of this salient region with respect to the original
-      image.
+  *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t`, *default:* `nil`) - The bounding polygon for the crop region. The coordinates of the bounding box are in the original image's scale.
+  *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of this being a salient region. Range [0, 1].
+  *   `importanceFraction` (*type:* `number()`, *default:* `nil`) - Fraction of importance of this salient region with respect to the original image.
   """
 
   use GoogleApi.Gax.ModelBase

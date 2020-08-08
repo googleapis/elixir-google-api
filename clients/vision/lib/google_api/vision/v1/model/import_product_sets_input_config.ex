@@ -21,8 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.ImportProductSetsInputConfig do
 
   ## Attributes
 
-  *   `gcsSource` (*type:* `GoogleApi.Vision.V1.Model.ImportProductSetsGcsSource.t`, *default:* `nil`) - The Google Cloud Storage location for a csv file which preserves a list
-      of ImportProductSetRequests in each line.
+  *   `gcsSource` (*type:* `GoogleApi.Vision.V1.Model.ImportProductSetsGcsSource.t`, *default:* `nil`) - The Google Cloud Storage location for a csv file which preserves a list of ImportProductSetRequests in each line.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.AsyncBatchAnnotateFilesResponse do
 
   ## Attributes
 
-  *   `responses` (*type:* `list(GoogleApi.Vision.V1.Model.AsyncAnnotateFileResponse.t)`, *default:* `nil`) - The list of file annotation responses, one for each request in
-      AsyncBatchAnnotateFilesRequest.
+  *   `responses` (*type:* `list(GoogleApi.Vision.V1.Model.AsyncAnnotateFileResponse.t)`, *default:* `nil`) - The list of file annotation responses, one for each request in AsyncBatchAnnotateFilesRequest.
   """
 
   use GoogleApi.Gax.ModelBase

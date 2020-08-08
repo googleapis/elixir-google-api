@@ -21,13 +21,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResul
 
   ## Attributes
 
-  *   `indexTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the index which provided these results. Products added to the
-      product set and products removed from the product set after this time are
-      not reflected in the current results.
-  *   `productGroupedResults` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult.t)`, *default:* `nil`) - List of results grouped by products detected in the query image. Each entry
-      corresponds to one bounding polygon in the query image, and contains the
-      matching products specific to that region. There may be duplicate product
-      matches in the union of all the per-product results.
+  *   `indexTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the index which provided these results. Products added to the product set and products removed from the product set after this time are not reflected in the current results.
+  *   `productGroupedResults` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult.t)`, *default:* `nil`) - List of results grouped by products detected in the query image. Each entry corresponds to one bounding polygon in the query image, and contains the matching products specific to that region. There may be duplicate product matches in the union of all the per-product results.
   *   `results` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsResult.t)`, *default:* `nil`) - List of results, one for each product match.
   """
 

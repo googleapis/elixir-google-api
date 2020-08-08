@@ -24,20 +24,7 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateFileRequest do
   *   `features` (*type:* `list(GoogleApi.Vision.V1.Model.Feature.t)`, *default:* `nil`) - Required. Requested features.
   *   `imageContext` (*type:* `GoogleApi.Vision.V1.Model.ImageContext.t`, *default:* `nil`) - Additional context that may accompany the image(s) in the file.
   *   `inputConfig` (*type:* `GoogleApi.Vision.V1.Model.InputConfig.t`, *default:* `nil`) - Required. Information about the input file.
-  *   `pages` (*type:* `list(integer())`, *default:* `nil`) - Pages of the file to perform image annotation.
-
-      Pages starts from 1, we assume the first page of the file is page 1.
-      At most 5 pages are supported per request. Pages can be negative.
-
-      Page 1 means the first page.
-      Page 2 means the second page.
-      Page -1 means the last page.
-      Page -2 means the second to the last page.
-
-      If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
-
-      If this field is empty, by default the service performs image annotation
-      for the first 5 pages of the file.
+  *   `pages` (*type:* `list(integer())`, *default:* `nil`) - Pages of the file to perform image annotation. Pages starts from 1, we assume the first page of the file is page 1. At most 5 pages are supported per request. Pages can be negative. Page 1 means the first page. Page 2 means the second page. Page -1 means the last page. Page -2 means the second to the last page. If the file is GIF instead of PDF or TIFF, page refers to GIF frames. If this field is empty, by default the service performs image annotation for the first 5 pages of the file.
   """
 
   use GoogleApi.Gax.ModelBase

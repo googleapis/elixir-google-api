@@ -21,9 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.ProductSetPurgeConfig do
 
   ## Attributes
 
-  *   `productSetId` (*type:* `String.t`, *default:* `nil`) - The ProductSet that contains the Products to delete. If a Product is a
-      member of product_set_id in addition to other ProductSets, the Product will
-      still be deleted.
+  *   `productSetId` (*type:* `String.t`, *default:* `nil`) - The ProductSet that contains the Products to delete. If a Product is a member of product_set_id in addition to other ProductSets, the Product will still be deleted.
   """
 
   use GoogleApi.Gax.ModelBase

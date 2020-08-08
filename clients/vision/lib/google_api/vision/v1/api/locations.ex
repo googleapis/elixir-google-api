@@ -26,9 +26,7 @@ defmodule GoogleApi.Vision.V1.Api.Locations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 

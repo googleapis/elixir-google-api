@@ -21,22 +21,15 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateImageResponse do
 
   ## Attributes
 
-  *   `context` (*type:* `GoogleApi.Vision.V1.Model.ImageAnnotationContext.t`, *default:* `nil`) - If present, contextual information is needed to understand where this image
-      comes from.
+  *   `context` (*type:* `GoogleApi.Vision.V1.Model.ImageAnnotationContext.t`, *default:* `nil`) - If present, contextual information is needed to understand where this image comes from.
   *   `cropHintsAnnotation` (*type:* `GoogleApi.Vision.V1.Model.CropHintsAnnotation.t`, *default:* `nil`) - If present, crop hints have completed successfully.
-  *   `error` (*type:* `GoogleApi.Vision.V1.Model.Status.t`, *default:* `nil`) - If set, represents the error message for the operation.
-      Note that filled-in image annotations are guaranteed to be
-      correct, even when `error` is set.
+  *   `error` (*type:* `GoogleApi.Vision.V1.Model.Status.t`, *default:* `nil`) - If set, represents the error message for the operation. Note that filled-in image annotations are guaranteed to be correct, even when `error` is set.
   *   `faceAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.FaceAnnotation.t)`, *default:* `nil`) - If present, face detection has completed successfully.
-  *   `fullTextAnnotation` (*type:* `GoogleApi.Vision.V1.Model.TextAnnotation.t`, *default:* `nil`) - If present, text (OCR) detection or document (OCR) text detection has
-      completed successfully.
-      This annotation provides the structural hierarchy for the OCR detected
-      text.
+  *   `fullTextAnnotation` (*type:* `GoogleApi.Vision.V1.Model.TextAnnotation.t`, *default:* `nil`) - If present, text (OCR) detection or document (OCR) text detection has completed successfully. This annotation provides the structural hierarchy for the OCR detected text.
   *   `imagePropertiesAnnotation` (*type:* `GoogleApi.Vision.V1.Model.ImageProperties.t`, *default:* `nil`) - If present, image properties were extracted successfully.
   *   `labelAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.EntityAnnotation.t)`, *default:* `nil`) - If present, label detection has completed successfully.
   *   `landmarkAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.EntityAnnotation.t)`, *default:* `nil`) - If present, landmark detection has completed successfully.
-  *   `localizedObjectAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.LocalizedObjectAnnotation.t)`, *default:* `nil`) - If present, localized object detection has completed successfully.
-      This will be sorted descending by confidence score.
+  *   `localizedObjectAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.LocalizedObjectAnnotation.t)`, *default:* `nil`) - If present, localized object detection has completed successfully. This will be sorted descending by confidence score.
   *   `logoAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.EntityAnnotation.t)`, *default:* `nil`) - If present, logo detection has completed successfully.
   *   `productSearchResults` (*type:* `GoogleApi.Vision.V1.Model.ProductSearchResults.t`, *default:* `nil`) - If present, product search has completed successfully.
   *   `safeSearchAnnotation` (*type:* `GoogleApi.Vision.V1.Model.SafeSearchAnnotation.t`, *default:* `nil`) - If present, safe-search annotation has completed successfully.

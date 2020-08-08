@@ -22,14 +22,7 @@ defmodule GoogleApi.Vision.V1.Model.ImageContext do
   ## Attributes
 
   *   `cropHintsParams` (*type:* `GoogleApi.Vision.V1.Model.CropHintsParams.t`, *default:* `nil`) - Parameters for crop hints annotation request.
-  *   `languageHints` (*type:* `list(String.t)`, *default:* `nil`) - List of languages to use for TEXT_DETECTION. In most cases, an empty value
-      yields the best results since it enables automatic language detection. For
-      languages based on the Latin alphabet, setting `language_hints` is not
-      needed. In rare cases, when the language of the text in the image is known,
-      setting a hint will help get better results (although it will be a
-      significant hindrance if the hint is wrong). Text detection returns an
-      error if one or more of the specified languages is not one of the
-      [supported languages](https://cloud.google.com/vision/docs/languages).
+  *   `languageHints` (*type:* `list(String.t)`, *default:* `nil`) - List of languages to use for TEXT_DETECTION. In most cases, an empty value yields the best results since it enables automatic language detection. For languages based on the Latin alphabet, setting `language_hints` is not needed. In rare cases, when the language of the text in the image is known, setting a hint will help get better results (although it will be a significant hindrance if the hint is wrong). Text detection returns an error if one or more of the specified languages is not one of the [supported languages](https://cloud.google.com/vision/docs/languages).
   *   `latLongRect` (*type:* `GoogleApi.Vision.V1.Model.LatLongRect.t`, *default:* `nil`) - Not used.
   *   `productSearchParams` (*type:* `GoogleApi.Vision.V1.Model.ProductSearchParams.t`, *default:* `nil`) - Parameters for product search.
   *   `webDetectionParams` (*type:* `GoogleApi.Vision.V1.Model.WebDetectionParams.t`, *default:* `nil`) - Parameters for web detection.

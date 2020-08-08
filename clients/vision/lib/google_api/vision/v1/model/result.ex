@@ -21,11 +21,9 @@ defmodule GoogleApi.Vision.V1.Model.Result do
 
   ## Attributes
 
-  *   `image` (*type:* `String.t`, *default:* `nil`) - The resource name of the image from the product that is the closest match
-      to the query.
+  *   `image` (*type:* `String.t`, *default:* `nil`) - The resource name of the image from the product that is the closest match to the query.
   *   `product` (*type:* `GoogleApi.Vision.V1.Model.Product.t`, *default:* `nil`) - The Product.
-  *   `score` (*type:* `number()`, *default:* `nil`) - A confidence level on the match, ranging from 0 (no confidence) to
-      1 (full confidence).
+  *   `score` (*type:* `number()`, *default:* `nil`) - A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).
   """
 
   use GoogleApi.Gax.ModelBase

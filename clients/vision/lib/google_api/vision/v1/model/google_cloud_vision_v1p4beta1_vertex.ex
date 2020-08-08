@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Vertex do
   @moduledoc """
-  A vertex represents a 2D point in the image.
-  NOTE: the vertex coordinates are in the same scale as the original image.
+  A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 
   ## Attributes
 

@@ -21,8 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.ListProductSetsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
-      results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   *   `productSets` (*type:* `list(GoogleApi.Vision.V1.Model.ProductSet.t)`, *default:* `nil`) - List of ProductSets.
   """
 

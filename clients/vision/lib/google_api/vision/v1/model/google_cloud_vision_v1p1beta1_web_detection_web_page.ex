@@ -21,13 +21,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1WebDetectionWebPag
 
   ## Attributes
 
-  *   `fullMatchingImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1WebDetectionWebImage.t)`, *default:* `nil`) - Fully matching images on the page.
-      Can include resized copies of the query image.
+  *   `fullMatchingImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1WebDetectionWebImage.t)`, *default:* `nil`) - Fully matching images on the page. Can include resized copies of the query image.
   *   `pageTitle` (*type:* `String.t`, *default:* `nil`) - Title for the web page, may contain HTML markups.
-  *   `partialMatchingImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1WebDetectionWebImage.t)`, *default:* `nil`) - Partial matching images on the page.
-      Those images are similar enough to share some key-point features. For
-      example an original image will likely have partial matching for its
-      crops.
+  *   `partialMatchingImages` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1WebDetectionWebImage.t)`, *default:* `nil`) - Partial matching images on the page. Those images are similar enough to share some key-point features. For example an original image will likely have partial matching for its crops.
   *   `score` (*type:* `number()`, *default:* `nil`) - (Deprecated) Overall relevancy score for the web page.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The result web page URL.
   """

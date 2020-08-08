@@ -21,8 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.GcsSource do
 
   ## Attributes
 
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI for the input file. This must only be a
-      Google Cloud Storage object. Wildcards are not currently supported.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI for the input file. This must only be a Google Cloud Storage object. Wildcards are not currently supported.
   """
 
   use GoogleApi.Gax.ModelBase

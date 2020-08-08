@@ -21,15 +21,8 @@ defmodule GoogleApi.Vision.V1.Model.Image do
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - Image content, represented as a stream of bytes.
-      Note: As with all `bytes` fields, protobuffers use a pure binary
-      representation, whereas JSON representations use base64.
-
-      Currently, this field only works for BatchAnnotateImages requests. It does
-      not work for AsyncBatchAnnotateImages requests.
-  *   `source` (*type:* `GoogleApi.Vision.V1.Model.ImageSource.t`, *default:* `nil`) - Google Cloud Storage image location, or publicly-accessible image
-      URL. If both `content` and `source` are provided for an image, `content`
-      takes precedence and is used to perform the image annotation request.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - Image content, represented as a stream of bytes. Note: As with all `bytes` fields, protobuffers use a pure binary representation, whereas JSON representations use base64. Currently, this field only works for BatchAnnotateImages requests. It does not work for AsyncBatchAnnotateImages requests.
+  *   `source` (*type:* `GoogleApi.Vision.V1.Model.ImageSource.t`, *default:* `nil`) - Google Cloud Storage image location, or publicly-accessible image URL. If both `content` and `source` are provided for an image, `content` takes precedence and is used to perform the image annotation request.
   """
 
   use GoogleApi.Gax.ModelBase

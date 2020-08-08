@@ -23,8 +23,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Celebrity do
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - The Celebrity's description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The Celebrity's display name.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the preloaded Celebrity. Has the format
-      `builtin/{mid}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the preloaded Celebrity. Has the format `builtin/{mid}`.
   """
 
   use GoogleApi.Gax.ModelBase

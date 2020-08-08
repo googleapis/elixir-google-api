@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Vision.V1.Model.Feature do
   @moduledoc """
-  The type of Google Cloud Vision API detection to perform, and the maximum
-  number of results to return for that type. Multiple `Feature` objects can
-  be specified in the `features` list.
+  The type of Google Cloud Vision API detection to perform, and the maximum number of results to return for that type. Multiple `Feature` objects can be specified in the `features` list.
 
   ## Attributes
 
-  *   `maxResults` (*type:* `integer()`, *default:* `nil`) - Maximum number of results of this type. Does not apply to
-      `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for the feature.
-      Supported values: "builtin/stable" (the default if unset) and
-      "builtin/latest".
+  *   `maxResults` (*type:* `integer()`, *default:* `nil`) - Maximum number of results of this type. Does not apply to `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for the feature. Supported values: "builtin/stable" (the default if unset) and "builtin/latest".
   *   `type` (*type:* `String.t`, *default:* `nil`) - The feature type.
   """
 
