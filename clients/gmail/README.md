@@ -2,8 +2,7 @@
 
 Gmail API client library.
 
-The Gmail API lets you view and manage Gmail mailbox data like
-    threads, messages, and labels.
+The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels.
 
 ## Installation
 

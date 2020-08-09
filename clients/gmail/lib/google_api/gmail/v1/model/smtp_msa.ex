@@ -21,16 +21,11 @@ defmodule GoogleApi.Gmail.V1.Model.SmtpMsa do
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - The hostname of the SMTP service.  Required.
-  *   `password` (*type:* `String.t`, *default:* `nil`) - The password that will be used for authentication with the SMTP service.
-      This is a write-only field that can be specified in requests to create or
-      update SendAs settings; it is never populated in responses.
-  *   `port` (*type:* `integer()`, *default:* `nil`) - The port of the SMTP service.  Required.
-  *   `securityMode` (*type:* `String.t`, *default:* `nil`) - The protocol that will be used to secure communication with the SMTP
-      service.  Required.
-  *   `username` (*type:* `String.t`, *default:* `nil`) - The username that will be used for authentication with the SMTP service.
-      This is a write-only field that can be specified in requests to create or
-      update SendAs settings; it is never populated in responses.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - The hostname of the SMTP service. Required.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - The password that will be used for authentication with the SMTP service. This is a write-only field that can be specified in requests to create or update SendAs settings; it is never populated in responses.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - The port of the SMTP service. Required.
+  *   `securityMode` (*type:* `String.t`, *default:* `nil`) - The protocol that will be used to secure communication with the SMTP service. Required.
+  *   `username` (*type:* `String.t`, *default:* `nil`) - The username that will be used for authentication with the SMTP service. This is a write-only field that can be specified in requests to create or update SendAs settings; it is never populated in responses.
   """
 
   use GoogleApi.Gax.ModelBase

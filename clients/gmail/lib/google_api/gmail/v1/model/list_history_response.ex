@@ -21,9 +21,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListHistoryResponse do
 
   ## Attributes
 
-  *   `history` (*type:* `list(GoogleApi.Gmail.V1.Model.History.t)`, *default:* `nil`) - List of history records.  Any `messages` contained in the
-      response will typically only have `id` and
-      `threadId` fields populated.
+  *   `history` (*type:* `list(GoogleApi.Gmail.V1.Model.History.t)`, *default:* `nil`) - List of history records. Any `messages` contained in the response will typically only have `id` and `threadId` fields populated.
   *   `historyId` (*type:* `String.t`, *default:* `nil`) - The ID of the mailbox's current history record.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token to retrieve the next page of results in the list.
   """
