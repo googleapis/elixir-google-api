@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.CommentAnalyzer.V1alpha1.Model.ArticleAndParentComment do
   @moduledoc """
-  A type of context specific to a comment left on a single-threaded comment
-  message board, where comments are either a top level comment or the child of
-  a top level comment.
+  A type of context specific to a comment left on a single-threaded comment message board, where comments are either a top level comment or the child of a top level comment.
 
   ## Attributes
 
-  *   `article` (*type:* `GoogleApi.CommentAnalyzer.V1alpha1.Model.TextEntry.t`, *default:* `nil`) - The source content about which the comment was made (article text, article
-      summary, video transcript, etc).
-  *   `parentComment` (*type:* `GoogleApi.CommentAnalyzer.V1alpha1.Model.TextEntry.t`, *default:* `nil`) - Refers to text that is a direct parent of the source comment, such as in a
-      one-deep threaded message board. This field will only be present for
-      comments that are replies to other comments and will not be populated for
-      direct comments on the article_text.
+  *   `article` (*type:* `GoogleApi.CommentAnalyzer.V1alpha1.Model.TextEntry.t`, *default:* `nil`) - The source content about which the comment was made (article text, article summary, video transcript, etc).
+  *   `parentComment` (*type:* `GoogleApi.CommentAnalyzer.V1alpha1.Model.TextEntry.t`, *default:* `nil`) - Refers to text that is a direct parent of the source comment, such as in a one-deep threaded message board. This field will only be present for comments that are replies to other comments and will not be populated for direct comments on the article_text.
   """
 
   use GoogleApi.Gax.ModelBase

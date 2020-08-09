@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_comment_analyzer, "~> 0.6"}]
+  [{:google_api_comment_analyzer, "~> 0.7"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://github.com/conversationai/perspectiveapi/blob/master/README.md](https://github.com/conversationai/perspectiveapi/blob/master/README.md).
+Product documentation is available at [https://support.perspective.api.com](https://support.perspective.api.com).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_comment_analyzer](https://hexdocs.pm/google_api_comment_analyzer).

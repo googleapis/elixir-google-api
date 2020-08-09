@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.CommentAnalyzer.V1alpha1.Model.Context do
   @moduledoc """
-  Context is typically something that a Comment is referencing or replying to
-  (such as an article, or previous comment).
-  Note: Populate only ONE OF the following fields. The oneof syntax cannot be
-  used because that would require nesting entries inside another message and
-  breaking backwards compatibility. The server will return an error if more
-  than one of the following fields is present.
+  Context is typically something that a Comment is referencing or replying to (such as an article, or previous comment). Note: Populate only ONE OF the following fields. The oneof syntax cannot be used because that would require nesting entries inside another message and breaking backwards compatibility. The server will return an error if more than one of the following fields is present.
 
   ## Attributes
 
-  *   `articleAndParentComment` (*type:* `GoogleApi.CommentAnalyzer.V1alpha1.Model.ArticleAndParentComment.t`, *default:* `nil`) - Information about the source for which the original comment was made, and
-      any parent comment info.
+  *   `articleAndParentComment` (*type:* `GoogleApi.CommentAnalyzer.V1alpha1.Model.ArticleAndParentComment.t`, *default:* `nil`) - Information about the source for which the original comment was made, and any parent comment info.
   *   `entries` (*type:* `list(GoogleApi.CommentAnalyzer.V1alpha1.Model.TextEntry.t)`, *default:* `nil`) - A list of messages. For example, a linear comments section or forum thread.
   """
 

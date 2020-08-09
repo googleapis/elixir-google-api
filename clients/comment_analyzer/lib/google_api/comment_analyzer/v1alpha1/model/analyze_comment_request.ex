@@ -17,44 +17,19 @@
 
 defmodule GoogleApi.CommentAnalyzer.V1alpha1.Model.AnalyzeCommentRequest do
   @moduledoc """
-  The comment analysis request message.
-  LINT.IfChange
+  The comment analysis request message. LINT.IfChange
 
   ## Attributes
 
   *   `clientToken` (*type:* `String.t`, *default:* `nil`) - Opaque token that is echoed from the request to the response.
   *   `comment` (*type:* `GoogleApi.CommentAnalyzer.V1alpha1.Model.TextEntry.t`, *default:* `nil`) - The comment to analyze.
-  *   `communityId` (*type:* `String.t`, *default:* `nil`) - Optional identifier associating this AnalyzeCommentRequest with a
-      particular client's community. Different communities may have different
-      norms and rules. Specifying this value enables us to explore building
-      community-specific models for clients.
+  *   `communityId` (*type:* `String.t`, *default:* `nil`) - Optional identifier associating this AnalyzeCommentRequest with a particular client's community. Different communities may have different norms and rules. Specifying this value enables us to explore building community-specific models for clients.
   *   `context` (*type:* `GoogleApi.CommentAnalyzer.V1alpha1.Model.Context.t`, *default:* `nil`) - The context of the comment.
-  *   `doNotStore` (*type:* `boolean()`, *default:* `nil`) - Do not store the comment or context sent in this request. By default, the
-      service may store comments/context for debugging purposes.
-  *   `languages` (*type:* `list(String.t)`, *default:* `nil`) - The language(s) of the comment and context. If none are specified, we
-      attempt to automatically detect the language. Specifying multiple languages
-      means the text contains multiple lanugages. Both ISO and BCP-47 language
-      codes are accepted.
-
-      The server returns an error if no language was specified and language
-      detection fails. The server also returns an error if the languages (either
-      specified by the caller, or auto-detected) are not *all* supported by the
-      service.
-  *   `requestedAttributes` (*type:* `%{optional(String.t) => GoogleApi.CommentAnalyzer.V1alpha1.Model.AttributeParameters.t}`, *default:* `nil`) - Specification of requested attributes. The AttributeParameters serve as
-      configuration for each associated attribute. The map keys are attribute
-      names. The available attributes may be different on each RFE installation,
-      and can be seen by calling ListAttributes (see above).
-      For the prod installation, known as Perspective API, at
-      blade:commentanalyzer-esf and commentanalyzer.googleapis.com, see
-      go/checker-models (internal) and
-      https://github.com/conversationai/perspectiveapi/blob/master/2-api/models.md#all-attribute-types.
-  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Session ID. Used to join related RPCs into a single session. For example,
-      an interactive tool that calls both the AnalyzeComment and
-      SuggestCommentScore RPCs should set all invocations of both RPCs to the
-      same Session ID, typically a random 64-bit integer.
-  *   `spanAnnotations` (*type:* `boolean()`, *default:* `nil`) - An advisory parameter that will return span annotations if the model
-      is capable of providing scores with sub-comment resolution. This will
-      likely increase the size of the returned message.
+  *   `doNotStore` (*type:* `boolean()`, *default:* `nil`) - Do not store the comment or context sent in this request. By default, the service may store comments/context for debugging purposes.
+  *   `languages` (*type:* `list(String.t)`, *default:* `nil`) - The language(s) of the comment and context. If none are specified, we attempt to automatically detect the language. Specifying multiple languages means the text contains multiple lanugages. Both ISO and BCP-47 language codes are accepted. The server returns an error if no language was specified and language detection fails. The server also returns an error if the languages (either specified by the caller, or auto-detected) are not *all* supported by the service.
+  *   `requestedAttributes` (*type:* `%{optional(String.t) => GoogleApi.CommentAnalyzer.V1alpha1.Model.AttributeParameters.t}`, *default:* `nil`) - Specification of requested attributes. The AttributeParameters serve as configuration for each associated attribute. The map keys are attribute names. The available attributes may be different on each RFE installation, and can be seen by calling ListAttributes (see above). For the prod installation, known as Perspective API, at blade:commentanalyzer-esf and commentanalyzer.googleapis.com, see go/checker-models (internal) and https://github.com/conversationai/perspectiveapi/blob/master/2-api/models.md#all-attribute-types.
+  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Session ID. Used to join related RPCs into a single session. For example, an interactive tool that calls both the AnalyzeComment and SuggestCommentScore RPCs should set all invocations of both RPCs to the same Session ID, typically a random 64-bit integer.
+  *   `spanAnnotations` (*type:* `boolean()`, *default:* `nil`) - An advisory parameter that will return span annotations if the model is capable of providing scores with sub-comment resolution. This will likely increase the size of the returned message.
   """
 
   use GoogleApi.Gax.ModelBase
