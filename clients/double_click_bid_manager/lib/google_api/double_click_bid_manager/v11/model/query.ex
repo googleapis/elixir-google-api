@@ -21,14 +21,22 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.Query do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `doubleclickbidmanager#query`) - Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#query".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"doubleclickbidmanager#query"</code>.
   *   `metadata` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.QueryMetadata.t`, *default:* `nil`) - Query metadata.
   *   `params` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.Parameters.t`, *default:* `nil`) - Query parameters.
   *   `queryId` (*type:* `String.t`, *default:* `nil`) - Query ID.
-  *   `reportDataEndTimeMs` (*type:* `String.t`, *default:* `nil`) - The ending time for the data that is shown in the report. Note, reportDataEndTimeMs is required if metadata.dataRange is CUSTOM_DATES and ignored otherwise.
-  *   `reportDataStartTimeMs` (*type:* `String.t`, *default:* `nil`) - The starting time for the data that is shown in the report. Note, reportDataStartTimeMs is required if metadata.dataRange is CUSTOM_DATES and ignored otherwise.
+  *   `reportDataEndTimeMs` (*type:* `String.t`, *default:* `nil`) - The ending time for the data that is shown in the report. Note,
+      <code>reportDataEndTimeMs</code> is required if
+      <code>metadata.dataRange</code> is <code>CUSTOM_DATES</code> and ignored
+      otherwise.
+  *   `reportDataStartTimeMs` (*type:* `String.t`, *default:* `nil`) - The starting time for the data that is shown in the report. Note,
+      <code>reportDataStartTimeMs</code> is required if
+      <code>metadata.dataRange</code> is <code>CUSTOM_DATES</code> and ignored
+      otherwise.
   *   `schedule` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.QuerySchedule.t`, *default:* `nil`) - Information on how often and when to run a query.
-  *   `timezoneCode` (*type:* `String.t`, *default:* `nil`) - Canonical timezone code for report data time. Defaults to America/New_York.
+  *   `timezoneCode` (*type:* `String.t`, *default:* `nil`) - Canonical timezone code for report data time. Defaults to
+      <code>America/New_York</code>.
   """
 
   use GoogleApi.Gax.ModelBase

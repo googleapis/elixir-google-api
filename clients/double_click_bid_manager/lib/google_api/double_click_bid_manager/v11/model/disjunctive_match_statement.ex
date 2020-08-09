@@ -21,7 +21,8 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.DisjunctiveMatchStatement do
 
   ## Attributes
 
-  *   `eventFilters` (*type:* `list(GoogleApi.DoubleClickBidManager.V11.Model.EventFilter.t)`, *default:* `nil`) - Filters. There is a limit of 100 filters that can be set per disjunctive match statement.
+  *   `eventFilters` (*type:* `list(GoogleApi.DoubleClickBidManager.V11.Model.EventFilter.t)`, *default:* `nil`) - Filters. There is a limit of 100 filters that can be set per disjunctive
+      match statement.
   """
 
   use GoogleApi.Gax.ModelBase

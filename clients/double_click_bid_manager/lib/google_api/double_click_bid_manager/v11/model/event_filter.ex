@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V11.Model.EventFilter do
   @moduledoc """
-  Defines the type of filter to be applied to the path, a DV360 event dimension filter.
+  Defines the type of filter to be applied to the path, a DV360 event dimension
+  filter.
 
   ## Attributes
 

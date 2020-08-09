@@ -17,22 +17,23 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadRequest do
   @moduledoc """
-  Request to fetch stored inventory sources, campaigns, insertion orders, line items, YouTube ad groups and ads.
+  Request to fetch stored inventory sources, campaigns, insertion orders, line
+  items, YouTube ad groups and ads.
 
   ## Attributes
 
-  *   `fileTypes` (*type:* `list(String.t)`, *default:* `nil`) - File types that will be returned. If INVENTORY_SOURCE is requested, no other file types may be requested.
-
-      Acceptable values are:  
-      - "AD" 
-      - "AD_GROUP" 
-      - "CAMPAIGN" 
-      - "INSERTION_ORDER" 
-      - "INVENTORY_SOURCE" 
-      - "LINE_ITEM"
-  *   `filterIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the specified filter type. This is used to filter entities to fetch. At least one ID must be specified.
-  *   `filterType` (*type:* `String.t`, *default:* `nil`) - Filter type used to filter entities to fetch. PARTNER_ID and INVENTORY_SOURCE_ID may only be used when downloading inventory sources.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - SDF Version (column names, types, order) in which the entities will be returned. Default to 5.
+  *   `fileTypes` (*type:* `list(String.t)`, *default:* `nil`) - File types that will be returned. If INVENTORY_SOURCE is requested, no
+      other file types may be requested. <br><br>Acceptable values are: <ul>
+      <li>"<code>AD</code>"</li> <li>"<code>AD_GROUP</code>"</li>
+      <li>"<code>CAMPAIGN</code>"</li> <li>"<code>INSERTION_ORDER</code>"</li>
+      <li>"<code>INVENTORY_SOURCE</code>"</li> <li>"<code>LINE_ITEM</code>"</li>
+      </ul>
+  *   `filterIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the specified filter type. This is used to filter entities to
+      fetch. At least one ID must be specified.
+  *   `filterType` (*type:* `String.t`, *default:* `nil`) - Filter type used to filter entities to fetch. PARTNER_ID and
+      INVENTORY_SOURCE_ID may only be used when downloading inventory sources.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - SDF Version (column names, types, order) in which the entities will be
+      returned. Default to <code>5</code>.
   """
 
   use GoogleApi.Gax.ModelBase

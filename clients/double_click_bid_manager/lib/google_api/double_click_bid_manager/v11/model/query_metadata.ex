@@ -23,16 +23,22 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.QueryMetadata do
 
   *   `dataRange` (*type:* `String.t`, *default:* `nil`) - Range of report data.
   *   `format` (*type:* `String.t`, *default:* `nil`) - Format of the generated report.
-  *   `googleCloudStoragePathForLatestReport` (*type:* `String.t`, *default:* `nil`) - The path to the location in Google Cloud Storage where the latest report is stored.
+  *   `googleCloudStoragePathForLatestReport` (*type:* `String.t`, *default:* `nil`) - The path to the location in Google Cloud Storage where the latest report is
+      stored.
   *   `googleDrivePathForLatestReport` (*type:* `String.t`, *default:* `nil`) - The path in Google Drive for the latest report.
   *   `latestReportRunTimeMs` (*type:* `String.t`, *default:* `nil`) - The time when the latest report started to run.
-  *   `locale` (*type:* `String.t`, *default:* `nil`) - Locale of the generated reports. Valid values are cs CZECH de GERMAN en ENGLISH es SPANISH fr FRENCH it ITALIAN ja JAPANESE ko KOREAN pl POLISH pt-BR BRAZILIAN_PORTUGUESE ru RUSSIAN tr TURKISH uk UKRAINIAN zh-CN CHINA_CHINESE zh-TW TAIWAN_CHINESE
-
-      An locale string not in the list above will generate reports in English.
+  *   `locale` (*type:* `String.t`, *default:* `nil`) - Locale of the generated reports. Valid values are cs      CZECH de
+      GERMAN en      ENGLISH es      SPANISH fr      FRENCH it      ITALIAN ja
+      JAPANESE ko      KOREAN pl      POLISH pt-BR   BRAZILIAN_PORTUGUESE ru
+      RUSSIAN tr      TURKISH uk      UKRAINIAN zh-CN   CHINA_CHINESE zh-TW
+      TAIWAN_CHINESE <br><br> An locale string not in the list above will
+      generate reports in English.
   *   `reportCount` (*type:* `integer()`, *default:* `nil`) - Number of reports that have been generated for the query.
   *   `running` (*type:* `boolean()`, *default:* `nil`) - Whether the latest report is currently running.
-  *   `sendNotification` (*type:* `boolean()`, *default:* `nil`) - Whether to send an email notification when a report is ready. Default to false.
-  *   `shareEmailAddress` (*type:* `list(String.t)`, *default:* `nil`) - List of email addresses which are sent email notifications when the report is finished. Separate from sendNotification.
+  *   `sendNotification` (*type:* `boolean()`, *default:* `nil`) - Whether to send an email notification when a report is ready. Default to
+      false.
+  *   `shareEmailAddress` (*type:* `list(String.t)`, *default:* `nil`) - List of email addresses which are sent email notifications when the report
+      is finished. Separate from <code>sendNotification</code>.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Query title. It is used to name the reports generated from this query.
   """
 

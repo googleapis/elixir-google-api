@@ -21,7 +21,8 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.ListReportsResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `doubleclickbidmanager#listReportsResponse`) - Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#listReportsResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"doubleclickbidmanager#listReportsResponse"</code>.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Next page's pagination token if one exists.
   *   `reports` (*type:* `list(GoogleApi.DoubleClickBidManager.V11.Model.Report.t)`, *default:* `nil`) - Retrieved reports.
   """
