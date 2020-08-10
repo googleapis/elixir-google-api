@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Testing.V1.Model.ClientInfoDetail do
   @moduledoc """
-  Key-value pair of detailed information about the client which invoked the
-  test. Examples: {'Version', '1.0'}, {'Release Track', 'BETA'}.
+  Key-value pair of detailed information about the client which invoked the test. Examples: {'Version', '1.0'}, {'Release Track', 'BETA'}.
 
   ## Attributes
 

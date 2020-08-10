@@ -21,9 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.FileReference do
 
   ## Attributes
 
-  *   `gcsPath` (*type:* `String.t`, *default:* `nil`) - A path to a file in Google Cloud Storage.
-      Example: gs://build-app-1414623860166/app%40debug-unaligned.apk
-      These paths are expected to be url encoded (percent encoding)
+  *   `gcsPath` (*type:* `String.t`, *default:* `nil`) - A path to a file in Google Cloud Storage. Example: gs://build-app-1414623860166/app%40debug-unaligned.apk These paths are expected to be url encoded (percent encoding)
   """
 
   use GoogleApi.Gax.ModelBase

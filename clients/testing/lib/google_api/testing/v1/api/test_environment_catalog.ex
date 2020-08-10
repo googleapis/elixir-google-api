@@ -26,13 +26,7 @@ defmodule GoogleApi.Testing.V1.Api.TestEnvironmentCatalog do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets the catalog of supported test environments.
-
-  May return any of the following canonical error codes:
-
-  - INVALID_ARGUMENT - if the request is malformed
-  - NOT_FOUND - if the environment type does not exist
-  - INTERNAL - if an internal error occurred
+  Gets the catalog of supported test environments. May return any of the following canonical error codes: - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the environment type does not exist - INTERNAL - if an internal error occurred
 
   ## Parameters
 

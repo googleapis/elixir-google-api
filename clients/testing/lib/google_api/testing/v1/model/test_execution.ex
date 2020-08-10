@@ -26,8 +26,7 @@ defmodule GoogleApi.Testing.V1.Model.TestExecution do
   *   `matrixId` (*type:* `String.t`, *default:* `nil`) - Output only. Id of the containing TestMatrix.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. The cloud project that owns the test execution.
   *   `shard` (*type:* `GoogleApi.Testing.V1.Model.Shard.t`, *default:* `nil`) - Output only. Details about the shard.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the current progress of the test execution
-      (e.g., FINISHED).
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the current progress of the test execution (e.g., FINISHED).
   *   `testDetails` (*type:* `GoogleApi.Testing.V1.Model.TestDetails.t`, *default:* `nil`) - Output only. Additional details about the running test.
   *   `testSpecification` (*type:* `GoogleApi.Testing.V1.Model.TestSpecification.t`, *default:* `nil`) - Output only. How to run the test.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this test execution was initially created.

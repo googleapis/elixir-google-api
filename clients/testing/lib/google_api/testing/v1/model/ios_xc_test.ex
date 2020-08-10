@@ -17,30 +17,15 @@
 
 defmodule GoogleApi.Testing.V1.Model.IosXcTest do
   @moduledoc """
-  A test of an iOS application that uses the XCTest framework.
-  Xcode supports the option to "build for testing", which generates an
-  .xctestrun file that contains a test specification (arguments, test methods,
-  etc). This test type accepts a zip file containing the .xctestrun file and
-  the corresponding contents of the Build/Products directory that contains all
-  the binaries needed to run the tests.
+  A test of an iOS application that uses the XCTest framework. Xcode supports the option to "build for testing", which generates an .xctestrun file that contains a test specification (arguments, test methods, etc). This test type accepts a zip file containing the .xctestrun file and the corresponding contents of the Build/Products directory that contains all the binaries needed to run the tests.
 
   ## Attributes
 
   *   `appBundleId` (*type:* `String.t`, *default:* `nil`) - Output only. The bundle id for the application under test.
-  *   `testSpecialEntitlements` (*type:* `boolean()`, *default:* `nil`) - The option to test special app entitlements. Setting this would re-sign the
-      app having special entitlements with an explicit application-identifier.
-      Currently supports testing aps-environment entitlement.
-  *   `testsZip` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - Required. The .zip containing the .xctestrun file and the contents of the
-      DerivedData/Build/Products directory.
-      The .xctestrun file in this zip is ignored if the xctestrun field is
-      specified.
-  *   `xcodeVersion` (*type:* `String.t`, *default:* `nil`) - The Xcode version that should be used for the test.
-      Use the TestEnvironmentDiscoveryService to get supported options.
-      Defaults to the latest Xcode version Firebase Test Lab supports.
-  *   `xctestrun` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - An .xctestrun file that will override the .xctestrun file in the
-      tests zip. Because the .xctestrun file contains environment variables along
-      with test methods to run and/or ignore, this can be useful for sharding
-      tests. Default is taken from the tests zip.
+  *   `testSpecialEntitlements` (*type:* `boolean()`, *default:* `nil`) - The option to test special app entitlements. Setting this would re-sign the app having special entitlements with an explicit application-identifier. Currently supports testing aps-environment entitlement.
+  *   `testsZip` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - Required. The .zip containing the .xctestrun file and the contents of the DerivedData/Build/Products directory. The .xctestrun file in this zip is ignored if the xctestrun field is specified.
+  *   `xcodeVersion` (*type:* `String.t`, *default:* `nil`) - The Xcode version that should be used for the test. Use the TestEnvironmentDiscoveryService to get supported options. Defaults to the latest Xcode version Firebase Test Lab supports.
+  *   `xctestrun` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - An .xctestrun file that will override the .xctestrun file in the tests zip. Because the .xctestrun file contains environment variables along with test methods to run and/or ignore, this can be useful for sharding tests. Default is taken from the tests zip.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.CancelTestMatrixResponse do
 
   ## Attributes
 
-  *   `testState` (*type:* `String.t`, *default:* `nil`) - The current rolled-up state of the test matrix.
-      If this state is already final, then the cancelation request will
-      have no effect.
+  *   `testState` (*type:* `String.t`, *default:* `nil`) - The current rolled-up state of the test matrix. If this state is already final, then the cancelation request will have no effect.
   """
 
   use GoogleApi.Gax.ModelBase

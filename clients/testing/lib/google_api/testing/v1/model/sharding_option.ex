@@ -21,8 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.ShardingOption do
 
   ## Attributes
 
-  *   `manualSharding` (*type:* `GoogleApi.Testing.V1.Model.ManualSharding.t`, *default:* `nil`) - Shards test cases into the specified groups of packages, classes, and/or
-      methods.
+  *   `manualSharding` (*type:* `GoogleApi.Testing.V1.Model.ManualSharding.t`, *default:* `nil`) - Shards test cases into the specified groups of packages, classes, and/or methods.
   *   `uniformSharding` (*type:* `GoogleApi.Testing.V1.Model.UniformSharding.t`, *default:* `nil`) - Uniformly shards test cases given a total number of shards.
   """
 

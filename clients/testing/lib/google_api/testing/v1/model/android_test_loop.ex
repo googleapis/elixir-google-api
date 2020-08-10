@@ -17,26 +17,15 @@
 
 defmodule GoogleApi.Testing.V1.Model.AndroidTestLoop do
   @moduledoc """
-  A test of an Android Application with a Test Loop.
-  The intent \\<intent-name\\> will be implicitly added, since Games is the only
-  user of this api, for the time being.
+  A test of an Android Application with a Test Loop. The intent \\ will be implicitly added, since Games is the only user of this api, for the time being.
 
   ## Attributes
 
   *   `appApk` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - The APK for the application under test.
   *   `appBundle` (*type:* `GoogleApi.Testing.V1.Model.AppBundle.t`, *default:* `nil`) - A multi-apk app bundle for the application under test.
-  *   `appPackageId` (*type:* `String.t`, *default:* `nil`) - The java package for the application under test.
-      The default is determined by examining the application's manifest.
-  *   `scenarioLabels` (*type:* `list(String.t)`, *default:* `nil`) - The list of scenario labels that should be run during the test.
-      The scenario labels should map to labels defined in the application's
-      manifest. For example, player_experience and
-      com.google.test.loops.player_experience add all of the loops labeled in the
-      manifest with the com.google.test.loops.player_experience name to the
-      execution.
-      Scenarios can also be specified in the scenarios field.
-  *   `scenarios` (*type:* `list(integer())`, *default:* `nil`) - The list of scenarios that should be run during the test.
-      The default is all test loops, derived from the application's
-      manifest.
+  *   `appPackageId` (*type:* `String.t`, *default:* `nil`) - The java package for the application under test. The default is determined by examining the application's manifest.
+  *   `scenarioLabels` (*type:* `list(String.t)`, *default:* `nil`) - The list of scenario labels that should be run during the test. The scenario labels should map to labels defined in the application's manifest. For example, player_experience and com.google.test.loops.player_experience add all of the loops labeled in the manifest with the com.google.test.loops.player_experience name to the execution. Scenarios can also be specified in the scenarios field.
+  *   `scenarios` (*type:* `list(integer())`, *default:* `nil`) - The list of scenarios that should be run during the test. The default is all test loops, derived from the application's manifest.
   """
 
   use GoogleApi.Gax.ModelBase

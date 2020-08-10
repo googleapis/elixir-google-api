@@ -22,28 +22,13 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
   ## Attributes
 
   *   `account` (*type:* `GoogleApi.Testing.V1.Model.Account.t`, *default:* `nil`) - The device will be logged in on this account for the duration of the test.
-  *   `additionalApks` (*type:* `list(GoogleApi.Testing.V1.Model.Apk.t)`, *default:* `nil`) - APKs to install in addition to those being directly tested.
-      Currently capped at 100.
-  *   `directoriesToPull` (*type:* `list(String.t)`, *default:* `nil`) - List of directories on the device to upload to GCS at the end of the test;
-      they must be absolute paths under /sdcard, /storage or /data/local/tmp.
-      Path names are restricted to characters a-z A-Z 0-9 _ - . + and /
-
-      Note: The paths /sdcard and /data will be made available and treated as
-      implicit path substitutions. E.g. if /sdcard on a particular device does
-      not map to external storage, the system will replace it with the external
-      storage path prefix for that device.
+  *   `additionalApks` (*type:* `list(GoogleApi.Testing.V1.Model.Apk.t)`, *default:* `nil`) - APKs to install in addition to those being directly tested. Currently capped at 100.
+  *   `directoriesToPull` (*type:* `list(String.t)`, *default:* `nil`) - List of directories on the device to upload to GCS at the end of the test; they must be absolute paths under /sdcard, /storage or /data/local/tmp. Path names are restricted to characters a-z A-Z 0-9 _ - . + and / Note: The paths /sdcard and /data will be made available and treated as implicit path substitutions. E.g. if /sdcard on a particular device does not map to external storage, the system will replace it with the external storage path prefix for that device.
   *   `dontAutograntPermissions` (*type:* `boolean()`, *default:* `nil`) - Whether to prevent all runtime permissions to be granted at app install
-  *   `environmentVariables` (*type:* `list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t)`, *default:* `nil`) - Environment variables to set for the test (only applicable for
-      instrumentation tests).
+  *   `environmentVariables` (*type:* `list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t)`, *default:* `nil`) - Environment variables to set for the test (only applicable for instrumentation tests).
   *   `filesToPush` (*type:* `list(GoogleApi.Testing.V1.Model.DeviceFile.t)`, *default:* `nil`) - List of files to push to the device before starting the test.
-  *   `networkProfile` (*type:* `String.t`, *default:* `nil`) - The network traffic profile used for running the test.
-      Available network profiles can be queried by using the
-      NETWORK_CONFIGURATION environment type when calling
-      TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
-  *   `systrace` (*type:* `GoogleApi.Testing.V1.Model.SystraceSetup.t`, *default:* `nil`) - Systrace configuration for the run.
-      If set a systrace will be taken, starting on test start and lasting for the
-      configured duration. The systrace file thus obtained is put in the results
-      bucket together with the other artifacts from the run.
+  *   `networkProfile` (*type:* `String.t`, *default:* `nil`) - The network traffic profile used for running the test. Available network profiles can be queried by using the NETWORK_CONFIGURATION environment type when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
+  *   `systrace` (*type:* `GoogleApi.Testing.V1.Model.SystraceSetup.t`, *default:* `nil`) - Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run.
   """
 
   use GoogleApi.Gax.ModelBase

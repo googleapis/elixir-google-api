@@ -21,36 +21,21 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
 
   ## Attributes
 
-  *   `brand` (*type:* `String.t`, *default:* `nil`) - The company that this device is branded with.
-      Example: "Google", "Samsung".
-  *   `codename` (*type:* `String.t`, *default:* `nil`) - The name of the industrial design.
-      This corresponds to android.os.Build.DEVICE.
+  *   `brand` (*type:* `String.t`, *default:* `nil`) - The company that this device is branded with. Example: "Google", "Samsung".
+  *   `codename` (*type:* `String.t`, *default:* `nil`) - The name of the industrial design. This corresponds to android.os.Build.DEVICE.
   *   `form` (*type:* `String.t`, *default:* `nil`) - Whether this device is virtual or physical.
   *   `formFactor` (*type:* `String.t`, *default:* `nil`) - Whether this device is a phone, tablet, wearable, etc.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique opaque id for this model.
-      Use this for invoking the TestExecutionService.
-  *   `lowFpsVideoRecording` (*type:* `boolean()`, *default:* `nil`) - True if and only if tests with this model are recorded by stitching
-      together screenshots. See use_low_spec_video_recording in device config.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique opaque id for this model. Use this for invoking the TestExecutionService.
+  *   `lowFpsVideoRecording` (*type:* `boolean()`, *default:* `nil`) - True if and only if tests with this model are recorded by stitching together screenshots. See use_low_spec_video_recording in device config.
   *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The manufacturer of this device.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable marketing name for this device model.
-      Examples: "Nexus 5", "Galaxy S5".
-  *   `screenDensity` (*type:* `integer()`, *default:* `nil`) - Screen density in DPI.
-      This corresponds to ro.sf.lcd_density
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable marketing name for this device model. Examples: "Nexus 5", "Galaxy S5".
+  *   `screenDensity` (*type:* `integer()`, *default:* `nil`) - Screen density in DPI. This corresponds to ro.sf.lcd_density
   *   `screenX` (*type:* `integer()`, *default:* `nil`) - Screen size in the horizontal (X) dimension measured in pixels.
   *   `screenY` (*type:* `integer()`, *default:* `nil`) - Screen size in the vertical (Y) dimension measured in pixels.
-  *   `supportedAbis` (*type:* `list(String.t)`, *default:* `nil`) - The list of supported ABIs for this device.
-      This corresponds to either android.os.Build.SUPPORTED_ABIS (for API level
-      21 and above) or android.os.Build.CPU_ABI/CPU_ABI2.
-      The most preferred ABI is the first element in the list.
-
-      Elements are optionally prefixed by "version_id:" (where version_id is
-      the id of an AndroidVersion), denoting an ABI that is supported only on
-      a particular version.
+  *   `supportedAbis` (*type:* `list(String.t)`, *default:* `nil`) - The list of supported ABIs for this device. This corresponds to either android.os.Build.SUPPORTED_ABIS (for API level 21 and above) or android.os.Build.CPU_ABI/CPU_ABI2. The most preferred ABI is the first element in the list. Elements are optionally prefixed by "version_id:" (where version_id is the id of an AndroidVersion), denoting an ABI that is supported only on a particular version.
   *   `supportedVersionIds` (*type:* `list(String.t)`, *default:* `nil`) - The set of Android versions this device supports.
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension.
-      Examples: "default", "preview", "deprecated".
-  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image (photo) of the device.
-      e.g. https://lh3.googleusercontent.com/90WcauuJiCYABEl8U0lcZeuS5STUbf2yW...
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension. Examples: "default", "preview", "deprecated".
+  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image (photo) of the device. e.g. https://lh3.googleusercontent.com/90WcauuJiCYABEl8U0lcZeuS5STUbf2yW...
   """
 
   use GoogleApi.Gax.ModelBase

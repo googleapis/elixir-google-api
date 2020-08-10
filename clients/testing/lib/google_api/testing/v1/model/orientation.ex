@@ -21,12 +21,9 @@ defmodule GoogleApi.Testing.V1.Model.Orientation do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The id for this orientation.
-      Example: "portrait".
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A human-friendly name for this orientation.
-      Example: "portrait".
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension.
-      Example: "default".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The id for this orientation. Example: "portrait".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A human-friendly name for this orientation. Example: "portrait".
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension. Example: "default".
   """
 
   use GoogleApi.Gax.ModelBase

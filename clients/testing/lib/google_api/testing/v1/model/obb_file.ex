@@ -22,12 +22,7 @@ defmodule GoogleApi.Testing.V1.Model.ObbFile do
   ## Attributes
 
   *   `obb` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - Required. Opaque Binary Blob (OBB) file(s) to install on the device.
-  *   `obbFileName` (*type:* `String.t`, *default:* `nil`) - Required. OBB file name which must conform to the format as specified by
-      Android
-      e.g. [main|patch].0300110.com.example.android.obb
-      which will be installed into
-        \\<shared-storage\\>/Android/obb/\\<package-name\\>/
-      on the device.
+  *   `obbFileName` (*type:* `String.t`, *default:* `nil`) - Required. OBB file name which must conform to the format as specified by Android e.g. [main|patch].0300110.com.example.android.obb which will be installed into \\/Android/obb/\\/ on the device.
   """
 
   use GoogleApi.Gax.ModelBase

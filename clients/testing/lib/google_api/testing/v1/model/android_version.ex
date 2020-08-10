@@ -21,18 +21,13 @@ defmodule GoogleApi.Testing.V1.Model.AndroidVersion do
 
   ## Attributes
 
-  *   `apiLevel` (*type:* `integer()`, *default:* `nil`) - The API level for this Android version.
-      Examples: 18, 19.
-  *   `codeName` (*type:* `String.t`, *default:* `nil`) - The code name for this Android version.
-      Examples: "JellyBean", "KitKat".
+  *   `apiLevel` (*type:* `integer()`, *default:* `nil`) - The API level for this Android version. Examples: 18, 19.
+  *   `codeName` (*type:* `String.t`, *default:* `nil`) - The code name for this Android version. Examples: "JellyBean", "KitKat".
   *   `distribution` (*type:* `GoogleApi.Testing.V1.Model.Distribution.t`, *default:* `nil`) - Market share for this version.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque id for this Android version.
-      Use this id to invoke the TestExecutionService.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque id for this Android version. Use this id to invoke the TestExecutionService.
   *   `releaseDate` (*type:* `GoogleApi.Testing.V1.Model.Date.t`, *default:* `nil`) - The date this Android version became available in the market.
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension.
-      Examples: "default", "preview", "deprecated".
-  *   `versionString` (*type:* `String.t`, *default:* `nil`) - A string representing this version of the Android OS.
-      Examples: "4.3", "4.4".
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension. Examples: "default", "preview", "deprecated".
+  *   `versionString` (*type:* `String.t`, *default:* `nil`) - A string representing this version of the Android OS. Examples: "4.3", "4.4".
   """
 
   use GoogleApi.Gax.ModelBase

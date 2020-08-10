@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   @moduledoc """
-  An Android app manifest. See
-  http://developer.android.com/guide/topics/manifest/manifest-intro.html
+  An Android app manifest. See http://developer.android.com/guide/topics/manifest/manifest-intro.html
 
   ## Attributes
 
@@ -26,8 +25,7 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   *   `intentFilters` (*type:* `list(GoogleApi.Testing.V1.Model.IntentFilter.t)`, *default:* `nil`) - 
   *   `maxSdkVersion` (*type:* `integer()`, *default:* `nil`) - Maximum API level on which the application is designed to run.
   *   `minSdkVersion` (*type:* `integer()`, *default:* `nil`) - Minimum API level required for the application to run.
-  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Full Java-style package name for this application, e.g.
-      "com.example.foo".
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Full Java-style package name for this application, e.g. "com.example.foo".
   *   `targetSdkVersion` (*type:* `integer()`, *default:* `nil`) - Specifies the API Level on which the application is designed to run.
   """
 

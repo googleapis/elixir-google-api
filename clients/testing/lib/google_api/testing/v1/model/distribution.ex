@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Testing.V1.Model.Distribution do
   @moduledoc """
-  Data about the relative number of devices running a
-  given configuration of the Android platform.
+  Data about the relative number of devices running a given configuration of the Android platform.
 
   ## Attributes
 
-  *   `marketShare` (*type:* `float()`, *default:* `nil`) - Output only. The estimated fraction (0-1) of the total market with this
-      configuration.
+  *   `marketShare` (*type:* `float()`, *default:* `nil`) - Output only. The estimated fraction (0-1) of the total market with this configuration.
   *   `measurementTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this distribution was measured.
   """
 
