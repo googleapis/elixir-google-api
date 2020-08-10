@@ -26,8 +26,7 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the profile information used for logging in to a virtual machine
-  on Google Compute Engine.
+  Retrieves the profile information used for logging in to a virtual machine on Google Compute Engine.
 
   ## Parameters
 
@@ -90,9 +89,7 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   end
 
   @doc """
-  Adds an SSH public key and returns the profile information. Default POSIX
-  account information is set when no username and UID exist as part of the
-  login profile.
+  Adds an SSH public key and returns the profile information. Default POSIX account information is set when no username and UID exist as part of the login profile.
 
   ## Parameters
 
@@ -160,9 +157,7 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. A reference to the POSIX account to update. POSIX accounts are identified
-      by the project ID they are associated with. A reference to the POSIX
-      account is in format `users/{user}/projects/{project}`.
+  *   `name` (*type:* `String.t`) - Required. A reference to the POSIX account to update. POSIX accounts are identified by the project ID they are associated with. A reference to the POSIX account is in format `users/{user}/projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -219,9 +214,7 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to update. Public keys are identified by
-      their SHA-256 fingerprint. The fingerprint of the public key is in format
-      `users/{user}/sshPublicKeys/{fingerprint}`.
+  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -278,9 +271,7 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to retrieve. Public keys are identified
-      by their SHA-256 fingerprint. The fingerprint of the public key is in
-      format `users/{user}/sshPublicKeys/{fingerprint}`.
+  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to retrieve. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -334,15 +325,12 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   end
 
   @doc """
-  Updates an SSH public key and returns the profile information. This method
-  supports patch semantics.
+  Updates an SSH public key and returns the profile information. This method supports patch semantics.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to update. Public keys are identified by
-      their SHA-256 fingerprint. The fingerprint of the public key is in format
-      `users/{user}/sshPublicKeys/{fingerprint}`.
+  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

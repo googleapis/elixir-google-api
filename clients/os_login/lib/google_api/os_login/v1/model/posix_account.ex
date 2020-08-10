@@ -29,8 +29,7 @@ defmodule GoogleApi.OSLogin.V1.Model.PosixAccount do
   *   `operatingSystemType` (*type:* `String.t`, *default:* `nil`) - The operating system type where this account applies.
   *   `primary` (*type:* `boolean()`, *default:* `nil`) - Only one POSIX account can be marked as primary.
   *   `shell` (*type:* `String.t`, *default:* `nil`) - The path to the logic shell for this account.
-  *   `systemId` (*type:* `String.t`, *default:* `nil`) - System identifier for which account the username or uid applies to.
-      By default, the empty value is used.
+  *   `systemId` (*type:* `String.t`, *default:* `nil`) - System identifier for which account the username or uid applies to. By default, the empty value is used.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - The user ID.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The username of the POSIX account.
   """

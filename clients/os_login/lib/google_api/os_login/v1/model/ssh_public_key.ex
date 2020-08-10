@@ -23,9 +23,7 @@ defmodule GoogleApi.OSLogin.V1.Model.SshPublicKey do
 
   *   `expirationTimeUsec` (*type:* `String.t`, *default:* `nil`) - An expiration time in microseconds since epoch.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Output only. The SHA-256 fingerprint of the SSH public key.
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Public key text in SSH format, defined by
-      <a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank">RFC4253</a>
-      section 6.6.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Public key text in SSH format, defined by RFC4253 section 6.6.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The canonical resource name.
   """
 
