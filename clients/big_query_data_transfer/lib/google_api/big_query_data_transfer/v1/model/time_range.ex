@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TimeRange do
   @moduledoc """
-  A specification for a time range, this will request transfer runs with
-  run_time between start_time (inclusive) and end_time (exclusive).
+  A specification for a time range, this will request transfer runs with run_time between start_time (inclusive) and end_time (exclusive).
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the range of transfer runs. For example,
-      `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-      Creates transfer runs where run_time is in the range between start_time
-      (inclusive) and end_time (exclusive).
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of the range of transfer runs. For example,
-      `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-      the end_time. Creates transfer runs where run_time is in the range
-      between start_time (inclusive) and end_time (exclusive).
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the range of transfer runs. For example, `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future. Creates transfer runs where run_time is in the range between start_time (inclusive) and end_time (exclusive).
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of the range of transfer runs. For example, `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than the end_time. Creates transfer runs where run_time is in the range between start_time (inclusive) and end_time (exclusive).
   """
 
   use GoogleApi.Gax.ModelBase

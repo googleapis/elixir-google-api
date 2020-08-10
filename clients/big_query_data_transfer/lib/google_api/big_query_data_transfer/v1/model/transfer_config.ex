@@ -17,52 +17,22 @@
 
 defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   @moduledoc """
-  Represents a data transfer configuration. A transfer configuration
-  contains all metadata needed to perform a data transfer. For example,
-  `destination_dataset_id` specifies where data should be stored.
-  When a new transfer configuration is created, the specified
-  `destination_dataset_id` is created when needed and shared with the
-  appropriate data source service account.
+  Represents a data transfer configuration. A transfer configuration contains all metadata needed to perform a data transfer. For example, `destination_dataset_id` specifies where data should be stored. When a new transfer configuration is created, the specified `destination_dataset_id` is created when needed and shared with the appropriate data source service account.
 
   ## Attributes
 
-  *   `dataRefreshWindowDays` (*type:* `integer()`, *default:* `nil`) - The number of days to look back to automatically refresh the data.
-      For example, if `data_refresh_window_days = 10`, then every day
-      BigQuery reingests data for [today-10, today-1], rather than ingesting data
-      for just [today-1].
-      Only valid if the data source supports the feature. Set the value to  0
-      to use the default value.
+  *   `dataRefreshWindowDays` (*type:* `integer()`, *default:* `nil`) - The number of days to look back to automatically refresh the data. For example, if `data_refresh_window_days = 10`, then every day BigQuery reingests data for [today-10, today-1], rather than ingesting data for just [today-1]. Only valid if the data source supports the feature. Set the value to 0 to use the default value.
   *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - Data source id. Cannot be changed once data transfer is created.
   *   `datasetRegion` (*type:* `String.t`, *default:* `nil`) - Output only. Region in which BigQuery dataset is located.
   *   `destinationDatasetId` (*type:* `String.t`, *default:* `nil`) - The BigQuery target dataset id.
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Is this config disabled. When set to true, no runs are scheduled
-      for a given transfer.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Is this config disabled. When set to true, no runs are scheduled for a given transfer.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User specified display name for the data transfer.
-  *   `emailPreferences` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t`, *default:* `nil`) - Email notifications will be sent according to these preferences
-      to the email address of the user who owns this transfer config.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the transfer config.
-      Transfer config names have the form of
-      `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-      The name is automatically generated based on the config_id specified in
-      CreateTransferConfigRequest along with project_id and region. If config_id
-      is not provided, usually a uuid, even though it is not guaranteed or
-      required, will be generated for config_id.
+  *   `emailPreferences` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t`, *default:* `nil`) - Email notifications will be sent according to these preferences to the email address of the user who owns this transfer config.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the transfer config. Transfer config names have the form of `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`. The name is automatically generated based on the config_id specified in CreateTransferConfigRequest along with project_id and region. If config_id is not provided, usually a uuid, even though it is not guaranteed or required, will be generated for config_id.
   *   `nextRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Next time when data transfer will run.
-  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic where notifications will be sent after transfer runs
-      associated with this transfer config finish.
+  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic where notifications will be sent after transfer runs associated with this transfer config finish.
   *   `params` (*type:* `map()`, *default:* `nil`) - Data transfer specific parameters.
-  *   `schedule` (*type:* `String.t`, *default:* `nil`) - Data transfer schedule.
-      If the data source does not support a custom schedule, this should be
-      empty. If it is empty, the default value for the data source will be
-      used.
-      The specified times are in UTC.
-      Examples of valid format:
-      `1st,3rd monday of month 15:30`,
-      `every wed,fri of jan,jun 13:15`, and
-      `first sunday of quarter 00:00`.
-      See more explanation about the format here:
-      https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-      NOTE: the granularity should be at least 8 hours, or less frequent.
+  *   `schedule` (*type:* `String.t`, *default:* `nil`) - Data transfer schedule. If the data source does not support a custom schedule, this should be empty. If it is empty, the default value for the data source will be used. The specified times are in UTC. Examples of valid format: `1st,3rd monday of month 15:30`, `every wed,fri of jan,jun 13:15`, and `first sunday of quarter 00:00`. See more explanation about the format here: https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format NOTE: the granularity should be at least 8 hours, or less frequent.
   *   `scheduleOptions` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t`, *default:* `nil`) - Options customizing the data transfer schedule.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the most recently updated transfer run.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Data transfer modification time. Ignored by server on input.

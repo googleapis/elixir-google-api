@@ -21,10 +21,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Output only. The next-pagination token. For multiple-page list results,
-      this token can be used as the
-      `ListTransferConfigsRequest.page_token`
-      to request the next page of list results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Output only. The next-pagination token. For multiple-page list results, this token can be used as the `ListTransferConfigsRequest.page_token` to request the next page of list results.
   *   `transferConfigs` (*type:* `list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t)`, *default:* `nil`) - Output only. The stored pipeline transfer configurations.
   """
 

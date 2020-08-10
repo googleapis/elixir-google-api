@@ -26,19 +26,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns true if valid credentials exist for the given data source and
-  requesting user.
-  Some data sources doesn't support service account, so we need to talk to
-  them on behalf of the end user. This API just checks whether we have OAuth
-  token for the particular user, which is a pre-requisite before user can
-  create a transfer config.
+  Returns true if valid credentials exist for the given data source and requesting user. Some data sources doesn't support service account, so we need to talk to them on behalf of the end user. This API just checks whether we have OAuth token for the particular user, which is a pre-requisite before user can create a transfer config.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The data source in the form:
-      `projects/{project_id}/dataSources/{data_source_id}` or
-      `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
+  *   `name` (*type:* `String.t`) - Required. The data source in the form: `projects/{project_id}/dataSources/{data_source_id}` or `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -106,15 +99,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Retrieves a supported data source and returns its settings,
-  which can be used for UI rendering.
+  Retrieves a supported data source and returns its settings, which can be used for UI rendering.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/dataSources/{data_source_id}` or
-      `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/dataSources/{data_source_id}` or `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -178,15 +168,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Lists supported data sources and returns their settings,
-  which can be used for UI rendering.
+  Lists supported data sources and returns their settings, which can be used for UI rendering.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned.
-      Must be in the form: `projects/{project_id}` or
-      `projects/{project_id}/locations/{location_id}
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned. Must be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -200,11 +187,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
-      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
-          of `ListDataSourcesRequest` list results. For multiple-page
-          results, `ListDataSourcesResponse` outputs
-          a `next_page` token, which can be used as the
-          `page_token` value to request the next page of list results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page of `ListDataSourcesRequest` list results. For multiple-page results, `ListDataSourcesResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -406,19 +389,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Returns true if valid credentials exist for the given data source and
-  requesting user.
-  Some data sources doesn't support service account, so we need to talk to
-  them on behalf of the end user. This API just checks whether we have OAuth
-  token for the particular user, which is a pre-requisite before user can
-  create a transfer config.
+  Returns true if valid credentials exist for the given data source and requesting user. Some data sources doesn't support service account, so we need to talk to them on behalf of the end user. This API just checks whether we have OAuth token for the particular user, which is a pre-requisite before user can create a transfer config.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The data source in the form:
-      `projects/{project_id}/dataSources/{data_source_id}` or
-      `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
+  *   `name` (*type:* `String.t`) - Required. The data source in the form: `projects/{project_id}/dataSources/{data_source_id}` or `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -486,15 +462,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Retrieves a supported data source and returns its settings,
-  which can be used for UI rendering.
+  Retrieves a supported data source and returns its settings, which can be used for UI rendering.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/dataSources/{data_source_id}` or
-      `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/dataSources/{data_source_id}` or `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -558,15 +531,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Lists supported data sources and returns their settings,
-  which can be used for UI rendering.
+  Lists supported data sources and returns their settings, which can be used for UI rendering.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned.
-      Must be in the form: `projects/{project_id}` or
-      `projects/{project_id}/locations/{location_id}
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned. Must be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -580,11 +550,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
-      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
-          of `ListDataSourcesRequest` list results. For multiple-page
-          results, `ListDataSourcesResponse` outputs
-          a `next_page` token, which can be used as the
-          `page_token` value to request the next page of list results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page of `ListDataSourcesRequest` list results. For multiple-page results, `ListDataSourcesResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -645,10 +611,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id where the transfer configuration should be created.
-      Must be in the format projects/{project_id}/locations/{location_id} or
-      projects/{project_id}. If specified location and location of the
-      destination bigquery dataset do not match - the request will fail.
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id where the transfer configuration should be created. Must be in the format projects/{project_id}/locations/{location_id} or projects/{project_id}. If specified location and location of the destination bigquery dataset do not match - the request will fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -661,32 +624,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration.
-          This is required if new credentials are needed, as indicated by
-          `CheckValidCreds`.
-          In order to obtain authorization_code, please make a
-          request to
-          https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
-
-          * client_id should be OAuth client_id of BigQuery DTS API for the given
-            data source returned by ListDataSources method.
-          * data_source_scopes are the scopes returned by ListDataSources method.
-          * redirect_uri is an optional parameter. If not specified, then
-            authorization code is posted to the opener of authorization flow window.
-            Otherwise it will be sent to the redirect uri. A special value of
-            urn:ietf:wg:oauth:2.0:oob means that authorization code should be
-            returned in the title bar of the browser, with the page text prompting
-            the user to copy the code and paste it in the application.
-      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set, transfer config will
-          be created with this service account credentials. It requires that
-          requesting user calling this API has permissions to act as this service
-          account.
-      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
-          that is, immediately after approving access, users have to set the
-          version_info claim in the token request. To obtain the version_info, users
-          must use the "none+gsession" response type. which be return a
-          version_info back in the authorization response which be be put in a JWT
-          claim in the token request.
+      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration. This is required if new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&scope=&redirect_uri= * client_id should be OAuth client_id of BigQuery DTS API for the given data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then authorization code is posted to the opener of authorization flow window. Otherwise it will be sent to the redirect uri. A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code should be returned in the title bar of the browser, with the page text prompting the user to copy the code and paste it in the application.
+      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set, transfer config will be created with this service account credentials. It requires that requesting user calling this API has permissions to act as this service account.
+      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the "none+gsession" response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request.
       *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -745,15 +685,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a data transfer configuration,
-  including any associated transfer runs and logs.
+  Deletes a data transfer configuration, including any associated transfer runs and logs.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -822,9 +759,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -895,9 +830,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources
-      should be returned: `projects/{project_id}` or
-      `projects/{project_id}/locations/{location_id}`
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -912,11 +845,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:dataSourceIds` (*type:* `list(String.t)`) - When specified, only configurations of requested data sources are returned.
       *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
-      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
-          of `ListTransfersRequest` list results. For multiple-page
-          results, `ListTransfersResponse` outputs
-          a `next_page` token, which can be used as the
-          `page_token` value to request the next page of list results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page of `ListTransfersRequest` list results. For multiple-page results, `ListTransfersResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -973,19 +902,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Updates a data transfer configuration.
-  All fields must be set, even if they are not updated.
+  Updates a data transfer configuration. All fields must be set, even if they are not updated.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the transfer config.
-      Transfer config names have the form of
-      `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-      The name is automatically generated based on the config_id specified in
-      CreateTransferConfigRequest along with project_id and region. If config_id
-      is not provided, usually a uuid, even though it is not guaranteed or
-      required, will be generated for config_id.
+  *   `name` (*type:* `String.t`) - The resource name of the transfer config. Transfer config names have the form of `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`. The name is automatically generated based on the config_id specified in CreateTransferConfigRequest along with project_id and region. If config_id is not provided, usually a uuid, even though it is not guaranteed or required, will be generated for config_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -998,34 +920,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration.
-          If it is provided, the transfer configuration will be associated with the
-          authorizing user.
-          In order to obtain authorization_code, please make a
-          request to
-          https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
-
-          * client_id should be OAuth client_id of BigQuery DTS API for the given
-            data source returned by ListDataSources method.
-          * data_source_scopes are the scopes returned by ListDataSources method.
-          * redirect_uri is an optional parameter. If not specified, then
-            authorization code is posted to the opener of authorization flow window.
-            Otherwise it will be sent to the redirect uri. A special value of
-            urn:ietf:wg:oauth:2.0:oob means that authorization code should be
-            returned in the title bar of the browser, with the page text prompting
-            the user to copy the code and paste it in the application.
-      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set and
-          "service_account_name" is set in update_mask, transfer config will be
-          updated to use this service account credentials. It requires that
-          requesting user calling this API has permissions to act as this service
-          account.
+      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration. If it is provided, the transfer configuration will be associated with the authorizing user. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&scope=&redirect_uri= * client_id should be OAuth client_id of BigQuery DTS API for the given data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then authorization code is posted to the opener of authorization flow window. Otherwise it will be sent to the redirect uri. A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code should be returned in the title bar of the browser, with the page text prompting the user to copy the code and paste it in the application.
+      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set and "service_account_name" is set in update_mask, transfer config will be updated to use this service account credentials. It requires that requesting user calling this API has permissions to act as this service account.
       *   `:updateMask` (*type:* `String.t`) - Required. Required list of fields to be updated in this request.
-      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
-          that is, immediately after approving access, users have to set the
-          version_info claim in the token request. To obtain the version_info, users
-          must use the "none+gsession" response type. which be return a
-          version_info back in the authorization response which be be put in a JWT
-          claim in the token request.
+      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the "none+gsession" response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request.
       *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1085,18 +983,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Creates transfer runs for a time range [start_time, end_time].
-  For each date - or whatever granularity the data source supports - in the
-  range, one transfer run is created.
-  Note that runs are created per UTC time in the time range.
-  DEPRECATED: use StartManualTransferRuns instead.
+  Creates transfer runs for a time range [start_time, end_time]. For each date - or whatever granularity the data source supports - in the range, one transfer run is created. Note that runs are created per UTC time in the time range. DEPRECATED: use StartManualTransferRuns instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Transfer configuration name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+  *   `parent` (*type:* `String.t`) - Required. Transfer configuration name in the form: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1164,17 +1056,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Start manual transfer runs to be executed now with schedule_time equal to
-  current time. The transfer runs can be created for a time range where the
-  run_time is between start_time (inclusive) and end_time (exclusive), or for
-  a specific run_time.
+  Start manual transfer runs to be executed now with schedule_time equal to current time. The transfer runs can be created for a time range where the run_time is between start_time (inclusive) and end_time (exclusive), or for a specific run_time.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+  *   `parent` (*type:* `String.t`) - Transfer configuration name in the form: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1247,9 +1134,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1318,9 +1203,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1389,10 +1272,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of transfer configuration for which transfer runs should be retrieved.
-      Format of transfer configuration resource name is:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of transfer configuration for which transfer runs should be retrieved. Format of transfer configuration resource name is: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1406,11 +1286,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
-      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
-          of `ListTransferRunsRequest` list results. For multiple-page
-          results, `ListTransferRunsResponse` outputs
-          a `next_page` token, which can be used as the
-          `page_token` value to request the next page of list results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page of `ListTransferRunsRequest` list results. For multiple-page results, `ListTransferRunsResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
       *   `:runAttempt` (*type:* `String.t`) - Indicates how run attempts are to be pulled.
       *   `:states` (*type:* `list(String.t)`) - When specified, only transfer runs with requested states are returned.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1475,9 +1351,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Transfer run name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `parent` (*type:* `String.t`) - Required. Transfer run name in the form: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1490,14 +1364,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:messageTypes` (*type:* `list(String.t)`) - Message types to return. If not populated - INFO, WARNING and ERROR
-          messages are returned.
+      *   `:messageTypes` (*type:* `list(String.t)`) - Message types to return. If not populated - INFO, WARNING and ERROR messages are returned.
       *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
-      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
-          of `ListTransferLogsRequest` list results. For multiple-page
-          results, `ListTransferLogsResponse` outputs
-          a `next_page` token, which can be used as the
-          `page_token` value to request the next page of list results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page of `ListTransferLogsRequest` list results. For multiple-page results, `ListTransferLogsResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1559,10 +1428,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id where the transfer configuration should be created.
-      Must be in the format projects/{project_id}/locations/{location_id} or
-      projects/{project_id}. If specified location and location of the
-      destination bigquery dataset do not match - the request will fail.
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id where the transfer configuration should be created. Must be in the format projects/{project_id}/locations/{location_id} or projects/{project_id}. If specified location and location of the destination bigquery dataset do not match - the request will fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1575,32 +1441,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration.
-          This is required if new credentials are needed, as indicated by
-          `CheckValidCreds`.
-          In order to obtain authorization_code, please make a
-          request to
-          https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
-
-          * client_id should be OAuth client_id of BigQuery DTS API for the given
-            data source returned by ListDataSources method.
-          * data_source_scopes are the scopes returned by ListDataSources method.
-          * redirect_uri is an optional parameter. If not specified, then
-            authorization code is posted to the opener of authorization flow window.
-            Otherwise it will be sent to the redirect uri. A special value of
-            urn:ietf:wg:oauth:2.0:oob means that authorization code should be
-            returned in the title bar of the browser, with the page text prompting
-            the user to copy the code and paste it in the application.
-      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set, transfer config will
-          be created with this service account credentials. It requires that
-          requesting user calling this API has permissions to act as this service
-          account.
-      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
-          that is, immediately after approving access, users have to set the
-          version_info claim in the token request. To obtain the version_info, users
-          must use the "none+gsession" response type. which be return a
-          version_info back in the authorization response which be be put in a JWT
-          claim in the token request.
+      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration. This is required if new credentials are needed, as indicated by `CheckValidCreds`. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&scope=&redirect_uri= * client_id should be OAuth client_id of BigQuery DTS API for the given data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then authorization code is posted to the opener of authorization flow window. Otherwise it will be sent to the redirect uri. A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code should be returned in the title bar of the browser, with the page text prompting the user to copy the code and paste it in the application.
+      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set, transfer config will be created with this service account credentials. It requires that requesting user calling this API has permissions to act as this service account.
+      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the "none+gsession" response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request.
       *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1659,15 +1502,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a data transfer configuration,
-  including any associated transfer runs and logs.
+  Deletes a data transfer configuration, including any associated transfer runs and logs.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1736,9 +1576,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1809,9 +1647,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources
-      should be returned: `projects/{project_id}` or
-      `projects/{project_id}/locations/{location_id}`
+  *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1826,11 +1662,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:dataSourceIds` (*type:* `list(String.t)`) - When specified, only configurations of requested data sources are returned.
       *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
-      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
-          of `ListTransfersRequest` list results. For multiple-page
-          results, `ListTransfersResponse` outputs
-          a `next_page` token, which can be used as the
-          `page_token` value to request the next page of list results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page of `ListTransfersRequest` list results. For multiple-page results, `ListTransfersResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1887,19 +1719,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Updates a data transfer configuration.
-  All fields must be set, even if they are not updated.
+  Updates a data transfer configuration. All fields must be set, even if they are not updated.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the transfer config.
-      Transfer config names have the form of
-      `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-      The name is automatically generated based on the config_id specified in
-      CreateTransferConfigRequest along with project_id and region. If config_id
-      is not provided, usually a uuid, even though it is not guaranteed or
-      required, will be generated for config_id.
+  *   `name` (*type:* `String.t`) - The resource name of the transfer config. Transfer config names have the form of `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`. The name is automatically generated based on the config_id specified in CreateTransferConfigRequest along with project_id and region. If config_id is not provided, usually a uuid, even though it is not guaranteed or required, will be generated for config_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1912,34 +1737,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration.
-          If it is provided, the transfer configuration will be associated with the
-          authorizing user.
-          In order to obtain authorization_code, please make a
-          request to
-          https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=<datatransferapiclientid>&scope=<data_source_scopes>&redirect_uri=<redirect_uri>
-
-          * client_id should be OAuth client_id of BigQuery DTS API for the given
-            data source returned by ListDataSources method.
-          * data_source_scopes are the scopes returned by ListDataSources method.
-          * redirect_uri is an optional parameter. If not specified, then
-            authorization code is posted to the opener of authorization flow window.
-            Otherwise it will be sent to the redirect uri. A special value of
-            urn:ietf:wg:oauth:2.0:oob means that authorization code should be
-            returned in the title bar of the browser, with the page text prompting
-            the user to copy the code and paste it in the application.
-      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set and
-          "service_account_name" is set in update_mask, transfer config will be
-          updated to use this service account credentials. It requires that
-          requesting user calling this API has permissions to act as this service
-          account.
+      *   `:authorizationCode` (*type:* `String.t`) - Optional OAuth2 authorization code to use with this transfer configuration. If it is provided, the transfer configuration will be associated with the authorizing user. In order to obtain authorization_code, please make a request to https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&scope=&redirect_uri= * client_id should be OAuth client_id of BigQuery DTS API for the given data source returned by ListDataSources method. * data_source_scopes are the scopes returned by ListDataSources method. * redirect_uri is an optional parameter. If not specified, then authorization code is posted to the opener of authorization flow window. Otherwise it will be sent to the redirect uri. A special value of urn:ietf:wg:oauth:2.0:oob means that authorization code should be returned in the title bar of the browser, with the page text prompting the user to copy the code and paste it in the application.
+      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set and "service_account_name" is set in update_mask, transfer config will be updated to use this service account credentials. It requires that requesting user calling this API has permissions to act as this service account.
       *   `:updateMask` (*type:* `String.t`) - Required. Required list of fields to be updated in this request.
-      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
-          that is, immediately after approving access, users have to set the
-          version_info claim in the token request. To obtain the version_info, users
-          must use the "none+gsession" response type. which be return a
-          version_info back in the authorization response which be be put in a JWT
-          claim in the token request.
+      *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token, that is, immediately after approving access, users have to set the version_info claim in the token request. To obtain the version_info, users must use the "none+gsession" response type. which be return a version_info back in the authorization response which be be put in a JWT claim in the token request.
       *   `:body` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1999,18 +1800,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Creates transfer runs for a time range [start_time, end_time].
-  For each date - or whatever granularity the data source supports - in the
-  range, one transfer run is created.
-  Note that runs are created per UTC time in the time range.
-  DEPRECATED: use StartManualTransferRuns instead.
+  Creates transfer runs for a time range [start_time, end_time]. For each date - or whatever granularity the data source supports - in the range, one transfer run is created. Note that runs are created per UTC time in the time range. DEPRECATED: use StartManualTransferRuns instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Transfer configuration name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+  *   `parent` (*type:* `String.t`) - Required. Transfer configuration name in the form: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2078,17 +1873,12 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   end
 
   @doc """
-  Start manual transfer runs to be executed now with schedule_time equal to
-  current time. The transfer runs can be created for a time range where the
-  run_time is between start_time (inclusive) and end_time (exclusive), or for
-  a specific run_time.
+  Start manual transfer runs to be executed now with schedule_time equal to current time. The transfer runs can be created for a time range where the run_time is between start_time (inclusive) and end_time (exclusive), or for a specific run_time.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+  *   `parent` (*type:* `String.t`) - Transfer configuration name in the form: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2161,9 +1951,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2232,9 +2020,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2303,10 +2089,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of transfer configuration for which transfer runs should be retrieved.
-      Format of transfer configuration resource name is:
-      `projects/{project_id}/transferConfigs/{config_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of transfer configuration for which transfer runs should be retrieved. Format of transfer configuration resource name is: `projects/{project_id}/transferConfigs/{config_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2320,11 +2103,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
-      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
-          of `ListTransferRunsRequest` list results. For multiple-page
-          results, `ListTransferRunsResponse` outputs
-          a `next_page` token, which can be used as the
-          `page_token` value to request the next page of list results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page of `ListTransferRunsRequest` list results. For multiple-page results, `ListTransferRunsResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
       *   `:runAttempt` (*type:* `String.t`) - Indicates how run attempts are to be pulled.
       *   `:states` (*type:* `list(String.t)`) - When specified, only transfer runs with requested states are returned.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2389,9 +2168,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Transfer run name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
-      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+  *   `parent` (*type:* `String.t`) - Required. Transfer run name in the form: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2404,14 +2181,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:messageTypes` (*type:* `list(String.t)`) - Message types to return. If not populated - INFO, WARNING and ERROR
-          messages are returned.
+      *   `:messageTypes` (*type:* `list(String.t)`) - Message types to return. If not populated - INFO, WARNING and ERROR messages are returned.
       *   `:pageSize` (*type:* `integer()`) - Page size. The default page size is the maximum value of 1000 results.
-      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page
-          of `ListTransferLogsRequest` list results. For multiple-page
-          results, `ListTransferLogsResponse` outputs
-          a `next_page` token, which can be used as the
-          `page_token` value to request the next page of list results.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token, which can be used to request a specific page of `ListTransferLogsRequest` list results. For multiple-page results, `ListTransferLogsResponse` outputs a `next_page` token, which can be used as the `page_token` value to request the next page of list results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
