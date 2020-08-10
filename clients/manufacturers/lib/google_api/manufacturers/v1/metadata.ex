@@ -20,7 +20,7 @@ defmodule GoogleApi.Manufacturers.V1 do
   API client metadata for GoogleApi.Manufacturers.V1.
   """
 
-  @discovery_revision "20200721"
+  @discovery_revision "20200805"
 
   def discovery_revision(), do: @discovery_revision
 end

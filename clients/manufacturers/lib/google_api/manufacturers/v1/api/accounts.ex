@@ -31,19 +31,8 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Manufacturers.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`.
-
-      `account_id` - The ID of the Manufacturer Center account.
-  *   `name` (*type:* `String.t`) - Name in the format `{target_country}:{content_language}:{product_id}`.
-
-      `target_country`   - The target country of the product as a CLDR territory
-                           code (for example, US).
-
-      `content_language` - The content language of the product as a two-letter
-                           ISO 639-1 language code (for example, en).
-
-      `product_id`     -   The ID of the product. For more information, see
-                           https://support.google.com/manufacturers/answer/6124116#id.
+  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`. `account_id` - The ID of the Manufacturer Center account.
+  *   `name` (*type:* `String.t`) - Name in the format `{target_country}:{content_language}:{product_id}`. `target_country` - The target country of the product as a CLDR territory code (for example, US). `content_language` - The content language of the product as a two-letter ISO 639-1 language code (for example, en). `product_id` - The ID of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -110,30 +99,13 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   end
 
   @doc """
-  Gets the product from a Manufacturer Center account, including product
-  issues.
-
-  A recently updated product takes around 15 minutes to process. Changes are
-  only visible after it has been processed. While some issues may be
-  available once the product has been processed, other issues may take days
-  to appear.
+  Gets the product from a Manufacturer Center account, including product issues. A recently updated product takes around 15 minutes to process. Changes are only visible after it has been processed. While some issues may be available once the product has been processed, other issues may take days to appear.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Manufacturers.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`.
-
-      `account_id` - The ID of the Manufacturer Center account.
-  *   `name` (*type:* `String.t`) - Name in the format `{target_country}:{content_language}:{product_id}`.
-
-      `target_country`   - The target country of the product as a CLDR territory
-                           code (for example, US).
-
-      `content_language` - The content language of the product as a two-letter
-                           ISO 639-1 language code (for example, en).
-
-      `product_id`     -   The ID of the product. For more information, see
-                           https://support.google.com/manufacturers/answer/6124116#id.
+  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`. `account_id` - The ID of the Manufacturer Center account.
+  *   `name` (*type:* `String.t`) - Name in the format `{target_country}:{content_language}:{product_id}`. `target_country` - The target country of the product as a CLDR territory code (for example, US). `content_language` - The content language of the product as a two-letter ISO 639-1 language code (for example, en). `product_id` - The ID of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -146,8 +118,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:include` (*type:* `list(String.t)`) - The information to be included in the response. Only sections listed here
-          will be returned.
+      *   `:include` (*type:* `list(String.t)`) - The information to be included in the response. Only sections listed here will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -208,9 +179,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Manufacturers.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`.
-
-      `account_id` - The ID of the Manufacturer Center account.
+  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`. `account_id` - The ID of the Manufacturer Center account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -223,10 +192,8 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:include` (*type:* `list(String.t)`) - The information to be included in the response. Only sections listed here
-          will be returned.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of product statuses to return in the response, used for
-          paging.
+      *   `:include` (*type:* `list(String.t)`) - The information to be included in the response. Only sections listed here will be returned.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of product statuses to return in the response, used for paging.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -272,38 +239,13 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   end
 
   @doc """
-  Inserts or updates the attributes of the product in a Manufacturer Center
-  account.
-
-  Creates a product with the provided attributes. If the product already
-  exists, then all attributes are replaced with the new ones. The checks at
-  upload time are minimal. All required attributes need to be present for a
-  product to be valid. Issues may show up later after the API has accepted a
-  new upload for a product and it is possible to overwrite an existing valid
-  product with an invalid product. To detect this, you should retrieve the
-  product and check it for issues once the new version is available.
-
-  Uploaded attributes first need to be processed before they can be
-  retrieved. Until then, new products will be unavailable, and retrieval
-  of previously uploaded products will return the original state of the
-  product.
+  Inserts or updates the attributes of the product in a Manufacturer Center account. Creates a product with the provided attributes. If the product already exists, then all attributes are replaced with the new ones. The checks at upload time are minimal. All required attributes need to be present for a product to be valid. Issues may show up later after the API has accepted a new upload for a product and it is possible to overwrite an existing valid product with an invalid product. To detect this, you should retrieve the product and check it for issues once the new version is available. Uploaded attributes first need to be processed before they can be retrieved. Until then, new products will be unavailable, and retrieval of previously uploaded products will return the original state of the product.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Manufacturers.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`.
-
-      `account_id` - The ID of the Manufacturer Center account.
-  *   `name` (*type:* `String.t`) - Name in the format `{target_country}:{content_language}:{product_id}`.
-
-      `target_country`   - The target country of the product as a CLDR territory
-                           code (for example, US).
-
-      `content_language` - The content language of the product as a two-letter
-                           ISO 639-1 language code (for example, en).
-
-      `product_id`     -   The ID of the product. For more information, see
-                           https://support.google.com/manufacturers/answer/6124116#id.
+  *   `parent` (*type:* `String.t`) - Parent ID in the format `accounts/{account_id}`. `account_id` - The ID of the Manufacturer Center account.
+  *   `name` (*type:* `String.t`) - Name in the format `{target_country}:{content_language}:{product_id}`. `target_country` - The target country of the product as a CLDR territory code (for example, US). `content_language` - The content language of the product as a two-letter ISO 639-1 language code (for example, en). `product_id` - The ID of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

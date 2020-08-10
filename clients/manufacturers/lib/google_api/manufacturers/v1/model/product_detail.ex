@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Manufacturers.V1.Model.ProductDetail do
   @moduledoc """
-  A product detail of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#productdetail.
+  A product detail of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#productdetail.
 
   ## Attributes
 

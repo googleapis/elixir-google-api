@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Manufacturers.V1.Model.Count do
   @moduledoc """
-  The number of products in a single package. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#count.
+  The number of products in a single package. For more information, see https://support.google.com/manufacturers/answer/6124116#count.
 
   ## Attributes
 

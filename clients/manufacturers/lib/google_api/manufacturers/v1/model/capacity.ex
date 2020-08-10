@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Manufacturers.V1.Model.Capacity do
   @moduledoc """
-  The capacity of a product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#capacity.
+  The capacity of a product. For more information, see https://support.google.com/manufacturers/answer/6124116#capacity.
 
   ## Attributes
 

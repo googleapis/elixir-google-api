@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Manufacturers.V1.Model.FeatureDescription do
   @moduledoc """
-  A feature description of the product. For more information, see
-  https://support.google.com/manufacturers/answer/6124116#featuredesc.
+  A feature description of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#featuredesc.
 
   ## Attributes
 

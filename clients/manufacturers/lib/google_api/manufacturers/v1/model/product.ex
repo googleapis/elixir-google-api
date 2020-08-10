@@ -21,29 +21,14 @@ defmodule GoogleApi.Manufacturers.V1.Model.Product do
 
   ## Attributes
 
-  *   `attributes` (*type:* `GoogleApi.Manufacturers.V1.Model.Attributes.t`, *default:* `nil`) - Attributes of the product uploaded to the Manufacturer Center. Manually
-      edited attributes are taken into account.
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The content language of the product as a two-letter ISO 639-1 language code
-      (for example, en).
+  *   `attributes` (*type:* `GoogleApi.Manufacturers.V1.Model.Attributes.t`, *default:* `nil`) - Attributes of the product uploaded to the Manufacturer Center. Manually edited attributes are taken into account.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The content language of the product as a two-letter ISO 639-1 language code (for example, en).
   *   `destinationStatuses` (*type:* `list(GoogleApi.Manufacturers.V1.Model.DestinationStatus.t)`, *default:* `nil`) - The status of the destinations.
   *   `issues` (*type:* `list(GoogleApi.Manufacturers.V1.Model.Issue.t)`, *default:* `nil`) - A server-generated list of issues associated with the product.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name in the format `{target_country}:{content_language}:{product_id}`.
-
-      `target_country`   - The target country of the product as a CLDR territory
-                           code (for example, US).
-
-      `content_language` - The content language of the product as a two-letter
-                           ISO 639-1 language code (for example, en).
-
-      `product_id`     -   The ID of the product. For more information, see
-                           https://support.google.com/manufacturers/answer/6124116#id.
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Parent ID in the format `accounts/{account_id}`.
-
-      `account_id` - The ID of the Manufacturer Center account.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product. For more information, see
-      https://support.google.com/manufacturers/answer/6124116#id.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The target country of the product as a CLDR territory code (for example,
-      US).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name in the format `{target_country}:{content_language}:{product_id}`. `target_country` - The target country of the product as a CLDR territory code (for example, US). `content_language` - The content language of the product as a two-letter ISO 639-1 language code (for example, en). `product_id` - The ID of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#id.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Parent ID in the format `accounts/{account_id}`. `account_id` - The ID of the Manufacturer Center account.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#id.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The target country of the product as a CLDR territory code (for example, US).
   """
 
   use GoogleApi.Gax.ModelBase
