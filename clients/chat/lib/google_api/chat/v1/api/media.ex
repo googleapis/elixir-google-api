@@ -26,14 +26,12 @@ defmodule GoogleApi.Chat.V1.Api.Media do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Downloads media. Download is supported
-  on the URI `/v1/media/{+name}?alt=media`.
+  Downloads media. Download is supported on the URI `/v1/media/{+name}?alt=media`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded.  See
-      ReadRequest.resource_name.
+  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded. See ReadRequest.resource_name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

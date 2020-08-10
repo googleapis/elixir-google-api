@@ -21,12 +21,9 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the membership a.k.a the time at which the member
-      joined the space, if applicable.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the membership a.k.a the time at which the member joined the space, if applicable.
   *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - Member details.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the membership, in the form "spaces/*/members/*".
-
-      Example: spaces/AAAAMpdlehY/members/105115627578887013105
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the membership, in the form "spaces/*/members/*". Example: spaces/AAAAMpdlehY/members/105115627578887013105
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the membership.
   """
 

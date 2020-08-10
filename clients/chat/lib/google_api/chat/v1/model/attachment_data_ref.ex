@@ -21,8 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.AttachmentDataRef do
 
   ## Attributes
 
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name of the attachment data. This is used with the media API
-      to download the attachment data.
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name of the attachment data. This is used with the media API to download the attachment data.
   """
 
   use GoogleApi.Gax.ModelBase

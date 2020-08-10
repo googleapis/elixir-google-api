@@ -17,37 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.Annotation do
   @moduledoc """
-  Annotations associated with the plain-text body of the message.
-
-  Example plain-text message body:
-  ```
-  Hello @FooBot how are you!"
-  ```
-
-  The corresponding annotations metadata:
-  ```
-  "annotations":[{
-    "type":"USER_MENTION",
-    "startIndex":6,
-    "length":7,
-    "userMention": {
-      "user": {
-        "name":"users/107946847022116401880",
-        "displayName":"FooBot",
-        "avatarUrl":"https://goo.gl/aeDtrS",
-        "type":"BOT"
-      },
-      "type":"MENTION"
-     }
-  }]
-  ```
+  Annotations associated with the plain-text body of the message. Example plain-text message body: ``` Hello @FooBot how are you!" ``` The corresponding annotations metadata: ``` "annotations":[{ "type":"USER_MENTION", "startIndex":6, "length":7, "userMention": { "user": { "name":"users/107946847022116401880", "displayName":"FooBot", "avatarUrl":"https://goo.gl/aeDtrS", "type":"BOT" }, "type":"MENTION" } }] ```
 
   ## Attributes
 
-  *   `length` (*type:* `integer()`, *default:* `nil`) - Length of the substring in the plain-text message body this annotation
-      corresponds to.
-  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - Start index (0-based, inclusive) in the plain-text message body this
-      annotation corresponds to.
+  *   `length` (*type:* `integer()`, *default:* `nil`) - Length of the substring in the plain-text message body this annotation corresponds to.
+  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - Start index (0-based, inclusive) in the plain-text message body this annotation corresponds to.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this annotation.
   *   `userMention` (*type:* `GoogleApi.Chat.V1.Model.UserMentionMetadata.t`, *default:* `nil`) - The metadata of user mention.
   """

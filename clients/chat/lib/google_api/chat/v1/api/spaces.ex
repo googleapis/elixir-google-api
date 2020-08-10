@@ -31,9 +31,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the space, in the form "spaces/*".
-
-      Example: spaces/AAAAMpdlehY
+  *   `name` (*type:* `String.t`) - Required. Resource name of the space, in the form "spaces/*". Example: spaces/AAAAMpdlehY
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -102,9 +100,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The value is capped at 1000.
-          Server may return fewer results than requested.
-          If unspecified, server will default to 100.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The value is capped at 1000. Server may return fewer results than requested. If unspecified, server will default to 100.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -152,10 +148,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the membership to be retrieved, in the form
-      "spaces/*/members/*".
-
-      Example: spaces/AAAAMpdlehY/members/105115627578887013105
+  *   `name` (*type:* `String.t`) - Required. Resource name of the membership to be retrieved, in the form "spaces/*/members/*". Example: spaces/AAAAMpdlehY/members/105115627578887013105
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -212,10 +205,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the space for which membership list is to be
-      fetched, in the form "spaces/*".
-
-      Example: spaces/AAAAMpdlehY
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the space for which membership list is to be fetched, in the form "spaces/*". Example: spaces/AAAAMpdlehY
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -228,9 +218,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The value is capped at 1000.
-          Server may return fewer results than requested.
-          If unspecified, server will default to 100.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The value is capped at 1000. Server may return fewer results than requested. If unspecified, server will default to 100.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -280,8 +268,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*".
-      Example: spaces/AAAAMpdlehY
+  *   `parent` (*type:* `String.t`) - Required. Space resource name, in the form "spaces/*". Example: spaces/AAAAMpdlehY
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -294,15 +281,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:threadKey` (*type:* `String.t`) - Opaque thread identifier string that can be specified to group messages
-          into a single thread. If this is the first message with a given thread
-          identifier, a new thread is created. Subsequent messages with the same
-          thread identifier will be posted into the same thread. This relieves bots
-          and webhooks from having to store the Hangouts Chat thread ID of a thread (created earlier by them) to post
-          further updates to it.
-
-          Has no effect if thread field,
-          corresponding to an existing thread, is set in message.
+      *   `:threadKey` (*type:* `String.t`) - Opaque thread identifier string that can be specified to group messages into a single thread. If this is the first message with a given thread identifier, a new thread is created. Subsequent messages with the same thread identifier will be posted into the same thread. This relieves bots and webhooks from having to store the Hangouts Chat thread ID of a thread (created earlier by them) to post further updates to it. Has no effect if thread field, corresponding to an existing thread, is set in message.
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -350,10 +329,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the message to be deleted, in the form
-      "spaces/*/messages/*"
-
-      Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
+  *   `name` (*type:* `String.t`) - Required. Resource name of the message to be deleted, in the form "spaces/*/messages/*" Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -410,10 +386,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the message to be retrieved, in the form
-      "spaces/*/messages/*".
-
-      Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
+  *   `name` (*type:* `String.t`) - Required. Resource name of the message to be retrieved, in the form "spaces/*/messages/*". Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -470,9 +443,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name, in the form "spaces/*/messages/*".
-
-      Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
+  *   `name` (*type:* `String.t`) - Resource name, in the form "spaces/*/messages/*". Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -485,12 +456,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The field paths to be updated, comma separated if there are
-          multiple.
-
-          Currently supported field paths:
-          * text
-          * cards
+      *   `:updateMask` (*type:* `String.t`) - Required. The field paths to be updated, comma separated if there are multiple. Currently supported field paths: * text * cards
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -533,14 +499,12 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   end
 
   @doc """
-  Gets the metadata of a message attachment. The attachment data is fetched
-  using the media API.
+  Gets the metadata of a message attachment. The attachment data is fetched using the media API.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the attachment, in the form
-      "spaces/*/messages/*/attachments/*".
+  *   `name` (*type:* `String.t`) - Resource name of the attachment, in the form "spaces/*/messages/*/attachments/*".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
