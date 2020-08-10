@@ -21,8 +21,7 @@ defmodule GoogleApi.Tasks.V1.Model.TaskLinks do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The description. In HTML speak: Everything between &lt;a&gt; and
-      &lt;/a&gt;.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description. In HTML speak: Everything between <a> and </a>.
   *   `link` (*type:* `String.t`, *default:* `nil`) - The URL.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the link, e.g. "email".
   """

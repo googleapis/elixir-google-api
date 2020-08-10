@@ -213,8 +213,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of task lists returned on one page. Optional. The default is
-          20 (max allowed: 100).
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of task lists returned on one page. Optional. The default is 20 (max allowed: 100).
       *   `:pageToken` (*type:* `String.t`) - Token specifying the result page to return. Optional.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -255,8 +254,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   end
 
   @doc """
-  Updates the authenticated user's specified task list. This method supports
-  patch semantics.
+  Updates the authenticated user's specified task list. This method supports patch semantics.
 
   ## Parameters
 

@@ -26,9 +26,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Clears all completed tasks from the specified task list. The affected tasks
-  will be marked as 'hidden' and no longer be returned by default when
-  retrieving all tasks for a task list.
+  Clears all completed tasks from the specified task list. The affected tasks will be marked as 'hidden' and no longer be returned by default when retrieving all tasks for a task list.
 
   ## Parameters
 
@@ -221,10 +219,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - Parent task identifier. If the task is created at the top level, this
-          parameter is omitted. Optional.
-      *   `:previous` (*type:* `String.t`) - Previous sibling task identifier. If the task is created at the first
-          position among its siblings, this parameter is omitted. Optional.
+      *   `:parent` (*type:* `String.t`) - Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.
+      *   `:previous` (*type:* `String.t`) - Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.
       *   `:body` (*type:* `GoogleApi.Tasks.V1.Model.Task.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -286,26 +282,16 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:completedMax` (*type:* `String.t`) - Upper bound for a task's completion date (as a RFC 3339 timestamp) to
-          filter by. Optional. The default is not to filter by completion date.
-      *   `:completedMin` (*type:* `String.t`) - Lower bound for a task's completion date (as a RFC 3339 timestamp) to
-          filter by. Optional. The default is not to filter by completion date.
-      *   `:dueMax` (*type:* `String.t`) - Upper bound for a task's due date (as a RFC 3339 timestamp) to filter by.
-          Optional. The default is not to filter by due date.
-      *   `:dueMin` (*type:* `String.t`) - Lower bound for a task's due date (as a RFC 3339 timestamp) to filter by.
-          Optional. The default is not to filter by due date.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of task lists returned on one page. Optional. The default is
-          20 (max allowed: 100).
+      *   `:completedMax` (*type:* `String.t`) - Upper bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.
+      *   `:completedMin` (*type:* `String.t`) - Lower bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.
+      *   `:dueMax` (*type:* `String.t`) - Upper bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.
+      *   `:dueMin` (*type:* `String.t`) - Lower bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of task lists returned on one page. Optional. The default is 20 (max allowed: 100).
       *   `:pageToken` (*type:* `String.t`) - Token specifying the result page to return. Optional.
-      *   `:showCompleted` (*type:* `boolean()`) - Flag indicating whether completed tasks are returned in the result.
-          Optional. The default is True.
-      *   `:showDeleted` (*type:* `boolean()`) - Flag indicating whether deleted tasks are returned in the result. Optional.
-          The default is False.
-      *   `:showHidden` (*type:* `boolean()`) - Flag indicating whether hidden tasks are returned in the result. Optional.
-          The default is False.
-      *   `:updatedMin` (*type:* `String.t`) - Lower bound for a task's last modification time (as a RFC 3339 timestamp)
-          to filter by. Optional. The default is not to filter by last modification
-          time.
+      *   `:showCompleted` (*type:* `boolean()`) - Flag indicating whether completed tasks are returned in the result. Optional. The default is True.
+      *   `:showDeleted` (*type:* `boolean()`) - Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.
+      *   `:showHidden` (*type:* `boolean()`) - Flag indicating whether hidden tasks are returned in the result. Optional. The default is False.
+      *   `:updatedMin` (*type:* `String.t`) - Lower bound for a task's last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -355,9 +341,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   end
 
   @doc """
-  Moves the specified task to another position in the task list. This can
-  include putting it as a child task under a new parent and/or move it to a
-  different position among its sibling tasks.
+  Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.
 
   ## Parameters
 
@@ -376,10 +360,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - New parent task identifier. If the task is moved to the top level, this
-          parameter is omitted. Optional.
-      *   `:previous` (*type:* `String.t`) - New previous sibling task identifier. If the task is moved to the first
-          position among its siblings, this parameter is omitted. Optional.
+      *   `:parent` (*type:* `String.t`) - New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.
+      *   `:previous` (*type:* `String.t`) - New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
