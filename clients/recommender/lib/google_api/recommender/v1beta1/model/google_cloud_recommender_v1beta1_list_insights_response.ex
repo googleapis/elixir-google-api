@@ -22,8 +22,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ListI
   ## Attributes
 
   *   `insights` (*type:* `list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Insight.t)`, *default:* `nil`) - The set of insights for the `parent` resource.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be used to request the next page of results. This field is
-      empty if there are no additional results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be used to request the next page of results. This field is empty if there are no additional results.
   """
 
   use GoogleApi.Gax.ModelBase

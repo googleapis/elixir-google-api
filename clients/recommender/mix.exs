@@ -18,7 +18,7 @@
 defmodule GoogleApi.Recommender.Mixfile do
   use Mix.Project
 
-  @version "0.9.0"
+  @version "0.9.1"
 
   def project() do
     [

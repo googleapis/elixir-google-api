@@ -21,8 +21,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
 
   ## Attributes
 
-  *   `insight` (*type:* `String.t`, *default:* `nil`) - Insight resource name, e.g.
-      projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/insights/[INSIGHT_ID]
+  *   `insight` (*type:* `String.t`, *default:* `nil`) - Insight resource name, e.g. projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/insights/[INSIGHT_ID]
   """
 
   use GoogleApi.Gax.ModelBase

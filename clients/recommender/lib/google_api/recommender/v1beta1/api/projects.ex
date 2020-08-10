@@ -26,8 +26,7 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets the requested insight. Requires the recommender.*.get IAM permission
-  for the specified insight type.
+  Gets the requested insight. Requires the recommender.*.get IAM permission for the specified insight type.
 
   ## Parameters
 
@@ -99,20 +98,12 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists insights for a Cloud project. Requires the recommender.*.list IAM
-  permission for the specified insight type.
+  Lists insights for a Cloud project. Requires the recommender.*.list IAM permission for the specified insight type.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Recommender.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The container resource on which to execute the request.
-      Acceptable formats:
-
-      1.
-      "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
-
-      LOCATION here refers to GCP Locations:
-      https://cloud.google.com/about/locations/
+  *   `parent` (*type:* `String.t`) - Required. The container resource on which to execute the request. Acceptable formats: 1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]", LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -125,16 +116,9 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Filter expression to restrict the insights returned. Supported
-          filter fields: state
-          Eg: `state:"DISMISSED" or state:"ACTIVE"
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request.  Non-positive
-          values are ignored. If not specified, the server will determine the number
-          of results to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. If present, retrieves the next batch of results from the preceding call to
-          this method. `page_token` must be the value of `next_page_token` from the
-          previous response. The values of other method parameters must be identical
-          to those in the previous call.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter expression to restrict the insights returned. Supported filter fields: state Eg: `state:"DISMISSED" or state:"ACTIVE"
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. If not specified, the server will determine the number of results to return.
+      *   `:pageToken` (*type:* `String.t`) - Optional. If present, retrieves the next batch of results from the preceding call to this method. `page_token` must be the value of `next_page_token` from the previous response. The values of other method parameters must be identical to those in the previous call.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -196,12 +180,7 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
   end
 
   @doc """
-  Marks the Insight State as Accepted. Users can use this method to
-  indicate to the Recommender API that they have applied some action based
-  on the insight. This stops the insight content from being updated.
-
-  MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
-  the recommender.*.update IAM permission for the specified insight.
+  Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender API that they have applied some action based on the insight. This stops the insight content from being updated. MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the recommender.*.update IAM permission for the specified insight.
 
   ## Parameters
 
@@ -275,8 +254,7 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the requested recommendation. Requires the recommender.*.get
-  IAM permission for the specified recommender.
+  Gets the requested recommendation. Requires the recommender.*.get IAM permission for the specified recommender.
 
   ## Parameters
 
@@ -352,20 +330,12 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists recommendations for a Cloud project. Requires the recommender.*.list
-  IAM permission for the specified recommender.
+  Lists recommendations for a Cloud project. Requires the recommender.*.list IAM permission for the specified recommender.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Recommender.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The container resource on which to execute the request.
-      Acceptable formats:
-
-      1.
-      "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
-
-      LOCATION here refers to GCP Locations:
-      https://cloud.google.com/about/locations/
+  *   `parent` (*type:* `String.t`) - Required. The container resource on which to execute the request. Acceptable formats: 1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]", LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -378,16 +348,9 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter expression to restrict the recommendations returned. Supported
-          filter fields: state_info.state
-          Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request.  Non-positive
-          values are ignored. If not specified, the server will determine the number
-          of results to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. If present, retrieves the next batch of results from the preceding call to
-          this method. `page_token` must be the value of `next_page_token` from the
-          previous response. The values of other method parameters must be identical
-          to those in the previous call.
+      *   `:filter` (*type:* `String.t`) - Filter expression to restrict the recommendations returned. Supported filter fields: state_info.state Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. If not specified, the server will determine the number of results to return.
+      *   `:pageToken` (*type:* `String.t`) - Optional. If present, retrieves the next batch of results from the preceding call to this method. `page_token` must be the value of `next_page_token` from the previous response. The values of other method parameters must be identical to those in the previous call.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -449,16 +412,7 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
   end
 
   @doc """
-  Marks the Recommendation State as Claimed. Users can use this method to
-  indicate to the Recommender API that they are starting to apply the
-  recommendation themselves. This stops the recommendation content from being
-  updated. Associated insights are frozen and placed in the ACCEPTED state.
-
-  MarkRecommendationClaimed can be applied to recommendations in CLAIMED or
-  ACTIVE state.
-
-  Requires the recommender.*.update IAM permission for the specified
-  recommender.
+  Marks the Recommendation State as Claimed. Users can use this method to indicate to the Recommender API that they are starting to apply the recommendation themselves. This stops the recommendation content from being updated. Associated insights are frozen and placed in the ACCEPTED state. MarkRecommendationClaimed can be applied to recommendations in CLAIMED or ACTIVE state. Requires the recommender.*.update IAM permission for the specified recommender.
 
   ## Parameters
 
@@ -536,17 +490,7 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
   end
 
   @doc """
-  Marks the Recommendation State as Failed. Users can use this method to
-  indicate to the Recommender API that they have applied the recommendation
-  themselves, and the operation failed. This stops the recommendation content
-  from being updated. Associated insights are frozen and placed in the
-  ACCEPTED state.
-
-  MarkRecommendationFailed can be applied to recommendations in ACTIVE,
-  CLAIMED, SUCCEEDED, or FAILED state.
-
-  Requires the recommender.*.update IAM permission for the specified
-  recommender.
+  Marks the Recommendation State as Failed. Users can use this method to indicate to the Recommender API that they have applied the recommendation themselves, and the operation failed. This stops the recommendation content from being updated. Associated insights are frozen and placed in the ACCEPTED state. MarkRecommendationFailed can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED, or FAILED state. Requires the recommender.*.update IAM permission for the specified recommender.
 
   ## Parameters
 
@@ -624,17 +568,7 @@ defmodule GoogleApi.Recommender.V1beta1.Api.Projects do
   end
 
   @doc """
-  Marks the Recommendation State as Succeeded. Users can use this method to
-  indicate to the Recommender API that they have applied the recommendation
-  themselves, and the operation was successful. This stops the recommendation
-  content from being updated. Associated insights are frozen and placed in
-  the ACCEPTED state.
-
-  MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
-  CLAIMED, SUCCEEDED, or FAILED state.
-
-  Requires the recommender.*.update IAM permission for the specified
-  recommender.
+  Marks the Recommendation State as Succeeded. Users can use this method to indicate to the Recommender API that they have applied the recommendation themselves, and the operation was successful. This stops the recommendation content from being updated. Associated insights are frozen and placed in the ACCEPTED state. MarkRecommendationSucceeded can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED, or FAILED state. Requires the recommender.*.update IAM permission for the specified recommender.
 
   ## Parameters
 

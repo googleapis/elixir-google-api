@@ -17,25 +17,19 @@
 
 defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Insight do
   @moduledoc """
-  An insight along with the information used to derive the insight. The insight
-  may have associated recomendations as well.
+  An insight along with the information used to derive the insight. The insight may have associated recomendations as well.
 
   ## Attributes
 
   *   `associatedRecommendations` (*type:* `list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1InsightRecommendationReference.t)`, *default:* `nil`) - Recommendations derived from this insight.
   *   `category` (*type:* `String.t`, *default:* `nil`) - Category being targeted by the insight.
-  *   `content` (*type:* `map()`, *default:* `nil`) - A struct of custom fields to explain the insight.
-      Example: "grantedPermissionsCount": "1000"
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Free-form human readable summary in English. The maximum length is 500
-      characters.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - Fingerprint of the Insight. Provides optimistic locking when updating
-      states.
+  *   `content` (*type:* `map()`, *default:* `nil`) - A struct of custom fields to explain the insight. Example: "grantedPermissionsCount": "1000"
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Free-form human readable summary in English. The maximum length is 500 characters.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Fingerprint of the Insight. Provides optimistic locking when updating states.
   *   `insightSubtype` (*type:* `String.t`, *default:* `nil`) - Insight subtype. Insight content schema will be stable for a given subtype.
   *   `lastRefreshTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the latest data used to generate the insight.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the insight.
-  *   `observationPeriod` (*type:* `String.t`, *default:* `nil`) - Observation period that led to the insight. The source data used to
-      generate the insight ends at last_refresh_time and begins at
-      (last_refresh_time - observation_period).
+  *   `observationPeriod` (*type:* `String.t`, *default:* `nil`) - Observation period that led to the insight. The source data used to generate the insight ends at last_refresh_time and begins at (last_refresh_time - observation_period).
   *   `stateInfo` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1InsightStateInfo.t`, *default:* `nil`) - Information state and metadata.
   *   `targetResources` (*type:* `list(String.t)`, *default:* `nil`) - Fully qualified resource names that this insight is targeting.
   """

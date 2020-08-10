@@ -21,9 +21,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Value
 
   ## Attributes
 
-  *   `matchesPattern` (*type:* `String.t`, *default:* `nil`) - To be used for full regex matching. The regular expression is using the
-      Google RE2 syntax (https://github.com/google/re2/wiki/Syntax), so to be
-      used with RE2::FullMatch
+  *   `matchesPattern` (*type:* `String.t`, *default:* `nil`) - To be used for full regex matching. The regular expression is using the Google RE2 syntax (https://github.com/google/re2/wiki/Syntax), so to be used with RE2::FullMatch
   """
 
   use GoogleApi.Gax.ModelBase

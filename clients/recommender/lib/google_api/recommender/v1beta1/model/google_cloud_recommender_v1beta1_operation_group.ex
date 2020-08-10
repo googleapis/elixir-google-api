@@ -21,8 +21,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Opera
 
   ## Attributes
 
-  *   `operations` (*type:* `list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Operation.t)`, *default:* `nil`) - List of operations across one or more resources that belong to this group.
-      Loosely based on RFC6902 and should be performed in the order they appear.
+  *   `operations` (*type:* `list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Operation.t)`, *default:* `nil`) - List of operations across one or more resources that belong to this group. Loosely based on RFC6902 and should be performed in the order they appear.
   """
 
   use GoogleApi.Gax.ModelBase
