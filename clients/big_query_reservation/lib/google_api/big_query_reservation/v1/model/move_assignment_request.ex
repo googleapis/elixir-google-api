@@ -17,20 +17,11 @@
 
 defmodule GoogleApi.BigQueryReservation.V1.Model.MoveAssignmentRequest do
   @moduledoc """
-  The request for
-  ReservationService.MoveAssignment.
-
-  **Note**: "bigquery.reservationAssignments.create" permission is required on
-  the destination_id.
-
-  **Note**: "bigquery.reservationAssignments.create" and
-  "bigquery.reservationAssignments.delete" permission are required on the
-  related assignee.
+  The request for ReservationService.MoveAssignment. **Note**: "bigquery.reservationAssignments.create" permission is required on the destination_id. **Note**: "bigquery.reservationAssignments.create" and "bigquery.reservationAssignments.delete" permission are required on the related assignee.
 
   ## Attributes
 
-  *   `destinationId` (*type:* `String.t`, *default:* `nil`) - The new reservation ID, e.g.:
-        `projects/myotherproject/locations/US/reservations/team2-prod`
+  *   `destinationId` (*type:* `String.t`, *default:* `nil`) - The new reservation ID, e.g.: `projects/myotherproject/locations/US/reservations/team2-prod`
   """
 
   use GoogleApi.Gax.ModelBase

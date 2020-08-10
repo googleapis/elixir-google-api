@@ -21,9 +21,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.BiReservation do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the singleton BI reservation.
-      Reservation names have the form
-      `projects/{project_id}/locations/{location_id}/bireservation`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the singleton BI reservation. Reservation names have the form `projects/{project_id}/locations/{location_id}/bireservation`.
   *   `size` (*type:* `String.t`, *default:* `nil`) - Size of a reservation, in bytes.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a reservation.
   """

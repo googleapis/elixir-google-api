@@ -21,8 +21,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.ListReservationsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   *   `reservations` (*type:* `list(GoogleApi.BigQueryReservation.V1.Model.Reservation.t)`, *default:* `nil`) - List of reservations visible to the user.
   """
 

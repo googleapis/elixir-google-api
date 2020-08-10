@@ -22,8 +22,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.ListAssignmentsResponse do
   ## Attributes
 
   *   `assignments` (*type:* `list(GoogleApi.BigQueryReservation.V1.Model.Assignment.t)`, *default:* `nil`) - List of assignments visible to the user.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase
