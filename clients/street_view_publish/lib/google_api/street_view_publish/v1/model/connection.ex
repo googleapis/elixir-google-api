@@ -21,8 +21,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Connection do
 
   ## Attributes
 
-  *   `target` (*type:* `GoogleApi.StreetViewPublish.V1.Model.PhotoId.t`, *default:* `nil`) - Required. The destination of the connection from the containing photo to
-      another photo.
+  *   `target` (*type:* `GoogleApi.StreetViewPublish.V1.Model.PhotoId.t`, *default:* `nil`) - Required. The destination of the connection from the containing photo to another photo.
   """
 
   use GoogleApi.Gax.ModelBase

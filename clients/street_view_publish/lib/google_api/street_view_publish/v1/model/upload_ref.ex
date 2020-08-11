@@ -21,9 +21,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.UploadRef do
 
   ## Attributes
 
-  *   `uploadUrl` (*type:* `String.t`, *default:* `nil`) - Required. An upload reference should be unique for each user. It follows
-      the form:
-      "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
+  *   `uploadUrl` (*type:* `String.t`, *default:* `nil`) - Required. An upload reference should be unique for each user. It follows the form: "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
   """
 
   use GoogleApi.Gax.ModelBase

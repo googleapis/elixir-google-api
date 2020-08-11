@@ -21,11 +21,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.ListPhotosResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
-      results in the list.
-  *   `photos` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.Photo.t)`, *default:* `nil`) - List of photos. The
-      pageSize field
-      in the request determines the number of items returned.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
+  *   `photos` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.Photo.t)`, *default:* `nil`) - List of photos. The pageSize field in the request determines the number of items returned.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.StreetViewPublish.V1.Model.PhotoResponse do
   @moduledoc """
-  Response payload for a single
-  Photo
-  in batch operations including
-  BatchGetPhotos
-  and
-  BatchUpdatePhotos.
+  Response payload for a single Photo in batch operations including BatchGetPhotos and BatchUpdatePhotos.
 
   ## Attributes
 
-  *   `photo` (*type:* `GoogleApi.StreetViewPublish.V1.Model.Photo.t`, *default:* `nil`) - The Photo resource, if the request
-      was successful.
-  *   `status` (*type:* `GoogleApi.StreetViewPublish.V1.Model.Status.t`, *default:* `nil`) - The status for the operation to get or update a single photo in the batch
-      request.
+  *   `photo` (*type:* `GoogleApi.StreetViewPublish.V1.Model.Photo.t`, *default:* `nil`) - The Photo resource, if the request was successful.
+  *   `status` (*type:* `GoogleApi.StreetViewPublish.V1.Model.Status.t`, *default:* `nil`) - The status for the operation to get or update a single photo in the batch request.
   """
 
   use GoogleApi.Gax.ModelBase

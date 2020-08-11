@@ -21,9 +21,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosRequest do
 
   ## Attributes
 
-  *   `photoIds` (*type:* `list(String.t)`, *default:* `nil`) - Required. IDs of the Photos. HTTP
-      GET requests require the following syntax for the URL query parameter:
-      `photoIds=<id1>&photoIds=<id2>&...`.
+  *   `photoIds` (*type:* `list(String.t)`, *default:* `nil`) - Required. IDs of the Photos. HTTP GET requests require the following syntax for the URL query parameter: `photoIds=&photoIds=&...`.
   """
 
   use GoogleApi.Gax.ModelBase

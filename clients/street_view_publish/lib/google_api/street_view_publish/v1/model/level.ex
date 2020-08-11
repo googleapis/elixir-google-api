@@ -21,12 +21,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Level do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. A name assigned to this Level, restricted to 3 characters.
-      Consider how the elevator buttons would be labeled for this level if there
-      was an elevator.
-  *   `number` (*type:* `float()`, *default:* `nil`) - Floor number, used for ordering. 0 indicates the ground level, 1 indicates
-      the first level above ground level, -1 indicates the first level under
-      ground level. Non-integer values are OK.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. A name assigned to this Level, restricted to 3 characters. Consider how the elevator buttons would be labeled for this level if there was an elevator.
+  *   `number` (*type:* `float()`, *default:* `nil`) - Floor number, used for ordering. 0 indicates the ground level, 1 indicates the first level above ground level, -1 indicates the first level under ground level. Non-integer values are OK.
   """
 
   use GoogleApi.Gax.ModelBase

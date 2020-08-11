@@ -21,10 +21,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.BatchGetPhotosResponse do
 
   ## Attributes
 
-  *   `results` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.PhotoResponse.t)`, *default:* `nil`) - List of results for each individual
-      Photo requested, in the same order as
-      the requests in
-      BatchGetPhotos.
+  *   `results` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.PhotoResponse.t)`, *default:* `nil`) - List of results for each individual Photo requested, in the same order as the requests in BatchGetPhotos.
   """
 
   use GoogleApi.Gax.ModelBase
