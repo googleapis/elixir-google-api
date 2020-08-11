@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Datatransfer_v1.Model.ApplicationsListResponse do
   @moduledoc """
-  Template for a collection of Applications.
+  Template for a collection of Applications. STEPLADDER: Generated unstable field number for field 'kind'. (See http://go/stepladder-help#fieldNumber) STEPLADDER: Generated unstable field number for field 'etag'. (See http://go/stepladder-help#fieldNumber)
 
   ## Attributes
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Datatransfer_v1.Model.DataTransfersListResponse do
   @moduledoc """
-  Template for a collection of DataTransfer resources.
+  Template for a collection of DataTransfer resources. STEPLADDER: Generated unstable field number for field 'kind'. (See http://go/stepladder-help#fieldNumber) STEPLADDER: Generated unstable field number for field 'etag'. (See http://go/stepladder-help#fieldNumber)
 
   ## Attributes
 

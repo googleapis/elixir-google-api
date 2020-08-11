@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Datatransfer_v1.Model.Application do
   @moduledoc """
-  The JSON template for an Application resource.
+  The JSON template for an Application resource. STEPLADDER: Generated unstable field number for field 'kind'. (See http://go/stepladder-help#fieldNumber) STEPLADDER: Generated unstable field number for field 'etag'. (See http://go/stepladder-help#fieldNumber)
 
   ## Attributes
 
