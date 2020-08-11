@@ -17,21 +17,12 @@
 
 defmodule GoogleApi.Docs.V1.Model.UpdateTableRowStyleRequest do
   @moduledoc """
-  Updates the TableRowStyle of rows in a
-  table.
+  Updates the TableRowStyle of rows in a table.
 
   ## Attributes
 
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.
-
-      At least one field must be specified. The root `tableRowStyle` is implied
-      and should not be specified. A single `"*"` can be used as short-hand for
-      listing every field.
-
-      For example to update the minimum row height, set `fields` to
-      `"min_row_height"`.
-  *   `rowIndices` (*type:* `list(integer())`, *default:* `nil`) - The list of zero-based row indices whose style should be updated. If no
-      indices are specified, all rows will be updated.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `tableRowStyle` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field. For example to update the minimum row height, set `fields` to `"min_row_height"`.
+  *   `rowIndices` (*type:* `list(integer())`, *default:* `nil`) - The list of zero-based row indices whose style should be updated. If no indices are specified, all rows will be updated.
   *   `tableRowStyle` (*type:* `GoogleApi.Docs.V1.Model.TableRowStyle.t`, *default:* `nil`) - The styles to be set on the rows.
   *   `tableStartLocation` (*type:* `GoogleApi.Docs.V1.Model.Location.t`, *default:* `nil`) - The location where the table starts in the document.
   """

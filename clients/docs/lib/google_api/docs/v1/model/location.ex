@@ -21,12 +21,8 @@ defmodule GoogleApi.Docs.V1.Model.Location do
 
   ## Attributes
 
-  *   `index` (*type:* `integer()`, *default:* `nil`) - The zero-based index, in UTF-16 code units.
-
-      The index is relative to the beginning of the segment specified by
-      segment_id.
-  *   `segmentId` (*type:* `String.t`, *default:* `nil`) - The ID of the header, footer or footnote the location is in. An empty
-      segment ID signifies the document's body.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - The zero-based index, in UTF-16 code units. The index is relative to the beginning of the segment specified by segment_id.
+  *   `segmentId` (*type:* `String.t`, *default:* `nil`) - The ID of the header, footer or footnote the location is in. An empty segment ID signifies the document's body.
   """
 
   use GoogleApi.Gax.ModelBase

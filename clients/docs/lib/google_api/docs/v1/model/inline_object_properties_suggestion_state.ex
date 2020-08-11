@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.InlineObjectPropertiesSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base
-  InlineObjectProperties have
-  been changed in this suggestion. For any field set to true, there is a new
-  suggested value.
+  A mask that indicates which of the fields on the base InlineObjectProperties have been changed in this suggestion. For any field set to true, there is a new suggested value.
 
   ## Attributes
 
-  *   `embeddedObjectSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in embedded_object have been
-      changed in this suggestion.
+  *   `embeddedObjectSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in embedded_object have been changed in this suggestion.
   """
 
   use GoogleApi.Gax.ModelBase

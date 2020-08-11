@@ -17,24 +17,14 @@
 
 defmodule GoogleApi.Docs.V1.Model.ColumnBreak do
   @moduledoc """
-  A ParagraphElement representing a
-  column break. A column break makes the subsequent text start at the top of
-  the next column.
+  A ParagraphElement representing a column break. A column break makes the subsequent text start at the top of the next column.
 
   ## Attributes
 
-  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions
-      of this content.
-  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A ColumnBreak may have multiple insertion IDs if it is
-      a nested suggested change. If empty, then this is not a suggested
-      insertion.
-  *   `suggestedTextStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedTextStyle.t}`, *default:* `nil`) - The suggested text style changes to this ColumnBreak, keyed by suggestion
-      ID.
-  *   `textStyle` (*type:* `GoogleApi.Docs.V1.Model.TextStyle.t`, *default:* `nil`) - The text style of this ColumnBreak.
-
-      Similar to text content, like text runs and footnote references, the text
-      style of a column break can affect content layout as well as the styling of
-      text inserted adjacent to it.
+  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
+  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A ColumnBreak may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.
+  *   `suggestedTextStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedTextStyle.t}`, *default:* `nil`) - The suggested text style changes to this ColumnBreak, keyed by suggestion ID.
+  *   `textStyle` (*type:* `GoogleApi.Docs.V1.Model.TextStyle.t`, *default:* `nil`) - The text style of this ColumnBreak. Similar to text content, like text runs and footnote references, the text style of a column break can affect content layout as well as the styling of text inserted adjacent to it.
   """
 
   use GoogleApi.Gax.ModelBase

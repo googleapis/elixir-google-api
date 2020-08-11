@@ -21,15 +21,8 @@ defmodule GoogleApi.Docs.V1.Model.InsertTableColumnRequest do
 
   ## Attributes
 
-  *   `insertRight` (*type:* `boolean()`, *default:* `nil`) - Whether to insert new column to the right of the reference cell location.
-
-      - `True`: insert to the right.
-      - `False`: insert to the left.
-  *   `tableCellLocation` (*type:* `GoogleApi.Docs.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which columns will be inserted.
-
-      A new column will be inserted to the left (or right) of the column where
-      the reference cell is. If the reference cell is a merged cell, a new
-      column will be inserted to the left (or right) of the merged cell.
+  *   `insertRight` (*type:* `boolean()`, *default:* `nil`) - Whether to insert new column to the right of the reference cell location. - `True`: insert to the right. - `False`: insert to the left.
+  *   `tableCellLocation` (*type:* `GoogleApi.Docs.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which columns will be inserted. A new column will be inserted to the left (or right) of the column where the reference cell is. If the reference cell is a merged cell, a new column will be inserted to the left (or right) of the merged cell.
   """
 
   use GoogleApi.Gax.ModelBase

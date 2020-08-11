@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base ParagraphStyle have been changed in this suggestion.
-  For any field set to true, there is a new suggested value.
+  A mask that indicates which of the fields on the base ParagraphStyle have been changed in this suggestion. For any field set to true, there is a new suggested value.
 
   ## Attributes
 
@@ -38,8 +37,7 @@ defmodule GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState do
   *   `keepWithNextSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to keep_with_next.
   *   `lineSpacingSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to line_spacing.
   *   `namedStyleTypeSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to named_style_type.
-  *   `shadingSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.ShadingSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in shading have been changed in
-      this suggestion.
+  *   `shadingSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.ShadingSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in shading have been changed in this suggestion.
   *   `spaceAboveSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to space_above.
   *   `spaceBelowSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to space_below.
   *   `spacingModeSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to spacing_mode.

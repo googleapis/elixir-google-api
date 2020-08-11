@@ -17,23 +17,13 @@
 
 defmodule GoogleApi.Docs.V1.Model.ReplaceImageRequest do
   @moduledoc """
-  Replaces an existing image with a new image.
-
-  Replacing an image removes some image effects from the existing image in order to
-  mirror the behavior of the Docs editor.
+  Replaces an existing image with a new image. Replacing an image removes some image effects from the existing image in order to mirror the behavior of the Docs editor.
 
   ## Attributes
 
   *   `imageObjectId` (*type:* `String.t`, *default:* `nil`) - The ID of the existing image that will be replaced.
   *   `imageReplaceMethod` (*type:* `String.t`, *default:* `nil`) - The replacement method.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the new image.
-
-      The image is fetched once at insertion time and a copy is stored for
-      display inside the document. Images must be less than 50MB in size, cannot
-      exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format.
-
-      The provided URI can be at most 2 kB in length. The URI itself is saved
-      with the image, and exposed via the ImageProperties.source_uri field.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the new image. The image is fetched once at insertion time and a copy is stored for display inside the document. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URI can be at most 2 kB in length. The URI itself is saved with the image, and exposed via the ImageProperties.source_uri field.
   """
 
   use GoogleApi.Gax.ModelBase

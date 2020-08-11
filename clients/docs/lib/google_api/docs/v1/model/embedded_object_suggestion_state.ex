@@ -17,26 +17,20 @@
 
 defmodule GoogleApi.Docs.V1.Model.EmbeddedObjectSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base EmbeddedObject have been changed in this suggestion.
-  For any field set to true, there is a new suggested value.
+  A mask that indicates which of the fields on the base EmbeddedObject have been changed in this suggestion. For any field set to true, there is a new suggested value.
 
   ## Attributes
 
   *   `descriptionSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to description.
-  *   `embeddedDrawingPropertiesSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.EmbeddedDrawingPropertiesSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in embedded_drawing_properties have been
-      changed in this suggestion.
-  *   `embeddedObjectBorderSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.EmbeddedObjectBorderSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in embedded_object_border have been
-      changed in this suggestion.
-  *   `imagePropertiesSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.ImagePropertiesSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in image_properties have been changed in
-      this suggestion.
-  *   `linkedContentReferenceSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.LinkedContentReferenceSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in linked_content_reference have been
-      changed in this suggestion.
+  *   `embeddedDrawingPropertiesSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.EmbeddedDrawingPropertiesSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in embedded_drawing_properties have been changed in this suggestion.
+  *   `embeddedObjectBorderSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.EmbeddedObjectBorderSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in embedded_object_border have been changed in this suggestion.
+  *   `imagePropertiesSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.ImagePropertiesSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in image_properties have been changed in this suggestion.
+  *   `linkedContentReferenceSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.LinkedContentReferenceSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in linked_content_reference have been changed in this suggestion.
   *   `marginBottomSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_bottom.
   *   `marginLeftSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_left.
   *   `marginRightSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_right.
   *   `marginTopSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_top.
-  *   `sizeSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.SizeSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in size have been changed in this
-      suggestion.
+  *   `sizeSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.SizeSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in size have been changed in this suggestion.
   *   `titleSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to title.
   """
 

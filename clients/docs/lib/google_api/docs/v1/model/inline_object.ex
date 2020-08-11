@@ -17,19 +17,15 @@
 
 defmodule GoogleApi.Docs.V1.Model.InlineObject do
   @moduledoc """
-  An object that appears inline with text. An InlineObject contains
-  an EmbeddedObject such as an image.
+  An object that appears inline with text. An InlineObject contains an EmbeddedObject such as an image.
 
   ## Attributes
 
   *   `inlineObjectProperties` (*type:* `GoogleApi.Docs.V1.Model.InlineObjectProperties.t`, *default:* `nil`) - The properties of this inline object.
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - The ID of this inline object.
-  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions
-      of this content.
-  *   `suggestedInlineObjectPropertiesChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedInlineObjectProperties.t}`, *default:* `nil`) - The suggested changes to the inline object properties, keyed by suggestion
-      ID.
-  *   `suggestedInsertionId` (*type:* `String.t`, *default:* `nil`) - The suggested insertion ID. If empty, then this is not a suggested
-      insertion.
+  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
+  *   `suggestedInlineObjectPropertiesChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedInlineObjectProperties.t}`, *default:* `nil`) - The suggested changes to the inline object properties, keyed by suggestion ID.
+  *   `suggestedInsertionId` (*type:* `String.t`, *default:* `nil`) - The suggested insertion ID. If empty, then this is not a suggested insertion.
   """
 
   use GoogleApi.Gax.ModelBase

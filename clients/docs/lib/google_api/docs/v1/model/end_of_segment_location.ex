@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.EndOfSegmentLocation do
   @moduledoc """
-  Location at the end of a body, header, footer or footnote. The location is
-  immediately before the last newline in the document segment.
+  Location at the end of a body, header, footer or footnote. The location is immediately before the last newline in the document segment.
 
   ## Attributes
 
-  *   `segmentId` (*type:* `String.t`, *default:* `nil`) - The ID of the header, footer or footnote the location is in. An empty
-      segment ID signifies the document's body.
+  *   `segmentId` (*type:* `String.t`, *default:* `nil`) - The ID of the header, footer or footnote the location is in. An empty segment ID signifies the document's body.
   """
 
   use GoogleApi.Gax.ModelBase

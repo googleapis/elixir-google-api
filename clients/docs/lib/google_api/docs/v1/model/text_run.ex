@@ -17,20 +17,13 @@
 
 defmodule GoogleApi.Docs.V1.Model.TextRun do
   @moduledoc """
-  A ParagraphElement that represents a
-  run of text that all has the same styling.
+  A ParagraphElement that represents a run of text that all has the same styling.
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - The text of this run.
-
-      Any non-text elements in the run are replaced with the Unicode character
-      U+E907.
-  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions
-      of this content.
-  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A TextRun may
-      have multiple insertion IDs if it is a nested suggested change. If empty,
-      then this is not a suggested insertion.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The text of this run. Any non-text elements in the run are replaced with the Unicode character U+E907.
+  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
+  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A TextRun may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.
   *   `suggestedTextStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedTextStyle.t}`, *default:* `nil`) - The suggested text style changes to this run, keyed by suggestion ID.
   *   `textStyle` (*type:* `GoogleApi.Docs.V1.Model.TextStyle.t`, *default:* `nil`) - The text style of this run.
   """

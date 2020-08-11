@@ -21,23 +21,17 @@ defmodule GoogleApi.Docs.V1.Model.EmbeddedObject do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the embedded object. The `title` and `description` are
-      both combined to display alt text.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the embedded object. The `title` and `description` are both combined to display alt text.
   *   `embeddedDrawingProperties` (*type:* `GoogleApi.Docs.V1.Model.EmbeddedDrawingProperties.t`, *default:* `nil`) - The properties of an embedded drawing.
   *   `embeddedObjectBorder` (*type:* `GoogleApi.Docs.V1.Model.EmbeddedObjectBorder.t`, *default:* `nil`) - The border of the embedded object.
   *   `imageProperties` (*type:* `GoogleApi.Docs.V1.Model.ImageProperties.t`, *default:* `nil`) - The properties of an image.
-  *   `linkedContentReference` (*type:* `GoogleApi.Docs.V1.Model.LinkedContentReference.t`, *default:* `nil`) - A reference to the external linked source content. For example, it contains
-      a reference to the source Sheets chart when the embedded object is a linked
-      chart.
-
-      If unset, then the embedded object is not linked.
+  *   `linkedContentReference` (*type:* `GoogleApi.Docs.V1.Model.LinkedContentReference.t`, *default:* `nil`) - A reference to the external linked source content. For example, it contains a reference to the source Sheets chart when the embedded object is a linked chart. If unset, then the embedded object is not linked.
   *   `marginBottom` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The bottom margin of the embedded object.
   *   `marginLeft` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The left margin of the embedded object.
   *   `marginRight` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The right margin of the embedded object.
   *   `marginTop` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The top margin of the embedded object.
   *   `size` (*type:* `GoogleApi.Docs.V1.Model.Size.t`, *default:* `nil`) - The visible size of the image after cropping.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the embedded object. The `title` and `description` are both
-      combined to display alt text.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the embedded object. The `title` and `description` are both combined to display alt text.
   """
 
   use GoogleApi.Gax.ModelBase

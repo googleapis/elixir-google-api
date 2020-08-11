@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.NamedStyle do
   @moduledoc """
-  A named style. Paragraphs in the document can inherit their
-  TextStyle and
-  ParagraphStyle from this named style
-  when they have the same named style type.
+  A named style. Paragraphs in the document can inherit their TextStyle and ParagraphStyle from this named style when they have the same named style type.
 
   ## Attributes
 

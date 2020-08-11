@@ -21,9 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.Footnote do
 
   ## Attributes
 
-  *   `content` (*type:* `list(GoogleApi.Docs.V1.Model.StructuralElement.t)`, *default:* `nil`) - The contents of the footnote.
-
-      The indexes for a footnote's content begin at zero.
+  *   `content` (*type:* `list(GoogleApi.Docs.V1.Model.StructuralElement.t)`, *default:* `nil`) - The contents of the footnote. The indexes for a footnote's content begin at zero.
   *   `footnoteId` (*type:* `String.t`, *default:* `nil`) - The ID of the footnote.
   """
 

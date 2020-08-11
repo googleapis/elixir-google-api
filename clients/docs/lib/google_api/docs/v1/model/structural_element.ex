@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.Docs.V1.Model.StructuralElement do
   @moduledoc """
-  A StructuralElement describes content that provides structure to the
-  document.
+  A StructuralElement describes content that provides structure to the document.
 
   ## Attributes
 
-  *   `endIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based end index of this structural element, exclusive, in UTF-16
-      code units.
+  *   `endIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based end index of this structural element, exclusive, in UTF-16 code units.
   *   `paragraph` (*type:* `GoogleApi.Docs.V1.Model.Paragraph.t`, *default:* `nil`) - A paragraph type of structural element.
   *   `sectionBreak` (*type:* `GoogleApi.Docs.V1.Model.SectionBreak.t`, *default:* `nil`) - A section break type of structural element.
-  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based start index of this structural element, in UTF-16 code
-      units.
+  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based start index of this structural element, in UTF-16 code units.
   *   `table` (*type:* `GoogleApi.Docs.V1.Model.Table.t`, *default:* `nil`) - A table type of structural element.
   *   `tableOfContents` (*type:* `GoogleApi.Docs.V1.Model.TableOfContents.t`, *default:* `nil`) - A table of contents type of structural element.
   """

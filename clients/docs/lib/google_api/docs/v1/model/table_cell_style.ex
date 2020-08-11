@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.TableCellStyle do
   @moduledoc """
-  The style of a TableCell.
-
-  Inherited table cell styles are represented as unset fields in this message.
-  A table cell style can inherit from the table's style.
+  The style of a TableCell. Inherited table cell styles are represented as unset fields in this message. A table cell style can inherit from the table's style.
 
   ## Attributes
 
@@ -29,18 +26,13 @@ defmodule GoogleApi.Docs.V1.Model.TableCellStyle do
   *   `borderLeft` (*type:* `GoogleApi.Docs.V1.Model.TableCellBorder.t`, *default:* `nil`) - The left border of the cell.
   *   `borderRight` (*type:* `GoogleApi.Docs.V1.Model.TableCellBorder.t`, *default:* `nil`) - The right border of the cell.
   *   `borderTop` (*type:* `GoogleApi.Docs.V1.Model.TableCellBorder.t`, *default:* `nil`) - The top border of the cell.
-  *   `columnSpan` (*type:* `integer()`, *default:* `nil`) - The column span of the cell.
-
-      This property is read-only.
-  *   `contentAlignment` (*type:* `String.t`, *default:* `nil`) - The alignment of the content in the table cell. The default alignment
-      matches the alignment for newly created table cells in the Docs editor.
+  *   `columnSpan` (*type:* `integer()`, *default:* `nil`) - The column span of the cell. This property is read-only.
+  *   `contentAlignment` (*type:* `String.t`, *default:* `nil`) - The alignment of the content in the table cell. The default alignment matches the alignment for newly created table cells in the Docs editor.
   *   `paddingBottom` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The bottom padding of the cell.
   *   `paddingLeft` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The left padding of the cell.
   *   `paddingRight` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The right padding of the cell.
   *   `paddingTop` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The top padding of the cell.
-  *   `rowSpan` (*type:* `integer()`, *default:* `nil`) - The row span of the cell.
-
-      This property is read-only.
+  *   `rowSpan` (*type:* `integer()`, *default:* `nil`) - The row span of the cell. This property is read-only.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,9 +22,7 @@ defmodule GoogleApi.Docs.V1.Model.PositionedObjectProperties do
   ## Attributes
 
   *   `embeddedObject` (*type:* `GoogleApi.Docs.V1.Model.EmbeddedObject.t`, *default:* `nil`) - The embedded object of this positioned object.
-  *   `positioning` (*type:* `GoogleApi.Docs.V1.Model.PositionedObjectPositioning.t`, *default:* `nil`) - The positioning of this positioned object relative to the newline of the
-      Paragraph that references this positioned
-      object.
+  *   `positioning` (*type:* `GoogleApi.Docs.V1.Model.PositionedObjectPositioning.t`, *default:* `nil`) - The positioning of this positioned object relative to the newline of the Paragraph that references this positioned object.
   """
 
   use GoogleApi.Gax.ModelBase

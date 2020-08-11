@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.Docs.V1.Model.TableOfContents do
   @moduledoc """
-  A StructuralElement representing
-  a table of contents.
+  A StructuralElement representing a table of contents.
 
   ## Attributes
 
   *   `content` (*type:* `list(GoogleApi.Docs.V1.Model.StructuralElement.t)`, *default:* `nil`) - The content of the table of contents.
-  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions
-      of this content.
-  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A TableOfContents may have multiple insertion IDs if it
-      is a nested suggested change. If empty, then this is not a suggested
-      insertion.
+  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
+  *   `suggestedInsertionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested insertion IDs. A TableOfContents may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.
   """
 
   use GoogleApi.Gax.ModelBase

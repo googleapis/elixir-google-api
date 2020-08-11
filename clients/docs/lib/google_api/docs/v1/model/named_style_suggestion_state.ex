@@ -21,14 +21,9 @@ defmodule GoogleApi.Docs.V1.Model.NamedStyleSuggestionState do
 
   ## Attributes
 
-  *   `namedStyleType` (*type:* `String.t`, *default:* `nil`) - The named style type that this suggestion state corresponds to.
-
-      This field is provided as a convenience for matching the
-      NamedStyleSuggestionState with its corresponding NamedStyle.
-  *   `paragraphStyleSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in paragraph style have been changed in this
-      suggestion.
-  *   `textStyleSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in text style have been changed in this
-      suggestion.
+  *   `namedStyleType` (*type:* `String.t`, *default:* `nil`) - The named style type that this suggestion state corresponds to. This field is provided as a convenience for matching the NamedStyleSuggestionState with its corresponding NamedStyle.
+  *   `paragraphStyleSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.ParagraphStyleSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in paragraph style have been changed in this suggestion.
+  *   `textStyleSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in text style have been changed in this suggestion.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.Footer do
 
   ## Attributes
 
-  *   `content` (*type:* `list(GoogleApi.Docs.V1.Model.StructuralElement.t)`, *default:* `nil`) - The contents of the footer.
-
-      The indexes for a footer's content begin at zero.
+  *   `content` (*type:* `list(GoogleApi.Docs.V1.Model.StructuralElement.t)`, *default:* `nil`) - The contents of the footer. The indexes for a footer's content begin at zero.
   *   `footerId` (*type:* `String.t`, *default:* `nil`) - The ID of the footer.
   """
 

@@ -21,9 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.TableRowStyle do
 
   ## Attributes
 
-  *   `minRowHeight` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The minimum height of the row. The row will be rendered in the Docs editor
-      at a height equal to or greater than this value in order to show all the
-      content in the row's cells.
+  *   `minRowHeight` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The minimum height of the row. The row will be rendered in the Docs editor at a height equal to or greater than this value in order to show all the content in the row's cells.
   """
 
   use GoogleApi.Gax.ModelBase

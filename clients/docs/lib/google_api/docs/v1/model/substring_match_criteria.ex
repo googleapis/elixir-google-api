@@ -21,10 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.SubstringMatchCriteria do
 
   ## Attributes
 
-  *   `matchCase` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the search should respect case:
-
-      - `True`: the search is case sensitive.
-      - `False`: the search is case insensitive.
+  *   `matchCase` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the search should respect case: - `True`: the search is case sensitive. - `False`: the search is case insensitive.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The text to search for in the document.
   """
 
