@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.OSLogin.V1alpha.Model.LoginProfile do
   @moduledoc """
-  The user profile information used for logging in to a virtual machine on
-  Google Compute Engine.
+  The user profile information used for logging in to a virtual machine on Google Compute Engine.
 
   ## Attributes
 
