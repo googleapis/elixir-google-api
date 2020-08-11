@@ -26,9 +26,7 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets metadata about a Web Document. This method can _only_ be used to query
-  URLs that were previously seen in successful Indexing API notifications.
-  Includes the latest `UrlNotification` received via this API.
+  Gets metadata about a Web Document. This method can _only_ be used to query URLs that were previously seen in successful Indexing API notifications. Includes the latest `UrlNotification` received via this API.
 
   ## Parameters
 
