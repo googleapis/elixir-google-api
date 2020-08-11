@@ -21,30 +21,17 @@ defmodule GoogleApi.Tasks.V1.Model.Task do
 
   ## Attributes
 
-  *   `completed` (*type:* `String.t`, *default:* `nil`) - Completion date of the task (as a RFC 3339 timestamp). This field is
-      omitted if the task has not been completed.
+  *   `completed` (*type:* `String.t`, *default:* `nil`) - Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Flag indicating whether the task has been deleted. The default is False.
-  *   `due` (*type:* `String.t`, *default:* `nil`) - Due date of the task (as a RFC 3339 timestamp). Optional. The due date only
-      records date information; the time portion of the timestamp is discarded
-      when setting the due date. It isn't possible to read or write the time that
-      a task is due via the API.
+  *   `due` (*type:* `String.t`, *default:* `nil`) - Due date of the task (as a RFC 3339 timestamp). Optional. The due date only records date information; the time portion of the timestamp is discarded when setting the due date. It isn't possible to read or write the time that a task is due via the API.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `hidden` (*type:* `boolean()`, *default:* `nil`) - Flag indicating whether the task is hidden. This is the case if the task
-      had been marked completed when the task list was last cleared. The default
-      is False. This field is read-only.
+  *   `hidden` (*type:* `boolean()`, *default:* `nil`) - Flag indicating whether the task is hidden. This is the case if the task had been marked completed when the task list was last cleared. The default is False. This field is read-only.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Task identifier.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Type of the resource. This is always "tasks#task".
   *   `links` (*type:* `list(GoogleApi.Tasks.V1.Model.TaskLinks.t)`, *default:* `nil`) - Collection of links. This collection is read-only.
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes describing the task. Optional.
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Parent task identifier. This field is omitted if it is a top-level task.
-      This field is read-only. Use the "move" method to move the task under a
-      different parent or to the top level.
-  *   `position` (*type:* `String.t`, *default:* `nil`) - String indicating the position of the task among its sibling tasks under
-      the same parent task or at the top level. If this string is greater than
-      another task's corresponding position string according to lexicographical
-      ordering, the task is positioned after the other task under the same parent
-      task (or at the top level). This field is read-only. Use the "move" method
-      to move the task to another position.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Parent task identifier. This field is omitted if it is a top-level task. This field is read-only. Use the "move" method to move the task under a different parent or to the top level.
+  *   `position` (*type:* `String.t`, *default:* `nil`) - String indicating the position of the task among its sibling tasks under the same parent task or at the top level. If this string is greater than another task's corresponding position string according to lexicographical ordering, the task is positioned after the other task under the same parent task (or at the top level). This field is read-only. Use the "move" method to move the task to another position.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL pointing to this task. Used to retrieve, update, or delete this task.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the task. This is either "needsAction" or "completed".
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the task.
