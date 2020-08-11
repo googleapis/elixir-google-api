@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Dimension do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#dimension`) - The kind of resource this is, in this case dfareporting#dimension.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#dimension.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The dimension name, e.g. dfa:advertiser
   """
 

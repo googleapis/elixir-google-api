@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Region do
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code of the country to which this region belongs.
   *   `countryDartId` (*type:* `String.t`, *default:* `nil`) - DART ID of the country to which this region belongs.
   *   `dartId` (*type:* `String.t`, *default:* `nil`) - DART ID of this region.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#region`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#region".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#region".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this region.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Region code.
   """

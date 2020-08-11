@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.VideoFormatsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#videoFormatsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoFormatsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoFormatsListResponse".
   *   `videoFormats` (*type:* `list(GoogleApi.DFAReporting.V33.Model.VideoFormat.t)`, *default:* `nil`) - Video format collection.
   """
 

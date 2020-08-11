@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.DirectorySitesListResponse do
   ## Attributes
 
   *   `directorySites` (*type:* `list(GoogleApi.DFAReporting.V33.Model.DirectorySite.t)`, *default:* `nil`) - Directory site collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#directorySitesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#directorySitesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#directorySitesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

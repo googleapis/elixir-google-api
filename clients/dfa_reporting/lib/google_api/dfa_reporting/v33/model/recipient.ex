@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Recipient do
 
   *   `deliveryType` (*type:* `String.t`, *default:* `nil`) - The delivery type for the recipient.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the recipient.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#recipient`) - The kind of resource this is, in this case dfareporting#recipient.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#recipient.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ProjectsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#projectsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#projectsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#projectsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   *   `projects` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Project.t)`, *default:* `nil`) - Project collection.
   """

@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CrossDimensionReachReportCompatibleFi
 
   *   `breakdown` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Dimension.t)`, *default:* `nil`) - Dimensions which are compatible to be selected in the "breakdown" section of the report.
   *   `dimensionFilters` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Dimension.t)`, *default:* `nil`) - Dimensions which are compatible to be selected in the "dimensionFilters" section of the report.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#crossDimensionReachReportCompatibleFields`) - The kind of resource this is, in this case dfareporting#crossDimensionReachReportCompatibleFields.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#crossDimensionReachReportCompatibleFields.
   *   `metrics` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Metric.t)`, *default:* `nil`) - Metrics which are compatible to be selected in the "metricNames" section of the report.
   *   `overlapMetrics` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Metric.t)`, *default:* `nil`) - Metrics which are compatible to be selected in the "overlapMetricNames" section of the report.
   """

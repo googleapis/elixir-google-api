@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.UserRole do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this user role. This is a read-only field that can be left blank.
   *   `defaultUserRole` (*type:* `boolean()`, *default:* `nil`) - Whether this is a default user role. Default user roles are created by the system for the account/subaccount and cannot be modified or deleted. Each default user role comes with a basic set of preassigned permissions.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this user role. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#userRole`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRole".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRole".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this user role. This is a required field. Must be less than 256 characters long. If this user role is under a subaccount, the name must be unique among sites of the same subaccount. Otherwise, this user role is a top-level user role, and the name must be unique among top-level user roles of the same account.
   *   `parentUserRoleId` (*type:* `String.t`, *default:* `nil`) - ID of the user role that this user role is based on or copied from. This is a required field.
   *   `permissions` (*type:* `list(GoogleApi.DFAReporting.V33.Model.UserRolePermission.t)`, *default:* `nil`) - List of permissions associated with this user role.

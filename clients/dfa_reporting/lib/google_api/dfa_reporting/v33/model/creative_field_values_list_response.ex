@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeFieldValuesListResponse do
   ## Attributes
 
   *   `creativeFieldValues` (*type:* `list(GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t)`, *default:* `nil`) - Creative field value collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#creativeFieldValuesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeFieldValuesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeFieldValuesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

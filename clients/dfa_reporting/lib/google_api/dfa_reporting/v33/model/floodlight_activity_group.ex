@@ -28,10 +28,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightActivityGroup do
   *   `floodlightConfigurationIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the floodlight configuration. This is a read-only, auto-generated field.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this floodlight activity group. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this floodlight activity group. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#floodlightActivityGroup`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivityGroup".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivityGroup".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this floodlight activity group. This is a required field. Must be less than 65 characters long and cannot contain quotes.
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this floodlight activity group. This is a read-only field that can be left blank.
-  *   `tagString` (*type:* `String.t`, *default:* `nil`) - Value of the type= parameter in the floodlight tag, which the ad servers use to identify the activity group that the activity belongs to. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being [a-z][A-Z][0-9][-][ _ ]. This tag string must also be unique among activity groups of the same floodlight configuration. This field is read-only after insertion.
+  *   `tagString` (*type:* `String.t`, *default:* `nil`) - Value of the type= parameter in the floodlight tag, which the ad servers use to identify the activity group that the activity belongs to. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being a-z0-9[ _ ]. This tag string must also be unique among activity groups of the same floodlight configuration. This field is read-only after insertion.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the floodlight activity group. This is a required field that is read-only after insertion.
   """
 

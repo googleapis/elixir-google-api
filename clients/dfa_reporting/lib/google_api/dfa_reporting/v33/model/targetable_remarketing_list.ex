@@ -27,7 +27,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.TargetableRemarketingList do
   *   `advertiserIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the advertiser.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Targetable remarketing list description.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Targetable remarketing list ID.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#targetableRemarketingList`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetableRemarketingList".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetableRemarketingList".
   *   `lifeSpan` (*type:* `String.t`, *default:* `nil`) - Number of days that a user should remain in the targetable remarketing list without an impression.
   *   `listSize` (*type:* `String.t`, *default:* `nil`) - Number of users currently in the list. This is a read-only field.
   *   `listSource` (*type:* `String.t`, *default:* `nil`) - Product from which this targetable remarketing list was originated.

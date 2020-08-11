@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.SortedDimension do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#sortedDimension`) - The kind of resource this is, in this case dfareporting#sortedDimension.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#sortedDimension.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the dimension.
   *   `sortOrder` (*type:* `String.t`, *default:* `nil`) - An optional sort order for the dimension column.
   """

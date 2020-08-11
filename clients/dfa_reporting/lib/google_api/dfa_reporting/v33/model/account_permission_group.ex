@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.AccountPermissionGroup do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this account permission group.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#accountPermissionGroup`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionGroup".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionGroup".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this account permission group.
   """
 

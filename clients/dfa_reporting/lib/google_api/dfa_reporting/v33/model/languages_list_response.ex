@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.LanguagesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#languagesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#languagesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#languagesListResponse".
   *   `languages` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Language.t)`, *default:* `nil`) - Language collection.
   """
 

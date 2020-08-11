@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.UserProfileList do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `items` (*type:* `list(GoogleApi.DFAReporting.V33.Model.UserProfile.t)`, *default:* `nil`) - The user profiles returned in this response.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#userProfileList`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userProfileList".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userProfileList".
   """
 
   use GoogleApi.Gax.ModelBase

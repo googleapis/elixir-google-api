@@ -38,7 +38,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightActivity do
   *   `hidden` (*type:* `boolean()`, *default:* `nil`) - Whether this activity is archived.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this floodlight activity. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this floodlight activity. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#floodlightActivity`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivity".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivity".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this floodlight activity. This is a required field. Must be less than 129 characters long and cannot contain quotes.
   *   `notes` (*type:* `String.t`, *default:* `nil`) - General notes or implementation instructions for the tag.
   *   `publisherTags` (*type:* `list(GoogleApi.DFAReporting.V33.Model.FloodlightActivityPublisherDynamicTag.t)`, *default:* `nil`) - Publisher dynamic floodlight tags.
@@ -47,9 +47,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightActivity do
   *   `sslRequired` (*type:* `boolean()`, *default:* `nil`) - Whether this floodlight activity must be SSL-compliant.
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this floodlight activity. This is a read-only field that can be left blank.
   *   `tagFormat` (*type:* `String.t`, *default:* `nil`) - Tag format type for the floodlight activity. If left blank, the tag format will default to HTML.
-  *   `tagString` (*type:* `String.t`, *default:* `nil`) - Value of the cat= parameter in the floodlight tag, which the ad servers use to identify the activity. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being [a-z][A-Z][0-9][-][ _ ]. This tag string must also be unique among activities of the same activity group. This field is read-only after insertion.
-  *   `userDefinedVariableTypes` (*type:* `list(String.t)`, *default:* `nil`) - List of the user-defined variables used by this conversion tag. These map to the "u[1-100]=" in the tags. Each of these can have a user defined type.
-      Acceptable values are U1 to U100, inclusive.
+  *   `tagString` (*type:* `String.t`, *default:* `nil`) - Value of the cat= parameter in the floodlight tag, which the ad servers use to identify the activity. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being a-z0-9[ _ ]. This tag string must also be unique among activities of the same activity group. This field is read-only after insertion.
+  *   `userDefinedVariableTypes` (*type:* `list(String.t)`, *default:* `nil`) - List of the user-defined variables used by this conversion tag. These map to the "u[1-100]=" in the tags. Each of these can have a user defined type. Acceptable values are U1 to U100, inclusive. 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.RegionsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#regionsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#regionsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#regionsListResponse".
   *   `regions` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Region.t)`, *default:* `nil`) - Region collection.
   """
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ChangeLogsListResponse do
   ## Attributes
 
   *   `changeLogs` (*type:* `list(GoogleApi.DFAReporting.V33.Model.ChangeLog.t)`, *default:* `nil`) - Change log collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#changeLogsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#changeLogsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#changeLogsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

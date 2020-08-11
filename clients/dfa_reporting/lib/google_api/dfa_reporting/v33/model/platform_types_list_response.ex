@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.PlatformTypesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#platformTypesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#platformTypesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#platformTypesListResponse".
   *   `platformTypes` (*type:* `list(GoogleApi.DFAReporting.V33.Model.PlatformType.t)`, *default:* `nil`) - Platform type collection.
   """
 

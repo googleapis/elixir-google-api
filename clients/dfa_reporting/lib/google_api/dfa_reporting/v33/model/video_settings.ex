@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.VideoSettings do
   ## Attributes
 
   *   `companionSettings` (*type:* `GoogleApi.DFAReporting.V33.Model.CompanionSetting.t`, *default:* `nil`) - Settings for the companion creatives of video creatives served to this placement.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#videoSettings`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoSettings".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoSettings".
   *   `orientation` (*type:* `String.t`, *default:* `nil`) - Orientation of a video placement. If this value is set, placement will return assets matching the specified orientation.
   *   `skippableSettings` (*type:* `GoogleApi.DFAReporting.V33.Model.SkippableSetting.t`, *default:* `nil`) - Settings for the skippability of video creatives served to this placement. If this object is provided, the creative-level skippable settings will be overridden.
   *   `transcodeSettings` (*type:* `GoogleApi.DFAReporting.V33.Model.TranscodeSetting.t`, *default:* `nil`) - Settings for the transcodes of video creatives served to this placement. If this object is provided, the creative-level transcode settings will be overridden.

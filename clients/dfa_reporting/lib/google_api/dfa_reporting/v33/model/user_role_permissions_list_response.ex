@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.UserRolePermissionsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#userRolePermissionsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermissionsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermissionsListResponse".
   *   `userRolePermissions` (*type:* `list(GoogleApi.DFAReporting.V33.Model.UserRolePermission.t)`, *default:* `nil`) - User role permission collection.
   """
 

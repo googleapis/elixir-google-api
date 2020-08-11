@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Metric do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#metric`) - The kind of resource this is, in this case dfareporting#metric.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#metric.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The metric name, e.g. dfa:impressions
   """
 

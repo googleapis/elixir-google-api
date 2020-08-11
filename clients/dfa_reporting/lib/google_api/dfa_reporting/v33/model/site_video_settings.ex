@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.SiteVideoSettings do
   ## Attributes
 
   *   `companionSettings` (*type:* `GoogleApi.DFAReporting.V33.Model.SiteCompanionSetting.t`, *default:* `nil`) - Settings for the companion creatives of video creatives served to this site.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#siteVideoSettings`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteVideoSettings".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteVideoSettings".
   *   `orientation` (*type:* `String.t`, *default:* `nil`) - Orientation of a site template used for video. This will act as default for new placements created under this site.
   *   `skippableSettings` (*type:* `GoogleApi.DFAReporting.V33.Model.SiteSkippableSetting.t`, *default:* `nil`) - Settings for the skippability of video creatives served to this site. This will act as default for new placements created under this site.
   *   `transcodeSettings` (*type:* `GoogleApi.DFAReporting.V33.Model.SiteTranscodeSetting.t`, *default:* `nil`) - Settings for the transcodes of video creatives served to this site. This will act as default for new placements created under this site.

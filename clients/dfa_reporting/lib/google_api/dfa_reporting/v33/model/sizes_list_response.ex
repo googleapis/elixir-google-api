@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.SizesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#sizesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#sizesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#sizesListResponse".
   *   `sizes` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Size.t)`, *default:* `nil`) - Size collection.
   """
 

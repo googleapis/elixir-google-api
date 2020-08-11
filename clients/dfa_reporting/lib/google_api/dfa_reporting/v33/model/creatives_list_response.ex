@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativesListResponse do
   ## Attributes
 
   *   `creatives` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Creative.t)`, *default:* `nil`) - Creative collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#creativesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

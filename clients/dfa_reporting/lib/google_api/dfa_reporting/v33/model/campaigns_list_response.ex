@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CampaignsListResponse do
   ## Attributes
 
   *   `campaigns` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Campaign.t)`, *default:* `nil`) - Campaign collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#campaignsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

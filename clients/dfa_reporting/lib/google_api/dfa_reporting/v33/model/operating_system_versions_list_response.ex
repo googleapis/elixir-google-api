@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.OperatingSystemVersionsListResponse d
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#operatingSystemVersionsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystemVersionsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystemVersionsListResponse".
   *   `operatingSystemVersions` (*type:* `list(GoogleApi.DFAReporting.V33.Model.OperatingSystemVersion.t)`, *default:* `nil`) - Operating system version collection.
   """
 

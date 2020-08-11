@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.AccountUserProfilesListResponse do
   ## Attributes
 
   *   `accountUserProfiles` (*type:* `list(GoogleApi.DFAReporting.V33.Model.AccountUserProfile.t)`, *default:* `nil`) - Account user profile collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#accountUserProfilesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountUserProfilesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountUserProfilesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

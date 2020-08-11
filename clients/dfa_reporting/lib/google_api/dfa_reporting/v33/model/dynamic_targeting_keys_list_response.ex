@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.DynamicTargetingKeysListResponse do
   ## Attributes
 
   *   `dynamicTargetingKeys` (*type:* `list(GoogleApi.DFAReporting.V33.Model.DynamicTargetingKey.t)`, *default:* `nil`) - Dynamic targeting key collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#dynamicTargetingKeysListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#dynamicTargetingKeysListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#dynamicTargetingKeysListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.SkippableSetting do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#skippableSetting`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#skippableSetting".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#skippableSetting".
   *   `progressOffset` (*type:* `GoogleApi.DFAReporting.V33.Model.VideoOffset.t`, *default:* `nil`) - Amount of time to play videos served to this placement before counting a view. Applicable when skippable is true.
   *   `skipOffset` (*type:* `GoogleApi.DFAReporting.V33.Model.VideoOffset.t`, *default:* `nil`) - Amount of time to play videos served to this placement before the skip button should appear. Applicable when skippable is true.
   *   `skippable` (*type:* `boolean()`, *default:* `nil`) - Whether the user can skip creatives served to this placement.

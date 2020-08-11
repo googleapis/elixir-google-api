@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.PlatformType do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this platform type.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#platformType`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#platformType".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#platformType".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this platform type.
   """
 

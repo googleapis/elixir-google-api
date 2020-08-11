@@ -23,8 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportFloodlightCriteria do
 
   *   `customRichMediaEvents` (*type:* `list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t)`, *default:* `nil`) - The list of custom rich media events to include.
   *   `dateRange` (*type:* `GoogleApi.DFAReporting.V33.Model.DateRange.t`, *default:* `nil`) - The date range this report should be run for.
-  *   `dimensionFilters` (*type:* `list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t)`, *default:* `nil`) - The list of filters on which dimensions are filtered.
-      Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed.
+  *   `dimensionFilters` (*type:* `list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t)`, *default:* `nil`) - The list of filters on which dimensions are filtered. Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed.
   *   `dimensions` (*type:* `list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t)`, *default:* `nil`) - The list of dimensions the report should include.
   *   `floodlightConfigId` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - The floodlight ID for which to show data in this report. All advertisers associated with that ID will automatically be added. The dimension of the value needs to be 'dfa:floodlightConfigId'.
   *   `metricNames` (*type:* `list(String.t)`, *default:* `nil`) - The list of names of metrics the report should include.

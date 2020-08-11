@@ -25,7 +25,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeField do
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Advertiser ID of this creative field. This is a required field on insertion.
   *   `advertiserIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this creative field. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#creativeField`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeField".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeField".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this creative field. This is a required field and must be less than 256 characters long and unique among creative fields of the same advertiser.
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this creative field. This is a read-only field that can be left blank.
   """

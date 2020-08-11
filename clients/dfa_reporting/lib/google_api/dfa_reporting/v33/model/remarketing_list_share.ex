@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.RemarketingListShare do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#remarketingListShare`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#remarketingListShare".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#remarketingListShare".
   *   `remarketingListId` (*type:* `String.t`, *default:* `nil`) - Remarketing list ID. This is a read-only, auto-generated field.
   *   `sharedAccountIds` (*type:* `list(String.t)`, *default:* `nil`) - Accounts that the remarketing list is shared with.
   *   `sharedAdvertiserIds` (*type:* `list(String.t)`, *default:* `nil`) - Advertisers that the remarketing list is shared with.

@@ -21,16 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.DayPartTargeting do
 
   ## Attributes
 
-  *   `daysOfWeek` (*type:* `list(String.t)`, *default:* `nil`) - Days of the week when the ad will serve.
-
-      Acceptable values are:
-      - "SUNDAY"
-      - "MONDAY"
-      - "TUESDAY"
-      - "WEDNESDAY"
-      - "THURSDAY"
-      - "FRIDAY"
-      - "SATURDAY"
+  *   `daysOfWeek` (*type:* `list(String.t)`, *default:* `nil`) - Days of the week when the ad will serve. Acceptable values are: - "SUNDAY" - "MONDAY" - "TUESDAY" - "WEDNESDAY" - "THURSDAY" - "FRIDAY" - "SATURDAY" 
   *   `hoursOfDay` (*type:* `list(integer())`, *default:* `nil`) - Hours of the day when the ad will serve, where 0 is midnight to 1 AM and 23 is 11 PM to midnight. Can be specified with days of week, in which case the ad would serve during these hours on the specified days. For example if Monday, Wednesday, Friday are the days of week specified and 9-10am, 3-5pm (hours 9, 15, and 16) is specified, the ad would serve Monday, Wednesdays, and Fridays at 9-10am and 3-5pm. Acceptable values are 0 to 23, inclusive.
   *   `userLocalTime` (*type:* `boolean()`, *default:* `nil`) - Whether or not to use the user's local time. If false, the America/New York time zone applies.
   """

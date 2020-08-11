@@ -31,7 +31,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightConfiguration do
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this floodlight configuration. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this floodlight configuration. This is a read-only, auto-generated field.
   *   `inAppAttributionTrackingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether in-app attribution tracking is enabled.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#floodlightConfiguration`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightConfiguration".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightConfiguration".
   *   `lookbackConfiguration` (*type:* `GoogleApi.DFAReporting.V33.Model.LookbackConfiguration.t`, *default:* `nil`) - Lookback window settings for this floodlight configuration.
   *   `naturalSearchConversionAttributionOption` (*type:* `String.t`, *default:* `nil`) - Types of attribution options for natural search conversions.
   *   `omnitureSettings` (*type:* `GoogleApi.DFAReporting.V33.Model.OmnitureSettings.t`, *default:* `nil`) - Settings for Campaign Manager Omniture integration.

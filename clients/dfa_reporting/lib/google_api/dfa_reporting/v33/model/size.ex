@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Size do
   *   `height` (*type:* `integer()`, *default:* `nil`) - Height of this size. Acceptable values are 0 to 32767, inclusive.
   *   `iab` (*type:* `boolean()`, *default:* `nil`) - IAB standard size. This is a read-only, auto-generated field.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this size. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#size`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#size".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#size".
   *   `width` (*type:* `integer()`, *default:* `nil`) - Width of this size. Acceptable values are 0 to 32767, inclusive.
   """
 

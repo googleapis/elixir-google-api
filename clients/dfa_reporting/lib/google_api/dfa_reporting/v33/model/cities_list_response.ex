@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CitiesListResponse do
   ## Attributes
 
   *   `cities` (*type:* `list(GoogleApi.DFAReporting.V33.Model.City.t)`, *default:* `nil`) - City collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#citiesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#citiesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#citiesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

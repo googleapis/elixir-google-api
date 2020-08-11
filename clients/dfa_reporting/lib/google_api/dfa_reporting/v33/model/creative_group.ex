@@ -26,7 +26,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeGroup do
   *   `advertiserIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.
   *   `groupNumber` (*type:* `integer()`, *default:* `nil`) - Subgroup of the creative group. Assign your creative groups to a subgroup in order to filter or manage them more easily. This field is required on insertion and is read-only after insertion. Acceptable values are 1 to 2, inclusive.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this creative group. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#creativeGroup`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeGroup".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeGroup".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this creative group. This is a required field and must be less than 256 characters long and unique among creative groups of the same advertiser.
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this creative group. This is a read-only field that can be left blank.
   """

@@ -24,20 +24,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.DirectorySite do
   *   `active` (*type:* `boolean()`, *default:* `nil`) - Whether this directory site is active.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this directory site. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this directory site. This is a read-only, auto-generated field.
-  *   `inpageTagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag types for regular placements.
-
-      Acceptable values are:
-      - "STANDARD"
-      - "IFRAME_JAVASCRIPT_INPAGE"
-      - "INTERNAL_REDIRECT_INPAGE"
-      - "JAVASCRIPT_INPAGE"
-  *   `interstitialTagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag types for interstitial placements.
-
-      Acceptable values are:
-      - "IFRAME_JAVASCRIPT_INTERSTITIAL"
-      - "INTERNAL_REDIRECT_INTERSTITIAL"
-      - "JAVASCRIPT_INTERSTITIAL"
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#directorySite`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#directorySite".
+  *   `inpageTagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag types for regular placements. Acceptable values are: - "STANDARD" - "IFRAME_JAVASCRIPT_INPAGE" - "INTERNAL_REDIRECT_INPAGE" - "JAVASCRIPT_INPAGE" 
+  *   `interstitialTagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag types for interstitial placements. Acceptable values are: - "IFRAME_JAVASCRIPT_INTERSTITIAL" - "INTERNAL_REDIRECT_INTERSTITIAL" - "JAVASCRIPT_INTERSTITIAL" 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#directorySite".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this directory site.
   *   `settings` (*type:* `GoogleApi.DFAReporting.V33.Model.DirectorySiteSettings.t`, *default:* `nil`) - Directory site settings.
   *   `url` (*type:* `String.t`, *default:* `nil`) - URL of this directory site.

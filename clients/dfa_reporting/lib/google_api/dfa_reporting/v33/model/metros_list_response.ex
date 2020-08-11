@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.MetrosListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#metrosListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#metrosListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#metrosListResponse".
   *   `metros` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Metro.t)`, *default:* `nil`) - Metro collection.
   """
 

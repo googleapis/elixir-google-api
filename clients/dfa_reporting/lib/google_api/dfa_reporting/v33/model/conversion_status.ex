@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ConversionStatus do
 
   *   `conversion` (*type:* `GoogleApi.DFAReporting.V33.Model.Conversion.t`, *default:* `nil`) - The original conversion that was inserted or updated.
   *   `errors` (*type:* `list(GoogleApi.DFAReporting.V33.Model.ConversionError.t)`, *default:* `nil`) - A list of errors related to this conversion.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#conversionStatus`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionStatus".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionStatus".
   """
 
   use GoogleApi.Gax.ModelBase

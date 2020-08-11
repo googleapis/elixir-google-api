@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.DimensionFilter do
   ## Attributes
 
   *   `dimensionName` (*type:* `String.t`, *default:* `nil`) - The name of the dimension to filter.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#dimensionFilter`) - The kind of resource this is, in this case dfareporting#dimensionFilter.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#dimensionFilter.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the dimension to filter.
   """
 
