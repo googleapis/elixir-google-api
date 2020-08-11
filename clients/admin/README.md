@@ -1,8 +1,8 @@
 # GoogleApi.Admin
 
-Admin Data Transfer API client library.
+Admin SDK client library.
 
-Transfers user data from one user to another.
+Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.
 
 ## Installation
 
@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_admin, "~> 0.16"}]
+  [{:google_api_admin, "~> 0.17"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/admin-sdk/data-transfer/](https://developers.google.com/admin-sdk/data-transfer/).
+Product documentation is available at [http://developers.google.com/admin-sdk/](http://developers.google.com/admin-sdk/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_admin](https://hexdocs.pm/google_api_admin).

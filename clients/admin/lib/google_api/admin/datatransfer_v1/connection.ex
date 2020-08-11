@@ -31,5 +31,5 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Connection do
       "https://www.googleapis.com/auth/admin.datatransfer.readonly"
     ],
     otp_app: :google_api_admin,
-    base_url: "https://www.googleapis.com/admin/datatransfer/v1/"
+    base_url: "https://www.googleapis.com/"
 end
