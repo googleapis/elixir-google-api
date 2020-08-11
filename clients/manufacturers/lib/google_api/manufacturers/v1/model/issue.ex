@@ -21,17 +21,14 @@ defmodule GoogleApi.Manufacturers.V1.Model.Issue do
 
   ## Attributes
 
-  *   `attribute` (*type:* `String.t`, *default:* `nil`) - If present, the attribute that triggered the issue. For more information
-      about attributes, see
-      https://support.google.com/manufacturers/answer/6124116.
+  *   `attribute` (*type:* `String.t`, *default:* `nil`) - If present, the attribute that triggered the issue. For more information about attributes, see https://support.google.com/manufacturers/answer/6124116.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Longer description of the issue focused on how to resolve it.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The destination this issue applies to.
   *   `resolution` (*type:* `String.t`, *default:* `nil`) - What needs to happen to resolve the issue.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the issue.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when this issue appeared.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Short title describing the nature of the issue.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The server-generated type of the issue, for example,
-      “INCORRECT_TEXT_FORMATTING”, “IMAGE_NOT_SERVEABLE”, etc.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The server-generated type of the issue, for example, “INCORRECT_TEXT_FORMATTING”, “IMAGE_NOT_SERVEABLE”, etc.
   """
 
   use GoogleApi.Gax.ModelBase
