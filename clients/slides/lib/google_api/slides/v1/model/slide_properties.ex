@@ -17,24 +17,13 @@
 
 defmodule GoogleApi.Slides.V1.Model.SlideProperties do
   @moduledoc """
-  The properties of Page that are only
-  relevant for pages with page_type SLIDE.
+  The properties of Page that are only relevant for pages with page_type SLIDE.
 
   ## Attributes
 
-  *   `layoutObjectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the layout that this slide is based on. This property is
-      read-only.
-  *   `masterObjectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the master that this slide is based on. This property is
-      read-only.
-  *   `notesPage` (*type:* `GoogleApi.Slides.V1.Model.Page.t`, *default:* `nil`) - The notes page that this slide is associated with. It defines the visual
-      appearance of a notes page when printing or exporting slides with speaker
-      notes. A notes page inherits properties from the
-      notes master.
-      The placeholder shape with type BODY on the notes page contains the speaker
-      notes for this slide. The ID of this shape is identified by the
-      speakerNotesObjectId field.
-      The notes page is read-only except for the text content and styles of the
-      speaker notes shape. This property is read-only.
+  *   `layoutObjectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the layout that this slide is based on. This property is read-only.
+  *   `masterObjectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the master that this slide is based on. This property is read-only.
+  *   `notesPage` (*type:* `GoogleApi.Slides.V1.Model.Page.t`, *default:* `nil`) - The notes page that this slide is associated with. It defines the visual appearance of a notes page when printing or exporting slides with speaker notes. A notes page inherits properties from the notes master. The placeholder shape with type BODY on the notes page contains the speaker notes for this slide. The ID of this shape is identified by the speakerNotesObjectId field. The notes page is read-only except for the text content and styles of the speaker notes shape. This property is read-only.
   """
 
   use GoogleApi.Gax.ModelBase

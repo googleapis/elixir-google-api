@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.MasterProperties do
   @moduledoc """
-  The properties of Page that are only
-  relevant for pages with page_type MASTER.
+  The properties of Page that are only relevant for pages with page_type MASTER.
 
   ## Attributes
 

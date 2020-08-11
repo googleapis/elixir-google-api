@@ -21,36 +21,17 @@ defmodule GoogleApi.Slides.V1.Model.PageElement do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the page element. Combined with title to display alt
-      text.
-
-      The field is not supported for Group
-      elements.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the page element. Combined with title to display alt text. The field is not supported for Group elements.
   *   `elementGroup` (*type:* `GoogleApi.Slides.V1.Model.Group.t`, *default:* `nil`) - A collection of page elements joined as a single unit.
   *   `image` (*type:* `GoogleApi.Slides.V1.Model.Image.t`, *default:* `nil`) - An image page element.
   *   `line` (*type:* `GoogleApi.Slides.V1.Model.Line.t`, *default:* `nil`) - A line page element.
-  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID for this page element. Object IDs used by
-      google.apps.slides.v1.Page and
-      google.apps.slides.v1.PageElement share the same namespace.
+  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID for this page element. Object IDs used by google.apps.slides.v1.Page and google.apps.slides.v1.PageElement share the same namespace.
   *   `shape` (*type:* `GoogleApi.Slides.V1.Model.Shape.t`, *default:* `nil`) - A generic shape.
-  *   `sheetsChart` (*type:* `GoogleApi.Slides.V1.Model.SheetsChart.t`, *default:* `nil`) - A linked chart embedded from Google Sheets. Unlinked charts are
-      represented as images.
+  *   `sheetsChart` (*type:* `GoogleApi.Slides.V1.Model.SheetsChart.t`, *default:* `nil`) - A linked chart embedded from Google Sheets. Unlinked charts are represented as images.
   *   `size` (*type:* `GoogleApi.Slides.V1.Model.Size.t`, *default:* `nil`) - The size of the page element.
   *   `table` (*type:* `GoogleApi.Slides.V1.Model.Table.t`, *default:* `nil`) - A table page element.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the page element. Combined with description to display alt
-      text.
-
-      The field is not supported for Group
-      elements.
-  *   `transform` (*type:* `GoogleApi.Slides.V1.Model.AffineTransform.t`, *default:* `nil`) - The transform of the page element.
-
-      The visual appearance of the page element is determined by its absolute
-      transform. To compute the absolute transform, preconcatenate a page
-      element's transform with the transforms of all of its parent groups. If the
-      page element is not in a group, its absolute transform is the same as the
-      value in this field.
-
-      The initial transform for the newly created Group is always the identity transform.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the page element. Combined with description to display alt text. The field is not supported for Group elements.
+  *   `transform` (*type:* `GoogleApi.Slides.V1.Model.AffineTransform.t`, *default:* `nil`) - The transform of the page element. The visual appearance of the page element is determined by its absolute transform. To compute the absolute transform, preconcatenate a page element's transform with the transforms of all of its parent groups. If the page element is not in a group, its absolute transform is the same as the value in this field. The initial transform for the newly created Group is always the identity transform.
   *   `video` (*type:* `GoogleApi.Slides.V1.Model.Video.t`, *default:* `nil`) - A video page element.
   *   `wordArt` (*type:* `GoogleApi.Slides.V1.Model.WordArt.t`, *default:* `nil`) - A word art page element.
   """

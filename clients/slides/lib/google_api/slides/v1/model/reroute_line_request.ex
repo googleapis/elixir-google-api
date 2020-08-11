@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.Slides.V1.Model.RerouteLineRequest do
   @moduledoc """
-  Reroutes a line such that it's connected at the
-  two closest connection sites on the connected page elements.
+  Reroutes a line such that it's connected at the two closest connection sites on the connected page elements.
 
   ## Attributes
 
-  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the line to reroute.
-
-      Only a line with a category
-      indicating it is a "connector" can be rerouted. The start and end
-      connections of the line must be on different page elements.
+  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the line to reroute. Only a line with a category indicating it is a "connector" can be rerouted. The start and end connections of the line must be on different page elements.
   """
 
   use GoogleApi.Gax.ModelBase

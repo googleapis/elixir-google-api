@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.TextRun do
   @moduledoc """
-  A TextElement kind that represents a run of text that all has the same
-  styling.
+  A TextElement kind that represents a run of text that all has the same styling.
 
   ## Attributes
 

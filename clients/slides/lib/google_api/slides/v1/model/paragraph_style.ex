@@ -17,40 +17,18 @@
 
 defmodule GoogleApi.Slides.V1.Model.ParagraphStyle do
   @moduledoc """
-  Styles that apply to a whole paragraph.
-
-  If this text is contained in a shape with a parent placeholder, then these paragraph styles may be
-  inherited from the parent. Which paragraph styles are inherited depend on the
-  nesting level of lists:
-
-  * A paragraph not in a list will inherit its paragraph style from the
-    paragraph at the 0 nesting level of the list inside the parent placeholder.
-  * A paragraph in a list will inherit its paragraph style from the paragraph
-    at its corresponding nesting level of the list inside the parent
-    placeholder.
-
-  Inherited paragraph styles are represented as unset fields in this message.
+  Styles that apply to a whole paragraph. If this text is contained in a shape with a parent placeholder, then these paragraph styles may be inherited from the parent. Which paragraph styles are inherited depend on the nesting level of lists: * A paragraph not in a list will inherit its paragraph style from the paragraph at the 0 nesting level of the list inside the parent placeholder. * A paragraph in a list will inherit its paragraph style from the paragraph at its corresponding nesting level of the list inside the parent placeholder. Inherited paragraph styles are represented as unset fields in this message.
 
   ## Attributes
 
   *   `alignment` (*type:* `String.t`, *default:* `nil`) - The text alignment for this paragraph.
-  *   `direction` (*type:* `String.t`, *default:* `nil`) - The text direction of this paragraph. If unset, the value defaults to
-      LEFT_TO_RIGHT since
-      text direction is not inherited.
-  *   `indentEnd` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount indentation for the paragraph on the side that corresponds to
-      the end of the text, based on the current text direction. If unset, the
-      value is inherited from the parent.
-  *   `indentFirstLine` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount of indentation for the start of the first line of the paragraph.
-      If unset, the value is inherited from the parent.
-  *   `indentStart` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount indentation for the paragraph on the side that corresponds to
-      the start of the text, based on the current text direction. If unset, the
-      value is inherited from the parent.
-  *   `lineSpacing` (*type:* `number()`, *default:* `nil`) - The amount of space between lines, as a percentage of normal, where normal
-      is represented as 100.0. If unset, the value is inherited from the parent.
-  *   `spaceAbove` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount of extra space above the paragraph. If unset, the value is
-      inherited from the parent.
-  *   `spaceBelow` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount of extra space below the paragraph. If unset, the value is
-      inherited from the parent.
+  *   `direction` (*type:* `String.t`, *default:* `nil`) - The text direction of this paragraph. If unset, the value defaults to LEFT_TO_RIGHT since text direction is not inherited.
+  *   `indentEnd` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount indentation for the paragraph on the side that corresponds to the end of the text, based on the current text direction. If unset, the value is inherited from the parent.
+  *   `indentFirstLine` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount of indentation for the start of the first line of the paragraph. If unset, the value is inherited from the parent.
+  *   `indentStart` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount indentation for the paragraph on the side that corresponds to the start of the text, based on the current text direction. If unset, the value is inherited from the parent.
+  *   `lineSpacing` (*type:* `number()`, *default:* `nil`) - The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent.
+  *   `spaceAbove` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount of extra space above the paragraph. If unset, the value is inherited from the parent.
+  *   `spaceBelow` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The amount of extra space below the paragraph. If unset, the value is inherited from the parent.
   *   `spacingMode` (*type:* `String.t`, *default:* `nil`) - The spacing mode for the paragraph.
   """
 

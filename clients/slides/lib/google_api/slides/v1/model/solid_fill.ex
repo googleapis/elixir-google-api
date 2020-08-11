@@ -17,21 +17,11 @@
 
 defmodule GoogleApi.Slides.V1.Model.SolidFill do
   @moduledoc """
-  A solid color fill. The page or page element is filled entirely with the
-  specified color value.
-
-  If any field is unset, its value may be inherited from a parent placeholder
-  if it exists.
+  A solid color fill. The page or page element is filled entirely with the specified color value. If any field is unset, its value may be inherited from a parent placeholder if it exists.
 
   ## Attributes
 
-  *   `alpha` (*type:* `number()`, *default:* `nil`) - The fraction of this `color` that should be applied to the pixel.
-      That is, the final pixel color is defined by the equation:
-
-        pixel color = alpha * (color) + (1.0 - alpha) * (background color)
-
-      This means that a value of 1.0 corresponds to a solid color, whereas
-      a value of 0.0 corresponds to a completely transparent color.
+  *   `alpha` (*type:* `number()`, *default:* `nil`) - The fraction of this `color` that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha * (color) + (1.0 - alpha) * (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color.
   *   `color` (*type:* `GoogleApi.Slides.V1.Model.OpaqueColor.t`, *default:* `nil`) - The color value of the solid fill.
   """
 

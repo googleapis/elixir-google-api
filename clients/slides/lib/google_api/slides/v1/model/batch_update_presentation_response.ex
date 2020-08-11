@@ -22,8 +22,7 @@ defmodule GoogleApi.Slides.V1.Model.BatchUpdatePresentationResponse do
   ## Attributes
 
   *   `presentationId` (*type:* `String.t`, *default:* `nil`) - The presentation the updates were applied to.
-  *   `replies` (*type:* `list(GoogleApi.Slides.V1.Model.Response.t)`, *default:* `nil`) - The reply of the updates.  This maps 1:1 with the updates, although
-      replies to some requests may be empty.
+  *   `replies` (*type:* `list(GoogleApi.Slides.V1.Model.Response.t)`, *default:* `nil`) - The reply of the updates. This maps 1:1 with the updates, although replies to some requests may be empty.
   *   `writeControl` (*type:* `GoogleApi.Slides.V1.Model.WriteControl.t`, *default:* `nil`) - The updated write control after applying the request.
   """
 

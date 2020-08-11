@@ -21,17 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest do
 
   ## Attributes
 
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.
-
-      At least one field must be specified. The root `lineProperties` is
-      implied and should not be specified. A single `"*"` can be used as
-      short-hand for listing every field.
-
-      For example to update the line solid fill color, set `fields` to
-      `"lineFill.solidFill.color"`.
-
-      To reset a property to its default value, include its field name in the
-      field mask but leave the field itself unset.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `lineProperties` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field. For example to update the line solid fill color, set `fields` to `"lineFill.solidFill.color"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset.
   *   `lineProperties` (*type:* `GoogleApi.Slides.V1.Model.LineProperties.t`, *default:* `nil`) - The line properties to update.
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the line the update is applied to.
   """

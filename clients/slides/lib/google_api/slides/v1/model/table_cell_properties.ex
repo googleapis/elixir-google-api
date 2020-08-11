@@ -21,10 +21,8 @@ defmodule GoogleApi.Slides.V1.Model.TableCellProperties do
 
   ## Attributes
 
-  *   `contentAlignment` (*type:* `String.t`, *default:* `nil`) - The alignment of the content in the table cell. The default alignment
-      matches the alignment for newly created table cells in the Slides editor.
-  *   `tableCellBackgroundFill` (*type:* `GoogleApi.Slides.V1.Model.TableCellBackgroundFill.t`, *default:* `nil`) - The background fill of the table cell. The default fill matches the fill
-      for newly created table cells in the Slides editor.
+  *   `contentAlignment` (*type:* `String.t`, *default:* `nil`) - The alignment of the content in the table cell. The default alignment matches the alignment for newly created table cells in the Slides editor.
+  *   `tableCellBackgroundFill` (*type:* `GoogleApi.Slides.V1.Model.TableCellBackgroundFill.t`, *default:* `nil`) - The background fill of the table cell. The default fill matches the fill for newly created table cells in the Slides editor.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Slides.V1.Model.TextContent do
   @moduledoc """
-  The general text content. The text must reside in a compatible shape (e.g.
-  text box or rectangle) or a table cell in a page.
+  The general text content. The text must reside in a compatible shape (e.g. text box or rectangle) or a table cell in a page.
 
   ## Attributes
 
   *   `lists` (*type:* `%{optional(String.t) => GoogleApi.Slides.V1.Model.List.t}`, *default:* `nil`) - The bulleted lists contained in this text, keyed by list ID.
-  *   `textElements` (*type:* `list(GoogleApi.Slides.V1.Model.TextElement.t)`, *default:* `nil`) - The text contents broken down into its component parts, including styling
-      information. This property is read-only.
+  *   `textElements` (*type:* `list(GoogleApi.Slides.V1.Model.TextElement.t)`, *default:* `nil`) - The text contents broken down into its component parts, including styling information. This property is read-only.
   """
 
   use GoogleApi.Gax.ModelBase

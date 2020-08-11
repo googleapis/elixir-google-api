@@ -17,26 +17,14 @@
 
 defmodule GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest do
   @moduledoc """
-  Replaces all shapes that match the given criteria with the provided Google
-  Sheets chart. The chart will be scaled and centered to fit within the bounds
-  of the original shape.
-
-  NOTE: Replacing shapes with a chart requires at least one of the
-  spreadsheets.readonly, spreadsheets, drive.readonly, or drive OAuth scopes.
+  Replaces all shapes that match the given criteria with the provided Google Sheets chart. The chart will be scaled and centered to fit within the bounds of the original shape. NOTE: Replacing shapes with a chart requires at least one of the spreadsheets.readonly, spreadsheets, drive.readonly, or drive OAuth scopes.
 
   ## Attributes
 
   *   `chartId` (*type:* `integer()`, *default:* `nil`) - The ID of the specific chart in the Google Sheets spreadsheet.
-  *   `containsText` (*type:* `GoogleApi.Slides.V1.Model.SubstringMatchCriteria.t`, *default:* `nil`) - The criteria that the shapes must match in order to be replaced. The
-      request will replace all of the shapes that contain the given text.
-  *   `linkingMode` (*type:* `String.t`, *default:* `nil`) - The mode with which the chart is linked to the source spreadsheet. When
-      not specified, the chart will be an image that is not linked.
-  *   `pageObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - If non-empty, limits the matches to page elements only on the given pages.
-
-      Returns a 400 bad request error if given the page object ID of a
-      notes page or a
-      notes master, or if a
-      page with that object ID doesn't exist in the presentation.
+  *   `containsText` (*type:* `GoogleApi.Slides.V1.Model.SubstringMatchCriteria.t`, *default:* `nil`) - The criteria that the shapes must match in order to be replaced. The request will replace all of the shapes that contain the given text.
+  *   `linkingMode` (*type:* `String.t`, *default:* `nil`) - The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked.
+  *   `pageObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn't exist in the presentation.
   *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Sheets spreadsheet that contains the chart.
   """
 

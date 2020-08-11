@@ -21,8 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.ParagraphMarker do
 
   ## Attributes
 
-  *   `bullet` (*type:* `GoogleApi.Slides.V1.Model.Bullet.t`, *default:* `nil`) - The bullet for this paragraph. If not present, the paragraph does not
-      belong to a list.
+  *   `bullet` (*type:* `GoogleApi.Slides.V1.Model.Bullet.t`, *default:* `nil`) - The bullet for this paragraph. If not present, the paragraph does not belong to a list.
   *   `style` (*type:* `GoogleApi.Slides.V1.Model.ParagraphStyle.t`, *default:* `nil`) - The paragraph's style
   """
 

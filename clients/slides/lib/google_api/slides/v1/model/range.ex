@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Slides.V1.Model.Range do
   @moduledoc """
-  Specifies a contiguous range of an indexed collection, such as characters in
-  text.
+  Specifies a contiguous range of an indexed collection, such as characters in text.
 
   ## Attributes
 
-  *   `endIndex` (*type:* `integer()`, *default:* `nil`) - The optional zero-based index of the end of the collection.
-      Required for `FIXED_RANGE` ranges.
-  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The optional zero-based index of the beginning of the collection.
-      Required for `FIXED_RANGE` and `FROM_START_INDEX` ranges.
+  *   `endIndex` (*type:* `integer()`, *default:* `nil`) - The optional zero-based index of the end of the collection. Required for `FIXED_RANGE` ranges.
+  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The optional zero-based index of the beginning of the collection. Required for `FIXED_RANGE` and `FROM_START_INDEX` ranges.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of range.
   """
 

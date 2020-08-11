@@ -22,11 +22,7 @@ defmodule GoogleApi.Slides.V1.Model.ReplaceAllTextRequest do
   ## Attributes
 
   *   `containsText` (*type:* `GoogleApi.Slides.V1.Model.SubstringMatchCriteria.t`, *default:* `nil`) - Finds text in a shape matching this substring.
-  *   `pageObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - If non-empty, limits the matches to page elements only on the given pages.
-
-      Returns a 400 bad request error if given the page object ID of a
-      notes master,
-      or if a page with that object ID doesn't exist in the presentation.
+  *   `pageObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes master, or if a page with that object ID doesn't exist in the presentation.
   *   `replaceText` (*type:* `String.t`, *default:* `nil`) - The text that will replace the matched text.
   """
 

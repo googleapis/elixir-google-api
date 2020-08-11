@@ -21,21 +21,14 @@ defmodule GoogleApi.Slides.V1.Model.ImageProperties do
 
   ## Attributes
 
-  *   `brightness` (*type:* `number()`, *default:* `nil`) - The brightness effect of the image. The value should be in the interval
-      [-1.0, 1.0], where 0 means no effect. This property is read-only.
-  *   `contrast` (*type:* `number()`, *default:* `nil`) - The contrast effect of the image. The value should be in the interval
-      [-1.0, 1.0], where 0 means no effect. This property is read-only.
-  *   `cropProperties` (*type:* `GoogleApi.Slides.V1.Model.CropProperties.t`, *default:* `nil`) - The crop properties of the image. If not set, the image is not cropped.
-      This property is read-only.
+  *   `brightness` (*type:* `number()`, *default:* `nil`) - The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.
+  *   `contrast` (*type:* `number()`, *default:* `nil`) - The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.
+  *   `cropProperties` (*type:* `GoogleApi.Slides.V1.Model.CropProperties.t`, *default:* `nil`) - The crop properties of the image. If not set, the image is not cropped. This property is read-only.
   *   `link` (*type:* `GoogleApi.Slides.V1.Model.Link.t`, *default:* `nil`) - The hyperlink destination of the image. If unset, there is no link.
   *   `outline` (*type:* `GoogleApi.Slides.V1.Model.Outline.t`, *default:* `nil`) - The outline of the image. If not set, the image has no outline.
-  *   `recolor` (*type:* `GoogleApi.Slides.V1.Model.Recolor.t`, *default:* `nil`) - The recolor effect of the image. If not set, the image is not recolored.
-      This property is read-only.
-  *   `shadow` (*type:* `GoogleApi.Slides.V1.Model.Shadow.t`, *default:* `nil`) - The shadow of the image. If not set, the image has no shadow. This property
-      is read-only.
-  *   `transparency` (*type:* `number()`, *default:* `nil`) - The transparency effect of the image. The value should be in the interval
-      [0.0, 1.0], where 0 means no effect and 1 means completely transparent.
-      This property is read-only.
+  *   `recolor` (*type:* `GoogleApi.Slides.V1.Model.Recolor.t`, *default:* `nil`) - The recolor effect of the image. If not set, the image is not recolored. This property is read-only.
+  *   `shadow` (*type:* `GoogleApi.Slides.V1.Model.Shadow.t`, *default:* `nil`) - The shadow of the image. If not set, the image has no shadow. This property is read-only.
+  *   `transparency` (*type:* `number()`, *default:* `nil`) - The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent. This property is read-only.
   """
 
   use GoogleApi.Gax.ModelBase

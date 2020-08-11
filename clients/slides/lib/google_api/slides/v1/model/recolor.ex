@@ -21,17 +21,8 @@ defmodule GoogleApi.Slides.V1.Model.Recolor do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the recolor effect.
-
-      The name is determined from the `recolor_stops` by matching the gradient
-      against the colors in the page's current color scheme. This property is
-      read-only.
-  *   `recolorStops` (*type:* `list(GoogleApi.Slides.V1.Model.ColorStop.t)`, *default:* `nil`) - The recolor effect is represented by a gradient, which is a list of color
-      stops.
-
-      The colors in the gradient will replace the corresponding colors at
-      the same position in the color palette and apply to the image. This
-      property is read-only.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the recolor effect. The name is determined from the `recolor_stops` by matching the gradient against the colors in the page's current color scheme. This property is read-only.
+  *   `recolorStops` (*type:* `list(GoogleApi.Slides.V1.Model.ColorStop.t)`, *default:* `nil`) - The recolor effect is represented by a gradient, which is a list of color stops. The colors in the gradient will replace the corresponding colors at the same position in the color palette and apply to the image. This property is read-only.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,24 +17,12 @@
 
 defmodule GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest do
   @moduledoc """
-  Creates bullets for all of the paragraphs that overlap with the given
-  text index range.
-
-  The nesting level of each paragraph will be determined by counting leading
-  tabs in front of each paragraph. To avoid excess space between the bullet and
-  the corresponding paragraph, these leading tabs are removed by this request.
-  This may change the indices of parts of the text.
-
-  If the paragraph immediately before paragraphs being updated is in a list
-  with a matching preset, the paragraphs being updated are added to that
-  preceding list.
+  Creates bullets for all of the paragraphs that overlap with the given text index range. The nesting level of each paragraph will be determined by counting leading tabs in front of each paragraph. To avoid excess space between the bullet and the corresponding paragraph, these leading tabs are removed by this request. This may change the indices of parts of the text. If the paragraph immediately before paragraphs being updated is in a list with a matching preset, the paragraphs being updated are added to that preceding list.
 
   ## Attributes
 
-  *   `bulletPreset` (*type:* `String.t`, *default:* `nil`) - The kinds of bullet glyphs to be used. Defaults to the
-      `BULLET_DISC_CIRCLE_SQUARE` preset.
-  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The optional table cell location if the text to be modified is in a table
-      cell. If present, the object_id must refer to a table.
+  *   `bulletPreset` (*type:* `String.t`, *default:* `nil`) - The kinds of bullet glyphs to be used. Defaults to the `BULLET_DISC_CIRCLE_SQUARE` preset.
+  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The optional table cell location if the text to be modified is in a table cell. If present, the object_id must refer to a table.
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the shape or table containing the text to add bullets to.
   *   `textRange` (*type:* `GoogleApi.Slides.V1.Model.Range.t`, *default:* `nil`) - The range of text to apply the bullet presets to, based on TextElement indexes.
   """

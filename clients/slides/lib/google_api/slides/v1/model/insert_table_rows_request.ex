@@ -21,15 +21,8 @@ defmodule GoogleApi.Slides.V1.Model.InsertTableRowsRequest do
 
   ## Attributes
 
-  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which rows will be inserted.
-
-      A new row will be inserted above (or below) the row where the reference
-      cell is. If the reference cell is a merged cell, a new row will be
-      inserted above (or below) the merged cell.
-  *   `insertBelow` (*type:* `boolean()`, *default:* `nil`) - Whether to insert new rows below the reference cell location.
-
-      - `True`: insert below the cell.
-      - `False`: insert above the cell.
+  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which rows will be inserted. A new row will be inserted above (or below) the row where the reference cell is. If the reference cell is a merged cell, a new row will be inserted above (or below) the merged cell.
+  *   `insertBelow` (*type:* `boolean()`, *default:* `nil`) - Whether to insert new rows below the reference cell location. - `True`: insert below the cell. - `False`: insert above the cell.
   *   `number` (*type:* `integer()`, *default:* `nil`) - The number of rows to be inserted. Maximum 20 per request.
   *   `tableObjectId` (*type:* `String.t`, *default:* `nil`) - The table to insert rows into.
   """

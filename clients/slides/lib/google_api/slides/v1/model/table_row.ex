@@ -22,12 +22,7 @@ defmodule GoogleApi.Slides.V1.Model.TableRow do
   ## Attributes
 
   *   `rowHeight` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - Height of a row.
-  *   `tableCells` (*type:* `list(GoogleApi.Slides.V1.Model.TableCell.t)`, *default:* `nil`) - Properties and contents of each cell.
-
-      Cells that span multiple columns are represented only once with a
-      column_span greater
-      than 1. As a result, the length of this collection does not always match
-      the number of columns of the entire table.
+  *   `tableCells` (*type:* `list(GoogleApi.Slides.V1.Model.TableCell.t)`, *default:* `nil`) - Properties and contents of each cell. Cells that span multiple columns are represented only once with a column_span greater than 1. As a result, the length of this collection does not always match the number of columns of the entire table.
   *   `tableRowProperties` (*type:* `GoogleApi.Slides.V1.Model.TableRowProperties.t`, *default:* `nil`) - Properties of the row.
   """
 

@@ -21,11 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.DeleteTableColumnRequest do
 
   ## Attributes
 
-  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which a column will be deleted.
-
-      The column this cell spans will be deleted. If this is a merged cell,
-      multiple columns will be deleted. If no columns remain in the table after
-      this deletion, the whole table is deleted.
+  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which a column will be deleted. The column this cell spans will be deleted. If this is a merged cell, multiple columns will be deleted. If no columns remain in the table after this deletion, the whole table is deleted.
   *   `tableObjectId` (*type:* `String.t`, *default:* `nil`) - The table to delete columns from.
   """
 

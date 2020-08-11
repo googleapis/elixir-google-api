@@ -35,22 +35,19 @@ defmodule GoogleApi.Slides.V1.Model.Request do
   *   `replaceImage` (*type:* `GoogleApi.Slides.V1.Model.ReplaceImageRequest.t`, *default:* `nil`) - Replaces an existing image with a new image.
   *   `createSlide` (*type:* `GoogleApi.Slides.V1.Model.CreateSlideRequest.t`, *default:* `nil`) - Creates a new slide.
   *   `createTable` (*type:* `GoogleApi.Slides.V1.Model.CreateTableRequest.t`, *default:* `nil`) - Creates a new table.
-  *   `updateTableColumnProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Table
-      column.
+  *   `updateTableColumnProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Table column.
   *   `createVideo` (*type:* `GoogleApi.Slides.V1.Model.CreateVideoRequest.t`, *default:* `nil`) - Creates a video.
   *   `createLine` (*type:* `GoogleApi.Slides.V1.Model.CreateLineRequest.t`, *default:* `nil`) - Creates a line.
   *   `deleteTableRow` (*type:* `GoogleApi.Slides.V1.Model.DeleteTableRowRequest.t`, *default:* `nil`) - Deletes a row from a table.
   *   `ungroupObjects` (*type:* `GoogleApi.Slides.V1.Model.UngroupObjectsRequest.t`, *default:* `nil`) - Ungroups objects, such as groups.
-  *   `rerouteLine` (*type:* `GoogleApi.Slides.V1.Model.RerouteLineRequest.t`, *default:* `nil`) - Reroutes a line such that it's connected
-      at the two closest connection sites on the connected page elements.
+  *   `rerouteLine` (*type:* `GoogleApi.Slides.V1.Model.RerouteLineRequest.t`, *default:* `nil`) - Reroutes a line such that it's connected at the two closest connection sites on the connected page elements.
   *   `updateTableRowProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateTableRowPropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Table row.
   *   `updateTextStyle` (*type:* `GoogleApi.Slides.V1.Model.UpdateTextStyleRequest.t`, *default:* `nil`) - Updates the styling of text within a Shape or Table.
   *   `updateImageProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest.t`, *default:* `nil`) - Updates the properties of an Image.
   *   `insertTableRows` (*type:* `GoogleApi.Slides.V1.Model.InsertTableRowsRequest.t`, *default:* `nil`) - Inserts rows into a table.
   *   `createImage` (*type:* `GoogleApi.Slides.V1.Model.CreateImageRequest.t`, *default:* `nil`) - Creates an image.
   *   `replaceAllShapesWithImage` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest.t`, *default:* `nil`) - Replaces all shapes matching some criteria with an image.
-  *   `updatePageElementAltText` (*type:* `GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest.t`, *default:* `nil`) - Updates the alt text title and/or description of a
-      page element.
+  *   `updatePageElementAltText` (*type:* `GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest.t`, *default:* `nil`) - Updates the alt text title and/or description of a page element.
   *   `duplicateObject` (*type:* `GoogleApi.Slides.V1.Model.DuplicateObjectRequest.t`, *default:* `nil`) - Duplicates a slide or page element.
   *   `replaceAllText` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllTextRequest.t`, *default:* `nil`) - Replaces all instances of specified text.
   *   `updateVideoProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Video.

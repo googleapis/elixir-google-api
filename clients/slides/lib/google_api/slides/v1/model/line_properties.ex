@@ -17,28 +17,17 @@
 
 defmodule GoogleApi.Slides.V1.Model.LineProperties do
   @moduledoc """
-  The properties of the Line.
-
-  When unset, these fields default to values that match the appearance of
-  new lines created in the Slides editor.
+  The properties of the Line. When unset, these fields default to values that match the appearance of new lines created in the Slides editor.
 
   ## Attributes
 
   *   `dashStyle` (*type:* `String.t`, *default:* `nil`) - The dash style of the line.
   *   `endArrow` (*type:* `String.t`, *default:* `nil`) - The style of the arrow at the end of the line.
-  *   `endConnection` (*type:* `GoogleApi.Slides.V1.Model.LineConnection.t`, *default:* `nil`) - The connection at the end of the line. If unset, there is no connection.
-
-      Only lines with a Type indicating it is
-      a "connector" can have an `end_connection`.
-  *   `lineFill` (*type:* `GoogleApi.Slides.V1.Model.LineFill.t`, *default:* `nil`) - The fill of the line. The default line fill matches the defaults for new
-      lines created in the Slides editor.
+  *   `endConnection` (*type:* `GoogleApi.Slides.V1.Model.LineConnection.t`, *default:* `nil`) - The connection at the end of the line. If unset, there is no connection. Only lines with a Type indicating it is a "connector" can have an `end_connection`.
+  *   `lineFill` (*type:* `GoogleApi.Slides.V1.Model.LineFill.t`, *default:* `nil`) - The fill of the line. The default line fill matches the defaults for new lines created in the Slides editor.
   *   `link` (*type:* `GoogleApi.Slides.V1.Model.Link.t`, *default:* `nil`) - The hyperlink destination of the line. If unset, there is no link.
   *   `startArrow` (*type:* `String.t`, *default:* `nil`) - The style of the arrow at the beginning of the line.
-  *   `startConnection` (*type:* `GoogleApi.Slides.V1.Model.LineConnection.t`, *default:* `nil`) - The connection at the beginning of the line. If unset, there is no
-      connection.
-
-      Only lines with a Type indicating it is
-      a "connector" can have a `start_connection`.
+  *   `startConnection` (*type:* `GoogleApi.Slides.V1.Model.LineConnection.t`, *default:* `nil`) - The connection at the beginning of the line. If unset, there is no connection. Only lines with a Type indicating it is a "connector" can have a `start_connection`.
   *   `weight` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The thickness of the line.
   """
 

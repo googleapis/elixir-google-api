@@ -21,12 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.PageBackgroundFill do
 
   ## Attributes
 
-  *   `propertyState` (*type:* `String.t`, *default:* `nil`) - The background fill property state.
-
-      Updating the fill on a page will implicitly update this field to
-      `RENDERED`, unless another value is specified in the same request. To
-      have no fill on a page, set this field to `NOT_RENDERED`. In this case,
-      any other fill fields set in the same request will be ignored.
+  *   `propertyState` (*type:* `String.t`, *default:* `nil`) - The background fill property state. Updating the fill on a page will implicitly update this field to `RENDERED`, unless another value is specified in the same request. To have no fill on a page, set this field to `NOT_RENDERED`. In this case, any other fill fields set in the same request will be ignored.
   *   `solidFill` (*type:* `GoogleApi.Slides.V1.Model.SolidFill.t`, *default:* `nil`) - Solid color fill.
   *   `stretchedPictureFill` (*type:* `GoogleApi.Slides.V1.Model.StretchedPictureFill.t`, *default:* `nil`) - Stretched picture fill.
   """

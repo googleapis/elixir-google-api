@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Slides.V1.Model.Line do
   @moduledoc """
-  A PageElement kind representing a
-  non-connector line, straight connector, curved connector, or bent connector.
+  A PageElement kind representing a non-connector line, straight connector, curved connector, or bent connector.
 
   ## Attributes
 
-  *   `lineCategory` (*type:* `String.t`, *default:* `nil`) - The category of the line.
-
-      It matches the `category` specified in CreateLineRequest, and can be updated with
-      UpdateLineCategoryRequest.
+  *   `lineCategory` (*type:* `String.t`, *default:* `nil`) - The category of the line. It matches the `category` specified in CreateLineRequest, and can be updated with UpdateLineCategoryRequest.
   *   `lineProperties` (*type:* `GoogleApi.Slides.V1.Model.LineProperties.t`, *default:* `nil`) - The properties of the line.
   *   `lineType` (*type:* `String.t`, *default:* `nil`) - The type of the line.
   """

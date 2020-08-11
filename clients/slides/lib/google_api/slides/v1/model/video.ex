@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.Slides.V1.Model.Video do
   @moduledoc """
-  A PageElement kind representing a
-  video.
+  A PageElement kind representing a video.
 
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - The video source's unique identifier for this video.
   *   `source` (*type:* `String.t`, *default:* `nil`) - The video source.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - An URL to a video. The URL is valid as long as the source video exists and
-      sharing settings do not change.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - An URL to a video. The URL is valid as long as the source video exists and sharing settings do not change.
   *   `videoProperties` (*type:* `GoogleApi.Slides.V1.Model.VideoProperties.t`, *default:* `nil`) - The properties of the video.
   """
 

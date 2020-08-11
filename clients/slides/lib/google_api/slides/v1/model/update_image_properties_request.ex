@@ -21,17 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest do
 
   ## Attributes
 
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.
-
-      At least one field must be specified. The root `imageProperties` is
-      implied and should not be specified. A single `"*"` can be used as
-      short-hand for listing every field.
-
-      For example to update the image outline color, set `fields` to
-      `"outline.outlineFill.solidFill.color"`.
-
-      To reset a property to its default value, include its field name in the
-      field mask but leave the field itself unset.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `imageProperties` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field. For example to update the image outline color, set `fields` to `"outline.outlineFill.solidFill.color"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset.
   *   `imageProperties` (*type:* `GoogleApi.Slides.V1.Model.ImageProperties.t`, *default:* `nil`) - The image properties to update.
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the image the updates are applied to.
   """

@@ -17,21 +17,12 @@
 
 defmodule GoogleApi.Slides.V1.Model.InsertTableColumnsRequest do
   @moduledoc """
-  Inserts columns into a table.
-
-  Other columns in the table will be resized to fit the new column.
+  Inserts columns into a table. Other columns in the table will be resized to fit the new column.
 
   ## Attributes
 
-  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which columns will be inserted.
-
-      A new column will be inserted to the left (or right) of the column where
-      the reference cell is. If the reference cell is a merged cell, a new
-      column will be inserted to the left (or right) of the merged cell.
-  *   `insertRight` (*type:* `boolean()`, *default:* `nil`) - Whether to insert new columns to the right of the reference cell location.
-
-      - `True`: insert to the right.
-      - `False`: insert to the left.
+  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which columns will be inserted. A new column will be inserted to the left (or right) of the column where the reference cell is. If the reference cell is a merged cell, a new column will be inserted to the left (or right) of the merged cell.
+  *   `insertRight` (*type:* `boolean()`, *default:* `nil`) - Whether to insert new columns to the right of the reference cell location. - `True`: insert to the right. - `False`: insert to the left.
   *   `number` (*type:* `integer()`, *default:* `nil`) - The number of columns to be inserted. Maximum 20 per request.
   *   `tableObjectId` (*type:* `String.t`, *default:* `nil`) - The table to insert columns into.
   """

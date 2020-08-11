@@ -17,34 +17,15 @@
 
 defmodule GoogleApi.Slides.V1.Model.ShapeProperties do
   @moduledoc """
-  The properties of a Shape.
-
-  If the shape is a placeholder shape as determined by the
-  placeholder field, then these
-  properties may be inherited from a parent placeholder shape.
-  Determining the rendered value of the property depends on the corresponding
-  property_state field value.
+  The properties of a Shape. If the shape is a placeholder shape as determined by the placeholder field, then these properties may be inherited from a parent placeholder shape. Determining the rendered value of the property depends on the corresponding property_state field value.
 
   ## Attributes
 
-  *   `contentAlignment` (*type:* `String.t`, *default:* `nil`) - The alignment of the content in the shape. If unspecified,
-      the alignment is inherited from a parent placeholder if it exists. If the
-      shape has no parent, the default alignment matches the alignment for new
-      shapes created in the Slides editor.
-  *   `link` (*type:* `GoogleApi.Slides.V1.Model.Link.t`, *default:* `nil`) - The hyperlink destination of the shape. If unset, there is no link. Links
-      are not inherited from parent placeholders.
-  *   `outline` (*type:* `GoogleApi.Slides.V1.Model.Outline.t`, *default:* `nil`) - The outline of the shape. If unset, the outline is inherited from a
-      parent placeholder if it exists. If the shape has no parent, then the
-      default outline depends on the shape type, matching the defaults for
-      new shapes created in the Slides editor.
-  *   `shadow` (*type:* `GoogleApi.Slides.V1.Model.Shadow.t`, *default:* `nil`) - The shadow properties of the shape. If unset, the shadow is inherited from
-      a parent placeholder if it exists. If the shape has no parent, then the
-      default shadow matches the defaults for new shapes created in the Slides
-      editor. This property is read-only.
-  *   `shapeBackgroundFill` (*type:* `GoogleApi.Slides.V1.Model.ShapeBackgroundFill.t`, *default:* `nil`) - The background fill of the shape. If unset, the background fill is
-      inherited from a parent placeholder if it exists. If the shape has no
-      parent, then the default background fill depends on the shape type,
-      matching the defaults for new shapes created in the Slides editor.
+  *   `contentAlignment` (*type:* `String.t`, *default:* `nil`) - The alignment of the content in the shape. If unspecified, the alignment is inherited from a parent placeholder if it exists. If the shape has no parent, the default alignment matches the alignment for new shapes created in the Slides editor.
+  *   `link` (*type:* `GoogleApi.Slides.V1.Model.Link.t`, *default:* `nil`) - The hyperlink destination of the shape. If unset, there is no link. Links are not inherited from parent placeholders.
+  *   `outline` (*type:* `GoogleApi.Slides.V1.Model.Outline.t`, *default:* `nil`) - The outline of the shape. If unset, the outline is inherited from a parent placeholder if it exists. If the shape has no parent, then the default outline depends on the shape type, matching the defaults for new shapes created in the Slides editor.
+  *   `shadow` (*type:* `GoogleApi.Slides.V1.Model.Shadow.t`, *default:* `nil`) - The shadow properties of the shape. If unset, the shadow is inherited from a parent placeholder if it exists. If the shape has no parent, then the default shadow matches the defaults for new shapes created in the Slides editor. This property is read-only.
+  *   `shapeBackgroundFill` (*type:* `GoogleApi.Slides.V1.Model.ShapeBackgroundFill.t`, *default:* `nil`) - The background fill of the shape. If unset, the background fill is inherited from a parent placeholder if it exists. If the shape has no parent, then the default background fill depends on the shape type, matching the defaults for new shapes created in the Slides editor.
   """
 
   use GoogleApi.Gax.ModelBase
