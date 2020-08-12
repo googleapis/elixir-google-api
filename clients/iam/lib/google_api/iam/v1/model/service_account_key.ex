@@ -17,51 +17,19 @@
 
 defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
   @moduledoc """
-  Represents a service account key.
-
-  A service account has two sets of key-pairs: user-managed, and
-  system-managed.
-
-  User-managed key-pairs can be created and deleted by users.  Users are
-  responsible for rotating these keys periodically to ensure security of
-  their service accounts.  Users retain the private key of these key-pairs,
-  and Google retains ONLY the public key.
-
-  System-managed keys are automatically rotated by Google, and are used for
-  signing for a maximum of two weeks. The rotation process is probabilistic,
-  and usage of the new key will gradually ramp up and down over the key's
-  lifetime. We recommend caching the public key set for a service account for
-  no more than 24 hours to ensure you have access to the latest keys.
-
-  Public keys for all service accounts are also published at the OAuth2
-  Service Account API.
+  Represents a service account key. A service account has two sets of key-pairs: user-managed, and system-managed. User-managed key-pairs can be created and deleted by users. Users are responsible for rotating these keys periodically to ensure security of their service accounts. Users retain the private key of these key-pairs, and Google retains ONLY the public key. System-managed keys are automatically rotated by Google, and are used for signing for a maximum of two weeks. The rotation process is probabilistic, and usage of the new key will gradually ramp up and down over the key's lifetime. We recommend caching the public key set for a service account for no more than 24 hours to ensure you have access to the latest keys. Public keys for all service accounts are also published at the OAuth2 Service Account API.
 
   ## Attributes
 
   *   `keyAlgorithm` (*type:* `String.t`, *default:* `nil`) - Specifies the algorithm (and possibly key size) for the key.
   *   `keyOrigin` (*type:* `String.t`, *default:* `nil`) - The key origin.
   *   `keyType` (*type:* `String.t`, *default:* `nil`) - The key type.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the service account key in the following format
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
-  *   `privateKeyData` (*type:* `String.t`, *default:* `nil`) - The private key data. Only provided in `CreateServiceAccountKey`
-      responses. Make sure to keep the private key data secure because it
-      allows for the assertion of the service account identity.
-      When base64 decoded, the private key data can be used to authenticate with
-      Google API client libraries and with
-      <a href="/sdk/gcloud/reference/auth/activate-service-account">gcloud
-      auth activate-service-account</a>.
-  *   `privateKeyType` (*type:* `String.t`, *default:* `nil`) - The output format for the private key.
-      Only provided in `CreateServiceAccountKey` responses, not
-      in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
-
-      Google never exposes system-managed private keys, and never retains
-      user-managed private keys.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the service account key in the following format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
+  *   `privateKeyData` (*type:* `String.t`, *default:* `nil`) - The private key data. Only provided in `CreateServiceAccountKey` responses. Make sure to keep the private key data secure because it allows for the assertion of the service account identity. When base64 decoded, the private key data can be used to authenticate with Google API client libraries and with gcloud auth activate-service-account.
+  *   `privateKeyType` (*type:* `String.t`, *default:* `nil`) - The output format for the private key. Only provided in `CreateServiceAccountKey` responses, not in `GetServiceAccountKey` or `ListServiceAccountKey` responses. Google never exposes system-managed private keys, and never retains user-managed private keys.
   *   `publicKeyData` (*type:* `String.t`, *default:* `nil`) - The public key data. Only provided in `GetServiceAccountKey` responses.
   *   `validAfterTime` (*type:* `DateTime.t`, *default:* `nil`) - The key can be used after this timestamp.
-  *   `validBeforeTime` (*type:* `DateTime.t`, *default:* `nil`) - The key can be used before this timestamp.
-      For system-managed key pairs, this timestamp is the end time for the
-      private key signing operation. The public key could still be used
-      for verification for a few hours after this time.
+  *   `validBeforeTime` (*type:* `DateTime.t`, *default:* `nil`) - The key can be used before this timestamp. For system-managed key pairs, this timestamp is the end time for the private key signing operation. The public key could still be used for verification for a few hours after this time.
   """
 
   use GoogleApi.Gax.ModelBase

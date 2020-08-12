@@ -21,23 +21,13 @@ defmodule GoogleApi.IAM.V1.Model.Role do
 
   ## Attributes
 
-  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - The current deleted state of the role. This field is read only.
-      It will be ignored in calls to CreateRole and UpdateRole.
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - The current deleted state of the role. This field is read only. It will be ignored in calls to CreateRole and UpdateRole.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A human-readable description for the role.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Used to perform a consistent read-modify-write.
   *   `includedPermissions` (*type:* `list(String.t)`, *default:* `nil`) - The names of the permissions this role grants when bound in an IAM policy.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the role.
-
-      When Role is used in CreateRole, the role name must not be set.
-
-      When Role is used in output and other input such as UpdateRole, the role
-      name is the complete path, e.g., roles/logging.viewer for predefined roles
-      and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
-  *   `stage` (*type:* `String.t`, *default:* `nil`) - The current launch stage of the role. If the `ALPHA` launch stage has been
-      selected for a role, the `stage` field will not be included in the
-      returned definition for the role.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. A human-readable title for the role.  Typically this
-      is limited to 100 UTF-8 bytes.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the role. When Role is used in CreateRole, the role name must not be set. When Role is used in output and other input such as UpdateRole, the role name is the complete path, e.g., roles/logging.viewer for predefined roles and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
+  *   `stage` (*type:* `String.t`, *default:* `nil`) - The current launch stage of the role. If the `ALPHA` launch stage has been selected for a role, the `stage` field will not be included in the returned definition for the role.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. A human-readable title for the role. Typically this is limited to 100 UTF-8 bytes.
   """
 
   use GoogleApi.Gax.ModelBase

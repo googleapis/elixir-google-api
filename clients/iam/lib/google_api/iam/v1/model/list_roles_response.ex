@@ -21,8 +21,7 @@ defmodule GoogleApi.IAM.V1.Model.ListRolesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - To retrieve the next page of results, set
-      `ListRolesRequest.page_token` to this value.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - To retrieve the next page of results, set `ListRolesRequest.page_token` to this value.
   *   `roles` (*type:* `list(GoogleApi.IAM.V1.Model.Role.t)`, *default:* `nil`) - The Roles defined on this resource.
   """
 

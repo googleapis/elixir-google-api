@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.IAM.V1.Model.PermissionDelta do
   @moduledoc """
-  A PermissionDelta message to record the added_permissions and
-  removed_permissions inside a role.
+  A PermissionDelta message to record the added_permissions and removed_permissions inside a role.
 
   ## Attributes
 

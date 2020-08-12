@@ -23,12 +23,10 @@ defmodule GoogleApi.IAM.V1.Model.Permission do
 
   *   `apiDisabled` (*type:* `boolean()`, *default:* `nil`) - The service API associated with the permission is not enabled.
   *   `customRolesSupportLevel` (*type:* `String.t`, *default:* `nil`) - The current custom role support level.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A brief description of what this Permission is used for.
-      This permission can ONLY be used in predefined roles.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A brief description of what this Permission is used for. This permission can ONLY be used in predefined roles.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this Permission.
   *   `onlyInPredefinedRoles` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `primaryPermission` (*type:* `String.t`, *default:* `nil`) - The preferred name for this permission. If present, then this permission is
-      an alias of, and equivalent to, the listed primary_permission.
+  *   `primaryPermission` (*type:* `String.t`, *default:* `nil`) - The preferred name for this permission. If present, then this permission is an alias of, and equivalent to, the listed primary_permission.
   *   `stage` (*type:* `String.t`, *default:* `nil`) - The current launch stage of the permission.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this Permission.
   """

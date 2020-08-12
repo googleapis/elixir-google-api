@@ -22,20 +22,11 @@ defmodule GoogleApi.IAM.V1.Model.LintResult do
   ## Attributes
 
   *   `debugMessage` (*type:* `String.t`, *default:* `nil`) - Human readable debug message associated with the issue.
-  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The name of the field for which this lint result is about.
-
-      For nested messages `field_name` consists of names of the embedded fields
-      separated by period character. The top-level qualifier is the input object
-      to lint in the request. For example, the `field_name` value
-      `condition.expression` identifies a lint result for the `expression` field
-      of the provided condition.
+  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The name of the field for which this lint result is about. For nested messages `field_name` consists of names of the embedded fields separated by period character. The top-level qualifier is the input object to lint in the request. For example, the `field_name` value `condition.expression` identifies a lint result for the `expression` field of the provided condition.
   *   `level` (*type:* `String.t`, *default:* `nil`) - The validation unit level.
-  *   `locationOffset` (*type:* `integer()`, *default:* `nil`) - 0-based character position of problematic construct within the object
-      identified by `field_name`. Currently, this is populated only for condition
-      expression.
+  *   `locationOffset` (*type:* `integer()`, *default:* `nil`) - 0-based character position of problematic construct within the object identified by `field_name`. Currently, this is populated only for condition expression.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The validation unit severity.
-  *   `validationUnitName` (*type:* `String.t`, *default:* `nil`) - The validation unit name, for instance
-      "lintValidationUnits/ConditionComplexityCheck".
+  *   `validationUnitName` (*type:* `String.t`, *default:* `nil`) - The validation unit name, for instance "lintValidationUnits/ConditionComplexityCheck".
   """
 
   use GoogleApi.Gax.ModelBase
