@@ -25,7 +25,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.LandingPage do
   *   `archived` (*type:* `boolean()`, *default:* `nil`) - Whether this landing page has been archived.
   *   `deepLinks` (*type:* `list(GoogleApi.DFAReporting.V33.Model.DeepLink.t)`, *default:* `nil`) - Links that will direct the user to a mobile app, if installed.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this landing page. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#landingPage`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#landingPage".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#landingPage".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this landing page. This is a required field. It must be less than 256 characters long.
   *   `url` (*type:* `String.t`, *default:* `nil`) - URL of this landing page. This is a required field.
   """

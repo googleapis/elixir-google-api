@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.EncryptionInfo do
   *   `encryptionEntityId` (*type:* `String.t`, *default:* `nil`) - The encryption entity ID. This should match the encryption configuration for ad serving or Data Transfer.
   *   `encryptionEntityType` (*type:* `String.t`, *default:* `nil`) - The encryption entity type. This should match the encryption configuration for ad serving or Data Transfer.
   *   `encryptionSource` (*type:* `String.t`, *default:* `nil`) - Describes whether the encrypted cookie was received from ad serving (the %m macro) or from Data Transfer.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#encryptionInfo`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#encryptionInfo".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#encryptionInfo".
   """
 
   use GoogleApi.Gax.ModelBase

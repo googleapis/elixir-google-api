@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.SiteCompanionSetting do
   *   `companionsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether companions are disabled for this site template.
   *   `enabledSizes` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Size.t)`, *default:* `nil`) - Whitelist of companion sizes to be served via this site template. Set this list to null or empty to serve all companion sizes.
   *   `imageOnly` (*type:* `boolean()`, *default:* `nil`) - Whether to serve only static images as companions.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#siteCompanionSetting`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteCompanionSetting".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteCompanionSetting".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.MobileAppsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#mobileAppsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileAppsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileAppsListResponse".
   *   `mobileApps` (*type:* `list(GoogleApi.DFAReporting.V33.Model.MobileApp.t)`, *default:* `nil`) - Mobile apps collection.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """

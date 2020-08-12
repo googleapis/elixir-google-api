@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.UserRolePermissionGroupsListResponse 
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#userRolePermissionGroupsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermissionGroupsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermissionGroupsListResponse".
   *   `userRolePermissionGroups` (*type:* `list(GoogleApi.DFAReporting.V33.Model.UserRolePermissionGroup.t)`, *default:* `nil`) - User role permission group collection.
   """
 

@@ -27,11 +27,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.OrderDocument do
   *   `approvedByUserProfileIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of users who have approved this order document.
   *   `cancelled` (*type:* `boolean()`, *default:* `nil`) - Whether this order document is cancelled.
   *   `createdInfo` (*type:* `GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the creation of this order document.
-  *   `effectiveDate` (*type:* `Date.t`, *default:* `nil`) - Effective date of this order document.
+  *   `effectiveDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this order document.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#orderDocument`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#orderDocument".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#orderDocument".
   *   `lastSentRecipients` (*type:* `list(String.t)`, *default:* `nil`) - List of email addresses that received the last sent document.
-  *   `lastSentTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the last email sent with this order document.
+  *   `lastSentTime` (*type:* `DateTime.t`, *default:* `nil`) - 
   *   `orderId` (*type:* `String.t`, *default:* `nil`) - ID of the order from which this order document is created.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID of this order document.
   *   `signed` (*type:* `boolean()`, *default:* `nil`) - Whether this order document has been signed.

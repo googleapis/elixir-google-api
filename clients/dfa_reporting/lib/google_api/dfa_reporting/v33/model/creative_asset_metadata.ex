@@ -26,34 +26,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeAssetMetadata do
   *   `detectedFeatures` (*type:* `list(String.t)`, *default:* `nil`) - List of feature dependencies for the creative asset that are detected by Campaign Manager. Feature dependencies are features that a browser must be able to support in order to render your HTML5 creative correctly. This is a read-only, auto-generated field.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Numeric ID of the asset. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the numeric ID of the asset. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#creativeAssetMetadata`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeAssetMetadata".
-  *   `warnedValidationRules` (*type:* `list(String.t)`, *default:* `nil`) - Rules validated during code generation that generated a warning. This is a read-only, auto-generated field.
-
-      Possible values are:
-      - "ADMOB_REFERENCED"
-      - "ASSET_FORMAT_UNSUPPORTED_DCM"
-      - "ASSET_INVALID"
-      - "CLICK_TAG_HARD_CODED"
-      - "CLICK_TAG_INVALID"
-      - "CLICK_TAG_IN_GWD"
-      - "CLICK_TAG_MISSING"
-      - "CLICK_TAG_MORE_THAN_ONE"
-      - "CLICK_TAG_NON_TOP_LEVEL"
-      - "COMPONENT_UNSUPPORTED_DCM"
-      - "ENABLER_UNSUPPORTED_METHOD_DCM"
-      - "EXTERNAL_FILE_REFERENCED"
-      - "FILE_DETAIL_EMPTY"
-      - "FILE_TYPE_INVALID"
-      - "GWD_PROPERTIES_INVALID"
-      - "HTML5_FEATURE_UNSUPPORTED"
-      - "LINKED_FILE_NOT_FOUND"
-      - "MAX_FLASH_VERSION_11"
-      - "MRAID_REFERENCED"
-      - "NOT_SSL_COMPLIANT"
-      - "ORPHANED_ASSET"
-      - "PRIMARY_HTML_MISSING"
-      - "SVG_INVALID"
-      - "ZIP_INVALID"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeAssetMetadata".
+  *   `warnedValidationRules` (*type:* `list(String.t)`, *default:* `nil`) - Rules validated during code generation that generated a warning. This is a read-only, auto-generated field. Possible values are: - "ADMOB_REFERENCED" - "ASSET_FORMAT_UNSUPPORTED_DCM" - "ASSET_INVALID" - "CLICK_TAG_HARD_CODED" - "CLICK_TAG_INVALID" - "CLICK_TAG_IN_GWD" - "CLICK_TAG_MISSING" - "CLICK_TAG_MORE_THAN_ONE" - "CLICK_TAG_NON_TOP_LEVEL" - "COMPONENT_UNSUPPORTED_DCM" - "ENABLER_UNSUPPORTED_METHOD_DCM" - "EXTERNAL_FILE_REFERENCED" - "FILE_DETAIL_EMPTY" - "FILE_TYPE_INVALID" - "GWD_PROPERTIES_INVALID" - "HTML5_FEATURE_UNSUPPORTED" - "LINKED_FILE_NOT_FOUND" - "MAX_FLASH_VERSION_11" - "MRAID_REFERENCED" - "NOT_SSL_COMPLIANT" - "ORPHANED_ASSET" - "PRIMARY_HTML_MISSING" - "SVG_INVALID" - "ZIP_INVALID" 
   """
 
   use GoogleApi.Gax.ModelBase

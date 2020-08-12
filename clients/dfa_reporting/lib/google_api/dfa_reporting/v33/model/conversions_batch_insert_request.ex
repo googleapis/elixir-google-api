@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ConversionsBatchInsertRequest do
 
   *   `conversions` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Conversion.t)`, *default:* `nil`) - The set of conversions to insert.
   *   `encryptionInfo` (*type:* `GoogleApi.DFAReporting.V33.Model.EncryptionInfo.t`, *default:* `nil`) - Describes how encryptedUserId or encryptedUserIdCandidates[] is encrypted. This is a required field if encryptedUserId or encryptedUserIdCandidates[] is used.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#conversionsBatchInsertRequest`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchInsertRequest".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchInsertRequest".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Language do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - Language ID of this language. This is the ID used for targeting and generating reports.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#language`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#language".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#language".
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Format of language code is an ISO 639 two-letter language code optionally followed by an underscore followed by an ISO 3166 code. Examples are "en" for English or "zh_CN" for Simplified Chinese.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this language.
   """

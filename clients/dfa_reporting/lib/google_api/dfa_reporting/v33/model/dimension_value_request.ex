@@ -22,10 +22,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.DimensionValueRequest do
   ## Attributes
 
   *   `dimensionName` (*type:* `String.t`, *default:* `nil`) - The name of the dimension for which values should be requested.
-  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - The end date of the date range for which to retrieve dimension values. A string of the format "yyyy-MM-dd".
+  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `filters` (*type:* `list(GoogleApi.DFAReporting.V33.Model.DimensionFilter.t)`, *default:* `nil`) - The list of filters by which to filter values. The filters are ANDed.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#dimensionValueRequest`) - The kind of request this is, in this case dfareporting#dimensionValueRequest.
-  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - The start date of the date range for which to retrieve dimension values. A string of the format "yyyy-MM-dd".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of request this is, in this case dfareporting#dimensionValueRequest .
+  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

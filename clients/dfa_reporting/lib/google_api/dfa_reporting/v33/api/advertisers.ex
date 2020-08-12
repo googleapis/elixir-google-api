@@ -34,13 +34,17 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
   *   `id` (*type:* `String.t`) - Advertiser ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -60,13 +64,17 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
           | {:error, any()}
   def dfareporting_advertisers_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -92,13 +100,17 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.DFAReporting.V33.Model.Advertiser.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -113,13 +125,17 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
           | {:error, any()}
   def dfareporting_advertisers_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -145,13 +161,17 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:advertiserGroupIds` (*type:* `list(String.t)`) - Select only advertisers with these advertiser group IDs.
       *   `:floodlightConfigurationIds` (*type:* `list(String.t)`) - Select only advertisers with these floodlight configuration IDs.
       *   `:ids` (*type:* `list(String.t)`) - Select only advertisers with these IDs.
@@ -159,7 +179,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:onlyParent` (*type:* `boolean()`) - Select only advertisers which use another advertiser's floodlight configuration.
       *   `:pageToken` (*type:* `String.t`) - Value of the nextPageToken from the previous result page.
-      *   `:searchString` (*type:* `String.t`) - Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "advertiser*2015" will return objects with names like "advertiser June 2015", "advertiser April 2015", or simply "advertiser 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "advertiser" will match objects with name "my advertiser", "advertiser 2015", or simply "advertiser".
+      *   `:searchString` (*type:* `String.t`) - Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, "advertiser*2015" will return objects with names like "advertiser June 2015", "advertiser April 2015", or simply "advertiser 2015". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of "advertiser" will match objects with name "my advertiser", "advertiser 2015", or simply "advertiser" .
       *   `:sortField` (*type:* `String.t`) - Field by which to sort the list.
       *   `:sortOrder` (*type:* `String.t`) - Order of sorted results.
       *   `:status` (*type:* `String.t`) - Select only advertisers with the specified status.
@@ -177,13 +197,17 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
           | {:error, any()}
   def dfareporting_advertisers_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :advertiserGroupIds => :query,
       :floodlightConfigurationIds => :query,
       :ids => :query,
@@ -221,15 +245,19 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
-  *   `id` (*type:* `String.t`) - Advertiser ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:id` (*type:* `String.t`) - Advertiser ID.
       *   `:body` (*type:* `GoogleApi.DFAReporting.V33.Model.Advertiser.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -238,31 +266,24 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
   *   `{:ok, %GoogleApi.DFAReporting.V33.Model.Advertiser{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec dfareporting_advertisers_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec dfareporting_advertisers_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Advertiser.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def dfareporting_advertisers_patch(
-        connection,
-        profile_id,
-        id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def dfareporting_advertisers_patch(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :id => :query,
       :body => :body
     }
 
@@ -272,7 +293,6 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
       |> Request.url("/dfareporting/v3.3/userprofiles/{profileId}/advertisers", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
-      |> Request.add_param(:query, :id, id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -289,13 +309,17 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.DFAReporting.V33.Model.Advertiser.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -310,13 +334,17 @@ defmodule GoogleApi.DFAReporting.V33.Api.Advertisers do
           | {:error, any()}
   def dfareporting_advertisers_update(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 

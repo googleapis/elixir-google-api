@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CompatibleFields do
 
   *   `crossDimensionReachReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V33.Model.CrossDimensionReachReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "CROSS_DIMENSION_REACH".
   *   `floodlightReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V33.Model.FloodlightReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "FLOODLIGHT".
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#compatibleFields`) - The kind of resource this is, in this case dfareporting#compatibleFields.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#compatibleFields.
   *   `pathToConversionReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V33.Model.PathToConversionReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "PATH_TO_CONVERSION".
   *   `reachReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V33.Model.ReachReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "REACH".
   *   `reportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V33.Model.ReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "STANDARD".

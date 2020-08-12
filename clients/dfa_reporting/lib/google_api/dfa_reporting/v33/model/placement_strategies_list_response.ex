@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.PlacementStrategiesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#placementStrategiesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementStrategiesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementStrategiesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   *   `placementStrategies` (*type:* `list(GoogleApi.DFAReporting.V33.Model.PlacementStrategy.t)`, *default:* `nil`) - Placement strategy collection.
   """

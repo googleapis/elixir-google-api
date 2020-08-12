@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CampaignCreativeAssociationsListRespo
   ## Attributes
 
   *   `campaignCreativeAssociations` (*type:* `list(GoogleApi.DFAReporting.V33.Model.CampaignCreativeAssociation.t)`, *default:* `nil`) - Campaign creative association collection
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#campaignCreativeAssociationsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignCreativeAssociationsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignCreativeAssociationsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

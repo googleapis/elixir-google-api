@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.VideoFormat do
 
   *   `fileType` (*type:* `String.t`, *default:* `nil`) - File type of the video format.
   *   `id` (*type:* `integer()`, *default:* `nil`) - ID of the video format.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#videoFormat`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoFormat".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoFormat".
   *   `resolution` (*type:* `GoogleApi.DFAReporting.V33.Model.Size.t`, *default:* `nil`) - The resolution of this video format.
   *   `targetBitRate` (*type:* `integer()`, *default:* `nil`) - The target bit rate of this video format.
   """

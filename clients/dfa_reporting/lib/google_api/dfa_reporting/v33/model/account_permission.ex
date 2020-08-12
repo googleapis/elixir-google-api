@@ -21,13 +21,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.AccountPermission do
 
   ## Attributes
 
-  *   `accountProfiles` (*type:* `list(String.t)`, *default:* `nil`) - Account profiles associated with this account permission.
-
-      Possible values are:
-      - "ACCOUNT_PROFILE_BASIC"
-      - "ACCOUNT_PROFILE_STANDARD"
+  *   `accountProfiles` (*type:* `list(String.t)`, *default:* `nil`) - Account profiles associated with this account permission. Possible values are: - "ACCOUNT_PROFILE_BASIC" - "ACCOUNT_PROFILE_STANDARD" 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this account permission.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#accountPermission`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermission".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermission".
   *   `level` (*type:* `String.t`, *default:* `nil`) - Administrative level required to enable this account permission.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this account permission.
   *   `permissionGroupId` (*type:* `String.t`, *default:* `nil`) - Permission group of this account permission.

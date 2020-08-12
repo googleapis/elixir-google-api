@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ContentCategory do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this content category. This is a read-only field that can be left blank.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this content category. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#contentCategory`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#contentCategory".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#contentCategory".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this content category. This is a required field and must be less than 256 characters long and unique among content categories of the same account.
   """
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ConversionError do
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - The error code.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#conversionError`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionError".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionError".
   *   `message` (*type:* `String.t`, *default:* `nil`) - A description of the error.
   """
 

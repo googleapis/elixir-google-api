@@ -28,26 +28,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.AccountUserProfile do
   *   `comments` (*type:* `String.t`, *default:* `nil`) - Comments for this user profile.
   *   `email` (*type:* `String.t`, *default:* `nil`) - Email of the user profile. The email addresss must be linked to a Google Account. This field is required on insertion and is read-only after insertion.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of the user profile. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#accountUserProfile`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountUserProfile".
-  *   `locale` (*type:* `String.t`, *default:* `nil`) - Locale of the user profile. This is a required field.
-      Acceptable values are:  
-      - "cs" (Czech) 
-      - "de" (German) 
-      - "en" (English) 
-      - "en-GB" (English United Kingdom) 
-      - "es" (Spanish) 
-      - "fr" (French) 
-      - "it" (Italian) 
-      - "ja" (Japanese) 
-      - "ko" (Korean) 
-      - "pl" (Polish) 
-      - "pt-BR" (Portuguese Brazil)
-      - "ru" (Russian) 
-      - "sv" (Swedish) 
-      - "tr" (Turkish) 
-      - "zh-CN" (Chinese Simplified) 
-      - "zh-TW" (Chinese Traditional)
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the user profile. This is a required field. Must be less than 64 characters long, must be globally unique, and cannot contain whitespace or any of the following characters: "&;"#%,".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountUserProfile".
+  *   `locale` (*type:* `String.t`, *default:* `nil`) - Locale of the user profile. This is a required field. Acceptable values are: - "cs" (Czech) - "de" (German) - "en" (English) - "en-GB" (English United Kingdom) - "es" (Spanish) - "fr" (French) - "it" (Italian) - "ja" (Japanese) - "ko" (Korean) - "pl" (Polish) - "pt-BR" (Portuguese Brazil) - "ru" (Russian) - "sv" (Swedish) - "tr" (Turkish) - "zh-CN" (Chinese Simplified) - "zh-TW" (Chinese Traditional) 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the user profile. This is a required field. Must be less than 64 characters long, must be globally unique, and cannot contain whitespace or any of the following characters: "&;<>"#%,".
   *   `siteFilter` (*type:* `GoogleApi.DFAReporting.V33.Model.ObjectFilter.t`, *default:* `nil`) - Filter that describes which sites are visible to the user profile.
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of the user profile. This is a read-only field that can be left blank.
   *   `traffickerType` (*type:* `String.t`, *default:* `nil`) - Trafficker type of this user profile. This is a read-only field.

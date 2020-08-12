@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.SitesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#sitesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#sitesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#sitesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   *   `sites` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Site.t)`, *default:* `nil`) - Site collection.
   """

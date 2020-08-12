@@ -28,23 +28,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeAssignment do
   *   `creativeGroupAssignments` (*type:* `list(GoogleApi.DFAReporting.V33.Model.CreativeGroupAssignment.t)`, *default:* `nil`) - Creative group assignments for this creative assignment. Only one assignment per creative group number is allowed for a maximum of two assignments.
   *   `creativeId` (*type:* `String.t`, *default:* `nil`) - ID of the creative to be assigned. This is a required field.
   *   `creativeIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the creative. This is a read-only, auto-generated field.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Date and time that the assigned creative should stop serving. Must be later than the start time.
-  *   `richMediaExitOverrides` (*type:* `list(GoogleApi.DFAReporting.V33.Model.RichMediaExitOverride.t)`, *default:* `nil`) - Rich media exit overrides for this creative assignment.
-      Applicable when the creative type is any of the following: 
-      - DISPLAY
-      - RICH_MEDIA_INPAGE
-      - RICH_MEDIA_INPAGE_FLOATING
-      - RICH_MEDIA_IM_EXPAND
-      - RICH_MEDIA_EXPANDING
-      - RICH_MEDIA_INTERSTITIAL_FLOAT
-      - RICH_MEDIA_MOBILE_IN_APP
-      - RICH_MEDIA_MULTI_FLOATING
-      - RICH_MEDIA_PEEL_DOWN
-      - VPAID_LINEAR
-      - VPAID_NON_LINEAR
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - 
+  *   `richMediaExitOverrides` (*type:* `list(GoogleApi.DFAReporting.V33.Model.RichMediaExitOverride.t)`, *default:* `nil`) - Rich media exit overrides for this creative assignment. Applicable when the creative type is any of the following: - DISPLAY - RICH_MEDIA_INPAGE - RICH_MEDIA_INPAGE_FLOATING - RICH_MEDIA_IM_EXPAND - RICH_MEDIA_EXPANDING - RICH_MEDIA_INTERSTITIAL_FLOAT - RICH_MEDIA_MOBILE_IN_APP - RICH_MEDIA_MULTI_FLOATING - RICH_MEDIA_PEEL_DOWN - VPAID_LINEAR - VPAID_NON_LINEAR 
   *   `sequence` (*type:* `integer()`, *default:* `nil`) - Sequence number of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_SEQUENTIAL. Acceptable values are 1 to 65535, inclusive.
   *   `sslCompliant` (*type:* `boolean()`, *default:* `nil`) - Whether the creative to be assigned is SSL-compliant. This is a read-only field that is auto-generated when the ad is inserted or updated.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Date and time that the assigned creative should start serving.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - 
   *   `weight` (*type:* `integer()`, *default:* `nil`) - Weight of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_RANDOM. Value must be greater than or equal to 1.
   """
 

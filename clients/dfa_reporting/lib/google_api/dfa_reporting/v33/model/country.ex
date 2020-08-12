@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Country do
 
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code.
   *   `dartId` (*type:* `String.t`, *default:* `nil`) - DART ID of this country. This is the ID used for targeting and generating reports.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#country`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#country".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#country".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this country.
   *   `sslEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether ad serving supports secure servers in this country.
   """

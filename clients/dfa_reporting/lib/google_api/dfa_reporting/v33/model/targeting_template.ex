@@ -28,7 +28,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.TargetingTemplate do
   *   `geoTargeting` (*type:* `GoogleApi.DFAReporting.V33.Model.GeoTargeting.t`, *default:* `nil`) - Geographical targeting criteria.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this targeting template. This is a read-only, auto-generated field.
   *   `keyValueTargetingExpression` (*type:* `GoogleApi.DFAReporting.V33.Model.KeyValueTargetingExpression.t`, *default:* `nil`) - Key-value targeting criteria.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#targetingTemplate`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetingTemplate".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetingTemplate".
   *   `languageTargeting` (*type:* `GoogleApi.DFAReporting.V33.Model.LanguageTargeting.t`, *default:* `nil`) - Language targeting criteria.
   *   `listTargetingExpression` (*type:* `GoogleApi.DFAReporting.V33.Model.ListTargetingExpression.t`, *default:* `nil`) - Remarketing list targeting criteria.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this targeting template. This field is required. It must be less than 256 characters long and unique within an advertiser.

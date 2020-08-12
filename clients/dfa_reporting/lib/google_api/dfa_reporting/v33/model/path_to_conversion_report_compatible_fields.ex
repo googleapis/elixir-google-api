@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.PathToConversionReportCompatibleField
 
   *   `conversionDimensions` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Dimension.t)`, *default:* `nil`) - Conversion dimensions which are compatible to be selected in the "conversionDimensions" section of the report.
   *   `customFloodlightVariables` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Dimension.t)`, *default:* `nil`) - Custom floodlight variables which are compatible to be selected in the "customFloodlightVariables" section of the report.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#pathToConversionReportCompatibleFields`) - The kind of resource this is, in this case dfareporting#pathToConversionReportCompatibleFields.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#pathToConversionReportCompatibleFields.
   *   `metrics` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Metric.t)`, *default:* `nil`) - Metrics which are compatible to be selected in the "metricNames" section of the report.
   *   `perInteractionDimensions` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Dimension.t)`, *default:* `nil`) - Per-interaction dimensions which are compatible to be selected in the "perInteractionDimensions" section of the report.
   """

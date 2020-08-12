@@ -23,13 +23,13 @@ defmodule GoogleApi.DFAReporting.V33.Model.PricingSchedule do
 
   *   `capCostOption` (*type:* `String.t`, *default:* `nil`) - Placement cap cost option.
   *   `disregardOverdelivery` (*type:* `boolean()`, *default:* `nil`) - Whether cap costs are ignored by ad serving.
-  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - Placement end date. This date must be later than, or the same day as, the placement start date, but not later than the campaign end date. If, for example, you set 6/25/2015 as both the start and end dates, the effective placement date is just that day only, 6/25/2015. The hours, minutes, and seconds of the end date should not be set, as doing so will result in an error. This field is required on insertion.
+  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `flighted` (*type:* `boolean()`, *default:* `nil`) - Whether this placement is flighted. If true, pricing periods will be computed automatically.
   *   `floodlightActivityId` (*type:* `String.t`, *default:* `nil`) - Floodlight activity ID associated with this placement. This field should be set when placement pricing type is set to PRICING_TYPE_CPA.
   *   `pricingPeriods` (*type:* `list(GoogleApi.DFAReporting.V33.Model.PricingSchedulePricingPeriod.t)`, *default:* `nil`) - Pricing periods for this placement.
   *   `pricingType` (*type:* `String.t`, *default:* `nil`) - Placement pricing type. This field is required on insertion.
-  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - Placement start date. This date must be later than, or the same day as, the campaign start date. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error. This field is required on insertion.
-  *   `testingStartDate` (*type:* `Date.t`, *default:* `nil`) - Testing start date of this placement. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error.
+  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
+  *   `testingStartDate` (*type:* `Date.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

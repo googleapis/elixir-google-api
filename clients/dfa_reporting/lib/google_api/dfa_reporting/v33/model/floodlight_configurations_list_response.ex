@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightConfigurationsListResponse 
   ## Attributes
 
   *   `floodlightConfigurations` (*type:* `list(GoogleApi.DFAReporting.V33.Model.FloodlightConfiguration.t)`, *default:* `nil`) - Floodlight configuration collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#floodlightConfigurationsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightConfigurationsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightConfigurationsListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

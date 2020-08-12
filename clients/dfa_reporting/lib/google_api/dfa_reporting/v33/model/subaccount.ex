@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Subaccount do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - ID of the account that contains this subaccount. This is a read-only field that can be left blank.
   *   `availablePermissionIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the available user role permissions for this subaccount.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this subaccount. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#subaccount`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#subaccount".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#subaccount".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this subaccount. This is a required field. Must be less than 128 characters long and be unique among subaccounts of the same account.
   """
 

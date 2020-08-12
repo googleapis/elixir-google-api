@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.DimensionValue do
   *   `dimensionName` (*type:* `String.t`, *default:* `nil`) - The name of the dimension.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The eTag of this response for caching purposes.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID associated with the value if available.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#dimensionValue`) - The kind of resource this is, in this case dfareporting#dimensionValue.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#dimensionValue.
   *   `matchType` (*type:* `String.t`, *default:* `nil`) - Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the dimension.
   """

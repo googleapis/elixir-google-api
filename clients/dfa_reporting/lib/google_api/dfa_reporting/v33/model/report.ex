@@ -30,7 +30,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Report do
   *   `floodlightCriteria` (*type:* `GoogleApi.DFAReporting.V33.Model.ReportFloodlightCriteria.t`, *default:* `nil`) - The report criteria for a report of type "FLOODLIGHT".
   *   `format` (*type:* `String.t`, *default:* `nil`) - The output format of the report. If not specified, default format is "CSV". Note that the actual format in the completed report file might differ if for instance the report's size exceeds the format's capabilities. "CSV" will then be the fallback format.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID identifying this report resource.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#report`) - The kind of resource this is, in this case dfareporting#report.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#report.
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - The timestamp (in milliseconds since epoch) of when this report was last modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the report.
   *   `ownerProfileId` (*type:* `String.t`, *default:* `nil`) - The user profile id of the owner of this report.

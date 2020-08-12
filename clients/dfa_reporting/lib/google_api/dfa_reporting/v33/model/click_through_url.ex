@@ -21,10 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ClickThroughUrl do
 
   ## Attributes
 
-  *   `computedClickThroughUrl` (*type:* `String.t`, *default:* `nil`) - Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: 
-      - If defaultLandingPage is enabled then the campaign's default landing page URL is assigned to this field.
-      - If defaultLandingPage is not enabled and a landingPageId is specified then that landing page's URL is assigned to this field.
-      - If neither of the above cases apply, then the customClickThroughUrl is assigned to this field.
+  *   `computedClickThroughUrl` (*type:* `String.t`, *default:* `nil`) - Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: - If defaultLandingPage is enabled then the campaign's default landing page URL is assigned to this field. - If defaultLandingPage is not enabled and a landingPageId is specified then that landing page's URL is assigned to this field. - If neither of the above cases apply, then the customClickThroughUrl is assigned to this field. 
   *   `customClickThroughUrl` (*type:* `String.t`, *default:* `nil`) - Custom click-through URL. Applicable if the defaultLandingPage field is set to false and the landingPageId field is left unset.
   *   `defaultLandingPage` (*type:* `boolean()`, *default:* `nil`) - Whether the campaign default landing page is used.
   *   `landingPageId` (*type:* `String.t`, *default:* `nil`) - ID of the landing page for the click-through URL. Applicable if the defaultLandingPage field is set to false.

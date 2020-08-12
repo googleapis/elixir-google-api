@@ -29,10 +29,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.EventTag do
   *   `enabledByDefault` (*type:* `boolean()`, *default:* `nil`) - Whether this event tag should be automatically enabled for all of the advertiser's campaigns and ads.
   *   `excludeFromAdxRequests` (*type:* `boolean()`, *default:* `nil`) - Whether to remove this event tag from ads that are trafficked through Display & Video 360 to Ad Exchange. This may be useful if the event tag uses a pixel that is unapproved for Ad Exchange bids on one or more networks, such as the Google Display Network.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this event tag. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#eventTag`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#eventTag".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#eventTag".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this event tag. This is a required field and must be less than 256 characters long.
   *   `siteFilterType` (*type:* `String.t`, *default:* `nil`) - Site filter type for this event tag. If no type is specified then the event tag will be applied to all sites.
-  *   `siteIds` (*type:* `list(String.t)`, *default:* `nil`) - Filter list of site IDs associated with this event tag. The siteFilterType determines whether this is a whitelist or blacklist filter.
+  *   `siteIds` (*type:* `list(String.t)`, *default:* `nil`) - Filter list of site IDs associated with this event tag. The siteFilterType determines whether this is a allowlist or blocklist filter.
   *   `sslCompliant` (*type:* `boolean()`, *default:* `nil`) - Whether this tag is SSL-compliant or not. This is a read-only field.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of this event tag. Must be ENABLED for this event tag to fire. This is a required field.
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this event tag. This is a read-only field that can be left blank.

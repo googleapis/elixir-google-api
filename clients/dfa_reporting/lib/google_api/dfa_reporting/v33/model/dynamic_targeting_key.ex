@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.DynamicTargetingKey do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#dynamicTargetingKey`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#dynamicTargetingKey".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#dynamicTargetingKey".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this dynamic targeting key. This is a required field. Must be less than 256 characters long and cannot contain commas. All characters are converted to lowercase.
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - ID of the object of this dynamic targeting key. This is a required field.
   *   `objectType` (*type:* `String.t`, *default:* `nil`) - Type of the object of this dynamic targeting key. This is a required field.

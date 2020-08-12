@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ConversionsBatchInsertResponse do
   ## Attributes
 
   *   `hasFailures` (*type:* `boolean()`, *default:* `nil`) - Indicates that some or all conversions failed to insert.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#conversionsBatchInsertResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchInsertResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchInsertResponse".
   *   `status` (*type:* `list(GoogleApi.DFAReporting.V33.Model.ConversionStatus.t)`, *default:* `nil`) - The insert status of each conversion. Statuses are returned in the same order that conversions are inserted.
   """
 

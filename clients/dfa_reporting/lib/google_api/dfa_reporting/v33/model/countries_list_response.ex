@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CountriesListResponse do
   ## Attributes
 
   *   `countries` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Country.t)`, *default:* `nil`) - Country collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#countriesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#countriesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#countriesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase
