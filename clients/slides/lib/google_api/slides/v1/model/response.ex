@@ -30,10 +30,8 @@ defmodule GoogleApi.Slides.V1.Model.Response do
   *   `createVideo` (*type:* `GoogleApi.Slides.V1.Model.CreateVideoResponse.t`, *default:* `nil`) - The result of creating a video.
   *   `duplicateObject` (*type:* `GoogleApi.Slides.V1.Model.DuplicateObjectResponse.t`, *default:* `nil`) - The result of duplicating an object.
   *   `groupObjects` (*type:* `GoogleApi.Slides.V1.Model.GroupObjectsResponse.t`, *default:* `nil`) - The result of grouping objects.
-  *   `replaceAllShapesWithImage` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageResponse.t`, *default:* `nil`) - The result of replacing all shapes matching some criteria with an
-      image.
-  *   `replaceAllShapesWithSheetsChart` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartResponse.t`, *default:* `nil`) - The result of replacing all shapes matching some criteria with a Google
-      Sheets chart.
+  *   `replaceAllShapesWithImage` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageResponse.t`, *default:* `nil`) - The result of replacing all shapes matching some criteria with an image.
+  *   `replaceAllShapesWithSheetsChart` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartResponse.t`, *default:* `nil`) - The result of replacing all shapes matching some criteria with a Google Sheets chart.
   *   `replaceAllText` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllTextResponse.t`, *default:* `nil`) - The result of replacing text.
   """
 

@@ -17,12 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.PageElementProperties do
   @moduledoc """
-  Common properties for a page element.
-
-  Note: When you initially create a
-  PageElement, the API may modify
-  the values of both `size` and `transform`, but the
-  visual size will be unchanged.
+  Common properties for a page element. Note: When you initially create a PageElement, the API may modify the values of both `size` and `transform`, but the visual size will be unchanged.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.WordArt do
   @moduledoc """
-  A PageElement kind representing
-  word art.
+  A PageElement kind representing word art.
 
   ## Attributes
 

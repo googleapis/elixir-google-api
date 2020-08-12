@@ -21,8 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.TableBorderRow do
 
   ## Attributes
 
-  *   `tableBorderCells` (*type:* `list(GoogleApi.Slides.V1.Model.TableBorderCell.t)`, *default:* `nil`) - Properties of each border cell. When a border's adjacent table cells are
-      merged, it is not included in the response.
+  *   `tableBorderCells` (*type:* `list(GoogleApi.Slides.V1.Model.TableBorderCell.t)`, *default:* `nil`) - Properties of each border cell. When a border's adjacent table cells are merged, it is not included in the response.
   """
 
   use GoogleApi.Gax.ModelBase

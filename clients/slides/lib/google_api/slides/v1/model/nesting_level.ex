@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.NestingLevel do
   @moduledoc """
-  Contains properties describing the look and feel of a list bullet at a given
-  level of nesting.
+  Contains properties describing the look and feel of a list bullet at a given level of nesting.
 
   ## Attributes
 

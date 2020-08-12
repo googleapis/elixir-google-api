@@ -21,8 +21,7 @@ defmodule GoogleApi.Slides.V1.Model.OptionalColor do
 
   ## Attributes
 
-  *   `opaqueColor` (*type:* `GoogleApi.Slides.V1.Model.OpaqueColor.t`, *default:* `nil`) - If set, this will be used as an opaque color. If unset, this represents
-      a transparent color.
+  *   `opaqueColor` (*type:* `GoogleApi.Slides.V1.Model.OpaqueColor.t`, *default:* `nil`) - If set, this will be used as an opaque color. If unset, this represents a transparent color.
   """
 
   use GoogleApi.Gax.ModelBase

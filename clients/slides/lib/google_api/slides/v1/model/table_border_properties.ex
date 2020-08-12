@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.TableBorderProperties do
   @moduledoc """
-  The border styling properties of the
-  TableBorderCell.
+  The border styling properties of the TableBorderCell.
 
   ## Attributes
 

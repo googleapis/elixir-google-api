@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest do
   @moduledoc """
-  Deletes bullets from all of the paragraphs that overlap with the given text
-  index range.
-
-  The nesting level of each paragraph will be visually preserved by adding
-  indent to the start of the corresponding paragraph.
+  Deletes bullets from all of the paragraphs that overlap with the given text index range. The nesting level of each paragraph will be visually preserved by adding indent to the start of the corresponding paragraph.
 
   ## Attributes
 
-  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The optional table cell location if the text to be modified is in a table
-      cell. If present, the object_id must refer to a table.
-  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the shape or table containing the text to delete bullets
-      from.
+  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The optional table cell location if the text to be modified is in a table cell. If present, the object_id must refer to a table.
+  *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the shape or table containing the text to delete bullets from.
   *   `textRange` (*type:* `GoogleApi.Slides.V1.Model.Range.t`, *default:* `nil`) - The range of text to delete bullets from, based on TextElement indexes.
   """
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.Group do
   @moduledoc """
-  A PageElement kind representing a
-  joined collection of PageElements.
+  A PageElement kind representing a joined collection of PageElements.
 
   ## Attributes
 

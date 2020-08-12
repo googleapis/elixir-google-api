@@ -21,12 +21,9 @@ defmodule GoogleApi.Slides.V1.Model.Link do
 
   ## Attributes
 
-  *   `pageObjectId` (*type:* `String.t`, *default:* `nil`) - If set, indicates this is a link to the specific page in this
-      presentation with this ID. A page with this ID may not exist.
-  *   `relativeLink` (*type:* `String.t`, *default:* `nil`) - If set, indicates this is a link to a slide in this presentation,
-      addressed by its position.
-  *   `slideIndex` (*type:* `integer()`, *default:* `nil`) - If set, indicates this is a link to the slide at this zero-based index
-      in the presentation. There may not be a slide at this index.
+  *   `pageObjectId` (*type:* `String.t`, *default:* `nil`) - If set, indicates this is a link to the specific page in this presentation with this ID. A page with this ID may not exist.
+  *   `relativeLink` (*type:* `String.t`, *default:* `nil`) - If set, indicates this is a link to a slide in this presentation, addressed by its position.
+  *   `slideIndex` (*type:* `integer()`, *default:* `nil`) - If set, indicates this is a link to the slide at this zero-based index in the presentation. There may not be a slide at this index.
   *   `url` (*type:* `String.t`, *default:* `nil`) - If set, indicates this is a link to the external web page at this URL.
   """
 

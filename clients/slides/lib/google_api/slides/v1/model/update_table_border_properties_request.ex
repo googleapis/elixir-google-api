@@ -21,25 +21,11 @@ defmodule GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest do
 
   ## Attributes
 
-  *   `borderPosition` (*type:* `String.t`, *default:* `nil`) - The border position in the table range the updates should apply to. If a
-      border position is not specified, the updates will apply to all borders in
-      the table range.
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.
-
-      At least one field must be specified. The root `tableBorderProperties` is
-      implied and should not be specified. A single `"*"` can be used as
-      short-hand for listing every field.
-
-      For example to update the table border solid fill color, set
-      `fields` to `"tableBorderFill.solidFill.color"`.
-
-      To reset a property to its default value, include its field name in the
-      field mask but leave the field itself unset.
+  *   `borderPosition` (*type:* `String.t`, *default:* `nil`) - The border position in the table range the updates should apply to. If a border position is not specified, the updates will apply to all borders in the table range.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `tableBorderProperties` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field. For example to update the table border solid fill color, set `fields` to `"tableBorderFill.solidFill.color"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset.
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the table.
   *   `tableBorderProperties` (*type:* `GoogleApi.Slides.V1.Model.TableBorderProperties.t`, *default:* `nil`) - The table border properties to update.
-  *   `tableRange` (*type:* `GoogleApi.Slides.V1.Model.TableRange.t`, *default:* `nil`) - The table range representing the subset of the table to which the updates
-      are applied. If a table range is not specified, the updates will apply to
-      the entire table.
+  *   `tableRange` (*type:* `GoogleApi.Slides.V1.Model.TableRange.t`, *default:* `nil`) - The table range representing the subset of the table to which the updates are applied. If a table range is not specified, the updates will apply to the entire table.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest do
   @moduledoc """
-  Updates the transform of a page element.
-
-  Updating the transform of a group will change the absolute transform of the
-  page elements in that group, which can change their visual appearance. See
-  the documentation for PageElement.transform for more details.
+  Updates the transform of a page element. Updating the transform of a group will change the absolute transform of the page elements in that group, which can change their visual appearance. See the documentation for PageElement.transform for more details.
 
   ## Attributes
 

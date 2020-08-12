@@ -17,25 +17,12 @@
 
 defmodule GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest do
   @moduledoc """
-  Updates the styling for all of the paragraphs within a Shape or Table that
-  overlap with the given text index range.
+  Updates the styling for all of the paragraphs within a Shape or Table that overlap with the given text index range.
 
   ## Attributes
 
-  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The location of the cell in the table containing the paragraph(s) to
-      style. If `object_id` refers to a table, `cell_location` must have a value.
-      Otherwise, it must not.
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.
-
-      At least one field must be specified. The root `style` is implied and
-      should not be specified. A single `"*"` can be used as short-hand for
-      listing every field.
-
-      For example, to update the paragraph alignment, set `fields` to
-      `"alignment"`.
-
-      To reset a property to its default value, include its field name in the
-      field mask but leave the field itself unset.
+  *   `cellLocation` (*type:* `GoogleApi.Slides.V1.Model.TableCellLocation.t`, *default:* `nil`) - The location of the cell in the table containing the paragraph(s) to style. If `object_id` refers to a table, `cell_location` must have a value. Otherwise, it must not.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `style` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field. For example, to update the paragraph alignment, set `fields` to `"alignment"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset.
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - The object ID of the shape or table with the text to be styled.
   *   `style` (*type:* `GoogleApi.Slides.V1.Model.ParagraphStyle.t`, *default:* `nil`) - The paragraph's style.
   *   `textRange` (*type:* `GoogleApi.Slides.V1.Model.Range.t`, *default:* `nil`) - The range of text containing the paragraph(s) to style.

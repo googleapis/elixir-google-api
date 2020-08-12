@@ -21,11 +21,8 @@ defmodule GoogleApi.Slides.V1.Model.Placeholder do
 
   ## Attributes
 
-  *   `index` (*type:* `integer()`, *default:* `nil`) - The index of the placeholder. If the same placeholder types are present in
-      the same page, they would have different index values.
-  *   `parentObjectId` (*type:* `String.t`, *default:* `nil`) - The object ID of this shape's parent placeholder.
-      If unset, the parent placeholder shape does not exist, so the shape does
-      not inherit properties from any other shape.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - The index of the placeholder. If the same placeholder types are present in the same page, they would have different index values.
+  *   `parentObjectId` (*type:* `String.t`, *default:* `nil`) - The object ID of this shape's parent placeholder. If unset, the parent placeholder shape does not exist, so the shape does not inherit properties from any other shape.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the placeholder.
   """
 

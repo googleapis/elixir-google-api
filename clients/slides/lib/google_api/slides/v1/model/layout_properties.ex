@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.LayoutProperties do
   @moduledoc """
-  The properties of Page are only
-  relevant for pages with page_type LAYOUT.
+  The properties of Page are only relevant for pages with page_type LAYOUT.
 
   ## Attributes
 

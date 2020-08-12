@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.Slides.V1.Model.Image do
   @moduledoc """
-  A PageElement kind representing an
-  image.
+  A PageElement kind representing an image.
 
   ## Attributes
 
-  *   `contentUrl` (*type:* `String.t`, *default:* `nil`) - An URL to an image with a default lifetime of 30 minutes.
-      This URL is tagged with the account of the requester. Anyone with the URL
-      effectively accesses the image as the original requester. Access to the
-      image may be lost if the presentation's sharing settings change.
+  *   `contentUrl` (*type:* `String.t`, *default:* `nil`) - An URL to an image with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change.
   *   `imageProperties` (*type:* `GoogleApi.Slides.V1.Model.ImageProperties.t`, *default:* `nil`) - The properties of the image.
-  *   `sourceUrl` (*type:* `String.t`, *default:* `nil`) - The source URL is the URL used to insert the image. The source URL can be
-      empty.
+  *   `sourceUrl` (*type:* `String.t`, *default:* `nil`) - The source URL is the URL used to insert the image. The source URL can be empty.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.LayoutReference do
   @moduledoc """
-  Slide layout reference. This may reference either:
-
-  - A predefined layout
-  - One of the layouts in the presentation.
+  Slide layout reference. This may reference either: - A predefined layout - One of the layouts in the presentation.
 
   ## Attributes
 

@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.Slides.V1.Model.List do
   @moduledoc """
-  A List describes the look and feel of bullets belonging to paragraphs
-  associated with a list. A paragraph that is part of a list has an implicit
-  reference to that list's ID.
+  A List describes the look and feel of bullets belonging to paragraphs associated with a list. A paragraph that is part of a list has an implicit reference to that list's ID.
 
   ## Attributes
 
   *   `listId` (*type:* `String.t`, *default:* `nil`) - The ID of the list.
-  *   `nestingLevel` (*type:* `%{optional(String.t) => GoogleApi.Slides.V1.Model.NestingLevel.t}`, *default:* `nil`) - A map of nesting levels to the properties of bullets at the associated
-      level. A list has at most nine levels of nesting, so the possible values
-      for the keys of this map are 0 through 8, inclusive.
+  *   `nestingLevel` (*type:* `%{optional(String.t) => GoogleApi.Slides.V1.Model.NestingLevel.t}`, *default:* `nil`) - A map of nesting levels to the properties of bullets at the associated level. A list has at most nine levels of nesting, so the possible values for the keys of this map are 0 through 8, inclusive.
   """
 
   use GoogleApi.Gax.ModelBase

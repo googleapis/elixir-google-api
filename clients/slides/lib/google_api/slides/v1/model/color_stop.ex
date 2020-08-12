@@ -21,11 +21,9 @@ defmodule GoogleApi.Slides.V1.Model.ColorStop do
 
   ## Attributes
 
-  *   `alpha` (*type:* `number()`, *default:* `nil`) - The alpha value of this color in the gradient band. Defaults to 1.0,
-      fully opaque.
+  *   `alpha` (*type:* `number()`, *default:* `nil`) - The alpha value of this color in the gradient band. Defaults to 1.0, fully opaque.
   *   `color` (*type:* `GoogleApi.Slides.V1.Model.OpaqueColor.t`, *default:* `nil`) - The color of the gradient stop.
-  *   `position` (*type:* `number()`, *default:* `nil`) - The relative position of the color stop in the gradient band measured
-      in percentage. The value should be in the interval [0.0, 1.0].
+  *   `position` (*type:* `number()`, *default:* `nil`) - The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval [0.0, 1.0].
   """
 
   use GoogleApi.Gax.ModelBase

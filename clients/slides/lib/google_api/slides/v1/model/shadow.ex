@@ -17,31 +17,17 @@
 
 defmodule GoogleApi.Slides.V1.Model.Shadow do
   @moduledoc """
-  The shadow properties of a page element.
-
-  If these fields are unset, they may be inherited from a parent placeholder
-  if it exists. If there is no parent, the fields will default to the value
-  used for new page elements created in the Slides editor, which may depend on
-  the page element kind.
+  The shadow properties of a page element. If these fields are unset, they may be inherited from a parent placeholder if it exists. If there is no parent, the fields will default to the value used for new page elements created in the Slides editor, which may depend on the page element kind.
 
   ## Attributes
 
-  *   `alignment` (*type:* `String.t`, *default:* `nil`) - The alignment point of the shadow, that sets the origin for translate,
-      scale and skew of the shadow. This property is read-only.
+  *   `alignment` (*type:* `String.t`, *default:* `nil`) - The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. This property is read-only.
   *   `alpha` (*type:* `number()`, *default:* `nil`) - The alpha of the shadow's color, from 0.0 to 1.0.
-  *   `blurRadius` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The radius of the shadow blur. The larger the radius, the more diffuse the
-      shadow becomes.
+  *   `blurRadius` (*type:* `GoogleApi.Slides.V1.Model.Dimension.t`, *default:* `nil`) - The radius of the shadow blur. The larger the radius, the more diffuse the shadow becomes.
   *   `color` (*type:* `GoogleApi.Slides.V1.Model.OpaqueColor.t`, *default:* `nil`) - The shadow color value.
-  *   `propertyState` (*type:* `String.t`, *default:* `nil`) - The shadow property state.
-
-      Updating the shadow on a page element will implicitly update this field to
-      `RENDERED`, unless another value is specified in the same request. To have
-      no shadow on a page element, set this field to `NOT_RENDERED`. In this
-      case, any other shadow fields set in the same request will be ignored.
-  *   `rotateWithShape` (*type:* `boolean()`, *default:* `nil`) - Whether the shadow should rotate with the shape. This property is
-      read-only.
-  *   `transform` (*type:* `GoogleApi.Slides.V1.Model.AffineTransform.t`, *default:* `nil`) - Transform that encodes the translate, scale, and skew of the shadow,
-      relative to the alignment position.
+  *   `propertyState` (*type:* `String.t`, *default:* `nil`) - The shadow property state. Updating the shadow on a page element will implicitly update this field to `RENDERED`, unless another value is specified in the same request. To have no shadow on a page element, set this field to `NOT_RENDERED`. In this case, any other shadow fields set in the same request will be ignored.
+  *   `rotateWithShape` (*type:* `boolean()`, *default:* `nil`) - Whether the shadow should rotate with the shape. This property is read-only.
+  *   `transform` (*type:* `GoogleApi.Slides.V1.Model.AffineTransform.t`, *default:* `nil`) - Transform that encodes the translate, scale, and skew of the shadow, relative to the alignment position.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the shadow. This property is read-only.
   """
 

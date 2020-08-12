@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Slides.V1.Model.SheetsChart do
   @moduledoc """
-  A PageElement kind representing
-  a linked chart embedded from Google Sheets.
+  A PageElement kind representing a linked chart embedded from Google Sheets.
 
   ## Attributes
 
-  *   `chartId` (*type:* `integer()`, *default:* `nil`) - The ID of the specific chart in the Google Sheets spreadsheet that is
-      embedded.
-  *   `contentUrl` (*type:* `String.t`, *default:* `nil`) - The URL of an image of the embedded chart, with a default lifetime of 30
-      minutes. This URL is tagged with the account of the requester. Anyone with
-      the URL effectively accesses the image as the original requester. Access to
-      the image may be lost if the presentation's sharing settings change.
+  *   `chartId` (*type:* `integer()`, *default:* `nil`) - The ID of the specific chart in the Google Sheets spreadsheet that is embedded.
+  *   `contentUrl` (*type:* `String.t`, *default:* `nil`) - The URL of an image of the embedded chart, with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change.
   *   `sheetsChartProperties` (*type:* `GoogleApi.Slides.V1.Model.SheetsChartProperties.t`, *default:* `nil`) - The properties of the Sheets chart.
   *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Sheets spreadsheet that contains the source chart.
   """
