@@ -25,10 +25,9 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigur
   *   `draft` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail.t`, *default:* `nil`) - The draft data of the achievement.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the achievement.
   *   `initialState` (*type:* `String.t`, *default:* `nil`) - The initial state of the achievement.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `gamesConfiguration#achievementConfiguration`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `gamesConfiguration#achievementConfiguration`.
   *   `published` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail.t`, *default:* `nil`) - The read-only published data of the achievement.
-  *   `stepsToUnlock` (*type:* `integer()`, *default:* `nil`) - Steps to unlock.  Only applicable to incremental achievements.
+  *   `stepsToUnlock` (*type:* `integer()`, *default:* `nil`) - Steps to unlock. Only applicable to incremental achievements.
   *   `token` (*type:* `String.t`, *default:* `nil`) - The token for this resource.
   """
 

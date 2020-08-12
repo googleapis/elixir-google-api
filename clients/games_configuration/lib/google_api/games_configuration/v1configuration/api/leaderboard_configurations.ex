@@ -256,9 +256,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of resource configurations to return in the response,
-          used for paging. For any response, the actual number of resources returned
-          may be less than the specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of resource configurations to return in the response, used for paging. For any response, the actual number of resources returned may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 
