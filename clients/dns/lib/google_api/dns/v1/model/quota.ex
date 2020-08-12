@@ -24,22 +24,17 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   *   `dnsKeysPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of DnsKeys per ManagedZone.
   *   `kind` (*type:* `String.t`, *default:* `dns#quota`) - 
   *   `managedZones` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones in the project.
-  *   `managedZonesPerNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a
-      network.
-  *   `networksPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks to which a privately scoped zone can be
-      attached.
+  *   `managedZonesPerNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a network.
+  *   `networksPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks to which a privately scoped zone can be attached.
   *   `networksPerPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks per policy.
   *   `policies` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of policies per project.
   *   `resourceRecordsPerRrset` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecords per ResourceRecordSet.
-  *   `rrsetAdditionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to add per
-      ChangesCreateRequest.
-  *   `rrsetDeletionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to delete per
-      ChangesCreateRequest.
+  *   `rrsetAdditionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest.
+  *   `rrsetDeletionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest.
   *   `rrsetsPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets per zone in the project.
   *   `targetNameServersPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of target name servers per managed forwarding zone.
   *   `targetNameServersPerPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of alternative target name servers per policy.
-  *   `totalRrdataSizePerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed size for total rrdata in one ChangesCreateRequest in
-      bytes.
+  *   `totalRrdataSizePerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes.
   *   `whitelistedKeySpecs` (*type:* `list(GoogleApi.DNS.V1.Model.DnsKeySpec.t)`, *default:* `nil`) - DNSSEC algorithm and key length types that can be used for DnsKeys.
   """
 
