@@ -21,16 +21,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportRequest do
 
   ## Attributes
 
-  *   `newConfig` (*type:* `map()`, *default:* `nil`) - Required. Service configuration for which we want to generate the report.
-      For this version of API, the supported types are
-      google.api.servicemanagement.v1.ConfigRef,
-      google.api.servicemanagement.v1.ConfigSource,
-      and google.api.Service
-  *   `oldConfig` (*type:* `map()`, *default:* `nil`) - Optional. Service configuration against which the comparison will be done.
-      For this version of API, the supported types are
-      google.api.servicemanagement.v1.ConfigRef,
-      google.api.servicemanagement.v1.ConfigSource,
-      and google.api.Service
+  *   `newConfig` (*type:* `map()`, *default:* `nil`) - Required. Service configuration for which we want to generate the report. For this version of API, the supported types are google.api.servicemanagement.v1.ConfigRef, google.api.servicemanagement.v1.ConfigSource, and google.api.Service
+  *   `oldConfig` (*type:* `map()`, *default:* `nil`) - Optional. Service configuration against which the comparison will be done. For this version of API, the supported types are google.api.servicemanagement.v1.ConfigRef, google.api.servicemanagement.v1.ConfigSource, and google.api.Service
   """
 
   use GoogleApi.Gax.ModelBase

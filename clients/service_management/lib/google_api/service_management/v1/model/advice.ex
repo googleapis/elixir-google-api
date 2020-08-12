@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.ServiceManagement.V1.Model.Advice do
   @moduledoc """
-  Generated advice about this change, used for providing more
-  information about how a change will affect the existing service.
+  Generated advice about this change, used for providing more information about how a change will affect the existing service.
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Useful description for why this advice was applied and what actions should
-      be taken to mitigate any implied risks.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Useful description for why this advice was applied and what actions should be taken to mitigate any implied risks.
   """
 
   use GoogleApi.Gax.ModelBase

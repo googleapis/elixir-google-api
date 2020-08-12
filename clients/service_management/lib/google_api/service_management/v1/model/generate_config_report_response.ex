@@ -21,11 +21,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportResponse do
 
   ## Attributes
 
-  *   `changeReports` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.ChangeReport.t)`, *default:* `nil`) - list of ChangeReport, each corresponding to comparison between two
-      service configurations.
-  *   `diagnostics` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.Diagnostic.t)`, *default:* `nil`) - Errors / Linter warnings associated with the service definition this
-      report
-      belongs to.
+  *   `changeReports` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.ChangeReport.t)`, *default:* `nil`) - list of ChangeReport, each corresponding to comparison between two service configurations.
+  *   `diagnostics` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.Diagnostic.t)`, *default:* `nil`) - Errors / Linter warnings associated with the service definition this report belongs to.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of the service configuration this report belongs to.
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - Name of the service this report belongs to.
   """

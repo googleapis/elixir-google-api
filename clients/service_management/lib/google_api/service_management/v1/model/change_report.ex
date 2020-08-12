@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.ServiceManagement.V1.Model.ChangeReport do
   @moduledoc """
-  Change report associated with a particular service configuration.
-
-  It contains a list of ConfigChanges based on the comparison between
-  two service configurations.
+  Change report associated with a particular service configuration. It contains a list of ConfigChanges based on the comparison between two service configurations.
 
   ## Attributes
 
-  *   `configChanges` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.ConfigChange.t)`, *default:* `nil`) - List of changes between two service configurations.
-      The changes will be alphabetically sorted based on the identifier
-      of each change.
-      A ConfigChange identifier is a dot separated path to the configuration.
-      Example: visibility.rules[selector='LibraryService.CreateBook'].restriction
+  *   `configChanges` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.ConfigChange.t)`, *default:* `nil`) - List of changes between two service configurations. The changes will be alphabetically sorted based on the identifier of each change. A ConfigChange identifier is a dot separated path to the configuration. Example: visibility.rules[selector='LibraryService.CreateBook'].restriction
   """
 
   use GoogleApi.Gax.ModelBase

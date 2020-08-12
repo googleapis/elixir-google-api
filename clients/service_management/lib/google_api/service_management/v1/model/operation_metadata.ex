@@ -22,8 +22,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.OperationMetadata do
   ## Attributes
 
   *   `progressPercentage` (*type:* `integer()`, *default:* `nil`) - Percentage of completion of this operation, ranging from 0 to 100.
-  *   `resourceNames` (*type:* `list(String.t)`, *default:* `nil`) - The full name of the resources that this operation is directly
-      associated with.
+  *   `resourceNames` (*type:* `list(String.t)`, *default:* `nil`) - The full name of the resources that this operation is directly associated with.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the operation.
   *   `steps` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.Step.t)`, *default:* `nil`) - Detailed status information for each step. The order is undetermined.
   """
