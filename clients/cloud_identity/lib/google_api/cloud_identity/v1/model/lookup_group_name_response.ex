@@ -21,9 +21,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.LookupGroupNameResponse do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the
-      Group in the format: `groups/{group_id}`, where `group_id` is the unique ID
-      assigned to the Group.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the Group in the format: `groups/{group_id}`, where `group_id` is the unique ID assigned to the Group.
   """
 
   use GoogleApi.Gax.ModelBase

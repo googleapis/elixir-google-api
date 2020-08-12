@@ -17,20 +17,12 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.EntityKey do
   @moduledoc """
-  An EntityKey uniquely identifies an Entity. Namespaces are used to provide
-  isolation for IDs. A single ID can be reused across namespaces but the
-  combination of a namespace and an ID must be unique.
+  An EntityKey uniquely identifies an Entity. Namespaces are used to provide isolation for IDs. A single ID can be reused across namespaces but the combination of a namespace and an ID must be unique.
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the entity within the given namespace. The ID must be unique
-      within its namespace.
-  *   `namespace` (*type:* `String.t`, *default:* `nil`) - Namespaces provide isolation for IDs, so an ID only needs to be unique
-      within its namespace.
-
-      Namespaces are currently only created as part of IdentitySource creation
-      from Admin Console. A namespace `"identitysources/{identity_source_id}"` is
-      created corresponding to every Identity Source `identity_source_id`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the entity within the given namespace. The ID must be unique within its namespace.
+  *   `namespace` (*type:* `String.t`, *default:* `nil`) - Namespaces provide isolation for IDs, so an ID only needs to be unique within its namespace. Namespaces are currently only created as part of IdentitySource creation from Admin Console. A namespace `"identitysources/{identity_source_id}"` is created corresponding to every Identity Source `identity_source_id`.
   """
 
   use GoogleApi.Gax.ModelBase
