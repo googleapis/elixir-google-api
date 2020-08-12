@@ -29,6 +29,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Fi
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The relative resource name of the source the finding belongs to. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name This field is immutable after creation time. For example: "organizations/{organization_id}/sources/{source_id}"
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - For findings on Google Cloud resources, the full resource name of the Google Cloud resource this finding is for. See: https://cloud.google.com/apis/design/resource_names#full_resource_name When the finding is for a non-Google Cloud resource, the resourceName can be a customer or partner defined string. This field is immutable after creation time.
   *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1SecurityMarks.t`, *default:* `nil`) - Output only. User specified security marks. These marks are entirely managed by the user and come from the SecurityMarks resource that belongs to the finding.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the finding.
   *   `sourceProperties` (*type:* `map()`, *default:* `nil`) - Source specific properties. These properties are managed by the source that writes the finding. The key names in the source_properties map must be between 1 and 255 characters, and must start with a letter and contain alphanumeric characters or underscores only.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the finding.
   """
@@ -45,6 +46,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Fi
           :resourceName => String.t(),
           :securityMarks =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1SecurityMarks.t(),
+          :severity => String.t(),
           :sourceProperties => map(),
           :state => String.t()
         }
@@ -61,6 +63,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Fi
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1SecurityMarks
   )
 
+  field(:severity)
   field(:sourceProperties, type: :map)
   field(:state)
 end
