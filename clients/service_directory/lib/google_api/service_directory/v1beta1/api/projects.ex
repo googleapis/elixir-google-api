@@ -172,8 +172,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the project and location the namespace
-      will be created in.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the project and location the namespace will be created in.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -186,13 +185,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:namespaceId` (*type:* `String.t`) - Required. The Resource ID must be 1-63 characters long, and comply with
-          <a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank">RFC1035</a>.
-          Specifically, the name must be 1-63 characters long and match the regular
-          expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?` which means the first
-          character must be a lowercase letter, and all following characters must
-          be a dash, lowercase letter, or digit, except the last character, which
-          cannot be a dash.
+      *   `:namespaceId` (*type:* `String.t`) - Required. The Resource ID must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
       *   `:body` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Model.Namespace.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -247,8 +240,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes a namespace. This also deletes all services and endpoints in
-  the namespace.
+  Deletes a namespace. This also deletes all services and endpoints in the namespace.
 
   ## Parameters
 
@@ -391,8 +383,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -463,8 +454,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the project and location whose namespaces we'd like to
-      list.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the project and location whose namespaces we'd like to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -477,38 +467,8 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to list result by.
-
-          General filter string syntax:
-          <field> <operator> <value> (<logical connector>)
-          <field> can be "name", or "labels.<key>" for map field.
-          <operator> can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS, and
-          is roughly the same as "=".
-          <value> must be the same data type as field.
-          <logical connector> can be "AND, OR, NOT".
-
-          Examples of valid filters:
-          * "labels.owner" returns Namespaces that have a label with the key "owner"
-            this is the same as "labels:owner".
-          * "labels.protocol=gRPC" returns Namespaces that have key/value
-            "protocol=gRPC".
-          * "name>projects/my-project/locations/us-east/namespaces/namespace-c"
-            returns Namespaces that have name that is alphabetically later than the
-            string, so "namespace-e" will be returned but "namespace-a" will not be.
-          * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have
-            "owner" in label key but value is not "sd" AND have key/value foo=bar.
-          * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't
-            have a field called "doesnotexist". Since the filter does not match any
-            Namespaces, it returns no results.
-      *   `:orderBy` (*type:* `String.t`) - Optional. The order to list result by.
-
-          General order by string syntax:
-          <field> (<asc|desc>) (,)
-          <field> allows values {"name"}
-          <asc/desc> ascending or descending order by <field>. If this is left
-          blank, "asc" is used.
-          Note that an empty order_by string result in default order, which is order
-          by name in ascending order.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to list result by. General filter string syntax: () can be "name", or "labels." for map field. can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS, and is roughly the same as "=". must be the same data type as field. can be "AND, OR, NOT". Examples of valid filters: * "labels.owner" returns Namespaces that have a label with the key "owner" this is the same as "labels:owner". * "labels.protocol=gRPC" returns Namespaces that have key/value "protocol=gRPC". * "name>projects/my-project/locations/us-east/namespaces/namespace-c" returns Namespaces that have name that is alphabetically later than the string, so "namespace-e" will be returned but "namespace-a" will not be. * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have "owner" in label key but value is not "sd" AND have key/value foo=bar. * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't have a field called "doesnotexist". Since the filter does not match any Namespaces, it returns no results.
+      *   `:orderBy` (*type:* `String.t`) - Optional. The order to list result by. General order by string syntax: () (,) allows values {"name"} ascending or descending order by . If this is left blank, "asc" is used. Note that an empty order_by string result in default order, which is order by name in ascending order.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -573,8 +533,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The resource name for the namespace in the format
-      'projects/*/locations/*/namespaces/*'.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name for the namespace in the format 'projects/*/locations/*/namespaces/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -647,8 +606,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -719,8 +677,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -806,13 +763,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:serviceId` (*type:* `String.t`) - Required. The Resource ID must be 1-63 characters long, and comply with
-          <a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank">RFC1035</a>.
-          Specifically, the name must be 1-63 characters long and match the regular
-          expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?` which means the first
-          character must be a lowercase letter, and all following characters must
-          be a dash, lowercase letter, or digit, except the last character, which
-          cannot be a dash.
+      *   `:serviceId` (*type:* `String.t`) - Required. The Resource ID must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
       *   `:body` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Model.Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -867,8 +818,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes a service. This also deletes all endpoints associated with
-  the service.
+  Deletes a service. This also deletes all endpoints associated with the service.
 
   ## Parameters
 
@@ -1011,8 +961,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1083,8 +1032,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the namespace whose services we'd
-      like to list.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the namespace whose services we'd like to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1097,33 +1045,10 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to list result by.
-
-          General filter string syntax:
-          <field> <operator> <value> (<logical connector>)
-          <field> can be "name", or "metadata.<key>" for map field.
-          <operator> can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS, and
-          is roughly the same as "=".
-          <value> must be the same data type as field.
-          <logical connector> can be "AND, OR, NOT".
-
-          Examples of valid filters:
-          * "metadata.owner" returns Services that have a label with the key "owner"
-            this is the same as "metadata:owner".
-          * "metadata.protocol=gRPC" returns Services that have key/value
-            "protocol=gRPC".
-          * "name>projects/my-project/locations/us-east/namespaces/my-namespace/services/service-c"
-            returns Services that have name that is alphabetically later than the
-            string, so "service-e" will be returned but "service-a" will not be.
-          * "metadata.owner!=sd AND metadata.foo=bar" returns Services that have
-            "owner" in label key but value is not "sd" AND have key/value foo=bar.
-          * "doesnotexist.foo=bar" returns an empty list. Note that Service doesn't
-            have a field called "doesnotexist". Since the filter does not match any
-            Services, it returns no results.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to list result by. General filter string syntax: () can be "name", or "metadata." for map field. can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS, and is roughly the same as "=". must be the same data type as field. can be "AND, OR, NOT". Examples of valid filters: * "metadata.owner" returns Services that have a label with the key "owner" this is the same as "metadata:owner". * "metadata.protocol=gRPC" returns Services that have key/value "protocol=gRPC". * "name>projects/my-project/locations/us-east/namespaces/my-namespace/services/service-c" returns Services that have name that is alphabetically later than the string, so "service-e" will be returned but "service-a" will not be. * "metadata.owner!=sd AND metadata.foo=bar" returns Services that have "owner" in label key but value is not "sd" AND have key/value foo=bar. * "doesnotexist.foo=bar" returns an empty list. Note that Service doesn't have a field called "doesnotexist". Since the filter does not match any Services, it returns no results.
       *   `:orderBy` (*type:* `String.t`) - Optional. The order to list result by.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request,
-          if any.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1186,8 +1111,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The resource name for the service in the format
-      'projects/*/locations/*/namespaces/*/services/*'.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name for the service in the format 'projects/*/locations/*/namespaces/*/services/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1255,9 +1179,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns a service and its
-  associated endpoints.
-  Resolving a service is not considered an active developer method.
+  Returns a service and its associated endpoints. Resolving a service is not considered an active developer method.
 
   ## Parameters
 
@@ -1335,8 +1257,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1407,8 +1328,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1494,13 +1414,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:endpointId` (*type:* `String.t`) - Required. The Resource ID must be 1-63 characters long, and comply with
-          <a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank">RFC1035</a>.
-          Specifically, the name must be 1-63 characters long and match the regular
-          expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?` which means the first
-          character must be a lowercase letter, and all following characters must
-          be a dash, lowercase letter, or digit, except the last character, which
-          cannot be a dash.
+      *   `:endpointId` (*type:* `String.t`) - Required. The Resource ID must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
       *   `:body` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1698,8 +1612,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the service whose endpoints we'd like to
-      list.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the service whose endpoints we'd like to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1712,35 +1625,10 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to list result by.
-
-          General filter string syntax:
-          <field> <operator> <value> (<logical connector>)
-          <field> can be "name", "address", "port" or "metadata.<key>" for map field.
-          <operator> can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS, and
-          is roughly the same as "=".
-          <value> must be the same data type as field.
-          <logical connector> can be "AND, OR, NOT".
-
-          Examples of valid filters:
-          * "metadata.owner" returns Endpoints that have a label with the key "owner"
-            this is the same as "metadata:owner".
-          * "metadata.protocol=gRPC" returns Endpoints that have key/value
-            "protocol=gRPC".
-          * "address=192.108.1.105" returns Endpoints that have this address.
-          * "port>8080" returns Endpoints that have port number larger than 8080.
-          * "name>projects/my-project/locations/us-east/namespaces/my-namespace/services/my-service/endpoints/endpoint-c"
-            returns Endpoints that have name that is alphabetically later than the
-            string, so "endpoint-e" will be returned but "endpoint-a" will not be.
-          * "metadata.owner!=sd AND metadata.foo=bar" returns Endpoints that have
-            "owner" in label key but value is not "sd" AND have key/value foo=bar.
-          * "doesnotexist.foo=bar" returns an empty list. Note that Endpoint doesn't
-            have a field called "doesnotexist". Since the filter does not match any
-            Endpoints, it returns no results.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to list result by. General filter string syntax: () can be "name", "address", "port" or "metadata." for map field. can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS, and is roughly the same as "=". must be the same data type as field. can be "AND, OR, NOT". Examples of valid filters: * "metadata.owner" returns Endpoints that have a label with the key "owner" this is the same as "metadata:owner". * "metadata.protocol=gRPC" returns Endpoints that have key/value "protocol=gRPC". * "address=192.108.1.105" returns Endpoints that have this address. * "port>8080" returns Endpoints that have port number larger than 8080. * "name>projects/my-project/locations/us-east/namespaces/my-namespace/services/my-service/endpoints/endpoint-c" returns Endpoints that have name that is alphabetically later than the string, so "endpoint-e" will be returned but "endpoint-a" will not be. * "metadata.owner!=sd AND metadata.foo=bar" returns Endpoints that have "owner" in label key but value is not "sd" AND have key/value foo=bar. * "doesnotexist.foo=bar" returns an empty list. Note that Endpoint doesn't have a field called "doesnotexist". Since the filter does not match any Endpoints, it returns no results.
       *   `:orderBy` (*type:* `String.t`) - Optional. The order to list result by.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request,
-          if any.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1803,8 +1691,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The resource name for the endpoint in the format
-      'projects/*/locations/*/namespaces/*/services/*/endpoints/*'.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name for the endpoint in the format 'projects/*/locations/*/namespaces/*/services/*/endpoints/*'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

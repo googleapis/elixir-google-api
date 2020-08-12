@@ -22,8 +22,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.ListNamespacesResponse do
   ## Attributes
 
   *   `namespaces` (*type:* `list(GoogleApi.ServiceDirectory.V1beta1.Model.Namespace.t)`, *default:* `nil`) - The list of namespaces.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

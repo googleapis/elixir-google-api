@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Namespace do
   @moduledoc """
-  A container for services.
-  Namespaces allow administrators to group services together and define
-  permissions for a collection of services.
+  A container for services. Namespaces allow administrators to group services together and define permissions for a collection of services.
 
   ## Attributes
 
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels associated with this Namespace.
-      No more than 64 user labels can be associated with a given resource.  Label
-      keys and values can be no longer than 63 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the namespace in the format
-      'projects/*/locations/*/namespaces/*'.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels associated with this Namespace. No more than 64 user labels can be associated with a given resource. Label keys and values can be no longer than 63 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the namespace in the format 'projects/*/locations/*/namespaces/*'.
   """
 
   use GoogleApi.Gax.ModelBase
