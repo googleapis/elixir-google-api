@@ -21,8 +21,7 @@ defmodule GoogleApi.Games.V1.Model.EventPeriodUpdate do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#eventPeriodUpdate`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#eventPeriodUpdate`.
   *   `timePeriod` (*type:* `GoogleApi.Games.V1.Model.EventPeriodRange.t`, *default:* `nil`) - The time period being covered by this update.
   *   `updates` (*type:* `list(GoogleApi.Games.V1.Model.EventUpdateRequest.t)`, *default:* `nil`) - The updates being made for this time period.
   """

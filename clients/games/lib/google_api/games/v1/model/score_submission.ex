@@ -21,14 +21,11 @@ defmodule GoogleApi.Games.V1.Model.ScoreSubmission do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#scoreSubmission`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#scoreSubmission`.
   *   `leaderboardId` (*type:* `String.t`, *default:* `nil`) - The leaderboard this score is being submitted to.
   *   `score` (*type:* `String.t`, *default:* `nil`) - The new score being submitted.
-  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about this score.  Values will contain no more than
-      64 URI-safe characters as defined by section 2.3 of RFC 3986.
-  *   `signature` (*type:* `String.t`, *default:* `nil`) - Signature Values will contain URI-safe characters as defined by section 2.3
-      of RFC 3986.
+  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986.
+  *   `signature` (*type:* `String.t`, *default:* `nil`) - Signature Values will contain URI-safe characters as defined by section 2.3 of RFC 3986.
   """
 
   use GoogleApi.Gax.ModelBase

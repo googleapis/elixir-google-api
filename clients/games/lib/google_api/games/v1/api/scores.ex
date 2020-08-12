@@ -26,20 +26,13 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Get high scores, and optionally ranks, in leaderboards for the currently
-  authenticated player.  For a specific time span, `leaderboardId`
-  can be set to `ALL` to retrieve data for all leaderboards in a
-  given time span.  `NOTE: You cannot ask for 'ALL' leaderboards and
-  'ALL' timeSpans in the same request; only one parameter may be set to
-  'ALL'.
+  Get high scores, and optionally ranks, in leaderboards for the currently authenticated player. For a specific time span, `leaderboardId` can be set to `ALL` to retrieve data for all leaderboards in a given time span. `NOTE: You cannot ask for 'ALL' leaderboards and 'ALL' timeSpans in the same request; only one parameter may be set to 'ALL'.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
-  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the
-      authenticated player's ID.
-  *   `leaderboard_id` (*type:* `String.t`) - The ID of the leaderboard.  Can be set to 'ALL' to retrieve data for all
-      leaderboards for this application.
+  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the authenticated player's ID.
+  *   `leaderboard_id` (*type:* `String.t`) - The ID of the leaderboard. Can be set to 'ALL' to retrieve data for all leaderboards for this application.
   *   `time_span` (*type:* `String.t`) - The time span for the scores and ranks you're requesting.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -53,12 +46,9 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:includeRankType` (*type:* `String.t`) - The types of ranks to return. If the parameter is omitted, no ranks will be
-          returned.
+      *   `:includeRankType` (*type:* `String.t`) - The types of ranks to return. If the parameter is omitted, no ranks will be returned.
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of leaderboard scores to return in the response.  For
-          any response, the actual number of leaderboard scores returned may be less
-          than the specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of leaderboard scores to return in the response. For any response, the actual number of leaderboard scores returned may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -147,9 +137,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of leaderboard scores to return in the response.  For
-          any response, the actual number of leaderboard scores returned may be less
-          than the specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of leaderboard scores to return in the response. For any response, the actual number of leaderboard scores returned may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -232,16 +220,10 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of leaderboard scores to return in the response.  For
-          any response, the actual number of leaderboard scores returned may be less
-          than the specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of leaderboard scores to return in the response. For any response, the actual number of leaderboard scores returned may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
-      *   `:resultsAbove` (*type:* `integer()`) - The preferred number of scores to return above the player's score. More
-          scores may be returned if the player is at the bottom of the leaderboard;
-          fewer may be returned if the player is at the top. Must be less than or
-          equal to maxResults.
-      *   `:returnTopIfAbsent` (*type:* `boolean()`) - True if the top scores should be returned when the player is not in the
-          leaderboard. Defaults to true.
+      *   `:resultsAbove` (*type:* `integer()`) - The preferred number of scores to return above the player's score. More scores may be returned if the player is at the bottom of the leaderboard; fewer may be returned if the player is at the top. Must be less than or equal to maxResults.
+      *   `:returnTopIfAbsent` (*type:* `boolean()`) - True if the top scores should be returned when the player is not in the leaderboard. Defaults to true.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -310,12 +292,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
 
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
   *   `leaderboard_id` (*type:* `String.t`) - The ID of the leaderboard.
-  *   `score` (*type:* `String.t`) - The score you're submitting. The submitted score is ignored if it is worse
-      than a previously submitted score, where worse depends on the leaderboard
-      sort order. The meaning of the score value depends on the leaderboard
-      format type. For fixed-point, the score represents the raw value.  For
-      time, the score represents elapsed time in milliseconds.  For currency, the
-      score represents a value in micro units.
+  *   `score` (*type:* `String.t`) - The score you're submitting. The submitted score is ignored if it is worse than a previously submitted score, where worse depends on the leaderboard sort order. The meaning of the score value depends on the leaderboard format type. For fixed-point, the score represents the raw value. For time, the score represents elapsed time in milliseconds. For currency, the score represents a value in micro units.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -329,9 +306,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:scoreTag` (*type:* `String.t`) - Additional information about the score you're submitting.  Values must
-          contain no more than 64 URI-safe characters as defined by section 2.3 of
-          RFC 3986.
+      *   `:scoreTag` (*type:* `String.t`) - Additional information about the score you're submitting. Values must contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

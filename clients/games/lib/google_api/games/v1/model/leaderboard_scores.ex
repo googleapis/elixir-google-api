@@ -22,15 +22,10 @@ defmodule GoogleApi.Games.V1.Model.LeaderboardScores do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.LeaderboardEntry.t)`, *default:* `nil`) - The scores in the leaderboard.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#leaderboardScores`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#leaderboardScores`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token for the next page of results.
   *   `numScores` (*type:* `String.t`, *default:* `nil`) - The total number of scores in the leaderboard.
-  *   `playerScore` (*type:* `GoogleApi.Games.V1.Model.LeaderboardEntry.t`, *default:* `nil`) - The score of the requesting player on the leaderboard. The player's score
-      may appear both here and in the list of scores above. If you are viewing a
-      public leaderboard and the player is not sharing their gameplay information
-      publicly, the `scoreRank`and `formattedScoreRank`
-      values will not be present.
+  *   `playerScore` (*type:* `GoogleApi.Games.V1.Model.LeaderboardEntry.t`, *default:* `nil`) - The score of the requesting player on the leaderboard. The player's score may appear both here and in the list of scores above. If you are viewing a public leaderboard and the player is not sharing their gameplay information publicly, the `scoreRank`and `formattedScoreRank` values will not be present.
   *   `prevPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token for the previous page of results.
   """
 

@@ -21,10 +21,8 @@ defmodule GoogleApi.Games.V1.Model.AchievementRevealResponse do
 
   ## Attributes
 
-  *   `currentState` (*type:* `String.t`, *default:* `nil`) - The current state of the achievement for which a reveal was attempted. This
-      might be `UNLOCKED` if the achievement was already unlocked.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#achievementRevealResponse`.
+  *   `currentState` (*type:* `String.t`, *default:* `nil`) - The current state of the achievement for which a reveal was attempted. This might be `UNLOCKED` if the achievement was already unlocked.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementRevealResponse`.
   """
 
   use GoogleApi.Gax.ModelBase

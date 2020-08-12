@@ -23,8 +23,7 @@ defmodule GoogleApi.Games.V1.Model.Category do
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - The category name.
   *   `experiencePoints` (*type:* `String.t`, *default:* `nil`) - Experience points earned in this category.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#category`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#category`.
   """
 
   use GoogleApi.Gax.ModelBase

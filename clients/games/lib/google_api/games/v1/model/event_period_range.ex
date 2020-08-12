@@ -21,12 +21,9 @@ defmodule GoogleApi.Games.V1.Model.EventPeriodRange do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#eventPeriodRange`.
-  *   `periodEndMillis` (*type:* `String.t`, *default:* `nil`) - The time when this update period ends, in millis, since 1970 UTC (Unix
-      Epoch).
-  *   `periodStartMillis` (*type:* `String.t`, *default:* `nil`) - The time when this update period begins, in millis, since 1970 UTC (Unix
-      Epoch).
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#eventPeriodRange`.
+  *   `periodEndMillis` (*type:* `String.t`, *default:* `nil`) - The time when this update period ends, in millis, since 1970 UTC (Unix Epoch).
+  *   `periodStartMillis` (*type:* `String.t`, *default:* `nil`) - The time when this update period begins, in millis, since 1970 UTC (Unix Epoch).
   """
 
   use GoogleApi.Gax.ModelBase

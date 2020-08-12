@@ -22,8 +22,7 @@ defmodule GoogleApi.Games.V1.Model.EventBatchRecordFailure do
   ## Attributes
 
   *   `failureCause` (*type:* `String.t`, *default:* `nil`) - The cause for the update failure.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#eventBatchRecordFailure`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#eventBatchRecordFailure`.
   *   `range` (*type:* `GoogleApi.Games.V1.Model.EventPeriodRange.t`, *default:* `nil`) - The time range which was rejected; empty for a request-wide failure.
   """
 

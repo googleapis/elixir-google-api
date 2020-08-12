@@ -22,8 +22,7 @@ defmodule GoogleApi.Games.V1.Model.PlayerEventListResponse do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.PlayerEvent.t)`, *default:* `nil`) - The player events.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#playerEventListResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#playerEventListResponse`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token for the next page of results.
   """
 

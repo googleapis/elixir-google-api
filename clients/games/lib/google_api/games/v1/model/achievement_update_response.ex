@@ -24,10 +24,8 @@ defmodule GoogleApi.Games.V1.Model.AchievementUpdateResponse do
   *   `achievementId` (*type:* `String.t`, *default:* `nil`) - The achievement this update is was applied to.
   *   `currentState` (*type:* `String.t`, *default:* `nil`) - The current state of the achievement.
   *   `currentSteps` (*type:* `integer()`, *default:* `nil`) - The current steps recorded for this achievement if it is incremental.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#achievementUpdateResponse`.
-  *   `newlyUnlocked` (*type:* `boolean()`, *default:* `nil`) - Whether this achievement was newly unlocked (that is, whether the unlock
-      request for the achievement was the first for the player).
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementUpdateResponse`.
+  *   `newlyUnlocked` (*type:* `boolean()`, *default:* `nil`) - Whether this achievement was newly unlocked (that is, whether the unlock request for the achievement was the first for the player).
   *   `updateOccurred` (*type:* `boolean()`, *default:* `nil`) - Whether the requested updates actually affected the achievement.
   """
 

@@ -26,8 +26,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns a list showing the current progress on events in this application
-  for the currently authenticated user.
+  Returns a list showing the current progress on events in this application for the currently authenticated user.
 
   ## Parameters
 
@@ -45,9 +44,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of events to return in the response, used for paging.
-          For any response, the actual number of events to return may be less than
-          the specified maxResults.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of events to return in the response, used for paging. For any response, the actual number of events to return may be less than the specified maxResults.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -109,9 +106,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of event definitions to return in the response, used for
-          paging.  For any response, the actual number of event definitions to return
-          may be less than the specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of event definitions to return in the response, used for paging. For any response, the actual number of event definitions to return may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -155,8 +150,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
   end
 
   @doc """
-  Records a batch of changes to the number of times events have occurred for
-  the currently authenticated user of this application.
+  Records a batch of changes to the number of times events have occurred for the currently authenticated user of this application.
 
   ## Parameters
 

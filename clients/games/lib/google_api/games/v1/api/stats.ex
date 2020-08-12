@@ -26,8 +26,7 @@ defmodule GoogleApi.Games.V1.Api.Stats do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns engagement and spend statistics in this application for the
-  currently authenticated user.
+  Returns engagement and spend statistics in this application for the currently authenticated user.
 
   ## Parameters
 

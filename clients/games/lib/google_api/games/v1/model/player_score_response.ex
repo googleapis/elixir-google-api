@@ -21,18 +21,12 @@ defmodule GoogleApi.Games.V1.Model.PlayerScoreResponse do
 
   ## Attributes
 
-  *   `beatenScoreTimeSpans` (*type:* `list(String.t)`, *default:* `nil`) - The time spans where the submitted score is better than the existing score
-      for that time span.
+  *   `beatenScoreTimeSpans` (*type:* `list(String.t)`, *default:* `nil`) - The time spans where the submitted score is better than the existing score for that time span.
   *   `formattedScore` (*type:* `String.t`, *default:* `nil`) - The formatted value of the submitted score.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#playerScoreResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#playerScoreResponse`.
   *   `leaderboardId` (*type:* `String.t`, *default:* `nil`) - The leaderboard ID that this score was submitted to.
-  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about this score.  Values will contain no more than
-      64 URI-safe characters as defined by section 2.3 of RFC 3986.
-  *   `unbeatenScores` (*type:* `list(GoogleApi.Games.V1.Model.PlayerScore.t)`, *default:* `nil`) - The scores in time spans that have not been beaten.  As an example, the
-      submitted score may be better than the
-      player's `DAILY` score, but not better than the player's scores
-      for the `WEEKLY` or `ALL_TIME` time spans.
+  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986.
+  *   `unbeatenScores` (*type:* `list(GoogleApi.Games.V1.Model.PlayerScore.t)`, *default:* `nil`) - The scores in time spans that have not been beaten. As an example, the submitted score may be better than the player's `DAILY` score, but not better than the player's scores for the `WEEKLY` or `ALL_TIME` time spans.
   """
 
   use GoogleApi.Gax.ModelBase

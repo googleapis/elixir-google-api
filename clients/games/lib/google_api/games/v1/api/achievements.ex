@@ -26,8 +26,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Increments the steps of the achievement with the given ID for the currently
-  authenticated player.
+  Increments the steps of the achievement with the given ID for the currently authenticated player.
 
   ## Parameters
 
@@ -46,9 +45,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:requestId` (*type:* `String.t`) - A randomly generated numeric ID for each request specified by the caller.
-          This number is used at the server to ensure that the request is handled
-          correctly across retries.
+      *   `:requestId` (*type:* `String.t`) - A randomly generated numeric ID for each request specified by the caller. This number is used at the server to ensure that the request is handled correctly across retries.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -104,14 +101,12 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   end
 
   @doc """
-  Lists the progress for all your application's achievements for the
-  currently authenticated player.
+  Lists the progress for all your application's achievements for the currently authenticated player.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
-  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the
-      authenticated player's ID.
+  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the authenticated player's ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -125,12 +120,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of achievement resources to return in the response, used
-          for paging. For any response, the actual number of achievement resources
-          returned may be less than the specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of achievement resources to return in the response, used for paging. For any response, the actual number of achievement resources returned may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
-      *   `:state` (*type:* `String.t`) - Tells the server to return only achievements with the specified state.  If
-          this parameter isn't specified, all achievements are returned.
+      *   `:state` (*type:* `String.t`) - Tells the server to return only achievements with the specified state. If this parameter isn't specified, all achievements are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -178,8 +170,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   end
 
   @doc """
-  Sets the state of the achievement with the given ID to
-  `REVEALED` for the currently authenticated player.
+  Sets the state of the achievement with the given ID to `REVEALED` for the currently authenticated player.
 
   ## Parameters
 
@@ -238,10 +229,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   end
 
   @doc """
-  Sets the steps for the currently authenticated player towards unlocking an
-  achievement. If the steps parameter is less than the current number of
-  steps that the player already gained for the achievement, the achievement
-  is not modified.
+  Sets the steps for the currently authenticated player towards unlocking an achievement. If the steps parameter is less than the current number of steps that the player already gained for the achievement, the achievement is not modified.
 
   ## Parameters
 

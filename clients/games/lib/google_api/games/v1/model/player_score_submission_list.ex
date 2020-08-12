@@ -21,8 +21,7 @@ defmodule GoogleApi.Games.V1.Model.PlayerScoreSubmissionList do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#playerScoreSubmissionList`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#playerScoreSubmissionList`.
   *   `scores` (*type:* `list(GoogleApi.Games.V1.Model.ScoreSubmission.t)`, *default:* `nil`) - The score submissions.
   """
 

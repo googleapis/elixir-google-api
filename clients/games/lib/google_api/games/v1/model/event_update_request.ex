@@ -22,8 +22,7 @@ defmodule GoogleApi.Games.V1.Model.EventUpdateRequest do
   ## Attributes
 
   *   `definitionId` (*type:* `String.t`, *default:* `nil`) - The ID of the event being modified in this update.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#eventUpdateRequest`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#eventUpdateRequest`.
   *   `updateCount` (*type:* `String.t`, *default:* `nil`) - The number of times this event occurred in this time period.
   """
 
