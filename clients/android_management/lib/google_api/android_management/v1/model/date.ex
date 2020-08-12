@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.Date do
   @moduledoc """
-  Represents a whole or partial calendar date, e.g. a birthday. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the Proleptic Gregorian Calendar. This can represent:
-  A full date, with non-zero year, month and day values
-  A month and day value, with a zero year, e.g. an anniversary
-  A year on its own, with zero month and day values
-  A year and month value, with a zero day, e.g. a credit card expiration dateRelated types are google.type.TimeOfDay and google.protobuf.Timestamp.
+  Represents a whole or partial calendar date, e.g. a birthday. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the Proleptic Gregorian Calendar. This can represent: A full date, with non-zero year, month and day values A month and day value, with a zero year, e.g. an anniversary A year on its own, with zero month and day values A year and month value, with a zero day, e.g. a credit card expiration dateRelated types are google.type.TimeOfDay and google.protobuf.Timestamp.
 
   ## Attributes
 

@@ -22,12 +22,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   ## Attributes
 
   *   `accessibleTrackIds` (*type:* `list(String.t)`, *default:* `nil`) - List of the app’s track IDs that a device belonging to the enterprise can access. If the list contains multiple track IDs, devices receive the latest version among all accessible tracks. If the list contains no track IDs, devices only have access to the app’s production track. More details about each track are available in AppTrackInfo.
+  *   `connectedWorkAndPersonalApp` (*type:* `String.t`, *default:* `nil`) - Controls whether the app can communicate with itself across a device’s work and personal profiles, subject to user consent.
   *   `defaultPermissionPolicy` (*type:* `String.t`, *default:* `nil`) - The default policy for all permissions requested by the app. If specified, this overrides the policy-level default_permission_policy which applies to all apps. It does not override the permission_grants which applies to all apps.
   *   `delegatedScopes` (*type:* `list(String.t)`, *default:* `nil`) - The scopes delegated to the app from Android Device Policy.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether the app is disabled. When disabled, the app data is still preserved.
   *   `installType` (*type:* `String.t`, *default:* `nil`) - The type of installation to perform.
   *   `lockTaskAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether the app is allowed to lock itself in full-screen mode. DEPRECATED. Use InstallType KIOSK or kioskCustomLauncherEnabled to to configure a dedicated device.
-  *   `managedConfiguration` (*type:* `map()`, *default:* `nil`) - Managed configuration applied to the app. The format for the configuration is dictated by the ManagedProperty values supported by the app. Each field name in the managed configuration must match the key field of the ManagedProperty. The field value must be compatible with the type of the ManagedProperty: <table> <tr><td><i>type</i></td><td><i>JSON value</i></td></tr> <tr><td>BOOL</td><td>true or false</td></tr> <tr><td>STRING</td><td>string</td></tr> <tr><td>INTEGER</td><td>number</td></tr> <tr><td>CHOICE</td><td>string</td></tr> <tr><td>MULTISELECT</td><td>array of strings</td></tr> <tr><td>HIDDEN</td><td>string</td></tr> <tr><td>BUNDLE_ARRAY</td><td>array of objects</td></tr> </table>
+  *   `managedConfiguration` (*type:* `map()`, *default:* `nil`) - Managed configuration applied to the app. The format for the configuration is dictated by the ManagedProperty values supported by the app. Each field name in the managed configuration must match the key field of the ManagedProperty. The field value must be compatible with the type of the ManagedProperty: *type* *JSON value* BOOL true or false STRING string INTEGER number CHOICE string MULTISELECT array of strings HIDDEN string BUNDLE_ARRAY array of objects 
   *   `managedConfigurationTemplate` (*type:* `GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate.t`, *default:* `nil`) - The managed configurations template for the app, saved from the managed configurations iframe. This field is ignored if managed_configuration is set.
   *   `minimumVersionCode` (*type:* `integer()`, *default:* `nil`) - The minimum version of the app that runs on the device. If set, the device attempts to update the app to at least this version code. If the app is not up-to-date, the device will contain a NonComplianceDetail with non_compliance_reason set to APP_NOT_UPDATED. The app must already be published to Google Play with a version code greater than or equal to this value. At most 20 apps may specify a minimum version code per policy.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the app. For example, com.google.android.youtube for the YouTube app.
@@ -38,6 +39,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
 
   @type t :: %__MODULE__{
           :accessibleTrackIds => list(String.t()),
+          :connectedWorkAndPersonalApp => String.t(),
           :defaultPermissionPolicy => String.t(),
           :delegatedScopes => list(String.t()),
           :disabled => boolean(),
@@ -52,6 +54,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
         }
 
   field(:accessibleTrackIds, type: :list)
+  field(:connectedWorkAndPersonalApp)
   field(:defaultPermissionPolicy)
   field(:delegatedScopes, type: :list)
   field(:disabled)

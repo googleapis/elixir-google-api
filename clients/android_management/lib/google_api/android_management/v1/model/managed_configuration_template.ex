@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate do
 
   ## Attributes
 
-  *   `configurationVariables` (*type:* `map()`, *default:* `nil`) - Optional, a map containing <key, value> configuration variables defined for the configuration.
+  *   `configurationVariables` (*type:* `map()`, *default:* `nil`) - Optional, a map containing configuration variables defined for the configuration.
   *   `templateId` (*type:* `String.t`, *default:* `nil`) - The ID of the managed configurations template.
   """
 

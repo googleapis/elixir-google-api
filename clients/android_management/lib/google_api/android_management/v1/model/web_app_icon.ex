@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.WebAppIcon do
 
   ## Attributes
 
-  *   `imageData` (*type:* `String.t`, *default:* `nil`) - The actual bytes of the image in a base64url encoded string (c.f. RFC4648, section 5 "Base 64 Encoding with URL and Filename Safe Alphabet"). <ul> <li>The image type can be png or jpg. <li>The image should ideally be square. <li>The image should ideally have a size of 512x512. </ul>
+  *   `imageData` (*type:* `String.t`, *default:* `nil`) - The actual bytes of the image in a base64url encoded string (c.f. RFC4648, section 5 "Base 64 Encoding with URL and Filename Safe Alphabet"). - The image type can be png or jpg. - The image should ideally be square. - The image should ideally have a size of 512x512. 
   """
 
   use GoogleApi.Gax.ModelBase
