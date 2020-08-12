@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePhotosResponse do
   @moduledoc """
-  Response to batch update of metadata of one or more
-  Photos.
+  Response to batch update of metadata of one or more Photos.
 
   ## Attributes
 
-  *   `results` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.PhotoResponse.t)`, *default:* `nil`) - List of results for each individual
-      Photo updated, in the same order as
-      the request.
+  *   `results` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.PhotoResponse.t)`, *default:* `nil`) - List of results for each individual Photo updated, in the same order as the request.
   """
 
   use GoogleApi.Gax.ModelBase

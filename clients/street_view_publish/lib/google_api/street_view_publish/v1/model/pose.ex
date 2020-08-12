@@ -21,31 +21,13 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Pose do
 
   ## Attributes
 
-  *   `accuracyMeters` (*type:* `number()`, *default:* `nil`) - The estimated horizontal accuracy of this pose in meters with 68%
-      confidence (one standard deviation). For example, on Android, this value is
-      available from this method:
-      https://developer.android.com/reference/android/location/Location#getAccuracy().
-      Other platforms have different methods of obtaining similar accuracy
-      estimations.
-  *   `altitude` (*type:* `float()`, *default:* `nil`) - Altitude of the pose in meters above WGS84 ellipsoid.
-      NaN indicates an unmeasured quantity.
-  *   `heading` (*type:* `float()`, *default:* `nil`) - Compass heading, measured at the center of the photo in degrees clockwise
-      from North. Value must be >=0 and <360.
-      NaN indicates an unmeasured quantity.
-  *   `latLngPair` (*type:* `GoogleApi.StreetViewPublish.V1.Model.LatLng.t`, *default:* `nil`) - Latitude and longitude pair of the pose, as explained here:
-      https://cloud.google.com/datastore/docs/reference/rest/Shared.Types/LatLng
-      When creating a Photo, if the
-      latitude and longitude pair are not provided, the geolocation from the
-      exif header is used. A latitude and longitude pair not provided in the
-      photo or exif header causes the photo process to fail.
+  *   `accuracyMeters` (*type:* `number()`, *default:* `nil`) - The estimated horizontal accuracy of this pose in meters with 68% confidence (one standard deviation). For example, on Android, this value is available from this method: https://developer.android.com/reference/android/location/Location#getAccuracy(). Other platforms have different methods of obtaining similar accuracy estimations.
+  *   `altitude` (*type:* `float()`, *default:* `nil`) - Altitude of the pose in meters above WGS84 ellipsoid. NaN indicates an unmeasured quantity.
+  *   `heading` (*type:* `float()`, *default:* `nil`) - Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be >=0 and <360. NaN indicates an unmeasured quantity.
+  *   `latLngPair` (*type:* `GoogleApi.StreetViewPublish.V1.Model.LatLng.t`, *default:* `nil`) - Latitude and longitude pair of the pose, as explained here: https://cloud.google.com/datastore/docs/reference/rest/Shared.Types/LatLng When creating a Photo, if the latitude and longitude pair are not provided, the geolocation from the exif header is used. A latitude and longitude pair not provided in the photo or exif header causes the photo process to fail.
   *   `level` (*type:* `GoogleApi.StreetViewPublish.V1.Model.Level.t`, *default:* `nil`) - Level (the floor in a building) used to configure vertical navigation.
-  *   `pitch` (*type:* `float()`, *default:* `nil`) - Pitch, measured at the center of the photo in degrees. Value must be >=-90
-      and <= 90. A value of -90 means looking directly down, and a value of 90
-      means looking directly up.
-      NaN indicates an unmeasured quantity.
-  *   `roll` (*type:* `float()`, *default:* `nil`) - Roll, measured in degrees. Value must be >= 0 and <360. A value of 0
-      means level with the horizon.
-      NaN indicates an unmeasured quantity.
+  *   `pitch` (*type:* `float()`, *default:* `nil`) - Pitch, measured at the center of the photo in degrees. Value must be >=-90 and <= 90. A value of -90 means looking directly down, and a value of 90 means looking directly up. NaN indicates an unmeasured quantity.
+  *   `roll` (*type:* `float()`, *default:* `nil`) - Roll, measured in degrees. Value must be >= 0 and <360. A value of 0 means level with the horizon. NaN indicates an unmeasured quantity.
   """
 
   use GoogleApi.Gax.ModelBase

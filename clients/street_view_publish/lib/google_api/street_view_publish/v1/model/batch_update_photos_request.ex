@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePhotosRequest do
   @moduledoc """
-  Request to update the metadata of photos.
-  Updating the pixels of photos is not supported.
+  Request to update the metadata of photos. Updating the pixels of photos is not supported.
 
   ## Attributes
 
-  *   `updatePhotoRequests` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.UpdatePhotoRequest.t)`, *default:* `nil`) - Required. List of
-      UpdatePhotoRequests.
+  *   `updatePhotoRequests` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.UpdatePhotoRequest.t)`, *default:* `nil`) - Required. List of UpdatePhotoRequests.
   """
 
   use GoogleApi.Gax.ModelBase

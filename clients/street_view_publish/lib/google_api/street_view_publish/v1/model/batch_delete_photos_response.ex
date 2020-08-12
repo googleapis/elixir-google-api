@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosResponse do
   @moduledoc """
-  Response to batch delete of one or more
-  Photos.
+  Response to batch delete of one or more Photos.
 
   ## Attributes
 
-  *   `status` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.Status.t)`, *default:* `nil`) - The status for the operation to delete a single
-      Photo in the batch request.
+  *   `status` (*type:* `list(GoogleApi.StreetViewPublish.V1.Model.Status.t)`, *default:* `nil`) - The status for the operation to delete a single Photo in the batch request.
   """
 
   use GoogleApi.Gax.ModelBase
