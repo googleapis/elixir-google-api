@@ -53,7 +53,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
 
       To see the latest fingerprint, make a get() request to retrieve a BackendService.
-  *   `healthChecks` (*type:* `list(String.t)`, *default:* `nil`) - The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently at most one health check can be specified. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet NEG backends must not have a health check. A health check must
+  *   `healthChecks` (*type:* `list(String.t)`, *default:* `nil`) - The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
   *   `iap` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceIAP.t`, *default:* `nil`) - The configurations for Identity-Aware Proxy on this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#backendService`) - [Output Only] Type of resource. Always compute#backendService for backend services.
@@ -89,7 +89,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol this BackendService uses to communicate with backends.
 
-      Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
+      Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this backend service.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
