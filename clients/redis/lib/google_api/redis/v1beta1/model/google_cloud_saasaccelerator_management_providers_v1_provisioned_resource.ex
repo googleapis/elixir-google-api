@@ -21,14 +21,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.GoogleCloudSaasacceleratorManagementProv
 
   ## Attributes
 
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Type of the resource. This can be either a GCP resource or a custom one
-      (e.g. another cloud provider's VM). For GCP compute resources use singular
-      form of the names listed in GCP compute API documentation
-      (https://cloud.google.com/compute/docs/reference/rest/v1/), prefixed with
-      'compute-', for example: 'compute-instance', 'compute-disk',
-      'compute-autoscaler'.
-  *   `resourceUrl` (*type:* `String.t`, *default:* `nil`) - URL identifying the resource, e.g.
-      "https://www.googleapis.com/compute/v1/projects/...)".
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Type of the resource. This can be either a GCP resource or a custom one (e.g. another cloud provider's VM). For GCP compute resources use singular form of the names listed in GCP compute API documentation (https://cloud.google.com/compute/docs/reference/rest/v1/), prefixed with 'compute-', for example: 'compute-instance', 'compute-disk', 'compute-autoscaler'.
+  *   `resourceUrl` (*type:* `String.t`, *default:* `nil`) - URL identifying the resource, e.g. "https://www.googleapis.com/compute/v1/projects/...)".
   """
 
   use GoogleApi.Gax.ModelBase
