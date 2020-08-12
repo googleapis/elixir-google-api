@@ -26,19 +26,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  A policy specifies the attestors that must attest to
-  a container image, before the project is allowed to deploy that
-  image. There is at most one policy per project. All image admission
-  requests are permitted if a project has no policy.
-
-  Gets the policy for this project. Returns a default
-  policy if the project does not have one.
+  A policy specifies the attestors that must attest to a container image, before the project is allowed to deploy that image. There is at most one policy per project. All image admission requests are permitted if a project has no policy. Gets the policy for this project. Returns a default policy if the project does not have one.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the policy to retrieve,
-      in the format `projects/*/policy`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the policy to retrieve, in the format `projects/*/policy`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -97,17 +90,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Creates or updates a project's policy, and returns a copy of the
-  new policy. A policy is always updated as a whole, to avoid race
-  conditions with concurrent policy enforcement (or management!)
-  requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT
-  if the request is malformed.
+  Creates or updates a project's policy, and returns a copy of the new policy. A policy is always updated as a whole, to avoid race conditions with concurrent policy enforcement (or management!) requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the request is malformed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name, in the format `projects/*/policy`. There is
-      at most one policy per project.
+  *   `name` (*type:* `String.t`) - Output only. The resource name, in the format `projects/*/policy`. There is at most one policy per project.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -173,10 +161,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Creates an attestor, and returns a copy of the new
-  attestor. Returns NOT_FOUND if the project does not exist,
-  INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
-  attestor already exists.
+  Creates an attestor, and returns a copy of the new attestor. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the attestor already exists.
 
   ## Parameters
 
@@ -249,14 +234,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Deletes an attestor. Returns NOT_FOUND if the
-  attestor does not exist.
+  Deletes an attestor. Returns NOT_FOUND if the attestor does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the attestors to delete, in the format
-      `projects/*/attestors/*`.
+  *   `name` (*type:* `String.t`) - Required. The name of the attestors to delete, in the format `projects/*/attestors/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -320,14 +303,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Gets an attestor.
-  Returns NOT_FOUND if the attestor does not exist.
+  Gets an attestor. Returns NOT_FOUND if the attestor does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the attestor to retrieve, in the format
-      `projects/*/attestors/*`.
+  *   `name` (*type:* `String.t`) - Required. The name of the attestor to retrieve, in the format `projects/*/attestors/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -391,15 +372,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -412,18 +390,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -476,14 +443,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Lists attestors.
-  Returns INVALID_ARGUMENT if the project does not exist.
+  Lists attestors. Returns INVALID_ARGUMENT if the project does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the project associated with the
-      attestors, in the format `projects/*`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the project associated with the attestors, in the format `projects/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -496,11 +461,8 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If
-          unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically,
-          this is the value of ListAttestorsResponse.next_page_token returned
-          from the previous call to the `ListAttestors` method.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. If unspecified, the server will pick an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of ListAttestorsResponse.next_page_token returned from the previous call to the `ListAttestors` method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -556,16 +518,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
-
-  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -631,19 +589,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a `NOT_FOUND` error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -711,14 +662,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Updates an attestor.
-  Returns NOT_FOUND if the attestor does not exist.
+  Updates an attestor. Returns NOT_FOUND if the attestor does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name, in the format:
-      `projects/*/attestors/*`. This field may not be updated.
+  *   `name` (*type:* `String.t`) - Required. The resource name, in the format: `projects/*/attestors/*`. This field may not be updated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -784,15 +733,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -805,18 +751,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -869,16 +804,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
-
-  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -944,19 +875,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a `NOT_FOUND` error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BinaryAuthorization.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
