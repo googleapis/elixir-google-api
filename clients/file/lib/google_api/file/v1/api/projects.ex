@@ -102,8 +102,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The standard list filter.
-      *   `:includeUnrevealedLocations` (*type:* `boolean()`) - If true, the returned list will include locations which are not yet
-          revealed.
+      *   `:includeUnrevealedLocations` (*type:* `boolean()`) - If true, the returned list will include locations which are not yet revealed.
       *   `:pageSize` (*type:* `integer()`) - The standard list page size.
       *   `:pageToken` (*type:* `String.t`) - The standard list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -156,9 +155,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The instance's project and location, in the format
-      projects/{project_id}/locations/{location}. In Cloud Filestore,
-      locations map to GCP zones, for example **us-west1-b**.
+  *   `parent` (*type:* `String.t`) - Required. The instance's project and location, in the format projects/{project_id}/locations/{location}. In Cloud Filestore, locations map to GCP zones, for example **us-west1-b**.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -171,8 +168,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:instanceId` (*type:* `String.t`) - Required. The name of the instance to create.
-          The name must be unique for the specified project and location.
+      *   `:instanceId` (*type:* `String.t`) - Required. The name of the instance to create. The name must be unique for the specified project and location.
       *   `:body` (*type:* `GoogleApi.File.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -229,8 +225,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The instance resource name, in the format
-      projects/{project_id}/locations/{location}/instances/{instance_id}
+  *   `name` (*type:* `String.t`) - Required. The instance resource name, in the format projects/{project_id}/locations/{location}/instances/{instance_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -296,8 +291,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The instance resource name, in the format
-      projects/{project_id}/locations/{location}/instances/{instance_id}.
+  *   `name` (*type:* `String.t`) - Required. The instance resource name, in the format projects/{project_id}/locations/{location}/instances/{instance_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -353,17 +347,12 @@ defmodule GoogleApi.File.V1.Api.Projects do
   end
 
   @doc """
-  Lists all instances in a project for either a specified location
-  or for all locations.
+  Lists all instances in a project for either a specified location or for all locations.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project and location for which to retrieve instance information,
-      in the format projects/{project_id}/locations/{location}. In Cloud
-      Filestore, locations map to GCP zones, for example **us-west1-b**. To
-      retrieve instance information for all locations, use "-" for the {location}
-      value.
+  *   `parent` (*type:* `String.t`) - Required. The project and location for which to retrieve instance information, in the format projects/{project_id}/locations/{location}. In Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To retrieve instance information for all locations, use "-" for the {location} value.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -379,8 +368,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
       *   `:filter` (*type:* `String.t`) - List filter.
       *   `:orderBy` (*type:* `String.t`) - Sort results. Supported values are "name", "name desc" or "" (unsorted).
       *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value to use if there are additional
-          results to retrieve for this list request.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value to use if there are additional results to retrieve for this list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -441,8 +429,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of the instance, in the format
-      projects/{project}/locations/{location}/instances/{instance}.
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the instance, in the format projects/{project}/locations/{location}/instances/{instance}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -455,13 +442,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Mask of fields to update.  At least one path must be supplied in this
-          field.  The elements of the repeated paths field may only include these
-          fields:
-
-          * "description"
-          * "file_shares"
-          * "labels"
+      *   `:updateMask` (*type:* `String.t`) - Mask of fields to update. At least one path must be supplied in this field. The elements of the repeated paths field may only include these fields: * "description" * "file_shares" * "labels"
       *   `:body` (*type:* `GoogleApi.File.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -508,16 +489,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -585,10 +557,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a long-running operation. This method indicates that the client is
-  no longer interested in the operation result. It does not cancel the
-  operation. If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -654,9 +623,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -717,16 +684,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the
-  server doesn't support this method, it returns `UNIMPLEMENTED`.
-
-  NOTE: the `name` binding allows API services to override the binding
-  to use different resource name schemes, such as `users/*/operations`. To
-  override the binding, API services can add a binding such as
-  `"/v1/{name=users/*}/operations"` to their service configuration.
-  For backwards compatibility, the default name includes the operations
-  collection id, however overriding users must ensure the name binding
-  is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
 
   ## Parameters
 

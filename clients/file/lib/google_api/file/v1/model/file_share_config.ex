@@ -21,8 +21,7 @@ defmodule GoogleApi.File.V1.Model.FileShareConfig do
 
   ## Attributes
 
-  *   `capacityGb` (*type:* `String.t`, *default:* `nil`) - File share capacity in gigabytes (GB).
-      Cloud Filestore defines 1 GB as 1024^3 bytes.
+  *   `capacityGb` (*type:* `String.t`, *default:* `nil`) - File share capacity in gigabytes (GB). Cloud Filestore defines 1 GB as 1024^3 bytes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the file share (must be 16 characters or less).
   """
 

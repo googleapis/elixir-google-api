@@ -21,21 +21,9 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
 
   ## Attributes
 
-  *   `duration` (*type:* `String.t`, *default:* `nil`) - Exclusion duration. No restrictions on the possible values.
-
-      When an ongoing operation is taking longer than initially expected,
-      an existing entry in the exclusion list can be updated by extending the
-      duration. This is supported by the subsystem exporting eligibility data
-      as long as such extension is committed at least 10 minutes before the
-      original exclusion expiration - otherwise it is possible that there will
-      be "gaps" in the exclusion application in the exported timeseries.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - Human-readable reason for the exclusion.
-      This should be a static string (e.g. "Disruptive update in progress")
-      and should not contain dynamically generated data (e.g. instance name).
-      Can be left empty.
-  *   `sliName` (*type:* `String.t`, *default:* `nil`) - Name of an SLI that this exclusion applies to. Can be left empty,
-      signaling that the instance should be excluded from all SLIs defined
-      in the service SLO configuration.
+  *   `duration` (*type:* `String.t`, *default:* `nil`) - Exclusion duration. No restrictions on the possible values. When an ongoing operation is taking longer than initially expected, an existing entry in the exclusion list can be updated by extending the duration. This is supported by the subsystem exporting eligibility data as long as such extension is committed at least 10 minutes before the original exclusion expiration - otherwise it is possible that there will be "gaps" in the exclusion application in the exported timeseries.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - Human-readable reason for the exclusion. This should be a static string (e.g. "Disruptive update in progress") and should not contain dynamically generated data (e.g. instance name). Can be left empty.
+  *   `sliName` (*type:* `String.t`, *default:* `nil`) - Name of an SLI that this exclusion applies to. Can be left empty, signaling that the instance should be excluded from all SLIs defined in the service SLO configuration.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of the exclusion. No alignment (e.g. to a full minute) needed.
   """
 

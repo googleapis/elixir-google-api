@@ -21,14 +21,8 @@ defmodule GoogleApi.File.V1.Model.ListInstancesResponse do
 
   ## Attributes
 
-  *   `instances` (*type:* `list(GoogleApi.File.V1.Model.Instance.t)`, *default:* `nil`) - A list of instances in the project for the specified location.
-
-      If the {location} value in the request is "-", the response contains a list
-      of instances from all locations. If any location is unreachable, the
-      response will only return instances in reachable locations and the
-      "unreachable" field will be populated with a list of unreachable locations.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token you can use to retrieve the next page of results. Not returned
-      if there are no more results in the list.
+  *   `instances` (*type:* `list(GoogleApi.File.V1.Model.Instance.t)`, *default:* `nil`) - A list of instances in the project for the specified location. If the {location} value in the request is "-", the response contains a list of instances from all locations. If any location is unreachable, the response will only return instances in reachable locations and the "unreachable" field will be populated with a list of unreachable locations.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token you can use to retrieve the next page of results. Not returned if there are no more results in the list.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
