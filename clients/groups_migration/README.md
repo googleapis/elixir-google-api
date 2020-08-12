@@ -2,8 +2,7 @@
 
 Groups Migration API client library.
 
-The Groups Migration API allows domain administrators to archive
-    emails into Google groups.
+The Groups Migration API allows domain administrators to archive emails into Google groups.
 
 ## Installation
 
