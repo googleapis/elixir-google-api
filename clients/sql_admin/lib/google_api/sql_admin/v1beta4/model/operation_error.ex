@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OperationError do
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - Identifies the specific error that occurred.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#operationError</b>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#operationError*.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Additional information about the error encountered.
   """
 

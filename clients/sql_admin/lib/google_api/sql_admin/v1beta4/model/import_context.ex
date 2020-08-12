@@ -23,20 +23,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
 
   *   `bakImportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions.t`, *default:* `nil`) - Import parameters specific to SQL Server .BAK files
   *   `csvImportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions.t`, *default:* `nil`) - Options for importing data as CSV.
-  *   `database` (*type:* `String.t`, *default:* `nil`) - The target database for the import. If <b>fileType</b> is
-      <b>SQL</b>, this field is required only if the import file does not
-      specify a database, and is overridden by any database specification in the
-      import file. If <b>fileType</b> is <b>CSV</b>, one database
-      must be specified.
-  *   `fileType` (*type:* `String.t`, *default:* `nil`) - The file type for the specified uri. <br><b>SQL</b>: The file
-      contains SQL statements. <br><b>CSV</b>: The file contains CSV data.
+  *   `database` (*type:* `String.t`, *default:* `nil`) - The target database for the import. If *fileType* is *SQL*, this field is required only if the import file does not specify a database, and is overridden by any database specification in the import file. If *fileType* is *CSV*, one database must be specified.
+  *   `fileType` (*type:* `String.t`, *default:* `nil`) - The file type for the specified uri. *SQL*: The file contains SQL statements. *CSV*: The file contains CSV data.
   *   `importUser` (*type:* `String.t`, *default:* `nil`) - The PostgreSQL user for this import operation. PostgreSQL instances only.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#importContext</b>.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Path to the import file in Cloud Storage, in the form
-      <b>gs:
-      //bucketName/fileName</b>. Compressed gzip files (.gz) are supported
-      // when <b>fileType</b> is <b>SQL</b>. The instance must have
-      // write permissions to the bucket and read access to the file.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#importContext*.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Path to the import file in Cloud Storage, in the form *gs: //bucketName/fileName*. Compressed gzip files (.gz) are supported // when *fileType* is *SQL*. The instance must have // write permissions to the bucket and read access to the file.
   """
 
   use GoogleApi.Gax.ModelBase
