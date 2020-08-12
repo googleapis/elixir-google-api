@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Script.V1.Model.Struct do
   @moduledoc """
-  `Struct` represents a structured data value, consisting of fields which map
-  to dynamically typed values.
+  `Struct` represents a structured data value, consisting of fields which map to dynamically typed values.
 
   ## Attributes
 

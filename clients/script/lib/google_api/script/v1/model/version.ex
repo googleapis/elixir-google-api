@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.Script.V1.Model.Version do
   @moduledoc """
-  A resource representing a script project version. A version is a "snapshot"
-  of a script project and is similar to a read-only branched release. When
-  creating deployments, the version to use must be specified.
+  A resource representing a script project version. A version is a "snapshot" of a script project and is similar to a read-only branched release. When creating deployments, the version to use must be specified.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - When the version was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description for this version.
   *   `scriptId` (*type:* `String.t`, *default:* `nil`) - The script project's Drive ID.
-  *   `versionNumber` (*type:* `integer()`, *default:* `nil`) - The incremental ID that is created by Apps Script when a version is
-      created. This is system assigned number and is immutable once created.
+  *   `versionNumber` (*type:* `integer()`, *default:* `nil`) - The incremental ID that is created by Apps Script when a version is created. This is system assigned number and is immutable once created.
   """
 
   use GoogleApi.Gax.ModelBase

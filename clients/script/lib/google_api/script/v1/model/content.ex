@@ -21,10 +21,7 @@ defmodule GoogleApi.Script.V1.Model.Content do
 
   ## Attributes
 
-  *   `files` (*type:* `list(GoogleApi.Script.V1.Model.File.t)`, *default:* `nil`) - The list of script project files.
-      One of the files is a script manifest; it must be named "appsscript",
-      must have type of JSON, and include the manifest configurations for the
-      project.
+  *   `files` (*type:* `list(GoogleApi.Script.V1.Model.File.t)`, *default:* `nil`) - The list of script project files. One of the files is a script manifest; it must be named "appsscript", must have type of JSON, and include the manifest configurations for the project.
   *   `scriptId` (*type:* `String.t`, *default:* `nil`) - The script project's Drive ID.
   """
 

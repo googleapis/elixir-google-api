@@ -24,9 +24,7 @@ defmodule GoogleApi.Script.V1.Model.Project do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - When the script was created.
   *   `creator` (*type:* `GoogleApi.Script.V1.Model.GoogleAppsScriptTypeUser.t`, *default:* `nil`) - User who originally created the script.
   *   `lastModifyUser` (*type:* `GoogleApi.Script.V1.Model.GoogleAppsScriptTypeUser.t`, *default:* `nil`) - User who last modified the script.
-  *   `parentId` (*type:* `String.t`, *default:* `nil`) - The parent's Drive ID that the script will be attached to. This is usually
-      the ID of a Google Document or Google Sheet. This filed is optional, and
-      if not set, a stand-alone script will be created.
+  *   `parentId` (*type:* `String.t`, *default:* `nil`) - The parent's Drive ID that the script will be attached to. This is usually the ID of a Google Document or Google Sheet. This filed is optional, and if not set, a stand-alone script will be created.
   *   `scriptId` (*type:* `String.t`, *default:* `nil`) - The script project's Drive ID.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title for the project.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - When the script was last updated.

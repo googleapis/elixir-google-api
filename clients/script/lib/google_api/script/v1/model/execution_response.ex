@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.Script.V1.Model.ExecutionResponse do
   @moduledoc """
-  An object that provides the return value of a function executed using the
-  Apps Script API. If the script function returns successfully, the response
-  body's response field contains this
-  `ExecutionResponse` object.
+  An object that provides the return value of a function executed using the Apps Script API. If the script function returns successfully, the response body's response field contains this `ExecutionResponse` object.
 
   ## Attributes
 
-  *   `result` (*type:* `any()`, *default:* `nil`) - The return value of the script function. The type matches the object type
-      returned in Apps Script. Functions called using the Apps Script API cannot
-      return Apps Script-specific objects (such as a `Document` or a `Calendar`);
-      they can only return primitive types such as a `string`, `number`, `array`,
-      `object`, or `boolean`.
+  *   `result` (*type:* `any()`, *default:* `nil`) - The return value of the script function. The type matches the object type returned in Apps Script. Functions called using the Apps Script API cannot return Apps Script-specific objects (such as a `Document` or a `Calendar`); they can only return primitive types such as a `string`, `number`, `array`, `object`, or `boolean`.
   """
 
   use GoogleApi.Gax.ModelBase

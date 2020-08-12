@@ -26,8 +26,7 @@ defmodule GoogleApi.Script.V1.Api.Processes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  List information about processes made by or on behalf of a user,
-  such as process type and current status.
+  List information about processes made by or on behalf of a user, such as process type and current status.
 
   ## Parameters
 
@@ -44,28 +43,17 @@ defmodule GoogleApi.Script.V1.Api.Processes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of returned processes per page of results. Defaults to
-          50.
-      *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This
-          should be set to the value of `nextPageToken` from a previous response.
-      *   `:"userProcessFilter.deploymentId"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
-          projects with a specific deployment ID.
-      *   `:"userProcessFilter.endTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that completed
-          on or before the given timestamp.
-      *   `:"userProcessFilter.functionName"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
-          a script function with the given function name.
-      *   `:"userProcessFilter.projectName"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
-          projects with project names containing a specific string.
-      *   `:"userProcessFilter.scriptId"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
-          projects with a specific script ID.
-      *   `:"userProcessFilter.startTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that were
-          started on or after the given timestamp.
-      *   `:"userProcessFilter.statuses"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
-          the specified process statuses.
-      *   `:"userProcessFilter.types"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
-          the specified process types.
-      *   `:"userProcessFilter.userAccessLevels"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
-          the specified user access levels.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of returned processes per page of results. Defaults to 50.
+      *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from a previous response.
+      *   `:"userProcessFilter.deploymentId"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from projects with a specific deployment ID.
+      *   `:"userProcessFilter.endTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that completed on or before the given timestamp.
+      *   `:"userProcessFilter.functionName"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from a script function with the given function name.
+      *   `:"userProcessFilter.projectName"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from projects with project names containing a specific string.
+      *   `:"userProcessFilter.scriptId"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from projects with a specific script ID.
+      *   `:"userProcessFilter.startTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that were started on or after the given timestamp.
+      *   `:"userProcessFilter.statuses"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of the specified process statuses.
+      *   `:"userProcessFilter.types"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of the specified process types.
+      *   `:"userProcessFilter.userAccessLevels"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of the specified user access levels.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -116,8 +104,7 @@ defmodule GoogleApi.Script.V1.Api.Processes do
   end
 
   @doc """
-  List information about a script's executed processes, such as process type
-  and current status.
+  List information about a script's executed processes, such as process type and current status.
 
   ## Parameters
 
@@ -134,25 +121,16 @@ defmodule GoogleApi.Script.V1.Api.Processes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of returned processes per page of results. Defaults to
-          50.
-      *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This
-          should be set to the value of `nextPageToken` from a previous response.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of returned processes per page of results. Defaults to 50.
+      *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from a previous response.
       *   `:scriptId` (*type:* `String.t`) - The script ID of the project whose processes are listed.
-      *   `:"scriptProcessFilter.deploymentId"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
-          projects with a specific deployment ID.
-      *   `:"scriptProcessFilter.endTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that completed
-          on or before the given timestamp.
-      *   `:"scriptProcessFilter.functionName"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from
-          a script function with the given function name.
-      *   `:"scriptProcessFilter.startTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that were
-          started on or after the given timestamp.
-      *   `:"scriptProcessFilter.statuses"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
-          the specified process statuses.
-      *   `:"scriptProcessFilter.types"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
-          the specified process types.
-      *   `:"scriptProcessFilter.userAccessLevels"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of
-          the specified user access levels.
+      *   `:"scriptProcessFilter.deploymentId"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from projects with a specific deployment ID.
+      *   `:"scriptProcessFilter.endTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that completed on or before the given timestamp.
+      *   `:"scriptProcessFilter.functionName"` (*type:* `String.t`) - Optional field used to limit returned processes to those originating from a script function with the given function name.
+      *   `:"scriptProcessFilter.startTime"` (*type:* `DateTime.t`) - Optional field used to limit returned processes to those that were started on or after the given timestamp.
+      *   `:"scriptProcessFilter.statuses"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of the specified process statuses.
+      *   `:"scriptProcessFilter.types"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of the specified process types.
+      *   `:"scriptProcessFilter.userAccessLevels"` (*type:* `list(String.t)`) - Optional field used to limit returned processes to those having one of the specified user access levels.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

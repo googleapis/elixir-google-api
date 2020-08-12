@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Script.V1.Model.ListScriptProcessesResponse do
   @moduledoc """
-  Response with the list of
-  Process resources.
+  Response with the list of Process resources.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token for the next page of results. If empty, there are no more pages
-      remaining.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token for the next page of results. If empty, there are no more pages remaining.
   *   `processes` (*type:* `list(GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess.t)`, *default:* `nil`) - List of processes matching request parameters.
   """
 
