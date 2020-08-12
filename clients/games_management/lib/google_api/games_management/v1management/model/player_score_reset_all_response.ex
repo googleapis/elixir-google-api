@@ -21,8 +21,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetAllRespon
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `gamesManagement#playerScoreResetAllResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `gamesManagement#playerScoreResetAllResponse`.
   *   `results` (*type:* `list(GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse.t)`, *default:* `nil`) - The leaderboard reset results.
   """
 

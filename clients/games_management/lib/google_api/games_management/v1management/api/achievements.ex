@@ -26,9 +26,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Resets the achievement with the given ID for the currently authenticated
-  player. This method is only accessible to whitelisted tester accounts for
-  your application.
+  Resets the achievement with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
@@ -94,9 +92,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   end
 
   @doc """
-  Resets all achievements for the currently authenticated player for your
-  application. This method is only accessible to whitelisted tester accounts
-  for your application.
+  Resets all achievements for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
@@ -155,8 +151,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   end
 
   @doc """
-  Resets all draft achievements for all players. This method is only
-  available to user accounts for your developer console.
+  Resets all draft achievements for all players. This method is only available to user accounts for your developer console.
 
   ## Parameters
 
@@ -217,9 +212,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   end
 
   @doc """
-  Resets the achievement with the given ID for all players. This method is
-  only available to user accounts for your developer console. Only draft
-  achievements can be reset.
+  Resets the achievement with the given ID for all players. This method is only available to user accounts for your developer console. Only draft achievements can be reset.
 
   ## Parameters
 
@@ -285,9 +278,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   end
 
   @doc """
-  Resets achievements with the given IDs for all players. This method is only
-  available to user accounts for your developer console. Only draft
-  achievements may be reset.
+  Resets achievements with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft achievements may be reset.
 
   ## Parameters
 

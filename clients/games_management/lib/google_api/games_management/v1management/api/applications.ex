@@ -26,8 +26,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Applications do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Get the list of players hidden from the given application. This method is
-  only available to user accounts for your developer console.
+  Get the list of players hidden from the given application. This method is only available to user accounts for your developer console.
 
   ## Parameters
 
@@ -45,9 +44,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Applications do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of player resources to return in the response, used for
-          paging. For any response, the actual number of player resources returned
-          may be less than the specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of player resources to return in the response, used for paging. For any response, the actual number of player resources returned may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 

@@ -21,8 +21,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.ScoresResetMultipleForAll
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `gamesManagement#scoresResetMultipleForAllRequest`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `gamesManagement#scoresResetMultipleForAllRequest`.
   *   `leaderboard_ids` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of leaderboards to reset.
   """
 
