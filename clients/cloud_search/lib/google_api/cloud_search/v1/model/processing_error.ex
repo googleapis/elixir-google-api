@@ -23,8 +23,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ProcessingError do
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - Error code indicating the nature of the error.
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Description of the error.
-  *   `fieldViolations` (*type:* `list(GoogleApi.CloudSearch.V1.Model.FieldViolation.t)`, *default:* `nil`) - In case the item fields are invalid, this field contains the details
-      about the validation errors.
+  *   `fieldViolations` (*type:* `list(GoogleApi.CloudSearch.V1.Model.FieldViolation.t)`, *default:* `nil`) - In case the item fields are invalid, this field contains the details about the validation errors.
   """
 
   use GoogleApi.Gax.ModelBase

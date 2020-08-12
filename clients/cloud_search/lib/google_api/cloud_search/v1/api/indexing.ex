@@ -26,15 +26,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the schema of a data source.
-
-  **Note:** This API requires an admin or service account to execute.
+  Deletes the schema of a data source. **Note:** This API requires an admin or service account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the data source to delete Schema.  Format:
-      datasources/{source_id}
+  *   `name` (*type:* `String.t`) - Name of the data source to delete Schema. Format: datasources/{source_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -47,8 +44,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -101,15 +97,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Gets the schema of a data source.
-
-  **Note:** This API requires an admin or service account to execute.
+  Gets the schema of a data source. **Note:** This API requires an admin or service account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the data source to get Schema.  Format:
-      datasources/{source_id}
+  *   `name` (*type:* `String.t`) - Name of the data source to get Schema. Format: datasources/{source_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -122,8 +115,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -176,17 +168,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Updates the schema of a data source. This method does not perform
-  incremental updates to the schema. Instead, this method updates the schema
-  by overwriting the entire schema.
-
-  **Note:** This API requires an admin or service account to execute.
+  Updates the schema of a data source. This method does not perform incremental updates to the schema. Instead, this method updates the schema by overwriting the entire schema. **Note:** This API requires an admin or service account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the data source to update Schema.  Format:
-      datasources/{source_id}
+  *   `name` (*type:* `String.t`) - Name of the data source to update Schema. Format: datasources/{source_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -252,16 +239,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Deletes Item resource for the
-  specified resource name. This API requires an admin or service account
-  to execute. The service account used is the one whitelisted in the
-  corresponding data source.
+  Deletes Item resource for the specified resource name. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the item to delete.
-      Format: datasources/{source_id}/items/{item_id}
+  *   `name` (*type:* `String.t`) - Required. Name of the item to delete. Format: datasources/{source_id}/items/{item_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -274,20 +257,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:connectorName` (*type:* `String.t`) - Name of connector making this call.
-          <br />Format: datasources/{source_id}/connectors/{ID}
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:connectorName` (*type:* `String.t`) - Name of connector making this call. Format: datasources/{source_id}/connectors/{ID}
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
       *   `:mode` (*type:* `String.t`) - Required. The RequestMode for this request.
-      *   `:version` (*type:* `String.t`) - Required. The incremented version of the item to delete from the index.
-          The indexing system stores the version from the datasource as a
-          byte string and compares the Item version in the index
-          to the version of the queued Item using lexical ordering.
-          <br /><br />
-          Cloud Search Indexing won't delete any queued item with
-          a version value that is less than or equal to
-          the version of the currently indexed item.
-          The maximum length for this field is 1024 bytes.
+      *   `:version` (*type:* `String.t`) - Required. The incremented version of the item to delete from the index. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -343,17 +316,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Deletes all items in a queue. This method is useful for deleting stale
-  items.
-
-  This API requires an admin or service account to execute. The service
-  account used is the one whitelisted in the corresponding data source.
+  Deletes all items in a queue. This method is useful for deleting stale items. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the Data Source to delete items in a queue.
-      Format: datasources/{source_id}
+  *   `name` (*type:* `String.t`) - Name of the Data Source to delete items in a queue. Format: datasources/{source_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -419,16 +387,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Gets Item resource by item name.
-
-  This API requires an admin or service account to execute.  The service
-  account used is the one whitelisted in the corresponding data source.
+  Gets Item resource by item name. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the item to get info.
-      Format: datasources/{source_id}/items/{item_id}
+  *   `name` (*type:* `String.t`) - Name of the item to get info. Format: datasources/{source_id}/items/{item_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -441,10 +405,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:connectorName` (*type:* `String.t`) - Name of connector making this call.
-          <br />Format: datasources/{source_id}/connectors/{ID}
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:connectorName` (*type:* `String.t`) - Name of connector making this call. Format: datasources/{source_id}/connectors/{ID}
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -496,22 +458,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Updates Item ACL, metadata, and
-  content. It will insert the Item if it
-  does not exist.
-  This method does not support partial updates.  Fields with no provided
-  values are cleared out in the Cloud Search index.
-
-  This API requires an admin or service account to execute. The service
-  account used is the one whitelisted in the corresponding data source.
+  Updates Item ACL, metadata, and content. It will insert the Item if it does not exist. This method does not support partial updates. Fields with no provided values are cleared out in the Cloud Search index. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the Item. Format:
-      datasources/{source_id}/items/{item_id}
-      <br />This is a required field.
-      The maximum length is 1536 characters.
+  *   `name` (*type:* `String.t`) - Name of the Item. Format: datasources/{source_id}/items/{item_id} This is a required field. The maximum length is 1536 characters.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -577,16 +529,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Lists all or a subset of Item resources.
-
-  This API requires an admin or service account to execute. The service
-  account used is the one whitelisted in the corresponding data source.
+  Lists all or a subset of Item resources. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the Data Source to list Items.  Format:
-      datasources/{source_id}
+  *   `name` (*type:* `String.t`) - Name of the Data Source to list Items. Format: datasources/{source_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -599,33 +547,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:brief` (*type:* `boolean()`) - When set to true, the indexing system only populates the following fields:
-          name,
-          version,
-          queue.
-          metadata.hash,
-          metadata.title,
-          metadata.sourceRepositoryURL,
-          metadata.objectType,
-          metadata.createTime,
-          metadata.updateTime,
-          metadata.contentLanguage,
-          metadata.mimeType,
-          structured_data.hash,
-          content.hash,
-          itemType,
-          itemStatus.code,
-          itemStatus.processingError.code,
-          itemStatus.repositoryError.type,
-          <br />If this value is false, then all the fields are populated in Item.
-      *   `:connectorName` (*type:* `String.t`) - Name of connector making this call.
-          <br />Format: datasources/{source_id}/connectors/{ID}
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to fetch in a request.
-          The max value is 1000 when brief is true.  The max value is 10 if brief
-          is false.
-          <br />The default value is 10
+      *   `:brief` (*type:* `boolean()`) - When set to true, the indexing system only populates the following fields: name, version, queue. metadata.hash, metadata.title, metadata.sourceRepositoryURL, metadata.objectType, metadata.createTime, metadata.updateTime, metadata.contentLanguage, metadata.mimeType, structured_data.hash, content.hash, itemType, itemStatus.code, itemStatus.processingError.code, itemStatus.repositoryError.type, If this value is false, then all the fields are populated in Item.
+      *   `:connectorName` (*type:* `String.t`) - Name of connector making this call. Format: datasources/{source_id}/connectors/{ID}
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to fetch in a request. The max value is 1000 when brief is true. The max value is 10 if brief is false. The default value is 10
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -683,40 +608,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Polls for unreserved items from the indexing queue and marks a
-  set as reserved, starting with items that have
-  the oldest timestamp from the highest priority
-  ItemStatus.
-  The priority order is as follows: <br />
-  ERROR
-  <br />
-  MODIFIED
-  <br />
-  NEW_ITEM
-  <br />
-  ACCEPTED
-  <br />
-  Reserving items ensures that polling from other threads
-  cannot create overlapping sets.
-
-  After handling the reserved items, the client should put items back
-  into the unreserved state, either by calling
-  index,
-  or by calling
-  push with
-  the type REQUEUE.
-
-  Items automatically become available (unreserved) after 4 hours even if no
-  update or push method is called.
-
-  This API requires an admin or service account to execute. The service
-  account used is the one whitelisted in the corresponding data source.
+  Polls for unreserved items from the indexing queue and marks a set as reserved, starting with items that have the oldest timestamp from the highest priority ItemStatus. The priority order is as follows: ERROR MODIFIED NEW_ITEM ACCEPTED Reserving items ensures that polling from other threads cannot create overlapping sets. After handling the reserved items, the client should put items back into the unreserved state, either by calling index, or by calling push with the type REQUEUE. Items automatically become available (unreserved) after 4 hours even if no update or push method is called. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the Data Source to poll items.
-      Format: datasources/{source_id}
+  *   `name` (*type:* `String.t`) - Name of the Data Source to poll items. Format: datasources/{source_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -782,19 +679,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Pushes an item onto a queue for later polling and updating.
-
-  This API requires an admin or service account to execute. The service
-  account used is the one whitelisted in the corresponding data source.
+  Pushes an item onto a queue for later polling and updating. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the item to
-      push into the indexing queue.<br />
-      Format: datasources/{source_id}/items/{ID}
-      <br />This is a required field.
-      The maximum length is 1536 characters.
+  *   `name` (*type:* `String.t`) - Name of the item to push into the indexing queue. Format: datasources/{source_id}/items/{ID} This is a required field. The maximum length is 1536 characters.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -858,18 +748,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Unreserves all items from a queue, making them all eligible to be
-  polled.  This method is useful for resetting the indexing queue
-  after a connector has been restarted.
-
-  This API requires an admin or service account to execute. The service
-  account used is the one whitelisted in the corresponding data source.
+  Unreserves all items from a queue, making them all eligible to be polled. This method is useful for resetting the indexing queue after a connector has been restarted. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the Data Source to unreserve all items.
-      Format: datasources/{source_id}
+  *   `name` (*type:* `String.t`) - Name of the Data Source to unreserve all items. Format: datasources/{source_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -935,20 +819,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   end
 
   @doc """
-  Creates an upload session for uploading item content. For items smaller
-  than 100 KB, it's easier to embed the content
-  inline within
-  an index request.
-
-  This API requires an admin or service account to execute. The service
-  account used is the one whitelisted in the corresponding data source.
+  Creates an upload session for uploading item content. For items smaller than 100 KB, it's easier to embed the content inline within an index request. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the Item to start a resumable upload.
-      Format: datasources/{source_id}/items/{item_id}.
-      The maximum length is 1536 bytes.
+  *   `name` (*type:* `String.t`) - Name of the Item to start a resumable upload. Format: datasources/{source_id}/items/{item_id}. The maximum length is 1536 bytes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

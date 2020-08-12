@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.ScoringConfig do
   @moduledoc """
-  Scoring configurations for a source while processing a
-  Search or
-  Suggest request.
+  Scoring configurations for a source while processing a Search or Suggest request.
 
   ## Attributes
 
-  *   `disableFreshness` (*type:* `boolean()`, *default:* `nil`) - Whether to use freshness as a ranking signal. By default, freshness is used
-      as a ranking signal. Note that this setting is not available in the Admin
-      UI.
-  *   `disablePersonalization` (*type:* `boolean()`, *default:* `nil`) - Whether to personalize the results. By default, personal signals will
-      be used to boost results.
+  *   `disableFreshness` (*type:* `boolean()`, *default:* `nil`) - Whether to use freshness as a ranking signal. By default, freshness is used as a ranking signal. Note that this setting is not available in the Admin UI.
+  *   `disablePersonalization` (*type:* `boolean()`, *default:* `nil`) - Whether to personalize the results. By default, personal signals will be used to boost results.
   """
 
   use GoogleApi.Gax.ModelBase

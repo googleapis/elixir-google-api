@@ -26,9 +26,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a datasource.
-
-  **Note:** This API requires an admin account to execute.
+  Creates a datasource. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
@@ -86,15 +84,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Deletes a datasource.
-
-  **Note:** This API requires an admin account to execute.
+  Deletes a datasource. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the datasource.
-      Format: datasources/{source_id}.
+  *   `name` (*type:* `String.t`) - Name of the datasource. Format: datasources/{source_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -107,8 +102,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -156,15 +150,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Gets a datasource.
-
-  **Note:** This API requires an admin account to execute.
+  Gets a datasource. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the datasource resource.
-      Format: datasources/{source_id}.
+  *   `name` (*type:* `String.t`) - Name of the datasource resource. Format: datasources/{source_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -177,8 +168,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -221,9 +211,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Lists datasources.
-
-  **Note:** This API requires an admin account to execute.
+  Lists datasources. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
@@ -240,11 +228,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of datasources to fetch in a request.
-          The max value is 100.
-          <br />The default value is 10
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of datasources to fetch in a request. The max value is 100. The default value is 10
       *   `:pageToken` (*type:* `String.t`) - Starting index of the results.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -288,16 +273,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Updates a datasource.
-
-  **Note:** This API requires an admin account to execute.
+  Updates a datasource. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the datasource resource.
-      Format: datasources/{source_id}.
-      <br />The name is ignored when creating a datasource.
+  *   `name` (*type:* `String.t`) - Name of the datasource resource. Format: datasources/{source_id}. The name is ignored when creating a datasource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -358,9 +339,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Creates a search application.
-
-  **Note:** This API requires an admin account to execute.
+  Creates a search application. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
@@ -422,15 +401,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Deletes a search application.
-
-  **Note:** This API requires an admin account to execute.
+  Deletes a search application. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the search application to be deleted.
-      <br />Format: applications/{application_id}.
+  *   `name` (*type:* `String.t`) - The name of the search application to be deleted. Format: applications/{application_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -443,8 +419,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -497,15 +472,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Gets the specified search application.
-
-  **Note:** This API requires an admin account to execute.
+  Gets the specified search application. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the search application.
-      <br />Format: searchapplications/{application_id}.
+  *   `name` (*type:* `String.t`) - Name of the search application. Format: searchapplications/{application_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -518,8 +490,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -572,9 +543,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Lists all search applications.
-
-  **Note:** This API requires an admin account to execute.
+  Lists all search applications. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
@@ -591,11 +560,9 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
-          <br/> The default value is 10
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any. The default value is 10
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -640,16 +607,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Resets a search application to default settings. This will return an empty
-  response.
-
-  **Note:** This API requires an admin account to execute.
+  Resets a search application to default settings. This will return an empty response. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the search application to be reset.
-      <br />Format: applications/{application_id}.
+  *   `name` (*type:* `String.t`) - The name of the search application to be reset. Format: applications/{application_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -715,15 +678,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
   end
 
   @doc """
-  Updates a search application.
-
-  **Note:** This API requires an admin account to execute.
+  Updates a search application. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the Search Application.
-      <br />Format: searchapplications/{application_id}.
+  *   `name` (*type:* `String.t`) - Name of the Search Application. Format: searchapplications/{application_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

@@ -28,10 +28,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Metadata do
   *   `objectType` (*type:* `String.t`, *default:* `nil`) - Object type of the search result.
   *   `owner` (*type:* `GoogleApi.CloudSearch.V1.Model.Person.t`, *default:* `nil`) - Owner (usually creator) of the document or object of the search result.
   *   `source` (*type:* `GoogleApi.CloudSearch.V1.Model.Source.t`, *default:* `nil`) - The named source for the result, such as Gmail.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last modified date for the object in the search result. If not
-      set in the item, the value returned here is empty. When
-      `updateTime` is used for calculating freshness and is not set, this
-      value defaults to 2 years from the current time.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last modified date for the object in the search result. If not set in the item, the value returned here is empty. When `updateTime` is used for calculating freshness and is not set, this value defaults to 2 years from the current time.
   """
 
   use GoogleApi.Gax.ModelBase

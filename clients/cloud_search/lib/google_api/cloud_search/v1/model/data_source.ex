@@ -17,39 +17,18 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.DataSource do
   @moduledoc """
-  Datasource is a logical namespace for items to be indexed.
-  All items must belong to a datasource.  This is the prerequisite before
-  items can be indexed into Cloud Search.
+  Datasource is a logical namespace for items to be indexed. All items must belong to a datasource. This is the prerequisite before items can be indexed into Cloud Search.
 
   ## Attributes
 
-  *   `disableModifications` (*type:* `boolean()`, *default:* `nil`) - If true, Indexing API rejects any modification calls to this datasource
-      such as create, update, and delete.
-      Disabling this does not imply halting process of previously
-      accepted data.
+  *   `disableModifications` (*type:* `boolean()`, *default:* `nil`) - If true, Indexing API rejects any modification calls to this datasource such as create, update, and delete. Disabling this does not imply halting process of previously accepted data.
   *   `disableServing` (*type:* `boolean()`, *default:* `nil`) - Disable serving any search or assist results.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the datasource
-      The maximum length is 300 characters.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the datasource The maximum length is 300 characters.
   *   `indexingServiceAccounts` (*type:* `list(String.t)`, *default:* `nil`) - List of service accounts that have indexing access.
-  *   `itemsVisibility` (*type:* `list(GoogleApi.CloudSearch.V1.Model.GSuitePrincipal.t)`, *default:* `nil`) - This field restricts visibility to items at the datasource level. Items
-      within the datasource are restricted to the union of users and groups
-      included in this field. Note that, this does not ensure access to a
-      specific item, as users need to have ACL permissions on the contained
-      items. This ensures a high level access on the entire datasource, and
-      that the individual items are not shared outside this visibility.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the datasource resource.
-      Format: datasources/{source_id}.
-      <br />The name is ignored when creating a datasource.
-  *   `operationIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the Long Running Operations (LROs) currently running for this
-      schema.
-  *   `shortName` (*type:* `String.t`, *default:* `nil`) - A short name or alias for the source.  This value will be used to match the
-      'source' operator. For example, if the short name is *&lt;value&gt;* then
-      queries like *source:&lt;value&gt;* will only return results for this
-      source. The value must be unique across all datasources. The value must
-      only contain alphanumeric characters (a-zA-Z0-9). The value cannot start
-      with 'google' and cannot be one of the following: mail, gmail, docs, drive,
-      groups, sites, calendar, hangouts, gplus, keep, people, teams.
-      Its maximum length is 32 characters.
+  *   `itemsVisibility` (*type:* `list(GoogleApi.CloudSearch.V1.Model.GSuitePrincipal.t)`, *default:* `nil`) - This field restricts visibility to items at the datasource level. Items within the datasource are restricted to the union of users and groups included in this field. Note that, this does not ensure access to a specific item, as users need to have ACL permissions on the contained items. This ensures a high level access on the entire datasource, and that the individual items are not shared outside this visibility.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the datasource resource. Format: datasources/{source_id}. The name is ignored when creating a datasource.
+  *   `operationIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the Long Running Operations (LROs) currently running for this schema.
+  *   `shortName` (*type:* `String.t`, *default:* `nil`) - A short name or alias for the source. This value will be used to match the 'source' operator. For example, if the short name is *<value>* then queries like *source:<value>* will only return results for this source. The value must be unique across all datasources. The value must only contain alphanumeric characters (a-zA-Z0-9). The value cannot start with 'google' and cannot be one of the following: mail, gmail, docs, drive, groups, sites, calendar, hangouts, gplus, keep, people, teams. Its maximum length is 32 characters.
   """
 
   use GoogleApi.Gax.ModelBase

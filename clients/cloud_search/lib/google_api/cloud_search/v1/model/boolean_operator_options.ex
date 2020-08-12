@@ -17,22 +17,11 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.BooleanOperatorOptions do
   @moduledoc """
-  Used to provide a search operator for boolean properties. This is
-  optional. Search operators let users restrict the query to specific fields
-  relevant to the type of item being searched.
+  Used to provide a search operator for boolean properties. This is optional. Search operators let users restrict the query to specific fields relevant to the type of item being searched.
 
   ## Attributes
 
-  *   `operatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name required in the query in order to isolate the
-      boolean property. For example, if operatorName is *closed* and the
-      property's name is *isClosed*, then queries like
-      *closed:&lt;value&gt;* show results only where the value of the
-      property named *isClosed* matches *&lt;value&gt;*. By contrast, a
-      search that uses the same *&lt;value&gt;* without an operator returns
-      all items where *&lt;value&gt;* matches the value of any
-      String properties or text within the content field for the item.
-      The operator name can only contain lowercase letters (a-z).
-      The maximum length is 32 characters.
+  *   `operatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name required in the query in order to isolate the boolean property. For example, if operatorName is *closed* and the property's name is *isClosed*, then queries like *closed:<value>* show results only where the value of the property named *isClosed* matches *<value>*. By contrast, a search that uses the same *<value>* without an operator returns all items where *<value>* matches the value of any String properties or text within the content field for the item. The operator name can only contain lowercase letters (a-z). The maximum length is 32 characters.
   """
 
   use GoogleApi.Gax.ModelBase

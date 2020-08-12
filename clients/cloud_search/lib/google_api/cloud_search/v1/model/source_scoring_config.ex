@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.SourceScoringConfig do
   @moduledoc """
-  Set the scoring configuration. This allows modifying the ranking of results
-  for a source.
+  Set the scoring configuration. This allows modifying the ranking of results for a source.
 
   ## Attributes
 

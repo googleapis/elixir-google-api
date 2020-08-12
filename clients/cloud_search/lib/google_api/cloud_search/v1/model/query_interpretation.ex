@@ -22,12 +22,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.QueryInterpretation do
   ## Attributes
 
   *   `interpretationType` (*type:* `String.t`, *default:* `nil`) - 
-  *   `interpretedQuery` (*type:* `String.t`, *default:* `nil`) - The interpretation of the query used in search. For example, queries with
-      natural language intent like "email from john" will be interpreted as
-      "from:john source:mail". This field will not be filled when the reason is
-      NOT_ENOUGH_RESULTS_FOUND_FOR_USER_QUERY.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for interpretation of the query. This field will not be
-      UNSPECIFIED if the interpretation type is not NONE.
+  *   `interpretedQuery` (*type:* `String.t`, *default:* `nil`) - The interpretation of the query used in search. For example, queries with natural language intent like "email from john" will be interpreted as "from:john source:mail". This field will not be filled when the reason is NOT_ENOUGH_RESULTS_FOUND_FOR_USER_QUERY.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for interpretation of the query. This field will not be UNSPECIFIED if the interpretation type is not NONE.
   """
 
   use GoogleApi.Gax.ModelBase

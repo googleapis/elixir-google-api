@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.QuerySuggestion do
   @moduledoc """
-  This field does not contain anything as of now and is just used as an
-  indicator that the suggest result was a phrase completion.
+  This field does not contain anything as of now and is just used as an indicator that the suggest result was a phrase completion.
 
   ## Attributes
 

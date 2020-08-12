@@ -21,13 +21,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemStructuredData do
 
   ## Attributes
 
-  *   `hash` (*type:* `String.t`, *default:* `nil`) - Hashing value provided by the API caller.
-      This can be used with the
-      items.push
-      method to calculate modified state.
-      The maximum length is 2048 characters.
-  *   `object` (*type:* `GoogleApi.CloudSearch.V1.Model.StructuredDataObject.t`, *default:* `nil`) - The structured data object that should conform to a registered object
-      definition in the schema for the data source.
+  *   `hash` (*type:* `String.t`, *default:* `nil`) - Hashing value provided by the API caller. This can be used with the items.push method to calculate modified state. The maximum length is 2048 characters.
+  *   `object` (*type:* `GoogleApi.CloudSearch.V1.Model.StructuredDataObject.t`, *default:* `nil`) - The structured data object that should conform to a registered object definition in the schema for the data source.
   """
 
   use GoogleApi.Gax.ModelBase

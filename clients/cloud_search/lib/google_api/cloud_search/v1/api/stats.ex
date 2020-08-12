@@ -26,11 +26,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets indexed item statistics aggreggated across all data sources. This
-  API only returns statistics for previous dates; it doesn't return
-  statistics for the current day.
-
-  **Note:** This API requires a standard end user account to execute.
+  Gets indexed item statistics aggreggated across all data sources. This API only returns statistics for previous dates; it doesn't return statistics for the current day. **Note:** This API requires a standard end user account to execute.
 
   ## Parameters
 
@@ -100,9 +96,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   end
 
   @doc """
-  Get the query statistics for customer.
-
-  **Note:** This API requires a standard end user account to execute.
+  Get the query statistics for customer. **Note:** This API requires a standard end user account to execute.
 
   ## Parameters
 
@@ -172,10 +166,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   end
 
   @doc """
-  Get the # of search sessions, % of successful sessions with a click query
-  statistics for customer.
-
-  **Note:** This API requires a standard end user account to execute.
+  Get the # of search sessions, % of successful sessions with a click query statistics for customer. **Note:** This API requires a standard end user account to execute.
 
   ## Parameters
 
@@ -245,9 +236,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   end
 
   @doc """
-  Get the users statistics for customer.
-
-  **Note:** This API requires a standard end user account to execute.
+  Get the users statistics for customer. **Note:** This API requires a standard end user account to execute.
 
   ## Parameters
 
@@ -317,15 +306,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   end
 
   @doc """
-  Gets indexed item statistics for a single data source.
-
-  **Note:** This API requires a standard end user account to execute.
+  Gets indexed item statistics for a single data source. **Note:** This API requires a standard end user account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource id of the data source to retrieve statistics for,
-      in the following format: "datasources/{source_id}"
+  *   `name` (*type:* `String.t`) - The resource id of the data source to retrieve statistics for, in the following format: "datasources/{source_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -398,15 +384,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   end
 
   @doc """
-  Get the query statistics for search application.
-
-  **Note:** This API requires a standard end user account to execute.
+  Get the query statistics for search application. **Note:** This API requires a standard end user account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource id of the search application query stats, in the following
-      format: searchapplications/{application_id}
+  *   `name` (*type:* `String.t`) - The resource id of the search application query stats, in the following format: searchapplications/{application_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -484,16 +467,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   end
 
   @doc """
-  Get the # of search sessions, % of successful sessions with a click query
-  statistics for search application.
-
-  **Note:** This API requires a standard end user account to execute.
+  Get the # of search sessions, % of successful sessions with a click query statistics for search application. **Note:** This API requires a standard end user account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource id of the search application session stats, in the following
-      format: searchapplications/{application_id}
+  *   `name` (*type:* `String.t`) - The resource id of the search application session stats, in the following format: searchapplications/{application_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -571,15 +550,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   end
 
   @doc """
-  Get the users statistics for search application.
-
-  **Note:** This API requires a standard end user account to execute.
+  Get the users statistics for search application. **Note:** This API requires a standard end user account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource id of the search application session stats, in the following
-      format: searchapplications/{application_id}
+  *   `name` (*type:* `String.t`) - The resource id of the search application session stats, in the following format: searchapplications/{application_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

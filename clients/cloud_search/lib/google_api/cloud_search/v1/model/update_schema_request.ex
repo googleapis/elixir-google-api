@@ -23,8 +23,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.UpdateSchemaRequest do
 
   *   `debugOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.DebugOptions.t`, *default:* `nil`) - Common debug options.
   *   `schema` (*type:* `GoogleApi.CloudSearch.V1.Model.Schema.t`, *default:* `nil`) - The new schema for the source.
-  *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If true, the schema will be checked for validity,
-      but will not be registered with the data source, even if valid.
+  *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If true, the schema will be checked for validity, but will not be registered with the data source, even if valid.
   """
 
   use GoogleApi.Gax.ModelBase

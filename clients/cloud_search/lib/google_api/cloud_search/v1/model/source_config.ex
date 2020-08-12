@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.SourceConfig do
   @moduledoc """
-  Configurations for a source while processing a
-  Search or
-  Suggest request.
+  Configurations for a source while processing a Search or Suggest request.
 
   ## Attributes
 

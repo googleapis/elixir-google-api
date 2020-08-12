@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.Snippet do
   @moduledoc """
-  Snippet of the search result, which summarizes the content of the resulting
-  page.
+  Snippet of the search result, which summarizes the content of the resulting page.
 
   ## Attributes
 
   *   `matchRanges` (*type:* `list(GoogleApi.CloudSearch.V1.Model.MatchRange.t)`, *default:* `nil`) - The matched ranges in the snippet.
-  *   `snippet` (*type:* `String.t`, *default:* `nil`) - The snippet of the document.
-      The snippet of the document. May contain escaped HTML character that
-      should be unescaped prior to rendering.
+  *   `snippet` (*type:* `String.t`, *default:* `nil`) - The snippet of the document. The snippet of the document. May contain escaped HTML character that should be unescaped prior to rendering.
   """
 
   use GoogleApi.Gax.ModelBase
