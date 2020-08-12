@@ -38,6 +38,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
       - "`link`" 
       - "`update`"
   *   `overwrite` (*type:* `boolean()`, *default:* `nil`) - Only applicable if the method is `claimwebsite`. Indicates whether or not to take the claim from another account in case there is a conflict.
+  *   `view` (*type:* `String.t`, *default:* `nil`) - Controls which fields are visible. Only applicable if the method is 'get'.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -52,7 +53,8 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
             GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest.t(),
           :merchantId => String.t(),
           :method => String.t(),
-          :overwrite => boolean()
+          :overwrite => boolean(),
+          :view => String.t()
         }
 
   field(:account, as: GoogleApi.Content.V21.Model.Account)
@@ -64,6 +66,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
   field(:merchantId)
   field(:method)
   field(:overwrite)
+  field(:view)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
