@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.NamedRanges do
   @moduledoc """
-  A collection of all the NamedRanges in the
-  document that share a given name.
+  A collection of all the NamedRanges in the document that share a given name.
 
   ## Attributes
 

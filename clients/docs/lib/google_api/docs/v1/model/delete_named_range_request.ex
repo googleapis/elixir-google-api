@@ -21,8 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the range(s) to delete. All named ranges with the given
-      name will be deleted.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the range(s) to delete. All named ranges with the given name will be deleted.
   *   `namedRangeId` (*type:* `String.t`, *default:* `nil`) - The ID of the named range to delete.
   """
 

@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.Docs.V1.Model.ParagraphElement do
   @moduledoc """
-  A ParagraphElement describes content within a
-  Paragraph.
+  A ParagraphElement describes content within a Paragraph.
 
   ## Attributes
 
   *   `autoText` (*type:* `GoogleApi.Docs.V1.Model.AutoText.t`, *default:* `nil`) - An auto text paragraph element.
   *   `columnBreak` (*type:* `GoogleApi.Docs.V1.Model.ColumnBreak.t`, *default:* `nil`) - A column break paragraph element.
-  *   `endIndex` (*type:* `integer()`, *default:* `nil`) - The zero-base end index of this paragraph element, exclusive, in UTF-16
-      code units.
+  *   `endIndex` (*type:* `integer()`, *default:* `nil`) - The zero-base end index of this paragraph element, exclusive, in UTF-16 code units.
   *   `equation` (*type:* `GoogleApi.Docs.V1.Model.Equation.t`, *default:* `nil`) - An equation paragraph element.
   *   `footnoteReference` (*type:* `GoogleApi.Docs.V1.Model.FootnoteReference.t`, *default:* `nil`) - A footnote reference paragraph element.
   *   `horizontalRule` (*type:* `GoogleApi.Docs.V1.Model.HorizontalRule.t`, *default:* `nil`) - A horizontal rule paragraph element.

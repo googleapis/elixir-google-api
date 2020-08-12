@@ -21,9 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.Header do
 
   ## Attributes
 
-  *   `content` (*type:* `list(GoogleApi.Docs.V1.Model.StructuralElement.t)`, *default:* `nil`) - The contents of the header.
-
-      The indexes for a header's content begin at zero.
+  *   `content` (*type:* `list(GoogleApi.Docs.V1.Model.StructuralElement.t)`, *default:* `nil`) - The contents of the header. The indexes for a header's content begin at zero.
   *   `headerId` (*type:* `String.t`, *default:* `nil`) - The ID of the header.
   """
 

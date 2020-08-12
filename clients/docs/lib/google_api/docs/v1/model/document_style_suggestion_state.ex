@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base DocumentStyle have been changed in this suggestion.
-  For any field set to true, there is a new suggested value.
+  A mask that indicates which of the fields on the base DocumentStyle have been changed in this suggestion. For any field set to true, there is a new suggested value.
 
   ## Attributes
 
-  *   `backgroundSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.BackgroundSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in background have been changed in this
-      suggestion.
+  *   `backgroundSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.BackgroundSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in background have been changed in this suggestion.
   *   `defaultFooterIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to default_footer_id.
   *   `defaultHeaderIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to default_header_id.
   *   `evenPageFooterIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to even_page_footer_id.
@@ -37,10 +35,8 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState do
   *   `marginRightSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_right.
   *   `marginTopSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_top.
   *   `pageNumberStartSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to page_number_start.
-  *   `pageSizeSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.SizeSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in size have been changed in this
-      suggestion.
-  *   `useCustomHeaderFooterMarginsSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to
-      use_custom_header_footer_margins.
+  *   `pageSizeSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.SizeSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in size have been changed in this suggestion.
+  *   `useCustomHeaderFooterMarginsSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to use_custom_header_footer_margins.
   *   `useEvenPageHeaderFooterSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to use_even_page_header_footer.
   *   `useFirstPageHeaderFooterSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to use_first_page_header_footer.
   """

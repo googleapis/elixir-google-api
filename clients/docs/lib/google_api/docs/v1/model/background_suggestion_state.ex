@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.BackgroundSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base Background have been changed in this suggestion.
-  For any field set to true, the Backgound has a new suggested value.
+  A mask that indicates which of the fields on the base Background have been changed in this suggestion. For any field set to true, the Backgound has a new suggested value.
 
   ## Attributes
 
-  *   `backgroundColorSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the current background color has been modified in this
-      suggestion.
+  *   `backgroundColorSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the current background color has been modified in this suggestion.
   """
 
   use GoogleApi.Gax.ModelBase

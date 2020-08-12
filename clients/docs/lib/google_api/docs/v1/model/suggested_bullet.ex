@@ -21,12 +21,8 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedBullet do
 
   ## Attributes
 
-  *   `bullet` (*type:* `GoogleApi.Docs.V1.Model.Bullet.t`, *default:* `nil`) - A Bullet that only includes the changes made
-      in this suggestion. This can be used along with the
-      bullet_suggestion_state to see which
-      fields have changed and their new values.
-  *   `bulletSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.BulletSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields on the base
-      Bullet have been changed in this suggestion.
+  *   `bullet` (*type:* `GoogleApi.Docs.V1.Model.Bullet.t`, *default:* `nil`) - A Bullet that only includes the changes made in this suggestion. This can be used along with the bullet_suggestion_state to see which fields have changed and their new values.
+  *   `bulletSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.BulletSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields on the base Bullet have been changed in this suggestion.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.Body do
   @moduledoc """
-  The document body.
-
-  The body typically contains the full document contents except for
-  headers, footers
-  and footnotes.
+  The document body. The body typically contains the full document contents except for headers, footers and footnotes.
 
   ## Attributes
 
-  *   `content` (*type:* `list(GoogleApi.Docs.V1.Model.StructuralElement.t)`, *default:* `nil`) - The contents of the body.
-
-      The indexes for the body's content begin at zero.
+  *   `content` (*type:* `list(GoogleApi.Docs.V1.Model.StructuralElement.t)`, *default:* `nil`) - The contents of the body. The indexes for the body's content begin at zero.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.ListPropertiesSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base ListProperties have been changed in this suggestion.
-  For any field set to true, there is a new suggested value.
+  A mask that indicates which of the fields on the base ListProperties have been changed in this suggestion. For any field set to true, there is a new suggested value.
 
   ## Attributes
 
-  *   `nestingLevelsSuggestionStates` (*type:* `list(GoogleApi.Docs.V1.Model.NestingLevelSuggestionState.t)`, *default:* `nil`) - A mask that indicates which of the fields on the corresponding
-      NestingLevel in nesting_levels have been changed in
-      this suggestion.
-
-      The nesting level suggestion states are returned in ascending order of the
-      nesting level with the least nested returned first.
+  *   `nestingLevelsSuggestionStates` (*type:* `list(GoogleApi.Docs.V1.Model.NestingLevelSuggestionState.t)`, *default:* `nil`) - A mask that indicates which of the fields on the corresponding NestingLevel in nesting_levels have been changed in this suggestion. The nesting level suggestion states are returned in ascending order of the nesting level with the least nested returned first.
   """
 
   use GoogleApi.Gax.ModelBase

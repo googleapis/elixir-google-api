@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.TableCellBorder do
   @moduledoc """
-  A border around a table cell.
-
-  Table cell borders cannot be transparent. To hide a table cell border, make
-  its width 0.
+  A border around a table cell. Table cell borders cannot be transparent. To hide a table cell border, make its width 0.
 
   ## Attributes
 
-  *   `color` (*type:* `GoogleApi.Docs.V1.Model.OptionalColor.t`, *default:* `nil`) - The color of the border.
-
-      This color cannot be transparent.
+  *   `color` (*type:* `GoogleApi.Docs.V1.Model.OptionalColor.t`, *default:* `nil`) - The color of the border. This color cannot be transparent.
   *   `dashStyle` (*type:* `String.t`, *default:* `nil`) - The dash style of the border.
   *   `width` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The width of the border.
   """

@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.Docs.V1.Model.BulletSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base
-  Bullet have been changed in this suggestion.
-  For any field set to true, there is a new suggested value.
+  A mask that indicates which of the fields on the base Bullet have been changed in this suggestion. For any field set to true, there is a new suggested value.
 
   ## Attributes
 
-  *   `listIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to the
-      list_id.
-  *   `nestingLevelSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to the
-      nesting_level.
-  *   `textStyleSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in text style have been changed in this
-      suggestion.
+  *   `listIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to the list_id.
+  *   `nestingLevelSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to the nesting_level.
+  *   `textStyleSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.TextStyleSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in text style have been changed in this suggestion.
   """
 
   use GoogleApi.Gax.ModelBase

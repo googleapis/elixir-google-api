@@ -21,8 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.TableColumnProperties do
 
   ## Attributes
 
-  *   `width` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The width of the column. Set when the column's `width_type` is
-      FIXED_WIDTH.
+  *   `width` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The width of the column. Set when the column's `width_type` is FIXED_WIDTH.
   *   `widthType` (*type:* `String.t`, *default:* `nil`) - The width type of the column.
   """
 

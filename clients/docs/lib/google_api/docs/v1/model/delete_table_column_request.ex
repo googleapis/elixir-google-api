@@ -21,12 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.DeleteTableColumnRequest do
 
   ## Attributes
 
-  *   `tableCellLocation` (*type:* `GoogleApi.Docs.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which the column will be deleted.
-
-      The column this cell spans will be deleted. If this is a merged cell that
-      spans multiple columns, all columns that the cell spans will be deleted. If
-      no columns remain in the table after this deletion, the whole table is
-      deleted.
+  *   `tableCellLocation` (*type:* `GoogleApi.Docs.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which the column will be deleted. The column this cell spans will be deleted. If this is a merged cell that spans multiple columns, all columns that the cell spans will be deleted. If no columns remain in the table after this deletion, the whole table is deleted.
   """
 
   use GoogleApi.Gax.ModelBase

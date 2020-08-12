@@ -21,10 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedDocumentStyle do
 
   ## Attributes
 
-  *   `documentStyle` (*type:* `GoogleApi.Docs.V1.Model.DocumentStyle.t`, *default:* `nil`) - A DocumentStyle that only includes
-      the changes made in this suggestion. This can be used along with the
-      document_style_suggestion_state
-      to see which fields have changed and their new values.
+  *   `documentStyle` (*type:* `GoogleApi.Docs.V1.Model.DocumentStyle.t`, *default:* `nil`) - A DocumentStyle that only includes the changes made in this suggestion. This can be used along with the document_style_suggestion_state to see which fields have changed and their new values.
   *   `documentStyleSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields on the base DocumentStyle have been changed in this suggestion.
   """
 

@@ -21,11 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.TableStyle do
 
   ## Attributes
 
-  *   `tableColumnProperties` (*type:* `list(GoogleApi.Docs.V1.Model.TableColumnProperties.t)`, *default:* `nil`) - The properties of each column.
-
-      Note that in Docs, tables contain rows and rows contain cells, similar to
-      HTML. So the properties for a row can be found on the row's
-      table_row_style.
+  *   `tableColumnProperties` (*type:* `list(GoogleApi.Docs.V1.Model.TableColumnProperties.t)`, *default:* `nil`) - The properties of each column. Note that in Docs, tables contain rows and rows contain cells, similar to HTML. So the properties for a row can be found on the row's table_row_style.
   """
 
   use GoogleApi.Gax.ModelBase

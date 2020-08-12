@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.NamedStyles do
   @moduledoc """
-  The named styles. Paragraphs in the document can inherit their
-  TextStyle and
-  ParagraphStyle from these named styles.
+  The named styles. Paragraphs in the document can inherit their TextStyle and ParagraphStyle from these named styles.
 
   ## Attributes
 
-  *   `styles` (*type:* `list(GoogleApi.Docs.V1.Model.NamedStyle.t)`, *default:* `nil`) - The named styles.
-
-      There is an entry for each of the possible named style types.
+  *   `styles` (*type:* `list(GoogleApi.Docs.V1.Model.NamedStyle.t)`, *default:* `nil`) - The named styles. There is an entry for each of the possible named style types.
   """
 
   use GoogleApi.Gax.ModelBase

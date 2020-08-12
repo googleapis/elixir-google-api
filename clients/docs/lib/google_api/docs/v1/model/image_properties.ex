@@ -22,19 +22,12 @@ defmodule GoogleApi.Docs.V1.Model.ImageProperties do
   ## Attributes
 
   *   `angle` (*type:* `number()`, *default:* `nil`) - The clockwise rotation angle of the image, in radians.
-  *   `brightness` (*type:* `number()`, *default:* `nil`) - The brightness effect of the image. The value should be in the interval
-      [-1.0, 1.0], where 0 means no effect.
-  *   `contentUri` (*type:* `String.t`, *default:* `nil`) - A URI to the image with a default lifetime of 30 minutes.
-      This URI is tagged with the account of the requester. Anyone with the URI
-      effectively accesses the image as the original requester. Access to the
-      image may be lost if the document's sharing settings change.
-  *   `contrast` (*type:* `number()`, *default:* `nil`) - The contrast effect of the image. The value should be in the interval
-      [-1.0, 1.0], where 0 means no effect.
+  *   `brightness` (*type:* `number()`, *default:* `nil`) - The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect.
+  *   `contentUri` (*type:* `String.t`, *default:* `nil`) - A URI to the image with a default lifetime of 30 minutes. This URI is tagged with the account of the requester. Anyone with the URI effectively accesses the image as the original requester. Access to the image may be lost if the document's sharing settings change.
+  *   `contrast` (*type:* `number()`, *default:* `nil`) - The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect.
   *   `cropProperties` (*type:* `GoogleApi.Docs.V1.Model.CropProperties.t`, *default:* `nil`) - The crop properties of the image.
-  *   `sourceUri` (*type:* `String.t`, *default:* `nil`) - The source URI is the URI used to insert the image. The source URI can be
-      empty.
-  *   `transparency` (*type:* `number()`, *default:* `nil`) - The transparency effect of the image. The value should be in the interval
-      [0.0, 1.0], where 0 means no effect and 1 means completely transparent.
+  *   `sourceUri` (*type:* `String.t`, *default:* `nil`) - The source URI is the URI used to insert the image. The source URI can be empty.
+  *   `transparency` (*type:* `number()`, *default:* `nil`) - The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent.
   """
 
   use GoogleApi.Gax.ModelBase

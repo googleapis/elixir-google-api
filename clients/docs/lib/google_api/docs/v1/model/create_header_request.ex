@@ -17,21 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.CreateHeaderRequest do
   @moduledoc """
-  Creates a Header. The new header is applied to
-  the SectionStyle at the location of the
-  SectionBreak if specificed, otherwise
-  it is applied to the DocumentStyle.
-
-  If a header of the specified type already exists, a 400 bad request error
-  is returned.
+  Creates a Header. The new header is applied to the SectionStyle at the location of the SectionBreak if specificed, otherwise it is applied to the DocumentStyle. If a header of the specified type already exists, a 400 bad request error is returned.
 
   ## Attributes
 
-  *   `sectionBreakLocation` (*type:* `GoogleApi.Docs.V1.Model.Location.t`, *default:* `nil`) - The location of the SectionBreak
-      which begins the section this header should belong to. If
-      `section_break_location' is unset or if it refers to the first section
-      break in the document body, the header applies to the
-      DocumentStyle
+  *   `sectionBreakLocation` (*type:* `GoogleApi.Docs.V1.Model.Location.t`, *default:* `nil`) - The location of the SectionBreak which begins the section this header should belong to. If `section_break_location' is unset or if it refers to the first section break in the document body, the header applies to the DocumentStyle
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of header to create.
   """
 

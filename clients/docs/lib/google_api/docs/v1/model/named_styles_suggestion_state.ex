@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.NamedStylesSuggestionState do
   @moduledoc """
-  The suggestion state of a NamedStyles
-  message.
+  The suggestion state of a NamedStyles message.
 
   ## Attributes
 
-  *   `stylesSuggestionStates` (*type:* `list(GoogleApi.Docs.V1.Model.NamedStyleSuggestionState.t)`, *default:* `nil`) - A mask that indicates which of the fields on the corresponding NamedStyle in styles have been changed in this
-      suggestion.
-
-      The order of these named style suggestion states match the order of the
-      corresponding named style within the named styles suggestion.
+  *   `stylesSuggestionStates` (*type:* `list(GoogleApi.Docs.V1.Model.NamedStyleSuggestionState.t)`, *default:* `nil`) - A mask that indicates which of the fields on the corresponding NamedStyle in styles have been changed in this suggestion. The order of these named style suggestion states match the order of the corresponding named style within the named styles suggestion.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,20 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.CreateFooterRequest do
   @moduledoc """
-  Creates a Footer. The new footer is applied to
-  the SectionStyle at the location of the
-  SectionBreak if specificed, otherwise
-  it is applied to the DocumentStyle.
-
-  If a footer of the specified type already exists, a 400 bad request error
-  is returned.
+  Creates a Footer. The new footer is applied to the SectionStyle at the location of the SectionBreak if specificed, otherwise it is applied to the DocumentStyle. If a footer of the specified type already exists, a 400 bad request error is returned.
 
   ## Attributes
 
-  *   `sectionBreakLocation` (*type:* `GoogleApi.Docs.V1.Model.Location.t`, *default:* `nil`) - The location of the SectionBreak
-      immediately preceding the section whose SectionStyle this footer should belong to. If this is
-      unset or refers to the first section break in the document, the footer
-      applies to the document style.
+  *   `sectionBreakLocation` (*type:* `GoogleApi.Docs.V1.Model.Location.t`, *default:* `nil`) - The location of the SectionBreak immediately preceding the section whose SectionStyle this footer should belong to. If this is unset or refers to the first section break in the document, the footer applies to the document style.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of footer to create.
   """
 

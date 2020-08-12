@@ -21,13 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.DeleteFooterRequest do
 
   ## Attributes
 
-  *   `footerId` (*type:* `String.t`, *default:* `nil`) - The id of the footer to delete. If this footer is defined on
-      DocumentStyle, the reference to
-      this footer is removed, resulting in no footer of that type for
-      the first section of the document. If this footer is defined on a
-      SectionStyle, the reference to this
-      footer is removed and the footer of that type is now continued from
-      the previous section.
+  *   `footerId` (*type:* `String.t`, *default:* `nil`) - The id of the footer to delete. If this footer is defined on DocumentStyle, the reference to this footer is removed, resulting in no footer of that type for the first section of the document. If this footer is defined on a SectionStyle, the reference to this footer is removed and the footer of that type is now continued from the previous section.
   """
 
   use GoogleApi.Gax.ModelBase

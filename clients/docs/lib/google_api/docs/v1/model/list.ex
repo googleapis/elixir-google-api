@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.Docs.V1.Model.List do
   @moduledoc """
-  A List represents the list attributes for a group of paragraphs that all
-  belong to the same list. A paragraph that is part of a list has a reference
-  to the list's ID in its bullet.
+  A List represents the list attributes for a group of paragraphs that all belong to the same list. A paragraph that is part of a list has a reference to the list's ID in its bullet.
 
   ## Attributes
 
   *   `listProperties` (*type:* `GoogleApi.Docs.V1.Model.ListProperties.t`, *default:* `nil`) - The properties of the list.
-  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions
-      of this list.
-  *   `suggestedInsertionId` (*type:* `String.t`, *default:* `nil`) - The suggested insertion ID. If empty, then this is not a suggested
-      insertion.
-  *   `suggestedListPropertiesChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedListProperties.t}`, *default:* `nil`) - The suggested changes to the list properties, keyed by suggestion
-      ID.
+  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this list.
+  *   `suggestedInsertionId` (*type:* `String.t`, *default:* `nil`) - The suggested insertion ID. If empty, then this is not a suggested insertion.
+  *   `suggestedListPropertiesChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedListProperties.t}`, *default:* `nil`) - The suggested changes to the list properties, keyed by suggestion ID.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.SuggestedTableRowStyle do
   @moduledoc """
-  A suggested change to a
-  TableRowStyle.
+  A suggested change to a TableRowStyle.
 
   ## Attributes
 
-  *   `tableRowStyle` (*type:* `GoogleApi.Docs.V1.Model.TableRowStyle.t`, *default:* `nil`) - A TableRowStyle that only includes
-      the changes made in this suggestion. This can be used along with the
-      table_row_style_suggestion_state
-      to see which fields have changed and their new values.
+  *   `tableRowStyle` (*type:* `GoogleApi.Docs.V1.Model.TableRowStyle.t`, *default:* `nil`) - A TableRowStyle that only includes the changes made in this suggestion. This can be used along with the table_row_style_suggestion_state to see which fields have changed and their new values.
   *   `tableRowStyleSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.TableRowStyleSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields on the base TableRowStyle have been changed in this suggestion.
   """
 

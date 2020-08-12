@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest do
   @moduledoc """
-  Deletes a PositionedObject from the
-  document.
+  Deletes a PositionedObject from the document.
 
   ## Attributes
 

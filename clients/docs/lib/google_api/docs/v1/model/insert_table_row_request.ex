@@ -21,15 +21,8 @@ defmodule GoogleApi.Docs.V1.Model.InsertTableRowRequest do
 
   ## Attributes
 
-  *   `insertBelow` (*type:* `boolean()`, *default:* `nil`) - Whether to insert new row below the reference cell location.
-
-      - `True`: insert below the cell.
-      - `False`: insert above the cell.
-  *   `tableCellLocation` (*type:* `GoogleApi.Docs.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which rows will be inserted.
-
-      A new row will be inserted above (or below) the row where the reference
-      cell is. If the reference cell is a merged cell, a new row will be
-      inserted above (or below) the merged cell.
+  *   `insertBelow` (*type:* `boolean()`, *default:* `nil`) - Whether to insert new row below the reference cell location. - `True`: insert below the cell. - `False`: insert above the cell.
+  *   `tableCellLocation` (*type:* `GoogleApi.Docs.V1.Model.TableCellLocation.t`, *default:* `nil`) - The reference table cell location from which rows will be inserted. A new row will be inserted above (or below) the row where the reference cell is. If the reference cell is a merged cell, a new row will be inserted above (or below) the merged cell.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,7 @@ defmodule GoogleApi.Docs.V1.Model.BatchUpdateDocumentResponse do
   ## Attributes
 
   *   `documentId` (*type:* `String.t`, *default:* `nil`) - The ID of the document to which the updates were applied to.
-  *   `replies` (*type:* `list(GoogleApi.Docs.V1.Model.Response.t)`, *default:* `nil`) - The reply of the updates. This maps 1:1 with the updates, although replies
-      to some requests may be empty.
+  *   `replies` (*type:* `list(GoogleApi.Docs.V1.Model.Response.t)`, *default:* `nil`) - The reply of the updates. This maps 1:1 with the updates, although replies to some requests may be empty.
   *   `writeControl` (*type:* `GoogleApi.Docs.V1.Model.WriteControl.t`, *default:* `nil`) - The updated write control after applying the request.
   """
 

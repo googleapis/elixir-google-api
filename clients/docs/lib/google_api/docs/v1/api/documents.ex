@@ -26,27 +26,7 @@ defmodule GoogleApi.Docs.V1.Api.Documents do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Applies one or more updates to the document.
-
-  Each request is validated before
-  being applied. If any request is not valid, then the entire request will
-  fail and nothing will be applied.
-
-  Some requests have replies to
-  give you some information about how they are applied. Other requests do
-  not need to return information; these each return an empty reply.
-  The order of replies matches that of the requests.
-
-  For example, suppose you call batchUpdate with four updates, and only the
-  third one returns information. The response would have two empty replies,
-  the reply to the third request, and another empty reply, in that order.
-
-  Because other users may be editing the document, the document
-  might not exactly reflect your changes: your changes may
-  be altered with respect to collaborator changes. If there are no
-  collaborators, the document should reflect your changes. In any case,
-  the updates in your request are guaranteed to be applied together
-  atomically.
+  Applies one or more updates to the document. Each request is validated before being applied. If any request is not valid, then the entire request will fail and nothing will be applied. Some requests have replies to give you some information about how they are applied. Other requests do not need to return information; these each return an empty reply. The order of replies matches that of the requests. For example, suppose you call batchUpdate with four updates, and only the third one returns information. The response would have two empty replies, the reply to the third request, and another empty reply, in that order. Because other users may be editing the document, the document might not exactly reflect your changes: your changes may be altered with respect to collaborator changes. If there are no collaborators, the document should reflect your changes. In any case, the updates in your request are guaranteed to be applied together atomically.
 
   ## Parameters
 
@@ -107,10 +87,7 @@ defmodule GoogleApi.Docs.V1.Api.Documents do
   end
 
   @doc """
-  Creates a blank document using the title given in the request. Other fields
-  in the request, including any provided content, are ignored.
-
-  Returns the created document.
+  Creates a blank document using the title given in the request. Other fields in the request, including any provided content, are ignored. Returns the created document.
 
   ## Parameters
 
@@ -184,10 +161,7 @@ defmodule GoogleApi.Docs.V1.Api.Documents do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:suggestionsViewMode` (*type:* `String.t`) - The suggestions view mode to apply to the document. This allows viewing the
-          document with all suggestions inline, accepted or rejected. If one is not
-          specified, DEFAULT_FOR_CURRENT_ACCESS is
-          used.
+      *   `:suggestionsViewMode` (*type:* `String.t`) - The suggestions view mode to apply to the document. This allows viewing the document with all suggestions inline, accepted or rejected. If one is not specified, DEFAULT_FOR_CURRENT_ACCESS is used.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

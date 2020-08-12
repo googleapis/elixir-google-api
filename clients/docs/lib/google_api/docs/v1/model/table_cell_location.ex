@@ -21,10 +21,8 @@ defmodule GoogleApi.Docs.V1.Model.TableCellLocation do
 
   ## Attributes
 
-  *   `columnIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based column index. For example, the second column in the table
-      has a column index of 1.
-  *   `rowIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based row index. For example, the second row in the table has a
-      row index of 1.
+  *   `columnIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based column index. For example, the second column in the table has a column index of 1.
+  *   `rowIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based row index. For example, the second row in the table has a row index of 1.
   *   `tableStartLocation` (*type:* `GoogleApi.Docs.V1.Model.Location.t`, *default:* `nil`) - The location where the table starts in the document.
   """
 

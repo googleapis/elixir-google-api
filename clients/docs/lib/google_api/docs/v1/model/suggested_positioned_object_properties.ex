@@ -21,13 +21,8 @@ defmodule GoogleApi.Docs.V1.Model.SuggestedPositionedObjectProperties do
 
   ## Attributes
 
-  *   `positionedObjectProperties` (*type:* `GoogleApi.Docs.V1.Model.PositionedObjectProperties.t`, *default:* `nil`) - A PositionedObjectProperties that only includes the
-      changes made in this suggestion. This can be used along with the
-      positioned_object_properties_suggestion_state
-      to see which fields have changed and their new values.
-  *   `positionedObjectPropertiesSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.PositionedObjectPropertiesSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields on the base
-      PositionedObjectProperties have been changed in this
-      suggestion.
+  *   `positionedObjectProperties` (*type:* `GoogleApi.Docs.V1.Model.PositionedObjectProperties.t`, *default:* `nil`) - A PositionedObjectProperties that only includes the changes made in this suggestion. This can be used along with the positioned_object_properties_suggestion_state to see which fields have changed and their new values.
+  *   `positionedObjectPropertiesSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.PositionedObjectPropertiesSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields on the base PositionedObjectProperties have been changed in this suggestion.
   """
 
   use GoogleApi.Gax.ModelBase

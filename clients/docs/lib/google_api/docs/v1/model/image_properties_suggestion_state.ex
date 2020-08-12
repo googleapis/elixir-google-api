@@ -17,18 +17,15 @@
 
 defmodule GoogleApi.Docs.V1.Model.ImagePropertiesSuggestionState do
   @moduledoc """
-  A mask that indicates which of the fields on the base ImageProperties have been changed in this suggestion.
-  For any field set to true, there is a new suggested value.
+  A mask that indicates which of the fields on the base ImageProperties have been changed in this suggestion. For any field set to true, there is a new suggested value.
 
   ## Attributes
 
   *   `angleSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to angle.
   *   `brightnessSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to brightness.
-  *   `contentUriSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to
-      content_uri.
+  *   `contentUriSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to content_uri.
   *   `contrastSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to contrast.
-  *   `cropPropertiesSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.CropPropertiesSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in crop_properties have been changed in
-      this suggestion.
+  *   `cropPropertiesSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.CropPropertiesSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in crop_properties have been changed in this suggestion.
   *   `sourceUriSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to source_uri.
   *   `transparencySuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to transparency.
   """

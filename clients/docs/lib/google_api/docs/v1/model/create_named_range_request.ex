@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.CreateNamedRangeRequest do
   @moduledoc """
-  Creates a NamedRange referencing the given
-  range.
+  Creates a NamedRange referencing the given range.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the NamedRange. Names do not need to be unique.
-
-      Names must be at least 1 character and no more than 256 characters,
-      measured in UTF-16 code units.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the NamedRange. Names do not need to be unique. Names must be at least 1 character and no more than 256 characters, measured in UTF-16 code units.
   *   `range` (*type:* `GoogleApi.Docs.V1.Model.Range.t`, *default:* `nil`) - The range to apply the name to.
   """
 

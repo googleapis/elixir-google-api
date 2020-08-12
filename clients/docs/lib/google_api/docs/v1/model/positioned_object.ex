@@ -17,21 +17,15 @@
 
 defmodule GoogleApi.Docs.V1.Model.PositionedObject do
   @moduledoc """
-  An object that is tethered to a Paragraph
-  and positioned relative to the beginning of the paragraph. A PositionedObject
-  contains an EmbeddedObject such as an
-  image.
+  An object that is tethered to a Paragraph and positioned relative to the beginning of the paragraph. A PositionedObject contains an EmbeddedObject such as an image.
 
   ## Attributes
 
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - The ID of this positioned object.
   *   `positionedObjectProperties` (*type:* `GoogleApi.Docs.V1.Model.PositionedObjectProperties.t`, *default:* `nil`) - The properties of this positioned object.
-  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions
-      of this content.
-  *   `suggestedInsertionId` (*type:* `String.t`, *default:* `nil`) - The suggested insertion ID. If empty, then this is not a suggested
-      insertion.
-  *   `suggestedPositionedObjectPropertiesChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedPositionedObjectProperties.t}`, *default:* `nil`) - The suggested changes to the positioned object properties, keyed by
-      suggestion ID.
+  *   `suggestedDeletionIds` (*type:* `list(String.t)`, *default:* `nil`) - The suggested deletion IDs. If empty, then there are no suggested deletions of this content.
+  *   `suggestedInsertionId` (*type:* `String.t`, *default:* `nil`) - The suggested insertion ID. If empty, then this is not a suggested insertion.
+  *   `suggestedPositionedObjectPropertiesChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedPositionedObjectProperties.t}`, *default:* `nil`) - The suggested changes to the positioned object properties, keyed by suggestion ID.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.OptionalColor do
 
   ## Attributes
 
-  *   `color` (*type:* `GoogleApi.Docs.V1.Model.Color.t`, *default:* `nil`) - If set, this will be used as an opaque color. If unset, this represents
-      a transparent color.
+  *   `color` (*type:* `GoogleApi.Docs.V1.Model.Color.t`, *default:* `nil`) - If set, this will be used as an opaque color. If unset, this represents a transparent color.
   """
 
   use GoogleApi.Gax.ModelBase

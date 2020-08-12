@@ -21,13 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.DeleteHeaderRequest do
 
   ## Attributes
 
-  *   `headerId` (*type:* `String.t`, *default:* `nil`) - The id of the header to delete. If this header is defined on
-      DocumentStyle, the reference to
-      this header is removed, resulting in no header of that type for
-      the first section of the document. If this header is defined on a
-      SectionStyle, the reference to this
-      header is removed and the header of that type is now continued from
-      the previous section.
+  *   `headerId` (*type:* `String.t`, *default:* `nil`) - The id of the header to delete. If this header is defined on DocumentStyle, the reference to this header is removed, resulting in no header of that type for the first section of the document. If this header is defined on a SectionStyle, the reference to this header is removed and the header of that type is now continued from the previous section.
   """
 
   use GoogleApi.Gax.ModelBase
