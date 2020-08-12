@@ -18,7 +18,7 @@
 defmodule GoogleApi.FirebaseRules.Mixfile do
   use Mix.Project
 
-  @version "0.15.0"
+  @version "0.15.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.FirebaseRules.Mixfile do
 
   defp description() do
     """
-    Firebase Rules API client library. Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request.
-
+    Firebase Rules API client library. Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request. 
     """
   end
 

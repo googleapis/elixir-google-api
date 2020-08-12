@@ -21,8 +21,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Metadata do
 
   ## Attributes
 
-  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - Services that this ruleset has declarations for (e.g.,
-      "cloud.firestore"). There may be 0+ of these.
+  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - Services that this ruleset has declarations for (e.g., "cloud.firestore"). There may be 0+ of these.
   """
 
   use GoogleApi.Gax.ModelBase

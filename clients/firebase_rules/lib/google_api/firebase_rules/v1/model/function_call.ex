@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.FirebaseRules.V1.Model.FunctionCall do
   @moduledoc """
-  Represents a service-defined function call that was invoked during test
-  execution.
+  Represents a service-defined function call that was invoked during test execution.
 
   ## Attributes
 

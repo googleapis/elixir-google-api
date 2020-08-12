@@ -25,9 +25,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.GetReleaseExecutableResponse do
   *   `executableVersion` (*type:* `String.t`, *default:* `nil`) - The Rules runtime version of the executable.
   *   `language` (*type:* `String.t`, *default:* `nil`) - `Language` used to generate the executable bytes.
   *   `rulesetName` (*type:* `String.t`, *default:* `nil`) - `Ruleset` name associated with the `Release` executable.
-  *   `syncTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional, indicates the freshness of the result. The response is
-      guaranteed to be the latest within an interval up to the
-      sync_time (inclusive).
+  *   `syncTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional, indicates the freshness of the result. The response is guaranteed to be the latest within an interval up to the sync_time (inclusive).
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the most recent `Release.update_time`.
   """
 
