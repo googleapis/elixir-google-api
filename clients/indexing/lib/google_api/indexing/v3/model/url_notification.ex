@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.Indexing.V3.Model.UrlNotification do
   @moduledoc """
-  `UrlNotification` is the resource used in all Indexing API calls.
-  It describes one event in the life cycle of a Web Document.
+  `UrlNotification` is the resource used in all Indexing API calls. It describes one event in the life cycle of a Web Document.
 
   ## Attributes
 
-  *   `notifyTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation timestamp for this notification.
-      Users should _not_ specify it, the field is ignored at the request time.
+  *   `notifyTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation timestamp for this notification. Users should _not_ specify it, the field is ignored at the request time.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The URL life cycle event that Google is being notified about.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The object of this notification. The URL must be owned by the publisher
-      of this notification and, in case of `URL_UPDATED` notifications, it _must_
-      be crawlable by Google.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The object of this notification. The URL must be owned by the publisher of this notification and, in case of `URL_UPDATED` notifications, it _must_ be crawlable by Google.
   """
 
   use GoogleApi.Gax.ModelBase

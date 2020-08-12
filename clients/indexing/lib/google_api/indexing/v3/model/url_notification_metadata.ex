@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Indexing.V3.Model.UrlNotificationMetadata do
   @moduledoc """
-  Summary of the most recent Indexing API notifications successfully received,
-  for a given URL.
+  Summary of the most recent Indexing API notifications successfully received, for a given URL.
 
   ## Attributes
 
