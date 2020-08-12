@@ -17,20 +17,16 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance do
   @moduledoc """
-  Provenance of a build. Contains all information needed to verify the full
-  details about the build from source to completion.
+  Provenance of a build. Contains all information needed to verify the full details about the build from source to completion.
 
   ## Attributes
 
-  *   `buildOptions` (*type:* `map()`, *default:* `nil`) - Special options applied to this build. This is a catch-all field where
-      build providers can enter any desired additional details.
+  *   `buildOptions` (*type:* `map()`, *default:* `nil`) - Special options applied to this build. This is a catch-all field where build providers can enter any desired additional details.
   *   `builderVersion` (*type:* `String.t`, *default:* `nil`) - Version string of the builder at the time this build was executed.
   *   `builtArtifacts` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Artifact.t)`, *default:* `nil`) - Output of the build.
   *   `commands` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Command.t)`, *default:* `nil`) - Commands requested by the build.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time at which the build was created.
-  *   `creator` (*type:* `String.t`, *default:* `nil`) - E-mail address of the user who initiated this build. Note that this was the
-      user's e-mail address at the time the build was initiated; this address may
-      not represent the same end-user for all time.
+  *   `creator` (*type:* `String.t`, *default:* `nil`) - E-mail address of the user who initiated this build. Note that this was the user's e-mail address at the time the build was initiated; this address may not represent the same end-user for all time.
   *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - Time at which execution of the build was finished.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the build.
   *   `logsBucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket where logs were written.

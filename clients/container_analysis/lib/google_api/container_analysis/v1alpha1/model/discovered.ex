@@ -22,13 +22,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered do
   ## Attributes
 
   *   `analysisStatus` (*type:* `String.t`, *default:* `nil`) - The status of discovery for the resource.
-  *   `analysisStatusError` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Status.t`, *default:* `nil`) - When an error is encountered this will contain a LocalizedMessage under
-      details to show to the user. The LocalizedMessage output only and
-      populated by the API.
+  *   `analysisStatusError` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Status.t`, *default:* `nil`) - When an error is encountered this will contain a LocalizedMessage under details to show to the user. The LocalizedMessage output only and populated by the API.
   *   `continuousAnalysis` (*type:* `String.t`, *default:* `nil`) - Whether the resource is continuously analyzed.
   *   `cpe` (*type:* `String.t`, *default:* `nil`) - The CPE of the resource being scanned.
-  *   `operation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t`, *default:* `nil`) - Output only. An operation that indicates the status of the current scan.
-      This field is deprecated, do not use.
+  *   `operation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t`, *default:* `nil`) - Output only. An operation that indicates the status of the current scan. This field is deprecated, do not use.
   """
 
   use GoogleApi.Gax.ModelBase

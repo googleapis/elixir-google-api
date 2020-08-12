@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Version do
   @moduledoc """
-  Version contains structured information about the version of the package.
-  For a discussion of this in Debian/Ubuntu:
-  http://serverfault.com/questions/604541/debian-packages-version-convention
-  For a discussion of this in Redhat/Fedora/Centos:
-  http://blog.jasonantman.com/2014/07/how-yum-and-rpm-compare-versions/
+  Version contains structured information about the version of the package. For a discussion of this in Debian/Ubuntu: http://serverfault.com/questions/604541/debian-packages-version-convention For a discussion of this in Redhat/Fedora/Centos: http://blog.jasonantman.com/2014/07/how-yum-and-rpm-compare-versions/
 
   ## Attributes
 
   *   `epoch` (*type:* `integer()`, *default:* `nil`) - Used to correct mistakes in the version numbering scheme.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Distinguish between sentinel MIN/MAX versions and normal versions.
-      If kind is not NORMAL, then the other fields are ignored.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Distinguish between sentinel MIN/MAX versions and normal versions. If kind is not NORMAL, then the other fields are ignored.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The main part of the version name.
   *   `revision` (*type:* `String.t`, *default:* `nil`) - The iteration of the package build from the above version.
   """

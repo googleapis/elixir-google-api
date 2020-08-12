@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Installation do
   @moduledoc """
-  This represents how a particular software package may be installed on
-  a system.
+  This represents how a particular software package may be installed on a system.
 
   ## Attributes
 
-  *   `location` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Location.t)`, *default:* `nil`) - All of the places within the filesystem versions of this package
-      have been found.
+  *   `location` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Location.t)`, *default:* `nil`) - All of the places within the filesystem versions of this package have been found.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the installed package.
   """
 

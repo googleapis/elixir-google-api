@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageIssue do
   @moduledoc """
-  This message wraps a location affected by a vulnerability and its
-  associated fix (if one is available).
+  This message wraps a location affected by a vulnerability and its associated fix (if one is available).
 
   ## Attributes
 

@@ -22,13 +22,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Command do
   ## Attributes
 
   *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Command-line arguments used when executing this Command.
-  *   `dir` (*type:* `String.t`, *default:* `nil`) - Working directory (relative to project source root) used when running
-      this Command.
+  *   `dir` (*type:* `String.t`, *default:* `nil`) - Working directory (relative to project source root) used when running this Command.
   *   `env` (*type:* `list(String.t)`, *default:* `nil`) - Environment variables set before running this Command.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional unique identifier for this Command, used in wait_for to reference
-      this Command as a dependency.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the command, as presented on the command line, or if the command is
-      packaged as a Docker container, as presented to `docker pull`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional unique identifier for this Command, used in wait_for to reference this Command as a dependency.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the command, as presented on the command line, or if the command is packaged as a Docker container, as presented to `docker pull`.
   *   `waitFor` (*type:* `list(String.t)`, *default:* `nil`) - The ID(s) of the Command(s) that this Command depends on.
   """
 

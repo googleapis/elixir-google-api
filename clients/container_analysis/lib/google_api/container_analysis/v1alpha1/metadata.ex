@@ -20,7 +20,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1 do
   API client metadata for GoogleApi.ContainerAnalysis.V1alpha1.
   """
 
-  @discovery_revision "20200724"
+  @discovery_revision "20200807"
 
   def discovery_revision(), do: @discovery_revision
 end

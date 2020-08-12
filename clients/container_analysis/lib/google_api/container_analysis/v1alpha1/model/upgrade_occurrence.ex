@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeOccurrence do
   @moduledoc """
-  An Upgrade Occurrence represents that a specific resource_url could install a
-  specific upgrade. This presence is supplied via local sources (i.e. it is
-  present in the mirror and the running system has noticed its availability).
+  An Upgrade Occurrence represents that a specific resource_url could install a specific upgrade. This presence is supplied via local sources (i.e. it is present in the mirror and the running system has noticed its availability).
 
   ## Attributes
 
-  *   `distribution` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeDistribution.t`, *default:* `nil`) - Metadata about the upgrade for available for the specific operating system
-      for the resource_url. This allows efficient filtering, as well as
-      making it easier to use the occurrence.
+  *   `distribution` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeDistribution.t`, *default:* `nil`) - Metadata about the upgrade for available for the specific operating system for the resource_url. This allows efficient filtering, as well as making it easier to use the occurrence.
   *   `package` (*type:* `String.t`, *default:* `nil`) - Required - The package this Upgrade is for.
   *   `parsedVersion` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t`, *default:* `nil`) - Required - The version of the package in a machine + human readable form.
   """

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.RepoSource do
   @moduledoc """
-  RepoSource describes the location of the source in a Google Cloud Source
-  Repository.
+  RepoSource describes the location of the source in a Google Cloud Source Repository.
 
   ## Attributes
 

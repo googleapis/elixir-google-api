@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1OperationMetadata do
   @moduledoc """
-  Metadata for all operations used and required for all operations
-  that created by Container Analysis Providers
+  Metadata for all operations used and required for all operations that created by Container Analysis Providers
 
   ## Attributes
 
