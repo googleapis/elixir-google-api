@@ -1,0 +1,30 @@
+name: Presubmit
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  presubmit:
+    strategy:
+      matrix:
+        include:
+          - elixir: "1.6.6"
+            otp: "21.3.8.17"
+          - elixir: "1.9.4"
+            otp: "22.3.4.5"
+          - elixir: "1.10.4"
+            otp: "23.0.3"
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Install Elixir ${{matrix.elixir}} on OTP ${{matrix.otp}}
+        uses: actions/setup-elixir@v1
+        with:
+          otp-version: ${{matrix.otp}}
+          elixir-version: ${{matrix.elixir}}
+      - name: Run presubmits
+        run: mix do deps.get, presubmit
