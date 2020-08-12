@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.QueryRequest do
   @moduledoc """
-  Request type for the
-  [`Query`](#google.home.graph.v1.HomeGraphApiService.Query) call.
+  Request type for the [`Query`](#google.home.graph.v1.HomeGraphApiService.Query) call.
 
   ## Attributes
 
   *   `agentUserId` (*type:* `String.t`, *default:* `nil`) - Required. Third-party user ID.
-  *   `inputs` (*type:* `list(GoogleApi.HomeGraph.V1.Model.QueryRequestInput.t)`, *default:* `nil`) - Required. Inputs containing third-party device IDs for which to
-      get the device states.
+  *   `inputs` (*type:* `list(GoogleApi.HomeGraph.V1.Model.QueryRequestInput.t)`, *default:* `nil`) - Required. Inputs containing third-party device IDs for which to get the device states.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Request ID used for debugging.
   """
 

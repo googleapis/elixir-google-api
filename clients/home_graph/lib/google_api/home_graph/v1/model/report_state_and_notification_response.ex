@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.ReportStateAndNotificationResponse do
   @moduledoc """
-  Response type for the
-  [`ReportStateAndNotification`](#google.home.graph.v1.HomeGraphApiService.ReportStateAndNotification)
-  call.
+  Response type for the [`ReportStateAndNotification`](#google.home.graph.v1.HomeGraphApiService.ReportStateAndNotification) call.
 
   ## Attributes
 
