@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.FirebaseRules.V1.Model.ExpressionReport do
   @moduledoc """
-  Describes where in a file an expression is found and what it was
-  evaluated to over the course of its use.
+  Describes where in a file an expression is found and what it was evaluated to over the course of its use.
 
   ## Attributes
 

@@ -17,47 +17,16 @@
 
 defmodule GoogleApi.FirebaseRules.V1.Model.TestCase do
   @moduledoc """
-  `TestCase` messages provide the request context and an expectation as to
-  whether the given context will be allowed or denied. Test cases may specify
-  the `request`, `resource`, and `function_mocks` to mock a function call to
-  a service-provided function.
-
-  The `request` object represents context present at request-time.
-
-  The `resource` is the value of the target resource as it appears in
-  persistent storage before the request is executed.
+  `TestCase` messages provide the request context and an expectation as to whether the given context will be allowed or denied. Test cases may specify the `request`, `resource`, and `function_mocks` to mock a function call to a service-provided function. The `request` object represents context present at request-time. The `resource` is the value of the target resource as it appears in persistent storage before the request is executed.
 
   ## Attributes
 
   *   `expectation` (*type:* `String.t`, *default:* `nil`) - Test expectation.
   *   `expressionReportLevel` (*type:* `String.t`, *default:* `nil`) - Specifies what should be included in the response.
-  *   `functionMocks` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.FunctionMock.t)`, *default:* `nil`) - Optional function mocks for service-defined functions. If not set, any
-      service defined function is expected to return an error, which may or may
-      not influence the test outcome.
+  *   `functionMocks` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.FunctionMock.t)`, *default:* `nil`) - Optional function mocks for service-defined functions. If not set, any service defined function is expected to return an error, which may or may not influence the test outcome.
   *   `pathEncoding` (*type:* `String.t`, *default:* `nil`) - Specifies whether paths (such as request.path) are encoded and how.
-  *   `request` (*type:* `any()`, *default:* `nil`) - Request context.
-
-      The exact format of the request context is service-dependent. See the
-      appropriate service documentation for information about the supported
-      fields and types on the request. Minimally, all services support the
-      following fields and types:
-
-      Request field  | Type
-      ---------------|-----------------
-      auth.uid       | `string`
-      auth.token     | `map<string, string>`
-      headers        | `map<string, string>`
-      method         | `string`
-      params         | `map<string, string>`
-      path           | `string`
-      time           | `google.protobuf.Timestamp`
-
-      If the request value is not well-formed for the service, the request will
-      be rejected as an invalid argument.
-  *   `resource` (*type:* `any()`, *default:* `nil`) - Optional resource value as it appears in persistent storage before the
-      request is fulfilled.
-
-      The resource type depends on the `request.path` value.
+  *   `request` (*type:* `any()`, *default:* `nil`) - Request context. The exact format of the request context is service-dependent. See the appropriate service documentation for information about the supported fields and types on the request. Minimally, all services support the following fields and types: Request field | Type ---------------|----------------- auth.uid | `string` auth.token | `map` headers | `map` method | `string` params | `map` path | `string` time | `google.protobuf.Timestamp` If the request value is not well-formed for the service, the request will be rejected as an invalid argument.
+  *   `resource` (*type:* `any()`, *default:* `nil`) - Optional resource value as it appears in persistent storage before the request is fulfilled. The resource type depends on the `request.path` value.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.FirebaseRules.V1.Model.SourcePosition do
   @moduledoc """
-  Position in the `Source` content including its line, column number, and an
-  index of the `File` in the `Source` message. Used for debug purposes.
+  Position in the `Source` content including its line, column number, and an index of the `File` in the `Source` message. Used for debug purposes.
 
   ## Attributes
 

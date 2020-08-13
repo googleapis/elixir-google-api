@@ -21,9 +21,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestRulesetRequest do
 
   ## Attributes
 
-  *   `source` (*type:* `GoogleApi.FirebaseRules.V1.Model.Source.t`, *default:* `nil`) - Optional `Source` to be checked for correctness.
-
-      This field must not be set when the resource name refers to a `Ruleset`.
+  *   `source` (*type:* `GoogleApi.FirebaseRules.V1.Model.Source.t`, *default:* `nil`) - Optional `Source` to be checked for correctness. This field must not be set when the resource name refers to a `Ruleset`.
   *   `testSuite` (*type:* `GoogleApi.FirebaseRules.V1.Model.TestSuite.t`, *default:* `nil`) - Inline `TestSuite` to run.
   """
 
