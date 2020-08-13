@@ -27,12 +27,9 @@ defmodule GoogleApi.Games.V1.Model.AchievementDefinition do
   *   `formattedTotalSteps` (*type:* `String.t`, *default:* `nil`) - The total steps for an incremental achievement as a string.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the achievement.
   *   `initialState` (*type:* `String.t`, *default:* `nil`) - The initial state of the achievement.
-  *   `isRevealedIconUrlDefault` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the revealed icon image being returned is a default
-      image, or is provided by the game.
-  *   `isUnlockedIconUrlDefault` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the unlocked icon image being returned is a default
-      image, or is game-provided.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#achievementDefinition`.
+  *   `isRevealedIconUrlDefault` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the revealed icon image being returned is a default image, or is provided by the game.
+  *   `isUnlockedIconUrlDefault` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the unlocked icon image being returned is a default image, or is game-provided.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementDefinition`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the achievement.
   *   `revealedIconUrl` (*type:* `String.t`, *default:* `nil`) - The image URL for the revealed achievement icon.
   *   `totalSteps` (*type:* `integer()`, *default:* `nil`) - The total steps for an incremental achievement.

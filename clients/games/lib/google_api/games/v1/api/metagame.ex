@@ -82,14 +82,12 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
   end
 
   @doc """
-  List play data aggregated per category for the player corresponding to
-  `playerId`.
+  List play data aggregated per category for the player corresponding to `playerId`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
-  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the
-      authenticated player's ID.
+  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the authenticated player's ID.
   *   `collection` (*type:* `String.t`) - The collection of categories for which data will be returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -104,9 +102,7 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of category resources to return in the response, used
-          for paging. For any response, the actual number of category resources
-          returned may be less than the specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of category resources to return in the response, used for paging. For any response, the actual number of category resources returned may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 

@@ -21,10 +21,8 @@ defmodule GoogleApi.Games.V1.Model.RevisionCheckResponse do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API this client revision should use when calling API
-      methods.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#revisionCheckResponse`.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API this client revision should use when calling API methods.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#revisionCheckResponse`.
   *   `revisionStatus` (*type:* `String.t`, *default:* `nil`) - The result of the revision check.
   """
 

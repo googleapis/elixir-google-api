@@ -23,16 +23,13 @@ defmodule GoogleApi.Games.V1.Model.LeaderboardEntry do
 
   *   `formattedScore` (*type:* `String.t`, *default:* `nil`) - The localized string for the numerical value of this score.
   *   `formattedScoreRank` (*type:* `String.t`, *default:* `nil`) - The localized string for the rank of this score for this leaderboard.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#leaderboardEntry`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#leaderboardEntry`.
   *   `player` (*type:* `GoogleApi.Games.V1.Model.Player.t`, *default:* `nil`) - The player who holds this score.
   *   `scoreRank` (*type:* `String.t`, *default:* `nil`) - The rank of this score for this leaderboard.
-  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about the score.  Values must contain no more than
-      64 URI-safe characters as defined by section 2.3 of RFC 3986.
+  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about the score. Values must contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986.
   *   `scoreValue` (*type:* `String.t`, *default:* `nil`) - The numerical value of this score.
   *   `timeSpan` (*type:* `String.t`, *default:* `nil`) - The time span of this high score.
-  *   `writeTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The timestamp at which this score was recorded, in milliseconds since the
-      epoch in UTC.
+  *   `writeTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The timestamp at which this score was recorded, in milliseconds since the epoch in UTC.
   """
 
   use GoogleApi.Gax.ModelBase

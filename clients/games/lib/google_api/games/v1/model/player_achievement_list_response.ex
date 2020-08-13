@@ -22,8 +22,7 @@ defmodule GoogleApi.Games.V1.Model.PlayerAchievementListResponse do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.PlayerAchievement.t)`, *default:* `nil`) - The achievements.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#playerAchievementListResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#playerAchievementListResponse`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token corresponding to the next page of results.
   """
 

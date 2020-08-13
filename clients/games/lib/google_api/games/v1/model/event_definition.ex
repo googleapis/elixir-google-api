@@ -26,10 +26,8 @@ defmodule GoogleApi.Games.V1.Model.EventDefinition do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the event.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the event.
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The base URL for the image that represents the event.
-  *   `isDefaultImageUrl` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the icon image being returned is a default image, or is
-      game-provided.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#eventDefinition`.
+  *   `isDefaultImageUrl` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the icon image being returned is a default image, or is game-provided.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#eventDefinition`.
   *   `visibility` (*type:* `String.t`, *default:* `nil`) - The visibility of event being tracked in this definition.
   """
 

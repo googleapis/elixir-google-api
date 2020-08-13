@@ -26,14 +26,12 @@ defmodule GoogleApi.Games.V1.Api.Players do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the Player resource with the given ID.  To retrieve the player
-  for the currently authenticated user, set `playerId` to `me`.
+  Retrieves the Player resource with the given ID. To retrieve the player for the currently authenticated user, set `playerId` to `me`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
-  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the
-      authenticated player's ID.
+  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the authenticated player's ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -106,9 +104,7 @@ defmodule GoogleApi.Games.V1.Api.Players do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of player resources to return in the response, used for
-          paging. For any response, the actual number of player resources returned
-          may be less than the specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of player resources to return in the response, used for paging. For any response, the actual number of player resources returned may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 

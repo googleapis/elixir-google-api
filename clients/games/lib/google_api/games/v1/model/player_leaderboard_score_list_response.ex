@@ -22,8 +22,7 @@ defmodule GoogleApi.Games.V1.Model.PlayerLeaderboardScoreListResponse do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.PlayerLeaderboardScore.t)`, *default:* `nil`) - The leaderboard scores.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#playerLeaderboardScoreListResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#playerLeaderboardScoreListResponse`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token for the next page of results.
   *   `player` (*type:* `GoogleApi.Games.V1.Model.Player.t`, *default:* `nil`) - The Player resources for the owner of this score.
   """

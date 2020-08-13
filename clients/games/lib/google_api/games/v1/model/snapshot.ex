@@ -23,17 +23,12 @@ defmodule GoogleApi.Games.V1.Model.Snapshot do
 
   *   `coverImage` (*type:* `GoogleApi.Games.V1.Model.SnapshotImage.t`, *default:* `nil`) - The cover image of this snapshot. May be absent if there is no image.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this snapshot.
-  *   `driveId` (*type:* `String.t`, *default:* `nil`) - The ID of the file underlying this snapshot in the Drive API.  Only present
-      if the snapshot is a view on a Drive file and the file is owned by the
-      caller.
+  *   `driveId` (*type:* `String.t`, *default:* `nil`) - The ID of the file underlying this snapshot in the Drive API. Only present if the snapshot is a view on a Drive file and the file is owned by the caller.
   *   `durationMillis` (*type:* `String.t`, *default:* `nil`) - The duration associated with this snapshot, in millis.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the snapshot.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#snapshot`.
-  *   `lastModifiedMillis` (*type:* `String.t`, *default:* `nil`) - The timestamp (in millis since Unix epoch) of the last modification to this
-      snapshot.
-  *   `progressValue` (*type:* `String.t`, *default:* `nil`) - The progress value (64-bit integer set by developer) associated with this
-      snapshot.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#snapshot`.
+  *   `lastModifiedMillis` (*type:* `String.t`, *default:* `nil`) - The timestamp (in millis since Unix epoch) of the last modification to this snapshot.
+  *   `progressValue` (*type:* `String.t`, *default:* `nil`) - The progress value (64-bit integer set by developer) associated with this snapshot.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this snapshot.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this snapshot.
   *   `uniqueName` (*type:* `String.t`, *default:* `nil`) - The unique name provided when the snapshot was created.
