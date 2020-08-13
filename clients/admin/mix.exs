@@ -18,7 +18,7 @@
 defmodule GoogleApi.Admin.Mixfile do
   use Mix.Project
 
-  @version "0.17.0"
+  @version "0.18.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Admin.Mixfile do
 
   defp description() do
     """
-    Admin SDK client library. Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.
+    Admin Directory API client library. Manages enterprise resources such as users and groups, administrative notifications, security features, and more.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Admin.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/admin",
-        "Homepage" => "http://developers.google.com/admin-sdk/"
+        "Homepage" => "https://developers.google.com/admin-sdk/directory/"
       }
     ]
   end
