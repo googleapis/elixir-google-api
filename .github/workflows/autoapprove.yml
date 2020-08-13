@@ -27,9 +27,10 @@ jobs:
               return;
             }
             if (!process.env.ENABLE_AUTO_APPROVE) {
-              console.log("AutoApprove would be applied but ENABLE_AUTO_APPROVE is not set.");
+              console.log("AutoApprove: PR conditions passed but ENABLE_AUTO_APPROVE is not set.");
               return;
             }
+            console.log("AutoApprove: PR conditions passed!");
             await github.pulls.createReview({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -37,9 +38,11 @@ jobs:
               pull_number: context.payload.pull_request.number,
               event: "APPROVE"
             });
+            console.log("AutoApprove: Rubber stamped client regeneration!");
             await github.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.payload.pull_request.number,
               labels: ["automerge"]
             });
+            console.log("AutoApprove: Applied automerge label!");
