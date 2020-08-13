@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.SecretManager.V1.Model.SecretPayload do
   @moduledoc """
-  A secret payload resource in the Secret Manager API. This contains the
-  sensitive secret payload that is associated with a SecretVersion.
+  A secret payload resource in the Secret Manager API. This contains the sensitive secret payload that is associated with a SecretVersion.
 
   ## Attributes
 

@@ -176,14 +176,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a new SecretVersion containing secret data and attaches
-  it to an existing Secret.
+  Creates a new SecretVersion containing secret data and attaches it to an existing Secret.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the Secret to associate with the
-      SecretVersion in the format `projects/*/secrets/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the Secret to associate with the SecretVersion in the format `projects/*/secrets/*`.
   *   `secrets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -258,8 +256,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the project to associate with the
-      Secret, in the format `projects/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the project to associate with the Secret, in the format `projects/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -272,11 +269,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:secretId` (*type:* `String.t`) - Required. This must be unique within the project.
-
-          A secret ID is a string with a maximum length of 255 characters and can
-          contain uppercase and lowercase letters, numerals, and the hyphen (`-`) and
-          underscore (`_`) characters.
+      *   `:secretId` (*type:* `String.t`) - Required. This must be unique within the project. A secret ID is a string with a maximum length of 255 characters and can contain uppercase and lowercase letters, numerals, and the hyphen (`-`) and underscore (`_`) characters.
       *   `:body` (*type:* `GoogleApi.SecretManager.V1beta1.Model.Secret.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -336,8 +329,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Secret to delete in the format
-      `projects/*/secrets/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Secret to delete in the format `projects/*/secrets/*`.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -478,14 +470,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a secret.
-  Returns empty policy if the secret exists and does not have a policy set.
+  Gets the access control policy for a secret. Returns empty policy if the secret exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `secrets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -499,18 +489,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -571,8 +550,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the project associated with the
-      Secrets, in the format `projects/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the project associated with the Secrets, in the format `projects/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -585,11 +563,8 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to be returned in a single page. If
-          set to 0, the server decides the number of results to return. If the
-          number is greater than 25000, it is capped at 25000.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Pagination token, returned earlier via
-          ListSecretsResponse.next_page_token.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to be returned in a single page. If set to 0, the server decides the number of results to return. If the number is greater than 25000, it is capped at 25000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Pagination token, returned earlier via ListSecretsResponse.next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -717,17 +692,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified secret. Replaces any
-  existing policy.
-
-  Permissions on SecretVersions are enforced according
-  to the policy set on the associated Secret.
+  Sets the access control policy on the specified secret. Replaces any existing policy. Permissions on SecretVersions are enforced according to the policy set on the associated Secret.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `secrets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -797,19 +767,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has for the specified secret.
-  If the secret does not exist, this call returns an empty set of
-  permissions, not a NOT_FOUND error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has for the specified secret. If the secret does not exist, this call returns an empty set of permissions, not a NOT_FOUND error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `secrets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -881,16 +844,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Accesses a SecretVersion. This call returns the secret data.
-
-  `projects/*/secrets/*/versions/latest` is an alias to the `latest`
-  SecretVersion.
+  Accesses a SecretVersion. This call returns the secret data. `projects/*/secrets/*/versions/latest` is an alias to the `latest` SecretVersion.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format
-      `projects/*/secrets/*/versions/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -967,17 +926,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Destroys a SecretVersion.
-
-  Sets the state of the SecretVersion to
-  DESTROYED and irrevocably destroys the
-  secret data.
+  Destroys a SecretVersion. Sets the state of the SecretVersion to DESTROYED and irrevocably destroys the secret data.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to destroy in the format
-      `projects/*/secrets/*/versions/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to destroy in the format `projects/*/secrets/*/versions/*`.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1054,16 +1008,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Disables a SecretVersion.
-
-  Sets the state of the SecretVersion to
-  DISABLED.
+  Disables a SecretVersion. Sets the state of the SecretVersion to DISABLED.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to disable in the format
-      `projects/*/secrets/*/versions/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to disable in the format `projects/*/secrets/*/versions/*`.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1140,16 +1090,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Enables a SecretVersion.
-
-  Sets the state of the SecretVersion to
-  ENABLED.
+  Enables a SecretVersion. Sets the state of the SecretVersion to ENABLED.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to enable in the format
-      `projects/*/secrets/*/versions/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to enable in the format `projects/*/secrets/*/versions/*`.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1226,18 +1172,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets metadata for a SecretVersion.
-
-  `projects/*/secrets/*/versions/latest` is an alias to the `latest`
-  SecretVersion.
+  Gets metadata for a SecretVersion. `projects/*/secrets/*/versions/latest` is an alias to the `latest` SecretVersion.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format
-      `projects/*/secrets/*/versions/*`.
-      `projects/*/secrets/*/versions/latest` is an alias to the `latest`
-      SecretVersion.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` is an alias to the `latest` SecretVersion.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1312,15 +1252,12 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists SecretVersions. This call does not return secret
-  data.
+  Lists SecretVersions. This call does not return secret data.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the Secret associated with the
-      SecretVersions to list, in the format
-      `projects/*/secrets/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the Secret associated with the SecretVersions to list, in the format `projects/*/secrets/*`.
   *   `secrets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1334,11 +1271,8 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to be returned in a single page. If
-          set to 0, the server decides the number of results to return. If the
-          number is greater than 25000, it is capped at 25000.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Pagination token, returned earlier via
-          ListSecretVersionsResponse.next_page_token][].
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to be returned in a single page. If set to 0, the server decides the number of results to return. If the number is greater than 25000, it is capped at 25000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Pagination token, returned earlier via ListSecretVersionsResponse.next_page_token][].
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

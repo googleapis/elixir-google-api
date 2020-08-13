@@ -21,8 +21,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Replica do
 
   ## Attributes
 
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The canonical IDs of the location to replicate data.
-      For example: `"us-east1"`.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The canonical IDs of the location to replicate data. For example: `"us-east1"`.
   """
 
   use GoogleApi.Gax.ModelBase

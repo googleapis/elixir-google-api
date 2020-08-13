@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.SecretManager.V1beta1.Model.UserManaged do
   @moduledoc """
-  A replication policy that replicates the Secret payload into the
-  locations specified in Secret.replication.user_managed.replicas
+  A replication policy that replicates the Secret payload into the locations specified in Secret.replication.user_managed.replicas
 
   ## Attributes
 
-  *   `replicas` (*type:* `list(GoogleApi.SecretManager.V1beta1.Model.Replica.t)`, *default:* `nil`) - Required. The list of Replicas for this Secret.
-
-      Cannot be empty.
+  *   `replicas` (*type:* `list(GoogleApi.SecretManager.V1beta1.Model.Replica.t)`, *default:* `nil`) - Required. The list of Replicas for this Secret. Cannot be empty.
   """
 
   use GoogleApi.Gax.ModelBase
