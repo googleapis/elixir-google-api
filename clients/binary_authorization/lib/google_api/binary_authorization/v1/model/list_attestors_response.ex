@@ -22,9 +22,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.ListAttestorsResponse do
   ## Attributes
 
   *   `attestors` (*type:* `list(GoogleApi.BinaryAuthorization.V1.Model.Attestor.t)`, *default:* `nil`) - The list of attestors.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the
-      ListAttestorsRequest.page_token field in the subsequent call to the
-      `ListAttestors` method to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the ListAttestorsRequest.page_token field in the subsequent call to the `ListAttestors` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

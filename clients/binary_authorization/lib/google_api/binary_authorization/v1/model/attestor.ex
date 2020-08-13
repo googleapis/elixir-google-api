@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.BinaryAuthorization.V1.Model.Attestor do
   @moduledoc """
-  An attestor that attests to container image
-  artifacts. An existing attestor cannot be modified except where
-  indicated.
+  An attestor that attests to container image artifacts. An existing attestor cannot be modified except where indicated.
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive comment.  This field may be updated.
-      The field may be displayed in chooser dialogs.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name, in the format:
-      `projects/*/attestors/*`. This field may not be updated.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive comment. This field may be updated. The field may be displayed in chooser dialogs.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name, in the format: `projects/*/attestors/*`. This field may not be updated.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the attestor was last updated.
-  *   `userOwnedGrafeasNote` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.UserOwnedGrafeasNote.t`, *default:* `nil`) - This specifies how an attestation will be read, and how it will be used
-      during policy enforcement.
+  *   `userOwnedGrafeasNote` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.UserOwnedGrafeasNote.t`, *default:* `nil`) - This specifies how an attestation will be read, and how it will be used during policy enforcement.
   """
 
   use GoogleApi.Gax.ModelBase
