@@ -23,8 +23,7 @@ defmodule GoogleApi.Games.V1.Model.EventRecordFailure do
 
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - The ID of the event that was not updated.
   *   `failureCause` (*type:* `String.t`, *default:* `nil`) - The cause for the update failure.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#eventRecordFailure`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#eventRecordFailure`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -26,10 +26,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the metadata of the application with the given ID. If the
-  requested application is not available for the specified
-  `platformType`, the returned response will not include any
-  instance data.
+  Retrieves the metadata of the application with the given ID. If the requested application is not available for the specified `platformType`, the returned response will not include any instance data.
 
   ## Parameters
 
@@ -90,8 +87,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   end
 
   @doc """
-  Indicate that the currently authenticated user is playing your
-  application.
+  Indicate that the currently authenticated user is playing your application.
 
   ## Parameters
 
@@ -145,8 +141,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   end
 
   @doc """
-  Verifies the auth token provided with this request is for the application
-  with the specified ID, and returns the ID of the player it was granted for.
+  Verifies the auth token provided with this request is for the application with the specified ID, and returns the ID of the player it was granted for.
 
   ## Parameters
 

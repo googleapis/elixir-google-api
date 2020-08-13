@@ -26,18 +26,12 @@ defmodule GoogleApi.Games.V1.Model.Player do
   *   `bannerUrlPortrait` (*type:* `String.t`, *default:* `nil`) - The url to the portrait mode player banner image.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the player.
   *   `experienceInfo` (*type:* `GoogleApi.Games.V1.Model.PlayerExperienceInfo.t`, *default:* `nil`) - An object to represent Play Game experience information for the player.
-  *   `friendStatus` (*type:* `String.t`, *default:* `nil`) - The friend status of the given player, relative to the requester. This is
-      unset if the player is not sharing their friends list with the game.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#player`
+  *   `friendStatus` (*type:* `String.t`, *default:* `nil`) - The friend status of the given player, relative to the requester. This is unset if the player is not sharing their friends list with the game.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#player`
   *   `name` (*type:* `GoogleApi.Games.V1.Model.PlayerName.t`, *default:* `nil`) - A representation of the individual components of the name.
-  *   `originalPlayerId` (*type:* `String.t`, *default:* `nil`) - The player ID that was used for this player the first time they signed into
-      the game in question. This is only populated for calls to player.get for
-      the requesting player, only if the player ID has subsequently changed, and
-      only to clients that support remapping player IDs.
+  *   `originalPlayerId` (*type:* `String.t`, *default:* `nil`) - The player ID that was used for this player the first time they signed into the game in question. This is only populated for calls to player.get for the requesting player, only if the player ID has subsequently changed, and only to clients that support remapping player IDs.
   *   `playerId` (*type:* `String.t`, *default:* `nil`) - The ID of the player.
-  *   `profileSettings` (*type:* `GoogleApi.Games.V1.Model.ProfileSettings.t`, *default:* `nil`) - The player's profile settings. Controls whether or not the player's profile
-      is visible to other players.
+  *   `profileSettings` (*type:* `GoogleApi.Games.V1.Model.ProfileSettings.t`, *default:* `nil`) - The player's profile settings. Controls whether or not the player's profile is visible to other players.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The player's title rewarded for their game activities.
   """
 

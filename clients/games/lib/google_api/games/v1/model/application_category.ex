@@ -21,8 +21,7 @@ defmodule GoogleApi.Games.V1.Model.ApplicationCategory do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#applicationCategory`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#applicationCategory`.
   *   `primary` (*type:* `String.t`, *default:* `nil`) - The primary category.
   *   `secondary` (*type:* `String.t`, *default:* `nil`) - The secondary category.
   """

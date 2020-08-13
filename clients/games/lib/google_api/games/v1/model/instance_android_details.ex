@@ -22,8 +22,7 @@ defmodule GoogleApi.Games.V1.Model.InstanceAndroidDetails do
   ## Attributes
 
   *   `enablePiracyCheck` (*type:* `boolean()`, *default:* `nil`) - Flag indicating whether the anti-piracy check is enabled.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#instanceAndroidDetails`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#instanceAndroidDetails`.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Android package name which maps to Google Play URL.
   *   `preferred` (*type:* `boolean()`, *default:* `nil`) - Indicates that this instance is the default for new installations.
   """

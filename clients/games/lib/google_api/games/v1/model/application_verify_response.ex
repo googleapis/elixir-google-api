@@ -21,10 +21,8 @@ defmodule GoogleApi.Games.V1.Model.ApplicationVerifyResponse do
 
   ## Attributes
 
-  *   `alternate_player_id` (*type:* `String.t`, *default:* `nil`) - An alternate ID that was once used for the player that was issued the auth
-      token used in this request. (This field is not normally populated.)
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#applicationVerifyResponse`.
+  *   `alternate_player_id` (*type:* `String.t`, *default:* `nil`) - An alternate ID that was once used for the player that was issued the auth token used in this request. (This field is not normally populated.)
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#applicationVerifyResponse`.
   *   `player_id` (*type:* `String.t`, *default:* `nil`) - The ID of the player that was issued the auth token used in this request.
   """
 

@@ -24,8 +24,7 @@ defmodule GoogleApi.Games.V1.Model.Instance do
   *   `acquisitionUri` (*type:* `String.t`, *default:* `nil`) - URI which shows where a user can acquire this instance.
   *   `androidInstance` (*type:* `GoogleApi.Games.V1.Model.InstanceAndroidDetails.t`, *default:* `nil`) - Platform dependent details for Android.
   *   `iosInstance` (*type:* `GoogleApi.Games.V1.Model.InstanceIosDetails.t`, *default:* `nil`) - Platform dependent details for iOS.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#instance`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#instance`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Localized display name.
   *   `platformType` (*type:* `String.t`, *default:* `nil`) - The platform type.
   *   `realtimePlay` (*type:* `boolean()`, *default:* `nil`) - Flag to show if this game instance supports realtime play.

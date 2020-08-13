@@ -22,8 +22,7 @@ defmodule GoogleApi.Games.V1.Model.ProfileSettings do
   ## Attributes
 
   *   `friendsListVisibility` (*type:* `String.t`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#profileSettings`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#profileSettings`.
   *   `profileVisible` (*type:* `boolean()`, *default:* `nil`) - Whether the player's profile is visible to the currently signed in player.
   """
 

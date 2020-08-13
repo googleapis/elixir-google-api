@@ -22,12 +22,9 @@ defmodule GoogleApi.Games.V1.Model.AchievementUpdateRequest do
   ## Attributes
 
   *   `achievementId` (*type:* `String.t`, *default:* `nil`) - The achievement this update is being applied to.
-  *   `incrementPayload` (*type:* `GoogleApi.Games.V1.Model.GamesAchievementIncrement.t`, *default:* `nil`) - The payload if an update of type `INCREMENT` was requested for
-      the achievement.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#achievementUpdateRequest`.
-  *   `setStepsAtLeastPayload` (*type:* `GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast.t`, *default:* `nil`) - The payload if an update of type `SET_STEPS_AT_LEAST` was
-      requested for the achievement.
+  *   `incrementPayload` (*type:* `GoogleApi.Games.V1.Model.GamesAchievementIncrement.t`, *default:* `nil`) - The payload if an update of type `INCREMENT` was requested for the achievement.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementUpdateRequest`.
+  *   `setStepsAtLeastPayload` (*type:* `GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast.t`, *default:* `nil`) - The payload if an update of type `SET_STEPS_AT_LEAST` was requested for the achievement.
   *   `updateType` (*type:* `String.t`, *default:* `nil`) - The type of update being applied.
   """
 

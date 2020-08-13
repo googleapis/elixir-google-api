@@ -23,8 +23,7 @@ defmodule GoogleApi.Games.V1.Model.EventUpdateResponse do
 
   *   `batchFailures` (*type:* `list(GoogleApi.Games.V1.Model.EventBatchRecordFailure.t)`, *default:* `nil`) - Any batch-wide failures which occurred applying updates.
   *   `eventFailures` (*type:* `list(GoogleApi.Games.V1.Model.EventRecordFailure.t)`, *default:* `nil`) - Any failures updating a particular event.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `games#eventUpdateResponse`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `games#eventUpdateResponse`.
   *   `playerEvents` (*type:* `list(GoogleApi.Games.V1.Model.PlayerEvent.t)`, *default:* `nil`) - The current status of any updated events
   """
 

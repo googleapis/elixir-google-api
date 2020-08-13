@@ -103,9 +103,7 @@ defmodule GoogleApi.Games.V1.Api.Leaderboards do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:language` (*type:* `String.t`) - The preferred language to use for strings returned by this method.
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of leaderboards to return in the response.  For any
-          response, the actual number of leaderboards returned may be less than the
-          specified `maxResults`.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of leaderboards to return in the response. For any response, the actual number of leaderboards returned may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 
