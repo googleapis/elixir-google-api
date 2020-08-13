@@ -23,13 +23,10 @@ defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
 
   *   `kind` (*type:* `String.t`, *default:* `dns#resourceRecordSet`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - For example, www.example.com.
-  *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see
-      <a href="/dns/records/json-record">examples</a>.
+  *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see examples.
   *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - As defined in RFC 4034 (section 3.2).
   *   `ttl` (*type:* `integer()`, *default:* `nil`) - Number of seconds that this ResourceRecordSet can be cached by resolvers.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The identifier of a supported record type. See the list of
-      <a href="/dns/docs/overview#supported_dns_record_types">Supported
-      DNS record types</a>.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The identifier of a supported record type. See the list of Supported DNS record types.
   """
 
   use GoogleApi.Gax.ModelBase
