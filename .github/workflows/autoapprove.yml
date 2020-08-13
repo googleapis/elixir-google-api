@@ -1,0 +1,43 @@
+name: AutoApprove
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+
+jobs:
+  auto-approve:
+    runs-on: ubuntu-latest
+    env:
+      ENABLE_AUTO_APPROVE: ${{ secrets.ENABLE_AUTO_APPROVE }}
+    steps:
+      - name: AutoApprove
+        uses: actions/github-script@v2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            if (context.payload.sender.login != "yoshi-automation") {
+              return;
+            }
+            if (!context.payload.pull_request.title.startsWith("Regenerate")) {
+              return;
+            }
+            if (!process.env.ENABLE_AUTO_APPROVE) {
+              console.log("AutoApprove would be applied but ENABLE_AUTO_APPROVE is not set.");
+              return;
+            }
+            await github.pulls.createReview({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "AutoApprove: Rubber stamped client regeneration!",
+              pull_number: context.payload.pull_request.number,
+              event: "APPROVE"
+            });
+            await github.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              labels: ["automerge"]
+            });
