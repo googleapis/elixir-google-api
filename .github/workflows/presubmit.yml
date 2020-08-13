@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  versions:
+  tests:
     strategy:
       matrix:
         include:
@@ -28,8 +28,8 @@ jobs:
           elixir-version: ${{matrix.elixir}}
       - name: Run presubmits
         run: mix do deps.get, presubmit
-  completion:
-    needs: versions
+  required-checks:
+    needs: tests
     runs-on: ubuntu-latest
     steps:
       - name: 
