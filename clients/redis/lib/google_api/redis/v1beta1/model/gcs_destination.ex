@@ -21,8 +21,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.GcsDestination do
 
   ## Attributes
 
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. Data destination URI (e.g.
-      'gs://my_bucket/my_object'). Existing files will be overwritten.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. Data destination URI (e.g. 'gs://my_bucket/my_object'). Existing files will be overwritten.
   """
 
   use GoogleApi.Gax.ModelBase
