@@ -58,9 +58,9 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   *   `replicaZones` (*type:* `list(String.t)`, *default:* `nil`) - URLs of the zones where the disk should be replicated to. Only applicable for regional resources.
   *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies applied to this disk for automatic snapshot creations.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined fully-qualified URL for this resource.
-  *   `sizeGb` (*type:* `String.t`, *default:* `nil`) - Size of the persistent disk, specified in GB. You can specify this field when creating a persistent disk using the sourceImage or sourceSnapshot parameter, or specify it alone to create an empty persistent disk.
+  *   `sizeGb` (*type:* `String.t`, *default:* `nil`) - Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
 
-      If you specify this field along with sourceImage or sourceSnapshot, the value of sizeGb must not be less than the size of the sourceImage or the size of the snapshot. Acceptable values are 1 to 65536, inclusive.
+      If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
   *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:  
       - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk 
       - projects/project/zones/zone/disks/disk 

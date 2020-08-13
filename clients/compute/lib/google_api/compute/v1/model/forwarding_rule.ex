@@ -86,13 +86,14 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
 
       If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
-  *   `portRange` (*type:* `String.t`, *default:* `nil`) - When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+  *   `portRange` (*type:* `String.t`, *default:* `nil`) - When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
 
       Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
 
       Some types of forwarding target have constraints on the acceptable ports:  
       - TargetHttpProxy: 80, 8080 
       - TargetHttpsProxy: 443 
+      - TargetGrpcProxy: Any ports 
       - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 
       - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 
       - TargetVpnGateway: 500, 4500
@@ -118,7 +119,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       For internal load balancing, this field identifies the subnetwork that the load balanced IP should belong to for this Forwarding Rule.
 
       If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must live in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only targetHttpProxy is valid, not targetHttpsProxy.
+  *   `target` (*type:* `String.t`, *default:* `nil`) - The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must live in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only targetHttpProxy and targetGrpcProxy are valid, not targetHttpsProxy.
   """
 
   use GoogleApi.Gax.ModelBase

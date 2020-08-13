@@ -19,11 +19,14 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   @moduledoc """
   Represents a collection of network endpoints.
 
-  A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up internet NEGs or  Setting up zonal NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
+  A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up internet NEGs,  Setting up zonal NEGs, or  Setting up serverless NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
 
   ## Attributes
 
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Metadata defined as annotations on the network endpoint group.
+  *   `appEngine` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupAppEngine.t`, *default:* `nil`) - Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+  *   `cloudFunction` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudFunction.t`, *default:* `nil`) - Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+  *   `cloudRun` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudRun.t`, *default:* `nil`) - Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `defaultPort` (*type:* `integer()`, *default:* `nil`) - The default port used if the port number is not specified in the network endpoint.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
@@ -31,7 +34,8 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   *   `kind` (*type:* `String.t`, *default:* `compute#networkEndpointGroup`) - [Output Only] Type of the resource. Always compute#networkEndpointGroup for network endpoint group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
-  *   `networkEndpointType` (*type:* `String.t`, *default:* `nil`) - Type of network endpoints in this network endpoint group.
+  *   `networkEndpointType` (*type:* `String.t`, *default:* `nil`) - Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the network endpoint group is located.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `size` (*type:* `integer()`, *default:* `nil`) - [Output only] Number of network endpoints in the network endpoint group.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Optional URL of the subnetwork to which all network endpoints in the NEG belong.
@@ -42,6 +46,9 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
 
   @type t :: %__MODULE__{
           :annotations => map(),
+          :appEngine => GoogleApi.Compute.V1.Model.NetworkEndpointGroupAppEngine.t(),
+          :cloudFunction => GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudFunction.t(),
+          :cloudRun => GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudRun.t(),
           :creationTimestamp => String.t(),
           :defaultPort => integer(),
           :description => String.t(),
@@ -50,6 +57,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
           :name => String.t(),
           :network => String.t(),
           :networkEndpointType => String.t(),
+          :region => String.t(),
           :selfLink => String.t(),
           :size => integer(),
           :subnetwork => String.t(),
@@ -57,6 +65,9 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
         }
 
   field(:annotations, type: :map)
+  field(:appEngine, as: GoogleApi.Compute.V1.Model.NetworkEndpointGroupAppEngine)
+  field(:cloudFunction, as: GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudFunction)
+  field(:cloudRun, as: GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudRun)
   field(:creationTimestamp)
   field(:defaultPort)
   field(:description)
@@ -65,6 +76,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   field(:name)
   field(:network)
   field(:networkEndpointType)
+  field(:region)
   field(:selfLink)
   field(:size)
   field(:subnetwork)

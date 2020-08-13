@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
 
   ## Attributes
 
+  *   `cpuOvercommitType` (*type:* `String.t`, *default:* `nil`) - CPU overcommit.
   *   `instances` (*type:* `list(String.t)`, *default:* `nil`) - Instances scheduled on this node.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the node.
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - The type of this node.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cpuOvercommitType => String.t(),
           :instances => list(String.t()),
           :name => String.t(),
           :nodeType => String.t(),
@@ -40,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
           :status => String.t()
         }
 
+  field(:cpuOvercommitType)
   field(:instances, type: :list)
   field(:name)
   field(:nodeType)
