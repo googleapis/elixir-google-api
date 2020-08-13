@@ -23,11 +23,13 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
 
   ## Attributes
 
+  *   `category` (*type:* `String.t`, *default:* `nil`) - The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `endTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Commitment end time in RFC3339 text format.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#commitment`) - [Output Only] Type of the resource. Always compute#commitment for commitments.
+  *   `licenseResource` (*type:* `GoogleApi.Compute.V1.Model.LicenseResourceCommitment.t`, *default:* `nil`) - The license specification required as part of a license commitment.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `plan` (*type:* `String.t`, *default:* `nil`) - The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where this commitment may be used.
@@ -42,11 +44,13 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :category => String.t(),
           :creationTimestamp => String.t(),
           :description => String.t(),
           :endTimestamp => String.t(),
           :id => String.t(),
           :kind => String.t(),
+          :licenseResource => GoogleApi.Compute.V1.Model.LicenseResourceCommitment.t(),
           :name => String.t(),
           :plan => String.t(),
           :region => String.t(),
@@ -58,11 +62,13 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
           :statusMessage => String.t()
         }
 
+  field(:category)
   field(:creationTimestamp)
   field(:description)
   field(:endTimestamp)
   field(:id)
   field(:kind)
+  field(:licenseResource, as: GoogleApi.Compute.V1.Model.LicenseResourceCommitment)
   field(:name)
   field(:plan)
   field(:region)

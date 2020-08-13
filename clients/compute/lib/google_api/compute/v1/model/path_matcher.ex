@@ -36,7 +36,8 @@ defmodule GoogleApi.Compute.V1.Model.PathMatcher do
       If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `headerAction` (*type:* `GoogleApi.Compute.V1.Model.HttpHeaderAction.t`, *default:* `nil`) - Specifies changes to request and response headers that need to take effect for the selected backendService.
-      HeaderAction specified here are applied after the matching HttpRouteRule HeaderAction and before the HeaderAction in the UrlMap
+      HeaderAction specified here are applied after the matching HttpRouteRule HeaderAction and before the HeaderAction in the UrlMap 
+      Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name to which this PathMatcher is referred by the HostRule.
   *   `pathRules` (*type:* `list(GoogleApi.Compute.V1.Model.PathRule.t)`, *default:* `nil`) - The list of path rules. Use this list instead of routeRules when routing based on simple path matching is all that's required. The order by which path rules are specified does not matter. Matches are always done on the longest-path-first basis.
       For example: a pathRule with a path /a/b/c/* will match before /a/b/* irrespective of the order in which those paths appear in this list.

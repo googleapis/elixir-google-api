@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
 
   ## Attributes
 
+  *   `cpuOvercommitType` (*type:* `String.t`, *default:* `nil`) - CPU overcommit.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
@@ -47,6 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cpuOvercommitType => String.t(),
           :creationTimestamp => String.t(),
           :description => String.t(),
           :id => String.t(),
@@ -62,6 +64,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
           :statusMessage => String.t()
         }
 
+  field(:cpuOvercommitType)
   field(:creationTimestamp)
   field(:description)
   field(:id)

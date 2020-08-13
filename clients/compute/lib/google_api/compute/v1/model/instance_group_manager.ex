@@ -44,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `namedPorts` (*type:* `list(GoogleApi.Compute.V1.Model.NamedPort.t)`, *default:* `nil`) - Named ports configured for the Instance Groups complementary to this Instance Group Manager.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the managed instance group resides (for regional resources).
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL for this managed instance group. The server defines this URL.
+  *   `statefulPolicy` (*type:* `GoogleApi.Compute.V1.Model.StatefulPolicy.t`, *default:* `nil`) - Stateful configuration for this Instanced Group Manager
   *   `status` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus.t`, *default:* `nil`) - [Output Only] The status of this managed instance group.
   *   `targetPools` (*type:* `list(String.t)`, *default:* `nil`) - The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
   *   `targetSize` (*type:* `integer()`, *default:* `nil`) - The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
@@ -73,6 +74,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()),
           :region => String.t(),
           :selfLink => String.t(),
+          :statefulPolicy => GoogleApi.Compute.V1.Model.StatefulPolicy.t(),
           :status => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus.t(),
           :targetPools => list(String.t()),
           :targetSize => integer(),
@@ -100,6 +102,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   field(:namedPorts, as: GoogleApi.Compute.V1.Model.NamedPort, type: :list)
   field(:region)
   field(:selfLink)
+  field(:statefulPolicy, as: GoogleApi.Compute.V1.Model.StatefulPolicy)
   field(:status, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus)
   field(:targetPools, type: :list)
   field(:targetSize)
