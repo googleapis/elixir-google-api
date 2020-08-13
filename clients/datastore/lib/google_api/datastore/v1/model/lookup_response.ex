@@ -21,15 +21,9 @@ defmodule GoogleApi.Datastore.V1.Model.LookupResponse do
 
   ## Attributes
 
-  *   `deferred` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - A list of keys that were not looked up due to resource constraints. The
-      order of results in this field is undefined and has no relation to the
-      order of the keys in the input.
-  *   `found` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - Entities found as `ResultType.FULL` entities. The order of results in this
-      field is undefined and has no relation to the order of the keys in the
-      input.
-  *   `missing` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - Entities not found as `ResultType.KEY_ONLY` entities. The order of results
-      in this field is undefined and has no relation to the order of the keys
-      in the input.
+  *   `deferred` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - A list of keys that were not looked up due to resource constraints. The order of results in this field is undefined and has no relation to the order of the keys in the input.
+  *   `found` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - Entities found as `ResultType.FULL` entities. The order of results in this field is undefined and has no relation to the order of the keys in the input.
+  *   `missing` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - Entities not found as `ResultType.KEY_ONLY` entities. The order of results in this field is undefined and has no relation to the order of the keys in the input.
   """
 
   use GoogleApi.Gax.ModelBase

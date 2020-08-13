@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ListIndexesResponse do
   @moduledoc """
-  The response for
-  google.datastore.admin.v1.DatastoreAdmin.ListIndexes.
+  The response for google.datastore.admin.v1.DatastoreAdmin.ListIndexes.
 
   ## Attributes
 
