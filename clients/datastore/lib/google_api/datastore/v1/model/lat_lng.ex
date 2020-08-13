@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.Datastore.V1.Model.LatLng do
   @moduledoc """
-  An object representing a latitude/longitude pair. This is expressed as a pair
-  of doubles representing degrees latitude and degrees longitude. Unless
-  specified otherwise, this must conform to the
-  <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
-  standard</a>. Values must be within normalized ranges.
+  An object representing a latitude/longitude pair. This is expressed as a pair of doubles representing degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the WGS84 standard. Values must be within normalized ranges.
 
   ## Attributes
 

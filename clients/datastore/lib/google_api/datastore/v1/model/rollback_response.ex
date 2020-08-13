@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Datastore.V1.Model.RollbackResponse do
   @moduledoc """
-  The response for Datastore.Rollback.
-  (an empty message).
+  The response for Datastore.Rollback. (an empty message).
 
   ## Attributes
 

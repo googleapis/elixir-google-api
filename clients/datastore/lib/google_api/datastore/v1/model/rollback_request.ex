@@ -21,8 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.RollbackRequest do
 
   ## Attributes
 
-  *   `transaction` (*type:* `String.t`, *default:* `nil`) - Required. The transaction identifier, returned by a call to
-      Datastore.BeginTransaction.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - Required. The transaction identifier, returned by a call to Datastore.BeginTransaction.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index do
 
   ## Attributes
 
-  *   `ancestor` (*type:* `String.t`, *default:* `nil`) - Required. The index's ancestor mode.  Must not be ANCESTOR_MODE_UNSPECIFIED.
+  *   `ancestor` (*type:* `String.t`, *default:* `nil`) - Required. The index's ancestor mode. Must not be ANCESTOR_MODE_UNSPECIFIED.
   *   `indexId` (*type:* `String.t`, *default:* `nil`) - Output only. The resource ID of the index.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Required. The entity kind to which this index applies.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. Project ID.
