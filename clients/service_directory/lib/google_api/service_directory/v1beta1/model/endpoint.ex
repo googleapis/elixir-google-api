@@ -17,26 +17,13 @@
 
 defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint do
   @moduledoc """
-  An individual endpoint that provides a
-  service. The service must
-  already exist to create an endpoint.
+  An individual endpoint that provides a service. The service must already exist to create an endpoint.
 
   ## Attributes
 
-  *   `address` (*type:* `String.t`, *default:* `nil`) - Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-      addresses like:
-        "8.8.8"
-        "8.8.8.8:53"
-        "test:bad:address"
-        "[::1]"
-        "[::1]:8080"
-      Limited to 45 characters.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. Metadata for the endpoint. This data can be consumed by service
-      clients.  The entire metadata dictionary may contain up to 512 characters,
-      spread accoss all key-value pairs. Metadata that goes beyond any these
-      limits will be rejected.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the endpoint in the format
-      'projects/*/locations/*/namespaces/*/services/*/endpoints/*'.
+  *   `address` (*type:* `String.t`, *default:* `nil`) - Optional. An IPv4 or IPv6 address. Service Directory will reject bad addresses like: "8.8.8" "8.8.8.8:53" "test:bad:address" "[::1]" "[::1]:8080" Limited to 45 characters.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. Metadata for the endpoint. This data can be consumed by service clients. The entire metadata dictionary may contain up to 512 characters, spread accoss all key-value pairs. Metadata that goes beyond any these limits will be rejected.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the endpoint in the format 'projects/*/locations/*/namespaces/*/services/*/endpoints/*'.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Optional. Service Directory will reject values outside of [0, 65535].
   """
 

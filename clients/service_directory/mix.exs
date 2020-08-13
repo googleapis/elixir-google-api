@@ -18,7 +18,7 @@
 defmodule GoogleApi.ServiceDirectory.Mixfile do
   use Mix.Project
 
-  @version "0.4.0"
+  @version "0.4.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.ServiceDirectory.Mixfile do
 
   defp description() do
     """
-    Service Directory API client library. Service Directory is a platform for discovering, publishing, and connecting services.
-
+    Service Directory API client library. Service Directory is a platform for discovering, publishing, and connecting services. 
     """
   end
 

@@ -21,8 +21,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.ListServicesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   *   `services` (*type:* `list(GoogleApi.ServiceDirectory.V1beta1.Model.Service.t)`, *default:* `nil`) - The list of services.
   """
 

@@ -17,21 +17,13 @@
 
 defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Service do
   @moduledoc """
-  An individual service. A service contains a name and optional metadata.
-  A service must exist before
-  endpoints can be
-  added to it.
+  An individual service. A service contains a name and optional metadata. A service must exist before endpoints can be added to it.
 
   ## Attributes
 
-  *   `endpoints` (*type:* `list(GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t)`, *default:* `nil`) - Output only. Endpoints associated with this service. Returned on LookupService.Resolve.
-      Control plane clients should use RegistrationService.ListEndpoints.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. Metadata for the service. This data can be consumed by service
-      clients.  The entire metadata dictionary may contain up to 2000 characters,
-      spread across all key-value pairs. Metadata that goes beyond any these
-      limits will be rejected.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the service in the format
-      'projects/*/locations/*/namespaces/*/services/*'.
+  *   `endpoints` (*type:* `list(GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t)`, *default:* `nil`) - Output only. Endpoints associated with this service. Returned on LookupService.Resolve. Control plane clients should use RegistrationService.ListEndpoints.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. Metadata for the service. This data can be consumed by service clients. The entire metadata dictionary may contain up to 2000 characters, spread across all key-value pairs. Metadata that goes beyond any these limits will be rejected.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the service in the format 'projects/*/locations/*/namespaces/*/services/*'.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -2,8 +2,7 @@
 
 Service Directory API client library.
 
-Service Directory is a platform for discovering, publishing, and connecting services.
-
+Service Directory is a platform for discovering, publishing, and connecting services. 
 
 ## Installation
 
