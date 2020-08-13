@@ -21,10 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.CategoricalValue do
 
   ## Attributes
 
-  *   `categoryCounts` (*type:* `list(GoogleApi.BigQuery.V2.Model.CategoryCount.t)`, *default:* `nil`) - Counts of all categories for the categorical feature. If there are
-      more than ten categories, we return top ten (by count) and return
-      one more CategoryCount with category "_OTHER_" and count as
-      aggregate counts of remaining categories.
+  *   `categoryCounts` (*type:* `list(GoogleApi.BigQuery.V2.Model.CategoryCount.t)`, *default:* `nil`) - Counts of all categories for the categorical feature. If there are more than ten categories, we return top ten (by count) and return one more CategoryCount with category "_OTHER_" and count as aggregate counts of remaining categories.
   """
 
   use GoogleApi.Gax.ModelBase

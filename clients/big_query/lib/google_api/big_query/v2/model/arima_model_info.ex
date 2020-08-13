@@ -23,11 +23,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaModelInfo do
 
   *   `arimaCoefficients` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaCoefficients.t`, *default:* `nil`) - Arima coefficients.
   *   `arimaFittingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t`, *default:* `nil`) - Arima fitting metrics.
-  *   `hasDrift` (*type:* `boolean()`, *default:* `nil`) - Whether Arima model fitted with drift or not. It is always false
-      when d is not 1.
+  *   `hasDrift` (*type:* `boolean()`, *default:* `nil`) - Whether Arima model fitted with drift or not. It is always false when d is not 1.
   *   `nonSeasonalOrder` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaOrder.t`, *default:* `nil`) - Non-seasonal order.
-  *   `seasonalPeriods` (*type:* `list(String.t)`, *default:* `nil`) - Seasonal periods. Repeated because multiple periods are supported
-      for one time series.
+  *   `seasonalPeriods` (*type:* `list(String.t)`, *default:* `nil`) - Seasonal periods. Repeated because multiple periods are supported for one time series.
   *   `timeSeriesId` (*type:* `String.t`, *default:* `nil`) - The id to indicate different time series.
   """
 

@@ -22,8 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.CategoryCount do
   ## Attributes
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - The name of category.
-  *   `count` (*type:* `String.t`, *default:* `nil`) - The count of training samples matching the category within the
-      cluster.
+  *   `count` (*type:* `String.t`, *default:* `nil`) - The count of training samples matching the category within the cluster.
   """
 
   use GoogleApi.Gax.ModelBase

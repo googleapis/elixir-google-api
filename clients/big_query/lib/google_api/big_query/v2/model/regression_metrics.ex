@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.RegressionMetrics do
   @moduledoc """
-  Evaluation metrics for regression and explicit feedback type matrix
-  factorization models.
+  Evaluation metrics for regression and explicit feedback type matrix factorization models.
 
   ## Attributes
 

@@ -22,9 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.StandardSqlField do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The name of this field. Can be absent for struct fields.
-  *   `type` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t`, *default:* `nil`) - Optional. The type of this parameter. Absent if not explicitly
-      specified (e.g., CREATE FUNCTION statement can omit the return type;
-      in this case the output parameter does not have this "type" field).
+  *   `type` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t`, *default:* `nil`) - Optional. The type of this parameter. Absent if not explicitly specified (e.g., CREATE FUNCTION statement can omit the return type; in this case the output parameter does not have this "type" field).
   """
 
   use GoogleApi.Gax.ModelBase

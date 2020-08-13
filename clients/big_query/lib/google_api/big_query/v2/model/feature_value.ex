@@ -23,8 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.FeatureValue do
 
   *   `categoricalValue` (*type:* `GoogleApi.BigQuery.V2.Model.CategoricalValue.t`, *default:* `nil`) - The categorical feature value.
   *   `featureColumn` (*type:* `String.t`, *default:* `nil`) - The feature column name.
-  *   `numericalValue` (*type:* `float()`, *default:* `nil`) - The numerical feature value. This is the centroid value for this
-      feature.
+  *   `numericalValue` (*type:* `float()`, *default:* `nil`) - The numerical feature value. This is the centroid value for this feature.
   """
 
   use GoogleApi.Gax.ModelBase

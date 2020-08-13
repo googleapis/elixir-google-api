@@ -26,10 +26,8 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix do
   *   `falseNegatives` (*type:* `String.t`, *default:* `nil`) - Number of false samples predicted as false.
   *   `falsePositives` (*type:* `String.t`, *default:* `nil`) - Number of false samples predicted as true.
   *   `positiveClassThreshold` (*type:* `float()`, *default:* `nil`) - Threshold value used when computing each of the following metric.
-  *   `precision` (*type:* `float()`, *default:* `nil`) - The fraction of actual positive predictions that had positive actual
-      labels.
-  *   `recall` (*type:* `float()`, *default:* `nil`) - The fraction of actual positive labels that were given a positive
-      prediction.
+  *   `precision` (*type:* `float()`, *default:* `nil`) - The fraction of actual positive predictions that had positive actual labels.
+  *   `recall` (*type:* `float()`, *default:* `nil`) - The fraction of actual positive labels that were given a positive prediction.
   *   `trueNegatives` (*type:* `String.t`, *default:* `nil`) - Number of true samples predicted as false.
   *   `truePositives` (*type:* `String.t`, *default:* `nil`) - Number of true samples predicted as true.
   """

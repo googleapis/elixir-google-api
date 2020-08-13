@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ArimaResult do
   @moduledoc """
-  (Auto-)arima fitting result. Wrap everything in ArimaResult for easier
-  refactoring if we want to use model-specific iteration results.
+  (Auto-)arima fitting result. Wrap everything in ArimaResult for easier refactoring if we want to use model-specific iteration results.
 
   ## Attributes
 
-  *   `arimaModelInfo` (*type:* `list(GoogleApi.BigQuery.V2.Model.ArimaModelInfo.t)`, *default:* `nil`) - This message is repeated because there are multiple arima models
-      fitted in auto-arima. For non-auto-arima model, its size is one.
-  *   `seasonalPeriods` (*type:* `list(String.t)`, *default:* `nil`) - Seasonal periods. Repeated because multiple periods are supported for
-      one time series.
+  *   `arimaModelInfo` (*type:* `list(GoogleApi.BigQuery.V2.Model.ArimaModelInfo.t)`, *default:* `nil`) - This message is repeated because there are multiple arima models fitted in auto-arima. For non-auto-arima model, its size is one.
+  *   `seasonalPeriods` (*type:* `list(String.t)`, *default:* `nil`) - Seasonal periods. Repeated because multiple periods are supported for one time series.
   """
 
   use GoogleApi.Gax.ModelBase
