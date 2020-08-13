@@ -17,22 +17,14 @@
 
 defmodule GoogleApi.ServiceControl.V1.Model.CheckError do
   @moduledoc """
-  Defines the errors to be returned in
-  google.api.servicecontrol.v1.CheckResponse.check_errors.
+  Defines the errors to be returned in google.api.servicecontrol.v1.CheckResponse.check_errors.
 
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - The error code.
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Free-form text providing details on the error cause of the error.
-  *   `status` (*type:* `GoogleApi.ServiceControl.V1.Model.Status.t`, *default:* `nil`) - Contains public information about the check error. If available,
-      `status.code` will be non zero and client can propagate it out as public
-      error.
-  *   `subject` (*type:* `String.t`, *default:* `nil`) - Subject to whom this error applies. See the specific code enum for more
-      details on this field. For example:
-
-      - "project:<project-id or project-number>"
-      - "folder:<folder-id>"
-      - "organization:<organization-id>"
+  *   `status` (*type:* `GoogleApi.ServiceControl.V1.Model.Status.t`, *default:* `nil`) - Contains public information about the check error. If available, `status.code` will be non zero and client can propagate it out as public error.
+  *   `subject` (*type:* `String.t`, *default:* `nil`) - Subject to whom this error applies. See the specific code enum for more details on this field. For example: - "project:" - "folder:" - "organization:"
   """
 
   use GoogleApi.Gax.ModelBase

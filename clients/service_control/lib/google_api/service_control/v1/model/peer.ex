@@ -17,22 +17,15 @@
 
 defmodule GoogleApi.ServiceControl.V1.Model.Peer do
   @moduledoc """
-  This message defines attributes for a node that handles a network request.
-  The node can be either a service or an application that sends, forwards,
-  or receives the request. Service peers should fill in
-  `principal` and `labels` as appropriate.
+  This message defines attributes for a node that handles a network request. The node can be either a service or an application that sends, forwards, or receives the request. Service peers should fill in `principal` and `labels` as appropriate.
 
   ## Attributes
 
   *   `ip` (*type:* `String.t`, *default:* `nil`) - The IP address of the peer.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with the peer.
   *   `port` (*type:* `String.t`, *default:* `nil`) - The network port of the peer.
-  *   `principal` (*type:* `String.t`, *default:* `nil`) - The identity of this peer. Similar to `Request.auth.principal`, but
-      relative to the peer instead of the request. For example, the
-      idenity associated with a load balancer that forwared the request.
-  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - The CLDR country/region code associated with the above IP address.
-      If the IP address is private, the `region_code` should reflect the
-      physical location where this peer is running.
+  *   `principal` (*type:* `String.t`, *default:* `nil`) - The identity of this peer. Similar to `Request.auth.principal`, but relative to the peer instead of the request. For example, the idenity associated with a load balancer that forwared the request.
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - The CLDR country/region code associated with the above IP address. If the IP address is private, the `region_code` should reflect the physical location where this peer is running.
   """
 
   use GoogleApi.Gax.ModelBase
