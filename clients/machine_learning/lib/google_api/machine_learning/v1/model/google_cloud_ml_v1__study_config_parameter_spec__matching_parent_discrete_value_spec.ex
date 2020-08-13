@@ -21,8 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParamete
 
   ## Attributes
 
-  *   `values` (*type:* `list(float())`, *default:* `nil`) - Matches values of the parent parameter with type 'DISCRETE'.
-      All values must exist in `discrete_value_spec` of parent parameter.
+  *   `values` (*type:* `list(float())`, *default:* `nil`) - Matches values of the parent parameter with type 'DISCRETE'. All values must exist in `discrete_value_spec` of parent parameter.
   """
 
   use GoogleApi.Gax.ModelBase

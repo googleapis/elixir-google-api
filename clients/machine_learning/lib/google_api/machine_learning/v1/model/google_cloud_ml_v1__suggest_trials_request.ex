@@ -21,11 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SuggestTrialsReques
 
   ## Attributes
 
-  *   `clientId` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the client that is requesting the suggestion.
-
-      If multiple SuggestTrialsRequests have the same `client_id`,
-      the service will return the identical suggested trial if the trial is
-      pending, and provide a new trial if the last suggested trial was completed.
+  *   `clientId` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the client that is requesting the suggestion. If multiple SuggestTrialsRequests have the same `client_id`, the service will return the identical suggested trial if the trial is pending, and provide a new trial if the last suggested trial was completed.
   *   `suggestionCount` (*type:* `integer()`, *default:* `nil`) - Required. The number of suggestions requested.
   """
 

@@ -21,8 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListVersionsRespons
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a
-      subsequent call.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a subsequent call.
   *   `versions` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t)`, *default:* `nil`) - The list of versions.
   """
 

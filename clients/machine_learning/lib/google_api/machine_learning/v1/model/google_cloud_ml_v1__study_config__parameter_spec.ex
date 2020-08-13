@@ -22,11 +22,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_Paramet
   ## Attributes
 
   *   `categoricalValueSpec` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_CategoricalValueSpec.t`, *default:* `nil`) - The value spec for a 'CATEGORICAL' parameter.
-  *   `childParameterSpecs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_ParameterSpec.t)`, *default:* `nil`) - A child node is active if the parameter's value matches the child node's
-      matching_parent_values.
-
-      If two items in child_parameter_specs have the same name, they must have
-      disjoint matching_parent_values.
+  *   `childParameterSpecs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_ParameterSpec.t)`, *default:* `nil`) - A child node is active if the parameter's value matches the child node's matching_parent_values. If two items in child_parameter_specs have the same name, they must have disjoint matching_parent_values.
   *   `discreteValueSpec` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_DiscreteValueSpec.t`, *default:* `nil`) - The value spec for a 'DISCRETE' parameter.
   *   `doubleValueSpec` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_DoubleValueSpec.t`, *default:* `nil`) - The value spec for a 'DOUBLE' parameter.
   *   `integerValueSpec` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_IntegerValueSpec.t`, *default:* `nil`) - The value spec for an 'INTEGER' parameter.
@@ -34,8 +30,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_Paramet
   *   `parentCategoricalValues` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_MatchingParentCategoricalValueSpec.t`, *default:* `nil`) - 
   *   `parentDiscreteValues` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_MatchingParentDiscreteValueSpec.t`, *default:* `nil`) - 
   *   `parentIntValues` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_MatchingParentIntValueSpec.t`, *default:* `nil`) - 
-  *   `scaleType` (*type:* `String.t`, *default:* `nil`) - How the parameter should be scaled.
-      Leave unset for categorical parameters.
+  *   `scaleType` (*type:* `String.t`, *default:* `nil`) - How the parameter should be scaled. Leave unset for categorical parameters.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the parameter.
   """
 

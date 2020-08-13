@@ -21,13 +21,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CompleteTrialReques
 
   ## Attributes
 
-  *   `finalMeasurement` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t`, *default:* `nil`) - Optional. If provided, it will be used as the completed trial's
-      final_measurement; Otherwise, the service will auto-select a
-      previously reported measurement as the final-measurement
-  *   `infeasibleReason` (*type:* `String.t`, *default:* `nil`) - Optional. A human readable reason why the trial was infeasible. This should
-      only be provided if `trial_infeasible` is true.
-  *   `trialInfeasible` (*type:* `boolean()`, *default:* `nil`) - Optional. True if the trial cannot be run with the given Parameter, and
-      final_measurement will be ignored.
+  *   `finalMeasurement` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t`, *default:* `nil`) - Optional. If provided, it will be used as the completed trial's final_measurement; Otherwise, the service will auto-select a previously reported measurement as the final-measurement
+  *   `infeasibleReason` (*type:* `String.t`, *default:* `nil`) - Optional. A human readable reason why the trial was infeasible. This should only be provided if `trial_infeasible` is true.
+  *   `trialInfeasible` (*type:* `boolean()`, *default:* `nil`) - Optional. True if the trial cannot be run with the given Parameter, and final_measurement will be ignored.
   """
 
   use GoogleApi.Gax.ModelBase

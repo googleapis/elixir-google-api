@@ -21,12 +21,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement do
 
   ## Attributes
 
-  *   `elapsedTime` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the trial has been running at the point of
-      this measurement.
-  *   `metrics` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement_Metric.t)`, *default:* `nil`) - Provides a list of metrics that act as inputs into the objective
-      function.
-  *   `stepCount` (*type:* `String.t`, *default:* `nil`) - The number of steps a machine learning model has been trained for.
-      Must be non-negative.
+  *   `elapsedTime` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the trial has been running at the point of this measurement.
+  *   `metrics` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement_Metric.t)`, *default:* `nil`) - Provides a list of metrics that act as inputs into the objective function.
+  *   `stepCount` (*type:* `String.t`, *default:* `nil`) - The number of steps a machine learning model has been trained for. Must be non-negative.
   """
 
   use GoogleApi.Gax.ModelBase

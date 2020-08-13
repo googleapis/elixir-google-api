@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CheckTrialEarlyStoppingStateResponse do
   @moduledoc """
-  The message will be placed in the response field of a completed
-  google.longrunning.Operation associated with a CheckTrialEarlyStoppingState
-  request.
+  The message will be placed in the response field of a completed google.longrunning.Operation associated with a CheckTrialEarlyStoppingState request.
 
   ## Attributes
 

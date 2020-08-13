@@ -26,16 +26,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Performs explanation on the data in the request.
-
-  <div>{% dynamic include "/ai-platform/includes/___explain-request" %}</div>
+  Performs explanation on the data in the request. {% dynamic include "/ai-platform/includes/___explain-request" %} 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of a model or a version.
-
-      Authorization: requires the `predict` permission on the specified resource.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of a model or a version. Authorization: requires the `predict` permission on the specified resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -91,10 +87,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Get the service account information associated with your project. You need
-  this information in order to grant the service account permissions for
-  the Google Cloud Storage location where you put your model training code
-  for training the model with Google Cloud Machine Learning.
+  Get the service account information associated with your project. You need this information in order to grant the service account permissions for the Google Cloud Storage location where you put your model training code for training the model with Google Cloud Machine Learning.
 
   ## Parameters
 
@@ -155,16 +148,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Performs online prediction on the data in the request.
-
-  <div>{% dynamic include "/ai-platform/includes/___predict-request" %}</div>
+  Performs online prediction on the data in the request. {% dynamic include "/ai-platform/includes/___predict-request" %} 
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of a model or a version.
-
-      Authorization: requires the `predict` permission on the specified resource.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of a model or a version. Authorization: requires the `predict` permission on the specified resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -411,15 +400,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -433,18 +419,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -500,10 +475,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Lists the jobs in the project.
-
-  If there are no jobs that match the request parameters, the list
-  request returns an empty response body: {}.
+  Lists the jobs in the project. If there are no jobs that match the request parameters, the list request returns an empty response body: {}.
 
   ## Parameters
 
@@ -521,24 +493,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Specifies the subset of jobs to retrieve.
-          You can filter on the value of one or more attributes of the job object.
-          For example, retrieve jobs with a job identifier that starts with 'census':
-          <p><code>gcloud ai-platform jobs list --filter='jobId:census*'</code>
-          <p>List all failed jobs with names that start with 'rnn':
-          <p><code>gcloud ai-platform jobs list --filter='jobId:rnn*
-          AND state:FAILED'</code>
-          <p>For more examples, see the guide to
-          <a href="/ml-engine/docs/tensorflow/monitor-training">monitoring jobs</a>.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The number of jobs to retrieve per "page" of results. If there
-          are more remaining results than this number, the response message will
-          contain a valid value in the `next_page_token` field.
-
-          The default value is 20, and the maximum page size is 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token to request the next page of results.
-
-          You get the token from the `next_page_token` field of the response from
-          the previous call.
+      *   `:filter` (*type:* `String.t`) - Optional. Specifies the subset of jobs to retrieve. You can filter on the value of one or more attributes of the job object. For example, retrieve jobs with a job identifier that starts with 'census': gcloud ai-platform jobs list --filter='jobId:census*' List all failed jobs with names that start with 'rnn': gcloud ai-platform jobs list --filter='jobId:rnn* AND state:FAILED' For more examples, see the guide to monitoring jobs.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of jobs to retrieve per "page" of results. If there are more remaining results than this number, the response message will contain a valid value in the `next_page_token` field. The default value is 20, and the maximum page size is 100.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token to request the next page of results. You get the token from the `next_page_token` field of the response from the previous call.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -585,9 +542,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Updates a specific job resource.
-
-  Currently the only supported fields to update are `labels`.
+  Updates a specific job resource. Currently the only supported fields to update are `labels`.
 
   ## Parameters
 
@@ -606,25 +561,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to `Job`, of the field to update.
-          To adopt etag mechanism, include `etag` field in the mask, and include the
-          `etag` value in your job resource.
-
-          For example, to change the labels of a job, the `update_mask` parameter
-          would be specified as `labels`, `etag`, and the
-          `PATCH` request body would specify the new value, as follows:
-              {
-                "labels": {
-                   "owner": "Google",
-                   "color": "Blue"
-                }
-                "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4"
-              }
-          If `etag` matches the one on the server, the labels of the job will be
-          replaced with the given ones, and the server end `etag` will be
-          recalculated.
-
-          Currently the only supported update masks are `labels` and `etag`.
+      *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to `Job`, of the field to update. To adopt etag mechanism, include `etag` field in the mask, and include the `etag` value in your job resource. For example, to change the labels of a job, the `update_mask` parameter would be specified as `labels`, `etag`, and the `PATCH` request body would specify the new value, as follows: { "labels": { "owner": "Google", "color": "Blue" } "etag": "33a64df551425fcc55e4d42a148795d9f25f89d4" } If `etag` matches the one on the server, the labels of the job will be replaced with the given ones, and the server end `etag` will be recalculated. Currently the only supported update masks are `labels` and `etag`.
       *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -672,16 +609,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
-
-  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -751,19 +684,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a `NOT_FOUND` error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -836,8 +762,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Get the complete list of CMLE capabilities in a location, along with their
-  location-specific properties.
+  Get the complete list of CMLE capabilities in a location, along with their location-specific properties.
 
   ## Parameters
 
@@ -917,8 +842,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project for which available locations are to be
-      listed (since some locations might be whitelisted for specific projects).
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project for which available locations are to be listed (since some locations might be whitelisted for specific projects).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -931,15 +855,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The number of locations to retrieve per "page" of results. If
-          there are more remaining results than this number, the response message
-          will contain a valid value in the `next_page_token` field.
-
-          The default value is 20, and the maximum page size is 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token to request the next page of results.
-
-          You get the token from the `next_page_token` field of the response from
-          the previous call.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of locations to retrieve per "page" of results. If there are more remaining results than this number, the response message will contain a valid value in the `next_page_token` field. The default value is 20, and the maximum page size is 100.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token to request the next page of results. You get the token from the `next_page_token` field of the response from the previous call.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -986,16 +903,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -1077,9 +985,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -1166,8 +1072,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location that the study belongs to.
-      Format: projects/{project}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location that the study belongs to. Format: projects/{project}/locations/{location}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1181,8 +1086,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:studyId` (*type:* `String.t`) - Required. The ID to use for the study, which will become the final component of
-          the study's resource name.
+      *   `:studyId` (*type:* `String.t`) - Required. The ID to use for the study, which will become the final component of the study's resource name.
       *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1405,8 +1309,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location that the study belongs to.
-      Format: projects/{project}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location that the study belongs to. Format: projects/{project}/locations/{location}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1476,8 +1379,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Adds a measurement of the objective metrics to a trial. This measurement
-  is assumed to have been taken before the trial is complete.
+  Adds a measurement of the objective metrics to a trial. This measurement is assumed to have been taken before the trial is complete.
 
   ## Parameters
 
@@ -1565,10 +1467,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Checks  whether a trial should stop or not. Returns a
-  long-running operation. When the operation is successful,
-  it will contain a
-  CheckTrialEarlyStoppingStateResponse.
+  Checks whether a trial should stop or not. Returns a long-running operation. When the operation is successful, it will contain a CheckTrialEarlyStoppingStateResponse.
 
   ## Parameters
 
@@ -2170,11 +2069,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Adds one or more trials to a study, with parameter values
-  suggested by AI Platform Optimizer. Returns a long-running
-  operation associated with the generation of trial suggestions.
-  When this long-running operation succeeds, it will contain
-  a SuggestTrialsResponse.
+  Adds one or more trials to a study, with parameter values suggested by AI Platform Optimizer. Returns a long-running operation associated with the generation of trial suggestions. When this long-running operation succeeds, it will contain a SuggestTrialsResponse.
 
   ## Parameters
 
@@ -2258,11 +2153,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Creates a model which will later contain one or more versions.
-
-  You must add at least one version before you can request predictions from
-  the model. Add versions by calling
-  projects.models.versions.create.
+  Creates a model which will later contain one or more versions. You must add at least one version before you can request predictions from the model. Add versions by calling projects.models.versions.create.
 
   ## Parameters
 
@@ -2325,11 +2216,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a model.
-
-  You can only delete a model if there are no versions in it. You can delete
-  versions by calling
-  projects.models.versions.delete.
+  Deletes a model. You can only delete a model if there are no versions in it. You can delete versions by calling projects.models.versions.delete.
 
   ## Parameters
 
@@ -2404,9 +2291,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Gets information about a model, including its name, the description (if
-  set), and the default version (if at least one version of the model has
-  been deployed).
+  Gets information about a model, including its name, the description (if set), and the default version (if at least one version of the model has been deployed).
 
   ## Parameters
 
@@ -2475,15 +2360,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `models_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2497,18 +2379,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2564,13 +2435,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Lists the models in a project.
-
-  Each project can contain multiple models, and each model can have multiple
-  versions.
-
-  If there are no models that match the request parameters, the list request
-  returns an empty response body: {}.
+  Lists the models in a project. Each project can contain multiple models, and each model can have multiple versions. If there are no models that match the request parameters, the list request returns an empty response body: {}.
 
   ## Parameters
 
@@ -2589,15 +2454,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Specifies the subset of models to retrieve.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The number of models to retrieve per "page" of results. If there
-          are more remaining results than this number, the response message will
-          contain a valid value in the `next_page_token` field.
-
-          The default value is 20, and the maximum page size is 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token to request the next page of results.
-
-          You get the token from the `next_page_token` field of the response from
-          the previous call.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of models to retrieve per "page" of results. If there are more remaining results than this number, the response message will contain a valid value in the `next_page_token` field. The default value is 20, and the maximum page size is 100.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token to request the next page of results. You get the token from the `next_page_token` field of the response from the previous call.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2644,10 +2502,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Updates a specific model resource.
-
-  Currently the only supported fields to update are `description` and
-  `default_version.name`.
+  Updates a specific model resource. Currently the only supported fields to update are `description` and `default_version.name`.
 
   ## Parameters
 
@@ -2666,21 +2521,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to `Model`, of the field to update.
-
-          For example, to change the description of a model to "foo" and set its
-          default version to "version_1", the `update_mask` parameter would be
-          specified as `description`, `default_version.name`, and the `PATCH`
-          request body would specify the new value, as follows:
-              {
-                "description": "foo",
-                "defaultVersion": {
-                  "name":"version_1"
-                }
-              }
-
-          Currently the supported update masks are `description` and
-          `default_version.name`.
+      *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to `Model`, of the field to update. For example, to change the description of a model to "foo" and set its default version to "version_1", the `update_mask` parameter would be specified as `description`, `default_version.name`, and the `PATCH` request body would specify the new value, as follows: { "description": "foo", "defaultVersion": { "name":"version_1" } } Currently the supported update masks are `description` and `default_version.name`.
       *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2734,16 +2575,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
-
-  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `models_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2813,19 +2650,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a `NOT_FOUND` error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `models_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2898,14 +2728,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Creates a new version of a model from a trained TensorFlow model.
-
-  If the version created in the cloud by this call is the first deployed
-  version of the specified model, it will be made the default version of the
-  model. When you add a version to a model that already has one or more
-  versions, the default version does not automatically change. If you want a
-  new version to be the default, you must call
-  projects.models.versions.setDefault.
+  Creates a new version of a model from a trained TensorFlow model. If the version created in the cloud by this call is the first deployed version of the specified model, it will be made the default version of the model. When you add a version to a model that already has one or more versions, the default version does not automatically change. If you want a new version to be the default, you must call projects.models.versions.setDefault.
 
   ## Parameters
 
@@ -2982,20 +2805,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a model version.
-
-  Each model can have multiple versions deployed and in use at any given
-  time. Use this method to remove a single version.
-
-  Note: You cannot delete the version that is set as the default version
-  of the model unless it is the only remaining version.
+  Deletes a model version. Each model can have multiple versions deployed and in use at any given time. Use this method to remove a single version. Note: You cannot delete the version that is set as the default version of the model unless it is the only remaining version.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the version. You can get the names of all the
-      versions of a model by calling
-      projects.models.versions.list.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the version. You can get the names of all the versions of a model by calling projects.models.versions.list.
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3069,12 +2884,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Gets information about a model version.
-
-  Models can have multiple versions. You can call
-  projects.models.versions.list
-  to get the same information that this method returns for all of the
-  versions of a model.
+  Gets information about a model version. Models can have multiple versions. You can call projects.models.versions.list to get the same information that this method returns for all of the versions of a model.
 
   ## Parameters
 
@@ -3153,14 +2963,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Gets basic information about all the versions of a model.
-
-  If you expect that a model has many versions, or if you need to handle
-  only a limited number of results at a time, you can request that the list
-  be retrieved in batches (called pages).
-
-  If there are no versions that match the request parameters, the list
-  request returns an empty response body: {}.
+  Gets basic information about all the versions of a model. If you expect that a model has many versions, or if you need to handle only a limited number of results at a time, you can request that the list be retrieved in batches (called pages). If there are no versions that match the request parameters, the list request returns an empty response body: {}.
 
   ## Parameters
 
@@ -3180,15 +2983,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Specifies the subset of versions to retrieve.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The number of versions to retrieve per "page" of results. If
-          there are more remaining results than this number, the response message
-          will contain a valid value in the `next_page_token` field.
-
-          The default value is 20, and the maximum page size is 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token to request the next page of results.
-
-          You get the token from the `next_page_token` field of the response from
-          the previous call.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of versions to retrieve per "page" of results. If there are more remaining results than this number, the response message will contain a valid value in the `next_page_token` field. The default value is 20, and the maximum page size is 100.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token to request the next page of results. You get the token from the `next_page_token` field of the response from the previous call.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3248,10 +3044,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Updates the specified Version resource.
-
-  Currently the only update-able fields are `description`,
-  `requestLoggingConfig`, `autoScaling.minNodes`, and `manualScaling.nodes`.
+  Updates the specified Version resource. Currently the only update-able fields are `description`, `requestLoggingConfig`, `autoScaling.minNodes`, and `manualScaling.nodes`.
 
   ## Parameters
 
@@ -3271,24 +3064,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to `Version`, of the field to
-          update. Must be present and non-empty.
-
-          For example, to change the description of a version to "foo", the
-          `update_mask` parameter would be specified as `description`, and the
-          `PATCH` request body would specify the new value, as follows:
-
-          ```
-          {
-            "description": "foo"
-          }
-          ```
-
-          Currently the only supported update mask fields are `description`,
-          `requestLoggingConfig`, `autoScaling.minNodes`, and `manualScaling.nodes`.
-          However, you can only update `manualScaling.nodes` if the version uses a
-          [Compute Engine (N1)
-          machine type](/ml-engine/docs/machine-types-online-prediction).
+      *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to `Version`, of the field to update. Must be present and non-empty. For example, to change the description of a version to "foo", the `update_mask` parameter would be specified as `description`, and the `PATCH` request body would specify the new value, as follows: ``` { "description": "foo" } ``` Currently the only supported update mask fields are `description`, `requestLoggingConfig`, `autoScaling.minNodes`, and `manualScaling.nodes`. However, you can only update `manualScaling.nodes` if the version uses a [Compute Engine (N1) machine type](/ml-engine/docs/machine-types-online-prediction).
       *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3351,21 +3127,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Designates a version to be the default for the model.
-
-  The default version is used for prediction requests made against the model
-  that don't specify a version.
-
-  The first version to be created for a model is automatically set as the
-  default. You must make any subsequent changes to the default version
-  setting manually using this method.
+  Designates a version to be the default for the model. The default version is used for prediction requests made against the model that don't specify a version. The first version to be created for a model is automatically set as the default. You must make any subsequent changes to the default version setting manually using this method.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the version to make the default for the model. You
-      can get the names of all the versions of a model by calling
-      projects.models.versions.list.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the version to make the default for the model. You can get the names of all the versions of a model by calling projects.models.versions.list.
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3444,16 +3211,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -3528,9 +3286,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -3605,16 +3361,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the
-  server doesn't support this method, it returns `UNIMPLEMENTED`.
-
-  NOTE: the `name` binding allows API services to override the binding
-  to use different resource name schemes, such as `users/*/operations`. To
-  override the binding, API services can add a binding such as
-  `"/v1/{name=users/*}/operations"` to their service configuration.
-  For backwards compatibility, the default name includes the operations
-  collection id, however overriding users must ensure the name binding
-  is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
 
   ## Parameters
 

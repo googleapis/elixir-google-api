@@ -24,8 +24,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_OperationMetadata d
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation was submitted.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time operation processing completed.
   *   `isCancellationRequested` (*type:* `boolean()`, *default:* `nil`) - Indicates whether a request to cancel this operation has been made.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - The user labels, inherited from the model or the model version being
-      operated on.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The user labels, inherited from the model or the model version being operated on.
   *   `modelName` (*type:* `String.t`, *default:* `nil`) - Contains the name of the model associated with the operation.
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - The operation type.
   *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - Contains the project number associated with the operation.

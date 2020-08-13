@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CheckTrialEarlyStoppingStateMetatdata do
   @moduledoc """
-  This message will be placed in the metadata field of a
-  google.longrunning.Operation associated with a CheckTrialEarlyStoppingState
-  request.
+  This message will be placed in the metadata field of a google.longrunning.Operation associated with a CheckTrialEarlyStoppingState request.
 
   ## Attributes
 
