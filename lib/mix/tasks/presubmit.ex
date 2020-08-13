@@ -17,31 +17,69 @@ defmodule Mix.Tasks.Presubmit do
 
   @shortdoc "Presubmit tests"
 
-  def run(_) do
-    cmd_opts = [into: IO.stream(:stdio, :line), env: [{"MIX_ENV", "test"}]]
-    {generator_changed, changed_clients} = get_changes()
-    if generator_changed do
-      header("Running tests for generator")
-      {_, 0} = System.cmd("mix", ["test", "--include=external"], cmd_opts)
-      header("Building test client")
-      {_, 0} = System.cmd("mix", ["google_apis.build", "TestClient"], into: IO.stream(:stdio, :line))
-      header("Running tests for test client")
-      {_, 0} = System.cmd("mix", ["do", "deps.get,", "test"], [{:cd, "clients/test_client"} | cmd_opts])
-    end
-    Enum.each(changed_clients, fn client ->
-      header("Running tests for client: #{client}")
-      {_, 0} = System.cmd("mix", ["do", "deps.get,", "test"], [{:cd, "clients/#{client}"} | cmd_opts])
+  def run(args) do
+    {opts, _, _} = OptionParser.parse(args, switches: [pr: :string])
+
+    files = get_changed_files(opts)
+    IO.puts("\nChanged files:")
+    Enum.each(files, fn file ->
+      IO.puts("  #{file}")
     end)
+
+    if generator_changed?(files) do
+      header("Running tests for generator")
+      {_, 0} = System.cmd("mix", ["test", "--include=external"],
+                          into: IO.stream(:stdio, :line), env: [{"MIX_ENV", "test"}])
+      header("Building test client")
+      {_, 0} = System.cmd("mix", ["google_apis.build", "TestClient"],
+                          into: IO.stream(:stdio, :line))
+      header("Running tests for test client")
+      {_, 0} = System.cmd("mix", ["do", "deps.get,", "test"],
+                          cd: "clients/test_client", into: IO.stream(:stdio, :line), env: [{"MIX_ENV", "test"}])
+    end
+
+    Enum.each(changed_clients(files), fn client ->
+      header("Running tests for client: #{client}")
+      {_, 0} = System.cmd("mix", ["do", "deps.get,", "test"],
+                          cd: "clients/#{client}", into: IO.stream(:stdio, :line), env: [{"MIX_ENV", "test"}])
+    end)
+
     header("All presubmits passed!")
   end
 
-  defp get_changes() do
-    base_ref = "GITHUB_EVENT_PATH" |> System.get_env() |> get_base_ref()
-    {output, 0} = System.cmd("git", ["--no-pager", "diff", "--name-only", base_ref])
-    files = String.split(output, "\n", trim: true)
-    IO.puts("\nChanged files:\n#{output}")
+  defp get_changed_files([]) do
+    {output, 0} = System.cmd("git", ["--no-pager", "diff", "--name-only", "HEAD"])
+    String.split(output, "\n", trim: true)
+  end
 
-    changed_clients = files
+  defp get_changed_files([pr: pr_number]) do
+    {:ok, %{status: 200, body: diff}} =
+      Tesla.get("https://patch-diff.githubusercontent.com/raw/googleapis/elixir-google-api/pull/#{pr_number}.diff")
+
+    diff
+    |> String.split("\n", trim: true)
+    |> Enum.reduce([], fn (line, files) ->
+      case Regex.run(~r{^diff --git a/(\S+) b/(\S+)$}, line) do
+        [_, file1, file2] -> [file1, file2 | files]
+        _ -> files
+      end
+    end)
+    |> Enum.uniq()
+    |> Enum.sort()
+  end
+
+  defp generator_changed?(files) do
+    Enum.any?(files, fn
+      ("mix." <> _) -> true
+      ("lib/" <> _) -> true
+      ("test/" <> _) -> true
+      ("template/" <> _) -> true
+      (_) -> false
+    end)
+  end
+
+  defp changed_clients(files) do
+    files
     |> Enum.reduce([], fn
       ("clients/" <> path, list) ->
         [name | _] = String.split(path, "/", parts: 2)
@@ -50,27 +88,6 @@ defmodule Mix.Tasks.Presubmit do
     end)
     |> Enum.uniq()
     |> Enum.sort()
-
-    generator_changed = Enum.any?(files, fn
-      ("mix." <> _) -> true
-      ("lib/" <> _) -> true
-      ("test/" <> _) -> true
-      ("template/" <> _) -> true
-      (_) -> false
-    end)
-
-    {generator_changed, changed_clients}
-  end
-
-  defp get_base_ref(nil), do: "HEAD"
-
-  defp get_base_ref(event_path) do
-    base_ref = event_path
-    |> File.read!()
-    |> Jason.decode!()
-    |> get_in(["pull_request", "base", "sha"])
-    {_, 0} = System.cmd("git", ["fetch", "--no-tags", "--prune", "--depth=1", "origin", base_ref], into: IO.stream(:stdio, :line))
-    base_ref
   end
 
   defp header(str) do
