@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.MobileCarriersListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#mobileCarriersListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileCarriersListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileCarriersListResponse".
   *   `mobileCarriers` (*type:* `list(GoogleApi.DFAReporting.V34.Model.MobileCarrier.t)`, *default:* `nil`) - Mobile carrier collection.
   """
 

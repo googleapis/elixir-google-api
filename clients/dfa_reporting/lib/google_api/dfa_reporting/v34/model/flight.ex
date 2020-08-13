@@ -21,9 +21,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.Flight do
 
   ## Attributes
 
-  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - Inventory item flight end date.
+  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `rateOrCost` (*type:* `String.t`, *default:* `nil`) - Rate or cost of this flight.
-  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - Inventory item flight start date.
+  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `units` (*type:* `String.t`, *default:* `nil`) - Units of this flight.
   """
 

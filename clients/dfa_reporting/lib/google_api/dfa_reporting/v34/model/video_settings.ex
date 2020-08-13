@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.VideoSettings do
   ## Attributes
 
   *   `companionSettings` (*type:* `GoogleApi.DFAReporting.V34.Model.CompanionSetting.t`, *default:* `nil`) - Settings for the companion creatives of video creatives served to this placement.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#videoSettings`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoSettings".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoSettings".
   *   `obaEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether OBA icons are enabled for this placement.
   *   `obaSettings` (*type:* `GoogleApi.DFAReporting.V34.Model.ObaIcon.t`, *default:* `nil`) - Settings for the OBA icon of video creatives served to this placement. If this object is provided, the creative-level OBA settings will be overridden.
   *   `orientation` (*type:* `String.t`, *default:* `nil`) - Orientation of a video placement. If this value is set, placement will return assets matching the specified orientation.

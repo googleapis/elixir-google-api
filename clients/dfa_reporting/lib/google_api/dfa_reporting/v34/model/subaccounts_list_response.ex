@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.SubaccountsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#subaccountsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#subaccountsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#subaccountsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   *   `subaccounts` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Subaccount.t)`, *default:* `nil`) - Subaccount collection.
   """

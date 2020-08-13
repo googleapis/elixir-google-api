@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventsBatchInsertRequest do
   ## Attributes
 
   *   `customEvents` (*type:* `list(GoogleApi.DFAReporting.V34.Model.CustomEvent.t)`, *default:* `nil`) - The set of custom events to insert.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customEventsBatchInsertRequest`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventsBatchInsertRequest".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventsBatchInsertRequest".
   """
 
   use GoogleApi.Gax.ModelBase

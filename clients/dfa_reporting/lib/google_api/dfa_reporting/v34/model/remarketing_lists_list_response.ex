@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.RemarketingListsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#remarketingListsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#remarketingListsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#remarketingListsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   *   `remarketingLists` (*type:* `list(GoogleApi.DFAReporting.V34.Model.RemarketingList.t)`, *default:* `nil`) - Remarketing list collection.
   """

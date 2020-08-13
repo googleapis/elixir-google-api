@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CampaignCreativeAssociation do
   ## Attributes
 
   *   `creativeId` (*type:* `String.t`, *default:* `nil`) - ID of the creative associated with the campaign. This is a required field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#campaignCreativeAssociation`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignCreativeAssociation".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignCreativeAssociation".
   """
 
   use GoogleApi.Gax.ModelBase

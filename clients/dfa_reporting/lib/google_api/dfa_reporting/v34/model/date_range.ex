@@ -21,10 +21,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.DateRange do
 
   ## Attributes
 
-  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - The end date of the date range, inclusive. A string of the format: "yyyy-MM-dd".
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#dateRange`) - The kind of resource this is, in this case dfareporting#dateRange.
+  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#dateRange.
   *   `relativeDateRange` (*type:* `String.t`, *default:* `nil`) - The date range relative to the date of when the report is run.
-  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - The start date of the date range, inclusive. A string of the format: "yyyy-MM-dd".
+  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

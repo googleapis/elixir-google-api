@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.AdsListResponse do
   ## Attributes
 
   *   `ads` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Ad.t)`, *default:* `nil`) - Ad collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#adsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#adsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#adsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

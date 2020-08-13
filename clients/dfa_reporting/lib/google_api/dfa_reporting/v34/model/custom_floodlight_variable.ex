@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomFloodlightVariable do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customFloodlightVariable`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customFloodlightVariable".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customFloodlightVariable".
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of custom floodlight variable to supply a value for. These map to the "u[1-20]=" in the tags.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the custom floodlight variable. The length of string must not exceed 50 characters.
   """

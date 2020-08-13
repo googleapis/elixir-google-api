@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.EventFilter do
   ## Attributes
 
   *   `dimensionFilter` (*type:* `GoogleApi.DFAReporting.V34.Model.PathReportDimensionValue.t`, *default:* `nil`) - The dimension filter contained within this EventFilter.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#eventFilter`) - The kind of resource this is, in this case dfareporting#eventFilter.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#eventFilter.
   """
 
   use GoogleApi.Gax.ModelBase

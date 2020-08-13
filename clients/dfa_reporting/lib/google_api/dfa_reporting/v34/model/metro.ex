@@ -25,7 +25,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Metro do
   *   `countryDartId` (*type:* `String.t`, *default:* `nil`) - DART ID of the country to which this metro region belongs.
   *   `dartId` (*type:* `String.t`, *default:* `nil`) - DART ID of this metro region.
   *   `dmaId` (*type:* `String.t`, *default:* `nil`) - DMA ID of this metro region. This is the ID used for targeting and generating reports, and is equivalent to metro_code.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#metro`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#metro".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#metro".
   *   `metroCode` (*type:* `String.t`, *default:* `nil`) - Metro code of this metro region. This is equivalent to dma_id.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this metro region.
   """

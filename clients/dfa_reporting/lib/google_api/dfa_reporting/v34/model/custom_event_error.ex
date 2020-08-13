@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventError do
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - The error code.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customEventError`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventError".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventError".
   *   `message` (*type:* `String.t`, *default:* `nil`) - A description of the error.
   """
 

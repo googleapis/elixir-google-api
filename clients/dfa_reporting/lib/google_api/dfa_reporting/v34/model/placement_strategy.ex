@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.PlacementStrategy do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this placement strategy.This is a read-only field that can be left blank.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this placement strategy. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#placementStrategy`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementStrategy".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementStrategy".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this placement strategy. This is a required field. It must be less than 256 characters long and unique among placement strategies of the same account.
   """
 

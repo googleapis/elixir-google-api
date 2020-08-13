@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.AdvertiserGroup do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this advertiser group. This is a read-only field that can be left blank.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this advertiser group. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#advertiserGroup`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiserGroup".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiserGroup".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this advertiser group. This is a required field and must be less than 256 characters long and unique among advertiser groups of the same account.
   """
 

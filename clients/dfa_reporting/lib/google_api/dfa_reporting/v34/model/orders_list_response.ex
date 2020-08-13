@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.OrdersListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#ordersListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#ordersListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#ordersListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   *   `orders` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Order.t)`, *default:* `nil`) - Order collection.
   """

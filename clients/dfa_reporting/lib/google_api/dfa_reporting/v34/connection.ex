@@ -34,5 +34,5 @@ defmodule GoogleApi.DFAReporting.V34.Connection do
       "https://www.googleapis.com/auth/dfatrafficking"
     ],
     otp_app: :google_api_dfa_reporting,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://dfareporting.googleapis.com/"
 end

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.ChannelGroupingRule do
   ## Attributes
 
   *   `disjunctiveMatchStatements` (*type:* `list(GoogleApi.DFAReporting.V34.Model.DisjunctiveMatchStatement.t)`, *default:* `nil`) - The disjunctive match statements contained within this rule.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#channelGroupingRule`) - The kind of resource this is, in this case dfareporting#channelGroupingRule.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#channelGroupingRule.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Rule name.
   """
 

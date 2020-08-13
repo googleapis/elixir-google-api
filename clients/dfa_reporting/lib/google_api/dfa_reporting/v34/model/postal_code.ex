@@ -25,7 +25,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.PostalCode do
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code of the country to which this postal code belongs.
   *   `countryDartId` (*type:* `String.t`, *default:* `nil`) - DART ID of the country to which this postal code belongs.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this postal code.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#postalCode`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#postalCode".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#postalCode".
   """
 
   use GoogleApi.Gax.ModelBase

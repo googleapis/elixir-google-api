@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.MobileApp do
 
   *   `directory` (*type:* `String.t`, *default:* `nil`) - Mobile app directory.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this mobile app.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#mobileApp`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileApp".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileApp".
   *   `publisherName` (*type:* `String.t`, *default:* `nil`) - Publisher name.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of this mobile app.
   """

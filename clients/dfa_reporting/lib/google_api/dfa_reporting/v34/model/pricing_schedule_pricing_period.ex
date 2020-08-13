@@ -21,10 +21,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.PricingSchedulePricingPeriod do
 
   ## Attributes
 
-  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - Pricing period end date. This date must be later than, or the same day as, the pricing period start date, but not later than the placement end date. The period end date can be the same date as the period start date. If, for example, you set 6/25/2015 as both the start and end dates, the effective pricing period date is just that day only, 6/25/2015. The hours, minutes, and seconds of the end date should not be set, as doing so will result in an error.
+  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `pricingComment` (*type:* `String.t`, *default:* `nil`) - Comments for this pricing period.
   *   `rateOrCostNanos` (*type:* `String.t`, *default:* `nil`) - Rate or cost of this pricing period in nanos (i.e., multipled by 1000000000). Acceptable values are 0 to 1000000000000000000, inclusive.
-  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - Pricing period start date. This date must be later than, or the same day as, the placement start date. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error.
+  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `units` (*type:* `String.t`, *default:* `nil`) - Units of this pricing period. Acceptable values are 0 to 10000000000, inclusive.
   """
 

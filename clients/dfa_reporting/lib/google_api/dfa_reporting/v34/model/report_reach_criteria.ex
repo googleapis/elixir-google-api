@@ -24,12 +24,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReportReachCriteria do
   *   `activities` (*type:* `GoogleApi.DFAReporting.V34.Model.Activities.t`, *default:* `nil`) - Activity group.
   *   `customRichMediaEvents` (*type:* `GoogleApi.DFAReporting.V34.Model.CustomRichMediaEvents.t`, *default:* `nil`) - Custom Rich Media Events group.
   *   `dateRange` (*type:* `GoogleApi.DFAReporting.V34.Model.DateRange.t`, *default:* `nil`) - The date range this report should be run for.
-  *   `dimensionFilters` (*type:* `list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t)`, *default:* `nil`) - The list of filters on which dimensions are filtered.
-      Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed.
+  *   `dimensionFilters` (*type:* `list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t)`, *default:* `nil`) - The list of filters on which dimensions are filtered. Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed.
   *   `dimensions` (*type:* `list(GoogleApi.DFAReporting.V34.Model.SortedDimension.t)`, *default:* `nil`) - The list of dimensions the report should include.
   *   `enableAllDimensionCombinations` (*type:* `boolean()`, *default:* `nil`) - Whether to enable all reach dimension combinations in the report. Defaults to false. If enabled, the date range of the report should be within the last 42 days.
   *   `metricNames` (*type:* `list(String.t)`, *default:* `nil`) - The list of names of metrics the report should include.
-  *   `reachByFrequencyMetricNames` (*type:* `list(String.t)`, *default:* `nil`) - The list of names of  Reach By Frequency metrics the report should include.
+  *   `reachByFrequencyMetricNames` (*type:* `list(String.t)`, *default:* `nil`) - The list of names of Reach By Frequency metrics the report should include.
   """
 
   use GoogleApi.Gax.ModelBase

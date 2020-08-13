@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.BrowsersListResponse do
   ## Attributes
 
   *   `browsers` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Browser.t)`, *default:* `nil`) - Browser collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#browsersListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#browsersListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#browsersListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

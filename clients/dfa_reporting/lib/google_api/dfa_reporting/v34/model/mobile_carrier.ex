@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.MobileCarrier do
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code of the country to which this mobile carrier belongs.
   *   `countryDartId` (*type:* `String.t`, *default:* `nil`) - DART ID of the country to which this mobile carrier belongs.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this mobile carrier.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#mobileCarrier`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileCarrier".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileCarrier".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this mobile carrier.
   """
 

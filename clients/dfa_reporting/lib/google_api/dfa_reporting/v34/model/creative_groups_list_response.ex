@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CreativeGroupsListResponse do
   ## Attributes
 
   *   `creativeGroups` (*type:* `list(GoogleApi.DFAReporting.V34.Model.CreativeGroup.t)`, *default:* `nil`) - Creative group collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#creativeGroupsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeGroupsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeGroupsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

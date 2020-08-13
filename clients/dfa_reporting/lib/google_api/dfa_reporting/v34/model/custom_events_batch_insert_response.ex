@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventsBatchInsertResponse do
   ## Attributes
 
   *   `hasFailures` (*type:* `boolean()`, *default:* `nil`) - Indicates that some or all custom events failed to insert.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customEventsBatchInsertResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventsBatchInsertResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventsBatchInsertResponse".
   *   `status` (*type:* `list(GoogleApi.DFAReporting.V34.Model.CustomEventStatus.t)`, *default:* `nil`) - The insert status of each custom event. Statuses are returned in the same order that conversions are inserted.
   """
 
