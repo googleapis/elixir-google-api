@@ -21,7 +21,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListDelegatesResponse do
 
   ## Attributes
 
-  *   `delegates` (*type:* `list(GoogleApi.Gmail.V1.Model.Delegate.t)`, *default:* `nil`) - List of the user's delegates (with any verification status).
+  *   `delegates` (*type:* `list(GoogleApi.Gmail.V1.Model.Delegate.t)`, *default:* `nil`) - List of the user's delegates (with any verification status). If an account doesn't have delegates, this field doesn't appear.
   """
 
   use GoogleApi.Gax.ModelBase
