@@ -18,7 +18,7 @@
 defmodule GoogleApi.GamesManagement.Mixfile do
   use Mix.Project
 
-  @version "0.17.0"
+  @version "0.17.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.GamesManagement.Mixfile do
 
   defp description() do
     """
-    Google Play Game Management client library. The Google Play Game Management API allows developers to manage resources from the Google
-     Play Game service.
+    Google Play Game Management client library. The Google Play Game Management API allows developers to manage resources from the Google Play Game service.
     """
   end
 
