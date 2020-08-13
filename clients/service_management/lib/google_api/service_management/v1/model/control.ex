@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.ServiceManagement.V1.Model.Control do
   @moduledoc """
-  Selects and configures the service controller used by the service.  The
-  service controller handles features like abuse, quota, billing, logging,
-  monitoring, etc.
+  Selects and configures the service controller used by the service. The service controller handles features like abuse, quota, billing, logging, monitoring, etc.
 
   ## Attributes
 
-  *   `environment` (*type:* `String.t`, *default:* `nil`) - The service control environment to use. If empty, no control plane
-      feature (like quota and billing) will be enabled.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - The service control environment to use. If empty, no control plane feature (like quota and billing) will be enabled.
   """
 
   use GoogleApi.Gax.ModelBase

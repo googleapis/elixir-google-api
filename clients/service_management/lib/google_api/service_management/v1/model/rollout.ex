@@ -17,31 +17,17 @@
 
 defmodule GoogleApi.ServiceManagement.V1.Model.Rollout do
   @moduledoc """
-  A rollout resource that defines how service configuration versions are pushed
-  to control plane systems. Typically, you create a new version of the
-  service config, and then create a Rollout to push the service config.
+  A rollout resource that defines how service configuration versions are pushed to control plane systems. Typically, you create a new version of the service config, and then create a Rollout to push the service config.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation time of the rollout. Readonly.
-  *   `createdBy` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be deleted. Please remove usage of
-      this field.
-  *   `deleteServiceStrategy` (*type:* `GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy.t`, *default:* `nil`) - The strategy associated with a rollout to delete a `ManagedService`.
-      Readonly.
-  *   `rolloutId` (*type:* `String.t`, *default:* `nil`) - Optional. Unique identifier of this Rollout. Must be no longer than 63 characters
-      and only lower case letters, digits, '.', '_' and '-' are allowed.
-
-      If not specified by client, the server will generate one. The generated id
-      will have the form of <date><revision number>, where "date" is the create
-      date in ISO 8601 format.  "revision number" is a monotonically increasing
-      positive number that is reset every day for each service.
-      An example of the generated rollout_id is '2016-02-16r1'
+  *   `createdBy` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be deleted. Please remove usage of this field.
+  *   `deleteServiceStrategy` (*type:* `GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy.t`, *default:* `nil`) - The strategy associated with a rollout to delete a `ManagedService`. Readonly.
+  *   `rolloutId` (*type:* `String.t`, *default:* `nil`) - Optional. Unique identifier of this Rollout. Must be no longer than 63 characters and only lower case letters, digits, '.', '_' and '-' are allowed. If not specified by client, the server will generate one. The generated id will have the form of , where "date" is the create date in ISO 8601 format. "revision number" is a monotonically increasing positive number that is reset every day for each service. An example of the generated rollout_id is '2016-02-16r1'
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the service associated with this Rollout.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of this rollout. Readonly. In case of a failed rollout,
-      the system will automatically rollback to the current Rollout
-      version. Readonly.
-  *   `trafficPercentStrategy` (*type:* `GoogleApi.ServiceManagement.V1.Model.TrafficPercentStrategy.t`, *default:* `nil`) - Google Service Control selects service configurations based on
-      traffic percentage.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of this rollout. Readonly. In case of a failed rollout, the system will automatically rollback to the current Rollout version. Readonly.
+  *   `trafficPercentStrategy` (*type:* `GoogleApi.ServiceManagement.V1.Model.TrafficPercentStrategy.t`, *default:* `nil`) - Google Service Control selects service configurations based on traffic percentage.
   """
 
   use GoogleApi.Gax.ModelBase

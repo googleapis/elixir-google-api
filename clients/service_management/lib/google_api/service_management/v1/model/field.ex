@@ -27,12 +27,10 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Field do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The field type.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The field name.
   *   `number` (*type:* `integer()`, *default:* `nil`) - The field number.
-  *   `oneofIndex` (*type:* `integer()`, *default:* `nil`) - The index of the field type in `Type.oneofs`, for message or enumeration
-      types. The first type has index 1; zero means the type is not in the list.
+  *   `oneofIndex` (*type:* `integer()`, *default:* `nil`) - The index of the field type in `Type.oneofs`, for message or enumeration types. The first type has index 1; zero means the type is not in the list.
   *   `options` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.Option.t)`, *default:* `nil`) - The protocol buffer options.
   *   `packed` (*type:* `boolean()`, *default:* `nil`) - Whether to use alternative packed wire representation.
-  *   `typeUrl` (*type:* `String.t`, *default:* `nil`) - The field type URL, without the scheme, for message or enumeration
-      types. Example: `"type.googleapis.com/google.protobuf.Timestamp"`.
+  *   `typeUrl` (*type:* `String.t`, *default:* `nil`) - The field type URL, without the scheme, for message or enumeration types. Example: `"type.googleapis.com/google.protobuf.Timestamp"`.
   """
 
   use GoogleApi.Gax.ModelBase

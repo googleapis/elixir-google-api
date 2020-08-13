@@ -26,9 +26,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -104,29 +102,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Operations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A string for filtering Operations.
-            The following filter fields are supported&#58;
-
-            * serviceName&#58; Required. Only `=` operator is allowed.
-            * startTime&#58; The time this job was started, in ISO 8601 format.
-              Allowed operators are `>=`,  `>`, `<=`, and `<`.
-            * status&#58; Can be `done`, `in_progress`, or `failed`. Allowed
-              operators are `=`, and `!=`.
-
-            Filter expression supports conjunction (AND) and disjunction (OR)
-            logical operators. However, the serviceName restriction must be at the
-            top-level and can only be combined with other restrictions via the AND
-            logical operator.
-
-            Examples&#58;
-
-            * `serviceName={some-service}.googleapis.com`
-            * `serviceName={some-service}.googleapis.com AND startTime>="2017-02-01"`
-            * `serviceName={some-service}.googleapis.com AND status=done`
-            * `serviceName={some-service}.googleapis.com AND (status=done OR startTime>="2017-02-01")`
+      *   `:filter` (*type:* `String.t`) - A string for filtering Operations. The following filter fields are supported: * serviceName: Required. Only `=` operator is allowed. * startTime: The time this job was started, in ISO 8601 format. Allowed operators are `>=`, `>`, `<=`, and `<`. * status: Can be `done`, `in_progress`, or `failed`. Allowed operators are `=`, and `!=`. Filter expression supports conjunction (AND) and disjunction (OR) logical operators. However, the serviceName restriction must be at the top-level and can only be combined with other restrictions via the AND logical operator. Examples: * `serviceName={some-service}.googleapis.com` * `serviceName={some-service}.googleapis.com AND startTime>="2017-02-01"` * `serviceName={some-service}.googleapis.com AND status=done` * `serviceName={some-service}.googleapis.com AND (status=done OR startTime>="2017-02-01")`
       *   `:name` (*type:* `String.t`) - Not used.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of operations to return. If unspecified, defaults to
-          50. The maximum value is 100.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of operations to return. If unspecified, defaults to 50. The maximum value is 100.
       *   `:pageToken` (*type:* `String.t`) - The standard list page token.
   *   `opts` (*type:* `keyword()`) - Call options
 

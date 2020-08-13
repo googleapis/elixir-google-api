@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ServiceManagement.V1.Model.FlowErrorDetails do
   @moduledoc """
-  Encapsulation of flow-specific error details for debugging.
-  Used as a details field on an error Status, not intended for external use.
+  Encapsulation of flow-specific error details for debugging. Used as a details field on an error Status, not intended for external use.
 
   ## Attributes
 
