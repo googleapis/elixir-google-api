@@ -21,25 +21,12 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Policy do
 
   ## Attributes
 
-  *   `admissionWhitelistPatterns` (*type:* `list(GoogleApi.BinaryAuthorization.V1.Model.AdmissionWhitelistPattern.t)`, *default:* `nil`) - Optional. Admission policy whitelisting. A matching admission request will
-      always be permitted. This feature is typically used to exclude Google or
-      third-party infrastructure images from Binary Authorization policies.
-  *   `clusterAdmissionRules` (*type:* `%{optional(String.t) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t}`, *default:* `nil`) - Optional. Per-cluster admission rules. Cluster spec format:
-      `location.clusterId`. There can be at most one admission rule per cluster
-      spec.
-      A `location` is either a compute zone (e.g. us-central1-a) or a region
-      (e.g. us-central1).
-      For `clusterId` syntax restrictions see
-      https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters.
-  *   `defaultAdmissionRule` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t`, *default:* `nil`) - Required. Default admission rule for a cluster without a per-cluster, per-
-      kubernetes-service-account, or per-istio-service-identity admission rule.
+  *   `admissionWhitelistPatterns` (*type:* `list(GoogleApi.BinaryAuthorization.V1.Model.AdmissionWhitelistPattern.t)`, *default:* `nil`) - Optional. Admission policy whitelisting. A matching admission request will always be permitted. This feature is typically used to exclude Google or third-party infrastructure images from Binary Authorization policies.
+  *   `clusterAdmissionRules` (*type:* `%{optional(String.t) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t}`, *default:* `nil`) - Optional. Per-cluster admission rules. Cluster spec format: `location.clusterId`. There can be at most one admission rule per cluster spec. A `location` is either a compute zone (e.g. us-central1-a) or a region (e.g. us-central1). For `clusterId` syntax restrictions see https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters.
+  *   `defaultAdmissionRule` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t`, *default:* `nil`) - Required. Default admission rule for a cluster without a per-cluster, per- kubernetes-service-account, or per-istio-service-identity admission rule.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive comment.
-  *   `globalPolicyEvaluationMode` (*type:* `String.t`, *default:* `nil`) - Optional. Controls the evaluation of a Google-maintained global admission
-      policy for common system-level images. Images not covered by the global
-      policy will be subject to the project admission policy. This setting
-      has no effect when specified inside a global admission policy.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name, in the format `projects/*/policy`. There is
-      at most one policy per project.
+  *   `globalPolicyEvaluationMode` (*type:* `String.t`, *default:* `nil`) - Optional. Controls the evaluation of a Google-maintained global admission policy for common system-level images. Images not covered by the global policy will be subject to the project admission policy. This setting has no effect when specified inside a global admission policy.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name, in the format `projects/*/policy`. There is at most one policy per project.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the policy was last updated.
   """
 
