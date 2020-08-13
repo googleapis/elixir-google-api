@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.Spanner.V1.Model.InstanceConfig do
   @moduledoc """
-  A possible configuration for a Cloud Spanner instance. Configurations
-  define the geographic placement of nodes and their replication.
+  A possible configuration for a Cloud Spanner instance. Configurations define the geographic placement of nodes and their replication.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name of this instance configuration as it appears in UIs.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the instance configuration.  Values
-      are of the form
-      `projects/<project>/instanceConfigs/a-z*`
-  *   `replicas` (*type:* `list(GoogleApi.Spanner.V1.Model.ReplicaInfo.t)`, *default:* `nil`) - The geographic placement of nodes in this instance configuration and their
-      replication properties.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the instance configuration. Values are of the form `projects//instanceConfigs/a-z*`
+  *   `replicas` (*type:* `list(GoogleApi.Spanner.V1.Model.ReplicaInfo.t)`, *default:* `nil`) - The geographic placement of nodes in this instance configuration and their replication properties.
   """
 
   use GoogleApi.Gax.ModelBase

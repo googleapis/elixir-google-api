@@ -22,9 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.ListInstancesResponse do
   ## Attributes
 
   *   `instances` (*type:* `list(GoogleApi.Spanner.V1.Model.Instance.t)`, *default:* `nil`) - The list of requested instances.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent
-      ListInstances call to fetch more
-      of the matching instances.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent ListInstances call to fetch more of the matching instances.
   """
 
   use GoogleApi.Gax.ModelBase

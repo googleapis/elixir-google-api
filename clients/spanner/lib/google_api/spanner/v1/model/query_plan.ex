@@ -21,9 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.QueryPlan do
 
   ## Attributes
 
-  *   `planNodes` (*type:* `list(GoogleApi.Spanner.V1.Model.PlanNode.t)`, *default:* `nil`) - The nodes in the query plan. Plan nodes are returned in pre-order starting
-      with the plan root. Each PlanNode's `id` corresponds to its index in
-      `plan_nodes`.
+  *   `planNodes` (*type:* `list(GoogleApi.Spanner.V1.Model.PlanNode.t)`, *default:* `nil`) - The nodes in the query plan. Plan nodes are returned in pre-order starting with the plan root. Each PlanNode's `id` corresponds to its index in `plan_nodes`.
   """
 
   use GoogleApi.Gax.ModelBase

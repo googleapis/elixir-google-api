@@ -17,25 +17,12 @@
 
 defmodule GoogleApi.Spanner.V1.Model.PartitionOptions do
   @moduledoc """
-  Options for a PartitionQueryRequest and
-  PartitionReadRequest.
+  Options for a PartitionQueryRequest and PartitionReadRequest.
 
   ## Attributes
 
-  *   `maxPartitions` (*type:* `String.t`, *default:* `nil`) - **Note:** This hint is currently ignored by PartitionQuery and
-      PartitionRead requests.
-
-      The desired maximum number of partitions to return.  For example, this may
-      be set to the number of workers available.  The default for this option
-      is currently 10,000. The maximum value is currently 200,000.  This is only
-      a hint.  The actual number of partitions returned may be smaller or larger
-      than this maximum count request.
-  *   `partitionSizeBytes` (*type:* `String.t`, *default:* `nil`) - **Note:** This hint is currently ignored by PartitionQuery and
-      PartitionRead requests.
-
-      The desired data size for each partition generated.  The default for this
-      option is currently 1 GiB.  This is only a hint. The actual size of each
-      partition may be smaller or larger than this size request.
+  *   `maxPartitions` (*type:* `String.t`, *default:* `nil`) - **Note:** This hint is currently ignored by PartitionQuery and PartitionRead requests. The desired maximum number of partitions to return. For example, this may be set to the number of workers available. The default for this option is currently 10,000. The maximum value is currently 200,000. This is only a hint. The actual number of partitions returned may be smaller or larger than this maximum count request.
+  *   `partitionSizeBytes` (*type:* `String.t`, *default:* `nil`) - **Note:** This hint is currently ignored by PartitionQuery and PartitionRead requests. The desired data size for each partition generated. The default for this option is currently 1 GiB. This is only a hint. The actual size of each partition may be smaller or larger than this size request.
   """
 
   use GoogleApi.Gax.ModelBase

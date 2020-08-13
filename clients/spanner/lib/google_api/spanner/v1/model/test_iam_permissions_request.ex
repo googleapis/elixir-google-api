@@ -21,8 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.TestIamPermissionsRequest do
 
   ## Attributes
 
-  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - REQUIRED: The set of permissions to check for 'resource'.
-      Permissions with wildcards (such as '*', 'spanner.*', 'spanner.instances.*') are not allowed.
+  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - REQUIRED: The set of permissions to check for 'resource'. Permissions with wildcards (such as '*', 'spanner.*', 'spanner.instances.*') are not allowed.
   """
 
   use GoogleApi.Gax.ModelBase

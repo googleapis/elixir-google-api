@@ -21,9 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.ListSessionsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent
-      ListSessions call to fetch more of the matching
-      sessions.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent ListSessions call to fetch more of the matching sessions.
   *   `sessions` (*type:* `list(GoogleApi.Spanner.V1.Model.Session.t)`, *default:* `nil`) - The list of requested sessions.
   """
 

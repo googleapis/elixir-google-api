@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.Spanner.V1.Model.CreateInstanceMetadata do
   @moduledoc """
-  Metadata type for the operation returned by
-  CreateInstance.
+  Metadata type for the operation returned by CreateInstance.
 
   ## Attributes
 
-  *   `cancelTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this operation was cancelled. If set, this operation is
-      in the process of undoing itself (which is guaranteed to succeed) and
-      cannot be cancelled again.
+  *   `cancelTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this operation was cancelled. If set, this operation is in the process of undoing itself (which is guaranteed to succeed) and cannot be cancelled again.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this operation failed or was completed successfully.
   *   `instance` (*type:* `GoogleApi.Spanner.V1.Model.Instance.t`, *default:* `nil`) - The instance being created.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the
-      CreateInstance request was
-      received.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the CreateInstance request was received.
   """
 
   use GoogleApi.Gax.ModelBase

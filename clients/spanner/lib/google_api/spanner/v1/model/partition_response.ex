@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Spanner.V1.Model.PartitionResponse do
   @moduledoc """
-  The response for PartitionQuery
-  or PartitionRead
+  The response for PartitionQuery or PartitionRead
 
   ## Attributes
 

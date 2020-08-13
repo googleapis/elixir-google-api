@@ -21,8 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.GetDatabaseDdlResponse do
 
   ## Attributes
 
-  *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - A list of formatted DDL statements defining the schema of the database
-      specified in the request.
+  *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - A list of formatted DDL statements defining the schema of the database specified in the request.
   """
 
   use GoogleApi.Gax.ModelBase

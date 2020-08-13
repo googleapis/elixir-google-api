@@ -17,38 +17,15 @@
 
 defmodule GoogleApi.Spanner.V1.Model.RestoreDatabaseMetadata do
   @moduledoc """
-  Metadata type for the long-running operation returned by
-  RestoreDatabase.
+  Metadata type for the long-running operation returned by RestoreDatabase.
 
   ## Attributes
 
   *   `backupInfo` (*type:* `GoogleApi.Spanner.V1.Model.BackupInfo.t`, *default:* `nil`) - Information about the backup used to restore the database.
-  *   `cancelTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which cancellation of this operation was received.
-      Operations.CancelOperation
-      starts asynchronous cancellation on a long-running operation. The server
-      makes a best effort to cancel the operation, but success is not guaranteed.
-      Clients can use
-      Operations.GetOperation or
-      other methods to check whether the cancellation succeeded or whether the
-      operation completed despite cancellation. On successful cancellation,
-      the operation is not deleted; instead, it becomes an operation with
-      an Operation.error value with a
-      google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
+  *   `cancelTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which cancellation of this operation was received. Operations.CancelOperation starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the database being created and restored to.
-  *   `optimizeDatabaseOperationName` (*type:* `String.t`, *default:* `nil`) - If exists, the name of the long-running operation that will be used to
-      track the post-restore optimization process to optimize the performance of
-      the restored database, and remove the dependency on the restore source.
-      The name is of the form
-      `projects/<project>/instances/<instance>/databases/<database>/operations/<operation>`
-      where the <database> is the name of database being created and restored to.
-      The metadata type of the  long-running operation is
-      OptimizeRestoredDatabaseMetadata. This long-running operation will be
-      automatically created by the system after the RestoreDatabase long-running
-      operation completes successfully. This operation will not be created if the
-      restore was not successful.
-  *   `progress` (*type:* `GoogleApi.Spanner.V1.Model.OperationProgress.t`, *default:* `nil`) - The progress of the
-      RestoreDatabase
-      operation.
+  *   `optimizeDatabaseOperationName` (*type:* `String.t`, *default:* `nil`) - If exists, the name of the long-running operation that will be used to track the post-restore optimization process to optimize the performance of the restored database, and remove the dependency on the restore source. The name is of the form `projects//instances//databases//operations/` where the is the name of database being created and restored to. The metadata type of the long-running operation is OptimizeRestoredDatabaseMetadata. This long-running operation will be automatically created by the system after the RestoreDatabase long-running operation completes successfully. This operation will not be created if the restore was not successful.
+  *   `progress` (*type:* `GoogleApi.Spanner.V1.Model.OperationProgress.t`, *default:* `nil`) - The progress of the RestoreDatabase operation.
   *   `sourceType` (*type:* `String.t`, *default:* `nil`) - The type of the restore source.
   """
 

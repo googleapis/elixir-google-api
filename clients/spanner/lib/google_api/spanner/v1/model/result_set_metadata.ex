@@ -21,16 +21,8 @@ defmodule GoogleApi.Spanner.V1.Model.ResultSetMetadata do
 
   ## Attributes
 
-  *   `rowType` (*type:* `GoogleApi.Spanner.V1.Model.StructType.t`, *default:* `nil`) - Indicates the field names and types for the rows in the result
-      set.  For example, a SQL query like `"SELECT UserId, UserName FROM
-      Users"` could return a `row_type` value like:
-
-          "fields": [
-            { "name": "UserId", "type": { "code": "INT64" } },
-            { "name": "UserName", "type": { "code": "STRING" } },
-          ]
-  *   `transaction` (*type:* `GoogleApi.Spanner.V1.Model.Transaction.t`, *default:* `nil`) - If the read or SQL query began a transaction as a side-effect, the
-      information about the new transaction is yielded here.
+  *   `rowType` (*type:* `GoogleApi.Spanner.V1.Model.StructType.t`, *default:* `nil`) - Indicates the field names and types for the rows in the result set. For example, a SQL query like `"SELECT UserId, UserName FROM Users"` could return a `row_type` value like: "fields": [ { "name": "UserId", "type": { "code": "INT64" } }, { "name": "UserName", "type": { "code": "STRING" } }, ]
+  *   `transaction` (*type:* `GoogleApi.Spanner.V1.Model.Transaction.t`, *default:* `nil`) - If the read or SQL query began a transaction as a side-effect, the information about the new transaction is yielded here.
   """
 
   use GoogleApi.Gax.ModelBase

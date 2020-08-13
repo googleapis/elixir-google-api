@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Spanner.V1.Model.RestoreDatabaseRequest do
   @moduledoc """
-  The request for
-  RestoreDatabase.
+  The request for RestoreDatabase.
 
   ## Attributes
 
-  *   `backup` (*type:* `String.t`, *default:* `nil`) - Name of the backup from which to restore.  Values are of the form
-      `projects/<project>/instances/<instance>/backups/<backup>`.
-  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - Required. The id of the database to create and restore to. This
-      database must not already exist. The `database_id` appended to
-      `parent` forms the full database name of the form
-      `projects/<project>/instances/<instance>/databases/<database_id>`.
+  *   `backup` (*type:* `String.t`, *default:* `nil`) - Name of the backup from which to restore. Values are of the form `projects//instances//backups/`.
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - Required. The id of the database to create and restore to. This database must not already exist. The `database_id` appended to `parent` forms the full database name of the form `projects//instances//databases/`.
   """
 
   use GoogleApi.Gax.ModelBase

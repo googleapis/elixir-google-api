@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.Spanner.V1.Model.Type do
   @moduledoc """
-  `Type` indicates the type of a Cloud Spanner value, as might be stored in a
-  table cell or returned from an SQL query.
+  `Type` indicates the type of a Cloud Spanner value, as might be stored in a table cell or returned from an SQL query.
 
   ## Attributes
 
-  *   `arrayElementType` (*type:* `GoogleApi.Spanner.V1.Model.Type.t`, *default:* `nil`) - If code == ARRAY, then `array_element_type`
-      is the type of the array elements.
+  *   `arrayElementType` (*type:* `GoogleApi.Spanner.V1.Model.Type.t`, *default:* `nil`) - If code == ARRAY, then `array_element_type` is the type of the array elements.
   *   `code` (*type:* `String.t`, *default:* `nil`) - Required. The TypeCode for this type.
-  *   `structType` (*type:* `GoogleApi.Spanner.V1.Model.StructType.t`, *default:* `nil`) - If code == STRUCT, then `struct_type`
-      provides type information for the struct's fields.
+  *   `structType` (*type:* `GoogleApi.Spanner.V1.Model.StructType.t`, *default:* `nil`) - If code == STRUCT, then `struct_type` provides type information for the struct's fields.
   """
 
   use GoogleApi.Gax.ModelBase

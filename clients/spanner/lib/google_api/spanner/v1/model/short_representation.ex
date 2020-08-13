@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Spanner.V1.Model.ShortRepresentation do
   @moduledoc """
-  Condensed representation of a node and its subtree. Only present for
-  `SCALAR` PlanNode(s).
+  Condensed representation of a node and its subtree. Only present for `SCALAR` PlanNode(s).
 
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - A string representation of the expression subtree rooted at this node.
-  *   `subqueries` (*type:* `map()`, *default:* `nil`) - A mapping of (subquery variable name) -> (subquery node id) for cases
-      where the `description` string of this node references a `SCALAR`
-      subquery contained in the expression subtree rooted at this node. The
-      referenced `SCALAR` subquery may not necessarily be a direct child of
-      this node.
+  *   `subqueries` (*type:* `map()`, *default:* `nil`) - A mapping of (subquery variable name) -> (subquery node id) for cases where the `description` string of this node references a `SCALAR` subquery contained in the expression subtree rooted at this node. The referenced `SCALAR` subquery may not necessarily be a direct child of this node.
   """
 
   use GoogleApi.Gax.ModelBase

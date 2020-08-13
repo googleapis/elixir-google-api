@@ -21,22 +21,12 @@ defmodule GoogleApi.Spanner.V1.Model.PartitionReadRequest do
 
   ## Attributes
 
-  *   `columns` (*type:* `list(String.t)`, *default:* `nil`) - The columns of table to be returned for each row matching
-      this request.
-  *   `index` (*type:* `String.t`, *default:* `nil`) - If non-empty, the name of an index on table. This index is
-      used instead of the table primary key when interpreting key_set
-      and sorting result rows. See key_set for further information.
-  *   `keySet` (*type:* `GoogleApi.Spanner.V1.Model.KeySet.t`, *default:* `nil`) - Required. `key_set` identifies the rows to be yielded. `key_set` names the
-      primary keys of the rows in table to be yielded, unless index
-      is present. If index is present, then key_set instead names
-      index keys in index.
-
-      It is not an error for the `key_set` to name rows that do not
-      exist in the database. Read yields nothing for nonexistent rows.
+  *   `columns` (*type:* `list(String.t)`, *default:* `nil`) - The columns of table to be returned for each row matching this request.
+  *   `index` (*type:* `String.t`, *default:* `nil`) - If non-empty, the name of an index on table. This index is used instead of the table primary key when interpreting key_set and sorting result rows. See key_set for further information.
+  *   `keySet` (*type:* `GoogleApi.Spanner.V1.Model.KeySet.t`, *default:* `nil`) - Required. `key_set` identifies the rows to be yielded. `key_set` names the primary keys of the rows in table to be yielded, unless index is present. If index is present, then key_set instead names index keys in index. It is not an error for the `key_set` to name rows that do not exist in the database. Read yields nothing for nonexistent rows.
   *   `partitionOptions` (*type:* `GoogleApi.Spanner.V1.Model.PartitionOptions.t`, *default:* `nil`) - Additional options that affect how many partitions are created.
   *   `table` (*type:* `String.t`, *default:* `nil`) - Required. The name of the table in the database to be read.
-  *   `transaction` (*type:* `GoogleApi.Spanner.V1.Model.TransactionSelector.t`, *default:* `nil`) - Read only snapshot transactions are supported, read/write and single use
-      transactions are not.
+  *   `transaction` (*type:* `GoogleApi.Spanner.V1.Model.TransactionSelector.t`, *default:* `nil`) - Read only snapshot transactions are supported, read/write and single use transactions are not.
   """
 
   use GoogleApi.Gax.ModelBase

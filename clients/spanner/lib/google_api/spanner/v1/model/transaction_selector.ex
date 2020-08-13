@@ -17,21 +17,13 @@
 
 defmodule GoogleApi.Spanner.V1.Model.TransactionSelector do
   @moduledoc """
-  This message is used to select the transaction in which a
-  Read or
-  ExecuteSql call runs.
-
-  See TransactionOptions for more information about transactions.
+  This message is used to select the transaction in which a Read or ExecuteSql call runs. See TransactionOptions for more information about transactions.
 
   ## Attributes
 
-  *   `begin` (*type:* `GoogleApi.Spanner.V1.Model.TransactionOptions.t`, *default:* `nil`) - Begin a new transaction and execute this read or SQL query in
-      it. The transaction ID of the new transaction is returned in
-      ResultSetMetadata.transaction, which is a Transaction.
+  *   `begin` (*type:* `GoogleApi.Spanner.V1.Model.TransactionOptions.t`, *default:* `nil`) - Begin a new transaction and execute this read or SQL query in it. The transaction ID of the new transaction is returned in ResultSetMetadata.transaction, which is a Transaction.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Execute the read or SQL query in a previously-started transaction.
-  *   `singleUse` (*type:* `GoogleApi.Spanner.V1.Model.TransactionOptions.t`, *default:* `nil`) - Execute the read or SQL query in a temporary transaction.
-      This is the most efficient way to execute a transaction that
-      consists of a single SQL query.
+  *   `singleUse` (*type:* `GoogleApi.Spanner.V1.Model.TransactionOptions.t`, *default:* `nil`) - Execute the read or SQL query in a temporary transaction. This is the most efficient way to execute a transaction that consists of a single SQL query.
   """
 
   use GoogleApi.Gax.ModelBase

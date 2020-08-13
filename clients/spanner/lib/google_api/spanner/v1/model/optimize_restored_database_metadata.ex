@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.Spanner.V1.Model.OptimizeRestoredDatabaseMetadata do
   @moduledoc """
-  Metadata type for the long-running operation used to track the progress
-  of optimizations performed on a newly restored database. This long-running
-  operation is automatically created by the system after the successful
-  completion of a database restore, and cannot be cancelled.
+  Metadata type for the long-running operation used to track the progress of optimizations performed on a newly restored database. This long-running operation is automatically created by the system after the successful completion of a database restore, and cannot be cancelled.
 
   ## Attributes
 

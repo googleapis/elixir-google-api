@@ -22,8 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.BackupInfo do
   ## Attributes
 
   *   `backup` (*type:* `String.t`, *default:* `nil`) - Name of the backup.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The backup contains an externally consistent copy of `source_database` at
-      the timestamp specified by `create_time`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The backup contains an externally consistent copy of `source_database` at the timestamp specified by `create_time`.
   *   `sourceDatabase` (*type:* `String.t`, *default:* `nil`) - Name of the database the backup was created from.
   """
 
