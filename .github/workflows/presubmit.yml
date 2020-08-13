@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  versions:
+  tests:
     strategy:
       matrix:
         include:
@@ -21,16 +21,17 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Install Elixir ${{matrix.elixir}} on OTP ${{matrix.otp}}
+      - name: Install Elixir ${{ matrix.elixir }} on OTP ${{ matrix.otp }}
         uses: actions/setup-elixir@v1
         with:
-          otp-version: ${{matrix.otp}}
-          elixir-version: ${{matrix.elixir}}
+          otp-version: ${{ matrix.otp }}
+          elixir-version: ${{ matrix.elixir }}
       - name: Run presubmits
         run: mix do deps.get, presubmit
-  completion:
-    needs: versions
+  required-checks:
+    needs: tests
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
-      - name: 
-        run: echo Presubmit passed
+      - name: Required checks collector
+        run: 'test "${{ needs.tests.result }}" = "success"'

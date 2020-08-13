@@ -32,12 +32,14 @@ defmodule Mix.Tasks.Presubmit do
       header("Running tests for client: #{client}")
       {_, 0} = System.cmd("mix", ["do", "deps.get,", "test"], [{:cd, "clients/#{client}"} | cmd_opts])
     end)
+    header("All presubmits passed!")
   end
 
   defp get_changes() do
     base_ref = "GITHUB_EVENT_PATH" |> System.get_env() |> get_base_ref()
     {output, 0} = System.cmd("git", ["--no-pager", "diff", "--name-only", base_ref])
     files = String.split(output, "\n", trim: true)
+    IO.puts("\nChanged files:\n#{output}")
 
     changed_clients = files
     |> Enum.reduce([], fn
@@ -72,6 +74,6 @@ defmodule Mix.Tasks.Presubmit do
   end
 
   defp header(str) do
-    IO.puts("\n#{IO.ANSI.bright()}**** #{str} ****#{IO.ANSI.reset()}\n")
+    IO.puts("\n#{IO.ANSI.bright()}#{IO.ANSI.yellow()}**** #{str} ****#{IO.ANSI.reset()}\n")
   end
 end
