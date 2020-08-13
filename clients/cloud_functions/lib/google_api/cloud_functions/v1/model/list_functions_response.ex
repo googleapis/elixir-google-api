@@ -22,12 +22,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse do
   ## Attributes
 
   *   `functions` (*type:* `list(GoogleApi.CloudFunctions.V1.Model.CloudFunction.t)`, *default:* `nil`) - The functions that match the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more functions that match
-      the request; this value should be passed in a new
-      google.cloud.functions.v1.ListFunctionsRequest
-      to get more functions.
-  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached. The response does not include any
-      functions from these locations.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more functions that match the request; this value should be passed in a new google.cloud.functions.v1.ListFunctionsRequest to get more functions.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached. The response does not include any functions from these locations.
   """
 
   use GoogleApi.Gax.ModelBase

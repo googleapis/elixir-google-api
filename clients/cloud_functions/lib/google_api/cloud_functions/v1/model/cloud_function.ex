@@ -17,79 +17,33 @@
 
 defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   @moduledoc """
-  Describes a Cloud Function that contains user computation executed in
-  response to an event. It encapsulate function and triggers configurations.
+  Describes a Cloud Function that contains user computation executed in response to an event. It encapsulate function and triggers configurations.
 
   ## Attributes
 
-  *   `availableMemoryMb` (*type:* `integer()`, *default:* `nil`) - The amount of memory in MB available for a function.
-      Defaults to 256MB.
-  *   `buildId` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Build ID of the latest successful deployment of the
-      function.
+  *   `availableMemoryMb` (*type:* `integer()`, *default:* `nil`) - The amount of memory in MB available for a function. Defaults to 256MB.
+  *   `buildId` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Build ID of the latest successful deployment of the function.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description of a function.
-  *   `entryPoint` (*type:* `String.t`, *default:* `nil`) - The name of the function (as defined in source code) that will be
-      executed. Defaults to the resource name suffix, if not specified. For
-      backward compatibility, if function with given name is not found, then the
-      system will try to use function named "function".
-      For Node.js this is name of a function exported by the module specified
-      in `source_location`.
+  *   `entryPoint` (*type:* `String.t`, *default:* `nil`) - The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix, if not specified. For backward compatibility, if function with given name is not found, then the system will try to use function named "function". For Node.js this is name of a function exported by the module specified in `source_location`.
   *   `environmentVariables` (*type:* `map()`, *default:* `nil`) - Environment variables that shall be available during function execution.
   *   `eventTrigger` (*type:* `GoogleApi.CloudFunctions.V1.Model.EventTrigger.t`, *default:* `nil`) - A source that fires events in response to a condition in another service.
   *   `httpsTrigger` (*type:* `GoogleApi.CloudFunctions.V1.Model.HttpsTrigger.t`, *default:* `nil`) - An HTTPS endpoint type of source that can be triggered via URL.
-  *   `ingressSettings` (*type:* `String.t`, *default:* `nil`) - The ingress settings for the function, controlling what traffic can reach
-      it.
+  *   `ingressSettings` (*type:* `String.t`, *default:* `nil`) - The ingress settings for the function, controlling what traffic can reach it.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this Cloud Function.
-  *   `maxInstances` (*type:* `integer()`, *default:* `nil`) - The limit on the maximum number of function instances that may coexist at a
-      given time.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the function. Function names must be unique
-      globally and match pattern `projects/*/locations/*/functions/*`
-  *   `network` (*type:* `String.t`, *default:* `nil`) - The VPC Network that this cloud function can connect to. It can be
-      either the fully-qualified URI, or the short name of the network resource.
-      If the short network name is used, the network must belong to the same
-      project. Otherwise, it must belong to a project within the same
-      organization. The format of this field is either
-      `projects/{project}/global/networks/{network}` or `{network}`, where
-      {project} is a project id where the network is defined, and {network} is
-      the short name of the network.
-
-      This field is mutually exclusive with `vpc_connector` and will be replaced
-      by it.
-
-      See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
-      more information on connecting Cloud projects.
-  *   `runtime` (*type:* `String.t`, *default:* `nil`) - The runtime in which to run the function. Required when deploying a new
-      function, optional when updating an existing function. For a complete
-      list of possible choices, see the
-      [`gcloud` command
-      reference](/sdk/gcloud/reference/functions/deploy#--runtime).
-  *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The email of the function's service account. If empty, defaults to
-      `{project_id}@appspot.gserviceaccount.com`.
-  *   `sourceArchiveUrl` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URL, starting with gs://, pointing to the zip
-      archive which contains the function.
-  *   `sourceRepository` (*type:* `GoogleApi.CloudFunctions.V1.Model.SourceRepository.t`, *default:* `nil`) - **Beta Feature**
-
-      The source repository where a function is hosted.
-  *   `sourceUploadUrl` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage signed URL used for source uploading, generated
-      by google.cloud.functions.v1.GenerateUploadUrl
+  *   `maxInstances` (*type:* `integer()`, *default:* `nil`) - The limit on the maximum number of function instances that may coexist at a given time.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`
+  *   `network` (*type:* `String.t`, *default:* `nil`) - The VPC Network that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network resource. If the short network name is used, the network must belong to the same project. Otherwise, it must belong to a project within the same organization. The format of this field is either `projects/{project}/global/networks/{network}` or `{network}`, where {project} is a project id where the network is defined, and {network} is the short name of the network. This field is mutually exclusive with `vpc_connector` and will be replaced by it. See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for more information on connecting Cloud projects.
+  *   `runtime` (*type:* `String.t`, *default:* `nil`) - The runtime in which to run the function. Required when deploying a new function, optional when updating an existing function. For a complete list of possible choices, see the [`gcloud` command reference](/sdk/gcloud/reference/functions/deploy#--runtime).
+  *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The email of the function's service account. If empty, defaults to `{project_id}@appspot.gserviceaccount.com`.
+  *   `sourceArchiveUrl` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URL, starting with gs://, pointing to the zip archive which contains the function.
+  *   `sourceRepository` (*type:* `GoogleApi.CloudFunctions.V1.Model.SourceRepository.t`, *default:* `nil`) - **Beta Feature** The source repository where a function is hosted.
+  *   `sourceUploadUrl` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage signed URL used for source uploading, generated by google.cloud.functions.v1.GenerateUploadUrl
   *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the function deployment.
-  *   `timeout` (*type:* `String.t`, *default:* `nil`) - The function execution timeout. Execution is considered failed and
-      can be terminated if the function is not completed at the end of the
-      timeout period. Defaults to 60 seconds.
+  *   `timeout` (*type:* `String.t`, *default:* `nil`) - The function execution timeout. Execution is considered failed and can be terminated if the function is not completed at the end of the timeout period. Defaults to 60 seconds.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a Cloud Function.
-  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Output only. The version identifier of the Cloud Function. Each deployment attempt
-      results in a new version of a function being created.
-  *   `vpcConnector` (*type:* `String.t`, *default:* `nil`) - The VPC Network Connector that this cloud function can connect to. It can
-      be either the fully-qualified URI, or the short name of the network
-      connector resource. The format of this field is
-      `projects/*/locations/*/connectors/*`
-
-      This field is mutually exclusive with `network` field and will eventually
-      replace it.
-
-      See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
-      more information on connecting Cloud projects.
-  *   `vpcConnectorEgressSettings` (*type:* `String.t`, *default:* `nil`) - The egress settings for the connector, controlling what traffic is diverted
-      through it.
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Output only. The version identifier of the Cloud Function. Each deployment attempt results in a new version of a function being created.
+  *   `vpcConnector` (*type:* `String.t`, *default:* `nil`) - The VPC Network Connector that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network connector resource. The format of this field is `projects/*/locations/*/connectors/*` This field is mutually exclusive with `network` field and will eventually replace it. See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for more information on connecting Cloud projects.
+  *   `vpcConnectorEgressSettings` (*type:* `String.t`, *default:* `nil`) - The egress settings for the connector, controlling what traffic is diverted through it.
   """
 
   use GoogleApi.Gax.ModelBase

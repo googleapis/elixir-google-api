@@ -103,10 +103,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Synchronously invokes a deployed Cloud Function. To be used for testing
-  purposes as very limited traffic is allowed. For more information on
-  the actual limits, refer to
-  [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).
+  Synchronously invokes a deployed Cloud Function. To be used for testing purposes as very limited traffic is allowed. For more information on the actual limits, refer to [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).
 
   ## Parameters
 
@@ -190,15 +187,12 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Creates a new function. If a function with the given name already exists in
-  the specified project, the long running operation will return
-  `ALREADY_EXISTS` error.
+  Creates a new function. If a function with the given name already exists in the specified project, the long running operation will return `ALREADY_EXISTS` error.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `location`. Required. The project and location in which the function should be created, specified
-      in the format `projects/*/locations/*`
+  *   `projects_id` (*type:* `String.t`) - Part of `location`. Required. The project and location in which the function should be created, specified in the format `projects/*/locations/*`
   *   `locations_id` (*type:* `String.t`) - Part of `location`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -268,9 +262,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a function with the given name from the specified project. If the
-  given function is used by some trigger, the trigger will be updated to
-  remove this function.
+  Deletes a function with the given name from the specified project. If the given function is used by some trigger, the trigger will be updated to remove this function.
 
   ## Parameters
 
@@ -350,17 +342,12 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Returns a signed URL for downloading deployed function source code.
-  The URL is only valid for a limited period and should be used within
-  minutes after generation.
-  For more information about the signed URL usage see:
-  https://cloud.google.com/storage/docs/access-control/signed-urls
+  Returns a signed URL for downloading deployed function source code. The URL is only valid for a limited period and should be used within minutes after generation. For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of function for which source code Google Cloud Storage signed
-      URL should be generated.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of function for which source code Google Cloud Storage signed URL should be generated.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -439,37 +426,12 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Returns a signed URL for uploading a function source code.
-  For more information about the signed URL usage see:
-  https://cloud.google.com/storage/docs/access-control/signed-urls.
-  Once the function source code upload is complete, the used signed
-  URL should be provided in CreateFunction or UpdateFunction request
-  as a reference to the function source code.
-
-  When uploading source code to the generated signed URL, please follow
-  these restrictions:
-
-  * Source file type should be a zip file.
-  * Source file size should not exceed 100MB limit.
-  * No credentials should be attached - the signed URLs provide access to the
-    target bucket using internal service identity; if credentials were
-    attached, the identity from the credentials would be used, but that
-    identity does not have permissions to upload files to the URL.
-
-  When making a HTTP PUT request, these two headers need to be specified:
-
-  * `content-type: application/zip`
-  * `x-goog-content-length-range: 0,104857600`
-
-  And this header SHOULD NOT be specified:
-
-  * `Authorization: Bearer YOUR_TOKEN`
+  Returns a signed URL for uploading a function source code. For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls. Once the function source code upload is complete, the used signed URL should be provided in CreateFunction or UpdateFunction request as a reference to the function source code. When uploading source code to the generated signed URL, please follow these restrictions: * Source file type should be a zip file. * Source file size should not exceed 100MB limit. * No credentials should be attached - the signed URLs provide access to the target bucket using internal service identity; if credentials were attached, the identity from the credentials would be used, but that identity does not have permissions to upload files to the URL. When making a HTTP PUT request, these two headers need to be specified: * `content-type: application/zip` * `x-goog-content-length-range: 0,104857600` And this header SHOULD NOT be specified: * `Authorization: Bearer YOUR_TOKEN`
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project and location in which the Google Cloud Storage signed URL
-      should be generated, specified in the format `projects/*/locations/*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project and location in which the Google Cloud Storage signed URL should be generated, specified in the format `projects/*/locations/*`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -624,15 +586,12 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Gets the IAM access control policy for a function.
-  Returns an empty policy if the function exists and does not have a policy
-  set.
+  Gets the IAM access control policy for a function. Returns an empty policy if the function exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `functions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -647,18 +606,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -725,12 +673,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project and location from which the function should be listed,
-      specified in the format `projects/*/locations/*`
-      If you want to list functions in all locations, use "-" in place of a
-      location. When listing functions in all locations, if one or more
-      location(s) are unreachable, the response will contain functions from all
-      reachable locations along with the names of any unreachable locations.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project and location from which the function should be listed, specified in the format `projects/*/locations/*` If you want to list functions in all locations, use "-" in place of a location. When listing functions in all locations, if one or more location(s) are unreachable, the response will contain functions from all reachable locations along with the names of any unreachable locations.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -745,10 +688,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of functions to return per call.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last
-          `ListFunctionsResponse`; indicates that
-          this is a continuation of a prior `ListFunctions` call, and that the
-          system should return the next page of data.
+      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListFunctionsResponse`; indicates that this is a continuation of a prior `ListFunctions` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -812,8 +752,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `function.name`. A user-defined name of the function. Function names must be unique
-      globally and match pattern `projects/*/locations/*/functions/*`
+  *   `projects_id` (*type:* `String.t`) - Part of `function.name`. A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`
   *   `locations_id` (*type:* `String.t`) - Part of `function.name`. See documentation of `projectsId`.
   *   `functions_id` (*type:* `String.t`) - Part of `function.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -892,14 +831,12 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Sets the IAM access control policy on the specified function.
-  Replaces any existing policy.
+  Sets the IAM access control policy on the specified function. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `functions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -976,16 +913,12 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   end
 
   @doc """
-  Tests the specified permissions against the IAM access control policy
-  for a function.
-  If the function does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  Tests the specified permissions against the IAM access control policy for a function. If the function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `functions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

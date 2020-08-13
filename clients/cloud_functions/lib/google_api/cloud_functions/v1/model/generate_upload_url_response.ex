@@ -21,9 +21,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlResponse do
 
   ## Attributes
 
-  *   `uploadUrl` (*type:* `String.t`, *default:* `nil`) - The generated Google Cloud Storage signed URL that should be used for a
-      function source code upload. The uploaded file should be a zip archive
-      which contains a function.
+  *   `uploadUrl` (*type:* `String.t`, *default:* `nil`) - The generated Google Cloud Storage signed URL that should be used for a function source code upload. The uploaded file should be a zip archive which contains a function.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudFunctions.V1.Model.FailurePolicy do
   @moduledoc """
-  Describes the policy in case of function's execution failure.
-  If empty, then defaults to ignoring failures (i.e. not retrying them).
+  Describes the policy in case of function's execution failure. If empty, then defaults to ignoring failures (i.e. not retrying them).
 
   ## Attributes
 
