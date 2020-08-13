@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
 
   ## Attributes
 
-  *   `allowPlaybackInterruption` (*type:* `boolean()`, *default:* `nil`) - Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
+  *   `allowPlaybackInterruption` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
   *   `audioUri` (*type:* `String.t`, *default:* `nil`) - Required. URI of the audio clip. Dialogflow does not impose any validation on this value. It is specific to the client that reads it.
   """
 
