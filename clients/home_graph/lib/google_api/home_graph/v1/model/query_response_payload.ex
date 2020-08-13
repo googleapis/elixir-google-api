@@ -21,8 +21,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.QueryResponsePayload do
 
   ## Attributes
 
-  *   `devices` (*type:* `map()`, *default:* `nil`) - States of the devices. Map of third-party device ID to struct of device
-      states.
+  *   `devices` (*type:* `map()`, *default:* `nil`) - States of the devices. Map of third-party device ID to struct of device states.
   """
 
   use GoogleApi.Gax.ModelBase

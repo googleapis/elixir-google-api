@@ -17,12 +17,7 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.RequestSyncDevicesResponse do
   @moduledoc """
-  Response type for the
-  [`RequestSyncDevices`](#google.home.graph.v1.HomeGraphApiService.RequestSyncDevices)
-  call.
-
-  Intentionally empty upon success. An HTTP response code is returned
-  with more details upon failure.
+  Response type for the [`RequestSyncDevices`](#google.home.graph.v1.HomeGraphApiService.RequestSyncDevices) call. Intentionally empty upon success. An HTTP response code is returned with more details upon failure.
 
   ## Attributes
 
