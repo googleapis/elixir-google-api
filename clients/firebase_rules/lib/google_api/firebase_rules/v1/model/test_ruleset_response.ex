@@ -21,11 +21,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestRulesetResponse do
 
   ## Attributes
 
-  *   `issues` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.Issue.t)`, *default:* `nil`) - Syntactic and semantic `Source` issues of varying severity. Issues of
-      `ERROR` severity will prevent tests from executing.
-  *   `testResults` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.TestResult.t)`, *default:* `nil`) - The set of test results given the test cases in the `TestSuite`.
-      The results will appear in the same order as the test cases appear in the
-      `TestSuite`.
+  *   `issues` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.Issue.t)`, *default:* `nil`) - Syntactic and semantic `Source` issues of varying severity. Issues of `ERROR` severity will prevent tests from executing.
+  *   `testResults` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.TestResult.t)`, *default:* `nil`) - The set of test results given the test cases in the `TestSuite`. The results will appear in the same order as the test cases appear in the `TestSuite`.
   """
 
   use GoogleApi.Gax.ModelBase

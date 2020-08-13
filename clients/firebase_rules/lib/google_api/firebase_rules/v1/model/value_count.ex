@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.FirebaseRules.V1.Model.ValueCount do
   @moduledoc """
-  Tuple for how many times an Expression was evaluated to a particular
-  ExpressionValue.
+  Tuple for how many times an Expression was evaluated to a particular ExpressionValue.
 
   ## Attributes
 

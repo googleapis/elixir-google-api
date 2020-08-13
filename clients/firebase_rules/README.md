@@ -2,8 +2,7 @@
 
 Firebase Rules API client library.
 
-Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request.
-
+Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request. 
 
 ## Installation
 

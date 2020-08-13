@@ -21,8 +21,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.ListRulesetsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results. If the value is
-      empty, no further results remain.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results. If the value is empty, no further results remain.
   *   `rulesets` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.Ruleset.t)`, *default:* `nil`) - List of `Ruleset` instances.
   """
 

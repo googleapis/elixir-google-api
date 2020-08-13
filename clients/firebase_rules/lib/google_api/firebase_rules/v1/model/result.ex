@@ -22,8 +22,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.Result do
   ## Attributes
 
   *   `undefined` (*type:* `GoogleApi.FirebaseRules.V1.Model.Empty.t`, *default:* `nil`) - The result is undefined, meaning the result could not be computed.
-  *   `value` (*type:* `any()`, *default:* `nil`) - The result is an actual value. The type of the value must match that
-      of the type declared by the service.
+  *   `value` (*type:* `any()`, *default:* `nil`) - The result is an actual value. The type of the value must match that of the type declared by the service.
   """
 
   use GoogleApi.Gax.ModelBase
