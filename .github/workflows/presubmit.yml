@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  presubmit:
+  versions:
     strategy:
       matrix:
         include:
@@ -28,3 +28,9 @@ jobs:
           elixir-version: ${{matrix.elixir}}
       - name: Run presubmits
         run: mix do deps.get, presubmit
+  completion:
+    needs: versions
+    runs-on: ubuntu-latest
+    steps:
+      - name: 
+        run: echo Presubmit passed
