@@ -22,8 +22,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.EventsResetMultipleForAll
   ## Attributes
 
   *   `event_ids` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of events to reset.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `gamesManagement#eventsResetMultipleForAllRequest`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `gamesManagement#eventsResetMultipleForAllRequest`.
   """
 
   use GoogleApi.Gax.ModelBase

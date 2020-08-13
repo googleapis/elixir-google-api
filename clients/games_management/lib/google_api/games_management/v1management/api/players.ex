@@ -26,15 +26,13 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Hide the given player's leaderboard scores from the given application. This
-  method is only available to user accounts for your developer console.
+  Hide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GamesManagement.V1management.Connection.t`) - Connection to server
   *   `application_id` (*type:* `String.t`) - The application ID from the Google Play developer console.
-  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the
-      authenticated player's ID.
+  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the authenticated player's ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -101,15 +99,13 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
   end
 
   @doc """
-  Unhide the given player's leaderboard scores from the given application.
-  This method is only available to user accounts for your developer console.
+  Unhide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GamesManagement.V1management.Connection.t`) - Connection to server
   *   `application_id` (*type:* `String.t`) - The application ID from the Google Play developer console.
-  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the
-      authenticated player's ID.
+  *   `player_id` (*type:* `String.t`) - A player ID. A value of `me` may be used in place of the authenticated player's ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

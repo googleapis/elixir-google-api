@@ -22,12 +22,8 @@ defmodule GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse 
   ## Attributes
 
   *   `definitionId` (*type:* `String.t`, *default:* `nil`) - The ID of an leaderboard for which player state has been updated.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `gamesManagement#playerScoreResetResponse`.
-  *   `resetScoreTimeSpans` (*type:* `list(String.t)`, *default:* `nil`) - The time spans of the updated score. <br/>Possible values are: <ul>
-      <li>"`ALL_TIME`" - The score is an all-time score.</li>
-      <li>"`WEEKLY`" - The score is a weekly score.</li>
-      <li>"`DAILY`" - The score is a daily score.</li> </ul>
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `gamesManagement#playerScoreResetResponse`.
+  *   `resetScoreTimeSpans` (*type:* `list(String.t)`, *default:* `nil`) - The time spans of the updated score. Possible values are: - "`ALL_TIME`" - The score is an all-time score. - "`WEEKLY`" - The score is a weekly score. - "`DAILY`" - The score is a daily score. 
   """
 
   use GoogleApi.Gax.ModelBase

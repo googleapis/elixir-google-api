@@ -22,8 +22,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetMultipleF
   ## Attributes
 
   *   `achievement_ids` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of achievements to reset.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `gamesManagement#achievementResetMultipleForAllRequest`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `gamesManagement#achievementResetMultipleForAllRequest`.
   """
 
   use GoogleApi.Gax.ModelBase

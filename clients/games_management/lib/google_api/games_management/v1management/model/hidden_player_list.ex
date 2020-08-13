@@ -22,8 +22,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.GamesManagement.V1management.Model.HiddenPlayer.t)`, *default:* `nil`) - The players.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `gamesManagement#hiddenPlayerList`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `gamesManagement#hiddenPlayerList`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token for the next page of results.
   """
 

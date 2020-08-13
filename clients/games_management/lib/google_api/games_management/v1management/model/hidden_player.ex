@@ -22,8 +22,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.HiddenPlayer do
   ## Attributes
 
   *   `hiddenTimeMillis` (*type:* `String.t`, *default:* `nil`) - Output only. The time this player was hidden.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. Uniquely identifies the type of this resource. Value is always the fixed
-      string `gamesManagement#hiddenPlayer`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. Uniquely identifies the type of this resource. Value is always the fixed string `gamesManagement#hiddenPlayer`.
   *   `player` (*type:* `GoogleApi.GamesManagement.V1management.Model.Player.t`, *default:* `nil`) - Output only. The player information.
   """
 

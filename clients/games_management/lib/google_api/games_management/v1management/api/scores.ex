@@ -26,9 +26,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Resets scores for the leaderboard with the given ID for the currently
-  authenticated player. This method is only accessible to whitelisted tester
-  accounts for your application.
+  Resets scores for the leaderboard with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
@@ -89,9 +87,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   end
 
   @doc """
-  Resets all scores for all leaderboards for the currently authenticated
-  players. This method is only accessible to whitelisted tester accounts for
-  your application.
+  Resets all scores for all leaderboards for the currently authenticated players. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
@@ -150,8 +146,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   end
 
   @doc """
-  Resets scores for all draft leaderboards for all players. This method is
-  only available to user accounts for your developer console.
+  Resets scores for all draft leaderboards for all players. This method is only available to user accounts for your developer console.
 
   ## Parameters
 
@@ -212,9 +207,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   end
 
   @doc """
-  Resets scores for the leaderboard with the given ID for all players. This
-  method is only available to user accounts for your developer console. Only
-  draft leaderboards can be reset.
+  Resets scores for the leaderboard with the given ID for all players. This method is only available to user accounts for your developer console. Only draft leaderboards can be reset.
 
   ## Parameters
 
@@ -283,9 +276,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   end
 
   @doc """
-  Resets scores for the leaderboards with the given IDs for all players. This
-  method is only available to user accounts for your developer console. Only
-  draft leaderboards may be reset.
+  Resets scores for the leaderboards with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft leaderboards may be reset.
 
   ## Parameters
 
