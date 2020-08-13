@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.BigQueryConnection.V1beta1.Model.Connection do
   @moduledoc """
-  Configuration parameters to establish connection with an external data
-  source, except the credential attributes.
+  Configuration parameters to establish connection with an external data source, except the credential attributes.
 
   ## Attributes
 
@@ -28,8 +27,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.Connection do
   *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - User provided display name for the connection.
   *   `hasCredential` (*type:* `boolean()`, *default:* `nil`) - Output only. True, if credential is configured for this connection.
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The last update timestamp of the connection.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the connection in the form of:
-      `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the connection in the form of: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
   """
 
   use GoogleApi.Gax.ModelBase
