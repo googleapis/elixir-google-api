@@ -24,10 +24,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberFormatCo
   *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - The curreny code string. Only used for CURRENCY format type.
   *   `numDecimalPlaces` (*type:* `integer()`, *default:* `nil`) - The number of decimal places for number. Only used for NUMERIC format type.
   *   `numberFormatType` (*type:* `String.t`, *default:* `nil`) - The formatting for the number.
-  *   `suffix` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberAffixConfiguration.t`, *default:* `nil`) - An optional suffix for the NUMERIC format type.  These strings follow the
-      same <a
-      href="http://developer.android.com/guide/topics/resources/string-resource.html#Plurals">
-      plural rules</a> as all Android string resources.
+  *   `suffix` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberAffixConfiguration.t`, *default:* `nil`) - An optional suffix for the NUMERIC format type. These strings follow the same plural rules as all Android string resources.
   """
 
   use GoogleApi.Gax.ModelBase
