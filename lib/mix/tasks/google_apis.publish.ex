@@ -14,6 +14,7 @@
 
 defmodule Mix.Tasks.GoogleApis.Publish do
   use Mix.Task
+  require Logger
 
   @shortdoc "Publish clients"
 
@@ -30,8 +31,17 @@ defmodule Mix.Tasks.GoogleApis.Publish do
   end
 
   defp publish(apis) do
-    Enum.each(apis, fn api ->
-      GoogleApis.publish(api)
+    failed_list = Enum.reduce(apis, [], fn api, acc ->
+      case GoogleApis.publish(api) do
+        {:ok, _} -> acc
+        {:error, _} -> [api.name | acc]
+      end
     end)
+    if Enum.empty?(failed_list) do
+      Logger.info("All publishes successful")
+    else
+      failed_str = Enum.join(failed_list, ", ")
+      Mix.raise("Failed to publish: #{failed_str}")
+    end
   end
 end
