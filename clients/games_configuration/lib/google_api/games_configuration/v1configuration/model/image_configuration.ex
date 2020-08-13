@@ -22,8 +22,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.ImageConfiguration 
   ## Attributes
 
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The image type for the image.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string `gamesConfiguration#imageConfiguration`.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed string `gamesConfiguration#imageConfiguration`.
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The resource ID of resource which the image belongs to.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The url for this image.
   """
