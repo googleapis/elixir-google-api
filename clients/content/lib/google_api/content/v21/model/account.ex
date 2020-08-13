@@ -24,9 +24,11 @@ defmodule GoogleApi.Content.V21.Model.Account do
   *   `adsLinks` (*type:* `list(GoogleApi.Content.V21.Model.AccountAdsLink.t)`, *default:* `nil`) - List of linked Ads accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the Ads interface or through the AdWords API. To delete an active link, or to cancel a link request, remove it from the list.
   *   `adultContent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the merchant sells adult content.
   *   `businessInformation` (*type:* `GoogleApi.Content.V21.Model.AccountBusinessInformation.t`, *default:* `nil`) - The business information of the account.
+  *   `cssId` (*type:* `String.t`, *default:* `nil`) - ID of CSS the account belongs to.
   *   `googleMyBusinessLink` (*type:* `GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink.t`, *default:* `nil`) - The GMB account which is linked or in the process of being linked with the Merchant Center account.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required for update. Merchant Center account ID.
   *   `kind` (*type:* `String.t`, *default:* `content#account`) - Identifies what kind of resource this is. Value: the fixed string "`content#account`"
+  *   `labelIds` (*type:* `list(String.t)`, *default:* `nil`) - List of label IDs that are assigned to the account by CSS.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Display name for the account.
   *   `sellerId` (*type:* `String.t`, *default:* `nil`) - Client-specific, locally-unique, internal ID for the child account.
   *   `users` (*type:* `list(GoogleApi.Content.V21.Model.AccountUser.t)`, *default:* `nil`) - Users with access to the account. Every account (except for subaccounts) must have at least one admin user.
@@ -40,9 +42,11 @@ defmodule GoogleApi.Content.V21.Model.Account do
           :adsLinks => list(GoogleApi.Content.V21.Model.AccountAdsLink.t()),
           :adultContent => boolean(),
           :businessInformation => GoogleApi.Content.V21.Model.AccountBusinessInformation.t(),
+          :cssId => String.t(),
           :googleMyBusinessLink => GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink.t(),
           :id => String.t(),
           :kind => String.t(),
+          :labelIds => list(String.t()),
           :name => String.t(),
           :sellerId => String.t(),
           :users => list(GoogleApi.Content.V21.Model.AccountUser.t()),
@@ -53,9 +57,11 @@ defmodule GoogleApi.Content.V21.Model.Account do
   field(:adsLinks, as: GoogleApi.Content.V21.Model.AccountAdsLink, type: :list)
   field(:adultContent)
   field(:businessInformation, as: GoogleApi.Content.V21.Model.AccountBusinessInformation)
+  field(:cssId)
   field(:googleMyBusinessLink, as: GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink)
   field(:id)
   field(:kind)
+  field(:labelIds, type: :list)
   field(:name)
   field(:sellerId)
   field(:users, as: GoogleApi.Content.V21.Model.AccountUser, type: :list)
