@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.RestrictItem do
   @moduledoc """
-  Information relevant only to a restrict entry.
-  NextId: 12
+  Information relevant only to a restrict entry. NextId: 12
 
   ## Attributes
 
   *   `driveFollowUpRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveFollowUpRestrict.t`, *default:* `nil`) - LINT.ThenChange(//depot/google3/java/com/google/apps/search/quality/itemsuggest/utils/SubtypeRerankingUtils.java)
   *   `driveLocationRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveLocationRestrict.t`, *default:* `nil`) - 
-  *   `driveMimeTypeRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveMimeTypeRestrict.t`, *default:* `nil`) - LINT.IfChange
-      Drive Types.
+  *   `driveMimeTypeRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveMimeTypeRestrict.t`, *default:* `nil`) - LINT.IfChange Drive Types.
   *   `driveTimeSpanRestrict` (*type:* `GoogleApi.CloudSearch.V1.Model.DriveTimeSpanRestrict.t`, *default:* `nil`) - 
   *   `searchOperator` (*type:* `String.t`, *default:* `nil`) - The search restrict (e.g. "after:2017-09-11 before:2017-09-12").
   """

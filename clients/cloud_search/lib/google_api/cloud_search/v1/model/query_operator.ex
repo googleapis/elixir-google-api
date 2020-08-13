@@ -22,20 +22,15 @@ defmodule GoogleApi.CloudSearch.V1.Model.QueryOperator do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the operator
-  *   `enumValues` (*type:* `list(String.t)`, *default:* `nil`) - Potential list of values for the opeatror field. This field is only filled
-      when we can safely enumerate all the possible values of this operator.
-  *   `greaterThanOperatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name that can be used to  isolate the property using
-      the greater-than operator.
+  *   `enumValues` (*type:* `list(String.t)`, *default:* `nil`) - Potential list of values for the opeatror field. This field is only filled when we can safely enumerate all the possible values of this operator.
+  *   `greaterThanOperatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name that can be used to isolate the property using the greater-than operator.
   *   `isFacetable` (*type:* `boolean()`, *default:* `nil`) - Can this operator be used to get facets.
   *   `isRepeatable` (*type:* `boolean()`, *default:* `nil`) - Indicates if multiple values can be set for this property.
-  *   `isReturnable` (*type:* `boolean()`, *default:* `nil`) - Will the property associated with this facet be returned as part of search
-      results.
+  *   `isReturnable` (*type:* `boolean()`, *default:* `nil`) - Will the property associated with this facet be returned as part of search results.
   *   `isSortable` (*type:* `boolean()`, *default:* `nil`) - Can this operator be used to sort results.
   *   `isSuggestable` (*type:* `boolean()`, *default:* `nil`) - Can get suggestions for this field.
-  *   `lessThanOperatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name that can be used to  isolate the property using
-      the less-than operator.
-  *   `objectType` (*type:* `String.t`, *default:* `nil`) - Name of the object corresponding to the operator. This field is only filled
-      for schema-specific operators, and is unset for common operators.
+  *   `lessThanOperatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name that can be used to isolate the property using the less-than operator.
+  *   `objectType` (*type:* `String.t`, *default:* `nil`) - Name of the object corresponding to the operator. This field is only filled for schema-specific operators, and is unset for common operators.
   *   `operatorName` (*type:* `String.t`, *default:* `nil`) - The name of the operator.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the operator.
   """

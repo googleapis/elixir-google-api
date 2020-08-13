@@ -23,11 +23,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemContent do
 
   *   `contentDataRef` (*type:* `GoogleApi.CloudSearch.V1.Model.UploadItemRef.t`, *default:* `nil`) - Upload reference ID of a previously uploaded content via write method.
   *   `contentFormat` (*type:* `String.t`, *default:* `nil`) - 
-  *   `hash` (*type:* `String.t`, *default:* `nil`) - Hashing info calculated and provided by the API client for content.
-      Can be used with the items.push method to calculate modified state.
-      The maximum length is 2048 characters.
-  *   `inlineContent` (*type:* `String.t`, *default:* `nil`) - Content that is supplied inlined within the update method.
-      The maximum length is 102400 bytes (100 KiB).
+  *   `hash` (*type:* `String.t`, *default:* `nil`) - Hashing info calculated and provided by the API client for content. Can be used with the items.push method to calculate modified state. The maximum length is 2048 characters.
+  *   `inlineContent` (*type:* `String.t`, *default:* `nil`) - Content that is supplied inlined within the update method. The maximum length is 102400 bytes (100 KiB).
   """
 
   use GoogleApi.Gax.ModelBase

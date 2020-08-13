@@ -21,20 +21,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.IntegerPropertyOptions do
 
   ## Attributes
 
-  *   `maximumValue` (*type:* `String.t`, *default:* `nil`) - The maximum value of the property. The minimum and maximum values for the
-      property are used to rank results according to the
-      ordered ranking.
-      Indexing requests with values greater than the maximum are accepted and
-      ranked with the same weight as items indexed with the maximum value.
-  *   `minimumValue` (*type:* `String.t`, *default:* `nil`) - The minimum value of the property. The minimum and maximum values for the
-      property are used to rank results according to the
-      ordered ranking.
-      Indexing requests with values less than the minimum are accepted and
-      ranked with the same weight as items indexed with the minimum value.
+  *   `maximumValue` (*type:* `String.t`, *default:* `nil`) - The maximum value of the property. The minimum and maximum values for the property are used to rank results according to the ordered ranking. Indexing requests with values greater than the maximum are accepted and ranked with the same weight as items indexed with the maximum value.
+  *   `minimumValue` (*type:* `String.t`, *default:* `nil`) - The minimum value of the property. The minimum and maximum values for the property are used to rank results according to the ordered ranking. Indexing requests with values less than the minimum are accepted and ranked with the same weight as items indexed with the minimum value.
   *   `operatorOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.IntegerOperatorOptions.t`, *default:* `nil`) - If set, describes how the integer should be used as a search operator.
-  *   `orderedRanking` (*type:* `String.t`, *default:* `nil`) - Used to specify the ordered ranking for the integer. Can only be used if
-      isRepeatable
-      is false.
+  *   `orderedRanking` (*type:* `String.t`, *default:* `nil`) - Used to specify the ordered ranking for the integer. Can only be used if isRepeatable is false.
   """
 
   use GoogleApi.Gax.ModelBase

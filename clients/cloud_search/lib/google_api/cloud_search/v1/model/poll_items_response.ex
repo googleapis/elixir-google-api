@@ -21,15 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.PollItemsResponse do
 
   ## Attributes
 
-  *   `items` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Item.t)`, *default:* `nil`) - Set of items from the queue available for connector to process.
-      <br />These items have the following subset of fields populated: <br />
-      <br />version
-      <br />metadata.hash
-      <br />structured_data.hash
-      <br />content.hash
-      <br />payload
-      <br />status
-      <br />queue
+  *   `items` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Item.t)`, *default:* `nil`) - Set of items from the queue available for connector to process. These items have the following subset of fields populated: version metadata.hash structured_data.hash content.hash payload status queue
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DebugOptions do
 
   ## Attributes
 
-  *   `enableDebugging` (*type:* `boolean()`, *default:* `nil`) - If you are asked by Google to help with debugging, set this field.
-      Otherwise, ignore this field.
+  *   `enableDebugging` (*type:* `boolean()`, *default:* `nil`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
   """
 
   use GoogleApi.Gax.ModelBase

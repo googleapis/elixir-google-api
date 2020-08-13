@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ListUnmappedIdentitiesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   *   `unmappedIdentities` (*type:* `list(GoogleApi.CloudSearch.V1.Model.UnmappedIdentity.t)`, *default:* `nil`) - 
   """
 

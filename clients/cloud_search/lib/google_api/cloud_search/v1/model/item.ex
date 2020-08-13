@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.Item do
   @moduledoc """
-  Represents a single object that is an item in the search index, such as a
-  file, folder, or a database record.
+  Represents a single object that is an item in the search index, such as a file, folder, or a database record.
 
   ## Attributes
 
@@ -26,26 +25,12 @@ defmodule GoogleApi.CloudSearch.V1.Model.Item do
   *   `content` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemContent.t`, *default:* `nil`) - Item content to be indexed and made text searchable.
   *   `itemType` (*type:* `String.t`, *default:* `nil`) - Type for this item.
   *   `metadata` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemMetadata.t`, *default:* `nil`) - Metadata information.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Item. Format:
-      datasources/{source_id}/items/{item_id}
-      <br />This is a required field.
-      The maximum length is 1536 characters.
-  *   `payload` (*type:* `String.t`, *default:* `nil`) - Additional state connector can store for this item.
-      The maximum length is 10000 bytes.
-  *   `queue` (*type:* `String.t`, *default:* `nil`) - Queue this item belongs to.
-      The maximum length is 100 characters.
-  *   `status` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemStatus.t`, *default:* `nil`) - Status of the item.
-      Output only field.
-  *   `structuredData` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemStructuredData.t`, *default:* `nil`) - The structured data for the item that should conform to a registered
-      object definition in the schema for the data source.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Required. The indexing system stores the version from the datasource as a
-      byte string and compares the Item version in the index
-      to the version of the queued Item using lexical ordering.
-      <br /><br />
-      Cloud Search Indexing won't index or delete any queued item with
-      a version value that is less than or equal to the version of the
-      currently indexed item.
-      The maximum length for this field is 1024 bytes.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Item. Format: datasources/{source_id}/items/{item_id} This is a required field. The maximum length is 1536 characters.
+  *   `payload` (*type:* `String.t`, *default:* `nil`) - Additional state connector can store for this item. The maximum length is 10000 bytes.
+  *   `queue` (*type:* `String.t`, *default:* `nil`) - Queue this item belongs to. The maximum length is 100 characters.
+  *   `status` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemStatus.t`, *default:* `nil`) - Status of the item. Output only field.
+  *   `structuredData` (*type:* `GoogleApi.CloudSearch.V1.Model.ItemStructuredData.t`, *default:* `nil`) - The structured data for the item that should conform to a registered object definition in the schema for the data source.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Required. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't index or delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes.
   """
 
   use GoogleApi.Gax.ModelBase

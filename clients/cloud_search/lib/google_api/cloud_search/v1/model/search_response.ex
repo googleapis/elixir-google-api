@@ -25,15 +25,13 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchResponse do
   *   `errorInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.ErrorInfo.t`, *default:* `nil`) - Error information about the response.
   *   `facetResults` (*type:* `list(GoogleApi.CloudSearch.V1.Model.FacetResult.t)`, *default:* `nil`) - Repeated facet results.
   *   `hasMoreResults` (*type:* `boolean()`, *default:* `nil`) - Whether there are more search results matching the query.
-  *   `queryInterpretation` (*type:* `GoogleApi.CloudSearch.V1.Model.QueryInterpretation.t`, *default:* `nil`) - Query interpretation result for user query. Empty if query interpretation
-      is disabled.
+  *   `queryInterpretation` (*type:* `GoogleApi.CloudSearch.V1.Model.QueryInterpretation.t`, *default:* `nil`) - Query interpretation result for user query. Empty if query interpretation is disabled.
   *   `resultCountEstimate` (*type:* `String.t`, *default:* `nil`) - The estimated result count for this query.
   *   `resultCountExact` (*type:* `String.t`, *default:* `nil`) - The exact result count for this query.
   *   `resultCounts` (*type:* `GoogleApi.CloudSearch.V1.Model.ResultCounts.t`, *default:* `nil`) - Expanded result count information.
   *   `results` (*type:* `list(GoogleApi.CloudSearch.V1.Model.SearchResult.t)`, *default:* `nil`) - Results from a search query.
   *   `spellResults` (*type:* `list(GoogleApi.CloudSearch.V1.Model.SpellResult.t)`, *default:* `nil`) - Suggested spelling for the query.
-  *   `structuredResults` (*type:* `list(GoogleApi.CloudSearch.V1.Model.StructuredResult.t)`, *default:* `nil`) - Structured results for the user query. These results are not counted
-      against the page_size.
+  *   `structuredResults` (*type:* `list(GoogleApi.CloudSearch.V1.Model.StructuredResult.t)`, *default:* `nil`) - Structured results for the user query. These results are not counted against the page_size.
   """
 
   use GoogleApi.Gax.ModelBase

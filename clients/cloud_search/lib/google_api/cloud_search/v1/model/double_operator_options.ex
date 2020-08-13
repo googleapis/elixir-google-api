@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.DoubleOperatorOptions do
   @moduledoc """
-  Used to provide a search operator for double properties. This is
-  optional. Search operators let users restrict the query to specific fields
-  relevant to the type of item being searched.
+  Used to provide a search operator for double properties. This is optional. Search operators let users restrict the query to specific fields relevant to the type of item being searched.
 
   ## Attributes
 
-  *   `operatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name required in the query in order to use the
-      double property in sorting or as a facet.
-      The operator name can only contain lowercase letters (a-z).
-      The maximum length is 32 characters.
+  *   `operatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name required in the query in order to use the double property in sorting or as a facet. The operator name can only contain lowercase letters (a-z). The maximum length is 32 characters.
   """
 
   use GoogleApi.Gax.ModelBase
