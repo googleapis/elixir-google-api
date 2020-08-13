@@ -17,27 +17,17 @@
 
 defmodule GoogleApi.Script.V1.Model.File do
   @moduledoc """
-  An individual file within a script project.
-  A file is a third-party source code created by one or more
-  developers. It can be a server-side JS code, HTML, or a
-  configuration file. Each script project can contain multiple files.
+  An individual file within a script project. A file is a third-party source code created by one or more developers. It can be a server-side JS code, HTML, or a configuration file. Each script project can contain multiple files.
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation date timestamp.
-      This read-only field is only visible to users who have WRITER
-      permission for the script project.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation date timestamp. This read-only field is only visible to users who have WRITER permission for the script project.
   *   `functionSet` (*type:* `GoogleApi.Script.V1.Model.GoogleAppsScriptTypeFunctionSet.t`, *default:* `nil`) - The defined set of functions in the script file, if any.
-  *   `lastModifyUser` (*type:* `GoogleApi.Script.V1.Model.GoogleAppsScriptTypeUser.t`, *default:* `nil`) - The user who modified the file most recently.
-      This read-only field is only visible to users who have WRITER
-      permission for the script project.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the file. The file extension is not part of the file
-      name, which can be identified from the type field.
+  *   `lastModifyUser` (*type:* `GoogleApi.Script.V1.Model.GoogleAppsScriptTypeUser.t`, *default:* `nil`) - The user who modified the file most recently. This read-only field is only visible to users who have WRITER permission for the script project.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the file. The file extension is not part of the file name, which can be identified from the type field.
   *   `source` (*type:* `String.t`, *default:* `nil`) - The file content.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the file.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Last modified date timestamp.
-      This read-only field is only visible to users who have WRITER
-      permission for the script project.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Last modified date timestamp. This read-only field is only visible to users who have WRITER permission for the script project.
   """
 
   use GoogleApi.Gax.ModelBase

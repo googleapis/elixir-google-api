@@ -21,7 +21,7 @@ defmodule GoogleApi.Script.V1.Model.Status do
 
   ## Attributes
 
-  *   `code` (*type:* `integer()`, *default:* `nil`) - The status code. For this API, this value either: <ul> <li> 10, indicating a `SCRIPT_TIMEOUT` error,</li> <li> 3, indicating an `INVALID_ARGUMENT` error, or</li> <li> 1, indicating a `CANCELLED` execution.</li> </ul>
+  *   `code` (*type:* `integer()`, *default:* `nil`) - The status code. For this API, this value either: - 10, indicating a `SCRIPT_TIMEOUT` error, - 3, indicating an `INVALID_ARGUMENT` error, or - 1, indicating a `CANCELLED` execution. 
   *   `details` (*type:* `list(map())`, *default:* `nil`) - An array that contains a single ExecutionError object that provides information about the nature of the error.
   *   `message` (*type:* `String.t`, *default:* `nil`) - A developer-facing error message, which is in English. Any user-facing error message is localized and sent in the details field, or localized by the client.
   """

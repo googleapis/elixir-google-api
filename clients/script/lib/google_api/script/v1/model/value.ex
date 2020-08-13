@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Script.V1.Model.Value do
   @moduledoc """
-  `Value` represents a dynamically typed value which is the outcome of an
-  executed script.
+  `Value` represents a dynamically typed value which is the outcome of an executed script.
 
   ## Attributes
 

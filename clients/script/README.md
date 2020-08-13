@@ -2,8 +2,7 @@
 
 Apps Script API client library.
 
-Manages and executes Google Apps Script projects.
-
+Manages and executes Google Apps Script projects. 
 
 ## Installation
 
