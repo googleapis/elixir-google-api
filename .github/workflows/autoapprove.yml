@@ -19,18 +19,18 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             if (context.payload.sender.login != "yoshi-automation") {
-              console.log("AutoApprove: Not running for this sender.");
+              core.error("AutoApprove: Not running for this sender.");
               return;
             }
             if (!context.payload.pull_request.title.startsWith("Regenerate")) {
-              console.log("AutoApprove: Not running for this PR title.");
+              core.error("AutoApprove: Not running for this PR title.");
               return;
             }
             if (!process.env.ENABLE_AUTO_APPROVE) {
-              console.log("AutoApprove: PR conditions passed but ENABLE_AUTO_APPROVE is not set.");
+              core.error("AutoApprove: PR conditions passed but ENABLE_AUTO_APPROVE is not set.");
               return;
             }
-            console.log("AutoApprove: PR conditions passed!");
+            core.info("AutoApprove: PR conditions passed!");
             await github.pulls.createReview({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -38,11 +38,11 @@ jobs:
               pull_number: context.payload.pull_request.number,
               event: "APPROVE"
             });
-            console.log("AutoApprove: Rubber stamped client regeneration!");
+            core.info("AutoApprove: Rubber stamped client regeneration!");
             await github.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.payload.pull_request.number,
               labels: ["automerge"]
             });
-            console.log("AutoApprove: Applied automerge label!");
+            core.info("AutoApprove: Applied automerge label!");

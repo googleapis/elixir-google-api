@@ -35,15 +35,8 @@ jobs:
     steps:
       - name: Required checks collector
         uses: actions/github-script@v2
+        env:
+          NEEDS_RESULTS: ${{ toJSON(needs) }}
         with:
           script: |
-            var failure_count = 0;
-            for (const job_id in needs) {
-              if (needs[job_id].result != "success") {
-                console.log("Failed: #{job_id}");
-                console.log(needs[job_id].outputs);
-              }
-            }
-            if (failure_count > 0) {
-              core.setFailed("Failure count: #{failure_count}");
-            }
+            console.log(process.env.NEEDS_RESULTS);
