@@ -21,9 +21,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.MembershipRole do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - MembershipRole in string format.
-
-      Currently supported MembershipRoles: `"MEMBER"`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - MembershipRole in string format. Currently supported MembershipRoles: `"MEMBER"`.
   """
 
   use GoogleApi.Gax.ModelBase

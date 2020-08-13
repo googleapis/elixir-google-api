@@ -21,30 +21,14 @@ defmodule GoogleApi.CloudIdentity.V1.Model.Group do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the Group was created.
-      Output only.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - An extended description to help users determine the purpose of a Group. For
-      example, you can include information about who should join the Group, the
-      types of messages to send to the Group, links to FAQs about the Group, or
-      related Groups. Maximum length is 4,096 characters.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the Group was created. Output only.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - An extended description to help users determine the purpose of a Group. For example, you can include information about who should join the Group, the types of messages to send to the Group, links to FAQs about the Group, or related Groups. Maximum length is 4,096 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The Group's display name.
-  *   `groupKey` (*type:* `GoogleApi.CloudIdentity.V1.Model.EntityKey.t`, *default:* `nil`) - Required. Immutable. EntityKey of the Group.
-
-      Must be set when creating a Group, read-only afterwards.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Required. `Required`. Labels for Group resource.
-      For creating Groups under a namespace, set label key to
-      'labels/system/groups/external' and label value as empty.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
-      Group in the format: `groups/{group_id}`, where group_id is the unique ID
-      assigned to the Group.
-
-      Must be left blank while creating a Group.
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The entity under which this Group resides in Cloud Identity resource
-      hierarchy. Must be set when creating a Group, read-only afterwards.
-
-      Currently allowed types: `identitysources`.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the Group was last updated.
-      Output only.
+  *   `groupKey` (*type:* `GoogleApi.CloudIdentity.V1.Model.EntityKey.t`, *default:* `nil`) - Required. Immutable. EntityKey of the Group. Must be set when creating a Group, read-only afterwards.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Required. `Required`. Labels for Group resource. For creating Groups under a namespace, set label key to 'labels/system/groups/external' and label value as empty.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Group in the format: `groups/{group_id}`, where group_id is the unique ID assigned to the Group. Must be left blank while creating a Group.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The entity under which this Group resides in Cloud Identity resource hierarchy. Must be set when creating a Group, read-only afterwards. Currently allowed types: `identitysources`.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the Group was last updated. Output only.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.SearchGroupsResponse do
   ## Attributes
 
   *   `groups` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.Group.t)`, *default:* `nil`) - List of Groups satisfying the search query.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results available for specified query.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results available for specified query.
   """
 
   use GoogleApi.Gax.ModelBase
