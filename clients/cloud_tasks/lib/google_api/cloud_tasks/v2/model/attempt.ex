@@ -21,19 +21,10 @@ defmodule GoogleApi.CloudTasks.V2.Model.Attempt do
 
   ## Attributes
 
-  *   `dispatchTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that this attempt was dispatched.
-
-      `dispatch_time` will be truncated to the nearest microsecond.
-  *   `responseStatus` (*type:* `GoogleApi.CloudTasks.V2.Model.Status.t`, *default:* `nil`) - Output only. The response from the worker for this attempt.
-
-      If `response_time` is unset, then the task has not been attempted or is
-      currently running and the `response_status` field is meaningless.
-  *   `responseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that this attempt response was received.
-
-      `response_time` will be truncated to the nearest microsecond.
-  *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that this attempt was scheduled.
-
-      `schedule_time` will be truncated to the nearest microsecond.
+  *   `dispatchTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that this attempt was dispatched. `dispatch_time` will be truncated to the nearest microsecond.
+  *   `responseStatus` (*type:* `GoogleApi.CloudTasks.V2.Model.Status.t`, *default:* `nil`) - Output only. The response from the worker for this attempt. If `response_time` is unset, then the task has not been attempted or is currently running and the `response_status` field is meaningless.
+  *   `responseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that this attempt response was received. `response_time` will be truncated to the nearest microsecond.
+  *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that this attempt was scheduled. `schedule_time` will be truncated to the nearest microsecond.
   """
 
   use GoogleApi.Gax.ModelBase

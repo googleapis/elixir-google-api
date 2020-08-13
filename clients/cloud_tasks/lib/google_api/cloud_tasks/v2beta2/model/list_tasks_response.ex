@@ -21,13 +21,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.ListTasksResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results.
-
-      To return the next page of results, call
-      ListTasks with this value as the
-      page_token.
-
-      If the next_page_token is empty, there are no more results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. To return the next page of results, call ListTasks with this value as the page_token. If the next_page_token is empty, there are no more results.
   *   `tasks` (*type:* `list(GoogleApi.CloudTasks.V2beta2.Model.Task.t)`, *default:* `nil`) - The list of tasks.
   """
 

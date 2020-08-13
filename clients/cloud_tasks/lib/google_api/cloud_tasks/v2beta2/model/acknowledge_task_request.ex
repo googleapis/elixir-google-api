@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.CloudTasks.V2beta2.Model.AcknowledgeTaskRequest do
   @moduledoc """
-  Request message for acknowledging a task using
-  AcknowledgeTask.
+  Request message for acknowledging a task using AcknowledgeTask.
 
   ## Attributes
 
-  *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The task's current schedule time, available in the
-      schedule_time returned by
-      LeaseTasks response or
-      RenewLease response. This restriction is
-      to ensure that your worker currently holds the lease.
+  *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The task's current schedule time, available in the schedule_time returned by LeaseTasks response or RenewLease response. This restriction is to ensure that your worker currently holds the lease.
   """
 
   use GoogleApi.Gax.ModelBase
