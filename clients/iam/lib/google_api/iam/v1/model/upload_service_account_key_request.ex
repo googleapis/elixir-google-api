@@ -21,10 +21,7 @@ defmodule GoogleApi.IAM.V1.Model.UploadServiceAccountKeyRequest do
 
   ## Attributes
 
-  *   `publicKeyData` (*type:* `String.t`, *default:* `nil`) - A field that allows clients to upload their own public key. If set,
-      use this public key data to create a service account key for given
-      service account.
-      Please note, the expected format for this field is X509_PEM.
+  *   `publicKeyData` (*type:* `String.t`, *default:* `nil`) - A field that allows clients to upload their own public key. If set, use this public key data to create a service account key for given service account. Please note, the expected format for this field is X509_PEM.
   """
 
   use GoogleApi.Gax.ModelBase

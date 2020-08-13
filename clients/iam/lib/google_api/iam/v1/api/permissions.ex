@@ -26,9 +26,7 @@ defmodule GoogleApi.IAM.V1.Api.Permissions do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists every permission that you can test on a resource. A permission is
-  testable if you can check whether a member has that permission on the
-  resource.
+  Lists every permission that you can test on a resource. A permission is testable if you can check whether a member has that permission on the resource.
 
   ## Parameters
 

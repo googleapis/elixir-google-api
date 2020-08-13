@@ -17,21 +17,12 @@
 
 defmodule GoogleApi.IAM.V1.Model.SignBlobResponse do
   @moduledoc """
-  Deprecated. [Migrate to Service Account Credentials
-  API](https://cloud.google.com/iam/help/credentials/migrate-api).
-
-  The service account sign blob response.
+  Deprecated. [Migrate to Service Account Credentials API](https://cloud.google.com/iam/help/credentials/migrate-api). The service account sign blob response.
 
   ## Attributes
 
-  *   `keyId` (*type:* `String.t`, *default:* `nil`) - Deprecated. [Migrate to Service Account Credentials
-      API](https://cloud.google.com/iam/help/credentials/migrate-api).
-
-      The id of the key used to sign the blob.
-  *   `signature` (*type:* `String.t`, *default:* `nil`) - Deprecated. [Migrate to Service Account Credentials
-      API](https://cloud.google.com/iam/help/credentials/migrate-api).
-
-      The signed blob.
+  *   `keyId` (*type:* `String.t`, *default:* `nil`) - Deprecated. [Migrate to Service Account Credentials API](https://cloud.google.com/iam/help/credentials/migrate-api). The id of the key used to sign the blob.
+  *   `signature` (*type:* `String.t`, *default:* `nil`) - Deprecated. [Migrate to Service Account Credentials API](https://cloud.google.com/iam/help/credentials/migrate-api). The signed blob.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.IAM.V1.Model.AuditableService do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Public name of the service.
-      For example, the service name for Cloud IAM is 'iam.googleapis.com'.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Public name of the service. For example, the service name for Cloud IAM is 'iam.googleapis.com'.
   """
 
   use GoogleApi.Gax.ModelBase

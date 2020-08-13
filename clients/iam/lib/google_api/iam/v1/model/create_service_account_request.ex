@@ -21,13 +21,8 @@ defmodule GoogleApi.IAM.V1.Model.CreateServiceAccountRequest do
 
   ## Attributes
 
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Required. The account id that is used to generate the service account
-      email address and a stable unique id. It is unique within a project,
-      must be 6-30 characters long, and match the regular expression
-      `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
-  *   `serviceAccount` (*type:* `GoogleApi.IAM.V1.Model.ServiceAccount.t`, *default:* `nil`) - The ServiceAccount resource to
-      create. Currently, only the following values are user assignable:
-      `display_name` and `description`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Required. The account id that is used to generate the service account email address and a stable unique id. It is unique within a project, must be 6-30 characters long, and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
+  *   `serviceAccount` (*type:* `GoogleApi.IAM.V1.Model.ServiceAccount.t`, *default:* `nil`) - The ServiceAccount resource to create. Currently, only the following values are user assignable: `display_name` and `description`.
   """
 
   use GoogleApi.Gax.ModelBase

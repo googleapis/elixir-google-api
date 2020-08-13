@@ -31,26 +31,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The `parent` parameter's value depends on the target resource for the
-      request, namely
-      [`projects`](/iam/reference/rest/v1/projects.roles) or
-      [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-      resource type's `parent` value format is described below:
-
-      * [`projects.roles.create()`](/iam/reference/rest/v1/projects.roles/create):
-        `projects/{PROJECT_ID}`. This method creates project-level
-        [custom roles](/iam/docs/understanding-custom-roles).
-        Example request URL:
-        `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
-
-      * [`organizations.roles.create()`](/iam/reference/rest/v1/organizations.roles/create):
-        `organizations/{ORGANIZATION_ID}`. This method creates organization-level
-        [custom roles](/iam/docs/understanding-custom-roles). Example request
-        URL:
-        `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
-
-      Note: Wildcard (*) values are invalid; you must specify a complete project
-      ID or organization ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The `parent` parameter's value depends on the target resource for the request, namely [`projects`](/iam/reference/rest/v1/projects.roles) or [`organizations`](/iam/reference/rest/v1/organizations.roles). Each resource type's `parent` value format is described below: * [`projects.roles.create()`](/iam/reference/rest/v1/projects.roles/create): `projects/{PROJECT_ID}`. This method creates project-level [custom roles](/iam/docs/understanding-custom-roles). Example request URL: `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles` * [`organizations.roles.create()`](/iam/reference/rest/v1/organizations.roles/create): `organizations/{ORGANIZATION_ID}`. This method creates organization-level [custom roles](/iam/docs/understanding-custom-roles). Example request URL: `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles` Note: Wildcard (*) values are invalid; you must specify a complete project ID or organization ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -104,47 +85,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a custom Role.
-
-  When you delete a custom role, the following changes occur immediately:
-
-  * You cannot bind a member to the custom role in an IAM
-  Policy.
-  * Existing bindings to the custom role are not changed, but they have no
-  effect.
-  * By default, the response from ListRoles does not include the custom
-  role.
-
-  You have 7 days to undelete the custom role. After 7 days, the following
-  changes occur:
-
-  * The custom role is permanently deleted and cannot be recovered.
-  * If an IAM policy contains a binding to the custom role, the binding is
-  permanently removed.
+  Deletes a custom Role. When you delete a custom role, the following changes occur immediately: * You cannot bind a member to the custom role in an IAM Policy. * Existing bindings to the custom role are not changed, but they have no effect. * By default, the response from ListRoles does not include the custom role. You have 7 days to undelete the custom role. After 7 days, the following changes occur: * The custom role is permanently deleted and cannot be recovered. * If an IAM policy contains a binding to the custom role, the binding is permanently removed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The `name` parameter's value depends on the target resource for the
-      request, namely
-      [`projects`](/iam/reference/rest/v1/projects.roles) or
-      [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-      resource type's `name` value format is described below:
-
-      * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
-        `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
-        [custom roles](/iam/docs/understanding-custom-roles) that have been
-        created at the project level. Example request URL:
-        `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-
-      * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
-        `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-        deletes only [custom roles](/iam/docs/understanding-custom-roles) that
-        have been created at the organization level. Example request URL:
-        `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
-
-      Note: Wildcard (*) values are invalid; you must specify a complete project
-      ID or organization ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The `name` parameter's value depends on the target resource for the request, namely [`projects`](/iam/reference/rest/v1/projects.roles) or [`organizations`](/iam/reference/rest/v1/organizations.roles). Each resource type's `name` value format is described below: * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete): `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only [custom roles](/iam/docs/understanding-custom-roles) that have been created at the project level. Example request URL: `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}` * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete): `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only [custom roles](/iam/docs/understanding-custom-roles) that have been created at the organization level. Example request URL: `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}` Note: Wildcard (*) values are invalid; you must specify a complete project ID or organization ID.
   *   `roles_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -216,33 +162,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The `name` parameter's value depends on the target resource for the
-      request, namely
-      [`roles`](/iam/reference/rest/v1/roles),
-      [`projects`](/iam/reference/rest/v1/projects.roles), or
-      [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-      resource type's `name` value format is described below:
-
-      * [`roles.get()`](/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
-        This method returns results from all
-        [predefined roles](/iam/docs/understanding-roles#predefined_roles) in
-        Cloud IAM. Example request URL:
-        `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
-
-      * [`projects.roles.get()`](/iam/reference/rest/v1/projects.roles/get):
-        `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
-        [custom roles](/iam/docs/understanding-custom-roles) that have been
-        created at the project level. Example request URL:
-        `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-
-      * [`organizations.roles.get()`](/iam/reference/rest/v1/organizations.roles/get):
-        `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-        returns only [custom roles](/iam/docs/understanding-custom-roles) that
-        have been created at the organization level. Example request URL:
-        `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
-
-      Note: Wildcard (*) values are invalid; you must specify a complete project
-      ID or organization ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The `name` parameter's value depends on the target resource for the request, namely [`roles`](/iam/reference/rest/v1/roles), [`projects`](/iam/reference/rest/v1/projects.roles), or [`organizations`](/iam/reference/rest/v1/organizations.roles). Each resource type's `name` value format is described below: * [`roles.get()`](/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`. This method returns results from all [predefined roles](/iam/docs/understanding-roles#predefined_roles) in Cloud IAM. Example request URL: `https://iam.googleapis.com/v1/roles/{ROLE_NAME}` * [`projects.roles.get()`](/iam/reference/rest/v1/projects.roles/get): `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only [custom roles](/iam/docs/understanding-custom-roles) that have been created at the project level. Example request URL: `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}` * [`organizations.roles.get()`](/iam/reference/rest/v1/organizations.roles/get): `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only [custom roles](/iam/docs/understanding-custom-roles) that have been created at the organization level. Example request URL: `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}` Note: Wildcard (*) values are invalid; you must specify a complete project ID or organization ID.
   *   `roles_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -296,39 +216,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Lists every predefined Role that IAM supports, or every custom role
-  that is defined for an organization or project.
+  Lists every predefined Role that IAM supports, or every custom role that is defined for an organization or project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The `parent` parameter's value depends on the target resource for the
-      request, namely
-      [`roles`](/iam/reference/rest/v1/roles),
-      [`projects`](/iam/reference/rest/v1/projects.roles), or
-      [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-      resource type's `parent` value format is described below:
-
-      * [`roles.list()`](/iam/reference/rest/v1/roles/list): An empty string.
-        This method doesn't require a resource; it simply returns all
-        [predefined roles](/iam/docs/understanding-roles#predefined_roles) in
-        Cloud IAM. Example request URL:
-        `https://iam.googleapis.com/v1/roles`
-
-      * [`projects.roles.list()`](/iam/reference/rest/v1/projects.roles/list):
-        `projects/{PROJECT_ID}`. This method lists all project-level
-        [custom roles](/iam/docs/understanding-custom-roles).
-        Example request URL:
-        `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
-
-      * [`organizations.roles.list()`](/iam/reference/rest/v1/organizations.roles/list):
-        `organizations/{ORGANIZATION_ID}`. This method lists all
-        organization-level [custom roles](/iam/docs/understanding-custom-roles).
-        Example request URL:
-        `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
-
-      Note: Wildcard (*) values are invalid; you must specify a complete project
-      ID or organization ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The `parent` parameter's value depends on the target resource for the request, namely [`roles`](/iam/reference/rest/v1/roles), [`projects`](/iam/reference/rest/v1/projects.roles), or [`organizations`](/iam/reference/rest/v1/organizations.roles). Each resource type's `parent` value format is described below: * [`roles.list()`](/iam/reference/rest/v1/roles/list): An empty string. This method doesn't require a resource; it simply returns all [predefined roles](/iam/docs/understanding-roles#predefined_roles) in Cloud IAM. Example request URL: `https://iam.googleapis.com/v1/roles` * [`projects.roles.list()`](/iam/reference/rest/v1/projects.roles/list): `projects/{PROJECT_ID}`. This method lists all project-level [custom roles](/iam/docs/understanding-custom-roles). Example request URL: `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles` * [`organizations.roles.list()`](/iam/reference/rest/v1/organizations.roles/list): `organizations/{ORGANIZATION_ID}`. This method lists all organization-level [custom roles](/iam/docs/understanding-custom-roles). Example request URL: `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles` Note: Wildcard (*) values are invalid; you must specify a complete project ID or organization ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -341,15 +234,10 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of roles to include in the response.
-
-          The default is 300, and the maximum is 1,000.
+      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of roles to include in the response. The default is 300, and the maximum is 1,000.
       *   `:pageToken` (*type:* `String.t`) - Optional pagination token returned in an earlier ListRolesResponse.
       *   `:showDeleted` (*type:* `boolean()`) - Include Roles that have been deleted.
-      *   `:view` (*type:* `String.t`) - Optional view for the returned Role objects. When `FULL` is specified,
-          the `includedPermissions` field is returned, which includes a list of all
-          permissions in the role. The default value is `BASIC`, which does not
-          return the `includedPermissions` field.
+      *   `:view` (*type:* `String.t`) - Optional view for the returned Role objects. When `FULL` is specified, the `includedPermissions` field is returned, which includes a list of all permissions in the role. The default value is `BASIC`, which does not return the `includedPermissions` field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -400,26 +288,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The `name` parameter's value depends on the target resource for the
-      request, namely
-      [`projects`](/iam/reference/rest/v1/projects.roles) or
-      [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-      resource type's `name` value format is described below:
-
-      * [`projects.roles.patch()`](/iam/reference/rest/v1/projects.roles/patch):
-        `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
-        [custom roles](/iam/docs/understanding-custom-roles) that have been
-        created at the project level. Example request URL:
-        `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-
-      * [`organizations.roles.patch()`](/iam/reference/rest/v1/organizations.roles/patch):
-        `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-        updates only [custom roles](/iam/docs/understanding-custom-roles) that
-        have been created at the organization level. Example request URL:
-        `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
-
-      Note: Wildcard (*) values are invalid; you must specify a complete project
-      ID or organization ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The `name` parameter's value depends on the target resource for the request, namely [`projects`](/iam/reference/rest/v1/projects.roles) or [`organizations`](/iam/reference/rest/v1/organizations.roles). Each resource type's `name` value format is described below: * [`projects.roles.patch()`](/iam/reference/rest/v1/projects.roles/patch): `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only [custom roles](/iam/docs/understanding-custom-roles) that have been created at the project level. Example request URL: `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}` * [`organizations.roles.patch()`](/iam/reference/rest/v1/organizations.roles/patch): `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only [custom roles](/iam/docs/understanding-custom-roles) that have been created at the organization level. Example request URL: `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}` Note: Wildcard (*) values are invalid; you must specify a complete project ID or organization ID.
   *   `roles_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -488,26 +357,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The `name` parameter's value depends on the target resource for the
-      request, namely
-      [`projects`](/iam/reference/rest/v1/projects.roles) or
-      [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-      resource type's `name` value format is described below:
-
-      * [`projects.roles.undelete()`](/iam/reference/rest/v1/projects.roles/undelete):
-        `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes
-        only [custom roles](/iam/docs/understanding-custom-roles) that have been
-        created at the project level. Example request URL:
-        `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-
-      * [`organizations.roles.undelete()`](/iam/reference/rest/v1/organizations.roles/undelete):
-        `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-        undeletes only [custom roles](/iam/docs/understanding-custom-roles) that
-        have been created at the organization level. Example request URL:
-        `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
-
-      Note: Wildcard (*) values are invalid; you must specify a complete project
-      ID or organization ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The `name` parameter's value depends on the target resource for the request, namely [`projects`](/iam/reference/rest/v1/projects.roles) or [`organizations`](/iam/reference/rest/v1/organizations.roles). Each resource type's `name` value format is described below: * [`projects.roles.undelete()`](/iam/reference/rest/v1/projects.roles/undelete): `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes only [custom roles](/iam/docs/understanding-custom-roles) that have been created at the project level. Example request URL: `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}` * [`organizations.roles.undelete()`](/iam/reference/rest/v1/organizations.roles/undelete): `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes only [custom roles](/iam/docs/understanding-custom-roles) that have been created at the organization level. Example request URL: `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}` Note: Wildcard (*) values are invalid; you must specify a complete project ID or organization ID.
   *   `roles_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -579,8 +429,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the project associated with the service
-      accounts, such as `projects/my-project-123`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the project associated with the service accounts, such as `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -641,30 +490,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a ServiceAccount.
-
-  **Warning:** After you delete a service account, you might not be able to
-  undelete it. If you know that you need to re-enable the service account in
-  the future, use DisableServiceAccount instead.
-
-  If you delete a service account, IAM permanently removes the service
-  account 30 days later. Google Cloud cannot recover the service account
-  after it is permanently removed, even if you file a support request.
-
-  To help avoid unplanned outages, we recommend that you disable the service
-  account before you delete it. Use DisableServiceAccount to disable the
-  service account, then wait at least 24 hours and watch for unintended
-  consequences. If there are no unintended consequences, you can delete the
-  service account.
+  Deletes a ServiceAccount. **Warning:** After you delete a service account, you might not be able to undelete it. If you know that you need to re-enable the service account in the future, use DisableServiceAccount instead. If you delete a service account, IAM permanently removes the service account 30 days later. Google Cloud cannot recover the service account after it is permanently removed, even if you file a support request. To help avoid unplanned outages, we recommend that you disable the service account before you delete it. Use DisableServiceAccount to disable the service account, then wait at least 24 hours and watch for unintended consequences. If there are no unintended consequences, you can delete the service account.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -730,31 +561,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Disables a ServiceAccount immediately.
-
-  If an application uses the service account to authenticate, that
-  application can no longer call Google APIs or access Google Cloud
-  resources. Existing access tokens for the service account are rejected, and
-  requests for new access tokens will fail.
-
-  To re-enable the service account, use EnableServiceAccount. After you
-  re-enable the service account, its existing access tokens will be accepted,
-  and you can request new access tokens.
-
-  To help avoid unplanned outages, we recommend that you disable the service
-  account before you delete it. Use this method to disable the service
-  account, then wait at least 24 hours and watch for unintended consequences.
-  If there are no unintended consequences, you can delete the service account
-  with DeleteServiceAccount.
+  Disables a ServiceAccount immediately. If an application uses the service account to authenticate, that application can no longer call Google APIs or access Google Cloud resources. Existing access tokens for the service account are rejected, and requests for new access tokens will fail. To re-enable the service account, use EnableServiceAccount. After you re-enable the service account, its existing access tokens will be accepted, and you can request new access tokens. To help avoid unplanned outages, we recommend that you disable the service account before you delete it. Use this method to disable the service account, then wait at least 24 hours and watch for unintended consequences. If there are no unintended consequences, you can delete the service account with DeleteServiceAccount.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -821,23 +633,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Enables a ServiceAccount that was disabled by
-  DisableServiceAccount.
-
-  If the service account is already enabled, then this method has no effect.
-
-  If the service account was disabled by other means—for example, if Google
-  disabled the service account because it was compromised—you cannot use this
-  method to enable the service account.
+  Enables a ServiceAccount that was disabled by DisableServiceAccount. If the service account is already enabled, then this method has no effect. If the service account was disabled by other means—for example, if Google disabled the service account because it was compromised—you cannot use this method to enable the service account.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -909,11 +710,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -982,22 +779,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Gets the IAM policy that is attached to a ServiceAccount. This IAM
-  policy specifies which members have access to the service account.
-
-  This method does not tell you whether the service account has been granted
-  any roles on other resources. To check whether a service account has role
-  grants on a resource, use the `getIamPolicy` method for that resource. For
-  example, to view the role grants for a project, call the Resource Manager
-  API's
-  [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
-  method.
+  Gets the IAM policy that is attached to a ServiceAccount. This IAM policy specifies which members have access to the service account. This method does not tell you whether the service account has been granted any roles on other resources. To check whether a service account has role grants on a resource, use the `getIamPolicy` method for that resource. For example, to view the role grants for a project, call the Resource Manager API's [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1011,18 +798,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1083,8 +859,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the project associated with the service
-      accounts, such as `projects/my-project-123`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the project associated with the service accounts, such as `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1097,14 +872,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of service accounts to include in the
-          response. Further accounts can subsequently be obtained by including the
-          ListServiceAccountsResponse.next_page_token
-          in a subsequent request.
-
-          The default is 20, and the maximum is 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional pagination token returned in an earlier
-          ListServiceAccountsResponse.next_page_token.
+      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of service accounts to include in the response. Further accounts can subsequently be obtained by including the ListServiceAccountsResponse.next_page_token in a subsequent request. The default is 20, and the maximum is 100.
+      *   `:pageToken` (*type:* `String.t`) - Optional pagination token returned in an earlier ListServiceAccountsResponse.next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1158,25 +927,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `serviceAccount.name`. The resource name of the service account.
-
-      Use one of the following formats:
-
-      * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
-      * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
-
-      As an alternative, you can use the `-` wildcard character instead of the
-      project ID:
-
-      * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
-      * `projects/-/serviceAccounts/{UNIQUE_ID}`
-
-      When possible, avoid using the `-` wildcard character, because it can cause
-      response messages to contain misleading error codes. For example, if you
-      try to get the service account
-      `projects/-/serviceAccounts/fake@example.com`, which does not exist, the
-      response contains an HTTP `403 Forbidden` error instead of a `404 Not
-      Found` error.
+  *   `projects_id` (*type:* `String.t`) - Part of `serviceAccount.name`. The resource name of the service account. Use one of the following formats: * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}` * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}` As an alternative, you can use the `-` wildcard character instead of the project ID: * `projects/-/serviceAccounts/{EMAIL_ADDRESS}` * `projects/-/serviceAccounts/{UNIQUE_ID}` When possible, avoid using the `-` wildcard character, because it can cause response messages to contain misleading error codes. For example, if you try to get the service account `projects/-/serviceAccounts/fake@example.com`, which does not exist, the response contains an HTTP `403 Forbidden` error instead of a `404 Not Found` error.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `serviceAccount.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1247,29 +998,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Sets the IAM policy that is attached to a ServiceAccount.
-
-  Use this method to grant or revoke access to the service account. For
-  example, you could grant a member the ability to impersonate the service
-  account.
-
-  This method does not enable the service account to access other resources.
-  To grant roles to a service account on a resource, follow these steps:
-
-  1. Call the resource's `getIamPolicy` method to get its current IAM policy.
-  2. Edit the policy so that it binds the service account to an IAM role for
-  the resource.
-  3. Call the resource's `setIamPolicy` method to update its IAM policy.
-
-  For detailed instructions, see
-  [Granting roles to a service account for specific
-  resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
+  Sets the IAM policy that is attached to a ServiceAccount. Use this method to grant or revoke access to the service account. For example, you could grant a member the ability to impersonate the service account. This method does not enable the service account to access other resources. To grant roles to a service account on a resource, follow these steps: 1. Call the resource's `getIamPolicy` method to get its current IAM policy. 2. Edit the policy so that it binds the service account to an IAM role for the resource. 3. Call the resource's `setIamPolicy` method to update its IAM policy. For detailed instructions, see [Granting roles to a service account for specific resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1339,27 +1073,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  **Note:** This method is deprecated and will stop working on July 1, 2021.
-  Use the
-  [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
-  method in the IAM Service Account Credentials API instead. If you currently
-  use this method, see the [migration
-  guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
-  instructions.
-
-  Signs a blob using the system-managed private key for a ServiceAccount.
+  **Note:** This method is deprecated and will stop working on July 1, 2021. Use the [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob) method in the IAM Service Account Credentials API instead. If you currently use this method, see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for instructions. Signs a blob using the system-managed private key for a ServiceAccount.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Deprecated. [Migrate to Service Account Credentials
-      API](https://cloud.google.com/iam/help/credentials/migrate-api).
-
-      The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Deprecated. [Migrate to Service Account Credentials API](https://cloud.google.com/iam/help/credentials/migrate-api). The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1429,28 +1148,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  **Note:** This method is deprecated and will stop working on July 1, 2021.
-  Use the
-  [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
-  method in the IAM Service Account Credentials API instead. If you currently
-  use this method, see the [migration
-  guide](https://cloud.google.com/iam/help/credentials/migrate-api) for
-  instructions.
-
-  Signs a JSON Web Token (JWT) using the system-managed private key for a
-  ServiceAccount.
+  **Note:** This method is deprecated and will stop working on July 1, 2021. Use the [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt) method in the IAM Service Account Credentials API instead. If you currently use this method, see the [migration guide](https://cloud.google.com/iam/help/credentials/migrate-api) for instructions. Signs a JSON Web Token (JWT) using the system-managed private key for a ServiceAccount.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Deprecated. [Migrate to Service Account Credentials
-      API](https://cloud.google.com/iam/help/credentials/migrate-api).
-
-      The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Deprecated. [Migrate to Service Account Credentials API](https://cloud.google.com/iam/help/credentials/migrate-api). The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1520,14 +1223,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Tests whether the caller has the specified permissions on a
-  ServiceAccount.
+  Tests whether the caller has the specified permissions on a ServiceAccount.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1600,22 +1301,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Restores a deleted ServiceAccount.
-
-  **Important:** It is not always possible to restore a deleted service
-  account. Use this method only as a last resort.
-
-  After you delete a service account, IAM permanently removes the service
-  account 30 days later. There is no way to restore a deleted service account
-  that has been permanently removed.
+  Restores a deleted ServiceAccount. **Important:** It is not always possible to restore a deleted service account. Use this method only as a last resort. After you delete a service account, IAM permanently removes the service account 30 days later. There is no way to restore a deleted service account that has been permanently removed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1685,35 +1376,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  **Note:** We are in the process of deprecating this method. Use
-  PatchServiceAccount instead.
-
-  Updates a ServiceAccount.
-
-  You can update only the `display_name` and `description` fields.
+  **Note:** We are in the process of deprecating this method. Use PatchServiceAccount instead. Updates a ServiceAccount. You can update only the `display_name` and `description` fields.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account.
-
-      Use one of the following formats:
-
-      * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
-      * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
-
-      As an alternative, you can use the `-` wildcard character instead of the
-      project ID:
-
-      * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
-      * `projects/-/serviceAccounts/{UNIQUE_ID}`
-
-      When possible, avoid using the `-` wildcard character, because it can cause
-      response messages to contain misleading error codes. For example, if you
-      try to get the service account
-      `projects/-/serviceAccounts/fake@example.com`, which does not exist, the
-      response contains an HTTP `403 Forbidden` error instead of a `404 Not
-      Found` error.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account. Use one of the following formats: * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}` * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}` As an alternative, you can use the `-` wildcard character instead of the project ID: * `projects/-/serviceAccounts/{EMAIL_ADDRESS}` * `projects/-/serviceAccounts/{UNIQUE_ID}` When possible, avoid using the `-` wildcard character, because it can cause response messages to contain misleading error codes. For example, if you try to get the service account `projects/-/serviceAccounts/fake@example.com`, which does not exist, the response contains an HTTP `403 Forbidden` error instead of a `404 Not Found` error.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1789,11 +1457,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1868,11 +1532,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account key in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account key in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1949,12 +1609,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account key in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
-
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account key in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1969,8 +1624,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:publicKeyType` (*type:* `String.t`) - The output format of the public key requested.
-          X509_PEM is the default output format.
+      *   `:publicKeyType` (*type:* `String.t`) - The output format of the public key requested. X509_PEM is the default output format.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2037,12 +1691,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-
-      Using `-` as a wildcard for the `PROJECT_ID`, will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID`, will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2056,9 +1705,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:keyTypes` (*type:* `list(String.t)`) - Filters the types of keys the user wants to include in the list
-          response. Duplicate key types are not allowed. If no key type
-          is provided, all keys are returned.
+      *   `:keyTypes` (*type:* `list(String.t)`) - Filters the types of keys the user wants to include in the list response. Duplicate key types are not allowed. If no key type is provided, all keys are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2119,11 +1766,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-      Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-      the account. The `ACCOUNT` value can be the `email` address or the
-      `unique_id` of the service account.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

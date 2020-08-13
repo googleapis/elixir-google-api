@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.IAM.V1.Model.SignBlobRequest do
   @moduledoc """
-  Deprecated. [Migrate to Service Account Credentials
-  API](https://cloud.google.com/iam/help/credentials/migrate-api).
-
-  The service account sign blob request.
+  Deprecated. [Migrate to Service Account Credentials API](https://cloud.google.com/iam/help/credentials/migrate-api). The service account sign blob request.
 
   ## Attributes
 
-  *   `bytesToSign` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. [Migrate to Service Account Credentials
-      API](https://cloud.google.com/iam/help/credentials/migrate-api).
-
-      The bytes to sign.
+  *   `bytesToSign` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. [Migrate to Service Account Credentials API](https://cloud.google.com/iam/help/credentials/migrate-api). The bytes to sign.
   """
 
   use GoogleApi.Gax.ModelBase
