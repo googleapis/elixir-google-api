@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventInsert do
   *   `cmDimensions` (*type:* `GoogleApi.DFAReporting.V34.Model.CampaignManagerIds.t`, *default:* `nil`) - Campaign Manager dimensions associated with the event.
   *   `dv3Dimensions` (*type:* `GoogleApi.DFAReporting.V34.Model.DV3Ids.t`, *default:* `nil`) - DV360 dimensions associated with the event.
   *   `insertEventType` (*type:* `String.t`, *default:* `nil`) - The type of event to insert.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customEventInsert`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventInsert".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventInsert".
   *   `matchId` (*type:* `String.t`, *default:* `nil`) - The match ID field. A match ID is your own first-party identifier that has been synced with Google using the match ID feature in Floodlight. This field is mutually exclusive with mobileDeviceId, and at least one of the two fields is required.
   *   `mobileDeviceId` (*type:* `String.t`, *default:* `nil`) - The mobile device ID. This field is mutually exclusive with matchId, and at least one of the two fields is required.
   """

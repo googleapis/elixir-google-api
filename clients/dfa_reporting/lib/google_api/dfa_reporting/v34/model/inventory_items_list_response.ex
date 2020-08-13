@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.InventoryItemsListResponse do
   ## Attributes
 
   *   `inventoryItems` (*type:* `list(GoogleApi.DFAReporting.V34.Model.InventoryItem.t)`, *default:* `nil`) - Inventory item collection
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#inventoryItemsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#inventoryItemsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#inventoryItemsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

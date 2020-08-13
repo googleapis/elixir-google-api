@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomVariable do
   ## Attributes
 
   *   `index` (*type:* `String.t`, *default:* `nil`) - The index of the custom variable.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customVariable`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customVariable".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customVariable".
   *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the custom variable. The length of string must not exceed 50 characters.
   """
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.AdvertiserLandingPagesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#advertiserLandingPagesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiserLandingPagesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiserLandingPagesListResponse".
   *   `landingPages` (*type:* `list(GoogleApi.DFAReporting.V34.Model.LandingPage.t)`, *default:* `nil`) - Landing page collection
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """

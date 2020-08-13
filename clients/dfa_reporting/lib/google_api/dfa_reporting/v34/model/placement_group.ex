@@ -36,7 +36,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.PlacementGroup do
   *   `externalId` (*type:* `String.t`, *default:* `nil`) - External ID for this placement.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this placement group. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this placement group. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#placementGroup`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementGroup".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementGroup".
   *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the most recent modification of this placement group. This is a read-only field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this placement group. This is a required field and must be less than 256 characters long.
   *   `placementGroupType` (*type:* `String.t`, *default:* `nil`) - Type of this placement group. A package is a simple group of placements that acts as a single pricing point for a group of tags. A roadblock is a group of placements that not only acts as a single pricing point, but also assumes that all the tags in it will be served at the same time. A roadblock requires one of its assigned placements to be marked as primary for reporting. This field is required on insertion.

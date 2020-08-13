@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventImpressionAnnotation do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customEventImpressionAnnotation`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventImpressionAnnotation".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventImpressionAnnotation".
   *   `pathImpressionId` (*type:* `String.t`, *default:* `nil`) - The path impression ID. Use this field to annotate the impression associated with the pathImpressionId.
   """
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.AccountPermissionsListResponse do
   ## Attributes
 
   *   `accountPermissions` (*type:* `list(GoogleApi.DFAReporting.V34.Model.AccountPermission.t)`, *default:* `nil`) - Account permission collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#accountPermissionsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionsListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

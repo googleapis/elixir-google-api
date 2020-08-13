@@ -23,15 +23,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReportSchedule do
 
   *   `active` (*type:* `boolean()`, *default:* `nil`) - Whether the schedule is active or not. Must be set to either true or false.
   *   `every` (*type:* `integer()`, *default:* `nil`) - Defines every how many days, weeks or months the report should be run. Needs to be set when "repeats" is either "DAILY", "WEEKLY" or "MONTHLY".
-  *   `expirationDate` (*type:* `Date.t`, *default:* `nil`) - The expiration date when the scheduled report stops running.
-  *   `repeats` (*type:* `String.t`, *default:* `nil`) - The interval for which the report is repeated. Note:  
-      - "DAILY" also requires field "every" to be set. 
-      - "WEEKLY" also requires fields "every" and "repeatsOnWeekDays" to be set. 
-      - "MONTHLY" also requires fields "every" and "runsOnDayOfMonth" to be set.
+  *   `expirationDate` (*type:* `Date.t`, *default:* `nil`) - 
+  *   `repeats` (*type:* `String.t`, *default:* `nil`) - The interval for which the report is repeated. Note: - "DAILY" also requires field "every" to be set. - "WEEKLY" also requires fields "every" and "repeatsOnWeekDays" to be set. - "MONTHLY" also requires fields "every" and "runsOnDayOfMonth" to be set. 
   *   `repeatsOnWeekDays` (*type:* `list(String.t)`, *default:* `nil`) - List of week days "WEEKLY" on which scheduled reports should run.
-  *   `runsOnDayOfMonth` (*type:* `String.t`, *default:* `nil`) - Enum to define for "MONTHLY" scheduled reports whether reports should be repeated on the same day of the month as "startDate" or the same day of the week of the month.
-      Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" would run subsequent reports on the 2nd of every Month, and "WEEK_OF_MONTH" would run subsequent reports on the first Monday of the month.
-  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - Start date of date range for which scheduled reports should be run.
+  *   `runsOnDayOfMonth` (*type:* `String.t`, *default:* `nil`) - Enum to define for "MONTHLY" scheduled reports whether reports should be repeated on the same day of the month as "startDate" or the same day of the week of the month. Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" would run subsequent reports on the 2nd of every Month, and "WEEK_OF_MONTH" would run subsequent reports on the first Monday of the month.
+  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

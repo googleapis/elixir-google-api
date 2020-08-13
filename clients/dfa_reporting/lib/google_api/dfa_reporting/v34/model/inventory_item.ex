@@ -29,7 +29,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.InventoryItem do
   *   `estimatedConversionRate` (*type:* `String.t`, *default:* `nil`) - Estimated conversion rate of this inventory item.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this inventory item.
   *   `inPlan` (*type:* `boolean()`, *default:* `nil`) - Whether this inventory item is in plan.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#inventoryItem`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#inventoryItem".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#inventoryItem".
   *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the most recent modification of this inventory item.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this inventory item. For standalone inventory items, this is the same name as that of its only ad slot. For group inventory items, this can differ from the name of any of its ad slots.
   *   `negotiationChannelId` (*type:* `String.t`, *default:* `nil`) - Negotiation channel ID of this inventory item.

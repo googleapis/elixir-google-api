@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.ConnectionTypesListResponse do
   ## Attributes
 
   *   `connectionTypes` (*type:* `list(GoogleApi.DFAReporting.V34.Model.ConnectionType.t)`, *default:* `nil`) - Collection of connection types such as broadband and mobile.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#connectionTypesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#connectionTypesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#connectionTypesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

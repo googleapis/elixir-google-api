@@ -28,13 +28,13 @@ defmodule GoogleApi.DFAReporting.V34.Model.Project do
   *   `budget` (*type:* `String.t`, *default:* `nil`) - Budget of this project in the currency specified by the current account. The value stored in this field represents only the non-fractional amount. For example, for USD, the smallest value that can be represented by this field is 1 US dollar.
   *   `clientBillingCode` (*type:* `String.t`, *default:* `nil`) - Client billing code of this project.
   *   `clientName` (*type:* `String.t`, *default:* `nil`) - Name of the project client.
-  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - End date of the project.
+  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this project. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#project`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#project".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#project".
   *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the most recent modification of this project.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this project.
   *   `overview` (*type:* `String.t`, *default:* `nil`) - Overview of this project.
-  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - Start date of the project.
+  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this project.
   *   `targetClicks` (*type:* `String.t`, *default:* `nil`) - Number of clicks that the advertiser is targeting.
   *   `targetConversions` (*type:* `String.t`, *default:* `nil`) - Number of conversions that the advertiser is targeting.

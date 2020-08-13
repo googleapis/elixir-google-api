@@ -27,7 +27,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.RemarketingList do
   *   `advertiserIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Remarketing list description.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Remarketing list ID. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#remarketingList`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#remarketingList".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#remarketingList".
   *   `lifeSpan` (*type:* `String.t`, *default:* `nil`) - Number of days that a user should remain in the remarketing list without an impression. Acceptable values are 1 to 540, inclusive.
   *   `listPopulationRule` (*type:* `GoogleApi.DFAReporting.V34.Model.ListPopulationRule.t`, *default:* `nil`) - Rule used to populate the remarketing list with users.
   *   `listSize` (*type:* `String.t`, *default:* `nil`) - Number of users currently in the list. This is a read-only field.

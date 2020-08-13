@@ -24,8 +24,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReportCriteria do
   *   `activities` (*type:* `GoogleApi.DFAReporting.V34.Model.Activities.t`, *default:* `nil`) - Activity group.
   *   `customRichMediaEvents` (*type:* `GoogleApi.DFAReporting.V34.Model.CustomRichMediaEvents.t`, *default:* `nil`) - Custom Rich Media Events group.
   *   `dateRange` (*type:* `GoogleApi.DFAReporting.V34.Model.DateRange.t`, *default:* `nil`) - The date range for which this report should be run.
-  *   `dimensionFilters` (*type:* `list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t)`, *default:* `nil`) - The list of filters on which dimensions are filtered.
-      Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed.
+  *   `dimensionFilters` (*type:* `list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t)`, *default:* `nil`) - The list of filters on which dimensions are filtered. Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed.
   *   `dimensions` (*type:* `list(GoogleApi.DFAReporting.V34.Model.SortedDimension.t)`, *default:* `nil`) - The list of standard dimensions the report should include.
   *   `metricNames` (*type:* `list(String.t)`, *default:* `nil`) - The list of names of metrics the report should include.
   """

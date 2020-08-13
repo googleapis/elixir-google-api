@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.OperatingSystemVersion do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this operating system version.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#operatingSystemVersion`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystemVersion".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystemVersion".
   *   `majorVersion` (*type:* `String.t`, *default:* `nil`) - Major version (leftmost number) of this operating system version.
   *   `minorVersion` (*type:* `String.t`, *default:* `nil`) - Minor version (number after the first dot) of this operating system version.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this operating system version.

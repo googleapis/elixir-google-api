@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.OperatingSystem do
 
   *   `dartId` (*type:* `String.t`, *default:* `nil`) - DART ID of this operating system. This is the ID used for targeting.
   *   `desktop` (*type:* `boolean()`, *default:* `nil`) - Whether this operating system is for desktop.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#operatingSystem`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystem".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystem".
   *   `mobile` (*type:* `boolean()`, *default:* `nil`) - Whether this operating system is for mobile.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this operating system.
   """

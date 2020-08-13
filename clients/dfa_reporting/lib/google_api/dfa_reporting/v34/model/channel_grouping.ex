@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.ChannelGrouping do
   ## Attributes
 
   *   `fallbackName` (*type:* `String.t`, *default:* `nil`) - ChannelGrouping fallback name.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#channelGrouping`) - The kind of resource this is, in this case dfareporting#channelGrouping.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#channelGrouping.
   *   `name` (*type:* `String.t`, *default:* `nil`) - ChannelGrouping name.
   *   `rules` (*type:* `list(GoogleApi.DFAReporting.V34.Model.ChannelGroupingRule.t)`, *default:* `nil`) - The rules contained within this channel grouping.
   """

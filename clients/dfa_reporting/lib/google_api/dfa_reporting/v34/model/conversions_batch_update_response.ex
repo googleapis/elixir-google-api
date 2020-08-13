@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.ConversionsBatchUpdateResponse do
   ## Attributes
 
   *   `hasFailures` (*type:* `boolean()`, *default:* `nil`) - Indicates that some or all conversions failed to update.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#conversionsBatchUpdateResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchUpdateResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchUpdateResponse".
   *   `status` (*type:* `list(GoogleApi.DFAReporting.V34.Model.ConversionStatus.t)`, *default:* `nil`) - The update status of each conversion. Statuses are returned in the same order that conversions are updated.
   """
 

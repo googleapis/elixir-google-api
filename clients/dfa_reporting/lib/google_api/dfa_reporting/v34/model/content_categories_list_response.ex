@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.ContentCategoriesListResponse do
   ## Attributes
 
   *   `contentCategories` (*type:* `list(GoogleApi.DFAReporting.V34.Model.ContentCategory.t)`, *default:* `nil`) - Content category collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#contentCategoriesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#contentCategoriesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#contentCategoriesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

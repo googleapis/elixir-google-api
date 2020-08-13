@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Activities do
   ## Attributes
 
   *   `filters` (*type:* `list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t)`, *default:* `nil`) - List of activity filters. The dimension values need to be all either of type "dfa:activity" or "dfa:activityGroup".
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#activities`) - The kind of resource this is, in this case dfareporting#activities.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#activities.
   *   `metricNames` (*type:* `list(String.t)`, *default:* `nil`) - List of names of floodlight activity metrics.
   """
 

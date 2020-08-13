@@ -22,11 +22,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.Pricing do
   ## Attributes
 
   *   `capCostType` (*type:* `String.t`, *default:* `nil`) - Cap cost type of this inventory item.
-  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - End date of this inventory item.
+  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `flights` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Flight.t)`, *default:* `nil`) - Flights of this inventory item. A flight (a.k.a. pricing period) represents the inventory item pricing information for a specific period of time.
   *   `groupType` (*type:* `String.t`, *default:* `nil`) - Group type of this inventory item if it represents a placement group. Is null otherwise. There are two type of placement groups: PLANNING_PLACEMENT_GROUP_TYPE_PACKAGE is a simple group of inventory items that acts as a single pricing point for a group of tags. PLANNING_PLACEMENT_GROUP_TYPE_ROADBLOCK is a group of inventory items that not only acts as a single pricing point, but also assumes that all the tags in it will be served at the same time. A roadblock requires one of its assigned inventory items to be marked as primary.
   *   `pricingType` (*type:* `String.t`, *default:* `nil`) - Pricing type of this inventory item.
-  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - Start date of this inventory item.
+  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReportCompatibleFields do
 
   *   `dimensionFilters` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Dimension.t)`, *default:* `nil`) - Dimensions which are compatible to be selected in the "dimensionFilters" section of the report.
   *   `dimensions` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Dimension.t)`, *default:* `nil`) - Dimensions which are compatible to be selected in the "dimensions" section of the report.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#reportCompatibleFields`) - The kind of resource this is, in this case dfareporting#reportCompatibleFields.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#reportCompatibleFields.
   *   `metrics` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Metric.t)`, *default:* `nil`) - Metrics which are compatible to be selected in the "metricNames" section of the report.
   *   `pivotedActivityMetrics` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Metric.t)`, *default:* `nil`) - Metrics which are compatible to be selected as activity metrics to pivot on in the "activities" section of the report.
   """

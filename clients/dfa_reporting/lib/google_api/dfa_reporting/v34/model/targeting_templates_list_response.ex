@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.TargetingTemplatesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#targetingTemplatesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetingTemplatesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetingTemplatesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   *   `targetingTemplates` (*type:* `list(GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t)`, *default:* `nil`) - Targeting template collection.
   """

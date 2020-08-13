@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightActivitiesListResponse do
   ## Attributes
 
   *   `floodlightActivities` (*type:* `list(GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t)`, *default:* `nil`) - Floodlight activity collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#floodlightActivitiesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivitiesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivitiesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

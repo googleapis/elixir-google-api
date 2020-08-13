@@ -29,7 +29,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Order do
   *   `comments` (*type:* `String.t`, *default:* `nil`) - Comments in this order.
   *   `contacts` (*type:* `list(GoogleApi.DFAReporting.V34.Model.OrderContact.t)`, *default:* `nil`) - Contacts for this order.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this order. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#order`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#order".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#order".
   *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the most recent modification of this order.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this order.
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes of this order.
