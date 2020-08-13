@@ -22,8 +22,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ListIndexesResponse
   ## Attributes
 
   *   `indexes` (*type:* `list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index.t)`, *default:* `nil`) - The requested indexes.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A page token that may be used to request another page of results. If blank,
-      this is the last page.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A page token that may be used to request another page of results. If blank, this is the last page.
   """
 
   use GoogleApi.Gax.ModelBase

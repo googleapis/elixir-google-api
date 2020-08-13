@@ -22,8 +22,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1ImportDoc
   ## Attributes
 
   *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection ids are being imported.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation ended, either successfully or otherwise. Unset if
-      the operation is still active.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation ended, either successfully or otherwise. Unset if the operation is still active.
   *   `inputUriPrefix` (*type:* `String.t`, *default:* `nil`) - The location of the documents being imported.
   *   `operationState` (*type:* `String.t`, *default:* `nil`) - The state of the import operation.
   *   `progressBytes` (*type:* `GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress.t`, *default:* `nil`) - An estimate of the number of bytes processed.

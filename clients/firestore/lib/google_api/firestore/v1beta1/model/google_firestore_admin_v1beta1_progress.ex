@@ -21,10 +21,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress 
 
   ## Attributes
 
-  *   `workCompleted` (*type:* `String.t`, *default:* `nil`) - An estimate of how much work has been completed. Note that this may be
-      greater than `work_estimated`.
-  *   `workEstimated` (*type:* `String.t`, *default:* `nil`) - An estimate of how much work needs to be performed. Zero if the
-      work estimate is unavailable. May change as work progresses.
+  *   `workCompleted` (*type:* `String.t`, *default:* `nil`) - An estimate of how much work has been completed. Note that this may be greater than `work_estimated`.
+  *   `workEstimated` (*type:* `String.t`, *default:* `nil`) - An estimate of how much work needs to be performed. Zero if the work estimate is unavailable. May change as work progresses.
   """
 
   use GoogleApi.Gax.ModelBase

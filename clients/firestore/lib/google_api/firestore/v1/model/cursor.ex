@@ -21,12 +21,8 @@ defmodule GoogleApi.Firestore.V1.Model.Cursor do
 
   ## Attributes
 
-  *   `before` (*type:* `boolean()`, *default:* `nil`) - If the position is just before or just after the given values, relative
-      to the sort order defined by the query.
-  *   `values` (*type:* `list(GoogleApi.Firestore.V1.Model.Value.t)`, *default:* `nil`) - The values that represent a position, in the order they appear in
-      the order by clause of a query.
-
-      Can contain fewer values than specified in the order by clause.
+  *   `before` (*type:* `boolean()`, *default:* `nil`) - If the position is just before or just after the given values, relative to the sort order defined by the query.
+  *   `values` (*type:* `list(GoogleApi.Firestore.V1.Model.Value.t)`, *default:* `nil`) - The values that represent a position, in the order they appear in the order by clause of a query. Can contain fewer values than specified in the order by clause.
   """
 
   use GoogleApi.Gax.ModelBase

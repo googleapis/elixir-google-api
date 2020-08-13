@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1IndexOperationMetadata do
   @moduledoc """
-  Metadata for index operations. This metadata populates
-  the metadata field of google.longrunning.Operation.
+  Metadata for index operations. This metadata populates the metadata field of google.longrunning.Operation.
 
   ## Attributes
 
-  *   `cancelled` (*type:* `boolean()`, *default:* `nil`) - True if the [google.longrunning.Operation] was cancelled. If the
-      cancellation is in progress, cancelled will be true but
-      google.longrunning.Operation.done will be false.
+  *   `cancelled` (*type:* `boolean()`, *default:* `nil`) - True if the [google.longrunning.Operation] was cancelled. If the cancellation is in progress, cancelled will be true but google.longrunning.Operation.done will be false.
   *   `documentProgress` (*type:* `GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress.t`, *default:* `nil`) - Progress of the existing operation, measured in number of documents.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation ended, either successfully or otherwise. Unset if
-      the operation is still active.
-  *   `index` (*type:* `String.t`, *default:* `nil`) - The index resource that this operation is acting on. For example:
-      `projects/{project_id}/databases/{database_id}/indexes/{index_id}`
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation ended, either successfully or otherwise. Unset if the operation is still active.
+  *   `index` (*type:* `String.t`, *default:* `nil`) - The index resource that this operation is acting on. For example: `projects/{project_id}/databases/{database_id}/indexes/{index_id}`
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - The type of index operation.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that work began on the operation.
   """

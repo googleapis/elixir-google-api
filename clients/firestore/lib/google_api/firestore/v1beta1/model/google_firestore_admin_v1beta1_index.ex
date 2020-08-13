@@ -23,10 +23,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Index do
 
   *   `collectionId` (*type:* `String.t`, *default:* `nil`) - The collection ID to which this index applies. Required.
   *   `fields` (*type:* `list(GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1IndexField.t)`, *default:* `nil`) - The fields to index.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the index.
-      Output only.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the index.
-      Output only.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the index. Output only.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the index. Output only.
   """
 
   use GoogleApi.Gax.ModelBase

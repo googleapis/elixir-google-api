@@ -21,8 +21,7 @@ defmodule GoogleApi.Firestore.V1.Model.BeginTransactionRequest do
 
   ## Attributes
 
-  *   `options` (*type:* `GoogleApi.Firestore.V1.Model.TransactionOptions.t`, *default:* `nil`) - The options for the transaction.
-      Defaults to a read-write transaction.
+  *   `options` (*type:* `GoogleApi.Firestore.V1.Model.TransactionOptions.t`, *default:* `nil`) - The options for the transaction. Defaults to a read-write transaction.
   """
 
   use GoogleApi.Gax.ModelBase

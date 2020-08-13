@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ExportDocumentsMetadata do
   @moduledoc """
-  Metadata for google.longrunning.Operation results from
-  FirestoreAdmin.ExportDocuments.
+  Metadata for google.longrunning.Operation results from FirestoreAdmin.ExportDocuments.
 
   ## Attributes
 
   *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection ids are being exported.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in
-      progress.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in progress.
   *   `operationState` (*type:* `String.t`, *default:* `nil`) - The state of the export operation.
   *   `outputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Where the entities are being exported to.
   *   `progressBytes` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in bytes, of this operation.

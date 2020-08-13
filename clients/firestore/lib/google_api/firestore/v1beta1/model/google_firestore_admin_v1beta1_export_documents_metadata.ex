@@ -22,8 +22,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1ExportDoc
   ## Attributes
 
   *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection ids are being exported.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation ended, either successfully or otherwise. Unset if
-      the operation is still active.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation ended, either successfully or otherwise. Unset if the operation is still active.
   *   `operationState` (*type:* `String.t`, *default:* `nil`) - The state of the export operation.
   *   `outputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Where the entities are being exported to.
   *   `progressBytes` (*type:* `GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1Progress.t`, *default:* `nil`) - An estimate of the number of bytes processed.

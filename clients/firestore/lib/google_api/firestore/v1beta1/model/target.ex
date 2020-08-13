@@ -24,14 +24,9 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Target do
   *   `documents` (*type:* `GoogleApi.Firestore.V1beta1.Model.DocumentsTarget.t`, *default:* `nil`) - A target specified by a set of document names.
   *   `once` (*type:* `boolean()`, *default:* `nil`) - If the target should be removed once it is current and consistent.
   *   `query` (*type:* `GoogleApi.Firestore.V1beta1.Model.QueryTarget.t`, *default:* `nil`) - A target specified by a query.
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Start listening after a specific `read_time`.
-
-      The client must know the state of matching documents at this time.
-  *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - A resume token from a prior TargetChange for an identical target.
-
-      Using a resume token with a different target is unsupported and may fail.
-  *   `targetId` (*type:* `integer()`, *default:* `nil`) - The target ID that identifies the target on the stream. Must be a positive
-      number and non-zero.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Start listening after a specific `read_time`. The client must know the state of matching documents at this time.
+  *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - A resume token from a prior TargetChange for an identical target. Using a resume token with a different target is unsupported and may fail.
+  *   `targetId` (*type:* `integer()`, *default:* `nil`) - The target ID that identifies the target on the stream. Must be a positive number and non-zero.
   """
 
   use GoogleApi.Gax.ModelBase

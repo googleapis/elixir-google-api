@@ -21,10 +21,7 @@ defmodule GoogleApi.Firestore.V1.Model.ExistenceFilter do
 
   ## Attributes
 
-  *   `count` (*type:* `integer()`, *default:* `nil`) - The total count of documents that match target_id.
-
-      If different from the count of documents in the client that match, the
-      client must manually determine which documents no longer match the target.
+  *   `count` (*type:* `integer()`, *default:* `nil`) - The total count of documents that match target_id. If different from the count of documents in the client that match, the client must manually determine which documents no longer match the target.
   *   `targetId` (*type:* `integer()`, *default:* `nil`) - The target ID to which this filter applies.
   """
 

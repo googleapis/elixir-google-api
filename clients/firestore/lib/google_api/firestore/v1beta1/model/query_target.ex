@@ -21,12 +21,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.QueryTarget do
 
   ## Attributes
 
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - The parent resource name. In the format:
-      `projects/{project_id}/databases/{database_id}/documents` or
-      `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-      For example:
-      `projects/my-project/databases/my-database/documents` or
-      `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - The parent resource name. In the format: `projects/{project_id}/databases/{database_id}/documents` or `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example: `projects/my-project/databases/my-database/documents` or `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
   *   `structuredQuery` (*type:* `GoogleApi.Firestore.V1beta1.Model.StructuredQuery.t`, *default:* `nil`) - A structured query.
   """
 

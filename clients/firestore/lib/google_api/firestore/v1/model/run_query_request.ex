@@ -21,12 +21,8 @@ defmodule GoogleApi.Firestore.V1.Model.RunQueryRequest do
 
   ## Attributes
 
-  *   `newTransaction` (*type:* `GoogleApi.Firestore.V1.Model.TransactionOptions.t`, *default:* `nil`) - Starts a new transaction and reads the documents.
-      Defaults to a read-only transaction.
-      The new transaction ID will be returned as the first response in the
-      stream.
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time.
-      This may not be older than 270 seconds.
+  *   `newTransaction` (*type:* `GoogleApi.Firestore.V1.Model.TransactionOptions.t`, *default:* `nil`) - Starts a new transaction and reads the documents. Defaults to a read-only transaction. The new transaction ID will be returned as the first response in the stream.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time. This may not be older than 270 seconds.
   *   `structuredQuery` (*type:* `GoogleApi.Firestore.V1.Model.StructuredQuery.t`, *default:* `nil`) - A structured query.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - Reads documents in a transaction.
   """

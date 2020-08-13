@@ -21,13 +21,8 @@ defmodule GoogleApi.Firestore.V1.Model.WriteResult do
 
   ## Attributes
 
-  *   `transformResults` (*type:* `list(GoogleApi.Firestore.V1.Model.Value.t)`, *default:* `nil`) - The results of applying each DocumentTransform.FieldTransform, in the
-      same order.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update time of the document after applying the write. Not set
-      after a `delete`.
-
-      If the write did not actually change the document, this will be the
-      previous update_time.
+  *   `transformResults` (*type:* `list(GoogleApi.Firestore.V1.Model.Value.t)`, *default:* `nil`) - The results of applying each DocumentTransform.FieldTransform, in the same order.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update time of the document after applying the write. Not set after a `delete`. If the write did not actually change the document, this will be the previous update_time.
   """
 
   use GoogleApi.Gax.ModelBase

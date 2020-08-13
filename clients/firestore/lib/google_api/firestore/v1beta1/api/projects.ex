@@ -26,20 +26,12 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Exports a copy of all or a subset of documents from Google Cloud Firestore
-  to another storage system, such as Google Cloud Storage. Recent updates to
-  documents may not be reflected in the export. The export occurs in the
-  background and its progress can be monitored and managed via the
-  Operation resource that is created. The output of an export may only be
-  used once the associated operation is done. If an export operation is
-  cancelled before completion it may leave partial data behind in Google
-  Cloud Storage.
+  Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. Recent updates to documents may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Database to export. Should be of the form:
-      `projects/{project_id}/databases/{database_id}`.
+  *   `name` (*type:* `String.t`) - Database to export. Should be of the form: `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -107,17 +99,12 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   end
 
   @doc """
-  Imports documents into Google Cloud Firestore. Existing documents with the
-  same name are overwritten. The import occurs in the background and its
-  progress can be monitored and managed via the Operation resource that is
-  created. If an ImportDocuments operation is cancelled, it is possible
-  that a subset of the data has already been imported to Cloud Firestore.
+  Imports documents into Google Cloud Firestore. Existing documents with the same name are overwritten. The import occurs in the background and its progress can be monitored and managed via the Operation resource that is created. If an ImportDocuments operation is cancelled, it is possible that a subset of the data has already been imported to Cloud Firestore.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Database to import into. Should be of the form:
-      `projects/{project_id}/databases/{database_id}`.
+  *   `name` (*type:* `String.t`) - Database to import into. Should be of the form: `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -185,16 +172,12 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets multiple documents.
-
-  Documents returned by this method are not guaranteed to be returned in the
-  same order that they were requested.
+  Gets multiple documents. Documents returned by this method are not guaranteed to be returned in the same order that they were requested.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
-      `projects/{project_id}/databases/{database_id}`.
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format: `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -262,21 +245,12 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   end
 
   @doc """
-  Applies a batch of write operations.
-
-  The BatchWrite method does not apply the write operations atomically
-  and can apply them out of order. Method does not allow more than one write
-  per document. Each write succeeds or fails independently. See the
-  BatchWriteResponse for the success status of each write.
-
-  If you require an atomically applied set of writes, use
-  Commit instead.
+  Applies a batch of write operations. The BatchWrite method does not apply the write operations atomically and can apply them out of order. Method does not allow more than one write per document. Each write succeeds or fails independently. See the BatchWriteResponse for the success status of each write. If you require an atomically applied set of writes, use Commit instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
-      `projects/{project_id}/databases/{database_id}`.
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format: `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -347,8 +321,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
-      `projects/{project_id}/databases/{database_id}`.
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format: `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -421,8 +394,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
-      `projects/{project_id}/databases/{database_id}`.
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format: `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -493,9 +465,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource. For example:
-      `projects/{project_id}/databases/{database_id}/documents` or
-      `projects/{project_id}/databases/{database_id}/documents/chatrooms/{chatroom_id}`
+  *   `parent` (*type:* `String.t`) - Required. The parent resource. For example: `projects/{project_id}/databases/{database_id}/documents` or `projects/{project_id}/databases/{database_id}/documents/chatrooms/{chatroom_id}`
   *   `collection_id` (*type:* `String.t`) - Required. The collection ID, relative to `parent`, to list. For example: `chatrooms`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -509,11 +479,8 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:documentId` (*type:* `String.t`) - The client-assigned document ID to use for this document.
-
-          Optional. If not specified, an ID will be assigned by the service.
-      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
-          path syntax reference.
+      *   `:documentId` (*type:* `String.t`) - The client-assigned document ID to use for this document. Optional. If not specified, an ID will be assigned by the service.
+      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
       *   `:body` (*type:* `GoogleApi.Firestore.V1beta1.Model.Document.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -577,8 +544,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Document to delete. In the format:
-      `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Document to delete. In the format: `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -591,10 +557,8 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"currentDocument.exists"` (*type:* `boolean()`) - When set to `true`, the target document must exist.
-          When set to `false`, the target document must not exist.
-      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at
-          that time.
+      *   `:"currentDocument.exists"` (*type:* `boolean()`) - When set to `true`, the target document must exist. When set to `false`, the target document must not exist.
+      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at that time.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -653,8 +617,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Document to get. In the format:
-      `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Document to get. In the format: `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -667,10 +630,8 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
-          path syntax reference.
-      *   `:readTime` (*type:* `DateTime.t`) - Reads the version of the document at the given time.
-          This may not be older than 270 seconds.
+      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
+      *   `:readTime` (*type:* `DateTime.t`) - Reads the version of the document at the given time. This may not be older than 270 seconds.
       *   `:transaction` (*type:* `String.t`) - Reads the document in a transaction.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -731,14 +692,8 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format:
-      `projects/{project_id}/databases/{database_id}/documents` or
-      `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-      For example:
-      `projects/my-project/databases/my-database/documents` or
-      `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
-  *   `collection_id` (*type:* `String.t`) - Required. The collection ID, relative to `parent`, to list. For example: `chatrooms`
-      or `messages`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format: `projects/{project_id}/databases/{database_id}/documents` or `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example: `projects/my-project/databases/my-database/documents` or `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
+  *   `collection_id` (*type:* `String.t`) - Required. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -751,20 +706,12 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
-          path syntax reference.
+      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
       *   `:orderBy` (*type:* `String.t`) - The order to sort results by. For example: `priority desc, name`.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of documents to return.
       *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous List request, if any.
-      *   `:readTime` (*type:* `DateTime.t`) - Reads documents as they were at the given time.
-          This may not be older than 270 seconds.
-      *   `:showMissing` (*type:* `boolean()`) - If the list should show missing documents. A missing document is a
-          document that does not exist but has sub-documents. These documents will
-          be returned with a key but will not have fields, Document.create_time,
-          or Document.update_time set.
-
-          Requests with `show_missing` may not specify `where` or
-          `order_by`.
+      *   `:readTime` (*type:* `DateTime.t`) - Reads documents as they were at the given time. This may not be older than 270 seconds.
+      *   `:showMissing` (*type:* `boolean()`) - If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`.
       *   `:transaction` (*type:* `String.t`) - Reads documents in a transaction.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -834,10 +781,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent document. In the format:
-      `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-      For example:
-      `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
+  *   `parent` (*type:* `String.t`) - Required. The parent document. In the format: `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example: `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -910,8 +854,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
-      `projects/{project_id}/databases/{database_id}`.
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format: `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -977,17 +920,12 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   end
 
   @doc """
-  Partitions a query by returning partition cursors that can be used to run
-  the query in parallel. The returned partition cursors are split points that
-  can be used by RunQuery as starting/end points for the query results.
+  Partitions a query by returning partition cursors that can be used to run the query in parallel. The returned partition cursors are split points that can be used by RunQuery as starting/end points for the query results.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format:
-      `projects/{project_id}/databases/{database_id}/documents`.
-      Document resource names are not supported; only database resource names
-      can be specified.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format: `projects/{project_id}/databases/{database_id}/documents`. Document resource names are not supported; only database resource names can be specified.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1060,8 +998,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the document, for example
-      `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+  *   `name` (*type:* `String.t`) - The resource name of the document, for example `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1074,14 +1011,10 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"currentDocument.exists"` (*type:* `boolean()`) - When set to `true`, the target document must exist.
-          When set to `false`, the target document must not exist.
-      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at
-          that time.
-      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
-          path syntax reference.
-      *   `:"updateMask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
-          path syntax reference.
+      *   `:"currentDocument.exists"` (*type:* `boolean()`) - When set to `true`, the target document must exist. When set to `false`, the target document must not exist.
+      *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at that time.
+      *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
+      *   `:"updateMask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
       *   `:body` (*type:* `GoogleApi.Firestore.V1beta1.Model.Document.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1144,8 +1077,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
-      `projects/{project_id}/databases/{database_id}`.
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format: `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1216,12 +1148,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format:
-      `projects/{project_id}/databases/{database_id}/documents` or
-      `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-      For example:
-      `projects/my-project/databases/my-database/documents` or
-      `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format: `projects/{project_id}/databases/{database_id}/documents` or `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example: `projects/my-project/databases/my-database/documents` or `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1292,9 +1219,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
-      `projects/{project_id}/databases/{database_id}`.
-      This is only required in the first message.
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format: `projects/{project_id}/databases/{database_id}`. This is only required in the first message.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1360,25 +1285,12 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates the specified index.
-  A newly created index's initial state is `CREATING`. On completion of the
-  returned google.longrunning.Operation, the state will be `READY`.
-  If the index already exists, the call will return an `ALREADY_EXISTS`
-  status.
-
-  During creation, the process could result in an error, in which case the
-  index will move to the `ERROR` state. The process can be recovered by
-  fixing the data that caused the error, removing the index with
-  delete, then re-creating the index with
-  create.
-
-  Indexes with a single field cannot be created.
+  Creates the specified index. A newly created index's initial state is `CREATING`. On completion of the returned google.longrunning.Operation, the state will be `READY`. If the index already exists, the call will return an `ALREADY_EXISTS` status. During creation, the process could result in an error, in which case the index will move to the `ERROR` state. The process can be recovered by fixing the data that caused the error, removing the index with delete, then re-creating the index with create. Indexes with a single field cannot be created.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The name of the database this index will apply to. For example:
-      `projects/{project_id}/databases/{database_id}`
+  *   `parent` (*type:* `String.t`) - The name of the database this index will apply to. For example: `projects/{project_id}/databases/{database_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1451,8 +1363,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The index name. For example:
-      `projects/{project_id}/databases/{database_id}/indexes/{index_id}`
+  *   `name` (*type:* `String.t`) - The index name. For example: `projects/{project_id}/databases/{database_id}/indexes/{index_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1521,8 +1432,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the index. For example:
-      `projects/{project_id}/databases/{database_id}/indexes/{index_id}`
+  *   `name` (*type:* `String.t`) - The name of the index. For example: `projects/{project_id}/databases/{database_id}/indexes/{index_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1593,8 +1503,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The database name. For example:
-      `projects/{project_id}/databases/{database_id}`
+  *   `parent` (*type:* `String.t`) - The database name. For example: `projects/{project_id}/databases/{database_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

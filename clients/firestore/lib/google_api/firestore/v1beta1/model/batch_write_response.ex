@@ -21,14 +21,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.BatchWriteResponse do
 
   ## Attributes
 
-  *   `status` (*type:* `list(GoogleApi.Firestore.V1beta1.Model.Status.t)`, *default:* `nil`) - The status of applying the writes.
-
-      This i-th write status corresponds to the i-th write in the
-      request.
-  *   `writeResults` (*type:* `list(GoogleApi.Firestore.V1beta1.Model.WriteResult.t)`, *default:* `nil`) - The result of applying the writes.
-
-      This i-th write result corresponds to the i-th write in the
-      request.
+  *   `status` (*type:* `list(GoogleApi.Firestore.V1beta1.Model.Status.t)`, *default:* `nil`) - The status of applying the writes. This i-th write status corresponds to the i-th write in the request.
+  *   `writeResults` (*type:* `list(GoogleApi.Firestore.V1beta1.Model.WriteResult.t)`, *default:* `nil`) - The result of applying the writes. This i-th write result corresponds to the i-th write in the request.
   """
 
   use GoogleApi.Gax.ModelBase

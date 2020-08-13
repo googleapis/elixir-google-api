@@ -21,13 +21,8 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsRequ
 
   ## Attributes
 
-  *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection ids to import. Unspecified means all collections included
-      in the import.
-  *   `inputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Location of the exported files.
-      This must match the output_uri_prefix of an ExportDocumentsResponse from
-      an export that has completed successfully.
-      See:
-      google.firestore.admin.v1.ExportDocumentsResponse.output_uri_prefix.
+  *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection ids to import. Unspecified means all collections included in the import.
+  *   `inputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Location of the exported files. This must match the output_uri_prefix of an ExportDocumentsResponse from an export that has completed successfully. See: google.firestore.admin.v1.ExportDocumentsResponse.output_uri_prefix.
   """
 
   use GoogleApi.Gax.ModelBase

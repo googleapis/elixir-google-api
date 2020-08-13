@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsMetadata do
   @moduledoc """
-  Metadata for google.longrunning.Operation results from
-  FirestoreAdmin.ImportDocuments.
+  Metadata for google.longrunning.Operation results from FirestoreAdmin.ImportDocuments.
 
   ## Attributes
 
   *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection ids are being imported.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in
-      progress.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in progress.
   *   `inputUriPrefix` (*type:* `String.t`, *default:* `nil`) - The location of the documents being imported.
   *   `operationState` (*type:* `String.t`, *default:* `nil`) - The state of the import operation.
   *   `progressBytes` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in bytes, of this operation.

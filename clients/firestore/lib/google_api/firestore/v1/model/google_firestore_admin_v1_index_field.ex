@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexField do
   @moduledoc """
-  A field in an index.
-  The field_path describes which field is indexed, the value_mode describes
-  how the field value is indexed.
+  A field in an index. The field_path describes which field is indexed, the value_mode describes how the field value is indexed.
 
   ## Attributes
 
   *   `arrayConfig` (*type:* `String.t`, *default:* `nil`) - Indicates that this field supports operations on `array_value`s.
-  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - Can be __name__.
-      For single field indexes, this must match the name of the field or may
-      be omitted.
-  *   `order` (*type:* `String.t`, *default:* `nil`) - Indicates that this field supports ordering by the specified order or
-      comparing using =, <, <=, >, >=.
+  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - Can be __name__. For single field indexes, this must match the name of the field or may be omitted.
+  *   `order` (*type:* `String.t`, *default:* `nil`) - Indicates that this field supports ordering by the specified order or comparing using =, <, <=, >, >=.
   """
 
   use GoogleApi.Gax.ModelBase

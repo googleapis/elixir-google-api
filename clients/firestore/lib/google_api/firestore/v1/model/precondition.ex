@@ -21,10 +21,8 @@ defmodule GoogleApi.Firestore.V1.Model.Precondition do
 
   ## Attributes
 
-  *   `exists` (*type:* `boolean()`, *default:* `nil`) - When set to `true`, the target document must exist.
-      When set to `false`, the target document must not exist.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - When set, the target document must exist and have been last updated at
-      that time.
+  *   `exists` (*type:* `boolean()`, *default:* `nil`) - When set to `true`, the target document must exist. When set to `false`, the target document must not exist.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - When set, the target document must exist and have been last updated at that time.
   """
 
   use GoogleApi.Gax.ModelBase

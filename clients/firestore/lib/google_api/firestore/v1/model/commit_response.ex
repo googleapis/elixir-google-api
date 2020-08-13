@@ -21,12 +21,8 @@ defmodule GoogleApi.Firestore.V1.Model.CommitResponse do
 
   ## Attributes
 
-  *   `commitTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the commit occurred. Any read with an equal or greater
-      `read_time` is guaranteed to see the effects of the commit.
-  *   `writeResults` (*type:* `list(GoogleApi.Firestore.V1.Model.WriteResult.t)`, *default:* `nil`) - The result of applying the writes.
-
-      This i-th write result corresponds to the i-th write in the
-      request.
+  *   `commitTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the commit occurred. Any read with an equal or greater `read_time` is guaranteed to see the effects of the commit.
+  *   `writeResults` (*type:* `list(GoogleApi.Firestore.V1.Model.WriteResult.t)`, *default:* `nil`) - The result of applying the writes. This i-th write result corresponds to the i-th write in the request.
   """
 
   use GoogleApi.Gax.ModelBase

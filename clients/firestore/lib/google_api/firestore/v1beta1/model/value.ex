@@ -21,31 +21,17 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Value do
 
   ## Attributes
 
-  *   `arrayValue` (*type:* `GoogleApi.Firestore.V1beta1.Model.ArrayValue.t`, *default:* `nil`) - An array value.
-
-      Cannot directly contain another array value, though can contain an
-      map which contains another array.
+  *   `arrayValue` (*type:* `GoogleApi.Firestore.V1beta1.Model.ArrayValue.t`, *default:* `nil`) - An array value. Cannot directly contain another array value, though can contain an map which contains another array.
   *   `booleanValue` (*type:* `boolean()`, *default:* `nil`) - A boolean value.
-  *   `bytesValue` (*type:* `String.t`, *default:* `nil`) - A bytes value.
-
-      Must not exceed 1 MiB - 89 bytes.
-      Only the first 1,500 bytes are considered by queries.
+  *   `bytesValue` (*type:* `String.t`, *default:* `nil`) - A bytes value. Must not exceed 1 MiB - 89 bytes. Only the first 1,500 bytes are considered by queries.
   *   `doubleValue` (*type:* `float()`, *default:* `nil`) - A double value.
   *   `geoPointValue` (*type:* `GoogleApi.Firestore.V1beta1.Model.LatLng.t`, *default:* `nil`) - A geo point value representing a point on the surface of Earth.
   *   `integerValue` (*type:* `String.t`, *default:* `nil`) - An integer value.
   *   `mapValue` (*type:* `GoogleApi.Firestore.V1beta1.Model.MapValue.t`, *default:* `nil`) - A map value.
   *   `nullValue` (*type:* `String.t`, *default:* `nil`) - A null value.
-  *   `referenceValue` (*type:* `String.t`, *default:* `nil`) - A reference to a document. For example:
-      `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - A string value.
-
-      The string, represented as UTF-8, must not exceed 1 MiB - 89 bytes.
-      Only the first 1,500 bytes of the UTF-8 representation are considered by
-      queries.
-  *   `timestampValue` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp value.
-
-      Precise only to microseconds. When stored, any additional precision is
-      rounded down.
+  *   `referenceValue` (*type:* `String.t`, *default:* `nil`) - A reference to a document. For example: `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - A string value. The string, represented as UTF-8, must not exceed 1 MiB - 89 bytes. Only the first 1,500 bytes of the UTF-8 representation are considered by queries.
+  *   `timestampValue` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp value. Precise only to microseconds. When stored, any additional precision is rounded down.
   """
 
   use GoogleApi.Gax.ModelBase

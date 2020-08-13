@@ -21,10 +21,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1IndexFiel
 
   ## Attributes
 
-  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - The path of the field. Must match the field path specification described
-      by google.firestore.v1beta1.Document.fields.
-      Special field path `__name__` may be used by itself or at the end of a
-      path. `__type__` may be used only at the end of path.
+  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - The path of the field. Must match the field path specification described by google.firestore.v1beta1.Document.fields. Special field path `__name__` may be used by itself or at the end of a path. `__type__` may be used only at the end of path.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - The field's mode.
   """
 

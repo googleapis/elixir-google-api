@@ -21,9 +21,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.GoogleFirestoreAdminV1beta1ExportDoc
 
   ## Attributes
 
-  *   `outputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Location of the output files. This can be used to begin an import
-      into Cloud Firestore (this project or another project) after the operation
-      completes successfully.
+  *   `outputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Location of the output files. This can be used to begin an import into Cloud Firestore (this project or another project) after the operation completes successfully.
   """
 
   use GoogleApi.Gax.ModelBase
