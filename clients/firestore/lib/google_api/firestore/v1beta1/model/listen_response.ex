@@ -23,13 +23,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListenResponse do
 
   *   `documentChange` (*type:* `GoogleApi.Firestore.V1beta1.Model.DocumentChange.t`, *default:* `nil`) - A Document has changed.
   *   `documentDelete` (*type:* `GoogleApi.Firestore.V1beta1.Model.DocumentDelete.t`, *default:* `nil`) - A Document has been deleted.
-  *   `documentRemove` (*type:* `GoogleApi.Firestore.V1beta1.Model.DocumentRemove.t`, *default:* `nil`) - A Document has been removed from a target (because it is no longer
-      relevant to that target).
-  *   `filter` (*type:* `GoogleApi.Firestore.V1beta1.Model.ExistenceFilter.t`, *default:* `nil`) - A filter to apply to the set of documents previously returned for the
-      given target.
-
-      Returned when documents may have been removed from the given target, but
-      the exact documents are unknown.
+  *   `documentRemove` (*type:* `GoogleApi.Firestore.V1beta1.Model.DocumentRemove.t`, *default:* `nil`) - A Document has been removed from a target (because it is no longer relevant to that target).
+  *   `filter` (*type:* `GoogleApi.Firestore.V1beta1.Model.ExistenceFilter.t`, *default:* `nil`) - A filter to apply to the set of documents previously returned for the given target. Returned when documents may have been removed from the given target, but the exact documents are unknown.
   *   `targetChange` (*type:* `GoogleApi.Firestore.V1beta1.Model.TargetChange.t`, *default:* `nil`) - Targets have changed.
   """
 

@@ -22,9 +22,7 @@ defmodule GoogleApi.Firestore.V1.Model.DocumentTransform do
   ## Attributes
 
   *   `document` (*type:* `String.t`, *default:* `nil`) - The name of the document to transform.
-  *   `fieldTransforms` (*type:* `list(GoogleApi.Firestore.V1.Model.FieldTransform.t)`, *default:* `nil`) - The list of transformations to apply to the fields of the document, in
-      order.
-      This must not be empty.
+  *   `fieldTransforms` (*type:* `list(GoogleApi.Firestore.V1.Model.FieldTransform.t)`, *default:* `nil`) - The list of transformations to apply to the fields of the document, in order. This must not be empty.
   """
 
   use GoogleApi.Gax.ModelBase

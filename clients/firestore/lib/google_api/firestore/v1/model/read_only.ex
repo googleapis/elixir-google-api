@@ -21,8 +21,7 @@ defmodule GoogleApi.Firestore.V1.Model.ReadOnly do
 
   ## Attributes
 
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents at the given time.
-      This may not be older than 60 seconds.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents at the given time. This may not be older than 60 seconds.
   """
 
   use GoogleApi.Gax.ModelBase

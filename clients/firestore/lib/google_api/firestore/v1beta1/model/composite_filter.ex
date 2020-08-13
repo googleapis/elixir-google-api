@@ -21,8 +21,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.CompositeFilter do
 
   ## Attributes
 
-  *   `filters` (*type:* `list(GoogleApi.Firestore.V1beta1.Model.Filter.t)`, *default:* `nil`) - The list of filters to combine.
-      Must contain at least one filter.
+  *   `filters` (*type:* `list(GoogleApi.Firestore.V1beta1.Model.Filter.t)`, *default:* `nil`) - The list of filters to combine. Must contain at least one filter.
   *   `op` (*type:* `String.t`, *default:* `nil`) - The operator for combining multiple filters.
   """
 

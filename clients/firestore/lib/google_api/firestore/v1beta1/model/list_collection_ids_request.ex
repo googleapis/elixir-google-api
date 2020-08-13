@@ -22,8 +22,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListCollectionIdsRequest do
   ## Attributes
 
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The maximum number of results to return.
-  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A page token. Must be a value from
-      ListCollectionIdsResponse.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A page token. Must be a value from ListCollectionIdsResponse.
   """
 
   use GoogleApi.Gax.ModelBase

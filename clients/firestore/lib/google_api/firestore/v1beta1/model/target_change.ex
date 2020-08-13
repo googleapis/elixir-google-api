@@ -22,26 +22,10 @@ defmodule GoogleApi.Firestore.V1beta1.Model.TargetChange do
   ## Attributes
 
   *   `cause` (*type:* `GoogleApi.Firestore.V1beta1.Model.Status.t`, *default:* `nil`) - The error that resulted in this change, if applicable.
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - The consistent `read_time` for the given `target_ids` (omitted when the
-      target_ids are not at a consistent snapshot).
-
-      The stream is guaranteed to send a `read_time` with `target_ids` empty
-      whenever the entire stream reaches a new consistent snapshot. ADD,
-      CURRENT, and RESET messages are guaranteed to (eventually) result in a
-      new consistent snapshot (while NO_CHANGE and REMOVE messages are not).
-
-      For a given stream, `read_time` is guaranteed to be monotonically
-      increasing.
-  *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - A token that can be used to resume the stream for the given `target_ids`,
-      or all targets if `target_ids` is empty.
-
-      Not set on every target change.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - The consistent `read_time` for the given `target_ids` (omitted when the target_ids are not at a consistent snapshot). The stream is guaranteed to send a `read_time` with `target_ids` empty whenever the entire stream reaches a new consistent snapshot. ADD, CURRENT, and RESET messages are guaranteed to (eventually) result in a new consistent snapshot (while NO_CHANGE and REMOVE messages are not). For a given stream, `read_time` is guaranteed to be monotonically increasing.
+  *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - A token that can be used to resume the stream for the given `target_ids`, or all targets if `target_ids` is empty. Not set on every target change.
   *   `targetChangeType` (*type:* `String.t`, *default:* `nil`) - The type of change that occurred.
-  *   `targetIds` (*type:* `list(integer())`, *default:* `nil`) - The target IDs of targets that have changed.
-
-      If empty, the change applies to all targets.
-
-      The order of the target IDs is not defined.
+  *   `targetIds` (*type:* `list(integer())`, *default:* `nil`) - The target IDs of targets that have changed. If empty, the change applies to all targets. The order of the target IDs is not defined.
   """
 
   use GoogleApi.Gax.ModelBase

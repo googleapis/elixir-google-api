@@ -18,7 +18,7 @@
 defmodule GoogleApi.Firestore.Mixfile do
   use Mix.Project
 
-  @version "0.20.0"
+  @version "0.20.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.Firestore.Mixfile do
 
   defp description() do
     """
-    Cloud Firestore API client library. Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development.
-
+    Cloud Firestore API client library. Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development. 
     """
   end
 

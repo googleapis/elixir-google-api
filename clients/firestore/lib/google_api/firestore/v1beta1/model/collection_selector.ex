@@ -21,11 +21,8 @@ defmodule GoogleApi.Firestore.V1beta1.Model.CollectionSelector do
 
   ## Attributes
 
-  *   `allDescendants` (*type:* `boolean()`, *default:* `nil`) - When false, selects only collections that are immediate children of
-      the `parent` specified in the containing `RunQueryRequest`.
-      When true, selects all descendant collections.
-  *   `collectionId` (*type:* `String.t`, *default:* `nil`) - The collection ID.
-      When set, selects only collections with this ID.
+  *   `allDescendants` (*type:* `boolean()`, *default:* `nil`) - When false, selects only collections that are immediate children of the `parent` specified in the containing `RunQueryRequest`. When true, selects all descendant collections.
+  *   `collectionId` (*type:* `String.t`, *default:* `nil`) - The collection ID. When set, selects only collections with this ID.
   """
 
   use GoogleApi.Gax.ModelBase

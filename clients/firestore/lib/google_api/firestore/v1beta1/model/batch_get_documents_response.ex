@@ -22,15 +22,9 @@ defmodule GoogleApi.Firestore.V1beta1.Model.BatchGetDocumentsResponse do
   ## Attributes
 
   *   `found` (*type:* `GoogleApi.Firestore.V1beta1.Model.Document.t`, *default:* `nil`) - A document that was requested.
-  *   `missing` (*type:* `String.t`, *default:* `nil`) - A document name that was requested but does not exist. In the format:
-      `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the document was read.
-      This may be monotically increasing, in this case the previous documents in
-      the result stream are guaranteed not to have changed between their
-      read_time and this one.
-  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The transaction that was started as part of this request.
-      Will only be set in the first response, and only if
-      BatchGetDocumentsRequest.new_transaction was set in the request.
+  *   `missing` (*type:* `String.t`, *default:* `nil`) - A document name that was requested but does not exist. In the format: `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the document was read. This may be monotically increasing, in this case the previous documents in the result stream are guaranteed not to have changed between their read_time and this one.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The transaction that was started as part of this request. Will only be set in the first response, and only if BatchGetDocumentsRequest.new_transaction was set in the request.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,32 +23,9 @@ defmodule GoogleApi.Firestore.V1.Model.StructuredQuery do
 
   *   `endAt` (*type:* `GoogleApi.Firestore.V1.Model.Cursor.t`, *default:* `nil`) - A end point for the query results.
   *   `from` (*type:* `list(GoogleApi.Firestore.V1.Model.CollectionSelector.t)`, *default:* `nil`) - The collections to query.
-  *   `limit` (*type:* `integer()`, *default:* `nil`) - The maximum number of results to return.
-
-      Applies after all other constraints.
-      Must be >= 0 if specified.
-  *   `offset` (*type:* `integer()`, *default:* `nil`) - The number of results to skip.
-
-      Applies before limit, but after all other constraints. Must be >= 0 if
-      specified.
-  *   `orderBy` (*type:* `list(GoogleApi.Firestore.V1.Model.Order.t)`, *default:* `nil`) - The order to apply to the query results.
-
-      Firestore guarantees a stable ordering through the following rules:
-
-       * Any field required to appear in `order_by`, that is not already
-         specified in `order_by`, is appended to the order in field name order
-         by default.
-       * If an order on `__name__` is not specified, it is appended by default.
-
-      Fields are appended with the same sort direction as the last order
-      specified, or 'ASCENDING' if no order was specified. For example:
-
-       * `SELECT * FROM Foo ORDER BY A` becomes
-         `SELECT * FROM Foo ORDER BY A, __name__`
-       * `SELECT * FROM Foo ORDER BY A DESC` becomes
-         `SELECT * FROM Foo ORDER BY A DESC, __name__ DESC`
-       * `SELECT * FROM Foo WHERE A > 1` becomes
-         `SELECT * FROM Foo WHERE A > 1 ORDER BY A, __name__`
+  *   `limit` (*type:* `integer()`, *default:* `nil`) - The maximum number of results to return. Applies after all other constraints. Must be >= 0 if specified.
+  *   `offset` (*type:* `integer()`, *default:* `nil`) - The number of results to skip. Applies before limit, but after all other constraints. Must be >= 0 if specified.
+  *   `orderBy` (*type:* `list(GoogleApi.Firestore.V1.Model.Order.t)`, *default:* `nil`) - The order to apply to the query results. Firestore guarantees a stable ordering through the following rules: * Any field required to appear in `order_by`, that is not already specified in `order_by`, is appended to the order in field name order by default. * If an order on `__name__` is not specified, it is appended by default. Fields are appended with the same sort direction as the last order specified, or 'ASCENDING' if no order was specified. For example: * `SELECT * FROM Foo ORDER BY A` becomes `SELECT * FROM Foo ORDER BY A, __name__` * `SELECT * FROM Foo ORDER BY A DESC` becomes `SELECT * FROM Foo ORDER BY A DESC, __name__ DESC` * `SELECT * FROM Foo WHERE A > 1` becomes `SELECT * FROM Foo WHERE A > 1 ORDER BY A, __name__`
   *   `select` (*type:* `GoogleApi.Firestore.V1.Model.Projection.t`, *default:* `nil`) - The projection to return.
   *   `startAt` (*type:* `GoogleApi.Firestore.V1.Model.Cursor.t`, *default:* `nil`) - A starting point for the query results.
   *   `where` (*type:* `GoogleApi.Firestore.V1.Model.Filter.t`, *default:* `nil`) - The filter to apply.

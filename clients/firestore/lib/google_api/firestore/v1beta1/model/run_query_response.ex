@@ -21,21 +21,10 @@ defmodule GoogleApi.Firestore.V1beta1.Model.RunQueryResponse do
 
   ## Attributes
 
-  *   `document` (*type:* `GoogleApi.Firestore.V1beta1.Model.Document.t`, *default:* `nil`) - A query result.
-      Not set when reporting partial progress.
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the document was read. This may be monotonically
-      increasing; in this case, the previous documents in the result stream are
-      guaranteed not to have changed between their `read_time` and this one.
-
-      If the query returns no results, a response with `read_time` and no
-      `document` will be sent, and this represents the time at which the query
-      was run.
-  *   `skippedResults` (*type:* `integer()`, *default:* `nil`) - The number of results that have been skipped due to an offset between
-      the last response and the current response.
-  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The transaction that was started as part of this request.
-      Can only be set in the first response, and only if
-      RunQueryRequest.new_transaction was set in the request.
-      If set, no other fields will be set in this response.
+  *   `document` (*type:* `GoogleApi.Firestore.V1beta1.Model.Document.t`, *default:* `nil`) - A query result. Not set when reporting partial progress.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the document was read. This may be monotonically increasing; in this case, the previous documents in the result stream are guaranteed not to have changed between their `read_time` and this one. If the query returns no results, a response with `read_time` and no `document` will be sent, and this represents the time at which the query was run.
+  *   `skippedResults` (*type:* `integer()`, *default:* `nil`) - The number of results that have been skipped due to an offset between the last response and the current response.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The transaction that was started as part of this request. Can only be set in the first response, and only if RunQueryRequest.new_transaction was set in the request. If set, no other fields will be set in this response.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,9 +22,7 @@ defmodule GoogleApi.Firestore.V1.Model.CommitRequest do
   ## Attributes
 
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - If set, applies all writes in this transaction, and commits it.
-  *   `writes` (*type:* `list(GoogleApi.Firestore.V1.Model.Write.t)`, *default:* `nil`) - The writes to apply.
-
-      Always executed atomically and in order.
+  *   `writes` (*type:* `list(GoogleApi.Firestore.V1.Model.Write.t)`, *default:* `nil`) - The writes to apply. Always executed atomically and in order.
   """
 
   use GoogleApi.Gax.ModelBase

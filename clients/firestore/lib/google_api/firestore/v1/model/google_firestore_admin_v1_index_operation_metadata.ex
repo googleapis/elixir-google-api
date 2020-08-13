@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexOperationMetadata do
   @moduledoc """
-  Metadata for google.longrunning.Operation results from
-  FirestoreAdmin.CreateIndex.
+  Metadata for google.longrunning.Operation results from FirestoreAdmin.CreateIndex.
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in
-      progress.
-  *   `index` (*type:* `String.t`, *default:* `nil`) - The index resource that this operation is acting on. For example:
-      `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{index_id}`
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in progress.
+  *   `index` (*type:* `String.t`, *default:* `nil`) - The index resource that this operation is acting on. For example: `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{index_id}`
   *   `progressBytes` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in bytes, of this operation.
   *   `progressDocuments` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in documents, of this operation.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation started.
