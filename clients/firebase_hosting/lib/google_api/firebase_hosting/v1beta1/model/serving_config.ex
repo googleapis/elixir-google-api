@@ -24,6 +24,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ServingConfig do
   *   `appAssociation` (*type:* `String.t`, *default:* `nil`) - How to handle well known App Association files.
   *   `cleanUrls` (*type:* `boolean()`, *default:* `nil`) - Defines whether to drop the file extension from uploaded files.
   *   `headers` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Header.t)`, *default:* `nil`) - An array of objects, where each object specifies a URL pattern that, if matched to the request URL path, triggers Hosting to apply the specified custom response headers.
+  *   `i18n` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.I18nConfig.t`, *default:* `nil`) - Optional. Defines i18n rewrite behavior.
   *   `redirects` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Redirect.t)`, *default:* `nil`) - An array of objects (called redirect rules), where each rule specifies a URL pattern that, if matched to the request URL path, triggers Hosting to respond with a redirect to the specified destination path.
   *   `rewrites` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite.t)`, *default:* `nil`) - An array of objects (called rewrite rules), where each rule specifies a URL pattern that, if matched to the request URL path, triggers Hosting to respond as if the service were given the specified destination URL.
   *   `trailingSlashBehavior` (*type:* `String.t`, *default:* `nil`) - Defines how to handle a trailing slash in the URL path.
@@ -35,6 +36,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ServingConfig do
           :appAssociation => String.t(),
           :cleanUrls => boolean(),
           :headers => list(GoogleApi.FirebaseHosting.V1beta1.Model.Header.t()),
+          :i18n => GoogleApi.FirebaseHosting.V1beta1.Model.I18nConfig.t(),
           :redirects => list(GoogleApi.FirebaseHosting.V1beta1.Model.Redirect.t()),
           :rewrites => list(GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite.t()),
           :trailingSlashBehavior => String.t()
@@ -43,6 +45,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ServingConfig do
   field(:appAssociation)
   field(:cleanUrls)
   field(:headers, as: GoogleApi.FirebaseHosting.V1beta1.Model.Header, type: :list)
+  field(:i18n, as: GoogleApi.FirebaseHosting.V1beta1.Model.I18nConfig)
   field(:redirects, as: GoogleApi.FirebaseHosting.V1beta1.Model.Redirect, type: :list)
   field(:rewrites, as: GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite, type: :list)
   field(:trailingSlashBehavior)
