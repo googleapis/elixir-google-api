@@ -21,14 +21,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   ## Attributes
 
-  *   `feature` (*type:* `String.t`, *default:* `nil`) - Specifies which feature is being tracked if the request contains more than
-      one feature.
-  *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in
-      [Cloud Storage](https://cloud.google.com/storage/).
-  *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - Approximate percentage processed thus far. Guaranteed to be
-      100 when fully processed.
-  *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment.t`, *default:* `nil`) - Specifies which segment is being tracked if the request contains more than
-      one segment.
+  *   `feature` (*type:* `String.t`, *default:* `nil`) - Specifies which feature is being tracked if the request contains more than one feature.
+  *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in [Cloud Storage](https://cloud.google.com/storage/).
+  *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+  *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment.t`, *default:* `nil`) - Specifies which segment is being tracked if the request contains more than one segment.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the request was received.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time of the most recent update.
   """

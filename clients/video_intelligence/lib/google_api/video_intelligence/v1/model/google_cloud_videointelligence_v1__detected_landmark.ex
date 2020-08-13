@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_DetectedLandmark do
   @moduledoc """
-  A generic detected landmark represented by name in string format and a 2D
-  location.
+  A generic detected landmark represented by name in string format and a 2D location.
 
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - The confidence score of the detected landmark. Range [0, 1].
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this landmark, for example, left_hand, right_shoulder.
-  *   `point` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_NormalizedVertex.t`, *default:* `nil`) - The 2D point of the detected landmark using the normalized image
-      coordindate system. The normalized coordinates have the range from 0 to 1.
+  *   `point` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_NormalizedVertex.t`, *default:* `nil`) - The 2D point of the detected landmark using the normalized image coordindate system. The normalized coordinates have the range from 0 to 1.
   """
 
   use GoogleApi.Gax.ModelBase

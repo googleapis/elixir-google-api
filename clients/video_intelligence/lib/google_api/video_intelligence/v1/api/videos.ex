@@ -26,10 +26,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Videos do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Performs asynchronous video annotation. Progress and results can be
-  retrieved through the `google.longrunning.Operations` interface.
-  `Operation.metadata` contains `AnnotateVideoProgress` (progress).
-  `Operation.response` contains `AnnotateVideoResponse` (results).
+  Performs asynchronous video annotation. Progress and results can be retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains `AnnotateVideoProgress` (progress). `Operation.response` contains `AnnotateVideoResponse` (results).
 
   ## Parameters
 

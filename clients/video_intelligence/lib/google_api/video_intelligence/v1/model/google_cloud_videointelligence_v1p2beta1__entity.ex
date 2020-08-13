@@ -22,9 +22,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Textual description, e.g., `Fixed-gear bicycle`.
-  *   `entityId` (*type:* `String.t`, *default:* `nil`) - Opaque entity ID. Some IDs may be available in
-      [Google Knowledge Graph Search
-      API](https://developers.google.com/knowledge-graph/).
+  *   `entityId` (*type:* `String.t`, *default:* `nil`) - Opaque entity ID. Some IDs may be available in [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language code for `description` in BCP-47 format.
   """
 

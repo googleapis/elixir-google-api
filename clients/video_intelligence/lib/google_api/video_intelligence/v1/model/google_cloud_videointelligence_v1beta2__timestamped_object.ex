@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_TimestampedObject do
   @moduledoc """
-  For tracking related features.
-  An object at time_offset with attributes, and located with
-  normalized_bounding_box.
+  For tracking related features. An object at time_offset with attributes, and located with normalized_bounding_box.
 
   ## Attributes
 
   *   `attributes` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_DetectedAttribute.t)`, *default:* `nil`) - Optional. The attributes of the object in the bounding box.
   *   `landmarks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_DetectedLandmark.t)`, *default:* `nil`) - Optional. The detected landmarks.
   *   `normalizedBoundingBox` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_NormalizedBoundingBox.t`, *default:* `nil`) - Normalized Bounding box in a frame, where the object is located.
-  *   `timeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video,
-      corresponding to the video frame for this object.
+  *   `timeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video, corresponding to the video frame for this object.
   """
 
   use GoogleApi.Gax.ModelBase

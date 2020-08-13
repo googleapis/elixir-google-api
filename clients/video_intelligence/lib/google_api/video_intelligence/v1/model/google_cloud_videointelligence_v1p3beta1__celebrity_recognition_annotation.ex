@@ -21,8 +21,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   ## Attributes
 
-  *   `celebrityTracks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack.t)`, *default:* `nil`) - The tracks detected from the input video, including recognized celebrities
-      and other detected faces in the video.
+  *   `celebrityTracks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack.t)`, *default:* `nil`) - The tracks detected from the input video, including recognized celebrities and other detected faces in the video.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 

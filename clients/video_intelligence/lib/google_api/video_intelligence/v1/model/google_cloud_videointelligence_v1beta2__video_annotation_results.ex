@@ -21,36 +21,20 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
 
   ## Attributes
 
-  *   `error` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t`, *default:* `nil`) - If set, indicates an error. Note that for a single `AnnotateVideoRequest`
-      some videos may succeed and some may fail.
+  *   `error` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t`, *default:* `nil`) - If set, indicates an error. Note that for a single `AnnotateVideoRequest` some videos may succeed and some may fail.
   *   `explicitAnnotation` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation.t`, *default:* `nil`) - Explicit content annotation.
-  *   `frameLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Label annotations on frame level.
-      There is exactly one element for each unique label.
-  *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in
-      [Cloud Storage](https://cloud.google.com/storage/).
+  *   `frameLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Label annotations on frame level. There is exactly one element for each unique label.
+  *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in [Cloud Storage](https://cloud.google.com/storage/).
   *   `logoRecognitionAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LogoRecognitionAnnotation.t)`, *default:* `nil`) - Annotations for list of logos detected, tracked and recognized in video.
   *   `objectAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation.t)`, *default:* `nil`) - Annotations for list of objects detected and tracked in video.
   *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_VideoSegment.t`, *default:* `nil`) - Video segment on which the annotation is run.
-  *   `segmentLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on video level or user-specified segment level.
-      There is exactly one element for each unique label.
-  *   `segmentPresenceLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Presence label annotations on video level or user-specified segment level.
-      There is exactly one element for each unique label. Compared to the
-      existing topical `segment_label_annotations`, this field presents more
-      fine-grained, segment-level labels detected in video content and is made
-      available only when the client sets `LabelDetectionConfig.model` to
-      "builtin/latest" in the request.
+  *   `segmentLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on video level or user-specified segment level. There is exactly one element for each unique label.
+  *   `segmentPresenceLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
   *   `shotAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_VideoSegment.t)`, *default:* `nil`) - Shot annotations. Each shot is represented as a video segment.
-  *   `shotLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on shot level.
-      There is exactly one element for each unique label.
-  *   `shotPresenceLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Presence label annotations on shot level. There is exactly one element for
-      each unique label. Compared to the existing topical
-      `shot_label_annotations`, this field presents more fine-grained, shot-level
-      labels detected in video content and is made available only when the client
-      sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
+  *   `shotLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on shot level. There is exactly one element for each unique label.
+  *   `shotPresenceLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
   *   `speechTranscriptions` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_SpeechTranscription.t)`, *default:* `nil`) - Speech transcription.
-  *   `textAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_TextAnnotation.t)`, *default:* `nil`) - OCR text detection and tracking.
-      Annotations for list of detected text snippets. Each will have list of
-      frame information associated with it.
+  *   `textAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_TextAnnotation.t)`, *default:* `nil`) - OCR text detection and tracking. Annotations for list of detected text snippets. Each will have list of frame information associated with it.
   """
 
   use GoogleApi.Gax.ModelBase

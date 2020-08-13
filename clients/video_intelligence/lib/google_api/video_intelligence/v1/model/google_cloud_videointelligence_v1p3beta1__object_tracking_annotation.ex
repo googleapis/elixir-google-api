@@ -23,18 +23,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Object category's labeling confidence of this track.
   *   `entity` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Entity.t`, *default:* `nil`) - Entity to specify the object category that this track is labeled as.
-  *   `frames` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingFrame.t)`, *default:* `nil`) - Information corresponding to all frames where this object track appears.
-      Non-streaming batch mode: it may be one or multiple ObjectTrackingFrame
-      messages in frames.
-      Streaming mode: it can only be one ObjectTrackingFrame message in frames.
-  *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment.t`, *default:* `nil`) - Non-streaming batch mode ONLY.
-      Each object track corresponds to one video segment where it appears.
-  *   `trackId` (*type:* `String.t`, *default:* `nil`) - Streaming mode ONLY.
-      In streaming mode, we do not know the end time of a tracked object
-      before it is completed. Hence, there is no VideoSegment info returned.
-      Instead, we provide a unique identifiable integer track_id so that
-      the customers can correlate the results of the ongoing
-      ObjectTrackAnnotation of the same track_id over time.
+  *   `frames` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingFrame.t)`, *default:* `nil`) - Information corresponding to all frames where this object track appears. Non-streaming batch mode: it may be one or multiple ObjectTrackingFrame messages in frames. Streaming mode: it can only be one ObjectTrackingFrame message in frames.
+  *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment.t`, *default:* `nil`) - Non-streaming batch mode ONLY. Each object track corresponds to one video segment where it appears.
+  *   `trackId` (*type:* `String.t`, *default:* `nil`) - Streaming mode ONLY. In streaming mode, we do not know the end time of a tracked object before it is completed. Hence, there is no VideoSegment info returned. Instead, we provide a unique identifiable integer track_id so that the customers can correlate the results of the ongoing ObjectTrackAnnotation of the same track_id over time.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 

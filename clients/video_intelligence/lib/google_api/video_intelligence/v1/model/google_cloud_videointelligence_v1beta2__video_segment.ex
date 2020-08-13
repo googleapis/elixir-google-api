@@ -21,10 +21,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
 
   ## Attributes
 
-  *   `endTimeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video,
-      corresponding to the end of the segment (inclusive).
-  *   `startTimeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video,
-      corresponding to the start of the segment (inclusive).
+  *   `endTimeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video, corresponding to the end of the segment (inclusive).
+  *   `startTimeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video, corresponding to the start of the segment (inclusive).
   """
 
   use GoogleApi.Gax.ModelBase

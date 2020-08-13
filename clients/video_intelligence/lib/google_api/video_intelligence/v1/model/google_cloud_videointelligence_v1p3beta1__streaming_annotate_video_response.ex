@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_StreamingAnnotateVideoResponse do
   @moduledoc """
-  `StreamingAnnotateVideoResponse` is the only message returned to the client
-  by `StreamingAnnotateVideo`. A series of zero or more
-  `StreamingAnnotateVideoResponse` messages are streamed back to the client.
+  `StreamingAnnotateVideoResponse` is the only message returned to the client by `StreamingAnnotateVideo`. A series of zero or more `StreamingAnnotateVideoResponse` messages are streamed back to the client.
 
   ## Attributes
 
   *   `annotationResults` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults.t`, *default:* `nil`) - Streaming annotation results.
-  *   `annotationResultsUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI that stores annotation results of one
-      streaming session in JSON format.
-      It is the annotation_result_storage_directory
-      from the request followed by '/cloud_project_number-session_id'.
-  *   `error` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t`, *default:* `nil`) - If set, returns a google.rpc.Status message that
-      specifies the error for the operation.
+  *   `annotationResultsUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI that stores annotation results of one streaming session in JSON format. It is the annotation_result_storage_directory from the request followed by '/cloud_project_number-session_id'.
+  *   `error` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t`, *default:* `nil`) - If set, returns a google.rpc.Status message that specifies the error for the operation.
   """
 
   use GoogleApi.Gax.ModelBase
