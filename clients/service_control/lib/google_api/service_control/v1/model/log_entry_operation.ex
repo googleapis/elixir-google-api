@@ -17,18 +17,14 @@
 
 defmodule GoogleApi.ServiceControl.V1.Model.LogEntryOperation do
   @moduledoc """
-  Additional information about a potentially long-running operation with which
-  a log entry is associated.
+  Additional information about a potentially long-running operation with which a log entry is associated.
 
   ## Attributes
 
   *   `first` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this to True if this is the first log entry in the operation.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. An arbitrary operation identifier. Log entries with the
-      same identifier are assumed to be part of the same operation.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. An arbitrary operation identifier. Log entries with the same identifier are assumed to be part of the same operation.
   *   `last` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this to True if this is the last log entry in the operation.
-  *   `producer` (*type:* `String.t`, *default:* `nil`) - Optional. An arbitrary producer identifier. The combination of
-      `id` and `producer` must be globally unique.  Examples for `producer`:
-      `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
+  *   `producer` (*type:* `String.t`, *default:* `nil`) - Optional. An arbitrary producer identifier. The combination of `id` and `producer` must be globally unique. Examples for `producer`: `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
   """
 
   use GoogleApi.Gax.ModelBase

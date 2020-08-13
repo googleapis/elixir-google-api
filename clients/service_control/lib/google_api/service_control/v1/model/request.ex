@@ -17,35 +17,22 @@
 
 defmodule GoogleApi.ServiceControl.V1.Model.Request do
   @moduledoc """
-  This message defines attributes for an HTTP request. If the actual
-  request is not an HTTP request, the runtime system should try to map
-  the actual request to an equivalent HTTP request.
+  This message defines attributes for an HTTP request. If the actual request is not an HTTP request, the runtime system should try to map the actual request to an equivalent HTTP request.
 
   ## Attributes
 
-  *   `auth` (*type:* `GoogleApi.ServiceControl.V1.Model.Auth.t`, *default:* `nil`) - The request authentication. May be absent for unauthenticated requests.
-      Derived from the HTTP request `Authorization` header or equivalent.
-  *   `headers` (*type:* `map()`, *default:* `nil`) - The HTTP request headers. If multiple headers share the same key, they
-      must be merged according to the HTTP spec. All header keys must be
-      lowercased, because HTTP header keys are case-insensitive.
+  *   `auth` (*type:* `GoogleApi.ServiceControl.V1.Model.Auth.t`, *default:* `nil`) - The request authentication. May be absent for unauthenticated requests. Derived from the HTTP request `Authorization` header or equivalent.
+  *   `headers` (*type:* `map()`, *default:* `nil`) - The HTTP request headers. If multiple headers share the same key, they must be merged according to the HTTP spec. All header keys must be lowercased, because HTTP header keys are case-insensitive.
   *   `host` (*type:* `String.t`, *default:* `nil`) - The HTTP request `Host` header value.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for a request, which can be propagated to downstream
-      systems. The ID should have low probability of collision
-      within a single day for a specific service.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for a request, which can be propagated to downstream systems. The ID should have low probability of collision within a single day for a specific service.
   *   `method` (*type:* `String.t`, *default:* `nil`) - The HTTP request method, such as `GET`, `POST`.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The HTTP URL path.
-  *   `protocol` (*type:* `String.t`, *default:* `nil`) - The network protocol used with the request, such as "http/1.1",
-      "spdy/3", "h2", "h2c", "webrtc", "tcp", "udp", "quic". See
-      https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
-      for details.
-  *   `query` (*type:* `String.t`, *default:* `nil`) - The HTTP URL query in the format of `name1=value1&name2=value2`, as it
-      appears in the first line of the HTTP request. No decoding is performed.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - A special parameter for request reason. It is used by security systems
-      to associate auditing information with a request.
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - The network protocol used with the request, such as "http/1.1", "spdy/3", "h2", "h2c", "webrtc", "tcp", "udp", "quic". See https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids for details.
+  *   `query` (*type:* `String.t`, *default:* `nil`) - The HTTP URL query in the format of `name1=value1&name2=value2`, as it appears in the first line of the HTTP request. No decoding is performed.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - A special parameter for request reason. It is used by security systems to associate auditing information with a request.
   *   `scheme` (*type:* `String.t`, *default:* `nil`) - The HTTP URL scheme, such as `http` and `https`.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The HTTP request size in bytes. If unknown, it must be -1.
-  *   `time` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the `destination` service receives the first byte of
-      the request.
+  *   `time` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the `destination` service receives the first byte of the request.
   """
 
   use GoogleApi.Gax.ModelBase

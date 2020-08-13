@@ -17,33 +17,14 @@
 
 defmodule GoogleApi.ServiceControl.V1.Model.Resource do
   @moduledoc """
-  This message defines core attributes for a resource. A resource is an
-  addressable (named) entity provided by the destination service. For
-  example, a file stored on a network storage service.
+  This message defines core attributes for a resource. A resource is an addressable (named) entity provided by the destination service. For example, a file stored on a network storage service.
 
   ## Attributes
 
-  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels or tags on the resource, such as AWS resource tags and
-      Kubernetes resource labels.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The stable identifier (name) of a resource on the `service`. A resource
-      can be logically identified as "//{resource.service}/{resource.name}".
-      The differences between a resource name and a URI are:
-
-      *   Resource name is a logical identifier, independent of network
-          protocol and API version. For example,
-          `//pubsub.googleapis.com/projects/123/topics/news-feed`.
-      *   URI often includes protocol and version information, so it can
-          be used directly by applications. For example,
-          `https://pubsub.googleapis.com/v1/projects/123/topics/news-feed`.
-
-      See https://cloud.google.com/apis/design/resource_names for details.
-  *   `service` (*type:* `String.t`, *default:* `nil`) - The name of the service that this resource belongs to, such as
-      `pubsub.googleapis.com`. The service may be different from the DNS
-      hostname that actually serves the request.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the resource. The syntax is platform-specific because
-      different platforms define their resources differently.
-
-      For Google APIs, the type format must be "{service}/{kind}".
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels or tags on the resource, such as AWS resource tags and Kubernetes resource labels.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The stable identifier (name) of a resource on the `service`. A resource can be logically identified as "//{resource.service}/{resource.name}". The differences between a resource name and a URI are: * Resource name is a logical identifier, independent of network protocol and API version. For example, `//pubsub.googleapis.com/projects/123/topics/news-feed`. * URI often includes protocol and version information, so it can be used directly by applications. For example, `https://pubsub.googleapis.com/v1/projects/123/topics/news-feed`. See https://cloud.google.com/apis/design/resource_names for details.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - The name of the service that this resource belongs to, such as `pubsub.googleapis.com`. The service may be different from the DNS hostname that actually serves the request.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the resource. The syntax is platform-specific because different platforms define their resources differently. For Google APIs, the type format must be "{service}/{kind}".
   """
 
   use GoogleApi.Gax.ModelBase

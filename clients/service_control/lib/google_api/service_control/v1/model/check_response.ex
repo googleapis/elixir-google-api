@@ -21,16 +21,10 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckResponse do
 
   ## Attributes
 
-  *   `checkErrors` (*type:* `list(GoogleApi.ServiceControl.V1.Model.CheckError.t)`, *default:* `nil`) - Indicate the decision of the check.
-
-      If no check errors are present, the service should process the operation.
-      Otherwise the service should use the list of errors to determine the
-      appropriate action.
+  *   `checkErrors` (*type:* `list(GoogleApi.ServiceControl.V1.Model.CheckError.t)`, *default:* `nil`) - Indicate the decision of the check. If no check errors are present, the service should process the operation. Otherwise the service should use the list of errors to determine the appropriate action.
   *   `checkInfo` (*type:* `GoogleApi.ServiceControl.V1.Model.CheckInfo.t`, *default:* `nil`) - Feedback data returned from the server during processing a Check request.
-  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The same operation_id value used in the CheckRequest.
-      Used for logging and diagnostics purposes.
-  *   `quotaInfo` (*type:* `GoogleApi.ServiceControl.V1.Model.QuotaInfo.t`, *default:* `nil`) - Quota information for the check request associated with this response.
-
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - The same operation_id value used in the CheckRequest. Used for logging and diagnostics purposes.
+  *   `quotaInfo` (*type:* `GoogleApi.ServiceControl.V1.Model.QuotaInfo.t`, *default:* `nil`) - Quota information for the check request associated with this response. 
   *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - The actual config id used to process the request.
   *   `serviceRolloutId` (*type:* `String.t`, *default:* `nil`) - The current service rollout id used to process the request.
   """
