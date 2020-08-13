@@ -23,15 +23,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCert do
 
   *   `cert` (*type:* `String.t`, *default:* `nil`) - PEM representation.
   *   `certSerialNumber` (*type:* `String.t`, *default:* `nil`) - Serial number, as extracted from the certificate.
-  *   `commonName` (*type:* `String.t`, *default:* `nil`) - User supplied name.  Constrained to [a-zA-Z.-_ ]+.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the certificate was created in <a
-      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-      <b>2012-11-15T16:19:00.094Z</b>
-  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the certificate expires in <a
-      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-      <b>2012-11-15T16:19:00.094Z</b>.
+  *   `commonName` (*type:* `String.t`, *default:* `nil`) - User supplied name. Constrained to [a-zA-Z.-_ ]+.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the certificate was created in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*
+  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the certificate expires in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - Name of the database instance.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#sslCert</b>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#sslCert*.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `sha1Fingerprint` (*type:* `String.t`, *default:* `nil`) - Sha1 Fingerprint.
   """

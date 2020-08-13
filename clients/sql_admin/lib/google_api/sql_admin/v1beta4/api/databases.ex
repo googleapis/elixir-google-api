@@ -106,8 +106,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   end
 
   @doc """
-  Retrieves a resource containing information about a database inside a Cloud
-  SQL instance.
+  Retrieves a resource containing information about a database inside a Cloud SQL instance.
 
   ## Parameters
 
@@ -187,8 +186,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   end
 
   @doc """
-  Inserts a resource containing information about a database inside a Cloud
-  SQL instance.
+  Inserts a resource containing information about a database inside a Cloud SQL instance.
 
   ## Parameters
 
@@ -314,8 +312,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   end
 
   @doc """
-  Partially updates a resource containing information about a database inside
-  a Cloud SQL instance. This method supports patch semantics.
+  Partially updates a resource containing information about a database inside a Cloud SQL instance. This method supports patch semantics.
 
   ## Parameters
 
@@ -397,8 +394,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   end
 
   @doc """
-  Updates a resource containing information about a database inside a Cloud
-  SQL instance.
+  Updates a resource containing information about a database inside a Cloud SQL instance.
 
   ## Parameters
 

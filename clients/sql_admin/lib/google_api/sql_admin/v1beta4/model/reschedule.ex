@@ -22,10 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Reschedule do
   ## Attributes
 
   *   `rescheduleType` (*type:* `String.t`, *default:* `nil`) - Required. The type of the reschedule.
-  *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Timestamp when the maintenance shall be rescheduled to if
-      reschedule_type=SPECIFIC_TIME, in <a
-      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for
-      example <b>2012-11-15T16:19:00.094Z</b>.
+  *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Timestamp when the maintenance shall be rescheduled to if reschedule_type=SPECIFIC_TIME, in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*.
   """
 
   use GoogleApi.Gax.ModelBase

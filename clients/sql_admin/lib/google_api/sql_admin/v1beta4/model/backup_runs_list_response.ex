@@ -22,9 +22,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRunsListResponse do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t)`, *default:* `nil`) - A list of backup runs in reverse chronological order of the enqueued time.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#backupRunsList</b>.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide
-      this value in a subsequent request to return the next page of results.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#backupRunsList*.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.AclEntry do
 
   ## Attributes
 
-  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when this access control entry expires in <a
-      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-      <b>2012-11-15T16:19:00.094Z</b>.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#aclEntry</b>.
+  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when this access control entry expires in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#aclEntry*.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. A label to identify this entry.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The allowlisted value for the access control list.
   """

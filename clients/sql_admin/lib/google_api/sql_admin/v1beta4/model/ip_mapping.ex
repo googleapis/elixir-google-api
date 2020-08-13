@@ -22,15 +22,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.IpMapping do
   ## Attributes
 
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The IP address assigned.
-  *   `timeToRetire` (*type:* `DateTime.t`, *default:* `nil`) - The due time for this IP to be retired in <a
-      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-      <b>2012-11-15T16:19:00.094Z</b>. This field is only available when
-      the IP is scheduled to be retired.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this IP address. A <b>PRIMARY</b> address is a public
-      address that can accept incoming connections. A <b>PRIVATE</b>
-      address is a private address that can accept incoming connections. An
-      <b>OUTGOING</b> address is the source address of connections
-      originating from the instance, if supported.
+  *   `timeToRetire` (*type:* `DateTime.t`, *default:* `nil`) - The due time for this IP to be retired in RFC 3339 format, for example *2012-11-15T16:19:00.094Z*. This field is only available when the IP is scheduled to be retired.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this IP address. A *PRIMARY* address is a public address that can accept incoming connections. A *PRIVATE* address is a private address that can accept incoming connections. An *OUTGOING* address is the source address of connections originating from the instance, if supported.
   """
 
   use GoogleApi.Gax.ModelBase

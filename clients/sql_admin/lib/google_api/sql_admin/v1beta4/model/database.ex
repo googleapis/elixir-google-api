@@ -23,14 +23,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Database do
 
   *   `charset` (*type:* `String.t`, *default:* `nil`) - The Cloud SQL charset value.
   *   `collation` (*type:* `String.t`, *default:* `nil`) - The Cloud SQL collation value.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the
-      API.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the API.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud SQL instance. This does not include the project ID.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#database</b>.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the database in the Cloud SQL instance. This does not include
-      the project ID or instance name.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL database. The Google
-      apps domain is prefixed if applicable.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#database*.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the database in the Cloud SQL instance. This does not include the project ID or instance name.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL database. The Google apps domain is prefixed if applicable.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `sqlserverDatabaseDetails` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlServerDatabaseDetails.t`, *default:* `nil`) - 
   """

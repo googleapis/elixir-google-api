@@ -87,8 +87,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
   end
 
   @doc """
-  Lists all instance operations that have been performed on the given Cloud
-  SQL instance in the reverse chronological order of the start time.
+  Lists all instance operations that have been performed on the given Cloud SQL instance in the reverse chronological order of the start time.
 
   ## Parameters
 
@@ -108,8 +107,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of operations per response.
-      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
-          results to view.
+      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
