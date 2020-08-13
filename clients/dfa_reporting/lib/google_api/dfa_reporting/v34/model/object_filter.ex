@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.ObjectFilter do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#objectFilter`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#objectFilter".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#objectFilter".
   *   `objectIds` (*type:* `list(String.t)`, *default:* `nil`) - Applicable when status is ASSIGNED. The user has access to objects with these object IDs.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the filter. NONE means the user has access to none of the objects. ALL means the user has access to all objects. ASSIGNED means the user has access to the objects with IDs in the objectIds list.
   """

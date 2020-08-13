@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventStatus do
 
   *   `customEvent` (*type:* `GoogleApi.DFAReporting.V34.Model.CustomEvent.t`, *default:* `nil`) - The original custom event that was inserted.
   *   `errors` (*type:* `list(GoogleApi.DFAReporting.V34.Model.CustomEventError.t)`, *default:* `nil`) - A list of errors related to this custom event.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customEventStatus`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventStatus".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventStatus".
   """
 
   use GoogleApi.Gax.ModelBase

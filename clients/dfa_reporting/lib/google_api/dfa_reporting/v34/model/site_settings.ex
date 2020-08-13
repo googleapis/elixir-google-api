@@ -26,9 +26,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.SiteSettings do
   *   `disableNewCookie` (*type:* `boolean()`, *default:* `nil`) - Whether new cookies are disabled for this site.
   *   `tagSetting` (*type:* `GoogleApi.DFAReporting.V34.Model.TagSetting.t`, *default:* `nil`) - Configuration settings for dynamic and image floodlight tags.
   *   `videoActiveViewOptOutTemplate` (*type:* `boolean()`, *default:* `nil`) - Whether Verification and ActiveView for in-stream video creatives are disabled by default for new placements created under this site. This value will be used to populate the placement.videoActiveViewOptOut field, when no value is specified for the new placement.
-  *   `vpaidAdapterChoiceTemplate` (*type:* `String.t`, *default:* `nil`) - Default VPAID adapter setting for new placements created under this site. This value will be used to populate the placements.vpaidAdapterChoice field, when no value is specified for the new placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to the placement. The publisher's specifications will typically determine this setting. For VPAID creatives, the adapter format will match the VPAID format (HTML5 VPAID creatives use the HTML5 adapter).
-
-      Note: Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
+  *   `vpaidAdapterChoiceTemplate` (*type:* `String.t`, *default:* `nil`) - Default VPAID adapter setting for new placements created under this site. This value will be used to populate the placements.vpaidAdapterChoice field, when no value is specified for the new placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to the placement. The publisher's specifications will typically determine this setting. For VPAID creatives, the adapter format will match the VPAID format (HTML5 VPAID creatives use the HTML5 adapter). *Note:* Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
   """
 
   use GoogleApi.Gax.ModelBase

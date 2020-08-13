@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.EventTagsListResponse do
   ## Attributes
 
   *   `eventTags` (*type:* `list(GoogleApi.DFAReporting.V34.Model.EventTag.t)`, *default:* `nil`) - Event tag collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#eventTagsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#eventTagsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#eventTagsListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

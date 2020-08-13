@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.PostalCodesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#postalCodesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#postalCodesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#postalCodesListResponse".
   *   `postalCodes` (*type:* `list(GoogleApi.DFAReporting.V34.Model.PostalCode.t)`, *default:* `nil`) - Postal code collection.
   """
 

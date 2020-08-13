@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.UserRolesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#userRolesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   *   `userRoles` (*type:* `list(GoogleApi.DFAReporting.V34.Model.UserRole.t)`, *default:* `nil`) - User role collection.
   """

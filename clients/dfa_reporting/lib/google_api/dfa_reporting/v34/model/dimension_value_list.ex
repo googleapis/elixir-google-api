@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.DimensionValueList do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The eTag of this response for caching purposes.
   *   `items` (*type:* `list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t)`, *default:* `nil`) - The dimension values returned in this response.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#dimensionValueList`) - The kind of list this is, in this case dfareporting#dimensionValueList.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of list this is, in this case dfareporting#dimensionValueList.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token used to page through dimension values. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted.
   """
 

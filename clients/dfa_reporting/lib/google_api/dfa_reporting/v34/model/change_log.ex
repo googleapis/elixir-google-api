@@ -23,10 +23,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.ChangeLog do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of the modified object.
   *   `action` (*type:* `String.t`, *default:* `nil`) - Action which caused the change.
-  *   `changeTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the object was modified.
+  *   `changeTime` (*type:* `DateTime.t`, *default:* `nil`) - 
   *   `fieldName` (*type:* `String.t`, *default:* `nil`) - Field name of the object which changed.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this change log.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#changeLog`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#changeLog".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#changeLog".
   *   `newValue` (*type:* `String.t`, *default:* `nil`) - New value of the object field.
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - ID of the object of this change log. The object could be a campaign, placement, ad, or other type.
   *   `objectType` (*type:* `String.t`, *default:* `nil`) - Object type of the change log.

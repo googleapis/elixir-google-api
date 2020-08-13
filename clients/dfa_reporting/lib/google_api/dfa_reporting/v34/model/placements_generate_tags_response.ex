@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.PlacementsGenerateTagsResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#placementsGenerateTagsResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementsGenerateTagsResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementsGenerateTagsResponse".
   *   `placementTags` (*type:* `list(GoogleApi.DFAReporting.V34.Model.PlacementTag.t)`, *default:* `nil`) - Set of generated tags for the specified placements.
   """
 

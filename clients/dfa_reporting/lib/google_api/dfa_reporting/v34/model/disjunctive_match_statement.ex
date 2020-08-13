@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.DisjunctiveMatchStatement do
   ## Attributes
 
   *   `eventFilters` (*type:* `list(GoogleApi.DFAReporting.V34.Model.EventFilter.t)`, *default:* `nil`) - The event filters contained within this disjunctive match statement.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#disjunctiveMatchStatement`) - The kind of resource this is, in this case dfareporting#disjunctiveMatchStatement.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#disjunctiveMatchStatement.
   """
 
   use GoogleApi.Gax.ModelBase

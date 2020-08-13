@@ -28,7 +28,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Site do
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this site. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this site. This is a read-only, auto-generated field.
   *   `keyName` (*type:* `String.t`, *default:* `nil`) - Key name of this site. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#site`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#site".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#site".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this site.This is a required field. Must be less than 128 characters long. If this site is under a subaccount, the name must be unique among sites of the same subaccount. Otherwise, this site is a top-level site, and the name must be unique among top-level sites of the same account.
   *   `siteContacts` (*type:* `list(GoogleApi.DFAReporting.V34.Model.SiteContact.t)`, *default:* `nil`) - Site contacts.
   *   `siteSettings` (*type:* `GoogleApi.DFAReporting.V34.Model.SiteSettings.t`, *default:* `nil`) - Site-wide settings.

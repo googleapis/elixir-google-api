@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.UserRolePermission do
 
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Levels of availability for a user role permission.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this user role permission.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#userRolePermission`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermission".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermission".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this user role permission.
   *   `permissionGroupId` (*type:* `String.t`, *default:* `nil`) - ID of the permission group that this user role permission belongs to.
   """

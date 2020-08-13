@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventClickAnnotation do
   ## Attributes
 
   *   `gclid` (*type:* `String.t`, *default:* `nil`) - The Google click ID. Use this field to annotate the click associated with the gclid.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customEventClickAnnotation`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventClickAnnotation".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEventClickAnnotation".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CreativeFieldValue do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this creative field value. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#creativeFieldValue`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeFieldValue".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeFieldValue".
   *   `value` (*type:* `String.t`, *default:* `nil`) - Value of this creative field value. It needs to be less than 256 characters in length and unique per creative field.
   """
 

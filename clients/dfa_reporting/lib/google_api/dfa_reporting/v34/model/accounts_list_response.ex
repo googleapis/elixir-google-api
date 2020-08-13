@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.AccountsListResponse do
   ## Attributes
 
   *   `accounts` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Account.t)`, *default:* `nil`) - Account collection.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#accountsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to be used for the next list operation.
   """
 

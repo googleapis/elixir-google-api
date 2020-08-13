@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.ConversionsBatchUpdateRequest do
 
   *   `conversions` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Conversion.t)`, *default:* `nil`) - The set of conversions to update.
   *   `encryptionInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.EncryptionInfo.t`, *default:* `nil`) - Describes how encryptedUserId is encrypted. This is a required field if encryptedUserId is used.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#conversionsBatchUpdateRequest`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchUpdateRequest".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchUpdateRequest".
   """
 
   use GoogleApi.Gax.ModelBase

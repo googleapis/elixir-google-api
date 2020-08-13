@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.City do
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code of the country to which this city belongs.
   *   `countryDartId` (*type:* `String.t`, *default:* `nil`) - DART ID of the country to which this city belongs.
   *   `dartId` (*type:* `String.t`, *default:* `nil`) - DART ID of this city. This is the ID used for targeting and generating reports.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#city`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#city".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#city".
   *   `metroCode` (*type:* `String.t`, *default:* `nil`) - Metro region code of the metro region (DMA) to which this city belongs.
   *   `metroDmaId` (*type:* `String.t`, *default:* `nil`) - ID of the metro region (DMA) to which this city belongs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this city.

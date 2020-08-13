@@ -26,8 +26,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.File do
   *   `fileName` (*type:* `String.t`, *default:* `nil`) - The filename of the file.
   *   `format` (*type:* `String.t`, *default:* `nil`) - The output format of the report. Only available once the file is available.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of this report file.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#file`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#file".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#file".
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - The timestamp in milliseconds since epoch when this file was last modified.
+  *   `mediaRequestInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.MediaRequestInfo.t`, *default:* `nil`) - 
+  *   `mediaResponseInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.MediaResponseInfo.t`, *default:* `nil`) - 
   *   `reportId` (*type:* `String.t`, *default:* `nil`) - The ID of the report this file was generated from.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the report file.
   *   `urls` (*type:* `GoogleApi.DFAReporting.V34.Model.FileUrls.t`, *default:* `nil`) - The URLs where the completed report file can be downloaded.
@@ -43,6 +45,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.File do
           :id => String.t(),
           :kind => String.t(),
           :lastModifiedTime => String.t(),
+          :mediaRequestInfo => GoogleApi.DFAReporting.V34.Model.MediaRequestInfo.t(),
+          :mediaResponseInfo => GoogleApi.DFAReporting.V34.Model.MediaResponseInfo.t(),
           :reportId => String.t(),
           :status => String.t(),
           :urls => GoogleApi.DFAReporting.V34.Model.FileUrls.t()
@@ -55,6 +59,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.File do
   field(:id)
   field(:kind)
   field(:lastModifiedTime)
+  field(:mediaRequestInfo, as: GoogleApi.DFAReporting.V34.Model.MediaRequestInfo)
+  field(:mediaResponseInfo, as: GoogleApi.DFAReporting.V34.Model.MediaResponseInfo)
   field(:reportId)
   field(:status)
   field(:urls, as: GoogleApi.DFAReporting.V34.Model.FileUrls)

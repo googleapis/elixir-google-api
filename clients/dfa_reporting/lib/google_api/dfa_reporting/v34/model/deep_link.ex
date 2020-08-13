@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.DeepLink do
 
   *   `appUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the mobile app being linked to.
   *   `fallbackUrl` (*type:* `String.t`, *default:* `nil`) - The fallback URL. This URL will be served to users who do not have the mobile app installed.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#deepLink`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#deepLink".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#deepLink".
   *   `mobileApp` (*type:* `GoogleApi.DFAReporting.V34.Model.MobileApp.t`, *default:* `nil`) - The mobile app targeted by this deep link.
   *   `remarketingListIds` (*type:* `list(String.t)`, *default:* `nil`) - Ads served to users on these remarketing lists will use this deep link. Applicable when mobileApp.directory is APPLE_APP_STORE.
   """

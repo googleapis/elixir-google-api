@@ -25,7 +25,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.AccountActiveAdSummary do
   *   `activeAds` (*type:* `String.t`, *default:* `nil`) - Ads that have been activated for the account
   *   `activeAdsLimitTier` (*type:* `String.t`, *default:* `nil`) - Maximum number of active ads allowed for the account.
   *   `availableAds` (*type:* `String.t`, *default:* `nil`) - Ads that can be activated for the account.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#accountActiveAdSummary`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountActiveAdSummary".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountActiveAdSummary".
   """
 
   use GoogleApi.Gax.ModelBase

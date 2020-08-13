@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.UserRolePermissionGroup do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this user role permission.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#userRolePermissionGroup`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermissionGroup".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermissionGroup".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this user role permission group.
   """
 

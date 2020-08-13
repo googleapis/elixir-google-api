@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.PathReportDimensionValue do
 
   *   `dimensionName` (*type:* `String.t`, *default:* `nil`) - The name of the dimension.
   *   `ids` (*type:* `list(String.t)`, *default:* `nil`) - The possible ID's associated with the value if available.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#pathReportDimensionValue`) - The kind of resource this is, in this case dfareporting#pathReportDimensionValue.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#pathReportDimensionValue.
   *   `matchType` (*type:* `String.t`, *default:* `nil`) - Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.
   *   `values` (*type:* `list(String.t)`, *default:* `nil`) - The possible values of the dimension.
   """

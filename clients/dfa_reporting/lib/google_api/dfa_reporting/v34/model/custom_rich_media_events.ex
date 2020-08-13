@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomRichMediaEvents do
   ## Attributes
 
   *   `filteredEventIds` (*type:* `list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t)`, *default:* `nil`) - List of custom rich media event IDs. Dimension values must be all of type dfa:richMediaEventTypeIdAndName.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#customRichMediaEvents`) - The kind of resource this is, in this case dfareporting#customRichMediaEvents.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#customRichMediaEvents.
   """
 
   use GoogleApi.Gax.ModelBase

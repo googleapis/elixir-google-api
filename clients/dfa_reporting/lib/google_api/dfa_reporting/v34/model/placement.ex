@@ -34,13 +34,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.Placement do
   *   `publisherUpdateInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the last publisher update. This is a read-only field.
   *   `createInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the creation of this placement. This is a read-only field.
   *   `adBlockingOptOut` (*type:* `boolean()`, *default:* `nil`) - Whether this placement opts out of ad blocking. When true, ad blocking is disabled for this placement. When false, the campaign and site settings take effect.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#placement`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placement".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placement".
   *   `lookbackConfiguration` (*type:* `GoogleApi.DFAReporting.V34.Model.LookbackConfiguration.t`, *default:* `nil`) - Lookback window settings for this placement.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Campaign ID of this placement. This field is a required field on insertion.
   *   `placementGroupId` (*type:* `String.t`, *default:* `nil`) - ID of this placement's group, if applicable.
-  *   `vpaidAdapterChoice` (*type:* `String.t`, *default:* `nil`) - VPAID adapter setting for this placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to this placement.
-
-      Note: Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
+  *   `vpaidAdapterChoice` (*type:* `String.t`, *default:* `nil`) - VPAID adapter setting for this placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to this placement. *Note:* Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this placement.This is a required field and must be less than 256 characters long.
   *   `campaignIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the campaign. This is a read-only, auto-generated field.
   *   `videoSettings` (*type:* `GoogleApi.DFAReporting.V34.Model.VideoSettings.t`, *default:* `nil`) - A collection of settings which affect video creatives served through this placement. Applicable to placements with IN_STREAM_VIDEO compatibility.
@@ -62,23 +60,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Placement do
   *   `videoActiveViewOptOut` (*type:* `boolean()`, *default:* `nil`) - Whether Verification and ActiveView are disabled for in-stream video creatives for this placement. The same setting videoActiveViewOptOut exists on the site level -- the opt out occurs if either of these settings are true. These settings are distinct from DirectorySites.settings.activeViewOptOut or Sites.siteSettings.activeViewOptOut which only apply to display ads. However, Accounts.activeViewOptOut opts out both video traffic, as well as display ads, from Verification and ActiveView.
   *   `directorySiteId` (*type:* `String.t`, *default:* `nil`) - Directory site ID of this placement. On insert, you must set either this field or the siteId field to specify the site associated with this placement. This is a required field that is read-only after insertion.
   *   `comment` (*type:* `String.t`, *default:* `nil`) - Comments for this placement.
-  *   `tagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag formats to generate for this placement. This field is required on insertion.
-      Acceptable values are:
-      - "PLACEMENT_TAG_STANDARD"
-      - "PLACEMENT_TAG_IFRAME_JAVASCRIPT"
-      - "PLACEMENT_TAG_IFRAME_ILAYER"
-      - "PLACEMENT_TAG_INTERNAL_REDIRECT"
-      - "PLACEMENT_TAG_JAVASCRIPT"
-      - "PLACEMENT_TAG_INTERSTITIAL_IFRAME_JAVASCRIPT"
-      - "PLACEMENT_TAG_INTERSTITIAL_INTERNAL_REDIRECT"
-      - "PLACEMENT_TAG_INTERSTITIAL_JAVASCRIPT"
-      - "PLACEMENT_TAG_CLICK_COMMANDS"
-      - "PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH"
-      - "PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_3"
-      - "PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_4"
-      - "PLACEMENT_TAG_TRACKING"
-      - "PLACEMENT_TAG_TRACKING_IFRAME"
-      - "PLACEMENT_TAG_TRACKING_JAVASCRIPT"
+  *   `tagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag formats to generate for this placement. This field is required on insertion. Acceptable values are: - "PLACEMENT_TAG_STANDARD" - "PLACEMENT_TAG_IFRAME_JAVASCRIPT" - "PLACEMENT_TAG_IFRAME_ILAYER" - "PLACEMENT_TAG_INTERNAL_REDIRECT" - "PLACEMENT_TAG_JAVASCRIPT" - "PLACEMENT_TAG_INTERSTITIAL_IFRAME_JAVASCRIPT" - "PLACEMENT_TAG_INTERSTITIAL_INTERNAL_REDIRECT" - "PLACEMENT_TAG_INTERSTITIAL_JAVASCRIPT" - "PLACEMENT_TAG_CLICK_COMMANDS" - "PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH" - "PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_3" - "PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_4" - "PLACEMENT_TAG_TRACKING" - "PLACEMENT_TAG_TRACKING_IFRAME" - "PLACEMENT_TAG_TRACKING_JAVASCRIPT" 
   *   `directorySiteIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the directory site. This is a read-only, auto-generated field.
   """
 

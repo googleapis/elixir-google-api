@@ -21,9 +21,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CreativeClickThroughUrl do
 
   ## Attributes
 
-  *   `computedClickThroughUrl` (*type:* `String.t`, *default:* `nil`) - Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: 
-      - If landingPageId is specified then that landing page's URL is assigned to this field.
-      - Otherwise, the customClickThroughUrl is assigned to this field.
+  *   `computedClickThroughUrl` (*type:* `String.t`, *default:* `nil`) - Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: - If landingPageId is specified then that landing page's URL is assigned to this field. - Otherwise, the customClickThroughUrl is assigned to this field. 
   *   `customClickThroughUrl` (*type:* `String.t`, *default:* `nil`) - Custom click-through URL. Applicable if the landingPageId field is left unset.
   *   `landingPageId` (*type:* `String.t`, *default:* `nil`) - ID of the landing page for the click-through URL.
   """

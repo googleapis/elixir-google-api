@@ -37,16 +37,16 @@ defmodule GoogleApi.DFAReporting.V34.Model.Campaign do
   *   `creativeOptimizationConfiguration` (*type:* `GoogleApi.DFAReporting.V34.Model.CreativeOptimizationConfiguration.t`, *default:* `nil`) - Creative optimization configuration for the campaign.
   *   `defaultClickThroughEventTagProperties` (*type:* `GoogleApi.DFAReporting.V34.Model.DefaultClickThroughEventTagProperties.t`, *default:* `nil`) - Click-through event tag ID override properties for this campaign.
   *   `defaultLandingPageId` (*type:* `String.t`, *default:* `nil`) - The default landing page ID for this campaign.
-  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - Date on which the campaign will stop running. On insert, the end date must be today or a future date. The end date must be later than or be the same as the start date. If, for example, you set 6/25/2015 as both the start and end dates, the effective campaign run date is just that day only, 6/25/2015. The hours, minutes, and seconds of the end date should not be set, as doing so will result in an error. This is a required field.
+  *   `endDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `eventTagOverrides` (*type:* `list(GoogleApi.DFAReporting.V34.Model.EventTagOverride.t)`, *default:* `nil`) - Overrides that can be used to activate or deactivate advertiser event tags.
   *   `externalId` (*type:* `String.t`, *default:* `nil`) - External ID for this campaign.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this campaign. This is a read-only auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this campaign. This is a read-only, auto-generated field.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#campaign`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaign".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaign".
   *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the most recent modification of this campaign. This is a read-only field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this campaign. This is a required field and must be less than 256 characters long and unique among campaigns of the same advertiser.
   *   `nielsenOcrEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Nielsen reports are enabled for this campaign.
-  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - Date on which the campaign starts running. The start date can be any date. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error. This is a required field.
+  *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this campaign. This is a read-only field that can be left blank.
   *   `traffickerEmails` (*type:* `list(String.t)`, *default:* `nil`) - Campaign trafficker contact emails.
   """

@@ -26,7 +26,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.DV3Ids do
   *   `dvInsertionOrderId` (*type:* `String.t`, *default:* `nil`) - Insertion Order ID for DV360.
   *   `dvLineItemId` (*type:* `String.t`, *default:* `nil`) - Line Item ID for DV360.
   *   `dvSiteId` (*type:* `String.t`, *default:* `nil`) - Site ID for DV360.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#dV3Ids`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#dV3Ids".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#dV3Ids".
   """
 
   use GoogleApi.Gax.ModelBase

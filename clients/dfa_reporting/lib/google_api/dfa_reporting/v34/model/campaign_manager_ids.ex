@@ -24,7 +24,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CampaignManagerIds do
   *   `adId` (*type:* `String.t`, *default:* `nil`) - Ad ID for Campaign Manager.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Campaign ID for Campaign Manager.
   *   `creativeId` (*type:* `String.t`, *default:* `nil`) - Creative ID for Campaign Manager.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#campaignManagerIds`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignManagerIds".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignManagerIds".
   *   `placementId` (*type:* `String.t`, *default:* `nil`) - Placement ID for Campaign Manager.
   *   `siteId` (*type:* `String.t`, *default:* `nil`) - Site ID for Campaign Manager.
   """

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.PathFilter do
   ## Attributes
 
   *   `eventFilters` (*type:* `list(GoogleApi.DFAReporting.V34.Model.EventFilter.t)`, *default:* `nil`) - Event filters in path report.
-  *   `kind` (*type:* `String.t`, *default:* `dfaReporting#pathFilter`) - The kind of resource this is, in this case dfareporting#pathFilter.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#pathFilter.
   *   `pathMatchPosition` (*type:* `String.t`, *default:* `nil`) - Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.
   """
 
