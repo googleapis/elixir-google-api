@@ -21,9 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ListModelsResponse do
 
   ## Attributes
 
-  *   `models` (*type:* `list(GoogleApi.BigQuery.V2.Model.Model.t)`, *default:* `nil`) - Models in the requested dataset. Only the following fields are populated:
-      model_reference, model_type, creation_time, last_modified_time and
-      labels.
+  *   `models` (*type:* `list(GoogleApi.BigQuery.V2.Model.Model.t)`, *default:* `nil`) - Models in the requested dataset. Only the following fields are populated: model_reference, model_type, creation_time, last_modified_time and labels.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to request the next page of results.
   """
 

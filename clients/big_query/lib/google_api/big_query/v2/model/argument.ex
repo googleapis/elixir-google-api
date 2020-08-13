@@ -23,8 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Argument do
 
   *   `argumentKind` (*type:* `String.t`, *default:* `nil`) - Optional. Defaults to FIXED_TYPE.
   *   `dataType` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t`, *default:* `nil`) - Required unless argument_kind = ANY_TYPE.
-  *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies whether the argument is input or output.
-      Can be set for procedures only.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies whether the argument is input or output. Can be set for procedures only.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The name of this argument. Can be absent for function return argument.
   """
 

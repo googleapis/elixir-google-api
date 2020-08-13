@@ -17,23 +17,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.StandardSqlDataType do
   @moduledoc """
-  The type of a variable, e.g., a function argument.
-  Examples:
-  INT64: {type_kind="INT64"}
-  ARRAY<STRING>: {type_kind="ARRAY", array_element_type="STRING"}
-  STRUCT<x STRING, y ARRAY<DATE>>:
-    {type_kind="STRUCT",
-     struct_type={fields=[
-       {name="x", type={type_kind="STRING"}},
-       {name="y", type={type_kind="ARRAY", array_element_type="DATE"}}
-     ]}}
+  The type of a variable, e.g., a function argument. Examples: INT64: {type_kind="INT64"} ARRAY: {type_kind="ARRAY", array_element_type="STRING"} STRUCT>: {type_kind="STRUCT", struct_type={fields=[ {name="x", type={type_kind="STRING"}}, {name="y", type={type_kind="ARRAY", array_element_type="DATE"}} ]}}
 
   ## Attributes
 
   *   `arrayElementType` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t`, *default:* `nil`) - The type of the array's elements, if type_kind = "ARRAY".
   *   `structType` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlStructType.t`, *default:* `nil`) - The fields of this struct, in order, if type_kind = "STRUCT".
-  *   `typeKind` (*type:* `String.t`, *default:* `nil`) - Required. The top level type of this field.
-      Can be any standard SQL data type (e.g., "INT64", "DATE", "ARRAY").
+  *   `typeKind` (*type:* `String.t`, *default:* `nil`) - Required. The top level type of this field. Can be any standard SQL data type (e.g., "INT64", "DATE", "ARRAY").
   """
 
   use GoogleApi.Gax.ModelBase

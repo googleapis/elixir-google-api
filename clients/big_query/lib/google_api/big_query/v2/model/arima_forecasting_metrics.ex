@@ -22,13 +22,10 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics do
   ## Attributes
 
   *   `arimaFittingMetrics` (*type:* `list(GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t)`, *default:* `nil`) - Arima model fitting metrics.
-  *   `arimaSingleModelForecastingMetrics` (*type:* `list(GoogleApi.BigQuery.V2.Model.ArimaSingleModelForecastingMetrics.t)`, *default:* `nil`) - Repeated as there can be many metric sets (one for each model) in
-      auto-arima and the large-scale case.
-  *   `hasDrift` (*type:* `list(boolean())`, *default:* `nil`) - Whether Arima model fitted with drift or not. It is always false when d
-      is not 1.
+  *   `arimaSingleModelForecastingMetrics` (*type:* `list(GoogleApi.BigQuery.V2.Model.ArimaSingleModelForecastingMetrics.t)`, *default:* `nil`) - Repeated as there can be many metric sets (one for each model) in auto-arima and the large-scale case.
+  *   `hasDrift` (*type:* `list(boolean())`, *default:* `nil`) - Whether Arima model fitted with drift or not. It is always false when d is not 1.
   *   `nonSeasonalOrder` (*type:* `list(GoogleApi.BigQuery.V2.Model.ArimaOrder.t)`, *default:* `nil`) - Non-seasonal order.
-  *   `seasonalPeriods` (*type:* `list(String.t)`, *default:* `nil`) - Seasonal periods. Repeated because multiple periods are supported for one
-      time series.
+  *   `seasonalPeriods` (*type:* `list(String.t)`, *default:* `nil`) - Seasonal periods. Repeated because multiple periods are supported for one time series.
   *   `timeSeriesId` (*type:* `list(String.t)`, *default:* `nil`) - Id to differentiate different time series for the large-scale case.
   """
 

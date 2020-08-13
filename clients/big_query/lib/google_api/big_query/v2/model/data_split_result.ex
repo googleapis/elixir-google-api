@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.DataSplitResult do
   @moduledoc """
-  Data split result. This contains references to the training and evaluation
-  data tables that were used to train the model.
+  Data split result. This contains references to the training and evaluation data tables that were used to train the model.
 
   ## Attributes
 

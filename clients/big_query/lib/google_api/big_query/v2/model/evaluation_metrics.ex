@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
   @moduledoc """
-  Evaluation metrics of a model. These are either computed on all training
-  data or just the eval data based on whether eval data was used during
-  training. These are not present for imported models.
+  Evaluation metrics of a model. These are either computed on all training data or just the eval data based on whether eval data was used during training. These are not present for imported models.
 
   ## Attributes
 
@@ -28,8 +26,7 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
   *   `clusteringMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t`, *default:* `nil`) - Populated for clustering models.
   *   `multiClassClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t`, *default:* `nil`) - Populated for multi-class classification/classifier models.
   *   `rankingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RankingMetrics.t`, *default:* `nil`) - Populated for implicit feedback type matrix factorization models.
-  *   `regressionMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RegressionMetrics.t`, *default:* `nil`) - Populated for regression models and explicit feedback type matrix
-      factorization models.
+  *   `regressionMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RegressionMetrics.t`, *default:* `nil`) - Populated for regression models and explicit feedback type matrix factorization models.
   """
 
   use GoogleApi.Gax.ModelBase
