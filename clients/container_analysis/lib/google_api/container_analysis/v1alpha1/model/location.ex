@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Location do
   @moduledoc """
-  An occurrence of a particular package installation found within a
-  system's filesystem.
-  e.g. glibc was found in /var/lib/dpkg/status
+  An occurrence of a particular package installation found within a system's filesystem. e.g. glibc was found in /var/lib/dpkg/status
 
   ## Attributes
 
-  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
-      denoting the package manager version distributing a package.
+  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The path from which we gathered that this package/version is installed.
   *   `version` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t`, *default:* `nil`) - The version installed at this location.
   """

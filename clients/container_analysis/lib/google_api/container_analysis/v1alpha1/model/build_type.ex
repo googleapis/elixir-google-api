@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildType do
   @moduledoc """
-  Note holding the version of the provider's builder and the signature of
-  the provenance message in linked BuildDetails.
+  Note holding the version of the provider's builder and the signature of the provenance message in linked BuildDetails.
 
   ## Attributes
 
   *   `builderVersion` (*type:* `String.t`, *default:* `nil`) - Version of the builder which produced this Note.
-  *   `signature` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildSignature.t`, *default:* `nil`) - Signature of the build in Occurrences pointing to the Note containing this
-      `BuilderDetails`.
+  *   `signature` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildSignature.t`, *default:* `nil`) - Signature of the build in Occurrences pointing to the Note containing this `BuilderDetails`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeDistribution do
   @moduledoc """
-  The Upgrade Distribution represents metadata about the Upgrade for each
-  operating system (CPE). Some distributions have additional metadata around
-  updates, classifying them into various categories and severities.
+  The Upgrade Distribution represents metadata about the Upgrade for each operating system (CPE). Some distributions have additional metadata around updates, classifying them into various categories and severities.
 
   ## Attributes
 
-  *   `classification` (*type:* `String.t`, *default:* `nil`) - The operating system classification of this Upgrade, as specified by the
-      upstream operating system upgrade feed.
-  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - Required - The specific operating system this metadata applies to. See
-      https://cpe.mitre.org/specification/.
+  *   `classification` (*type:* `String.t`, *default:* `nil`) - The operating system classification of this Upgrade, as specified by the upstream operating system upgrade feed.
+  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - Required - The specific operating system this metadata applies to. See https://cpe.mitre.org/specification/.
   *   `cve` (*type:* `list(String.t)`, *default:* `nil`) - The cve that would be resolved by this upgrade.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity as specified by the upstream operating system.
   """

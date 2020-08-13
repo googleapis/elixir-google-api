@@ -21,8 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ListNotesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next pagination token in the list response. It should be used as
-      page_token for the following request. An empty value means no more result.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next pagination token in the list response. It should be used as page_token for the following request. An empty value means no more result.
   *   `notes` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t)`, *default:* `nil`) - The occurrences requested
   """
 

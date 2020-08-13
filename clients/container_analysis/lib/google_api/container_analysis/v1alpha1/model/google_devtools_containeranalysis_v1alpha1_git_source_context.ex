@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1GitSourceContext do
   @moduledoc """
-  A GitSourceContext denotes a particular revision in a third party Git
-  repository (e.g., GitHub).
+  A GitSourceContext denotes a particular revision in a third party Git repository (e.g., GitHub).
 
   ## Attributes
 

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Package do
   @moduledoc """
-  This represents a particular package that is distributed over
-  various channels.
-  e.g. glibc (aka libc6) is distributed by many, at various versions.
+  This represents a particular package that is distributed over various channels. e.g. glibc (aka libc6) is distributed by many, at various versions.
 
   ## Attributes
 

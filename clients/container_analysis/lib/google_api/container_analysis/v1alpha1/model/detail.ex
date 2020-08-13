@@ -17,26 +17,18 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Detail do
   @moduledoc """
-  Identifies all occurrences of this vulnerability in the package for a
-  specific distro/location
-  For example: glibc in cpe:/o:debian:debian_linux:8 for versions 2.1 - 2.2
+  Identifies all occurrences of this vulnerability in the package for a specific distro/location For example: glibc in cpe:/o:debian:debian_linux:8 for versions 2.1 - 2.2
 
   ## Attributes
 
-  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format] (https://cpe.mitre.org/specification/) in
-      which the vulnerability manifests.  Examples include distro or storage
-      location for vulnerable jar.
-      This field can be used as a filter in list requests.
+  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format] (https://cpe.mitre.org/specification/) in which the vulnerability manifests. Examples include distro or storage location for vulnerable jar. This field can be used as a filter in list requests.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A vendor-specific description of this note.
   *   `fixedLocation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityLocation.t`, *default:* `nil`) - The fix for this specific package version.
-  *   `isObsolete` (*type:* `boolean()`, *default:* `nil`) - Whether this Detail is obsolete. Occurrences are expected not to point to
-      obsolete details.
+  *   `isObsolete` (*type:* `boolean()`, *default:* `nil`) - Whether this Detail is obsolete. Occurrences are expected not to point to obsolete details.
   *   `maxAffectedVersion` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t`, *default:* `nil`) - The max version of the package in which the vulnerability exists.
   *   `minAffectedVersion` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t`, *default:* `nil`) - The min version of the package in which the vulnerability exists.
-  *   `package` (*type:* `String.t`, *default:* `nil`) - The name of the package where the vulnerability was found.
-      This field can be used as a filter in list requests.
-  *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package; whether native or non native(ruby gems,
-      node.js packages etc)
+  *   `package` (*type:* `String.t`, *default:* `nil`) - The name of the package where the vulnerability was found. This field can be used as a filter in list requests.
+  *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package; whether native or non native(ruby gems, node.js packages etc)
   *   `severityName` (*type:* `String.t`, *default:* `nil`) - The severity (eg: distro assigned severity) for this vulnerability.
   """
 

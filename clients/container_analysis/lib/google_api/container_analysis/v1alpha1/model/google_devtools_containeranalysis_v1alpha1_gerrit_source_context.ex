@@ -22,9 +22,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranal
   ## Attributes
 
   *   `aliasContext` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1AliasContext.t`, *default:* `nil`) - An alias, which may be a branch or tag.
-  *   `gerritProject` (*type:* `String.t`, *default:* `nil`) - The full project name within the host. Projects may be nested, so
-      "project/subproject" is a valid project name. The "repo name" is
-      the hostURI/project.
+  *   `gerritProject` (*type:* `String.t`, *default:* `nil`) - The full project name within the host. Projects may be nested, so "project/subproject" is a valid project name. The "repo name" is the hostURI/project.
   *   `hostUri` (*type:* `String.t`, *default:* `nil`) - The URI of a running Gerrit instance.
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - A revision (commit) ID.
   """

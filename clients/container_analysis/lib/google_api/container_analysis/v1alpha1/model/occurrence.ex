@@ -25,23 +25,15 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
   *   `buildDetails` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails.t`, *default:* `nil`) - Build details for a verifiable build.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this `Occurrence` was created.
   *   `deployment` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployment.t`, *default:* `nil`) - Describes the deployment of an artifact on a runtime.
-  *   `derivedImage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived.t`, *default:* `nil`) - Describes how this resource derives from the basis
-      in the associated note.
+  *   `derivedImage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived.t`, *default:* `nil`) - Describes how this resource derives from the basis in the associated note.
   *   `discovered` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered.t`, *default:* `nil`) - Describes the initial scan status for this resource.
   *   `installation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Installation.t`, *default:* `nil`) - Describes the installation of a package on the linked resource.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. This explicitly denotes which of the `Occurrence` details are
-      specified. This field can be used as a filter in list requests.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the `Occurrence` in the form
-      "projects/{project_id}/occurrences/{OCCURRENCE_ID}"
-  *   `noteName` (*type:* `String.t`, *default:* `nil`) - An analysis note associated with this image, in the form
-      "providers/{provider_id}/notes/{NOTE_ID}"
-      This field can be used as a filter in list requests.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. This explicitly denotes which of the `Occurrence` details are specified. This field can be used as a filter in list requests.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the `Occurrence` in the form "projects/{project_id}/occurrences/{OCCURRENCE_ID}"
+  *   `noteName` (*type:* `String.t`, *default:* `nil`) - An analysis note associated with this image, in the form "providers/{provider_id}/notes/{NOTE_ID}" This field can be used as a filter in list requests.
   *   `remediation` (*type:* `String.t`, *default:* `nil`) - A description of actions that can be taken to remedy the `Note`
-  *   `resource` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource.t`, *default:* `nil`) - 
-      The resource for which the `Occurrence` applies.
-  *   `resourceUrl` (*type:* `String.t`, *default:* `nil`) - The unique URL of the image or the container for which the `Occurrence`
-      applies. For example, https://gcr.io/project/image@sha256:foo This field
-      can be used as a filter in list requests.
+  *   `resource` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource.t`, *default:* `nil`) -  The resource for which the `Occurrence` applies.
+  *   `resourceUrl` (*type:* `String.t`, *default:* `nil`) - The unique URL of the image or the container for which the `Occurrence` applies. For example, https://gcr.io/project/image@sha256:foo This field can be used as a filter in list requests.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this `Occurrence` was last updated.
   *   `upgrade` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeOccurrence.t`, *default:* `nil`) - Describes an upgrade.
   *   `vulnerabilityDetails` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityDetails.t`, *default:* `nil`) - Details of a security vulnerability note.
