@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CheckAccessResponse do
 
   ## Attributes
 
-  *   `hasAccess` (*type:* `boolean()`, *default:* `nil`) - Returns true if principal has access.  Returns false otherwise.
+  *   `hasAccess` (*type:* `boolean()`, *default:* `nil`) - Returns true if principal has access. Returns false otherwise.
   """
 
   use GoogleApi.Gax.ModelBase

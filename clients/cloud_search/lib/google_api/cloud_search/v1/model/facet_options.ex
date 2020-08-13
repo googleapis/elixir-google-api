@@ -17,20 +17,14 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.FacetOptions do
   @moduledoc """
-  Specifies operators to return facet results for. There will be one
-  FacetResult for every source_name/object_type/operator_name combination.
+  Specifies operators to return facet results for. There will be one FacetResult for every source_name/object_type/operator_name combination.
 
   ## Attributes
 
-  *   `numFacetBuckets` (*type:* `integer()`, *default:* `nil`) - Maximum number of facet buckets that should be returned for this facet.
-      Defaults to 10.
-      Maximum value is 100.
-  *   `objectType` (*type:* `String.t`, *default:* `nil`) - If object_type is set, only those objects of that type will be used to
-      compute facets. If empty, then all objects will be used to compute facets.
-  *   `operatorName` (*type:* `String.t`, *default:* `nil`) - Name of the operator chosen for faceting. @see
-      cloudsearch.SchemaPropertyOptions
-  *   `sourceName` (*type:* `String.t`, *default:* `nil`) - Source name to facet on. Format: datasources/{source_id}
-      If empty, all data sources will be used.
+  *   `numFacetBuckets` (*type:* `integer()`, *default:* `nil`) - Maximum number of facet buckets that should be returned for this facet. Defaults to 10. Maximum value is 100.
+  *   `objectType` (*type:* `String.t`, *default:* `nil`) - If object_type is set, only those objects of that type will be used to compute facets. If empty, then all objects will be used to compute facets.
+  *   `operatorName` (*type:* `String.t`, *default:* `nil`) - Name of the operator chosen for faceting. @see cloudsearch.SchemaPropertyOptions
+  *   `sourceName` (*type:* `String.t`, *default:* `nil`) - Source name to facet on. Format: datasources/{source_id} If empty, all data sources will be used.
   """
 
   use GoogleApi.Gax.ModelBase

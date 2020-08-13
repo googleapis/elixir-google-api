@@ -23,8 +23,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchItemsByViewUrlRequest do
 
   *   `debugOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.DebugOptions.t`, *default:* `nil`) - Common debug options.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - The next_page_token value returned from a previous request, if any.
-  *   `viewUrl` (*type:* `String.t`, *default:* `nil`) - Specify the full view URL to find the corresponding item.
-      The maximum length is 2048 characters.
+  *   `viewUrl` (*type:* `String.t`, *default:* `nil`) - Specify the full view URL to find the corresponding item. The maximum length is 2048 characters.
   """
 
   use GoogleApi.Gax.ModelBase

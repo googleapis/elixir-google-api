@@ -21,15 +21,12 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchResult do
 
   ## Attributes
 
-  *   `clusteredResults` (*type:* `list(GoogleApi.CloudSearch.V1.Model.SearchResult.t)`, *default:* `nil`) - If source is clustered, provide list of clustered results. There will only
-      be one level of clustered results. If current source is not enabled for
-      clustering, this field will be empty.
+  *   `clusteredResults` (*type:* `list(GoogleApi.CloudSearch.V1.Model.SearchResult.t)`, *default:* `nil`) - If source is clustered, provide list of clustered results. There will only be one level of clustered results. If current source is not enabled for clustering, this field will be empty.
   *   `debugInfo` (*type:* `GoogleApi.CloudSearch.V1.Model.ResultDebugInfo.t`, *default:* `nil`) - Debugging information about this search result.
   *   `metadata` (*type:* `GoogleApi.CloudSearch.V1.Model.Metadata.t`, *default:* `nil`) - Metadata of the search result.
   *   `snippet` (*type:* `GoogleApi.CloudSearch.V1.Model.Snippet.t`, *default:* `nil`) - The concatenation of all snippets (summaries) available for this result.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the search result.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the search result. The URL contains a Google redirect to the
-      actual item. This URL is signed and shouldn't be changed.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the search result. The URL contains a Google redirect to the actual item. This URL is signed and shouldn't be changed.
   """
 
   use GoogleApi.Gax.ModelBase

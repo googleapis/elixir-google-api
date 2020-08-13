@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Interaction do
 
   ## Attributes
 
-  *   `interactionTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the user acted on the item.  If multiple actions of the same
-      type exist for a single user, only the most recent action is recorded.
+  *   `interactionTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the user acted on the item. If multiple actions of the same type exist for a single user, only the most recent action is recorded.
   *   `principal` (*type:* `GoogleApi.CloudSearch.V1.Model.Principal.t`, *default:* `nil`) - The user that acted on the item.
   *   `type` (*type:* `String.t`, *default:* `nil`) - 
   """

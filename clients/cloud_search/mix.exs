@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudSearch.Mixfile do
   use Mix.Project
 
-  @version "0.7.0"
+  @version "0.7.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.CloudSearch.Mixfile do
 
   defp description() do
     """
-    Cloud Search API client library. Cloud Search provides cloud-based search capabilities over G Suite data.  The Cloud Search API allows indexing of non-G Suite data into Cloud Search.
+    Cloud Search API client library. Cloud Search provides cloud-based search capabilities over G Suite data. The Cloud Search API allows indexing of non-G Suite data into Cloud Search.
     """
   end
 

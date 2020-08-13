@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Source do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Source name for content indexed by the
-      Indexing API.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Source name for content indexed by the Indexing API.
   *   `predefinedSource` (*type:* `String.t`, *default:* `nil`) - Predefined content source for Google Apps.
   """
 

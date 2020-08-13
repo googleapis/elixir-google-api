@@ -22,9 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.FilterOptions do
   ## Attributes
 
   *   `filter` (*type:* `GoogleApi.CloudSearch.V1.Model.Filter.t`, *default:* `nil`) - Generic filter to restrict the search, such as `lang:en`, `site:xyz`.
-  *   `objectType` (*type:* `String.t`, *default:* `nil`) - If object_type is set, only objects of that type are returned. This should
-      correspond to the name of the object that was registered within the
-      definition of schema. The maximum length is 256 characters.
+  *   `objectType` (*type:* `String.t`, *default:* `nil`) - If object_type is set, only objects of that type are returned. This should correspond to the name of the object that was registered within the definition of schema. The maximum length is 256 characters.
   """
 
   use GoogleApi.Gax.ModelBase

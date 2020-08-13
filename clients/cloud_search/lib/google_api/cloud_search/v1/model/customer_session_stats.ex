@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.CustomerSessionStats do
 
   ## Attributes
 
-  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - Date for which session stats were calculated. Stats calculated on the next
-      day close to midnight are returned.
+  *   `date` (*type:* `GoogleApi.CloudSearch.V1.Model.Date.t`, *default:* `nil`) - Date for which session stats were calculated. Stats calculated on the next day close to midnight are returned.
   *   `searchSessionsCount` (*type:* `String.t`, *default:* `nil`) - The count of search sessions on the day
   """
 

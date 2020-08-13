@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.UploadItemRef do
   @moduledoc """
-  Represents an upload session reference.
-  This reference is created via upload
-  method.
-  Updating of item content may refer to this uploaded content via
-  contentDataRef.
+  Represents an upload session reference. This reference is created via upload method. Updating of item content may refer to this uploaded content via contentDataRef.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the content reference.
-      The maximum length is 2048 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the content reference. The maximum length is 2048 characters.
   """
 
   use GoogleApi.Gax.ModelBase

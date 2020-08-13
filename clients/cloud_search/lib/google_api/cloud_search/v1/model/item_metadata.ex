@@ -21,48 +21,17 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemMetadata do
 
   ## Attributes
 
-  *   `containerName` (*type:* `String.t`, *default:* `nil`) - The name of the container for this item.
-      Deletion of the container item leads to automatic deletion of this
-      item.  Note: ACLs are not inherited from a container item.
-      To provide ACL inheritance for an item, use the
-      inheritAclFrom
-      field. The maximum length is 1536 characters.
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code for the item, such as "en-US" or "sr-Latn". For
-      more information, see
-      http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
-      The maximum length is 32 characters.
+  *   `containerName` (*type:* `String.t`, *default:* `nil`) - The name of the container for this item. Deletion of the container item leads to automatic deletion of this item. Note: ACLs are not inherited from a container item. To provide ACL inheritance for an item, use the inheritAclFrom field. The maximum length is 1536 characters.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code for the item, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. The maximum length is 32 characters.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the item was created in the source repository.
-  *   `hash` (*type:* `String.t`, *default:* `nil`) - Hashing value provided by the API caller.
-      This can be used with the
-      items.push
-      method to calculate modified state.
-      The maximum length is 2048 characters.
-  *   `interactions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Interaction.t)`, *default:* `nil`) - A list of interactions for the item.  Interactions are used to improve
-      Search quality, but are not exposed to end users.
-      The maximum number of elements is 1000.
-  *   `keywords` (*type:* `list(String.t)`, *default:* `nil`) - Additional keywords or phrases that should match the item.
-      Used internally for user generated content.
-      The maximum number of elements is 100.
-      The maximum length is 8192 characters.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The original mime-type of
-      ItemContent.content
-      in the source repository.
-      The maximum length is 256 characters.
-  *   `objectType` (*type:* `String.t`, *default:* `nil`) - The type of the item.  This should correspond to the name of an object
-      definition in the schema registered for the data source.  For example, if
-      the schema for the data source contains an object definition with name
-      'document', then item indexing requests for objects of that type should set
-      objectType to 'document'.
-      The maximum length is 256 characters.
+  *   `hash` (*type:* `String.t`, *default:* `nil`) - Hashing value provided by the API caller. This can be used with the items.push method to calculate modified state. The maximum length is 2048 characters.
+  *   `interactions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Interaction.t)`, *default:* `nil`) - A list of interactions for the item. Interactions are used to improve Search quality, but are not exposed to end users. The maximum number of elements is 1000.
+  *   `keywords` (*type:* `list(String.t)`, *default:* `nil`) - Additional keywords or phrases that should match the item. Used internally for user generated content. The maximum number of elements is 100. The maximum length is 8192 characters.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The original mime-type of ItemContent.content in the source repository. The maximum length is 256 characters.
+  *   `objectType` (*type:* `String.t`, *default:* `nil`) - The type of the item. This should correspond to the name of an object definition in the schema registered for the data source. For example, if the schema for the data source contains an object definition with name 'document', then item indexing requests for objects of that type should set objectType to 'document'. The maximum length is 256 characters.
   *   `searchQualityMetadata` (*type:* `GoogleApi.CloudSearch.V1.Model.SearchQualityMetadata.t`, *default:* `nil`) - Additional search quality metadata of the item
-  *   `sourceRepositoryUrl` (*type:* `String.t`, *default:* `nil`) - Link to the source repository serving the data.  &#83;earch results apply
-      this link to the title.
-      Whitespace or special characters may cause Cloud &#83;earch result links to
-      trigger a redirect notice; to avoid this, encode the URL.
-      The maximum length is 2048 characters.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the item.  If given, this will be the displayed title of the
-      Search result.
-      The maximum length is 2048 characters.
+  *   `sourceRepositoryUrl` (*type:* `String.t`, *default:* `nil`) - Link to the source repository serving the data. Search results apply this link to the title. Whitespace or special characters may cause Cloud Search result links to trigger a redirect notice; to avoid this, encode the URL. The maximum length is 2048 characters.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the item. If given, this will be the displayed title of the Search result. The maximum length is 2048 characters.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the item was last modified in the source repository.
   """
 

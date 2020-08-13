@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.Metaline do
   @moduledoc """
-  A metaline is a list of properties that are displayed along with the search
-  result to provide context.
+  A metaline is a list of properties that are displayed along with the search result to provide context.
 
   ## Attributes
 
-  *   `properties` (*type:* `list(GoogleApi.CloudSearch.V1.Model.DisplayedProperty.t)`, *default:* `nil`) - The list of displayed properties for the metaline. The maximum number of
-      properties is 5.
+  *   `properties` (*type:* `list(GoogleApi.CloudSearch.V1.Model.DisplayedProperty.t)`, *default:* `nil`) - The list of displayed properties for the metaline. The maximum number of properties is 5.
   """
 
   use GoogleApi.Gax.ModelBase
