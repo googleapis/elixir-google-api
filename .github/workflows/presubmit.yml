@@ -27,7 +27,7 @@ jobs:
           otp-version: ${{ matrix.otp }}
           elixir-version: ${{ matrix.elixir }}
       - name: Run presubmits
-        run: mix do deps.get, presubmit
+        run: mix do deps.get, presubmit --pr ${{ github.event.pull_request.number }}
   required-checks:
     needs: tests
     if: ${{ always() }}
