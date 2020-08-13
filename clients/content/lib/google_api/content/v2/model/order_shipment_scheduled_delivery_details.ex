@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.OrderShipmentScheduledDeliveryDetails do
 
   ## Attributes
 
-  *   `carrierPhoneNumber` (*type:* `String.t`, *default:* `nil`) - The phone number of the carrier fulfilling the delivery.
+  *   `carrierPhoneNumber` (*type:* `String.t`, *default:* `nil`) - The phone number of the carrier fulfilling the delivery. The phone number is formatted as the international notation in ITU-T Recommendation E.123 (e.g., "+41 44 668 1800").
   *   `scheduledDate` (*type:* `String.t`, *default:* `nil`) - The date a shipment is scheduled for delivery, in ISO 8601 format.
   """
 

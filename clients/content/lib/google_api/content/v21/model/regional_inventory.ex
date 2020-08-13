@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V21.Model.RegionalInventory do
   *   `customAttributes` (*type:* `list(GoogleApi.Content.V21.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form.
   *   `kind` (*type:* `String.t`, *default:* `content#regionalInventory`) - Identifies what kind of resource this is. Value: the fixed string "content#regionalInventory".
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The price of the product.
-  *   `regionId` (*type:* `String.t`, *default:* `nil`) - The ID (name) of the region.
+  *   `regionId` (*type:* `String.t`, *default:* `nil`) - The ID uniquely identifying each region.
   *   `salePrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The sale price of the product. Mandatory if `sale_price_effective_date` is defined.
   *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided.
   """
