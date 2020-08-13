@@ -21,15 +21,12 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
 
   ## Attributes
 
-  *   `buildId` (*type:* `String.t`, *default:* `nil`) - The Cloud Build ID of the function created or updated by an API call.
-      This field is only populated for Create and Update operations.
+  *   `buildId` (*type:* `String.t`, *default:* `nil`) - The Cloud Build ID of the function created or updated by an API call. This field is only populated for Create and Update operations.
   *   `request` (*type:* `map()`, *default:* `nil`) - The original request that started the operation.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example
-      projects/project-1/locations/region-1/functions/function-1
+  *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example projects/project-1/locations/region-1/functions/function-1
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of operation.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of the operation.
-  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Version id of the function created or updated by an API call.
-      This field is only populated for Create and Update operations.
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Version id of the function created or updated by an API call. This field is only populated for Create and Update operations.
   """
 
   use GoogleApi.Gax.ModelBase

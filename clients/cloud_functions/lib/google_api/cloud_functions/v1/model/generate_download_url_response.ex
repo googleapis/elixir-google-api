@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlResponse do
 
   ## Attributes
 
-  *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - The generated Google Cloud Storage signed URL that should be used for
-      function source code download.
+  *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - The generated Google Cloud Storage signed URL that should be used for function source code download.
   """
 
   use GoogleApi.Gax.ModelBase

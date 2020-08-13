@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlRequest do
 
   ## Attributes
 
-  *   `versionId` (*type:* `String.t`, *default:* `nil`) - The optional version of function. If not set, default, current version
-      is used.
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - The optional version of function. If not set, default, current version is used.
   """
 
   use GoogleApi.Gax.ModelBase
