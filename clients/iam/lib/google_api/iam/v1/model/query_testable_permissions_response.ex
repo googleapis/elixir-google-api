@@ -21,8 +21,7 @@ defmodule GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - To retrieve the next page of results, set
-      `QueryTestableRolesRequest.page_token` to this value.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - To retrieve the next page of results, set `QueryTestableRolesRequest.page_token` to this value.
   *   `permissions` (*type:* `list(GoogleApi.IAM.V1.Model.Permission.t)`, *default:* `nil`) - The Permissions testable on the requested resource.
   """
 

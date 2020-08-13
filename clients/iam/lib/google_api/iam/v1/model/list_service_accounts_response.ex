@@ -22,9 +22,7 @@ defmodule GoogleApi.IAM.V1.Model.ListServiceAccountsResponse do
   ## Attributes
 
   *   `accounts` (*type:* `list(GoogleApi.IAM.V1.Model.ServiceAccount.t)`, *default:* `nil`) - The list of matching service accounts.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - To retrieve the next page of results, set
-      ListServiceAccountsRequest.page_token
-      to this value.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - To retrieve the next page of results, set ListServiceAccountsRequest.page_token to this value.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,12 +21,8 @@ defmodule GoogleApi.IAM.V1.Model.CreateServiceAccountKeyRequest do
 
   ## Attributes
 
-  *   `keyAlgorithm` (*type:* `String.t`, *default:* `nil`) - Which type of key and algorithm to use for the key.
-      The default is currently a 2K RSA key.  However this may change in the
-      future.
-  *   `privateKeyType` (*type:* `String.t`, *default:* `nil`) - The output format of the private key. The default value is
-      `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File
-      format.
+  *   `keyAlgorithm` (*type:* `String.t`, *default:* `nil`) - Which type of key and algorithm to use for the key. The default is currently a 2K RSA key. However this may change in the future.
+  *   `privateKeyType` (*type:* `String.t`, *default:* `nil`) - The output format of the private key. The default value is `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File format.
   """
 
   use GoogleApi.Gax.ModelBase

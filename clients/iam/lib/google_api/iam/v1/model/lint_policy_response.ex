@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.IAM.V1.Model.LintPolicyResponse do
   @moduledoc """
-  The response of a lint operation. An empty response indicates
-  the operation was able to fully execute and no lint issue was found.
+  The response of a lint operation. An empty response indicates the operation was able to fully execute and no lint issue was found.
 
   ## Attributes
 

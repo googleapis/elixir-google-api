@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.IAM.V1.Model.AdminAuditData do
   @moduledoc """
-  Audit log information specific to Cloud IAM admin APIs. This message is
-  serialized as an `Any` type in the `ServiceData` message of an
-  `AuditLog` message.
+  Audit log information specific to Cloud IAM admin APIs. This message is serialized as an `Any` type in the `ServiceData` message of an `AuditLog` message.
 
   ## Attributes
 
