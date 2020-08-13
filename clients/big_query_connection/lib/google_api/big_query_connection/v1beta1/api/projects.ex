@@ -31,8 +31,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      Must be in the format `projects/{project_id}/locations/{location_id}`
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. Must be in the format `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -105,8 +104,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the deleted connection, for example:
-      `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
+  *   `name` (*type:* `String.t`) - Required. Name of the deleted connection, for example: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -175,8 +173,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the requested connection, for example:
-      `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
+  *   `name` (*type:* `String.t`) - Required. Name of the requested connection, for example: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -240,15 +237,12 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -319,8 +313,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
-      Must be in the form: `projects/{project_id}/locations/{location_id}`
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name. Must be in the form: `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -390,14 +383,12 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates the specified connection. For security reasons, also resets
-  credential if connection properties are in the update field mask.
+  Updates the specified connection. For security reasons, also resets credential if connection properties are in the update field mask.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the connection to update, for example:
-      `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
+  *   `name` (*type:* `String.t`) - Required. Name of the connection to update, for example: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -465,16 +456,12 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
-
-  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -540,19 +527,12 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a `NOT_FOUND` error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -625,8 +605,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the connection, for example:
-      `projects/{project_id}/locations/{location_id}/connections/{connection_id}/credential`
+  *   `name` (*type:* `String.t`) - Required. Name of the connection, for example: `projects/{project_id}/locations/{location_id}/connections/{connection_id}/credential`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

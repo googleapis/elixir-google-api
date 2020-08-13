@@ -21,8 +21,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.GetIamPolicyRequest do
 
   ## Attributes
 
-  *   `options` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Model.GetPolicyOptions.t`, *default:* `nil`) - OPTIONAL: A `GetPolicyOptions` object for specifying options to
-      `GetIamPolicy`.
+  *   `options` (*type:* `GoogleApi.BigQueryConnection.V1beta1.Model.GetPolicyOptions.t`, *default:* `nil`) - OPTIONAL: A `GetPolicyOptions` object for specifying options to `GetIamPolicy`.
   """
 
   use GoogleApi.Gax.ModelBase
