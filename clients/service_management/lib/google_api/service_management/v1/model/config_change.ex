@@ -17,31 +17,15 @@
 
 defmodule GoogleApi.ServiceManagement.V1.Model.ConfigChange do
   @moduledoc """
-  Output generated from semantically comparing two versions of a service
-  configuration.
-
-  Includes detailed information about a field that have changed with
-  applicable advice about potential consequences for the change, such as
-  backwards-incompatibility.
+  Output generated from semantically comparing two versions of a service configuration. Includes detailed information about a field that have changed with applicable advice about potential consequences for the change, such as backwards-incompatibility.
 
   ## Attributes
 
-  *   `advices` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.Advice.t)`, *default:* `nil`) - Collection of advice provided for this change, useful for determining the
-      possible impact of this change.
+  *   `advices` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.Advice.t)`, *default:* `nil`) - Collection of advice provided for this change, useful for determining the possible impact of this change.
   *   `changeType` (*type:* `String.t`, *default:* `nil`) - The type for this change, either ADDED, REMOVED, or MODIFIED.
-  *   `element` (*type:* `String.t`, *default:* `nil`) - Object hierarchy path to the change, with levels separated by a '.'
-      character. For repeated fields, an applicable unique identifier field is
-      used for the index (usually selector, name, or id). For maps, the term
-      'key' is used. If the field has no unique identifier, the numeric index
-      is used.
-      Examples:
-      - visibility.rules[selector=="google.LibraryService.ListBooks"].restriction
-      - quota.metric_rules[selector=="google"].metric_costs[key=="reads"].value
-      - logging.producer_destinations[0]
-  *   `newValue` (*type:* `String.t`, *default:* `nil`) - Value of the changed object in the new Service configuration,
-      in JSON format. This field will not be populated if ChangeType == REMOVED.
-  *   `oldValue` (*type:* `String.t`, *default:* `nil`) - Value of the changed object in the old Service configuration,
-      in JSON format. This field will not be populated if ChangeType == ADDED.
+  *   `element` (*type:* `String.t`, *default:* `nil`) - Object hierarchy path to the change, with levels separated by a '.' character. For repeated fields, an applicable unique identifier field is used for the index (usually selector, name, or id). For maps, the term 'key' is used. If the field has no unique identifier, the numeric index is used. Examples: - visibility.rules[selector=="google.LibraryService.ListBooks"].restriction - quota.metric_rules[selector=="google"].metric_costs[key=="reads"].value - logging.producer_destinations[0]
+  *   `newValue` (*type:* `String.t`, *default:* `nil`) - Value of the changed object in the new Service configuration, in JSON format. This field will not be populated if ChangeType == REMOVED.
+  *   `oldValue` (*type:* `String.t`, *default:* `nil`) - Value of the changed object in the old Service configuration, in JSON format. This field will not be populated if ChangeType == ADDED.
   """
 
   use GoogleApi.Gax.ModelBase

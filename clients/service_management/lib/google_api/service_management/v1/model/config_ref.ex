@@ -21,8 +21,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.ConfigRef do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of a service config. It must have the following
-      format: "services/{service name}/configs/{config id}".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of a service config. It must have the following format: "services/{service name}/configs/{config id}".
   """
 
   use GoogleApi.Gax.ModelBase

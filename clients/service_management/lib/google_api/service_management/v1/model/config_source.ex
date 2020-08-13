@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.ServiceManagement.V1.Model.ConfigSource do
   @moduledoc """
-  Represents a source file which is used to generate the service configuration
-  defined by `google.api.Service`.
+  Represents a source file which is used to generate the service configuration defined by `google.api.Service`.
 
   ## Attributes
 
-  *   `files` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.ConfigFile.t)`, *default:* `nil`) - Set of source configuration files that are used to generate a service
-      configuration (`google.api.Service`).
-  *   `id` (*type:* `String.t`, *default:* `nil`) - A unique ID for a specific instance of this message, typically assigned
-      by the client for tracking purpose. If empty, the server may choose to
-      generate one instead.
+  *   `files` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.ConfigFile.t)`, *default:* `nil`) - Set of source configuration files that are used to generate a service configuration (`google.api.Service`).
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. If empty, the server may choose to generate one instead.
   """
 
   use GoogleApi.Gax.ModelBase

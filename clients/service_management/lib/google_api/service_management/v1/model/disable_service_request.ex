@@ -21,15 +21,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.DisableServiceRequest do
 
   ## Attributes
 
-  *   `consumerId` (*type:* `String.t`, *default:* `nil`) - Required. The identity of consumer resource which service disablement will be
-      applied to.
-
-      The Google Service Management implementation accepts the following
-      forms:
-      - "project:<project_id>"
-
-      Note: this is made compatible with
-      google.api.servicecontrol.v1.Operation.consumer_id.
+  *   `consumerId` (*type:* `String.t`, *default:* `nil`) - Required. The identity of consumer resource which service disablement will be applied to. The Google Service Management implementation accepts the following forms: - "project:" Note: this is made compatible with google.api.servicecontrol.v1.Operation.consumer_id.
   """
 
   use GoogleApi.Gax.ModelBase

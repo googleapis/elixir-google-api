@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy do
   @moduledoc """
-  Strategy used to delete a service. This strategy is a placeholder only
-  used by the system generated rollout to delete a service.
+  Strategy used to delete a service. This strategy is a placeholder only used by the system generated rollout to delete a service.
 
   ## Attributes
 
