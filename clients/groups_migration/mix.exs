@@ -18,7 +18,7 @@
 defmodule GoogleApi.GroupsMigration.Mixfile do
   use Mix.Project
 
-  @version "0.9.0"
+  @version "0.9.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.GroupsMigration.Mixfile do
 
   defp description() do
     """
-    Groups Migration API client library. The Groups Migration API allows domain administrators to archive
-    emails into Google groups.
+    Groups Migration API client library. The Groups Migration API allows domain administrators to archive emails into Google groups.
     """
   end
 
