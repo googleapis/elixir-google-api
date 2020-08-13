@@ -21,44 +21,18 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput do
 
   ## Attributes
 
-  *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Optional. Number of records per batch, defaults to 64.
-      The service will buffer batch_size number of records in memory before
-      invoking one Tensorflow prediction call internally. So take the record
-      size and memory available into consideration when setting this parameter.
+  *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Optional. Number of records per batch, defaults to 64. The service will buffer batch_size number of records in memory before invoking one Tensorflow prediction call internally. So take the record size and memory available into consideration when setting this parameter.
   *   `dataFormat` (*type:* `String.t`, *default:* `nil`) - Required. The format of the input data files.
-  *   `inputPaths` (*type:* `list(String.t)`, *default:* `nil`) - Required. The Cloud Storage location of the input data files. May contain
-      <a href="/storage/docs/gsutil/addlhelp/WildcardNames">wildcards</a>.
-  *   `maxWorkerCount` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum number of workers to be used for parallel processing.
-      Defaults to 10 if not specified.
-  *   `modelName` (*type:* `String.t`, *default:* `nil`) - Use this field if you want to use the default version for the specified
-      model. The string must use the following format:
-
-      `"projects/YOUR_PROJECT/models/YOUR_MODEL"`
+  *   `inputPaths` (*type:* `list(String.t)`, *default:* `nil`) - Required. The Cloud Storage location of the input data files. May contain wildcards.
+  *   `maxWorkerCount` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum number of workers to be used for parallel processing. Defaults to 10 if not specified.
+  *   `modelName` (*type:* `String.t`, *default:* `nil`) - Use this field if you want to use the default version for the specified model. The string must use the following format: `"projects/YOUR_PROJECT/models/YOUR_MODEL"`
   *   `outputDataFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Format of the output data files, defaults to JSON.
   *   `outputPath` (*type:* `String.t`, *default:* `nil`) - Required. The output Google Cloud Storage location.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - Required. The Google Compute Engine region to run the prediction job in.
-      See the <a href="/ml-engine/docs/tensorflow/regions">available regions</a>
-      for AI Platform services.
-  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The AI Platform runtime version to use for this batch
-      prediction. If not set, AI Platform will pick the runtime version used
-      during the CreateVersion request for this model version, or choose the
-      latest stable version when model version information is not available
-      such as when the model is specified by uri.
-  *   `signatureName` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the signature defined in the SavedModel to use for
-      this job. Please refer to
-      [SavedModel](https://tensorflow.github.io/serving/serving_basic.html)
-      for information about how to use signatures.
-
-      Defaults to
-      [DEFAULT_SERVING_SIGNATURE_DEF_KEY](https://www.tensorflow.org/api_docs/python/tf/saved_model/signature_constants)
-      , which is "serving_default".
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Use this field if you want to specify a Google Cloud Storage path for
-      the model to use.
-  *   `versionName` (*type:* `String.t`, *default:* `nil`) - Use this field if you want to specify a version of the model to use. The
-      string is formatted the same way as `model_version`, with the addition
-      of the version information:
-
-      `"projects/YOUR_PROJECT/models/YOUR_MODEL/versions/YOUR_VERSION"`
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Required. The Google Compute Engine region to run the prediction job in. See the available regions for AI Platform services.
+  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The AI Platform runtime version to use for this batch prediction. If not set, AI Platform will pick the runtime version used during the CreateVersion request for this model version, or choose the latest stable version when model version information is not available such as when the model is specified by uri.
+  *   `signatureName` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the signature defined in the SavedModel to use for this job. Please refer to [SavedModel](https://tensorflow.github.io/serving/serving_basic.html) for information about how to use signatures. Defaults to [DEFAULT_SERVING_SIGNATURE_DEF_KEY](https://www.tensorflow.org/api_docs/python/tf/saved_model/signature_constants) , which is "serving_default".
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Use this field if you want to specify a Google Cloud Storage path for the model to use.
+  *   `versionName` (*type:* `String.t`, *default:* `nil`) - Use this field if you want to specify a version of the model to use. The string is formatted the same way as `model_version`, with the addition of the version information: `"projects/YOUR_PROJECT/models/YOUR_MODEL/versions/YOUR_VERSION"`
   """
 
   use GoogleApi.Gax.ModelBase

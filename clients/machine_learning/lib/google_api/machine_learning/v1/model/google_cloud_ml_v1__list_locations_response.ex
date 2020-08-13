@@ -22,8 +22,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListLocationsRespon
   ## Attributes
 
   *   `locations` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location.t)`, *default:* `nil`) - Locations where at least one type of CMLE capability is available.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a
-      subsequent call.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a subsequent call.
   """
 
   use GoogleApi.Gax.ModelBase

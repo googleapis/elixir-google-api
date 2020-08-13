@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput do
   @moduledoc """
-  Represents the result of a single hyperparameter tuning trial from a
-  training job. The TrainingOutput object that is returned on successful
-  completion of a training job with hyperparameter tuning includes a list
-  of HyperparameterOutput objects, one for each successful trial.
+  Represents the result of a single hyperparameter tuning trial from a training job. The TrainingOutput object that is returned on successful completion of a training job with hyperparameter tuning includes a list of HyperparameterOutput objects, one for each successful trial.
 
   ## Attributes
 
-  *   `allMetrics` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t)`, *default:* `nil`) - All recorded object metrics for this trial. This field is not currently
-      populated.
-  *   `builtInAlgorithmOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t`, *default:* `nil`) - Details related to built-in algorithms jobs.
-      Only set for trials of built-in algorithms jobs that have succeeded.
+  *   `allMetrics` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t)`, *default:* `nil`) - All recorded object metrics for this trial. This field is not currently populated.
+  *   `builtInAlgorithmOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t`, *default:* `nil`) - Details related to built-in algorithms jobs. Only set for trials of built-in algorithms jobs that have succeeded.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. End time for the trial.
   *   `finalMetric` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t`, *default:* `nil`) - The final objective metric seen for this trial.
   *   `hyperparameters` (*type:* `map()`, *default:* `nil`) - The hyperparameters given to this trial.

@@ -21,45 +21,15 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec 
 
   ## Attributes
 
-  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - Optional. The search algorithm specified for the hyperparameter
-      tuning job.
-      Uses the default AI Platform hyperparameter tuning
-      algorithm if unspecified.
-  *   `enableTrialEarlyStopping` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the hyperparameter tuning job enables auto trial
-      early stopping.
-  *   `goal` (*type:* `String.t`, *default:* `nil`) - Required. The type of goal to use for tuning. Available types are
-      `MAXIMIZE` and `MINIMIZE`.
-
-      Defaults to `MAXIMIZE`.
-  *   `hyperparameterMetricTag` (*type:* `String.t`, *default:* `nil`) - Optional. The TensorFlow summary tag name to use for optimizing trials. For
-      current versions of TensorFlow, this tag name should exactly match what is
-      shown in TensorBoard, including all scopes.  For versions of TensorFlow
-      prior to 0.12, this should be only the tag passed to tf.Summary.
-      By default, "training/hptuning/metric" will be used.
-  *   `maxFailedTrials` (*type:* `integer()`, *default:* `nil`) - Optional. The number of failed trials that need to be seen before failing
-      the hyperparameter tuning job. You can specify this field to override the
-      default failing criteria for AI Platform hyperparameter tuning jobs.
-
-      Defaults to zero, which means the service decides when a hyperparameter
-      job should fail.
-  *   `maxParallelTrials` (*type:* `integer()`, *default:* `nil`) - Optional. The number of training trials to run concurrently.
-      You can reduce the time it takes to perform hyperparameter tuning by adding
-      trials in parallel. However, each trail only benefits from the information
-      gained in completed trials. That means that a trial does not get access to
-      the results of trials running at the same time, which could reduce the
-      quality of the overall optimization.
-
-      Each trial will use the same scale tier and machine types.
-
-      Defaults to one.
-  *   `maxTrials` (*type:* `integer()`, *default:* `nil`) - Optional. How many training trials should be attempted to optimize
-      the specified hyperparameters.
-
-      Defaults to one.
+  *   `algorithm` (*type:* `String.t`, *default:* `nil`) - Optional. The search algorithm specified for the hyperparameter tuning job. Uses the default AI Platform hyperparameter tuning algorithm if unspecified.
+  *   `enableTrialEarlyStopping` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the hyperparameter tuning job enables auto trial early stopping.
+  *   `goal` (*type:* `String.t`, *default:* `nil`) - Required. The type of goal to use for tuning. Available types are `MAXIMIZE` and `MINIMIZE`. Defaults to `MAXIMIZE`.
+  *   `hyperparameterMetricTag` (*type:* `String.t`, *default:* `nil`) - Optional. The TensorFlow summary tag name to use for optimizing trials. For current versions of TensorFlow, this tag name should exactly match what is shown in TensorBoard, including all scopes. For versions of TensorFlow prior to 0.12, this should be only the tag passed to tf.Summary. By default, "training/hptuning/metric" will be used.
+  *   `maxFailedTrials` (*type:* `integer()`, *default:* `nil`) - Optional. The number of failed trials that need to be seen before failing the hyperparameter tuning job. You can specify this field to override the default failing criteria for AI Platform hyperparameter tuning jobs. Defaults to zero, which means the service decides when a hyperparameter job should fail.
+  *   `maxParallelTrials` (*type:* `integer()`, *default:* `nil`) - Optional. The number of training trials to run concurrently. You can reduce the time it takes to perform hyperparameter tuning by adding trials in parallel. However, each trail only benefits from the information gained in completed trials. That means that a trial does not get access to the results of trials running at the same time, which could reduce the quality of the overall optimization. Each trial will use the same scale tier and machine types. Defaults to one.
+  *   `maxTrials` (*type:* `integer()`, *default:* `nil`) - Optional. How many training trials should be attempted to optimize the specified hyperparameters. Defaults to one.
   *   `params` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ParameterSpec.t)`, *default:* `nil`) - Required. The set of parameters to tune.
-  *   `resumePreviousJobId` (*type:* `String.t`, *default:* `nil`) - Optional. The prior hyperparameter tuning job id that users hope to
-      continue with. The job id will be used to find the corresponding vizier
-      study guid and resume the study.
+  *   `resumePreviousJobId` (*type:* `String.t`, *default:* `nil`) - Optional. The prior hyperparameter tuning job id that users hope to continue with. The job id will be used to find the corresponding vizier study guid and resume the study.
   """
 
   use GoogleApi.Gax.ModelBase

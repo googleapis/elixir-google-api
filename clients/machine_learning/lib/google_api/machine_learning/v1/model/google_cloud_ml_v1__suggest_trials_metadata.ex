@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SuggestTrialsMetadata do
   @moduledoc """
-  Metadata field of a google.longrunning.Operation associated
-  with a SuggestTrialsRequest.
+  Metadata field of a google.longrunning.Operation associated with a SuggestTrialsRequest.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SuggestTrialsResponse do
   @moduledoc """
-  This message will be placed in the response field of a completed
-  google.longrunning.Operation associated with a SuggestTrials request.
+  This message will be placed in the response field of a completed google.longrunning.Operation associated with a SuggestTrials request.
 
   ## Attributes
 

@@ -22,23 +22,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ParameterSpec do
   ## Attributes
 
   *   `categoricalValues` (*type:* `list(String.t)`, *default:* `nil`) - Required if type is `CATEGORICAL`. The list of possible categories.
-  *   `discreteValues` (*type:* `list(float())`, *default:* `nil`) - Required if type is `DISCRETE`.
-      A list of feasible points.
-      The list should be in strictly increasing order. For instance, this
-      parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-      should not contain more than 1,000 values.
-  *   `maxValue` (*type:* `float()`, *default:* `nil`) - Required if type is `DOUBLE` or `INTEGER`. This field
-      should be unset if type is `CATEGORICAL`. This value should be integers if
-      type is `INTEGER`.
-  *   `minValue` (*type:* `float()`, *default:* `nil`) - Required if type is `DOUBLE` or `INTEGER`. This field
-      should be unset if type is `CATEGORICAL`. This value should be integers if
-      type is INTEGER.
-  *   `parameterName` (*type:* `String.t`, *default:* `nil`) - Required. The parameter name must be unique amongst all ParameterConfigs in
-      a HyperparameterSpec message. E.g., "learning_rate".
-  *   `scaleType` (*type:* `String.t`, *default:* `nil`) - Optional. How the parameter should be scaled to the hypercube.
-      Leave unset for categorical parameters.
-      Some kind of scaling is strongly recommended for real or integral
-      parameters (e.g., `UNIT_LINEAR_SCALE`).
+  *   `discreteValues` (*type:* `list(float())`, *default:* `nil`) - Required if type is `DISCRETE`. A list of feasible points. The list should be in strictly increasing order. For instance, this parameter might have possible settings of 1.5, 2.5, and 4.0. This list should not contain more than 1,000 values.
+  *   `maxValue` (*type:* `float()`, *default:* `nil`) - Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is `INTEGER`.
+  *   `minValue` (*type:* `float()`, *default:* `nil`) - Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is INTEGER.
+  *   `parameterName` (*type:* `String.t`, *default:* `nil`) - Required. The parameter name must be unique amongst all ParameterConfigs in a HyperparameterSpec message. E.g., "learning_rate".
+  *   `scaleType` (*type:* `String.t`, *default:* `nil`) - Optional. How the parameter should be scaled to the hypercube. Leave unset for categorical parameters. Some kind of scaling is strongly recommended for real or integral parameters (e.g., `UNIT_LINEAR_SCALE`).
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the parameter.
   """
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingConfig do
   @moduledoc """
-  Configuration for Automated Early Stopping of Trials. If no
-  implementation_config is set, automated early stopping will not be run.
+  Configuration for Automated Early Stopping of Trials. If no implementation_config is set, automated early stopping will not be run.
 
   ## Attributes
 

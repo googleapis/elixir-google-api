@@ -21,19 +21,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
 
   ## Attributes
 
-  *   `builtInAlgorithmOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t`, *default:* `nil`) - Details related to built-in algorithms jobs.
-      Only set for built-in algorithms jobs.
-  *   `completedTrialCount` (*type:* `String.t`, *default:* `nil`) - The number of hyperparameter tuning trials that completed successfully.
-      Only set for hyperparameter tuning jobs.
+  *   `builtInAlgorithmOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t`, *default:* `nil`) - Details related to built-in algorithms jobs. Only set for built-in algorithms jobs.
+  *   `completedTrialCount` (*type:* `String.t`, *default:* `nil`) - The number of hyperparameter tuning trials that completed successfully. Only set for hyperparameter tuning jobs.
   *   `consumedMLUnits` (*type:* `float()`, *default:* `nil`) - The amount of ML units consumed by the job.
-  *   `hyperparameterMetricTag` (*type:* `String.t`, *default:* `nil`) - The TensorFlow summary tag name used for optimizing hyperparameter tuning
-      trials. See
-      [`HyperparameterSpec.hyperparameterMetricTag`](#HyperparameterSpec.FIELDS.hyperparameter_metric_tag)
-      for more information. Only set for hyperparameter tuning jobs.
+  *   `hyperparameterMetricTag` (*type:* `String.t`, *default:* `nil`) - The TensorFlow summary tag name used for optimizing hyperparameter tuning trials. See [`HyperparameterSpec.hyperparameterMetricTag`](#HyperparameterSpec.FIELDS.hyperparameter_metric_tag) for more information. Only set for hyperparameter tuning jobs.
   *   `isBuiltInAlgorithmJob` (*type:* `boolean()`, *default:* `nil`) - Whether this job is a built-in Algorithm job.
   *   `isHyperparameterTuningJob` (*type:* `boolean()`, *default:* `nil`) - Whether this job is a hyperparameter tuning job.
-  *   `trials` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput.t)`, *default:* `nil`) - Results for individual Hyperparameter trials.
-      Only set for hyperparameter tuning jobs.
+  *   `trials` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput.t)`, *default:* `nil`) - Results for individual Hyperparameter trials. Only set for hyperparameter tuning jobs.
   """
 
   use GoogleApi.Gax.ModelBase

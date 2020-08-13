@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial_Parameter do
   @moduledoc """
-  A message representing a parameter to be tuned. Contains the name of
-  the parameter and the suggested value to use for this trial.
+  A message representing a parameter to be tuned. Contains the name of the parameter and the suggested value to use for this trial.
 
   ## Attributes
 

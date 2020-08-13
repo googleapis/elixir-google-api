@@ -21,8 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParamete
 
   ## Attributes
 
-  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Must be specified if type is `CATEGORICAL`.
-      The list of possible categories.
+  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Must be specified if type is `CATEGORICAL`. The list of possible categories.
   """
 
   use GoogleApi.Gax.ModelBase

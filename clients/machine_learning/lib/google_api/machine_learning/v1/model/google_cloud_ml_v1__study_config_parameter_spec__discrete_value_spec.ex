@@ -21,11 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParamete
 
   ## Attributes
 
-  *   `values` (*type:* `list(float())`, *default:* `nil`) - Must be specified if type is `DISCRETE`.
-      A list of feasible points.
-      The list should be in strictly increasing order. For instance, this
-      parameter might have possible settings of 1.5, 2.5, and 4.0. This list
-      should not contain more than 1,000 values.
+  *   `values` (*type:* `list(float())`, *default:* `nil`) - Must be specified if type is `DISCRETE`. A list of feasible points. The list should be in strictly increasing order. For instance, this parameter might have possible settings of 1.5, 2.5, and 4.0. This list should not contain more than 1,000 values.
   """
 
   use GoogleApi.Gax.ModelBase

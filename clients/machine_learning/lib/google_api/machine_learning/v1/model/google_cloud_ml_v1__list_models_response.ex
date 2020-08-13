@@ -22,8 +22,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListModelsResponse 
   ## Attributes
 
   *   `models` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t)`, *default:* `nil`) - The list of models.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a
-      subsequent call.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a subsequent call.
   """
 
   use GoogleApi.Gax.ModelBase

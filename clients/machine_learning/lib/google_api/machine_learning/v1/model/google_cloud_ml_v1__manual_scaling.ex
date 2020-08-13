@@ -21,10 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling do
 
   ## Attributes
 
-  *   `nodes` (*type:* `integer()`, *default:* `nil`) - The number of nodes to allocate for this model. These nodes are always up,
-      starting from the time the model is deployed, so the cost of operating
-      this model will be proportional to `nodes` * number of hours since
-      last billing cycle plus the cost for each prediction performed.
+  *   `nodes` (*type:* `integer()`, *default:* `nil`) - The number of nodes to allocate for this model. These nodes are always up, starting from the time the model is deployed, so the cost of operating this model will be proportional to `nodes` * number of hours since last billing cycle plus the cost for each prediction performed.
   """
 
   use GoogleApi.Gax.ModelBase

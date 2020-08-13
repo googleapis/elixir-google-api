@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig do
   @moduledoc """
-  Represents a hardware accelerator request config.
-  Note that the AcceleratorConfig can be used in both Jobs and Versions.
-  Learn more about [accelerators for training](/ml-engine/docs/using-gpus) and
-  [accelerators for online
-  prediction](/ml-engine/docs/machine-types-online-prediction#gpus).
+  Represents a hardware accelerator request config. Note that the AcceleratorConfig can be used in both Jobs and Versions. Learn more about [accelerators for training](/ml-engine/docs/using-gpus) and [accelerators for online prediction](/ml-engine/docs/machine-types-online-prediction#gpus).
 
   ## Attributes
 

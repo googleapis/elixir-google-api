@@ -21,8 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParamete
 
   ## Attributes
 
-  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Matches values of the parent parameter with type 'CATEGORICAL'.
-      All values must exist in `categorical_value_spec` of parent parameter.
+  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Matches values of the parent parameter with type 'CATEGORICAL'. All values must exist in `categorical_value_spec` of parent parameter.
   """
 
   use GoogleApi.Gax.ModelBase

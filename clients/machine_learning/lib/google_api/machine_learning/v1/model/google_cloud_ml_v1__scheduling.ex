@@ -21,29 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling do
 
   ## Attributes
 
-  *   `maxRunningTime` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum job running time, expressed in seconds. The field can
-      contain up to nine fractional digits, terminated by `s`. If not specified,
-      this field defaults to `604800s` (seven days).
-
-      If the training job is still running after this duration, AI Platform
-      Training cancels it.
-
-      For example, if you want to ensure your job runs for no more than 2 hours,
-      set this field to `7200s` (2 hours * 60 minutes / hour * 60 seconds /
-      minute).
-
-      If you submit your training job using the `gcloud` tool, you can [provide
-      this field in a `config.yaml`
-      file](/ai-platform/training/docs/training-jobs#formatting_your_configuration_parameters).
-      For example:
-
-      ```yaml
-      trainingInput:
-        ...
-        scheduling:
-          maxRunningTime: 7200s
-        ...
-      ```
+  *   `maxRunningTime` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum job running time, expressed in seconds. The field can contain up to nine fractional digits, terminated by `s`. If not specified, this field defaults to `604800s` (seven days). If the training job is still running after this duration, AI Platform Training cancels it. For example, if you want to ensure your job runs for no more than 2 hours, set this field to `7200s` (2 hours * 60 minutes / hour * 60 seconds / minute). If you submit your training job using the `gcloud` tool, you can [provide this field in a `config.yaml` file](/ai-platform/training/docs/training-jobs#formatting_your_configuration_parameters). For example: ```yaml trainingInput: ... scheduling: maxRunningTime: 7200s ... ```
   *   `maxWaitTime` (*type:* `String.t`, *default:* `nil`) - 
   """
 

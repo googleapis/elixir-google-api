@@ -21,8 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplainRequest do
 
   ## Attributes
 
-  *   `httpBody` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t`, *default:* `nil`) - Required.
-      The explanation request body.
+  *   `httpBody` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t`, *default:* `nil`) - Required. The explanation request body.
   """
 
   use GoogleApi.Gax.ModelBase

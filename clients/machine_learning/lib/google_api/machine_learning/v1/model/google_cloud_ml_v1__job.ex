@@ -24,19 +24,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the job was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the job processing was completed.
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Output only. The details of a failure or a cancellation.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - `etag` is used for optimistic concurrency control as a way to help
-      prevent simultaneous updates of a job from overwriting each other.
-      It is strongly suggested that systems make use of the `etag` in the
-      read-modify-write cycle to perform job updates in order to avoid race
-      conditions: An `etag` is returned in the response to `GetJob`, and
-      systems are expected to put that etag in the request to `UpdateJob` to
-      ensure that their change will be applied to the same version of the job.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a job from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform job updates in order to avoid race conditions: An `etag` is returned in the response to `GetJob`, and systems are expected to put that etag in the request to `UpdateJob` to ensure that their change will be applied to the same version of the job.
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - Required. The user-specified id of the job.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. One or more labels that you can add, to organize your jobs.
-      Each label is a key-value pair, where both the key and the value are
-      arbitrary strings that you supply.
-      For more information, see the documentation on
-      <a href="/ml-engine/docs/tensorflow/resource-labels">using labels</a>.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. One or more labels that you can add, to organize your jobs. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on using labels.
   *   `predictionInput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput.t`, *default:* `nil`) - Input parameters to create a prediction job.
   *   `predictionOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionOutput.t`, *default:* `nil`) - The current prediction job result.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the job processing was started.

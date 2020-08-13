@@ -22,8 +22,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the study was created.
-  *   `inactiveReason` (*type:* `String.t`, *default:* `nil`) - Output only. A human readable reason why the Study is inactive.
-      This should be empty if a study is ACTIVE or COMPLETED.
+  *   `inactiveReason` (*type:* `String.t`, *default:* `nil`) - Output only. A human readable reason why the Study is inactive. This should be empty if a study is ACTIVE or COMPLETED.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of a study.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of a study.
   *   `studyConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig.t`, *default:* `nil`) - Required. Configuration of the study.

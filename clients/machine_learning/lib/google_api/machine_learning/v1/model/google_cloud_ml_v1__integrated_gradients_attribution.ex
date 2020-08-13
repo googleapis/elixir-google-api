@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution do
   @moduledoc """
-  Attributes credit by computing the Aumann-Shapley value taking advantage
-  of the model's fully differentiable structure. Refer to this paper for
-  more details: https://arxiv.org/abs/1703.01365
+  Attributes credit by computing the Aumann-Shapley value taking advantage of the model's fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1703.01365
 
   ## Attributes
 
-  *   `numIntegralSteps` (*type:* `integer()`, *default:* `nil`) - Number of steps for approximating the path integral.
-      A good value to start is 50 and gradually increase until the
-      sum to diff property is met within the desired error range.
+  *   `numIntegralSteps` (*type:* `integer()`, *default:* `nil`) - Number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range.
   """
 
   use GoogleApi.Gax.ModelBase
