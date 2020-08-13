@@ -46,9 +46,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier
-          specified by the client. Must be unique for operation resources in the
-          Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -126,10 +124,8 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the
-          server will decide how many results to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated.
-          Use this parameter to continue a previous list request.
+      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
       *   `:sortBy` (*type:* `String.t`) - Sorting criterion. The only supported values are START_TIME and ID.
   *   `opts` (*type:* `keyword()`) - Call options
 

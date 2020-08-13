@@ -21,11 +21,9 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneDnsSecConfig do
 
   ## Attributes
 
-  *   `defaultKeySpecs` (*type:* `list(GoogleApi.DNS.V1.Model.DnsKeySpec.t)`, *default:* `nil`) - Specifies parameters for generating initial DnsKeys for this
-      ManagedZone. Can only be changed while the state is OFF.
+  *   `defaultKeySpecs` (*type:* `list(GoogleApi.DNS.V1.Model.DnsKeySpec.t)`, *default:* `nil`) - Specifies parameters for generating initial DnsKeys for this ManagedZone. Can only be changed while the state is OFF.
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneDnsSecConfig`) - 
-  *   `nonExistence` (*type:* `String.t`, *default:* `nil`) - Specifies the mechanism for authenticated denial-of-existence responses.
-      Can only be changed while the state is OFF.
+  *   `nonExistence` (*type:* `String.t`, *default:* `nil`) - Specifies the mechanism for authenticated denial-of-existence responses. Can only be changed while the state is OFF.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Specifies whether DNSSEC is enabled, and what mode it is in.
   """
 

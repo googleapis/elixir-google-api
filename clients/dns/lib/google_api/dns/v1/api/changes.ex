@@ -32,8 +32,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed
-      zone name or id.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -46,9 +45,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier
-          specified by the client. Must be unique for operation resources in the
-          Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
       *   `:body` (*type:* `GoogleApi.DNS.V1.Model.Change.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -98,10 +95,8 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed
-      zone name or id.
-  *   `change_id` (*type:* `String.t`) - The identifier of the requested change, from a previous
-      ResourceRecordSetsChangeResponse.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `change_id` (*type:* `String.t`) - The identifier of the requested change, from a previous ResourceRecordSetsChangeResponse.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -114,9 +109,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier
-          specified by the client. Must be unique for operation resources in the
-          Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -181,8 +174,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed
-      zone name or id.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -195,10 +187,8 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the
-          server will decide how many results to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated.
-          Use this parameter to continue a previous list request.
+      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
       *   `:sortBy` (*type:* `String.t`) - Sorting criterion. The only supported value is change sequence.
       *   `:sortOrder` (*type:* `String.t`) - Sorting order direction: 'ascending' or 'descending'.
   *   `opts` (*type:* `keyword()`) - Call options
