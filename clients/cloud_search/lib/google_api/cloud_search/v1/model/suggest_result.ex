@@ -21,14 +21,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.SuggestResult do
 
   ## Attributes
 
-  *   `peopleSuggestion` (*type:* `GoogleApi.CloudSearch.V1.Model.PeopleSuggestion.t`, *default:* `nil`) - This is present when the suggestion indicates a person. It
-      contains more information about the person - like their email ID,
-      name etc.
-  *   `querySuggestion` (*type:* `GoogleApi.CloudSearch.V1.Model.QuerySuggestion.t`, *default:* `nil`) - This field will be present if the suggested query is a word/phrase
-      completion.
+  *   `peopleSuggestion` (*type:* `GoogleApi.CloudSearch.V1.Model.PeopleSuggestion.t`, *default:* `nil`) - This is present when the suggestion indicates a person. It contains more information about the person - like their email ID, name etc.
+  *   `querySuggestion` (*type:* `GoogleApi.CloudSearch.V1.Model.QuerySuggestion.t`, *default:* `nil`) - This field will be present if the suggested query is a word/phrase completion.
   *   `source` (*type:* `GoogleApi.CloudSearch.V1.Model.Source.t`, *default:* `nil`) - The source of the suggestion.
-  *   `suggestedQuery` (*type:* `String.t`, *default:* `nil`) - The suggested query that will be used for search, when the user
-      clicks on the suggestion
+  *   `suggestedQuery` (*type:* `String.t`, *default:* `nil`) - The suggested query that will be used for search, when the user clicks on the suggestion
   """
 
   use GoogleApi.Gax.ModelBase

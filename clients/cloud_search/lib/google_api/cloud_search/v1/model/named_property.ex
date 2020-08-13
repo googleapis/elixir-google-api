@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.NamedProperty do
   @moduledoc """
-  A typed name-value pair for structured data.  The type of the value should
-  be the same as the registered type for the `name` property in the object
-  definition of `objectType`.
+  A typed name-value pair for structured data. The type of the value should be the same as the registered type for the `name` property in the object definition of `objectType`.
 
   ## Attributes
 
@@ -29,9 +27,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.NamedProperty do
   *   `enumValues` (*type:* `GoogleApi.CloudSearch.V1.Model.EnumValues.t`, *default:* `nil`) - 
   *   `htmlValues` (*type:* `GoogleApi.CloudSearch.V1.Model.HtmlValues.t`, *default:* `nil`) - 
   *   `integerValues` (*type:* `GoogleApi.CloudSearch.V1.Model.IntegerValues.t`, *default:* `nil`) - 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the property.  This name should correspond to the name of the
-      property that was registered for object definition in the schema.
-      The maximum allowable length for this property is 256 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the property. This name should correspond to the name of the property that was registered for object definition in the schema. The maximum allowable length for this property is 256 characters.
   *   `objectValues` (*type:* `GoogleApi.CloudSearch.V1.Model.ObjectValues.t`, *default:* `nil`) - 
   *   `textValues` (*type:* `GoogleApi.CloudSearch.V1.Model.TextValues.t`, *default:* `nil`) - 
   *   `timestampValues` (*type:* `GoogleApi.CloudSearch.V1.Model.TimestampValues.t`, *default:* `nil`) - 

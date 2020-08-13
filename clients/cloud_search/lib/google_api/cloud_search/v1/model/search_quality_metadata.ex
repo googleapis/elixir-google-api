@@ -21,9 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchQualityMetadata do
 
   ## Attributes
 
-  *   `quality` (*type:* `float()`, *default:* `nil`) - An indication of the quality of the item, used to influence search quality.
-      Value should be between 0.0 (lowest quality) and 1.0 (highest quality). The
-      default value is 0.0.
+  *   `quality` (*type:* `float()`, *default:* `nil`) - An indication of the quality of the item, used to influence search quality. Value should be between 0.0 (lowest quality) and 1.0 (highest quality). The default value is 0.0.
   """
 
   use GoogleApi.Gax.ModelBase

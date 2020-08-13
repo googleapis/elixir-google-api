@@ -26,34 +26,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Media do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Uploads media for indexing.
-
-  The upload endpoint supports direct and resumable upload protocols and
-  is intended for large items that can not be
-  [inlined during index requests](https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items#itemcontent).
-  To index large content:
-
-  1. Call
-     indexing.datasources.items.upload
-     with the resource name to begin an upload session and retrieve the
-     UploadItemRef.
-  1. Call media.upload to upload the content using the same resource name from step 1.
-  1. Call indexing.datasources.items.index
-     to index the item. Populate the
-     [ItemContent](/cloud-search/docs/reference/rest/v1/indexing.datasources.items#ItemContent)
-     with the UploadItemRef from step 1.
-
-
-  For additional information, see
-  [Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest).
-
-    **Note:** This API requires a service account to execute.
+  Uploads media for indexing. The upload endpoint supports direct and resumable upload protocols and is intended for large items that can not be [inlined during index requests](https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items#itemcontent). To index large content: 1. Call indexing.datasources.items.upload with the resource name to begin an upload session and retrieve the UploadItemRef. 1. Call media.upload to upload the content using the same resource name from step 1. 1. Call indexing.datasources.items.index to index the item. Populate the [ItemContent](/cloud-search/docs/reference/rest/v1/indexing.datasources.items#ItemContent) with the UploadItemRef from step 1. For additional information, see [Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest). **Note:** This API requires a service account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded.  See
-      ReadRequest.resource_name.
+  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded. See ReadRequest.resource_name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -107,34 +85,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Media do
   end
 
   @doc """
-  Uploads media for indexing.
-
-  The upload endpoint supports direct and resumable upload protocols and
-  is intended for large items that can not be
-  [inlined during index requests](https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items#itemcontent).
-  To index large content:
-
-  1. Call
-     indexing.datasources.items.upload
-     with the resource name to begin an upload session and retrieve the
-     UploadItemRef.
-  1. Call media.upload to upload the content using the same resource name from step 1.
-  1. Call indexing.datasources.items.index
-     to index the item. Populate the
-     [ItemContent](/cloud-search/docs/reference/rest/v1/indexing.datasources.items#ItemContent)
-     with the UploadItemRef from step 1.
-
-
-  For additional information, see
-  [Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest).
-
-    **Note:** This API requires a service account to execute.
+  Uploads media for indexing. The upload endpoint supports direct and resumable upload protocols and is intended for large items that can not be [inlined during index requests](https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items#itemcontent). To index large content: 1. Call indexing.datasources.items.upload with the resource name to begin an upload session and retrieve the UploadItemRef. 1. Call media.upload to upload the content using the same resource name from step 1. 1. Call indexing.datasources.items.index to index the item. Populate the [ItemContent](/cloud-search/docs/reference/rest/v1/indexing.datasources.items#ItemContent) with the UploadItemRef from step 1. For additional information, see [Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest). **Note:** This API requires a service account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded.  See
-      ReadRequest.resource_name.
+  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded. See ReadRequest.resource_name.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.CloudSearch.V1.Model.Media.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
@@ -208,34 +164,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Media do
   end
 
   @doc """
-  Uploads media for indexing.
-
-  The upload endpoint supports direct and resumable upload protocols and
-  is intended for large items that can not be
-  [inlined during index requests](https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items#itemcontent).
-  To index large content:
-
-  1. Call
-     indexing.datasources.items.upload
-     with the resource name to begin an upload session and retrieve the
-     UploadItemRef.
-  1. Call media.upload to upload the content using the same resource name from step 1.
-  1. Call indexing.datasources.items.index
-     to index the item. Populate the
-     [ItemContent](/cloud-search/docs/reference/rest/v1/indexing.datasources.items#ItemContent)
-     with the UploadItemRef from step 1.
-
-
-  For additional information, see
-  [Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest).
-
-    **Note:** This API requires a service account to execute.
+  Uploads media for indexing. The upload endpoint supports direct and resumable upload protocols and is intended for large items that can not be [inlined during index requests](https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items#itemcontent). To index large content: 1. Call indexing.datasources.items.upload with the resource name to begin an upload session and retrieve the UploadItemRef. 1. Call media.upload to upload the content using the same resource name from step 1. 1. Call indexing.datasources.items.index to index the item. Populate the [ItemContent](/cloud-search/docs/reference/rest/v1/indexing.datasources.items#ItemContent) with the UploadItemRef from step 1. For additional information, see [Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest). **Note:** This API requires a service account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded.  See
-      ReadRequest.resource_name.
+  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded. See ReadRequest.resource_name.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.CloudSearch.V1.Model.Media.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload

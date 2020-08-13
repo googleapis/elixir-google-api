@@ -21,11 +21,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.Schema do
 
   ## Attributes
 
-  *   `objectDefinitions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.ObjectDefinition.t)`, *default:* `nil`) - The list of top-level objects for the data source.
-      The maximum number of elements is 10.
-  *   `operationIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the Long Running Operations (LROs) currently running for this
-      schema. After modifying the schema, wait for operations to complete
-      before indexing additional content.
+  *   `objectDefinitions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.ObjectDefinition.t)`, *default:* `nil`) - The list of top-level objects for the data source. The maximum number of elements is 10.
+  *   `operationIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the Long Running Operations (LROs) currently running for this schema. After modifying the schema, wait for operations to complete before indexing additional content.
   """
 
   use GoogleApi.Gax.ModelBase

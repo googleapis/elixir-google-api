@@ -21,14 +21,10 @@ defmodule GoogleApi.CloudSearch.V1.Model.PollItemsRequest do
 
   ## Attributes
 
-  *   `connectorName` (*type:* `String.t`, *default:* `nil`) - Name of connector making this call.
-      <br />Format: datasources/{source_id}/connectors/{ID}
+  *   `connectorName` (*type:* `String.t`, *default:* `nil`) - Name of connector making this call. Format: datasources/{source_id}/connectors/{ID}
   *   `debugOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.DebugOptions.t`, *default:* `nil`) - Common debug options.
-  *   `limit` (*type:* `integer()`, *default:* `nil`) - Maximum number of items to return.
-      <br />The maximum value is 100 and the default value is 20.
-  *   `queue` (*type:* `String.t`, *default:* `nil`) - Queue name to fetch items from.  If unspecified, PollItems will
-      fetch from 'default' queue.
-      The maximum length is 100 characters.
+  *   `limit` (*type:* `integer()`, *default:* `nil`) - Maximum number of items to return. The maximum value is 100 and the default value is 20.
+  *   `queue` (*type:* `String.t`, *default:* `nil`) - Queue name to fetch items from. If unspecified, PollItems will fetch from 'default' queue. The maximum length is 100 characters.
   *   `statusCodes` (*type:* `list(String.t)`, *default:* `nil`) - Limit the items polled to the ones with these statuses.
   """
 

@@ -21,9 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.RetrievalImportance do
 
   ## Attributes
 
-  *   `importance` (*type:* `String.t`, *default:* `nil`) - Indicates the ranking importance given to property when it is matched
-      during retrieval. Once set, the token importance of a property cannot be
-      changed.
+  *   `importance` (*type:* `String.t`, *default:* `nil`) - Indicates the ranking importance given to property when it is matched during retrieval. Once set, the token importance of a property cannot be changed.
   """
 
   use GoogleApi.Gax.ModelBase

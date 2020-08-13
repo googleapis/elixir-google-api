@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.StructuredDataObject do
 
   ## Attributes
 
-  *   `properties` (*type:* `list(GoogleApi.CloudSearch.V1.Model.NamedProperty.t)`, *default:* `nil`) - The properties for the object.
-      The maximum number of elements is 1000.
+  *   `properties` (*type:* `list(GoogleApi.CloudSearch.V1.Model.NamedProperty.t)`, *default:* `nil`) - The properties for the object. The maximum number of elements is 1000.
   """
 
   use GoogleApi.Gax.ModelBase

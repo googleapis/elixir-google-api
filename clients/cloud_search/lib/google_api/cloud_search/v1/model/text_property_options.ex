@@ -22,8 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.TextPropertyOptions do
   ## Attributes
 
   *   `operatorOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.TextOperatorOptions.t`, *default:* `nil`) - If set, describes how the property should be used as a search operator.
-  *   `retrievalImportance` (*type:* `GoogleApi.CloudSearch.V1.Model.RetrievalImportance.t`, *default:* `nil`) - Indicates the search quality importance of the tokens within the
-      field when used for retrieval.
+  *   `retrievalImportance` (*type:* `GoogleApi.CloudSearch.V1.Model.RetrievalImportance.t`, *default:* `nil`) - Indicates the search quality importance of the tokens within the field when used for retrieval.
   """
 
   use GoogleApi.Gax.ModelBase

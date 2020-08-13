@@ -21,10 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectPropertyOptions do
 
   ## Attributes
 
-  *   `subobjectProperties` (*type:* `list(GoogleApi.CloudSearch.V1.Model.PropertyDefinition.t)`, *default:* `nil`) - The properties of the sub-object. These properties represent a nested
-      object. For example, if this property represents a postal address, the
-      subobjectProperties might be named *street*, *city*, and *state*.
-      The maximum number of elements is 1000.
+  *   `subobjectProperties` (*type:* `list(GoogleApi.CloudSearch.V1.Model.PropertyDefinition.t)`, *default:* `nil`) - The properties of the sub-object. These properties represent a nested object. For example, if this property represents a postal address, the subobjectProperties might be named *street*, *city*, and *state*. The maximum number of elements is 1000.
   """
 
   use GoogleApi.Gax.ModelBase

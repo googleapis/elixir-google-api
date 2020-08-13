@@ -26,15 +26,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Checks whether an item is accessible by specified principal.
-
-  **Note:** This API requires an admin account to execute.
+  Checks whether an item is accessible by specified principal. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Item name, format:
-      datasources/{source_id}/items/{item_id}
+  *   `name` (*type:* `String.t`) - Item name, format: datasources/{source_id}/items/{item_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -47,8 +44,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
       *   `:body` (*type:* `GoogleApi.CloudSearch.V1.Model.Principal.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -103,16 +99,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
   end
 
   @doc """
-  Fetches the item whose viewUrl exactly matches that of the URL provided
-  in the request.
-
-  **Note:** This API requires an admin account to execute.
+  Fetches the item whose viewUrl exactly matches that of the URL provided in the request. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Source name, format:
-      datasources/{source_id}
+  *   `name` (*type:* `String.t`) - Source name, format: datasources/{source_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -180,15 +172,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
   end
 
   @doc """
-  List all unmapped identities for a specific item.
-
-  **Note:** This API requires an admin account to execute.
+  List all unmapped identities for a specific item. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The name of the item, in the following format:
-      datasources/{source_id}/items/{ID}
+  *   `parent` (*type:* `String.t`) - The name of the item, in the following format: datasources/{source_id}/items/{ID}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -201,10 +190,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to fetch in a request.
-          Defaults to 100.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to fetch in a request. Defaults to 100.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -262,15 +249,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
   end
 
   @doc """
-  Lists names of items associated with an unmapped identity.
-
-  **Note:** This API requires an admin account to execute.
+  Lists names of items associated with an unmapped identity. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The name of the identity source, in the following format:
-      identitysources/{source_id}}
+  *   `parent` (*type:* `String.t`) - The name of the identity source, in the following format: identitysources/{source_id}}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -283,11 +267,9 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
       *   `:groupResourceName` (*type:* `String.t`) - 
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to fetch in a request.
-          Defaults to 100.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to fetch in a request. Defaults to 100.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
       *   `:userResourceName` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -348,15 +330,12 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
   end
 
   @doc """
-  Lists unmapped user identities for an identity source.
-
-  **Note:** This API requires an admin account to execute.
+  Lists unmapped user identities for an identity source. **Note:** This API requires an admin account to execute.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The name of the identity source, in the following format:
-      identitysources/{source_id}
+  *   `parent` (*type:* `String.t`) - The name of the identity source, in the following format: identitysources/{source_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -369,10 +348,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Debug do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field.
-          Otherwise, ignore this field.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to fetch in a request.
-          Defaults to 100.
+      *   `:"debugOptions.enableDebugging"` (*type:* `boolean()`) - If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to fetch in a request. Defaults to 100.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
       *   `:resolutionStatusCode` (*type:* `String.t`) - Limit users selection to this status.
   *   `opts` (*type:* `keyword()`) - Call options
