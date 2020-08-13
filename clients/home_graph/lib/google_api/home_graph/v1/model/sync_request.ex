@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.SyncRequest do
   @moduledoc """
-  Request type for the [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync)
-  call.
+  Request type for the [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync) call.
 
   ## Attributes
 
