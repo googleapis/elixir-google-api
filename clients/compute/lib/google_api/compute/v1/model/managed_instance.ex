@@ -36,6 +36,8 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
   *   `instanceHealth` (*type:* `list(GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth.t)`, *default:* `nil`) - [Output Only] Health state of the instance per health-check.
   *   `instanceStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the instance. This field is empty when the instance does not exist.
   *   `lastAttempt` (*type:* `GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t`, *default:* `nil`) - [Output Only] Information about the last attempt to create or delete the instance.
+  *   `preservedStateFromConfig` (*type:* `GoogleApi.Compute.V1.Model.PreservedState.t`, *default:* `nil`) - [Output Only] Preserved state applied from per-instance config for this instance.
+  *   `preservedStateFromPolicy` (*type:* `GoogleApi.Compute.V1.Model.PreservedState.t`, *default:* `nil`) - [Output Only] Preserved state generated based on stateful policy for this instance.
   *   `version` (*type:* `GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t`, *default:* `nil`) - [Output Only] Intended version of this instance.
   """
 
@@ -48,6 +50,8 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
           :instanceHealth => list(GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth.t()),
           :instanceStatus => String.t(),
           :lastAttempt => GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t(),
+          :preservedStateFromConfig => GoogleApi.Compute.V1.Model.PreservedState.t(),
+          :preservedStateFromPolicy => GoogleApi.Compute.V1.Model.PreservedState.t(),
           :version => GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t()
         }
 
@@ -59,6 +63,8 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
 
   field(:instanceStatus)
   field(:lastAttempt, as: GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt)
+  field(:preservedStateFromConfig, as: GoogleApi.Compute.V1.Model.PreservedState)
+  field(:preservedStateFromPolicy, as: GoogleApi.Compute.V1.Model.PreservedState)
   field(:version, as: GoogleApi.Compute.V1.Model.ManagedInstanceVersion)
 end
 

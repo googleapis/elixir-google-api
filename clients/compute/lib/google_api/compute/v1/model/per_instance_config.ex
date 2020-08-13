@@ -23,17 +23,23 @@ defmodule GoogleApi.Compute.V1.Model.PerInstanceConfig do
 
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+  *   `preservedState` (*type:* `GoogleApi.Compute.V1.Model.PreservedState.t`, *default:* `nil`) - The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of applying this per-instance config on the corresponding managed instance.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :fingerprint => String.t(),
-          :name => String.t()
+          :name => String.t(),
+          :preservedState => GoogleApi.Compute.V1.Model.PreservedState.t(),
+          :status => String.t()
         }
 
   field(:fingerprint)
   field(:name)
+  field(:preservedState, as: GoogleApi.Compute.V1.Model.PreservedState)
+  field(:status)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.PerInstanceConfig do

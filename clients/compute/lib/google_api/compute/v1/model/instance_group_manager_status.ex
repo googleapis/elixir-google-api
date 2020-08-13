@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do
 
   *   `autoscaler` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the Autoscaler that targets this instance group manager.
   *   `isStable` (*type:* `boolean()`, *default:* `nil`) - [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+  *   `stateful` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStateful.t`, *default:* `nil`) - [Output Only] Stateful status of the given Instance Group Manager.
   *   `versionTarget` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusVersionTarget.t`, *default:* `nil`) - [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do
   @type t :: %__MODULE__{
           :autoscaler => String.t(),
           :isStable => boolean(),
+          :stateful => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStateful.t(),
           :versionTarget => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusVersionTarget.t()
         }
 
   field(:autoscaler)
   field(:isStable)
+  field(:stateful, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStateful)
   field(:versionTarget, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusVersionTarget)
 end
 
