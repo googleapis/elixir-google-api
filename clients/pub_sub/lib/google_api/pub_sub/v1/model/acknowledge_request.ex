@@ -21,8 +21,7 @@ defmodule GoogleApi.PubSub.V1.Model.AcknowledgeRequest do
 
   ## Attributes
 
-  *   `ackIds` (*type:* `list(String.t)`, *default:* `nil`) - Required. The acknowledgment ID for the messages being acknowledged that was returned
-      by the Pub/Sub system in the `Pull` response. Must not be empty.
+  *   `ackIds` (*type:* `list(String.t)`, *default:* `nil`) - Required. The acknowledgment ID for the messages being acknowledged that was returned by the Pub/Sub system in the `Pull` response. Must not be empty.
   """
 
   use GoogleApi.Gax.ModelBase

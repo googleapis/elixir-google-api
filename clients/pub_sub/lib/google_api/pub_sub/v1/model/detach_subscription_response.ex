@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.PubSub.V1.Model.DetachSubscriptionResponse do
   @moduledoc """
-  Response for the DetachSubscription method.
-  Reserved for future use.
+  Response for the DetachSubscription method. Reserved for future use.
 
   ## Attributes
 

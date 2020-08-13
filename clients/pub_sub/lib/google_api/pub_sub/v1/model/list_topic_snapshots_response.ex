@@ -21,9 +21,7 @@ defmodule GoogleApi.PubSub.V1.Model.ListTopicSnapshotsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more snapshots that match
-      the request; this value should be passed in a new
-      `ListTopicSnapshotsRequest` to get more snapshots.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more snapshots that match the request; this value should be passed in a new `ListTopicSnapshotsRequest` to get more snapshots.
   *   `snapshots` (*type:* `list(String.t)`, *default:* `nil`) - The names of the snapshots that match the request.
   """
 
