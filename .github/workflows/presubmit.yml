@@ -34,4 +34,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Required checks collector
-        run: '[ "${{ needs.tests.result }}" = "success" ]'
+        run: 'test "${{ needs.tests.result }}" = "success"'
