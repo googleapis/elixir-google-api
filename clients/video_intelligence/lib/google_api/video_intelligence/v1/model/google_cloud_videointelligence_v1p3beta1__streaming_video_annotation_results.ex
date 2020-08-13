@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults do
   @moduledoc """
-  Streaming annotation results corresponding to a portion of the video
-  that is currently being processed.
+  Streaming annotation results corresponding to a portion of the video that is currently being processed.
 
   ## Attributes
 

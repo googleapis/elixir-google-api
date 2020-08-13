@@ -21,9 +21,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Ex
 
   ## Attributes
 
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for explicit content detection.
-      Supported values: "builtin/stable" (the default if unset) and
-      "builtin/latest".
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for explicit content detection. Supported values: "builtin/stable" (the default if unset) and "builtin/latest".
   """
 
   use GoogleApi.Gax.ModelBase

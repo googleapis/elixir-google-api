@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ExplicitContentAnnotation do
   @moduledoc """
-  Explicit content annotation (based on per-frame visual signals only).
-  If no explicit content has been detected in a frame, no annotations are
-  present for that frame.
+  Explicit content annotation (based on per-frame visual signals only). If no explicit content has been detected in a frame, no annotations are present for that frame.
 
   ## Attributes
 

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_AnnotateVideoProgress do
   @moduledoc """
-  Video annotation progress. Included in the `metadata`
-  field of the `Operation` returned by the `GetOperation`
-  call of the `google::longrunning::Operations` service.
+  Video annotation progress. Included in the `metadata` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 
   ## Attributes
 

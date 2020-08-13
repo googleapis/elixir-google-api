@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_AnnotateVideoResponse do
   @moduledoc """
-  Video annotation response. Included in the `response`
-  field of the `Operation` returned by the `GetOperation`
-  call of the `google::longrunning::Operations` service.
+  Video annotation response. Included in the `response` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 
   ## Attributes
 

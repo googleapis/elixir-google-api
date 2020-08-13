@@ -21,8 +21,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
 
   ## Attributes
 
-  *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence for the track of detected text. It is calculated as the highest
-      over all frames where OCR detected text appears.
+  *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
   *   `frames` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_TextFrame.t)`, *default:* `nil`) - Information related to the frames where OCR detected text appears.
   *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_VideoSegment.t`, *default:* `nil`) - Video segment where a text snippet was detected.
   """

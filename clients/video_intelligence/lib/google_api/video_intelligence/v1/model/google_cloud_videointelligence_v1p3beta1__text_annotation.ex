@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_TextAnnotation do
   @moduledoc """
-  Annotations related to one detected OCR text snippet. This will contain the
-  corresponding text, confidence value, and frame level information for each
-  detection.
+  Annotations related to one detected OCR text snippet. This will contain the corresponding text, confidence value, and frame level information for each detection.
 
   ## Attributes
 

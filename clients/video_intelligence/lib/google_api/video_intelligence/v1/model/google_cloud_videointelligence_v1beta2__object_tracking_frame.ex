@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ObjectTrackingFrame do
   @moduledoc """
-  Video frame level annotations for object detection and tracking. This field
-  stores per frame location, time offset, and confidence.
+  Video frame level annotations for object detection and tracking. This field stores per frame location, time offset, and confidence.
 
   ## Attributes
 

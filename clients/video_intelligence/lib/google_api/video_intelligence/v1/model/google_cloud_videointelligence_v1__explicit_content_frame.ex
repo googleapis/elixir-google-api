@@ -22,8 +22,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Ex
   ## Attributes
 
   *   `pornographyLikelihood` (*type:* `String.t`, *default:* `nil`) - Likelihood of the pornography content..
-  *   `timeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video, corresponding to the
-      video frame for this location.
+  *   `timeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video, corresponding to the video frame for this location.
   """
 
   use GoogleApi.Gax.ModelBase

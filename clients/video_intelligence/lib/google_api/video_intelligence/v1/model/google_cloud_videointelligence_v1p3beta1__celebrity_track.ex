@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack do
   @moduledoc """
-  The annotation result of a celebrity face track. RecognizedCelebrity field
-  could be empty if the face track does not have any matched celebrities.
+  The annotation result of a celebrity face track. RecognizedCelebrity field could be empty if the face track does not have any matched celebrities.
 
   ## Attributes
 

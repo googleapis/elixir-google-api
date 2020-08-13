@@ -22,8 +22,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence that the label is accurate. Range: [0, 1].
-  *   `timeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video, corresponding to the
-      video frame for this location.
+  *   `timeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video, corresponding to the video frame for this location.
   """
 
   use GoogleApi.Gax.ModelBase

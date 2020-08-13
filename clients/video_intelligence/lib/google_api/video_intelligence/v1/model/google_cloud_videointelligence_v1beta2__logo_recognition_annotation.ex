@@ -21,12 +21,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
 
   ## Attributes
 
-  *   `entity` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_Entity.t`, *default:* `nil`) - Entity category information to specify the logo class that all the logo
-      tracks within this LogoRecognitionAnnotation are recognized as.
-  *   `segments` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_VideoSegment.t)`, *default:* `nil`) - All video segments where the recognized logo appears. There might be
-      multiple instances of the same logo class appearing in one VideoSegment.
-  *   `tracks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_Track.t)`, *default:* `nil`) - All logo tracks where the recognized logo appears. Each track corresponds
-      to one logo instance appearing in consecutive frames.
+  *   `entity` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_Entity.t`, *default:* `nil`) - Entity category information to specify the logo class that all the logo tracks within this LogoRecognitionAnnotation are recognized as.
+  *   `segments` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_VideoSegment.t)`, *default:* `nil`) - All video segments where the recognized logo appears. There might be multiple instances of the same logo class appearing in one VideoSegment.
+  *   `tracks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_Track.t)`, *default:* `nil`) - All logo tracks where the recognized logo appears. Each track corresponds to one logo instance appearing in consecutive frames.
   """
 
   use GoogleApi.Gax.ModelBase

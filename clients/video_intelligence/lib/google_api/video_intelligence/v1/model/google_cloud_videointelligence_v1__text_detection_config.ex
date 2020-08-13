@@ -21,14 +21,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Te
 
   ## Attributes
 
-  *   `languageHints` (*type:* `list(String.t)`, *default:* `nil`) - Language hint can be specified if the language to be detected is known a
-      priori. It can increase the accuracy of the detection. Language hint must
-      be language code in BCP-47 format.
-
-      Automatic language detection is performed if no hint is provided.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for text detection.
-      Supported values: "builtin/stable" (the default if unset) and
-      "builtin/latest".
+  *   `languageHints` (*type:* `list(String.t)`, *default:* `nil`) - Language hint can be specified if the language to be detected is known a priori. It can increase the accuracy of the detection. Language hint must be language code in BCP-47 format. Automatic language detection is performed if no hint is provided.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for text detection. Supported values: "builtin/stable" (the default if unset) and "builtin/latest".
   """
 
   use GoogleApi.Gax.ModelBase

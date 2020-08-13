@@ -21,13 +21,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Textual description of additional information about the celebrity, if
-      applicable.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Textual description of additional information about the celebrity, if applicable.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The celebrity name.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the celebrity. Have the format
-      `video-intelligence/kg-mid` indicates a celebrity from preloaded gallery.
-      kg-mid is the id in Google knowledge graph, which is unique for the
-      celebrity.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the celebrity. Have the format `video-intelligence/kg-mid` indicates a celebrity from preloaded gallery. kg-mid is the id in Google knowledge graph, which is unique for the celebrity.
   """
 
   use GoogleApi.Gax.ModelBase

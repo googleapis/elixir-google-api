@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_TextFrame do
   @moduledoc """
-  Video frame level annotation results for text annotation (OCR).
-  Contains information regarding timestamp and bounding box locations for the
-  frames containing detected OCR text snippets.
+  Video frame level annotation results for text annotation (OCR). Contains information regarding timestamp and bounding box locations for the frames containing detected OCR text snippets.
 
   ## Attributes
 

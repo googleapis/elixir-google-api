@@ -21,9 +21,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Ob
 
   ## Attributes
 
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for object tracking.
-      Supported values: "builtin/stable" (the default if unset) and
-      "builtin/latest".
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Model to use for object tracking. Supported values: "builtin/stable" (the default if unset) and "builtin/latest".
   """
 
   use GoogleApi.Gax.ModelBase

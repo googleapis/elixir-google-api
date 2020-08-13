@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox do
   @moduledoc """
-  Normalized bounding box.
-  The normalized vertex coordinates are relative to the original image.
-  Range: [0, 1].
+  Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1].
 
   ## Attributes
 
