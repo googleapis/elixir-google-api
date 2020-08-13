@@ -21,15 +21,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
 
   ## Attributes
 
-  *   `binaryLogEnabled` (*type:* `boolean()`, *default:* `nil`) - (MySQL only) Whether binary log is enabled. If backup configuration is
-      disabled, binarylog must be disabled as well.
+  *   `binaryLogEnabled` (*type:* `boolean()`, *default:* `nil`) - (MySQL only) Whether binary log is enabled. If backup configuration is disabled, binarylog must be disabled as well.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether this configuration is enabled.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#backupConfiguration</b>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#backupConfiguration*.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the backup
   *   `pointInTimeRecoveryEnabled` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
   *   `replicationLogArchivingEnabled` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
-  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Start time for the daily backup configuration in UTC timezone in the 24
-      hour format - <b>HH:MM</b>.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Start time for the daily backup configuration in UTC timezone in the 24 hour format - *HH:MM*.
   """
 
   use GoogleApi.Gax.ModelBase

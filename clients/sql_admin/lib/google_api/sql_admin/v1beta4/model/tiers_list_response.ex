@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.TiersListResponse do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.Tier.t)`, *default:* `nil`) - List of tiers.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#tiersList</b>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#tiersList*.
   """
 
   use GoogleApi.Gax.ModelBase

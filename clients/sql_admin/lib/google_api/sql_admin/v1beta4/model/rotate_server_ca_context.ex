@@ -21,9 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.RotateServerCaContext do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#rotateServerCaContext</b>.
-  *   `nextVersion` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the next version to be rotated to. If left unspecified,
-      will be rotated to the most recently added server CA version.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#rotateServerCaContext*.
+  *   `nextVersion` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the next version to be rotated to. If left unspecified, will be rotated to the most recently added server CA version.
   """
 
   use GoogleApi.Gax.ModelBase

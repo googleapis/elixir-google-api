@@ -26,10 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Generates a short-lived X509 certificate containing the provided public key
-  and signed by a private key specific to the target instance. Users may use
-  the certificate to authenticate as themselves when connecting to the
-  database.
+  Generates a short-lived X509 certificate containing the provided public key and signed by a private key specific to the target instance. Users may use the certificate to authenticate as themselves when connecting to the database.
 
   ## Parameters
 
@@ -104,8 +101,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   end
 
   @doc """
-  Deletes the SSL certificate. For First Generation instances, the
-  certificate remains valid until the instance is restarted.
+  Deletes the SSL certificate. For First Generation instances, the certificate remains valid until the instance is restarted.
 
   ## Parameters
 
@@ -186,9 +182,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   end
 
   @doc """
-  Retrieves a particular SSL certificate.  Does not include the private key
-  (required for usage).  The private key must be saved from the response to
-  initial creation.
+  Retrieves a particular SSL certificate. Does not include the private key (required for usage). The private key must be saved from the response to initial creation.
 
   ## Parameters
 
@@ -269,9 +263,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   end
 
   @doc """
-  Creates an SSL certificate and returns it along with the private key and
-  server certificate authority.  The new certificate will not be usable until
-  the instance is restarted.
+  Creates an SSL certificate and returns it along with the private key and server certificate authority. The new certificate will not be usable until the instance is restarted.
 
   ## Parameters
 

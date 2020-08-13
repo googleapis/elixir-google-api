@@ -33,9 +33,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
-  *   `id` (*type:* `String.t`) - The ID of the Backup Run to delete. To find a Backup Run ID, use the <a
-      href="/sql/docs/db_path/admin-api/rest/v1beta4/backupRuns/list">list</a>
-      method.
+  *   `id` (*type:* `String.t`) - The ID of the Backup Run to delete. To find a Backup Run ID, use the list method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -168,8 +166,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   end
 
   @doc """
-  Creates a new backup run on demand. This method is applicable only to
-  Second Generation instances.
+  Creates a new backup run on demand. This method is applicable only to Second Generation instances.
 
   ## Parameters
 
@@ -232,8 +229,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   end
 
   @doc """
-  Lists all backup runs associated with a given instance and configuration in
-  the reverse chronological order of the backup initiation time.
+  Lists all backup runs associated with a given instance and configuration in the reverse chronological order of the backup initiation time.
 
   ## Parameters
 
@@ -253,8 +249,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:maxResults` (*type:* `integer()`) - Maximum number of backup runs per response.
-      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
-          results to view.
+      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

@@ -26,11 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Add a new trusted Certificate Authority (CA) version for the specified
-  instance. Required to prepare for a certificate rotation. If a CA version
-  was previously added but never used in a certificate rotation, this
-  operation replaces that version. There cannot be more than one CA version
-  waiting to be rotated in.
+  Add a new trusted Certificate Authority (CA) version for the specified instance. Required to prepare for a certificate rotation. If a CA version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one CA version waiting to be rotated in.
 
   ## Parameters
 
@@ -103,15 +99,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Creates a Cloud SQL instance as a clone of the source instance. Using this
-  operation might cause your instance to restart.
+  Creates a Cloud SQL instance as a clone of the source instance. Using this operation might cause your instance to restart.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID of the source as well as the clone Cloud SQL instance.
-  *   `instance` (*type:* `String.t`) - The ID of the Cloud SQL instance to be cloned (source). This does not
-      include the project ID.
+  *   `instance` (*type:* `String.t`) - The ID of the Cloud SQL instance to be cloned (source). This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -229,8 +223,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Demotes the stand-alone instance to be a Cloud SQL read replica for an
-  external database server.
+  Demotes the stand-alone instance to be a Cloud SQL read replica for an external database server.
 
   ## Parameters
 
@@ -305,8 +298,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL
-  dump or CSV file.
+  Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL dump or CSV file.
 
   ## Parameters
 
@@ -369,8 +361,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Failover the instance to its failover replica instance. Using this
-  operation might cause your instance to restart.
+  Failover the instance to its failover replica instance. Using this operation might cause your instance to restart.
 
   ## Parameters
 
@@ -494,8 +485,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Imports data into a Cloud SQL instance from a SQL dump  or CSV file in
-  Cloud Storage.
+  Imports data into a Cloud SQL instance from a SQL dump or CSV file in Cloud Storage.
 
   ## Parameters
 
@@ -563,8 +553,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Project ID of the project to which the newly created Cloud SQL instances
-      should belong.
+  *   `project` (*type:* `String.t`) - Project ID of the project to which the newly created Cloud SQL instances should belong.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -638,18 +627,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A filter expression that filters resources listed in the response.
-          The expression is in the form of field:value. For example,
-          'instanceType:CLOUD_SQL_INSTANCE'. Fields can be nested as needed as per
-          their JSON representation, such as 'settings.userLabels.auto_start:true'.
-
-          Multiple filter queries are space-separated. For example.
-          'state:RUNNABLE instanceType:CLOUD_SQL_INSTANCE'. By default, each
-          expression is an AND expression. However, you can include AND and OR
-          expressions explicitly.
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters resources listed in the response. The expression is in the form of field:value. For example, 'instanceType:CLOUD_SQL_INSTANCE'. Fields can be nested as needed as per their JSON representation, such as 'settings.userLabels.auto_start:true'. Multiple filter queries are space-separated. For example. 'state:RUNNABLE instanceType:CLOUD_SQL_INSTANCE'. By default, each expression is an AND expression. However, you can include AND and OR expressions explicitly.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return per response.
-      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
-          results to view.
+      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -696,11 +676,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Lists all of the trusted Certificate Authorities (CAs) for the specified
-  instance. There can be up to three CAs listed: the CA that was used to sign
-  the certificate that is currently in use, a CA that has been added but not
-  yet used to sign a certificate, and a CA used to sign a certificate that
-  has previously rotated out.
+  Lists all of the trusted Certificate Authorities (CAs) for the specified instance. There can be up to three CAs listed: the CA that was used to sign the certificate that is currently in use, a CA that has been added but not yet used to sign a certificate, and a CA used to sign a certificate that has previously rotated out.
 
   ## Parameters
 
@@ -775,8 +751,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Updates settings of a Cloud SQL instance.
-  This method supports patch semantics.
+  Updates settings of a Cloud SQL instance. This method supports patch semantics.
 
   ## Parameters
 
@@ -839,8 +814,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Promotes the read replica instance to be a stand-alone Cloud SQL instance.
-  Using this operation might cause your instance to restart.
+  Promotes the read replica instance to be a stand-alone Cloud SQL instance. Using this operation might cause your instance to restart.
 
   ## Parameters
 
@@ -913,8 +887,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Deletes all client certificates and generates a new server SSL certificate
-  for the instance.
+  Deletes all client certificates and generates a new server SSL certificate for the instance.
 
   ## Parameters
 
@@ -1048,8 +1021,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Restores a backup of a Cloud SQL instance. Using this operation might cause
-  your instance to restart.
+  Restores a backup of a Cloud SQL instance. Using this operation might cause your instance to restart.
 
   ## Parameters
 
@@ -1124,8 +1096,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Rotates the server certificate to one signed by the Certificate Authority
-  (CA) version previously added with the addServerCA method.
+  Rotates the server certificate to one signed by the Certificate Authority (CA) version previously added with the addServerCA method.
 
   ## Parameters
 
@@ -1409,8 +1380,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Updates settings of a Cloud SQL instance. Using this operation might cause
-  your instance to restart.
+  Updates settings of a Cloud SQL instance. Using this operation might cause your instance to restart.
 
   ## Parameters
 

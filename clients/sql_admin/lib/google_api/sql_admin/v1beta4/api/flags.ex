@@ -43,8 +43,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Flags do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:databaseVersion` (*type:* `String.t`) - Database type and version you want to retrieve flags for. By default, this
-          method returns flags for all database types and versions.
+      *   `:databaseVersion` (*type:* `String.t`) - Database type and version you want to retrieve flags for. By default, this method returns flags for all database types and versions.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
