@@ -34,9 +34,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Required checks collector
-        uses: actions/github-script@v2
-        env:
-          NEEDS_RESULTS: ${{ toJSON(needs) }}
-        with:
-          script: |
-            console.log(process.env.NEEDS_RESULTS);
+        run: '[ "${{ needs.tests.result }}" = "success" ]'
