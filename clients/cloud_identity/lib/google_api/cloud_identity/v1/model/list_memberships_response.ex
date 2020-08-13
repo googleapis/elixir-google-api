@@ -22,8 +22,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.ListMembershipsResponse do
   ## Attributes
 
   *   `memberships` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.Membership.t)`, *default:* `nil`) - List of Memberships.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results available for listing.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results available for listing.
   """
 
   use GoogleApi.Gax.ModelBase
