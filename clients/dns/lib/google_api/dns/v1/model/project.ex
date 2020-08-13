@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.DNS.V1.Model.Project do
   @moduledoc """
-  A project resource. The project is a top level container for resources
-  including Cloud DNS ManagedZones. Projects can be created only in the APIs
-  console.
+  A project resource. The project is a top level container for resources including Cloud DNS ManagedZones. Projects can be created only in the APIs console.
 
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - User assigned unique identifier for the resource (output only).
   *   `kind` (*type:* `String.t`, *default:* `dns#project`) - 
-  *   `number` (*type:* `String.t`, *default:* `nil`) - Unique numeric identifier for the resource; defined by the server (output
-      only).
+  *   `number` (*type:* `String.t`, *default:* `nil`) - Unique numeric identifier for the resource; defined by the server (output only).
   *   `quota` (*type:* `GoogleApi.DNS.V1.Model.Quota.t`, *default:* `nil`) - Quotas assigned to this project (output only).
   """
 
