@@ -21,8 +21,7 @@ defmodule GoogleApi.Redis.V1.Model.FailoverInstanceRequest do
 
   ## Attributes
 
-  *   `dataProtectionMode` (*type:* `String.t`, *default:* `nil`) - Optional. Available data protection modes that the user can choose. If it's
-      unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
+  *   `dataProtectionMode` (*type:* `String.t`, *default:* `nil`) - Optional. Available data protection modes that the user can choose. If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
   """
 
   use GoogleApi.Gax.ModelBase

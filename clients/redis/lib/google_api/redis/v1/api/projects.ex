@@ -161,25 +161,12 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Creates a Redis instance based on the specified tier and memory size.
-
-  By default, the instance is accessible from the project's
-  [default network](https://cloud.google.com/vpc/docs/vpc).
-
-  The creation is executed asynchronously and callers may check the returned
-  operation to track its progress. Once the operation is completed the Redis
-  instance will be fully functional. Completed longrunning.Operation will
-  contain the new instance object in the response field.
-
-  The returned operation is automatically deleted after a few hours, so there
-  is no need to call DeleteOperation.
+  Creates a Redis instance based on the specified tier and memory size. By default, the instance is accessible from the project's [default network](https://cloud.google.com/vpc/docs/vpc). The creation is executed asynchronously and callers may check the returned operation to track its progress. Once the operation is completed the Redis instance will be fully functional. Completed longrunning.Operation will contain the new instance object in the response field. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Redis.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the instance location using the form:
-          `projects/{project_id}/locations/{location_id}`
-      where `location_id` refers to a GCP region.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the instance location using the form: `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -193,14 +180,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:instanceId` (*type:* `String.t`) - Required. The logical name of the Redis instance in the customer project
-          with the following restrictions:
-
-          * Must contain only lowercase letters, numbers, and hyphens.
-          * Must start with a letter.
-          * Must be between 1-40 characters.
-          * Must end with a number or a letter.
-          * Must be unique within the customer project / location
+      *   `:instanceId` (*type:* `String.t`) - Required. The logical name of the Redis instance in the customer project with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-40 characters. * Must end with a number or a letter. * Must be unique within the customer project / location
       *   `:body` (*type:* `GoogleApi.Redis.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -256,15 +236,12 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a specific Redis instance.  Instance stops serving and data is
-  deleted.
+  Deletes a specific Redis instance. Instance stops serving and data is deleted.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Redis.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-      where `location_id` refers to a GCP region.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id` refers to a GCP region.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -337,19 +314,12 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Export Redis instance data into a Redis RDB format file in Cloud Storage.
-
-  Redis will continue serving during this operation.
-
-  The returned operation is automatically deleted after a few hours, so
-  there is no need to call DeleteOperation.
+  Export Redis instance data into a Redis RDB format file in Cloud Storage. Redis will continue serving during this operation. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Redis.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-      where `location_id` refers to a GCP region.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id` refers to a GCP region.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -424,15 +394,12 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Initiates a failover of the master node to current replica node for a
-  specific STANDARD tier Cloud Memorystore for Redis instance.
+  Initiates a failover of the master node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Redis.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-      where `location_id` refers to a GCP region.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id` refers to a GCP region.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -512,9 +479,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Redis.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-      where `location_id` refers to a GCP region.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id` refers to a GCP region.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -586,21 +551,12 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
-
-  Redis may stop serving during this operation. Instance state will be
-  IMPORTING for entire operation. When complete, the instance will contain
-  only data from the imported file.
-
-  The returned operation is automatically deleted after a few hours, so
-  there is no need to call DeleteOperation.
+  Import a Redis RDB snapshot file from Cloud Storage into a Redis instance. Redis may stop serving during this operation. Instance state will be IMPORTING for entire operation. When complete, the instance will contain only data from the imported file. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Redis.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-      where `location_id` refers to a GCP region.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id` refers to a GCP region.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -675,22 +631,12 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Lists all Redis instances owned by a project in either the specified
-  location (region) or all locations.
-
-  The location should have the following format:
-
-  * `projects/{project_id}/locations/{location_id}`
-
-  If `location_id` is specified as `-` (wildcard), then all regions
-  available to the project are queried, and the results are aggregated.
+  Lists all Redis instances owned by a project in either the specified location (region) or all locations. The location should have the following format: * `projects/{project_id}/locations/{location_id}` If `location_id` is specified as `-` (wildcard), then all regions available to the project are queried, and the results are aggregated.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Redis.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the instance location using the form:
-          `projects/{project_id}/locations/{location_id}`
-      where `location_id` refers to a GCP region.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the instance location using the form: `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -704,15 +650,8 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return.
-
-          If not specified, a default value of 1000 will be used by the service.
-          Regardless of the page_size value, the response may include a partial list
-          and a caller should only rely on response's
-          `next_page_token`
-          to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous
-          ListInstances request, if any.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response's `next_page_token` to determine if there are more instances left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous ListInstances request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -769,24 +708,12 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Updates the metadata and configuration of a specific Redis instance.
-
-  Completed longrunning.Operation will contain the new instance object
-  in the response field. The returned operation is automatically deleted
-  after a few hours, so there is no need to call DeleteOperation.
+  Updates the metadata and configuration of a specific Redis instance. Completed longrunning.Operation will contain the new instance object in the response field. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Redis.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `instance.name`. Required. Unique name of the resource in this scope including project and
-      location using the form:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-
-      Note: Redis instances are managed and addressed at regional level so
-      location_id here refers to a GCP region; however, users may choose which
-      specific zone (or collection of zones for cross-zone instances) an instance
-      should be provisioned in. Refer to location_id and
-      alternative_location_id fields for more details.
+  *   `projects_id` (*type:* `String.t`) - Part of `instance.name`. Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Redis instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in. Refer to location_id and alternative_location_id fields for more details.
   *   `locations_id` (*type:* `String.t`) - Part of `instance.name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `instance.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -801,14 +728,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in
-          this field. The elements of the repeated paths field may only include these
-          fields from Instance:
-
-           *   `displayName`
-           *   `labels`
-           *   `memorySizeGb`
-           *   `redisConfig`
+      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. The elements of the repeated paths field may only include these fields from Instance: * `displayName` * `labels` * `memorySizeGb` * `redisConfig`
       *   `:body` (*type:* `GoogleApi.Redis.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -870,15 +790,12 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Upgrades Redis instance to the newer Redis version specified in the
-  request.
+  Upgrades Redis instance to the newer Redis version specified in the request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Redis.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-      where `location_id` refers to a GCP region.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Redis instance resource name using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id` refers to a GCP region.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -953,16 +870,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -1039,10 +947,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a long-running operation. This method indicates that the client is
-  no longer interested in the operation result. It does not cancel the
-  operation. If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -1119,9 +1024,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -1199,16 +1102,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the
-  server doesn't support this method, it returns `UNIMPLEMENTED`.
-
-  NOTE: the `name` binding allows API services to override the binding
-  to use different resource name schemes, such as `users/*/operations`. To
-  override the binding, API services can add a binding such as
-  `"/v1/{name=users/*}/operations"` to their service configuration.
-  For backwards compatibility, the default name includes the operations
-  collection id, however overriding users must ensure the name binding
-  is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
 
   ## Parameters
 

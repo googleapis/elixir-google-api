@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Redis.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings do
   @moduledoc """
-  Maintenance settings associated with instance. Allows service producers and
-  end users to assign settings that controls maintenance on this instance.
+  Maintenance settings associated with instance. Allows service producers and end users to assign settings that controls maintenance on this instance.
 
   ## Attributes
 
-  *   `exclude` (*type:* `boolean()`, *default:* `nil`) - Optional. Exclude instance from maintenance. When true, rollout service will not
-      attempt maintenance on the instance. Rollout service will include the
-      instance in reported rollout progress as not attempted.
+  *   `exclude` (*type:* `boolean()`, *default:* `nil`) - Optional. Exclude instance from maintenance. When true, rollout service will not attempt maintenance on the instance. Rollout service will include the instance in reported rollout progress as not attempted.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.Redis.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility do
   @moduledoc """
-  SloEligibility is a tuple containing eligibility value: true if an instance
-  is eligible for SLO calculation or false if it should be excluded from all
-  SLO-related calculations along with a user-defined reason.
+  SloEligibility is a tuple containing eligibility value: true if an instance is eligible for SLO calculation or false if it should be excluded from all SLO-related calculations along with a user-defined reason.
 
   ## Attributes
 
   *   `eligible` (*type:* `boolean()`, *default:* `nil`) - Whether an instance is eligible or ineligible.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - User-defined reason for the current value of instance eligibility. Usually,
-      this can be directly mapped to the internal state. An empty reason is
-      allowed.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - User-defined reason for the current value of instance eligibility. Usually, this can be directly mapped to the internal state. An empty reason is allowed.
   """
 
   use GoogleApi.Gax.ModelBase

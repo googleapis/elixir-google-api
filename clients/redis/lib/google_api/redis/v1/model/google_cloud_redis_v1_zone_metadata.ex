@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Redis.V1.Model.GoogleCloudRedisV1ZoneMetadata do
   @moduledoc """
-  Defines specific information for a particular zone. Currently empty and
-  reserved for future use only.
+  Defines specific information for a particular zone. Currently empty and reserved for future use only.
 
   ## Attributes
 
