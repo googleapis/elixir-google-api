@@ -17,32 +17,12 @@
 
 defmodule GoogleApi.ServiceDirectory.V1beta1.Model.ResolveServiceRequest do
   @moduledoc """
-  The request message for LookupService.ResolveService.
-  Looks up a service by its name, returns the service and its endpoints.
+  The request message for LookupService.ResolveService. Looks up a service by its name, returns the service and its endpoints.
 
   ## Attributes
 
-  *   `endpointFilter` (*type:* `String.t`, *default:* `nil`) - Optional. The filter applied to the endpoints of the resolved service.
-
-      General filter string syntax:
-      <field> <operator> <value> (<logical connector>)
-      <field> can be "name" or "metadata.<key>" for map field.
-      <operator> can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS and is
-      roughly the same as "=".
-      <value> must be the same data type as the field.
-      <logical connector> can be "AND, OR, NOT".
-
-      Examples of valid filters:
-      * "metadata.owner" returns Endpoints that have a label with the
-        key "owner", this is the same as "metadata:owner"
-      * "metadata.protocol=gRPC" returns Endpoints that have key/value
-        "protocol=gRPC"
-      * "metadata.owner!=sd AND metadata.foo=bar" returns
-        Endpoints that have "owner" field in metadata with a value that is not
-        "sd" AND have the key/value foo=bar.
-  *   `maxEndpoints` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of endpoints to return. Defaults to 25. Maximum is 100.
-      If a value less than one is specified, the Default is used.
-      If a value greater than the Maximum is specified, the Maximum is used.
+  *   `endpointFilter` (*type:* `String.t`, *default:* `nil`) - Optional. The filter applied to the endpoints of the resolved service. General filter string syntax: () can be "name" or "metadata." for map field. can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS and is roughly the same as "=". must be the same data type as the field. can be "AND, OR, NOT". Examples of valid filters: * "metadata.owner" returns Endpoints that have a label with the key "owner", this is the same as "metadata:owner" * "metadata.protocol=gRPC" returns Endpoints that have key/value "protocol=gRPC" * "metadata.owner!=sd AND metadata.foo=bar" returns Endpoints that have "owner" field in metadata with a value that is not "sd" AND have the key/value foo=bar.
+  *   `maxEndpoints` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of endpoints to return. Defaults to 25. Maximum is 100. If a value less than one is specified, the Default is used. If a value greater than the Maximum is specified, the Maximum is used.
   """
 
   use GoogleApi.Gax.ModelBase
