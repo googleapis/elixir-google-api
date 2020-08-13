@@ -21,8 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.TestIamPermissionsResponse 
 
   ## Attributes
 
-  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - A subset of `TestPermissionsRequest.permissions` that the caller is
-      allowed.
+  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - A subset of `TestPermissionsRequest.permissions` that the caller is allowed.
   """
 
   use GoogleApi.Gax.ModelBase

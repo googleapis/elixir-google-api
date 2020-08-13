@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.StorageSource do
   @moduledoc """
-  StorageSource describes the location of the source in an archive file in
-  Google Cloud Storage.
+  StorageSource describes the location of the source in an archive file in Google Cloud Storage.
 
   ## Attributes
 
-  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket containing source (see [Bucket Name
-      Requirements]
-      (https://cloud.google.com/storage/docs/bucket-naming#requirements)).
+  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket containing source (see [Bucket Name Requirements] (https://cloud.google.com/storage/docs/bucket-naming#requirements)).
   *   `generation` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage generation for the object.
   *   `object` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage object containing source.
   """

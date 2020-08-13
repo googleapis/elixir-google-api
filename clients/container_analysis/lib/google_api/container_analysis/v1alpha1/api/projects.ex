@@ -31,8 +31,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. This field contains the project Id for example:
-      "projects/{project_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. This field contains the project Id for example: "projects/{project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -45,9 +44,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:name` (*type:* `String.t`) - The name of the project.
-          Should be of the form "providers/{provider_id}".
-          @Deprecated
+      *   `:name` (*type:* `String.t`) - The name of the project. Should be of the form "providers/{provider_id}". @Deprecated
       *   `:noteId` (*type:* `String.t`) - The ID to use for this note.
       *   `:body` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -109,8 +106,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the note in the form of
-      "providers/{provider_id}/notes/{NOTE_ID}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the note in the form of "providers/{provider_id}/notes/{NOTE_ID}"
   *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -183,8 +179,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the note in the form of
-      "providers/{provider_id}/notes/{NOTE_ID}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the note in the form of "providers/{provider_id}/notes/{NOTE_ID}"
   *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -252,23 +247,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a note or an `Occurrence` resource.
-  Requires `containeranalysis.notes.setIamPolicy` or
-  `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-  a note or occurrence, respectively.
-  Attempting to call this method on a resource without the required
-  permission will result in a `PERMISSION_DENIED` error. Attempting to call
-  this method on a non-existent resource will result in a `NOT_FOUND` error
-  if the user has list permission on the project, or a `PERMISSION_DENIED`
-  error otherwise. The resource takes the following formats:
-  `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for occurrences and
-  projects/{PROJECT_ID}/notes/{NOTE_ID} for notes
+  Gets the access control policy for a note or an `Occurrence` resource. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or occurrence, respectively. Attempting to call this method on a resource without the required permission will result in a `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for occurrences and projects/{PROJECT_ID}/notes/{NOTE_ID} for notes
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -357,9 +341,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The filter expression.
-      *   `:name` (*type:* `String.t`) - The name field will contain the project Id for example:
-          "providers/{provider_id}
-          @Deprecated
+      *   `:name` (*type:* `String.t`) - The name field will contain the project Id for example: "providers/{provider_id} @Deprecated
       *   `:pageSize` (*type:* `integer()`) - Number of notes to return in the list.
       *   `:pageToken` (*type:* `String.t`) - Token to provide to skip to a particular spot in the list.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -424,8 +406,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the note.
-      Should be of the form "projects/{provider_id}/notes/{note_id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the note. Should be of the form "projects/{provider_id}/notes/{note_id}".
   *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -497,24 +478,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified `Note` or `Occurrence`.
-  Requires `containeranalysis.notes.setIamPolicy` or
-  `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-  a `Note` or an `Occurrence`, respectively.
-  Attempting to call this method without these permissions will result in a `
-  `PERMISSION_DENIED` error.
-  Attempting to call this method on a non-existent resource will result in a
-  `NOT_FOUND` error if the user has `containeranalysis.notes.list` permission
-  on a `Note` or `containeranalysis.occurrences.list` on an `Occurrence`, or
-  a `PERMISSION_DENIED` error otherwise. The resource takes the following
-  formats: `projects/{projectid}/occurrences/{occurrenceid}` for occurrences
-  and projects/{projectid}/notes/{noteid} for notes
+  Sets the access control policy on the specified `Note` or `Occurrence`. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a `Note` or an `Occurrence`, respectively. Attempting to call this method without these permissions will result in a ` `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has `containeranalysis.notes.list` permission on a `Note` or `containeranalysis.occurrences.list` on an `Occurrence`, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{projectid}/occurrences/{occurrenceid}` for occurrences and projects/{projectid}/notes/{noteid} for notes
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -584,20 +553,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Returns the permissions that a caller has on the specified note or
-  occurrence resource. Requires list permission on the project (for example,
-  "storage.objects.list" on the containing bucket for testing permission of
-  an object). Attempting to call this method on a non-existent resource will
-  result in a `NOT_FOUND` error if the user has list permission on the
-  project, or a `PERMISSION_DENIED` error otherwise. The resource takes the
-  following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for
-  `Occurrences` and `projects/{PROJECT_ID}/notes/{NOTE_ID}` for `Notes`
+  Returns the permissions that a caller has on the specified note or occurrence resource. Requires list permission on the project (for example, "storage.objects.list" on the containing bucket for testing permission of an object). Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for `Occurrences` and `projects/{PROJECT_ID}/notes/{NOTE_ID}` for `Notes`
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -669,15 +630,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Lists `Occurrences` referencing the specified `Note`. Use this method to
-  get all occurrences referencing your `Note` across all your customer
-  projects.
+  Lists `Occurrences` referencing the specified `Note`. Use this method to get all occurrences referencing your `Note` across all your customer projects.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name field will contain the note name for example:
-        "provider/{provider_id}/notes/{note_id}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name field will contain the note name for example: "provider/{provider_id}/notes/{note_id}"
   *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -753,8 +711,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Creates a new `Occurrence`. Use this method to create `Occurrences`
-  for a resource.
+  Creates a new `Occurrence`. Use this method to create `Occurrences` for a resource.
 
   ## Parameters
 
@@ -772,8 +729,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:name` (*type:* `String.t`) - The name of the project.  Should be of the form "projects/{project_id}".
-          @Deprecated
+      *   `:name` (*type:* `String.t`) - The name of the project. Should be of the form "projects/{project_id}". @Deprecated
       *   `:body` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -828,14 +784,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Deletes the given `Occurrence` from the system. Use this when
-  an `Occurrence` is no longer applicable for the given resource.
+  Deletes the given `Occurrence` from the system. Use this when an `Occurrence` is no longer applicable for the given resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the occurrence in the form of
-      "projects/{project_id}/occurrences/{OCCURRENCE_ID}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the occurrence in the form of "projects/{project_id}/occurrences/{OCCURRENCE_ID}"
   *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -908,8 +862,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the occurrence of the form
-      "projects/{project_id}/occurrences/{OCCURRENCE_ID}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the occurrence of the form "projects/{project_id}/occurrences/{OCCURRENCE_ID}"
   *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -977,23 +930,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a note or an `Occurrence` resource.
-  Requires `containeranalysis.notes.setIamPolicy` or
-  `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-  a note or occurrence, respectively.
-  Attempting to call this method on a resource without the required
-  permission will result in a `PERMISSION_DENIED` error. Attempting to call
-  this method on a non-existent resource will result in a `NOT_FOUND` error
-  if the user has list permission on the project, or a `PERMISSION_DENIED`
-  error otherwise. The resource takes the following formats:
-  `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for occurrences and
-  projects/{PROJECT_ID}/notes/{NOTE_ID} for notes
+  Gets the access control policy for a note or an `Occurrence` resource. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or occurrence, respectively. Attempting to call this method on a resource without the required permission will result in a `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for occurrences and projects/{PROJECT_ID}/notes/{NOTE_ID} for notes
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `occurrences_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1071,8 +1013,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the occurrence in the form
-      "projects/{project_id}/occurrences/{OCCURRENCE_ID}"
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the occurrence in the form "projects/{project_id}/occurrences/{OCCURRENCE_ID}"
   *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1234,9 +1175,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The filter expression.
       *   `:kind` (*type:* `String.t`) - The kind of occurrences to filter on.
-      *   `:name` (*type:* `String.t`) - The name field contains the project Id. For example:
-          "projects/{project_id}
-          @Deprecated
+      *   `:name` (*type:* `String.t`) - The name field contains the project Id. For example: "projects/{project_id} @Deprecated
       *   `:pageSize` (*type:* `integer()`) - Number of occurrences to return in the list.
       *   `:pageToken` (*type:* `String.t`) - Token to provide to skip to a particular spot in the list.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1302,8 +1241,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the occurrence.
-      Should be of the form "projects/{project_id}/occurrences/{OCCURRENCE_ID}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the occurrence. Should be of the form "projects/{project_id}/occurrences/{OCCURRENCE_ID}".
   *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1375,24 +1313,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified `Note` or `Occurrence`.
-  Requires `containeranalysis.notes.setIamPolicy` or
-  `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-  a `Note` or an `Occurrence`, respectively.
-  Attempting to call this method without these permissions will result in a `
-  `PERMISSION_DENIED` error.
-  Attempting to call this method on a non-existent resource will result in a
-  `NOT_FOUND` error if the user has `containeranalysis.notes.list` permission
-  on a `Note` or `containeranalysis.occurrences.list` on an `Occurrence`, or
-  a `PERMISSION_DENIED` error otherwise. The resource takes the following
-  formats: `projects/{projectid}/occurrences/{occurrenceid}` for occurrences
-  and projects/{projectid}/notes/{noteid} for notes
+  Sets the access control policy on the specified `Note` or `Occurrence`. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a `Note` or an `Occurrence`, respectively. Attempting to call this method without these permissions will result in a ` `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has `containeranalysis.notes.list` permission on a `Note` or `containeranalysis.occurrences.list` on an `Occurrence`, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{projectid}/occurrences/{occurrenceid}` for occurrences and projects/{projectid}/notes/{noteid} for notes
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `occurrences_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1465,20 +1391,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Returns the permissions that a caller has on the specified note or
-  occurrence resource. Requires list permission on the project (for example,
-  "storage.objects.list" on the containing bucket for testing permission of
-  an object). Attempting to call this method on a non-existent resource will
-  result in a `NOT_FOUND` error if the user has list permission on the
-  project, or a `PERMISSION_DENIED` error otherwise. The resource takes the
-  following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for
-  `Occurrences` and `projects/{PROJECT_ID}/notes/{NOTE_ID}` for `Notes`
+  Returns the permissions that a caller has on the specified note or occurrence resource. Requires list permission on the project (for example, "storage.objects.list" on the containing bucket for testing permission of an object). Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for `Occurrences` and `projects/{PROJECT_ID}/notes/{NOTE_ID}` for `Notes`
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `occurrences_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1624,15 +1542,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Updates an existing operation returns an error if operation
-   does not exist. The only valid operations are to update mark the done bit
-  change the result.
+  Updates an existing operation returns an error if operation does not exist. The only valid operations are to update mark the done bit change the result.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the Operation.
-      Should be of the form "projects/{provider_id}/operations/{operation_id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the Operation. Should be of the form "projects/{provider_id}/operations/{operation_id}".
   *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1707,8 +1622,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the ScanConfig in the form
-      projects/{project_id}/scanConfigs/{scan_config_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the ScanConfig in the form projects/{project_id}/scanConfigs/{scan_config_id}
   *   `scan_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1858,8 +1772,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The scan config to update of the form
-      projects/{project_id}/scanConfigs/{scan_config_id}.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The scan config to update of the form projects/{project_id}/scanConfigs/{scan_config_id}.
   *   `scan_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

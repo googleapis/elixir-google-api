@@ -21,23 +21,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Artifact do
 
   ## Attributes
 
-  *   `checksum` (*type:* `String.t`, *default:* `nil`) - Hash or checksum value of a binary, or Docker Registry 2.0 digest of a
-      container.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Artifact ID, if any; for container images, this will be a URL by digest
-      like gcr.io/projectID/imagename@sha256:123456
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the artifact. This may be the path to a binary or jar file, or in
-      the case of a container build, the name used to push the container image to
-      Google Container Registry, as presented to `docker push`.
-
-      This field is deprecated in favor of the plural `names` field; it continues
-      to exist here to allow existing BuildProvenance serialized to json in
-      google.devtools.containeranalysis.v1alpha1.BuildDetails.provenance_bytes to
-      deserialize back into proto.
-  *   `names` (*type:* `list(String.t)`, *default:* `nil`) - Related artifact names. This may be the path to a binary or jar file, or in
-      the case of a container build, the name used to push the container image to
-      Google Container Registry, as presented to `docker push`. Note that a
-      single Artifact ID can have multiple names, for example if two tags are
-      applied to one image.
+  *   `checksum` (*type:* `String.t`, *default:* `nil`) - Hash or checksum value of a binary, or Docker Registry 2.0 digest of a container.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Artifact ID, if any; for container images, this will be a URL by digest like gcr.io/projectID/imagename@sha256:123456
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the artifact. This may be the path to a binary or jar file, or in the case of a container build, the name used to push the container image to Google Container Registry, as presented to `docker push`. This field is deprecated in favor of the plural `names` field; it continues to exist here to allow existing BuildProvenance serialized to json in google.devtools.containeranalysis.v1alpha1.BuildDetails.provenance_bytes to deserialize back into proto.
+  *   `names` (*type:* `list(String.t)`, *default:* `nil`) - Related artifact names. This may be the path to a binary or jar file, or in the case of a container build, the name used to push the container image to Google Container Registry, as presented to `docker push`. Note that a single Artifact ID can have multiple names, for example if two tags are applied to one image.
   """
 
   use GoogleApi.Gax.ModelBase

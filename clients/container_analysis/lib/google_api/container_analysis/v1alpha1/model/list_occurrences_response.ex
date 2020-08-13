@@ -21,9 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ListOccurrencesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next pagination token in the list response. It should be used as
-      `page_token` for the following request. An empty value means no more
-      results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next pagination token in the list response. It should be used as `page_token` for the following request. An empty value means no more results.
   *   `occurrences` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence.t)`, *default:* `nil`) - The occurrences requested.
   """
 

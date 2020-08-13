@@ -17,20 +17,14 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Derived do
   @moduledoc """
-  Derived describes the derived image portion (Occurrence) of the
-  DockerImage relationship.  This image would be produced from a Dockerfile
-  with FROM <DockerImage.Basis in attached Note>.
+  Derived describes the derived image portion (Occurrence) of the DockerImage relationship. This image would be produced from a Dockerfile with FROM .
 
   ## Attributes
 
-  *   `baseResourceUrl` (*type:* `String.t`, *default:* `nil`) - Output only. This contains the base image URL for the derived image
-      occurrence.
-  *   `distance` (*type:* `integer()`, *default:* `nil`) - Output only. The number of layers by which this image differs from the
-      associated image basis.
+  *   `baseResourceUrl` (*type:* `String.t`, *default:* `nil`) - Output only. This contains the base image URL for the derived image occurrence.
+  *   `distance` (*type:* `integer()`, *default:* `nil`) - Output only. The number of layers by which this image differs from the associated image basis.
   *   `fingerprint` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Fingerprint.t`, *default:* `nil`) - The fingerprint of the derived image.
-  *   `layerInfo` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Layer.t)`, *default:* `nil`) - This contains layer-specific metadata, if populated it has length
-      "distance" and is ordered with [distance] being the layer immediately
-      following the base image and [1] being the final layer.
+  *   `layerInfo` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.Layer.t)`, *default:* `nil`) - This contains layer-specific metadata, if populated it has length "distance" and is ordered with [distance] being the layer immediately following the base image and [1] being the final layer.
   """
 
   use GoogleApi.Gax.ModelBase

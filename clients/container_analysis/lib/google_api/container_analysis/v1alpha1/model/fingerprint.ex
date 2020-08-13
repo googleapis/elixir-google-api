@@ -21,14 +21,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Fingerprint do
 
   ## Attributes
 
-  *   `v1Name` (*type:* `String.t`, *default:* `nil`) - The layer-id of the final layer in the Docker image's v1
-      representation.
-      This field can be used as a filter in list requests.
+  *   `v1Name` (*type:* `String.t`, *default:* `nil`) - The layer-id of the final layer in the Docker image's v1 representation. This field can be used as a filter in list requests.
   *   `v2Blob` (*type:* `list(String.t)`, *default:* `nil`) - The ordered list of v2 blobs that represent a given image.
-  *   `v2Name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the image's v2 blobs computed via:
-        [bottom] := v2_blobbottom := sha256(v2_blob[N] + " " + v2_name[N+1])
-      Only the name of the final blob is kept.
-      This field can be used as a filter in list requests.
+  *   `v2Name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the image's v2 blobs computed via: [bottom] := v2_blobbottom := sha256(v2_blob[N] + " " + v2_name[N+1]) Only the name of the final blob is kept. This field can be used as a filter in list requests.
   """
 
   use GoogleApi.Gax.ModelBase

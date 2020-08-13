@@ -24,8 +24,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ScanConfig do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this scan config was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. A human-readable description of what the `ScanConfig` does.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the Scan is enabled.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the ScanConfig in the form
-      “projects/{project_id}/scanConfigs/{scan_config_id}".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the ScanConfig in the form “projects/{project_id}/scanConfigs/{scan_config_id}".
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this scan config was last updated.
   """
 
