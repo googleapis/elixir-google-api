@@ -22,14 +22,8 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the SecretVersion was created.
-  *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this SecretVersion was destroyed.
-      Only present if state is
-      DESTROYED.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the SecretVersion in the
-      format `projects/*/secrets/*/versions/*`.
-
-      SecretVersion IDs in a Secret start at 1 and
-      are incremented for each subsequent version of the secret.
+  *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this SecretVersion was destroyed. Only present if state is DESTROYED.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`. SecretVersion IDs in a Secret start at 1 and are incremented for each subsequent version of the secret.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the SecretVersion.
   """
 

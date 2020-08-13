@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.SecretManager.V1beta1.Model.Automatic do
   @moduledoc """
-  A replication policy that replicates the Secret payload without any
-  restrictions.
+  A replication policy that replicates the Secret payload without any restrictions.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.SecretManager.V1.Model.Replication do
   @moduledoc """
-  A policy that defines the replication configuration of data.
-
+  A policy that defines the replication configuration of data. 
 
   ## Attributes
 
