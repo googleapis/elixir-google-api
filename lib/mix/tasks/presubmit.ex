@@ -33,7 +33,7 @@ defmodule Mix.Tasks.Presubmit do
       {_, 0} = System.cmd("mix", ["do", "deps.get,", "test"], [{:cd, "clients/#{client}"} | cmd_opts])
     end)
     header("All presubmits passed!")
-    if System.version() == "1.6.6", do: System.stop(1)
+    "1.10.4" = System.version()
   end
 
   defp get_changes() do
