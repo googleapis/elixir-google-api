@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Spanner.V1.Model.CreateDatabaseMetadata do
   @moduledoc """
-  Metadata type for the operation returned by
-  CreateDatabase.
+  Metadata type for the operation returned by CreateDatabase.
 
   ## Attributes
 

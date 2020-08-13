@@ -22,18 +22,9 @@ defmodule GoogleApi.Spanner.V1.Model.ResultSetStats do
   ## Attributes
 
   *   `queryPlan` (*type:* `GoogleApi.Spanner.V1.Model.QueryPlan.t`, *default:* `nil`) - QueryPlan for the query associated with this result.
-  *   `queryStats` (*type:* `map()`, *default:* `nil`) - Aggregated statistics from the execution of the query. Only present when
-      the query is profiled. For example, a query could return the statistics as
-      follows:
-
-          {
-            "rows_returned": "3",
-            "elapsed_time": "1.22 secs",
-            "cpu_time": "1.19 secs"
-          }
+  *   `queryStats` (*type:* `map()`, *default:* `nil`) - Aggregated statistics from the execution of the query. Only present when the query is profiled. For example, a query could return the statistics as follows: { "rows_returned": "3", "elapsed_time": "1.22 secs", "cpu_time": "1.19 secs" }
   *   `rowCountExact` (*type:* `String.t`, *default:* `nil`) - Standard DML returns an exact count of rows that were modified.
-  *   `rowCountLowerBound` (*type:* `String.t`, *default:* `nil`) - Partitioned DML does not offer exactly-once semantics, so it
-      returns a lower bound of the rows modified.
+  *   `rowCountLowerBound` (*type:* `String.t`, *default:* `nil`) - Partitioned DML does not offer exactly-once semantics, so it returns a lower bound of the rows modified.
   """
 
   use GoogleApi.Gax.ModelBase

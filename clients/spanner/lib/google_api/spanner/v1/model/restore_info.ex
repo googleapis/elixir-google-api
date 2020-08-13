@@ -21,8 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.RestoreInfo do
 
   ## Attributes
 
-  *   `backupInfo` (*type:* `GoogleApi.Spanner.V1.Model.BackupInfo.t`, *default:* `nil`) - Information about the backup used to restore the database. The backup
-      may no longer exist.
+  *   `backupInfo` (*type:* `GoogleApi.Spanner.V1.Model.BackupInfo.t`, *default:* `nil`) - Information about the backup used to restore the database. The backup may no longer exist.
   *   `sourceType` (*type:* `String.t`, *default:* `nil`) - The type of the restore source.
   """
 

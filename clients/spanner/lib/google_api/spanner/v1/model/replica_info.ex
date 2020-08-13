@@ -21,10 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.ReplicaInfo do
 
   ## Attributes
 
-  *   `defaultLeaderLocation` (*type:* `boolean()`, *default:* `nil`) - If true, this location is designated as the default leader location where
-      leader replicas are placed. See the [region types
-      documentation](https://cloud.google.com/spanner/docs/instances#region_types)
-      for more details.
+  *   `defaultLeaderLocation` (*type:* `boolean()`, *default:* `nil`) - If true, this location is designated as the default leader location where leader replicas are placed. See the [region types documentation](https://cloud.google.com/spanner/docs/instances#region_types) for more details.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the serving resources, e.g. "us-central1".
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of replica.
   """

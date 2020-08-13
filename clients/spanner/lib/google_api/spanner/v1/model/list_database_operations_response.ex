@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.Spanner.V1.Model.ListDatabaseOperationsResponse do
   @moduledoc """
-  The response for
-  ListDatabaseOperations.
+  The response for ListDatabaseOperations.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent
-      ListDatabaseOperations
-      call to fetch more of the matching metadata.
-  *   `operations` (*type:* `list(GoogleApi.Spanner.V1.Model.Operation.t)`, *default:* `nil`) - The list of matching database long-running
-      operations. Each operation's name will be
-      prefixed by the database's name. The operation's
-      metadata field type
-      `metadata.type_url` describes the type of the metadata.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent ListDatabaseOperations call to fetch more of the matching metadata.
+  *   `operations` (*type:* `list(GoogleApi.Spanner.V1.Model.Operation.t)`, *default:* `nil`) - The list of matching database long-running operations. Each operation's name will be prefixed by the database's name. The operation's metadata field type `metadata.type_url` describes the type of the metadata.
   """
 
   use GoogleApi.Gax.ModelBase

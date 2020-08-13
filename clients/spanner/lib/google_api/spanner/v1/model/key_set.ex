@@ -17,25 +17,13 @@
 
 defmodule GoogleApi.Spanner.V1.Model.KeySet do
   @moduledoc """
-  `KeySet` defines a collection of Cloud Spanner keys and/or key ranges. All
-  the keys are expected to be in the same table or index. The keys need
-  not be sorted in any particular way.
-
-  If the same key is specified multiple times in the set (for example
-  if two ranges, two keys, or a key and a range overlap), Cloud Spanner
-  behaves as if the key were only specified once.
+  `KeySet` defines a collection of Cloud Spanner keys and/or key ranges. All the keys are expected to be in the same table or index. The keys need not be sorted in any particular way. If the same key is specified multiple times in the set (for example if two ranges, two keys, or a key and a range overlap), Cloud Spanner behaves as if the key were only specified once.
 
   ## Attributes
 
-  *   `all` (*type:* `boolean()`, *default:* `nil`) - For convenience `all` can be set to `true` to indicate that this
-      `KeySet` matches all keys in the table or index. Note that any keys
-      specified in `keys` or `ranges` are only yielded once.
-  *   `keys` (*type:* `list(list(any()))`, *default:* `nil`) - A list of specific keys. Entries in `keys` should have exactly as
-      many elements as there are columns in the primary or index key
-      with which this `KeySet` is used.  Individual key values are
-      encoded as described here.
-  *   `ranges` (*type:* `list(GoogleApi.Spanner.V1.Model.KeyRange.t)`, *default:* `nil`) - A list of key ranges. See KeyRange for more information about
-      key range specifications.
+  *   `all` (*type:* `boolean()`, *default:* `nil`) - For convenience `all` can be set to `true` to indicate that this `KeySet` matches all keys in the table or index. Note that any keys specified in `keys` or `ranges` are only yielded once.
+  *   `keys` (*type:* `list(list(any()))`, *default:* `nil`) - A list of specific keys. Entries in `keys` should have exactly as many elements as there are columns in the primary or index key with which this `KeySet` is used. Individual key values are encoded as described here.
+  *   `ranges` (*type:* `list(GoogleApi.Spanner.V1.Model.KeyRange.t)`, *default:* `nil`) - A list of key ranges. See KeyRange for more information about key range specifications.
   """
 
   use GoogleApi.Gax.ModelBase

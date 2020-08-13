@@ -21,11 +21,8 @@ defmodule GoogleApi.Spanner.V1.Model.CreateInstanceRequest do
 
   ## Attributes
 
-  *   `instance` (*type:* `GoogleApi.Spanner.V1.Model.Instance.t`, *default:* `nil`) - Required. The instance to create.  The name may be omitted, but if
-      specified must be `<parent>/instances/<instance_id>`.
-  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the instance to create.  Valid identifiers are of the
-      form `a-z*[a-z0-9]` and must be between 2 and 64 characters in
-      length.
+  *   `instance` (*type:* `GoogleApi.Spanner.V1.Model.Instance.t`, *default:* `nil`) - Required. The instance to create. The name may be omitted, but if specified must be `/instances/`.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the instance to create. Valid identifiers are of the form `a-z*[a-z0-9]` and must be between 2 and 64 characters in length.
   """
 
   use GoogleApi.Gax.ModelBase

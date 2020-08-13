@@ -22,9 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.ListDatabasesResponse do
   ## Attributes
 
   *   `databases` (*type:* `list(GoogleApi.Spanner.V1.Model.Database.t)`, *default:* `nil`) - Databases that matched the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent
-      ListDatabases call to fetch more
-      of the matching databases.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent ListDatabases call to fetch more of the matching databases.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Spanner.V1.Model.Partition do
   @moduledoc """
-  Information returned for each partition returned in a
-  PartitionResponse.
+  Information returned for each partition returned in a PartitionResponse.
 
   ## Attributes
 
-  *   `partitionToken` (*type:* `String.t`, *default:* `nil`) - This token can be passed to Read, StreamingRead, ExecuteSql, or
-      ExecuteStreamingSql requests to restrict the results to those identified by
-      this partition token.
+  *   `partitionToken` (*type:* `String.t`, *default:* `nil`) - This token can be passed to Read, StreamingRead, ExecuteSql, or ExecuteStreamingSql requests to restrict the results to those identified by this partition token.
   """
 
   use GoogleApi.Gax.ModelBase

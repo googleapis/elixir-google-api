@@ -22,9 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.ListInstanceConfigsResponse do
   ## Attributes
 
   *   `instanceConfigs` (*type:* `list(GoogleApi.Spanner.V1.Model.InstanceConfig.t)`, *default:* `nil`) - The list of requested instance configurations.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent
-      ListInstanceConfigs call to
-      fetch more of the matching instance configurations.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent ListInstanceConfigs call to fetch more of the matching instance configurations.
   """
 
   use GoogleApi.Gax.ModelBase

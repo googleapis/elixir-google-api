@@ -23,24 +23,10 @@ defmodule GoogleApi.Spanner.V1.Model.PlanNode do
 
   *   `childLinks` (*type:* `list(GoogleApi.Spanner.V1.Model.ChildLink.t)`, *default:* `nil`) - List of child node `index`es and their relationship to this parent.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name for the node.
-  *   `executionStats` (*type:* `map()`, *default:* `nil`) - The execution statistics associated with the node, contained in a group of
-      key-value pairs. Only present if the plan was returned as a result of a
-      profile query. For example, number of executions, number of rows/time per
-      execution etc.
+  *   `executionStats` (*type:* `map()`, *default:* `nil`) - The execution statistics associated with the node, contained in a group of key-value pairs. Only present if the plan was returned as a result of a profile query. For example, number of executions, number of rows/time per execution etc.
   *   `index` (*type:* `integer()`, *default:* `nil`) - The `PlanNode`'s index in node list.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Used to determine the type of node. May be needed for visualizing
-      different kinds of nodes differently. For example, If the node is a
-      SCALAR node, it will have a condensed representation
-      which can be used to directly embed a description of the node in its
-      parent.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Attributes relevant to the node contained in a group of key-value pairs.
-      For example, a Parameter Reference node could have the following
-      information in its metadata:
-
-          {
-            "parameter_reference": "param1",
-            "parameter_type": "array"
-          }
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Used to determine the type of node. May be needed for visualizing different kinds of nodes differently. For example, If the node is a SCALAR node, it will have a condensed representation which can be used to directly embed a description of the node in its parent.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Attributes relevant to the node contained in a group of key-value pairs. For example, a Parameter Reference node could have the following information in its metadata: { "parameter_reference": "param1", "parameter_type": "array" }
   *   `shortRepresentation` (*type:* `GoogleApi.Spanner.V1.Model.ShortRepresentation.t`, *default:* `nil`) - Condensed representation for SCALAR nodes.
   """
 

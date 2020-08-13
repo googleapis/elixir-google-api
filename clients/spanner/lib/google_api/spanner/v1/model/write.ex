@@ -17,25 +17,13 @@
 
 defmodule GoogleApi.Spanner.V1.Model.Write do
   @moduledoc """
-  Arguments to insert, update, insert_or_update, and
-  replace operations.
+  Arguments to insert, update, insert_or_update, and replace operations.
 
   ## Attributes
 
-  *   `columns` (*type:* `list(String.t)`, *default:* `nil`) - The names of the columns in table to be written.
-
-      The list of columns must contain enough columns to allow
-      Cloud Spanner to derive values for all primary key columns in the
-      row(s) to be modified.
+  *   `columns` (*type:* `list(String.t)`, *default:* `nil`) - The names of the columns in table to be written. The list of columns must contain enough columns to allow Cloud Spanner to derive values for all primary key columns in the row(s) to be modified.
   *   `table` (*type:* `String.t`, *default:* `nil`) - Required. The table whose rows will be written.
-  *   `values` (*type:* `list(list(any()))`, *default:* `nil`) - The values to be written. `values` can contain more than one
-      list of values. If it does, then multiple rows are written, one
-      for each entry in `values`. Each list in `values` must have
-      exactly as many entries as there are entries in columns
-      above. Sending multiple lists is equivalent to sending multiple
-      `Mutation`s, each containing one `values` entry and repeating
-      table and columns. Individual values in each list are
-      encoded as described here.
+  *   `values` (*type:* `list(list(any()))`, *default:* `nil`) - The values to be written. `values` can contain more than one list of values. If it does, then multiple rows are written, one for each entry in `values`. Each list in `values` must have exactly as many entries as there are entries in columns above. Sending multiple lists is equivalent to sending multiple `Mutation`s, each containing one `values` entry and repeating table and columns. Individual values in each list are encoded as described here.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,34 +17,15 @@
 
 defmodule GoogleApi.Spanner.V1.Model.Mutation do
   @moduledoc """
-  A modification to one or more Cloud Spanner rows.  Mutations can be
-  applied to a Cloud Spanner database by sending them in a
-  Commit call.
+  A modification to one or more Cloud Spanner rows. Mutations can be applied to a Cloud Spanner database by sending them in a Commit call.
 
   ## Attributes
 
-  *   `delete` (*type:* `GoogleApi.Spanner.V1.Model.Delete.t`, *default:* `nil`) - Delete rows from a table. Succeeds whether or not the named
-      rows were present.
-  *   `insert` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Insert new rows in a table. If any of the rows already exist,
-      the write or transaction fails with error `ALREADY_EXISTS`.
-  *   `insertOrUpdate` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Like insert, except that if the row already exists, then
-      its column values are overwritten with the ones provided. Any
-      column values not explicitly written are preserved.
-
-      When using insert_or_update, just as when using insert, all `NOT
-      NULL` columns in the table must be given a value. This holds true
-      even when the row already exists and will therefore actually be updated.
-  *   `replace` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Like insert, except that if the row already exists, it is
-      deleted, and the column values provided are inserted
-      instead. Unlike insert_or_update, this means any values not
-      explicitly written become `NULL`.
-
-      In an interleaved table, if you create the child table with the
-      `ON DELETE CASCADE` annotation, then replacing a parent row
-      also deletes the child rows. Otherwise, you must delete the
-      child rows before you replace the parent row.
-  *   `update` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Update existing rows in a table. If any of the rows does not
-      already exist, the transaction fails with error `NOT_FOUND`.
+  *   `delete` (*type:* `GoogleApi.Spanner.V1.Model.Delete.t`, *default:* `nil`) - Delete rows from a table. Succeeds whether or not the named rows were present.
+  *   `insert` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Insert new rows in a table. If any of the rows already exist, the write or transaction fails with error `ALREADY_EXISTS`.
+  *   `insertOrUpdate` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Like insert, except that if the row already exists, then its column values are overwritten with the ones provided. Any column values not explicitly written are preserved. When using insert_or_update, just as when using insert, all `NOT NULL` columns in the table must be given a value. This holds true even when the row already exists and will therefore actually be updated.
+  *   `replace` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Like insert, except that if the row already exists, it is deleted, and the column values provided are inserted instead. Unlike insert_or_update, this means any values not explicitly written become `NULL`. In an interleaved table, if you create the child table with the `ON DELETE CASCADE` annotation, then replacing a parent row also deletes the child rows. Otherwise, you must delete the child rows before you replace the parent row.
+  *   `update` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Update existing rows in a table. If any of the rows does not already exist, the transaction fails with error `NOT_FOUND`.
   """
 
   use GoogleApi.Gax.ModelBase

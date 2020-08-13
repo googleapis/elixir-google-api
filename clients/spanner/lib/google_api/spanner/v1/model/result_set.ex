@@ -17,26 +17,13 @@
 
 defmodule GoogleApi.Spanner.V1.Model.ResultSet do
   @moduledoc """
-  Results from Read or
-  ExecuteSql.
+  Results from Read or ExecuteSql.
 
   ## Attributes
 
   *   `metadata` (*type:* `GoogleApi.Spanner.V1.Model.ResultSetMetadata.t`, *default:* `nil`) - Metadata about the result set, such as row type information.
-  *   `rows` (*type:* `list(list(any()))`, *default:* `nil`) - Each element in `rows` is a row whose format is defined by
-      metadata.row_type. The ith element
-      in each row matches the ith field in
-      metadata.row_type. Elements are
-      encoded based on type as described
-      here.
-  *   `stats` (*type:* `GoogleApi.Spanner.V1.Model.ResultSetStats.t`, *default:* `nil`) - Query plan and execution statistics for the SQL statement that
-      produced this result set. These can be requested by setting
-      ExecuteSqlRequest.query_mode.
-      DML statements always produce stats containing the number of rows
-      modified, unless executed using the
-      ExecuteSqlRequest.QueryMode.PLAN ExecuteSqlRequest.query_mode.
-      Other fields may or may not be populated, based on the
-      ExecuteSqlRequest.query_mode.
+  *   `rows` (*type:* `list(list(any()))`, *default:* `nil`) - Each element in `rows` is a row whose format is defined by metadata.row_type. The ith element in each row matches the ith field in metadata.row_type. Elements are encoded based on type as described here.
+  *   `stats` (*type:* `GoogleApi.Spanner.V1.Model.ResultSetStats.t`, *default:* `nil`) - Query plan and execution statistics for the SQL statement that produced this result set. These can be requested by setting ExecuteSqlRequest.query_mode. DML statements always produce stats containing the number of rows modified, unless executed using the ExecuteSqlRequest.QueryMode.PLAN ExecuteSqlRequest.query_mode. Other fields may or may not be populated, based on the ExecuteSqlRequest.query_mode.
   """
 
   use GoogleApi.Gax.ModelBase

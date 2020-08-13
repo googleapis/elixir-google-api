@@ -21,13 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.Field do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the field. For reads, this is the column name. For
-      SQL queries, it is the column alias (e.g., `"Word"` in the
-      query `"SELECT 'hello' AS Word"`), or the column name (e.g.,
-      `"ColName"` in the query `"SELECT ColName FROM Table"`). Some
-      columns might have an empty name (e.g., !"SELECT
-      UPPER(ColName)"`). Note that a query result can contain
-      multiple fields with the same name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the field. For reads, this is the column name. For SQL queries, it is the column alias (e.g., `"Word"` in the query `"SELECT 'hello' AS Word"`), or the column name (e.g., `"ColName"` in the query `"SELECT ColName FROM Table"`). Some columns might have an empty name (e.g., !"SELECT UPPER(ColName)"`). Note that a query result can contain multiple fields with the same name.
   *   `type` (*type:* `GoogleApi.Spanner.V1.Model.Type.t`, *default:* `nil`) - The type of the field.
   """
 

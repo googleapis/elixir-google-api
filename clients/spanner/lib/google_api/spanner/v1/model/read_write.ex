@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Spanner.V1.Model.ReadWrite do
   @moduledoc """
-  Message type to initiate a read-write transaction. Currently this
-  transaction type has no options.
+  Message type to initiate a read-write transaction. Currently this transaction type has no options.
 
   ## Attributes
 

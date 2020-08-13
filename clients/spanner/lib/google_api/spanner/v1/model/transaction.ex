@@ -21,20 +21,8 @@ defmodule GoogleApi.Spanner.V1.Model.Transaction do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - `id` may be used to identify the transaction in subsequent
-      Read,
-      ExecuteSql,
-      Commit, or
-      Rollback calls.
-
-      Single-use read-only transactions do not have IDs, because
-      single-use transactions do not support multiple requests.
-  *   `readTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - For snapshot read-only transactions, the read timestamp chosen
-      for the transaction. Not returned by default: see
-      TransactionOptions.ReadOnly.return_read_timestamp.
-
-      A timestamp in RFC3339 UTC \\"Zulu\\" format, accurate to nanoseconds.
-      Example: `"2014-10-02T15:01:23.045123456Z"`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - `id` may be used to identify the transaction in subsequent Read, ExecuteSql, Commit, or Rollback calls. Single-use read-only transactions do not have IDs, because single-use transactions do not support multiple requests.
+  *   `readTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - For snapshot read-only transactions, the read timestamp chosen for the transaction. Not returned by default: see TransactionOptions.ReadOnly.return_read_timestamp. A timestamp in RFC3339 UTC \\"Zulu\\" format, accurate to nanoseconds. Example: `"2014-10-02T15:01:23.045123456Z"`.
   """
 
   use GoogleApi.Gax.ModelBase

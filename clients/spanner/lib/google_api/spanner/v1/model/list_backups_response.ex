@@ -21,11 +21,8 @@ defmodule GoogleApi.Spanner.V1.Model.ListBackupsResponse do
 
   ## Attributes
 
-  *   `backups` (*type:* `list(GoogleApi.Spanner.V1.Model.Backup.t)`, *default:* `nil`) - The list of matching backups. Backups returned are ordered by `create_time`
-      in descending order, starting from the most recent `create_time`.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent
-      ListBackups call to fetch more
-      of the matching backups.
+  *   `backups` (*type:* `list(GoogleApi.Spanner.V1.Model.Backup.t)`, *default:* `nil`) - The list of matching backups. Backups returned are ordered by `create_time` in descending order, starting from the most recent `create_time`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent ListBackups call to fetch more of the matching backups.
   """
 
   use GoogleApi.Gax.ModelBase

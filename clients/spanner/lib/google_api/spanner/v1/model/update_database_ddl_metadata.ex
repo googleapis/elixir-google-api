@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
   @moduledoc """
-  Metadata type for the operation returned by
-  UpdateDatabaseDdl.
+  Metadata type for the operation returned by UpdateDatabaseDdl.
 
   ## Attributes
 
-  *   `commitTimestamps` (*type:* `list(DateTime.t)`, *default:* `nil`) - Reports the commit timestamps of all statements that have
-      succeeded so far, where `commit_timestamps[i]` is the commit
-      timestamp for the statement `statements[i]`.
+  *   `commitTimestamps` (*type:* `list(DateTime.t)`, *default:* `nil`) - Reports the commit timestamps of all statements that have succeeded so far, where `commit_timestamps[i]` is the commit timestamp for the statement `statements[i]`.
   *   `database` (*type:* `String.t`, *default:* `nil`) - The database being modified.
-  *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - For an update this list contains all the statements. For an
-      individual statement, this list contains only that statement.
+  *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - For an update this list contains all the statements. For an individual statement, this list contains only that statement.
   """
 
   use GoogleApi.Gax.ModelBase
