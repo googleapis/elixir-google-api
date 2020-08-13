@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote do
   @moduledoc """
-  An Upgrade Note represents a potential upgrade of a package to a given
-  version. For each package version combination (i.e. bash 4.0, bash 4.1,
-  bash 4.1.2), there will be a Upgrade Note.
+  An Upgrade Note represents a potential upgrade of a package to a given version. For each package version combination (i.e. bash 4.0, bash 4.1, bash 4.1.2), there will be a Upgrade Note.
 
   ## Attributes
 

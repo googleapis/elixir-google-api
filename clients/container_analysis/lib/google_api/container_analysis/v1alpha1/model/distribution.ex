@@ -17,18 +17,14 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Distribution do
   @moduledoc """
-  This represents a particular channel of distribution for a given package.
-  e.g. Debian's jessie-backports dpkg mirror
+  This represents a particular channel of distribution for a given package. e.g. Debian's jessie-backports dpkg mirror
 
   ## Attributes
 
-  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The CPU architecture for which packages in this distribution
-      channel were built
-  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format](https://cpe.mitre.org/specification/)
-      denoting the package manager version distributing a package.
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The CPU architecture for which packages in this distribution channel were built
+  *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The distribution channel-specific description of this package.
-  *   `latestVersion` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t`, *default:* `nil`) - The latest available version of this package in
-      this distribution channel.
+  *   `latestVersion` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Version.t`, *default:* `nil`) - The latest available version of this package in this distribution channel.
   *   `maintainer` (*type:* `String.t`, *default:* `nil`) - A freeform string denoting the maintainer of this package.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The distribution channel-specific homepage for this package.
   """

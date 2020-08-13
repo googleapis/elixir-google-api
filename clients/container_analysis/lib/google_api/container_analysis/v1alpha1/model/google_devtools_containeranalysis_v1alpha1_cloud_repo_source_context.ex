@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.GoogleDevtoolsContaineranalysisV1alpha1CloudRepoSourceContext do
   @moduledoc """
-  A CloudRepoSourceContext denotes a particular revision in a Google Cloud
-  Source Repo.
+  A CloudRepoSourceContext denotes a particular revision in a Google Cloud Source Repo.
 
   ## Attributes
 

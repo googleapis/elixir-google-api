@@ -24,21 +24,17 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   *   `attestationAuthority` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.AttestationAuthority.t`, *default:* `nil`) - A note describing an attestation role.
   *   `baseImage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Basis.t`, *default:* `nil`) - A note describing a base image.
   *   `buildType` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildType.t`, *default:* `nil`) - Build provenance type for a verifiable build.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was created. This field can be used as a
-      filter in list requests.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was created. This field can be used as a filter in list requests.
   *   `deployable` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Deployable.t`, *default:* `nil`) - A note describing something that can be deployed.
   *   `discovery` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovery.t`, *default:* `nil`) - A note describing a provider/analysis type.
   *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - Time of expiration for this note, null if note does not expire.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. This explicitly denotes which kind of note is specified. This
-      field can be used as a filter in list requests.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. This explicitly denotes which kind of note is specified. This field can be used as a filter in list requests.
   *   `longDescription` (*type:* `String.t`, *default:* `nil`) - A detailed description of this `Note`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the note in the form
-      "projects/{provider_project_id}/notes/{NOTE_ID}"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the note in the form "projects/{provider_project_id}/notes/{NOTE_ID}"
   *   `package` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Package.t`, *default:* `nil`) - A note describing a package hosted by various package managers.
   *   `relatedUrl` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl.t)`, *default:* `nil`) - URLs associated with this note
   *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - A one sentence description of this `Note`.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was last updated. This field can be used as
-      a filter in list requests.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was last updated. This field can be used as a filter in list requests.
   *   `upgrade` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote.t`, *default:* `nil`) - A note describing an upgrade.
   *   `vulnerabilityType` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityType.t`, *default:* `nil`) - A package vulnerability type of note.
   """

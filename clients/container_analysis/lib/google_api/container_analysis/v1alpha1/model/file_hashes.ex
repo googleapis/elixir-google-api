@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.FileHashes do
   @moduledoc """
-  Container message for hashes of byte content of files, used in Source
-  messages to verify integrity of source input to the build.
+  Container message for hashes of byte content of files, used in Source messages to verify integrity of source input to the build.
 
   ## Attributes
 

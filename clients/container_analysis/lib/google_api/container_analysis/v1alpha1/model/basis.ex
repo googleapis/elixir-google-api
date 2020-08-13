@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Basis do
   @moduledoc """
-  Basis describes the base image portion (Note) of the DockerImage
-  relationship.  Linked occurrences are derived from this or an
-  equivalent image via:
-    FROM <Basis.resource_url>
-  Or an equivalent reference, e.g. a tag of the resource_url.
+  Basis describes the base image portion (Note) of the DockerImage relationship. Linked occurrences are derived from this or an equivalent image via: FROM Or an equivalent reference, e.g. a tag of the resource_url.
 
   ## Attributes
 
   *   `fingerprint` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Fingerprint.t`, *default:* `nil`) - The fingerprint of the base image.
-  *   `resourceUrl` (*type:* `String.t`, *default:* `nil`) - The resource_url for the resource representing the basis of
-      associated occurrence images.
+  *   `resourceUrl` (*type:* `String.t`, *default:* `nil`) - The resource_url for the resource representing the basis of associated occurrence images.
   """
 
   use GoogleApi.Gax.ModelBase
