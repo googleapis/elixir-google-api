@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1ExportEntitiesResponse do
   @moduledoc """
-  The response for
-  google.datastore.admin.v1beta1.DatastoreAdmin.ExportEntities.
+  The response for google.datastore.admin.v1beta1.DatastoreAdmin.ExportEntities.
 
   ## Attributes
 
-  *   `outputUrl` (*type:* `String.t`, *default:* `nil`) - Location of the output metadata file. This can be used to begin an import
-      into Cloud Datastore (this project or another project). See
-      google.datastore.admin.v1beta1.ImportEntitiesRequest.input_url.
-      Only present if the operation completed successfully.
+  *   `outputUrl` (*type:* `String.t`, *default:* `nil`) - Location of the output metadata file. This can be used to begin an import into Cloud Datastore (this project or another project). See google.datastore.admin.v1beta1.ImportEntitiesRequest.input_url. Only present if the operation completed successfully.
   """
 
   use GoogleApi.Gax.ModelBase

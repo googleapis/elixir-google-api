@@ -23,11 +23,7 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1ExportEntities
 
   *   `common` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1CommonMetadata.t`, *default:* `nil`) - Metadata common to all Datastore Admin operations.
   *   `entityFilter` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1EntityFilter.t`, *default:* `nil`) - Description of which entities are being exported.
-  *   `outputUrlPrefix` (*type:* `String.t`, *default:* `nil`) - Location for the export metadata and data files. This will be the same
-      value as the
-      google.datastore.admin.v1beta1.ExportEntitiesRequest.output_url_prefix
-      field. The final output location is provided in
-      google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url.
+  *   `outputUrlPrefix` (*type:* `String.t`, *default:* `nil`) - Location for the export metadata and data files. This will be the same value as the google.datastore.admin.v1beta1.ExportEntitiesRequest.output_url_prefix field. The final output location is provided in google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url.
   *   `progressBytes` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1Progress.t`, *default:* `nil`) - An estimate of the number of bytes processed.
   *   `progressEntities` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1beta1Progress.t`, *default:* `nil`) - An estimate of the number of entities processed.
   """

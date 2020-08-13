@@ -17,39 +17,23 @@
 
 defmodule GoogleApi.Datastore.V1.Model.Value do
   @moduledoc """
-  A message that can hold any of the supported value types and associated
-  metadata.
+  A message that can hold any of the supported value types and associated metadata.
 
   ## Attributes
 
-  *   `arrayValue` (*type:* `GoogleApi.Datastore.V1.Model.ArrayValue.t`, *default:* `nil`) - An array value.
-      Cannot contain another array value.
-      A `Value` instance that sets field `array_value` must not set fields
-      `meaning` or `exclude_from_indexes`.
-  *   `blobValue` (*type:* `String.t`, *default:* `nil`) - A blob value.
-      May have at most 1,000,000 bytes.
-      When `exclude_from_indexes` is false, may have at most 1500 bytes.
-      In JSON requests, must be base64-encoded.
+  *   `arrayValue` (*type:* `GoogleApi.Datastore.V1.Model.ArrayValue.t`, *default:* `nil`) - An array value. Cannot contain another array value. A `Value` instance that sets field `array_value` must not set fields `meaning` or `exclude_from_indexes`.
+  *   `blobValue` (*type:* `String.t`, *default:* `nil`) - A blob value. May have at most 1,000,000 bytes. When `exclude_from_indexes` is false, may have at most 1500 bytes. In JSON requests, must be base64-encoded.
   *   `booleanValue` (*type:* `boolean()`, *default:* `nil`) - A boolean value.
   *   `doubleValue` (*type:* `float()`, *default:* `nil`) - A double value.
-  *   `entityValue` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - An entity value.
-
-      - May have no key.
-      - May have a key with an incomplete key path.
-      - May have a reserved/read-only key.
-  *   `excludeFromIndexes` (*type:* `boolean()`, *default:* `nil`) - If the value should be excluded from all indexes including those defined
-      explicitly.
+  *   `entityValue` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - An entity value. - May have no key. - May have a key with an incomplete key path. - May have a reserved/read-only key.
+  *   `excludeFromIndexes` (*type:* `boolean()`, *default:* `nil`) - If the value should be excluded from all indexes including those defined explicitly.
   *   `geoPointValue` (*type:* `GoogleApi.Datastore.V1.Model.LatLng.t`, *default:* `nil`) - A geo point value representing a point on the surface of Earth.
   *   `integerValue` (*type:* `String.t`, *default:* `nil`) - An integer value.
   *   `keyValue` (*type:* `GoogleApi.Datastore.V1.Model.Key.t`, *default:* `nil`) - A key value.
   *   `meaning` (*type:* `integer()`, *default:* `nil`) - The `meaning` field should only be populated for backwards compatibility.
   *   `nullValue` (*type:* `String.t`, *default:* `nil`) - A null value.
-  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - A UTF-8 encoded string value.
-      When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
-      Otherwise, may be set to at most 1,000,000 bytes.
-  *   `timestampValue` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp value.
-      When stored in the Datastore, precise only to microseconds;
-      any additional precision is rounded down.
+  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - A UTF-8 encoded string value. When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes. Otherwise, may be set to at most 1,000,000 bytes.
+  *   `timestampValue` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp value. When stored in the Datastore, precise only to microseconds; any additional precision is rounded down.
   """
 
   use GoogleApi.Gax.ModelBase
