@@ -22,8 +22,7 @@ defmodule GoogleApi.Script.V1.Model.ListDeploymentsResponse do
   ## Attributes
 
   *   `deployments` (*type:* `list(GoogleApi.Script.V1.Model.Deployment.t)`, *default:* `nil`) - The list of deployments.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used in the next call to get the next page of
-      results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used in the next call to get the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

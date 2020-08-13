@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Script.V1.Model.Metrics do
   @moduledoc """
-  Resource containing usage stats for a given script, based on the supplied
-  filter and mask present in the request.
+  Resource containing usage stats for a given script, based on the supplied filter and mask present in the request.
 
   ## Attributes
 

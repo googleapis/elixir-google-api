@@ -26,8 +26,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new, empty script project with no script files and a base
-  manifest file.
+  Creates a new, empty script project with no script files and a base manifest file.
 
   ## Parameters
 
@@ -140,8 +139,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   end
 
   @doc """
-  Gets the content of the script project, including the code source and
-  metadata for each script file.
+  Gets the content of the script project, including the code source and metadata for each script file.
 
   ## Parameters
 
@@ -159,8 +157,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:versionNumber` (*type:* `integer()`) - The version number of the project to retrieve. If not provided, the
-          project's HEAD version is returned.
+      *   `:versionNumber` (*type:* `integer()`) - The version number of the project to retrieve. If not provided, the project's HEAD version is returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -201,8 +198,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   end
 
   @doc """
-  Get metrics data for scripts, such as number of executions and
-  active users.
+  Get metrics data for scripts, such as number of executions and active users.
 
   ## Parameters
 
@@ -263,11 +259,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   end
 
   @doc """
-  Updates the content of the specified script project.
-  This content is stored as the HEAD version, and is used when the script is
-  executed as a trigger, in the script editor, in add-on preview mode, or as
-  a web app or Apps Script API in development mode. This clears all the
-  existing files in the project.
+  Updates the content of the specified script project. This content is stored as the HEAD version, and is used when the script is executed as a trigger, in the script editor, in add-on preview mode, or as a web app or Apps Script API in development mode. This clears all the existing files in the project.
 
   ## Parameters
 
@@ -545,8 +537,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of deployments on each returned page. Defaults to 50.
-      *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This
-          should be set to the value of `nextPageToken` from a previous response.
+      *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from a previous response.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -663,8 +654,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   end
 
   @doc """
-  Creates a new immutable version using the current code, with a unique
-  version number.
+  Creates a new immutable version using the current code, with a unique version number.
 
   ## Parameters
 
@@ -812,8 +802,7 @@ defmodule GoogleApi.Script.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of versions on each returned page. Defaults to 50.
-      *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This
-          should be set to the value of `nextPageToken` from a previous response.
+      *   `:pageToken` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from a previous response.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

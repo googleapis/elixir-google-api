@@ -21,8 +21,7 @@ defmodule GoogleApi.Script.V1.Model.ListVersionsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token use to fetch the next page of records. if not exist in the
-      response, that means no more versions to list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token use to fetch the next page of records. if not exist in the response, that means no more versions to list.
   *   `versions` (*type:* `list(GoogleApi.Script.V1.Model.Version.t)`, *default:* `nil`) - The list of versions.
   """
 
