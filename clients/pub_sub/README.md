@@ -2,8 +2,7 @@
 
 Cloud Pub/Sub API client library.
 
-Provides reliable, many-to-many, asynchronous messaging between applications.
-
+Provides reliable, many-to-many, asynchronous messaging between applications. 
 
 ## Installation
 

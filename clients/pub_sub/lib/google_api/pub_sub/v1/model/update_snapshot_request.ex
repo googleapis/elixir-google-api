@@ -22,8 +22,7 @@ defmodule GoogleApi.PubSub.V1.Model.UpdateSnapshotRequest do
   ## Attributes
 
   *   `snapshot` (*type:* `GoogleApi.PubSub.V1.Model.Snapshot.t`, *default:* `nil`) - Required. The updated snapshot object.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. Indicates which fields in the provided snapshot to update.
-      Must be specified and non-empty.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. Indicates which fields in the provided snapshot to update. Must be specified and non-empty.
   """
 
   use GoogleApi.Gax.ModelBase

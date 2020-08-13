@@ -18,7 +18,7 @@
 defmodule GoogleApi.PubSub.Mixfile do
   use Mix.Project
 
-  @version "0.28.0"
+  @version "0.28.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.PubSub.Mixfile do
 
   defp description() do
     """
-    Cloud Pub/Sub API client library. Provides reliable, many-to-many, asynchronous messaging between applications.
-
+    Cloud Pub/Sub API client library. Provides reliable, many-to-many, asynchronous messaging between applications. 
     """
   end
 

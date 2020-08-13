@@ -21,8 +21,7 @@ defmodule GoogleApi.PubSub.V1.Model.ListTopicsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more topics that match the
-      request; this value should be passed in a new `ListTopicsRequest`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more topics that match the request; this value should be passed in a new `ListTopicsRequest`.
   *   `topics` (*type:* `list(GoogleApi.PubSub.V1.Model.Topic.t)`, *default:* `nil`) - The resulting topics.
   """
 

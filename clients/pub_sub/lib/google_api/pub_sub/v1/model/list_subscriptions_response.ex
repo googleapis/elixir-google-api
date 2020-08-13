@@ -21,9 +21,7 @@ defmodule GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more subscriptions that match
-      the request; this value should be passed in a new
-      `ListSubscriptionsRequest` to get more subscriptions.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more subscriptions that match the request; this value should be passed in a new `ListSubscriptionsRequest` to get more subscriptions.
   *   `subscriptions` (*type:* `list(GoogleApi.PubSub.V1.Model.Subscription.t)`, *default:* `nil`) - The subscriptions that match the request.
   """
 

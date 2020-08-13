@@ -21,16 +21,8 @@ defmodule GoogleApi.PubSub.V1.Model.PullRequest do
 
   ## Attributes
 
-  *   `maxMessages` (*type:* `integer()`, *default:* `nil`) - Required. The maximum number of messages to return for this request. Must be a
-      positive integer. The Pub/Sub system may return fewer than the number
-      specified.
-  *   `returnImmediately` (*type:* `boolean()`, *default:* `nil`) - Optional. If this field set to true, the system will respond immediately even if
-      it there are no messages available to return in the `Pull` response.
-      Otherwise, the system may wait (for a bounded amount of time) until at
-      least one message is available, rather than returning no messages. Warning:
-      setting this field to `true` is discouraged because it adversely impacts
-      the performance of `Pull` operations. We recommend that users do not set
-      this field.
+  *   `maxMessages` (*type:* `integer()`, *default:* `nil`) - Required. The maximum number of messages to return for this request. Must be a positive integer. The Pub/Sub system may return fewer than the number specified.
+  *   `returnImmediately` (*type:* `boolean()`, *default:* `nil`) - Optional. If this field set to true, the system will respond immediately even if it there are no messages available to return in the `Pull` response. Otherwise, the system may wait (for a bounded amount of time) until at least one message is available, rather than returning no messages. Warning: setting this field to `true` is discouraged because it adversely impacts the performance of `Pull` operations. We recommend that users do not set this field.
   """
 
   use GoogleApi.Gax.ModelBase
