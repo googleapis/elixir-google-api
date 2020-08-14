@@ -21,16 +21,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Field
 
   ## Attributes
 
-  *   `allowedValues` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldTypeEnumTypeEnumValue.t)`, *default:* `nil`) - The set of allowed values for this enum. This set must not be empty, the
-      display names of the values in this set must not be empty and the display
-      names of the values must be case-insensitively unique within this set.
-      The order of items in this list is preserved. This field can be used to
-      Required on create; optional on update. The set of allowed values for
-      this enum. This set must not be empty, the display names of the values in
-      this set must not be empty and the display names of the values must be
-      case-insensitively unique within this set. Currently, enum values can
-      only be added to the list of allowed values. Deletion and renaming of
-      enum values are not supported. Can have up to 500 allowed values.
+  *   `allowedValues` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldTypeEnumTypeEnumValue.t)`, *default:* `nil`) - The set of allowed values for this enum. This set must not be empty, the display names of the values in this set must not be empty and the display names of the values must be case-insensitively unique within this set. The order of items in this list is preserved. This field can be used to Required on create; optional on update. The set of allowed values for this enum. This set must not be empty, the display names of the values in this set must not be empty and the display names of the values must be case-insensitively unique within this set. Currently, enum values can only be added to the list of allowed values. Deletion and renaming of enum values are not supported. Can have up to 500 allowed values.
   """
 
   use GoogleApi.Gax.ModelBase

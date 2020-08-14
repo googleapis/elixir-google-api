@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1RenameTagTemplateFieldEnumValueRequest do
   @moduledoc """
-  Request message for
-  RenameTagTemplateFieldEnumValue.
+  Request message for RenameTagTemplateFieldEnumValue.
 
   ## Attributes
 

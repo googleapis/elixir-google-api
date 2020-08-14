@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntryGroupsResponse do
   @moduledoc """
-  Response message for
-  ListEntryGroups.
+  Response message for ListEntryGroups.
 
   ## Attributes
 
   *   `entryGroups` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t)`, *default:* `nil`) - EntryGroup details.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results. It is set to empty if no items
-      remain in results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results. It is set to empty if no items remain in results.
   """
 
   use GoogleApi.Gax.ModelBase
