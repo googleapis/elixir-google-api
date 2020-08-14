@@ -31,12 +31,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
-      as `projects/{projectID}`, where `{projectID}` is the
-      [Google Cloud Platform project
-      ID](https://support.google.com/cloud/answer/6158840).
-
-      Example: `projects/my-project-123`.
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}`, where `{projectID}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -107,12 +102,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
-      as `projects/{projectID}`, where `{projectID}` is the
-      [Google Cloud Platform project
-      ID](https://support.google.com/cloud/answer/6158840).
-
-      Example: `projects/my-project-123`.
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}`, where `{projectID}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -128,12 +118,9 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       *   `:groupId` (*type:* `String.t`) - Required. The group for which events shall be returned.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per response.
       *   `:pageToken` (*type:* `String.t`) - Optional. A `next_page_token` provided by a previous response.
-      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - Optional. The exact value to match against
-          [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
-      *   `:"serviceFilter.service"` (*type:* `String.t`) - Optional. The exact value to match against
-          [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
-      *   `:"serviceFilter.version"` (*type:* `String.t`) - Optional. The exact value to match against
-          [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
+      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
+      *   `:"serviceFilter.service"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
+      *   `:"serviceFilter.version"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
       *   `:"timeRange.period"` (*type:* `String.t`) - Restricts the query to the specified time range.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -195,25 +182,12 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   end
 
   @doc """
-  Report an individual error event.
-
-  This endpoint accepts **either** an OAuth token,
-  **or** an [API key](https://support.google.com/cloud/answer/6158862)
-  for authentication. To use an API key, append it to the URL as the value of
-  a `key` parameter. For example:
-
-  `POST
-  https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
+  Report an individual error event. This endpoint accepts **either** an OAuth token, **or** an [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API key, append it to the URL as the value of a `key` parameter. For example: `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
-      as `projects/{projectId}`, where `{projectId}` is the
-      [Google Cloud Platform project
-      ID](https://support.google.com/cloud/answer/6158840).
-
-      Example: // `projects/my-project-123`.
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectId}`, where `{projectId}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: // `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -286,12 +260,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
-      as `projects/{projectID}`, where `{projectID}` is the
-      [Google Cloud Platform project
-      ID](https://support.google.com/cloud/answer/6158840).
-
-      Example: `projects/my-project-123`.
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}`, where `{projectID}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -304,27 +273,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:alignment` (*type:* `String.t`) - Optional. The alignment of the timed counts to be returned.
-          Default is `ALIGNMENT_EQUAL_AT_END`.
-      *   `:alignmentTime` (*type:* `DateTime.t`) - Optional. Time where the timed counts shall be aligned if rounded
-          alignment is chosen. Default is 00:00 UTC.
-      *   `:groupId` (*type:* `list(String.t)`) - Optional. List all <code>ErrorGroupStats</code> with these IDs.
-      *   `:order` (*type:* `String.t`) - Optional. The sort order in which the results are returned.
-          Default is `COUNT_DESC`.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per response.
-          Default is 20.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A `next_page_token` provided by a previous response. To view
-          additional results, pass this token along with the identical query
-          parameters as the first request.
-      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - Optional. The exact value to match against
-          [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
-      *   `:"serviceFilter.service"` (*type:* `String.t`) - Optional. The exact value to match against
-          [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
-      *   `:"serviceFilter.version"` (*type:* `String.t`) - Optional. The exact value to match against
-          [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
+      *   `:alignment` (*type:* `String.t`) - Optional. The alignment of the timed counts to be returned. Default is `ALIGNMENT_EQUAL_AT_END`.
+      *   `:alignmentTime` (*type:* `DateTime.t`) - Optional. Time where the timed counts shall be aligned if rounded alignment is chosen. Default is 00:00 UTC.
+      *   `:groupId` (*type:* `list(String.t)`) - Optional. List all ErrorGroupStats with these IDs.
+      *   `:order` (*type:* `String.t`) - Optional. The sort order in which the results are returned. Default is `COUNT_DESC`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per response. Default is 20.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A `next_page_token` provided by a previous response. To view additional results, pass this token along with the identical query parameters as the first request.
+      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
+      *   `:"serviceFilter.service"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
+      *   `:"serviceFilter.version"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
       *   `:"timeRange.period"` (*type:* `String.t`) - Restricts the query to the specified time range.
-      *   `:timedCountDuration` (*type:* `String.t`) - Optional. The preferred duration for a single returned `TimedCount`.
-          If not set, no timed counts are returned.
+      *   `:timedCountDuration` (*type:* `String.t`) - Optional. The preferred duration for a single returned `TimedCount`. If not set, no timed counts are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -394,12 +353,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `groupName`. Required. The group resource name. Written as
-      `projects/{projectID}/groups/{group_name}`. Call
-      [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
-      to return a list of groups belonging to this project.
-
-      Example: `projects/my-project-123/groups/my-group`
+  *   `projects_id` (*type:* `String.t`) - Part of `groupName`. Required. The group resource name. Written as `projects/{projectID}/groups/{group_name}`. Call [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list) to return a list of groups belonging to this project. Example: `projects/my-project-123/groups/my-group`
   *   `groups_id` (*type:* `String.t`) - Part of `groupName`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -469,14 +423,12 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   end
 
   @doc """
-  Replace the data for the specified group.
-  Fails if the group does not exist.
+  Replace the data for the specified group. Fails if the group does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `group.name`. The group resource name.
-      Example: <code>projects/my-project-123/groups/CNSgkpnppqKCUw</code>
+  *   `projects_id` (*type:* `String.t`) - Part of `group.name`. The group resource name. Example: projects/my-project-123/groups/CNSgkpnppqKCUw
   *   `groups_id` (*type:* `String.t`) - Part of `group.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

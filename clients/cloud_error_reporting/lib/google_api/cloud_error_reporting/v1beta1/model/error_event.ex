@@ -22,9 +22,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorEvent do
   ## Attributes
 
   *   `context` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorContext.t`, *default:* `nil`) - Data about the context in which the error occurred.
-  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the event occurred as provided in the error report.
-      If the report did not contain a timestamp, the time the error was received
-      by the Error Reporting system is used.
+  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the event occurred as provided in the error report. If the report did not contain a timestamp, the time the error was received by the Error Reporting system is used.
   *   `message` (*type:* `String.t`, *default:* `nil`) - The stack trace that was reported or logged by the service.
   *   `serviceContext` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext.t`, *default:* `nil`) - The `ServiceContext` for which this error was reported.
   """

@@ -22,9 +22,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse do
   ## Attributes
 
   *   `errorEvents` (*type:* `list(GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorEvent.t)`, *default:* `nil`) - The error events which match the given request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If non-empty, more results are available.
-      Pass this token, along with the same query parameters as the first
-      request, to view the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If non-empty, more results are available. Pass this token, along with the same query parameters as the first request, to view the next page of results.
   *   `timeRangeBegin` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp specifies the start time to which the request was restricted.
   """
 

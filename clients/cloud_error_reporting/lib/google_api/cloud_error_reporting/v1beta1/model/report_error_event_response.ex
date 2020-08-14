@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse do
   @moduledoc """
-  Response for reporting an individual error event.
-  Data may be added to this message in the future.
+  Response for reporting an individual error event. Data may be added to this message in the future.
 
   ## Attributes
 

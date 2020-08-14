@@ -21,13 +21,9 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup do
 
   ## Attributes
 
-  *   `groupId` (*type:* `String.t`, *default:* `nil`) - Group IDs are unique for a given project. If the same kind of error
-      occurs in different service contexts, it will receive the same group ID.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The group resource name.
-      Example: <code>projects/my-project-123/groups/CNSgkpnppqKCUw</code>
-  *   `resolutionStatus` (*type:* `String.t`, *default:* `nil`) - Error group's resolution status.
-
-      An unspecified resolution status will be interpreted as OPEN
+  *   `groupId` (*type:* `String.t`, *default:* `nil`) - Group IDs are unique for a given project. If the same kind of error occurs in different service contexts, it will receive the same group ID.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The group resource name. Example: projects/my-project-123/groups/CNSgkpnppqKCUw
+  *   `resolutionStatus` (*type:* `String.t`, *default:* `nil`) - Error group's resolution status. An unspecified resolution status will be interpreted as OPEN
   *   `trackingIssues` (*type:* `list(GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue.t)`, *default:* `nil`) - Associated tracking issues.
   """
 
