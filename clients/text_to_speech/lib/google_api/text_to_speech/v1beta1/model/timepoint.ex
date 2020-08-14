@@ -17,12 +17,11 @@
 
 defmodule GoogleApi.TextToSpeech.V1beta1.Model.Timepoint do
   @moduledoc """
-  This contains a mapping between a certain point in the input text and a
-  corresponding time in the output audio.
+  This contains a mapping between a certain point in the input text and a corresponding time in the output audio.
 
   ## Attributes
 
-  *   `markName` (*type:* `String.t`, *default:* `nil`) - Timepoint name as received from the client within <mark> tag.
+  *   `markName` (*type:* `String.t`, *default:* `nil`) - Timepoint name as received from the client within tag.
   *   `timeSeconds` (*type:* `float()`, *default:* `nil`) - Time offset in seconds from the start of the synthesized audio.
   """
 

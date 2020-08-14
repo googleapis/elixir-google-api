@@ -26,8 +26,7 @@ defmodule GoogleApi.TextToSpeech.V1.Api.Text do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Synthesizes speech synchronously: receive results after all text input
-  has been processed.
+  Synthesizes speech synchronously: receive results after all text input has been processed.
 
   ## Parameters
 
