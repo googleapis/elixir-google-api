@@ -21,11 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Basi
 
   ## Attributes
 
-  *   `combiningFunction` (*type:* `String.t`, *default:* `nil`) - How the `conditions` list should be combined to determine if a request is
-      granted this `AccessLevel`. If AND is used, each `Condition` in
-      `conditions` must be satisfied for the `AccessLevel` to be applied. If OR
-      is used, at least one `Condition` in `conditions` must be satisfied for the
-      `AccessLevel` to be applied. Default behavior is AND.
+  *   `combiningFunction` (*type:* `String.t`, *default:* `nil`) - How the `conditions` list should be combined to determine if a request is granted this `AccessLevel`. If AND is used, each `Condition` in `conditions` must be satisfied for the `AccessLevel` to be applied. If OR is used, at least one `Condition` in `conditions` must be satisfied for the `AccessLevel` to be applied. Default behavior is AND.
   *   `conditions` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Condition.t)`, *default:* `nil`) - Required. A list of requirements for the `AccessLevel` to be granted.
   """
 

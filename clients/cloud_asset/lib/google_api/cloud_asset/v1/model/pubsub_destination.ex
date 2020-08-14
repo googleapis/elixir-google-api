@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.PubsubDestination do
 
   ## Attributes
 
-  *   `topic` (*type:* `String.t`, *default:* `nil`) - The name of the Pub/Sub topic to publish to.
-      Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - The name of the Pub/Sub topic to publish to. Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
   """
 
   use GoogleApi.Gax.ModelBase

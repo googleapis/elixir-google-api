@@ -26,17 +26,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a feed in a parent project/folder/organization to listen to its
-  asset updates.
+  Creates a feed in a parent project/folder/organization to listen to its asset updates.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project/folder/organization where this feed
-      should be created in. It can only be an organization number (such as
-      "organizations/123"), a folder number (such as "folders/123"), a project ID
-      (such as "projects/my-project-id")", or a project number (such as
-      "projects/12345").
+  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project/folder/organization where this feed should be created in. It can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id")", or a project number (such as "projects/12345").
   *   `v1_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v1Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -97,10 +92,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The name of the feed and it must be in the format of:
-      projects/project_number/feeds/feed_id
-      folders/folder_number/feeds/feed_id
-      organizations/organization_number/feeds/feed_id
+  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The name of the feed and it must be in the format of: projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id organizations/organization_number/feeds/feed_id
   *   `v1_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
   *   `feeds_id` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -175,10 +167,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Feed and it must be in the format of:
-      projects/project_number/feeds/feed_id
-      folders/folder_number/feeds/feed_id
-      organizations/organization_number/feeds/feed_id
+  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Feed and it must be in the format of: projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id organizations/organization_number/feeds/feed_id
   *   `v1_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
   *   `feeds_id` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -246,9 +235,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The parent project/folder/organization whose feeds are to be
-      listed. It can only be using project/folder/organization number (such as
-      "folders/12345")", or a project ID (such as "projects/my-project-id").
+  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The parent project/folder/organization whose feeds are to be listed. It can only be using project/folder/organization number (such as "folders/12345")", or a project ID (such as "projects/my-project-id").
   *   `v1_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v1Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -309,13 +296,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `feed.name`. Required. The format will be
-      projects/{project_number}/feeds/{client-assigned_feed_identifier} or
-      folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
-      organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
-
-      The client-assigned feed identifier must be unique within the parent
-      project/folder/organization.
+  *   `v1_id` (*type:* `String.t`) - Part of `feed.name`. Required. The format will be projects/{project_number}/feeds/{client-assigned_feed_identifier} or folders/{folder_number}/feeds/{client-assigned_feed_identifier} or organizations/{organization_number}/feeds/{client-assigned_feed_identifier} The client-assigned feed identifier must be unique within the parent project/folder/organization.
   *   `v1_id1` (*type:* `String.t`) - Part of `feed.name`. See documentation of `v1Id`.
   *   `feeds_id` (*type:* `String.t`) - Part of `feed.name`. See documentation of `v1Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

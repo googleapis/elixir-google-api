@@ -17,58 +17,20 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.Asset do
   @moduledoc """
-  An asset in Google Cloud. An asset can be any resource in the Google Cloud
-  [resource
-  hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
-  a resource outside the Google Cloud resource hierarchy (such as Google
-  Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
-  See [Supported asset
-  types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
-  for more information.
+  An asset in Google Cloud. An asset can be any resource in the Google Cloud [resource hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy), a resource outside the Google Cloud resource hierarchy (such as Google Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy). See [Supported asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types) for more information.
 
   ## Attributes
 
-  *   `accessLevel` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessLevel.t`, *default:* `nil`) - Please also refer to the [access level user
-      guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
-  *   `accessPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessPolicy.t`, *default:* `nil`) - Please also refer to the [access policy user
-      guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
-  *   `ancestors` (*type:* `list(String.t)`, *default:* `nil`) - The ancestry path of an asset in Google Cloud [resource
-      hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
-      represented as a list of relative resource names. An ancestry path starts
-      with the closest ancestor in the hierarchy and ends at root. If the asset
-      is a project, folder, or organization, the ancestry path starts from the
-      asset itself.
-
-      Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
-  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of the asset. Example: `compute.googleapis.com/Disk`
-
-      See [Supported asset
-      types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
-      for more information.
-  *   `iamPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.Policy.t`, *default:* `nil`) - A representation of the Cloud IAM policy set on a Google Cloud resource.
-      There can be a maximum of one Cloud IAM policy set on any given resource.
-      In addition, Cloud IAM policies inherit their granted access scope from any
-      policies set on parent resources in the resource hierarchy. Therefore, the
-      effectively policy is the union of both the policy set on this resource
-      and each policy set on all of the resource's ancestry resource levels in
-      the hierarchy. See
-      [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
-      more information.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The full name of the asset. Example:
-      `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
-
-      See [Resource
-      names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-      for more information.
-  *   `orgPolicy` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy.t)`, *default:* `nil`) - A representation of an [organization
-      policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
-      There can be more than one organization policy with different constraints
-      set on a given resource.
+  *   `accessLevel` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessLevel.t`, *default:* `nil`) - Please also refer to the [access level user guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+  *   `accessPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessPolicy.t`, *default:* `nil`) - Please also refer to the [access policy user guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+  *   `ancestors` (*type:* `list(String.t)`, *default:* `nil`) - The ancestry path of an asset in Google Cloud [resource hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy), represented as a list of relative resource names. An ancestry path starts with the closest ancestor in the hierarchy and ends at root. If the asset is a project, folder, or organization, the ancestry path starts from the asset itself. Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of the asset. Example: `compute.googleapis.com/Disk` See [Supported asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types) for more information.
+  *   `iamPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.Policy.t`, *default:* `nil`) - A representation of the Cloud IAM policy set on a Google Cloud resource. There can be a maximum of one Cloud IAM policy set on any given resource. In addition, Cloud IAM policies inherit their granted access scope from any policies set on parent resources in the resource hierarchy. Therefore, the effectively policy is the union of both the policy set on this resource and each policy set on all of the resource's ancestry resource levels in the hierarchy. See [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for more information.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The full name of the asset. Example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1` See [Resource names](https://cloud.google.com/apis/design/resource_names#full_resource_name) for more information.
+  *   `orgPolicy` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy.t)`, *default:* `nil`) - A representation of an [organization policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy). There can be more than one organization policy with different constraints set on a given resource.
   *   `resource` (*type:* `GoogleApi.CloudAsset.V1.Model.Resource.t`, *default:* `nil`) - A representation of the resource.
-  *   `servicePerimeter` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t`, *default:* `nil`) - Please also refer to the [service perimeter user
-      guide](https://cloud.google.com/vpc-service-controls/docs/overview).
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of an asset. update_time is updated when
-      create/update/delete operation is performed.
+  *   `servicePerimeter` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t`, *default:* `nil`) - Please also refer to the [service perimeter user guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of an asset. update_time is updated when create/update/delete operation is performed.
   """
 
   use GoogleApi.Gax.ModelBase

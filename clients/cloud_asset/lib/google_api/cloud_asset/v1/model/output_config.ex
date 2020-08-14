@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.OutputConfig do
 
   ## Attributes
 
-  *   `bigqueryDestination` (*type:* `GoogleApi.CloudAsset.V1.Model.BigQueryDestination.t`, *default:* `nil`) - Destination on BigQuery. The output table stores the fields in asset
-      proto as columns in BigQuery.
+  *   `bigqueryDestination` (*type:* `GoogleApi.CloudAsset.V1.Model.BigQueryDestination.t`, *default:* `nil`) - Destination on BigQuery. The output table stores the fields in asset proto as columns in BigQuery.
   *   `gcsDestination` (*type:* `GoogleApi.CloudAsset.V1.Model.GcsDestination.t`, *default:* `nil`) - Destination on Cloud Storage.
   """
 
