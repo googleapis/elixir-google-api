@@ -21,7 +21,7 @@ defmodule GoogleApis.Publisher do
 
     directory =
       Path.join([
-        File.cwd(),
+        File.cwd!(),
         "clients",
         api_name
       ])
