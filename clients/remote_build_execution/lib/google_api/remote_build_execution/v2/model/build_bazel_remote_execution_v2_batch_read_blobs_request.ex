@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2BatchReadBlobsRequest do
   @moduledoc """
-  A request message for
-  ContentAddressableStorage.BatchReadBlobs.
+  A request message for ContentAddressableStorage.BatchReadBlobs.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2CommandEnvironmentVariable do
   @moduledoc """
-  An `EnvironmentVariable` is one variable to set in the running program's
-  environment.
+  An `EnvironmentVariable` is one variable to set in the running program's environment.
 
   ## Attributes
 

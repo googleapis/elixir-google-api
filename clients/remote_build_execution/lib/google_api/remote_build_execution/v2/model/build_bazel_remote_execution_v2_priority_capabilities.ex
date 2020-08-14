@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities do
   @moduledoc """
-  Allowed values for priority in
-  ResultsCachePolicy
-  Used for querying both cache and execution valid priority ranges.
+  Allowed values for priority in ResultsCachePolicy Used for querying both cache and execution valid priority ranges.
 
   ## Attributes
 

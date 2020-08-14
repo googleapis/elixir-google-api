@@ -22,8 +22,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   ## Attributes
 
   *   `acceleratorCount` (*type:* `String.t`, *default:* `nil`) - The number of guest accelerator cards exposed to each VM.
-  *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - The type of accelerator to attach to each VM, e.g. "nvidia-tesla-k80" for
-      nVidia Tesla K80.
+  *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - The type of accelerator to attach to each VM, e.g. "nvidia-tesla-k80" for nVidia Tesla K80.
   """
 
   use GoogleApi.Gax.ModelBase

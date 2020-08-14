@@ -21,8 +21,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the instance to retrieve.
-      Format: `projects/[PROJECT_ID]/instances/[INSTANCE_ID]`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the instance to retrieve. Format: `projects/[PROJECT_ID]/instances/[INSTANCE_ID]`.
   """
 
   use GoogleApi.Gax.ModelBase

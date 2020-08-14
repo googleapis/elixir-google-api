@@ -17,25 +17,13 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2OutputSymlink do
   @moduledoc """
-  An `OutputSymlink` is similar to a
-  Symlink, but it is used as an
-  output in an `ActionResult`.
-
-  `OutputSymlink` is binary-compatible with `SymlinkNode`.
+  An `OutputSymlink` is similar to a Symlink, but it is used as an output in an `ActionResult`. `OutputSymlink` is binary-compatible with `SymlinkNode`.
 
   ## Attributes
 
-  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The supported node properties of the OutputSymlink, if requested by the
-      Action.
-  *   `path` (*type:* `String.t`, *default:* `nil`) - The full path of the symlink relative to the working directory, including the
-      filename. The path separator is a forward slash `/`. Since this is a
-      relative path, it MUST NOT begin with a leading forward slash.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - The target path of the symlink. The path separator is a forward slash `/`.
-      The target path can be relative to the parent directory of the symlink or
-      it can be an absolute path starting with `/`. Support for absolute paths
-      can be checked using the Capabilities
-      API. The canonical form forbids the substrings `/./` and `//` in the target
-      path. `..` components are allowed anywhere in the target path.
+  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The supported node properties of the OutputSymlink, if requested by the Action.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The full path of the symlink relative to the working directory, including the filename. The path separator is a forward slash `/`. Since this is a relative path, it MUST NOT begin with a leading forward slash.
+  *   `target` (*type:* `String.t`, *default:* `nil`) - The target path of the symlink. The path separator is a forward slash `/`. The target path can be relative to the parent directory of the symlink or it can be an absolute path starting with `/`. Support for absolute paths can be checked using the Capabilities API. The canonical form forbids the substrings `/./` and `//` in the target path. `..` components are allowed anywhere in the target path.
   """
 
   use GoogleApi.Gax.ModelBase

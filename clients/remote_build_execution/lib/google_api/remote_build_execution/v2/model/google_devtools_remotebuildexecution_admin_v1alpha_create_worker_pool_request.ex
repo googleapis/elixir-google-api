@@ -21,16 +21,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   ## Attributes
 
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Resource name of the instance in which to create the new worker pool.
-      Format: `projects/[PROJECT_ID]/instances/[INSTANCE_ID]`.
-  *   `poolId` (*type:* `String.t`, *default:* `nil`) - ID of the created worker pool.
-      A valid pool ID must:
-      be 6-50 characters long,
-      contain only lowercase letters, digits, hyphens and underscores,
-      start with a lowercase letter, and
-      end with a lowercase letter or a digit.
-  *   `workerPool` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPool.t`, *default:* `nil`) - Specifies the worker pool to create.
-      The name in the worker pool, if specified, is ignored.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Resource name of the instance in which to create the new worker pool. Format: `projects/[PROJECT_ID]/instances/[INSTANCE_ID]`.
+  *   `poolId` (*type:* `String.t`, *default:* `nil`) - ID of the created worker pool. A valid pool ID must: be 6-50 characters long, contain only lowercase letters, digits, hyphens and underscores, start with a lowercase letter, and end with a lowercase letter or a digit.
+  *   `workerPool` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPool.t`, *default:* `nil`) - Specifies the worker pool to create. The name in the worker pool, if specified, is ignored.
   """
 
   use GoogleApi.Gax.ModelBase

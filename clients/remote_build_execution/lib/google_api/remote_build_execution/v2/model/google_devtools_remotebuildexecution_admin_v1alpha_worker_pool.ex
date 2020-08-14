@@ -23,15 +23,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   *   `autoscale` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale.t`, *default:* `nil`) - The autoscale policy to apply on a pool.
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Channel specifies the release channel of the pool.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - WorkerPool resource name formatted as:
-      `projects/[PROJECT_ID]/instances/[INSTANCE_ID]/workerpools/[POOL_ID]`.
-      name should not be populated when creating a worker pool since it is
-      provided in the `poolId` field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - WorkerPool resource name formatted as: `projects/[PROJECT_ID]/instances/[INSTANCE_ID]/workerpools/[POOL_ID]`. name should not be populated when creating a worker pool since it is provided in the `poolId` field.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the worker pool.
-  *   `workerConfig` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig.t`, *default:* `nil`) - Specifies the properties, such as machine type and disk size, used for
-      creating workers in a worker pool.
-  *   `workerCount` (*type:* `String.t`, *default:* `nil`) - The desired number of workers in the worker pool. Must be a value between
-      0 and 15000.
+  *   `workerConfig` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig.t`, *default:* `nil`) - Specifies the properties, such as machine type and disk size, used for creating workers in a worker pool.
+  *   `workerCount` (*type:* `String.t`, *default:* `nil`) - The desired number of workers in the worker pool. Must be a value between 0 and 15000.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2DirectoryNode do
   @moduledoc """
-  A `DirectoryNode` represents a child of a
-  Directory which is itself
-  a `Directory` and its associated metadata.
+  A `DirectoryNode` represents a child of a Directory which is itself a `Directory` and its associated metadata.
 
   ## Attributes
 
-  *   `digest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t`, *default:* `nil`) - The digest of the
-      Directory object
-      represented. See Digest
-      for information about how to take the digest of a proto message.
+  *   `digest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t`, *default:* `nil`) - The digest of the Directory object represented. See Digest for information about how to take the digest of a proto message.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the directory.
   """
 

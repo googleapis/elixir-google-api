@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2GetTreeResponse do
   @moduledoc """
-  A response message for
-  ContentAddressableStorage.GetTree.
+  A response message for ContentAddressableStorage.GetTree.
 
   ## Attributes
 
   *   `directories` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t)`, *default:* `nil`) - The directories descended from the requested root.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If present, signifies that there are more results which the client can
-      retrieve by passing this as the page_token in a subsequent
-      request.
-      If empty, signifies that this is the last page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If present, signifies that there are more results which the client can retrieve by passing this as the page_token in a subsequent request. If empty, signifies that this is the last page of results.
   """
 
   use GoogleApi.Gax.ModelBase

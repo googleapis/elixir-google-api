@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2OutputDirectory do
   @moduledoc """
-  An `OutputDirectory` is the output in an `ActionResult` corresponding to a
-  directory's full contents rather than a single file.
+  An `OutputDirectory` is the output in an `ActionResult` corresponding to a directory's full contents rather than a single file.
 
   ## Attributes
 
-  *   `path` (*type:* `String.t`, *default:* `nil`) - The full path of the directory relative to the working directory. The path
-      separator is a forward slash `/`. Since this is a relative path, it MUST
-      NOT begin with a leading forward slash. The empty string value is allowed,
-      and it denotes the entire working directory.
-  *   `treeDigest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t`, *default:* `nil`) - The digest of the encoded
-      Tree proto containing the
-      directory's contents.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The full path of the directory relative to the working directory. The path separator is a forward slash `/`. Since this is a relative path, it MUST NOT begin with a leading forward slash. The empty string value is allowed, and it denotes the entire working directory.
+  *   `treeDigest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t`, *default:* `nil`) - The digest of the encoded Tree proto containing the directory's contents.
   """
 
   use GoogleApi.Gax.ModelBase

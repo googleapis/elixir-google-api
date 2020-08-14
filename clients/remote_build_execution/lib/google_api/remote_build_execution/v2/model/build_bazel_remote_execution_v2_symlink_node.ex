@@ -23,12 +23,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Sym
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the symlink.
   *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The node properties of the SymlinkNode.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - The target path of the symlink. The path separator is a forward slash `/`.
-      The target path can be relative to the parent directory of the symlink or
-      it can be an absolute path starting with `/`. Support for absolute paths
-      can be checked using the Capabilities
-      API. The canonical form forbids the substrings `/./` and `//` in the target
-      path. `..` components are allowed anywhere in the target path.
+  *   `target` (*type:* `String.t`, *default:* `nil`) - The target path of the symlink. The path separator is a forward slash `/`. The target path can be relative to the parent directory of the symlink or it can be an absolute path starting with `/`. Support for absolute paths can be checked using the Capabilities API. The canonical form forbids the substrings `/./` and `//` in the target path. `..` components are allowed anywhere in the target path.
   """
 
   use GoogleApi.Gax.ModelBase

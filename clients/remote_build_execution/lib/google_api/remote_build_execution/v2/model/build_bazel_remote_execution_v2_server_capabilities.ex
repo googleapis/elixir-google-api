@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ServerCapabilities do
   @moduledoc """
-  A response message for
-  Capabilities.GetCapabilities.
+  A response message for Capabilities.GetCapabilities.
 
   ## Attributes
 

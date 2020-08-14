@@ -21,8 +21,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   ## Attributes
 
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Resource name of the project.
-      Format: `projects/[PROJECT_ID]`.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Resource name of the project. Format: `projects/[PROJECT_ID]`.
   """
 
   use GoogleApi.Gax.ModelBase

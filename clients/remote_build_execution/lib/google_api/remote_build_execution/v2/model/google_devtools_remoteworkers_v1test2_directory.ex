@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Directory do
   @moduledoc """
-  The contents of a directory. Similar to the equivalent message in the Remote
-  Execution API.
+  The contents of a directory. Similar to the equivalent message in the Remote Execution API.
 
   ## Attributes
 

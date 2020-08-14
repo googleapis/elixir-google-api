@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FindMissingBlobsRequest do
   @moduledoc """
-  A request message for
-  ContentAddressableStorage.FindMissingBlobs.
+  A request message for ContentAddressableStorage.FindMissingBlobs.
 
   ## Attributes
 

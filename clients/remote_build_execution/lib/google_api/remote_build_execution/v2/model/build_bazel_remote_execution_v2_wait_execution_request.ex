@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2WaitExecutionRequest do
   @moduledoc """
-  A request message for
-  WaitExecution.
+  A request message for WaitExecution.
 
   ## Attributes
 

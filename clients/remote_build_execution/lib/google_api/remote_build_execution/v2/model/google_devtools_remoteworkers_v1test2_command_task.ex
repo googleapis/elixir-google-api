@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2CommandTask do
   @moduledoc """
-  Describes a shell-style task to execute, suitable for providing as the Bots
-  interface's `Lease.payload` field.
+  Describes a shell-style task to execute, suitable for providing as the Bots interface's `Lease.payload` field.
 
   ## Attributes
 
