@@ -21,8 +21,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.ListReportsResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"doubleclickbidmanager#listReportsResponse"</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#listReportsResponse".
   *   `reports` (*type:* `list(GoogleApi.DoubleClickBidManager.V1.Model.Report.t)`, *default:* `nil`) - Retrieved reports.
   """
 

@@ -21,13 +21,10 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.DownloadLineItemsRequest do
 
   ## Attributes
 
-  *   `fileSpec` (*type:* `String.t`, *default:* `nil`) - File specification (column names, types, order) in which the line items
-      will be returned. Default to <code>EWF</code>.
-  *   `filterIds` (*type:* `list(String.t)`, *default:* `nil`) - Ids of the specified filter type used to filter line items to fetch. If
-      omitted, all the line items will be returned.
+  *   `fileSpec` (*type:* `String.t`, *default:* `nil`) - File specification (column names, types, order) in which the line items will be returned. Default to EWF.
+  *   `filterIds` (*type:* `list(String.t)`, *default:* `nil`) - Ids of the specified filter type used to filter line items to fetch. If omitted, all the line items will be returned.
   *   `filterType` (*type:* `String.t`, *default:* `nil`) - Filter type used to filter line items to fetch.
-  *   `format` (*type:* `String.t`, *default:* `nil`) - Format in which the line items will be returned. Default to
-      <code>CSV</code>.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - Format in which the line items will be returned. Default to CSV.
   """
 
   use GoogleApi.Gax.ModelBase

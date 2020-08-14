@@ -21,8 +21,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.ListQueriesResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"doubleclickbidmanager#listQueriesResponse"</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#listQueriesResponse".
   *   `queries` (*type:* `list(GoogleApi.DoubleClickBidManager.V1.Model.Query.t)`, *default:* `nil`) - Retrieved queries.
   """
 

@@ -22,8 +22,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.PathQueryOptions do
   ## Attributes
 
   *   `channelGrouping` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.ChannelGrouping.t`, *default:* `nil`) - Custom Channel Groupings.
-  *   `pathFilters` (*type:* `list(GoogleApi.DoubleClickBidManager.V11.Model.PathFilter.t)`, *default:* `nil`) - Path Filters. There is a limit of 100 path filters that can be set per
-      report.
+  *   `pathFilters` (*type:* `list(GoogleApi.DoubleClickBidManager.V11.Model.PathFilter.t)`, *default:* `nil`) - Path Filters. There is a limit of 100 path filters that can be set per report.
   """
 
   use GoogleApi.Gax.ModelBase

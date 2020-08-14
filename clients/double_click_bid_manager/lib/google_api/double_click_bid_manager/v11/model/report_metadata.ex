@@ -21,8 +21,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.ReportMetadata do
 
   ## Attributes
 
-  *   `googleCloudStoragePath` (*type:* `String.t`, *default:* `nil`) - The path to the location in Google Cloud Storage where the report is
-      stored.
+  *   `googleCloudStoragePath` (*type:* `String.t`, *default:* `nil`) - The path to the location in Google Cloud Storage where the report is stored.
   *   `reportDataEndTimeMs` (*type:* `String.t`, *default:* `nil`) - The ending time for the data that is shown in the report.
   *   `reportDataStartTimeMs` (*type:* `String.t`, *default:* `nil`) - The starting time for the data that is shown in the report.
   *   `status` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.ReportStatus.t`, *default:* `nil`) - Report status.
