@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.TimedCount do
   @moduledoc """
-  The number of errors in a given time period.
-  All numbers are approximate since the error events are sampled
-  before counting them.
+  The number of errors in a given time period. All numbers are approximate since the error events are sampled before counting them.
 
   ## Attributes
 

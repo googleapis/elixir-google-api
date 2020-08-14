@@ -2,8 +2,7 @@
 
 Error Reporting API client library.
 
-Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors.
-
+Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors. 
 
 ## Installation
 

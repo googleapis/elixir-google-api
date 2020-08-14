@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.HttpRequestContext do
   @moduledoc """
-  HTTP request data that is related to a reported error.
-  This data should be provided by the application when reporting an error,
-  unless the
-  error report has been generated automatically from Google App Engine logs.
+  HTTP request data that is related to a reported error. This data should be provided by the application when reporting an error, unless the error report has been generated automatically from Google App Engine logs.
 
   ## Attributes
 
   *   `method` (*type:* `String.t`, *default:* `nil`) - The type of HTTP request, such as `GET`, `POST`, etc.
   *   `referrer` (*type:* `String.t`, *default:* `nil`) - The referrer information that is provided with the request.
-  *   `remoteIp` (*type:* `String.t`, *default:* `nil`) - The IP address from which the request originated.
-      This can be IPv4, IPv6, or a token which is derived from the
-      IP address, depending on the data that has been provided
-      in the error report.
+  *   `remoteIp` (*type:* `String.t`, *default:* `nil`) - The IP address from which the request originated. This can be IPv4, IPv6, or a token which is derived from the IP address, depending on the data that has been provided in the error report.
   *   `responseStatusCode` (*type:* `integer()`, *default:* `nil`) - The HTTP response status code for the request.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the request.
   *   `userAgent` (*type:* `String.t`, *default:* `nil`) - The user agent information that is provided with the request.

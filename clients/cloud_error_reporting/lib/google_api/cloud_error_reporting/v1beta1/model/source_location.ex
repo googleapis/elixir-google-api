@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.SourceLocation do
   @moduledoc """
-  Indicates a location in the source code of the service for which errors are
-  reported. `functionName` must be provided by the application when reporting
-  an error, unless the error report contains a `message` with a supported
-  exception stack trace. All fields are optional for the later case.
+  Indicates a location in the source code of the service for which errors are reported. `functionName` must be provided by the application when reporting an error, unless the error report contains a `message` with a supported exception stack trace. All fields are optional for the later case.
 
   ## Attributes
 
-  *   `filePath` (*type:* `String.t`, *default:* `nil`) - The source code filename, which can include a truncated relative
-      path, or a full path from a production machine.
-  *   `functionName` (*type:* `String.t`, *default:* `nil`) - Human-readable name of a function or method.
-      The value can include optional context like the class or package name.
-      For example, `my.package.MyClass.method` in case of Java.
+  *   `filePath` (*type:* `String.t`, *default:* `nil`) - The source code filename, which can include a truncated relative path, or a full path from a production machine.
+  *   `functionName` (*type:* `String.t`, *default:* `nil`) - Human-readable name of a function or method. The value can include optional context like the class or package name. For example, `my.package.MyClass.method` in case of Java.
   *   `lineNumber` (*type:* `integer()`, *default:* `nil`) - 1-based. 0 indicates that the line number is unknown.
   """
 
