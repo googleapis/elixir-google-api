@@ -21,13 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Explanation do
 
   ## Attributes
 
-  *   `matchedPermissions` (*type:* `%{optional(String.t) => GoogleApi.CloudAsset.V1.Model.Permissions.t}`, *default:* `nil`) - The map from roles to their included permissions that match the
-      permission query (i.e., a query containing `policy.role.permissions:`).
-      Example: if query `policy.role.permissions : "compute.disk.get"`
-      matches a policy binding that contains owner role, the
-      matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
-      roles can also be found in the returned `policy` bindings. Note that the
-      map is populated only for requests with permission queries.
+  *   `matchedPermissions` (*type:* `%{optional(String.t) => GoogleApi.CloudAsset.V1.Model.Permissions.t}`, *default:* `nil`) - The map from roles to their included permissions that match the permission query (i.e., a query containing `policy.role.permissions:`). Example: if query `policy.role.permissions:compute.disk.get` matches a policy binding that contains owner role, the matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The roles can also be found in the returned `policy` bindings. Note that the map is populated only for requests with permission queries.
   """
 
   use GoogleApi.Gax.ModelBase

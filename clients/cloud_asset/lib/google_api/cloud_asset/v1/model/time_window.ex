@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.TimeWindow do
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the time window (inclusive). If not specified, the current
-      timestamp is used instead.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the time window (inclusive). If not specified, the current timestamp is used instead.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of the time window (exclusive).
   """
 

@@ -21,13 +21,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.CreateFeedRequest do
 
   ## Attributes
 
-  *   `feed` (*type:* `GoogleApi.CloudAsset.V1.Model.Feed.t`, *default:* `nil`) - Required. The feed details. The field `name` must be empty and it will be generated
-      in the format of:
-      projects/project_number/feeds/feed_id
-      folders/folder_number/feeds/feed_id
-      organizations/organization_number/feeds/feed_id
-  *   `feedId` (*type:* `String.t`, *default:* `nil`) - Required. This is the client-assigned asset feed identifier and it needs to
-      be unique under a specific parent project/folder/organization.
+  *   `feed` (*type:* `GoogleApi.CloudAsset.V1.Model.Feed.t`, *default:* `nil`) - Required. The feed details. The field `name` must be empty and it will be generated in the format of: projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id organizations/organization_number/feeds/feed_id
+  *   `feedId` (*type:* `String.t`, *default:* `nil`) - Required. This is the client-assigned asset feed identifier and it needs to be unique under a specific parent project/folder/organization.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,17 +21,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.BigQueryDestination do
 
   ## Attributes
 
-  *   `dataset` (*type:* `String.t`, *default:* `nil`) - Required. The BigQuery dataset in format
-      "projects/projectId/datasets/datasetId", to which the snapshot result
-      should be exported. If this dataset does not exist, the export call returns
-      an INVALID_ARGUMENT error.
-  *   `force` (*type:* `boolean()`, *default:* `nil`) - If the destination table already exists and this flag is `TRUE`, the
-      table will be overwritten by the contents of assets snapshot. If the flag
-      is `FALSE` or unset and the destination table already exists, the export
-      call returns an INVALID_ARGUMEMT error.
-  *   `table` (*type:* `String.t`, *default:* `nil`) - Required. The BigQuery table to which the snapshot result should be
-      written. If this table does not exist, a new table with the given name
-      will be created.
+  *   `dataset` (*type:* `String.t`, *default:* `nil`) - Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId", to which the snapshot result should be exported. If this dataset does not exist, the export call returns an INVALID_ARGUMENT error.
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - If the destination table already exists and this flag is `TRUE`, the table will be overwritten by the contents of assets snapshot. If the flag is `FALSE` or unset and the destination table already exists, the export call returns an INVALID_ARGUMEMT error.
+  *   `table` (*type:* `String.t`, *default:* `nil`) - Required. The BigQuery table to which the snapshot result should be written. If this table does not exist, a new table with the given name will be created.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,40 +17,16 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Condition do
   @moduledoc """
-  A condition necessary for an `AccessLevel` to be granted. The Condition is an
-  AND over its fields. So a Condition is true if: 1) the request IP is from one
-  of the listed subnetworks AND 2) the originating device complies with the
-  listed device policy AND 3) all listed access levels are granted AND 4) the
-  request was sent at a time allowed by the DateTimeRestriction.
+  A condition necessary for an `AccessLevel` to be granted. The Condition is an AND over its fields. So a Condition is true if: 1) the request IP is from one of the listed subnetworks AND 2) the originating device complies with the listed device policy AND 3) all listed access levels are granted AND 4) the request was sent at a time allowed by the DateTimeRestriction.
 
   ## Attributes
 
-  *   `devicePolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1DevicePolicy.t`, *default:* `nil`) - Device specific restrictions, all restrictions must hold for the
-      Condition to be true. If not specified, all devices are allowed.
-  *   `ipSubnetworks` (*type:* `list(String.t)`, *default:* `nil`) - CIDR block IP subnetwork specification. May be IPv4 or IPv6. Note that for
-      a CIDR IP address block, the specified IP address portion must be properly
-      truncated (i.e. all the host bits must be zero) or the input is considered
-      malformed. For example, "192.0.2.0/24" is accepted but "192.0.2.1/24" is
-      not. Similarly, for IPv6, "2001:db8::/32" is accepted whereas
-      "2001:db8::1/32" is not. The originating IP of a request must be in one of
-      the listed subnets in order for this Condition to be true. If empty, all IP
-      addresses are allowed.
-  *   `members` (*type:* `list(String.t)`, *default:* `nil`) - The request must be made by one of the provided user or service
-      accounts. Groups are not supported.
-      Syntax:
-      `user:{emailid}`
-      `serviceAccount:{emailid}`
-      If not specified, a request may come from any user.
-  *   `negate` (*type:* `boolean()`, *default:* `nil`) - Whether to negate the Condition. If true, the Condition becomes a NAND over
-      its non-empty fields, each field must be false for the Condition overall to
-      be satisfied. Defaults to false.
-  *   `regions` (*type:* `list(String.t)`, *default:* `nil`) - The request must originate from one of the provided countries/regions.
-      Must be valid ISO 3166-1 alpha-2 codes.
-  *   `requiredAccessLevels` (*type:* `list(String.t)`, *default:* `nil`) - A list of other access levels defined in the same `Policy`, referenced by
-      resource name. Referencing an `AccessLevel` which does not exist is an
-      error. All access levels listed must be granted for the Condition
-      to be true. Example:
-      "`accessPolicies/MY_POLICY/accessLevels/LEVEL_NAME"`
+  *   `devicePolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1DevicePolicy.t`, *default:* `nil`) - Device specific restrictions, all restrictions must hold for the Condition to be true. If not specified, all devices are allowed.
+  *   `ipSubnetworks` (*type:* `list(String.t)`, *default:* `nil`) - CIDR block IP subnetwork specification. May be IPv4 or IPv6. Note that for a CIDR IP address block, the specified IP address portion must be properly truncated (i.e. all the host bits must be zero) or the input is considered malformed. For example, "192.0.2.0/24" is accepted but "192.0.2.1/24" is not. Similarly, for IPv6, "2001:db8::/32" is accepted whereas "2001:db8::1/32" is not. The originating IP of a request must be in one of the listed subnets in order for this Condition to be true. If empty, all IP addresses are allowed.
+  *   `members` (*type:* `list(String.t)`, *default:* `nil`) - The request must be made by one of the provided user or service accounts. Groups are not supported. Syntax: `user:{emailid}` `serviceAccount:{emailid}` If not specified, a request may come from any user.
+  *   `negate` (*type:* `boolean()`, *default:* `nil`) - Whether to negate the Condition. If true, the Condition becomes a NAND over its non-empty fields, each field must be false for the Condition overall to be satisfied. Defaults to false.
+  *   `regions` (*type:* `list(String.t)`, *default:* `nil`) - The request must originate from one of the provided countries/regions. Must be valid ISO 3166-1 alpha-2 codes.
+  *   `requiredAccessLevels` (*type:* `list(String.t)`, *default:* `nil`) - A list of other access levels defined in the same `Policy`, referenced by resource name. Referencing an `AccessLevel` which does not exist is an error. All access levels listed must be granted for the Condition to be true. Example: "`accessPolicies/MY_POLICY/accessLevels/LEVEL_NAME"`
   """
 
   use GoogleApi.Gax.ModelBase

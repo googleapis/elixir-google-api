@@ -21,11 +21,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.SearchAllResourcesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than those appearing in this response, then
-      `next_page_token` is included. To get the next set of results, call this
-      method again using the value of `next_page_token` as `page_token`.
-  *   `results` (*type:* `list(GoogleApi.CloudAsset.V1.Model.ResourceSearchResult.t)`, *default:* `nil`) - A list of Resources that match the search query. It contains the resource
-      standard metadata information.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than those appearing in this response, then `next_page_token` is included. To get the next set of results, call this method again using the value of `next_page_token` as `page_token`.
+  *   `results` (*type:* `list(GoogleApi.CloudAsset.V1.Model.ResourceSearchResult.t)`, *default:* `nil`) - A list of Resources that match the search query. It contains the resource standard metadata information.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,86 +21,15 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
 
   ## Attributes
 
-  *   `additionalAttributes` (*type:* `map()`, *default:* `nil`) - The additional searchable attributes of this resource. The attributes may
-      vary from one resource type to another. Examples: `projectId` for Project,
-      `dnsName` for DNS ManagedZone. This field contains a subset of the resource
-      metadata fields that are returned by the List or Get APIs provided by the
-      corresponding GCP service (e.g., Compute Engine). see [API references and
-      supported searchable
-      attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-      for more information.
-
-      You can search values of these fields through free text search. However,
-      you should not consume the field programically as the field names and
-      values may change as the GCP service updates to a new incompatible API
-      version.
-
-      To search against the `additional_attributes`:
-
-      * use a free text query to match the attributes values. Example: to search
-        `additional_attributes = { dnsName: "foobar" }`, you can issue a query
-        `"foobar"`.
-  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of this resource. Example: `compute.googleapis.com/Disk`.
-
-      To search against the `asset_type`:
-
-      * specify the `asset_type` field in your search request.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of this resource. Maximum length
-      could be up to 1M bytes.
-
-      To search against the `description`:
-
-      * use a field query. Example: `description : "*important instance*"`
-      * use a free text query. Example: `"*important instance*"`
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of this resource.
-
-      To search against the `display_name`:
-
-      * use a field query. Example: `displayName : "My Instance"`
-      * use a free text query. Example: `"My Instance"`
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this resource. See [Labelling and grouping GCP
-      resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-      for more information.
-
-      To search against the `labels`:
-
-      * use a field query, as following:
-          - query on any label's key or value. Example: `labels : "prod"`
-          - query by a given label. Example: `labels.env : "prod"`
-          - query by a given label'sexistence. Example: `labels.env : *`
-      * use a free text query. Example: `"prod"`
-  *   `location` (*type:* `String.t`, *default:* `nil`) - Location can be `global`, regional like `us-east1`, or zonal like
-      `us-west1-b`.
-
-      To search against the `location`:
-
-      * use a field query. Example: `location : "us-west*"`
-      * use a free text query. Example: `"us-west*"`
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of this resource. Example:
-      `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-      See [Cloud Asset Inventory Resource Name
-      Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-      for more information.
-
-      To search against the `name`:
-
-      * use a field query. Example: `name : "instance1"`
-      * use a free text query. Example: `"instance1"`
-  *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - Network tags associated with this resource. Like labels, network tags are a
-      type of annotations used to group GCP resources. See [Labelling GCP
-      resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-      for more information.
-
-      To search against the `network_tags`:
-
-      * use a field query. Example: `networkTags : "internal"`
-      * use a free text query. Example: `"internal"`
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The project that this resource belongs to, in the form of
-      projects/{PROJECT_NUMBER}.
-
-      To search against the `project`:
-
-      * specify the `scope` field as this project in your search request.
+  *   `additionalAttributes` (*type:* `map()`, *default:* `nil`) - The additional searchable attributes of this resource. The attributes may vary from one resource type to another. Examples: `projectId` for Project, `dnsName` for DNS ManagedZone. This field contains a subset of the resource metadata fields that are returned by the List or Get APIs provided by the corresponding GCP service (e.g., Compute Engine). see [API references and supported searchable attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types) for more information. You can search values of these fields through free text search. However, you should not consume the field programically as the field names and values may change as the GCP service updates to a new incompatible API version. To search against the `additional_attributes`: * use a free text query to match the attributes values. Example: to search `additional_attributes = { dnsName: "foobar" }`, you can issue a query `foobar`.
+  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of this resource. Example: `compute.googleapis.com/Disk`. To search against the `asset_type`: * specify the `asset_type` field in your search request.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of this resource. Maximum length could be up to 1M bytes. To search against the `description`: * use a field query. Example: `description:"*important instance*"` * use a free text query. Example: `"*important instance*"`
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of this resource. To search against the `display_name`: * use a field query. Example: `displayName:"My Instance"` * use a free text query. Example: `"My Instance"`
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this resource. See [Labelling and grouping GCP resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources) for more information. To search against the `labels`: * use a field query: - query on any label's key or value. Example: `labels:prod` - query by a given label. Example: `labels.env:prod` - query by a given label's existence. Example: `labels.env:*` * use a free text query. Example: `prod`
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Location can be `global`, regional like `us-east1`, or zonal like `us-west1-b`. To search against the `location`: * use a field query. Example: `location:us-west*` * use a free text query. Example: `us-west*`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of this resource. Example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`. See [Cloud Asset Inventory Resource Name Format](https://cloud.google.com/asset-inventory/docs/resource-name-format) for more information. To search against the `name`: * use a field query. Example: `name:instance1` * use a free text query. Example: `instance1`
+  *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - Network tags associated with this resource. Like labels, network tags are a type of annotations used to group GCP resources. See [Labelling GCP resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources) for more information. To search against the `network_tags`: * use a field query. Example: `networkTags:internal` * use a free text query. Example: `internal`
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The project that this resource belongs to, in the form of projects/{PROJECT_NUMBER}. To search against the `project`: * specify the `scope` field as this project in your search request.
   """
 
   use GoogleApi.Gax.ModelBase
