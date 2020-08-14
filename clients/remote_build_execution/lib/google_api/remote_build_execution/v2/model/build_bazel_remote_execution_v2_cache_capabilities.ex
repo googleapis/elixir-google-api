@@ -23,12 +23,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Cac
 
   *   `actionCacheUpdateCapabilities` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ActionCacheUpdateCapabilities.t`, *default:* `nil`) - Capabilities for updating the action cache.
   *   `cachePriorityCapabilities` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities.t`, *default:* `nil`) - Supported cache priority range for both CAS and ActionCache.
-  *   `digestFunction` (*type:* `list(String.t)`, *default:* `nil`) - All the digest functions supported by the remote cache.
-      Remote cache may support multiple digest functions simultaneously.
-  *   `maxBatchTotalSizeBytes` (*type:* `String.t`, *default:* `nil`) - Maximum total size of blobs to be uploaded/downloaded using
-      batch methods. A value of 0 means no limit is set, although
-      in practice there will always be a message size limitation
-      of the protocol in use, e.g. GRPC.
+  *   `digestFunction` (*type:* `list(String.t)`, *default:* `nil`) - All the digest functions supported by the remote cache. Remote cache may support multiple digest functions simultaneously.
+  *   `maxBatchTotalSizeBytes` (*type:* `String.t`, *default:* `nil`) - Maximum total size of blobs to be uploaded/downloaded using batch methods. A value of 0 means no limit is set, although in practice there will always be a message size limitation of the protocol in use, e.g. GRPC.
   *   `symlinkAbsolutePathStrategy` (*type:* `String.t`, *default:* `nil`) - Whether absolute symlink targets are supported.
   """
 

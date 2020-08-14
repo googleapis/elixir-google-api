@@ -26,23 +26,12 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.V2 do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  GetCapabilities returns the server capabilities configuration of the
-  remote endpoint.
-  Only the capabilities of the services supported by the endpoint will
-  be returned:
-  * Execution + CAS + Action Cache endpoints should return both
-    CacheCapabilities and ExecutionCapabilities.
-  * Execution only endpoints should return ExecutionCapabilities.
-  * CAS + Action Cache only endpoints should return CacheCapabilities.
+  GetCapabilities returns the server capabilities configuration of the remote endpoint. Only the capabilities of the services supported by the endpoint will be returned: * Execution + CAS + Action Cache endpoints should return both CacheCapabilities and ExecutionCapabilities. * Execution only endpoints should return ExecutionCapabilities. * CAS + Action Cache only endpoints should return CacheCapabilities.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RemoteBuildExecution.V2.Connection.t`) - Connection to server
-  *   `instance_name` (*type:* `String.t`) - The instance of the execution system to operate against. A server may
-      support multiple instances of the execution system (with their own workers,
-      storage, caches, etc.). The server MAY require use of this field to select
-      between them in an implementation-defined fashion, otherwise it can be
-      omitted.
+  *   `instance_name` (*type:* `String.t`) - The instance of the execution system to operate against. A server may support multiple instances of the execution system (with their own workers, storage, caches, etc.). The server MAY require use of this field to select between them in an implementation-defined fashion, otherwise it can be omitted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

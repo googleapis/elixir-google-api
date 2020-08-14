@@ -17,32 +17,32 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance do
   @moduledoc """
-  Instance conceptually encapsulates all Remote Build Execution resources
-  for remote builds.
-  An instance consists of storage and compute resources (for example,
-  `ContentAddressableStorage`, `ActionCache`, `WorkerPools`) used for
-  running remote builds.
-  All Remote Build Execution API calls are scoped to an instance.
+  Instance conceptually encapsulates all Remote Build Execution resources for remote builds. An instance consists of storage and compute resources (for example, `ContentAddressableStorage`, `ActionCache`, `WorkerPools`) used for running remote builds. All Remote Build Execution API calls are scoped to an instance.
 
   ## Attributes
 
+  *   `featurePolicy` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicy.t`, *default:* `nil`) - The policy to define whether or not RBE features can be used or how they can be used.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location is a GCP region. Currently only `us-central1` is supported.
   *   `loggingEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether stack driver logging is enabled for the instance.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Instance resource name formatted as:
-      `projects/[PROJECT_ID]/instances/[INSTANCE_ID]`.
-      Name should not be populated when creating an instance since it is provided
-      in the `instance_id` field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Instance resource name formatted as: `projects/[PROJECT_ID]/instances/[INSTANCE_ID]`. Name should not be populated when creating an instance since it is provided in the `instance_id` field.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the instance.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :featurePolicy =>
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicy.t(),
           :location => String.t(),
           :loggingEnabled => boolean(),
           :name => String.t(),
           :state => String.t()
         }
+
+  field(:featurePolicy,
+    as:
+      GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicy
+  )
 
   field(:location)
   field(:loggingEnabled)

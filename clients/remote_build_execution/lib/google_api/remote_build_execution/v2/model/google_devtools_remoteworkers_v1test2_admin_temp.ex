@@ -17,18 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2AdminTemp do
   @moduledoc """
-  AdminTemp is a prelimiary set of administration tasks. It's called "Temp"
-  because we do not yet know the best way to represent admin tasks; it's
-  possible that this will be entirely replaced in later versions of this API.
-  If this message proves to be sufficient, it will be renamed in the alpha or
-  beta release of this API.
-
-  This message (suitably marshalled into a protobuf.Any) can be used as the
-  inline_assignment field in a lease; the lease assignment field should simply
-  be `"admin"` in these cases.
-
-  This message is heavily based on Swarming administration tasks from the LUCI
-  project (http://github.com/luci/luci-py/appengine/swarming).
+  AdminTemp is a prelimiary set of administration tasks. It's called "Temp" because we do not yet know the best way to represent admin tasks; it's possible that this will be entirely replaced in later versions of this API. If this message proves to be sufficient, it will be renamed in the alpha or beta release of this API. This message (suitably marshalled into a protobuf.Any) can be used as the inline_assignment field in a lease; the lease assignment field should simply be `"admin"` in these cases. This message is heavily based on Swarming administration tasks from the LUCI project (http://github.com/luci/luci-py/appengine/swarming).
 
   ## Attributes
 

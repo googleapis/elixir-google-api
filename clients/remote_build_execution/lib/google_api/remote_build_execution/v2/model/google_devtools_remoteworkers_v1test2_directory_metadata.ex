@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2DirectoryMetadata do
   @moduledoc """
-  The metadata for a directory. Similar to the equivalent message in the Remote
-  Execution API.
+  The metadata for a directory. Similar to the equivalent message in the Remote Execution API.
 
   ## Attributes
 
-  *   `digest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Digest.t`, *default:* `nil`) - A pointer to the contents of the directory, in the form of a marshalled
-      Directory message.
+  *   `digest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Digest.t`, *default:* `nil`) - A pointer to the contents of the directory, in the form of a marshalled Directory message.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The path of the directory, as in FileMetadata.path.
   """
 

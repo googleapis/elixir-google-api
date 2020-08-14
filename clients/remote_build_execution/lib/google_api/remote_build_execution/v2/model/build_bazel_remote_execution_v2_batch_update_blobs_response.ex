@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2BatchUpdateBlobsResponse do
   @moduledoc """
-  A response message for
-  ContentAddressableStorage.BatchUpdateBlobs.
+  A response message for ContentAddressableStorage.BatchUpdateBlobs.
 
   ## Attributes
 

@@ -21,16 +21,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   ## Attributes
 
-  *   `instance` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance.t`, *default:* `nil`) - Specifies the instance to create.
-      The name in the instance, if specified in the instance, is ignored.
-  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - ID of the created instance.
-      A valid `instance_id` must:
-      be 6-50 characters long,
-      contain only lowercase letters, digits, hyphens and underscores,
-      start with a lowercase letter, and
-      end with a lowercase letter or a digit.
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Resource name of the project containing the instance.
-      Format: `projects/[PROJECT_ID]`.
+  *   `instance` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance.t`, *default:* `nil`) - Specifies the instance to create. The name in the instance, if specified in the instance, is ignored.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - ID of the created instance. A valid `instance_id` must: be 6-50 characters long, contain only lowercase letters, digits, hyphens and underscores, start with a lowercase letter, and end with a lowercase letter or a digit.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Resource name of the project containing the instance. Format: `projects/[PROJECT_ID]`.
   """
 
   use GoogleApi.Gax.ModelBase

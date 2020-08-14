@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCommandDurations do
   @moduledoc """
-  CommandDuration contains the various duration metrics tracked when a bot
-  performs a command.
+  CommandDuration contains the various duration metrics tracked when a bot performs a command.
 
   ## Attributes
 
-  *   `dockerPrep` (*type:* `String.t`, *default:* `nil`) - The time spent preparing the command to be run in a Docker container
-      (includes pulling the Docker image, if necessary).
+  *   `dockerPrep` (*type:* `String.t`, *default:* `nil`) - The time spent preparing the command to be run in a Docker container (includes pulling the Docker image, if necessary).
   *   `dockerPrepStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when docker preparation begins.
-  *   `download` (*type:* `String.t`, *default:* `nil`) - The time spent downloading the input files and constructing the working
-      directory.
+  *   `download` (*type:* `String.t`, *default:* `nil`) - The time spent downloading the input files and constructing the working directory.
   *   `downloadStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when downloading the input files begins.
   *   `execStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when execution begins.
   *   `execution` (*type:* `String.t`, *default:* `nil`) - The time spent executing the command (i.e., doing useful work).

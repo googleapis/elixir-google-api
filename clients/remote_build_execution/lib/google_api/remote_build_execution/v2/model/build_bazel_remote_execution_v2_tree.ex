@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Tree do
   @moduledoc """
-  A `Tree` contains all the
-  Directory protos in a
-  single directory Merkle tree, compressed into one message.
+  A `Tree` contains all the Directory protos in a single directory Merkle tree, compressed into one message.
 
   ## Attributes
 
-  *   `children` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t)`, *default:* `nil`) - All the child directories: the directories referred to by the root and,
-      recursively, all its children. In order to reconstruct the directory tree,
-      the client must take the digests of each of the child directories and then
-      build up a tree starting from the `root`.
+  *   `children` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t)`, *default:* `nil`) - All the child directories: the directories referred to by the root and, recursively, all its children. In order to reconstruct the directory tree, the client must take the digests of each of the child directories and then build up a tree starting from the `root`.
   *   `root` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t`, *default:* `nil`) - The root directory in the tree.
   """
 

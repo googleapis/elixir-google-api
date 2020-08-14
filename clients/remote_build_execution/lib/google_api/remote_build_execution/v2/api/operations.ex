@@ -26,18 +26,12 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Operations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Wait for an execution operation to complete. When the client initially
-  makes the request, the server immediately responds with the current status
-  of the execution. The server will leave the request stream open until the
-  operation completes, and then respond with the completed operation. The
-  server MAY choose to stream additional updates as execution progresses,
-  such as to provide an update as to the state of the execution.
+  Wait for an execution operation to complete. When the client initially makes the request, the server immediately responds with the current status of the execution. The server will leave the request stream open until the operation completes, and then respond with the completed operation. The server MAY choose to stream additional updates as execution progresses, such as to provide an update as to the state of the execution.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RemoteBuildExecution.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the Operation
-      returned by Execute.
+  *   `name` (*type:* `String.t`) - The name of the Operation returned by Execute.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

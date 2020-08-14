@@ -24,9 +24,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelSemverSemVer do
   *   `major` (*type:* `integer()`, *default:* `nil`) - The major version, e.g 10 for 10.2.3.
   *   `minor` (*type:* `integer()`, *default:* `nil`) - The minor version, e.g. 2 for 10.2.3.
   *   `patch` (*type:* `integer()`, *default:* `nil`) - The patch version, e.g 3 for 10.2.3.
-  *   `prerelease` (*type:* `String.t`, *default:* `nil`) - The pre-release version. Either this field or major/minor/patch fields
-      must be filled. They are mutually exclusive. Pre-release versions are
-      assumed to be earlier than any released versions.
+  *   `prerelease` (*type:* `String.t`, *default:* `nil`) - The pre-release version. Either this field or major/minor/patch fields must be filled. They are mutually exclusive. Pre-release versions are assumed to be earlier than any released versions.
   """
 
   use GoogleApi.Gax.ModelBase

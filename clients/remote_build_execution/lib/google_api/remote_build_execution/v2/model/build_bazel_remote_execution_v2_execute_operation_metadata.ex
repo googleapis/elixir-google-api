@@ -17,23 +17,14 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ExecuteOperationMetadata do
   @moduledoc """
-  Metadata about an ongoing
-  execution, which
-  will be contained in the metadata
-  field of the
-  Operation.
+  Metadata about an ongoing execution, which will be contained in the metadata field of the Operation.
 
   ## Attributes
 
-  *   `actionDigest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t`, *default:* `nil`) - The digest of the Action
-      being executed.
+  *   `actionDigest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t`, *default:* `nil`) - The digest of the Action being executed.
   *   `stage` (*type:* `String.t`, *default:* `nil`) - The current stage of execution.
-  *   `stderrStreamName` (*type:* `String.t`, *default:* `nil`) - If set, the client can use this name with
-      ByteStream.Read to stream the
-      standard error.
-  *   `stdoutStreamName` (*type:* `String.t`, *default:* `nil`) - If set, the client can use this name with
-      ByteStream.Read to stream the
-      standard output.
+  *   `stderrStreamName` (*type:* `String.t`, *default:* `nil`) - If set, the client can use this name with ByteStream.Read to stream the standard error.
+  *   `stdoutStreamName` (*type:* `String.t`, *default:* `nil`) - If set, the client can use this name with ByteStream.Read to stream the standard output.
   """
 
   use GoogleApi.Gax.ModelBase

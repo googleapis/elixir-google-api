@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2CommandOverhead do
   @moduledoc """
-  DEPRECATED - use CommandResult instead.
-  Can be used as part of CompleteRequest.metadata, or are part of a more
-  sophisticated message.
+  DEPRECATED - use CommandResult instead. Can be used as part of CompleteRequest.metadata, or are part of a more sophisticated message.
 
   ## Attributes
 
-  *   `duration` (*type:* `String.t`, *default:* `nil`) - The elapsed time between calling Accept and Complete. The server will also
-      have its own idea of what this should be, but this excludes the overhead of
-      the RPCs and the bot response time.
-  *   `overhead` (*type:* `String.t`, *default:* `nil`) - The amount of time *not* spent executing the command (ie
-      uploading/downloading files).
+  *   `duration` (*type:* `String.t`, *default:* `nil`) - The elapsed time between calling Accept and Complete. The server will also have its own idea of what this should be, but this excludes the overhead of the RPCs and the bot response time.
+  *   `overhead` (*type:* `String.t`, *default:* `nil`) - The amount of time *not* spent executing the command (ie uploading/downloading files).
   """
 
   use GoogleApi.Gax.ModelBase

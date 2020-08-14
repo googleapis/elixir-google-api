@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Platform do
   @moduledoc """
-  A `Platform` is a set of requirements, such as hardware, operating system, or
-  compiler toolchain, for an
-  Action's execution
-  environment. A `Platform` is represented as a series of key-value pairs
-  representing the properties that are required of the platform.
+  A `Platform` is a set of requirements, such as hardware, operating system, or compiler toolchain, for an Action's execution environment. A `Platform` is represented as a series of key-value pairs representing the properties that are required of the platform.
 
   ## Attributes
 
-  *   `properties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PlatformProperty.t)`, *default:* `nil`) - The properties that make up this platform. In order to ensure that
-      equivalent `Platform`s always hash to the same value, the properties MUST
-      be lexicographically sorted by name, and then by value. Sorting of strings
-      is done by code point, equivalently, by the UTF-8 bytes.
+  *   `properties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PlatformProperty.t)`, *default:* `nil`) - The properties that make up this platform. In order to ensure that equivalent `Platform`s always hash to the same value, the properties MUST be lexicographically sorted by name, and then by value. Sorting of strings is done by code point, equivalently, by the UTF-8 bytes.
   """
 
   use GoogleApi.Gax.ModelBase

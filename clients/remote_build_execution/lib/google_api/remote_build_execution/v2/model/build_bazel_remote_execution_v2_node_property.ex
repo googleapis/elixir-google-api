@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty do
   @moduledoc """
-  A single property for FileNodes,
-  DirectoryNodes, and
-  SymlinkNodes. The server is
-  responsible for specifying the property `name`s that it accepts. If
-  permitted by the server, the same `name` may occur multiple times.
+  A single property for FileNodes, DirectoryNodes, and SymlinkNodes. The server is responsible for specifying the property `name`s that it accepts. If permitted by the server, the same `name` may occur multiple times.
 
   ## Attributes
 

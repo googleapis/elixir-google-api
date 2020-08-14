@@ -26,29 +26,13 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieve a cached execution result.
-
-  Implementations SHOULD ensure that any blobs referenced from the
-  ContentAddressableStorage
-  are available at the time of returning the
-  ActionResult and will be
-  for some period of time afterwards. The TTLs of the referenced blobs SHOULD be increased
-  if necessary and applicable.
-
-  Errors:
-
-  * `NOT_FOUND`: The requested `ActionResult` is not in the cache.
+  Retrieve a cached execution result. Implementations SHOULD ensure that any blobs referenced from the ContentAddressableStorage are available at the time of returning the ActionResult and will be for some period of time afterwards. The TTLs of the referenced blobs SHOULD be increased if necessary and applicable. Errors: * `NOT_FOUND`: The requested `ActionResult` is not in the cache.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RemoteBuildExecution.V2.Connection.t`) - Connection to server
-  *   `instance_name` (*type:* `String.t`) - The instance of the execution system to operate against. A server may
-      support multiple instances of the execution system (with their own workers,
-      storage, caches, etc.). The server MAY require use of this field to select
-      between them in an implementation-defined fashion, otherwise it can be
-      omitted.
-  *   `hash` (*type:* `String.t`) - The hash. In the case of SHA-256, it will always be a lowercase hex string
-      exactly 64 characters long.
+  *   `instance_name` (*type:* `String.t`) - The instance of the execution system to operate against. A server may support multiple instances of the execution system (with their own workers, storage, caches, etc.). The server MAY require use of this field to select between them in an implementation-defined fashion, otherwise it can be omitted.
+  *   `hash` (*type:* `String.t`) - The hash. In the case of SHA-256, it will always be a lowercase hex string exactly 64 characters long.
   *   `size_bytes` (*type:* `String.t`) - The size of the blob, in bytes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -62,13 +46,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:inlineOutputFiles` (*type:* `list(String.t)`) - A hint to the server to inline the contents of the listed output files.
-          Each path needs to exactly match one path in `output_files` in the
-          Command message.
-      *   `:inlineStderr` (*type:* `boolean()`) - A hint to the server to request inlining stderr in the
-          ActionResult message.
-      *   `:inlineStdout` (*type:* `boolean()`) - A hint to the server to request inlining stdout in the
-          ActionResult message.
+      *   `:inlineOutputFiles` (*type:* `list(String.t)`) - A hint to the server to inline the contents of the listed output files. Each path needs to exactly match one path in `output_files` in the Command message.
+      *   `:inlineStderr` (*type:* `boolean()`) - A hint to the server to request inlining stderr in the ActionResult message.
+      *   `:inlineStdout` (*type:* `boolean()`) - A hint to the server to request inlining stdout in the ActionResult message.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -136,33 +116,13 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
   end
 
   @doc """
-  Upload a new execution result.
-
-  In order to allow the server to perform access control based on the type of
-  action, and to assist with client debugging, the client MUST first upload
-  the Action that produced the
-  result, along with its
-  Command, into the
-  `ContentAddressableStorage`.
-
-  Errors:
-
-  * `INVALID_ARGUMENT`: One or more arguments are invalid.
-  * `FAILED_PRECONDITION`: One or more errors occurred in updating the
-    action result, such as a missing command or action.
-  * `RESOURCE_EXHAUSTED`: There is insufficient storage space to add the
-    entry to the cache.
+  Upload a new execution result. In order to allow the server to perform access control based on the type of action, and to assist with client debugging, the client MUST first upload the Action that produced the result, along with its Command, into the `ContentAddressableStorage`. Errors: * `INVALID_ARGUMENT`: One or more arguments are invalid. * `FAILED_PRECONDITION`: One or more errors occurred in updating the action result, such as a missing command or action. * `RESOURCE_EXHAUSTED`: There is insufficient storage space to add the entry to the cache.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RemoteBuildExecution.V2.Connection.t`) - Connection to server
-  *   `instance_name` (*type:* `String.t`) - The instance of the execution system to operate against. A server may
-      support multiple instances of the execution system (with their own workers,
-      storage, caches, etc.). The server MAY require use of this field to select
-      between them in an implementation-defined fashion, otherwise it can be
-      omitted.
-  *   `hash` (*type:* `String.t`) - The hash. In the case of SHA-256, it will always be a lowercase hex string
-      exactly 64 characters long.
+  *   `instance_name` (*type:* `String.t`) - The instance of the execution system to operate against. A server may support multiple instances of the execution system (with their own workers, storage, caches, etc.). The server MAY require use of this field to select between them in an implementation-defined fashion, otherwise it can be omitted.
+  *   `hash` (*type:* `String.t`) - The hash. In the case of SHA-256, it will always be a lowercase hex string exactly 64 characters long.
   *   `size_bytes` (*type:* `String.t`) - The size of the blob, in bytes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -176,14 +136,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"resultsCachePolicy.priority"` (*type:* `integer()`) - The priority (relative importance) of this content in the overall cache.
-          Generally, a lower value means a longer retention time or other advantage,
-          but the interpretation of a given value is server-dependent. A priority of
-          0 means a *default* value, decided by the server.
-
-          The particular semantics of this field is up to the server. In particular,
-          every server will have their own supported range of priorities, and will
-          decide how these map into retention/eviction policy.
+      *   `:"resultsCachePolicy.priority"` (*type:* `integer()`) - The priority (relative importance) of this content in the overall cache. Generally, a lower value means a longer retention time or other advantage, but the interpretation of a given value is server-dependent. A priority of 0 means a *default* value, decided by the server. The particular semantics of this field is up to the server. In particular, every server will have their own supported range of priorities, and will decide how these map into retention/eviction policy.
       *   `:body` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ActionResult.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCommandEvents do
   @moduledoc """
-  CommandEvents contains counters for the number of warnings and errors
-  that occurred during the execution of a command.
+  CommandEvents contains counters for the number of warnings and errors that occurred during the execution of a command.
 
   ## Attributes
 
-  *   `dockerCacheHit` (*type:* `boolean()`, *default:* `nil`) - Indicates whether we are using a cached Docker image (true) or had to pull
-      the Docker image (false) for this command.
+  *   `dockerCacheHit` (*type:* `boolean()`, *default:* `nil`) - Indicates whether we are using a cached Docker image (true) or had to pull the Docker image (false) for this command.
   *   `inputCacheMiss` (*type:* `number()`, *default:* `nil`) - The input cache miss ratio.
   *   `numErrors` (*type:* `String.t`, *default:* `nil`) - The number of errors reported.
   *   `numWarnings` (*type:* `String.t`, *default:* `nil`) - The number of warnings reported.
