@@ -15,11 +15,6 @@
     "name": "AccessApproval"
   },
   {
-    "version": "v1beta1",
-    "url": "https://accessapproval.googleapis.com/$discovery/rest?version=v1beta1",
-    "name": "AccessApproval"
-  },
-  {
     "version": "v1",
     "url": "https://accesscontextmanager.googleapis.com/$discovery/rest?version=v1",
     "name": "AccessContextManager"
@@ -40,8 +35,8 @@
     "name": "AdExperienceReport"
   },
   {
-    "version": "reports_v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/admin/reports_v1/rest",
+    "version": "datatransfer_v1",
+    "url": "https://www.googleapis.com/discovery/v1/apis/admin/datatransfer_v1/rest",
     "name": "Admin"
   },
   {
@@ -50,8 +45,8 @@
     "name": "Admin"
   },
   {
-    "version": "datatransfer_v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/admin/datatransfer_v1/rest",
+    "version": "reports_v1",
+    "url": "https://www.googleapis.com/discovery/v1/apis/admin/reports_v1/rest",
     "name": "Admin"
   },
   {
@@ -61,12 +56,12 @@
   },
   {
     "version": "v1.4",
-    "url": "https://www.googleapis.com/discovery/v1/apis/adsense/v1.4/rest",
+    "url": "https://adsense.googleapis.com/$discovery/rest?version=v1.4",
     "name": "AdSense"
   },
   {
     "version": "v4.1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/adsensehost/v4.1/rest",
+    "url": "https://adsensehost.googleapis.com/$discovery/rest?version=v4.1",
     "name": "AdSenseHost"
   },
   {
@@ -120,6 +115,11 @@
     "name": "AppsActivity"
   },
   {
+    "version": "v1beta1",
+    "url": "https://artifactregistry.googleapis.com/$discovery/rest?version=v1beta1",
+    "name": "ArtifactRegistry"
+  },
+  {
     "version": "v2",
     "url": "https://www.googleapis.com/discovery/v1/apis/bigquery/v2/rest",
     "name": "BigQuery"
@@ -156,7 +156,7 @@
   },
   {
     "version": "v3",
-    "url": "https://www.googleapis.com/discovery/v1/apis/blogger/v3/rest",
+    "url": "https://blogger.googleapis.com/$discovery/rest?version=v3",
     "name": "Blogger"
   },
   {
@@ -175,8 +175,13 @@
     "name": "Chat"
   },
   {
+    "version": "v1",
+    "url": "https://chromeuxreport.googleapis.com/$discovery/rest?version=v1",
+    "name": "ChromeUXReport"
+  },
+  {
     "version": "v2",
-    "url": "https://www.googleapis.com/discovery/v1/apis/civicinfo/v2/rest",
+    "url": "https://civicinfo.googleapis.com/$discovery/rest?version=v2",
     "name": "CivicInfo"
   },
   {
@@ -285,11 +290,6 @@
     "name": "CloudTrace"
   },
   {
-    "version": "v1alpha1",
-    "url": "https://commentanalyzer.googleapis.com/$discovery/rest?version=v1alpha1",
-    "name": "CommentAnalyzer"
-  },
-  {
     "version": "v1",
     "url": "https://composer.googleapis.com/$discovery/rest?version=v1",
     "name": "Composer"
@@ -326,7 +326,7 @@
   },
   {
     "version": "v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/customsearch/v1/rest",
+    "url": "https://customsearch.googleapis.com/$discovery/rest?version=v1",
     "name": "CustomSearch"
   },
   {
@@ -338,6 +338,11 @@
     "version": "v1b3",
     "url": "https://dataflow.googleapis.com/$discovery/rest?version=v1b3",
     "name": "Dataflow"
+  },
+  {
+    "version": "v1",
+    "url": "https://datafusion.googleapis.com/$discovery/rest?version=v1",
+    "name": "DataFusion"
   },
   {
     "version": "v1beta1",
@@ -396,13 +401,18 @@
   },
   {
     "version": "v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/dns/v1/rest",
+    "url": "https://dns.googleapis.com/$discovery/rest?version=v1",
     "name": "DNS"
   },
   {
     "version": "v1",
     "url": "https://docs.googleapis.com/$discovery/rest?version=v1",
     "name": "Docs"
+  },
+  {
+    "version": "v1beta2",
+    "url": "https://documentai.googleapis.com/$discovery/rest?version=v1beta2",
+    "name": "DocumentAI"
   },
   {
     "version": "v1",
@@ -460,9 +470,19 @@
     "name": "FirebaseDynamicLinks"
   },
   {
+    "version": "v1",
+    "url": "https://firebasehosting.googleapis.com/$discovery/rest?version=v1",
+    "name": "FirebaseHosting"
+  },
+  {
     "version": "v1beta1",
     "url": "https://firebasehosting.googleapis.com/$discovery/rest?version=v1beta1",
     "name": "FirebaseHosting"
+  },
+  {
+    "version": "v1",
+    "url": "https://firebaseml.googleapis.com/$discovery/rest?version=v1",
+    "name": "FirebaseML"
   },
   {
     "version": "v1",
@@ -481,23 +501,23 @@
   },
   {
     "version": "v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/fitness/v1/rest",
+    "url": "https://www.googleapis.com/$discovery/rest?version=v1",
     "name": "Fitness"
   },
   {
     "version": "v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/webfonts/v1/rest",
-    "name": "Fonts"
-  },
-  {
-    "version": "v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/games/v1/rest",
+    "url": "https://games.googleapis.com/$discovery/rest?version=v1",
     "name": "Games"
   },
   {
     "version": "v1configuration",
-    "url": "https://www.googleapis.com/discovery/v1/apis/gamesConfiguration/v1configuration/rest",
+    "url": "https://gamesconfiguration.googleapis.com/$discovery/rest?version=v1configuration",
     "name": "GamesConfiguration"
+  },
+  {
+    "version": "v1",
+    "url": "https://gameservices.googleapis.com/$discovery/rest?version=v1",
+    "name": "GameServices"
   },
   {
     "version": "v1beta",
@@ -506,7 +526,7 @@
   },
   {
     "version": "v1management",
-    "url": "https://www.googleapis.com/discovery/v1/apis/gamesManagement/v1management/rest",
+    "url": "https://gamesmanagement.googleapis.com/$discovery/rest?version=v1management",
     "name": "GamesManagement"
   },
   {
@@ -520,14 +540,24 @@
     "name": "Gmail"
   },
   {
+    "version": "v1beta1",
+    "url": "https://gmailpostmastertools.googleapis.com/$discovery/rest?version=v1beta1",
+    "name": "GmailPostmasterTools"
+  },
+  {
     "version": "v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/groupsmigration/v1/rest",
+    "url": "https://www.googleapis.com/$discovery/rest?version=v1",
     "name": "GroupsMigration"
   },
   {
     "version": "v1",
     "url": "https://www.googleapis.com/discovery/v1/apis/groupssettings/v1/rest",
     "name": "GroupsSettings"
+  },
+  {
+    "version": "v1",
+    "url": "https://healthcare.googleapis.com/$discovery/rest?version=v1",
+    "name": "HealthCare"
   },
   {
     "version": "v1beta1",
@@ -615,6 +645,11 @@
     "name": "Manufacturers"
   },
   {
+    "version": "v1",
+    "url": "https://memcache.googleapis.com/$discovery/rest?version=v1",
+    "name": "Memcache"
+  },
+  {
     "version": "v1beta2",
     "url": "https://memcache.googleapis.com/$discovery/rest?version=v1beta2",
     "name": "Memcache"
@@ -625,14 +660,14 @@
     "name": "Monitoring"
   },
   {
-    "version": "v1beta1",
-    "url": "https://networkmanagement.googleapis.com/$discovery/rest?version=v1beta1",
+    "version": "v1",
+    "url": "https://networkmanagement.googleapis.com/$discovery/rest?version=v1",
     "name": "NetworkManagement"
   },
   {
-    "version": "v2",
-    "url": "https://www.googleapis.com/discovery/v1/apis/oauth2/v2/rest",
-    "name": "OAuth2"
+    "version": "v1beta1",
+    "url": "https://networkmanagement.googleapis.com/$discovery/rest?version=v1beta1",
+    "name": "NetworkManagement"
   },
   {
     "version": "v1",
@@ -651,7 +686,7 @@
   },
   {
     "version": "v5",
-    "url": "https://www.googleapis.com/discovery/v1/apis/pagespeedonline/v5/rest",
+    "url": "https://pagespeedonline.googleapis.com/$discovery/rest?version=v5",
     "name": "PageSpeedOnline"
   },
   {
@@ -660,9 +695,19 @@
     "name": "People"
   },
   {
+    "version": "v3",
+    "url": "https://playablelocations.googleapis.com/$discovery/rest?version=v3",
+    "name": "PlayableLocations"
+  },
+  {
     "version": "v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/playcustomapp/v1/rest",
+    "url": "https://www.googleapis.com/$discovery/rest?version=v1",
     "name": "PlayCustomApp"
+  },
+  {
+    "version": "v1",
+    "url": "https://www.googleapis.com/discovery/v1/apis/plus/v1/rest",
+    "name": "Plus"
   },
   {
     "version": "v1",
@@ -680,9 +725,34 @@
     "name": "Poly"
   },
   {
+    "version": "v1alpha1",
+    "url": "https://prod-tt-sasportal.googleapis.com/$discovery/rest?version=v1alpha1",
+    "name": "Prod_TT_SASPortal"
+  },
+  {
     "version": "v1",
     "url": "https://pubsub.googleapis.com/$discovery/rest?version=v1",
     "name": "PubSub"
+  },
+  {
+    "version": "v1",
+    "url": "https://pubsublite.googleapis.com/$discovery/rest?version=v1",
+    "name": "PubSubLite"
+  },
+  {
+    "version": "v1",
+    "url": "https://realtimebidding.googleapis.com/$discovery/rest?version=v1",
+    "name": "RealTimeBidding"
+  },
+  {
+    "version": "v1beta1",
+    "url": "https://recommendationengine.googleapis.com/$discovery/rest?version=v1beta1",
+    "name": "RecommendationEngine"
+  },
+  {
+    "version": "v1",
+    "url": "https://recommender.googleapis.com/$discovery/rest?version=v1",
+    "name": "Recommender"
   },
   {
     "version": "v1beta1",
@@ -725,6 +795,11 @@
     "name": "SafeBrowsing"
   },
   {
+    "version": "v1alpha1",
+    "url": "https://sasportal.googleapis.com/$discovery/rest?version=v1alpha1",
+    "name": "SASPortal"
+  },
+  {
     "version": "v1",
     "url": "https://script.googleapis.com/$discovery/rest?version=v1",
     "name": "Script"
@@ -757,6 +832,11 @@
   {
     "version": "v1",
     "url": "https://servicecontrol.googleapis.com/$discovery/rest?version=v1",
+    "name": "ServiceControl"
+  },
+  {
+    "version": "v2",
+    "url": "https://servicecontrol.googleapis.com/$discovery/rest?version=v2",
     "name": "ServiceControl"
   },
   {
@@ -855,19 +935,19 @@
     "name": "TextToSpeech"
   },
   {
-    "version": "v1",
-    "url": "https://toolresults.googleapis.com/$discovery/rest?version=v1",
-    "name": "ToolResults"
-  },
-  {
     "version": "v1beta3",
-    "url": "https://www.googleapis.com/discovery/v1/apis/toolresults/v1beta3/rest",
+    "url": "https://toolresults.googleapis.com/$discovery/rest?version=v1beta3",
     "name": "ToolResults"
   },
   {
     "version": "v1",
     "url": "https://tpu.googleapis.com/$discovery/rest?version=v1",
     "name": "TPU"
+  },
+  {
+    "version": "v2",
+    "url": "https://trafficdirector.googleapis.com/$discovery/rest?version=v2",
+    "name": "TrafficDirector"
   },
   {
     "version": "v2",
@@ -883,6 +963,11 @@
     "version": "v1",
     "url": "https://vault.googleapis.com/$discovery/rest?version=v1",
     "name": "Vault"
+  },
+  {
+    "version": "v1",
+    "url": "https://vectortile.googleapis.com/$discovery/rest?version=v1",
+    "name": "VectorTile"
   },
   {
     "version": "v1",
