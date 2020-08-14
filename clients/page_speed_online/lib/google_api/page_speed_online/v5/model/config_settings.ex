@@ -21,8 +21,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.ConfigSettings do
 
   ## Attributes
 
-  *   `channel` (*type:* `String.t`, *default:* `nil`) - How Lighthouse was run, e.g. from the Chrome extension or from the npm
-      module.
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - How Lighthouse was run, e.g. from the Chrome extension or from the npm module.
   *   `emulatedFormFactor` (*type:* `String.t`, *default:* `nil`) - The form factor the emulation should use.
   *   `locale` (*type:* `String.t`, *default:* `nil`) - The locale setting.
   *   `onlyCategories` (*type:* `any()`, *default:* `nil`) - List of categories of audits the run should conduct.

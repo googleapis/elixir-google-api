@@ -21,8 +21,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.I18n do
 
   ## Attributes
 
-  *   `rendererFormattedStrings` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.RendererFormattedStrings.t`, *default:* `nil`) - Internationalized strings that are formatted to the locale in
-      configSettings.
+  *   `rendererFormattedStrings` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.RendererFormattedStrings.t`, *default:* `nil`) - Internationalized strings that are formatted to the locale in configSettings.
   """
 
   use GoogleApi.Gax.ModelBase

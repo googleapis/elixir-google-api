@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.PageSpeedOnline.V5.Model.AuditRefs do
   @moduledoc """
-  A light reference to an audit by id, used to group and weight audits in a
-  given category.
+  A light reference to an audit by id, used to group and weight audits in a given category.
 
   ## Attributes
 

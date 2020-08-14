@@ -31,9 +31,8 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5 do
   *   `i18n` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.I18n.t`, *default:* `nil`) - The internationalization strings that are required to render the LHR.
   *   `lighthouseVersion` (*type:* `String.t`, *default:* `nil`) - The lighthouse version that was used to generate this LHR.
   *   `requestedUrl` (*type:* `String.t`, *default:* `nil`) - The original requested url.
-  *   `runWarnings` (*type:* `list(any())`, *default:* `nil`) - List of all run warnings in the LHR.  Will always output to at least `[]`.
-  *   `runtimeError` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.RuntimeError.t`, *default:* `nil`) - A top-level error message that, if present, indicates a serious enough
-      problem that this Lighthouse result may need to be discarded.
+  *   `runWarnings` (*type:* `list(any())`, *default:* `nil`) - List of all run warnings in the LHR. Will always output to at least `[]`.
+  *   `runtimeError` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.RuntimeError.t`, *default:* `nil`) - A top-level error message that, if present, indicates a serious enough problem that this Lighthouse result may need to be discarded.
   *   `stackPacks` (*type:* `list(GoogleApi.PageSpeedOnline.V5.Model.StackPack.t)`, *default:* `nil`) - The Stack Pack advice strings.
   *   `timing` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.Timing.t`, *default:* `nil`) - Timing information for this LHR.
   *   `userAgent` (*type:* `String.t`, *default:* `nil`) - The user agent that was used to run this LHR.
