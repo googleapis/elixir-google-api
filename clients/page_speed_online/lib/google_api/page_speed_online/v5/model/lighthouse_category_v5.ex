@@ -25,8 +25,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5 do
   *   `description` (*type:* `String.t`, *default:* `nil`) - A more detailed description of the category and its importance.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The string identifier of the category.
   *   `manualDescription` (*type:* `String.t`, *default:* `nil`) - A description for the manual audits in the category.
-  *   `score` (*type:* `any()`, *default:* `nil`) - The overall score of the category, the weighted average of all its audits.
-      (The category's score, can be null.)
+  *   `score` (*type:* `any()`, *default:* `nil`) - The overall score of the category, the weighted average of all its audits. (The category's score, can be null.)
   *   `title` (*type:* `String.t`, *default:* `nil`) - The human-friendly name of the category.
   """
 

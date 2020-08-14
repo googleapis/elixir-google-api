@@ -26,9 +26,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Api.Pagespeedapi do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Runs PageSpeed analysis on the page at the specified URL, and returns
-  PageSpeed scores, a list of suggestions to make that page faster, and other
-  information.
+  Runs PageSpeed analysis on the page at the specified URL, and returns PageSpeed scores, a list of suggestions to make that page faster, and other information.
 
   ## Parameters
 
@@ -46,12 +44,10 @@ defmodule GoogleApi.PageSpeedOnline.V5.Api.Pagespeedapi do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:captchaToken` (*type:* `String.t`) - The captcha token passed when filling out a captcha.
-      *   `:category` (*type:* `list(String.t)`) - A Lighthouse category to run; if none are given, only Performance category
-          will be run
+      *   `:category` (*type:* `list(String.t)`) - A Lighthouse category to run; if none are given, only Performance category will be run
       *   `:locale` (*type:* `String.t`) - The locale used to localize formatted results
-      *   `:strategy` (*type:* `String.t`) - The analysis strategy (desktop or mobile) to use, and desktop is the
-          default
-      *   `:url` (*type:* `String.t`) - The URL to fetch and analyze
+      *   `:strategy` (*type:* `String.t`) - The analysis strategy (desktop or mobile) to use, and desktop is the default
+      *   `:url` (*type:* `String.t`) - Required. The URL to fetch and analyze
       *   `:utm_campaign` (*type:* `String.t`) - Campaign name for analytics.
       *   `:utm_source` (*type:* `String.t`) - Campaign source for analytics.
   *   `opts` (*type:* `keyword()`) - Call options

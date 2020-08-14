@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.PageSpeedOnline.V5.Model.Bucket do
   @moduledoc """
-  A proportion of data in the total distribution, bucketed by a min/max
-  percentage. Each bucket's range is bounded by min <= x < max, In
-  millisecond.
+  A proportion of data in the total distribution, bucketed by a min/max percentage. Each bucket's range is bounded by min <= x < max, In millisecond.
 
   ## Attributes
 

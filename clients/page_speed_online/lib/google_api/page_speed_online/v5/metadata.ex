@@ -20,7 +20,7 @@ defmodule GoogleApi.PageSpeedOnline.V5 do
   API client metadata for GoogleApi.PageSpeedOnline.V5.
   """
 
-  @discovery_revision "20200723"
+  @discovery_revision "20200813"
 
   def discovery_revision(), do: @discovery_revision
 end

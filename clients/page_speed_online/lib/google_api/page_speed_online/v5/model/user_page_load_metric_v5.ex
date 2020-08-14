@@ -26,9 +26,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5 do
   *   `formFactor` (*type:* `String.t`, *default:* `nil`) - Identifies the form factor of the metric being collected.
   *   `median` (*type:* `integer()`, *default:* `nil`) - The median number of the metric, in millisecond.
   *   `metricId` (*type:* `String.t`, *default:* `nil`) - Identifies the type of the metric.
-  *   `percentile` (*type:* `integer()`, *default:* `nil`) - We use this field to store certain percentile value for this metric.
-      For v4, this field contains pc50.
-      For v5, this field contains pc90.
+  *   `percentile` (*type:* `integer()`, *default:* `nil`) - We use this field to store certain percentile value for this metric. For v4, this field contains pc50. For v5, this field contains pc90.
   """
 
   use GoogleApi.Gax.ModelBase

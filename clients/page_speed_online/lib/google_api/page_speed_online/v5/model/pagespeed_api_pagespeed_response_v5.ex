@@ -23,8 +23,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5 do
 
   *   `analysisUTCTimestamp` (*type:* `String.t`, *default:* `nil`) - The UTC timestamp of this analysis.
   *   `captchaResult` (*type:* `String.t`, *default:* `nil`) - The captcha verify result
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Canonicalized and final URL for the document, after following page
-      redirects (if any).
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Canonicalized and final URL for the document, after following page redirects (if any).
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Kind of result.
   *   `lighthouseResult` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5.t`, *default:* `nil`) - Lighthouse response for the audit url as an object.
   *   `loadingExperience` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5.t`, *default:* `nil`) - Metrics of end users' page loading experience.
