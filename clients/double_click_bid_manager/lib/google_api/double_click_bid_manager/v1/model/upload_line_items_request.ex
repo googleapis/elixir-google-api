@@ -21,12 +21,9 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.UploadLineItemsRequest do
 
   ## Attributes
 
-  *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - Set to <code>true</code> to get upload status without actually persisting
-      the line items.
-  *   `format` (*type:* `String.t`, *default:* `nil`) - Format the line items are in. Default to <code>CSV</code>.
-  *   `lineItems` (*type:* `String.t`, *default:* `nil`) - Line items in CSV to upload. Refer to <a
-      href="https://developers.google.com/bid-manager/guides/entity-write/format">
-      Entity Write File Format</a> for more information on file format.
+  *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - Set to true to get upload status without actually persisting the line items.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - Format the line items are in. Default to CSV.
+  *   `lineItems` (*type:* `String.t`, *default:* `nil`) - Line items in CSV to upload. Refer to Entity Write File Format for more information on file format.
   """
 
   use GoogleApi.Gax.ModelBase

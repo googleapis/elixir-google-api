@@ -43,8 +43,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:asynchronous` (*type:* `boolean()`) - If true, tries to run the query asynchronously. Only applicable when
-          the frequency is <code>ONE_TIME</code>.
+      *   `:asynchronous` (*type:* `boolean()`) - If true, tries to run the query asynchronously. Only applicable when the frequency is ONE_TIME.
       *   `:body` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.Query.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -77,7 +76,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/doubleclickbidmanager/v1.1/query", %{})
+      |> Request.url("/query", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -141,7 +140,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/doubleclickbidmanager/v1.1/query/{queryId}", %{
+      |> Request.url("/query/{queryId}", %{
         "queryId" => URI.encode(query_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -210,7 +209,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/doubleclickbidmanager/v1.1/query/{queryId}", %{
+      |> Request.url("/query/{queryId}", %{
         "queryId" => URI.encode(query_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -239,8 +238,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of results per page. Must be between <code>1</code> and
-          <code>100</code>. Defaults to <code>100</code> if unspecified.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of results per page. Must be between 1 and 100. Defaults to 100 if unspecified.
       *   `:pageToken` (*type:* `String.t`) - Optional pagination token.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -273,7 +271,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/doubleclickbidmanager/v1.1/queries", %{})
+      |> Request.url("/queries", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -343,7 +341,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/doubleclickbidmanager/v1.1/query/{queryId}", %{
+      |> Request.url("/query/{queryId}", %{
         "queryId" => URI.encode(query_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

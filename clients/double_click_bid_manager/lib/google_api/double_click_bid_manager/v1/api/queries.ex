@@ -74,7 +74,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/doubleclickbidmanager/v1/query", %{})
+      |> Request.url("/query", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -138,7 +138,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/doubleclickbidmanager/v1/query/{queryId}", %{
+      |> Request.url("/query/{queryId}", %{
         "queryId" => URI.encode(query_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -207,7 +207,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/doubleclickbidmanager/v1/query/{queryId}", %{
+      |> Request.url("/query/{queryId}", %{
         "queryId" => URI.encode(query_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -265,7 +265,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/doubleclickbidmanager/v1/queries", %{})
+      |> Request.url("/queries", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -333,7 +333,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/doubleclickbidmanager/v1/query/{queryId}", %{
+      |> Request.url("/query/{queryId}", %{
         "queryId" => URI.encode(query_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

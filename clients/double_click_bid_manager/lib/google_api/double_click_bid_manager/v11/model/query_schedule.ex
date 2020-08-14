@@ -23,10 +23,8 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.QuerySchedule do
 
   *   `endTimeMs` (*type:* `String.t`, *default:* `nil`) - Datetime to periodically run the query until.
   *   `frequency` (*type:* `String.t`, *default:* `nil`) - How often the query is run.
-  *   `nextRunMinuteOfDay` (*type:* `integer()`, *default:* `nil`) - Time of day at which a new report will be generated, represented as minutes
-      past midnight. Range is 0 to 1439. Only applies to scheduled reports.
-  *   `nextRunTimezoneCode` (*type:* `String.t`, *default:* `nil`) - Canonical timezone code for report generation time. Defaults to
-      <code>America/New_York</code>.
+  *   `nextRunMinuteOfDay` (*type:* `integer()`, *default:* `nil`) - Time of day at which a new report will be generated, represented as minutes past midnight. Range is 0 to 1439. Only applies to scheduled reports.
+  *   `nextRunTimezoneCode` (*type:* `String.t`, *default:* `nil`) - Canonical timezone code for report generation time. Defaults to America/New_York.
   *   `startTimeMs` (*type:* `String.t`, *default:* `nil`) - When to start running the query. Not applicable to `ONE_TIME` frequency.
   """
 

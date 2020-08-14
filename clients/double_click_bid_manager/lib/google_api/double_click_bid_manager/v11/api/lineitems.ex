@@ -26,8 +26,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Lineitems do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves line items in CSV format. YouTube & partners line items are not
-  supported.
+  Retrieves line items in CSV format. YouTube & partners line items are not supported.
 
   ## Parameters
 
@@ -83,7 +82,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Lineitems do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/doubleclickbidmanager/v1.1/lineitems/downloadlineitems", %{})
+      |> Request.url("/lineitems/downloadlineitems", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -95,8 +94,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Lineitems do
   end
 
   @doc """
-  Uploads line items in CSV format. YouTube & partners line items are not
-  supported.
+  Uploads line items in CSV format. YouTube & partners line items are not supported.
 
   ## Parameters
 
@@ -148,7 +146,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Lineitems do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/doubleclickbidmanager/v1.1/lineitems/uploadlineitems", %{})
+      |> Request.url("/lineitems/uploadlineitems", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

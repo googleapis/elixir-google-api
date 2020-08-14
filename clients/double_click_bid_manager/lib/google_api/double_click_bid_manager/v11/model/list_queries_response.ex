@@ -21,8 +21,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.ListQueriesResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string
-      <code>"doubleclickbidmanager#listQueriesResponse"</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#listQueriesResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Next page's pagination token if one exists.
   *   `queries` (*type:* `list(GoogleApi.DoubleClickBidManager.V11.Model.Query.t)`, *default:* `nil`) - Retrieved queries.
   """

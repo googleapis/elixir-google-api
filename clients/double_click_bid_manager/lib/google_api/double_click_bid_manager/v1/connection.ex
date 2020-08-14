@@ -28,5 +28,5 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Connection do
       "https://www.googleapis.com/auth/doubleclickbidmanager"
     ],
     otp_app: :google_api_double_click_bid_manager,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://www.googleapis.com/doubleclickbidmanager/v1/"
 end

@@ -22,14 +22,9 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.RunQueryRequest do
   ## Attributes
 
   *   `dataRange` (*type:* `String.t`, *default:* `nil`) - Report data range used to generate the report.
-  *   `reportDataEndTimeMs` (*type:* `String.t`, *default:* `nil`) - The ending time for the data that is shown in the report. Note,
-      <code>reportDataEndTimeMs</code> is required if <code>dataRange</code> is
-      <code>CUSTOM_DATES</code> and ignored otherwise.
-  *   `reportDataStartTimeMs` (*type:* `String.t`, *default:* `nil`) - The starting time for the data that is shown in the report. Note,
-      <code>reportDataStartTimeMs</code> is required if <code>dataRange</code> is
-      <code>CUSTOM_DATES</code> and ignored otherwise.
-  *   `timezoneCode` (*type:* `String.t`, *default:* `nil`) - Canonical timezone code for report data time. Defaults to
-      <code>America/New_York</code>.
+  *   `reportDataEndTimeMs` (*type:* `String.t`, *default:* `nil`) - The ending time for the data that is shown in the report. Note, reportDataEndTimeMs is required if dataRange is CUSTOM_DATES and ignored otherwise.
+  *   `reportDataStartTimeMs` (*type:* `String.t`, *default:* `nil`) - The starting time for the data that is shown in the report. Note, reportDataStartTimeMs is required if dataRange is CUSTOM_DATES and ignored otherwise.
+  *   `timezoneCode` (*type:* `String.t`, *default:* `nil`) - Canonical timezone code for report data time. Defaults to America/New_York.
   """
 
   use GoogleApi.Gax.ModelBase
