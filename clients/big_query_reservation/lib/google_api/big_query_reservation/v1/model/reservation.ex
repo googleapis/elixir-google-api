@@ -21,22 +21,28 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Reservation do
 
   ## Attributes
 
+  *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of the reservation.
   *   `ignoreIdleSlots` (*type:* `boolean()`, *default:* `nil`) - If false, any query using this reservation will use idle slots from other reservations within the same admin project. If true, a query using this reservation will execute with the slot capacity specified above at most.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the reservation, e.g., `projects/*/locations/*/reservations/team1-prod`.
   *   `slotCapacity` (*type:* `String.t`, *default:* `nil`) - Minimum slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the unit of parallelism. Queries using this reservation might use more slots during runtime if ignore_idle_slots is set to false. If the new reservation's slot capacity exceed the parent's slot capacity or if total slot capacity of the new reservation and its siblings exceeds the parent's slot capacity, the request will fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last update time of the reservation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :creationTime => DateTime.t(),
           :ignoreIdleSlots => boolean(),
           :name => String.t(),
-          :slotCapacity => String.t()
+          :slotCapacity => String.t(),
+          :updateTime => DateTime.t()
         }
 
+  field(:creationTime, as: DateTime)
   field(:ignoreIdleSlots)
   field(:name)
   field(:slotCapacity)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQueryReservation.V1.Model.Reservation do
