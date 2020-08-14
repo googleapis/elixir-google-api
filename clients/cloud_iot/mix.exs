@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudIot.Mixfile do
   use Mix.Project
 
-  @version "0.24.0"
+  @version "0.24.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.CloudIot.Mixfile do
 
   defp description() do
     """
-    Cloud IoT API client library. Registers and manages IoT (Internet of Things) devices that connect to the Google Cloud Platform.
-
+    Cloud IoT API client library. Registers and manages IoT (Internet of Things) devices that connect to the Google Cloud Platform. 
     """
   end
 
