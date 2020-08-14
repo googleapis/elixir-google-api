@@ -21,10 +21,8 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.Voice do
 
   ## Attributes
 
-  *   `languageCodes` (*type:* `list(String.t)`, *default:* `nil`) - The languages that this voice supports, expressed as
-      [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g.
-      "en-US", "es-419", "cmn-tw").
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this voice.  Each distinct voice has a unique name.
+  *   `languageCodes` (*type:* `list(String.t)`, *default:* `nil`) - The languages that this voice supports, expressed as [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g. "en-US", "es-419", "cmn-tw").
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this voice. Each distinct voice has a unique name.
   *   `naturalSampleRateHertz` (*type:* `integer()`, *default:* `nil`) - The natural sample rate (in hertz) for this voice.
   *   `ssmlGender` (*type:* `String.t`, *default:* `nil`) - The gender of this voice.
   """

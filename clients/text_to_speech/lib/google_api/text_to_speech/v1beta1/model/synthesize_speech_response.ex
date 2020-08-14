@@ -22,13 +22,8 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.SynthesizeSpeechResponse do
   ## Attributes
 
   *   `audioConfig` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.AudioConfig.t`, *default:* `nil`) - The audio metadata of `audio_content`.
-  *   `audioContent` (*type:* `String.t`, *default:* `nil`) - The audio data bytes encoded as specified in the request, including the
-      header for encodings that are wrapped in containers (e.g. MP3, OGG_OPUS).
-      For LINEAR16 audio, we include the WAV header. Note: as
-      with all bytes fields, protobuffers use a pure binary representation,
-      whereas JSON representations use base64.
-  *   `timepoints` (*type:* `list(GoogleApi.TextToSpeech.V1beta1.Model.Timepoint.t)`, *default:* `nil`) - A link between a position in the original request input and a corresponding
-      time in the output audio. It's only supported via <mark> of SSML input.
+  *   `audioContent` (*type:* `String.t`, *default:* `nil`) - The audio data bytes encoded as specified in the request, including the header for encodings that are wrapped in containers (e.g. MP3, OGG_OPUS). For LINEAR16 audio, we include the WAV header. Note: as with all bytes fields, protobuffers use a pure binary representation, whereas JSON representations use base64.
+  *   `timepoints` (*type:* `list(GoogleApi.TextToSpeech.V1beta1.Model.Timepoint.t)`, *default:* `nil`) - A link between a position in the original request input and a corresponding time in the output audio. It's only supported via of SSML input.
   """
 
   use GoogleApi.Gax.ModelBase
