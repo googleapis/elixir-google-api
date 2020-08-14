@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.IAP.V1.Model.Brand do
   @moduledoc """
-  OAuth brand data.
-  NOTE: Only contains a portion of the data that describes a brand.
+  OAuth brand data. NOTE: Only contains a portion of the data that describes a brand.
 
   ## Attributes
 
   *   `applicationTitle` (*type:* `String.t`, *default:* `nil`) - Application name displayed on OAuth consent screen.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier of the brand.
-      NOTE: GCP project number achieves the same brand identification purpose as
-      only one brand per project can be created.
-  *   `orgInternalOnly` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the brand is only intended for usage inside the
-      G Suite organization only.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier of the brand. NOTE: GCP project number achieves the same brand identification purpose as only one brand per project can be created.
+  *   `orgInternalOnly` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the brand is only intended for usage inside the G Suite organization only.
   *   `supportEmail` (*type:* `String.t`, *default:* `nil`) - Support email displayed on the OAuth consent screen.
   """
 

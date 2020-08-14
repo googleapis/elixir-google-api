@@ -22,14 +22,7 @@ defmodule GoogleApi.IAP.V1.Model.PolicyName do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - 
-  *   `region` (*type:* `String.t`, *default:* `nil`) - For Cloud IAM:
-      The location of the Policy.
-      Must be empty or "global" for Policies owned by global IAM.  Must name a
-      region from prodspec/cloud-iam-cloudspec for Regional IAM Policies, see
-      go/iam-faq#where-is-iam-currently-deployed.
-
-      For Local IAM:
-      This field should be set to "local".
+  *   `region` (*type:* `String.t`, *default:* `nil`) - For Cloud IAM: The location of the Policy. Must be empty or "global" for Policies owned by global IAM. Must name a region from prodspec/cloud-iam-cloudspec for Regional IAM Policies, see go/iam-faq#where-is-iam-currently-deployed. For Local IAM: This field should be set to "local".
   *   `type` (*type:* `String.t`, *default:* `nil`) - Valid values for type might be 'gce', 'gcs', 'project', 'account' etc.
   """
 

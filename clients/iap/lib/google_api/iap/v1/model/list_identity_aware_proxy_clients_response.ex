@@ -22,8 +22,7 @@ defmodule GoogleApi.IAP.V1.Model.ListIdentityAwareProxyClientsResponse do
   ## Attributes
 
   *   `identityAwareProxyClients` (*type:* `list(GoogleApi.IAP.V1.Model.IdentityAwareProxyClient.t)`, *default:* `nil`) - Clients existing in the brand.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be send as `page_token` to retrieve the next page.
-      If this field is omitted, there are no subsequent pages.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be send as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
   """
 
   use GoogleApi.Gax.ModelBase

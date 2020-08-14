@@ -24,8 +24,7 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
   *   `corsSettings` (*type:* `GoogleApi.IAP.V1.Model.CorsSettings.t`, *default:* `nil`) - Configuration to allow cross-origin requests via IAP.
   *   `gcipSettings` (*type:* `GoogleApi.IAP.V1.Model.GcipSettings.t`, *default:* `nil`) - GCIP claims and endpoint configurations for 3p identity providers.
   *   `oauthSettings` (*type:* `GoogleApi.IAP.V1.Model.OAuthSettings.t`, *default:* `nil`) - Settings to configure IAP's OAuth behavior.
-  *   `policyDelegationSettings` (*type:* `GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t`, *default:* `nil`) - Settings to configure Policy delegation for apps hosted in tenant projects.
-      INTERNAL_ONLY.
+  *   `policyDelegationSettings` (*type:* `GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t`, *default:* `nil`) - Settings to configure Policy delegation for apps hosted in tenant projects. INTERNAL_ONLY.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.IAP.V1.Model.CorsSettings do
   @moduledoc """
-  Allows customers to configure HTTP request paths that'll allow HTTP OPTIONS
-  call to bypass authentication and authorization.
+  Allows customers to configure HTTP request paths that'll allow HTTP OPTIONS call to bypass authentication and authorization.
 
   ## Attributes
 
-  *   `allowHttpOptions` (*type:* `boolean()`, *default:* `nil`) - Configuration to allow HTTP OPTIONS calls to skip authorization. If
-      undefined, IAP will not apply any special logic to OPTIONS requests.
+  *   `allowHttpOptions` (*type:* `boolean()`, *default:* `nil`) - Configuration to allow HTTP OPTIONS calls to skip authorization. If undefined, IAP will not apply any special logic to OPTIONS requests.
   """
 
   use GoogleApi.Gax.ModelBase

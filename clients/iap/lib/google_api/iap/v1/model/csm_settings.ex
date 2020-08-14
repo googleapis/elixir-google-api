@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.IAP.V1.Model.CsmSettings do
   @moduledoc """
-  Configuration for RCTokens generated for CSM workloads protected by IAP.
-  RCTokens are IAP generated JWTs that can be verified at the application. The
-  RCToken is primarily used for ISTIO deployments, and can be scoped to a
-  single mesh by configuring the audience field accordingly
+  Configuration for RCTokens generated for CSM workloads protected by IAP. RCTokens are IAP generated JWTs that can be verified at the application. The RCToken is primarily used for ISTIO deployments, and can be scoped to a single mesh by configuring the audience field accordingly
 
   ## Attributes
 
-  *   `rctokenAud` (*type:* `String.t`, *default:* `nil`) - Audience claim set in the generated RCToken. This value is not validated by
-      IAP.
+  *   `rctokenAud` (*type:* `String.t`, *default:* `nil`) - Audience claim set in the generated RCToken. This value is not validated by IAP.
   """
 
   use GoogleApi.Gax.ModelBase
