@@ -26,16 +26,12 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets the access control policy for an Identity-Aware Proxy protected
-  resource.
-  More information about managing access via IAP can be found at:
-  https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
+  Gets the access control policy for an Identity-Aware Proxy protected resource. More information about managing access via IAP can be found at: https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `v1_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -94,9 +90,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The resource name for which to retrieve the settings.
-      Authorization: Requires the `getSettings` permission for the associated
-      resource.
+  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The resource name for which to retrieve the settings. Authorization: Requires the `getSettings` permission for the associated resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -148,16 +142,12 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   end
 
   @doc """
-  Sets the access control policy for an Identity-Aware Proxy protected
-  resource. Replaces any existing policy.
-  More information about managing access via IAP can be found at:
-  https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
+  Sets the access control policy for an Identity-Aware Proxy protected resource. Replaces any existing policy. More information about managing access via IAP can be found at: https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `v1_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -211,16 +201,12 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   end
 
   @doc """
-  Returns permissions that a caller has on the Identity-Aware Proxy protected
-  resource.
-  More information about managing access via IAP can be found at:
-  https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
+  Returns permissions that a caller has on the Identity-Aware Proxy protected resource. More information about managing access via IAP can be found at: https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `v1_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -276,8 +262,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   end
 
   @doc """
-  Updates the IAP settings on a particular IAP protected resource. It
-  replaces all fields unless the `update_mask` is set.
+  Updates the IAP settings on a particular IAP protected resource. It replaces all fields unless the `update_mask` is set.
 
   ## Parameters
 
@@ -295,9 +280,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The field mask specifying which IAP settings should be updated.
-          If omitted, the all of the settings are updated. See
-          https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - The field mask specifying which IAP settings should be updated. If omitted, the all of the settings are updated. See https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
       *   `:body` (*type:* `GoogleApi.IAP.V1.Model.IapSettings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

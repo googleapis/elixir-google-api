@@ -26,19 +26,12 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Constructs a new OAuth brand for the project if one does not exist.
-  The created brand is "internal only", meaning that OAuth clients created
-  under it only accept requests from users who belong to the same G Suite
-  organization as the project. The brand is created in an un-reviewed status.
-  NOTE: The "internal only" status can be manually changed in the Google
-  Cloud console. Requires that a brand does not already exist for the
-  project, and that the specified support email is owned by the caller.
+  Constructs a new OAuth brand for the project if one does not exist. The created brand is "internal only", meaning that OAuth clients created under it only accept requests from users who belong to the same G Suite organization as the project. The brand is created in an un-reviewed status. NOTE: The "internal only" status can be manually changed in the Google Cloud console. Requires that a brand does not already exist for the project, and that the specified support email is owned by the caller.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id under which the brand is to be created.
-      In the following format: projects/{project_number/id}.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id under which the brand is to be created. In the following format: projects/{project_number/id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -97,8 +90,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the brand to be fetched.
-      In the following format: projects/{project_number/id}/brands/{brand}.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the brand to be fetched. In the following format: projects/{project_number/id}/brands/{brand}.
   *   `brands_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -163,8 +155,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id.
-      In the following format: projects/{project_number/id}.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id. In the following format: projects/{project_number/id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -218,17 +209,12 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   end
 
   @doc """
-  Creates an Identity Aware Proxy (IAP) OAuth client. The client is owned
-  by IAP. Requires that the brand for the project exists and that it is
-  set for internal-only use.
+  Creates an Identity Aware Proxy (IAP) OAuth client. The client is owned by IAP. Requires that the brand for the project exists and that it is set for internal-only use.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Path to create the client in.
-      In the following format:
-      projects/{project_number/id}/brands/{brand}.
-      The project must belong to a G Suite account.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Path to create the client in. In the following format: projects/{project_number/id}/brands/{brand}. The project must belong to a G Suite account.
   *   `brands_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -298,16 +284,12 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   end
 
   @doc """
-  Deletes an Identity Aware Proxy (IAP) OAuth client. Useful for removing
-  obsolete clients, managing the number of clients in a given project, and
-  cleaning up after tests. Requires that the client is owned by IAP.
+  Deletes an Identity Aware Proxy (IAP) OAuth client. Useful for removing obsolete clients, managing the number of clients in a given project, and cleaning up after tests. Requires that the client is owned by IAP.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the Identity Aware Proxy client to be deleted.
-      In the following format:
-      projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the Identity Aware Proxy client to be deleted. In the following format: projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
   *   `brands_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `identity_aware_proxy_clients_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -380,15 +362,12 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   end
 
   @doc """
-  Retrieves an Identity Aware Proxy (IAP) OAuth client.
-  Requires that the client is owned by IAP.
+  Retrieves an Identity Aware Proxy (IAP) OAuth client. Requires that the client is owned by IAP.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the Identity Aware Proxy client to be fetched.
-      In the following format:
-      projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the Identity Aware Proxy client to be fetched. In the following format: projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
   *   `brands_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `identity_aware_proxy_clients_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -469,8 +448,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Full brand path.
-      In the following format: projects/{project_number/id}/brands/{brand}.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Full brand path. In the following format: projects/{project_number/id}/brands/{brand}.
   *   `brands_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -484,16 +462,8 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of clients to return. The service may return fewer than
-          this value.
-          If unspecified, at most 100 clients will be returned.
-          The maximum value is 1000; values above 1000 will be coerced to 1000.
-      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListIdentityAwareProxyClients`
-          call. Provide this to retrieve the subsequent page.
-
-          When paginating, all other parameters provided to
-          `ListIdentityAwareProxyClients` must match the call that provided the page
-          token.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of clients to return. The service may return fewer than this value. If unspecified, at most 100 clients will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListIdentityAwareProxyClients` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListIdentityAwareProxyClients` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -552,15 +522,12 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   end
 
   @doc """
-  Resets an Identity Aware Proxy (IAP) OAuth client secret. Useful if the
-  secret was compromised. Requires that the client is owned by IAP.
+  Resets an Identity Aware Proxy (IAP) OAuth client secret. Useful if the secret was compromised. Requires that the client is owned by IAP.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the Identity Aware Proxy client to that will have its
-      secret reset. In the following format:
-      projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the Identity Aware Proxy client to that will have its secret reset. In the following format: projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
   *   `brands_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `identity_aware_proxy_clients_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
