@@ -21,8 +21,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Schem
 
   ## Attributes
 
-  *   `columns` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ColumnSchema.t)`, *default:* `nil`) - Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-      specified.
+  *   `columns` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ColumnSchema.t)`, *default:* `nil`) - Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be specified.
   """
 
   use GoogleApi.Gax.ModelBase

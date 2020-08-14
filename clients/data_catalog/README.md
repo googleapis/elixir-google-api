@@ -2,8 +2,7 @@
 
 Google Cloud Data Catalog API client library.
 
-A fully managed and highly scalable data discovery and metadata management service.
-
+A fully managed and highly scalable data discovery and metadata management service. 
 
 ## Installation
 

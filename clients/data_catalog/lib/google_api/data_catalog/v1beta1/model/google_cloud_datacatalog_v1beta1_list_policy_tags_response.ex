@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListPolicyTagsResponse do
   @moduledoc """
-  Response message for
-  ListPolicyTags.
+  Response message for ListPolicyTags.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to retrieve the next page of results, or empty if there are no more results in the list.
   *   `policyTags` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1PolicyTag.t)`, *default:* `nil`) - The policy tags that are in the requested taxonomy.
   """
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ExportTaxonomiesResponse do
   @moduledoc """
-  Response message for
-  ExportTaxonomies.
+  Response message for ExportTaxonomies.
 
   ## Attributes
 
