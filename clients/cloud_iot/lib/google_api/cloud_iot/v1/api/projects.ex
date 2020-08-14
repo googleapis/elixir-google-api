@@ -31,8 +31,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the registry. For example,
-      `projects/example-project/locations/us-central1/registries/my-registry`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the registry. For example, `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -116,8 +115,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and cloud region where this device registry must be created.
-      For example, `projects/example-project/locations/us-central1`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and cloud region where this device registry must be created. For example, `projects/example-project/locations/us-central1`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -192,8 +190,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device registry. For example,
-      `projects/example-project/locations/us-central1/registries/my-registry`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device registry. For example, `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -270,8 +267,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device registry. For example,
-      `projects/example-project/locations/us-central1/registries/my-registry`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device registry. For example, `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -346,15 +342,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -434,8 +427,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and cloud region path. For example,
-      `projects/example-project/locations/us-central1`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and cloud region path. For example, `projects/example-project/locations/us-central1`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -449,13 +441,8 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of registries to return in the response. If this value
-          is zero, the service will select a default size. A call may return fewer
-          objects than requested. A non-empty `next_page_token` in the response
-          indicates that more data is available.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListDeviceRegistriesResponse`; indicates
-          that this is a continuation of a prior `ListDeviceRegistries` call and
-          the system should return the next page of data.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of registries to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty `next_page_token` in the response indicates that more data is available.
+      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListDeviceRegistriesResponse`; indicates that this is a continuation of a prior `ListDeviceRegistries` call and the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -519,8 +506,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `deviceRegistry.name`. The resource path name. For example,
-      `projects/example-project/locations/us-central1/registries/my-registry`.
+  *   `projects_id` (*type:* `String.t`) - Part of `deviceRegistry.name`. The resource path name. For example, `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `deviceRegistry.name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `deviceRegistry.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -535,11 +521,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Only updates the `device_registry` fields indicated by this mask.
-          The field mask must not be empty, and it must not contain fields that
-          are immutable or only set by the server.
-          Mutable top-level fields: `event_notification_config`, `http_config`,
-          `mqtt_config`, and `state_notification_config`.
+      *   `:updateMask` (*type:* `String.t`) - Required. Only updates the `device_registry` fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: `event_notification_config`, `http_config`, `mqtt_config`, and `state_notification_config`.
       *   `:body` (*type:* `GoogleApi.CloudIot.V1.Model.DeviceRegistry.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -603,14 +585,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -685,15 +665,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -777,8 +754,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the registry. For example,
-      `projects/example-project/locations/us-central1/registries/my-registry`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the registry. For example, `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -862,9 +838,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the device registry where this device should be created.
-      For example,
-      `projects/example-project/locations/us-central1/registries/my-registry`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the device registry where this device should be created. For example, `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -944,9 +918,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
-      `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-      `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example, `projects/p0/locations/us-central1/registries/registry0/devices/device0` or `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1027,9 +999,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
-      `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-      `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example, `projects/p0/locations/us-central1/registries/registry0/devices/device0` or `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1045,8 +1015,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. If the
-          field mask is unset or empty, all fields are returned.
+      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. If the field mask is unset or empty, all fields are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1114,8 +1083,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The device registry path. Required. For example,
-      `projects/my-project/locations/us-central1/registries/my-registry`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The device registry path. Required. For example, `projects/my-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1130,31 +1098,14 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deviceIds` (*type:* `list(String.t)`) - A list of device string IDs. For example, `['device0', 'device12']`.
-          If empty, this field is ignored. Maximum IDs: 10,000
-      *   `:deviceNumIds` (*type:* `list(String.t)`) - A list of device numeric IDs. If empty, this field is ignored. Maximum
-          IDs: 10,000.
-      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The
-          fields `id` and `num_id` are always returned, along with any
-          other fields specified.
-      *   `:"gatewayListOptions.associationsDeviceId"` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is
-          associated. The device ID can be numeric (`num_id`) or the user-defined
-          string (`id`). For example, if `456` is specified, returns only the
-          gateways to which the device with `num_id` 456 is bound.
-      *   `:"gatewayListOptions.associationsGatewayId"` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned.
-          The gateway ID can be numeric (`num_id`) or the user-defined string
-          (`id`). For example, if `123` is specified, only devices bound to the
-          gateway with `num_id` 123 are returned.
-      *   `:"gatewayListOptions.gatewayType"` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
-          is specified, only non-gateway devices are returned. If
-          `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of devices to return in the response. If this value
-          is zero, the service will select a default size. A call may return fewer
-          objects than requested. A non-empty `next_page_token` in the response
-          indicates that more data is available.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListDevicesResponse`; indicates
-          that this is a continuation of a prior `ListDevices` call and
-          the system should return the next page of data.
+      *   `:deviceIds` (*type:* `list(String.t)`) - A list of device string IDs. For example, `['device0', 'device12']`. If empty, this field is ignored. Maximum IDs: 10,000
+      *   `:deviceNumIds` (*type:* `list(String.t)`) - A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
+      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The fields `id` and `num_id` are always returned, along with any other fields specified.
+      *   `:"gatewayListOptions.associationsDeviceId"` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (`num_id`) or the user-defined string (`id`). For example, if `456` is specified, returns only the gateways to which the device with `num_id` 456 is bound.
+      *   `:"gatewayListOptions.associationsGatewayId"` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (`num_id`) or the user-defined string (`id`). For example, if `123` is specified, only devices bound to the gateway with `num_id` 123 are returned.
+      *   `:"gatewayListOptions.gatewayType"` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY` is specified, only non-gateway devices are returned. If `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of devices to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty `next_page_token` in the response indicates that more data is available.
+      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListDevicesResponse`; indicates that this is a continuation of a prior `ListDevices` call and the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1223,16 +1174,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Modifies the configuration for the device, which is eventually sent from
-  the Cloud IoT Core servers. Returns the modified configuration version and
-  its metadata.
+  Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core servers. Returns the modified configuration version and its metadata.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
-      `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-      `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example, `projects/p0/locations/us-central1/registries/registry0/devices/device0` or `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1318,11 +1265,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `device.name`. The resource path name. For example,
-      `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
-      `projects/p1/locations/us-central1/registries/registry0/devices/{num_id}`.
-      When `name` is populated as a response from the service, it always ends
-      in the device numeric ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `device.name`. The resource path name. For example, `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or `projects/p1/locations/us-central1/registries/registry0/devices/{num_id}`. When `name` is populated as a response from the service, it always ends in the device numeric ID.
   *   `locations_id` (*type:* `String.t`) - Part of `device.name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `device.name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `device.name`. See documentation of `projectsId`.
@@ -1338,10 +1281,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Only updates the `device` fields indicated by this mask.
-          The field mask must not be empty, and it must not contain fields that
-          are immutable or only set by the server.
-          Mutable top-level fields: `credentials`, `blocked`, and `metadata`
+      *   `:updateMask` (*type:* `String.t`) - Required. Only updates the `device` fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: `credentials`, `blocked`, and `metadata`
       *   `:body` (*type:* `GoogleApi.CloudIot.V1.Model.Device.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1406,26 +1346,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Sends a command to the specified device. In order for a device to be able
-  to receive commands, it must:
-  1) be connected to Cloud IoT Core using the MQTT protocol, and
-  2) be subscribed to the group of MQTT topics specified by
-     /devices/{device-id}/commands/#. This subscription will receive commands
-     at the top-level topic /devices/{device-id}/commands as well as commands
-     for subfolders, like /devices/{device-id}/commands/subfolder.
-     Note that subscribing to specific subfolders is not supported.
-  If the command could not be delivered to the device, this method will
-  return an error; in particular, if the device is not subscribed, this
-  method will return FAILED_PRECONDITION. Otherwise, this method will
-  return OK. If the subscription is QoS 1, at least once delivery will be
-  guaranteed; for QoS 0, no acknowledgment will be expected from the device.
+  Sends a command to the specified device. In order for a device to be able to receive commands, it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will receive commands at the top-level topic /devices/{device-id}/commands as well as commands for subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific subfolders is not supported. If the command could not be delivered to the device, this method will return an error; in particular, if the device is not subscribed, this method will return FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the device.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
-      `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-      `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example, `projects/p0/locations/us-central1/registries/registry0/devices/device0` or `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1508,15 +1434,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Lists the last few versions of the device configuration in descending
-  order (i.e.: newest first).
+  Lists the last few versions of the device configuration in descending order (i.e.: newest first).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
-      `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-      `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example, `projects/p0/locations/us-central1/registries/registry0/devices/device0` or `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1532,9 +1455,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:numVersions` (*type:* `integer()`) - The number of versions to list. Versions are listed in decreasing order of
-          the version number. The maximum number of versions retained is 10. If this
-          value is zero, it will return all the versions available.
+      *   `:numVersions` (*type:* `integer()`) - The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1601,15 +1522,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Lists the last few versions of the device state in descending order (i.e.:
-  newest first).
+  Lists the last few versions of the device state in descending order (i.e.: newest first).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
-      `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-      `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example, `projects/p0/locations/us-central1/registries/registry0/devices/device0` or `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `devices_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1625,9 +1543,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:numStates` (*type:* `integer()`) - The number of states to list. States are listed in descending order of
-          update time. The maximum number of states retained is 10. If this
-          value is zero, it will return all the states available.
+      *   `:numStates` (*type:* `integer()`) - The number of states to list. States are listed in descending order of update time. The maximum number of states retained is 10. If this value is zero, it will return all the states available.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1692,15 +1608,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1779,14 +1692,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1865,15 +1776,12 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1961,8 +1869,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The device registry path. Required. For example,
-      `projects/my-project/locations/us-central1/registries/my-registry`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The device registry path. Required. For example, `projects/my-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -1978,31 +1885,14 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deviceIds` (*type:* `list(String.t)`) - A list of device string IDs. For example, `['device0', 'device12']`.
-          If empty, this field is ignored. Maximum IDs: 10,000
-      *   `:deviceNumIds` (*type:* `list(String.t)`) - A list of device numeric IDs. If empty, this field is ignored. Maximum
-          IDs: 10,000.
-      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The
-          fields `id` and `num_id` are always returned, along with any
-          other fields specified.
-      *   `:"gatewayListOptions.associationsDeviceId"` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is
-          associated. The device ID can be numeric (`num_id`) or the user-defined
-          string (`id`). For example, if `456` is specified, returns only the
-          gateways to which the device with `num_id` 456 is bound.
-      *   `:"gatewayListOptions.associationsGatewayId"` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned.
-          The gateway ID can be numeric (`num_id`) or the user-defined string
-          (`id`). For example, if `123` is specified, only devices bound to the
-          gateway with `num_id` 123 are returned.
-      *   `:"gatewayListOptions.gatewayType"` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
-          is specified, only non-gateway devices are returned. If
-          `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of devices to return in the response. If this value
-          is zero, the service will select a default size. A call may return fewer
-          objects than requested. A non-empty `next_page_token` in the response
-          indicates that more data is available.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListDevicesResponse`; indicates
-          that this is a continuation of a prior `ListDevices` call and
-          the system should return the next page of data.
+      *   `:deviceIds` (*type:* `list(String.t)`) - A list of device string IDs. For example, `['device0', 'device12']`. If empty, this field is ignored. Maximum IDs: 10,000
+      *   `:deviceNumIds` (*type:* `list(String.t)`) - A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
+      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The fields `id` and `num_id` are always returned, along with any other fields specified.
+      *   `:"gatewayListOptions.associationsDeviceId"` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (`num_id`) or the user-defined string (`id`). For example, if `456` is specified, returns only the gateways to which the device with `num_id` 456 is bound.
+      *   `:"gatewayListOptions.associationsGatewayId"` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (`num_id`) or the user-defined string (`id`). For example, if `123` is specified, only devices bound to the gateway with `num_id` 123 are returned.
+      *   `:"gatewayListOptions.gatewayType"` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY` is specified, only non-gateway devices are returned. If `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of devices to return in the response. If this value is zero, the service will select a default size. A call may return fewer objects than requested. A non-empty `next_page_token` in the response indicates that more data is available.
+      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListDevicesResponse`; indicates that this is a continuation of a prior `ListDevices` call and the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

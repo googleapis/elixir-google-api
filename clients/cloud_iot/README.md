@@ -2,8 +2,7 @@
 
 Cloud IoT API client library.
 
-Registers and manages IoT (Internet of Things) devices that connect to the Google Cloud Platform.
-
+Registers and manages IoT (Internet of Things) devices that connect to the Google Cloud Platform. 
 
 ## Installation
 
