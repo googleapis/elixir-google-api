@@ -22,8 +22,7 @@ defmodule GoogleApi.IAMCredentials.V1.Model.GenerateAccessTokenResponse do
   ## Attributes
 
   *   `accessToken` (*type:* `String.t`, *default:* `nil`) - The OAuth 2.0 access token.
-  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Token expiration time.
-      The expiration time is always set.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Token expiration time. The expiration time is always set.
   """
 
   use GoogleApi.Gax.ModelBase
