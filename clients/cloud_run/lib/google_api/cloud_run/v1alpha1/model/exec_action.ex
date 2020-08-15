@@ -21,16 +21,16 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ExecAction do
 
   ## Attributes
 
-  *   `command` (*type:* `String.t`, *default:* `nil`) - Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. +optional
+  *   `command` (*type:* `list(String.t)`, *default:* `nil`) - Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy. +optional
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :command => String.t()
+          :command => list(String.t())
         }
 
-  field(:command)
+  field(:command, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.ExecAction do
