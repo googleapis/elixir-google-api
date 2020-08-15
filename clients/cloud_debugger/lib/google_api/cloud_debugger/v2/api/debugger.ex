@@ -43,10 +43,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
-          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
-      *   `:includeInactive` (*type:* `boolean()`) - When set to `true`, the result includes all debuggees. Otherwise, the
-          result includes only debuggees that are active.
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call. Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+      *   `:includeInactive` (*type:* `boolean()`) - When set to `true`, the result includes all debuggees. Otherwise, the result includes only debuggees that are active.
       *   `:project` (*type:* `String.t`) - Required. Project number of a Google Cloud project whose debuggees to list.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -111,8 +109,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
-          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call. Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -187,8 +184,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
-          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call. Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -265,19 +261,11 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"action.value"` (*type:* `String.t`) - Only breakpoints with the specified action will pass the filter.
-      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
-          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
-      *   `:includeAllUsers` (*type:* `boolean()`) - When set to `true`, the response includes the list of breakpoints set by
-          any user. Otherwise, it includes only breakpoints set by the caller.
-      *   `:includeInactive` (*type:* `boolean()`) - When set to `true`, the response includes active and inactive
-          breakpoints. Otherwise, it includes only active breakpoints.
-      *   `:stripResults` (*type:* `boolean()`) - This field is deprecated. The following fields are always stripped out of
-          the result: `stack_frames`, `evaluated_expressions` and `variable_table`.
-      *   `:waitToken` (*type:* `String.t`) - A wait token that, if specified, blocks the call until the breakpoints
-          list has changed, or a server selected timeout has expired.  The value
-          should be set from the last response. The error code
-          `google.rpc.Code.ABORTED` (RPC) is returned on wait timeout, which
-          should be called again with the same `wait_token`.
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call. Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+      *   `:includeAllUsers` (*type:* `boolean()`) - When set to `true`, the response includes the list of breakpoints set by any user. Otherwise, it includes only breakpoints set by the caller.
+      *   `:includeInactive` (*type:* `boolean()`) - When set to `true`, the response includes active and inactive breakpoints. Otherwise, it includes only active breakpoints.
+      *   `:stripResults` (*type:* `boolean()`) - This field is deprecated. The following fields are always stripped out of the result: `stack_frames`, `evaluated_expressions` and `variable_table`.
+      *   `:waitToken` (*type:* `String.t`) - A wait token that, if specified, blocks the call until the breakpoints list has changed, or a server selected timeout has expired. The value should be set from the last response. The error code `google.rpc.Code.ABORTED` (RPC) is returned on wait timeout, which should be called again with the same `wait_token`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -356,8 +344,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:canaryOption` (*type:* `String.t`) - The canary option set by the user upon setting breakpoint.
-      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
-          Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call. Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
       *   `:body` (*type:* `GoogleApi.CloudDebugger.V2.Model.Breakpoint.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

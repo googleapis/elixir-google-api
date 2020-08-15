@@ -21,9 +21,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
 
   ## Attributes
 
-  *   `column` (*type:* `integer()`, *default:* `nil`) - Column within a line. The first column in a line as the value `1`.
-      Agents that do not support setting breakpoints on specific columns ignore
-      this field.
+  *   `column` (*type:* `integer()`, *default:* `nil`) - Column within a line. The first column in a line as the value `1`. Agents that do not support setting breakpoints on specific columns ignore this field.
   *   `line` (*type:* `integer()`, *default:* `nil`) - Line inside the file. The first line in the file has the value `1`.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Path to the source file within the source context of the target binary.
   """

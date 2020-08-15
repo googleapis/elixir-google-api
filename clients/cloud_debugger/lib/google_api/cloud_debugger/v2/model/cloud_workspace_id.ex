@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceId do
   @moduledoc """
-  A CloudWorkspaceId is a unique identifier for a cloud workspace.
-  A cloud workspace is a place associated with a repo where modified files
-  can be stored before they are committed.
+  A CloudWorkspaceId is a unique identifier for a cloud workspace. A cloud workspace is a place associated with a repo where modified files can be stored before they are committed.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the workspace within the repo.  This is the name
-      chosen by the client in the Source API's CreateWorkspace method.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the workspace within the repo. This is the name chosen by the client in the Source API's CreateWorkspace method.
   *   `repoId` (*type:* `GoogleApi.CloudDebugger.V2.Model.RepoId.t`, *default:* `nil`) - The ID of the repo containing the workspace.
   """
 

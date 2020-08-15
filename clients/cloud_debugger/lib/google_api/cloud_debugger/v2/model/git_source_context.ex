@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.GitSourceContext do
   @moduledoc """
-  A GitSourceContext denotes a particular revision in a third party Git
-  repository (e.g. GitHub).
+  A GitSourceContext denotes a particular revision in a third party Git repository (e.g. GitHub).
 
   ## Attributes
 
-  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Git commit hash.
-      required.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Git commit hash. required.
   *   `url` (*type:* `String.t`, *default:* `nil`) - Git repository URL.
   """
 

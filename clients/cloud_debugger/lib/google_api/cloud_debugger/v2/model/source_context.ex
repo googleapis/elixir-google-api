@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.SourceContext do
   @moduledoc """
-  A SourceContext is a reference to a tree of files. A SourceContext together
-  with a path point to a unique revision of a single file or directory.
+  A SourceContext is a reference to a tree of files. A SourceContext together with a path point to a unique revision of a single file or directory.
 
   ## Attributes
 

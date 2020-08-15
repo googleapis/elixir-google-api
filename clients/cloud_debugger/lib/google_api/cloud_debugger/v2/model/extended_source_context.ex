@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.ExtendedSourceContext do
   @moduledoc """
-  An ExtendedSourceContext is a SourceContext combined with additional
-  details describing the context.
+  An ExtendedSourceContext is a SourceContext combined with additional details describing the context.
 
   ## Attributes
 

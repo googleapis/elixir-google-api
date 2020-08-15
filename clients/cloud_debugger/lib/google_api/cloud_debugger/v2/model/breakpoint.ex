@@ -17,80 +17,28 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.Breakpoint do
   @moduledoc """
-  ------------------------------------------------------------------------------
-  ## Breakpoint (the resource)
-
-  Represents the breakpoint specification, status and results.
+  ------------------------------------------------------------------------------ ## Breakpoint (the resource) Represents the breakpoint specification, status and results.
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - Action that the agent should perform when the code at the
-      breakpoint location is hit.
-  *   `canaryExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - The deadline for the breakpoint to stay in CANARY_ACTIVE state. The value
-      is meaningless when the breakpoint is not in CANARY_ACTIVE state.
-  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition that triggers the breakpoint.
-      The condition is a compound boolean expression composed using expressions
-      in a programming language at the source location.
+  *   `action` (*type:* `String.t`, *default:* `nil`) - Action that the agent should perform when the code at the breakpoint location is hit.
+  *   `canaryExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - The deadline for the breakpoint to stay in CANARY_ACTIVE state. The value is meaningless when the breakpoint is not in CANARY_ACTIVE state.
+  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition that triggers the breakpoint. The condition is a compound boolean expression composed using expressions in a programming language at the source location.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time this breakpoint was created by the server in seconds resolution.
-  *   `evaluatedExpressions` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - Values of evaluated expressions at breakpoint time.
-      The evaluated expressions appear in exactly the same order they
-      are listed in the `expressions` field.
-      The `name` field holds the original expression text, the `value` or
-      `members` field holds the result of the evaluated expression.
-      If the expression cannot be evaluated, the `status` inside the `Variable`
-      will indicate an error and contain the error text.
-  *   `expressions` (*type:* `list(String.t)`, *default:* `nil`) - List of read-only expressions to evaluate at the breakpoint location.
-      The expressions are composed using expressions in the programming language
-      at the source location. If the breakpoint action is `LOG`, the evaluated
-      expressions are included in log statements.
-  *   `finalTime` (*type:* `DateTime.t`, *default:* `nil`) - Time this breakpoint was finalized as seen by the server in seconds
-      resolution.
+  *   `evaluatedExpressions` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - Values of evaluated expressions at breakpoint time. The evaluated expressions appear in exactly the same order they are listed in the `expressions` field. The `name` field holds the original expression text, the `value` or `members` field holds the result of the evaluated expression. If the expression cannot be evaluated, the `status` inside the `Variable` will indicate an error and contain the error text.
+  *   `expressions` (*type:* `list(String.t)`, *default:* `nil`) - List of read-only expressions to evaluate at the breakpoint location. The expressions are composed using expressions in the programming language at the source location. If the breakpoint action is `LOG`, the evaluated expressions are included in log statements.
+  *   `finalTime` (*type:* `DateTime.t`, *default:* `nil`) - Time this breakpoint was finalized as seen by the server in seconds resolution.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Breakpoint identifier, unique in the scope of the debuggee.
-  *   `isFinalState` (*type:* `boolean()`, *default:* `nil`) - When true, indicates that this is a final result and the
-      breakpoint state will not change from here on.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - A set of custom breakpoint properties, populated by the agent, to be
-      displayed to the user.
+  *   `isFinalState` (*type:* `boolean()`, *default:* `nil`) - When true, indicates that this is a final result and the breakpoint state will not change from here on.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - A set of custom breakpoint properties, populated by the agent, to be displayed to the user.
   *   `location` (*type:* `GoogleApi.CloudDebugger.V2.Model.SourceLocation.t`, *default:* `nil`) - Breakpoint source location.
   *   `logLevel` (*type:* `String.t`, *default:* `nil`) - Indicates the severity of the log. Only relevant when action is `LOG`.
-  *   `logMessageFormat` (*type:* `String.t`, *default:* `nil`) - Only relevant when action is `LOG`. Defines the message to log when
-      the breakpoint hits. The message may include parameter placeholders `$0`,
-      `$1`, etc. These placeholders are replaced with the evaluated value
-      of the appropriate expression. Expressions not referenced in
-      `log_message_format` are not logged.
-
-      Example: `Message received, id = $0, count = $1` with
-      `expressions` = `[ message.id, message.count ]`.
-  *   `stackFrames` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.StackFrame.t)`, *default:* `nil`) - The stack at breakpoint time, where stack_frames[0] represents the most
-      recently entered function.
+  *   `logMessageFormat` (*type:* `String.t`, *default:* `nil`) - Only relevant when action is `LOG`. Defines the message to log when the breakpoint hits. The message may include parameter placeholders `$0`, `$1`, etc. These placeholders are replaced with the evaluated value of the appropriate expression. Expressions not referenced in `log_message_format` are not logged. Example: `Message received, id = $0, count = $1` with `expressions` = `[ message.id, message.count ]`.
+  *   `stackFrames` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.StackFrame.t)`, *default:* `nil`) - The stack at breakpoint time, where stack_frames[0] represents the most recently entered function.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the breakpoint.
-  *   `status` (*type:* `GoogleApi.CloudDebugger.V2.Model.StatusMessage.t`, *default:* `nil`) - Breakpoint status.
-
-      The status includes an error flag and a human readable message.
-      This field is usually unset. The message can be either
-      informational or an error message. Regardless, clients should always
-      display the text message back to the user.
-
-      Error status indicates complete failure of the breakpoint.
-
-      Example (non-final state): `Still loading symbols...`
-
-      Examples (final state):
-
-      *   `Invalid line number` referring to location
-      *   `Field f not found in class C` referring to condition
+  *   `status` (*type:* `GoogleApi.CloudDebugger.V2.Model.StatusMessage.t`, *default:* `nil`) - Breakpoint status. The status includes an error flag and a human readable message. This field is usually unset. The message can be either informational or an error message. Regardless, clients should always display the text message back to the user. Error status indicates complete failure of the breakpoint. Example (non-final state): `Still loading symbols...` Examples (final state): * `Invalid line number` referring to location * `Field f not found in class C` referring to condition
   *   `userEmail` (*type:* `String.t`, *default:* `nil`) - E-mail address of the user that created this breakpoint
-  *   `variableTable` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - The `variable_table` exists to aid with computation, memory and network
-      traffic optimization.  It enables storing a variable once and reference
-      it from multiple variables, including variables stored in the
-      `variable_table` itself.
-      For example, the same `this` object, which may appear at many levels of
-      the stack, can have all of its data stored once in this table.  The
-      stack frame variables then would hold only a reference to it.
-
-      The variable `var_table_index` field is an index into this repeated field.
-      The stored objects are nameless and get their name from the referencing
-      variable. The effective variable is a merge of the referencing variable
-      and the referenced variable.
+  *   `variableTable` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - The `variable_table` exists to aid with computation, memory and network traffic optimization. It enables storing a variable once and reference it from multiple variables, including variables stored in the `variable_table` itself. For example, the same `this` object, which may appear at many levels of the stack, can have all of its data stored once in this table. The stack frame variables then would hold only a reference to it. The variable `var_table_index` field is an index into this repeated field. The stored objects are nameless and get their name from the referencing variable. The effective variable is a merge of the referencing variable and the referenced variable.
   """
 
   use GoogleApi.Gax.ModelBase

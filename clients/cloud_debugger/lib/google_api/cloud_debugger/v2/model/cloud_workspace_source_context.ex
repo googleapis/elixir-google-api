@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceSourceContext do
 
   ## Attributes
 
-  *   `snapshotId` (*type:* `String.t`, *default:* `nil`) - The ID of the snapshot.
-      An empty snapshot_id refers to the most recent snapshot.
+  *   `snapshotId` (*type:* `String.t`, *default:* `nil`) - The ID of the snapshot. An empty snapshot_id refers to the most recent snapshot.
   *   `workspaceId` (*type:* `GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceId.t`, *default:* `nil`) - The ID of the workspace.
   """
 
