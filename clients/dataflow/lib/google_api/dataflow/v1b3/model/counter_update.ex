@@ -22,10 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
   ## Attributes
 
   *   `boolean` (*type:* `boolean()`, *default:* `nil`) - Boolean value for And, Or.
-  *   `cumulative` (*type:* `boolean()`, *default:* `nil`) - True if this counter is reported as the total cumulative aggregate
-      value accumulated since the worker started working on this WorkItem.
-      By default this is false, indicating that this counter is reported
-      as a delta.
+  *   `cumulative` (*type:* `boolean()`, *default:* `nil`) - True if this counter is reported as the total cumulative aggregate value accumulated since the worker started working on this WorkItem. By default this is false, indicating that this counter is reported as a delta.
   *   `distribution` (*type:* `GoogleApi.Dataflow.V1b3.Model.DistributionUpdate.t`, *default:* `nil`) - Distribution data
   *   `floatingPoint` (*type:* `float()`, *default:* `nil`) - Floating point value for Sum, Max, Min.
   *   `floatingPointList` (*type:* `GoogleApi.Dataflow.V1b3.Model.FloatingPointList.t`, *default:* `nil`) - List of floating point numbers, for Set.
@@ -36,9 +33,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
   *   `integerMean` (*type:* `GoogleApi.Dataflow.V1b3.Model.IntegerMean.t`, *default:* `nil`) - Integer mean aggregation value for Mean.
   *   `internal` (*type:* `any()`, *default:* `nil`) - Value for internally-defined counters used by the Dataflow service.
   *   `nameAndKind` (*type:* `GoogleApi.Dataflow.V1b3.Model.NameAndKind.t`, *default:* `nil`) - Counter name and aggregation type.
-  *   `shortId` (*type:* `String.t`, *default:* `nil`) - The service-generated short identifier for this counter.
-      The short_id -> (name, metadata) mapping is constant for the lifetime of
-      a job.
+  *   `shortId` (*type:* `String.t`, *default:* `nil`) - The service-generated short identifier for this counter. The short_id -> (name, metadata) mapping is constant for the lifetime of a job.
   *   `stringList` (*type:* `GoogleApi.Dataflow.V1b3.Model.StringList.t`, *default:* `nil`) - List of strings, for Set.
   *   `structuredNameAndMetadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.CounterStructuredNameAndMetadata.t`, *default:* `nil`) - Counter structured name and metadata.
   """

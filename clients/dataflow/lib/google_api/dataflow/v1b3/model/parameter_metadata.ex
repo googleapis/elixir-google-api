@@ -25,8 +25,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ParameterMetadata do
   *   `isOptional` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the parameter is optional. Defaults to false.
   *   `label` (*type:* `String.t`, *default:* `nil`) - Required. The label to display for the parameter.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the parameter.
-  *   `paramType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of the parameter.
-      Used for selecting input picker.
+  *   `paramType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of the parameter. Used for selecting input picker.
   *   `regexes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Regexes that the parameter must match.
   """
 

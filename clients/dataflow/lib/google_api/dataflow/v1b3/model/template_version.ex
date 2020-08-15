@@ -17,20 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.TemplateVersion do
   @moduledoc """
-  /////////////////////////////////////////////////////////////////////////////
-  //// Template Catalog is used to organize user TemplateVersions.
-  //// TemplateVersions that have the same project_id and display_name are
-  //// belong to the same Template.
-  //// Templates with the same project_id belong to the same Project.
-  //// TemplateVersion may have labels and multiple labels are allowed.
-  //// Duplicated labels in the same `TemplateVersion` are not allowed.
-  //// TemplateVersion may have tags and multiple tags are allowed. Duplicated
-  //// tags in the same `Template` are not allowed!
+  ///////////////////////////////////////////////////////////////////////////// //// Template Catalog is used to organize user TemplateVersions. //// TemplateVersions that have the same project_id and display_name are //// belong to the same Template. //// Templates with the same project_id belong to the same Project. //// TemplateVersion may have labels and multiple labels are allowed. //// Duplicated labels in the same `TemplateVersion` are not allowed. //// TemplateVersion may have tags and multiple tags are allowed. Duplicated //// tags in the same `Template` are not allowed!
 
   ## Attributes
 
-  *   `artifact` (*type:* `GoogleApi.Dataflow.V1b3.Model.Artifact.t`, *default:* `nil`) - Job graph and metadata if it is a legacy Template.
-      Container image path and metadata if it is flex Template.
+  *   `artifact` (*type:* `GoogleApi.Dataflow.V1b3.Model.Artifact.t`, *default:* `nil`) - Job graph and metadata if it is a legacy Template. Container image path and metadata if it is flex Template.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation time of this TemplateVersion.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Template description from the user.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A customized name for Template. Multiple TemplateVersions per Template.

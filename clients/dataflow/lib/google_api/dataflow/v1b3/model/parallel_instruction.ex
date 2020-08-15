@@ -28,8 +28,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ParallelInstruction do
   *   `parDo` (*type:* `GoogleApi.Dataflow.V1b3.Model.ParDoInstruction.t`, *default:* `nil`) - Additional information for ParDo instructions.
   *   `partialGroupByKey` (*type:* `GoogleApi.Dataflow.V1b3.Model.PartialGroupByKeyInstruction.t`, *default:* `nil`) - Additional information for PartialGroupByKey instructions.
   *   `read` (*type:* `GoogleApi.Dataflow.V1b3.Model.ReadInstruction.t`, *default:* `nil`) - Additional information for Read instructions.
-  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of this operation.
-      Unique across the workflow.
+  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of this operation. Unique across the workflow.
   *   `write` (*type:* `GoogleApi.Dataflow.V1b3.Model.WriteInstruction.t`, *default:* `nil`) - Additional information for Write instructions.
   """
 

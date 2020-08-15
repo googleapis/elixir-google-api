@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.CounterStructuredNameAndMetadata do
   @moduledoc """
-  A single message which encapsulates structured name and metadata for a given
-  counter.
+  A single message which encapsulates structured name and metadata for a given counter.
 
   ## Attributes
 

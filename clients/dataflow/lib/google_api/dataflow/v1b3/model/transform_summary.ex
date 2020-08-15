@@ -26,7 +26,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TransformSummary do
   *   `inputCollectionName` (*type:* `list(String.t)`, *default:* `nil`) - User names for all collection inputs to this transform.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Type of transform.
   *   `name` (*type:* `String.t`, *default:* `nil`) - User provided name for this transform instance.
-  *   `outputCollectionName` (*type:* `list(String.t)`, *default:* `nil`) - User  names for all collection outputs to this transform.
+  *   `outputCollectionName` (*type:* `list(String.t)`, *default:* `nil`) - User names for all collection outputs to this transform.
   """
 
   use GoogleApi.Gax.ModelBase

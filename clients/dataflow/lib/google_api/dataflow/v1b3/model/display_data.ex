@@ -26,20 +26,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.DisplayData do
   *   `floatValue` (*type:* `number()`, *default:* `nil`) - Contains value if the data is of float type.
   *   `int64Value` (*type:* `String.t`, *default:* `nil`) - Contains value if the data is of int64 type.
   *   `javaClassValue` (*type:* `String.t`, *default:* `nil`) - Contains value if the data is of java class type.
-  *   `key` (*type:* `String.t`, *default:* `nil`) - The key identifying the display data.
-      This is intended to be used as a label for the display data
-      when viewed in a dax monitoring system.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The key identifying the display data. This is intended to be used as a label for the display data when viewed in a dax monitoring system.
   *   `label` (*type:* `String.t`, *default:* `nil`) - An optional label to display in a dax UI for the element.
-  *   `namespace` (*type:* `String.t`, *default:* `nil`) - The namespace for the key. This is usually a class name or programming
-      language namespace (i.e. python module) which defines the display data.
-      This allows a dax monitoring system to specially handle the data
-      and perform custom rendering.
-  *   `shortStrValue` (*type:* `String.t`, *default:* `nil`) - A possible additional shorter value to display.
-      For example a java_class_name_value of com.mypackage.MyDoFn
-      will be stored with MyDoFn as the short_str_value and
-      com.mypackage.MyDoFn as the java_class_name value.
-      short_str_value can be displayed and java_class_name_value
-      will be displayed as a tooltip.
+  *   `namespace` (*type:* `String.t`, *default:* `nil`) - The namespace for the key. This is usually a class name or programming language namespace (i.e. python module) which defines the display data. This allows a dax monitoring system to specially handle the data and perform custom rendering.
+  *   `shortStrValue` (*type:* `String.t`, *default:* `nil`) - A possible additional shorter value to display. For example a java_class_name_value of com.mypackage.MyDoFn will be stored with MyDoFn as the short_str_value and com.mypackage.MyDoFn as the java_class_name value. short_str_value can be displayed and java_class_name_value will be displayed as a tooltip.
   *   `strValue` (*type:* `String.t`, *default:* `nil`) - Contains value if the data is of string type.
   *   `timestampValue` (*type:* `DateTime.t`, *default:* `nil`) - Contains value if the data is of timestamp type.
   *   `url` (*type:* `String.t`, *default:* `nil`) - An optional full URL.

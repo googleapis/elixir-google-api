@@ -22,12 +22,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingSetupTask do
   ## Attributes
 
   *   `drain` (*type:* `boolean()`, *default:* `nil`) - The user has requested drain.
-  *   `receiveWorkPort` (*type:* `integer()`, *default:* `nil`) - The TCP port on which the worker should listen for messages from
-      other streaming computation workers.
+  *   `receiveWorkPort` (*type:* `integer()`, *default:* `nil`) - The TCP port on which the worker should listen for messages from other streaming computation workers.
   *   `snapshotConfig` (*type:* `GoogleApi.Dataflow.V1b3.Model.StreamingApplianceSnapshotConfig.t`, *default:* `nil`) - Configures streaming appliance snapshot.
   *   `streamingComputationTopology` (*type:* `GoogleApi.Dataflow.V1b3.Model.TopologyConfig.t`, *default:* `nil`) - The global topology of the streaming Dataflow job.
-  *   `workerHarnessPort` (*type:* `integer()`, *default:* `nil`) - The TCP port used by the worker to communicate with the Dataflow
-      worker harness.
+  *   `workerHarnessPort` (*type:* `integer()`, *default:* `nil`) - The TCP port used by the worker to communicate with the Dataflow worker harness.
   """
 
   use GoogleApi.Gax.ModelBase

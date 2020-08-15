@@ -17,16 +17,14 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamLocation do
   @moduledoc """
-  Describes a stream of data, either as input to be processed or as
-  output of a streaming Dataflow job.
+  Describes a stream of data, either as input to be processed or as output of a streaming Dataflow job.
 
   ## Attributes
 
   *   `customSourceLocation` (*type:* `GoogleApi.Dataflow.V1b3.Model.CustomSourceLocation.t`, *default:* `nil`) - The stream is a custom source.
   *   `pubsubLocation` (*type:* `GoogleApi.Dataflow.V1b3.Model.PubsubLocation.t`, *default:* `nil`) - The stream is a pubsub stream.
   *   `sideInputLocation` (*type:* `GoogleApi.Dataflow.V1b3.Model.StreamingSideInputLocation.t`, *default:* `nil`) - The stream is a streaming side input.
-  *   `streamingStageLocation` (*type:* `GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation.t`, *default:* `nil`) - The stream is part of another computation within the current
-      streaming Dataflow job.
+  *   `streamingStageLocation` (*type:* `GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation.t`, *default:* `nil`) - The stream is part of another computation within the current streaming Dataflow job.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,10 +24,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SeqMapTask do
   *   `inputs` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SideInputInfo.t)`, *default:* `nil`) - Information about each of the inputs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The user-provided name of the SeqDo operation.
   *   `outputInfos` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SeqMapTaskOutputInfo.t)`, *default:* `nil`) - Information about each of the outputs.
-  *   `stageName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the stage containing the SeqDo operation.
-      Unique across the workflow.
-  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the SeqDo operation.
-      Unique across the workflow.
+  *   `stageName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the stage containing the SeqDo operation. Unique across the workflow.
+  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the SeqDo operation. Unique across the workflow.
   *   `userFn` (*type:* `map()`, *default:* `nil`) - The user function to invoke.
   """
 

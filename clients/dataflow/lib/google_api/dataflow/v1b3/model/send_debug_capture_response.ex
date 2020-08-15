@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureResponse do
   @moduledoc """
-  Response to a send capture request.
-  nothing
+  Response to a send capture request. nothing
 
   ## Attributes
 

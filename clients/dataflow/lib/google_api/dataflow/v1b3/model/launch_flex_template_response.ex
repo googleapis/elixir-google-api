@@ -21,8 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateResponse do
 
   ## Attributes
 
-  *   `job` (*type:* `GoogleApi.Dataflow.V1b3.Model.Job.t`, *default:* `nil`) - The job that was launched, if the request was not a dry run and
-      the job was successfully launched.
+  *   `job` (*type:* `GoogleApi.Dataflow.V1b3.Model.Job.t`, *default:* `nil`) - The job that was launched, if the request was not a dry run and the job was successfully launched.
   """
 
   use GoogleApi.Gax.ModelBase

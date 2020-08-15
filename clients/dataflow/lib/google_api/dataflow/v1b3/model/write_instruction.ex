@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.WriteInstruction do
   @moduledoc """
-  An instruction that writes records.
-  Takes one input, produces no outputs.
+  An instruction that writes records. Takes one input, produces no outputs.
 
   ## Attributes
 

@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.InstructionInput do
   @moduledoc """
-  An input of an instruction, as a reference to an output of a
-  producer instruction.
+  An input of an instruction, as a reference to an output of a producer instruction.
 
   ## Attributes
 
   *   `outputNum` (*type:* `integer()`, *default:* `nil`) - The output index (origin zero) within the producer.
-  *   `producerInstructionIndex` (*type:* `integer()`, *default:* `nil`) - The index (origin zero) of the parallel instruction that produces
-      the output to be consumed by this input.  This index is relative
-      to the list of instructions in this input's instruction's
-      containing MapTask.
+  *   `producerInstructionIndex` (*type:* `integer()`, *default:* `nil`) - The index (origin zero) of the parallel instruction that produces the output to be consumed by this input. This index is relative to the list of instructions in this input's instruction's containing MapTask.
   """
 
   use GoogleApi.Gax.ModelBase

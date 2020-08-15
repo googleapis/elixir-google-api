@@ -25,8 +25,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig do
   *   `instructions` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.ParallelInstruction.t)`, *default:* `nil`) - Instructions that comprise the computation.
   *   `stageName` (*type:* `String.t`, *default:* `nil`) - Stage name of this computation.
   *   `systemName` (*type:* `String.t`, *default:* `nil`) - System defined name for this computation.
-  *   `transformUserNameToStateFamily` (*type:* `map()`, *default:* `nil`) - Map from user name of stateful transforms in this stage to their state
-      family.
+  *   `transformUserNameToStateFamily` (*type:* `map()`, *default:* `nil`) - Map from user name of stateful transforms in this stage to their state family.
   """
 
   use GoogleApi.Gax.ModelBase

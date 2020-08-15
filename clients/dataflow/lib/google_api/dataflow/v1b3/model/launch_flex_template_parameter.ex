@@ -24,11 +24,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateParameter do
   *   `containerSpec` (*type:* `GoogleApi.Dataflow.V1b3.Model.ContainerSpec.t`, *default:* `nil`) - Spec about the container image to launch.
   *   `containerSpecGcsPath` (*type:* `String.t`, *default:* `nil`) - Gcs path to a file with json serialized ContainerSpec as content.
   *   `jobName` (*type:* `String.t`, *default:* `nil`) - Required. The job name to use for the created job.
-  *   `launchOptions` (*type:* `map()`, *default:* `nil`) - Launch options for this flex template job. This is a common set of options
-      across languages and templates. This should not be used to pass job
-      parameters.
-  *   `parameters` (*type:* `map()`, *default:* `nil`) - The parameters for FlexTemplate.
-      Ex. {"num_workers":"5"}
+  *   `launchOptions` (*type:* `map()`, *default:* `nil`) - Launch options for this flex template job. This is a common set of options across languages and templates. This should not be used to pass job parameters.
+  *   `parameters` (*type:* `map()`, *default:* `nil`) - The parameters for FlexTemplate. Ex. {"num_workers":"5"}
   """
 
   use GoogleApi.Gax.ModelBase

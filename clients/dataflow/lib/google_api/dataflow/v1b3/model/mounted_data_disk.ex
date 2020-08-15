@@ -21,10 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MountedDataDisk do
 
   ## Attributes
 
-  *   `dataDisk` (*type:* `String.t`, *default:* `nil`) - The name of the data disk.
-      This name is local to the Google Cloud Platform project and uniquely
-      identifies the disk within that project, for example
-      "myproject-1014-104817-4c2-harness-0-disk-1".
+  *   `dataDisk` (*type:* `String.t`, *default:* `nil`) - The name of the data disk. This name is local to the Google Cloud Platform project and uniquely identifies the disk within that project, for example "myproject-1014-104817-4c2-harness-0-disk-1".
   """
 
   use GoogleApi.Gax.ModelBase

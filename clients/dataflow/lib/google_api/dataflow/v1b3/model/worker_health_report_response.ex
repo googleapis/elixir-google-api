@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerHealthReportResponse do
   @moduledoc """
-  WorkerHealthReportResponse contains information returned to the worker
-  in response to a health ping.
+  WorkerHealthReportResponse contains information returned to the worker in response to a health ping.
 
   ## Attributes
 
-  *   `reportInterval` (*type:* `String.t`, *default:* `nil`) - A positive value indicates the worker should change its reporting interval
-      to the specified value.
-
-      The default value of zero means no change in report rate is requested by
-      the server.
+  *   `reportInterval` (*type:* `String.t`, *default:* `nil`) - A positive value indicates the worker should change its reporting interval to the specified value. The default value of zero means no change in report rate is requested by the server.
   """
 
   use GoogleApi.Gax.ModelBase

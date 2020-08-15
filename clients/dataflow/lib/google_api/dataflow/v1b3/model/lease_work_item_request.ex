@@ -22,16 +22,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
   ## Attributes
 
   *   `currentWorkerTime` (*type:* `DateTime.t`, *default:* `nil`) - The current timestamp at the worker.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the WorkItem's job.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.
   *   `requestedLeaseDuration` (*type:* `String.t`, *default:* `nil`) - The initial lease period.
   *   `unifiedWorkerRequest` (*type:* `map()`, *default:* `nil`) - Untranslated bag-of-bytes WorkRequest from UnifiedWorker.
   *   `workItemTypes` (*type:* `list(String.t)`, *default:* `nil`) - Filter for WorkItem type.
-  *   `workerCapabilities` (*type:* `list(String.t)`, *default:* `nil`) - Worker capabilities. WorkItems might be limited to workers with specific
-      capabilities.
-  *   `workerId` (*type:* `String.t`, *default:* `nil`) - Identifies the worker leasing work -- typically the ID of the
-      virtual machine running the worker.
+  *   `workerCapabilities` (*type:* `list(String.t)`, *default:* `nil`) - Worker capabilities. WorkItems might be limited to workers with specific capabilities.
+  *   `workerId` (*type:* `String.t`, *default:* `nil`) - Identifies the worker leasing work -- typically the ID of the virtual machine running the worker.
   """
 
   use GoogleApi.Gax.ModelBase

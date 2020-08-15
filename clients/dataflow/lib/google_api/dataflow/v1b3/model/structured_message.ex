@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.StructuredMessage do
   @moduledoc """
-  A rich message format, including a human readable string, a key for
-  identifying the message, and structured data associated with the message for
-  programmatic consumption.
+  A rich message format, including a human readable string, a key for identifying the message, and structured data associated with the message for programmatic consumption.
 
   ## Attributes
 
-  *   `messageKey` (*type:* `String.t`, *default:* `nil`) - Identifier for this message type.  Used by external systems to
-      internationalize or personalize message.
+  *   `messageKey` (*type:* `String.t`, *default:* `nil`) - Identifier for this message type. Used by external systems to internationalize or personalize message.
   *   `messageText` (*type:* `String.t`, *default:* `nil`) - Human-readable version of message.
   *   `parameters` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Parameter.t)`, *default:* `nil`) - The structured data associated with this message.
   """

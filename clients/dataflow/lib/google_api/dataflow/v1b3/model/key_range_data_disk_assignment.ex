@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.KeyRangeDataDiskAssignment do
   @moduledoc """
-  Data disk assignment information for a specific key-range of a sharded
-  computation.
-  Currently we only support UTF-8 character splits to simplify encoding into
-  JSON.
+  Data disk assignment information for a specific key-range of a sharded computation. Currently we only support UTF-8 character splits to simplify encoding into JSON.
 
   ## Attributes
 
-  *   `dataDisk` (*type:* `String.t`, *default:* `nil`) - The name of the data disk where data for this range is stored.
-      This name is local to the Google Cloud Platform project and uniquely
-      identifies the disk within that project, for example
-      "myproject-1014-104817-4c2-harness-0-disk-1".
+  *   `dataDisk` (*type:* `String.t`, *default:* `nil`) - The name of the data disk where data for this range is stored. This name is local to the Google Cloud Platform project and uniquely identifies the disk within that project, for example "myproject-1014-104817-4c2-harness-0-disk-1".
   *   `end` (*type:* `String.t`, *default:* `nil`) - The end (exclusive) of the key range.
   *   `start` (*type:* `String.t`, *default:* `nil`) - The start (inclusive) of the key range.
   """

@@ -25,8 +25,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.DistributionUpdate do
   *   `histogram` (*type:* `GoogleApi.Dataflow.V1b3.Model.Histogram.t`, *default:* `nil`) - (Optional) Histogram of value counts for the distribution.
   *   `max` (*type:* `GoogleApi.Dataflow.V1b3.Model.SplitInt64.t`, *default:* `nil`) - The maximum value present in the distribution.
   *   `min` (*type:* `GoogleApi.Dataflow.V1b3.Model.SplitInt64.t`, *default:* `nil`) - The minimum value present in the distribution.
-  *   `sum` (*type:* `GoogleApi.Dataflow.V1b3.Model.SplitInt64.t`, *default:* `nil`) - Use an int64 since we'd prefer the added precision. If overflow is a common
-      problem we can detect it and use an additional int64 or a double.
+  *   `sum` (*type:* `GoogleApi.Dataflow.V1b3.Model.SplitInt64.t`, *default:* `nil`) - Use an int64 since we'd prefer the added precision. If overflow is a common problem we can detect it and use an additional int64 or a double.
   *   `sumOfSquares` (*type:* `float()`, *default:* `nil`) - Use a double since the sum of squares is likely to overflow int64.
   """
 

@@ -21,10 +21,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ApproximateSplitRequest do
 
   ## Attributes
 
-  *   `fractionConsumed` (*type:* `float()`, *default:* `nil`) - A fraction at which to split the work item, from 0.0 (beginning of the
-      input) to 1.0 (end of the input).
-  *   `fractionOfRemainder` (*type:* `float()`, *default:* `nil`) - The fraction of the remainder of work to split the work item at, from 0.0
-      (split at the current position) to 1.0 (end of the input).
+  *   `fractionConsumed` (*type:* `float()`, *default:* `nil`) - A fraction at which to split the work item, from 0.0 (beginning of the input) to 1.0 (end of the input).
+  *   `fractionOfRemainder` (*type:* `float()`, *default:* `nil`) - The fraction of the remainder of work to split the work item at, from 0.0 (split at the current position) to 1.0 (end of the input).
   *   `position` (*type:* `GoogleApi.Dataflow.V1b3.Model.Position.t`, *default:* `nil`) - A Position at which to split the work item.
   """
 

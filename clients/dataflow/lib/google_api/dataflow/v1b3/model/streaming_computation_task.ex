@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationTask do
   @moduledoc """
-  A task which describes what action should be performed for the specified
-  streaming computation ranges.
+  A task which describes what action should be performed for the specified streaming computation ranges.
 
   ## Attributes
 

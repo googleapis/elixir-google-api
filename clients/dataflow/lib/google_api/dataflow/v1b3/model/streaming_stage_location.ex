@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingStageLocation do
   @moduledoc """
-  Identifies the location of a streaming computation stage, for
-  stage-to-stage communication.
+  Identifies the location of a streaming computation stage, for stage-to-stage communication.
 
   ## Attributes
 
-  *   `streamId` (*type:* `String.t`, *default:* `nil`) - Identifies the particular stream within the streaming Dataflow
-      job.
+  *   `streamId` (*type:* `String.t`, *default:* `nil`) - Identifies the particular stream within the streaming Dataflow job.
   """
 
   use GoogleApi.Gax.ModelBase

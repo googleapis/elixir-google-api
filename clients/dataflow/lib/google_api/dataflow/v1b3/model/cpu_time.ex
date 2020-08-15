@@ -21,11 +21,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CPUTime do
 
   ## Attributes
 
-  *   `rate` (*type:* `float()`, *default:* `nil`) - Average CPU utilization rate (% non-idle cpu / second) since previous
-      sample.
+  *   `rate` (*type:* `float()`, *default:* `nil`) - Average CPU utilization rate (% non-idle cpu / second) since previous sample.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the measurement.
-  *   `totalMs` (*type:* `String.t`, *default:* `nil`) - Total active CPU time across all cores (ie., non-idle) in milliseconds
-      since start-up.
+  *   `totalMs` (*type:* `String.t`, *default:* `nil`) - Total active CPU time across all cores (ie., non-idle) in milliseconds since start-up.
   """
 
   use GoogleApi.Gax.ModelBase

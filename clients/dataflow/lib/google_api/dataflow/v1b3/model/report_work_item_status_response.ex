@@ -22,10 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse do
   ## Attributes
 
   *   `unifiedWorkerResponse` (*type:* `map()`, *default:* `nil`) - Untranslated bag-of-bytes WorkProgressUpdateResponse for UnifiedWorker.
-  *   `workItemServiceStates` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState.t)`, *default:* `nil`) - A set of messages indicating the service-side state for each
-      WorkItem whose status was reported, in the same order as the
-      WorkItemStatus messages in the ReportWorkItemStatusRequest which
-      resulting in this response.
+  *   `workItemServiceStates` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState.t)`, *default:* `nil`) - A set of messages indicating the service-side state for each WorkItem whose status was reported, in the same order as the WorkItemStatus messages in the ReportWorkItemStatusRequest which resulting in this response.
   """
 
   use GoogleApi.Gax.ModelBase

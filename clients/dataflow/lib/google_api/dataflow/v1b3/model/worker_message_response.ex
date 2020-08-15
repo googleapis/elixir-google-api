@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessageResponse do
   @moduledoc """
-  A worker_message response allows the server to pass information to the
-  sender.
+  A worker_message response allows the server to pass information to the sender.
 
   ## Attributes
 

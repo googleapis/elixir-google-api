@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.SplitInt64 do
   @moduledoc """
-  A representation of an int64, n, that is immune to precision loss when
-  encoded in JSON.
+  A representation of an int64, n, that is immune to precision loss when encoded in JSON.
 
   ## Attributes
 

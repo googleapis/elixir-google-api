@@ -23,47 +23,21 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings do
 
   *   `alsologtostderr` (*type:* `boolean()`, *default:* `nil`) - Whether to also send taskrunner log info to stderr.
   *   `baseTaskDir` (*type:* `String.t`, *default:* `nil`) - The location on the worker for task-specific subdirectories.
-  *   `baseUrl` (*type:* `String.t`, *default:* `nil`) - The base URL for the taskrunner to use when accessing Google Cloud APIs.
-
-      When workers access Google Cloud APIs, they logically do so via
-      relative URLs.  If this field is specified, it supplies the base
-      URL to use for resolving these relative URLs.  The normative
-      algorithm used is defined by RFC 1808, "Relative Uniform Resource
-      Locators".
-
-      If not specified, the default value is "http://www.googleapis.com/"
+  *   `baseUrl` (*type:* `String.t`, *default:* `nil`) - The base URL for the taskrunner to use when accessing Google Cloud APIs. When workers access Google Cloud APIs, they logically do so via relative URLs. If this field is specified, it supplies the base URL to use for resolving these relative URLs. The normative algorithm used is defined by RFC 1808, "Relative Uniform Resource Locators". If not specified, the default value is "http://www.googleapis.com/"
   *   `commandlinesFileName` (*type:* `String.t`, *default:* `nil`) - The file to store preprocessing commands in.
   *   `continueOnException` (*type:* `boolean()`, *default:* `nil`) - Whether to continue taskrunner if an exception is hit.
   *   `dataflowApiVersion` (*type:* `String.t`, *default:* `nil`) - The API version of endpoint, e.g. "v1b3"
   *   `harnessCommand` (*type:* `String.t`, *default:* `nil`) - The command to launch the worker harness.
   *   `languageHint` (*type:* `String.t`, *default:* `nil`) - The suggested backend language.
   *   `logDir` (*type:* `String.t`, *default:* `nil`) - The directory on the VM to store logs.
-  *   `logToSerialconsole` (*type:* `boolean()`, *default:* `nil`) - Whether to send taskrunner log info to Google Compute Engine VM serial
-      console.
-  *   `logUploadLocation` (*type:* `String.t`, *default:* `nil`) - Indicates where to put logs.  If this is not specified, the logs
-      will not be uploaded.
-
-      The supported resource type is:
-
-      Google Cloud Storage:
-        storage.googleapis.com/{bucket}/{object}
-        bucket.storage.googleapis.com/{object}
-  *   `oauthScopes` (*type:* `list(String.t)`, *default:* `nil`) - The OAuth2 scopes to be requested by the taskrunner in order to
-      access the Cloud Dataflow API.
+  *   `logToSerialconsole` (*type:* `boolean()`, *default:* `nil`) - Whether to send taskrunner log info to Google Compute Engine VM serial console.
+  *   `logUploadLocation` (*type:* `String.t`, *default:* `nil`) - Indicates where to put logs. If this is not specified, the logs will not be uploaded. The supported resource type is: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}
+  *   `oauthScopes` (*type:* `list(String.t)`, *default:* `nil`) - The OAuth2 scopes to be requested by the taskrunner in order to access the Cloud Dataflow API.
   *   `parallelWorkerSettings` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerSettings.t`, *default:* `nil`) - The settings to pass to the parallel worker harness.
   *   `streamingWorkerMainClass` (*type:* `String.t`, *default:* `nil`) - The streaming worker main class name.
-  *   `taskGroup` (*type:* `String.t`, *default:* `nil`) - The UNIX group ID on the worker VM to use for tasks launched by
-      taskrunner; e.g. "wheel".
-  *   `taskUser` (*type:* `String.t`, *default:* `nil`) - The UNIX user ID on the worker VM to use for tasks launched by
-      taskrunner; e.g. "root".
-  *   `tempStoragePrefix` (*type:* `String.t`, *default:* `nil`) - The prefix of the resources the taskrunner should use for
-      temporary storage.
-
-      The supported resource type is:
-
-      Google Cloud Storage:
-        storage.googleapis.com/{bucket}/{object}
-        bucket.storage.googleapis.com/{object}
+  *   `taskGroup` (*type:* `String.t`, *default:* `nil`) - The UNIX group ID on the worker VM to use for tasks launched by taskrunner; e.g. "wheel".
+  *   `taskUser` (*type:* `String.t`, *default:* `nil`) - The UNIX user ID on the worker VM to use for tasks launched by taskrunner; e.g. "root".
+  *   `tempStoragePrefix` (*type:* `String.t`, *default:* `nil`) - The prefix of the resources the taskrunner should use for temporary storage. The supported resource type is: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}
   *   `vmId` (*type:* `String.t`, *default:* `nil`) - The ID string of the VM.
   *   `workflowFileName` (*type:* `String.t`, *default:* `nil`) - The file to store the workflow in.
   """

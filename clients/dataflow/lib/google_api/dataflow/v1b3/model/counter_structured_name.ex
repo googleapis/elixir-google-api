@@ -17,29 +17,18 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.CounterStructuredName do
   @moduledoc """
-  Identifies a counter within a per-job namespace. Counters whose structured
-  names are the same get merged into a single value for the job.
+  Identifies a counter within a per-job namespace. Counters whose structured names are the same get merged into a single value for the job.
 
   ## Attributes
 
   *   `componentStepName` (*type:* `String.t`, *default:* `nil`) - Name of the optimized step being executed by the workers.
   *   `executionStepName` (*type:* `String.t`, *default:* `nil`) - Name of the stage. An execution step contains multiple component steps.
-  *   `inputIndex` (*type:* `integer()`, *default:* `nil`) - Index of an input collection that's being read from/written to as a side
-      input.
-      The index identifies a step's side inputs starting by 1 (e.g. the first
-      side input has input_index 1, the third has input_index 3).
-      Side inputs are identified by a pair of (original_step_name, input_index).
-      This field helps uniquely identify them.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Counter name. Not necessarily globally-unique, but unique within the
-      context of the other fields.
-      Required.
+  *   `inputIndex` (*type:* `integer()`, *default:* `nil`) - Index of an input collection that's being read from/written to as a side input. The index identifies a step's side inputs starting by 1 (e.g. the first side input has input_index 1, the third has input_index 3). Side inputs are identified by a pair of (original_step_name, input_index). This field helps uniquely identify them.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Counter name. Not necessarily globally-unique, but unique within the context of the other fields. Required.
   *   `origin` (*type:* `String.t`, *default:* `nil`) - One of the standard Origins defined above.
   *   `originNamespace` (*type:* `String.t`, *default:* `nil`) - A string containing a more specific namespace of the counter's origin.
-  *   `originalRequestingStepName` (*type:* `String.t`, *default:* `nil`) - The step name requesting an operation, such as GBK.
-      I.e. the ParDo causing a read/write from shuffle to occur, or a
-      read from side inputs.
-  *   `originalStepName` (*type:* `String.t`, *default:* `nil`) - System generated name of the original step in the user's graph, before
-      optimization.
+  *   `originalRequestingStepName` (*type:* `String.t`, *default:* `nil`) - The step name requesting an operation, such as GBK. I.e. the ParDo causing a read/write from shuffle to occur, or a read from side inputs.
+  *   `originalStepName` (*type:* `String.t`, *default:* `nil`) - System generated name of the original step in the user's graph, before optimization.
   *   `portion` (*type:* `String.t`, *default:* `nil`) - Portion of this counter, either key or value.
   *   `workerId` (*type:* `String.t`, *default:* `nil`) - ID of a particular worker.
   """

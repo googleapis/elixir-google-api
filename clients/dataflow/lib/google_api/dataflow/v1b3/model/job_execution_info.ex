@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.JobExecutionInfo do
   @moduledoc """
-  Additional information about how a Cloud Dataflow job will be executed that
-  isn't contained in the submitted job.
+  Additional information about how a Cloud Dataflow job will be executed that isn't contained in the submitted job.
 
   ## Attributes
 

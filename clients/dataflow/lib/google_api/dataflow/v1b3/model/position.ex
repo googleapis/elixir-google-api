@@ -17,20 +17,16 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.Position do
   @moduledoc """
-  Position defines a position within a collection of data.  The value
-  can be either the end position, a key (used with ordered
-  collections), a byte offset, or a record index.
+  Position defines a position within a collection of data. The value can be either the end position, a key (used with ordered collections), a byte offset, or a record index.
 
   ## Attributes
 
   *   `byteOffset` (*type:* `String.t`, *default:* `nil`) - Position is a byte offset.
   *   `concatPosition` (*type:* `GoogleApi.Dataflow.V1b3.Model.ConcatPosition.t`, *default:* `nil`) - CloudPosition is a concat position.
-  *   `end` (*type:* `boolean()`, *default:* `nil`) - Position is past all other positions. Also useful for the end
-      position of an unbounded range.
+  *   `end` (*type:* `boolean()`, *default:* `nil`) - Position is past all other positions. Also useful for the end position of an unbounded range.
   *   `key` (*type:* `String.t`, *default:* `nil`) - Position is a string key, ordered lexicographically.
   *   `recordIndex` (*type:* `String.t`, *default:* `nil`) - Position is a record index.
-  *   `shufflePosition` (*type:* `String.t`, *default:* `nil`) - CloudPosition is a base64 encoded BatchShufflePosition (with FIXED
-      sharding).
+  *   `shufflePosition` (*type:* `String.t`, *default:* `nil`) - CloudPosition is a base64 encoded BatchShufflePosition (with FIXED sharding).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,12 +21,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.DataDiskAssignment do
 
   ## Attributes
 
-  *   `dataDisks` (*type:* `list(String.t)`, *default:* `nil`) - Mounted data disks. The order is important a data disk's 0-based index in
-      this list defines which persistent directory the disk is mounted to, for
-      example the list of { "myproject-1014-104817-4c2-harness-0-disk-0" },
-      { "myproject-1014-104817-4c2-harness-0-disk-1" }.
-  *   `vmInstance` (*type:* `String.t`, *default:* `nil`) - VM instance name the data disks mounted to, for example
-      "myproject-1014-104817-4c2-harness-0".
+  *   `dataDisks` (*type:* `list(String.t)`, *default:* `nil`) - Mounted data disks. The order is important a data disk's 0-based index in this list defines which persistent directory the disk is mounted to, for example the list of { "myproject-1014-104817-4c2-harness-0-disk-0" }, { "myproject-1014-104817-4c2-harness-0-disk-1" }.
+  *   `vmInstance` (*type:* `String.t`, *default:* `nil`) - VM instance name the data disks mounted to, for example "myproject-1014-104817-4c2-harness-0".
   """
 
   use GoogleApi.Gax.ModelBase

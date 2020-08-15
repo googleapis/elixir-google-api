@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceOperationResponse do
   @moduledoc """
-  The result of a SourceOperationRequest, specified in
-  ReportWorkItemStatusRequest.source_operation when the work item
-  is completed.
+  The result of a SourceOperationRequest, specified in ReportWorkItemStatusRequest.source_operation when the work item is completed.
 
   ## Attributes
 

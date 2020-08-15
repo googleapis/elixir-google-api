@@ -22,8 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ComponentTransform do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Dataflow service generated name for this source.
-  *   `originalTransform` (*type:* `String.t`, *default:* `nil`) - User name for the original user transform with which this transform is
-      most closely associated.
+  *   `originalTransform` (*type:* `String.t`, *default:* `nil`) - User name for the original user transform with which this transform is most closely associated.
   *   `userName` (*type:* `String.t`, *default:* `nil`) - Human-readable name for this transform; may be user or system generated.
   """
 

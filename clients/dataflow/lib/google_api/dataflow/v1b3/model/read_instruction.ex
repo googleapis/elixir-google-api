@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.ReadInstruction do
   @moduledoc """
-  An instruction that reads records.
-  Takes no inputs, produces one output.
+  An instruction that reads records. Takes no inputs, produces one output.
 
   ## Attributes
 

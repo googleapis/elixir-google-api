@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.MemInfo do
   @moduledoc """
-  Information about the memory usage of a worker or a container within a
-  worker.
+  Information about the memory usage of a worker or a container within a worker.
 
   ## Attributes
 

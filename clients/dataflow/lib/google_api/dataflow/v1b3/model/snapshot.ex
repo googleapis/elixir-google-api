@@ -23,8 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Snapshot do
 
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this snapshot was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User specified description of the snapshot. Maybe empty.
-  *   `diskSizeBytes` (*type:* `String.t`, *default:* `nil`) - The disk byte size of the snapshot. Only available for snapshots in READY
-      state.
+  *   `diskSizeBytes` (*type:* `String.t`, *default:* `nil`) - The disk byte size of the snapshot. Only available for snapshots in READY state.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of this snapshot.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project this snapshot belongs to.
   *   `pubsubMetadata` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.PubsubSnapshotMetadata.t)`, *default:* `nil`) - PubSub snapshot metadata.

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceSplitOptions do
   @moduledoc """
-  Hints for splitting a Source into bundles (parts for parallel
-  processing) using SourceSplitRequest.
+  Hints for splitting a Source into bundles (parts for parallel processing) using SourceSplitRequest.
 
   ## Attributes
 
-  *   `desiredBundleSizeBytes` (*type:* `String.t`, *default:* `nil`) - The source should be split into a set of bundles where the estimated size
-      of each is approximately this many bytes.
+  *   `desiredBundleSizeBytes` (*type:* `String.t`, *default:* `nil`) - The source should be split into a set of bundles where the estimated size of each is approximately this many bytes.
   *   `desiredShardSizeBytes` (*type:* `String.t`, *default:* `nil`) - DEPRECATED in favor of desired_bundle_size_bytes.
   """
 

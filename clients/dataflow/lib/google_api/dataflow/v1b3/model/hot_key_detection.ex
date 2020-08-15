@@ -22,8 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.HotKeyDetection do
   ## Attributes
 
   *   `hotKeyAge` (*type:* `String.t`, *default:* `nil`) - The age of the hot key measured from when it was first detected.
-  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the step containing this hot key.
-      Unique across the workflow.
+  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the step containing this hot key. Unique across the workflow.
   *   `userStepName` (*type:* `String.t`, *default:* `nil`) - User-provided name of the step that contains this hot key.
   """
 

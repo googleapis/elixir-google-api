@@ -21,16 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessage do
 
   ## Attributes
 
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are used to group WorkerMessages.
-      For example, a worker_message about a particular container
-      might have the labels:
-      { "JOB_ID": "2015-04-22",
-        "WORKER_ID": "wordcount-vm-2015…"
-        "CONTAINER_TYPE": "worker",
-        "CONTAINER_ID": "ac1234def"}
-      Label tags typically correspond to Label enum values. However, for ease
-      of development other strings can be used as tags. LABEL_UNSPECIFIED should
-      not be used here.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are used to group WorkerMessages. For example, a worker_message about a particular container might have the labels: { "JOB_ID": "2015-04-22", "WORKER_ID": "wordcount-vm-2015…" "CONTAINER_TYPE": "worker", "CONTAINER_ID": "ac1234def"} Label tags typically correspond to Label enum values. However, for ease of development other strings can be used as tags. LABEL_UNSPECIFIED should not be used here.
   *   `time` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of the worker_message.
   *   `workerHealthReport` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport.t`, *default:* `nil`) - The health of a worker.
   *   `workerLifecycleEvent` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerLifecycleEvent.t`, *default:* `nil`) - Record of worker lifecycle events.

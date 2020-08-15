@@ -22,13 +22,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CreateJobFromTemplateRequest do
   ## Attributes
 
   *   `environment` (*type:* `GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment.t`, *default:* `nil`) - The runtime environment for the job.
-  *   `gcsPath` (*type:* `String.t`, *default:* `nil`) - Required. A Cloud Storage path to the template from which to
-      create the job.
-      Must be a valid Cloud Storage URL, beginning with `gs://`.
+  *   `gcsPath` (*type:* `String.t`, *default:* `nil`) - Required. A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with `gs://`.
   *   `jobName` (*type:* `String.t`, *default:* `nil`) - Required. The job name to use for the created job.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-      which to direct the request.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
   *   `parameters` (*type:* `map()`, *default:* `nil`) - The runtime parameters to pass to the job.
   """
 
