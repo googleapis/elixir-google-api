@@ -26,12 +26,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the settings associated with a project, folder, or organization.
-  This will have the effect of disabling Access Approval for the project,
-  folder, or organization, but only if all ancestors also have Access
-  Approval disabled. If Access Approval is enabled at a higher level of the
-  hierarchy, then Access Approval will still be enabled at this level as
-  the settings are inherited.
+  Deletes the settings associated with a project, folder, or organization. This will have the effect of disabling Access Approval for the project, folder, or organization, but only if all ancestors also have Access Approval disabled. If Access Approval is enabled at a higher level of the hierarchy, then Access Approval will still be enabled at this level as the settings are inherited.
 
   ## Parameters
 
@@ -171,18 +166,12 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
   end
 
   @doc """
-  Updates the settings associated with a project, folder, or organization.
-  Settings to update are determined by the value of field_mask.
+  Updates the settings associated with a project, folder, or organization. Settings to update are determined by the value of field_mask.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessApproval.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the settings. Format is one of:
-      <ol>
-        <li>"projects/{project_id}/accessApprovalSettings"</li>
-        <li>"folders/{folder_id}/accessApprovalSettings"</li>
-        <li>"organizations/{organization_id}/accessApprovalSettings"</li>
-      <ol>
+  *   `name` (*type:* `String.t`) - The resource name of the settings. Format is one of: 1. "projects/{project_id}/accessApprovalSettings" 2. "folders/{folder_id}/accessApprovalSettings" 3. "organizations/{organization_id}/accessApprovalSettings" 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -195,16 +184,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the settings. Only the top level fields of
-          AccessApprovalSettings (notification_emails & enrolled_services) are
-          supported. For each field, if it is included, the currently stored value
-          will be entirely overwritten with the value of the field passed in this
-          request.
-
-          For the `FieldMask` definition, see
-          https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-          If this field is left unset, only the notification_emails field will be
-          updated.
+      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the settings. Only the top level fields of AccessApprovalSettings (notification_emails & enrolled_services) are supported. For each field, if it is included, the currently stored value will be entirely overwritten with the value of the field passed in this request. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask If this field is left unset, only the notification_emails field will be updated.
       *   `:body` (*type:* `GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -261,10 +241,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
   end
 
   @doc """
-  Approves a request and returns the updated ApprovalRequest.
-
-  Returns NOT_FOUND if the request does not exist. Returns
-  FAILED_PRECONDITION if the request exists but is not in a pending state.
+  Approves a request and returns the updated ApprovalRequest. Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request exists but is not in a pending state.
 
   ## Parameters
 
@@ -335,16 +312,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
   end
 
   @doc """
-  Dismisses a request. Returns the updated ApprovalRequest.
-
-  NOTE: This does not deny access to the resource if another request has been
-  made and approved. It is equivalent in effect to ignoring the request
-  altogether.
-
-  Returns NOT_FOUND if the request does not exist.
-
-  Returns FAILED_PRECONDITION if the request exists but is not in a pending
-  state.
+  Dismisses a request. Returns the updated ApprovalRequest. NOTE: This does not deny access to the resource if another request has been made and approved. It is equivalent in effect to ignoring the request altogether. Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request exists but is not in a pending state.
 
   ## Parameters
 
@@ -484,15 +452,12 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
   end
 
   @doc """
-  Lists approval requests associated with a project, folder, or organization.
-  Approval requests can be filtered by state (pending, active, dismissed).
-  The order is reverse chronological.
+  Lists approval requests associated with a project, folder, or organization. Approval requests can be filtered by state (pending, active, dismissed). The order is reverse chronological.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessApproval.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource. This may be "projects/{project_id}",
-      "folders/{folder_id}", or "organizations/{organization_id}".
+  *   `parent` (*type:* `String.t`) - The parent resource. This may be "projects/{project_id}", "folders/{folder_id}", or "organizations/{organization_id}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -505,16 +470,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A filter on the type of approval requests to retrieve. Must be one of the
-          following values:
-          <ol>
-            <li>[not set]: Requests that are pending or have active approvals.</li>
-            <li>ALL: All requests.</li>
-            <li>PENDING: Only pending requests.</li>
-            <li>ACTIVE: Only active (i.e. currently approved) requests.</li>
-            <li>DISMISSED: Only dismissed (including expired) requests.</li>
-            <li>HISTORY: Active and dismissed (including expired) requests.</li>
-          </ol>
+      *   `:filter` (*type:* `String.t`) - A filter on the type of approval requests to retrieve. Must be one of the following values: 1. [not set]: Requests that are pending or have active approvals. 2. ALL: All requests. 3. PENDING: Only pending requests. 4. ACTIVE: Only active (i.e. currently approved) requests. 5. DISMISSED: Only dismissed (including expired) requests. 6. HISTORY: Active and dismissed (including expired) requests. 
       *   `:pageSize` (*type:* `integer()`) - Requested page size.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return.
   *   `opts` (*type:* `keyword()`) - Call options

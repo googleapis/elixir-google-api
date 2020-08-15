@@ -21,8 +21,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.ResourceProperties do
 
   ## Attributes
 
-  *   `excludesDescendants` (*type:* `boolean()`, *default:* `nil`) - Whether an approval will exclude the descendants of the resource being
-      requested.
+  *   `excludesDescendants` (*type:* `boolean()`, *default:* `nil`) - Whether an approval will exclude the descendants of the resource being requested.
   """
 
   use GoogleApi.Gax.ModelBase

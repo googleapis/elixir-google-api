@@ -23,20 +23,12 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApprovalRequest do
 
   *   `approve` (*type:* `GoogleApi.AccessApproval.V1.Model.ApproveDecision.t`, *default:* `nil`) - Access was approved.
   *   `dismiss` (*type:* `GoogleApi.AccessApproval.V1.Model.DismissDecision.t`, *default:* `nil`) - The request was dismissed.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the request. Format is
-      "{projects|folders|organizations}/{id}/approvalRequests/{approval_request_id}".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the request. Format is "{projects|folders|organizations}/{id}/approvalRequests/{approval_request_id}".
   *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which approval was requested.
-  *   `requestedExpiration` (*type:* `DateTime.t`, *default:* `nil`) - The requested expiration for the approval. If the request is approved,
-      access will be granted from the time of approval until the expiration time.
+  *   `requestedExpiration` (*type:* `DateTime.t`, *default:* `nil`) - The requested expiration for the approval. If the request is approved, access will be granted from the time of approval until the expiration time.
   *   `requestedLocations` (*type:* `GoogleApi.AccessApproval.V1.Model.AccessLocations.t`, *default:* `nil`) - The locations for which approval is being requested.
   *   `requestedReason` (*type:* `GoogleApi.AccessApproval.V1.Model.AccessReason.t`, *default:* `nil`) - The justification for which approval is being requested.
-  *   `requestedResourceName` (*type:* `String.t`, *default:* `nil`) - The resource for which approval is being requested. The format of the
-      resource name is defined at
-      https://cloud.google.com/apis/design/resource_names. The resource name here
-      may either be a "full" resource name (e.g.
-      "//library.googleapis.com/shelves/shelf1/books/book2") or a "relative"
-      resource name (e.g. "shelves/shelf1/books/book2") as described in the
-      resource name specification.
+  *   `requestedResourceName` (*type:* `String.t`, *default:* `nil`) - The resource for which approval is being requested. The format of the resource name is defined at https://cloud.google.com/apis/design/resource_names. The resource name here may either be a "full" resource name (e.g. "//library.googleapis.com/shelves/shelf1/books/book2") or a "relative" resource name (e.g. "shelves/shelf1/books/book2") as described in the resource name specification.
   *   `requestedResourceProperties` (*type:* `GoogleApi.AccessApproval.V1.Model.ResourceProperties.t`, *default:* `nil`) - Properties related to the resource represented by requested_resource_name.
   """
 
