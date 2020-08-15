@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.ProjectRepoId do
   @moduledoc """
-  Selects a repo using a Google Cloud Platform project ID
-  (e.g. winged-cargo-31) and a repo name within that project.
+  Selects a repo using a Google Cloud Platform project ID (e.g. winged-cargo-31) and a repo name within that project.
 
   ## Attributes
 

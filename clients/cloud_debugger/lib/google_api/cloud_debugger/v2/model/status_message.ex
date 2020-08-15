@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.StatusMessage do
   @moduledoc """
-  Represents a contextual status message.
-  The message can indicate an error or informational status, and refer to
-  specific parts of the containing object.
-  For example, the `Breakpoint.status` field can indicate an error referring
-  to the `BREAKPOINT_SOURCE_LOCATION` with the message `Location not found`.
+  Represents a contextual status message. The message can indicate an error or informational status, and refer to specific parts of the containing object. For example, the `Breakpoint.status` field can indicate an error referring to the `BREAKPOINT_SOURCE_LOCATION` with the message `Location not found`.
 
   ## Attributes
 

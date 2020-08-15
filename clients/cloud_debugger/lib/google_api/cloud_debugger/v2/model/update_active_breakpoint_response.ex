@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.UpdateActiveBreakpointResponse do
   @moduledoc """
-  Response for updating an active breakpoint.
-  The message is defined to allow future extensions.
+  Response for updating an active breakpoint. The message is defined to allow future extensions.
 
   ## Attributes
 

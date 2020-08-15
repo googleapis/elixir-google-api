@@ -21,10 +21,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.ListDebuggeesResponse do
 
   ## Attributes
 
-  *   `debuggees` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Debuggee.t)`, *default:* `nil`) - List of debuggees accessible to the calling user.
-      The fields `debuggee.id` and `description` are guaranteed to be set.
-      The `description` field is a human readable field provided by agents and
-      can be displayed to users.
+  *   `debuggees` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Debuggee.t)`, *default:* `nil`) - List of debuggees accessible to the calling user. The fields `debuggee.id` and `description` are guaranteed to be set. The `description` field is a human readable field provided by agents and can be displayed to users.
   """
 
   use GoogleApi.Gax.ModelBase

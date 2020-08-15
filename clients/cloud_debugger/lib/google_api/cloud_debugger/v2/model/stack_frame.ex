@@ -21,11 +21,9 @@ defmodule GoogleApi.CloudDebugger.V2.Model.StackFrame do
 
   ## Attributes
 
-  *   `arguments` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - Set of arguments passed to this function.
-      Note that this might not be populated for all stack frames.
+  *   `arguments` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - Set of arguments passed to this function. Note that this might not be populated for all stack frames.
   *   `function` (*type:* `String.t`, *default:* `nil`) - Demangled function name at the call site.
-  *   `locals` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - Set of local variables at the stack frame location.
-      Note that this might not be populated for all stack frames.
+  *   `locals` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.Variable.t)`, *default:* `nil`) - Set of local variables at the stack frame location. Note that this might not be populated for all stack frames.
   *   `location` (*type:* `GoogleApi.CloudDebugger.V2.Model.SourceLocation.t`, *default:* `nil`) - Source location of the call site.
   """
 

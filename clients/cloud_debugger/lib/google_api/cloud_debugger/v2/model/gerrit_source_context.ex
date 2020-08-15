@@ -23,9 +23,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.GerritSourceContext do
 
   *   `aliasContext` (*type:* `GoogleApi.CloudDebugger.V2.Model.AliasContext.t`, *default:* `nil`) - An alias, which may be a branch or tag.
   *   `aliasName` (*type:* `String.t`, *default:* `nil`) - The name of an alias (branch, tag, etc.).
-  *   `gerritProject` (*type:* `String.t`, *default:* `nil`) - The full project name within the host. Projects may be nested, so
-      "project/subproject" is a valid project name.
-      The "repo name" is hostURI/project.
+  *   `gerritProject` (*type:* `String.t`, *default:* `nil`) - The full project name within the host. Projects may be nested, so "project/subproject" is a valid project name. The "repo name" is hostURI/project.
   *   `hostUri` (*type:* `String.t`, *default:* `nil`) - The URI of a running Gerrit instance.
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - A revision (commit) ID.
   """

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.CloudRepoSourceContext do
   @moduledoc """
-  A CloudRepoSourceContext denotes a particular revision in a cloud
-  repo (a repo hosted by the Google Cloud Platform).
+  A CloudRepoSourceContext denotes a particular revision in a cloud repo (a repo hosted by the Google Cloud Platform).
 
   ## Attributes
 
