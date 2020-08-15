@@ -18,7 +18,7 @@
 defmodule GoogleApi.Admin.Mixfile do
   use Mix.Project
 
-  @version "0.18.0"
+  @version "0.19.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Admin.Mixfile do
 
   defp description() do
     """
-    Admin Directory API client library. Manages enterprise resources such as users and groups, administrative notifications, security features, and more.
+    Admin Reports API client library. Fetches reports for the administrators of G Suite customers about the usage, collaboration, security, and risk for their users.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Admin.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/admin",
-        "Homepage" => "https://developers.google.com/admin-sdk/directory/"
+        "Homepage" => "https://developers.google.com/admin-sdk/reports/"
       }
     ]
   end
