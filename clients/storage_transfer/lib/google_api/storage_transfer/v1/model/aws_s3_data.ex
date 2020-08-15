@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.AwsS3Data do
   @moduledoc """
-  An AwsS3Data resource can be a data source, but not a data sink.
-  In an AwsS3Data resource, an object's name is the S3 object's key name.
+  An AwsS3Data resource can be a data source, but not a data sink. In an AwsS3Data resource, an object's name is the S3 object's key name.
 
   ## Attributes
 
-  *   `awsAccessKey` (*type:* `GoogleApi.StorageTransfer.V1.Model.AwsAccessKey.t`, *default:* `nil`) - Required. AWS access key used to sign the API requests to the AWS S3
-      bucket. Permissions on the bucket must be granted to the access ID of the
-      AWS access key.
-  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Required. S3 Bucket name (see
-      [Creating a
-      bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
+  *   `awsAccessKey` (*type:* `GoogleApi.StorageTransfer.V1.Model.AwsAccessKey.t`, *default:* `nil`) - Required. AWS access key used to sign the API requests to the AWS S3 bucket. Permissions on the bucket must be granted to the access ID of the AWS access key.
+  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Required. S3 Bucket name (see [Creating a bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
   """
 
   use GoogleApi.Gax.ModelBase

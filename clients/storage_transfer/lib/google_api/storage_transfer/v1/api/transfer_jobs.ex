@@ -102,8 +102,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:projectId` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that owns the
-          job.
+      *   `:projectId` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that owns the job.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -163,17 +162,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of:
-          {"project<span>_</span>id":"my_project_id",
-           "job_names":["jobid1","jobid2",...],
-           "job_statuses":["status1","status2",...]}.
-          Since `job_names` and `job_statuses` support multiple values, their values
-          must be specified with array notation. `project`<span>`_`</span>`id` is
-          required.  `job_names` and `job_statuses` are optional.  The valid values
-          for `job_statuses` are case-insensitive:
-          ENABLED,
-          DISABLED, and
-          DELETED.
+      *   `:filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of: {"project_id":"my_project_id", "job_names":["jobid1","jobid2",...], "job_statuses":["status1","status2",...]}. Since `job_names` and `job_statuses` support multiple values, their values must be specified with array notation. `project``_``id` is required. `job_names` and `job_statuses` are optional. The valid values for `job_statuses` are case-insensitive: ENABLED, DISABLED, and DELETED.
       *   `:pageSize` (*type:* `integer()`) - The list page size. The max allowed value is 256.
       *   `:pageToken` (*type:* `String.t`) - The list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -220,15 +209,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   end
 
   @doc """
-  Updates a transfer job. Updating a job's transfer spec does not affect
-  transfer operations that are running already. Updating a job's schedule
-  is not allowed.
-
-  **Note:** The job's status field can be modified
-  using this RPC (for example, to set a job's status to
-  DELETED,
-  DISABLED, or
-  ENABLED).
+  Updates a transfer job. Updating a job's transfer spec does not affect transfer operations that are running already. Updating a job's schedule is not allowed. **Note:** The job's status field can be modified using this RPC (for example, to set a job's status to DELETED, DISABLED, or ENABLED).
 
   ## Parameters
 

@@ -26,20 +26,12 @@ defmodule GoogleApi.StorageTransfer.V1.Api.GoogleServiceAccounts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns the Google service account that is used by Storage Transfer
-  Service to access buckets in the project where transfers
-  run or in other projects. Each Google service account is associated
-  with one Google Cloud Platform Console project. Users
-  should add this service account to the Google Cloud Storage bucket
-  ACLs to grant access to Storage Transfer Service. This service
-  account is created and owned by Storage Transfer Service and can
-  only be used by Storage Transfer Service.
+  Returns the Google service account that is used by Storage Transfer Service to access buckets in the project where transfers run or in other projects. Each Google service account is associated with one Google Cloud Platform Console project. Users should add this service account to the Google Cloud Storage bucket ACLs to grant access to Storage Transfer Service. This service account is created and owned by Storage Transfer Service and can only be used by Storage Transfer Service.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that the
-      Google service account is associated with.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that the Google service account is associated with.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

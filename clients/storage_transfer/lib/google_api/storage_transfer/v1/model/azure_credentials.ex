@@ -21,10 +21,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AzureCredentials do
 
   ## Attributes
 
-  *   `sasToken` (*type:* `String.t`, *default:* `nil`) - Required. Azure shared access signature. (see
-      [Grant limited access to Azure Storage resources using shared access
-      signatures
-      (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview)).
+  *   `sasToken` (*type:* `String.t`, *default:* `nil`) - Required. Azure shared access signature. (see [Grant limited access to Azure Storage resources using shared access signatures (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview)).
   """
 
   use GoogleApi.Gax.ModelBase

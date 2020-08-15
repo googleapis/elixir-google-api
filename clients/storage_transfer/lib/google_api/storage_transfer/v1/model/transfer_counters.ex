@@ -25,26 +25,18 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferCounters do
   *   `bytesDeletedFromSink` (*type:* `String.t`, *default:* `nil`) - Bytes that are deleted from the data sink.
   *   `bytesDeletedFromSource` (*type:* `String.t`, *default:* `nil`) - Bytes that are deleted from the data source.
   *   `bytesFailedToDeleteFromSink` (*type:* `String.t`, *default:* `nil`) - Bytes that failed to be deleted from the data sink.
-  *   `bytesFoundFromSource` (*type:* `String.t`, *default:* `nil`) - Bytes found in the data source that are scheduled to be transferred,
-      excluding any that are filtered based on object conditions or skipped due
-      to sync.
+  *   `bytesFoundFromSource` (*type:* `String.t`, *default:* `nil`) - Bytes found in the data source that are scheduled to be transferred, excluding any that are filtered based on object conditions or skipped due to sync.
   *   `bytesFoundOnlyFromSink` (*type:* `String.t`, *default:* `nil`) - Bytes found only in the data sink that are scheduled to be deleted.
-  *   `bytesFromSourceFailed` (*type:* `String.t`, *default:* `nil`) - Bytes in the data source that failed to be transferred or that failed to
-      be deleted after being transferred.
-  *   `bytesFromSourceSkippedBySync` (*type:* `String.t`, *default:* `nil`) - Bytes in the data source that are not transferred because they already
-      exist in the data sink.
+  *   `bytesFromSourceFailed` (*type:* `String.t`, *default:* `nil`) - Bytes in the data source that failed to be transferred or that failed to be deleted after being transferred.
+  *   `bytesFromSourceSkippedBySync` (*type:* `String.t`, *default:* `nil`) - Bytes in the data source that are not transferred because they already exist in the data sink.
   *   `objectsCopiedToSink` (*type:* `String.t`, *default:* `nil`) - Objects that are copied to the data sink.
   *   `objectsDeletedFromSink` (*type:* `String.t`, *default:* `nil`) - Objects that are deleted from the data sink.
   *   `objectsDeletedFromSource` (*type:* `String.t`, *default:* `nil`) - Objects that are deleted from the data source.
   *   `objectsFailedToDeleteFromSink` (*type:* `String.t`, *default:* `nil`) - Objects that failed to be deleted from the data sink.
-  *   `objectsFoundFromSource` (*type:* `String.t`, *default:* `nil`) - Objects found in the data source that are scheduled to be transferred,
-      excluding any that are filtered based on object conditions or skipped due
-      to sync.
+  *   `objectsFoundFromSource` (*type:* `String.t`, *default:* `nil`) - Objects found in the data source that are scheduled to be transferred, excluding any that are filtered based on object conditions or skipped due to sync.
   *   `objectsFoundOnlyFromSink` (*type:* `String.t`, *default:* `nil`) - Objects found only in the data sink that are scheduled to be deleted.
-  *   `objectsFromSourceFailed` (*type:* `String.t`, *default:* `nil`) - Objects in the data source that failed to be transferred or that failed
-      to be deleted after being transferred.
-  *   `objectsFromSourceSkippedBySync` (*type:* `String.t`, *default:* `nil`) - Objects in the data source that are not transferred because they already
-      exist in the data sink.
+  *   `objectsFromSourceFailed` (*type:* `String.t`, *default:* `nil`) - Objects in the data source that failed to be transferred or that failed to be deleted after being transferred.
+  *   `objectsFromSourceSkippedBySync` (*type:* `String.t`, *default:* `nil`) - Objects in the data source that are not transferred because they already exist in the data sink.
   """
 
   use GoogleApi.Gax.ModelBase

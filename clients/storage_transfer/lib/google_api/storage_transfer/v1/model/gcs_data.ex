@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.GcsData do
   @moduledoc """
-  In a GcsData resource, an object's name is the Cloud Storage object's
-  name and its "last modification time" refers to the object's `updated`
-  property of Cloud Storage objects, which changes when the content or the
-  metadata of the object is updated.
+  In a GcsData resource, an object's name is the Cloud Storage object's name and its "last modification time" refers to the object's `updated` property of Cloud Storage objects, which changes when the content or the metadata of the object is updated.
 
   ## Attributes
 
-  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Required. Cloud Storage bucket name (see
-      [Bucket Name
-      Requirements](https://cloud.google.com/storage/docs/naming#requirements)).
+  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Required. Cloud Storage bucket name (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/naming#requirements)).
   """
 
   use GoogleApi.Gax.ModelBase

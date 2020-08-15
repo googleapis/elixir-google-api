@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.AwsAccessKey do
   @moduledoc """
-  AWS access key (see
-  [AWS Security
-  Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)).
+  AWS access key (see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)).
 
   ## Attributes
 
   *   `accessKeyId` (*type:* `String.t`, *default:* `nil`) - Required. AWS access key ID.
-  *   `secretAccessKey` (*type:* `String.t`, *default:* `nil`) - Required. AWS secret access key. This field is not returned in RPC
-      responses.
+  *   `secretAccessKey` (*type:* `String.t`, *default:* `nil`) - Required. AWS secret access key. This field is not returned in RPC responses.
   """
 
   use GoogleApi.Gax.ModelBase

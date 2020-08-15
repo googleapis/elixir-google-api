@@ -22,8 +22,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ErrorLogEntry do
   ## Attributes
 
   *   `errorDetails` (*type:* `list(String.t)`, *default:* `nil`) - A list of messages that carry the error details.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - Required. A URL that refers to the target (a data source, a data sink,
-      or an object) with which the error is associated.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Required. A URL that refers to the target (a data source, a data sink, or an object) with which the error is associated.
   """
 
   use GoogleApi.Gax.ModelBase
