@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.Residence do
   @moduledoc """
-  A person's past or current residence.
+  **DEPRECATED**: Please use `person.locations` instead. A person's past or current residence.
 
   ## Attributes
 
