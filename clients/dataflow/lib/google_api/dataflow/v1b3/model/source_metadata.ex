@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceMetadata do
   @moduledoc """
-  Metadata about a Source useful for automatically optimizing
-  and tuning the pipeline, etc.
+  Metadata about a Source useful for automatically optimizing and tuning the pipeline, etc.
 
   ## Attributes
 
-  *   `estimatedSizeBytes` (*type:* `String.t`, *default:* `nil`) - An estimate of the total size (in bytes) of the data that would be
-      read from this source.  This estimate is in terms of external storage
-      size, before any decompression or other processing done by the reader.
-  *   `infinite` (*type:* `boolean()`, *default:* `nil`) - Specifies that the size of this source is known to be infinite
-      (this is a streaming source).
-  *   `producesSortedKeys` (*type:* `boolean()`, *default:* `nil`) - Whether this source is known to produce key/value pairs with
-      the (encoded) keys in lexicographically sorted order.
+  *   `estimatedSizeBytes` (*type:* `String.t`, *default:* `nil`) - An estimate of the total size (in bytes) of the data that would be read from this source. This estimate is in terms of external storage size, before any decompression or other processing done by the reader.
+  *   `infinite` (*type:* `boolean()`, *default:* `nil`) - Specifies that the size of this source is known to be infinite (this is a streaming source).
+  *   `producesSortedKeys` (*type:* `boolean()`, *default:* `nil`) - Whether this source is known to produce key/value pairs with the (encoded) keys in lexicographically sorted order.
   """
 
   use GoogleApi.Gax.ModelBase

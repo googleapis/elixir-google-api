@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkItem do
   @moduledoc """
-  WorkItem represents basic information about a WorkItem to be executed
-  in the cloud.
+  WorkItem represents basic information about a WorkItem to be executed in the cloud.
 
   ## Attributes
 
@@ -28,8 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItem do
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - Identifies the workflow job this WorkItem belongs to.
   *   `leaseExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the lease on this Work will expire.
   *   `mapTask` (*type:* `GoogleApi.Dataflow.V1b3.Model.MapTask.t`, *default:* `nil`) - Additional information for MapTask WorkItems.
-  *   `packages` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Package.t)`, *default:* `nil`) - Any required packages that need to be fetched in order to execute
-      this WorkItem.
+  *   `packages` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Package.t)`, *default:* `nil`) - Any required packages that need to be fetched in order to execute this WorkItem.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Identifies the cloud project this WorkItem belongs to.
   *   `reportStatusInterval` (*type:* `String.t`, *default:* `nil`) - Recommended reporting interval.
   *   `seqMapTask` (*type:* `GoogleApi.Dataflow.V1b3.Model.SeqMapTask.t`, *default:* `nil`) - Additional information for SeqMapTask WorkItems.

@@ -17,22 +17,16 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.PubsubLocation do
   @moduledoc """
-  Identifies a pubsub location to use for transferring data into or
-  out of a streaming Dataflow job.
+  Identifies a pubsub location to use for transferring data into or out of a streaming Dataflow job.
 
   ## Attributes
 
   *   `dropLateData` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the pipeline allows late-arriving data.
-  *   `idLabel` (*type:* `String.t`, *default:* `nil`) - If set, contains a pubsub label from which to extract record ids.
-      If left empty, record deduplication will be strictly best effort.
-  *   `subscription` (*type:* `String.t`, *default:* `nil`) - A pubsub subscription, in the form of
-      "pubsub.googleapis.com/subscriptions/<project-id>/<subscription-name>"
-  *   `timestampLabel` (*type:* `String.t`, *default:* `nil`) - If set, contains a pubsub label from which to extract record timestamps.
-      If left empty, record timestamps will be generated upon arrival.
-  *   `topic` (*type:* `String.t`, *default:* `nil`) - A pubsub topic, in the form of
-      "pubsub.googleapis.com/topics/<project-id>/<topic-name>"
-  *   `trackingSubscription` (*type:* `String.t`, *default:* `nil`) - If set, specifies the pubsub subscription that will be used for tracking
-      custom time timestamps for watermark estimation.
+  *   `idLabel` (*type:* `String.t`, *default:* `nil`) - If set, contains a pubsub label from which to extract record ids. If left empty, record deduplication will be strictly best effort.
+  *   `subscription` (*type:* `String.t`, *default:* `nil`) - A pubsub subscription, in the form of "pubsub.googleapis.com/subscriptions//"
+  *   `timestampLabel` (*type:* `String.t`, *default:* `nil`) - If set, contains a pubsub label from which to extract record timestamps. If left empty, record timestamps will be generated upon arrival.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - A pubsub topic, in the form of "pubsub.googleapis.com/topics//"
+  *   `trackingSubscription` (*type:* `String.t`, *default:* `nil`) - If set, specifies the pubsub subscription that will be used for tracking custom time timestamps for watermark estimation.
   *   `withAttributes` (*type:* `boolean()`, *default:* `nil`) - If true, then the client has requested to get pubsub attributes.
   """
 

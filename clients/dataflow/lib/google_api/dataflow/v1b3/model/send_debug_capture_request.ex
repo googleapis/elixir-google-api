@@ -23,9 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureRequest do
 
   *   `componentId` (*type:* `String.t`, *default:* `nil`) - The internal component id for which debug information is sent.
   *   `data` (*type:* `String.t`, *default:* `nil`) - The encoded debug information.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the job specified by job_id.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   *   `workerId` (*type:* `String.t`, *default:* `nil`) - The worker id, i.e., VM hostname.
   """
 

@@ -24,58 +24,15 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemStatus do
   *   `completed` (*type:* `boolean()`, *default:* `nil`) - True if the WorkItem was completed (successfully or unsuccessfully).
   *   `counterUpdates` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.CounterUpdate.t)`, *default:* `nil`) - Worker output counters for this WorkItem.
   *   `dynamicSourceSplit` (*type:* `GoogleApi.Dataflow.V1b3.Model.DynamicSourceSplit.t`, *default:* `nil`) - See documentation of stop_position.
-  *   `errors` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Status.t)`, *default:* `nil`) - Specifies errors which occurred during processing.  If errors are
-      provided, and completed = true, then the WorkItem is considered
-      to have failed.
+  *   `errors` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Status.t)`, *default:* `nil`) - Specifies errors which occurred during processing. If errors are provided, and completed = true, then the WorkItem is considered to have failed.
   *   `metricUpdates` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.MetricUpdate.t)`, *default:* `nil`) - DEPRECATED in favor of counter_updates.
   *   `progress` (*type:* `GoogleApi.Dataflow.V1b3.Model.ApproximateProgress.t`, *default:* `nil`) - DEPRECATED in favor of reported_progress.
-  *   `reportIndex` (*type:* `String.t`, *default:* `nil`) - The report index.  When a WorkItem is leased, the lease will
-      contain an initial report index.  When a WorkItem's status is
-      reported to the system, the report should be sent with
-      that report index, and the response will contain the index the
-      worker should use for the next report.  Reports received with
-      unexpected index values will be rejected by the service.
-
-      In order to preserve idempotency, the worker should not alter the
-      contents of a report, even if the worker must submit the same
-      report multiple times before getting back a response.  The worker
-      should not submit a subsequent report until the response for the
-      previous report had been received from the service.
+  *   `reportIndex` (*type:* `String.t`, *default:* `nil`) - The report index. When a WorkItem is leased, the lease will contain an initial report index. When a WorkItem's status is reported to the system, the report should be sent with that report index, and the response will contain the index the worker should use for the next report. Reports received with unexpected index values will be rejected by the service. In order to preserve idempotency, the worker should not alter the contents of a report, even if the worker must submit the same report multiple times before getting back a response. The worker should not submit a subsequent report until the response for the previous report had been received from the service.
   *   `reportedProgress` (*type:* `GoogleApi.Dataflow.V1b3.Model.ApproximateReportedProgress.t`, *default:* `nil`) - The worker's progress through this WorkItem.
   *   `requestedLeaseDuration` (*type:* `String.t`, *default:* `nil`) - Amount of time the worker requests for its lease.
   *   `sourceFork` (*type:* `GoogleApi.Dataflow.V1b3.Model.SourceFork.t`, *default:* `nil`) - DEPRECATED in favor of dynamic_source_split.
-  *   `sourceOperationResponse` (*type:* `GoogleApi.Dataflow.V1b3.Model.SourceOperationResponse.t`, *default:* `nil`) - If the work item represented a SourceOperationRequest, and the work
-      is completed, contains the result of the operation.
-  *   `stopPosition` (*type:* `GoogleApi.Dataflow.V1b3.Model.Position.t`, *default:* `nil`) - A worker may split an active map task in two parts, "primary" and
-      "residual", continuing to process the primary part and returning the
-      residual part into the pool of available work.
-      This event is called a "dynamic split" and is critical to the dynamic
-      work rebalancing feature. The two obtained sub-tasks are called
-      "parts" of the split.
-      The parts, if concatenated, must represent the same input as would
-      be read by the current task if the split did not happen.
-      The exact way in which the original task is decomposed into the two
-      parts is specified either as a position demarcating them
-      (stop_position), or explicitly as two DerivedSources, if this
-      task consumes a user-defined source type (dynamic_source_split).
-
-      The "current" task is adjusted as a result of the split: after a task
-      with range [A, B) sends a stop_position update at C, its range is
-      considered to be [A, C), e.g.:
-      * Progress should be interpreted relative to the new range, e.g.
-        "75% completed" means "75% of [A, C) completed"
-      * The worker should interpret proposed_stop_position relative to the
-        new range, e.g. "split at 68%" should be interpreted as
-        "split at 68% of [A, C)".
-      * If the worker chooses to split again using stop_position, only
-        stop_positions in [A, C) will be accepted.
-      * Etc.
-      dynamic_source_split has similar semantics: e.g., if a task with
-      source S splits using dynamic_source_split into {P, R}
-      (where P and R must be together equivalent to S), then subsequent
-      progress and proposed_stop_position should be interpreted relative
-      to P, and in a potential subsequent dynamic_source_split into {P', R'},
-      P' and R' must be together equivalent to P, etc.
+  *   `sourceOperationResponse` (*type:* `GoogleApi.Dataflow.V1b3.Model.SourceOperationResponse.t`, *default:* `nil`) - If the work item represented a SourceOperationRequest, and the work is completed, contains the result of the operation.
+  *   `stopPosition` (*type:* `GoogleApi.Dataflow.V1b3.Model.Position.t`, *default:* `nil`) - A worker may split an active map task in two parts, "primary" and "residual", continuing to process the primary part and returning the residual part into the pool of available work. This event is called a "dynamic split" and is critical to the dynamic work rebalancing feature. The two obtained sub-tasks are called "parts" of the split. The parts, if concatenated, must represent the same input as would be read by the current task if the split did not happen. The exact way in which the original task is decomposed into the two parts is specified either as a position demarcating them (stop_position), or explicitly as two DerivedSources, if this task consumes a user-defined source type (dynamic_source_split). The "current" task is adjusted as a result of the split: after a task with range [A, B) sends a stop_position update at C, its range is considered to be [A, C), e.g.: * Progress should be interpreted relative to the new range, e.g. "75% completed" means "75% of [A, C) completed" * The worker should interpret proposed_stop_position relative to the new range, e.g. "split at 68%" should be interpreted as "split at 68% of [A, C)". * If the worker chooses to split again using stop_position, only stop_positions in [A, C) will be accepted. * Etc. dynamic_source_split has similar semantics: e.g., if a task with source S splits using dynamic_source_split into {P, R} (where P and R must be together equivalent to S), then subsequent progress and proposed_stop_position should be interpreted relative to P, and in a potential subsequent dynamic_source_split into {P', R'}, P' and R' must be together equivalent to P, etc.
   *   `totalThrottlerWaitTimeSeconds` (*type:* `float()`, *default:* `nil`) - Total time the worker spent being throttled by external systems.
   *   `workItemId` (*type:* `String.t`, *default:* `nil`) - Identifies the WorkItem.
   """

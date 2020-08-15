@@ -22,8 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateRequest do
   ## Attributes
 
   *   `launchParameter` (*type:* `GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateParameter.t`, *default:* `nil`) - Required. Parameter to launch a job form Flex Template.
-  *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If true, the request is validated but not actually executed.
-      Defaults to false.
+  *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If true, the request is validated but not actually executed. Defaults to false.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StageSource do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Dataflow service generated name for this source.
-  *   `originalTransformOrCollection` (*type:* `String.t`, *default:* `nil`) - User name for the original user transform or collection with which this
-      source is most closely associated.
+  *   `originalTransformOrCollection` (*type:* `String.t`, *default:* `nil`) - User name for the original user transform or collection with which this source is most closely associated.
   *   `sizeBytes` (*type:* `String.t`, *default:* `nil`) - Size of the source, if measurable.
   *   `userName` (*type:* `String.t`, *default:* `nil`) - Human-readable name for this source; may be user or system generated.
   """

@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionTagRequest do
   @moduledoc """
-  Add a tag to the current TemplateVersion. If tag exist in another
-  TemplateVersion in the Template, remove the tag before add it to the current
-  TemplateVersion. If remove_only set, remove the tag from the current
-  TemplateVersion.
+  Add a tag to the current TemplateVersion. If tag exist in another TemplateVersion in the Template, remove the tag before add it to the current TemplateVersion. If remove_only set, remove the tag from the current TemplateVersion.
 
   ## Attributes
 
-  *   `removeOnly` (*type:* `boolean()`, *default:* `nil`) - The flag that indicates if the request is only for remove tag from
-      TemplateVersion.
+  *   `removeOnly` (*type:* `boolean()`, *default:* `nil`) - The flag that indicates if the request is only for remove tag from TemplateVersion.
   *   `tag` (*type:* `String.t`, *default:* `nil`) - The tag for update.
   """
 

@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.ParDoInstruction do
   @moduledoc """
-  An instruction that does a ParDo operation.
-  Takes one main input and zero or more side inputs, and produces
-  zero or more outputs.
-  Runs user code.
+  An instruction that does a ParDo operation. Takes one main input and zero or more side inputs, and produces zero or more outputs. Runs user code.
 
   ## Attributes
 
   *   `input` (*type:* `GoogleApi.Dataflow.V1b3.Model.InstructionInput.t`, *default:* `nil`) - The input.
-  *   `multiOutputInfos` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.MultiOutputInfo.t)`, *default:* `nil`) - Information about each of the outputs, if user_fn is a  MultiDoFn.
+  *   `multiOutputInfos` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.MultiOutputInfo.t)`, *default:* `nil`) - Information about each of the outputs, if user_fn is a MultiDoFn.
   *   `numOutputs` (*type:* `integer()`, *default:* `nil`) - The number of outputs.
   *   `sideInputs` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SideInputInfo.t)`, *default:* `nil`) - Zero or more side inputs.
   *   `userFn` (*type:* `map()`, *default:* `nil`) - The user function to invoke.

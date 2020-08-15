@@ -21,40 +21,17 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
 
   ## Attributes
 
-  *   `cumulative` (*type:* `boolean()`, *default:* `nil`) - True if this metric is reported as the total cumulative aggregate
-      value accumulated since the worker started working on this WorkItem.
-      By default this is false, indicating that this metric is reported
-      as a delta that is not associated with any WorkItem.
+  *   `cumulative` (*type:* `boolean()`, *default:* `nil`) - True if this metric is reported as the total cumulative aggregate value accumulated since the worker started working on this WorkItem. By default this is false, indicating that this metric is reported as a delta that is not associated with any WorkItem.
   *   `distribution` (*type:* `any()`, *default:* `nil`) - A struct value describing properties of a distribution of numeric values.
-  *   `gauge` (*type:* `any()`, *default:* `nil`) - A struct value describing properties of a Gauge.
-      Metrics of gauge type show the value of a metric across time, and is
-      aggregated based on the newest value.
-  *   `internal` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for internal use by the Dataflow
-      service.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Metric aggregation kind.  The possible metric aggregation kinds are
-      "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
-      The specified aggregation kind is case-insensitive.
-
-      If omitted, this is not an aggregated value but instead
-      a single metric sample value.
-  *   `meanCount` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Mean" aggregation kind.
-      This holds the count of the aggregated values and is used in combination
-      with mean_sum above to obtain the actual mean aggregate value.
-      The only possible value type is Long.
-  *   `meanSum` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Mean" aggregation kind.
-      This holds the sum of the aggregated values and is used in combination
-      with mean_count below to obtain the actual mean aggregate value.
-      The only possible value types are Long and Double.
+  *   `gauge` (*type:* `any()`, *default:* `nil`) - A struct value describing properties of a Gauge. Metrics of gauge type show the value of a metric across time, and is aggregated based on the newest value.
+  *   `internal` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for internal use by the Dataflow service.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Metric aggregation kind. The possible metric aggregation kinds are "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution". The specified aggregation kind is case-insensitive. If omitted, this is not an aggregated value but instead a single metric sample value.
+  *   `meanCount` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Mean" aggregation kind. This holds the count of the aggregated values and is used in combination with mean_sum above to obtain the actual mean aggregate value. The only possible value type is Long.
+  *   `meanSum` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Mean" aggregation kind. This holds the sum of the aggregated values and is used in combination with mean_count below to obtain the actual mean aggregate value. The only possible value types are Long and Double.
   *   `name` (*type:* `GoogleApi.Dataflow.V1b3.Model.MetricStructuredName.t`, *default:* `nil`) - Name of the metric.
-  *   `scalar` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for aggregation kinds "Sum", "Max", "Min",
-      "And", and "Or".  The possible value types are Long, Double, and Boolean.
-  *   `set` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Set" aggregation kind.  The only
-      possible value type is a list of Values whose type can be Long, Double,
-      or String, according to the metric's type.  All Values in the list must
-      be of the same type.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp associated with the metric value. Optional when workers are
-      reporting work progress; it will be filled in responses from the
-      metrics API.
+  *   `scalar` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for aggregation kinds "Sum", "Max", "Min", "And", and "Or". The possible value types are Long, Double, and Boolean.
+  *   `set` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Set" aggregation kind. The only possible value type is a list of Values whose type can be Long, Double, or String, according to the metric's type. All Values in the list must be of the same type.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp associated with the metric value. Optional when workers are reporting work progress; it will be filled in responses from the metrics API.
   """
 
   use GoogleApi.Gax.ModelBase

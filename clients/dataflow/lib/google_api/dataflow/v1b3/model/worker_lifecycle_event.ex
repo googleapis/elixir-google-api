@@ -17,20 +17,13 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerLifecycleEvent do
   @moduledoc """
-  A report of an event in a worker's lifecycle.
-  The proto contains one event, because the worker is expected to
-  asynchronously send each message immediately after the event.
-  Due to this asynchrony, messages may arrive out of order (or missing), and it
-  is up to the consumer to interpret.
-  The timestamp of the event is in the enclosing WorkerMessage proto.
+  A report of an event in a worker's lifecycle. The proto contains one event, because the worker is expected to asynchronously send each message immediately after the event. Due to this asynchrony, messages may arrive out of order (or missing), and it is up to the consumer to interpret. The timestamp of the event is in the enclosing WorkerMessage proto.
 
   ## Attributes
 
-  *   `containerStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of this container. All events will report this so that
-      events can be grouped together across container/VM restarts.
+  *   `containerStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of this container. All events will report this so that events can be grouped together across container/VM restarts.
   *   `event` (*type:* `String.t`, *default:* `nil`) - The event being reported.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Other stats that can accompany an event. E.g.
-      { "downloaded_bytes" : "123456" }
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Other stats that can accompany an event. E.g. { "downloaded_bytes" : "123456" }
   """
 
   use GoogleApi.Gax.ModelBase

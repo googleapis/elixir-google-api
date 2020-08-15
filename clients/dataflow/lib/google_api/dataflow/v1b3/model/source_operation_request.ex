@@ -17,20 +17,16 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.SourceOperationRequest do
   @moduledoc """
-  A work item that represents the different operations that can be
-  performed on a user-defined Source specification.
+  A work item that represents the different operations that can be performed on a user-defined Source specification.
 
   ## Attributes
 
   *   `getMetadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.SourceGetMetadataRequest.t`, *default:* `nil`) - Information about a request to get metadata about a source.
   *   `name` (*type:* `String.t`, *default:* `nil`) - User-provided name of the Read instruction for this source.
-  *   `originalName` (*type:* `String.t`, *default:* `nil`) - System-defined name for the Read instruction for this source
-      in the original workflow graph.
+  *   `originalName` (*type:* `String.t`, *default:* `nil`) - System-defined name for the Read instruction for this source in the original workflow graph.
   *   `split` (*type:* `GoogleApi.Dataflow.V1b3.Model.SourceSplitRequest.t`, *default:* `nil`) - Information about a request to split a source.
-  *   `stageName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the stage containing the source operation.
-      Unique across the workflow.
-  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the Read instruction for this source.
-      Unique across the workflow.
+  *   `stageName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the stage containing the source operation. Unique across the workflow.
+  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the Read instruction for this source. Unique across the workflow.
   """
 
   use GoogleApi.Gax.ModelBase

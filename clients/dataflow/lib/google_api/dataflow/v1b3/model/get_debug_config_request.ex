@@ -21,11 +21,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.GetDebugConfigRequest do
 
   ## Attributes
 
-  *   `componentId` (*type:* `String.t`, *default:* `nil`) - The internal component id for which debug configuration is
-      requested.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the job specified by job_id.
+  *   `componentId` (*type:* `String.t`, *default:* `nil`) - The internal component id for which debug configuration is requested.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   *   `workerId` (*type:* `String.t`, *default:* `nil`) - The worker id, i.e., VM hostname.
   """
 

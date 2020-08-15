@@ -22,11 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage do
   ## Attributes
 
   *   `containerImage` (*type:* `String.t`, *default:* `nil`) - A docker container image that resides in Google Container Registry.
-  *   `useSingleCorePerContainer` (*type:* `boolean()`, *default:* `nil`) - If true, recommends the Dataflow service to use only one core per SDK
-      container instance with this image. If false (or unset) recommends using
-      more than one core per SDK container instance with this image for
-      efficiency. Note that Dataflow service may choose to override this property
-      if needed.
+  *   `useSingleCorePerContainer` (*type:* `boolean()`, *default:* `nil`) - If true, recommends the Dataflow service to use only one core per SDK container instance with this image. If false (or unset) recommends using more than one core per SDK container instance with this image for efficiency. Note that Dataflow service may choose to override this property if needed.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,22 +17,14 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.MapTask do
   @moduledoc """
-  MapTask consists of an ordered set of instructions, each of which
-  describes one particular low-level operation for the worker to
-  perform in order to accomplish the MapTask's WorkItem.
-
-  Each instruction must appear in the list before any instructions which
-  depends on its output.
+  MapTask consists of an ordered set of instructions, each of which describes one particular low-level operation for the worker to perform in order to accomplish the MapTask's WorkItem. Each instruction must appear in the list before any instructions which depends on its output.
 
   ## Attributes
 
-  *   `counterPrefix` (*type:* `String.t`, *default:* `nil`) - Counter prefix that can be used to prefix counters. Not currently used in
-      Dataflow.
+  *   `counterPrefix` (*type:* `String.t`, *default:* `nil`) - Counter prefix that can be used to prefix counters. Not currently used in Dataflow.
   *   `instructions` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.ParallelInstruction.t)`, *default:* `nil`) - The instructions in the MapTask.
-  *   `stageName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the stage containing this MapTask.
-      Unique across the workflow.
-  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of this MapTask.
-      Unique across the workflow.
+  *   `stageName` (*type:* `String.t`, *default:* `nil`) - System-defined name of the stage containing this MapTask. Unique across the workflow.
+  *   `systemName` (*type:* `String.t`, *default:* `nil`) - System-defined name of this MapTask. Unique across the workflow.
   """
 
   use GoogleApi.Gax.ModelBase

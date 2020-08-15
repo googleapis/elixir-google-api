@@ -21,9 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesRequest do
 
   ## Attributes
 
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the job.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job.
   *   `workerMessages` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.WorkerMessage.t)`, *default:* `nil`) - The WorkerMessages to send.
   """
 

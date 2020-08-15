@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport do
   @moduledoc """
-  Worker metrics exported from workers. This contains resource utilization
-  metrics accumulated from a variety of sources. For more information, see
-  go/df-resource-signals.
+  Worker metrics exported from workers. This contains resource utilization metrics accumulated from a variety of sources. For more information, see go/df-resource-signals.
 
   ## Attributes
 
-  *   `containers` (*type:* `%{optional(String.t) => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t}`, *default:* `nil`) - Per container information.
-      Key: container name.
+  *   `containers` (*type:* `%{optional(String.t) => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t}`, *default:* `nil`) - Per container information. Key: container name.
   *   `cpuTime` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.CPUTime.t)`, *default:* `nil`) - CPU utilization samples.
   *   `memoryInfo` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.MemInfo.t)`, *default:* `nil`) - Memory utilization samples.
   """

@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.ListJobsResponse do
   @moduledoc """
-  Response to a request to list Cloud Dataflow jobs in a project. This might
-  be a partial response, depending on the page size in the ListJobsRequest.
-  However, if the project does not have any jobs, an instance of
-  ListJobsResponse is not returned and the requests's response
-  body is empty {}.
+  Response to a request to list Cloud Dataflow jobs in a project. This might be a partial response, depending on the page size in the ListJobsRequest. However, if the project does not have any jobs, an instance of ListJobsResponse is not returned and the requests's response body is empty {}.
 
   ## Attributes
 
-  *   `failedLocation` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.FailedLocation.t)`, *default:* `nil`) - Zero or more messages describing the [regional endpoints]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      failed to respond.
+  *   `failedLocation` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.FailedLocation.t)`, *default:* `nil`) - Zero or more messages describing the [regional endpoints] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that failed to respond.
   *   `jobs` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Job.t)`, *default:* `nil`) - A subset of the requested job information.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Set if there may be more results than fit in this response.
   """

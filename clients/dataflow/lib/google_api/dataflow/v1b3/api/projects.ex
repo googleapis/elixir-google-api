@@ -157,16 +157,12 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a new TemplateVersion (Important: not new Template) entry in the
-  spanner table. Requires project_id and display_name (template).
+  Creates a new TemplateVersion (Important: not new Template) entry in the spanner table. Requires project_id and display_name (template).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The location of the template, name includes project_id and display_name.
-
-      Commit using project_id(pid1) and display_name(tid1).
-        Format: projects/{pid1}/catalogTemplates/{tid1}
+  *   `name` (*type:* `String.t`) - The location of the template, name includes project_id and display_name. Commit using project_id(pid1) and display_name(tid1). Format: projects/{pid1}/catalogTemplates/{tid1}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -237,10 +233,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - name includes project_id and display_name.
-
-      Delete by project_id(pid1) and display_name(tid1).
-        Format: projects/{pid1}/catalogTemplates/{tid1}
+  *   `name` (*type:* `String.t`) - name includes project_id and display_name. Delete by project_id(pid1) and display_name(tid1). Format: projects/{pid1}/catalogTemplates/{tid1}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -302,21 +295,12 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Get TemplateVersion using project_id and display_name with an optional
-  version_id field. Get latest (has tag "latest") TemplateVersion if
-  version_id not set.
+  Get TemplateVersion using project_id and display_name with an optional version_id field. Get latest (has tag "latest") TemplateVersion if version_id not set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name includes project_id and display_name. version_id is optional.
-      Get the latest TemplateVersion if version_id not set.
-
-      Get by project_id(pid1) and display_name(tid1):
-        Format: projects/{pid1}/catalogTemplates/{tid1}
-
-      Get by project_id(pid1), display_name(tid1), and version_id(vid1):
-        Format: projects/{pid1}/catalogTemplates/{tid1@vid}
+  *   `name` (*type:* `String.t`) - Resource name includes project_id and display_name. version_id is optional. Get the latest TemplateVersion if version_id not set. Get by project_id(pid1) and display_name(tid1): Format: projects/{pid1}/catalogTemplates/{tid1} Get by project_id(pid1), display_name(tid1), and version_id(vid1): Format: projects/{pid1}/catalogTemplates/{tid1@vid}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -375,16 +359,12 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Updates the label of the TemplateVersion. Label can be duplicated in
-  Template, so either add or remove the label in the TemplateVersion.
+  Updates the label of the TemplateVersion. Label can be duplicated in Template, so either add or remove the label in the TemplateVersion.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name includes project_id, display_name, and version_id.
-
-      Updates by project_id(pid1), display_name(tid1), and version_id(vid1):
-        Format: projects/{pid1}/catalogTemplates/{tid1@vid}
+  *   `name` (*type:* `String.t`) - Resource name includes project_id, display_name, and version_id. Updates by project_id(pid1), display_name(tid1), and version_id(vid1): Format: projects/{pid1}/catalogTemplates/{tid1@vid}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -452,19 +432,12 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Updates the tag of the TemplateVersion, and tag is unique in Template.
-  If tag exists in another TemplateVersion in the Template, updates the tag
-  to this TemplateVersion will remove it from the old TemplateVersion and add
-  it to this TemplateVersion. If request is remove_only (remove_only = true),
-  remove the tag from this TemplateVersion.
+  Updates the tag of the TemplateVersion, and tag is unique in Template. If tag exists in another TemplateVersion in the Template, updates the tag to this TemplateVersion will remove it from the old TemplateVersion and add it to this TemplateVersion. If request is remove_only (remove_only = true), remove the tag from this TemplateVersion.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name includes project_id, display_name, and version_id.
-
-      Updates by project_id(pid1), display_name(tid1), and version_id(vid1):
-        Format: projects/{pid1}/catalogTemplates/{tid1@vid}
+  *   `name` (*type:* `String.t`) - Resource name includes project_id, display_name, and version_id. Updates by project_id(pid1), display_name(tid1), and version_id(vid1): Format: projects/{pid1}/catalogTemplates/{tid1@vid}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -527,18 +500,12 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a new Template with TemplateVersion. Requires
-  project_id(projects) and template display_name(catalogTemplates).
-  The template display_name is set by the user.
+  Creates a new Template with TemplateVersion. Requires project_id(projects) and template display_name(catalogTemplates). The template display_name is set by the user.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent project and template that the TemplateVersion will be created
-      under.
-
-      Create using project_id(pid1) and display_name(tid1).
-        Format: projects/{pid1}/catalogTemplates/{tid1}
+  *   `parent` (*type:* `String.t`) - The parent project and template that the TemplateVersion will be created under. Create using project_id(pid1) and display_name(tid1). Format: projects/{pid1}/catalogTemplates/{tid1}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -623,14 +590,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The kind of filter to use.
-      *   `:location` (*type:* `String.t`) - The [regional endpoint]
-          (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-          contains this job.
-      *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many.
-          The actual number of jobs returned will be the lesser of max_responses
-          and an unspecified server-defined limit.
-      *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response
-          to request additional results in a long list.
+      *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
+      *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
+      *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
       *   `:view` (*type:* `String.t`) - Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -678,13 +640,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a Cloud Dataflow job.
-
-  To create a job, we recommend using `projects.locations.jobs.create` with a
-  [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.create` is not recommended, as your job will always start
-  in `us-central1`.
+  Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.
 
   ## Parameters
 
@@ -702,9 +658,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:location` (*type:* `String.t`) - The [regional endpoint]
-          (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-          contains this job.
+      *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
       *   `:replaceJobId` (*type:* `String.t`) - Deprecated. This field is now in the Job message.
       *   `:view` (*type:* `String.t`) - The level of information requested in response.
       *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.Job.t`) - 
@@ -751,13 +705,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Gets the state of the specified Cloud Dataflow job.
-
-  To get the state of a job, we recommend using `projects.locations.jobs.get`
-  with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.get` is not recommended, as you can only get the state of
-  jobs that are running in `us-central1`.
+  Gets the state of the specified Cloud Dataflow job. To get the state of a job, we recommend using `projects.locations.jobs.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.get` is not recommended, as you can only get the state of jobs that are running in `us-central1`.
 
   ## Parameters
 
@@ -776,9 +724,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:location` (*type:* `String.t`) - The [regional endpoint]
-          (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-          contains this job.
+      *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
       *   `:view` (*type:* `String.t`) - The level of information requested in response.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -833,19 +779,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Request the job status.
-
-  To request the status of a job, we recommend using
-  `projects.locations.jobs.getMetrics` with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.getMetrics` is not recommended, as you can only request the
-  status of jobs that are running in `us-central1`.
+  Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.getMetrics` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.getMetrics` is not recommended, as you can only request the status of jobs that are running in `us-central1`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - A project id.
-  *   `job_id` (*type:* `String.t`) - The job to get messages for.
+  *   `job_id` (*type:* `String.t`) - The job to get metrics for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -858,11 +798,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:location` (*type:* `String.t`) - The [regional endpoint]
-          (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-          contains the job specified by job_id.
-      *   `:startTime` (*type:* `DateTime.t`) - Return only metric data that has changed since this time.
-          Default is to return all information about all metrics for the job.
+      *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
+      *   `:startTime` (*type:* `DateTime.t`) - Return only metric data that has changed since this time. Default is to return all information about all metrics for the job.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -919,14 +856,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  List the jobs of a project.
-
-  To list the jobs of a project in a region, we recommend using
-  `projects.locations.jobs.list` with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To
-  list the all jobs across all regions, use `projects.jobs.aggregated`. Using
-  `projects.jobs.list` is not recommended, as you can only get the list of
-  jobs that are running in `us-central1`.
+  List the jobs of a project. To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, as you can only get the list of jobs that are running in `us-central1`.
 
   ## Parameters
 
@@ -945,14 +875,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The kind of filter to use.
-      *   `:location` (*type:* `String.t`) - The [regional endpoint]
-          (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-          contains this job.
-      *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many.
-          The actual number of jobs returned will be the lesser of max_responses
-          and an unspecified server-defined limit.
-      *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response
-          to request additional results in a long list.
+      *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
+      *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
+      *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
       *   `:view` (*type:* `String.t`) - Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1075,13 +1000,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Updates the state of an existing Cloud Dataflow job.
-
-  To update the state of an existing job, we recommend using
-  `projects.locations.jobs.update` with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.update` is not recommended, as you can only update the state
-  of jobs that are running in `us-central1`.
+  Updates the state of an existing Cloud Dataflow job. To update the state of an existing job, we recommend using `projects.locations.jobs.update` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.update` is not recommended, as you can only update the state of jobs that are running in `us-central1`.
 
   ## Parameters
 
@@ -1100,9 +1019,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:location` (*type:* `String.t`) - The [regional endpoint]
-          (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-          contains this job.
+      *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
       *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.Job.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1309,13 +1226,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Request the job status.
-
-  To request the status of a job, we recommend using
-  `projects.locations.jobs.messages.list` with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.messages.list` is not recommended, as you can only request
-  the status of jobs that are running in `us-central1`.
+  Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.messages.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.messages.list` is not recommended, as you can only request the status of jobs that are running in `us-central1`.
 
   ## Parameters
 
@@ -1334,20 +1245,12 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:endTime` (*type:* `DateTime.t`) - Return only messages with timestamps < end_time. The default is now
-          (i.e. return up to the latest messages available).
-      *   `:location` (*type:* `String.t`) - The [regional endpoint]
-          (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-          contains the job specified by job_id.
+      *   `:endTime` (*type:* `DateTime.t`) - Return only messages with timestamps < end_time. The default is now (i.e. return up to the latest messages available).
+      *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
       *   `:minimumImportance` (*type:* `String.t`) - Filter to only get messages with importance >= level
-      *   `:pageSize` (*type:* `integer()`) - If specified, determines the maximum number of messages to
-          return.  If unspecified, the service may choose an appropriate
-          default, or may return an arbitrarily large number of results.
-      *   `:pageToken` (*type:* `String.t`) - If supplied, this should be the value of next_page_token returned
-          by an earlier call. This will cause the next page of results to
-          be returned.
-      *   `:startTime` (*type:* `DateTime.t`) - If specified, return only messages with timestamps >= start_time.
-          The default is the job creation time (i.e. beginning of messages).
+      *   `:pageSize` (*type:* `integer()`) - If specified, determines the maximum number of messages to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
+      *   `:pageToken` (*type:* `String.t`) - If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
+      *   `:startTime` (*type:* `DateTime.t`) - If specified, return only messages with timestamps >= start_time. The default is the job creation time (i.e. beginning of messages).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1566,9 +1469,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The project to send the WorkerMessages to.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the job.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1645,9 +1546,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Cloud Platform project that the job belongs to.
-  *   `location` (*type:* `String.t`) - Required. The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-      which to direct the request. E.g., us-central1, us-west1.
+  *   `location` (*type:* `String.t`) - Required. The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request. E.g., us-central1, us-west1.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1718,21 +1617,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Creates a Cloud Dataflow job.
-
-  To create a job, we recommend using `projects.locations.jobs.create` with a
-  [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.create` is not recommended, as your job will always start
-  in `us-central1`.
+  Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the job belongs to.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains this job.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1802,21 +1693,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Gets the state of the specified Cloud Dataflow job.
-
-  To get the state of a job, we recommend using `projects.locations.jobs.get`
-  with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.get` is not recommended, as you can only get the state of
-  jobs that are running in `us-central1`.
+  Gets the state of the specified Cloud Dataflow job. To get the state of a job, we recommend using `projects.locations.jobs.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.get` is not recommended, as you can only get the state of jobs that are running in `us-central1`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the job belongs to.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains this job.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
   *   `job_id` (*type:* `String.t`) - The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1886,22 +1769,14 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Request the job status.
-
-  To request the status of a job, we recommend using
-  `projects.locations.jobs.getMetrics` with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.getMetrics` is not recommended, as you can only request the
-  status of jobs that are running in `us-central1`.
+  Request detailed information about the execution status of the job. EXPERIMENTAL. This API is subject to change or removal without notice.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - A project id.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the job specified by job_id.
-  *   `job_id` (*type:* `String.t`) - The job to get messages for.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
+  *   `job_id` (*type:* `String.t`) - The job to get execution details for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1914,8 +1789,87 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:startTime` (*type:* `DateTime.t`) - Return only metric data that has changed since this time.
-          Default is to return all information about all metrics for the job.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.JobExecutionDetails{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_locations_jobs_get_execution_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.JobExecutionDetails.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_locations_jobs_get_execution_details(
+        connection,
+        project_id,
+        location,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/executionDetails",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "location" => URI.encode(location, &URI.char_unreserved?/1),
+          "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.JobExecutionDetails{}])
+  end
+
+  @doc """
+  Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.getMetrics` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.getMetrics` is not recommended, as you can only request the status of jobs that are running in `us-central1`.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - A project id.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
+  *   `job_id` (*type:* `String.t`) - The job to get metrics for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:startTime` (*type:* `DateTime.t`) - Return only metric data that has changed since this time. Default is to return all information about all metrics for the job.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1974,22 +1928,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  List the jobs of a project.
-
-  To list the jobs of a project in a region, we recommend using
-  `projects.locations.jobs.list` with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To
-  list the all jobs across all regions, use `projects.jobs.aggregated`. Using
-  `projects.jobs.list` is not recommended, as you can only get the list of
-  jobs that are running in `us-central1`.
+  List the jobs of a project. To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, as you can only get the list of jobs that are running in `us-central1`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The project which owns the jobs.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains this job.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2003,11 +1948,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The kind of filter to use.
-      *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many.
-          The actual number of jobs returned will be the lesser of max_responses
-          and an unspecified server-defined limit.
-      *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response
-          to request additional results in a long list.
+      *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
+      *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
       *   `:view` (*type:* `String.t`) - Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2146,21 +2088,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Updates the state of an existing Cloud Dataflow job.
-
-  To update the state of an existing job, we recommend using
-  `projects.locations.jobs.update` with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.update` is not recommended, as you can only update the state
-  of jobs that are running in `us-central1`.
+  Updates the state of an existing Cloud Dataflow job. To update the state of an existing job, we recommend using `projects.locations.jobs.update` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.update` is not recommended, as you can only update the state of jobs that are running in `us-central1`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the job belongs to.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains this job.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
   *   `job_id` (*type:* `String.t`) - The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2236,9 +2170,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The project id.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the job specified by job_id.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   *   `job_id` (*type:* `String.t`) - The job id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2320,9 +2252,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The project id.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the job specified by job_id.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   *   `job_id` (*type:* `String.t`) - The job id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2400,21 +2330,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Request the job status.
-
-  To request the status of a job, we recommend using
-  `projects.locations.jobs.messages.list` with a [regional endpoint]
-  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
-  `projects.jobs.messages.list` is not recommended, as you can only request
-  the status of jobs that are running in `us-central1`.
+  Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.messages.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.messages.list` is not recommended, as you can only request the status of jobs that are running in `us-central1`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - A project id.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the job specified by job_id.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
   *   `job_id` (*type:* `String.t`) - The job to get messages about.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2428,17 +2350,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:endTime` (*type:* `DateTime.t`) - Return only messages with timestamps < end_time. The default is now
-          (i.e. return up to the latest messages available).
+      *   `:endTime` (*type:* `DateTime.t`) - Return only messages with timestamps < end_time. The default is now (i.e. return up to the latest messages available).
       *   `:minimumImportance` (*type:* `String.t`) - Filter to only get messages with importance >= level
-      *   `:pageSize` (*type:* `integer()`) - If specified, determines the maximum number of messages to
-          return.  If unspecified, the service may choose an appropriate
-          default, or may return an arbitrarily large number of results.
-      *   `:pageToken` (*type:* `String.t`) - If supplied, this should be the value of next_page_token returned
-          by an earlier call. This will cause the next page of results to
-          be returned.
-      *   `:startTime` (*type:* `DateTime.t`) - If specified, return only messages with timestamps >= start_time.
-          The default is the job creation time (i.e. beginning of messages).
+      *   `:pageSize` (*type:* `integer()`) - If specified, determines the maximum number of messages to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
+      *   `:pageToken` (*type:* `String.t`) - If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
+      *   `:startTime` (*type:* `DateTime.t`) - If specified, return only messages with timestamps >= start_time. The default is the job creation time (i.e. beginning of messages).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2578,15 +2494,105 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
+  Request detailed information about the execution status of a stage of the job. EXPERIMENTAL. This API is subject to change or removal without notice.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - A project id.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.
+  *   `job_id` (*type:* `String.t`) - The job to get execution details for.
+  *   `stage_id` (*type:* `String.t`) - The stage for which to fetch information.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:endTime` (*type:* `DateTime.t`) - Upper time bound of work items to include, by start time.
+      *   `:pageSize` (*type:* `integer()`) - If specified, determines the maximum number of work items to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
+      *   `:pageToken` (*type:* `String.t`) - If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
+      *   `:startTime` (*type:* `DateTime.t`) - Lower time bound of work items to include, by start time.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.StageExecutionDetails{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_locations_jobs_stages_get_execution_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.StageExecutionDetails.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_locations_jobs_stages_get_execution_details(
+        connection,
+        project_id,
+        location,
+        job_id,
+        stage_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :endTime => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :startTime => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/stages/{stageId}/executionDetails",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "location" => URI.encode(location, &URI.char_unreserved?/1),
+          "jobId" => URI.encode(job_id, &URI.char_unreserved?/1),
+          "stageId" => URI.encode(stage_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.StageExecutionDetails{}])
+  end
+
+  @doc """
   Leases a dataflow WorkItem to run.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Identifies the project this worker belongs to.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the WorkItem's job.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.
   *   `job_id` (*type:* `String.t`) - Identifies the workflow job this worker belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2668,9 +2674,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - The project which owns the WorkItem's job.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the WorkItem's job.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.
   *   `job_id` (*type:* `String.t`) - The job which the WorkItem is part of.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2977,18 +2981,13 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  Validates a GoogleSQL query for Cloud Dataflow syntax. Will always
-  confirm the given query parses correctly, and if able to look up
-  schema information from DataCatalog, will validate that the query
-  analyzes properly as well.
+  Validates a GoogleSQL query for Cloud Dataflow syntax. Will always confirm the given query parses correctly, and if able to look up schema information from DataCatalog, will validate that the query analyzes properly as well.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Cloud Platform project that the job belongs to.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-      which to direct the request.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3063,9 +3062,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Cloud Platform project that the job belongs to.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-      which to direct the request.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3137,9 +3134,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Cloud Platform project that the job belongs to.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-      which to direct the request.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3152,9 +3147,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gcsPath` (*type:* `String.t`) - Required. A Cloud Storage path to the template from which to
-          create the job.
-          Must be valid Cloud Storage URL, beginning with 'gs://'.
+      *   `:gcsPath` (*type:* `String.t`) - Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'.
       *   `:view` (*type:* `String.t`) - The view to retrieve. Defaults to METADATA_ONLY.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3218,9 +3211,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Cloud Platform project that the job belongs to.
-  *   `location` (*type:* `String.t`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-      which to direct the request.
+  *   `location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3233,15 +3224,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on GCS.
-          The file must be a Json serialized DynamicTemplateFieSpec object.
-      *   `:"dynamicTemplate.stagingLocation"` (*type:* `String.t`) - Cloud Storage path for staging dependencies.
-          Must be a valid Cloud Storage URL, beginning with `gs://`.
-      *   `:gcsPath` (*type:* `String.t`) - A Cloud Storage path to the template from which to create
-          the job.
-          Must be valid Cloud Storage URL, beginning with 'gs://'.
-      *   `:validateOnly` (*type:* `boolean()`) - If true, the request is validated but not actually executed.
-          Defaults to false.
+      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on GCS. The file must be a Json serialized DynamicTemplateFieSpec object.
+      *   `:"dynamicTemplate.stagingLocation"` (*type:* `String.t`) - Cloud Storage path for staging dependencies. Must be a valid Cloud Storage URL, beginning with `gs://`.
+      *   `:gcsPath` (*type:* `String.t`) - A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'.
+      *   `:validateOnly` (*type:* `boolean()`) - If true, the request is validated but not actually executed. Defaults to false.
       *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParameters.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3440,20 +3426,12 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
-  List TemplateVersions using project_id and an optional display_name field.
-  List all the TemplateVersions in the Template if display set.
-  List all the TemplateVersions in the Project if display_name not set.
+  List TemplateVersions using project_id and an optional display_name field. List all the TemplateVersions in the Template if display set. List all the TemplateVersions in the Project if display_name not set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - parent includes project_id, and display_name is optional.
-
-      List by project_id(pid1) and display_name(tid1).
-        Format: projects/{pid1}/catalogTemplates/{tid1}
-
-      List by project_id(pid1).
-        Format: projects/{pid1}
+  *   `parent` (*type:* `String.t`) - parent includes project_id, and display_name is optional. List by project_id(pid1) and display_name(tid1). Format: projects/{pid1}/catalogTemplates/{tid1} List by project_id(pid1). Format: projects/{pid1}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3467,8 +3445,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of TemplateVersions to return per page.
-      *   `:pageToken` (*type:* `String.t`) - The page token, received from a previous ListTemplateVersions call.
-          Provide this to retrieve the subsequent page.
+      *   `:pageToken` (*type:* `String.t`) - The page token, received from a previous ListTemplateVersions call. Provide this to retrieve the subsequent page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3606,12 +3583,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gcsPath` (*type:* `String.t`) - Required. A Cloud Storage path to the template from which to
-          create the job.
-          Must be valid Cloud Storage URL, beginning with 'gs://'.
-      *   `:location` (*type:* `String.t`) - The [regional endpoint]
-          (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-          which to direct the request.
+      *   `:gcsPath` (*type:* `String.t`) - Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'.
+      *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
       *   `:view` (*type:* `String.t`) - The view to retrieve. Defaults to METADATA_ONLY.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3675,18 +3648,11 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on GCS.
-          The file must be a Json serialized DynamicTemplateFieSpec object.
-      *   `:"dynamicTemplate.stagingLocation"` (*type:* `String.t`) - Cloud Storage path for staging dependencies.
-          Must be a valid Cloud Storage URL, beginning with `gs://`.
-      *   `:gcsPath` (*type:* `String.t`) - A Cloud Storage path to the template from which to create
-          the job.
-          Must be valid Cloud Storage URL, beginning with 'gs://'.
-      *   `:location` (*type:* `String.t`) - The [regional endpoint]
-          (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-          which to direct the request.
-      *   `:validateOnly` (*type:* `boolean()`) - If true, the request is validated but not actually executed.
-          Defaults to false.
+      *   `:"dynamicTemplate.gcsPath"` (*type:* `String.t`) - Path to dynamic template spec file on GCS. The file must be a Json serialized DynamicTemplateFieSpec object.
+      *   `:"dynamicTemplate.stagingLocation"` (*type:* `String.t`) - Cloud Storage path for staging dependencies. Must be a valid Cloud Storage URL, beginning with `gs://`.
+      *   `:gcsPath` (*type:* `String.t`) - A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'.
+      *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.
+      *   `:validateOnly` (*type:* `boolean()`) - If true, the request is validated but not actually executed. Defaults to false.
       *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.LaunchTemplateParameters.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

@@ -26,12 +26,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
   *   `maxWorkItemCommitBytes` (*type:* `String.t`, *default:* `nil`) - Maximum size for work item commit supported windmill storage layer.
   *   `streamingComputationConfigs` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig.t)`, *default:* `nil`) - Set of computation configuration information.
   *   `userStepToStateFamilyNameMap` (*type:* `map()`, *default:* `nil`) - Map from user step names to state families.
-  *   `windmillServiceEndpoint` (*type:* `String.t`, *default:* `nil`) - If present, the worker must use this endpoint to communicate with Windmill
-      Service dispatchers, otherwise the worker must continue to use whatever
-      endpoint it had been using.
-  *   `windmillServicePort` (*type:* `String.t`, *default:* `nil`) - If present, the worker must use this port to communicate with Windmill
-      Service dispatchers. Only applicable when windmill_service_endpoint is
-      specified.
+  *   `windmillServiceEndpoint` (*type:* `String.t`, *default:* `nil`) - If present, the worker must use this endpoint to communicate with Windmill Service dispatchers, otherwise the worker must continue to use whatever endpoint it had been using.
+  *   `windmillServicePort` (*type:* `String.t`, *default:* `nil`) - If present, the worker must use this port to communicate with Windmill Service dispatchers. Only applicable when windmill_service_endpoint is specified.
   """
 
   use GoogleApi.Gax.ModelBase

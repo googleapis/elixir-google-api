@@ -21,11 +21,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse do
 
   ## Attributes
 
-  *   `metadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t`, *default:* `nil`) - The template metadata describing the template name, available
-      parameters, etc.
+  *   `metadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t`, *default:* `nil`) - The template metadata describing the template name, available parameters, etc.
   *   `runtimeMetadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.RuntimeMetadata.t`, *default:* `nil`) - Describes the runtime metadata with SDKInfo and available parameters.
-  *   `status` (*type:* `GoogleApi.Dataflow.V1b3.Model.Status.t`, *default:* `nil`) - The status of the get template request. Any problems with the
-      request will be indicated in the error_details.
+  *   `status` (*type:* `GoogleApi.Dataflow.V1b3.Model.Status.t`, *default:* `nil`) - The status of the get template request. Any problems with the request will be indicated in the error_details.
   *   `templateType` (*type:* `String.t`, *default:* `nil`) - Template Type.
   """
 

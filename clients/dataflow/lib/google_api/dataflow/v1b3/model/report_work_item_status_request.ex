@@ -22,17 +22,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusRequest do
   ## Attributes
 
   *   `currentWorkerTime` (*type:* `DateTime.t`, *default:* `nil`) - The current timestamp at the worker.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint]
-      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-      contains the WorkItem's job.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.
   *   `unifiedWorkerRequest` (*type:* `map()`, *default:* `nil`) - Untranslated bag-of-bytes WorkProgressUpdateRequest from UnifiedWorker.
-  *   `workItemStatuses` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.WorkItemStatus.t)`, *default:* `nil`) - The order is unimportant, except that the order of the
-      WorkItemServiceState messages in the ReportWorkItemStatusResponse
-      corresponds to the order of WorkItemStatus messages here.
-  *   `workerId` (*type:* `String.t`, *default:* `nil`) - The ID of the worker reporting the WorkItem status.  If this
-      does not match the ID of the worker which the Dataflow service
-      believes currently has the lease on the WorkItem, the report
-      will be dropped (with an error response).
+  *   `workItemStatuses` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.WorkItemStatus.t)`, *default:* `nil`) - The order is unimportant, except that the order of the WorkItemServiceState messages in the ReportWorkItemStatusResponse corresponds to the order of WorkItemStatus messages here.
+  *   `workerId` (*type:* `String.t`, *default:* `nil`) - The ID of the worker reporting the WorkItem status. If this does not match the ID of the worker which the Dataflow service believes currently has the lease on the WorkItem, the report will be dropped (with an error response).
   """
 
   use GoogleApi.Gax.ModelBase

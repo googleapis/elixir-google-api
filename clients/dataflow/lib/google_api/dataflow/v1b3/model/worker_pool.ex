@@ -17,73 +17,32 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkerPool do
   @moduledoc """
-  Describes one particular pool of Cloud Dataflow workers to be
-  instantiated by the Cloud Dataflow service in order to perform the
-  computations required by a job.  Note that a workflow job may use
-  multiple pools, in order to match the various computational
-  requirements of the various stages of the job.
+  Describes one particular pool of Cloud Dataflow workers to be instantiated by the Cloud Dataflow service in order to perform the computations required by a job. Note that a workflow job may use multiple pools, in order to match the various computational requirements of the various stages of the job.
 
   ## Attributes
 
   *   `autoscalingSettings` (*type:* `GoogleApi.Dataflow.V1b3.Model.AutoscalingSettings.t`, *default:* `nil`) - Settings for autoscaling of this WorkerPool.
   *   `dataDisks` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Disk.t)`, *default:* `nil`) - Data disks that are used by a VM in this workflow.
-  *   `defaultPackageSet` (*type:* `String.t`, *default:* `nil`) - The default package set to install.  This allows the service to
-      select a default set of packages which are useful to worker
-      harnesses written in a particular language.
-  *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size of root disk for VMs, in GB.  If zero or unspecified, the service will
-      attempt to choose a reasonable default.
+  *   `defaultPackageSet` (*type:* `String.t`, *default:* `nil`) - The default package set to install. This allows the service to select a default set of packages which are useful to worker harnesses written in a particular language.
+  *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size of root disk for VMs, in GB. If zero or unspecified, the service will attempt to choose a reasonable default.
   *   `diskSourceImage` (*type:* `String.t`, *default:* `nil`) - Fully qualified source image for disks.
-  *   `diskType` (*type:* `String.t`, *default:* `nil`) - Type of root disk for VMs.  If empty or unspecified, the service will
-      attempt to choose a reasonable default.
+  *   `diskType` (*type:* `String.t`, *default:* `nil`) - Type of root disk for VMs. If empty or unspecified, the service will attempt to choose a reasonable default.
   *   `ipConfiguration` (*type:* `String.t`, *default:* `nil`) - Configuration for VM IPs.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of the worker pool; currently only `harness` and `shuffle`
-      are supported.
-  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Machine type (e.g. "n1-standard-1").  If empty or unspecified, the
-      service will attempt to choose a reasonable default.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of the worker pool; currently only `harness` and `shuffle` are supported.
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Machine type (e.g. "n1-standard-1"). If empty or unspecified, the service will attempt to choose a reasonable default.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Metadata to set on the Google Compute Engine VMs.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - Network to which VMs will be assigned.  If empty or unspecified,
-      the service will use the network "default".
-  *   `numThreadsPerWorker` (*type:* `integer()`, *default:* `nil`) - The number of threads per worker harness. If empty or unspecified, the
-      service will choose a number of threads (according to the number of cores
-      on the selected machine type for batch, or 1 by convention for streaming).
-  *   `numWorkers` (*type:* `integer()`, *default:* `nil`) - Number of Google Compute Engine workers in this pool needed to
-      execute the job.  If zero or unspecified, the service will
-      attempt to choose a reasonable default.
-  *   `onHostMaintenance` (*type:* `String.t`, *default:* `nil`) - The action to take on host maintenance, as defined by the Google
-      Compute Engine API.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Network to which VMs will be assigned. If empty or unspecified, the service will use the network "default".
+  *   `numThreadsPerWorker` (*type:* `integer()`, *default:* `nil`) - The number of threads per worker harness. If empty or unspecified, the service will choose a number of threads (according to the number of cores on the selected machine type for batch, or 1 by convention for streaming).
+  *   `numWorkers` (*type:* `integer()`, *default:* `nil`) - Number of Google Compute Engine workers in this pool needed to execute the job. If zero or unspecified, the service will attempt to choose a reasonable default.
+  *   `onHostMaintenance` (*type:* `String.t`, *default:* `nil`) - The action to take on host maintenance, as defined by the Google Compute Engine API.
   *   `packages` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Package.t)`, *default:* `nil`) - Packages to be installed on workers.
   *   `poolArgs` (*type:* `map()`, *default:* `nil`) - Extra arguments for this worker pool.
-  *   `sdkHarnessContainerImages` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage.t)`, *default:* `nil`) - Set of SDK harness containers needed to execute this pipeline. This will
-      only be set in the Fn API path. For non-cross-language pipelines this
-      should have only one entry. Cross-language pipelines will have two or more
-      entries.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Subnetwork to which VMs will be assigned, if desired.  Expected to be of
-      the form "regions/REGION/subnetworks/SUBNETWORK".
-  *   `taskrunnerSettings` (*type:* `GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings.t`, *default:* `nil`) - Settings passed through to Google Compute Engine workers when
-      using the standard Dataflow task runner.  Users should ignore
-      this field.
-  *   `teardownPolicy` (*type:* `String.t`, *default:* `nil`) - Sets the policy for determining when to turndown worker pool.
-      Allowed values are: `TEARDOWN_ALWAYS`, `TEARDOWN_ON_SUCCESS`, and
-      `TEARDOWN_NEVER`.
-      `TEARDOWN_ALWAYS` means workers are always torn down regardless of whether
-      the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down
-      if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn
-      down.
-
-      If the workers are not torn down by the service, they will
-      continue to run and use Google Compute Engine VM resources in the
-      user's project until they are explicitly terminated by the user.
-      Because of this, Google recommends using the `TEARDOWN_ALWAYS`
-      policy except for small, manually supervised test jobs.
-
-      If unknown or unspecified, the service will attempt to choose a reasonable
-      default.
-  *   `workerHarnessContainerImage` (*type:* `String.t`, *default:* `nil`) - Required. Docker container image that executes the Cloud Dataflow worker
-      harness, residing in Google Container Registry.
-
-      Deprecated for the Fn API path. Use sdk_harness_container_images instead.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Zone to run the worker pools in.  If empty or unspecified, the service
-      will attempt to choose a reasonable default.
+  *   `sdkHarnessContainerImages` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage.t)`, *default:* `nil`) - Set of SDK harness containers needed to execute this pipeline. This will only be set in the Fn API path. For non-cross-language pipelines this should have only one entry. Cross-language pipelines will have two or more entries.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Subnetwork to which VMs will be assigned, if desired. Expected to be of the form "regions/REGION/subnetworks/SUBNETWORK".
+  *   `taskrunnerSettings` (*type:* `GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings.t`, *default:* `nil`) - Settings passed through to Google Compute Engine workers when using the standard Dataflow task runner. Users should ignore this field.
+  *   `teardownPolicy` (*type:* `String.t`, *default:* `nil`) - Sets the policy for determining when to turndown worker pool. Allowed values are: `TEARDOWN_ALWAYS`, `TEARDOWN_ON_SUCCESS`, and `TEARDOWN_NEVER`. `TEARDOWN_ALWAYS` means workers are always torn down regardless of whether the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn down. If the workers are not torn down by the service, they will continue to run and use Google Compute Engine VM resources in the user's project until they are explicitly terminated by the user. Because of this, Google recommends using the `TEARDOWN_ALWAYS` policy except for small, manually supervised test jobs. If unknown or unspecified, the service will attempt to choose a reasonable default.
+  *   `workerHarnessContainerImage` (*type:* `String.t`, *default:* `nil`) - Required. Docker container image that executes the Cloud Dataflow worker harness, residing in Google Container Registry. Deprecated for the Fn API path. Use sdk_harness_container_images instead.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Zone to run the worker pools in. If empty or unspecified, the service will attempt to choose a reasonable default.
   """
 
   use GoogleApi.Gax.ModelBase

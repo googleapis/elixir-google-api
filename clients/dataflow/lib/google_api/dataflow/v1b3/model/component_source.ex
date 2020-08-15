@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.ComponentSource do
   @moduledoc """
-  Description of an interstitial value between transforms in an execution
-  stage.
+  Description of an interstitial value between transforms in an execution stage.
 
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Dataflow service generated name for this source.
-  *   `originalTransformOrCollection` (*type:* `String.t`, *default:* `nil`) - User name for the original user transform or collection with which this
-      source is most closely associated.
+  *   `originalTransformOrCollection` (*type:* `String.t`, *default:* `nil`) - User name for the original user transform or collection with which this source is most closely associated.
   *   `userName` (*type:* `String.t`, *default:* `nil`) - Human-readable name for this transform; may be user or system generated.
   """
 

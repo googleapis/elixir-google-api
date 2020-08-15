@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.MetricShortId do
   @moduledoc """
-  The metric short id is returned to the user alongside an offset into
-  ReportWorkItemStatusRequest
+  The metric short id is returned to the user alongside an offset into ReportWorkItemStatusRequest
 
   ## Attributes
 
-  *   `metricIndex` (*type:* `integer()`, *default:* `nil`) - The index of the corresponding metric in
-      the ReportWorkItemStatusRequest. Required.
+  *   `metricIndex` (*type:* `integer()`, *default:* `nil`) - The index of the corresponding metric in the ReportWorkItemStatusRequest. Required.
   *   `shortId` (*type:* `String.t`, *default:* `nil`) - The service-generated short identifier for the metric.
   """
 

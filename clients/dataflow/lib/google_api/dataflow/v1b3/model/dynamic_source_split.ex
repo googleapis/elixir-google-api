@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.DynamicSourceSplit do
   @moduledoc """
-  When a task splits using WorkItemStatus.dynamic_source_split, this
-  message describes the two parts of the split relative to the
-  description of the current task's input.
+  When a task splits using WorkItemStatus.dynamic_source_split, this message describes the two parts of the split relative to the description of the current task's input.
 
   ## Attributes
 
-  *   `primary` (*type:* `GoogleApi.Dataflow.V1b3.Model.DerivedSource.t`, *default:* `nil`) - Primary part (continued to be processed by worker).
-      Specified relative to the previously-current source.
-      Becomes current.
-  *   `residual` (*type:* `GoogleApi.Dataflow.V1b3.Model.DerivedSource.t`, *default:* `nil`) - Residual part (returned to the pool of work).
-      Specified relative to the previously-current source.
+  *   `primary` (*type:* `GoogleApi.Dataflow.V1b3.Model.DerivedSource.t`, *default:* `nil`) - Primary part (continued to be processed by worker). Specified relative to the previously-current source. Becomes current.
+  *   `residual` (*type:* `GoogleApi.Dataflow.V1b3.Model.DerivedSource.t`, *default:* `nil`) - Residual part (returned to the pool of work). Specified relative to the previously-current source.
   """
 
   use GoogleApi.Gax.ModelBase

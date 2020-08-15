@@ -17,20 +17,13 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.MetricStructuredName do
   @moduledoc """
-  Identifies a metric, by describing the source which generated the
-  metric.
+  Identifies a metric, by describing the source which generated the metric.
 
   ## Attributes
 
-  *   `context` (*type:* `map()`, *default:* `nil`) - Zero or more labeled fields which identify the part of the job this
-      metric is associated with, such as the name of a step or collection.
-
-      For example, built-in counters associated with steps will have
-      context['step'] = <step-name>. Counters associated with PCollections
-      in the SDK will have context['pcollection'] = <pcollection-name>.
+  *   `context` (*type:* `map()`, *default:* `nil`) - Zero or more labeled fields which identify the part of the job this metric is associated with, such as the name of a step or collection. For example, built-in counters associated with steps will have context['step'] = . Counters associated with PCollections in the SDK will have context['pcollection'] = .
   *   `name` (*type:* `String.t`, *default:* `nil`) - Worker-defined metric name.
-  *   `origin` (*type:* `String.t`, *default:* `nil`) - Origin (namespace) of metric name. May be blank for user-define metrics;
-      will be "dataflow" for metrics defined by the Dataflow service or SDK.
+  *   `origin` (*type:* `String.t`, *default:* `nil`) - Origin (namespace) of metric name. May be blank for user-define metrics; will be "dataflow" for metrics defined by the Dataflow service or SDK.
   """
 
   use GoogleApi.Gax.ModelBase

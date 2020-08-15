@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionLabelRequest do
   @moduledoc """
-  Either add the label to TemplateVersion or remove it from the
-  TemplateVersion.
+  Either add the label to TemplateVersion or remove it from the TemplateVersion.
 
   ## Attributes
 
   *   `key` (*type:* `String.t`, *default:* `nil`) - The label key for update.
-  *   `op` (*type:* `String.t`, *default:* `nil`) - Requests for add label to TemplateVersion or remove label from
-      TemplateVersion.
+  *   `op` (*type:* `String.t`, *default:* `nil`) - Requests for add label to TemplateVersion or remove label from TemplateVersion.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The label value for update.
   """
 

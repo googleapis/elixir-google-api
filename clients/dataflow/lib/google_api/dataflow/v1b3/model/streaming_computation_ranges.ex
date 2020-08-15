@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges do
   @moduledoc """
-  Describes full or partial data disk assignment information of the computation
-  ranges.
+  Describes full or partial data disk assignment information of the computation ranges.
 
   ## Attributes
 

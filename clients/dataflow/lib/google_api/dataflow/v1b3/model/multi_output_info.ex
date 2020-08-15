@@ -21,8 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MultiOutputInfo do
 
   ## Attributes
 
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - The id of the tag the user code will emit to this output by; this
-      should correspond to the tag of some SideInputInfo.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - The id of the tag the user code will emit to this output by; this should correspond to the tag of some SideInputInfo.
   """
 
   use GoogleApi.Gax.ModelBase

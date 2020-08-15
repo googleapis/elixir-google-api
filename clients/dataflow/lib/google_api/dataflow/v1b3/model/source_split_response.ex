@@ -21,14 +21,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SourceSplitResponse do
 
   ## Attributes
 
-  *   `bundles` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.DerivedSource.t)`, *default:* `nil`) - If outcome is SPLITTING_HAPPENED, then this is a list of bundles
-      into which the source was split. Otherwise this field is ignored.
-      This list can be empty, which means the source represents an empty input.
-  *   `outcome` (*type:* `String.t`, *default:* `nil`) - Indicates whether splitting happened and produced a list of bundles.
-      If this is USE_CURRENT_SOURCE_AS_IS, the current source should
-      be processed "as is" without splitting. "bundles" is ignored in this case.
-      If this is SPLITTING_HAPPENED, then "bundles" contains a list of
-      bundles into which the source was split.
+  *   `bundles` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.DerivedSource.t)`, *default:* `nil`) - If outcome is SPLITTING_HAPPENED, then this is a list of bundles into which the source was split. Otherwise this field is ignored. This list can be empty, which means the source represents an empty input.
+  *   `outcome` (*type:* `String.t`, *default:* `nil`) - Indicates whether splitting happened and produced a list of bundles. If this is USE_CURRENT_SOURCE_AS_IS, the current source should be processed "as is" without splitting. "bundles" is ignored in this case. If this is SPLITTING_HAPPENED, then "bundles" contains a list of bundles into which the source was split.
   *   `shards` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SourceSplitShard.t)`, *default:* `nil`) - DEPRECATED in favor of bundles.
   """
 

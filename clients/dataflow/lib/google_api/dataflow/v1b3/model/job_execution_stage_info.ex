@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.JobExecutionStageInfo do
   @moduledoc """
-  Contains information about how a particular
-  google.dataflow.v1beta3.Step will be executed.
+  Contains information about how a particular google.dataflow.v1beta3.Step will be executed.
 
   ## Attributes
 
-  *   `stepName` (*type:* `list(String.t)`, *default:* `nil`) - The steps associated with the execution stage.
-      Note that stages may have several steps, and that a given step
-      might be run by more than one stage.
+  *   `stepName` (*type:* `list(String.t)`, *default:* `nil`) - The steps associated with the execution stage. Note that stages may have several steps, and that a given step might be run by more than one stage.
   """
 
   use GoogleApi.Gax.ModelBase

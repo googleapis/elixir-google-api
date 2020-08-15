@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.TopologyConfig do
   @moduledoc """
-  Global topology of the streaming Dataflow job, including all
-  computations and their sharded locations.
+  Global topology of the streaming Dataflow job, including all computations and their sharded locations.
 
   ## Attributes
 

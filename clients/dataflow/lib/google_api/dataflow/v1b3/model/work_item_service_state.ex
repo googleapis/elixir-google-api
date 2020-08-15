@@ -17,33 +17,18 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState do
   @moduledoc """
-  The Dataflow service's idea of the current state of a WorkItem
-  being processed by a worker.
+  The Dataflow service's idea of the current state of a WorkItem being processed by a worker.
 
   ## Attributes
 
-  *   `completeWorkStatus` (*type:* `GoogleApi.Dataflow.V1b3.Model.Status.t`, *default:* `nil`) - If set, a request to complete the work item with the given status. This
-      will not be set to OK, unless supported by the specific kind of WorkItem.
-      It can be used for the backend to indicate a WorkItem must terminate, e.g.,
-      for aborting work.
-  *   `harnessData` (*type:* `map()`, *default:* `nil`) - Other data returned by the service, specific to the particular
-      worker harness.
-  *   `hotKeyDetection` (*type:* `GoogleApi.Dataflow.V1b3.Model.HotKeyDetection.t`, *default:* `nil`) - A hot key is a symptom of poor data distribution in which there are enough
-      elements mapped to a single key to impact pipeline performance. When
-      present, this field includes metadata associated with any hot key.
+  *   `completeWorkStatus` (*type:* `GoogleApi.Dataflow.V1b3.Model.Status.t`, *default:* `nil`) - If set, a request to complete the work item with the given status. This will not be set to OK, unless supported by the specific kind of WorkItem. It can be used for the backend to indicate a WorkItem must terminate, e.g., for aborting work.
+  *   `harnessData` (*type:* `map()`, *default:* `nil`) - Other data returned by the service, specific to the particular worker harness.
+  *   `hotKeyDetection` (*type:* `GoogleApi.Dataflow.V1b3.Model.HotKeyDetection.t`, *default:* `nil`) - A hot key is a symptom of poor data distribution in which there are enough elements mapped to a single key to impact pipeline performance. When present, this field includes metadata associated with any hot key.
   *   `leaseExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - Time at which the current lease will expire.
-  *   `metricShortId` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.MetricShortId.t)`, *default:* `nil`) - The short ids that workers should use in subsequent metric updates.
-      Workers should strive to use short ids whenever possible, but it is ok
-      to request the short_id again if a worker lost track of it
-      (e.g. if the worker is recovering from a crash).
-      NOTE: it is possible that the response may have short ids for a subset
-      of the metrics.
-  *   `nextReportIndex` (*type:* `String.t`, *default:* `nil`) - The index value to use for the next report sent by the worker.
-      Note: If the report call fails for whatever reason, the worker should
-      reuse this index for subsequent report attempts.
+  *   `metricShortId` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.MetricShortId.t)`, *default:* `nil`) - The short ids that workers should use in subsequent metric updates. Workers should strive to use short ids whenever possible, but it is ok to request the short_id again if a worker lost track of it (e.g. if the worker is recovering from a crash). NOTE: it is possible that the response may have short ids for a subset of the metrics.
+  *   `nextReportIndex` (*type:* `String.t`, *default:* `nil`) - The index value to use for the next report sent by the worker. Note: If the report call fails for whatever reason, the worker should reuse this index for subsequent report attempts.
   *   `reportStatusInterval` (*type:* `String.t`, *default:* `nil`) - New recommended reporting interval.
-  *   `splitRequest` (*type:* `GoogleApi.Dataflow.V1b3.Model.ApproximateSplitRequest.t`, *default:* `nil`) - The progress point in the WorkItem where the Dataflow service
-      suggests that the worker truncate the task.
+  *   `splitRequest` (*type:* `GoogleApi.Dataflow.V1b3.Model.ApproximateSplitRequest.t`, *default:* `nil`) - The progress point in the WorkItem where the Dataflow service suggests that the worker truncate the task.
   *   `suggestedStopPoint` (*type:* `GoogleApi.Dataflow.V1b3.Model.ApproximateProgress.t`, *default:* `nil`) - DEPRECATED in favor of split_request.
   *   `suggestedStopPosition` (*type:* `GoogleApi.Dataflow.V1b3.Model.Position.t`, *default:* `nil`) - Obsolete, always empty.
   """

@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.PartialGroupByKeyInstruction do
   @moduledoc """
-  An instruction that does a partial group-by-key.
-  One input and one output.
+  An instruction that does a partial group-by-key. One input and one output.
 
   ## Attributes
 
   *   `input` (*type:* `GoogleApi.Dataflow.V1b3.Model.InstructionInput.t`, *default:* `nil`) - Describes the input to the partial group-by-key instruction.
   *   `inputElementCodec` (*type:* `map()`, *default:* `nil`) - The codec to use for interpreting an element in the input PTable.
-  *   `originalCombineValuesInputStoreName` (*type:* `String.t`, *default:* `nil`) - If this instruction includes a combining function this is the name of the
-      intermediate store between the GBK and the CombineValues.
-  *   `originalCombineValuesStepName` (*type:* `String.t`, *default:* `nil`) - If this instruction includes a combining function, this is the name of the
-      CombineValues instruction lifted into this instruction.
+  *   `originalCombineValuesInputStoreName` (*type:* `String.t`, *default:* `nil`) - If this instruction includes a combining function this is the name of the intermediate store between the GBK and the CombineValues.
+  *   `originalCombineValuesStepName` (*type:* `String.t`, *default:* `nil`) - If this instruction includes a combining function, this is the name of the CombineValues instruction lifted into this instruction.
   *   `sideInputs` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SideInputInfo.t)`, *default:* `nil`) - Zero or more side inputs.
   *   `valueCombiningFn` (*type:* `map()`, *default:* `nil`) - The value combining function to invoke.
   """
