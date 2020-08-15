@@ -27,7 +27,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the resource. Used for web cache validation.
   *   `names` (*type:* `list(GoogleApi.People.V1.Model.Name.t)`, *default:* `nil`) - The person's names. This field is a singleton for contact sources.
   *   `taglines` (*type:* `list(GoogleApi.People.V1.Model.Tagline.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned The person's taglines.
-  *   `residences` (*type:* `list(GoogleApi.People.V1.Model.Residence.t)`, *default:* `nil`) - The person's residences.
+  *   `residences` (*type:* `list(GoogleApi.People.V1.Model.Residence.t)`, *default:* `nil`) - **DEPRECATED**: (Please use `person.locations` instead) The person's residences.
   *   `sipAddresses` (*type:* `list(GoogleApi.People.V1.Model.SipAddress.t)`, *default:* `nil`) - The person's SIP addresses.
   *   `externalIds` (*type:* `list(GoogleApi.People.V1.Model.ExternalId.t)`, *default:* `nil`) - The person's external IDs.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.PersonMetadata.t`, *default:* `nil`) - Output only. Metadata about the person.
@@ -43,6 +43,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `birthdays` (*type:* `list(GoogleApi.People.V1.Model.Birthday.t)`, *default:* `nil`) - The person's birthdays. This field is a singleton for contact sources.
   *   `calendarUrls` (*type:* `list(GoogleApi.People.V1.Model.CalendarUrl.t)`, *default:* `nil`) - The person's calendar URLs.
   *   `locales` (*type:* `list(GoogleApi.People.V1.Model.Locale.t)`, *default:* `nil`) - The person's locale preferences.
+  *   `locations` (*type:* `list(GoogleApi.People.V1.Model.Location.t)`, *default:* `nil`) - The person's locations.
   *   `interests` (*type:* `list(GoogleApi.People.V1.Model.Interest.t)`, *default:* `nil`) - The person's interests.
   *   `nicknames` (*type:* `list(GoogleApi.People.V1.Model.Nickname.t)`, *default:* `nil`) - The person's nicknames.
   *   `braggingRights` (*type:* `list(GoogleApi.People.V1.Model.BraggingRights.t)`, *default:* `nil`) - **DEPRECATED**: No data will be returned The person's bragging rights.
@@ -85,6 +86,7 @@ defmodule GoogleApi.People.V1.Model.Person do
           :birthdays => list(GoogleApi.People.V1.Model.Birthday.t()),
           :calendarUrls => list(GoogleApi.People.V1.Model.CalendarUrl.t()),
           :locales => list(GoogleApi.People.V1.Model.Locale.t()),
+          :locations => list(GoogleApi.People.V1.Model.Location.t()),
           :interests => list(GoogleApi.People.V1.Model.Interest.t()),
           :nicknames => list(GoogleApi.People.V1.Model.Nickname.t()),
           :braggingRights => list(GoogleApi.People.V1.Model.BraggingRights.t()),
@@ -124,6 +126,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   field(:birthdays, as: GoogleApi.People.V1.Model.Birthday, type: :list)
   field(:calendarUrls, as: GoogleApi.People.V1.Model.CalendarUrl, type: :list)
   field(:locales, as: GoogleApi.People.V1.Model.Locale, type: :list)
+  field(:locations, as: GoogleApi.People.V1.Model.Location, type: :list)
   field(:interests, as: GoogleApi.People.V1.Model.Interest, type: :list)
   field(:nicknames, as: GoogleApi.People.V1.Model.Nickname, type: :list)
   field(:braggingRights, as: GoogleApi.People.V1.Model.BraggingRights, type: :list)
