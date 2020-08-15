@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PackageResourceZypper do
   @moduledoc """
-  A package managed by Zypper.
-  install: `zypper -y install package`
-  remove: `zypper -y rm package`
+  A package managed by Zypper. install: `zypper -y install package` remove: `zypper -y rm package`
 
   ## Attributes
 

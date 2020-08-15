@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.RepositoryResourceGooRepository do
   @moduledoc """
-  Represents a Goo package repository. These will be added to a repo file
-  that will be managed at C:/ProgramData/GooGet/repos/google_osconfig.repo.
+  Represents a Goo package repository. These will be added to a repo file that will be managed at C:/ProgramData/GooGet/repos/google_osconfig.repo.
 
   ## Attributes
 

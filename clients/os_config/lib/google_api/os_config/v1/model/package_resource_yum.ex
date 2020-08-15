@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PackageResourceYUM do
   @moduledoc """
-  A package managed by YUM.
-  install: `yum -y install package`
-  remove: `yum -y remove package`
+  A package managed by YUM. install: `yum -y install package` remove: `yum -y remove package`
 
   ## Attributes
 

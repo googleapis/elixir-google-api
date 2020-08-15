@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.FixedOrPercent do
   @moduledoc """
-  Message encapsulating a value that can be either absolute ("fixed") or
-  relative ("percent") to a value.
+  Message encapsulating a value that can be either absolute ("fixed") or relative ("percent") to a value.
 
   ## Attributes
 
   *   `fixed` (*type:* `integer()`, *default:* `nil`) - Specifies a fixed value.
-  *   `percent` (*type:* `integer()`, *default:* `nil`) - Specifies the relative value defined as a percentage, which will be
-      multiplied by a reference value.
+  *   `percent` (*type:* `integer()`, *default:* `nil`) - Specifies the relative value defined as a percentage, which will be multiplied by a reference value.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,11 +21,7 @@ defmodule GoogleApi.OSConfig.V1.Model.File do
 
   ## Attributes
 
-  *   `allowInsecure` (*type:* `boolean()`, *default:* `nil`) - Defaults to false. When false, files will be subject to validations
-      based on the file type:
-
-      Remote: A checksum must be specified.
-      GCS:    An object generation number must be specified.
+  *   `allowInsecure` (*type:* `boolean()`, *default:* `nil`) - Defaults to false. When false, files will be subject to validations based on the file type: Remote: A checksum must be specified. GCS: An object generation number must be specified.
   *   `gcs` (*type:* `GoogleApi.OSConfig.V1.Model.FileGcs.t`, *default:* `nil`) - A GCS object.
   *   `localPath` (*type:* `String.t`, *default:* `nil`) - A local path to use.
   *   `remote` (*type:* `GoogleApi.OSConfig.V1.Model.FileRemote.t`, *default:* `nil`) - A generic remote file.

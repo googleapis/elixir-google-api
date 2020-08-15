@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.AptSettings do
   @moduledoc """
-  Apt patching is completed by executing `apt-get update && apt-get
-  upgrade`. Additional options can be set to control how this is executed.
+  Apt patching is completed by executing `apt-get update && apt-get upgrade`. Additional options can be set to control how this is executed.
 
   ## Attributes
 
   *   `excludes` (*type:* `list(String.t)`, *default:* `nil`) - List of packages to exclude from update. These packages will be excluded
-  *   `exclusivePackages` (*type:* `list(String.t)`, *default:* `nil`) - An exclusive list of packages to be updated. These are the only packages
-      that will be updated. If these packages are not installed, they will be
-      ignored. This field cannot be specified with any other patch configuration
-      fields.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - By changing the type to DIST, the patching is performed
-      using `apt-get dist-upgrade` instead.
+  *   `exclusivePackages` (*type:* `list(String.t)`, *default:* `nil`) - An exclusive list of packages to be updated. These are the only packages that will be updated. If these packages are not installed, they will be ignored. This field cannot be specified with any other patch configuration fields.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - By changing the type to DIST, the patching is performed using `apt-get dist-upgrade` instead.
   """
 
   use GoogleApi.Gax.ModelBase

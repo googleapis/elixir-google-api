@@ -22,8 +22,7 @@ defmodule GoogleApi.OSConfig.V1.Model.GcsObject do
   ## Attributes
 
   *   `bucket` (*type:* `String.t`, *default:* `nil`) - Required. Bucket of the Cloud Storage object.
-  *   `generationNumber` (*type:* `String.t`, *default:* `nil`) - Required. Generation number of the Cloud Storage object. This is used to
-      ensure that the ExecStep specified by this PatchJob does not change.
+  *   `generationNumber` (*type:* `String.t`, *default:* `nil`) - Required. Generation number of the Cloud Storage object. This is used to ensure that the ExecStep specified by this PatchJob does not change.
   *   `object` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Cloud Storage object.
   """
 

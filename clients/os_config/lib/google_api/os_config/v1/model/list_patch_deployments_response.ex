@@ -21,8 +21,7 @@ defmodule GoogleApi.OSConfig.V1.Model.ListPatchDeploymentsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token that can be used to get the next page of patch
-      deployments.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token that can be used to get the next page of patch deployments.
   *   `patchDeployments` (*type:* `list(GoogleApi.OSConfig.V1.Model.PatchDeployment.t)`, *default:* `nil`) - The list of patch deployments.
   """
 

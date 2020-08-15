@@ -17,23 +17,18 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PatchConfig do
   @moduledoc """
-  Patch configuration specifications. Contains details on how to apply the
-  patch(es) to a VM instance.
+  Patch configuration specifications. Contains details on how to apply the patch(es) to a VM instance.
 
   ## Attributes
 
-  *   `apt` (*type:* `GoogleApi.OSConfig.V1.Model.AptSettings.t`, *default:* `nil`) - Apt update settings. Use this setting to override the default `apt` patch
-      rules.
-  *   `goo` (*type:* `GoogleApi.OSConfig.V1.Model.GooSettings.t`, *default:* `nil`) - Goo update settings. Use this setting to override the default `goo` patch
-      rules.
+  *   `apt` (*type:* `GoogleApi.OSConfig.V1.Model.AptSettings.t`, *default:* `nil`) - Apt update settings. Use this setting to override the default `apt` patch rules.
+  *   `goo` (*type:* `GoogleApi.OSConfig.V1.Model.GooSettings.t`, *default:* `nil`) - Goo update settings. Use this setting to override the default `goo` patch rules.
   *   `postStep` (*type:* `GoogleApi.OSConfig.V1.Model.ExecStep.t`, *default:* `nil`) - The `ExecStep` to run after the patch update.
   *   `preStep` (*type:* `GoogleApi.OSConfig.V1.Model.ExecStep.t`, *default:* `nil`) - The `ExecStep` to run before the patch update.
   *   `rebootConfig` (*type:* `String.t`, *default:* `nil`) - Post-patch reboot settings.
   *   `windowsUpdate` (*type:* `GoogleApi.OSConfig.V1.Model.WindowsUpdateSettings.t`, *default:* `nil`) - Windows update settings. Use this override the default windows patch rules.
-  *   `yum` (*type:* `GoogleApi.OSConfig.V1.Model.YumSettings.t`, *default:* `nil`) - Yum update settings. Use this setting to override the default `yum` patch
-      rules.
-  *   `zypper` (*type:* `GoogleApi.OSConfig.V1.Model.ZypperSettings.t`, *default:* `nil`) - Zypper update settings. Use this setting to override the default `zypper`
-      patch rules.
+  *   `yum` (*type:* `GoogleApi.OSConfig.V1.Model.YumSettings.t`, *default:* `nil`) - Yum update settings. Use this setting to override the default `yum` patch rules.
+  *   `zypper` (*type:* `GoogleApi.OSConfig.V1.Model.ZypperSettings.t`, *default:* `nil`) - Zypper update settings. Use this setting to override the default `zypper` patch rules.
   """
 
   use GoogleApi.Gax.ModelBase

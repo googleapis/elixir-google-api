@@ -17,22 +17,16 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.ExecutePatchJobRequest do
   @moduledoc """
-  A request message to initiate patching across Compute Engine
-  instances.
+  A request message to initiate patching across Compute Engine instances.
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the patch job. Length of the description is limited
-      to 1024 characters.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the patch job. Length of the description is limited to 1024 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for this patch job. This does not have to be unique.
-  *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - If this patch is a dry-run only, instances are contacted but
-      will do nothing.
-  *   `duration` (*type:* `String.t`, *default:* `nil`) - Duration of the patch job. After the duration ends, the patch job
-      times out.
-  *   `instanceFilter` (*type:* `GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t`, *default:* `nil`) - Required. Instances to patch, either explicitly or filtered by some criteria such
-      as zone or labels.
-  *   `patchConfig` (*type:* `GoogleApi.OSConfig.V1.Model.PatchConfig.t`, *default:* `nil`) - Patch configuration being applied. If omitted, instances are
-      patched using the default configurations.
+  *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - If this patch is a dry-run only, instances are contacted but will do nothing.
+  *   `duration` (*type:* `String.t`, *default:* `nil`) - Duration of the patch job. After the duration ends, the patch job times out.
+  *   `instanceFilter` (*type:* `GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t`, *default:* `nil`) - Required. Instances to patch, either explicitly or filtered by some criteria such as zone or labels.
+  *   `patchConfig` (*type:* `GoogleApi.OSConfig.V1.Model.PatchConfig.t`, *default:* `nil`) - Patch configuration being applied. If omitted, instances are patched using the default configurations.
   *   `rollout` (*type:* `GoogleApi.OSConfig.V1.Model.PatchRollout.t`, *default:* `nil`) - Rollout strategy of the patch job.
   """
 

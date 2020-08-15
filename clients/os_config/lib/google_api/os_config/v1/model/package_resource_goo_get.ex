@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PackageResourceGooGet do
   @moduledoc """
-  A package managed by GooGet.
-  install: `googet -noconfirm install package`
-  remove: `googet -noconfirm remove package`
+  A package managed by GooGet. install: `googet -noconfirm install package` remove: `googet -noconfirm remove package`
 
   ## Attributes
 

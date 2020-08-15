@@ -21,12 +21,9 @@ defmodule GoogleApi.OSConfig.V1.Model.WindowsUpdateSettings do
 
   ## Attributes
 
-  *   `classifications` (*type:* `list(String.t)`, *default:* `nil`) - Only apply updates of these windows update classifications. If empty, all
-      updates are applied.
+  *   `classifications` (*type:* `list(String.t)`, *default:* `nil`) - Only apply updates of these windows update classifications. If empty, all updates are applied.
   *   `excludes` (*type:* `list(String.t)`, *default:* `nil`) - List of KBs to exclude from update.
-  *   `exclusivePatches` (*type:* `list(String.t)`, *default:* `nil`) - An exclusive list of kbs to be updated. These are the only patches
-      that will be updated. This field must not be used with other
-      patch configurations.
+  *   `exclusivePatches` (*type:* `list(String.t)`, *default:* `nil`) - An exclusive list of kbs to be updated. These are the only patches that will be updated. This field must not be used with other patch configurations.
   """
 
   use GoogleApi.Gax.ModelBase

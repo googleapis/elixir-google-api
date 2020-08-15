@@ -21,9 +21,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PackageResourceDeb do
 
   ## Attributes
 
-  *   `pullDeps` (*type:* `boolean()`, *default:* `nil`) - Whether dependencies should also be installed.
-      install when false: `dpkg -i package`
-      install when true: `apt-get update && apt-get -y install package.deb`
+  *   `pullDeps` (*type:* `boolean()`, *default:* `nil`) - Whether dependencies should also be installed. install when false: `dpkg -i package` install when true: `apt-get update && apt-get -y install package.deb`
   *   `source` (*type:* `GoogleApi.OSConfig.V1.Model.File.t`, *default:* `nil`) - A deb package.
   """
 
