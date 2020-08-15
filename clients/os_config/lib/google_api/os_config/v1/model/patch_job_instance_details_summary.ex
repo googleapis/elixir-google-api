@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetailsSummary do
   @moduledoc """
-  A summary of the current patch state across all instances that this patch
-  job affects. Contains counts of instances in different states. These states
-  map to `InstancePatchState`. List patch job instance details to see the
-  specific states of each instance.
+  A summary of the current patch state across all instances that this patch job affects. Contains counts of instances in different states. These states map to `InstancePatchState`. List patch job instance details to see the specific states of each instance.
 
   ## Attributes
 
@@ -29,9 +26,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetailsSummary do
   *   `downloadingPatchesInstanceCount` (*type:* `String.t`, *default:* `nil`) - Number of instances that are downloading patches.
   *   `failedInstanceCount` (*type:* `String.t`, *default:* `nil`) - Number of instances that failed.
   *   `inactiveInstanceCount` (*type:* `String.t`, *default:* `nil`) - Number of instances that are inactive.
-  *   `noAgentDetectedInstanceCount` (*type:* `String.t`, *default:* `nil`) - Number of instances that do not appear to be running the agent. Check to
-      ensure that the agent is installed, running, and able to communicate with
-      the service.
+  *   `noAgentDetectedInstanceCount` (*type:* `String.t`, *default:* `nil`) - Number of instances that do not appear to be running the agent. Check to ensure that the agent is installed, running, and able to communicate with the service.
   *   `notifiedInstanceCount` (*type:* `String.t`, *default:* `nil`) - Number of instances notified about patch job.
   *   `pendingInstanceCount` (*type:* `String.t`, *default:* `nil`) - Number of instances pending patch job.
   *   `postPatchStepInstanceCount` (*type:* `String.t`, *default:* `nil`) - Number of instances that are running the post-patch step.

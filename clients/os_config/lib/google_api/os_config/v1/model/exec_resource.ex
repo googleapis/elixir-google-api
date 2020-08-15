@@ -21,10 +21,8 @@ defmodule GoogleApi.OSConfig.V1.Model.ExecResource do
 
   ## Attributes
 
-  *   `enforce` (*type:* `GoogleApi.OSConfig.V1.Model.ExecResourceExec.t`, *default:* `nil`) - What to run to bring this resource into the desired state.
-      Optional if policy is in validate only mode.
-  *   `validate` (*type:* `GoogleApi.OSConfig.V1.Model.ExecResourceExec.t`, *default:* `nil`) - What to run to validate this resource is in the desired state.
-      A successful exit code indicates resource is in the desired state.
+  *   `enforce` (*type:* `GoogleApi.OSConfig.V1.Model.ExecResourceExec.t`, *default:* `nil`) - What to run to bring this resource into the desired state. Optional if policy is in validate only mode.
+  *   `validate` (*type:* `GoogleApi.OSConfig.V1.Model.ExecResourceExec.t`, *default:* `nil`) - What to run to validate this resource is in the desired state. A successful exit code indicates resource is in the desired state.
   """
 
   use GoogleApi.Gax.ModelBase

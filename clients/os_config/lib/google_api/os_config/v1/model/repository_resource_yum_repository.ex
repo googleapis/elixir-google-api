@@ -17,18 +17,14 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.RepositoryResourceYumRepository do
   @moduledoc """
-  Represents a single yum package repository. These will be added to a repo
-  file that will be managed at /etc/yum.repos.d/google_osconfig.repo.
+  Represents a single yum package repository. These will be added to a repo file that will be managed at /etc/yum.repos.d/google_osconfig.repo.
 
   ## Attributes
 
   *   `baseUrl` (*type:* `String.t`, *default:* `nil`) - The location of the repository directory.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the repository.
   *   `gpgKeys` (*type:* `list(String.t)`, *default:* `nil`) - URIs of GPG keys.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - A one word, unique name for this repository. This will be
-      the `repo id` in the yum config file and also the `display_name` if
-      `display_name` is omitted. This id is also used as the unique identifier
-      when checking for resource conflicts.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A one word, unique name for this repository. This will be the `repo id` in the yum config file and also the `display_name` if `display_name` is omitted. This id is also used as the unique identifier when checking for resource conflicts.
   """
 
   use GoogleApi.Gax.ModelBase

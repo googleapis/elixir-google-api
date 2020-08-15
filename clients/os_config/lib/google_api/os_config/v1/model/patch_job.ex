@@ -17,36 +17,22 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PatchJob do
   @moduledoc """
-  A high level representation of a patch job that is either in progress
-  or has completed.
-
-  Instance details are not included in the job. To paginate through instance
-  details, use ListPatchJobInstanceDetails.
-
-  For more information about patch jobs, see
-  [Creating patch
-  jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
+  A high level representation of a patch job that is either in progress or has completed. Instance details are not included in the job. To paginate through instance details, use ListPatchJobInstanceDetails. For more information about patch jobs, see [Creating patch jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time this patch job was created.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the patch job. Length of the description is limited
-      to 1024 characters.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the patch job. Length of the description is limited to 1024 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for this patch job. This is not a unique identifier.
-  *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - If this patch job is a dry run, the agent reports that it has
-      finished without running any updates on the VM instance.
-  *   `duration` (*type:* `String.t`, *default:* `nil`) - Duration of the patch job. After the duration ends, the
-      patch job times out.
-  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - If this patch job failed, this message provides information about the
-      failure.
+  *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - If this patch job is a dry run, the agent reports that it has finished without running any updates on the VM instance.
+  *   `duration` (*type:* `String.t`, *default:* `nil`) - Duration of the patch job. After the duration ends, the patch job times out.
+  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - If this patch job failed, this message provides information about the failure.
   *   `instanceDetailsSummary` (*type:* `GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetailsSummary.t`, *default:* `nil`) - Summary of instance details.
   *   `instanceFilter` (*type:* `GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t`, *default:* `nil`) - Instances to patch.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Unique identifier for this patch job in the form
-      `projects/*/patchJobs/*`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Unique identifier for this patch job in the form `projects/*/patchJobs/*`
   *   `patchConfig` (*type:* `GoogleApi.OSConfig.V1.Model.PatchConfig.t`, *default:* `nil`) - Patch configuration being applied.
   *   `patchDeployment` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the patch deployment that created this patch job.
-  *   `percentComplete` (*type:* `float()`, *default:* `nil`) - Reflects the overall progress of the patch job in the range of
-      0.0 being no progress to 100.0 being complete.
+  *   `percentComplete` (*type:* `float()`, *default:* `nil`) - Reflects the overall progress of the patch job in the range of 0.0 being no progress to 100.0 being complete.
   *   `rollout` (*type:* `GoogleApi.OSConfig.V1.Model.PatchRollout.t`, *default:* `nil`) - Rollout strategy being applied.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the PatchJob.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time this patch job was updated.

@@ -21,10 +21,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PackageResourceRPM do
 
   ## Attributes
 
-  *   `pullDeps` (*type:* `boolean()`, *default:* `nil`) - Whether dependencies should also be installed.
-      install when false: `rpm --upgrade --replacepkgs package.rpm`
-      install when true: `yum -y install package.rpm` or
-      `zypper -y install package.rpm`
+  *   `pullDeps` (*type:* `boolean()`, *default:* `nil`) - Whether dependencies should also be installed. install when false: `rpm --upgrade --replacepkgs package.rpm` install when true: `yum -y install package.rpm` or `zypper -y install package.rpm`
   *   `source` (*type:* `GoogleApi.OSConfig.V1.Model.File.t`, *default:* `nil`) - An rpm package.
   """
 

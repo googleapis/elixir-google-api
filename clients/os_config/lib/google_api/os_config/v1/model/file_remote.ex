@@ -22,8 +22,7 @@ defmodule GoogleApi.OSConfig.V1.Model.FileRemote do
   ## Attributes
 
   *   `sha256Checksum` (*type:* `String.t`, *default:* `nil`) - SHA256 checksum of the remote file.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI from which to fetch the object. It should contain both the protocol
-      and path following the format {protocol}://{location}.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI from which to fetch the object. It should contain both the protocol and path following the format {protocol}://{location}.
   """
 
   use GoogleApi.Gax.ModelBase

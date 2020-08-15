@@ -21,13 +21,9 @@ defmodule GoogleApi.OSConfig.V1.Model.ExecStepConfig do
 
   ## Attributes
 
-  *   `allowedSuccessCodes` (*type:* `list(integer())`, *default:* `nil`) - Defaults to [0]. A list of possible return values that the
-      execution can return to indicate a success.
+  *   `allowedSuccessCodes` (*type:* `list(integer())`, *default:* `nil`) - Defaults to [0]. A list of possible return values that the execution can return to indicate a success.
   *   `gcsObject` (*type:* `GoogleApi.OSConfig.V1.Model.GcsObject.t`, *default:* `nil`) - A Cloud Storage object containing the executable.
-  *   `interpreter` (*type:* `String.t`, *default:* `nil`) - The script interpreter to use to run the script. If no interpreter is
-      specified the script will be executed directly, which will likely
-      only succeed for scripts with [shebang lines]
-      (https://en.wikipedia.org/wiki/Shebang_\\(Unix\\)).
+  *   `interpreter` (*type:* `String.t`, *default:* `nil`) - The script interpreter to use to run the script. If no interpreter is specified the script will be executed directly, which will likely only succeed for scripts with [shebang lines] (https://en.wikipedia.org/wiki/Shebang_\\(Unix\\)).
   *   `localPath` (*type:* `String.t`, *default:* `nil`) - An absolute path to the executable on the VM.
   """
 

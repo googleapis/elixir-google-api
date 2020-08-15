@@ -17,16 +17,14 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.RepositoryResourceAptRepository do
   @moduledoc """
-  Represents a single apt package repository. These will be added to a repo
-  file that will be managed at /etc/apt/sources.list.d/google_osconfig.list.
+  Represents a single apt package repository. These will be added to a repo file that will be managed at /etc/apt/sources.list.d/google_osconfig.list.
 
   ## Attributes
 
   *   `archiveType` (*type:* `String.t`, *default:* `nil`) - Type of archive files in this repository. The default behavior is DEB.
   *   `components` (*type:* `list(String.t)`, *default:* `nil`) - List of components for this repository. Must contain at least one item.
   *   `distribution` (*type:* `String.t`, *default:* `nil`) - Distribution of this repository.
-  *   `gpgKey` (*type:* `String.t`, *default:* `nil`) - URI of the key file for this repository. The agent will maintain
-      a keyring at /etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg.
+  *   `gpgKey` (*type:* `String.t`, *default:* `nil`) - URI of the key file for this repository. The agent will maintain a keyring at /etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI for this repository.
   """
 

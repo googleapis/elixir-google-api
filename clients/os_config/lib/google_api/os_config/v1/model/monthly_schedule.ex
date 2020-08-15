@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.MonthlySchedule do
   @moduledoc """
-  Represents a monthly schedule. An example of a valid monthly schedule is
-  "on the third Tuesday of the month" or "on the 15th of the month".
+  Represents a monthly schedule. An example of a valid monthly schedule is "on the third Tuesday of the month" or "on the 15th of the month".
 
   ## Attributes
 
-  *   `monthDay` (*type:* `integer()`, *default:* `nil`) - Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1
-      indicates the last day of the month.
-      Months without the target day will be skipped. For example, a schedule to
-      run "every month on the 31st" will not run in February, April, June, etc.
+  *   `monthDay` (*type:* `integer()`, *default:* `nil`) - Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1 indicates the last day of the month. Months without the target day will be skipped. For example, a schedule to run "every month on the 31st" will not run in February, April, June, etc.
   *   `weekDayOfMonth` (*type:* `GoogleApi.OSConfig.V1.Model.WeekDayOfMonth.t`, *default:* `nil`) - Required. Week day in a month.
   """
 

@@ -17,26 +17,15 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PatchInstanceFilter do
   @moduledoc """
-  A filter to target VM instances for patching. The targeted
-  VMs must meet all criteria specified. So if both labels and zones are
-  specified, the patch job targets only VMs with those labels and in those
-  zones.
+  A filter to target VM instances for patching. The targeted VMs must meet all criteria specified. So if both labels and zones are specified, the patch job targets only VMs with those labels and in those zones.
 
   ## Attributes
 
-  *   `all` (*type:* `boolean()`, *default:* `nil`) - Target all VM instances in the project. If true, no other criteria is
-      permitted.
-  *   `groupLabels` (*type:* `list(GoogleApi.OSConfig.V1.Model.PatchInstanceFilterGroupLabel.t)`, *default:* `nil`) - Targets VM instances matching ANY of these GroupLabels. This allows
-      targeting of disparate groups of VM instances.
-  *   `instanceNamePrefixes` (*type:* `list(String.t)`, *default:* `nil`) - Targets VMs whose name starts with one of these prefixes. Similar to
-      labels, this is another way to group VMs when targeting configs, for
-      example prefix="prod-".
-  *   `instances` (*type:* `list(String.t)`, *default:* `nil`) - Targets any of the VM instances specified. Instances are specified by their
-      URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`,
-      `projects/[PROJECT_ID]/zones/[ZONE]/instances/[INSTANCE_NAME]`, or
-      `https://www.googleapis.com/compute/v1/projects/[PROJECT_ID]/zones/[ZONE]/instances/[INSTANCE_NAME]`
-  *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - Targets VM instances in ANY of these zones. Leave empty to target VM
-      instances in any zone.
+  *   `all` (*type:* `boolean()`, *default:* `nil`) - Target all VM instances in the project. If true, no other criteria is permitted.
+  *   `groupLabels` (*type:* `list(GoogleApi.OSConfig.V1.Model.PatchInstanceFilterGroupLabel.t)`, *default:* `nil`) - Targets VM instances matching ANY of these GroupLabels. This allows targeting of disparate groups of VM instances.
+  *   `instanceNamePrefixes` (*type:* `list(String.t)`, *default:* `nil`) - Targets VMs whose name starts with one of these prefixes. Similar to labels, this is another way to group VMs when targeting configs, for example prefix="prod-".
+  *   `instances` (*type:* `list(String.t)`, *default:* `nil`) - Targets any of the VM instances specified. Instances are specified by their URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`, `projects/[PROJECT_ID]/zones/[ZONE]/instances/[INSTANCE_NAME]`, or `https://www.googleapis.com/compute/v1/projects/[PROJECT_ID]/zones/[ZONE]/instances/[INSTANCE_NAME]`
+  *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - Targets VM instances in ANY of these zones. Leave empty to target VM instances in any zone.
   """
 
   use GoogleApi.Gax.ModelBase

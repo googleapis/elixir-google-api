@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.TimeZone do
   @moduledoc """
-  Represents a time zone from the
-  [IANA Time Zone Database](https://www.iana.org/time-zones).
+  Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones).
 
   ## Attributes
 

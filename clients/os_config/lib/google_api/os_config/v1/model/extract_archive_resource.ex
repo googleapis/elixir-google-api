@@ -21,13 +21,9 @@ defmodule GoogleApi.OSConfig.V1.Model.ExtractArchiveResource do
 
   ## Attributes
 
-  *   `creates` (*type:* `String.t`, *default:* `nil`) - Local file path that signals this resource is in the desired state.
-      The absence of this file will indicate whether the archive needs to be
-      extracted.
+  *   `creates` (*type:* `String.t`, *default:* `nil`) - Local file path that signals this resource is in the desired state. The absence of this file will indicate whether the archive needs to be extracted.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - Directory to extract archive to.
-  *   `overwrite` (*type:* `boolean()`, *default:* `nil`) - Whether to overwrite existing files during extraction. If this is set to
-      true, any existing files in the destination location will be overwritten by
-      the extraction.
+  *   `overwrite` (*type:* `boolean()`, *default:* `nil`) - Whether to overwrite existing files during extraction. If this is set to true, any existing files in the destination location will be overwritten by the extraction.
   *   `source` (*type:* `GoogleApi.OSConfig.V1.Model.File.t`, *default:* `nil`) - The source archive to extract.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the archive to extract.
   """

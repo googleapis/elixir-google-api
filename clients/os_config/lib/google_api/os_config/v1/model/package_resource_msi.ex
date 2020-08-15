@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PackageResourceMSI do
   @moduledoc """
-  An MSI package. MSI packages only support INSTALLED state.
-  Install msiexec /i /qn /norestart
+  An MSI package. MSI packages only support INSTALLED state. Install msiexec /i /qn /norestart
 
   ## Attributes
 
-  *   `allowedSuccessCodes` (*type:* `list(integer())`, *default:* `nil`) - Return codes that indicate that the software installed or updated
-      successfully. Behaviour defaults to [0]
-  *   `flags` (*type:* `list(String.t)`, *default:* `nil`) - Flags to use during package install.
-      Appended to the defalts of "/i /qn /norestart"
+  *   `allowedSuccessCodes` (*type:* `list(integer())`, *default:* `nil`) - Return codes that indicate that the software installed or updated successfully. Behaviour defaults to [0]
+  *   `flags` (*type:* `list(String.t)`, *default:* `nil`) - Flags to use during package install. Appended to the defalts of "/i /qn /norestart"
   *   `source` (*type:* `GoogleApi.OSConfig.V1.Model.File.t`, *default:* `nil`) - The MSI package.
   """
 

@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.ZypperSettings do
   @moduledoc """
-  Zypper patching is performed by running `zypper patch`.
-  See also https://en.opensuse.org/SDB:Zypper_manual.
+  Zypper patching is performed by running `zypper patch`. See also https://en.opensuse.org/SDB:Zypper_manual.
 
   ## Attributes
 
-  *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Install only patches with these categories.
-      Common categories include security, recommended, and feature.
+  *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Install only patches with these categories. Common categories include security, recommended, and feature.
   *   `excludes` (*type:* `list(String.t)`, *default:* `nil`) - List of patches to exclude from update.
-  *   `exclusivePatches` (*type:* `list(String.t)`, *default:* `nil`) - An exclusive list of patches to be updated. These are the only patches
-      that will be installed using 'zypper patch patch:<patch_name>' command.
-      This field must not be used with any other patch configuration fields.
-  *   `severities` (*type:* `list(String.t)`, *default:* `nil`) - Install only patches with these severities.
-      Common severities include critical, important, moderate, and low.
+  *   `exclusivePatches` (*type:* `list(String.t)`, *default:* `nil`) - An exclusive list of patches to be updated. These are the only patches that will be installed using 'zypper patch patch:' command. This field must not be used with any other patch configuration fields.
+  *   `severities` (*type:* `list(String.t)`, *default:* `nil`) - Install only patches with these severities. Common severities include critical, important, moderate, and low.
   *   `withOptional` (*type:* `boolean()`, *default:* `nil`) - Adds the `--with-optional` flag to `zypper patch`.
   *   `withUpdate` (*type:* `boolean()`, *default:* `nil`) - Adds the `--with-update` flag, to `zypper patch`.
   """

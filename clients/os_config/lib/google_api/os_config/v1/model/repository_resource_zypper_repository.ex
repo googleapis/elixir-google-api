@@ -17,18 +17,14 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.RepositoryResourceZypperRepository do
   @moduledoc """
-  Represents a single zypper package repository. These will be added to a
-  repo file that will be managed at /etc/zypp/repos.d/google_osconfig.repo.
+  Represents a single zypper package repository. These will be added to a repo file that will be managed at /etc/zypp/repos.d/google_osconfig.repo.
 
   ## Attributes
 
   *   `baseUrl` (*type:* `String.t`, *default:* `nil`) - The location of the repository directory.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the repository.
   *   `gpgKeys` (*type:* `list(String.t)`, *default:* `nil`) - URIs of GPG keys.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - A one word, unique name for this repository. This will be
-      the `repo id` in the zypper config file and also the `display_name` if
-      `display_name` is omitted. This id is also used as the unique identifier
-      when checking for GuestPolicy conflicts.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A one word, unique name for this repository. This will be the `repo id` in the zypper config file and also the `display_name` if `display_name` is omitted. This id is also used as the unique identifier when checking for GuestPolicy conflicts.
   """
 
   use GoogleApi.Gax.ModelBase

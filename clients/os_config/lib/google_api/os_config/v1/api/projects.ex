@@ -44,13 +44,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:patchDeploymentId` (*type:* `String.t`) - Required. A name for the patch deployment in the project. When creating a name
-          the following rules apply:
-          * Must contain only lowercase letters, numbers, and hyphens.
-          * Must start with a letter.
-          * Must be between 1-63 characters.
-          * Must end with a number or a letter.
-          * Must be unique within the project.
+      *   `:patchDeploymentId` (*type:* `String.t`) - Required. A name for the patch deployment in the project. When creating a name the following rules apply: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-63 characters. * Must end with a number or a letter. * Must be unique within the project.
       *   `:body` (*type:* `GoogleApi.OSConfig.V1.Model.PatchDeployment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -110,8 +104,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSConfig.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the patch deployment in the form
-      `projects/*/patchDeployments/*`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the patch deployment in the form `projects/*/patchDeployments/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -177,8 +170,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSConfig.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the patch deployment in the form
-      `projects/*/patchDeployments/*`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the patch deployment in the form `projects/*/patchDeployments/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -256,8 +248,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of patch deployments to return. Default is 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A pagination token returned from a previous call to ListPatchDeployments
-          that indicates where this listing should continue from.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A pagination token returned from a previous call to ListPatchDeployments that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -313,8 +304,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   end
 
   @doc """
-  Cancel a patch job. The patch job must be active. Canceled patch jobs
-  cannot be restarted.
+  Cancel a patch job. The patch job must be active. Canceled patch jobs cannot be restarted.
 
   ## Parameters
 
@@ -432,8 +422,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   end
 
   @doc """
-  Get the patch job. This can be used to track the progress of an
-  ongoing patch job or review the details of completed jobs.
+  Get the patch job. This can be used to track the progress of an ongoing patch job or review the details of completed jobs.
 
   ## Parameters
 
@@ -508,12 +497,9 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - If provided, this field specifies the criteria that must be met by patch
-          jobs to be included in the response.
-          Currently, filtering is only available on the patch_deployment field.
+      *   `:filter` (*type:* `String.t`) - If provided, this field specifies the criteria that must be met by patch jobs to be included in the response. Currently, filtering is only available on the patch_deployment field.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of instance status to return.
-      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call
-          that indicates where this listing should continue from.
+      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -576,12 +562,9 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A filter expression that filters results listed in the response. This
-          field supports filtering results by instance zone, name, state, or
-          `failure_reason`.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of instance details records to return.  Default is 100.
-      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call
-          that indicates where this listing should continue from.
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters results listed in the response. This field supports filtering results by instance zone, name, state, or `failure_reason`.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of instance details records to return. Default is 100.
+      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

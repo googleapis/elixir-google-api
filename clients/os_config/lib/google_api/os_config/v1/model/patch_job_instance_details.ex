@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetails do
   @moduledoc """
-  Patch details for a VM instance. For more information about reviewing VM
-  instance details, see
-  [Listing all VM instance details for a specific patch
-  job](https://cloud.google.com/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
+  Patch details for a VM instance. For more information about reviewing VM instance details, see [Listing all VM instance details for a specific patch job](https://cloud.google.com/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
 
   ## Attributes
 
   *   `attemptCount` (*type:* `String.t`, *default:* `nil`) - The number of times the agent that the agent attempts to apply the patch.
   *   `failureReason` (*type:* `String.t`, *default:* `nil`) - If the patch fails, this field provides the reason.
-  *   `instanceSystemId` (*type:* `String.t`, *default:* `nil`) - The unique identifier for the instance. This identifier is
-      defined by the server.
+  *   `instanceSystemId` (*type:* `String.t`, *default:* `nil`) - The unique identifier for the instance. This identifier is defined by the server.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The instance name in the form `projects/*/zones/*/instances/*`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Current state of instance patch.
   """

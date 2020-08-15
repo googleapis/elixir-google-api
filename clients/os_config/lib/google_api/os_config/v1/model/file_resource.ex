@@ -24,19 +24,7 @@ defmodule GoogleApi.OSConfig.V1.Model.FileResource do
   *   `content` (*type:* `String.t`, *default:* `nil`) - A a file with this content.
   *   `file` (*type:* `GoogleApi.OSConfig.V1.Model.File.t`, *default:* `nil`) - A remote or local source.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The absolute path of the file.
-  *   `permissions` (*type:* `String.t`, *default:* `nil`) - Consists of three octal digits which represent, in
-      order, the permissions of the owner, group, and other users for the
-      file (similarly to the numeric mode used in the linux chmod utility).
-      Each digit represents a three bit number with the 4 bit
-      corresponding to the read permissions, the 2 bit corresponds to the
-      write bit, and the one bit corresponds to the execute permission.
-      Default behavior is 755.
-
-      Below are some examples of permissions and their associated values:
-      read, write, and execute: 7
-      read and execute: 5
-      read and write: 6
-      read only: 4
+  *   `permissions` (*type:* `String.t`, *default:* `nil`) - Consists of three octal digits which represent, in order, the permissions of the owner, group, and other users for the file (similarly to the numeric mode used in the linux chmod utility). Each digit represents a three bit number with the 4 bit corresponding to the read permissions, the 2 bit corresponds to the write bit, and the one bit corresponds to the execute permission. Default behavior is 755. Below are some examples of permissions and their associated values: read, write, and execute: 7 read and execute: 5 read and write: 6 read only: 4
   *   `state` (*type:* `String.t`, *default:* `nil`) - Desired state of the file.
   """
 

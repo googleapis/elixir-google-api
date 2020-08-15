@@ -21,17 +21,14 @@ defmodule GoogleApi.OSConfig.V1.Model.RecurringSchedule do
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The end time at which a recurring patch deployment schedule is no longer
-      active.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The end time at which a recurring patch deployment schedule is no longer active.
   *   `frequency` (*type:* `String.t`, *default:* `nil`) - Required. The frequency unit of this recurring schedule.
   *   `lastExecuteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the last patch job ran successfully.
   *   `monthly` (*type:* `GoogleApi.OSConfig.V1.Model.MonthlySchedule.t`, *default:* `nil`) - Required. Schedule with monthly executions.
   *   `nextExecuteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the next patch job is scheduled to run.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time that the recurring schedule becomes effective.
-      Defaults to `create_time` of the patch deployment.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time that the recurring schedule becomes effective. Defaults to `create_time` of the patch deployment.
   *   `timeOfDay` (*type:* `GoogleApi.OSConfig.V1.Model.TimeOfDay.t`, *default:* `nil`) - Required. Time of the day to run a recurring deployment.
-  *   `timeZone` (*type:* `GoogleApi.OSConfig.V1.Model.TimeZone.t`, *default:* `nil`) - Required. Defines the time zone that `time_of_day` is relative to.
-      The rules for daylight saving time are determined by the chosen time zone.
+  *   `timeZone` (*type:* `GoogleApi.OSConfig.V1.Model.TimeZone.t`, *default:* `nil`) - Required. Defines the time zone that `time_of_day` is relative to. The rules for daylight saving time are determined by the chosen time zone.
   *   `weekly` (*type:* `GoogleApi.OSConfig.V1.Model.WeeklySchedule.t`, *default:* `nil`) - Required. Schedule with weekly executions.
   """
 

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PackageResourceAPT do
   @moduledoc """
-  A package managed by APT.
-  install: `apt-get update && apt-get -y install [name]`
-  remove: `apt-get -y remove [name]`
+  A package managed by APT. install: `apt-get update && apt-get -y install [name]` remove: `apt-get -y remove [name]`
 
   ## Attributes
 

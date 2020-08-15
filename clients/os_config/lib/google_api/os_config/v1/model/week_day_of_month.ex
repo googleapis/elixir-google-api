@@ -22,8 +22,7 @@ defmodule GoogleApi.OSConfig.V1.Model.WeekDayOfMonth do
   ## Attributes
 
   *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - Required. A day of the week.
-  *   `weekOrdinal` (*type:* `integer()`, *default:* `nil`) - Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1
-      indicates the last week of the month.
+  *   `weekOrdinal` (*type:* `integer()`, *default:* `nil`) - Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month.
   """
 
   use GoogleApi.Gax.ModelBase
