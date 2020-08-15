@@ -21,36 +21,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessLocations do
 
   ## Attributes
 
-  *   `principalOfficeCountry` (*type:* `String.t`, *default:* `nil`) - The "home office" location of the principal. A two-letter country code
-      (ISO 3166-1 alpha-2), such as "US", "DE" or "GB" or a region code. In some
-      limited situations Google systems may refer refer to a region code instead
-      of a country code.
-      Possible Region Codes:
-      <ol>
-        <li>ASI: Asia</li>
-        <li>EUR: Europe</li>
-        <li>OCE: Oceania</li>
-        <li>AFR: Africa</li>
-        <li>NAM: North America</li>
-        <li>SAM: South America</li>
-        <li>ANT: Antarctica</li>
-        <li>ANY: Any location</li>
-      </ol>
-  *   `principalPhysicalLocationCountry` (*type:* `String.t`, *default:* `nil`) - Physical location of the principal at the time of the access. A
-      two-letter country code (ISO 3166-1 alpha-2), such as "US", "DE" or "GB" or
-      a region code. In some limited situations Google systems may refer refer to
-      a region code instead of a country code.
-      Possible Region Codes:
-      <ol>
-        <li>ASI: Asia</li>
-        <li>EUR: Europe</li>
-        <li>OCE: Oceania</li>
-        <li>AFR: Africa</li>
-        <li>NAM: North America</li>
-        <li>SAM: South America</li>
-        <li>ANT: Antarctica</li>
-        <li>ANY: Any location</li>
-      </ol>
+  *   `principalOfficeCountry` (*type:* `String.t`, *default:* `nil`) - The "home office" location of the principal. A two-letter country code (ISO 3166-1 alpha-2), such as "US", "DE" or "GB" or a region code. In some limited situations Google systems may refer refer to a region code instead of a country code. Possible Region Codes: 1. ASI: Asia 2. EUR: Europe 3. OCE: Oceania 4. AFR: Africa 5. NAM: North America 6. SAM: South America 7. ANT: Antarctica 8. ANY: Any location 
+  *   `principalPhysicalLocationCountry` (*type:* `String.t`, *default:* `nil`) - Physical location of the principal at the time of the access. A two-letter country code (ISO 3166-1 alpha-2), such as "US", "DE" or "GB" or a region code. In some limited situations Google systems may refer refer to a region code instead of a country code. Possible Region Codes: 1. ASI: Asia 2. EUR: Europe 3. OCE: Oceania 4. AFR: Africa 5. NAM: North America 6. SAM: South America 7. ANT: Antarctica 8. ANY: Any location 
   """
 
   use GoogleApi.Gax.ModelBase
