@@ -40,9 +40,10 @@ defmodule GoogleApis.Discovery do
   end
 
   def discover_merge() do
+    exceptions = get_exceptions()
     ApiConfig.load_all()
-    |> remove_entries(discover(preferred: false))
-    |> add_entries(discover(preferred: true))
+    |> remove_entries(discover(preferred: false, exceptions: exceptions), exceptions: exceptions)
+    |> add_entries(discover(preferred: true, exceptions: exceptions))
     |> Enum.sort_by(fn config ->
       {config.publish == false, String.downcase(config.name), config.version, config.url}
     end)
@@ -55,18 +56,36 @@ defmodule GoogleApis.Discovery do
   def discover(opts \\ []) do
     conn = Connection.new()
     preferred = Keyword.get(opts, :preferred, true)
+    exceptions = Keyword.get_lazy(opts, :exceptions, &get_exceptions/0)
     {:ok, %{items: items}} = Apis.discovery_apis_list(conn, preferred: preferred)
 
-    Enum.map(items, fn item ->
-      %ApiConfig{
-        name: item.name,
-        version: item.version,
-        url: item.discoveryRestUrl
-      }
+    Enum.flat_map(items, fn %{name: name, version: version, discoveryRestUrl: url} ->
+      if Enum.any?(exceptions, fn
+        %{type: "omit", name: ^name, version: ^version} -> true
+        _ -> false
+      end) do
+        []
+      else
+        [%ApiConfig{name: name, version: version, url: url}]
+      end
     end)
   end
 
-  defp remove_entries(current, discovered) do
+  defmodule Exception do
+    defstruct type: nil,
+              name: nil,
+              version: nil
+  end
+
+  defp get_exceptions() do
+    "./config/exceptions.json"
+    |> Path.expand()
+    |> File.read!()
+    |> Poison.decode!(as: [%Exception{}])
+  end
+
+  defp remove_entries(current, discovered, opts) do
+    exceptions = Keyword.get_lazy(opts, :exceptions, &get_exceptions/0)
     Enum.map(current, fn
       (%ApiConfig{publish: false} = cur_config) ->
         cur_config
@@ -86,7 +105,14 @@ defmodule GoogleApis.Discovery do
         end)
         |> case do
           nil ->
-            %ApiConfig{cur_config | publish: "CHECKME: No longer in discovery. Consider removal."}
+            if Enum.any?(exceptions, fn
+              %{type: "keep", name: ^cur_name, version: ^cur_version} -> true
+              _ -> false
+            end) do
+              cur_config
+            else
+              %ApiConfig{cur_config | publish: "CHECKME: No longer in discovery. Consider removal."}
+            end
           altered_config ->
             altered_config
         end

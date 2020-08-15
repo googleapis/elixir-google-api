@@ -506,6 +506,11 @@
   },
   {
     "version": "v1",
+    "url": "https://www.googleapis.com/discovery/v1/apis/webfonts/v1/rest",
+    "name": "Fonts"
+  },
+  {
+    "version": "v1",
     "url": "https://games.googleapis.com/$discovery/rest?version=v1",
     "name": "Games"
   },
@@ -670,6 +675,11 @@
     "name": "NetworkManagement"
   },
   {
+    "version": "v2",
+    "url": "https://www.googleapis.com/discovery/v1/apis/oauth2/v2/rest",
+    "name": "OAuth2"
+  },
+  {
     "version": "v1",
     "url": "https://osconfig.googleapis.com/$discovery/rest?version=v1",
     "name": "OSConfig"
@@ -723,11 +733,6 @@
     "version": "v1",
     "url": "https://poly.googleapis.com/$discovery/rest?version=v1",
     "name": "Poly"
-  },
-  {
-    "version": "v1alpha1",
-    "url": "https://prod-tt-sasportal.googleapis.com/$discovery/rest?version=v1alpha1",
-    "name": "Prod_TT_SASPortal"
   },
   {
     "version": "v1",
@@ -943,11 +948,6 @@
     "version": "v1",
     "url": "https://tpu.googleapis.com/$discovery/rest?version=v1",
     "name": "TPU"
-  },
-  {
-    "version": "v2",
-    "url": "https://trafficdirector.googleapis.com/$discovery/rest?version=v2",
-    "name": "TrafficDirector"
   },
   {
     "version": "v2",

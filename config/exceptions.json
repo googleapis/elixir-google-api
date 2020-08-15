@@ -1,0 +1,22 @@
+[
+  {
+    "type": "omit",
+    "name": "trafficdirector",
+    "version": "v2"
+  },
+  {
+    "type": "omit",
+    "name": "prod_tt_sasportal",
+    "version": "v1alpha1"
+  },
+  {
+    "type": "keep",
+    "name": "OAuth2",
+    "version": "v2"
+  },
+  {
+    "type": "keep",
+    "name": "Fonts",
+    "version": "v1"
+  }
+]
