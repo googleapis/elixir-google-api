@@ -1,6 +1,11 @@
 [
   {
     "type": "omit",
+    "name": "plus",
+    "version": "v1"
+  },
+  {
+    "type": "omit",
     "name": "trafficdirector",
     "version": "v2"
   },
