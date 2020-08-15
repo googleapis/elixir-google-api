@@ -26,32 +26,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Cancels a transfer. Use the
-  transferOperations.get method to
-  check if the cancellation succeeded or if the operation completed despite
-  the `cancel` request.
-
-  When you cancel an operation, the currently running transfer is
-  interrupted.  For recurring transfer jobs, the next instance of the transfer job
-  will still run.  For example, if your job is configured to run every day
-  at 1pm and you cancel Monday's operation at 1:05pm, Monday's transfer
-  will stop. However, a transfer job will still be attempted on Tuesday.
-
-  This applies only to currently running operations. If an operation is
-  not currently running, `cancel` does nothing.
-
-  <aside class="caution">
-  <b>Caution:</b> Canceling a transfer job can leave your data in an unknown
-  state. We recommend that you restore the state at both the destination and the
-  source after the `cancel` request completes so that your data is in a consistent
-  state.
-  </aside>
-
-  When you cancel a job, the next job computes a delta of files and may repair any
-  inconsistent state. For instance, if you run a job every day, and today's job
-  found 10 new files and transferred five files before you canceled the job,
-  tomorrow's transfer operation will compute a new delta with the five files that
-  were not copied today plus any new files discovered tomorrow.
+  Cancels a transfer. Use the transferOperations.get method to check if the cancellation succeeded or if the operation completed despite the `cancel` request. When you cancel an operation, the currently running transfer is interrupted. For recurring transfer jobs, the next instance of the transfer job will still run. For example, if your job is configured to run every day at 1pm and you cancel Monday's operation at 1:05pm, Monday's transfer will stop. However, a transfer job will still be attempted on Tuesday. This applies only to currently running operations. If an operation is not currently running, `cancel` does nothing. *Caution:* Canceling a transfer job can leave your data in an unknown state. We recommend that you restore the state at both the destination and the source after the `cancel` request completes so that your data is in a consistent state. When you cancel a job, the next job computes a delta of files and may repair any inconsistent state. For instance, if you run a job every day, and today's job found 10 new files and transferred five files before you canceled the job, tomorrow's transfer operation will compute a new delta with the five files that were not copied today plus any new files discovered tomorrow.
 
   ## Parameters
 
@@ -120,9 +95,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -204,11 +177,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of: {"project<span>_</span>id":"my_project_id",
-           "job_names":["jobid1","jobid2",...],
-           "operation_names":["opid1","opid2",...],
-           "transfer_statuses":["status1","status2",...]}.
-          Since `job_names`, `operation_names`, and `transfer_statuses` support multiple values, they must be specified with array notation. `project`<span>`_`</span>`id` is required. `job_names`, `operation_names`, and `transfer_statuses` are optional. The valid values for `transfer_statuses` are case-insensitive: IN_PROGRESS, PAUSED, SUCCESS, FAILED, and ABORTED.
+      *   `:filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of: {"project_id":"my_project_id", "job_names":["jobid1","jobid2",...], "operation_names":["opid1","opid2",...], "transfer_statuses":["status1","status2",...]}. Since `job_names`, `operation_names`, and `transfer_statuses` support multiple values, they must be specified with array notation. `project``_``id` is required. `job_names`, `operation_names`, and `transfer_statuses` are optional. The valid values for `transfer_statuses` are case-insensitive: IN_PROGRESS, PAUSED, SUCCESS, FAILED, and ABORTED.
       *   `:pageSize` (*type:* `integer()`) - The list page size. The max allowed value is 256.
       *   `:pageToken` (*type:* `String.t`) - The list page token.
   *   `opts` (*type:* `keyword()`) - Call options
