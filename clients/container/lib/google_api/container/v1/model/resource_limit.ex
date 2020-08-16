@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.ResourceLimit do
   @moduledoc """
-  Contains information about amount of some resource in the cluster.
-  For memory, value should be in GB.
+  Contains information about amount of some resource in the cluster. For memory, value should be in GB.
 
   ## Attributes
 

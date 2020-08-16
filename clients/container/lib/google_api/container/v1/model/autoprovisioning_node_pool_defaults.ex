@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults do
   @moduledoc """
-  AutoprovisioningNodePoolDefaults contains defaults for a node pool created
-  by NAP.
+  AutoprovisioningNodePoolDefaults contains defaults for a node pool created by NAP.
 
   ## Attributes
 

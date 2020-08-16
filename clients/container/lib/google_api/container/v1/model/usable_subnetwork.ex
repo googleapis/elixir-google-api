@@ -17,21 +17,15 @@
 
 defmodule GoogleApi.Container.V1.Model.UsableSubnetwork do
   @moduledoc """
-  UsableSubnetwork resource returns the subnetwork name, its associated network
-  and the primary CIDR range.
+  UsableSubnetwork resource returns the subnetwork name, its associated network and the primary CIDR range.
 
   ## Attributes
 
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The range of internal addresses that are owned by this subnetwork.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - Network Name.
-      Example: projects/my-project/global/networks/my-network
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Network Name. Example: projects/my-project/global/networks/my-network
   *   `secondaryIpRanges` (*type:* `list(GoogleApi.Container.V1.Model.UsableSubnetworkSecondaryRange.t)`, *default:* `nil`) - Secondary IP ranges.
-  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - A human readable status message representing the reasons for cases where
-      the caller cannot use the secondary ranges under the subnet. For example if
-      the secondary_ip_ranges is empty due to a permission issue, an insufficient
-      permission message will be given by status_message.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Subnetwork Name.
-      Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - A human readable status message representing the reasons for cases where the caller cannot use the secondary ranges under the subnet. For example if the secondary_ip_ranges is empty due to a permission issue, an insufficient permission message will be given by status_message.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Subnetwork Name. Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
   """
 
   use GoogleApi.Gax.ModelBase

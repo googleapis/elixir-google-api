@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.Container.V1.Model.NodePoolAutoscaling do
   @moduledoc """
-  NodePoolAutoscaling contains information required by cluster autoscaler to
-  adjust the size of the node pool to the current cluster usage.
+  NodePoolAutoscaling contains information required by cluster autoscaler to adjust the size of the node pool to the current cluster usage.
 
   ## Attributes
 
   *   `autoprovisioned` (*type:* `boolean()`, *default:* `nil`) - Can this node pool be deleted automatically.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Is autoscaling enabled for this node pool.
-  *   `maxNodeCount` (*type:* `integer()`, *default:* `nil`) - Maximum number of nodes in the NodePool. Must be >= min_node_count. There
-      has to enough quota to scale up the cluster.
-  *   `minNodeCount` (*type:* `integer()`, *default:* `nil`) - Minimum number of nodes in the NodePool. Must be >= 1 and <=
-      max_node_count.
+  *   `maxNodeCount` (*type:* `integer()`, *default:* `nil`) - Maximum number of nodes in the NodePool. Must be >= min_node_count. There has to enough quota to scale up the cluster.
+  *   `minNodeCount` (*type:* `integer()`, *default:* `nil`) - Minimum number of nodes in the NodePool. Must be >= 1 and <= max_node_count.
   """
 
   use GoogleApi.Gax.ModelBase

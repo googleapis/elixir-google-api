@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Container.V1.Model.ListUsableSubnetworksResponse do
   @moduledoc """
-  ListUsableSubnetworksResponse is the response of
-  ListUsableSubnetworksRequest.
+  ListUsableSubnetworksResponse is the response of ListUsableSubnetworksRequest.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - This token allows you to get the next page of results for list requests.
-      If the number of results is larger than `page_size`, use the
-      `next_page_token` as a value for the query parameter `page_token` in the
-      next request. The value will become empty when there are no more pages.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - This token allows you to get the next page of results for list requests. If the number of results is larger than `page_size`, use the `next_page_token` as a value for the query parameter `page_token` in the next request. The value will become empty when there are no more pages.
   *   `subnetworks` (*type:* `list(GoogleApi.Container.V1.Model.UsableSubnetwork.t)`, *default:* `nil`) - A list of usable subnetworks in the specified network project.
   """
 

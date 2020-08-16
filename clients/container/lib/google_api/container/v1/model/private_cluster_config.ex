@@ -22,13 +22,9 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
   ## Attributes
 
   *   `enablePrivateEndpoint` (*type:* `boolean()`, *default:* `nil`) - Whether the master's internal IP address is used as the cluster endpoint.
-  *   `enablePrivateNodes` (*type:* `boolean()`, *default:* `nil`) - Whether nodes have internal IP addresses only. If enabled, all nodes are
-      given only RFC 1918 private addresses and communicate with the master via
-      private networking.
-  *   `masterIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP range in CIDR notation to use for the hosted master network. This
-      range will be used for assigning internal IP addresses to the master or
-      set of masters, as well as the ILB VIP. This range must not overlap with
-      any other ranges in use within the cluster's network.
+  *   `enablePrivateNodes` (*type:* `boolean()`, *default:* `nil`) - Whether nodes have internal IP addresses only. If enabled, all nodes are given only RFC 1918 private addresses and communicate with the master via private networking.
+  *   `masterGlobalAccessConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterMasterGlobalAccessConfig.t`, *default:* `nil`) - Controls master global access settings.
+  *   `masterIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP range in CIDR notation to use for the hosted master network. This range will be used for assigning internal IP addresses to the master or set of masters, as well as the ILB VIP. This range must not overlap with any other ranges in use within the cluster's network.
   *   `peeringName` (*type:* `String.t`, *default:* `nil`) - Output only. The peering name in the customer VPC used by this cluster.
   *   `privateEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The internal IP address of this cluster's master endpoint.
   *   `publicEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The external IP address of this cluster's master endpoint.
@@ -39,6 +35,8 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
   @type t :: %__MODULE__{
           :enablePrivateEndpoint => boolean(),
           :enablePrivateNodes => boolean(),
+          :masterGlobalAccessConfig =>
+            GoogleApi.Container.V1.Model.PrivateClusterMasterGlobalAccessConfig.t(),
           :masterIpv4CidrBlock => String.t(),
           :peeringName => String.t(),
           :privateEndpoint => String.t(),
@@ -47,6 +45,11 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
 
   field(:enablePrivateEndpoint)
   field(:enablePrivateNodes)
+
+  field(:masterGlobalAccessConfig,
+    as: GoogleApi.Container.V1.Model.PrivateClusterMasterGlobalAccessConfig
+  )
+
   field(:masterIpv4CidrBlock)
   field(:peeringName)
   field(:privateEndpoint)

@@ -21,9 +21,7 @@ defmodule GoogleApi.Container.V1.Model.ConsumptionMeteringConfig do
 
   ## Attributes
 
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether to enable consumption metering for this cluster. If enabled, a
-      second BigQuery table will be created to hold resource consumption
-      records.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether to enable consumption metering for this cluster. If enabled, a second BigQuery table will be created to hold resource consumption records.
   """
 
   use GoogleApi.Gax.ModelBase

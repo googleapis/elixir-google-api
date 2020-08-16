@@ -17,38 +17,23 @@
 
 defmodule GoogleApi.Container.V1.Model.NodePool do
   @moduledoc """
-  NodePool contains the name and configuration for a cluster's node pool.
-  Node pools are a set of nodes (i.e. VM's), with a common configuration and
-  specification, under the control of the cluster master. They may have a set
-  of Kubernetes labels applied to them, which may be used to reference them
-  during pod scheduling. They may also be resized up or down, to accommodate
-  the workload.
+  NodePool contains the name and configuration for a cluster's node pool. Node pools are a set of nodes (i.e. VM's), with a common configuration and specification, under the control of the cluster master. They may have a set of Kubernetes labels applied to them, which may be used to reference them during pod scheduling. They may also be resized up or down, to accommodate the workload.
 
   ## Attributes
 
-  *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for this NodePool. Autoscaler is enabled
-      only if a valid configuration is present.
+  *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for this NodePool. Autoscaler is enabled only if a valid configuration is present.
   *   `conditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current node pool state.
   *   `config` (*type:* `GoogleApi.Container.V1.Model.NodeConfig.t`, *default:* `nil`) - The node configuration of the pool.
-  *   `initialNodeCount` (*type:* `integer()`, *default:* `nil`) - The initial node count for the pool. You must ensure that your
-      Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
-      is sufficient for this number of instances. You must also have available
-      firewall and routes quota.
-  *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - [Output only] The resource URLs of the [managed instance
-      groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
-      associated with this node pool.
-  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine
-      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-      NodePool's nodes should be located.
+  *   `initialNodeCount` (*type:* `integer()`, *default:* `nil`) - The initial node count for the pool. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota.
+  *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - [Output only] The resource URLs of the [managed instance groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with this node pool.
+  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the NodePool's nodes should be located.
   *   `management` (*type:* `GoogleApi.Container.V1.Model.NodeManagement.t`, *default:* `nil`) - NodeManagement configuration for this NodePool.
-  *   `maxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The constraint on the maximum number of pods that can be run
-      simultaneously on a node in the node pool.
+  *   `maxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the node pool.
   *   `podIpv4CidrSize` (*type:* `integer()`, *default:* `nil`) - [Output only] The pod CIDR block size per node in this node pool.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output only] The status of the nodes in this pool instance.
-  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Additional information about the current status of this
-      node pool instance, if available.
+  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Additional information about the current status of this node pool instance, if available.
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the Kubernetes of this node.
   """

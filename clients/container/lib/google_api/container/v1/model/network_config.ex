@@ -21,26 +21,22 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
 
   ## Attributes
 
-  *   `enableIntraNodeVisibility` (*type:* `boolean()`, *default:* `nil`) - Whether Intra-node visibility is enabled for this cluster.
-      This makes same node pod to pod traffic visible for VPC network.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine
-      network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
-      to which the cluster is connected. Example:
-      projects/my-project/global/networks/my-network
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine
-      [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
-      cluster is connected. Example:
-      projects/my-project/regions/us-central1/subnetworks/my-subnet
+  *   `defaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when default_snat_status is disabled. When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic.
+  *   `enableIntraNodeVisibility` (*type:* `boolean()`, *default:* `nil`) - Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected. Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :defaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t(),
           :enableIntraNodeVisibility => boolean(),
           :network => String.t(),
           :subnetwork => String.t()
         }
 
+  field(:defaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
   field(:enableIntraNodeVisibility)
   field(:network)
   field(:subnetwork)

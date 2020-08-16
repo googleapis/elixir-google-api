@@ -22,11 +22,8 @@ defmodule GoogleApi.Container.V1.Model.MaintenanceWindow do
   ## Attributes
 
   *   `dailyMaintenanceWindow` (*type:* `GoogleApi.Container.V1.Model.DailyMaintenanceWindow.t`, *default:* `nil`) - DailyMaintenanceWindow specifies a daily maintenance operation window.
-  *   `maintenanceExclusions` (*type:* `%{optional(String.t) => GoogleApi.Container.V1.Model.TimeWindow.t}`, *default:* `nil`) - Exceptions to maintenance window. Non-emergency maintenance should not
-      occur in these windows.
-  *   `recurringWindow` (*type:* `GoogleApi.Container.V1.Model.RecurringTimeWindow.t`, *default:* `nil`) - RecurringWindow specifies some number of recurring time periods for
-      maintenance to occur. The time windows may be overlapping. If no
-      maintenance windows are set, maintenance can occur at any time.
+  *   `maintenanceExclusions` (*type:* `%{optional(String.t) => GoogleApi.Container.V1.Model.TimeWindow.t}`, *default:* `nil`) - Exceptions to maintenance window. Non-emergency maintenance should not occur in these windows.
+  *   `recurringWindow` (*type:* `GoogleApi.Container.V1.Model.RecurringTimeWindow.t`, *default:* `nil`) - RecurringWindow specifies some number of recurring time periods for maintenance to occur. The time windows may be overlapping. If no maintenance windows are set, maintenance can occur at any time.
   """
 
   use GoogleApi.Gax.ModelBase

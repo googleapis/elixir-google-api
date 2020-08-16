@@ -17,29 +17,17 @@
 
 defmodule GoogleApi.Container.V1.Model.AddonsConfig do
   @moduledoc """
-  Configuration for the addons that can be automatically spun up in the
-  cluster, enabling additional functionality.
+  Configuration for the addons that can be automatically spun up in the cluster, enabling additional functionality.
 
   ## Attributes
 
-  *   `cloudRunConfig` (*type:* `GoogleApi.Container.V1.Model.CloudRunConfig.t`, *default:* `nil`) - Configuration for the Cloud Run addon, which allows the user to use a
-      managed Knative service.
-  *   `configConnectorConfig` (*type:* `GoogleApi.Container.V1.Model.ConfigConnectorConfig.t`, *default:* `nil`) - Configuration for the ConfigConnector add-on, a Kubernetes
-      extension to manage hosted GCP services through the Kubernetes API
+  *   `cloudRunConfig` (*type:* `GoogleApi.Container.V1.Model.CloudRunConfig.t`, *default:* `nil`) - Configuration for the Cloud Run addon, which allows the user to use a managed Knative service.
+  *   `configConnectorConfig` (*type:* `GoogleApi.Container.V1.Model.ConfigConnectorConfig.t`, *default:* `nil`) - Configuration for the ConfigConnector add-on, a Kubernetes extension to manage hosted GCP services through the Kubernetes API
   *   `dnsCacheConfig` (*type:* `GoogleApi.Container.V1.Model.DnsCacheConfig.t`, *default:* `nil`) - Configuration for NodeLocalDNS, a dns cache running on cluster nodes
-  *   `horizontalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t`, *default:* `nil`) - Configuration for the horizontal pod autoscaling feature, which
-      increases or decreases the number of replica pods a replication controller
-      has based on the resource usage of the existing pods.
-  *   `httpLoadBalancing` (*type:* `GoogleApi.Container.V1.Model.HttpLoadBalancing.t`, *default:* `nil`) - Configuration for the HTTP (L7) load balancing controller addon, which
-      makes it easy to set up HTTP load balancers for services in a cluster.
-  *   `kubernetesDashboard` (*type:* `GoogleApi.Container.V1.Model.KubernetesDashboard.t`, *default:* `nil`) - Configuration for the Kubernetes Dashboard.
-      This addon is deprecated, and will be disabled in 1.15. It is recommended
-      to use the Cloud Console to manage and monitor your Kubernetes clusters,
-      workloads and applications. For more information, see:
-      https://cloud.google.com/kubernetes-engine/docs/concepts/dashboards
-  *   `networkPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.NetworkPolicyConfig.t`, *default:* `nil`) - Configuration for NetworkPolicy. This only tracks whether the addon
-      is enabled or not on the Master, it does not track whether network policy
-      is enabled for the nodes.
+  *   `horizontalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t`, *default:* `nil`) - Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods.
+  *   `httpLoadBalancing` (*type:* `GoogleApi.Container.V1.Model.HttpLoadBalancing.t`, *default:* `nil`) - Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster.
+  *   `kubernetesDashboard` (*type:* `GoogleApi.Container.V1.Model.KubernetesDashboard.t`, *default:* `nil`) - Configuration for the Kubernetes Dashboard. This addon is deprecated, and will be disabled in 1.15. It is recommended to use the Cloud Console to manage and monitor your Kubernetes clusters, workloads and applications. For more information, see: https://cloud.google.com/kubernetes-engine/docs/concepts/dashboards
+  *   `networkPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.NetworkPolicyConfig.t`, *default:* `nil`) - Configuration for NetworkPolicy. This only tracks whether the addon is enabled or not on the Master, it does not track whether network policy is enabled for the nodes.
   """
 
   use GoogleApi.Gax.ModelBase

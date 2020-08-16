@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.VerticalPodAutoscaling do
   @moduledoc """
-  VerticalPodAutoscaling contains global, per-cluster information
-  required by Vertical Pod Autoscaler to automatically adjust
-  the resources of pods controlled by it.
+  VerticalPodAutoscaling contains global, per-cluster information required by Vertical Pod Autoscaler to automatically adjust the resources of pods controlled by it.
 
   ## Attributes
 

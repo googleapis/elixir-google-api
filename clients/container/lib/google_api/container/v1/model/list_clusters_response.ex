@@ -21,10 +21,8 @@ defmodule GoogleApi.Container.V1.Model.ListClustersResponse do
 
   ## Attributes
 
-  *   `clusters` (*type:* `list(GoogleApi.Container.V1.Model.Cluster.t)`, *default:* `nil`) - A list of clusters in the project in the specified zone, or
-      across all ones.
-  *   `missingZones` (*type:* `list(String.t)`, *default:* `nil`) - If any zones are listed here, the list of clusters returned
-      may be missing those zones.
+  *   `clusters` (*type:* `list(GoogleApi.Container.V1.Model.Cluster.t)`, *default:* `nil`) - A list of clusters in the project in the specified zone, or across all ones.
+  *   `missingZones` (*type:* `list(String.t)`, *default:* `nil`) - If any zones are listed here, the list of clusters returned may be missing those zones.
   """
 
   use GoogleApi.Gax.ModelBase

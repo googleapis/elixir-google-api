@@ -21,17 +21,10 @@ defmodule GoogleApi.Container.V1.Model.CancelOperationRequest do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, operation id) of the operation to cancel.
-      Specified in the format `projects/*/locations/*/operations/*`.
-  *   `operationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The server-assigned `name` of the operation.
-      This field has been deprecated and replaced by the name field.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
-      number](https://support.google.com/cloud/answer/6158840).
-      This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-      operation resides. This field has been deprecated and replaced by the name
-      field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, operation id) of the operation to cancel. Specified in the format `projects/*/locations/*/operations/*`.
+  *   `operationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The server-assigned `name` of the operation. This field has been deprecated and replaced by the name field.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation resides. This field has been deprecated and replaced by the name field.
   """
 
   use GoogleApi.Gax.ModelBase

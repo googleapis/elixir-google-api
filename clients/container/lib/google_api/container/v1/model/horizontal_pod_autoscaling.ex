@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Container.V1.Model.HorizontalPodAutoscaling do
   @moduledoc """
-  Configuration options for the horizontal pod autoscaling feature, which
-  increases or decreases the number of replica pods a replication controller
-  has based on the resource usage of the existing pods.
+  Configuration options for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods.
 
   ## Attributes
 
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether the Horizontal Pod Autoscaling feature is enabled in the cluster.
-      When enabled, it ensures that metrics are collected into Stackdriver
-      Monitoring.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether the Horizontal Pod Autoscaling feature is enabled in the cluster. When enabled, it ensures that metrics are collected into Stackdriver Monitoring.
   """
 
   use GoogleApi.Gax.ModelBase

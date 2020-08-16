@@ -17,21 +17,14 @@
 
 defmodule GoogleApi.Container.V1.Model.ClusterAutoscaling do
   @moduledoc """
-  ClusterAutoscaling contains global, per-cluster information
-  required by Cluster Autoscaler to automatically adjust
-  the size of the cluster and create/delete
-  node pools based on the current needs.
+  ClusterAutoscaling contains global, per-cluster information required by Cluster Autoscaler to automatically adjust the size of the cluster and create/delete node pools based on the current needs.
 
   ## Attributes
 
-  *   `autoprovisioningLocations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine
-      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-      NodePool's nodes can be created by NAP.
-  *   `autoprovisioningNodePoolDefaults` (*type:* `GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults.t`, *default:* `nil`) - AutoprovisioningNodePoolDefaults contains defaults for a node pool
-      created by NAP.
+  *   `autoprovisioningLocations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the NodePool's nodes can be created by NAP.
+  *   `autoprovisioningNodePoolDefaults` (*type:* `GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults.t`, *default:* `nil`) - AutoprovisioningNodePoolDefaults contains defaults for a node pool created by NAP.
   *   `enableNodeAutoprovisioning` (*type:* `boolean()`, *default:* `nil`) - Enables automatic node pool creation and deletion.
-  *   `resourceLimits` (*type:* `list(GoogleApi.Container.V1.Model.ResourceLimit.t)`, *default:* `nil`) - Contains global constraints regarding minimum and maximum
-      amount of resources in the cluster.
+  *   `resourceLimits` (*type:* `list(GoogleApi.Container.V1.Model.ResourceLimit.t)`, *default:* `nil`) - Contains global constraints regarding minimum and maximum amount of resources in the cluster.
   """
 
   use GoogleApi.Gax.ModelBase

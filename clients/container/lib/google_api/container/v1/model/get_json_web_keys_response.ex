@@ -21,10 +21,8 @@ defmodule GoogleApi.Container.V1.Model.GetJSONWebKeysResponse do
 
   ## Attributes
 
-  *   `cacheHeader` (*type:* `GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t`, *default:* `nil`) - OnePlatform automatically extracts this field and uses it to set the HTTP
-      Cache-Control header.
-  *   `keys` (*type:* `list(GoogleApi.Container.V1.Model.Jwk.t)`, *default:* `nil`) - The public component of the keys used by the cluster to sign token
-      requests.
+  *   `cacheHeader` (*type:* `GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t`, *default:* `nil`) - OnePlatform automatically extracts this field and uses it to set the HTTP Cache-Control header.
+  *   `keys` (*type:* `list(GoogleApi.Container.V1.Model.Jwk.t)`, *default:* `nil`) - The public component of the keys used by the cluster to sign token requests.
   """
 
   use GoogleApi.Gax.ModelBase

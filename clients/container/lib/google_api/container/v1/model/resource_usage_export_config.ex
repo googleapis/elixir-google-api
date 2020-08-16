@@ -23,8 +23,7 @@ defmodule GoogleApi.Container.V1.Model.ResourceUsageExportConfig do
 
   *   `bigqueryDestination` (*type:* `GoogleApi.Container.V1.Model.BigQueryDestination.t`, *default:* `nil`) - Configuration to use BigQuery as usage export destination.
   *   `consumptionMeteringConfig` (*type:* `GoogleApi.Container.V1.Model.ConsumptionMeteringConfig.t`, *default:* `nil`) - Configuration to enable resource consumption metering.
-  *   `enableNetworkEgressMetering` (*type:* `boolean()`, *default:* `nil`) - Whether to enable network egress metering for this cluster. If enabled, a
-      daemonset will be created in the cluster to meter network egress traffic.
+  *   `enableNetworkEgressMetering` (*type:* `boolean()`, *default:* `nil`) - Whether to enable network egress metering for this cluster. If enabled, a daemonset will be created in the cluster to meter network egress traffic.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.Container.V1.Model.ListOperationsResponse do
 
   ## Attributes
 
-  *   `missingZones` (*type:* `list(String.t)`, *default:* `nil`) - If any zones are listed here, the list of operations returned
-      may be missing the operations from those zones.
+  *   `missingZones` (*type:* `list(String.t)`, *default:* `nil`) - If any zones are listed here, the list of operations returned may be missing the operations from those zones.
   *   `operations` (*type:* `list(GoogleApi.Container.V1.Model.Operation.t)`, *default:* `nil`) - A list of operations in the project in the specified zone.
   """
 

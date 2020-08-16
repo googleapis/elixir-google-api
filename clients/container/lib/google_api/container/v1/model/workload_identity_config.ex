@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.WorkloadIdentityConfig do
   @moduledoc """
-  Configuration for the use of Kubernetes Service Accounts in GCP IAM
-  policies.
+  Configuration for the use of Kubernetes Service Accounts in GCP IAM policies.
 
   ## Attributes
 

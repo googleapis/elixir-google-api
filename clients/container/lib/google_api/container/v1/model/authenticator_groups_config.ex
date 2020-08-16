@@ -21,10 +21,8 @@ defmodule GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig do
 
   ## Attributes
 
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether this cluster should return group membership lookups
-      during authentication using a group of security groups.
-  *   `securityGroup` (*type:* `String.t`, *default:* `nil`) - The name of the security group-of-groups to be used. Only relevant
-      if enabled = true.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether this cluster should return group membership lookups during authentication using a group of security groups.
+  *   `securityGroup` (*type:* `String.t`, *default:* `nil`) - The name of the security group-of-groups to be used. Only relevant if enabled = true.
   """
 
   use GoogleApi.Gax.ModelBase
