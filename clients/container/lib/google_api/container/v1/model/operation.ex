@@ -17,33 +17,24 @@
 
 defmodule GoogleApi.Container.V1.Model.Operation do
   @moduledoc """
-  This operation resource represents operations that may have happened or are
-  happening on the cluster. All fields are output only.
+  This operation resource represents operations that may have happened or are happening on the cluster. All fields are output only.
 
   ## Attributes
 
   *   `clusterConditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current cluster state.
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Detailed operation progress, if available.
-  *   `endTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the operation completed, in
-      [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine
-      [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
-      or
-      [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
-      in which the cluster resides.
+  *   `endTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the operation completed, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which the cluster resides.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned ID for the operation.
   *   `nodepoolConditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current node pool state.
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - The operation type.
   *   `progress` (*type:* `GoogleApi.Container.V1.Model.OperationProgress.t`, *default:* `nil`) - Output only. [Output only] Progress information for an operation.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Server-defined URL for the resource.
-  *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the operation started, in
-      [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the operation started, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The current status of the operation.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. If an error has occurred, a textual description of the error.
   *   `targetLink` (*type:* `String.t`, *default:* `nil`) - Server-defined URL for the target of the operation.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine
-      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-      operation is taking place. This field is deprecated, use location instead.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation is taking place. This field is deprecated, use location instead.
   """
 
   use GoogleApi.Gax.ModelBase

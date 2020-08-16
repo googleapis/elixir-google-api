@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.NetworkPolicy do
   @moduledoc """
-  Configuration options for the NetworkPolicy feature.
-  https://kubernetes.io/docs/concepts/services-networking/networkpolicies/
+  Configuration options for the NetworkPolicy feature. https://kubernetes.io/docs/concepts/services-networking/networkpolicies/
 
   ## Attributes
 

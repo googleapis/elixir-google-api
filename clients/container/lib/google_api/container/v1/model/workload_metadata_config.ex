@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Container.V1.Model.WorkloadMetadataConfig do
   @moduledoc """
-  WorkloadMetadataConfig defines the metadata configuration to expose to
-  workloads on the node pool.
+  WorkloadMetadataConfig defines the metadata configuration to expose to workloads on the node pool.
 
   ## Attributes
 
-  *   `mode` (*type:* `String.t`, *default:* `nil`) - Mode is the configuration for how to expose metadata to workloads running
-      on the node pool.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - Mode is the configuration for how to expose metadata to workloads running on the node pool.
   """
 
   use GoogleApi.Gax.ModelBase

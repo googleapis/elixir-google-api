@@ -21,17 +21,10 @@ defmodule GoogleApi.Container.V1.Model.OperationProgress do
 
   ## Attributes
 
-  *   `metrics` (*type:* `list(GoogleApi.Container.V1.Model.Metric.t)`, *default:* `nil`) - Progress metric bundle, for example:
-        metrics: [{name: "nodes done",     int_value: 15},
-                  {name: "nodes total",    int_value: 32}]
-      or
-        metrics: [{name: "progress",       double_value: 0.56},
-                  {name: "progress scale", double_value: 1.0}]
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A non-parameterized string describing an operation stage.
-      Unset for single-stage operations.
+  *   `metrics` (*type:* `list(GoogleApi.Container.V1.Model.Metric.t)`, *default:* `nil`) - Progress metric bundle, for example: metrics: [{name: "nodes done", int_value: 15}, {name: "nodes total", int_value: 32}] or metrics: [{name: "progress", double_value: 0.56}, {name: "progress scale", double_value: 1.0}]
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A non-parameterized string describing an operation stage. Unset for single-stage operations.
   *   `stages` (*type:* `list(GoogleApi.Container.V1.Model.OperationProgress.t)`, *default:* `nil`) - Substages of an operation or a stage.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of an operation stage.
-      Unset for single-stage operations.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of an operation stage. Unset for single-stage operations.
   """
 
   use GoogleApi.Gax.ModelBase

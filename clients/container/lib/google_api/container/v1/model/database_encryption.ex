@@ -21,8 +21,7 @@ defmodule GoogleApi.Container.V1.Model.DatabaseEncryption do
 
   ## Attributes
 
-  *   `keyName` (*type:* `String.t`, *default:* `nil`) - Name of CloudKMS key to use for the encryption of secrets in etcd.
-      Ex. projects/my-project/locations/global/keyRings/my-ring/cryptoKeys/my-key
+  *   `keyName` (*type:* `String.t`, *default:* `nil`) - Name of CloudKMS key to use for the encryption of secrets in etcd. Ex. projects/my-project/locations/global/keyRings/my-ring/cryptoKeys/my-key
   *   `state` (*type:* `String.t`, *default:* `nil`) - Denotes the state of etcd encryption.
   """
 

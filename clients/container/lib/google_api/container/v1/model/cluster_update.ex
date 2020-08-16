@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   @moduledoc """
-  ClusterUpdate describes an update to the cluster. Exactly one update can
-  be applied to a cluster with each request, so at most one field can be
-  provided.
+  ClusterUpdate describes an update to the cluster. Exactly one update can be applied to a cluster with each request, so at most one field can be provided.
 
   ## Attributes
 
@@ -27,68 +25,18 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredBinaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - The desired configuration options for the Binary Authorization feature.
   *   `desiredClusterAutoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
   *   `desiredDatabaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
-  *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool.
-      NOTE: Set the "desired_node_pool" field as well.
+  *   `desiredDefaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - The desired status of whether to disable default sNAT for this cluster.
+  *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool. NOTE: Set the "desired_node_pool" field as well.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
-  *   `desiredLocations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine
-      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-      cluster's nodes should be located. Changing the locations a cluster is in
-      will result in nodes being either created or removed from the cluster,
-      depending on whether locations are being added or removed.
-
-      This list must always include the cluster's primary zone.
-  *   `desiredLoggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs.
-      Currently available options:
-
-      * `logging.googleapis.com/kubernetes` - The Cloud Logging
-      service with a Kubernetes-native resource model
-      * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
-        available as of GKE 1.15).
-      * `none` - no logs will be exported from the cluster.
-
-      If left as an empty string,`logging.googleapis.com/kubernetes` will be
-      used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
+  *   `desiredLocations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes should be located. Changing the locations a cluster is in will result in nodes being either created or removed from the cluster, depending on whether locations are being added or removed. This list must always include the cluster's primary zone.
+  *   `desiredLoggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs. Currently available options: * `logging.googleapis.com/kubernetes` - The Cloud Logging service with a Kubernetes-native resource model * `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as of GKE 1.15). * `none` - no logs will be exported from the cluster. If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
-  *   `desiredMasterVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the master to.
-
-      Users may specify either explicit versions offered by
-      Kubernetes Engine or version aliases, which have the following behavior:
-
-      - "latest": picks the highest valid Kubernetes version
-      - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
-      - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
-      - "1.X.Y-gke.N": picks an explicit Kubernetes version
-      - "-": picks the default Kubernetes version
-  *   `desiredMonitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics.
-      Currently available options:
-
-      * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
-      service with a Kubernetes-native resource model
-      * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
-        longer available as of GKE 1.15).
-      * `none` - No metrics will be exported from the cluster.
-
-      If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
-      used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
-  *   `desiredNodePoolAutoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for the node pool specified in
-      desired_node_pool_id. If there is only one pool in the
-      cluster and desired_node_pool_id is not provided then
-      the change applies to that single node pool.
-  *   `desiredNodePoolId` (*type:* `String.t`, *default:* `nil`) - The node pool to be upgraded. This field is mandatory if
-      "desired_node_version", "desired_image_family" or
-      "desired_node_pool_autoscaling" is specified and there is more than one
-      node pool on the cluster.
-  *   `desiredNodeVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the nodes to (typically an
-      upgrade).
-
-      Users may specify either explicit versions offered by
-      Kubernetes Engine or version aliases, which have the following behavior:
-
-      - "latest": picks the highest valid Kubernetes version
-      - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
-      - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
-      - "1.X.Y-gke.N": picks an explicit Kubernetes version
-      - "-": picks the Kubernetes master version
+  *   `desiredMasterVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the master to. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the default Kubernetes version
+  *   `desiredMonitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics. Currently available options: * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a Kubernetes-native resource model * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer available as of GKE 1.15). * `none` - No metrics will be exported from the cluster. If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
+  *   `desiredNodePoolAutoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for the node pool specified in desired_node_pool_id. If there is only one pool in the cluster and desired_node_pool_id is not provided then the change applies to that single node pool.
+  *   `desiredNodePoolId` (*type:* `String.t`, *default:* `nil`) - The node pool to be upgraded. This field is mandatory if "desired_node_version", "desired_image_family" or "desired_node_pool_autoscaling" is specified and there is more than one node pool on the cluster.
+  *   `desiredNodeVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the nodes to (typically an upgrade). Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the Kubernetes master version
+  *   `desiredPrivateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - The desired private cluster configuration.
   *   `desiredReleaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - The desired release channel configuration.
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
@@ -103,6 +51,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredBinaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t(),
           :desiredClusterAutoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t(),
           :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t(),
+          :desiredDefaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t(),
           :desiredImageType => String.t(),
           :desiredIntraNodeVisibilityConfig =>
             GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t(),
@@ -115,6 +64,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredNodePoolAutoscaling => GoogleApi.Container.V1.Model.NodePoolAutoscaling.t(),
           :desiredNodePoolId => String.t(),
           :desiredNodeVersion => String.t(),
+          :desiredPrivateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t(),
           :desiredReleaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t(),
           :desiredResourceUsageExportConfig =>
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t(),
@@ -129,6 +79,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredBinaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
   field(:desiredClusterAutoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
   field(:desiredDatabaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
+  field(:desiredDefaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
   field(:desiredImageType)
 
   field(:desiredIntraNodeVisibilityConfig,
@@ -147,6 +98,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredNodePoolAutoscaling, as: GoogleApi.Container.V1.Model.NodePoolAutoscaling)
   field(:desiredNodePoolId)
   field(:desiredNodeVersion)
+  field(:desiredPrivateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)
   field(:desiredReleaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
 
   field(:desiredResourceUsageExportConfig,

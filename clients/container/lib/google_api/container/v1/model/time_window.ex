@@ -21,8 +21,7 @@ defmodule GoogleApi.Container.V1.Model.TimeWindow do
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the window ends. The end time should take place after the
-      start time.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the window ends. The end time should take place after the start time.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the window first starts.
   """
 

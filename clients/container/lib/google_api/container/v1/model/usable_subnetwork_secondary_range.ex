@@ -22,8 +22,7 @@ defmodule GoogleApi.Container.V1.Model.UsableSubnetworkSecondaryRange do
   ## Attributes
 
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The range of IP addresses belonging to this subnetwork secondary range.
-  *   `rangeName` (*type:* `String.t`, *default:* `nil`) - The name associated with this subnetwork secondary range, used when adding
-      an alias IP range to a VM instance.
+  *   `rangeName` (*type:* `String.t`, *default:* `nil`) - The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance.
   *   `status` (*type:* `String.t`, *default:* `nil`) - This field is to determine the status of the secondary range programmably.
   """
 

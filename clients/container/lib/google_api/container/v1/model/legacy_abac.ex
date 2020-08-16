@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Container.V1.Model.LegacyAbac do
   @moduledoc """
-  Configuration for the legacy Attribute Based Access Control authorization
-  mode.
+  Configuration for the legacy Attribute Based Access Control authorization mode.
 
   ## Attributes
 
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the ABAC authorizer is enabled for this cluster. When enabled,
-      identities in the system, including service accounts, nodes, and
-      controllers, will have statically granted permissions beyond those
-      provided by the RBAC configuration or IAM.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the ABAC authorizer is enabled for this cluster. When enabled, identities in the system, including service accounts, nodes, and controllers, will have statically granted permissions beyond those provided by the RBAC configuration or IAM.
   """
 
   use GoogleApi.Gax.ModelBase

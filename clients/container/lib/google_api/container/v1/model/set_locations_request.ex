@@ -21,24 +21,11 @@ defmodule GoogleApi.Container.V1.Model.SetLocationsRequest do
 
   ## Attributes
 
-  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade.
-      This field has been deprecated and replaced by the name field.
-  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - Required. The desired list of Google Compute Engine
-      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-      cluster's nodes should be located. Changing the locations a cluster is in
-      will result in nodes being either created or removed from the cluster,
-      depending on whether locations are being added or removed.
-
-      This list must always include the cluster's primary zone.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster) of the cluster to set locations.
-      Specified in the format `projects/*/locations/*/clusters/*`.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
-      number](https://support.google.com/cloud/answer/6158840).
-      This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-      cluster resides. This field has been deprecated and replaced by the name
-      field.
+  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
+  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - Required. The desired list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes should be located. Changing the locations a cluster is in will result in nodes being either created or removed from the cluster, depending on whether locations are being added or removed. This list must always include the cluster's primary zone.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster) of the cluster to set locations. Specified in the format `projects/*/locations/*/clusters/*`.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field.
   """
 
   use GoogleApi.Gax.ModelBase

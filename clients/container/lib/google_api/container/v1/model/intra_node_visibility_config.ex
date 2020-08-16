@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig do
   @moduledoc """
-  IntraNodeVisibilityConfig contains the desired config of the intra-node
-  visibility on this cluster.
+  IntraNodeVisibilityConfig contains the desired config of the intra-node visibility on this cluster.
 
   ## Attributes
 

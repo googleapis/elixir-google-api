@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig do
   @moduledoc """
-  Configuration options for the master authorized networks feature. Enabled
-  master authorized networks will disallow all external traffic to access
-  Kubernetes master through HTTPS except traffic from the given CIDR blocks,
-  Google Compute Engine Public IPs and Google Prod IPs.
+  Configuration options for the master authorized networks feature. Enabled master authorized networks will disallow all external traffic to access Kubernetes master through HTTPS except traffic from the given CIDR blocks, Google Compute Engine Public IPs and Google Prod IPs.
 
   ## Attributes
 
-  *   `cidrBlocks` (*type:* `list(GoogleApi.Container.V1.Model.CidrBlock.t)`, *default:* `nil`) - cidr_blocks define up to 50 external networks that could access
-      Kubernetes master through HTTPS.
+  *   `cidrBlocks` (*type:* `list(GoogleApi.Container.V1.Model.CidrBlock.t)`, *default:* `nil`) - cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not master authorized networks is enabled.
   """
 

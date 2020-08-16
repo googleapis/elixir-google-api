@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.StatusCondition do
   @moduledoc """
-  StatusCondition describes why a cluster or a node pool has a certain status
-  (e.g., ERROR or DEGRADED).
+  StatusCondition describes why a cluster or a node pool has a certain status (e.g., ERROR or DEGRADED).
 
   ## Attributes
 

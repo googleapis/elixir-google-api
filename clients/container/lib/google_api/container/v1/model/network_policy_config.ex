@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.NetworkPolicyConfig do
   @moduledoc """
-  Configuration for NetworkPolicy. This only tracks whether the addon
-  is enabled or not on the Master, it does not track whether network policy
-  is enabled for the nodes.
+  Configuration for NetworkPolicy. This only tracks whether the addon is enabled or not on the Master, it does not track whether network policy is enabled for the nodes.
 
   ## Attributes
 
