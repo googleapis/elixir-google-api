@@ -2,6 +2,9 @@ defmodule GoogleApi.Storage.StorageTest do
   use GoogleApi.Storage.TestHelper
   alias GoogleApi.Storage.V1.Model.Object
 
+  if System.get_env("GOOGLE_APPLICATION_CREDENTIALS") == nil do
+    @tag :skip
+  end
   test "storage" do
     bucket_id = System.get_env("BUCKET")
     assert bucket_id, "Please set the BUCKET environment variable"
