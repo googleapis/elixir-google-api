@@ -28,5 +28,5 @@ defmodule GoogleApi.AndroidPublisher.V3.Connection do
       "https://www.googleapis.com/auth/androidpublisher"
     ],
     otp_app: :google_api_android_publisher,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://androidpublisher.googleapis.com/"
 end
