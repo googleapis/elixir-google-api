@@ -17,25 +17,14 @@
 
 defmodule GoogleApi.CloudBilling.V1.Model.BillingAccount do
   @moduledoc """
-  A billing account in [GCP Console](https://console.cloud.google.com/).
-  You can assign a billing account to one or more projects.
+  A billing account in the [Google Cloud Console](https://console.cloud.google.com/). You can assign a billing account to one or more projects.
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name given to the billing account, such as `My Billing
-      Account`. This name is displayed in the GCP Console.
-  *   `masterBillingAccount` (*type:* `String.t`, *default:* `nil`) - If this account is a
-      [subaccount](https://cloud.google.com/billing/docs/concepts), then this
-      will be the resource name of the master billing account that it is being
-      resold through.
-      Otherwise this will be empty.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the billing account. The resource name has the form
-      `billingAccounts/{billing_account_id}`. For example,
-      `billingAccounts/012345-567890-ABCDEF` would be the resource name for
-      billing account `012345-567890-ABCDEF`.
-  *   `open` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the billing account is open, and will therefore be charged for any
-      usage on associated projects. False if the billing account is closed, and
-      therefore projects associated with it will be unable to use paid services.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name given to the billing account, such as `My Billing Account`. This name is displayed in the Google Cloud Console.
+  *   `masterBillingAccount` (*type:* `String.t`, *default:* `nil`) - If this account is a [subaccount](https://cloud.google.com/billing/docs/concepts), then this will be the resource name of the master billing account that it is being resold through. Otherwise this will be empty.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF` would be the resource name for billing account `012345-567890-ABCDEF`.
+  *   `open` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the billing account is open, and will therefore be charged for any usage on associated projects. False if the billing account is closed, and therefore projects associated with it will be unable to use paid services.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudBilling.V1.Model.TestIamPermissionsResponse do
 
   ## Attributes
 
-  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - A subset of `TestPermissionsRequest.permissions` that the caller is
-      allowed.
+  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - A subset of `TestPermissionsRequest.permissions` that the caller is allowed.
   """
 
   use GoogleApi.Gax.ModelBase

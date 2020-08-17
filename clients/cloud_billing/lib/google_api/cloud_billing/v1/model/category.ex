@@ -21,13 +21,10 @@ defmodule GoogleApi.CloudBilling.V1.Model.Category do
 
   ## Attributes
 
-  *   `resourceFamily` (*type:* `String.t`, *default:* `nil`) - The type of product the SKU refers to.
-      Example: "Compute", "Storage", "Network", "ApplicationServices" etc.
-  *   `resourceGroup` (*type:* `String.t`, *default:* `nil`) - A group classification for related SKUs.
-      Example: "RAM", "GPU", "Prediction", "Ops", "GoogleEgress" etc.
+  *   `resourceFamily` (*type:* `String.t`, *default:* `nil`) - The type of product the SKU refers to. Example: "Compute", "Storage", "Network", "ApplicationServices" etc.
+  *   `resourceGroup` (*type:* `String.t`, *default:* `nil`) - A group classification for related SKUs. Example: "RAM", "GPU", "Prediction", "Ops", "GoogleEgress" etc.
   *   `serviceDisplayName` (*type:* `String.t`, *default:* `nil`) - The display name of the service this SKU belongs to.
-  *   `usageType` (*type:* `String.t`, *default:* `nil`) - Represents how the SKU is consumed.
-      Example: "OnDemand", "Preemptible", "Commit1Mo", "Commit1Yr" etc.
+  *   `usageType` (*type:* `String.t`, *default:* `nil`) - Represents how the SKU is consumed. Example: "OnDemand", "Preemptible", "Commit1Mo", "Commit1Yr" etc.
   """
 
   use GoogleApi.Gax.ModelBase

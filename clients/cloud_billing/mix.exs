@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudBilling.Mixfile do
   use Mix.Project
 
-  @version "0.21.0"
+  @version "0.21.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.CloudBilling.Mixfile do
 
   defp description() do
     """
-    Cloud Billing API client library. Allows developers to manage billing for their Google Cloud Platform projects
-    programmatically.
+    Cloud Billing API client library. Allows developers to manage billing for their Google Cloud Platform projects programmatically.
     """
   end
 
