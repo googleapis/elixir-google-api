@@ -21,10 +21,8 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.ServiceAccount do
 
   ## Attributes
 
-  *   `email` (*type:* `String.t`, *default:* `nil`) - Email address of the service account. If not specified, the default
-      Compute Engine service account for the project will be used.
-  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - List of scopes to be enabled for this service account on the VM, in
-      addition to the cloud-platform API scope that will be added by default.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Email address of the service account. If not specified, the default Compute Engine service account for the project will be used.
+  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - List of scopes to be enabled for this service account on the VM, in addition to the cloud-platform API scope that will be added by default.
   """
 
   use GoogleApi.Gax.ModelBase

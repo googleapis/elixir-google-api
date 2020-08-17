@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.Secret do
   @moduledoc """
-  Holds encrypted information that is only decrypted and stored in RAM
-  by the worker VM when running the pipeline.
+  Holds encrypted information that is only decrypted and stored in RAM by the worker VM when running the pipeline.
 
   ## Attributes
 
-  *   `cipherText` (*type:* `String.t`, *default:* `nil`) - The value of the cipherText response from the `encrypt` method. This field
-      is intentionally unaudited.
-  *   `keyName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud KMS key that will be used to decrypt the secret
-      value. The VM service account must have the required permissions and
-      authentication scopes to invoke the `decrypt` method on the specified key.
+  *   `cipherText` (*type:* `String.t`, *default:* `nil`) - The value of the cipherText response from the `encrypt` method. This field is intentionally unaudited.
+  *   `keyName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud KMS key that will be used to decrypt the secret value. The VM service account must have the required permissions and authentication scopes to invoke the `decrypt` method on the specified key.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.FailedEvent do
   @moduledoc """
-  An event generated when the execution of a pipeline has failed. Note
-  that other events can continue to occur after this event.
+  An event generated when the execution of a pipeline has failed. Note that other events can continue to occur after this event.
 
   ## Attributes
 
