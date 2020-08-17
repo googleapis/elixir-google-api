@@ -37,6 +37,13 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DicomStore do
       `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `notificationConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t`, *default:* `nil`) - Notification destination for new DICOM instances.
       Supplied by the client.
+  *   `streamConfigs` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomStreamConfig.t)`, *default:* `nil`) - A list of streaming configs used to configure the destination of streaming
+      exports for every DICOM instance insertion in this DICOM store.
+      After a new config is added to `stream_configs`, DICOM instance
+      insertions are streamed to the new destination.
+      When a config is removed from `stream_configs`, the server stops streaming
+      to that destination.
+      Each config must contain a unique destination.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,12 +51,21 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DicomStore do
   @type t :: %__MODULE__{
           :labels => map(),
           :name => String.t(),
-          :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t()
+          :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t(),
+          :streamConfigs =>
+            list(
+              GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomStreamConfig.t()
+            )
         }
 
   field(:labels, type: :map)
   field(:name)
   field(:notificationConfig, as: GoogleApi.HealthCare.V1beta1.Model.NotificationConfig)
+
+  field(:streamConfigs,
+    as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomStreamConfig,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.DicomStore do

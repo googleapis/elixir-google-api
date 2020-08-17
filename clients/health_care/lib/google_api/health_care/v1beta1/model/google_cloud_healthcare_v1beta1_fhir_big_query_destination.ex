@@ -21,8 +21,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBig
 
   ## Attributes
 
-  *   `datasetUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to a dataset, up to 2000 characters long, in the format
-      `bq://projectId.bqDatasetId`
+  *   `datasetUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to an existing  dataset, up to 2000 characters long, in the
+      format `bq://projectId.bqDatasetId`.
   *   `force` (*type:* `boolean()`, *default:* `nil`) - This flag is being replaced by write_disposition which provides additional
       options. force=false is equivalent to WRITE_EMPTY and force=true is
       equivalent to WRITE_TRUNCATE.
