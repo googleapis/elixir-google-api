@@ -1,6 +1,9 @@
 defmodule GoogleApi.Translate.TranslateTest do
   use GoogleApi.Translate.TestHelper
 
+  if System.get_env("GOOGLE_APPLICATION_CREDENTIALS") == nil do
+    @tag :skip
+  end
   test "translate" do
     conn = GoogleApi.Translate.V2.Connection.new(&for_scope/1)
 
