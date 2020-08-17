@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BooleanCondition do
   @moduledoc """
-  A condition that can evaluate to true or false.
-  BooleanConditions are used by conditional formatting,
-  data validation, and the criteria in filters.
+  A condition that can evaluate to true or false. BooleanConditions are used by conditional formatting, data validation, and the criteria in filters.
 
   ## Attributes
 
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of condition.
-  *   `values` (*type:* `list(GoogleApi.Sheets.V4.Model.ConditionValue.t)`, *default:* `nil`) - The values of the condition. The number of supported values depends
-      on the condition type.  Some support zero values,
-      others one or two values,
-      and ConditionType.ONE_OF_LIST supports an arbitrary number of values.
+  *   `values` (*type:* `list(GoogleApi.Sheets.V4.Model.ConditionValue.t)`, *default:* `nil`) - The values of the condition. The number of supported values depends on the condition type. Some support zero values, others one or two values, and ConditionType.ONE_OF_LIST supports an arbitrary number of values.
   """
 
   use GoogleApi.Gax.ModelBase

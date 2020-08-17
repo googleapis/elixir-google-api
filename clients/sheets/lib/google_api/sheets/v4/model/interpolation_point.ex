@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.Sheets.V4.Model.InterpolationPoint do
   @moduledoc """
-  A single interpolation point on a gradient conditional format.
-  These pin the gradient color scale according to the color,
-  type and value chosen.
+  A single interpolation point on a gradient conditional format. These pin the gradient color scale according to the color, type and value chosen.
 
   ## Attributes
 
   *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color this interpolation point should use.
-  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color this interpolation point should use.
-      If color is also set, this field takes precedence.
+  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color this interpolation point should use. If color is also set, this field takes precedence.
   *   `type` (*type:* `String.t`, *default:* `nil`) - How the value should be interpreted.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value this interpolation point uses.  May be a formula.
-      Unused if type is MIN or
-      MAX.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value this interpolation point uses. May be a formula. Unused if type is MIN or MAX.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,10 +21,8 @@ defmodule GoogleApi.Sheets.V4.Model.GetSpreadsheetByDataFilterRequest do
 
   ## Attributes
 
-  *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The DataFilters used to select which ranges to retrieve from
-      the spreadsheet.
-  *   `includeGridData` (*type:* `boolean()`, *default:* `nil`) - True if grid data should be returned.
-      This parameter is ignored if a field mask was set in the request.
+  *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The DataFilters used to select which ranges to retrieve from the spreadsheet.
+  *   `includeGridData` (*type:* `boolean()`, *default:* `nil`) - True if grid data should be returned. This parameter is ignored if a field mask was set in the request.
   """
 
   use GoogleApi.Gax.ModelBase

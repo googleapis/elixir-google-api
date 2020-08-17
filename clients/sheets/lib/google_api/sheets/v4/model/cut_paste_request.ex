@@ -22,8 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.CutPasteRequest do
   ## Attributes
 
   *   `destination` (*type:* `GoogleApi.Sheets.V4.Model.GridCoordinate.t`, *default:* `nil`) - The top-left coordinate where the data should be pasted.
-  *   `pasteType` (*type:* `String.t`, *default:* `nil`) - What kind of data to paste.  All the source data will be cut, regardless
-      of what is pasted.
+  *   `pasteType` (*type:* `String.t`, *default:* `nil`) - What kind of data to paste. All the source data will be cut, regardless of what is pasted.
   *   `source` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The source data to cut.
   """
 

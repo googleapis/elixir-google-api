@@ -22,20 +22,9 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateValuesRequest do
   ## Attributes
 
   *   `data` (*type:* `list(GoogleApi.Sheets.V4.Model.ValueRange.t)`, *default:* `nil`) - The new values to apply to the spreadsheet.
-  *   `includeValuesInResponse` (*type:* `boolean()`, *default:* `nil`) - Determines if the update response should include the values
-      of the cells that were updated. By default, responses
-      do not include the updated values. The `updatedData` field within
-      each of the BatchUpdateValuesResponse.responses contains the updated
-      values. If the range to write was larger than the range actually written,
-      the response includes all values in the requested range (excluding trailing
-      empty rows and columns).
-  *   `responseDateTimeRenderOption` (*type:* `String.t`, *default:* `nil`) - Determines how dates, times, and durations in the response should be
-      rendered. This is ignored if response_value_render_option is
-      FORMATTED_VALUE.
-      The default dateTime render option is
-      DateTimeRenderOption.SERIAL_NUMBER.
-  *   `responseValueRenderOption` (*type:* `String.t`, *default:* `nil`) - Determines how values in the response should be rendered.
-      The default render option is ValueRenderOption.FORMATTED_VALUE.
+  *   `includeValuesInResponse` (*type:* `boolean()`, *default:* `nil`) - Determines if the update response should include the values of the cells that were updated. By default, responses do not include the updated values. The `updatedData` field within each of the BatchUpdateValuesResponse.responses contains the updated values. If the range to write was larger than the range actually written, the response includes all values in the requested range (excluding trailing empty rows and columns).
+  *   `responseDateTimeRenderOption` (*type:* `String.t`, *default:* `nil`) - Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is DateTimeRenderOption.SERIAL_NUMBER.
+  *   `responseValueRenderOption` (*type:* `String.t`, *default:* `nil`) - Determines how values in the response should be rendered. The default render option is ValueRenderOption.FORMATTED_VALUE.
   *   `valueInputOption` (*type:* `String.t`, *default:* `nil`) - How the input data should be interpreted.
   """
 

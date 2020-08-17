@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.Padding do
   @moduledoc """
-  The amount of padding around the cell, in pixels.
-  When updating padding, every field must be specified.
+  The amount of padding around the cell, in pixels. When updating padding, every field must be specified.
 
   ## Attributes
 

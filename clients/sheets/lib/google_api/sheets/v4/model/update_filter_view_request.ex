@@ -21,9 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest do
 
   ## Attributes
 
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.  At least one field must be specified.
-      The root `filter` is implied and should not be specified.
-      A single `"*"` can be used as short-hand for listing every field.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `filter` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field.
   *   `filter` (*type:* `GoogleApi.Sheets.V4.Model.FilterView.t`, *default:* `nil`) - The new properties of the filter view.
   """
 

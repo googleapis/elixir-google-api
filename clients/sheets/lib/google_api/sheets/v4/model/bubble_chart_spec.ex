@@ -17,35 +17,22 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BubbleChartSpec do
   @moduledoc """
-  A <a href="/chart/interactive/docs/gallery/bubblechart">bubble chart</a>.
+  A bubble chart.
 
   ## Attributes
 
   *   `bubbleBorderColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The bubble border color.
-  *   `bubbleBorderColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The bubble border color.
-      If bubble_border_color is also set, this field takes precedence.
-  *   `bubbleLabels` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the bubble labels.  These do not need to be unique.
-  *   `bubbleMaxRadiusSize` (*type:* `integer()`, *default:* `nil`) - The max radius size of the bubbles, in pixels.
-      If specified, the field must be a positive value.
-  *   `bubbleMinRadiusSize` (*type:* `integer()`, *default:* `nil`) - The minimum radius size of the bubbles, in pixels.
-      If specific, the field must be a positive value.
-  *   `bubbleOpacity` (*type:* `number()`, *default:* `nil`) - The opacity of the bubbles between 0 and 1.0.
-      0 is fully transparent and 1 is fully opaque.
-  *   `bubbleSizes` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data contianing the bubble sizes.  Bubble sizes are used to draw
-      the bubbles at different sizes relative to each other.
-      If specified, group_ids must also be specified.  This field is
-      optional.
-  *   `bubbleTextStyle` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of the text inside the bubbles.
-      Underline and Strikethrough are not supported.
-  *   `domain` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the bubble x-values.  These values locate the bubbles
-      in the chart horizontally.
-  *   `groupIds` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the bubble group IDs. All bubbles with the same group
-      ID are drawn in the same color. If bubble_sizes is specified then
-      this field must also be specified but may contain blank values.
-      This field is optional.
+  *   `bubbleBorderColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The bubble border color. If bubble_border_color is also set, this field takes precedence.
+  *   `bubbleLabels` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the bubble labels. These do not need to be unique.
+  *   `bubbleMaxRadiusSize` (*type:* `integer()`, *default:* `nil`) - The max radius size of the bubbles, in pixels. If specified, the field must be a positive value.
+  *   `bubbleMinRadiusSize` (*type:* `integer()`, *default:* `nil`) - The minimum radius size of the bubbles, in pixels. If specific, the field must be a positive value.
+  *   `bubbleOpacity` (*type:* `number()`, *default:* `nil`) - The opacity of the bubbles between 0 and 1.0. 0 is fully transparent and 1 is fully opaque.
+  *   `bubbleSizes` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data contianing the bubble sizes. Bubble sizes are used to draw the bubbles at different sizes relative to each other. If specified, group_ids must also be specified. This field is optional.
+  *   `bubbleTextStyle` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of the text inside the bubbles. Underline and Strikethrough are not supported.
+  *   `domain` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the bubble x-values. These values locate the bubbles in the chart horizontally.
+  *   `groupIds` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the bubble group IDs. All bubbles with the same group ID are drawn in the same color. If bubble_sizes is specified then this field must also be specified but may contain blank values. This field is optional.
   *   `legendPosition` (*type:* `String.t`, *default:* `nil`) - Where the legend of the chart should be drawn.
-  *   `series` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data contianing the bubble y-values.  These values locate the bubbles
-      in the chart vertically.
+  *   `series` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data contianing the bubble y-values. These values locate the bubbles in the chart vertically.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,20 +23,12 @@ defmodule GoogleApi.Sheets.V4.Model.FindReplaceRequest do
 
   *   `allSheets` (*type:* `boolean()`, *default:* `nil`) - True to find/replace over all sheets.
   *   `find` (*type:* `String.t`, *default:* `nil`) - The value to search.
-  *   `includeFormulas` (*type:* `boolean()`, *default:* `nil`) - True if the search should include cells with formulas.
-      False to skip cells with formulas.
+  *   `includeFormulas` (*type:* `boolean()`, *default:* `nil`) - True if the search should include cells with formulas. False to skip cells with formulas.
   *   `matchCase` (*type:* `boolean()`, *default:* `nil`) - True if the search is case sensitive.
   *   `matchEntireCell` (*type:* `boolean()`, *default:* `nil`) - True if the find value should match the entire cell.
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range to find/replace over.
   *   `replacement` (*type:* `String.t`, *default:* `nil`) - The value to use as the replacement.
-  *   `searchByRegex` (*type:* `boolean()`, *default:* `nil`) - True if the find value is a regex.
-      The regular expression and replacement should follow Java regex rules
-      at https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html.
-      The replacement string is allowed to refer to capturing groups.
-      For example, if one cell has the contents `"Google Sheets"` and another
-      has `"Google Docs"`, then searching for `"o.* (.*)"` with a replacement of
-      `"$1 Rocks"` would change the contents of the cells to
-      `"GSheets Rocks"` and `"GDocs Rocks"` respectively.
+  *   `searchByRegex` (*type:* `boolean()`, *default:* `nil`) - True if the find value is a regex. The regular expression and replacement should follow Java regex rules at https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html. The replacement string is allowed to refer to capturing groups. For example, if one cell has the contents `"Google Sheets"` and another has `"Google Docs"`, then searching for `"o.* (.*)"` with a replacement of `"$1 Rocks"` would change the contents of the cells to `"GSheets Rocks"` and `"GDocs Rocks"` respectively.
   *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The sheet to find/replace over.
   """
 

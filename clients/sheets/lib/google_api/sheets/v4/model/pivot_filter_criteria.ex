@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.PivotFilterCriteria do
 
   ## Attributes
 
-  *   `visibleValues` (*type:* `list(String.t)`, *default:* `nil`) - Values that should be included.  Values not listed here are excluded.
+  *   `visibleValues` (*type:* `list(String.t)`, *default:* `nil`) - Values that should be included. Values not listed here are excluded.
   """
 
   use GoogleApi.Gax.ModelBase

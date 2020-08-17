@@ -21,14 +21,9 @@ defmodule GoogleApi.Sheets.V4.Model.AutoFillRequest do
 
   ## Attributes
 
-  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range to autofill. This will examine the range and detect
-      the location that has data and automatically fill that data
-      in to the rest of the range.
-  *   `sourceAndDestination` (*type:* `GoogleApi.Sheets.V4.Model.SourceAndDestination.t`, *default:* `nil`) - The source and destination areas to autofill.
-      This explicitly lists the source of the autofill and where to
-      extend that data.
-  *   `useAlternateSeries` (*type:* `boolean()`, *default:* `nil`) - True if we should generate data with the "alternate" series.
-      This differs based on the type and amount of source data.
+  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range to autofill. This will examine the range and detect the location that has data and automatically fill that data in to the rest of the range.
+  *   `sourceAndDestination` (*type:* `GoogleApi.Sheets.V4.Model.SourceAndDestination.t`, *default:* `nil`) - The source and destination areas to autofill. This explicitly lists the source of the autofill and where to extend that data.
+  *   `useAlternateSeries` (*type:* `boolean()`, *default:* `nil`) - True if we should generate data with the "alternate" series. This differs based on the type and amount of source data.
   """
 
   use GoogleApi.Gax.ModelBase

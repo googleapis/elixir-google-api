@@ -21,8 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.MatchedValueRange do
 
   ## Attributes
 
-  *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The DataFilters from the request that matched the range of
-      values.
+  *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The DataFilters from the request that matched the range of values.
   *   `valueRange` (*type:* `GoogleApi.Sheets.V4.Model.ValueRange.t`, *default:* `nil`) - The values matched by the DataFilter.
   """
 

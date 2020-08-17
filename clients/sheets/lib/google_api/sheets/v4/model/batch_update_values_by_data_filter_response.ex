@@ -24,11 +24,9 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterResponse do
   *   `responses` (*type:* `list(GoogleApi.Sheets.V4.Model.UpdateValuesByDataFilterResponse.t)`, *default:* `nil`) - The response for each range updated.
   *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The spreadsheet the updates were applied to.
   *   `totalUpdatedCells` (*type:* `integer()`, *default:* `nil`) - The total number of cells updated.
-  *   `totalUpdatedColumns` (*type:* `integer()`, *default:* `nil`) - The total number of columns where at least one cell in the column was
-      updated.
+  *   `totalUpdatedColumns` (*type:* `integer()`, *default:* `nil`) - The total number of columns where at least one cell in the column was updated.
   *   `totalUpdatedRows` (*type:* `integer()`, *default:* `nil`) - The total number of rows where at least one cell in the row was updated.
-  *   `totalUpdatedSheets` (*type:* `integer()`, *default:* `nil`) - The total number of sheets where at least one cell in the sheet was
-      updated.
+  *   `totalUpdatedSheets` (*type:* `integer()`, *default:* `nil`) - The total number of sheets where at least one cell in the sheet was updated.
   """
 
   use GoogleApi.Gax.ModelBase

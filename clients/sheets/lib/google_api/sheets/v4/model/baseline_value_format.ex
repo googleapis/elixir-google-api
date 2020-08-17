@@ -22,20 +22,12 @@ defmodule GoogleApi.Sheets.V4.Model.BaselineValueFormat do
   ## Attributes
 
   *   `comparisonType` (*type:* `String.t`, *default:* `nil`) - The comparison type of key value with baseline value.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description which is appended after the baseline value.
-      This field is optional.
-  *   `negativeColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - Color to be used, in case baseline value represents a negative change for
-      key value. This field is optional.
-  *   `negativeColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - Color to be used, in case baseline value represents a negative change for
-      key value. This field is optional.
-      If negative_color is also set, this field takes precedence.
-  *   `position` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - Specifies the horizontal text positioning of baseline value.
-      This field is optional. If not specified, default positioning is used.
-  *   `positiveColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - Color to be used, in case baseline value represents a positive change for
-      key value. This field is optional.
-  *   `positiveColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - Color to be used, in case baseline value represents a positive change for
-      key value. This field is optional.
-      If positive_color is also set, this field takes precedence.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description which is appended after the baseline value. This field is optional.
+  *   `negativeColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - Color to be used, in case baseline value represents a negative change for key value. This field is optional.
+  *   `negativeColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - Color to be used, in case baseline value represents a negative change for key value. This field is optional. If negative_color is also set, this field takes precedence.
+  *   `position` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - Specifies the horizontal text positioning of baseline value. This field is optional. If not specified, default positioning is used.
+  *   `positiveColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - Color to be used, in case baseline value represents a positive change for key value. This field is optional.
+  *   `positiveColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - Color to be used, in case baseline value represents a positive change for key value. This field is optional. If positive_color is also set, this field takes precedence.
   *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - Text formatting options for baseline value.
   """
 

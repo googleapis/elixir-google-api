@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.Sheets.V4.Model.TextToColumnsRequest do
   @moduledoc """
-  Splits a column of text into multiple columns,
-  based on a delimiter in each cell.
+  Splits a column of text into multiple columns, based on a delimiter in each cell.
 
   ## Attributes
 
-  *   `delimiter` (*type:* `String.t`, *default:* `nil`) - The delimiter to use. Used only if delimiterType is
-      CUSTOM.
+  *   `delimiter` (*type:* `String.t`, *default:* `nil`) - The delimiter to use. Used only if delimiterType is CUSTOM.
   *   `delimiterType` (*type:* `String.t`, *default:* `nil`) - The delimiter type to use.
-  *   `source` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The source data range.  This must span exactly one column.
+  *   `source` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The source data range. This must span exactly one column.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,37 +17,16 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
   @moduledoc """
-  A single series of data in a chart.
-  For example, if charting stock prices over time, multiple series may exist,
-  one for the "Open Price", "High Price", "Low Price" and "Close Price".
+  A single series of data in a chart. For example, if charting stock prices over time, multiple series may exist, one for the "Open Price", "High Price", "Low Price" and "Close Price".
 
   ## Attributes
 
-  *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color for elements (such as bars, lines, and points) associated with
-      this series.  If empty, a default color is used.
-  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color for elements (such as bars, lines, and points) associated with
-      this series.  If empty, a default color is used.
-      If color is also set, this field takes precedence.
-  *   `lineStyle` (*type:* `GoogleApi.Sheets.V4.Model.LineStyle.t`, *default:* `nil`) - The line style of this series. Valid only if the
-      chartType is AREA,
-      LINE, or SCATTER.
-      COMBO charts are also supported if the
-      series chart type is
-      AREA or LINE.
+  *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used.
+  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used. If color is also set, this field takes precedence.
+  *   `lineStyle` (*type:* `GoogleApi.Sheets.V4.Model.LineStyle.t`, *default:* `nil`) - The line style of this series. Valid only if the chartType is AREA, LINE, or SCATTER. COMBO charts are also supported if the series chart type is AREA or LINE.
   *   `series` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data being visualized in this chart series.
-  *   `targetAxis` (*type:* `String.t`, *default:* `nil`) - The minor axis that will specify the range of values for this series.
-      For example, if charting stocks over time, the "Volume" series
-      may want to be pinned to the right with the prices pinned to the left,
-      because the scale of trading volume is different than the scale of
-      prices.
-      It is an error to specify an axis that isn't a valid minor axis
-      for the chart's type.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this series. Valid only if the
-      chartType is
-      COMBO.
-      Different types will change the way the series is visualized.
-      Only LINE, AREA,
-      and COLUMN are supported.
+  *   `targetAxis` (*type:* `String.t`, *default:* `nil`) - The minor axis that will specify the range of values for this series. For example, if charting stocks over time, the "Volume" series may want to be pinned to the right with the prices pinned to the left, because the scale of trading volume is different than the scale of prices. It is an error to specify an axis that isn't a valid minor axis for the chart's type.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this series. Valid only if the chartType is COMBO. Different types will change the way the series is visualized. Only LINE, AREA, and COLUMN are supported.
   """
 
   use GoogleApi.Gax.ModelBase

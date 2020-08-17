@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   @moduledoc """
-  The format of a run of text in a cell.
-  Absent values indicate that the field isn't specified.
+  The format of a run of text in a cell. Absent values indicate that the field isn't specified.
 
   ## Attributes
 
@@ -26,8 +25,7 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   *   `fontFamily` (*type:* `String.t`, *default:* `nil`) - The font family.
   *   `fontSize` (*type:* `integer()`, *default:* `nil`) - The size of the font.
   *   `foregroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The foreground color of the text.
-  *   `foregroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The foreground color of the text.
-      If foreground_color is also set, this field takes precedence.
+  *   `foregroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The foreground color of the text. If foreground_color is also set, this field takes precedence.
   *   `italic` (*type:* `boolean()`, *default:* `nil`) - True if the text is italicized.
   *   `strikethrough` (*type:* `boolean()`, *default:* `nil`) - True if the text has a strikethrough.
   *   `underline` (*type:* `boolean()`, *default:* `nil`) - True if the text is underlined.

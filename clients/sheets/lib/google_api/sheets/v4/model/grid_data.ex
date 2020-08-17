@@ -21,14 +21,9 @@ defmodule GoogleApi.Sheets.V4.Model.GridData do
 
   ## Attributes
 
-  *   `columnMetadata` (*type:* `list(GoogleApi.Sheets.V4.Model.DimensionProperties.t)`, *default:* `nil`) - Metadata about the requested columns in the grid, starting with the column
-      in start_column.
-  *   `rowData` (*type:* `list(GoogleApi.Sheets.V4.Model.RowData.t)`, *default:* `nil`) - The data in the grid, one entry per row,
-      starting with the row in startRow.
-      The values in RowData will correspond to columns starting
-      at start_column.
-  *   `rowMetadata` (*type:* `list(GoogleApi.Sheets.V4.Model.DimensionProperties.t)`, *default:* `nil`) - Metadata about the requested rows in the grid, starting with the row
-      in start_row.
+  *   `columnMetadata` (*type:* `list(GoogleApi.Sheets.V4.Model.DimensionProperties.t)`, *default:* `nil`) - Metadata about the requested columns in the grid, starting with the column in start_column.
+  *   `rowData` (*type:* `list(GoogleApi.Sheets.V4.Model.RowData.t)`, *default:* `nil`) - The data in the grid, one entry per row, starting with the row in startRow. The values in RowData will correspond to columns starting at start_column.
+  *   `rowMetadata` (*type:* `list(GoogleApi.Sheets.V4.Model.DimensionProperties.t)`, *default:* `nil`) - Metadata about the requested rows in the grid, starting with the row in start_row.
   *   `startColumn` (*type:* `integer()`, *default:* `nil`) - The first column this GridData refers to, zero-based.
   *   `startRow` (*type:* `integer()`, *default:* `nil`) - The first row this GridData refers to, zero-based.
   """

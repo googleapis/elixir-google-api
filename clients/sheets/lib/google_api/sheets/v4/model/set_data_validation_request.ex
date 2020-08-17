@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.SetDataValidationRequest do
   @moduledoc """
-  Sets a data validation rule to every cell in the range.
-  To clear validation in a range, call this with no rule specified.
+  Sets a data validation rule to every cell in the range. To clear validation in a range, call this with no rule specified.
 
   ## Attributes
 
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range the data validation rule should apply to.
-  *   `rule` (*type:* `GoogleApi.Sheets.V4.Model.DataValidationRule.t`, *default:* `nil`) - The data validation rule to set on each cell in the range,
-      or empty to clear the data validation in the range.
+  *   `rule` (*type:* `GoogleApi.Sheets.V4.Model.DataValidationRule.t`, *default:* `nil`) - The data validation rule to set on each cell in the range, or empty to clear the data validation in the range.
   """
 
   use GoogleApi.Gax.ModelBase

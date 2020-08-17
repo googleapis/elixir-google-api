@@ -22,10 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.SourceAndDestination do
   ## Attributes
 
   *   `dimension` (*type:* `String.t`, *default:* `nil`) - The dimension that data should be filled into.
-  *   `fillLength` (*type:* `integer()`, *default:* `nil`) - The number of rows or columns that data should be filled into.
-      Positive numbers expand beyond the last row or last column
-      of the source.  Negative numbers expand before the first row
-      or first column of the source.
+  *   `fillLength` (*type:* `integer()`, *default:* `nil`) - The number of rows or columns that data should be filled into. Positive numbers expand beyond the last row or last column of the source. Negative numbers expand before the first row or first column of the source.
   *   `source` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The location of the data to use as the source of the autofill.
   """
 

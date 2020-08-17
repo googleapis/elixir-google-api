@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.GridCoordinate do
   @moduledoc """
-  A coordinate in a sheet.
-  All indexes are zero-based.
+  A coordinate in a sheet. All indexes are zero-based.
 
   ## Attributes
 

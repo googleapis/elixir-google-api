@@ -21,18 +21,10 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateCellsRequest do
 
   ## Attributes
 
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields of CellData that should be updated.
-      At least one field must be specified.
-      The root is the CellData; 'row.values.' should not be specified.
-      A single `"*"` can be used as short-hand for listing every field.
-  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range to write data to.
-
-      If the data in rows does not cover the entire requested range,
-      the fields matching those set in fields will be cleared.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields of CellData that should be updated. At least one field must be specified. The root is the CellData; 'row.values.' should not be specified. A single `"*"` can be used as short-hand for listing every field.
+  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range to write data to. If the data in rows does not cover the entire requested range, the fields matching those set in fields will be cleared.
   *   `rows` (*type:* `list(GoogleApi.Sheets.V4.Model.RowData.t)`, *default:* `nil`) - The data to write.
-  *   `start` (*type:* `GoogleApi.Sheets.V4.Model.GridCoordinate.t`, *default:* `nil`) - The coordinate to start writing data at.
-      Any number of rows and columns (including a different number of
-      columns per row) may be written.
+  *   `start` (*type:* `GoogleApi.Sheets.V4.Model.GridCoordinate.t`, *default:* `nil`) - The coordinate to start writing data at. Any number of rows and columns (including a different number of columns per row) may be written.
   """
 
   use GoogleApi.Gax.ModelBase

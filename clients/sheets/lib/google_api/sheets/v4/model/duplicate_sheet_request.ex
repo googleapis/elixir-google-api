@@ -21,12 +21,9 @@ defmodule GoogleApi.Sheets.V4.Model.DuplicateSheetRequest do
 
   ## Attributes
 
-  *   `insertSheetIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based index where the new sheet should be inserted.
-      The index of all sheets after this are incremented.
-  *   `newSheetId` (*type:* `integer()`, *default:* `nil`) - If set, the ID of the new sheet. If not set, an ID is chosen.
-      If set, the ID must not conflict with any existing sheet ID.
-      If set, it must be non-negative.
-  *   `newSheetName` (*type:* `String.t`, *default:* `nil`) - The name of the new sheet.  If empty, a new name is chosen for you.
+  *   `insertSheetIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based index where the new sheet should be inserted. The index of all sheets after this are incremented.
+  *   `newSheetId` (*type:* `integer()`, *default:* `nil`) - If set, the ID of the new sheet. If not set, an ID is chosen. If set, the ID must not conflict with any existing sheet ID. If set, it must be non-negative.
+  *   `newSheetName` (*type:* `String.t`, *default:* `nil`) - The name of the new sheet. If empty, a new name is chosen for you.
   *   `sourceSheetId` (*type:* `integer()`, *default:* `nil`) - The sheet to duplicate.
   """
 

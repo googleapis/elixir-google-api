@@ -21,12 +21,9 @@ defmodule GoogleApi.Sheets.V4.Model.BasicFilter do
 
   ## Attributes
 
-  *   `criteria` (*type:* `%{optional(String.t) => GoogleApi.Sheets.V4.Model.FilterCriteria.t}`, *default:* `nil`) - The criteria for showing/hiding values per column.
-      The map's key is the column index, and the value is the criteria for
-      that column.
+  *   `criteria` (*type:* `%{optional(String.t) => GoogleApi.Sheets.V4.Model.FilterCriteria.t}`, *default:* `nil`) - The criteria for showing/hiding values per column. The map's key is the column index, and the value is the criteria for that column.
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range the filter covers.
-  *   `sortSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.SortSpec.t)`, *default:* `nil`) - The sort order per column. Later specifications are used when values
-      are equal in the earlier specifications.
+  *   `sortSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.SortSpec.t)`, *default:* `nil`) - The sort order per column. Later specifications are used when values are equal in the earlier specifications.
   """
 
   use GoogleApi.Gax.ModelBase

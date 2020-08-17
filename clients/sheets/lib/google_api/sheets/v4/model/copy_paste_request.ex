@@ -21,11 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.CopyPasteRequest do
 
   ## Attributes
 
-  *   `destination` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The location to paste to. If the range covers a span that's
-      a multiple of the source's height or width, then the
-      data will be repeated to fill in the destination range.
-      If the range is smaller than the source range, the entire
-      source data will still be copied (beyond the end of the destination range).
+  *   `destination` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The location to paste to. If the range covers a span that's a multiple of the source's height or width, then the data will be repeated to fill in the destination range. If the range is smaller than the source range, the entire source data will still be copied (beyond the end of the destination range).
   *   `pasteOrientation` (*type:* `String.t`, *default:* `nil`) - How that data should be oriented when pasting.
   *   `pasteType` (*type:* `String.t`, *default:* `nil`) - What kind of data to paste.
   *   `source` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The source range to copy.

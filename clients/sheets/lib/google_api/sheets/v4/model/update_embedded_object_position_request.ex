@@ -17,23 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest do
   @moduledoc """
-  Update an embedded object's position (such as a moving or resizing a
-  chart or image).
+  Update an embedded object's position (such as a moving or resizing a chart or image).
 
   ## Attributes
 
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields of OverlayPosition
-      that should be updated when setting a new position. Used only if
-      newPosition.overlayPosition
-      is set, in which case at least one field must
-      be specified.  The root `newPosition.overlayPosition` is implied and
-      should not be specified.
-      A single `"*"` can be used as short-hand for listing every field.
-  *   `newPosition` (*type:* `GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t`, *default:* `nil`) - An explicit position to move the embedded object to.
-      If newPosition.sheetId is set,
-      a new sheet with that ID will be created.
-      If newPosition.newSheet is set to true,
-      a new sheet will be created with an ID that will be chosen for you.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields of OverlayPosition that should be updated when setting a new position. Used only if newPosition.overlayPosition is set, in which case at least one field must be specified. The root `newPosition.overlayPosition` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field.
+  *   `newPosition` (*type:* `GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t`, *default:* `nil`) - An explicit position to move the embedded object to. If newPosition.sheetId is set, a new sheet with that ID will be created. If newPosition.newSheet is set to true, a new sheet will be created with an ID that will be chosen for you.
   *   `objectId` (*type:* `integer()`, *default:* `nil`) - The ID of the object to moved.
   """
 

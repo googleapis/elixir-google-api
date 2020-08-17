@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest do
   @moduledoc """
-  Updates a chart's specifications.
-  (This does not move or resize a chart. To move or resize a chart, use
-   UpdateEmbeddedObjectPositionRequest.)
+  Updates a chart's specifications. (This does not move or resize a chart. To move or resize a chart, use UpdateEmbeddedObjectPositionRequest.)
 
   ## Attributes
 

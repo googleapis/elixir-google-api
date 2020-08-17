@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata do
   @moduledoc """
-  A developer metadata entry and the data filters specified in the original
-  request that matched it.
+  A developer metadata entry and the data filters specified in the original request that matched it.
 
   ## Attributes
 

@@ -22,8 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle do
   ## Attributes
 
   *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the column.
-  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the column.
-      If color is also set, this field takes precedence.
+  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the column. If color is also set, this field takes precedence.
   *   `label` (*type:* `String.t`, *default:* `nil`) - The label of the column's legend.
   """
 

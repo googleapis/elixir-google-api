@@ -22,9 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.AppendValuesResponse do
   ## Attributes
 
   *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The spreadsheet the updates were applied to.
-  *   `tableRange` (*type:* `String.t`, *default:* `nil`) - The range (in A1 notation) of the table that values are being appended to
-      (before the values were appended).
-      Empty if no table was found.
+  *   `tableRange` (*type:* `String.t`, *default:* `nil`) - The range (in A1 notation) of the table that values are being appended to (before the values were appended). Empty if no table was found.
   *   `updates` (*type:* `GoogleApi.Sheets.V4.Model.UpdateValuesResponse.t`, *default:* `nil`) - Information about the updates that were applied.
   """
 

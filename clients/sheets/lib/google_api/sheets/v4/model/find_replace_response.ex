@@ -22,9 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.FindReplaceResponse do
   ## Attributes
 
   *   `formulasChanged` (*type:* `integer()`, *default:* `nil`) - The number of formula cells changed.
-  *   `occurrencesChanged` (*type:* `integer()`, *default:* `nil`) - The number of occurrences (possibly multiple within a cell) changed.
-      For example, if replacing `"e"` with `"o"` in `"Google Sheets"`, this would
-      be `"3"` because `"Google Sheets"` -> `"Googlo Shoots"`.
+  *   `occurrencesChanged` (*type:* `integer()`, *default:* `nil`) - The number of occurrences (possibly multiple within a cell) changed. For example, if replacing `"e"` with `"o"` in `"Google Sheets"`, this would be `"3"` because `"Google Sheets"` -> `"Googlo Shoots"`.
   *   `rowsChanged` (*type:* `integer()`, *default:* `nil`) - The number of rows changed.
   *   `sheetsChanged` (*type:* `integer()`, *default:* `nil`) - The number of sheets changed.
   *   `valuesChanged` (*type:* `integer()`, *default:* `nil`) - The number of non-formula cells changed.

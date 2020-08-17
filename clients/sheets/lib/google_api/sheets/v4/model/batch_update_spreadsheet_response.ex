@@ -21,11 +21,9 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse do
 
   ## Attributes
 
-  *   `replies` (*type:* `list(GoogleApi.Sheets.V4.Model.Response.t)`, *default:* `nil`) - The reply of the updates.  This maps 1:1 with the updates, although
-      replies to some requests may be empty.
+  *   `replies` (*type:* `list(GoogleApi.Sheets.V4.Model.Response.t)`, *default:* `nil`) - The reply of the updates. This maps 1:1 with the updates, although replies to some requests may be empty.
   *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The spreadsheet the updates were applied to.
-  *   `updatedSpreadsheet` (*type:* `GoogleApi.Sheets.V4.Model.Spreadsheet.t`, *default:* `nil`) - The spreadsheet after updates were applied. This is only set if
-      [BatchUpdateSpreadsheetRequest.include_spreadsheet_in_response] is `true`.
+  *   `updatedSpreadsheet` (*type:* `GoogleApi.Sheets.V4.Model.Spreadsheet.t`, *default:* `nil`) - The spreadsheet after updates were applied. This is only set if [BatchUpdateSpreadsheetRequest.include_spreadsheet_in_response] is `true`.
   """
 
   use GoogleApi.Gax.ModelBase

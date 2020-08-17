@@ -21,14 +21,8 @@ defmodule GoogleApi.Sheets.V4.Model.BooleanRule do
 
   ## Attributes
 
-  *   `condition` (*type:* `GoogleApi.Sheets.V4.Model.BooleanCondition.t`, *default:* `nil`) - The condition of the rule. If the condition evaluates to true,
-      the format is applied.
-  *   `format` (*type:* `GoogleApi.Sheets.V4.Model.CellFormat.t`, *default:* `nil`) - The format to apply.
-      Conditional formatting can only apply a subset of formatting:
-      bold, italic,
-      strikethrough,
-      foreground color &
-      background color.
+  *   `condition` (*type:* `GoogleApi.Sheets.V4.Model.BooleanCondition.t`, *default:* `nil`) - The condition of the rule. If the condition evaluates to true, the format is applied.
+  *   `format` (*type:* `GoogleApi.Sheets.V4.Model.CellFormat.t`, *default:* `nil`) - The format to apply. Conditional formatting can only apply a subset of formatting: bold, italic, strikethrough, foreground color & background color.
   """
 
   use GoogleApi.Gax.ModelBase

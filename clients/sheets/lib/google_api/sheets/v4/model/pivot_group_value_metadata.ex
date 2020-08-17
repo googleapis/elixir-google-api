@@ -22,9 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata do
   ## Attributes
 
   *   `collapsed` (*type:* `boolean()`, *default:* `nil`) - True if the data corresponding to the value is collapsed.
-  *   `value` (*type:* `GoogleApi.Sheets.V4.Model.ExtendedValue.t`, *default:* `nil`) - The calculated value the metadata corresponds to.
-      (Note that formulaValue is not valid,
-       because the values will be calculated.)
+  *   `value` (*type:* `GoogleApi.Sheets.V4.Model.ExtendedValue.t`, *default:* `nil`) - The calculated value the metadata corresponds to. (Note that formulaValue is not valid, because the values will be calculated.)
   """
 
   use GoogleApi.Gax.ModelBase

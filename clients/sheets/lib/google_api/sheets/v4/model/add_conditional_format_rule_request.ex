@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest do
   @moduledoc """
-  Adds a new conditional format rule at the given index.
-  All subsequent rules' indexes are incremented.
+  Adds a new conditional format rule at the given index. All subsequent rules' indexes are incremented.
 
   ## Attributes
 

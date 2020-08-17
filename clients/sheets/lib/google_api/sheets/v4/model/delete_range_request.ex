@@ -22,10 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteRangeRequest do
   ## Attributes
 
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range of cells to delete.
-  *   `shiftDimension` (*type:* `String.t`, *default:* `nil`) - The dimension from which deleted cells will be replaced with.
-      If ROWS, existing cells will be shifted upward to
-      replace the deleted cells. If COLUMNS, existing cells
-      will be shifted left to replace the deleted cells.
+  *   `shiftDimension` (*type:* `String.t`, *default:* `nil`) - The dimension from which deleted cells will be replaced with. If ROWS, existing cells will be shifted upward to replace the deleted cells. If COLUMNS, existing cells will be shifted left to replace the deleted cells.
   """
 
   use GoogleApi.Gax.ModelBase

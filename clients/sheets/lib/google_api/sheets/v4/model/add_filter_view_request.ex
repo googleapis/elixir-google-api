@@ -21,9 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddFilterViewRequest do
 
   ## Attributes
 
-  *   `filter` (*type:* `GoogleApi.Sheets.V4.Model.FilterView.t`, *default:* `nil`) - The filter to add. The filterViewId
-      field is optional; if one is not set, an id will be randomly generated. (It
-      is an error to specify the ID of a filter that already exists.)
+  *   `filter` (*type:* `GoogleApi.Sheets.V4.Model.FilterView.t`, *default:* `nil`) - The filter to add. The filterViewId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a filter that already exists.)
   """
 
   use GoogleApi.Gax.ModelBase

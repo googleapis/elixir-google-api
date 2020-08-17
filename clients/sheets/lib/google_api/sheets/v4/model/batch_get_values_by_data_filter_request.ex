@@ -17,25 +17,14 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterRequest do
   @moduledoc """
-  The request for retrieving a range of values in a spreadsheet selected by a
-  set of DataFilters.
+  The request for retrieving a range of values in a spreadsheet selected by a set of DataFilters.
 
   ## Attributes
 
-  *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The data filters used to match the ranges of values to retrieve. Ranges
-      that match any of the specified data filters are included in the response.
-  *   `dateTimeRenderOption` (*type:* `String.t`, *default:* `nil`) - How dates, times, and durations should be represented in the output.
-      This is ignored if value_render_option is
-      FORMATTED_VALUE.
-      The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
-  *   `majorDimension` (*type:* `String.t`, *default:* `nil`) - The major dimension that results should use.
-
-      For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`,
-      then a request that selects that range and sets `majorDimension=ROWS`
-      returns `[[1,2],[3,4]]`, whereas a request that sets
-      `majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.
-  *   `valueRenderOption` (*type:* `String.t`, *default:* `nil`) - How values should be represented in the output.
-      The default render option is ValueRenderOption.FORMATTED_VALUE.
+  *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The data filters used to match the ranges of values to retrieve. Ranges that match any of the specified data filters are included in the response.
+  *   `dateTimeRenderOption` (*type:* `String.t`, *default:* `nil`) - How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
+  *   `majorDimension` (*type:* `String.t`, *default:* `nil`) - The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then a request that selects that range and sets `majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas a request that sets `majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.
+  *   `valueRenderOption` (*type:* `String.t`, *default:* `nil`) - How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.
   """
 
   use GoogleApi.Gax.ModelBase

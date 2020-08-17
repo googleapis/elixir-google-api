@@ -21,9 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddNamedRangeRequest do
 
   ## Attributes
 
-  *   `namedRange` (*type:* `GoogleApi.Sheets.V4.Model.NamedRange.t`, *default:* `nil`) - The named range to add. The namedRangeId
-      field is optional; if one is not set, an id will be randomly generated. (It
-      is an error to specify the ID of a range that already exists.)
+  *   `namedRange` (*type:* `GoogleApi.Sheets.V4.Model.NamedRange.t`, *default:* `nil`) - The named range to add. The namedRangeId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a range that already exists.)
   """
 
   use GoogleApi.Gax.ModelBase

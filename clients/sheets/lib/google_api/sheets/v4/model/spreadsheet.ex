@@ -25,10 +25,8 @@ defmodule GoogleApi.Sheets.V4.Model.Spreadsheet do
   *   `namedRanges` (*type:* `list(GoogleApi.Sheets.V4.Model.NamedRange.t)`, *default:* `nil`) - The named ranges defined in a spreadsheet.
   *   `properties` (*type:* `GoogleApi.Sheets.V4.Model.SpreadsheetProperties.t`, *default:* `nil`) - Overall properties of a spreadsheet.
   *   `sheets` (*type:* `list(GoogleApi.Sheets.V4.Model.Sheet.t)`, *default:* `nil`) - The sheets that are part of a spreadsheet.
-  *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The ID of the spreadsheet.
-      This field is read-only.
-  *   `spreadsheetUrl` (*type:* `String.t`, *default:* `nil`) - The url of the spreadsheet.
-      This field is read-only.
+  *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The ID of the spreadsheet. This field is read-only.
+  *   `spreadsheetUrl` (*type:* `String.t`, *default:* `nil`) - The url of the spreadsheet. This field is read-only.
   """
 
   use GoogleApi.Gax.ModelBase

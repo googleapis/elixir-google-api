@@ -21,8 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.ErrorValue do
 
   ## Attributes
 
-  *   `message` (*type:* `String.t`, *default:* `nil`) - A message with more information about the error
-      (in the spreadsheet's locale).
+  *   `message` (*type:* `String.t`, *default:* `nil`) - A message with more information about the error (in the spreadsheet's locale).
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of error.
   """
 

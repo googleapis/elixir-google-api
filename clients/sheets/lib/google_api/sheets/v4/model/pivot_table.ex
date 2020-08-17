@@ -22,18 +22,10 @@ defmodule GoogleApi.Sheets.V4.Model.PivotTable do
   ## Attributes
 
   *   `columns` (*type:* `list(GoogleApi.Sheets.V4.Model.PivotGroup.t)`, *default:* `nil`) - Each column grouping in the pivot table.
-  *   `criteria` (*type:* `%{optional(String.t) => GoogleApi.Sheets.V4.Model.PivotFilterCriteria.t}`, *default:* `nil`) - An optional mapping of filters per source column offset.
-
-      The filters are applied before aggregating data into the pivot table.
-      The map's key is the column offset of the source range that you want to
-      filter, and the value is the criteria for that column.
-
-      For example, if the source was `C10:E15`, a key of `0` will have the filter
-      for column `C`, whereas the key `1` is for column `D`.
+  *   `criteria` (*type:* `%{optional(String.t) => GoogleApi.Sheets.V4.Model.PivotFilterCriteria.t}`, *default:* `nil`) - An optional mapping of filters per source column offset. The filters are applied before aggregating data into the pivot table. The map's key is the column offset of the source range that you want to filter, and the value is the criteria for that column. For example, if the source was `C10:E15`, a key of `0` will have the filter for column `C`, whereas the key `1` is for column `D`.
   *   `rows` (*type:* `list(GoogleApi.Sheets.V4.Model.PivotGroup.t)`, *default:* `nil`) - Each row grouping in the pivot table.
   *   `source` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range the pivot table is reading data from.
-  *   `valueLayout` (*type:* `String.t`, *default:* `nil`) - Whether values should be listed horizontally (as columns)
-      or vertically (as rows).
+  *   `valueLayout` (*type:* `String.t`, *default:* `nil`) - Whether values should be listed horizontally (as columns) or vertically (as rows).
   *   `values` (*type:* `list(GoogleApi.Sheets.V4.Model.PivotValue.t)`, *default:* `nil`) - A list of values to include in the pivot table.
   """
 

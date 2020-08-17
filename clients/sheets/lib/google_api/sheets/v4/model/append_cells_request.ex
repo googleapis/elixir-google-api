@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Sheets.V4.Model.AppendCellsRequest do
   @moduledoc """
-  Adds new cells after the last row with data in a sheet,
-  inserting new rows into the sheet if necessary.
+  Adds new cells after the last row with data in a sheet, inserting new rows into the sheet if necessary.
 
   ## Attributes
 
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields of CellData that should be updated.
-      At least one field must be specified.
-      The root is the CellData; 'row.values.' should not be specified.
-      A single `"*"` can be used as short-hand for listing every field.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields of CellData that should be updated. At least one field must be specified. The root is the CellData; 'row.values.' should not be specified. A single `"*"` can be used as short-hand for listing every field.
   *   `rows` (*type:* `list(GoogleApi.Sheets.V4.Model.RowData.t)`, *default:* `nil`) - The data to append.
   *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The sheet ID to append the data to.
   """

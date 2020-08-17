@@ -22,8 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.SortRangeRequest do
   ## Attributes
 
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range to sort.
-  *   `sortSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.SortSpec.t)`, *default:* `nil`) - The sort order per column. Later specifications are used when values
-      are equal in the earlier specifications.
+  *   `sortSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.SortSpec.t)`, *default:* `nil`) - The sort order per column. Later specifications are used when values are equal in the earlier specifications.
   """
 
   use GoogleApi.Gax.ModelBase

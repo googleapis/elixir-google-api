@@ -17,21 +17,14 @@
 
 defmodule GoogleApi.Sheets.V4.Model.CandlestickData do
   @moduledoc """
-  The Candlestick chart data, each containing the low, open, close, and high
-  values for a series.
+  The Candlestick chart data, each containing the low, open, close, and high values for a series.
 
   ## Attributes
 
-  *   `closeSeries` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickSeries.t`, *default:* `nil`) - The range data (vertical axis) for the close/final value for each candle.
-      This is the top of the candle body.  If greater than the open value the
-      candle will be filled.  Otherwise the candle will be hollow.
-  *   `highSeries` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickSeries.t`, *default:* `nil`) - The range data (vertical axis) for the high/maximum value for each
-      candle. This is the top of the candle's center line.
-  *   `lowSeries` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickSeries.t`, *default:* `nil`) - The range data (vertical axis) for the low/minimum value for each candle.
-      This is the bottom of the candle's center line.
-  *   `openSeries` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickSeries.t`, *default:* `nil`) - The range data (vertical axis) for the open/initial value for each
-      candle. This is the bottom of the candle body.  If less than the close
-      value the candle will be filled.  Otherwise the candle will be hollow.
+  *   `closeSeries` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickSeries.t`, *default:* `nil`) - The range data (vertical axis) for the close/final value for each candle. This is the top of the candle body. If greater than the open value the candle will be filled. Otherwise the candle will be hollow.
+  *   `highSeries` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickSeries.t`, *default:* `nil`) - The range data (vertical axis) for the high/maximum value for each candle. This is the top of the candle's center line.
+  *   `lowSeries` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickSeries.t`, *default:* `nil`) - The range data (vertical axis) for the low/minimum value for each candle. This is the bottom of the candle's center line.
+  *   `openSeries` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickSeries.t`, *default:* `nil`) - The range data (vertical axis) for the open/initial value for each candle. This is the bottom of the candle body. If less than the close value the candle will be filled. Otherwise the candle will be hollow.
   """
 
   use GoogleApi.Gax.ModelBase

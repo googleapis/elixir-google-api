@@ -21,39 +21,25 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
 
   ## Attributes
 
-  *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text that describes the chart.  This is often used
-      for accessibility.
-  *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color of the entire chart.
-      Not applicable to Org charts.
-  *   `backgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color of the entire chart.
-      Not applicable to Org charts.
-      If background_color is also set, this field takes precedence.
-  *   `basicChart` (*type:* `GoogleApi.Sheets.V4.Model.BasicChartSpec.t`, *default:* `nil`) - A basic chart specification, can be one of many kinds of charts.
-      See BasicChartType for the list of all
-      charts this supports.
+  *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text that describes the chart. This is often used for accessibility.
+  *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color of the entire chart. Not applicable to Org charts.
+  *   `backgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color of the entire chart. Not applicable to Org charts. If background_color is also set, this field takes precedence.
+  *   `basicChart` (*type:* `GoogleApi.Sheets.V4.Model.BasicChartSpec.t`, *default:* `nil`) - A basic chart specification, can be one of many kinds of charts. See BasicChartType for the list of all charts this supports.
   *   `bubbleChart` (*type:* `GoogleApi.Sheets.V4.Model.BubbleChartSpec.t`, *default:* `nil`) - A bubble chart specification.
   *   `candlestickChart` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickChartSpec.t`, *default:* `nil`) - A candlestick chart specification.
-  *   `fontName` (*type:* `String.t`, *default:* `nil`) - The name of the font to use by default for all chart text (e.g. title,
-      axis labels, legend).  If a font is specified for a specific part of the
-      chart it will override this font name.
+  *   `fontName` (*type:* `String.t`, *default:* `nil`) - The name of the font to use by default for all chart text (e.g. title, axis labels, legend). If a font is specified for a specific part of the chart it will override this font name.
   *   `hiddenDimensionStrategy` (*type:* `String.t`, *default:* `nil`) - Determines how the charts will use hidden rows or columns.
   *   `histogramChart` (*type:* `GoogleApi.Sheets.V4.Model.HistogramChartSpec.t`, *default:* `nil`) - A histogram chart specification.
-  *   `maximized` (*type:* `boolean()`, *default:* `nil`) - True to make a chart fill the entire space in which it's rendered with
-      minimum padding.  False to use the default padding.
-      (Not applicable to Geo and Org charts.)
+  *   `maximized` (*type:* `boolean()`, *default:* `nil`) - True to make a chart fill the entire space in which it's rendered with minimum padding. False to use the default padding. (Not applicable to Geo and Org charts.)
   *   `orgChart` (*type:* `GoogleApi.Sheets.V4.Model.OrgChartSpec.t`, *default:* `nil`) - An org chart specification.
   *   `pieChart` (*type:* `GoogleApi.Sheets.V4.Model.PieChartSpec.t`, *default:* `nil`) - A pie chart specification.
   *   `scorecardChart` (*type:* `GoogleApi.Sheets.V4.Model.ScorecardChartSpec.t`, *default:* `nil`) - A scorecard chart specification.
   *   `subtitle` (*type:* `String.t`, *default:* `nil`) - The subtitle of the chart.
-  *   `subtitleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The subtitle text format.
-      Strikethrough and underline are not supported.
-  *   `subtitleTextPosition` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - The subtitle text position.
-      This field is optional.
+  *   `subtitleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The subtitle text format. Strikethrough and underline are not supported.
+  *   `subtitleTextPosition` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - The subtitle text position. This field is optional.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the chart.
-  *   `titleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The title text format.
-      Strikethrough and underline are not supported.
-  *   `titleTextPosition` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - The title text position.
-      This field is optional.
+  *   `titleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The title text format. Strikethrough and underline are not supported.
+  *   `titleTextPosition` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - The title text position. This field is optional.
   *   `treemapChart` (*type:* `GoogleApi.Sheets.V4.Model.TreemapChartSpec.t`, *default:* `nil`) - A treemap chart specification.
   *   `waterfallChart` (*type:* `GoogleApi.Sheets.V4.Model.WaterfallChartSpec.t`, *default:* `nil`) - A waterfall chart specification.
   """

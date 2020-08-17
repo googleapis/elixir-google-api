@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse do
   @moduledoc """
-  The response when retrieving more than one range of values in a spreadsheet
-  selected by DataFilters.
+  The response when retrieving more than one range of values in a spreadsheet selected by DataFilters.
 
   ## Attributes
 
