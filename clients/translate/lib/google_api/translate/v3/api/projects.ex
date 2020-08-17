@@ -31,17 +31,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Translate.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's
-      project.
-
-      Format: `projects/{project-number-or-id}/locations/{location-id}` or
-      `projects/{project-number-or-id}`.
-
-      For global calls, use `projects/{project-number-or-id}/locations/global` or
-      `projects/{project-number-or-id}`.
-
-      Only models within the same region (has same location-id) can be used.
-      Otherwise an INVALID_ARGUMENT (400) error is returned.
+  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}/locations/{location-id}` or `projects/{project-number-or-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Only models within the same region (has same location-id) can be used. Otherwise an INVALID_ARGUMENT (400) error is returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -102,19 +92,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Translate.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's
-      project.
-
-      Format: `projects/{project-number-or-id}` or
-      `projects/{project-number-or-id}/locations/{location-id}`.
-
-      For global calls, use `projects/{project-number-or-id}/locations/global` or
-      `projects/{project-number-or-id}`.
-
-      Non-global location is required for AutoML models.
-
-      Only models within the same region (have same location-id) can be used,
-      otherwise an INVALID_ARGUMENT (400) error is returned.
+  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}` or `projects/{project-number-or-id}/locations/{location-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Non-global location is required for AutoML models. Only models within the same region (have same location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -127,23 +105,8 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:displayLanguageCode` (*type:* `String.t`) - Optional. The language to use to return localized, human readable names
-          of supported languages. If missing, then display names are not returned
-          in a response.
-      *   `:model` (*type:* `String.t`) - Optional. Get supported languages of this model.
-
-          The format depends on model type:
-
-          - AutoML Translation models:
-            `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
-
-          - General (built-in) models:
-            `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-            `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
-
-
-          Returns languages supported by the specified model.
-          If missing, we get supported languages of Google general base (PBMT) model.
+      *   `:displayLanguageCode` (*type:* `String.t`) - Optional. The language to use to return localized, human readable names of supported languages. If missing, then display names are not returned in a response.
+      *   `:model` (*type:* `String.t`) - Optional. Get supported languages of this model. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, `projects/{project-number-or-id}/locations/{location-id}/models/general/base` Returns languages supported by the specified model. If missing, we get supported languages of Google general base (PBMT) model.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -202,20 +165,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Translate.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's
-      project.
-
-      Format: `projects/{project-number-or-id}` or
-      `projects/{project-number-or-id}/locations/{location-id}`.
-
-      For global calls, use `projects/{project-number-or-id}/locations/global` or
-      `projects/{project-number-or-id}`.
-
-      Non-global location is required for requests using AutoML models or
-      custom glossaries.
-
-      Models and glossaries must be within the same region (have same
-      location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
+  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}` or `projects/{project-number-or-id}/locations/{location-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Non-global location is required for requests using AutoML models or custom glossaries. Models and glossaries must be within the same region (have same location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -271,26 +221,12 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Translates a large volume of text in asynchronous batch mode.
-  This function provides real-time output as the inputs are being processed.
-  If caller cancels a request, the partial results (for an input file, it's
-  all or nothing) may still be available on the specified output location.
-
-  This call returns immediately and you can
-  use google.longrunning.Operation.name to poll the status of the call.
+  Translates a large volume of text in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location. This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Translate.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Location to make a call. Must refer to a caller's project.
-
-      Format: `projects/{project-number-or-id}/locations/{location-id}`.
-
-      The `global` location is not supported for batch translation.
-
-      Only AutoML Translation models or glossaries within the same region (have
-      the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
-      error is returned.
+  *   `parent` (*type:* `String.t`) - Required. Location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}/locations/{location-id}`. The `global` location is not supported for batch translation. Only AutoML Translation models or glossaries within the same region (have the same location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -361,17 +297,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Translate.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's
-      project.
-
-      Format: `projects/{project-number-or-id}/locations/{location-id}` or
-      `projects/{project-number-or-id}`.
-
-      For global calls, use `projects/{project-number-or-id}/locations/global` or
-      `projects/{project-number-or-id}`.
-
-      Only models within the same region (has same location-id) can be used.
-      Otherwise an INVALID_ARGUMENT (400) error is returned.
+  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}/locations/{location-id}` or `projects/{project-number-or-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Only models within the same region (has same location-id) can be used. Otherwise an INVALID_ARGUMENT (400) error is returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -501,19 +427,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Translate.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's
-      project.
-
-      Format: `projects/{project-number-or-id}` or
-      `projects/{project-number-or-id}/locations/{location-id}`.
-
-      For global calls, use `projects/{project-number-or-id}/locations/global` or
-      `projects/{project-number-or-id}`.
-
-      Non-global location is required for AutoML models.
-
-      Only models within the same region (have same location-id) can be used,
-      otherwise an INVALID_ARGUMENT (400) error is returned.
+  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}` or `projects/{project-number-or-id}/locations/{location-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Non-global location is required for AutoML models. Only models within the same region (have same location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -526,23 +440,8 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:displayLanguageCode` (*type:* `String.t`) - Optional. The language to use to return localized, human readable names
-          of supported languages. If missing, then display names are not returned
-          in a response.
-      *   `:model` (*type:* `String.t`) - Optional. Get supported languages of this model.
-
-          The format depends on model type:
-
-          - AutoML Translation models:
-            `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
-
-          - General (built-in) models:
-            `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-            `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
-
-
-          Returns languages supported by the specified model.
-          If missing, we get supported languages of Google general base (PBMT) model.
+      *   `:displayLanguageCode` (*type:* `String.t`) - Optional. The language to use to return localized, human readable names of supported languages. If missing, then display names are not returned in a response.
+      *   `:model` (*type:* `String.t`) - Optional. Get supported languages of this model. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, `projects/{project-number-or-id}/locations/{location-id}/models/general/base` Returns languages supported by the specified model. If missing, we get supported languages of Google general base (PBMT) model.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -666,20 +565,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Translate.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's
-      project.
-
-      Format: `projects/{project-number-or-id}` or
-      `projects/{project-number-or-id}/locations/{location-id}`.
-
-      For global calls, use `projects/{project-number-or-id}/locations/global` or
-      `projects/{project-number-or-id}`.
-
-      Non-global location is required for requests using AutoML models or
-      custom glossaries.
-
-      Models and glossaries must be within the same region (have same
-      location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
+  *   `parent` (*type:* `String.t`) - Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}` or `projects/{project-number-or-id}/locations/{location-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Non-global location is required for requests using AutoML models or custom glossaries. Models and glossaries must be within the same region (have same location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -745,8 +631,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Creates a glossary and returns the long-running operation. Returns
-  NOT_FOUND, if the project doesn't exist.
+  Creates a glossary and returns the long-running operation. Returns NOT_FOUND, if the project doesn't exist.
 
   ## Parameters
 
@@ -817,9 +702,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Deletes a glossary, or cancels glossary construction
-  if the glossary isn't created yet.
-  Returns NOT_FOUND, if the glossary doesn't exist.
+  Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns NOT_FOUND, if the glossary doesn't exist.
 
   ## Parameters
 
@@ -888,8 +771,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Gets a glossary. Returns NOT_FOUND, if the glossary doesn't
-  exist.
+  Gets a glossary. Returns NOT_FOUND, if the glossary doesn't exist.
 
   ## Parameters
 
@@ -958,8 +840,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't
-  exist.
+  Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
 
   ## Parameters
 
@@ -977,28 +858,9 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Filter specifying constraints of a list operation.
-          Specify the constraint by the format of "key=value", where key must be
-          "src" or "tgt", and the value must be a valid language code.
-          For multiple restrictions, concatenate them by "AND" (uppercase only),
-          such as: "src=en-US AND tgt=zh-CN". Notice that the exact match is used
-          here, which means using 'en-US' and 'en' can lead to different results,
-          which depends on the language code you used when you create the glossary.
-          For the unidirectional glossaries, the "src" and "tgt" add restrictions
-          on the source and target language code separately.
-          For the equivalent term set glossaries, the "src" and/or "tgt" add
-          restrictions on the term set.
-          For example: "src=en-US AND tgt=zh-CN" will only pick the unidirectional
-          glossaries which exactly match the source language code as "en-US" and the
-          target language code "zh-CN", but all equivalent term set glossaries which
-          contain "en-US" and "zh-CN" in their language set will be picked.
-          If missing, no filtering is performed.
-      *   `:pageSize` (*type:* `integer()`) - Optional. Requested page size. The server may return fewer glossaries than
-          requested. If unspecified, the server picks an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A token identifying a page of results the server should return.
-          Typically, this is the value of [ListGlossariesResponse.next_page_token]
-          returned from the previous call to `ListGlossaries` method.
-          The first page is returned if `page_token`is empty or missing.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter specifying constraints of a list operation. Specify the constraint by the format of "key=value", where key must be "src" or "tgt", and the value must be a valid language code. For multiple restrictions, concatenate them by "AND" (uppercase only), such as: "src=en-US AND tgt=zh-CN". Notice that the exact match is used here, which means using 'en-US' and 'en' can lead to different results, which depends on the language code you used when you create the glossary. For the unidirectional glossaries, the "src" and "tgt" add restrictions on the source and target language code separately. For the equivalent term set glossaries, the "src" and/or "tgt" add restrictions on the term set. For example: "src=en-US AND tgt=zh-CN" will only pick the unidirectional glossaries which exactly match the source language code as "en-US" and the target language code "zh-CN", but all equivalent term set glossaries which contain "en-US" and "zh-CN" in their language set will be picked. If missing, no filtering is performed.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Requested page size. The server may return fewer glossaries than requested. If unspecified, the server picks an appropriate default.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A token identifying a page of results the server should return. Typically, this is the value of [ListGlossariesResponse.next_page_token] returned from the previous call to `ListGlossaries` method. The first page is returned if `page_token`is empty or missing.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1053,16 +915,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -1131,10 +984,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Deletes a long-running operation. This method indicates that the client is
-  no longer interested in the operation result. It does not cancel the
-  operation. If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -1201,9 +1051,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -1272,16 +1120,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the
-  server doesn't support this method, it returns `UNIMPLEMENTED`.
-
-  NOTE: the `name` binding allows API services to override the binding
-  to use different resource name schemes, such as `users/*/operations`. To
-  override the binding, API services can add a binding such as
-  `"/v1/{name=users/*}/operations"` to their service configuration.
-  For backwards compatibility, the default name includes the operations
-  collection id, however overriding users must ensure the name binding
-  is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
 
   ## Parameters
 
@@ -1356,15 +1195,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   end
 
   @doc """
-  Waits for the specified long-running operation until it is done or reaches
-  at most a specified timeout, returning the latest state.  If the operation
-  is already done, the latest state is immediately returned.  If the timeout
-  specified is greater than the default HTTP/RPC timeout, the HTTP/RPC
-  timeout is used.  If the server does not support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.
-  Note that this method is on a best-effort basis.  It may return the latest
-  state before the specified timeout (including immediately), meaning even an
-  immediate response is no guarantee that the operation is done.
+  Waits for the specified long-running operation until it is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done.
 
   ## Parameters
 

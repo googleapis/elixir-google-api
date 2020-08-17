@@ -21,8 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.SupportedLanguages do
 
   ## Attributes
 
-  *   `languages` (*type:* `list(GoogleApi.Translate.V3.Model.SupportedLanguage.t)`, *default:* `nil`) - A list of supported language responses. This list contains an entry
-      for each language the Translation API supports.
+  *   `languages` (*type:* `list(GoogleApi.Translate.V3.Model.SupportedLanguage.t)`, *default:* `nil`) - A list of supported language responses. This list contains an entry for each language the Translation API supports.
   """
 
   use GoogleApi.Gax.ModelBase
