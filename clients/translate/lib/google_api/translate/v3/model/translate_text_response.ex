@@ -21,14 +21,8 @@ defmodule GoogleApi.Translate.V3.Model.TranslateTextResponse do
 
   ## Attributes
 
-  *   `glossaryTranslations` (*type:* `list(GoogleApi.Translate.V3.Model.Translation.t)`, *default:* `nil`) - Text translation responses if a glossary is provided in the request.
-      This can be the same as
-      `translations` if no terms apply.
-      This field has the same length as
-      `contents`.
-  *   `translations` (*type:* `list(GoogleApi.Translate.V3.Model.Translation.t)`, *default:* `nil`) - Text translation responses with no glossary applied.
-      This field has the same length as
-      `contents`.
+  *   `glossaryTranslations` (*type:* `list(GoogleApi.Translate.V3.Model.Translation.t)`, *default:* `nil`) - Text translation responses if a glossary is provided in the request. This can be the same as `translations` if no terms apply. This field has the same length as `contents`.
+  *   `translations` (*type:* `list(GoogleApi.Translate.V3.Model.Translation.t)`, *default:* `nil`) - Text translation responses with no glossary applied. This field has the same length as `contents`.
   """
 
   use GoogleApi.Gax.ModelBase

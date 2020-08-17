@@ -23,12 +23,10 @@ defmodule GoogleApi.Translate.V3.Model.Glossary do
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the glossary creation was finished.
   *   `entryCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of entries defined in the glossary.
-  *   `inputConfig` (*type:* `GoogleApi.Translate.V3.Model.GlossaryInputConfig.t`, *default:* `nil`) - Required. Provides examples to build the glossary from.
-      Total glossary must not exceed 10M Unicode codepoints.
+  *   `inputConfig` (*type:* `GoogleApi.Translate.V3.Model.GlossaryInputConfig.t`, *default:* `nil`) - Required. Provides examples to build the glossary from. Total glossary must not exceed 10M Unicode codepoints.
   *   `languageCodesSet` (*type:* `GoogleApi.Translate.V3.Model.LanguageCodesSet.t`, *default:* `nil`) - Used with equivalent term set glossaries.
   *   `languagePair` (*type:* `GoogleApi.Translate.V3.Model.LanguageCodePair.t`, *default:* `nil`) - Used with unidirectional glossaries.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the glossary. Glossary names have the form
-      `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the glossary. Glossary names have the form `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
   *   `submitTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When CreateGlossary was called.
   """
 

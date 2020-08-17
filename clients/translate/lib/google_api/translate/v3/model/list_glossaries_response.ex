@@ -22,9 +22,7 @@ defmodule GoogleApi.Translate.V3.Model.ListGlossariesResponse do
   ## Attributes
 
   *   `glossaries` (*type:* `list(GoogleApi.Translate.V3.Model.Glossary.t)`, *default:* `nil`) - The list of glossaries for a project.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve a page of results. Pass this value in the
-      [ListGlossariesRequest.page_token] field in the subsequent call to
-      `ListGlossaries` method to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve a page of results. Pass this value in the [ListGlossariesRequest.page_token] field in the subsequent call to `ListGlossaries` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase
