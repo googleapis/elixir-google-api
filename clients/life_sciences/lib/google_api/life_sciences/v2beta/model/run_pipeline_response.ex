@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.RunPipelineResponse do
   @moduledoc """
-  The response to the RunPipeline method, returned in the operation's result
-  field on success.
+  The response to the RunPipeline method, returned in the operation's result field on success.
 
   ## Attributes
 

@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.Resources do
   @moduledoc """
-  The system resources for the pipeline run.
-
-  At least one zone or region must be specified or the pipeline run will fail.
+  The system resources for the pipeline run. At least one zone or region must be specified or the pipeline run will fail.
 
   ## Attributes
 
-  *   `regions` (*type:* `list(String.t)`, *default:* `nil`) - The list of regions allowed for VM allocation. If set, the `zones` field
-      must not be set.
+  *   `regions` (*type:* `list(String.t)`, *default:* `nil`) - The list of regions allowed for VM allocation. If set, the `zones` field must not be set.
   *   `virtualMachine` (*type:* `GoogleApi.LifeSciences.V2beta.Model.VirtualMachine.t`, *default:* `nil`) - The virtual machine specification.
-  *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - The list of zones allowed for VM allocation. If set, the `regions` field
-      must not be set.
+  *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - The list of zones allowed for VM allocation. If set, the `regions` field must not be set.
   """
 
   use GoogleApi.Gax.ModelBase

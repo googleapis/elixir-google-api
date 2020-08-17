@@ -22,16 +22,9 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Pipeline do
   ## Attributes
 
   *   `actions` (*type:* `list(GoogleApi.LifeSciences.V2beta.Model.Action.t)`, *default:* `nil`) - The list of actions to execute, in the order they are specified.
-  *   `environment` (*type:* `map()`, *default:* `nil`) - The environment to pass into every action. Each action can also specify
-      additional environment variables but cannot delete an entry from this map
-      (though they can overwrite it with a different value).
+  *   `environment` (*type:* `map()`, *default:* `nil`) - The environment to pass into every action. Each action can also specify additional environment variables but cannot delete an entry from this map (though they can overwrite it with a different value).
   *   `resources` (*type:* `GoogleApi.LifeSciences.V2beta.Model.Resources.t`, *default:* `nil`) - The resources required for execution.
-  *   `timeout` (*type:* `String.t`, *default:* `nil`) - The maximum amount of time to give the pipeline to complete.  This includes
-      the time spent waiting for a worker to be allocated.  If the pipeline fails
-      to complete before the timeout, it will be cancelled and the error code
-      will be set to DEADLINE_EXCEEDED.
-
-      If unspecified, it will default to 7 days.
+  *   `timeout` (*type:* `String.t`, *default:* `nil`) - The maximum amount of time to give the pipeline to complete. This includes the time spent waiting for a worker to be allocated. If the pipeline fails to complete before the timeout, it will be cancelled and the error code will be set to DEADLINE_EXCEEDED. If unspecified, it will default to 7 days.
   """
 
   use GoogleApi.Gax.ModelBase

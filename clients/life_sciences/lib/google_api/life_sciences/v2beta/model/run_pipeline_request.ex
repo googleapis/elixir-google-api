@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.RunPipelineRequest do
   @moduledoc """
-  The arguments to the `RunPipeline` method. The requesting user must have
-  the `iam.serviceAccounts.actAs` permission for the Cloud Life Sciences
-  service account or the request will fail.
+  The arguments to the `RunPipeline` method. The requesting user must have the `iam.serviceAccounts.actAs` permission for the Cloud Life Sciences service account or the request will fail.
 
   ## Attributes
 
-  *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels to associate with the returned operation. These
-      labels are not propagated to any Google Cloud Platform resources used by
-      the operation, and can be modified at any time.
-
-      To associate labels with resources created while executing the operation,
-      see the appropriate resource message (for example, `VirtualMachine`).
+  *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels to associate with the returned operation. These labels are not propagated to any Google Cloud Platform resources used by the operation, and can be modified at any time. To associate labels with resources created while executing the operation, see the appropriate resource message (for example, `VirtualMachine`).
   *   `pipeline` (*type:* `GoogleApi.LifeSciences.V2beta.Model.Pipeline.t`, *default:* `nil`) - Required. The description of the pipeline to run.
   """
 

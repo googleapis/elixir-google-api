@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.Operation do
   @moduledoc """
-  This resource represents a long-running operation that is the result of a
-  network API call.
+  This resource represents a long-running operation that is the result of a network API call.
 
   ## Attributes
 
-  *   `done` (*type:* `boolean()`, *default:* `nil`) - If the value is `false`, it means the operation is still in progress.
-      If `true`, the operation is completed, and either `error` or `response` is
-      available.
+  *   `done` (*type:* `boolean()`, *default:* `nil`) - If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available.
   *   `error` (*type:* `GoogleApi.LifeSciences.V2beta.Model.Status.t`, *default:* `nil`) - The error result of the operation in case of failure or cancellation.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - An Metadata object. This will always be returned with the Operation.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned name for the operation.  This may be passed to the other operation methods to retrieve information about the operation's status.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned name for the operation. This may be passed to the other operation methods to retrieve information about the operation's status.
   *   `response` (*type:* `map()`, *default:* `nil`) - An Empty object.
   """
 

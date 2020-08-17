@@ -25,9 +25,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Event do
   *   `containerStarted` (*type:* `GoogleApi.LifeSciences.V2beta.Model.ContainerStartedEvent.t`, *default:* `nil`) - See google.cloud.lifesciences.v2beta.ContainerStartedEvent.
   *   `containerStopped` (*type:* `GoogleApi.LifeSciences.V2beta.Model.ContainerStoppedEvent.t`, *default:* `nil`) - See google.cloud.lifesciences.v2beta.ContainerStoppedEvent.
   *   `delayed` (*type:* `GoogleApi.LifeSciences.V2beta.Model.DelayedEvent.t`, *default:* `nil`) - See google.cloud.lifesciences.v2beta.DelayedEvent.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A human-readable description of the event. Note that these strings can
-      change at any time without notice. Any application logic must use the
-      information in the `details` field.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A human-readable description of the event. Note that these strings can change at any time without notice. Any application logic must use the information in the `details` field.
   *   `failed` (*type:* `GoogleApi.LifeSciences.V2beta.Model.FailedEvent.t`, *default:* `nil`) - See google.cloud.lifesciences.v2beta.FailedEvent.
   *   `pullStarted` (*type:* `GoogleApi.LifeSciences.V2beta.Model.PullStartedEvent.t`, *default:* `nil`) - See google.cloud.lifesciences.v2beta.PullStartedEvent.
   *   `pullStopped` (*type:* `GoogleApi.LifeSciences.V2beta.Model.PullStoppedEvent.t`, *default:* `nil`) - See google.cloud.lifesciences.v2beta.PullStoppedEvent.

@@ -17,15 +17,13 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.Metadata do
   @moduledoc """
-  Carries information about the pipeline execution that is returned
-  in the long running operation's metadata field.
+  Carries information about the pipeline execution that is returned in the long running operation's metadata field.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation was created by the API.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which execution was completed and resources were cleaned up.
-  *   `events` (*type:* `list(GoogleApi.LifeSciences.V2beta.Model.Event.t)`, *default:* `nil`) - The list of events that have happened so far during the execution of this
-      operation.
+  *   `events` (*type:* `list(GoogleApi.LifeSciences.V2beta.Model.Event.t)`, *default:* `nil`) - The list of events that have happened so far during the execution of this operation.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The user-defined labels associated with this operation.
   *   `pipeline` (*type:* `GoogleApi.LifeSciences.V2beta.Model.Pipeline.t`, *default:* `nil`) - The pipeline this operation represents.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The first time at which resources were allocated to execute the pipeline.
