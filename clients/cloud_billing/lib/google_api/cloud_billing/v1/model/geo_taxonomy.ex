@@ -21,8 +21,7 @@ defmodule GoogleApi.CloudBilling.V1.Model.GeoTaxonomy do
 
   ## Attributes
 
-  *   `regions` (*type:* `list(String.t)`, *default:* `nil`) - The list of regions associated with a sku. Empty for Global skus, which are
-      associated with all GCP regions.
+  *   `regions` (*type:* `list(String.t)`, *default:* `nil`) - The list of regions associated with a sku. Empty for Global skus, which are associated with all Google Cloud regions.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of Geo Taxonomy: GLOBAL, REGIONAL, or MULTI_REGIONAL.
   """
 

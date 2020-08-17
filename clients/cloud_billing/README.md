@@ -2,8 +2,7 @@
 
 Cloud Billing API client library.
 
-Allows developers to manage billing for their Google Cloud Platform projects
-    programmatically.
+Allows developers to manage billing for their Google Cloud Platform projects programmatically.
 
 ## Installation
 

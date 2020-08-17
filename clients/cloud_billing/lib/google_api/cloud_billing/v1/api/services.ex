@@ -44,9 +44,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Requested page size. Defaults to 5000.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results to return. This should be a
-          `next_page_token` value returned from a previous `ListServices`
-          call. If unspecified, the first page of results is returned.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results to return. This should be a `next_page_token` value returned from a previous `ListServices` call. If unspecified, the first page of results is returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -93,8 +91,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the service.
-      Example: "services/DA34-426B-A397"
+  *   `parent` (*type:* `String.t`) - Required. The name of the service. Example: "services/DA34-426B-A397"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -107,25 +104,11 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:currencyCode` (*type:* `String.t`) - The ISO 4217 currency code for the pricing info in the response proto.
-          Will use the conversion rate as of start_time.
-          Optional. If not specified USD will be used.
-      *   `:endTime` (*type:* `DateTime.t`) - Optional exclusive end time of the time range for which the pricing
-          versions will be returned. Timestamps in the future are not allowed.
-          The time range has to be within a single calendar month in
-          America/Los_Angeles timezone. Time range as a whole is optional. If not
-          specified, the latest pricing will be returned (up to 12 hours old at
-          most).
+      *   `:currencyCode` (*type:* `String.t`) - The ISO 4217 currency code for the pricing info in the response proto. Will use the conversion rate as of start_time. Optional. If not specified USD will be used.
+      *   `:endTime` (*type:* `DateTime.t`) - Optional exclusive end time of the time range for which the pricing versions will be returned. Timestamps in the future are not allowed. The time range has to be within a single calendar month in America/Los_Angeles timezone. Time range as a whole is optional. If not specified, the latest pricing will be returned (up to 12 hours old at most).
       *   `:pageSize` (*type:* `integer()`) - Requested page size. Defaults to 5000.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results to return. This should be a
-          `next_page_token` value returned from a previous `ListSkus`
-          call. If unspecified, the first page of results is returned.
-      *   `:startTime` (*type:* `DateTime.t`) - Optional inclusive start time of the time range for which the pricing
-          versions will be returned. Timestamps in the future are not allowed.
-          The time range has to be within a single calendar month in
-          America/Los_Angeles timezone. Time range as a whole is optional. If not
-          specified, the latest pricing will be returned (up to 12 hours old at
-          most).
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results to return. This should be a `next_page_token` value returned from a previous `ListSkus` call. If unspecified, the first page of results is returned.
+      *   `:startTime` (*type:* `DateTime.t`) - Optional inclusive start time of the time range for which the pricing versions will be returned. Timestamps in the future are not allowed. The time range has to be within a single calendar month in America/Los_Angeles timezone. Time range as a whole is optional. If not specified, the latest pricing will be returned (up to 12 hours old at most).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
