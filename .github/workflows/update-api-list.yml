@@ -1,0 +1,75 @@
+name: UpdateApiList
+
+on:
+  schedule:
+    - cron: "50 4 * * 1"
+  workflow_dispatch:
+
+jobs:
+  update-api-list:
+    if: ${{ github.repository_owner == 'googleapis' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Install Elixir
+        uses: actions/setup-elixir@v1
+        with:
+          otp-version: "23.0.3"
+          elixir-version: "1.10.4"
+      - name: Compile
+        run: |
+          mix do deps.get, compile
+      - name: Find apis.json updates
+        run: |
+          mix google_apis.discover_update apis.json
+          if [ -n "$(git diff)" ]; then
+            echo "::set-env name=FOUND_CHANGES::true"
+            echo "Changes were made to apis.json"
+          else
+            echo "::set-env name=FOUND_CHANGES::false"
+            echo "No changes were made to apis.json"
+          fi
+      - name: Push changes to branch
+        if: ${{ env.FOUND_CHANGES == 'true' }}
+        run: |
+          git config --global user.email "yoshi-automation@google.com"
+          git config --global user.name "Yoshi Automation Bot"
+          git checkout -b action/auto-update-api-list
+          git commit -a -m "chore: Automatic update of apis.json"
+          git push -f origin action/auto-update-api-list
+      - name: Open PR
+        if: ${{ env.FOUND_CHANGES == 'true' }}
+        uses: actions/github-script@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const existing = await github.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              head: context.repo.owner + ":action/auto-update-api-list"
+            });
+            if (existing.data.length == 0) {
+              core.info("No existing PR found.");
+              const result = await github.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: "chore: Automatic update of apis.json",
+                head: context.repo.owner + ":action/auto-update-api-list",
+                base: "master",
+                maintainer_can_modify: true,
+                body: "Created by the update-api-list workflow.\n\nBe sure to review and edit CHECKME entries before merging."
+              });
+              core.info("Created PR number " + result.data.number);
+            } else {
+              const prNumber = existing.data[0].number;
+              core.info("Found existing PR number " + prNumber);
+              await github.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: "Updated by the update-api-list workflow"
+              });
+              core.info("Added comment to existing PR.")
+            }
