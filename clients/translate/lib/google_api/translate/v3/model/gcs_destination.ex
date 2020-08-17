@@ -21,11 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.GcsDestination do
 
   ## Attributes
 
-  *   `outputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Required. The bucket used in 'output_uri_prefix' must exist and there must be no
-      files under 'output_uri_prefix'. 'output_uri_prefix' must end with "/" and
-      start with "gs://". One 'output_uri_prefix' can only be used by one batch
-      translation job at a time. Otherwise an INVALID_ARGUMENT (400) error is
-       returned.
+  *   `outputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Required. The bucket used in 'output_uri_prefix' must exist and there must be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with "/" and start with "gs://". One 'output_uri_prefix' can only be used by one batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error is returned.
   """
 
   use GoogleApi.Gax.ModelBase

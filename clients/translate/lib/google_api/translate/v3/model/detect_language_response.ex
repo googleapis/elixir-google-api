@@ -21,8 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.DetectLanguageResponse do
 
   ## Attributes
 
-  *   `languages` (*type:* `list(GoogleApi.Translate.V3.Model.DetectedLanguage.t)`, *default:* `nil`) - A list of detected languages sorted by detection confidence in descending
-      order. The most probable language first.
+  *   `languages` (*type:* `list(GoogleApi.Translate.V3.Model.DetectedLanguage.t)`, *default:* `nil`) - A list of detected languages sorted by detection confidence in descending order. The most probable language first.
   """
 
   use GoogleApi.Gax.ModelBase

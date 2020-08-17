@@ -21,10 +21,8 @@ defmodule GoogleApi.Translate.V3.Model.LanguageCodePair do
 
   ## Attributes
 
-  *   `sourceLanguageCode` (*type:* `String.t`, *default:* `nil`) - Required. The BCP-47 language code of the input text, for example,
-      "en-US". Expected to be an exact match for GlossaryTerm.language_code.
-  *   `targetLanguageCode` (*type:* `String.t`, *default:* `nil`) - Required. The BCP-47 language code for translation output, for example,
-      "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
+  *   `sourceLanguageCode` (*type:* `String.t`, *default:* `nil`) - Required. The BCP-47 language code of the input text, for example, "en-US". Expected to be an exact match for GlossaryTerm.language_code.
+  *   `targetLanguageCode` (*type:* `String.t`, *default:* `nil`) - Required. The BCP-47 language code for translation output, for example, "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
   """
 
   use GoogleApi.Gax.ModelBase

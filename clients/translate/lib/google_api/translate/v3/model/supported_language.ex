@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Translate.V3.Model.SupportedLanguage do
   @moduledoc """
-  A single supported language response corresponds to information related
-  to one supported language.
+  A single supported language response corresponds to information related to one supported language.
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human readable name of the language localized in the display language
-      specified in the request.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Supported language code, generally consisting of its ISO 639-1
-      identifier, for example, 'en', 'ja'. In certain cases, BCP-47 codes
-      including language and region identifiers are returned (for example,
-      'zh-TW' and 'zh-CN')
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human readable name of the language localized in the display language specified in the request.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Supported language code, generally consisting of its ISO 639-1 identifier, for example, 'en', 'ja'. In certain cases, BCP-47 codes including language and region identifiers are returned (for example, 'zh-TW' and 'zh-CN')
   *   `supportSource` (*type:* `boolean()`, *default:* `nil`) - Can be used as source language.
   *   `supportTarget` (*type:* `boolean()`, *default:* `nil`) - Can be used as target language.
   """
