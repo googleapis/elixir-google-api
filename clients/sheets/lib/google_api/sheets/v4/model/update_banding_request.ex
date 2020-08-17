@@ -22,9 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateBandingRequest do
   ## Attributes
 
   *   `bandedRange` (*type:* `GoogleApi.Sheets.V4.Model.BandedRange.t`, *default:* `nil`) - The banded range to update with the new properties.
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.  At least one field must be specified.
-      The root `bandedRange` is implied and should not be specified.
-      A single `"*"` can be used as short-hand for listing every field.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `bandedRange` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field.
   """
 
   use GoogleApi.Gax.ModelBase

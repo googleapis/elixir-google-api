@@ -21,8 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest do
 
   ## Attributes
 
-  *   `dataFilter` (*type:* `GoogleApi.Sheets.V4.Model.DataFilter.t`, *default:* `nil`) - The data filter describing the criteria used to select which developer
-      metadata entry to delete.
+  *   `dataFilter` (*type:* `GoogleApi.Sheets.V4.Model.DataFilter.t`, *default:* `nil`) - The data filter describing the criteria used to select which developer metadata entry to delete.
   """
 
   use GoogleApi.Gax.ModelBase

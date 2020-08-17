@@ -17,35 +17,21 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BasicChartSpec do
   @moduledoc """
-  The specification for a basic chart.  See BasicChartType for the list
-  of charts this supports.
+  The specification for a basic chart. See BasicChartType for the list of charts this supports.
 
   ## Attributes
 
   *   `axis` (*type:* `list(GoogleApi.Sheets.V4.Model.BasicChartAxis.t)`, *default:* `nil`) - The axis on the chart.
   *   `chartType` (*type:* `String.t`, *default:* `nil`) - The type of the chart.
-  *   `compareMode` (*type:* `String.t`, *default:* `nil`) - The behavior of tooltips and data highlighting when hovering on data and
-      chart area.
-  *   `domains` (*type:* `list(GoogleApi.Sheets.V4.Model.BasicChartDomain.t)`, *default:* `nil`) - The domain of data this is charting.
-      Only a single domain is supported.
-  *   `headerCount` (*type:* `integer()`, *default:* `nil`) - The number of rows or columns in the data that are "headers".
-      If not set, Google Sheets will guess how many rows are headers based
-      on the data.
-
-      (Note that BasicChartAxis.title may override the axis title
-       inferred from the header values.)
-  *   `interpolateNulls` (*type:* `boolean()`, *default:* `nil`) - If some values in a series are missing, gaps may appear in the chart (e.g,
-      segments of lines in a line chart will be missing).  To eliminate these
-      gaps set this to true.
-      Applies to Line, Area, and Combo charts.
+  *   `compareMode` (*type:* `String.t`, *default:* `nil`) - The behavior of tooltips and data highlighting when hovering on data and chart area.
+  *   `domains` (*type:* `list(GoogleApi.Sheets.V4.Model.BasicChartDomain.t)`, *default:* `nil`) - The domain of data this is charting. Only a single domain is supported.
+  *   `headerCount` (*type:* `integer()`, *default:* `nil`) - The number of rows or columns in the data that are "headers". If not set, Google Sheets will guess how many rows are headers based on the data. (Note that BasicChartAxis.title may override the axis title inferred from the header values.)
+  *   `interpolateNulls` (*type:* `boolean()`, *default:* `nil`) - If some values in a series are missing, gaps may appear in the chart (e.g, segments of lines in a line chart will be missing). To eliminate these gaps set this to true. Applies to Line, Area, and Combo charts.
   *   `legendPosition` (*type:* `String.t`, *default:* `nil`) - The position of the chart legend.
-  *   `lineSmoothing` (*type:* `boolean()`, *default:* `nil`) - Gets whether all lines should be rendered smooth or straight by default.
-      Applies to Line charts.
+  *   `lineSmoothing` (*type:* `boolean()`, *default:* `nil`) - Gets whether all lines should be rendered smooth or straight by default. Applies to Line charts.
   *   `series` (*type:* `list(GoogleApi.Sheets.V4.Model.BasicChartSeries.t)`, *default:* `nil`) - The data this chart is visualizing.
-  *   `stackedType` (*type:* `String.t`, *default:* `nil`) - The stacked type for charts that support vertical stacking.
-      Applies to Area, Bar, Column, Combo, and Stepped Area charts.
-  *   `threeDimensional` (*type:* `boolean()`, *default:* `nil`) - True to make the chart 3D.
-      Applies to Bar and Column charts.
+  *   `stackedType` (*type:* `String.t`, *default:* `nil`) - The stacked type for charts that support vertical stacking. Applies to Area, Bar, Column, Combo, and Stepped Area charts.
+  *   `threeDimensional` (*type:* `boolean()`, *default:* `nil`) - True to make the chart 3D. Applies to Bar and Column charts.
   """
 
   use GoogleApi.Gax.ModelBase

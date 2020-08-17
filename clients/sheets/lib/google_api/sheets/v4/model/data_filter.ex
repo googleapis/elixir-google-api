@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataFilter do
   @moduledoc """
-  Filter that describes what data should be selected or returned from a
-  request.
+  Filter that describes what data should be selected or returned from a request.
 
   ## Attributes
 
   *   `a1Range` (*type:* `String.t`, *default:* `nil`) - Selects data that matches the specified A1 range.
-  *   `developerMetadataLookup` (*type:* `GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup.t`, *default:* `nil`) - Selects data associated with the developer metadata matching the criteria
-      described by this DeveloperMetadataLookup.
+  *   `developerMetadataLookup` (*type:* `GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup.t`, *default:* `nil`) - Selects data associated with the developer metadata matching the criteria described by this DeveloperMetadataLookup.
   *   `gridRange` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - Selects data that matches the range described by the GridRange.
   """
 

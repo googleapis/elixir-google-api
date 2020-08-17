@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest do
   @moduledoc """
-  Deletes a conditional format rule at the given index.
-  All subsequent rules' indexes are decremented.
+  Deletes a conditional format rule at the given index. All subsequent rules' indexes are decremented.
 
   ## Attributes
 

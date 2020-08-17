@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.CandlestickChartSpec do
   @moduledoc """
-  A <a href="/chart/interactive/docs/gallery/candlestickchart">candlestick
-  chart</a>.
+  A candlestick chart.
 
   ## Attributes
 
-  *   `data` (*type:* `list(GoogleApi.Sheets.V4.Model.CandlestickData.t)`, *default:* `nil`) - The Candlestick chart data.
-      Only one CandlestickData is supported.
-  *   `domain` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickDomain.t`, *default:* `nil`) - The domain data (horizontal axis) for the candlestick chart.  String data
-      will be treated as discrete labels, other data will be treated as
-      continuous values.
+  *   `data` (*type:* `list(GoogleApi.Sheets.V4.Model.CandlestickData.t)`, *default:* `nil`) - The Candlestick chart data. Only one CandlestickData is supported.
+  *   `domain` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickDomain.t`, *default:* `nil`) - The domain data (horizontal axis) for the candlestick chart. String data will be treated as discrete labels, other data will be treated as continuous values.
   """
 
   use GoogleApi.Gax.ModelBase

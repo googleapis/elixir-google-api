@@ -21,13 +21,9 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSeries do
 
   ## Attributes
 
-  *   `customSubtotals` (*type:* `list(GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal.t)`, *default:* `nil`) - Custom subtotal columns appearing in this series. The order in which
-      subtotals are defined is not significant. Only one subtotal may be
-      defined for each data point.
+  *   `customSubtotals` (*type:* `list(GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal.t)`, *default:* `nil`) - Custom subtotal columns appearing in this series. The order in which subtotals are defined is not significant. Only one subtotal may be defined for each data point.
   *   `data` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data being visualized in this series.
-  *   `hideTrailingSubtotal` (*type:* `boolean()`, *default:* `nil`) - True to hide the subtotal column from the end of the series. By default,
-      a subtotal column will appear at the end of each series. Setting this
-      field to true will hide that subtotal column for this series.
+  *   `hideTrailingSubtotal` (*type:* `boolean()`, *default:* `nil`) - True to hide the subtotal column from the end of the series. By default, a subtotal column will appear at the end of each series. Setting this field to true will hide that subtotal column for this series.
   *   `negativeColumnsStyle` (*type:* `GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t`, *default:* `nil`) - Styles for all columns in this series with negative values.
   *   `positiveColumnsStyle` (*type:* `GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t`, *default:* `nil`) - Styles for all columns in this series with positive values.
   *   `subtotalColumnsStyle` (*type:* `GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t`, *default:* `nil`) - Styles for all subtotal columns in this series.

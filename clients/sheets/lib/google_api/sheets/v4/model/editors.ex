@@ -21,8 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.Editors do
 
   ## Attributes
 
-  *   `domainUsersCanEdit` (*type:* `boolean()`, *default:* `nil`) - True if anyone in the document's domain has edit access to the protected
-      range.  Domain protection is only supported on documents within a domain.
+  *   `domainUsersCanEdit` (*type:* `boolean()`, *default:* `nil`) - True if anyone in the document's domain has edit access to the protected range. Domain protection is only supported on documents within a domain.
   *   `groups` (*type:* `list(String.t)`, *default:* `nil`) - The email addresses of groups with edit access to the protected range.
   *   `users` (*type:* `list(String.t)`, *default:* `nil`) - The email addresses of users with edit access to the protected range.
   """

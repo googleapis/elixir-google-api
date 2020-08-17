@@ -21,9 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.UnmergeCellsRequest do
 
   ## Attributes
 
-  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range within which all cells should be unmerged.
-      If the range spans multiple merges, all will be unmerged.
-      The range must not partially span any merge.
+  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range within which all cells should be unmerged. If the range spans multiple merges, all will be unmerged. The range must not partially span any merge.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,36 +22,13 @@ defmodule GoogleApi.Sheets.V4.Model.ProtectedRange do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this protected range.
-  *   `editors` (*type:* `GoogleApi.Sheets.V4.Model.Editors.t`, *default:* `nil`) - The users and groups with edit access to the protected range.
-      This field is only visible to users with edit access to the protected
-      range and the document.
-      Editors are not supported with warning_only protection.
-  *   `namedRangeId` (*type:* `String.t`, *default:* `nil`) - The named range this protected range is backed by, if any.
-
-      When writing, only one of range or named_range_id
-      may be set.
-  *   `protectedRangeId` (*type:* `integer()`, *default:* `nil`) - The ID of the protected range.
-      This field is read-only.
-  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range that is being protected.
-      The range may be fully unbounded, in which case this is considered
-      a protected sheet.
-
-      When writing, only one of range or named_range_id
-      may be set.
-  *   `requestingUserCanEdit` (*type:* `boolean()`, *default:* `nil`) - True if the user who requested this protected range can edit the
-      protected area.
-      This field is read-only.
-  *   `unprotectedRanges` (*type:* `list(GoogleApi.Sheets.V4.Model.GridRange.t)`, *default:* `nil`) - The list of unprotected ranges within a protected sheet.
-      Unprotected ranges are only supported on protected sheets.
-  *   `warningOnly` (*type:* `boolean()`, *default:* `nil`) - True if this protected range will show a warning when editing.
-      Warning-based protection means that every user can edit data in the
-      protected range, except editing will prompt a warning asking the user
-      to confirm the edit.
-
-      When writing: if this field is true, then editors is ignored.
-      Additionally, if this field is changed from true to false and the
-      `editors` field is not set (nor included in the field mask), then
-      the editors will be set to all the editors in the document.
+  *   `editors` (*type:* `GoogleApi.Sheets.V4.Model.Editors.t`, *default:* `nil`) - The users and groups with edit access to the protected range. This field is only visible to users with edit access to the protected range and the document. Editors are not supported with warning_only protection.
+  *   `namedRangeId` (*type:* `String.t`, *default:* `nil`) - The named range this protected range is backed by, if any. When writing, only one of range or named_range_id may be set.
+  *   `protectedRangeId` (*type:* `integer()`, *default:* `nil`) - The ID of the protected range. This field is read-only.
+  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range that is being protected. The range may be fully unbounded, in which case this is considered a protected sheet. When writing, only one of range or named_range_id may be set.
+  *   `requestingUserCanEdit` (*type:* `boolean()`, *default:* `nil`) - True if the user who requested this protected range can edit the protected area. This field is read-only.
+  *   `unprotectedRanges` (*type:* `list(GoogleApi.Sheets.V4.Model.GridRange.t)`, *default:* `nil`) - The list of unprotected ranges within a protected sheet. Unprotected ranges are only supported on protected sheets.
+  *   `warningOnly` (*type:* `boolean()`, *default:* `nil`) - True if this protected range will show a warning when editing. Warning-based protection means that every user can edit data in the protected range, except editing will prompt a warning asking the user to confirm the edit. When writing: if this field is true, then editors is ignored. Additionally, if this field is changed from true to false and the `editors` field is not set (nor included in the field mask), then the editors will be set to all the editors in the document.
   """
 
   use GoogleApi.Gax.ModelBase

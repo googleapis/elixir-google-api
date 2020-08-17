@@ -60,8 +60,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `updateSpreadsheetProperties` (*type:* `GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest.t`, *default:* `nil`) - Updates the spreadsheet's properties.
   *   `autoFill` (*type:* `GoogleApi.Sheets.V4.Model.AutoFillRequest.t`, *default:* `nil`) - Automatically fills in more data based on existing data.
   *   `sortRange` (*type:* `GoogleApi.Sheets.V4.Model.SortRangeRequest.t`, *default:* `nil`) - Sorts data in a range.
-  *   `deleteDuplicates` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDuplicatesRequest.t`, *default:* `nil`) - Removes rows containing duplicate values in specified columns of a cell
-      range.
+  *   `deleteDuplicates` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDuplicatesRequest.t`, *default:* `nil`) - Removes rows containing duplicate values in specified columns of a cell range.
   *   `addFilterView` (*type:* `GoogleApi.Sheets.V4.Model.AddFilterViewRequest.t`, *default:* `nil`) - Adds a filter view.
   *   `mergeCells` (*type:* `GoogleApi.Sheets.V4.Model.MergeCellsRequest.t`, *default:* `nil`) - Merges cells together.
   *   `insertRange` (*type:* `GoogleApi.Sheets.V4.Model.InsertRangeRequest.t`, *default:* `nil`) - Inserts new cells in a sheet, shifting the existing cells.
@@ -81,8 +80,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `clearBasicFilter` (*type:* `GoogleApi.Sheets.V4.Model.ClearBasicFilterRequest.t`, *default:* `nil`) - Clears the basic filter on a sheet.
   *   `deleteProtectedRange` (*type:* `GoogleApi.Sheets.V4.Model.DeleteProtectedRangeRequest.t`, *default:* `nil`) - Deletes a protected range.
   *   `duplicateSheet` (*type:* `GoogleApi.Sheets.V4.Model.DuplicateSheetRequest.t`, *default:* `nil`) - Duplicates a sheet.
-  *   `autoResizeDimensions` (*type:* `GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest.t`, *default:* `nil`) - Automatically resizes one or more dimensions based on the contents
-      of the cells in that dimension.
+  *   `autoResizeDimensions` (*type:* `GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest.t`, *default:* `nil`) - Automatically resizes one or more dimensions based on the contents of the cells in that dimension.
   """
 
   use GoogleApi.Gax.ModelBase

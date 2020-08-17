@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataRequest do
   @moduledoc """
-  A request to retrieve all developer metadata matching the set of specified
-  criteria.
+  A request to retrieve all developer metadata matching the set of specified criteria.
 
   ## Attributes
 
-  *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The data filters describing the criteria used to determine which
-      DeveloperMetadata entries to return.  DeveloperMetadata matching any of the
-      specified filters are included in the response.
+  *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The data filters describing the criteria used to determine which DeveloperMetadata entries to return. DeveloperMetadata matching any of the specified filters are included in the response.
   """
 
   use GoogleApi.Gax.ModelBase

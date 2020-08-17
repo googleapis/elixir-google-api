@@ -21,10 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest do
 
   ## Attributes
 
-  *   `protectedRange` (*type:* `GoogleApi.Sheets.V4.Model.ProtectedRange.t`, *default:* `nil`) - The protected range to be added. The
-      protectedRangeId field is optional; if
-      one is not set, an id will be randomly generated. (It is an error to
-      specify the ID of a range that already exists.)
+  *   `protectedRange` (*type:* `GoogleApi.Sheets.V4.Model.ProtectedRange.t`, *default:* `nil`) - The protected range to be added. The protectedRangeId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a range that already exists.)
   """
 
   use GoogleApi.Gax.ModelBase

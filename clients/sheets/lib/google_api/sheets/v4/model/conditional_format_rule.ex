@@ -23,8 +23,7 @@ defmodule GoogleApi.Sheets.V4.Model.ConditionalFormatRule do
 
   *   `booleanRule` (*type:* `GoogleApi.Sheets.V4.Model.BooleanRule.t`, *default:* `nil`) - The formatting is either "on" or "off" according to the rule.
   *   `gradientRule` (*type:* `GoogleApi.Sheets.V4.Model.GradientRule.t`, *default:* `nil`) - The formatting will vary based on the gradients in the rule.
-  *   `ranges` (*type:* `list(GoogleApi.Sheets.V4.Model.GridRange.t)`, *default:* `nil`) - The ranges that are formatted if the condition is true.
-      All the ranges must be on the same grid.
+  *   `ranges` (*type:* `list(GoogleApi.Sheets.V4.Model.GridRange.t)`, *default:* `nil`) - The ranges that are formatted if the condition is true. All the ranges must be on the same grid.
   """
 
   use GoogleApi.Gax.ModelBase

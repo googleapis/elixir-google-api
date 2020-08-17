@@ -21,10 +21,8 @@ defmodule GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation do
 
   ## Attributes
 
-  *   `dimensionRange` (*type:* `GoogleApi.Sheets.V4.Model.DimensionRange.t`, *default:* `nil`) - Represents the row or column when metadata is associated with
-      a dimension. The specified DimensionRange must represent a single row
-      or column; it cannot be unbounded or span multiple rows or columns.
-  *   `locationType` (*type:* `String.t`, *default:* `nil`) - The type of location this object represents.  This field is read-only.
+  *   `dimensionRange` (*type:* `GoogleApi.Sheets.V4.Model.DimensionRange.t`, *default:* `nil`) - Represents the row or column when metadata is associated with a dimension. The specified DimensionRange must represent a single row or column; it cannot be unbounded or span multiple rows or columns.
+  *   `locationType` (*type:* `String.t`, *default:* `nil`) - The type of location this object represents. This field is read-only.
   *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The ID of the sheet when metadata is associated with an entire sheet.
   *   `spreadsheet` (*type:* `boolean()`, *default:* `nil`) - True when metadata is associated with an entire spreadsheet.
   """

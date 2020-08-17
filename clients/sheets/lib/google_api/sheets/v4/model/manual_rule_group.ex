@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.ManualRuleGroup do
   @moduledoc """
-  A group name and a list of items from the source data that should be placed
-  in the group with this name.
+  A group name and a list of items from the source data that should be placed in the group with this name.
 
   ## Attributes
 
-  *   `groupName` (*type:* `GoogleApi.Sheets.V4.Model.ExtendedValue.t`, *default:* `nil`) - The group name, which must be a string. Each group in a given
-      ManualRule must have a unique group name.
-  *   `items` (*type:* `list(GoogleApi.Sheets.V4.Model.ExtendedValue.t)`, *default:* `nil`) - The items in the source data that should be placed into this group. Each
-      item may be a string, number, or boolean. Items may appear in at most one
-      group within a given ManualRule. Items that do not appear in any
-      group will appear on their own.
+  *   `groupName` (*type:* `GoogleApi.Sheets.V4.Model.ExtendedValue.t`, *default:* `nil`) - The group name, which must be a string. Each group in a given ManualRule must have a unique group name.
+  *   `items` (*type:* `list(GoogleApi.Sheets.V4.Model.ExtendedValue.t)`, *default:* `nil`) - The items in the source data that should be placed into this group. Each item may be a string, number, or boolean. Items may appear in at most one group within a given ManualRule. Items that do not appear in any group will appear on their own.
   """
 
   use GoogleApi.Gax.ModelBase

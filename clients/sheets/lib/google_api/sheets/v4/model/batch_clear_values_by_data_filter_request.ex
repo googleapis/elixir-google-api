@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterRequest do
   @moduledoc """
-  The request for clearing more than one range selected by a
-  DataFilter in a spreadsheet.
+  The request for clearing more than one range selected by a DataFilter in a spreadsheet.
 
   ## Attributes
 

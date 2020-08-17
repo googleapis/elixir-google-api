@@ -22,8 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.DimensionProperties do
   ## Attributes
 
   *   `developerMetadata` (*type:* `list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t)`, *default:* `nil`) - The developer metadata associated with a single row or column.
-  *   `hiddenByFilter` (*type:* `boolean()`, *default:* `nil`) - True if this dimension is being filtered.
-      This field is read-only.
+  *   `hiddenByFilter` (*type:* `boolean()`, *default:* `nil`) - True if this dimension is being filtered. This field is read-only.
   *   `hiddenByUser` (*type:* `boolean()`, *default:* `nil`) - True if this dimension is explicitly hidden.
   *   `pixelSize` (*type:* `integer()`, *default:* `nil`) - The height (if a row) or width (if a column) of the dimension in pixels.
   """

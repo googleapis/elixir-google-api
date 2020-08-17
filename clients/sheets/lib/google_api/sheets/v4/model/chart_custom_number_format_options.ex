@@ -21,10 +21,8 @@ defmodule GoogleApi.Sheets.V4.Model.ChartCustomNumberFormatOptions do
 
   ## Attributes
 
-  *   `prefix` (*type:* `String.t`, *default:* `nil`) - Custom prefix to be prepended to the chart attribute.
-      This field is optional.
-  *   `suffix` (*type:* `String.t`, *default:* `nil`) - Custom suffix to be appended to the chart attribute.
-      This field is optional.
+  *   `prefix` (*type:* `String.t`, *default:* `nil`) - Custom prefix to be prepended to the chart attribute. This field is optional.
+  *   `suffix` (*type:* `String.t`, *default:* `nil`) - Custom suffix to be appended to the chart attribute. This field is optional.
   """
 
   use GoogleApi.Gax.ModelBase

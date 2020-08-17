@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.ChartAxisViewWindowOptions do
   @moduledoc """
-  The options that define a "view window" for a chart (such as the visible
-  values in an axis).
+  The options that define a "view window" for a chart (such as the visible values in an axis).
 
   ## Attributes
 
-  *   `viewWindowMax` (*type:* `float()`, *default:* `nil`) - The maximum numeric value to be shown in this view window. If unset, will
-      automatically determine a maximum value that looks good for the data.
-  *   `viewWindowMin` (*type:* `float()`, *default:* `nil`) - The minimum numeric value to be shown in this view window. If unset, will
-      automatically determine a minimum value that looks good for the data.
+  *   `viewWindowMax` (*type:* `float()`, *default:* `nil`) - The maximum numeric value to be shown in this view window. If unset, will automatically determine a maximum value that looks good for the data.
+  *   `viewWindowMin` (*type:* `float()`, *default:* `nil`) - The minimum numeric value to be shown in this view window. If unset, will automatically determine a minimum value that looks good for the data.
   *   `viewWindowMode` (*type:* `String.t`, *default:* `nil`) - The view window's mode.
   """
 

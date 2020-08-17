@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.PieChartSpec do
   @moduledoc """
-  A <a href="/chart/interactive/docs/gallery/piechart">pie chart</a>.
+  A pie chart.
 
   ## Attributes
 

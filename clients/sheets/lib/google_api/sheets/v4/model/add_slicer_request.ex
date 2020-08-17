@@ -21,10 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddSlicerRequest do
 
   ## Attributes
 
-  *   `slicer` (*type:* `GoogleApi.Sheets.V4.Model.Slicer.t`, *default:* `nil`) - The slicer that should be added to the spreadsheet, including
-      the position where it should be placed. The slicerId field is optional; if one is not set, an id
-      will be randomly generated. (It is an error to specify the ID
-      of a slicer that already exists.)
+  *   `slicer` (*type:* `GoogleApi.Sheets.V4.Model.Slicer.t`, *default:* `nil`) - The slicer that should be added to the spreadsheet, including the position where it should be placed. The slicerId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a slicer that already exists.)
   """
 
   use GoogleApi.Gax.ModelBase

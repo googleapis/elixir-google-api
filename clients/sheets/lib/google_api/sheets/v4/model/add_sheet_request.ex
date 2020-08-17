@@ -17,20 +17,11 @@
 
 defmodule GoogleApi.Sheets.V4.Model.AddSheetRequest do
   @moduledoc """
-  Adds a new sheet.
-  When a sheet is added at a given index,
-  all subsequent sheets' indexes are incremented.
-  To add an object sheet, use AddChartRequest instead and specify
-  EmbeddedObjectPosition.sheetId or
-  EmbeddedObjectPosition.newSheet.
+  Adds a new sheet. When a sheet is added at a given index, all subsequent sheets' indexes are incremented. To add an object sheet, use AddChartRequest instead and specify EmbeddedObjectPosition.sheetId or EmbeddedObjectPosition.newSheet.
 
   ## Attributes
 
-  *   `properties` (*type:* `GoogleApi.Sheets.V4.Model.SheetProperties.t`, *default:* `nil`) - The properties the new sheet should have.
-      All properties are optional.
-      The sheetId field is optional; if one is not
-      set, an id will be randomly generated. (It is an error to specify the ID
-      of a sheet that already exists.)
+  *   `properties` (*type:* `GoogleApi.Sheets.V4.Model.SheetProperties.t`, *default:* `nil`) - The properties the new sheet should have. All properties are optional. The sheetId field is optional; if one is not set, an id will be randomly generated. (It is an error to specify the ID of a sheet that already exists.)
   """
 
   use GoogleApi.Gax.ModelBase

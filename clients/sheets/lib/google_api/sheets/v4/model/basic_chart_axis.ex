@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BasicChartAxis do
   @moduledoc """
-  An axis of the chart.
-  A chart may not have more than one axis per
-  axis position.
+  An axis of the chart. A chart may not have more than one axis per axis position.
 
   ## Attributes
 
-  *   `format` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of the title.
-      Only valid if the axis is not associated with the domain.
+  *   `format` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of the title. Only valid if the axis is not associated with the domain.
   *   `position` (*type:* `String.t`, *default:* `nil`) - The position of this axis.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this axis. If set, this overrides any title inferred
-      from headers of the data.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this axis. If set, this overrides any title inferred from headers of the data.
   *   `titleTextPosition` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - The axis title text position.
   *   `viewWindowOptions` (*type:* `GoogleApi.Sheets.V4.Model.ChartAxisViewWindowOptions.t`, *default:* `nil`) - The view window options for this axis.
   """

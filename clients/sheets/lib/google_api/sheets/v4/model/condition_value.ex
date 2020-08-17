@@ -21,19 +21,8 @@ defmodule GoogleApi.Sheets.V4.Model.ConditionValue do
 
   ## Attributes
 
-  *   `relativeDate` (*type:* `String.t`, *default:* `nil`) - A relative date (based on the current date).
-      Valid only if the type is
-      DATE_BEFORE,
-      DATE_AFTER,
-      DATE_ON_OR_BEFORE or
-      DATE_ON_OR_AFTER.
-
-      Relative dates are not supported in data validation.
-      They are supported only in conditional formatting and
-      conditional filters.
-  *   `userEnteredValue` (*type:* `String.t`, *default:* `nil`) - A value the condition is based on.
-      The value is parsed as if the user typed into a cell.
-      Formulas are supported (and must begin with an `=` or a '+').
+  *   `relativeDate` (*type:* `String.t`, *default:* `nil`) - A relative date (based on the current date). Valid only if the type is DATE_BEFORE, DATE_AFTER, DATE_ON_OR_BEFORE or DATE_ON_OR_AFTER. Relative dates are not supported in data validation. They are supported only in conditional formatting and conditional filters.
+  *   `userEnteredValue` (*type:* `String.t`, *default:* `nil`) - A value the condition is based on. The value is parsed as if the user typed into a cell. Formulas are supported (and must begin with an `=` or a '+').
   """
 
   use GoogleApi.Gax.ModelBase

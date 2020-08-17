@@ -22,12 +22,9 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse do
   ## Attributes
 
   *   `newIndex` (*type:* `integer()`, *default:* `nil`) - The index of the new rule.
-  *   `newRule` (*type:* `GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t`, *default:* `nil`) - The new rule that replaced the old rule (if replacing),
-      or the rule that was moved (if moved)
-  *   `oldIndex` (*type:* `integer()`, *default:* `nil`) - The old index of the rule. Not set if a rule was replaced
-      (because it is the same as new_index).
-  *   `oldRule` (*type:* `GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t`, *default:* `nil`) - The old (deleted) rule. Not set if a rule was moved
-      (because it is the same as new_rule).
+  *   `newRule` (*type:* `GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t`, *default:* `nil`) - The new rule that replaced the old rule (if replacing), or the rule that was moved (if moved)
+  *   `oldIndex` (*type:* `integer()`, *default:* `nil`) - The old index of the rule. Not set if a rule was replaced (because it is the same as new_index).
+  *   `oldRule` (*type:* `GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t`, *default:* `nil`) - The old (deleted) rule. Not set if a rule was moved (because it is the same as new_rule).
   """
 
   use GoogleApi.Gax.ModelBase

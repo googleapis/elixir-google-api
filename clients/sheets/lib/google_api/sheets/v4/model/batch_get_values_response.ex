@@ -22,8 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.BatchGetValuesResponse do
   ## Attributes
 
   *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The ID of the spreadsheet the data was retrieved from.
-  *   `valueRanges` (*type:* `list(GoogleApi.Sheets.V4.Model.ValueRange.t)`, *default:* `nil`) - The requested values. The order of the ValueRanges is the same as the
-      order of the requested ranges.
+  *   `valueRanges` (*type:* `list(GoogleApi.Sheets.V4.Model.ValueRange.t)`, *default:* `nil`) - The requested values. The order of the ValueRanges is the same as the order of the requested ranges.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.GradientRule do
   @moduledoc """
-  A rule that applies a gradient color scale format, based on
-  the interpolation points listed. The format of a cell will vary
-  based on its contents as compared to the values of the interpolation
-  points.
+  A rule that applies a gradient color scale format, based on the interpolation points listed. The format of a cell will vary based on its contents as compared to the values of the interpolation points.
 
   ## Attributes
 

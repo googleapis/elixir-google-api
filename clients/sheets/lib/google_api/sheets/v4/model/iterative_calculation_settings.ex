@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.IterativeCalculationSettings do
   @moduledoc """
-  Settings to control how circular dependencies are resolved with iterative
-  calculation.
+  Settings to control how circular dependencies are resolved with iterative calculation.
 
   ## Attributes
 
-  *   `convergenceThreshold` (*type:* `float()`, *default:* `nil`) - When iterative calculation is enabled and successive results differ by
-      less than this threshold value, the calculation rounds stop.
-  *   `maxIterations` (*type:* `integer()`, *default:* `nil`) - When iterative calculation is enabled, the maximum number of calculation
-      rounds to perform.
+  *   `convergenceThreshold` (*type:* `float()`, *default:* `nil`) - When iterative calculation is enabled and successive results differ by less than this threshold value, the calculation rounds stop.
+  *   `maxIterations` (*type:* `integer()`, *default:* `nil`) - When iterative calculation is enabled, the maximum number of calculation rounds to perform.
   """
 
   use GoogleApi.Gax.ModelBase

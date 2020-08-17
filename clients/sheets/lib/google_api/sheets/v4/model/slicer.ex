@@ -21,9 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.Slicer do
 
   ## Attributes
 
-  *   `position` (*type:* `GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t`, *default:* `nil`) - The position of the slicer. Note that slicer can be positioned only on
-      existing sheet. Also, width and height of slicer can be automatically
-      adjusted to keep it within permitted limits.
+  *   `position` (*type:* `GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t`, *default:* `nil`) - The position of the slicer. Note that slicer can be positioned only on existing sheet. Also, width and height of slicer can be automatically adjusted to keep it within permitted limits.
   *   `slicerId` (*type:* `integer()`, *default:* `nil`) - The ID of the slicer.
   *   `spec` (*type:* `GoogleApi.Sheets.V4.Model.SlicerSpec.t`, *default:* `nil`) - The specification of the slicer.
   """

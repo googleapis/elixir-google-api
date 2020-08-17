@@ -21,22 +21,12 @@ defmodule GoogleApi.Sheets.V4.Model.FilterCriteria do
 
   ## Attributes
 
-  *   `condition` (*type:* `GoogleApi.Sheets.V4.Model.BooleanCondition.t`, *default:* `nil`) - A condition that must be true for values to be shown.
-      (This does not override hidden_values -- if a value is listed there,
-       it will still be hidden.)
+  *   `condition` (*type:* `GoogleApi.Sheets.V4.Model.BooleanCondition.t`, *default:* `nil`) - A condition that must be true for values to be shown. (This does not override hidden_values -- if a value is listed there, it will still be hidden.)
   *   `hiddenValues` (*type:* `list(String.t)`, *default:* `nil`) - Values that should be hidden.
-  *   `visibleBackgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background fill color to filter by; only cells with this fill color are
-      shown. Mutually exclusive with visible_foreground_color.
-  *   `visibleBackgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background fill color to filter by; only cells with this fill color are
-      shown. This field is mutually exclusive with visible_foreground_color,
-      and must be set to an RGB-type color. If visible_background_color is
-      also set, this field takes precedence.
-  *   `visibleForegroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The foreground color to filter by; only cells with this foreground color
-      are shown. Mutually exclusive with visible_background_color.
-  *   `visibleForegroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The foreground color to filter by; only cells with this foreground color
-      are shown. This field is mutually exclusive with
-      visible_background_color, and must be set to an RGB-type color. If
-      visible_foreground_color is also set, this field takes precedence.
+  *   `visibleBackgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background fill color to filter by; only cells with this fill color are shown. Mutually exclusive with visible_foreground_color.
+  *   `visibleBackgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background fill color to filter by; only cells with this fill color are shown. This field is mutually exclusive with visible_foreground_color, and must be set to an RGB-type color. If visible_background_color is also set, this field takes precedence.
+  *   `visibleForegroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The foreground color to filter by; only cells with this foreground color are shown. Mutually exclusive with visible_background_color.
+  *   `visibleForegroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The foreground color to filter by; only cells with this foreground color are shown. This field is mutually exclusive with visible_background_color, and must be set to an RGB-type color. If visible_foreground_color is also set, this field takes precedence.
   """
 
   use GoogleApi.Gax.ModelBase

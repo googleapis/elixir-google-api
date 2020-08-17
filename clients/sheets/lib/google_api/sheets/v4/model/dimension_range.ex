@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DimensionRange do
   @moduledoc """
-  A range along a single dimension on a sheet.
-  All indexes are zero-based.
-  Indexes are half open: the start index is inclusive
-  and the end index is exclusive.
-  Missing indexes indicate the range is unbounded on that side.
+  A range along a single dimension on a sheet. All indexes are zero-based. Indexes are half open: the start index is inclusive and the end index is exclusive. Missing indexes indicate the range is unbounded on that side.
 
   ## Attributes
 

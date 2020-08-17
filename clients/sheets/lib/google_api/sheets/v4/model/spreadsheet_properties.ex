@@ -22,25 +22,11 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
   ## Attributes
 
   *   `autoRecalc` (*type:* `String.t`, *default:* `nil`) - The amount of time to wait before volatile functions are recalculated.
-  *   `defaultFormat` (*type:* `GoogleApi.Sheets.V4.Model.CellFormat.t`, *default:* `nil`) - The default format of all cells in the spreadsheet.
-      CellData.effectiveFormat will not be set if
-      the cell's format is equal to this default format. This field is read-only.
-  *   `iterativeCalculationSettings` (*type:* `GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t`, *default:* `nil`) - Determines whether and how circular references are resolved with iterative
-      calculation.  Absence of this field means that circular references result
-      in calculation errors.
-  *   `locale` (*type:* `String.t`, *default:* `nil`) - The locale of the spreadsheet in one of the following formats:
-
-      * an ISO 639-1 language code such as `en`
-
-      * an ISO 639-2 language code such as `fil`, if no 639-1 code exists
-
-      * a combination of the ISO language code and country code, such as `en_US`
-
-      Note: when updating this field, not all locales/languages are supported.
+  *   `defaultFormat` (*type:* `GoogleApi.Sheets.V4.Model.CellFormat.t`, *default:* `nil`) - The default format of all cells in the spreadsheet. CellData.effectiveFormat will not be set if the cell's format is equal to this default format. This field is read-only.
+  *   `iterativeCalculationSettings` (*type:* `GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t`, *default:* `nil`) - Determines whether and how circular references are resolved with iterative calculation. Absence of this field means that circular references result in calculation errors.
+  *   `locale` (*type:* `String.t`, *default:* `nil`) - The locale of the spreadsheet in one of the following formats: * an ISO 639-1 language code such as `en` * an ISO 639-2 language code such as `fil`, if no 639-1 code exists * a combination of the ISO language code and country code, such as `en_US` Note: when updating this field, not all locales/languages are supported.
   *   `spreadsheetTheme` (*type:* `GoogleApi.Sheets.V4.Model.SpreadsheetTheme.t`, *default:* `nil`) - Theme applied to the spreadsheet.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of the spreadsheet, in CLDR format such as
-      `America/New_York`. If the time zone isn't recognized, this may
-      be a custom time zone such as `GMT-07:00`.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of the spreadsheet, in CLDR format such as `America/New_York`. If the time zone isn't recognized, this may be a custom time zone such as `GMT-07:00`.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the spreadsheet.
   """
 

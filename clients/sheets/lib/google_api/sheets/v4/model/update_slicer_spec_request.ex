@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.Sheets.V4.Model.UpdateSlicerSpecRequest do
   @moduledoc """
-  Updates a slicer's specifications.
-  (This does not move or resize a slicer. To move or resize a slicer use
-  UpdateEmbeddedObjectPositionRequest.
+  Updates a slicer's specifications. (This does not move or resize a slicer. To move or resize a slicer use UpdateEmbeddedObjectPositionRequest.
 
   ## Attributes
 
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.  At least one field must be specified.
-      The root `SlicerSpec` is implied and should not be specified. A single "*"`
-      can be used as short-hand for listing every field.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `SlicerSpec` is implied and should not be specified. A single "*"` can be used as short-hand for listing every field.
   *   `slicerId` (*type:* `integer()`, *default:* `nil`) - The id of the slicer to update.
   *   `spec` (*type:* `GoogleApi.Sheets.V4.Model.SlicerSpec.t`, *default:* `nil`) - The specification to apply to the slicer.
   """

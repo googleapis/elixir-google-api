@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Sheets.V4.Model.TextFormatRun do
   @moduledoc """
-  A run of a text format. The format of this run continues until the start
-  index of the next run.
-  When updating, all fields must be set.
+  A run of a text format. The format of this run continues until the start index of the next run. When updating, all fields must be set.
 
   ## Attributes
 
-  *   `format` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of this run.  Absent values inherit the cell's format.
+  *   `format` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of this run. Absent values inherit the cell's format.
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The character index where this run starts.
   """
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest do
   @moduledoc """
-  Automatically resizes one or more dimensions based on the contents
-  of the cells in that dimension.
+  Automatically resizes one or more dimensions based on the contents of the cells in that dimension.
 
   ## Attributes
 

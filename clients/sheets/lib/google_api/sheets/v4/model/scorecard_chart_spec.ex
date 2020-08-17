@@ -17,31 +17,18 @@
 
 defmodule GoogleApi.Sheets.V4.Model.ScorecardChartSpec do
   @moduledoc """
-  A scorecard chart. Scorecard charts are used to highlight key performance
-  indicators, known as KPIs, on the spreadsheet. A scorecard chart can
-  represent things like total sales, average cost, or a top selling item. You
-  can specify a single data value, or aggregate over a range of data.
-  Percentage or absolute difference from a baseline value can be highlighted,
-  like changes over time.
+  A scorecard chart. Scorecard charts are used to highlight key performance indicators, known as KPIs, on the spreadsheet. A scorecard chart can represent things like total sales, average cost, or a top selling item. You can specify a single data value, or aggregate over a range of data. Percentage or absolute difference from a baseline value can be highlighted, like changes over time.
 
   ## Attributes
 
-  *   `aggregateType` (*type:* `String.t`, *default:* `nil`) - The aggregation type for key and baseline chart data in scorecard chart.
-      This field is optional.
-  *   `baselineValueData` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data for scorecard baseline value.
-      This field is optional.
-  *   `baselineValueFormat` (*type:* `GoogleApi.Sheets.V4.Model.BaselineValueFormat.t`, *default:* `nil`) - Formatting options for baseline value.
-      This field is needed only if baseline_value_data is specified.
-  *   `customFormatOptions` (*type:* `GoogleApi.Sheets.V4.Model.ChartCustomNumberFormatOptions.t`, *default:* `nil`) - Custom formatting options for numeric key/baseline values in scorecard
-      chart. This field is used only when number_format_source is set to
-      CUSTOM. This field is optional.
+  *   `aggregateType` (*type:* `String.t`, *default:* `nil`) - The aggregation type for key and baseline chart data in scorecard chart. This field is optional.
+  *   `baselineValueData` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data for scorecard baseline value. This field is optional.
+  *   `baselineValueFormat` (*type:* `GoogleApi.Sheets.V4.Model.BaselineValueFormat.t`, *default:* `nil`) - Formatting options for baseline value. This field is needed only if baseline_value_data is specified.
+  *   `customFormatOptions` (*type:* `GoogleApi.Sheets.V4.Model.ChartCustomNumberFormatOptions.t`, *default:* `nil`) - Custom formatting options for numeric key/baseline values in scorecard chart. This field is used only when number_format_source is set to CUSTOM. This field is optional.
   *   `keyValueData` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data for scorecard key value.
   *   `keyValueFormat` (*type:* `GoogleApi.Sheets.V4.Model.KeyValueFormat.t`, *default:* `nil`) - Formatting options for key value.
-  *   `numberFormatSource` (*type:* `String.t`, *default:* `nil`) - The number format source used in the scorecard chart.
-      This field is optional.
-  *   `scaleFactor` (*type:* `float()`, *default:* `nil`) - Value to scale scorecard key and baseline value. For example, a factor of
-      10 can be used to divide all values in the chart by 10.
-      This field is optional.
+  *   `numberFormatSource` (*type:* `String.t`, *default:* `nil`) - The number format source used in the scorecard chart. This field is optional.
+  *   `scaleFactor` (*type:* `float()`, *default:* `nil`) - Value to scale scorecard key and baseline value. For example, a factor of 10 can be used to divide all values in the chart by 10. This field is optional.
   """
 
   use GoogleApi.Gax.ModelBase

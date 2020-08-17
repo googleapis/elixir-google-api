@@ -23,10 +23,8 @@ defmodule GoogleApi.Sheets.V4.Model.OverlayPosition do
 
   *   `anchorCell` (*type:* `GoogleApi.Sheets.V4.Model.GridCoordinate.t`, *default:* `nil`) - The cell the object is anchored to.
   *   `heightPixels` (*type:* `integer()`, *default:* `nil`) - The height of the object, in pixels. Defaults to 371.
-  *   `offsetXPixels` (*type:* `integer()`, *default:* `nil`) - The horizontal offset, in pixels, that the object is offset
-      from the anchor cell.
-  *   `offsetYPixels` (*type:* `integer()`, *default:* `nil`) - The vertical offset, in pixels, that the object is offset
-      from the anchor cell.
+  *   `offsetXPixels` (*type:* `integer()`, *default:* `nil`) - The horizontal offset, in pixels, that the object is offset from the anchor cell.
+  *   `offsetYPixels` (*type:* `integer()`, *default:* `nil`) - The vertical offset, in pixels, that the object is offset from the anchor cell.
   *   `widthPixels` (*type:* `integer()`, *default:* `nil`) - The width of the object, in pixels. Defaults to 600.
   """
 

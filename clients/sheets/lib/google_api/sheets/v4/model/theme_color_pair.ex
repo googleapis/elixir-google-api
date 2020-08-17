@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.ThemeColorPair do
   @moduledoc """
-  A pair mapping a spreadsheet theme color type to the concrete color it
-  represents.
+  A pair mapping a spreadsheet theme color type to the concrete color it represents.
 
   ## Attributes
 

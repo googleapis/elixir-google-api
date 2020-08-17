@@ -17,26 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.RepeatCellRequest do
   @moduledoc """
-  Updates all cells in the range to the values in the given Cell object.
-  Only the fields listed in the fields field are updated; others are
-  unchanged.
-
-  If writing a cell with a formula, the formula's ranges will automatically
-  increment for each field in the range.
-  For example, if writing a cell with formula `=A1` into range B2:C4,
-  B2 would be `=A1`, B3 would be `=A2`, B4 would be `=A3`,
-  C2 would be `=B1`, C3 would be `=B2`, C4 would be `=B3`.
-
-  To keep the formula's ranges static, use the `$` indicator.
-  For example, use the formula `=$A$1` to prevent both the row and the
-  column from incrementing.
+  Updates all cells in the range to the values in the given Cell object. Only the fields listed in the fields field are updated; others are unchanged. If writing a cell with a formula, the formula's ranges will automatically increment for each field in the range. For example, if writing a cell with formula `=A1` into range B2:C4, B2 would be `=A1`, B3 would be `=A2`, B4 would be `=A3`, C2 would be `=B1`, C3 would be `=B2`, C4 would be `=B3`. To keep the formula's ranges static, use the `$` indicator. For example, use the formula `=$A$1` to prevent both the row and the column from incrementing.
 
   ## Attributes
 
   *   `cell` (*type:* `GoogleApi.Sheets.V4.Model.CellData.t`, *default:* `nil`) - The data to write.
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.  At least one field must be specified.
-      The root `cell` is implied and should not be specified.
-      A single `"*"` can be used as short-hand for listing every field.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `cell` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field.
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range to repeat the cell in.
   """
 

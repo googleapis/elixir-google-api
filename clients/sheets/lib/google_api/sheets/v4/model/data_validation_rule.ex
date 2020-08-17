@@ -23,8 +23,7 @@ defmodule GoogleApi.Sheets.V4.Model.DataValidationRule do
 
   *   `condition` (*type:* `GoogleApi.Sheets.V4.Model.BooleanCondition.t`, *default:* `nil`) - The condition that data in the cell must match.
   *   `inputMessage` (*type:* `String.t`, *default:* `nil`) - A message to show the user when adding data to the cell.
-  *   `showCustomUi` (*type:* `boolean()`, *default:* `nil`) - True if the UI should be customized based on the kind of condition.
-      If true, "List" conditions will show a dropdown.
+  *   `showCustomUi` (*type:* `boolean()`, *default:* `nil`) - True if the UI should be customized based on the kind of condition. If true, "List" conditions will show a dropdown.
   *   `strict` (*type:* `boolean()`, *default:* `nil`) - True if invalid data should be rejected.
   """
 

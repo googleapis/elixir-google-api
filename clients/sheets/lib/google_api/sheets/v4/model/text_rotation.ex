@@ -21,25 +21,8 @@ defmodule GoogleApi.Sheets.V4.Model.TextRotation do
 
   ## Attributes
 
-  *   `angle` (*type:* `integer()`, *default:* `nil`) - The angle between the standard orientation and the desired orientation.
-      Measured in degrees. Valid values are between -90 and 90. Positive
-      angles are angled upwards, negative are angled downwards.
-
-      Note: For LTR text direction positive angles are in the
-      counterclockwise direction, whereas for RTL they are in the clockwise
-      direction
-  *   `vertical` (*type:* `boolean()`, *default:* `nil`) - If true, text reads top to bottom, but the orientation of individual
-      characters is unchanged.
-      For example:
-
-          | V |
-          | e |
-          | r |
-          | t |
-          | i |
-          | c |
-          | a |
-          | l |
+  *   `angle` (*type:* `integer()`, *default:* `nil`) - The angle between the standard orientation and the desired orientation. Measured in degrees. Valid values are between -90 and 90. Positive angles are angled upwards, negative are angled downwards. Note: For LTR text direction positive angles are in the counterclockwise direction, whereas for RTL they are in the clockwise direction
+  *   `vertical` (*type:* `boolean()`, *default:* `nil`) - If true, text reads top to bottom, but the orientation of individual characters is unchanged. For example: | V | | e | | r | | t | | i | | c | | a | | l |
   """
 
   use GoogleApi.Gax.ModelBase

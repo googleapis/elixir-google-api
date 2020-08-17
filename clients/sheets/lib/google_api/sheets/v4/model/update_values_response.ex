@@ -24,9 +24,7 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateValuesResponse do
   *   `spreadsheetId` (*type:* `String.t`, *default:* `nil`) - The spreadsheet the updates were applied to.
   *   `updatedCells` (*type:* `integer()`, *default:* `nil`) - The number of cells updated.
   *   `updatedColumns` (*type:* `integer()`, *default:* `nil`) - The number of columns where at least one cell in the column was updated.
-  *   `updatedData` (*type:* `GoogleApi.Sheets.V4.Model.ValueRange.t`, *default:* `nil`) - The values of the cells after updates were applied.
-      This is only included if the request's `includeValuesInResponse` field
-      was `true`.
+  *   `updatedData` (*type:* `GoogleApi.Sheets.V4.Model.ValueRange.t`, *default:* `nil`) - The values of the cells after updates were applied. This is only included if the request's `includeValuesInResponse` field was `true`.
   *   `updatedRange` (*type:* `String.t`, *default:* `nil`) - The range (in A1 notation) that updates were applied to.
   *   `updatedRows` (*type:* `integer()`, *default:* `nil`) - The number of rows where at least one cell in the row was updated.
   """

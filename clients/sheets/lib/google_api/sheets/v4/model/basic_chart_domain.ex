@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BasicChartDomain do
   @moduledoc """
-  The domain of a chart.
-  For example, if charting stock prices over time, this would be the date.
+  The domain of a chart. For example, if charting stock prices over time, this would be the date.
 
   ## Attributes
 
-  *   `domain` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data of the domain. For example, if charting stock prices over time,
-      this is the data representing the dates.
+  *   `domain` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data of the domain. For example, if charting stock prices over time, this is the data representing the dates.
   *   `reversed` (*type:* `boolean()`, *default:* `nil`) - True to reverse the order of the domain values (horizontal axis).
   """
 

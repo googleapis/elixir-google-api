@@ -17,16 +17,14 @@
 
 defmodule GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleRequest do
   @moduledoc """
-  Updates a conditional format rule at the given index,
-  or moves a conditional format rule to another index.
+  Updates a conditional format rule at the given index, or moves a conditional format rule to another index.
 
   ## Attributes
 
   *   `index` (*type:* `integer()`, *default:* `nil`) - The zero-based index of the rule that should be replaced or moved.
   *   `newIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based new index the rule should end up at.
   *   `rule` (*type:* `GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t`, *default:* `nil`) - The rule that should replace the rule at the given index.
-  *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The sheet of the rule to move.  Required if new_index is set,
-      unused otherwise.
+  *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The sheet of the rule to move. Required if new_index is set, unused otherwise.
   """
 
   use GoogleApi.Gax.ModelBase

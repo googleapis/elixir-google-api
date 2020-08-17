@@ -21,11 +21,9 @@ defmodule GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition do
 
   ## Attributes
 
-  *   `newSheet` (*type:* `boolean()`, *default:* `nil`) - If true, the embedded object is put on a new sheet whose ID
-      is chosen for you. Used only when writing.
+  *   `newSheet` (*type:* `boolean()`, *default:* `nil`) - If true, the embedded object is put on a new sheet whose ID is chosen for you. Used only when writing.
   *   `overlayPosition` (*type:* `GoogleApi.Sheets.V4.Model.OverlayPosition.t`, *default:* `nil`) - The position at which the object is overlaid on top of a grid.
-  *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The sheet this is on. Set only if the embedded object
-      is on its own sheet. Must be non-negative.
+  *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The sheet this is on. Set only if the embedded object is on its own sheet. Must be non-negative.
   """
 
   use GoogleApi.Gax.ModelBase

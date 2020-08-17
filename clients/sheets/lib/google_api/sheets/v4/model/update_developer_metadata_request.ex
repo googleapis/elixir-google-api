@@ -17,20 +17,13 @@
 
 defmodule GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataRequest do
   @moduledoc """
-  A request to update properties of developer metadata.
-  Updates the properties of the developer metadata selected by the filters to
-  the values provided in the DeveloperMetadata resource.  Callers must
-  specify the properties they wish to update in the fields parameter, as well
-  as specify at least one DataFilter matching the metadata they wish to
-  update.
+  A request to update properties of developer metadata. Updates the properties of the developer metadata selected by the filters to the values provided in the DeveloperMetadata resource. Callers must specify the properties they wish to update in the fields parameter, as well as specify at least one DataFilter matching the metadata they wish to update.
 
   ## Attributes
 
   *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The filters matching the developer metadata entries to update.
   *   `developerMetadata` (*type:* `GoogleApi.Sheets.V4.Model.DeveloperMetadata.t`, *default:* `nil`) - The value that all metadata matched by the data filters will be updated to.
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.  At least one field must be specified.
-      The root `developerMetadata` is implied and should not be specified.
-      A single `"*"` can be used as short-hand for listing every field.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `developerMetadata` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field.
   """
 
   use GoogleApi.Gax.ModelBase

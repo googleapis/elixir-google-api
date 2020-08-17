@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest do
   @moduledoc """
-  Updates properties of the named range with the specified
-  namedRangeId.
+  Updates properties of the named range with the specified namedRangeId.
 
   ## Attributes
 
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated.  At least one field must be specified.
-      The root `namedRange` is implied and should not be specified.
-      A single `"*"` can be used as short-hand for listing every field.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `namedRange` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field.
   *   `namedRange` (*type:* `GoogleApi.Sheets.V4.Model.NamedRange.t`, *default:* `nil`) - The named range to update with the new properties.
   """
 
