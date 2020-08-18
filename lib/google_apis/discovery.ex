@@ -60,10 +60,13 @@ defmodule GoogleApis.Discovery do
     {:ok, %{items: items}} = Apis.discovery_apis_list(conn, preferred: preferred)
 
     Enum.flat_map(items, fn %{name: name, version: version, discoveryRestUrl: url} ->
-      if Enum.any?(exceptions, fn
+      exceptions
+      |> Enum.any?(fn
         %{type: "omit", name: ^name, version: ^version} -> true
+        %{type: "omit", discoveryRestUrl: ^url} -> true
         _ -> false
-      end) do
+      end)
+      |> if do
         []
       else
         [%ApiConfig{name: name, version: version, url: url}]
@@ -74,7 +77,8 @@ defmodule GoogleApis.Discovery do
   defmodule Exception do
     defstruct type: nil,
               name: nil,
-              version: nil
+              version: nil,
+              discoveryRestUrl: nil
   end
 
   defp get_exceptions() do
