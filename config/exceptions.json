@@ -1,6 +1,10 @@
 [
   {
     "type": "omit",
+    "discoveryRestUrl": "https://www.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "type": "omit",
     "name": "plus",
     "version": "v1"
   },
