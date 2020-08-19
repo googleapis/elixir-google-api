@@ -17,26 +17,13 @@
 
 defmodule GoogleApi.CloudScheduler.V1.Model.PubsubTarget do
   @moduledoc """
-  Pub/Sub target. The job will be delivered by publishing a message to
-  the given Pub/Sub topic.
+  Pub/Sub target. The job will be delivered by publishing a message to the given Pub/Sub topic.
 
   ## Attributes
 
-  *   `attributes` (*type:* `map()`, *default:* `nil`) - Attributes for PubsubMessage.
-
-      Pubsub message must contain either non-empty data, or at least one
-      attribute.
-  *   `data` (*type:* `String.t`, *default:* `nil`) - The message payload for PubsubMessage.
-
-      Pubsub message must contain either non-empty data, or at least one
-      attribute.
-  *   `topicName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Cloud Pub/Sub topic to which messages will
-      be published when a job is delivered. The topic name must be in the
-      same format as required by PubSub's
-      [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
-      for example `projects/PROJECT_ID/topics/TOPIC_ID`.
-
-      The topic must be in the same project as the Cloud Scheduler job.
+  *   `attributes` (*type:* `map()`, *default:* `nil`) - Attributes for PubsubMessage. Pubsub message must contain either non-empty data, or at least one attribute.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - The message payload for PubsubMessage. Pubsub message must contain either non-empty data, or at least one attribute.
+  *   `topicName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Cloud Pub/Sub topic to which messages will be published when a job is delivered. The topic name must be in the same format as required by PubSub's [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest), for example `projects/PROJECT_ID/topics/TOPIC_ID`. The topic must be in the same project as the Cloud Scheduler job.
   """
 
   use GoogleApi.Gax.ModelBase

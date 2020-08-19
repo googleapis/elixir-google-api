@@ -167,8 +167,7 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudScheduler.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The location name. For example:
-      `projects/PROJECT_ID/locations/LOCATION_ID`.
+  *   `parent` (*type:* `String.t`) - Required. The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -239,8 +238,7 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudScheduler.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The job name. For example:
-      `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+  *   `name` (*type:* `String.t`) - Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -309,8 +307,7 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudScheduler.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The job name. For example:
-      `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+  *   `name` (*type:* `String.t`) - Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -379,8 +376,7 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudScheduler.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The location name. For example:
-      `projects/PROJECT_ID/locations/LOCATION_ID`.
+  *   `parent` (*type:* `String.t`) - Required. The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -393,19 +389,8 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size.
-
-          The maximum page size is 500. If unspecified, the page size will
-          be the maximum. Fewer jobs than requested might be returned,
-          even if more jobs exist; use next_page_token to determine if more
-          jobs exist.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server will return. To
-          request the first page results, page_token must be empty. To
-          request the next page of results, page_token must be the value of
-          next_page_token returned from
-          the previous call to ListJobs. It is an error to
-          switch the value of filter or
-          order_by while iterating through pages.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The maximum page size is 500. If unspecified, the page size will be the maximum. Fewer jobs than requested might be returned, even if more jobs exist; use next_page_token to determine if more jobs exist.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server will return. To request the first page results, page_token must be empty. To request the next page of results, page_token must be the value of next_page_token returned from the previous call to ListJobs. It is an error to switch the value of filter or order_by while iterating through pages.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -459,36 +444,12 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
   end
 
   @doc """
-  Updates a job.
-
-  If successful, the updated Job is returned. If the job does
-  not exist, `NOT_FOUND` is returned.
-
-  If UpdateJob does not successfully return, it is possible for the
-  job to be in an Job.State.UPDATE_FAILED state. A job in this state may
-  not be executed. If this happens, retry the UpdateJob request
-  until a successful response is received.
+  Updates a job. If successful, the updated Job is returned. If the job does not exist, `NOT_FOUND` is returned. If UpdateJob does not successfully return, it is possible for the job to be in an Job.State.UPDATE_FAILED state. A job in this state may not be executed. If this happens, retry the UpdateJob request until a successful response is received.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudScheduler.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Optionally caller-specified in CreateJob, after
-      which it becomes output only.
-
-      The job name. For example:
-      `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
-
-      * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
-         hyphens (-), colons (:), or periods (.).
-         For more information, see
-         [Identifying
-         projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
-      * `LOCATION_ID` is the canonical ID for the job's location.
-         The list of available locations can be obtained by calling
-         ListLocations.
-         For more information, see https://cloud.google.com/about/locations/.
-      * `JOB_ID` can contain only letters ([A-Za-z]), numbers ([0-9]),
-         hyphens (-), or underscores (_). The maximum length is 500 characters.
+  *   `name` (*type:* `String.t`) - Optionally caller-specified in CreateJob, after which it becomes output only. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), or periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects) * `LOCATION_ID` is the canonical ID for the job's location. The list of available locations can be obtained by calling ListLocations. For more information, see https://cloud.google.com/about/locations/. * `JOB_ID` can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), or underscores (_). The maximum length is 500 characters.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -501,7 +462,7 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - A  mask used to specify which fields of the job are being updated.
+      *   `:updateMask` (*type:* `String.t`) - A mask used to specify which fields of the job are being updated.
       *   `:body` (*type:* `GoogleApi.CloudScheduler.V1.Model.Job.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -556,19 +517,12 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
   end
 
   @doc """
-  Pauses a job.
-
-  If a job is paused then the system will stop executing the job
-  until it is re-enabled via ResumeJob. The
-  state of the job is stored in state; if paused it
-  will be set to Job.State.PAUSED. A job must be in Job.State.ENABLED
-  to be paused.
+  Pauses a job. If a job is paused then the system will stop executing the job until it is re-enabled via ResumeJob. The state of the job is stored in state; if paused it will be set to Job.State.PAUSED. A job must be in Job.State.ENABLED to be paused.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudScheduler.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The job name. For example:
-      `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+  *   `name` (*type:* `String.t`) - Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -634,18 +588,12 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
   end
 
   @doc """
-  Resume a job.
-
-  This method reenables a job after it has been Job.State.PAUSED. The
-  state of a job is stored in Job.state; after calling this method it
-  will be set to Job.State.ENABLED. A job must be in
-  Job.State.PAUSED to be resumed.
+  Resume a job. This method reenables a job after it has been Job.State.PAUSED. The state of a job is stored in Job.state; after calling this method it will be set to Job.State.ENABLED. A job must be in Job.State.PAUSED to be resumed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudScheduler.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The job name. For example:
-      `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+  *   `name` (*type:* `String.t`) - Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -711,16 +659,12 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
   end
 
   @doc """
-  Forces a job to run now.
-
-  When this method is called, Cloud Scheduler will dispatch the job, even
-  if the job is already running.
+  Forces a job to run now. When this method is called, Cloud Scheduler will dispatch the job, even if the job is already running.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudScheduler.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The job name. For example:
-      `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+  *   `name` (*type:* `String.t`) - Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
