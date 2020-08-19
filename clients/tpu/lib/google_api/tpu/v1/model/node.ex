@@ -37,6 +37,7 @@ defmodule GoogleApi.TPU.V1.Model.Node do
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. The service account used to run the tensor flow services within the node. To share resources, including Google Cloud Storage data, with the Tensorflow job running in the Node, this account must have permissions to that data.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state for the TPU Node.
   *   `tensorflowVersion` (*type:* `String.t`, *default:* `nil`) - The version of Tensorflow running in the Node. Required.
+  *   `useServiceNetworking` (*type:* `boolean()`, *default:* `nil`) - Whether the VPC peering for the node is set up through Service Networking API. The VPC Peering should be set up before provisioning the node. If this field is set, cidr_block field should not be specified. If the network, that you want to peer the TPU Node to, is Shared VPC networks, the node must be created with this this field enabled.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -57,7 +58,8 @@ defmodule GoogleApi.TPU.V1.Model.Node do
           :schedulingConfig => GoogleApi.TPU.V1.Model.SchedulingConfig.t(),
           :serviceAccount => String.t(),
           :state => String.t(),
-          :tensorflowVersion => String.t()
+          :tensorflowVersion => String.t(),
+          :useServiceNetworking => boolean()
         }
 
   field(:acceleratorType)
@@ -76,6 +78,7 @@ defmodule GoogleApi.TPU.V1.Model.Node do
   field(:serviceAccount)
   field(:state)
   field(:tensorflowVersion)
+  field(:useServiceNetworking)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.TPU.V1.Model.Node do
