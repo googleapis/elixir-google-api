@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudScheduler.V1.Model.RunJobRequest do
   @moduledoc """
-  Request message for forcing a job to run now using
-  RunJob.
+  Request message for forcing a job to run now using RunJob.
 
   ## Attributes
 
