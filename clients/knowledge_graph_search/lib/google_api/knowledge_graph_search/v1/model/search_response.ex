@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.KnowledgeGraphSearch.V1.Model.SearchResponse do
   @moduledoc """
-  Response message includes the context and a list of matching results
-  which contain the detail of associated entities.
+  Response message includes the context and a list of matching results which contain the detail of associated entities.
 
   ## Attributes
 
-  *   `@context` (*type:* `any()`, *default:* `nil`) - The local context applicable for the response. See more details at
-      http://www.w3.org/TR/json-ld/#context-definitions.
+  *   `@context` (*type:* `any()`, *default:* `nil`) - The local context applicable for the response. See more details at http://www.w3.org/TR/json-ld/#context-definitions.
   *   `@type` (*type:* `any()`, *default:* `nil`) - The schema type of top-level JSON-LD object, e.g. ItemList.
   *   `itemListElement` (*type:* `list(any())`, *default:* `nil`) - The item list of search results.
   """

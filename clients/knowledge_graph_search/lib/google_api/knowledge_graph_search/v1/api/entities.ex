@@ -26,9 +26,7 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Searches Knowledge Graph for entities that match the constraints.
-  A list of matched entities will be returned in response, which will be in
-  JSON-LD format and compatible with http://schema.org
+  Searches Knowledge Graph for entities that match the constraints. A list of matched entities will be returned in response, which will be in JSON-LD format and compatible with http://schema.org
 
   ## Parameters
 
@@ -45,18 +43,13 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ids` (*type:* `list(String.t)`) - The list of entity id to be used for search instead of query string.
-          To specify multiple ids in the HTTP request, repeat the parameter in the
-          URL as in ...?ids=A&ids=B
+      *   `:ids` (*type:* `list(String.t)`) - The list of entity id to be used for search instead of query string. To specify multiple ids in the HTTP request, repeat the parameter in the URL as in ...?ids=A&ids=B
       *   `:indent` (*type:* `boolean()`) - Enables indenting of json results.
-      *   `:languages` (*type:* `list(String.t)`) - The list of language codes (defined in ISO 693) to run the query with,
-          e.g. 'en'.
+      *   `:languages` (*type:* `list(String.t)`) - The list of language codes (defined in ISO 693) to run the query with, e.g. 'en'.
       *   `:limit` (*type:* `integer()`) - Limits the number of entities to be returned.
       *   `:prefix` (*type:* `boolean()`) - Enables prefix match against names and aliases of entities
       *   `:query` (*type:* `String.t`) - The literal query string for search.
-      *   `:types` (*type:* `list(String.t)`) - Restricts returned entities with these types, e.g. Person
-          (as defined in http://schema.org/Person). If multiple types are specified,
-          returned entities will contain one or more of these types.
+      *   `:types` (*type:* `list(String.t)`) - Restricts returned entities with these types, e.g. Person (as defined in http://schema.org/Person). If multiple types are specified, returned entities will contain one or more of these types.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
