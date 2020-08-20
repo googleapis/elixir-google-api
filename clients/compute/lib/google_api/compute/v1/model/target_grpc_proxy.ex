@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetGrpcProxy do
   @moduledoc """
   Represents a Target gRPC Proxy resource.
 
-  A target gRPC proxy is a component of load balancers intended for load balancing gRPC traffic. Global forwarding rules reference a target gRPC proxy. The Target gRPC Proxy references a URL map which specifies how traffic routes to gRPC backend services.
+  A target gRPC proxy is a component of load balancers intended for load balancing gRPC traffic. Global forwarding rules reference a target gRPC proxy. The Target gRPC Proxy references a URL map which specifies how traffic routes to gRPC backend services. (== resource_for {$api_version}.targetGrpcProxies ==)
 
   ## Attributes
 
@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetGrpcProxy do
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `selfLinkWithId` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL with id for the resource.
   *   `urlMap` (*type:* `String.t`, *default:* `nil`) - URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
-  *   `validateForProxyless` (*type:* `boolean()`, *default:* `nil`) - If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds-experimental:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds-experimental:///" scheme in the target URI of the service it is connecting to
+  *   `validateForProxyless` (*type:* `boolean()`, *default:* `nil`) - If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
   """
 
   use GoogleApi.Gax.ModelBase

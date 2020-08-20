@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcherConfig do
 
   ## Attributes
 
-  *   `srcIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range.
+  *   `srcIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
   """
 
   use GoogleApi.Gax.ModelBase
