@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Fonts.V1.Model.WebfontList do
   @moduledoc """
-  Response containing the list of fonts currently served by the
-  Google Fonts API.
+  Response containing the list of fonts currently served by the Google Fonts API.
 
   ## Attributes
 

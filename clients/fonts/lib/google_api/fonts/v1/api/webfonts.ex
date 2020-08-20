@@ -26,8 +26,7 @@ defmodule GoogleApi.Fonts.V1.Api.Webfonts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the list of fonts currently served by the Google Fonts Developer
-  API.
+  Retrieves the list of fonts currently served by the Google Fonts Developer API.
 
   ## Parameters
 

@@ -23,8 +23,7 @@ defmodule GoogleApi.Fonts.V1.Model.Webfont do
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - The category of the font.
   *   `family` (*type:* `String.t`, *default:* `nil`) - The name of the font.
-  *   `files` (*type:* `map()`, *default:* `nil`) - The font files (with all supported scripts) for each one of the available
-      variants, as a key : value map.
+  *   `files` (*type:* `map()`, *default:* `nil`) - The font files (with all supported scripts) for each one of the available variants, as a key : value map.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This kind represents a webfont object in the webfonts service.
   *   `lastModified` (*type:* `String.t`, *default:* `nil`) - The date (format "yyyy-MM-dd") the font was modified for the last time.
   *   `subsets` (*type:* `list(String.t)`, *default:* `nil`) - The scripts supported by the font.
