@@ -38,7 +38,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can modify the sharing settings for this file.
   *   `canAddFolderFromAnotherDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add a folder from another drive (different shared drive or My Drive) to this folder. This is false when the item is not a folder. Only populated for items in shared drives.
   *   `canChangeCopyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the copyRequiresWriterPermission restriction of this file.
-  *   `canMoveItemWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move this item within this shared drive. Note that a request to change the parent of the item may still fail depending on the new parent that is being added. Only populated for items in shared drives.
+  *   `canMoveItemWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move this item within this drive. Note that a request to change the parent of the item may still fail depending on the new parent that is being added and the parent that is being removed.
   *   `canReadDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can read the shared drive to which this file belongs. Only populated for items in shared drives.
   *   `canRemoveMyDriveParent` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can remove a parent from the item without adding another parent in the same request. Not populated for shared drive files.
   *   `canChangeViewersCanCopyContent` (*type:* `boolean()`, *default:* `nil`) - Deprecated
@@ -46,7 +46,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   *   `canMoveItemIntoTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use canMoveItemOutOfDrive instead.
   *   `canMoveChildrenOutOfDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move children of this folder outside of the shared drive. This is false when the item is not a folder. Only populated for items in shared drives.
   *   `canMoveTeamDriveItem` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use canMoveItemWithinDrive or canMoveItemOutOfDrive instead.
-  *   `canMoveChildrenWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move children of this folder within the shared drive. This is false when the item is not a folder. Only populated for items in shared drives.
+  *   `canMoveChildrenWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move children of this folder within this drive. This is false when the item is not a folder. Note that a request to move the child may still fail depending on the current user's access to the child and to the destination folder.
   *   `canRename` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename this file.
   *   `canDelete` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can delete this file.
   *   `canEdit` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can edit this file. Other factors may limit the type of changes a user can make to a file. For example, see canChangeCopyRequiresWriterPermission or canModifyContent.
