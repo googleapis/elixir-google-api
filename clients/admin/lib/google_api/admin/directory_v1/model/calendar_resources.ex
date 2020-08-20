@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.CalendarResources do
   @moduledoc """
-  JSON template for Calendar Resource List Response object in Directory API.
+  Public API: Resources.calendars
 
   ## Attributes
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MembersHasMember do
 
   ## Attributes
 
-  *   `isMember` (*type:* `boolean()`, *default:* `nil`) - Identifies whether the given user is a member of the group. Membership can be direct or nested.
+  *   `isMember` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the given user is a member of the group. Membership can be direct or nested.
   """
 
   use GoogleApi.Gax.ModelBase

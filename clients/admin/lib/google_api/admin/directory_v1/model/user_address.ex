@@ -31,9 +31,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserAddress do
   *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal code.
   *   `primary` (*type:* `boolean()`, *default:* `nil`) - If this is user's primary address. Only one entry could be marked as primary.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Region.
-  *   `sourceIsStructured` (*type:* `boolean()`, *default:* `nil`) - User supplied address was structured. Structured addresses are NOT supported at this time. You might be able to write structured addresses, but any values will eventually be clobbered.
+  *   `sourceIsStructured` (*type:* `boolean()`, *default:* `nil`) - User supplied address was structured. Structured addresses are NOT supported at this time. You might be able to write structured addresses but any values will eventually be clobbered.
   *   `streetAddress` (*type:* `String.t`, *default:* `nil`) - Street.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Each entry can have a type which indicates standard values of that entry. For example address could be of home, work etc. In addition to the standard type, an entry can have a custom type and can take any value. Such type should have the CUSTOM value as type and also have a customType value.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Each entry can have a type which indicates standard values of that entry. For example address could be of home work etc. In addition to the standard type an entry can have a custom type and can take any value. Such type should have the CUSTOM value as type and also have a customType value.
   """
 
   use GoogleApi.Gax.ModelBase

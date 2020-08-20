@@ -33,13 +33,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -51,13 +55,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_groups_delete(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -82,13 +90,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -102,13 +114,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
           | {:error, any()}
   def directory_groups_get(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -132,13 +148,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.Group.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -153,13 +173,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
           | {:error, any()}
   def directory_groups_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -182,19 +206,23 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customer` (*type:* `String.t`) - Immutable ID of the G Suite account. In case of multi-domain, to fetch all groups for a customer, fill this field instead of domain.
       *   `:domain` (*type:* `String.t`) - Name of the domain. Fill this field to get groups from only this domain. To return all groups in a multi-domain fill customer field instead.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return. Max allowed value is 200.
       *   `:orderBy` (*type:* `String.t`) - Column to use for sorting results
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
-      *   `:query` (*type:* `String.t`) - Query string search. Should be of the form "". Complete documentation is at https://developers.google.com/admin-sdk/directory/v1/guides/search-groups
+      *   `:query` (*type:* `String.t`) - Query string search. Should be of the form "". Complete documentation is at https: //developers.google.com/admin-sdk/directory/v1/guides/search-groups
       *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Only of use when orderBy is also used
       *   `:userKey` (*type:* `String.t`) - Email or immutable ID of the user if only those groups are to be listed, the given user is a member of. If it's an ID, it should match with the ID of the user object.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -210,13 +238,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
           | {:error, any()}
   def directory_groups_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :customer => :query,
       :domain => :query,
       :maxResults => :query,
@@ -240,20 +272,24 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   end
 
   @doc """
-  Update Group. This method supports patch semantics.
+  Patch Groups via Apiary Patch Orchestration
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group. If ID, it should match with id of group object
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.Group.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -268,13 +304,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
           | {:error, any()}
   def directory_groups_patch(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -300,13 +340,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group. If ID, it should match with id of group object
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.Group.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -321,13 +365,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
           | {:error, any()}
   def directory_groups_update(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -354,13 +402,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
   *   `alias` (*type:* `String.t`) - The alias to be removed
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -383,13 +435,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -415,13 +471,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.Alias.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -436,13 +496,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
           | {:error, any()}
   def directory_groups_aliases_insert(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -468,13 +532,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -488,13 +556,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
           | {:error, any()}
   def directory_groups_aliases_list(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =

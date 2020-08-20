@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignments do
   @moduledoc """
-  JSON response template for List roleAssignments operation in Directory API.
+
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `items` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.RoleAssignment.t)`, *default:* `nil`) - A list of RoleAssignment resources.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#roleAssignments`) - The type of the API resource. This is always admin#directory#roleAssignments.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#roleAssignments`) - The type of the API resource. This is always admin#directory#roleAssignments .
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
   """
 

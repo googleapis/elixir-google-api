@@ -22,7 +22,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserRelation do
   ## Attributes
 
   *   `customType` (*type:* `String.t`, *default:* `nil`) - Custom Type.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The relation of the user. Some of the possible values are mother, father, sister, brother, manager, assistant, partner.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The relation of the user. Some of the possible values are mother father sister brother manager assistant partner.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The name of the relation.
   """
 

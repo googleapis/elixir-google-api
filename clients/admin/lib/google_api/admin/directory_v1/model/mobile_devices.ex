@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.MobileDevices do
   @moduledoc """
-  JSON response template for List Mobile Devices operation in Directory API.
+
 
   ## Attributes
 

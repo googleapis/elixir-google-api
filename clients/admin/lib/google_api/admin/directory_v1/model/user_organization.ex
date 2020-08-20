@@ -32,7 +32,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserOrganization do
   *   `primary` (*type:* `boolean()`, *default:* `nil`) - If it user's primary organization.
   *   `symbol` (*type:* `String.t`, *default:* `nil`) - Symbol of the organization.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title (designation) of the user in the organization.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Each entry can have a type which indicates standard types of that entry. For example organization could be of school, work etc. In addition to the standard type, an entry can have a custom type and can give it any name. Such types should have the CUSTOM value as type and also have a CustomType value.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Each entry can have a type which indicates standard types of that entry. For example organization could be of school work etc. In addition to the standard type an entry can have a custom type and can give it any name. Such types should have the CUSTOM value as type and also have a CustomType value.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserKeyword do
   ## Attributes
 
   *   `customType` (*type:* `String.t`, *default:* `nil`) - Custom Type.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Each entry can have a type which indicates standard type of that entry. For example, keyword could be of type occupation or outlook. In addition to the standard type, an entry can have a custom type and can give it any name. Such types should have the CUSTOM value as type and also have a customType value.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Each entry can have a type which indicates standard type of that entry. For example keyword could be of type occupation or outlook. In addition to the standard type an entry can have a custom type and can give it any name. Such types should have the CUSTOM value as type and also have a customType value.
   *   `value` (*type:* `String.t`, *default:* `nil`) - Keyword.
   """
 

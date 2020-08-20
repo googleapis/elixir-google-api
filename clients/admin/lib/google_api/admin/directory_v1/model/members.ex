@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Members do
   @moduledoc """
-  JSON response template for List Members operation in Directory API.
+
 
   ## Attributes
 

@@ -21,11 +21,11 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Alias do
 
   ## Attributes
 
-  *   `alias` (*type:* `String.t`, *default:* `nil`) - A alias email
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique id of the group (Read-only) Unique id of the user (Read-only)
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#alias`) - Kind of resource this is.
-  *   `primaryEmail` (*type:* `String.t`, *default:* `nil`) - Group's primary email (Read-only) User's primary email (Read-only)
+  *   `alias` (*type:* `String.t`, *default:* `nil`) - 
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#alias`) - 
+  *   `primaryEmail` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

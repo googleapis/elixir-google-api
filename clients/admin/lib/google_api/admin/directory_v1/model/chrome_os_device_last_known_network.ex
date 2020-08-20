@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork do
   @moduledoc """
-
+  Information for an ip address.
 
   ## Attributes
 
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The IP address
-  *   `wanIpAddress` (*type:* `String.t`, *default:* `nil`) - The WAN IP address
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The IP address.
+  *   `wanIpAddress` (*type:* `String.t`, *default:* `nil`) - The WAN IP address.
   """
 
   use GoogleApi.Gax.ModelBase

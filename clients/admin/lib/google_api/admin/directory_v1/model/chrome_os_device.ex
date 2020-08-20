@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   @moduledoc """
-  JSON template for Chrome Os Device resource in Directory API.
+  STEPLADDER: Generated unstable field number for field 'kind'. (See http://go/stepladder-help#fieldNumber) STEPLADDER: Generated unstable field number for field 'etag'. (See http://go/stepladder-help#fieldNumber)
 
   ## Attributes
 
@@ -52,11 +52,11 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `systemRamFreeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports.t)`, *default:* `nil`) - Reports of amounts of available RAM memory (Read-only)
   *   `annotatedAssetId` (*type:* `String.t`, *default:* `nil`) - AssetId specified during enrollment or through later annotation
   *   `cpuStatusReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports.t)`, *default:* `nil`) - Reports of CPU utilization and temperature (Read-only)
-  *   `dockMacAddress` (*type:* `String.t`, *default:* `nil`) - (Read-only) Built-in MAC address for the docking station that the device connected to. Factory sets Media access control address (MAC address) assigned for use by a dock. Currently this is only supported on the Dell Arcada / Sarien devices and the Dell WD19 / WD19TB Docking Station. It is reserved specifically for MAC pass through device policy. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for Dell devices.
+  *   `dockMacAddress` (*type:* `String.t`, *default:* `nil`) - (Read-only) Built-in MAC address for the docking station that the device connected to. Factory sets Media access control address (MAC address) assigned for use by a dock. It is reserved specifically for MAC pass through device policy. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for some devices.
   *   `autoUpdateExpiration` (*type:* `String.t`, *default:* `nil`) - (Read-only) The timestamp after which the device will stop receiving Chrome updates or support
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes added by the administrator
   *   `willAutoRenew` (*type:* `boolean()`, *default:* `nil`) - Will Chromebook auto renew after support end date (Read-only)
-  *   `lastKnownNetwork` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t)`, *default:* `nil`) - Contains last used network (Read-only)
+  *   `lastKnownNetwork` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t)`, *default:* `nil`) - Contains last known network (Read-only)
   """
 
   use GoogleApi.Gax.ModelBase

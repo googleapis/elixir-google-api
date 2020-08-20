@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignment do
   @moduledoc """
-  JSON template for roleAssignment resource in Directory API.
+
 
   ## Attributes
 
@@ -27,9 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignment do
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - If the role is restricted to an organization unit, this contains the ID for the organization unit the exercise of this role is restricted to.
   *   `roleAssignmentId` (*type:* `String.t`, *default:* `nil`) - ID of this roleAssignment.
   *   `roleId` (*type:* `String.t`, *default:* `nil`) - The ID of the role that is assigned.
-  *   `scopeType` (*type:* `String.t`, *default:* `nil`) - The scope in which this role is assigned. Possible values are: 
-      - CUSTOMER
-      - ORG_UNIT
+  *   `scopeType` (*type:* `String.t`, *default:* `nil`) - The scope in which this role is assigned. Possible values are: - CUSTOMER - ORG_UNIT 
   """
 
   use GoogleApi.Gax.ModelBase

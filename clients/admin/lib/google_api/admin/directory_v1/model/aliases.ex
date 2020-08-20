@@ -21,9 +21,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Aliases do
 
   ## Attributes
 
-  *   `aliases` (*type:* `list(any())`, *default:* `nil`) - List of alias objects.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#aliases`) - Kind of resource this is.
+  *   `aliases` (*type:* `list(any())`, *default:* `nil`) - 
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#aliases`) - 
   """
 
   use GoogleApi.Gax.ModelBase

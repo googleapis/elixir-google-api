@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Role do
   @moduledoc """
-  JSON template for role resource in Directory API.
+
 
   ## Attributes
 

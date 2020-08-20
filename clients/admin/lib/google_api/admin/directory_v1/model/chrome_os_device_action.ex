@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceAction do
   @moduledoc """
-  JSON request template for firing actions on ChromeOs Device in Directory Devices API.
+
 
   ## Attributes
 
