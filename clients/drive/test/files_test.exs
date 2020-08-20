@@ -19,8 +19,11 @@ defmodule GoogleApi.Drive.FilesTest do
   alias GoogleApi.Drive.V3.Model.FileList
   alias GoogleApi.Drive.V3.Api.Files
 
+  if System.get_env("GOOGLE_APPLICATION_CREDENTIALS") == nil do
+    @tag :skip
+  end
   test "upload file" do
-    conn = Connection.new(token())
+    conn = Connection.new(&for_scope/1)
 
     assert {:ok, file} =
              Files.drive_files_create_simple(
@@ -35,16 +38,13 @@ defmodule GoogleApi.Drive.FilesTest do
     assert %File{} = file
   end
 
+  if System.get_env("GOOGLE_APPLICATION_CREDENTIALS") == nil do
+    @tag :skip
+  end
   test "list files" do
-    conn = Connection.new(token())
+    conn = Connection.new(&for_scope/1)
 
     assert {:ok, file_list} = Files.drive_files_list(conn)
     assert %FileList{} = file_list
-  end
-
-  defp token do
-    t = System.get_env("AUTH_TOKEN")
-    assert t, "Please set the AUTH_TOKEN environment variable"
-    t
   end
 end
