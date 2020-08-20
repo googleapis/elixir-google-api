@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
   @moduledoc """
   Represents a Cloud VPN Tunnel resource.
 
-  For more information about VPN, read the the Cloud VPN Overview. (== resource_for {$api_version}.vpnTunnels ==)
+  For more information about VPN, read the  the Cloud VPN Overview. (== resource_for {$api_version}.vpnTunnels ==)
 
   ## Attributes
 
