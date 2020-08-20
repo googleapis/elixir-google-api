@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Buildings do
   @moduledoc """
-  JSON template for Building List Response object in Directory API.
+  Public API: Resources.buildings
 
   ## Attributes
 

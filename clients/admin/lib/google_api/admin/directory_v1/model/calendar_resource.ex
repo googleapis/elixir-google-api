@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.CalendarResource do
   @moduledoc """
-  JSON template for Calendar Resource object in Directory API.
+  Public API: Resources.calendars
 
   ## Attributes
 
   *   `buildingId` (*type:* `String.t`, *default:* `nil`) - Unique ID for the building a resource is located in.
   *   `capacity` (*type:* `integer()`, *default:* `nil`) - Capacity of a resource, number of seats in a room.
   *   `etags` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `featureInstances` (*type:* `any()`, *default:* `nil`) - 
+  *   `featureInstances` (*type:* `any()`, *default:* `nil`) - Instances of features for the calendar resource.
   *   `floorName` (*type:* `String.t`, *default:* `nil`) - Name of the floor a resource is located on.
   *   `floorSection` (*type:* `String.t`, *default:* `nil`) - Name of the section within a floor a resource is located in.
   *   `generatedResourceName` (*type:* `String.t`, *default:* `nil`) - The read-only auto-generated name of the calendar resource which includes metadata about the resource such as building name, floor, capacity, etc. For example, "NYC-2-Training Room 1A (16)".

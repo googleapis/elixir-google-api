@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Privileges do
   @moduledoc """
-  JSON response template for List privileges operation in Directory API.
+
 
   ## Attributes
 

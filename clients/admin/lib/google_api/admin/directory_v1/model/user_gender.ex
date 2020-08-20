@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserGender do
 
   ## Attributes
 
-  *   `addressMeAs` (*type:* `String.t`, *default:* `nil`) - AddressMeAs. A human-readable string containing the proper way to refer to the profile owner by humans, for example "he/him/his" or "they/them/their".
+  *   `addressMeAs` (*type:* `String.t`, *default:* `nil`) - AddressMeAs. A human-readable string containing the proper way to refer to the profile owner by humans for example he/him/his or they/them/their.
   *   `customGender` (*type:* `String.t`, *default:* `nil`) - Custom gender.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Gender.
   """

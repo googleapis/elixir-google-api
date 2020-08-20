@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.UserName do
   @moduledoc """
-  JSON template for name of a user in Directory API.
+
 
   ## Attributes
 

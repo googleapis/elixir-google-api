@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Features do
   @moduledoc """
-  JSON template for Feature List Response object in Directory API.
+  Public API: Resources.features
 
   ## Attributes
 

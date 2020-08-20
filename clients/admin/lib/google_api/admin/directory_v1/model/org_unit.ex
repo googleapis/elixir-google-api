@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.OrgUnit do
   @moduledoc """
-  JSON template for Org Unit resource in Directory API.
+  JSON template for Org Unit resource in Directory API. STEPLADDER: Generated unstable field number for field 'kind'. (See http://go/stepladder-help#fieldNumber) STEPLADDER: Generated unstable field number for field 'etag'. (See http://go/stepladder-help#fieldNumber)
 
   ## Attributes
 

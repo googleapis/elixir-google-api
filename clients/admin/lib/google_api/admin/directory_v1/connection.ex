@@ -63,9 +63,6 @@ defmodule GoogleApi.Admin.Directory_v1.Connection do
       # View groups on your domain
       "https://www.googleapis.com/auth/admin.directory.group.readonly",
 
-      # View and manage notifications received on your domain
-      "https://www.googleapis.com/auth/admin.directory.notifications",
-
       # View and manage organization units on your domain
       "https://www.googleapis.com/auth/admin.directory.orgunit",
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.FeatureRename do
   @moduledoc """
-  JSON request template for renaming a feature.
+
 
   ## Attributes
 

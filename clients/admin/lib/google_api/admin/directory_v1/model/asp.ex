@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Asp do
   @moduledoc """
-  The template that returns individual ASP (Access Code) data.
+  The template that returns individual ASP (Access Code) data. STEPLADDER: Generated unstable field number for field 'kind'. (See http://go/stepladder-help#fieldNumber) STEPLADDER: Generated unstable field number for field 'etag'. (See http://go/stepladder-help#fieldNumber)
 
   ## Attributes
 

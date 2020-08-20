@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.BuildingCoordinates do
   @moduledoc """
-  JSON template for coordinates of a building in Directory API.
+  Public API: Resources.buildings
 
   ## Attributes
 

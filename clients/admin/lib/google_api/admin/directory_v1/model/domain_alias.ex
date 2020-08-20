@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.DomainAlias do
   @moduledoc """
-  JSON template for Domain Alias object in Directory API.
+
 
   ## Attributes
 

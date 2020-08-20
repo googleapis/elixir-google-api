@@ -32,15 +32,19 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `org_unit_path` (*type:* `list(String.t)`) - Full path of the organizational unit or its ID
+  *   `org_unit_path` (*type:* `String.t`) - Full path of the organizational unit or its ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -51,7 +55,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   @spec directory_orgunits_delete(
           Tesla.Env.client(),
           String.t(),
-          list(String.t()),
+          String.t(),
           keyword(),
           keyword()
         ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
@@ -63,21 +67,25 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits{/orgUnitPath*}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits/{+orgUnitPath}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "orgUnitPath" => org_unit_path
+        "orgUnitPath" => URI.encode(org_unit_path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -94,15 +102,19 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `org_unit_path` (*type:* `list(String.t)`) - Full path of the organizational unit or its ID
+  *   `org_unit_path` (*type:* `String.t`) - Full path of the organizational unit or its ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -110,13 +122,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   *   `{:ok, %GoogleApi.Admin.Directory_v1.Model.OrgUnit{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec directory_orgunits_get(
-          Tesla.Env.client(),
-          String.t(),
-          list(String.t()),
-          keyword(),
-          keyword()
-        ) ::
+  @spec directory_orgunits_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.OrgUnit.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
@@ -128,21 +134,25 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits{/orgUnitPath*}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits/{+orgUnitPath}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "orgUnitPath" => org_unit_path
+        "orgUnitPath" => URI.encode(org_unit_path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -160,13 +170,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.OrgUnit.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -181,13 +195,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
           | {:error, any()}
   def directory_orgunits_insert(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -213,13 +231,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:orgUnitPath` (*type:* `String.t`) - the URL-encoded organizational unit's path or its ID
       *   `:type` (*type:* `String.t`) - Whether to return all sub-organizations or just immediate children
   *   `opts` (*type:* `keyword()`) - Call options
@@ -235,13 +257,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
           | {:error, any()}
   def directory_orgunits_list(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :orgUnitPath => :query,
       :type => :query
     }
@@ -261,21 +287,25 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   end
 
   @doc """
-  Update organizational unit. This method supports patch semantics.
+  Patch organization unit via Apiary Patch Orchestration
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `org_unit_path` (*type:* `list(String.t)`) - Full path of the organizational unit or its ID
+  *   `org_unit_path` (*type:* `String.t`) - Full path of the organizational unit or its ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.OrgUnit.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -284,13 +314,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   *   `{:ok, %GoogleApi.Admin.Directory_v1.Model.OrgUnit{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec directory_orgunits_patch(
-          Tesla.Env.client(),
-          String.t(),
-          list(String.t()),
-          keyword(),
-          keyword()
-        ) ::
+  @spec directory_orgunits_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.OrgUnit.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
@@ -302,22 +326,26 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits{/orgUnitPath*}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits/{+orgUnitPath}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "orgUnitPath" => org_unit_path
+        "orgUnitPath" => URI.encode(org_unit_path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -334,15 +362,19 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
   *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `org_unit_path` (*type:* `list(String.t)`) - Full path of the organizational unit or its ID
+  *   `org_unit_path` (*type:* `String.t`) - Full path of the organizational unit or its ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.OrgUnit.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -354,7 +386,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   @spec directory_orgunits_update(
           Tesla.Env.client(),
           String.t(),
-          list(String.t()),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -369,22 +401,26 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits{/orgUnitPath*}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits/{+orgUnitPath}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "orgUnitPath" => org_unit_path
+        "orgUnitPath" => URI.encode(org_unit_path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

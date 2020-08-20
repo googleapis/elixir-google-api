@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsMoveDevicesToOu do
   @moduledoc """
-  JSON request template for moving ChromeOs Device to given OU in Directory Devices API.
+
 
   ## Attributes
 

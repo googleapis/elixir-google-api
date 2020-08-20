@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserPhone do
 
   *   `customType` (*type:* `String.t`, *default:* `nil`) - Custom Type.
   *   `primary` (*type:* `boolean()`, *default:* `nil`) - If this is user's primary phone or not.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Each entry can have a type which indicates standard types of that entry. For example phone could be of home_fax, work, mobile etc. In addition to the standard type, an entry can have a custom type and can give it any name. Such types should have the CUSTOM value as type and also have a customType value.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Each entry can have a type which indicates standard types of that entry. For example phone could be of home_fax work mobile etc. In addition to the standard type an entry can have a custom type and can give it any name. Such types should have the CUSTOM value as type and also have a customType value.
   *   `value` (*type:* `String.t`, *default:* `nil`) - Phone number.
   """
 

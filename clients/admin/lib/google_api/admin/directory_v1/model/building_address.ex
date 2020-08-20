@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.BuildingAddress do
   @moduledoc """
-  JSON template for the postal address of a building in Directory API.
+  Public API: Resources.buildings
 
   ## Attributes
 

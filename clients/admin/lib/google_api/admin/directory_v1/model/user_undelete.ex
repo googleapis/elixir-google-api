@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.UserUndelete do
   @moduledoc """
-  JSON request template to undelete a user in Directory API.
+
 
   ## Attributes
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.CustomerPostalAddress do
   @moduledoc """
-  JSON template for postal address of a customer.
+  STEPLADDER: Generated unstable field number for field 'address_line2' to avoid collision. (See http://go/stepladder-help#fieldNumber) STEPLADDER: Generated unstable field number for field 'address_line3' to avoid collision. (See http://go/stepladder-help#fieldNumber)
 
   ## Attributes
 
@@ -28,7 +28,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.CustomerPostalAddress do
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - This is a required property. For countryCode information see the ISO 3166 country code elements.
   *   `locality` (*type:* `String.t`, *default:* `nil`) - Name of the locality. An example of a locality value is the city of San Francisco.
   *   `organizationName` (*type:* `String.t`, *default:* `nil`) - The company or company division name.
-  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - The postal code. A postalCode example is a postal zip code such as 10009. This is in accordance with - http://portablecontacts.net/draft-spec.html#address_element.
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - The postal code. A postalCode example is a postal zip code such as 10009. This is in accordance with - http: //portablecontacts.net/draft-spec.html#address_element.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Name of the region. An example of a region value is NY for the state of New York.
   """
 

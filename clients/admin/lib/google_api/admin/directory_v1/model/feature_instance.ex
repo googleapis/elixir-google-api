@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.FeatureInstance do
   @moduledoc """
-  JSON template for a "feature instance".
+  JSON template for a feature instance.
 
   ## Attributes
 

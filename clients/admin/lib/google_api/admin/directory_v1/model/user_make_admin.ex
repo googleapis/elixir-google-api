@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.UserMakeAdmin do
   @moduledoc """
-  JSON request template for setting/revoking admin status of a user in Directory API.
+
 
   ## Attributes
 

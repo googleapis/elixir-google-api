@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Member do
   @moduledoc """
-  JSON template for Member resource in Directory API.
+
 
   ## Attributes
 
   *   `delivery_settings` (*type:* `String.t`, *default:* `nil`) - Delivery settings of member
   *   `email` (*type:* `String.t`, *default:* `nil`) - Email of member (Read-only)
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of the group member. A member id can be used as a member request URI's memberKey. Unique identifier of group (Read-only) Unique identifier of member (Read-only)
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of group (Read-only) Unique identifier of member (Read-only) The unique ID of the group member. A member id can be used as a member request URI's memberKey.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#member`) - Kind of resource this is.
   *   `role` (*type:* `String.t`, *default:* `nil`) - Role of member
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of member (Immutable)

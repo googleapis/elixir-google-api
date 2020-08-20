@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.MobileDeviceAction do
   @moduledoc """
-  JSON request template for firing commands on Mobile Device in Directory Devices API.
+
 
   ## Attributes
 

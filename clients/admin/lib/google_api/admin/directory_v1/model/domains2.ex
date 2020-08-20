@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Domains2 do
   @moduledoc """
-  JSON response template to list Domains in Directory API.
+
 
   ## Attributes
 
