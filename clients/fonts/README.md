@@ -2,8 +2,7 @@
 
 Web Fonts Developer API client library.
 
-The Google Web Fonts Developer API lets you retrieve information about web fonts served
-    by Google.
+The Google Web Fonts Developer API lets you retrieve information about web fonts served by Google.
 
 ## Installation
 
