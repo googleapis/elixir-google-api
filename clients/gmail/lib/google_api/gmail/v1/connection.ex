@@ -67,5 +67,5 @@ defmodule GoogleApi.Gmail.V1.Connection do
       "https://www.googleapis.com/auth/gmail.settings.sharing"
     ],
     otp_app: :google_api_gmail,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://gmail.googleapis.com/"
 end
