@@ -31,5 +31,5 @@ defmodule GoogleApi.Tasks.V1.Connection do
       "https://www.googleapis.com/auth/tasks.readonly"
     ],
     otp_app: :google_api_tasks,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://tasks.googleapis.com/"
 end
