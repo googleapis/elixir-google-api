@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchorTextSegment do
   @moduledoc """
-  A text segment in the Document.text. The indices may be out of bounds
-  which indicate that the text extends into another document shard for
-  large sharded documents. See ShardInfo.text_offset
+  A text segment in the Document.text. The indices may be out of bounds which indicate that the text extends into another document shard for large sharded documents. See ShardInfo.text_offset
 
   ## Attributes
 
-  *   `endIndex` (*type:* `String.t`, *default:* `nil`) - TextSegment half open end UTF-8 char index in the
-      Document.text.
+  *   `endIndex` (*type:* `String.t`, *default:* `nil`) - TextSegment half open end UTF-8 char index in the Document.text.
   *   `startIndex` (*type:* `String.t`, *default:* `nil`) - TextSegment start UTF-8 char index in the Document.text.
   """
 

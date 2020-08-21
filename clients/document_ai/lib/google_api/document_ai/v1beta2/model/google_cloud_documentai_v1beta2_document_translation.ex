@@ -21,11 +21,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
 
   ## Attributes
 
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-      information, see
-      http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
-  *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t`, *default:* `nil`) - Provenance of the translation.
-      Text anchor indexing into the Document.text.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+  *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t`, *default:* `nil`) - Provenance of the translation. Text anchor indexing into the Document.text. There can only be a single `TextAnchor.text_segments` element. If the start and end index of the text segment are the same, the text change is inserted before that index.
   *   `translatedText` (*type:* `String.t`, *default:* `nil`) - Text translated into the target language.
   """
 

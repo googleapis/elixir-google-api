@@ -21,24 +21,17 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
 
   ## Attributes
 
-  *   `blocks` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageBlock.t)`, *default:* `nil`) - A list of visually detected text blocks on the page.
-      A block has a set of lines (collected into paragraphs) that have a common
-      line-spacing and orientation.
+  *   `blocks` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageBlock.t)`, *default:* `nil`) - A list of visually detected text blocks on the page. A block has a set of lines (collected into paragraphs) that have a common line-spacing and orientation.
   *   `detectedLanguages` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage.t)`, *default:* `nil`) - A list of detected languages together with confidence.
   *   `dimension` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageDimension.t`, *default:* `nil`) - Physical dimension of the page.
   *   `formFields` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageFormField.t)`, *default:* `nil`) - A list of visually detected form fields on the page.
   *   `layout` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t`, *default:* `nil`) - Layout for the page.
-  *   `lines` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLine.t)`, *default:* `nil`) - A list of visually detected text lines on the page.
-      A collection of tokens that a human would perceive as a line.
-  *   `pageNumber` (*type:* `integer()`, *default:* `nil`) - 1-based index for current Page in a parent Document.
-      Useful when a page is taken out of a Document for individual
-      processing.
-  *   `paragraphs` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageParagraph.t)`, *default:* `nil`) - A list of visually detected text paragraphs on the page.
-      A collection of lines that a human would perceive as a paragraph.
+  *   `lines` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLine.t)`, *default:* `nil`) - A list of visually detected text lines on the page. A collection of tokens that a human would perceive as a line.
+  *   `pageNumber` (*type:* `integer()`, *default:* `nil`) - 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing.
+  *   `paragraphs` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageParagraph.t)`, *default:* `nil`) - A list of visually detected text paragraphs on the page. A collection of lines that a human would perceive as a paragraph.
   *   `tables` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageTable.t)`, *default:* `nil`) - A list of visually detected tables on the page.
   *   `tokens` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageToken.t)`, *default:* `nil`) - A list of visually detected tokens on the page.
-  *   `visualElements` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageVisualElement.t)`, *default:* `nil`) - A list of detected non-text visual elements e.g. checkbox,
-      signature etc. on the page.
+  *   `visualElements` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageVisualElement.t)`, *default:* `nil`) - A list of detected non-text visual elements e.g. checkbox, signature etc. on the page.
   """
 
   use GoogleApi.Gax.ModelBase

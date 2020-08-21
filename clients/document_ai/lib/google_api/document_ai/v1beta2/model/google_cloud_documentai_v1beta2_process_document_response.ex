@@ -21,10 +21,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Process
 
   ## Attributes
 
-  *   `inputConfig` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2InputConfig.t`, *default:* `nil`) - Information about the input file. This is the same as the corresponding
-      input config in the request.
-  *   `outputConfig` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OutputConfig.t`, *default:* `nil`) - The output location of the parsed responses. The responses are written to
-      this location as JSON-serialized `Document` objects.
+  *   `inputConfig` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2InputConfig.t`, *default:* `nil`) - Information about the input file. This is the same as the corresponding input config in the request.
+  *   `outputConfig` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OutputConfig.t`, *default:* `nil`) - The output location of the parsed responses. The responses are written to this location as JSON-serialized `Document` objects.
   """
 
   use GoogleApi.Gax.ModelBase

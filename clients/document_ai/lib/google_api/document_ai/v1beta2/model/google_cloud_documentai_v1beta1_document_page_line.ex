@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageLine do
   @moduledoc """
-  A collection of tokens that a human would perceive as a line.
-  Does not cross column boundaries, can be horizontal, vertical, etc.
+  A collection of tokens that a human would perceive as a line. Does not cross column boundaries, can be horizontal, vertical, etc.
 
   ## Attributes
 

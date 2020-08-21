@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentEntity do
   @moduledoc """
-  A phrase in the text that is a known entity type, such as a person, an
-  organization, or location.
+  A phrase in the text that is a known entity type, such as a person, an organization, or location.
 
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Optional. Confidence of detected Schema entity. Range [0, 1].
-  *   `mentionId` (*type:* `String.t`, *default:* `nil`) - Deprecated.  Use `id` field instead.
+  *   `mentionId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use `id` field instead.
   *   `mentionText` (*type:* `String.t`, *default:* `nil`) - Text value in the document e.g. `1600 Amphitheatre Pkwy`.
-  *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t`, *default:* `nil`) - Provenance of the entity.
-      Text anchor indexing into the Document.text.
+  *   `normalizedValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentEntityNormalizedValue.t`, *default:* `nil`) - Optional. Normalized entity value. Absent if the extracted value could not be converted or the type (e.g. address) is not supported for certain parsers. This field is also only populated for certain supported document types.
+  *   `redacted` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the entity will be redacted for de-identification purposes.
+  *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t`, *default:* `nil`) - Provenance of the entity. Text anchor indexing into the Document.text.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Entity type from a schema e.g. `Address`.
   """
 
@@ -36,6 +36,9 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
           :confidence => number(),
           :mentionId => String.t(),
           :mentionText => String.t(),
+          :normalizedValue =>
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentEntityNormalizedValue.t(),
+          :redacted => boolean(),
           :textAnchor =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t(),
           :type => String.t()
@@ -44,6 +47,13 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
   field(:confidence)
   field(:mentionId)
   field(:mentionText)
+
+  field(:normalizedValue,
+    as:
+      GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentEntityNormalizedValue
+  )
+
+  field(:redacted)
 
   field(:textAnchor,
     as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor

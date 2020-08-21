@@ -26,17 +26,12 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  LRO endpoint to batch process many documents. The output is written
-  to Cloud Storage as JSON in the [Document] format.
+  LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DocumentAI.V1beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Target project and location to make a call.
-
-      Format: `projects/{project-id}/locations/{location-id}`.
-
-      If no location is specified, a region will be chosen automatically.
+  *   `parent` (*type:* `String.t`) - Target project and location to make a call. Format: `projects/{project-id}/locations/{location-id}`. If no location is specified, a region will be chosen automatically.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -109,12 +104,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DocumentAI.V1beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Target project and location to make a call.
-
-      Format: `projects/{project-id}/locations/{location-id}`.
-
-      If no location is specified, a region will be chosen automatically.
-      This field is only populated when used in ProcessDocument method.
+  *   `parent` (*type:* `String.t`) - Target project and location to make a call. Format: `projects/{project-id}/locations/{location-id}`. If no location is specified, a region will be chosen automatically. This field is only populated when used in ProcessDocument method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -177,17 +167,12 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
   end
 
   @doc """
-  LRO endpoint to batch process many documents. The output is written
-  to Cloud Storage as JSON in the [Document] format.
+  LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DocumentAI.V1beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Target project and location to make a call.
-
-      Format: `projects/{project-id}/locations/{location-id}`.
-
-      If no location is specified, a region will be chosen automatically.
+  *   `parent` (*type:* `String.t`) - Target project and location to make a call. Format: `projects/{project-id}/locations/{location-id}`. If no location is specified, a region will be chosen automatically.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -260,12 +245,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DocumentAI.V1beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Target project and location to make a call.
-
-      Format: `projects/{project-id}/locations/{location-id}`.
-
-      If no location is specified, a region will be chosen automatically.
-      This field is only populated when used in ProcessDocument method.
+  *   `parent` (*type:* `String.t`) - Target project and location to make a call. Format: `projects/{project-id}/locations/{location-id}`. If no location is specified, a region will be chosen automatically. This field is only populated when used in ProcessDocument method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -333,9 +313,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -406,9 +384,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 

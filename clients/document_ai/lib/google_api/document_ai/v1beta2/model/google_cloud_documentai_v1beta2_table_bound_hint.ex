@@ -21,11 +21,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableBo
 
   ## Attributes
 
-  *   `boundingBox` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2BoundingPoly.t`, *default:* `nil`) - Bounding box hint for a table on this page. The coordinates must be
-      normalized to [0,1] and the bounding box must be an axis-aligned rectangle.
-  *   `pageNumber` (*type:* `integer()`, *default:* `nil`) - Optional. Page number for multi-paged inputs this hint applies to. If not
-      provided, this hint will apply to all pages by default. This value is
-      1-based.
+  *   `boundingBox` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2BoundingPoly.t`, *default:* `nil`) - Bounding box hint for a table on this page. The coordinates must be normalized to [0,1] and the bounding box must be an axis-aligned rectangle.
+  *   `pageNumber` (*type:* `integer()`, *default:* `nil`) - Optional. Page number for multi-paged inputs this hint applies to. If not provided, this hint will apply to all pages by default. This value is 1-based.
   """
 
   use GoogleApi.Gax.ModelBase

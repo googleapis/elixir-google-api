@@ -21,9 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2AutoMlP
 
   ## Attributes
 
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Resource name of the AutoML model.
-
-      Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Resource name of the AutoML model. Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageBlock do
   @moduledoc """
-  A block has a set of lines (collected into paragraphs) that have a
-  common line-spacing and orientation.
+  A block has a set of lines (collected into paragraphs) that have a common line-spacing and orientation.
 
   ## Attributes
 

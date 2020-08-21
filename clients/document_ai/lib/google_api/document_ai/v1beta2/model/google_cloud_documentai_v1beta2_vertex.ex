@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Vertex do
   @moduledoc """
-  A vertex represents a 2D point in the image.
-  NOTE: the vertex coordinates are in the same scale as the original image.
+  A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image.
 
   ## Attributes
 

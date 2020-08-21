@@ -21,8 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
 
   ## Attributes
 
-  *   `fieldName` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageLayout.t`, *default:* `nil`) - Layout for the FormField name. e.g. `Address`, `Email`,
-      `Grand total`, `Phone number`, etc.
+  *   `fieldName` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageLayout.t`, *default:* `nil`) - Layout for the FormField name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
   *   `fieldValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageLayout.t`, *default:* `nil`) - Layout for the FormField value.
   *   `nameDetectedLanguages` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageDetectedLanguage.t)`, *default:* `nil`) - A list of detected languages for name together with confidence.
   *   `valueDetectedLanguages` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageDetectedLanguage.t)`, *default:* `nil`) - A list of detected languages for value together with confidence.

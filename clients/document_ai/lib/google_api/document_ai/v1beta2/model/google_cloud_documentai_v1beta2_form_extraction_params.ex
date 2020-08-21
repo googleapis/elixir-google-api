@@ -23,11 +23,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2FormExt
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether to enable form extraction.
   *   `keyValuePairHints` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2KeyValuePairHint.t)`, *default:* `nil`) - Reserved for future use.
-  *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - Model version of the form extraction system. Default is
-      "builtin/stable". Specify "builtin/latest" for the latest model.
-      For custom form models, specify: “custom/{model_name}". Model name
-      format is "bucket_name/path/to/modeldir" corresponding to
-      "gs://bucket_name/path/to/modeldir" where annotated examples are stored.
+  *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - Model version of the form extraction system. Default is "builtin/stable". Specify "builtin/latest" for the latest model. For custom form models, specify: “custom/{model_name}". Model name format is "bucket_name/path/to/modeldir" corresponding to "gs://bucket_name/path/to/modeldir" where annotated examples are stored.
   """
 
   use GoogleApi.Gax.ModelBase
