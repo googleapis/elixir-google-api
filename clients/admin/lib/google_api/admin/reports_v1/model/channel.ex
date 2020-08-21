@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Reports_v1.Model.Channel do
   @moduledoc """
-  An notification channel used to watch for resource changes.
+  A notification channel used to watch for resource changes.
 
   ## Attributes
 
