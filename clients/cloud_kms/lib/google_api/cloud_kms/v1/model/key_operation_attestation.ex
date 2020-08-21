@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation do
 
   ## Attributes
 
+  *   `certChains` (*type:* `GoogleApi.CloudKMS.V1.Model.CertificateChains.t`, *default:* `nil`) - Output only. The certificate chains needed to validate the attestation
   *   `content` (*type:* `String.t`, *default:* `nil`) - Output only. The attestation data provided by the HSM when the key operation was performed.
   *   `format` (*type:* `String.t`, *default:* `nil`) - Output only. The format of the attestation data.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :certChains => GoogleApi.CloudKMS.V1.Model.CertificateChains.t(),
           :content => String.t(),
           :format => String.t()
         }
 
+  field(:certChains, as: GoogleApi.CloudKMS.V1.Model.CertificateChains)
   field(:content)
   field(:format)
 end
