@@ -25,7 +25,6 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StatusProto do
   *   `code` (*type:* `integer()`, *default:* `nil`) - Numeric code drawn from the space specified below. Often, this is the canonical error space, and code is drawn from google3/util/task/codes.proto
   *   `message` (*type:* `String.t`, *default:* `nil`) - Detail message
   *   `messageSet` (*type:* `GoogleApi.Firebase.V1beta1.Model.MessageSet.t`, *default:* `nil`) - message_set associates an arbitrary proto message with the status.
-  *   `payload` (*type:* `GoogleApi.Firebase.V1beta1.Model.TypedMessage.t`, *default:* `nil`) - DEPRECATED. This field was deprecated in 2011 with cl/20297133. Java support for the field was moved to a proto1 backward compatibility class in April 2017 with cl/142615857 and cl/154123203. There was never support for this field in Go; if set Go will ignore it. C++ stopped setting StatusProto::payload in October 2015 with cl/106347055, and stopped reading the field in October 2017 with cl/173324114. In general, newly written code should use only "message_set". If you need to maintain backward compatibility with code written before 3/25/2011, do the following: - During the transition period, either (1) set both "payload" and "message_set", or (2) write the consumer of StatusProto so that it can forge a MessageSet object from "payload" if "message_set" is missing. The C++ util::Status implementation does (2). - Once all the consumers are converted to accept "message_set", then remove the use of "payload" on the producer side.
   *   `space` (*type:* `String.t`, *default:* `nil`) - The following are usually only present when code != 0 Space to which this status belongs
   """
 
@@ -36,7 +35,6 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StatusProto do
           :code => integer(),
           :message => String.t(),
           :messageSet => GoogleApi.Firebase.V1beta1.Model.MessageSet.t(),
-          :payload => GoogleApi.Firebase.V1beta1.Model.TypedMessage.t(),
           :space => String.t()
         }
 
@@ -44,7 +42,6 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StatusProto do
   field(:code)
   field(:message)
   field(:messageSet, as: GoogleApi.Firebase.V1beta1.Model.MessageSet)
-  field(:payload, as: GoogleApi.Firebase.V1beta1.Model.TypedMessage)
   field(:space)
 end
 
