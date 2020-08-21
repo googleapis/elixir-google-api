@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Reports_v1.Model.Activities do
   @moduledoc """
-  JSON template for a collection of activites.
+  JSON template for a collection of activities.
 
   ## Attributes
 
