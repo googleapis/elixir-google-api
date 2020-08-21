@@ -17,23 +17,13 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentLabel do
   @moduledoc """
-  Label attaches schema information and/or other metadata to segments within
-  a Document. Multiple Labels on a single field can denote either
-  different labels, different instances of the same label created at
-  different times, or some combination of both.
+  Label attaches schema information and/or other metadata to segments within a Document. Multiple Labels on a single field can denote either different labels, different instances of the same label created at different times, or some combination of both.
 
   ## Attributes
 
-  *   `automlModel` (*type:* `String.t`, *default:* `nil`) - Label is generated AutoML model. This field stores the full resource
-      name of the AutoML model.
-
-      Format:
-      `projects/{project-id}/locations/{location-id}/models/{model-id}`
+  *   `automlModel` (*type:* `String.t`, *default:* `nil`) - Label is generated AutoML model. This field stores the full resource name of the AutoML model. Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence score between 0 and 1 for label assignment.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the label.
-
-      When the label is generated from AutoML Text Classification model, this
-      field represents the name of the category.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the label. When the label is generated from AutoML Text Classification model, this field represents the name of the category.
   """
 
   use GoogleApi.Gax.ModelBase

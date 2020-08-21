@@ -22,10 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2KeyValu
   ## Attributes
 
   *   `key` (*type:* `String.t`, *default:* `nil`) - The key text for the hint.
-  *   `valueTypes` (*type:* `list(String.t)`, *default:* `nil`) - Type of the value. This is case-insensitive, and could be one of:
-      ADDRESS, LOCATION, ORGANIZATION, PERSON, PHONE_NUMBER,
-      ID, NUMBER, EMAIL, PRICE, TERMS, DATE, NAME. Types not in this list will
-      be ignored.
+  *   `valueTypes` (*type:* `list(String.t)`, *default:* `nil`) - Type of the value. This is case-insensitive, and could be one of: ADDRESS, LOCATION, ORGANIZATION, PERSON, PHONE_NUMBER, ID, NUMBER, EMAIL, PRICE, TERMS, DATE, NAME. Types not in this list will be ignored.
   """
 
   use GoogleApi.Gax.ModelBase

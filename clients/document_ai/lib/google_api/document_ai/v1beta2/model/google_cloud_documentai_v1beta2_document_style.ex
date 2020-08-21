@@ -17,22 +17,17 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentStyle do
   @moduledoc """
-  Annotation for common text style attributes. This adheres to CSS
-  conventions as much as possible.
+  Annotation for common text style attributes. This adheres to CSS conventions as much as possible.
 
   ## Attributes
 
   *   `backgroundColor` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeColor.t`, *default:* `nil`) - Text background color.
   *   `color` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeColor.t`, *default:* `nil`) - Text color.
   *   `fontSize` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentStyleFontSize.t`, *default:* `nil`) - Font size.
-  *   `fontWeight` (*type:* `String.t`, *default:* `nil`) - Font weight. Possible values are normal, bold, bolder, and lighter.
-      https://www.w3schools.com/cssref/pr_font_weight.asp
+  *   `fontWeight` (*type:* `String.t`, *default:* `nil`) - Font weight. Possible values are normal, bold, bolder, and lighter. https://www.w3schools.com/cssref/pr_font_weight.asp
   *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t`, *default:* `nil`) - Text anchor indexing into the Document.text.
-  *   `textDecoration` (*type:* `String.t`, *default:* `nil`) - Text decoration. Follows CSS standard.
-      <text-decoration-line> <text-decoration-color> <text-decoration-style>
-      https://www.w3schools.com/cssref/pr_text_text-decoration.asp
-  *   `textStyle` (*type:* `String.t`, *default:* `nil`) - Text style. Possible values are normal, italic, and oblique.
-      https://www.w3schools.com/cssref/pr_font_font-style.asp
+  *   `textDecoration` (*type:* `String.t`, *default:* `nil`) - Text decoration. Follows CSS standard. https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+  *   `textStyle` (*type:* `String.t`, *default:* `nil`) - Text style. Possible values are normal, italic, and oblique. https://www.w3schools.com/cssref/pr_font_font-style.asp
   """
 
   use GoogleApi.Gax.ModelBase

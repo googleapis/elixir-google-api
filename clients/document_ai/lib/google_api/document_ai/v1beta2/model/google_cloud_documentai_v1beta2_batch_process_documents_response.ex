@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2BatchProcessDocumentsResponse do
   @moduledoc """
-  Response to an batch document processing request. This is returned in
-  the LRO Operation after the operation is complete.
+  Response to an batch document processing request. This is returned in the LRO Operation after the operation is complete.
 
   ## Attributes
 

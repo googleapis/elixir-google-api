@@ -23,10 +23,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableEx
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether to enable table extraction.
   *   `headerHints` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Reserved for future use.
-  *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - Model version of the table extraction system. Default is "builtin/stable".
-      Specify "builtin/latest" for the latest model.
-  *   `tableBoundHints` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableBoundHint.t)`, *default:* `nil`) - Optional. Table bounding box hints that can be provided to complex cases
-      which our algorithm cannot locate the table(s) in.
+  *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - Model version of the table extraction system. Default is "builtin/stable". Specify "builtin/latest" for the latest model.
+  *   `tableBoundHints` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableBoundHint.t)`, *default:* `nil`) - Optional. Table bounding box hints that can be provided to complex cases which our algorithm cannot locate the table(s) in.
   """
 
   use GoogleApi.Gax.ModelBase

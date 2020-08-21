@@ -17,37 +17,22 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Document do
   @moduledoc """
-  Document represents the canonical document resource in Document Understanding
-  AI.
-  It is an interchange format that provides insights into documents and allows
-  for collaboration between users and Document Understanding AI to iterate and
-  optimize for quality.
+  Document represents the canonical document resource in Document Understanding AI. It is an interchange format that provides insights into documents and allows for collaboration between users and Document Understanding AI to iterate and optimize for quality.
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - Inline document content, represented as a stream of bytes.
-      Note: As with all `bytes` fields, protobuffers use a pure binary
-      representation, whereas JSON representations use base64.
-  *   `entities` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentEntity.t)`, *default:* `nil`) - A list of entities detected on Document.text. For document shards,
-      entities in this list may cross shard boundaries.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - Inline document content, represented as a stream of bytes. Note: As with all `bytes` fields, protobuffers use a pure binary representation, whereas JSON representations use base64.
+  *   `entities` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentEntity.t)`, *default:* `nil`) - A list of entities detected on Document.text. For document shards, entities in this list may cross shard boundaries.
   *   `entityRelations` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentEntityRelation.t)`, *default:* `nil`) - Relationship among Document.entities.
   *   `error` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Any error that occurred while processing this document.
   *   `labels` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentLabel.t)`, *default:* `nil`) - Labels for this document.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - An IANA published MIME type (also referred to as media type). For more
-      information, see
-      https://www.iana.org/assignments/media-types/media-types.xhtml.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - An IANA published MIME type (also referred to as media type). For more information, see https://www.iana.org/assignments/media-types/media-types.xhtml.
   *   `pages` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPage.t)`, *default:* `nil`) - Visual page layout for the Document.
-  *   `shardInfo` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentShardInfo.t`, *default:* `nil`) - Information about the sharding if this document is sharded part of a larger
-      document. If the document is not sharded, this message is not specified.
+  *   `shardInfo` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentShardInfo.t`, *default:* `nil`) - Information about the sharding if this document is sharded part of a larger document. If the document is not sharded, this message is not specified.
   *   `text` (*type:* `String.t`, *default:* `nil`) - UTF-8 encoded text in reading order from the document.
   *   `textStyles` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentStyle.t)`, *default:* `nil`) - Styles for the Document.text.
-  *   `translations` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTranslation.t)`, *default:* `nil`) - A list of translations on Document.text. For document shards,
-      translations in this list may cross shard boundaries.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Currently supports Google Cloud Storage URI of the form
-         `gs://bucket_name/object_name`. Object versioning is not supported.
-         See [Google Cloud Storage Request
-         URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-         info.
+  *   `translations` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTranslation.t)`, *default:* `nil`) - A list of translations on Document.text. For document shards, translations in this list may cross shard boundaries.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Currently supports Google Cloud Storage URI of the form `gs://bucket_name/object_name`. Object versioning is not supported. See [Google Cloud Storage Request URIs](https://cloud.google.com/storage/docs/reference-uris) for more info.
   """
 
   use GoogleApi.Gax.ModelBase

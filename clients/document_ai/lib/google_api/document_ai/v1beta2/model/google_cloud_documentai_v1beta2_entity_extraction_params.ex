@@ -22,8 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2EntityE
   ## Attributes
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether to enable entity extraction.
-  *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - Model version of the entity extraction. Default is
-      "builtin/stable". Specify "builtin/latest" for the latest model.
+  *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - Model version of the entity extraction. Default is "builtin/stable". Specify "builtin/latest" for the latest model.
   """
 
   use GoogleApi.Gax.ModelBase

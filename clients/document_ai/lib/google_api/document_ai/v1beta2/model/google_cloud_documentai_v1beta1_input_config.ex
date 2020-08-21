@@ -21,13 +21,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1InputCo
 
   ## Attributes
 
-  *   `gcsSource` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1GcsSource.t`, *default:* `nil`) - The Google Cloud Storage location to read the input from. This must be a
-      single file.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Required. Mimetype of the input. Current supported mimetypes are application/pdf,
-      image/tiff, and image/gif.
-      In addition, application/json type is supported for requests with
-      ProcessDocumentRequest.automl_params field set. The JSON file needs to
-      be in Document format.
+  *   `gcsSource` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1GcsSource.t`, *default:* `nil`) - The Google Cloud Storage location to read the input from. This must be a single file.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Required. Mimetype of the input. Current supported mimetypes are application/pdf, image/tiff, and image/gif. In addition, application/json type is supported for requests with ProcessDocumentRequest.automl_params field set. The JSON file needs to be in Document format.
   """
 
   use GoogleApi.Gax.ModelBase

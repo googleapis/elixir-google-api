@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentShardInfo do
   @moduledoc """
-  For a large document, sharding may be performed to produce several
-  document shards. Each document shard contains this field to detail which
-  shard it is.
+  For a large document, sharding may be performed to produce several document shards. Each document shard contains this field to detail which shard it is.
 
   ## Attributes
 
   *   `shardCount` (*type:* `String.t`, *default:* `nil`) - Total number of shards.
   *   `shardIndex` (*type:* `String.t`, *default:* `nil`) - The 0-based index of this shard.
-  *   `textOffset` (*type:* `String.t`, *default:* `nil`) - The index of the first character in Document.text in the overall
-      document global text.
+  *   `textOffset` (*type:* `String.t`, *default:* `nil`) - The index of the first character in Document.text in the overall document global text.
   """
 
   use GoogleApi.Gax.ModelBase

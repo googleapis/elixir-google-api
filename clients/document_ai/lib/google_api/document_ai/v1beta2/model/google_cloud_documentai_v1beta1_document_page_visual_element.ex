@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageVisualElement do
   @moduledoc """
-  Detected non-text visual elements e.g. checkbox, signature etc. on the
-  page.
+  Detected non-text visual elements e.g. checkbox, signature etc. on the page.
 
   ## Attributes
 

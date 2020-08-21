@@ -21,28 +21,15 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Process
 
   ## Attributes
 
-  *   `automlParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2AutoMlParams.t`, *default:* `nil`) - Controls AutoML model prediction behavior. AutoMlParams cannot be used
-      together with other Params.
-  *   `documentType` (*type:* `String.t`, *default:* `nil`) - Specifies a known document type for deeper structure detection. Valid
-      values are currently "general" and "invoice". If not provided, "general"\\
-      is used as default. If any other value is given, the request is rejected.
-  *   `entityExtractionParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2EntityExtractionParams.t`, *default:* `nil`) - Controls entity extraction behavior. If not specified, the system will
-      decide reasonable defaults.
-  *   `formExtractionParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2FormExtractionParams.t`, *default:* `nil`) - Controls form extraction behavior. If not specified, the system will
-      decide reasonable defaults.
+  *   `automlParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2AutoMlParams.t`, *default:* `nil`) - Controls AutoML model prediction behavior. AutoMlParams cannot be used together with other Params.
+  *   `documentType` (*type:* `String.t`, *default:* `nil`) - Specifies a known document type for deeper structure detection. Valid values are currently "general" and "invoice". If not provided, "general"\\ is used as default. If any other value is given, the request is rejected.
+  *   `entityExtractionParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2EntityExtractionParams.t`, *default:* `nil`) - Controls entity extraction behavior. If not specified, the system will decide reasonable defaults.
+  *   `formExtractionParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2FormExtractionParams.t`, *default:* `nil`) - Controls form extraction behavior. If not specified, the system will decide reasonable defaults.
   *   `inputConfig` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2InputConfig.t`, *default:* `nil`) - Required. Information about the input file.
-  *   `ocrParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OcrParams.t`, *default:* `nil`) - Controls OCR behavior. If not specified, the system will decide reasonable
-      defaults.
-  *   `outputConfig` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OutputConfig.t`, *default:* `nil`) - The desired output location. This field is only needed in
-      BatchProcessDocumentsRequest.
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Target project and location to make a call.
-
-      Format: `projects/{project-id}/locations/{location-id}`.
-
-      If no location is specified, a region will be chosen automatically.
-      This field is only populated when used in ProcessDocument method.
-  *   `tableExtractionParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableExtractionParams.t`, *default:* `nil`) - Controls table extraction behavior. If not specified, the system will
-      decide reasonable defaults.
+  *   `ocrParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OcrParams.t`, *default:* `nil`) - Controls OCR behavior. If not specified, the system will decide reasonable defaults.
+  *   `outputConfig` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OutputConfig.t`, *default:* `nil`) - The desired output location. This field is only needed in BatchProcessDocumentsRequest.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Target project and location to make a call. Format: `projects/{project-id}/locations/{location-id}`. If no location is specified, a region will be chosen automatically. This field is only populated when used in ProcessDocument method.
+  *   `tableExtractionParams` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableExtractionParams.t`, *default:* `nil`) - Controls table extraction behavior. If not specified, the system will decide reasonable defaults.
   """
 
   use GoogleApi.Gax.ModelBase
