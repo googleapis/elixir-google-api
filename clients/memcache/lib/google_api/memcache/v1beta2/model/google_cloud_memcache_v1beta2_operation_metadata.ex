@@ -22,10 +22,7 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudMemcacheV1beta2OperationMe
   ## Attributes
 
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - Output only. API version used to start the operation.
-  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the user has requested cancellation
-      of the operation. Operations that have successfully been cancelled
-      have Operation.error value with a google.rpc.Status.code of 1,
-      corresponding to `Code.CANCELLED`.
+  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the operation finished running.
   *   `statusDetail` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable status of the operation, if any.

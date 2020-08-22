@@ -21,10 +21,7 @@ defmodule GoogleApi.Memcache.V1.Model.MemcacheParameters do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID associated with this set of parameters. Users
-      can use this id to determine if the parameters associated with the instance
-      differ from the parameters associated with the nodes and any action needs
-      to be taken to apply parameters on nodes.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID associated with this set of parameters. Users can use this id to determine if the parameters associated with the instance differ from the parameters associated with the nodes and any action needs to be taken to apply parameters on nodes.
   *   `params` (*type:* `map()`, *default:* `nil`) - User defined set of parameters to use in the memcached process.
   """
 

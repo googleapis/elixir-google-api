@@ -21,10 +21,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Node do
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Hostname or IP address of the Memcached node used by the
-      clients to connect to the Memcached server on this node.
-  *   `nodeId` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier of the Memcached node. The node id does not
-      include project or location like the Memcached instance name.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Hostname or IP address of the Memcached node used by the clients to connect to the Memcached server on this node.
+  *   `nodeId` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier of the Memcached node. The node id does not include project or location like the Memcached instance name.
   *   `parameters` (*type:* `GoogleApi.Memcache.V1beta2.Model.MemcacheParameters.t`, *default:* `nil`) - User defined parameters currently applied to the node.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Output only. The port number of the Memcached server on this node.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the Memcached node.

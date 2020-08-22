@@ -162,14 +162,12 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   end
 
   @doc """
-  ApplyParameters will update current set of Parameters to the set of
-  specified nodes of the Memcached Instance.
+  ApplyParameters will update current set of Parameters to the set of specified nodes of the Memcached Instance.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Memcache.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Memcached instance for which parameter group updates
-      should be applied.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Memcached instance for which parameter group updates should be applied.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -251,9 +249,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Memcache.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the instance location using the form:
-          `projects/{project_id}/locations/{location_id}`
-      where `location_id` refers to a GCP region
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the instance location using the form: `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -267,14 +263,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:instanceId` (*type:* `String.t`) - Required. The logical name of the Memcached instance in the user
-          project with the following restrictions:
-
-          * Must contain only lowercase letters, numbers, and hyphens.
-          * Must start with a letter.
-          * Must be between 1-40 characters.
-          * Must end with a number or a letter.
-          * Must be unique within the user project / location
+      *   `:instanceId` (*type:* `String.t`) - Required. The logical name of the Memcached instance in the user project with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-40 characters. * Must end with a number or a letter. * Must be unique within the user project / location
       *   `:body` (*type:* `GoogleApi.Memcache.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -337,9 +326,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Memcache.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Memcached instance resource name in the format:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-      where `location_id` refers to a GCP region
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Memcached instance resource name in the format: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id` refers to a GCP region
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -419,9 +406,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Memcache.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Memcached instance resource name in the format:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-      where `location_id` refers to a GCP region
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Memcached instance resource name in the format: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id` refers to a GCP region
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -499,9 +484,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Memcache.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the instance location using the form:
-          `projects/{project_id}/locations/{location_id}`
-      where `location_id` refers to a GCP region
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the instance location using the form: `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -515,18 +498,10 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - List filter. For example, exclude all Memcached instances with name as
-          my-instance by specifying "name != my-instance".
+      *   `:filter` (*type:* `String.t`) - List filter. For example, exclude all Memcached instances with name as my-instance by specifying "name != my-instance".
       *   `:orderBy` (*type:* `String.t`) - Sort results. Supported values are "name", "name desc" or "" (unsorted).
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return.
-
-          If not specified, a default value of 1000 will be used by the service.
-          Regardless of the page_size value, the response may include a partial list
-          and a caller should only rely on response's
-          next_page_token
-          to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request,
-          if any.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response's next_page_token to determine if there are more instances left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -590,14 +565,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Memcache.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource.name`. Required. Unique name of the resource in this scope including project and
-      location using the form:
-          `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-
-      Note: Memcached instances are managed and addressed at regional level so
-      location_id here refers to a GCP region; however, users may choose which
-      zones Memcached nodes within an instances should be provisioned in.
-      Refer to [zones] field for more details.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource.name`. Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Memcached instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which zones Memcached nodes within an instances should be provisioned in. Refer to [zones] field for more details.
   *   `locations_id` (*type:* `String.t`) - Part of `resource.name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `resource.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -612,8 +580,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update.
-           *   `displayName`
+      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. * `displayName`
       *   `:body` (*type:* `GoogleApi.Memcache.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -677,15 +644,12 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   end
 
   @doc """
-  Updates the defined Memcached Parameters for an existing Instance.
-  This method only stages the parameters, it must be followed by
-  ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+  Updates the defined Memcached Parameters for an existing Instance. This method only stages the parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the Memcached Instance.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Memcache.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Memcached instance for which the parameters should be
-      updated.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Memcached instance for which the parameters should be updated.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -762,16 +726,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -850,10 +805,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a long-running operation. This method indicates that the client is
-  no longer interested in the operation result. It does not cancel the
-  operation. If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -930,9 +882,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -1012,16 +962,7 @@ defmodule GoogleApi.Memcache.V1.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the
-  server doesn't support this method, it returns `UNIMPLEMENTED`.
-
-  NOTE: the `name` binding allows API services to override the binding
-  to use different resource name schemes, such as `users/*/operations`. To
-  override the binding, API services can add a binding such as
-  `"/v1/{name=users/*}/operations"` to their service configuration.
-  For backwards compatibility, the default name includes the operations
-  collection id, however overriding users must ensure the name binding
-  is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
 
   ## Parameters
 
