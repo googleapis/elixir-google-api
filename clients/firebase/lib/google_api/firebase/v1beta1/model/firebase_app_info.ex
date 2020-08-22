@@ -21,9 +21,10 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
 
   ## Attributes
 
-  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`. This identifier should be treated as an opaque token, as the data format is not specified.
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`. This identifier should be treated as an opaque token, as the data format is not specified.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the Firebase App.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Firebase App, in the format: projects/PROJECT_ID /iosApps/APP_ID or projects/PROJECT_ID/androidApps/APP_ID or projects/ PROJECT_ID/webApps/APP_ID
+  *   `namespace` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The platform-specific identifier of the App. *Note:* For most use cases, use `appId`, which is the canonical, globally unique identifier for referencing an App. This string is derived from a native identifier for each platform: `packageName` for an `AndroidApp`, `bundleId` for an `IosApp`, and `webId` for a `WebApp`. Its contents should be treated as opaque, as the native identifier format may change as platforms evolve. This string is only unique within a `FirebaseProject` and its associated Apps.
   *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform of the Firebase App.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
           :appId => String.t(),
           :displayName => String.t(),
           :name => String.t(),
+          :namespace => String.t(),
           :platform => String.t()
         }
 
   field(:appId)
   field(:displayName)
   field(:name)
+  field(:namespace)
   field(:platform)
 end
 
