@@ -21,9 +21,7 @@ defmodule GoogleApi.Memcache.V1.Model.LocationMetadata do
 
   ## Attributes
 
-  *   `availableZones` (*type:* `%{optional(String.t) => GoogleApi.Memcache.V1.Model.ZoneMetadata.t}`, *default:* `nil`) - Output only. The set of available zones in the location. The map is keyed
-      by the lowercase ID of each zone, as defined by GCE. These keys can be
-      specified in the `zones` field when creating a Memcached instance.
+  *   `availableZones` (*type:* `%{optional(String.t) => GoogleApi.Memcache.V1.Model.ZoneMetadata.t}`, *default:* `nil`) - Output only. The set of available zones in the location. The map is keyed by the lowercase ID of each zone, as defined by GCE. These keys can be specified in the `zones` field when creating a Memcached instance.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,13 +21,8 @@ defmodule GoogleApi.Memcache.V1.Model.ListInstancesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
-      results in the list.
-  *   `resources` (*type:* `list(GoogleApi.Memcache.V1.Model.Instance.t)`, *default:* `nil`) - A list of Memcached instances in the project in the specified location,
-      or across all locations.
-
-      If the `location_id` in the parent field of the request is "-", all regions
-      available to the project are queried, and the results aggregated.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
+  *   `resources` (*type:* `list(GoogleApi.Memcache.V1.Model.Instance.t)`, *default:* `nil`) - A list of Memcached instances in the project in the specified location, or across all locations. If the `location_id` in the parent field of the request is "-", all regions available to the project are queried, and the results aggregated.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 

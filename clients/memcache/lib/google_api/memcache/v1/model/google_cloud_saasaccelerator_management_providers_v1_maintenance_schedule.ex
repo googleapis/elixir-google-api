@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.Memcache.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule do
   @moduledoc """
-  Maintenance schedule which is exposed to customer and potentially end user,
-  indicating published upcoming future maintenance schedule
+  Maintenance schedule which is exposed to customer and potentially end user, indicating published upcoming future maintenance schedule
 
   ## Attributes
 
-  *   `canReschedule` (*type:* `boolean()`, *default:* `nil`) - Can this scheduled update be rescheduled?
-      By default, it's true and API needs to do explicitly check whether it's
-      set, if it's set as false explicitly, it's false
+  *   `canReschedule` (*type:* `boolean()`, *default:* `nil`) - Can this scheduled update be rescheduled? By default, it's true and API needs to do explicitly check whether it's set, if it's set as false explicitly, it's false
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The scheduled end time for the maintenance.
-  *   `rolloutManagementPolicy` (*type:* `String.t`, *default:* `nil`) - The rollout management policy this maintenance schedule is associated
-      with. When doing reschedule update request, the reschedule should be
-      against this given policy.
+  *   `rolloutManagementPolicy` (*type:* `String.t`, *default:* `nil`) - The rollout management policy this maintenance schedule is associated with. When doing reschedule update request, the reschedule should be against this given policy.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The scheduled start time for the maintenance.
   """
 
