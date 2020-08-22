@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Tasks.V1.Model.Task do
   @moduledoc """
-  LINT.IfChange
+
 
   ## Attributes
 
