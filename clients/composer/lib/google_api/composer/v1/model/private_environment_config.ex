@@ -17,21 +17,14 @@
 
 defmodule GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig do
   @moduledoc """
-  The configuration information for configuring a Private IP Cloud Composer
-  environment.
+  The configuration information for configuring a Private IP Cloud Composer environment.
 
   ## Attributes
 
-  *   `cloudSqlIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range in tenant project will be reserved for
-      Cloud SQL. Needs to be disjoint from `web_server_ipv4_cidr_block`.
-  *   `enablePrivateEnvironment` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true`, a Private IP Cloud Composer environment is created.
-      If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be
-      set to true.
-  *   `privateClusterConfig` (*type:* `GoogleApi.Composer.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Optional. Configuration for the private GKE cluster for a Private IP
-      Cloud Composer environment.
-  *   `webServerIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range for web server will be reserved. Needs
-      to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
-      `cloud_sql_ipv4_cidr_block`.
+  *   `cloudSqlIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range in tenant project will be reserved for Cloud SQL. Needs to be disjoint from `web_server_ipv4_cidr_block`.
+  *   `enablePrivateEnvironment` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true`, a Private IP Cloud Composer environment is created. If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be set to true.
+  *   `privateClusterConfig` (*type:* `GoogleApi.Composer.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Optional. Configuration for the private GKE cluster for a Private IP Cloud Composer environment.
+  *   `webServerIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range for web server will be reserved. Needs to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and `cloud_sql_ipv4_cidr_block`.
   *   `webServerIpv4ReservedRange` (*type:* `String.t`, *default:* `nil`) - Output only. The IP range reserved for the tenant project's App Engine VMs.
   """
 

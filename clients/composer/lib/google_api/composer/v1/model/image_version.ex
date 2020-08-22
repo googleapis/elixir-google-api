@@ -21,10 +21,8 @@ defmodule GoogleApi.Composer.V1.Model.ImageVersion do
 
   ## Attributes
 
-  *   `imageVersionId` (*type:* `String.t`, *default:* `nil`) - The string identifier of the ImageVersion, in the form:
-      "composer-x.y.z-airflow-a.b(.c)"
-  *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Whether this is the default ImageVersion used by Composer during
-      environment creation if no input ImageVersion is specified.
+  *   `imageVersionId` (*type:* `String.t`, *default:* `nil`) - The string identifier of the ImageVersion, in the form: "composer-x.y.z-airflow-a.b(.c)"
+  *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Whether this is the default ImageVersion used by Composer during environment creation if no input ImageVersion is specified.
   *   `supportedPythonVersions` (*type:* `list(String.t)`, *default:* `nil`) - supported python versions
   """
 
