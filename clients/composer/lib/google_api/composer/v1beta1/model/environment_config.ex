@@ -21,24 +21,16 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
 
   ## Attributes
 
-  *   `airflowUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the Apache Airflow Web UI hosted within this environment (see
-      [Airflow web
-      interface](/composer/docs/how-to/accessing/airflow-web-interface)).
-  *   `dagGcsPrefix` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud
-      Storage objects reside in a flat namespace, a hierarchical file tree
-      can be simulated using "/"-delimited object name prefixes. DAG objects for
-      this environment reside in a simulated directory with the given prefix.
-  *   `databaseConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.DatabaseConfig.t`, *default:* `nil`) - Optional. The configuration settings for Cloud SQL instance used internally by Apache
-      Airflow software.
+  *   `airflowUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the Apache Airflow Web UI hosted within this environment (see [Airflow web interface](/composer/docs/how-to/accessing/airflow-web-interface)).
+  *   `dagGcsPrefix` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using "/"-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with the given prefix.
+  *   `databaseConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.DatabaseConfig.t`, *default:* `nil`) - Optional. The configuration settings for Cloud SQL instance used internally by Apache Airflow software.
   *   `gkeCluster` (*type:* `String.t`, *default:* `nil`) - Output only. The Kubernetes Engine cluster used to run this environment.
   *   `nodeConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.NodeConfig.t`, *default:* `nil`) - The configuration used for the Kubernetes Engine cluster.
-  *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be
-      used to run this environment.
+  *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be used to run this environment.
   *   `privateEnvironmentConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig.t`, *default:* `nil`) - The configuration used for the Private IP Cloud Composer environment.
   *   `softwareConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.SoftwareConfig.t`, *default:* `nil`) - The configuration settings for software inside the environment.
   *   `webServerConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.WebServerConfig.t`, *default:* `nil`) - Optional. The configuration settings for the Airflow web server App Engine instance.
-  *   `webServerNetworkAccessControl` (*type:* `GoogleApi.Composer.V1beta1.Model.WebServerNetworkAccessControl.t`, *default:* `nil`) - Optional. The network-level access control policy for the Airflow web server. If
-      unspecified, no network-level access restrictions will be applied.
+  *   `webServerNetworkAccessControl` (*type:* `GoogleApi.Composer.V1beta1.Model.WebServerNetworkAccessControl.t`, *default:* `nil`) - Optional. The network-level access control policy for the Airflow web server. If unspecified, no network-level access restrictions will be applied.
   """
 
   use GoogleApi.Gax.ModelBase
