@@ -21,15 +21,18 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
 
   ## Attributes
 
+  *   `details` (*type:* `String.t`, *default:* `nil`) - Detailed information about import results.
   *   `loginProfile` (*type:* `GoogleApi.OSLogin.V1alpha.Model.LoginProfile.t`, *default:* `nil`) - The login profile information for the user.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :details => String.t(),
           :loginProfile => GoogleApi.OSLogin.V1alpha.Model.LoginProfile.t()
         }
 
+  field(:details)
   field(:loginProfile, as: GoogleApi.OSLogin.V1alpha.Model.LoginProfile)
 end
 
