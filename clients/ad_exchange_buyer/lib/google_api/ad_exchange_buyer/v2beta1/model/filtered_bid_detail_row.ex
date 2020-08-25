@@ -22,7 +22,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidDetailRow do
   ## Attributes
 
   *   `bidCount` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids with the specified detail.
-  *   `detailId` (*type:* `integer()`, *default:* `nil`) - The ID of the detail. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message.
+  *   `detail` (*type:* `String.t`, *default:* `nil`) - The ID of the detail, can be numeric or text. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message.
+  *   `detailId` (*type:* `integer()`, *default:* `nil`) - Note: this field will be deprecated, use "detail" field instead. When "detail" field represents an integer value, this field is populated as the same integer value "detail" field represents, otherwise this field will be 0. The ID of the detail. The associated value can be looked up in the dictionary file corresponding to the DetailType in the response message.
   *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
   """
 
@@ -30,11 +31,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidDetailRow do
 
   @type t :: %__MODULE__{
           :bidCount => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
+          :detail => String.t(),
           :detailId => integer(),
           :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t()
         }
 
   field(:bidCount, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)
+  field(:detail)
   field(:detailId)
   field(:rowDimensions, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions)
 end
