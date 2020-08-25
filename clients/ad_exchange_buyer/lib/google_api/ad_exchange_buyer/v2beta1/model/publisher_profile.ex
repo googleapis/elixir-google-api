@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
   @moduledoc """
-  Note: this resource requires whitelisting for access. Please contact your account manager for access to Marketplace resources. Represents a publisher profile (https://support.google.com/admanager/answer/6035806?hl=en) in Marketplace. All fields are read only. All string fields are free-form text entered by the publisher unless noted otherwise.
+  Note: this resource requires whitelisting for access. Please contact your account manager for access to Marketplace resources. Represents a publisher profile (https://support.google.com/admanager/answer/6035806) in Marketplace. All fields are read only. All string fields are free-form text entered by the publisher unless noted otherwise.
 
   ## Attributes
 
@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of the publisher profile.
   *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - The list of domains represented in this publisher profile. Empty if this is a parent profile. These are top private domains, meaning that these will not contain a string like "photos.google.co.uk/123", but will instead contain "google.co.uk".
   *   `googlePlusUrl` (*type:* `String.t`, *default:* `nil`) - URL to publisher's Google+ page.
-  *   `isParent` (*type:* `boolean()`, *default:* `nil`) - Indicates if this profile is the parent profile of the seller. A parent profile represents all the inventory from the seller, as opposed to child profile that is created to brand a portion of inventory. One seller should have only one parent publisher profile, and can have multiple child profiles. Publisher profiles for the same seller will have same value of field google.ads.adexchange.buyer.v2beta1.PublisherProfile.seller. See https://support.google.com/admanager/answer/6035806?hl=en for details.
+  *   `isParent` (*type:* `boolean()`, *default:* `nil`) - Indicates if this profile is the parent profile of the seller. A parent profile represents all the inventory from the seller, as opposed to child profile that is created to brand a portion of inventory. One seller should have only one parent publisher profile, and can have multiple child profiles. Publisher profiles for the same seller will have same value of field google.ads.adexchange.buyer.v2beta1.PublisherProfile.seller. See https://support.google.com/admanager/answer/6035806 for details.
   *   `logoUrl` (*type:* `String.t`, *default:* `nil`) - A Google public URL to the logo for this publisher profile. The logo is stored as a PNG, JPG, or GIF image.
   *   `mediaKitUrl` (*type:* `String.t`, *default:* `nil`) - URL to additional marketing and sales materials.
   *   `overview` (*type:* `String.t`, *default:* `nil`) - Overview of the publisher.
