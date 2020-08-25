@@ -31,6 +31,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
   *   `deviceKernelVersion` (*type:* `String.t`, *default:* `nil`) - Kernel version, for example, 2.6.32.9-g103d848.
   *   `primaryLanguageCode` (*type:* `String.t`, *default:* `nil`) - An IETF BCP 47 language code for the primary locale on the device.
   *   `securityPatchLevel` (*type:* `String.t`, *default:* `nil`) - Security patch level, e.g. 2016-05-01.
+  *   `systemUpdateInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.SystemUpdateInfo.t`, *default:* `nil`) - Information about a potential pending system update.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,7 +46,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
           :deviceBuildSignature => String.t(),
           :deviceKernelVersion => String.t(),
           :primaryLanguageCode => String.t(),
-          :securityPatchLevel => String.t()
+          :securityPatchLevel => String.t(),
+          :systemUpdateInfo => GoogleApi.AndroidManagement.V1.Model.SystemUpdateInfo.t()
         }
 
   field(:androidBuildNumber)
@@ -58,6 +60,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
   field(:deviceKernelVersion)
   field(:primaryLanguageCode)
   field(:securityPatchLevel)
+  field(:systemUpdateInfo, as: GoogleApi.AndroidManagement.V1.Model.SystemUpdateInfo)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do

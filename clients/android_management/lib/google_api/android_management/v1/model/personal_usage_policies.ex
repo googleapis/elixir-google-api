@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies do
   @moduledoc """
-  Policies controlling personal usage on a Corporate Owned Personally Enabled device.
+  Policies controlling personal usage on a company-owned device with a work profile.
 
   ## Attributes
 
