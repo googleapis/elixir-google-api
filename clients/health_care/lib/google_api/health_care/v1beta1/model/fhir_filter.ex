@@ -21,8 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirFilter do
 
   ## Attributes
 
-  *   `resources` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Resources.t`, *default:* `nil`) - List of resources to include in the output. If this list is empty or
-      not specified, all resources are included in the output.
+  *   `resources` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Resources.t`, *default:* `nil`) - List of resources to include in the output. If this list is empty or not specified, all resources are included in the output.
   """
 
   use GoogleApi.Gax.ModelBase

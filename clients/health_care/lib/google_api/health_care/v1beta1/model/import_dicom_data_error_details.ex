@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ImportDicomDataErrorDetails do
   @moduledoc """
-  Returns the errors encountered during DICOM store import.
+  Deprecated. Error details are in [Cloud Logging](/healthcare/docs/how-tos/logging). Returns the errors encountered during DICOM store import.
 
   ## Attributes
 
-  *   `sampleErrors` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.ErrorDetail.t)`, *default:* `nil`) - Deprecated. Use only for debugging purposes.
-
-      Contains sample errors encountered in imports of individual resources.
-      For example, a Cloud Storage object.
+  *   `sampleErrors` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.ErrorDetail.t)`, *default:* `nil`) - Deprecated. Use only for debugging purposes. Contains sample errors encountered in imports of individual resources. For example, a Cloud Storage object.
   """
 
   use GoogleApi.Gax.ModelBase

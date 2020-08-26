@@ -21,10 +21,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SchemaGroup do
 
   ## Attributes
 
-  *   `choice` (*type:* `boolean()`, *default:* `nil`) - True indicates that this is a choice group, meaning that only one of its
-      segments can exist in a given message.
-  *   `maxOccurs` (*type:* `integer()`, *default:* `nil`) - The maximum number of times this group can be repeated. 0 or -1 means
-      unbounded.
+  *   `choice` (*type:* `boolean()`, *default:* `nil`) - True indicates that this is a choice group, meaning that only one of its segments can exist in a given message.
+  *   `maxOccurs` (*type:* `integer()`, *default:* `nil`) - The maximum number of times this group can be repeated. 0 or -1 means unbounded.
   *   `members` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.GroupOrSegment.t)`, *default:* `nil`) - Nested groups and/or segments.
   *   `minOccurs` (*type:* `integer()`, *default:* `nil`) - The minimum number of times this group must be present/repeated.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this group. For example, "ORDER_DETAIL".

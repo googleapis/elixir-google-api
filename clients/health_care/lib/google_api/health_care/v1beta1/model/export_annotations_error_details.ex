@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ExportAnnotationsErrorDetails do
   @moduledoc """
-  Response for failed annotation export operations. This structure
-  is included in error
-  details upon operation completion.
+  Deprecated. Response for failed annotation export operations. This structure is included in error details upon operation completion.
 
   ## Attributes
 
-  *   `annotationStore` (*type:* `String.t`, *default:* `nil`) - The annotation_store used for the export operation, in the format of
-      `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
+  *   `annotationStore` (*type:* `String.t`, *default:* `nil`) - The annotation_store used for the export operation, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `errorCount` (*type:* `String.t`, *default:* `nil`) - The number of annotations that had error.
   *   `successCount` (*type:* `String.t`, *default:* `nil`) - The number of annotations successfully exported.
   """

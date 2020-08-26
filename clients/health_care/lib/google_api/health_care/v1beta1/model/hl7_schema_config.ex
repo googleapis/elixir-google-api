@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7SchemaConfig do
   @moduledoc """
-  Root config message for HL7v2 schema. This contains a schema structure of
-  groups and segments, and filters that determine which messages to apply the
-  schema structure to.
+  Root config message for HL7v2 schema. This contains a schema structure of groups and segments, and filters that determine which messages to apply the schema structure to.
 
   ## Attributes
 
-  *   `messageSchemaConfigs` (*type:* `%{optional(String.t) => GoogleApi.HealthCare.V1beta1.Model.SchemaGroup.t}`, *default:* `nil`) - Map from each HL7v2 message type and trigger event pair, such as ADT_A04,
-      to its schema configuration root group.
-  *   `version` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.VersionSource.t)`, *default:* `nil`) - Each VersionSource is tested and only if they all match is the schema used
-      for the message.
+  *   `messageSchemaConfigs` (*type:* `%{optional(String.t) => GoogleApi.HealthCare.V1beta1.Model.SchemaGroup.t}`, *default:* `nil`) - Map from each HL7v2 message type and trigger event pair, such as ADT_A04, to its schema configuration root group.
+  *   `version` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.VersionSource.t)`, *default:* `nil`) - Each VersionSource is tested and only if they all match is the schema used for the message.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,10 +22,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Finding do
   ## Attributes
 
   *   `end` (*type:* `String.t`, *default:* `nil`) - Zero-based ending index of the found text, exclusively.
-  *   `infoType` (*type:* `String.t`, *default:* `nil`) - The type of information stored in this text range. For example,
-      HumanName, BirthDate, or Address.
-  *   `quote` (*type:* `String.t`, *default:* `nil`) - The snippet of the sensitive text. This field is only populated during
-      deidentification if `store_quote` is set to true in DeidentifyConfig.
+  *   `infoType` (*type:* `String.t`, *default:* `nil`) - The type of information stored in this text range. For example, HumanName, BirthDate, or Address.
+  *   `quote` (*type:* `String.t`, *default:* `nil`) - The snippet of the sensitive text. This field is only populated during deidentification if `store_quote` is set to true in DeidentifyConfig.
   *   `start` (*type:* `String.t`, *default:* `nil`) - Zero-based starting index of the found text, inclusively.
   """
 

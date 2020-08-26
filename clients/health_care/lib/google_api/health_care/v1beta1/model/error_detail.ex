@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ErrorDetail do
   @moduledoc """
-  Structure to describe the error encountered during batch operation on one
-  resource. This is used both for sample errors in operation response, and
-  for format of errors in error reports.
+  Structure to describe the error encountered during batch operation on one resource. This is used both for sample errors in operation response, and for format of errors in error reports.
 
   ## Attributes
 

@@ -21,9 +21,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirConfig do
 
   ## Attributes
 
-  *   `fieldMetadataList` (*type:* `list(GoogleApi.HealthCare.V1.Model.FieldMetadata.t)`, *default:* `nil`) - Specifies FHIR paths to match and how to transform them. Any field that
-      is not matched by a FieldMetadata is passed through to the output
-      dataset unmodified. All extensions are removed in the output.
+  *   `fieldMetadataList` (*type:* `list(GoogleApi.HealthCare.V1.Model.FieldMetadata.t)`, *default:* `nil`) - Specifies FHIR paths to match and how to transform them. Any field that is not matched by a FieldMetadata is passed through to the output dataset unmodified. All extensions are removed in the output.
   """
 
   use GoogleApi.Gax.ModelBase

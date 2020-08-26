@@ -17,34 +17,16 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreRequest do
   @moduledoc """
-  Request to evaluate an Annotation store against a
-  ground truth [Annotation store].
+  Request to evaluate an Annotation store against a ground truth [Annotation store].
 
   ## Attributes
 
-  *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationBigQueryDestination.t`, *default:* `nil`) - The BigQuery table where the server writes the output.
-      BigQueryDestination requires the `roles/bigquery.dataEditor` and
-      `roles/bigquery.jobUser` Cloud IAM roles.
-  *   `evalInfoTypeMapping` (*type:* `map()`, *default:* `nil`) - Optional. InfoType mapping for `eval_store`. Different resources can map to
-      the same infoType. For example, `PERSON_NAME`, `PERSON`, `NAME`, and
-      `HUMAN` are different. To map all of these into a single
-      infoType (such as `PERSON_NAME`), specify the following mapping:
-      ```
-        info_type_mapping["PERSON"] = "PERSON_NAME"
-        info_type_mapping["NAME"] = "PERSON_NAME"
-        info_type_mapping["HUMAN"] = "PERSON_NAME"
-      ```
-      Unmentioned infoTypes, such as `DATE`, are treated as identity
-      mapping. For example:
-      ```
-        info_type_mapping["DATE"] = "DATE"
-      ```
-      InfoTypes are case-insensitive.
-  *   `goldenInfoTypeMapping` (*type:* `map()`, *default:* `nil`) - Optional. Similar to `eval_info_type_mapping`, infoType mapping for
-      `golden_store`.
-  *   `goldenStore` (*type:* `String.t`, *default:* `nil`) - The Annotation store to use as ground truth, in the format of
-      `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
+  *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationBigQueryDestination.t`, *default:* `nil`) - The BigQuery table where the server writes the output. BigQueryDestination requires the `roles/bigquery.dataEditor` and `roles/bigquery.jobUser` Cloud IAM roles.
+  *   `evalInfoTypeMapping` (*type:* `map()`, *default:* `nil`) - Optional. InfoType mapping for `eval_store`. Different resources can map to the same infoType. For example, `PERSON_NAME`, `PERSON`, `NAME`, and `HUMAN` are different. To map all of these into a single infoType (such as `PERSON_NAME`), specify the following mapping: ``` info_type_mapping["PERSON"] = "PERSON_NAME" info_type_mapping["NAME"] = "PERSON_NAME" info_type_mapping["HUMAN"] = "PERSON_NAME" ``` Unmentioned infoTypes, such as `DATE`, are treated as identity mapping. For example: ``` info_type_mapping["DATE"] = "DATE" ``` InfoTypes are case-insensitive.
+  *   `goldenInfoTypeMapping` (*type:* `map()`, *default:* `nil`) - Optional. Similar to `eval_info_type_mapping`, infoType mapping for `golden_store`.
+  *   `goldenStore` (*type:* `String.t`, *default:* `nil`) - The Annotation store to use as ground truth, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `infoTypeConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig.t`, *default:* `nil`) - 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The Annotation store to compare against `golden_store`, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -55,7 +37,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreRequest do
           :evalInfoTypeMapping => map(),
           :goldenInfoTypeMapping => map(),
           :goldenStore => String.t(),
-          :infoTypeConfig => GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig.t()
+          :infoTypeConfig => GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig.t(),
+          :name => String.t()
         }
 
   field(:bigqueryDestination,
@@ -67,6 +50,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreRequest do
   field(:goldenInfoTypeMapping, type: :map)
   field(:goldenStore)
   field(:infoTypeConfig, as: GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig)
+  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreRequest do

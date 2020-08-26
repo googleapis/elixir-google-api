@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1.Model.RedactConfig do
   @moduledoc """
-  Define how to redact sensitive values. Default behaviour is erase.
-  For example, "My name is Jane." becomes "My name is ."
+  Define how to redact sensitive values. Default behaviour is erase. For example, "My name is Jane." becomes "My name is ."
 
   ## Attributes
 

@@ -21,10 +21,8 @@ defmodule GoogleApi.HealthCare.V1.Model.ListHl7V2StoresResponse do
 
   ## Attributes
 
-  *   `hl7V2Stores` (*type:* `list(GoogleApi.HealthCare.V1.Model.Hl7V2Store.t)`, *default:* `nil`) - The returned HL7v2 stores. Won't be more HL7v2 stores than the value of
-      page_size in the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more
-      results in the list.
+  *   `hl7V2Stores` (*type:* `list(GoogleApi.HealthCare.V1.Model.Hl7V2Store.t)`, *default:* `nil`) - The returned HL7v2 stores. Won't be more HL7v2 stores than the value of page_size in the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

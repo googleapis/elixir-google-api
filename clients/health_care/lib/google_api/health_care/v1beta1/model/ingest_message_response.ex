@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.IngestMessageResponse do
   @moduledoc """
-  Acknowledges that a message has been ingested into the specified
-  HL7v2 store.
+  Acknowledges that a message has been ingested into the specified HL7v2 store.
 
   ## Attributes
 

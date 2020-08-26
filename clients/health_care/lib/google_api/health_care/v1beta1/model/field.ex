@@ -21,14 +21,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Field do
 
   ## Attributes
 
-  *   `maxOccurs` (*type:* `integer()`, *default:* `nil`) - The maximum number of times this field can be repeated. 0 or -1 means
-      unbounded.
+  *   `maxOccurs` (*type:* `integer()`, *default:* `nil`) - The maximum number of times this field can be repeated. 0 or -1 means unbounded.
   *   `minOccurs` (*type:* `integer()`, *default:* `nil`) - The minimum number of times this field must be present/repeated.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the field. For example, "PID-1" or just "1".
-  *   `table` (*type:* `String.t`, *default:* `nil`) - The HL7v2 table this field refers to. For example, PID-15 (Patient's
-      Primary Language) usually refers to table "0296".
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this field. A Type with this name must be defined in an
-      Hl7TypesConfig.
+  *   `table` (*type:* `String.t`, *default:* `nil`) - The HL7v2 table this field refers to. For example, PID-15 (Patient's Primary Language) usually refers to table "0296".
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this field. A Type with this name must be defined in an Hl7TypesConfig.
   """
 
   use GoogleApi.Gax.ModelBase

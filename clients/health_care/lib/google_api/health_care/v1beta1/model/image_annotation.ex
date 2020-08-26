@@ -22,8 +22,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImageAnnotation do
   ## Attributes
 
   *   `boundingPolys` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.BoundingPoly.t)`, *default:* `nil`) - The list of polygons outlining the sensitive regions in the image.
-  *   `frameIndex` (*type:* `integer()`, *default:* `nil`) - 0-based index of the image frame. For example, an image frame in a DICOM
-      instance.
+  *   `frameIndex` (*type:* `integer()`, *default:* `nil`) - 0-based index of the image frame. For example, an image frame in a DICOM instance.
   """
 
   use GoogleApi.Gax.ModelBase

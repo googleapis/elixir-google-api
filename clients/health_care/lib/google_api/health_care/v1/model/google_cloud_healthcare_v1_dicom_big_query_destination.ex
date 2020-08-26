@@ -21,12 +21,8 @@ defmodule GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1DicomBigQueryDest
 
   ## Attributes
 
-  *   `force` (*type:* `boolean()`, *default:* `nil`) - If the destination table already exists and this flag is `TRUE`, the table
-      is overwritten by the contents of the DICOM store. If the flag is not
-      set and the destination table already exists, the export call returns an
-      error.
-  *   `tableUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to a table, up to 2000 characters long, in the format
-      `bq://projectId.bqDatasetId.tableId`
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - If the destination table already exists and this flag is `TRUE`, the table is overwritten by the contents of the DICOM store. If the flag is not set and the destination table already exists, the export call returns an error.
+  *   `tableUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to a table, up to 2000 characters long, in the format `bq://projectId.bqDatasetId.tableId`
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,14 +24,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DicomConfig do
   *   `filterProfile` (*type:* `String.t`, *default:* `nil`) - Tag filtering profile that determines which tags to keep/remove.
   *   `keepList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.TagFilterList.t`, *default:* `nil`) - List of tags to keep. Remove all other tags.
   *   `removeList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.TagFilterList.t`, *default:* `nil`) - List of tags to remove. Keep all other tags.
-  *   `skipIdRedaction` (*type:* `boolean()`, *default:* `nil`) - If true, skip replacing StudyInstanceUID, SeriesInstanceUID,
-      SOPInstanceUID, and MediaStorageSOPInstanceUID and leave them untouched.
-      The Cloud Healthcare API regenerates these UIDs by default based on the
-      DICOM Standard's reasoning: "Whilst these UIDs cannot be mapped directly
-      to an individual out of context, given access to the original images, or
-      to a database of the original images containing the UIDs, it would be
-      possible to recover the individual's identity."
-      http://dicom.nema.org/medical/dicom/current/output/chtml/part15/sect_E.3.9.html
+  *   `skipIdRedaction` (*type:* `boolean()`, *default:* `nil`) - If true, skip replacing StudyInstanceUID, SeriesInstanceUID, SOPInstanceUID, and MediaStorageSOPInstanceUID and leave them untouched. The Cloud Healthcare API regenerates these UIDs by default based on the DICOM Standard's reasoning: "Whilst these UIDs cannot be mapped directly to an individual out of context, given access to the original images, or to a database of the original images containing the UIDs, it would be possible to recover the individual's identity." http://dicom.nema.org/medical/dicom/current/output/chtml/part15/sect_E.3.9.html
   """
 
   use GoogleApi.Gax.ModelBase

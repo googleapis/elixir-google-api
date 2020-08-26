@@ -21,12 +21,8 @@ defmodule GoogleApi.HealthCare.V1.Model.ListMessagesResponse do
 
   ## Attributes
 
-  *   `hl7V2Messages` (*type:* `list(GoogleApi.HealthCare.V1.Model.Message.t)`, *default:* `nil`) - The returned Messages. Won't be more Messages than the value of
-      page_size in the request. See
-      view for
-      populated fields.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more
-      results in the list.
+  *   `hl7V2Messages` (*type:* `list(GoogleApi.HealthCare.V1.Model.Message.t)`, *default:* `nil`) - The returned Messages. Won't be more Messages than the value of page_size in the request. See view for populated fields.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

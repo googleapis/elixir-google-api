@@ -21,8 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SchemaSegment do
 
   ## Attributes
 
-  *   `maxOccurs` (*type:* `integer()`, *default:* `nil`) - The maximum number of times this segment can be present in this group.
-      0 or -1 means unbounded.
+  *   `maxOccurs` (*type:* `integer()`, *default:* `nil`) - The maximum number of times this segment can be present in this group. 0 or -1 means unbounded.
   *   `minOccurs` (*type:* `integer()`, *default:* `nil`) - The minimum number of times this segment can be present in this group.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The Segment type. For example, "PID".
   """

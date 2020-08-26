@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ImportMessagesResponse do
   @moduledoc """
-  Final response of importing messages.
-  This structure is included in the
-  response to describe the detailed
-  outcome. It is only included when the operation finishes successfully.
+  Final response of importing messages. This structure is included in the response to describe the detailed outcome. It is only included when the operation finishes successfully.
 
   ## Attributes
 

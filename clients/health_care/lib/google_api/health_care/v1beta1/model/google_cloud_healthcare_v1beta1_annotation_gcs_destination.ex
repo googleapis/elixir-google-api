@@ -21,12 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1Annotat
 
   ## Attributes
 
-  *   `uriPrefix` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage destination to export to.
-      URI for a Cloud Storage directory where the server writes result files, in
-      the format `gs://{bucket-id}/{path/to/destination/dir}`. If there is no
-      trailing slash, the service appends one when composing the object path.
-      The user is responsible for creating the Cloud Storage bucket referenced in
-      `uri_prefix`.
+  *   `uriPrefix` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage destination to export to. URI for a Cloud Storage directory where the server writes result files, in the format `gs://{bucket-id}/{path/to/destination/dir}`. If there is no trailing slash, the service appends one when composing the object path. The user is responsible for creating the Cloud Storage bucket referenced in `uri_prefix`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,20 +17,13 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails do
   @moduledoc """
-  Error response of importing resources.
-  This structure is included in the
-  error
-  details to describe the detailed error
-  after the operation finishes with some failure.
+   Error response of importing resources. This structure is included in the error details to describe the detailed error after the operation finishes with some failure.
 
   ## Attributes
 
   *   `errorCount` (*type:* `String.t`, *default:* `nil`) - The number of resources that had errors.
-  *   `fhirStore` (*type:* `String.t`, *default:* `nil`) - The name of the FHIR store where resources have been imported, in the
-      format
-      `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `inputSize` (*type:* `String.t`, *default:* `nil`) - The total number of resources included in the source data. This is the sum
-      of the success and error counts.
+  *   `fhirStore` (*type:* `String.t`, *default:* `nil`) - The name of the FHIR store where resources have been imported, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `inputSize` (*type:* `String.t`, *default:* `nil`) - The total number of resources included in the source data. This is the sum of the success and error counts.
   *   `successCount` (*type:* `String.t`, *default:* `nil`) - The number of resources that have been imported.
   """
 

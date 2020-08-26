@@ -21,18 +21,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SchemaPackage do
 
   ## Attributes
 
-  *   `ignoreMinOccurs` (*type:* `boolean()`, *default:* `nil`) - Flag to ignore all min_occurs restrictions in the schema. This means that
-      incoming messages can omit any group, segment, field, component, or
-      subcomponent.
-  *   `schemas` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Hl7SchemaConfig.t)`, *default:* `nil`) - Schema configs that are layered based on their VersionSources that
-      match the incoming message. Schema configs present in higher indices
-      override those in lower indices with the same message type and trigger
-      event if their VersionSources all match an incoming message.
+  *   `ignoreMinOccurs` (*type:* `boolean()`, *default:* `nil`) - Flag to ignore all min_occurs restrictions in the schema. This means that incoming messages can omit any group, segment, field, component, or subcomponent.
+  *   `schemas` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Hl7SchemaConfig.t)`, *default:* `nil`) - Schema configs that are layered based on their VersionSources that match the incoming message. Schema configs present in higher indices override those in lower indices with the same message type and trigger event if their VersionSources all match an incoming message.
   *   `schematizedParsingType` (*type:* `String.t`, *default:* `nil`) - Determines how messages that fail to parse are handled.
-  *   `types` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig.t)`, *default:* `nil`) - Schema type definitions that are layered based on their VersionSources
-      that match the incoming message. Type definitions present in higher indices
-      override those in lower indices with the same type name if their
-      VersionSources all match an incoming message.
+  *   `types` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig.t)`, *default:* `nil`) - Schema type definitions that are layered based on their VersionSources that match the incoming message. Type definitions present in higher indices override those in lower indices with the same type name if their VersionSources all match an incoming message.
+  *   `unexpectedSegmentHandling` (*type:* `String.t`, *default:* `nil`) - Determines how unexpected segments (segments not matched to the schema) are handled.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,13 +34,15 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SchemaPackage do
           :ignoreMinOccurs => boolean(),
           :schemas => list(GoogleApi.HealthCare.V1beta1.Model.Hl7SchemaConfig.t()),
           :schematizedParsingType => String.t(),
-          :types => list(GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig.t())
+          :types => list(GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig.t()),
+          :unexpectedSegmentHandling => String.t()
         }
 
   field(:ignoreMinOccurs)
   field(:schemas, as: GoogleApi.HealthCare.V1beta1.Model.Hl7SchemaConfig, type: :list)
   field(:schematizedParsingType)
   field(:types, as: GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig, type: :list)
+  field(:unexpectedSegmentHandling)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.SchemaPackage do

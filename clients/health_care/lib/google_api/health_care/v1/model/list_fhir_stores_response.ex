@@ -21,10 +21,8 @@ defmodule GoogleApi.HealthCare.V1.Model.ListFhirStoresResponse do
 
   ## Attributes
 
-  *   `fhirStores` (*type:* `list(GoogleApi.HealthCare.V1.Model.FhirStore.t)`, *default:* `nil`) - The returned FHIR stores. Won't be more FHIR stores than the value of
-      page_size in the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more
-      results in the list.
+  *   `fhirStores` (*type:* `list(GoogleApi.HealthCare.V1.Model.FhirStore.t)`, *default:* `nil`) - The returned FHIR stores. Won't be more FHIR stores than the value of page_size in the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

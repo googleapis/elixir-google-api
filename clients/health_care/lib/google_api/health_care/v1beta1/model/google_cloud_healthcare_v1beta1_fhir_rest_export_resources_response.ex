@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse do
   @moduledoc """
-  Response when all resources export successfully.
-  This structure is included in the
-  response to describe the detailed
-  outcome after the operation finishes successfully.
+   Response when all resources export successfully. This structure is included in the response to describe the detailed outcome after the operation finishes successfully.
 
   ## Attributes
 
-  *   `fhirStore` (*type:* `String.t`, *default:* `nil`) - The name of the FHIR store where resources have been exported, in the
-      format
-      `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `fhirStore` (*type:* `String.t`, *default:* `nil`) - The name of the FHIR store where resources have been exported, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `resourceCount` (*type:* `String.t`, *default:* `nil`) - The total number of resources exported from the requested FHIR store.
   """
 

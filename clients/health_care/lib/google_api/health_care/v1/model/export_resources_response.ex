@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1.Model.ExportResourcesResponse do
   @moduledoc """
-  Response when all resources export successfully.
-  This structure is included in the
-  response to describe the detailed
-  outcome after the operation finishes successfully.
+  Response when all resources export successfully. This structure is included in the response to describe the detailed outcome after the operation finishes successfully.
 
   ## Attributes
 

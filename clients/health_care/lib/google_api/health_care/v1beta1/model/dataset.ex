@@ -17,20 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.Dataset do
   @moduledoc """
-  A message representing a health dataset.
-
-  A health dataset represents a collection of healthcare data pertaining to one
-  or more patients. This may include multiple modalities of healthcare data,
-  such as electronic medical records or medical imaging data.
+  A message representing a health dataset. A health dataset represents a collection of healthcare data pertaining to one or more patients. This may include multiple modalities of healthcare data, such as electronic medical records or medical imaging data.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the dataset, of the form
-      `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The default timezone used by this dataset. Must be a either a valid IANA
-      time zone name such as "America/New_York" or empty, which defaults to UTC.
-      This is used for parsing times in resources, such as HL7 messages, where no
-      explicit timezone is specified.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the dataset, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The default timezone used by this dataset. Must be a either a valid IANA time zone name such as "America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources, such as HL7 messages, where no explicit timezone is specified.
   """
 
   use GoogleApi.Gax.ModelBase

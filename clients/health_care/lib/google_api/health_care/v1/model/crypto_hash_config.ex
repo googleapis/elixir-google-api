@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1.Model.CryptoHashConfig do
   @moduledoc """
-  Pseudonymization method that generates surrogates via cryptographic hashing.
-  Uses SHA-256.
-  Outputs a base64-encoded representation of the hashed output
-  (for example, `L7k0BHmF1ha5U3NfGykjro4xWi1MPVQPjhMAZbSV9mM=`).
+  Pseudonymization method that generates surrogates via cryptographic hashing. Uses SHA-256. Outputs a base64-encoded representation of the hashed output (for example, `L7k0BHmF1ha5U3NfGykjro4xWi1MPVQPjhMAZbSV9mM=`).
 
   ## Attributes
 
-  *   `cryptoKey` (*type:* `String.t`, *default:* `nil`) - An AES 128/192/256 bit key. Causes the hash to be computed based on this
-      key. A default key is generated for each Deidentify operation and is used
-      wherever crypto_key is not specified.
+  *   `cryptoKey` (*type:* `String.t`, *default:* `nil`) - An AES 128/192/256 bit key. Causes the hash to be computed based on this key. A default key is generated for each Deidentify operation and is used wherever crypto_key is not specified.
   """
 
   use GoogleApi.Gax.ModelBase

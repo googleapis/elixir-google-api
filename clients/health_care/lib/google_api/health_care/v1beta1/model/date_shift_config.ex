@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.DateShiftConfig do
   @moduledoc """
-  Shift a date forward or backward in time by a random amount which is
-  consistent for a given patient and crypto key combination.
+  Shift a date forward or backward in time by a random amount which is consistent for a given patient and crypto key combination.
 
   ## Attributes
 
-  *   `cryptoKey` (*type:* `String.t`, *default:* `nil`) - An AES 128/192/256 bit key. Causes the shift to be computed based on this
-      key and the patient ID. A default key is generated for each
-      Deidentify operation and is used wherever crypto_key is not specified.
+  *   `cryptoKey` (*type:* `String.t`, *default:* `nil`) - An AES 128/192/256 bit key. Causes the shift to be computed based on this key and the patient ID. A default key is generated for each Deidentify operation and is used wherever crypto_key is not specified.
   """
 
   use GoogleApi.Gax.ModelBase

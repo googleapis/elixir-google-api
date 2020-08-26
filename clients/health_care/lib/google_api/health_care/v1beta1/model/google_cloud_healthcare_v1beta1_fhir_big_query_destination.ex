@@ -21,11 +21,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBig
 
   ## Attributes
 
-  *   `datasetUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to an existing  dataset, up to 2000 characters long, in the
-      format `bq://projectId.bqDatasetId`.
-  *   `force` (*type:* `boolean()`, *default:* `nil`) - This flag is being replaced by write_disposition which provides additional
-      options. force=false is equivalent to WRITE_EMPTY and force=true is
-      equivalent to WRITE_TRUNCATE.
+  *   `datasetUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to an existing dataset, up to 2000 characters long, in the format `bq://projectId.bqDatasetId`.
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - If this flag is `TRUE`, all tables will be deleted from the dataset before the new exported tables are written. If the flag is not set and the destination dataset contains tables, the export call returns an error. This option is not used for the streaming export.
   *   `schemaConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SchemaConfig.t`, *default:* `nil`) - The configuration for the exported BigQuery schema.
   """
 
