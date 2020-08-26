@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ImportAnnotationsErrorDetails do
   @moduledoc """
-  Final response of importing
-  Annotations in
-  partial or total failure case. This structure is included in the
-  error
-  details. It is only included when the operation
-  finishes.
+  Deprecated. Final response of importing Annotations in partial or total failure case. This structure is included in the error details. It is only included when the operation finishes.
 
   ## Attributes
 
-  *   `annotationStore` (*type:* `String.t`, *default:* `nil`) - The annotation_store that the annotations were imported to. The name
-      is in the format
-      `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
+  *   `annotationStore` (*type:* `String.t`, *default:* `nil`) - The annotation_store that the annotations were imported to. The name is in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `errorCount` (*type:* `String.t`, *default:* `nil`) - The number of annotations that had errors.
   *   `successCount` (*type:* `String.t`, *default:* `nil`) - The number of annotations that have been imported.
   """

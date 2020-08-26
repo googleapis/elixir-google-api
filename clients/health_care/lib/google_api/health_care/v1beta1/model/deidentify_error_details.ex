@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyErrorDetails do
   @moduledoc """
-  Contains the status of the Deidentify operation.
+  Deprecated. Contains the status of the Deidentify operation.
 
   ## Attributes
 

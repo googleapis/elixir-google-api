@@ -21,11 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifySummary do
 
   ## Attributes
 
-  *   `failureResourceCount` (*type:* `String.t`, *default:* `nil`) - Number of resources that failed to process.
-      The failures might be caused by:
-
-        * Invalid user input data
-        * Transient errors that could be skipped
+  *   `failureResourceCount` (*type:* `String.t`, *default:* `nil`) - Number of resources that failed to process. The failures might be caused by: * Invalid user input data * Transient errors that could be skipped
   *   `successResourceCount` (*type:* `String.t`, *default:* `nil`) - Number of resources successfully processed.
   *   `successStoreCount` (*type:* `String.t`, *default:* `nil`) - Number of stores successfully processed.
   """

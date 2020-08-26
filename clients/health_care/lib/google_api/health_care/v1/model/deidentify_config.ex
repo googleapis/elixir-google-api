@@ -17,19 +17,14 @@
 
 defmodule GoogleApi.HealthCare.V1.Model.DeidentifyConfig do
   @moduledoc """
-  Configures de-id options specific to different types of content.
-  Each submessage customizes the handling of an
-  https://tools.ietf.org/html/rfc6838 media type or subtype. Configs are
-  applied in a nested manner at runtime.
+  Configures de-id options specific to different types of content. Each submessage customizes the handling of an https://tools.ietf.org/html/rfc6838 media type or subtype. Configs are applied in a nested manner at runtime.
 
   ## Attributes
 
   *   `dicom` (*type:* `GoogleApi.HealthCare.V1.Model.DicomConfig.t`, *default:* `nil`) - Configures de-id of application/DICOM content.
   *   `fhir` (*type:* `GoogleApi.HealthCare.V1.Model.FhirConfig.t`, *default:* `nil`) - Configures de-id of application/FHIR content.
-  *   `image` (*type:* `GoogleApi.HealthCare.V1.Model.ImageConfig.t`, *default:* `nil`) - Configures de-identification of image pixels wherever they are found in the
-      source_dataset.
-  *   `text` (*type:* `GoogleApi.HealthCare.V1.Model.TextConfig.t`, *default:* `nil`) - Configures de-identification of text wherever it is found in the
-      source_dataset.
+  *   `image` (*type:* `GoogleApi.HealthCare.V1.Model.ImageConfig.t`, *default:* `nil`) - Configures de-identification of image pixels wherever they are found in the source_dataset.
+  *   `text` (*type:* `GoogleApi.HealthCare.V1.Model.TextConfig.t`, *default:* `nil`) - Configures de-identification of text wherever it is found in the source_dataset.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SensitiveTextAnnotation do
 
   ## Attributes
 
-  *   `details` (*type:* `%{optional(String.t) => GoogleApi.HealthCare.V1beta1.Model.Detail.t}`, *default:* `nil`) - Maps from a resource slice. For example, FHIR resource field path to a set
-      of sensitive text findings. For example,
-      Appointment.Narrative text1 --> {findings_1, findings_2, findings_3}
+  *   `details` (*type:* `%{optional(String.t) => GoogleApi.HealthCare.V1beta1.Model.Detail.t}`, *default:* `nil`) - Maps from a resource slice. For example, FHIR resource field path to a set of sensitive text findings. For example, Appointment.Narrative text1 --> {findings_1, findings_2, findings_3}
   """
 
   use GoogleApi.Gax.ModelBase

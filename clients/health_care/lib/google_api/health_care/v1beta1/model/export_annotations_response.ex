@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ExportAnnotationsResponse do
   @moduledoc """
-  Response for successful annotation export operations. This structure is
-  included in response upon operation
-  completion.
+  Response for successful annotation export operations. This structure is included in response upon operation completion.
 
   ## Attributes
 
-  *   `annotationStore` (*type:* `String.t`, *default:* `nil`) - The annotation_store used for the export operation,
-      in the format of
-      `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
+  *   `annotationStore` (*type:* `String.t`, *default:* `nil`) - The annotation_store used for the export operation, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `successCount` (*type:* `String.t`, *default:* `nil`) - The total number of annotations successfully exported.
   """
 

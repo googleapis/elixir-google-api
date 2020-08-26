@@ -17,20 +17,13 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestExportResourcesErrorDetails do
   @moduledoc """
-  Response when errors occur while exporting resources.
-  This structure is included in the
-  error
-  details to describe the detailed outcome. It is
-  only included when the operation finishes with errors.
+   Response when errors occur while exporting resources. This structure is included in the error details to describe the detailed outcome. It is only included when the operation finishes with errors.
 
   ## Attributes
 
   *   `errorCount` (*type:* `String.t`, *default:* `nil`) - The number of resources that had errors.
-  *   `fhirStore` (*type:* `String.t`, *default:* `nil`) - The name of the FHIR store where resources have been exported, in the
-      format
-      `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `resourceCount` (*type:* `String.t`, *default:* `nil`) - The total number of resources included in the export operation. This is
-      the sum of the success and error counts.
+  *   `fhirStore` (*type:* `String.t`, *default:* `nil`) - The name of the FHIR store where resources have been exported, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `resourceCount` (*type:* `String.t`, *default:* `nil`) - The total number of resources included in the export operation. This is the sum of the success and error counts.
   *   `successCount` (*type:* `String.t`, *default:* `nil`) - The number of resources that were exported.
   """
 

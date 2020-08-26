@@ -17,23 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1.Model.FieldMetadata do
   @moduledoc """
-  Specifies FHIR paths to match, and how to handle de-identification of
-  matching fields.
+  Specifies FHIR paths to match, and how to handle de-identification of matching fields.
 
   ## Attributes
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - Deidentify action for one field.
-  *   `paths` (*type:* `list(String.t)`, *default:* `nil`) - List of paths to FHIR fields to be redacted. Each path is a
-      period-separated list where each component is either a field name or
-      FHIR type name, for example: Patient, HumanName.
-      For "choice" types (those defined in the FHIR spec with the form:
-      field[x]) we use two separate components. For example,
-      "deceasedAge.unit" is matched by "Deceased.Age.unit".
-      Supported types are: AdministrativeGenderCode, Code, Date, DateTime,
-      Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid,
-      Xhtml.
-      Base64Binary is also supported, but may only be kept as-is or have all
-      the content removed.
+  *   `paths` (*type:* `list(String.t)`, *default:* `nil`) - List of paths to FHIR fields to be redacted. Each path is a period-separated list where each component is either a field name or FHIR type name, for example: Patient, HumanName. For "choice" types (those defined in the FHIR spec with the form: field[x]) we use two separate components. For example, "deceasedAge.unit" is matched by "Deceased.Age.unit". Supported types are: AdministrativeGenderCode, Code, Date, DateTime, Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml. Base64Binary is also supported, but may only be kept as-is or have all the content removed.
   """
 
   use GoogleApi.Gax.ModelBase

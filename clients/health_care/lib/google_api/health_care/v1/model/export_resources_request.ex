@@ -21,21 +21,8 @@ defmodule GoogleApi.HealthCare.V1.Model.ExportResourcesRequest do
 
   ## Attributes
 
-  *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination.
-
-      The BigQuery location requires two IAM roles:
-      `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`.
-
-      The output is one BigQuery table per resource type.
-  *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination.
-
-      The Cloud Storage location requires the `roles/storage.objectAdmin` Cloud
-      IAM role.
-
-      The exported outputs are
-      organized by FHIR resource types. The server creates one object per
-      resource type. Each object contains newline delimited JSON, and each line
-      is a FHIR resource.
+  *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination. The BigQuery location requires two IAM roles: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one BigQuery table per resource type.
+  *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination. The Healthcare Service Agent account requires the `roles/storage.objectAdmin` role on the Cloud Storage location. The exported outputs are organized by FHIR resource types. The server creates one object per resource type. Each object contains newline delimited JSON, and each line is a FHIR resource.
   """
 
   use GoogleApi.Gax.ModelBase

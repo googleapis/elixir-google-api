@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ImportDicomDataRequest do
   @moduledoc """
-  Imports data into the specified DICOM store.
-  Returns an error if any of the files to import are not DICOM files. This
-  API accepts duplicate DICOM instances by ignoring the newly-pushed instance.
-  It does not overwrite.
+  Imports data into the specified DICOM store. Returns an error if any of the files to import are not DICOM files. This API accepts duplicate DICOM instances by ignoring the newly-pushed instance. It does not overwrite.
 
   ## Attributes
 
-  *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsSource.t`, *default:* `nil`) - Cloud Storage source data location and import configuration.
-
-      The Cloud Storage location requires the `roles/storage.objectViewer`
-      Cloud IAM role.
+  *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsSource.t`, *default:* `nil`) - Cloud Storage source data location and import configuration. The Cloud Storage location requires the `roles/storage.objectViewer` Cloud IAM role.
   """
 
   use GoogleApi.Gax.ModelBase

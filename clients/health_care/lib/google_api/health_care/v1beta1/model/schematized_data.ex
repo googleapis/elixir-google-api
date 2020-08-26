@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.SchematizedData do
   @moduledoc """
-  The content of an HL7v2 message in a structured format as specified by a
-  schema.
+  The content of an HL7v2 message in a structured format as specified by a schema.
 
   ## Attributes
 

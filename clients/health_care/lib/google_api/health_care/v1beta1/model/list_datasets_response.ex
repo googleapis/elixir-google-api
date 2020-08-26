@@ -22,8 +22,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ListDatasetsResponse do
   ## Attributes
 
   *   `datasets` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Dataset.t)`, *default:* `nil`) - The first page of datasets.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no
-      more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

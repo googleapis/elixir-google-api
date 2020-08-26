@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ParserConfig do
   @moduledoc """
-  The configuration for the parser. It determines how the server parses the
-  messages.
+  The configuration for the parser. It determines how the server parses the messages.
 
   ## Attributes
 
   *   `allowNullHeader` (*type:* `boolean()`, *default:* `nil`) - Determines whether messages with no header are allowed.
-  *   `schema` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SchemaPackage.t`, *default:* `nil`) - Schemas used to parse messages in this store, if schematized parsing is
-      desired.
-  *   `segmentTerminator` (*type:* `String.t`, *default:* `nil`) - Byte(s) to use as the segment terminator. If this is unset, '\\r' is
-      used as segment terminator, matching the HL7 version 2
-      specification.
+  *   `schema` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SchemaPackage.t`, *default:* `nil`) - Schemas used to parse messages in this store, if schematized parsing is desired.
+  *   `segmentTerminator` (*type:* `String.t`, *default:* `nil`) - Byte(s) to use as the segment terminator. If this is unset, '\\r' is used as segment terminator, matching the HL7 version 2 specification.
   """
 
   use GoogleApi.Gax.ModelBase

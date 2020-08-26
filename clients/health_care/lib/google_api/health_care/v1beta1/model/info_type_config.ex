@@ -17,39 +17,13 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig do
   @moduledoc """
-  Specifies how to use infoTypes for evaluation. For example, a user might
-  only want to evaluate `PERSON`, `LOCATION`, and `AGE`.
+  Specifies how to use infoTypes for evaluation. For example, a user might only want to evaluate `PERSON`, `LOCATION`, and `AGE`.
 
   ## Attributes
 
   *   `evaluateList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FilterList.t`, *default:* `nil`) - 
   *   `ignoreList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FilterList.t`, *default:* `nil`) - 
-  *   `strictMatching` (*type:* `boolean()`, *default:* `nil`) - If `TRUE`, infoTypes described by `filter` are used for evaluation.
-      Otherwise, infoTypes are not considered for evaluation.
-      For example:
-
-      * Annotated text:
-        "Toronto is a location"
-      * Finding 1:
-        `{"infoType": "PERSON", "quote": "Toronto", "start": 0, "end": 7}`
-      * Finding 2:
-        `{"infoType": "CITY", "quote": "Toronto", "start": 0, "end": 7}`
-      * Finding 3:
-        `{}`
-      * Ground truth:
-        `{"infoType": "LOCATION", "quote": "Toronto", "start": 0, "end": 7}`
-
-      When `strict_matching` is `TRUE`:
-
-      * Finding 1: 1 false positive
-      * Finding 2: 1 false positive
-      * Finding 3: 1 false negative
-
-      When `strict_matching` is `FALSE`:
-
-      * Finding 1: 1 true positive
-      * Finding 2: 1 true positive
-      * Finding 3: 1 false negative
+  *   `strictMatching` (*type:* `boolean()`, *default:* `nil`) - If `TRUE`, infoTypes described by `filter` are used for evaluation. Otherwise, infoTypes are not considered for evaluation. For example: * Annotated text: "Toronto is a location" * Finding 1: `{"infoType": "PERSON", "quote": "Toronto", "start": 0, "end": 7}` * Finding 2: `{"infoType": "CITY", "quote": "Toronto", "start": 0, "end": 7}` * Finding 3: `{}` * Ground truth: `{"infoType": "LOCATION", "quote": "Toronto", "start": 0, "end": 7}` When `strict_matching` is `TRUE`: * Finding 1: 1 false positive * Finding 2: 1 false positive * Finding 3: 1 false negative When `strict_matching` is `FALSE`: * Finding 1: 1 true positive * Finding 2: 1 true positive * Finding 3: 1 false negative
   """
 
   use GoogleApi.Gax.ModelBase

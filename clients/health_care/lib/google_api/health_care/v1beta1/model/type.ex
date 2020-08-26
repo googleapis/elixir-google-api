@@ -22,10 +22,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Type do
   ## Attributes
 
   *   `fields` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Field.t)`, *default:* `nil`) - The (sub) fields this type has (if not primitive).
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this type. This would be the segment or datatype name.
-      For example, "PID" or "XPN".
-  *   `primitive` (*type:* `String.t`, *default:* `nil`) - If this is a primitive type then this field is the type of the primitive
-      For example, STRING. Leave unspecified for composite types.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this type. This would be the segment or datatype name. For example, "PID" or "XPN".
+  *   `primitive` (*type:* `String.t`, *default:* `nil`) - If this is a primitive type then this field is the type of the primitive For example, STRING. Leave unspecified for composite types.
   """
 
   use GoogleApi.Gax.ModelBase

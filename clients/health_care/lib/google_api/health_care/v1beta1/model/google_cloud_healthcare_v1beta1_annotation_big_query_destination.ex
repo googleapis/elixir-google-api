@@ -21,13 +21,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1Annotat
 
   ## Attributes
 
-  *   `force` (*type:* `boolean()`, *default:* `nil`) - If the destination table already exists and this flag is `TRUE`, the table
-      is overwritten by the contents of the input store. If the flag is not
-      set and the destination table already exists, the export call returns an
-      error.
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - If the destination table already exists and this flag is `TRUE`, the table is overwritten by the contents of the input store. If the flag is not set and the destination table already exists, the export call returns an error.
   *   `schemaType` (*type:* `String.t`, *default:* `nil`) - Specifies the schema format to export.
-  *   `tableUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to a table, up to 2000 characters long, must be of the form
-      bq://projectId.bqDatasetId.tableId.
+  *   `tableUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to a table, up to 2000 characters long, must be of the form bq://projectId.bqDatasetId.tableId.
   """
 
   use GoogleApi.Gax.ModelBase

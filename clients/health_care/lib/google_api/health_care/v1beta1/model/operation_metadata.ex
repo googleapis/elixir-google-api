@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.OperationMetadata do
   @moduledoc """
-  OperationMetadata provides information about the operation execution.
-  Returned in the long-running operation's metadata field.
+  OperationMetadata provides information about the operation execution. Returned in the long-running operation's metadata field.
 
   ## Attributes
 
@@ -27,9 +26,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.OperationMetadata do
   *   `counter` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ProgressCounter.t`, *default:* `nil`) - 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation was created by the API.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which execution was completed.
-  *   `logsUrl` (*type:* `String.t`, *default:* `nil`) - A link to audit and error logs in the log viewer. Error logs are generated
-      only by some operations, listed at
-      [Viewing logs](/healthcare/docs/how-tos/logging).
+  *   `logsUrl` (*type:* `String.t`, *default:* `nil`) - A link to audit and error logs in the log viewer. Error logs are generated only by some operations, listed at [Viewing logs](/healthcare/docs/how-tos/logging).
   """
 
   use GoogleApi.Gax.ModelBase

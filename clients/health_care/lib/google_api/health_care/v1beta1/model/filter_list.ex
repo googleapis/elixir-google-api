@@ -21,8 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FilterList do
 
   ## Attributes
 
-  *   `infoTypes` (*type:* `list(String.t)`, *default:* `nil`) - These infoTypes are based on after the `eval_info_type_mapping` and
-      `golden_info_type_mapping`.
+  *   `infoTypes` (*type:* `list(String.t)`, *default:* `nil`) - These infoTypes are based on after the `eval_info_type_mapping` and `golden_info_type_mapping`.
   """
 
   use GoogleApi.Gax.ModelBase

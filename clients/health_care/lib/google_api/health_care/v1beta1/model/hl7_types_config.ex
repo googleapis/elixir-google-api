@@ -22,8 +22,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig do
   ## Attributes
 
   *   `type` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Type.t)`, *default:* `nil`) - The HL7v2 type definitions.
-  *   `version` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.VersionSource.t)`, *default:* `nil`) - The version selectors that this config applies to. A message must match
-      ALL version sources to apply.
+  *   `version` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.VersionSource.t)`, *default:* `nil`) - The version selectors that this config applies to. A message must match ALL version sources to apply.
   """
 
   use GoogleApi.Gax.ModelBase

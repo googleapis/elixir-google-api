@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ListAnnotationsResponse do
   @moduledoc """
-  Lists the Annotations in the specified
-  Annotation store.
+  Lists the Annotations in the specified Annotation store.
 
   ## Attributes
 
-  *   `annotations` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Annotation.t)`, *default:* `nil`) - The returned Annotations. Won't be more values than the value of
-      page_size in the request. See `AnnotationView` in the request for
-      populated fields.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more
-      results in the list.
+  *   `annotations` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Annotation.t)`, *default:* `nil`) - The returned Annotations. Won't be more values than the value of page_size in the request. See `AnnotationView` in the request for populated fields.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

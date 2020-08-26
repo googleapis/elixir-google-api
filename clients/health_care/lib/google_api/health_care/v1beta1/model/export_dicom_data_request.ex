@@ -17,26 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ExportDicomDataRequest do
   @moduledoc """
-  Exports data from the specified DICOM store.
-  If a given resource, such as a DICOM object with the same SOPInstance UID,
-  already exists in the output, it is overwritten with the version
-  in the source dataset.
-  Exported DICOM data persists when the DICOM store from which it was
-  exported is deleted.
+  Exports data from the specified DICOM store. If a given resource, such as a DICOM object with the same SOPInstance UID, already exists in the output, it is overwritten with the version in the source dataset. Exported DICOM data persists when the DICOM store from which it was exported is deleted.
 
   ## Attributes
 
-  *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination.
-
-      You can only export to a BigQuery dataset that's in the same project as
-      the DICOM store you're exporting from.
-
-      The BigQuery location requires two IAM roles:
-      `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`.
-  *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination.
-
-      The Cloud Storage location requires the `roles/storage.objectAdmin` Cloud
-      IAM role.
+  *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination. You can only export to a BigQuery dataset that's in the same project as the DICOM store you're exporting from. The BigQuery location requires two IAM roles: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`.
+  *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination. The Cloud Storage location requires the `roles/storage.objectAdmin` Cloud IAM role.
   """
 
   use GoogleApi.Gax.ModelBase

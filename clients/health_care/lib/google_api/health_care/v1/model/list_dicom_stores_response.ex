@@ -21,10 +21,8 @@ defmodule GoogleApi.HealthCare.V1.Model.ListDicomStoresResponse do
 
   ## Attributes
 
-  *   `dicomStores` (*type:* `list(GoogleApi.HealthCare.V1.Model.DicomStore.t)`, *default:* `nil`) - The returned DICOM stores. Won't be more DICOM stores than the value of
-      page_size in the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more
-      results in the list.
+  *   `dicomStores` (*type:* `list(GoogleApi.HealthCare.V1.Model.DicomStore.t)`, *default:* `nil`) - The returned DICOM stores. Won't be more DICOM stores than the value of page_size in the request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

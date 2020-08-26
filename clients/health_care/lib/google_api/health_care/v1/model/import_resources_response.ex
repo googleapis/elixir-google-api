@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1.Model.ImportResourcesResponse do
   @moduledoc """
-  Final response of importing resources.
-  This structure is included in the
-  response to describe the detailed
-  outcome after the operation finishes successfully.
+  Final response of importing resources. This structure is included in the response to describe the detailed outcome after the operation finishes successfully.
 
   ## Attributes
 
