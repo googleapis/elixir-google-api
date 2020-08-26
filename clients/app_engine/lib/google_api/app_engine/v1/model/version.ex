@@ -27,6 +27,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   *   `nobuildFilesRegex` (*type:* `String.t`, *default:* `nil`) - Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set.
   *   `livenessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.LivenessCheck.t`, *default:* `nil`) - Configures liveness health checking for instances. Unhealthy instances are stopped and replaced with new instancesOnly returned in GET requests if view=FULL is set.
   *   `apiConfig` (*type:* `GoogleApi.AppEngine.V1.Model.ApiConfigHandler.t`, *default:* `nil`) - Serving configuration for Google Cloud Endpoints (https://cloud.google.com/appengine/docs/python/endpoints/).Only returned in GET requests if view=FULL is set.
+  *   `buildEnvVariables` (*type:* `map()`, *default:* `nil`) - Environment variables available to the build environment.Only returned in GET requests if view=FULL is set.
   *   `handlers` (*type:* `list(GoogleApi.AppEngine.V1.Model.UrlMap.t)`, *default:* `nil`) - An ordered list of URL-matching patterns that should be applied to incoming requests. The first matching URL handles the request and other request handlers are not attempted.Only returned in GET requests if view=FULL is set.
   *   `inboundServices` (*type:* `list(String.t)`, *default:* `nil`) - Before an application can receive email or XMPP messages, the application must be configured to enable the service.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time that this version was created.@OutputOnly
@@ -69,6 +70,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
           :nobuildFilesRegex => String.t(),
           :livenessCheck => GoogleApi.AppEngine.V1.Model.LivenessCheck.t(),
           :apiConfig => GoogleApi.AppEngine.V1.Model.ApiConfigHandler.t(),
+          :buildEnvVariables => map(),
           :handlers => list(GoogleApi.AppEngine.V1.Model.UrlMap.t()),
           :inboundServices => list(String.t()),
           :createTime => DateTime.t(),
@@ -108,6 +110,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   field(:nobuildFilesRegex)
   field(:livenessCheck, as: GoogleApi.AppEngine.V1.Model.LivenessCheck)
   field(:apiConfig, as: GoogleApi.AppEngine.V1.Model.ApiConfigHandler)
+  field(:buildEnvVariables, type: :map)
   field(:handlers, as: GoogleApi.AppEngine.V1.Model.UrlMap, type: :list)
   field(:inboundServices, type: :list)
   field(:createTime, as: DateTime)
