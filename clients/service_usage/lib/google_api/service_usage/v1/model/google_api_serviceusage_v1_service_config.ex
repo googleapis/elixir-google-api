@@ -25,6 +25,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig d
   *   `authentication` (*type:* `GoogleApi.ServiceUsage.V1.Model.Authentication.t`, *default:* `nil`) - Auth configuration. Contains only the OAuth rules.
   *   `documentation` (*type:* `GoogleApi.ServiceUsage.V1.Model.Documentation.t`, *default:* `nil`) - Additional API documentation. Contains only the summary and the documentation URL.
   *   `endpoints` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Endpoint.t)`, *default:* `nil`) - Configuration for network endpoints. Contains only the names and aliases of the endpoints.
+  *   `monitoredResources` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.MonitoredResourceDescriptor.t)`, *default:* `nil`) - Defines the monitored resources used by this service. This is required by the Service.monitoring and Service.logging configurations.
+  *   `monitoring` (*type:* `GoogleApi.ServiceUsage.V1.Model.Monitoring.t`, *default:* `nil`) - Monitoring configuration. This should not include the 'producer_destinations' field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The DNS address at which this service is available. An example DNS address would be: `calendar.googleapis.com`.
   *   `quota` (*type:* `GoogleApi.ServiceUsage.V1.Model.Quota.t`, *default:* `nil`) - Quota configuration.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The product title for this service.
@@ -38,6 +40,9 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig d
           :authentication => GoogleApi.ServiceUsage.V1.Model.Authentication.t(),
           :documentation => GoogleApi.ServiceUsage.V1.Model.Documentation.t(),
           :endpoints => list(GoogleApi.ServiceUsage.V1.Model.Endpoint.t()),
+          :monitoredResources =>
+            list(GoogleApi.ServiceUsage.V1.Model.MonitoredResourceDescriptor.t()),
+          :monitoring => GoogleApi.ServiceUsage.V1.Model.Monitoring.t(),
           :name => String.t(),
           :quota => GoogleApi.ServiceUsage.V1.Model.Quota.t(),
           :title => String.t(),
@@ -48,6 +53,13 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1ServiceConfig d
   field(:authentication, as: GoogleApi.ServiceUsage.V1.Model.Authentication)
   field(:documentation, as: GoogleApi.ServiceUsage.V1.Model.Documentation)
   field(:endpoints, as: GoogleApi.ServiceUsage.V1.Model.Endpoint, type: :list)
+
+  field(:monitoredResources,
+    as: GoogleApi.ServiceUsage.V1.Model.MonitoredResourceDescriptor,
+    type: :list
+  )
+
+  field(:monitoring, as: GoogleApi.ServiceUsage.V1.Model.Monitoring)
   field(:name)
   field(:quota, as: GoogleApi.ServiceUsage.V1.Model.Quota)
   field(:title)
