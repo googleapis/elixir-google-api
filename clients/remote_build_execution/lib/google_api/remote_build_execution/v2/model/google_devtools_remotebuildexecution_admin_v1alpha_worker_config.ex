@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig do
   @moduledoc """
-  Defines the configuration to be used for a creating workers in the worker pool.
+  Defines the configuration to be used for creating workers in the worker pool.
 
   ## Attributes
 
@@ -30,6 +30,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum CPU platform to use when creating the worker. See [CPU Platforms](https://cloud.google.com/compute/docs/cpu-platforms).
   *   `networkAccess` (*type:* `String.t`, *default:* `nil`) - Determines the type of network access granted to workers. Possible values: - "public": Workers can connect to the public internet. - "private": Workers can only connect to Google APIs and services. - "restricted-private": Workers can only connect to Google APIs that are reachable through `restricted.googleapis.com` (`199.36.153.4/30`).
   *   `reserved` (*type:* `boolean()`, *default:* `nil`) - Determines whether the worker is reserved (equivalent to a Compute Engine on-demand VM and therefore won't be preempted). See [Preemptible VMs](https://cloud.google.com/preemptible-vms/) for more details.
+  *   `soleTenancy` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaSoleTenancyConfig.t`, *default:* `nil`) - Sole-tenant node information for pools hosted on STNs.
   *   `vmImage` (*type:* `String.t`, *default:* `nil`) - The name of the image used by each VM.
   """
 
@@ -46,6 +47,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
           :minCpuPlatform => String.t(),
           :networkAccess => String.t(),
           :reserved => boolean(),
+          :soleTenancy =>
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaSoleTenancyConfig.t(),
           :vmImage => String.t()
         }
 
@@ -62,6 +65,12 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   field(:minCpuPlatform)
   field(:networkAccess)
   field(:reserved)
+
+  field(:soleTenancy,
+    as:
+      GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaSoleTenancyConfig
+  )
+
   field(:vmImage)
 end
 
