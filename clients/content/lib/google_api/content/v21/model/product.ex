@@ -95,6 +95,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
       The REST ID for a product is of the form channel:contentLanguage:targetCountry: offerId.
   *   `shippingLength` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Length of the item for shipping.
   *   `shippingWeight` (*type:* `GoogleApi.Content.V21.Model.ProductShippingWeight.t`, *default:* `nil`) - Weight of the item for shipping.
+  *   `shoppingAdsExcludedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) to exclude the offer from Shopping Ads destination. Countries from this list are removed from countries configured in MC feed settings.
   *   `displayAdsSimilarIds` (*type:* `list(String.t)`, *default:* `nil`) - Advertiser-specified recommendations.
   *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Custom label 2 for custom grouping of items in a Shopping campaign.
   *   `sellOnGoogleQuantity` (*type:* `String.t`, *default:* `nil`) - The quantity of the product that is available for selling on Google. Supported only for online products.
@@ -185,6 +186,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :id => String.t(),
           :shippingLength => GoogleApi.Content.V21.Model.ProductShippingDimension.t(),
           :shippingWeight => GoogleApi.Content.V21.Model.ProductShippingWeight.t(),
+          :shoppingAdsExcludedCountries => list(String.t()),
           :displayAdsSimilarIds => list(String.t()),
           :customLabel2 => String.t(),
           :sellOnGoogleQuantity => String.t(),
@@ -266,6 +268,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:id)
   field(:shippingLength, as: GoogleApi.Content.V21.Model.ProductShippingDimension)
   field(:shippingWeight, as: GoogleApi.Content.V21.Model.ProductShippingWeight)
+  field(:shoppingAdsExcludedCountries, type: :list)
   field(:displayAdsSimilarIds, type: :list)
   field(:customLabel2)
   field(:sellOnGoogleQuantity)

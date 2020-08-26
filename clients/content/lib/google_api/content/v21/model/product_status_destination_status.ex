@@ -21,27 +21,27 @@ defmodule GoogleApi.Content.V21.Model.ProductStatusDestinationStatus do
 
   ## Attributes
 
-  *   `approvedCountrys` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the offer is approved.
+  *   `approvedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the offer is approved.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination
-  *   `disapprovedCountrys` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the offer is disapproved.
-  *   `pendingCountrys` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the offer is pending approval.
+  *   `disapprovedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the offer is disapproved.
+  *   `pendingCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the offer is pending approval.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Destination approval status in `targetCountry` of the offer.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approvedCountrys => list(String.t()),
+          :approvedCountries => list(String.t()),
           :destination => String.t(),
-          :disapprovedCountrys => list(String.t()),
-          :pendingCountrys => list(String.t()),
+          :disapprovedCountries => list(String.t()),
+          :pendingCountries => list(String.t()),
           :status => String.t()
         }
 
-  field(:approvedCountrys, type: :list)
+  field(:approvedCountries, type: :list)
   field(:destination)
-  field(:disapprovedCountrys, type: :list)
-  field(:pendingCountrys, type: :list)
+  field(:disapprovedCountries, type: :list)
+  field(:pendingCountries, type: :list)
   field(:status)
 end
 
