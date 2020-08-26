@@ -22,6 +22,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.FailureDetail do
   ## Attributes
 
   *   `crashed` (*type:* `boolean()`, *default:* `nil`) - If the failure was severe because the system (app) under test crashed.
+  *   `deviceOutOfMemory` (*type:* `boolean()`, *default:* `nil`) - If the device ran out of memory during a test, causing the test to crash.
   *   `failedRoboscript` (*type:* `boolean()`, *default:* `nil`) - If the Roboscript failed to complete successfully, e.g., because a Roboscript action or assertion failed or a Roboscript action could not be matched during the entire crawl.
   *   `notInstalled` (*type:* `boolean()`, *default:* `nil`) - If an app is not installed and thus no test can be run with the app. This might be caused by trying to run a test on an unsupported platform.
   *   `otherNativeCrash` (*type:* `boolean()`, *default:* `nil`) - If a native process (including any other than the app) crashed.
@@ -33,6 +34,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.FailureDetail do
 
   @type t :: %__MODULE__{
           :crashed => boolean(),
+          :deviceOutOfMemory => boolean(),
           :failedRoboscript => boolean(),
           :notInstalled => boolean(),
           :otherNativeCrash => boolean(),
@@ -41,6 +43,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.FailureDetail do
         }
 
   field(:crashed)
+  field(:deviceOutOfMemory)
   field(:failedRoboscript)
   field(:notInstalled)
   field(:otherNativeCrash)
