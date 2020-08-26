@@ -397,6 +397,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter will only take effect if the item is not in a shared drive. If an item's last parent is deleted but the item itself is not, the item will be placed under its owner's root.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -417,6 +418,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :enforceSingleParent => :query,
       :supportsAllDrives => :query,
       :supportsTeamDrives => :query
     }
@@ -449,6 +451,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter will only take effect if the item is not in a shared drive. If an item's last parent is deleted but the item itself is not, the item will be placed under its owner's root.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -466,7 +469,8 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :enforceSingleParent => :query
     }
 
     request =
