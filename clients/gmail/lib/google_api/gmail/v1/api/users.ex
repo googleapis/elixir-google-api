@@ -1955,7 +1955,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
+  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.
 
   ## Parameters
 
@@ -2022,7 +2022,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
+  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.
 
   ## Parameters
 
@@ -2108,7 +2108,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
+  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.
 
   ## Parameters
 
@@ -2188,7 +2188,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
+  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.
 
   ## Parameters
 
