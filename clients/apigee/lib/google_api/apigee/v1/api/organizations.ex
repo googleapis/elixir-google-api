@@ -6647,7 +6647,6 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:basepath` (*type:* `String.t`) - Base path where the API proxy revision should be deployed. Defaults to '/' if not provided.
       *   `:override` (*type:* `boolean()`) - Flag that specifies whether the new deployment replaces other deployed revisions of the API proxy in the environment. Set override to true to replace other deployed revisions. By default, override is false and the deployment is rejected if other revisions of the API proxy are deployed in the environment.
       *   `:sequencedRollout` (*type:* `boolean()`) - If true, a best-effort attempt will be made to roll out the routing rules corresponding to this deployment and the environment changes to add this deployment in a safe order. This reduces the risk of downtime that could be caused by changing the environment group's routing before the new destination for the affected traffic is ready to receive it. This should only be necessary if the new deployment will be capturing traffic from another environment under a shared environment group or if traffic will be rerouted to a different environment due to a basepath removal. The GenerateDeployChangeReport API may be used to examine routing changes before issuing the deployment request, and its response will indicate if a sequenced rollout is recommended for the deployment.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -6684,7 +6683,6 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :basepath => :query,
       :override => :query,
       :sequencedRollout => :query
     }

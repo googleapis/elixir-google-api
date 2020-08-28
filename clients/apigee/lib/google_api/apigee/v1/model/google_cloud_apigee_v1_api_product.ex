@@ -30,6 +30,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
   *   `environments` (*type:* `list(String.t)`, *default:* `nil`) - A comma-separated list of environment names to which the API product is bound. Requests to environments that are not listed are rejected. By specifying one or more environments, you can bind the resources listed in the API product to a specific environment, preventing developers from accessing those resources through API proxies deployed in another environment. This setting is used, for example, to prevent resources associated with API proxies in 'prod' from being accessed by API proxies deployed in 'test'.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Response only. Modified time of this environment as milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The internal name of the API Product. Characters you can use in the name are restricted to: A-Z0-9._\\-$ %. *NOTE:* The internal name cannot be edited when updating the API product.
+  *   `operationGroup` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup.t`, *default:* `nil`) - The operation_group enables api product creators to group Apigee proxies or remote services with resources, method types and quotas. The resource refers to the resource URI(excluding the base path). With this grouping, API product creator is able to finetune and give precise control over which REST methods have access to which resources, and how many such calls can be made (via Quota). Note that api_resources cannot be specified at both the API product level as well as within the operation_group. If configured that way, the call will fail. Please refer go/api-product-with-methods for additional details.
   *   `proxies` (*type:* `list(String.t)`, *default:* `nil`) - A comma-separated list of API proxy names to which this API product is bound. By specifying API proxies, you can associate resources in the API product with specific API proxies, preventing developers from accessing those resources through other API proxies. Edge rejects requests to API proxies that are not listed. *NOTE:* The API proxy names must already exist in the specified environment as they will be validated upon creation.
   *   `quota` (*type:* `String.t`, *default:* `nil`) - The number of request messages permitted per app by this API product for the specified `quotaInterval` and `quotaTimeUnit`. For example, a `quota` of 50, for a `quotaInterval` of 12 and a `quotaTimeUnit` of hours means 50 requests are allowed every 12 hours.
   *   `quotaInterval` (*type:* `String.t`, *default:* `nil`) - The time interval over which the number of request messages is calculated.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
           :environments => list(String.t()),
           :lastModifiedAt => String.t(),
           :name => String.t(),
+          :operationGroup => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup.t(),
           :proxies => list(String.t()),
           :quota => String.t(),
           :quotaInterval => String.t(),
@@ -65,6 +67,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
   field(:environments, type: :list)
   field(:lastModifiedAt)
   field(:name)
+  field(:operationGroup, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup)
   field(:proxies, type: :list)
   field(:quota)
   field(:quotaInterval)

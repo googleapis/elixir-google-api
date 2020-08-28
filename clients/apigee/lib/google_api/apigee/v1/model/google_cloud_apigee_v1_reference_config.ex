@@ -21,8 +21,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReferenceConfig do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the reference. Must be of the form 'organizations/{org}/environments/{env}/references/{ref}'.
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The name of the referred resource. Only references to keystore resources are supported. Must be of the form 'organizations/{org}/environments/{env}/keystores/{ks}'.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the reference in the following format: `organizations/{org}/environments/{env}/references/{reference}`
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Name of the referenced resource in the following format: `organizations/{org}/environments/{env}/keystores/{keystore}` Only references to keystore resources are supported.
   """
 
   use GoogleApi.Gax.ModelBase

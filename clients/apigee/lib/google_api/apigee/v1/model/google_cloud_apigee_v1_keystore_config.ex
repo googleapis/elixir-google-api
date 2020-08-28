@@ -22,7 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig do
   ## Attributes
 
   *   `aliases` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AliasRevisionConfig.t)`, *default:* `nil`) - Aliases in the keystore.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name. Must be of the form: 'organizations/{org}/environments/{env}/keystores/{keystore}'.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name in the following format: `organizations/{org}/environments/{env}/keystores/{keystore}`
   """
 
   use GoogleApi.Gax.ModelBase

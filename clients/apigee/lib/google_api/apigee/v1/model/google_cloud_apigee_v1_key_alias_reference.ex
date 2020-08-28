@@ -21,8 +21,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyAliasReference do
 
   ## Attributes
 
-  *   `aliasId` (*type:* `String.t`, *default:* `nil`) - The alias id. Must exist in the keystore referred to by reference.
-  *   `reference` (*type:* `String.t`, *default:* `nil`) - The reference name. Must be of the form: organizations/{org}/environments/{env}/references/{ref}.
+  *   `aliasId` (*type:* `String.t`, *default:* `nil`) - Alias ID. Must exist in the keystore referred to by the reference.
+  *   `reference` (*type:* `String.t`, *default:* `nil`) - Reference name in the following format: `organizations/{org}/environments/{env}/references/{reference}`
   """
 
   use GoogleApi.Gax.ModelBase
