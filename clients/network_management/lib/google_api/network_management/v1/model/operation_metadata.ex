@@ -26,8 +26,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.OperationMetadata do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation finished running.
   *   `statusDetail` (*type:* `String.t`, *default:* `nil`) - Human-readable status of the operation, if any.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example
-      projects/project-1/locations/global/connectivityTests/test-1
+  *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example projects/project-1/locations/global/connectivityTests/test-1
   *   `verb` (*type:* `String.t`, *default:* `nil`) - Name of the verb executed by the operation.
   """
 

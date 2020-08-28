@@ -29,10 +29,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo do
   *   `nextHopType` (*type:* `String.t`, *default:* `nil`) - Type of next hop.
   *   `priority` (*type:* `integer()`, *default:* `nil`) - Priority of the route.
   *   `routeType` (*type:* `String.t`, *default:* `nil`) - Type of route.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine route.
-      Dynamic route from cloud router does not have a URI.
-      Advertised route from Google Cloud VPC to on-premises network also does
-      not have a URI.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine route. Dynamic route from cloud router does not have a URI. Advertised route from Google Cloud VPC to on-premises network also does not have a URI.
   """
 
   use GoogleApi.Gax.ModelBase

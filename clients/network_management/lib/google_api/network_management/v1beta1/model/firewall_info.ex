@@ -28,8 +28,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.FirewallInfo do
   *   `priority` (*type:* `integer()`, *default:* `nil`) - Priority of the firewall rule.
   *   `targetServiceAccounts` (*type:* `list(String.t)`, *default:* `nil`) - Target service accounts of the firewall rule.
   *   `targetTags` (*type:* `list(String.t)`, *default:* `nil`) - Target tags of the firewall rule.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine firewall rule.
-      Implied default rule does not have URI.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine firewall rule. Implied default rule does not have URI.
   """
 
   use GoogleApi.Gax.ModelBase

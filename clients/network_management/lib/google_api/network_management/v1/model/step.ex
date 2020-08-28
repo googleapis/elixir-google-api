@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.NetworkManagement.V1.Model.Step do
   @moduledoc """
-  A simulated forwarding path is composed of multiple steps.
-  Each step has a well-defined state and an associated configuration.
+  A simulated forwarding path is composed of multiple steps. Each step has a well-defined state and an associated configuration.
 
   ## Attributes
 
@@ -27,10 +26,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Step do
   *   `deliver` (*type:* `GoogleApi.NetworkManagement.V1.Model.DeliverInfo.t`, *default:* `nil`) - Display info of the final state "deliver" and reason.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the step. Usually this is a summary of the state.
   *   `drop` (*type:* `GoogleApi.NetworkManagement.V1.Model.DropInfo.t`, *default:* `nil`) - Display info of the final state "drop" and reason.
-  *   `endpoint` (*type:* `GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t`, *default:* `nil`) - Display info of the source and destination under analysis.
-      The endpiont info in an intermediate state may differ with the
-      initial input, as it might be modified by state like NAT,
-      or Connection Proxy.
+  *   `endpoint` (*type:* `GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t`, *default:* `nil`) - Display info of the source and destination under analysis. The endpiont info in an intermediate state may differ with the initial input, as it might be modified by state like NAT, or Connection Proxy.
   *   `firewall` (*type:* `GoogleApi.NetworkManagement.V1.Model.FirewallInfo.t`, *default:* `nil`) - Display info of a Compute Engine firewall rule.
   *   `forward` (*type:* `GoogleApi.NetworkManagement.V1.Model.ForwardInfo.t`, *default:* `nil`) - Display info of the final state "forward" and reason.
   *   `forwardingRule` (*type:* `GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo.t`, *default:* `nil`) - Display info of a Compute Engine forwarding rule.
