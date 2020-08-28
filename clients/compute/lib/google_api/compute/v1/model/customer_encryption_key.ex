@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.CustomerEncryptionKey do
   @moduledoc """
-  Represents a customer-supplied encryption key
+
 
   ## Attributes
 

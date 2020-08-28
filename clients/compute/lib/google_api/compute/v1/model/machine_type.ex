@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineType do
 
   *   `accelerators` (*type:* `list(GoogleApi.Compute.V1.Model.MachineTypeAccelerators.t)`, *default:* `nil`) - [Output Only] A list of accelerator configurations assigned to this machine type.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
-  *   `deprecated` (*type:* `GoogleApi.Compute.V1.Model.DeprecationStatus.t`, *default:* `nil`) - [Output Only] The deprecation status associated with this machine type.
+  *   `deprecated` (*type:* `GoogleApi.Compute.V1.Model.DeprecationStatus.t`, *default:* `nil`) - [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional textual description of the resource.
   *   `guestCpus` (*type:* `integer()`, *default:* `nil`) - [Output Only] The number of virtual CPUs that are available to the instance.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
