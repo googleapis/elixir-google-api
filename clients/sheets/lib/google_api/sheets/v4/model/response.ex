@@ -23,6 +23,7 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
 
   *   `addBanding` (*type:* `GoogleApi.Sheets.V4.Model.AddBandingResponse.t`, *default:* `nil`) - A reply from adding a banded range.
   *   `addChart` (*type:* `GoogleApi.Sheets.V4.Model.AddChartResponse.t`, *default:* `nil`) - A reply from adding a chart.
+  *   `addDataSource` (*type:* `GoogleApi.Sheets.V4.Model.AddDataSourceResponse.t`, *default:* `nil`) - A reply from adding a data source.
   *   `addDimensionGroup` (*type:* `GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse.t`, *default:* `nil`) - A reply from adding a dimension group.
   *   `addFilterView` (*type:* `GoogleApi.Sheets.V4.Model.AddFilterViewResponse.t`, *default:* `nil`) - A reply from adding a filter view.
   *   `addNamedRange` (*type:* `GoogleApi.Sheets.V4.Model.AddNamedRangeResponse.t`, *default:* `nil`) - A reply from adding a named range.
@@ -37,8 +38,10 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   *   `duplicateFilterView` (*type:* `GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse.t`, *default:* `nil`) - A reply from duplicating a filter view.
   *   `duplicateSheet` (*type:* `GoogleApi.Sheets.V4.Model.DuplicateSheetResponse.t`, *default:* `nil`) - A reply from duplicating a sheet.
   *   `findReplace` (*type:* `GoogleApi.Sheets.V4.Model.FindReplaceResponse.t`, *default:* `nil`) - A reply from doing a find/replace.
+  *   `refreshDataSource` (*type:* `GoogleApi.Sheets.V4.Model.RefreshDataSourceResponse.t`, *default:* `nil`) - A reply from refreshing data source objects.
   *   `trimWhitespace` (*type:* `GoogleApi.Sheets.V4.Model.TrimWhitespaceResponse.t`, *default:* `nil`) - A reply from trimming whitespace.
   *   `updateConditionalFormatRule` (*type:* `GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse.t`, *default:* `nil`) - A reply from updating a conditional format rule.
+  *   `updateDataSource` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDataSourceResponse.t`, *default:* `nil`) - A reply from updating a data source.
   *   `updateDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse.t`, *default:* `nil`) - A reply from updating a developer metadata entry.
   *   `updateEmbeddedObjectPosition` (*type:* `GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse.t`, *default:* `nil`) - A reply from updating an embedded object's position.
   """
@@ -48,6 +51,7 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   @type t :: %__MODULE__{
           :addBanding => GoogleApi.Sheets.V4.Model.AddBandingResponse.t(),
           :addChart => GoogleApi.Sheets.V4.Model.AddChartResponse.t(),
+          :addDataSource => GoogleApi.Sheets.V4.Model.AddDataSourceResponse.t(),
           :addDimensionGroup => GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse.t(),
           :addFilterView => GoogleApi.Sheets.V4.Model.AddFilterViewResponse.t(),
           :addNamedRange => GoogleApi.Sheets.V4.Model.AddNamedRangeResponse.t(),
@@ -65,9 +69,11 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
           :duplicateFilterView => GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse.t(),
           :duplicateSheet => GoogleApi.Sheets.V4.Model.DuplicateSheetResponse.t(),
           :findReplace => GoogleApi.Sheets.V4.Model.FindReplaceResponse.t(),
+          :refreshDataSource => GoogleApi.Sheets.V4.Model.RefreshDataSourceResponse.t(),
           :trimWhitespace => GoogleApi.Sheets.V4.Model.TrimWhitespaceResponse.t(),
           :updateConditionalFormatRule =>
             GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse.t(),
+          :updateDataSource => GoogleApi.Sheets.V4.Model.UpdateDataSourceResponse.t(),
           :updateDeveloperMetadata =>
             GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse.t(),
           :updateEmbeddedObjectPosition =>
@@ -76,6 +82,7 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
 
   field(:addBanding, as: GoogleApi.Sheets.V4.Model.AddBandingResponse)
   field(:addChart, as: GoogleApi.Sheets.V4.Model.AddChartResponse)
+  field(:addDataSource, as: GoogleApi.Sheets.V4.Model.AddDataSourceResponse)
   field(:addDimensionGroup, as: GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse)
   field(:addFilterView, as: GoogleApi.Sheets.V4.Model.AddFilterViewResponse)
   field(:addNamedRange, as: GoogleApi.Sheets.V4.Model.AddNamedRangeResponse)
@@ -94,12 +101,14 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   field(:duplicateFilterView, as: GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse)
   field(:duplicateSheet, as: GoogleApi.Sheets.V4.Model.DuplicateSheetResponse)
   field(:findReplace, as: GoogleApi.Sheets.V4.Model.FindReplaceResponse)
+  field(:refreshDataSource, as: GoogleApi.Sheets.V4.Model.RefreshDataSourceResponse)
   field(:trimWhitespace, as: GoogleApi.Sheets.V4.Model.TrimWhitespaceResponse)
 
   field(:updateConditionalFormatRule,
     as: GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse
   )
 
+  field(:updateDataSource, as: GoogleApi.Sheets.V4.Model.UpdateDataSourceResponse)
   field(:updateDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse)
 
   field(:updateEmbeddedObjectPosition,

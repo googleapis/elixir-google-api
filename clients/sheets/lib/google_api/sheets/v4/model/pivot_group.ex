@@ -21,6 +21,8 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroup do
 
   ## Attributes
 
+  *   `dataSourceColumnReference` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t`, *default:* `nil`) - The reference to the data source column this grouping is based on.
+  *   `groupLimit` (*type:* `GoogleApi.Sheets.V4.Model.PivotGroupLimit.t`, *default:* `nil`) - The count limit on rows or columns to apply to this pivot group.
   *   `groupRule` (*type:* `GoogleApi.Sheets.V4.Model.PivotGroupRule.t`, *default:* `nil`) - The group rule to apply to this row/column group.
   *   `label` (*type:* `String.t`, *default:* `nil`) - The labels to use for the row/column groups which can be customized. For example, in the following pivot table, the row label is `Region` (which could be renamed to `State`) and the column label is `Product` (which could be renamed `Item`). Pivot tables created before December 2017 do not have header labels. If you'd like to add header labels to an existing pivot table, please delete the existing pivot table and then create a new pivot table with same parameters. +--------------+---------+-------+ | SUM of Units | Product | | | Region | Pen | Paper | +--------------+---------+-------+ | New York | 345 | 98 | | Oregon | 234 | 123 | | Tennessee | 531 | 415 | +--------------+---------+-------+ | Grand Total | 1110 | 636 | +--------------+---------+-------+
   *   `repeatHeadings` (*type:* `boolean()`, *default:* `nil`) - True if the headings in this pivot group should be repeated. This is only valid for row groupings and is ignored by columns. By default, we minimize repitition of headings by not showing higher level headings where they are the same. For example, even though the third row below corresponds to "Q1 Mar", "Q1" is not shown because it is redundant with previous rows. Setting repeat_headings to true would cause "Q1" to be repeated for "Feb" and "Mar". +--------------+ | Q1 | Jan | | | Feb | | | Mar | +--------+-----+ | Q1 Total | +--------------+
@@ -34,6 +36,8 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataSourceColumnReference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t(),
+          :groupLimit => GoogleApi.Sheets.V4.Model.PivotGroupLimit.t(),
           :groupRule => GoogleApi.Sheets.V4.Model.PivotGroupRule.t(),
           :label => String.t(),
           :repeatHeadings => boolean(),
@@ -44,6 +48,8 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroup do
           :valueMetadata => list(GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata.t())
         }
 
+  field(:dataSourceColumnReference, as: GoogleApi.Sheets.V4.Model.DataSourceColumnReference)
+  field(:groupLimit, as: GoogleApi.Sheets.V4.Model.PivotGroupLimit)
   field(:groupRule, as: GoogleApi.Sheets.V4.Model.PivotGroupRule)
   field(:label)
   field(:repeatHeadings)

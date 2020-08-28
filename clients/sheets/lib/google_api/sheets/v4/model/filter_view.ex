@@ -22,6 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.FilterView do
   ## Attributes
 
   *   `criteria` (*type:* `%{optional(String.t) => GoogleApi.Sheets.V4.Model.FilterCriteria.t}`, *default:* `nil`) - The criteria for showing/hiding values per column. The map's key is the column index, and the value is the criteria for that column.
+  *   `filterSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.FilterSpec.t)`, *default:* `nil`) - The filter criteria for showing/hiding values per column. Both criteria and filter_specs are populated in responses. If both fields are specified in an update request, this field takes precedence.
   *   `filterViewId` (*type:* `integer()`, *default:* `nil`) - The ID of the filter view.
   *   `namedRangeId` (*type:* `String.t`, *default:* `nil`) - The named range this filter view is backed by, if any. When writing, only one of range or named_range_id may be set.
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range this filter view covers. When writing, only one of range or named_range_id may be set.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Sheets.V4.Model.FilterView do
 
   @type t :: %__MODULE__{
           :criteria => %{optional(String.t()) => GoogleApi.Sheets.V4.Model.FilterCriteria.t()},
+          :filterSpecs => list(GoogleApi.Sheets.V4.Model.FilterSpec.t()),
           :filterViewId => integer(),
           :namedRangeId => String.t(),
           :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
@@ -41,6 +43,7 @@ defmodule GoogleApi.Sheets.V4.Model.FilterView do
         }
 
   field(:criteria, as: GoogleApi.Sheets.V4.Model.FilterCriteria, type: :map)
+  field(:filterSpecs, as: GoogleApi.Sheets.V4.Model.FilterSpec, type: :list)
   field(:filterViewId)
   field(:namedRangeId)
   field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)

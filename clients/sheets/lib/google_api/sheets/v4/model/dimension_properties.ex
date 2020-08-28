@@ -21,6 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.DimensionProperties do
 
   ## Attributes
 
+  *   `dataSourceColumnReference` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t`, *default:* `nil`) - Output only. If set, this is a column in a data source sheet.
   *   `developerMetadata` (*type:* `list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t)`, *default:* `nil`) - The developer metadata associated with a single row or column.
   *   `hiddenByFilter` (*type:* `boolean()`, *default:* `nil`) - True if this dimension is being filtered. This field is read-only.
   *   `hiddenByUser` (*type:* `boolean()`, *default:* `nil`) - True if this dimension is explicitly hidden.
@@ -30,12 +31,14 @@ defmodule GoogleApi.Sheets.V4.Model.DimensionProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataSourceColumnReference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t(),
           :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()),
           :hiddenByFilter => boolean(),
           :hiddenByUser => boolean(),
           :pixelSize => integer()
         }
 
+  field(:dataSourceColumnReference, as: GoogleApi.Sheets.V4.Model.DataSourceColumnReference)
   field(:developerMetadata, as: GoogleApi.Sheets.V4.Model.DeveloperMetadata, type: :list)
   field(:hiddenByFilter)
   field(:hiddenByUser)

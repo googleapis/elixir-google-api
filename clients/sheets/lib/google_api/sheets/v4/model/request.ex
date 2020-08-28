@@ -27,6 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `addNamedRange` (*type:* `GoogleApi.Sheets.V4.Model.AddNamedRangeRequest.t`, *default:* `nil`) - Adds a named range.
   *   `setDataValidation` (*type:* `GoogleApi.Sheets.V4.Model.SetDataValidationRequest.t`, *default:* `nil`) - Sets data validation for one or more cells.
   *   `updateDimensionProperties` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest.t`, *default:* `nil`) - Updates dimensions' properties.
+  *   `refreshDataSource` (*type:* `GoogleApi.Sheets.V4.Model.RefreshDataSourceRequest.t`, *default:* `nil`) - Refreshs one or multiple data sources and associated dbobjects.
   *   `updateDimensionGroup` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest.t`, *default:* `nil`) - Updates the state of the specified group.
   *   `appendDimension` (*type:* `GoogleApi.Sheets.V4.Model.AppendDimensionRequest.t`, *default:* `nil`) - Appends dimensions to the end of a sheet.
   *   `duplicateFilterView` (*type:* `GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest.t`, *default:* `nil`) - Duplicates a filter view.
@@ -39,9 +40,11 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `deleteDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t`, *default:* `nil`) - Deletes developer metadata
   *   `randomizeRange` (*type:* `GoogleApi.Sheets.V4.Model.RandomizeRangeRequest.t`, *default:* `nil`) - Randomizes the order of the rows in a range.
   *   `appendCells` (*type:* `GoogleApi.Sheets.V4.Model.AppendCellsRequest.t`, *default:* `nil`) - Appends cells after the last row with data in a sheet.
+  *   `deleteDataSource` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDataSourceRequest.t`, *default:* `nil`) - Deletes a data source.
   *   `updateCells` (*type:* `GoogleApi.Sheets.V4.Model.UpdateCellsRequest.t`, *default:* `nil`) - Updates many cells at once.
   *   `addBanding` (*type:* `GoogleApi.Sheets.V4.Model.AddBandingRequest.t`, *default:* `nil`) - Adds a new banded range
   *   `deleteEmbeddedObject` (*type:* `GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest.t`, *default:* `nil`) - Deletes an embedded object (e.g, chart, image) in a sheet.
+  *   `addDataSource` (*type:* `GoogleApi.Sheets.V4.Model.AddDataSourceRequest.t`, *default:* `nil`) - Adds a data source.
   *   `findReplace` (*type:* `GoogleApi.Sheets.V4.Model.FindReplaceRequest.t`, *default:* `nil`) - Finds and replaces occurrences of some text with other text.
   *   `cutPaste` (*type:* `GoogleApi.Sheets.V4.Model.CutPasteRequest.t`, *default:* `nil`) - Cuts data from one area and pastes it to another.
   *   `updateProtectedRange` (*type:* `GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest.t`, *default:* `nil`) - Updates a protected range.
@@ -55,6 +58,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `deleteConditionalFormatRule` (*type:* `GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest.t`, *default:* `nil`) - Deletes an existing conditional format rule.
   *   `updateFilterView` (*type:* `GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest.t`, *default:* `nil`) - Updates the properties of a filter view.
   *   `copyPaste` (*type:* `GoogleApi.Sheets.V4.Model.CopyPasteRequest.t`, *default:* `nil`) - Copies data from one area and pastes it to another.
+  *   `updateDataSource` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDataSourceRequest.t`, *default:* `nil`) - Updates a data source.
   *   `unmergeCells` (*type:* `GoogleApi.Sheets.V4.Model.UnmergeCellsRequest.t`, *default:* `nil`) - Unmerges merged cells.
   *   `createDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataRequest.t`, *default:* `nil`) - Creates new developer metadata
   *   `updateSpreadsheetProperties` (*type:* `GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest.t`, *default:* `nil`) - Updates the spreadsheet's properties.
@@ -94,6 +98,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
           :setDataValidation => GoogleApi.Sheets.V4.Model.SetDataValidationRequest.t(),
           :updateDimensionProperties =>
             GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest.t(),
+          :refreshDataSource => GoogleApi.Sheets.V4.Model.RefreshDataSourceRequest.t(),
           :updateDimensionGroup => GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest.t(),
           :appendDimension => GoogleApi.Sheets.V4.Model.AppendDimensionRequest.t(),
           :duplicateFilterView => GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest.t(),
@@ -108,9 +113,11 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
             GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t(),
           :randomizeRange => GoogleApi.Sheets.V4.Model.RandomizeRangeRequest.t(),
           :appendCells => GoogleApi.Sheets.V4.Model.AppendCellsRequest.t(),
+          :deleteDataSource => GoogleApi.Sheets.V4.Model.DeleteDataSourceRequest.t(),
           :updateCells => GoogleApi.Sheets.V4.Model.UpdateCellsRequest.t(),
           :addBanding => GoogleApi.Sheets.V4.Model.AddBandingRequest.t(),
           :deleteEmbeddedObject => GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest.t(),
+          :addDataSource => GoogleApi.Sheets.V4.Model.AddDataSourceRequest.t(),
           :findReplace => GoogleApi.Sheets.V4.Model.FindReplaceRequest.t(),
           :cutPaste => GoogleApi.Sheets.V4.Model.CutPasteRequest.t(),
           :updateProtectedRange => GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest.t(),
@@ -125,6 +132,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
             GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleRequest.t(),
           :updateFilterView => GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest.t(),
           :copyPaste => GoogleApi.Sheets.V4.Model.CopyPasteRequest.t(),
+          :updateDataSource => GoogleApi.Sheets.V4.Model.UpdateDataSourceRequest.t(),
           :unmergeCells => GoogleApi.Sheets.V4.Model.UnmergeCellsRequest.t(),
           :createDeveloperMetadata =>
             GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataRequest.t(),
@@ -165,6 +173,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
 
   field(:updateDimensionProperties, as: GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest)
 
+  field(:refreshDataSource, as: GoogleApi.Sheets.V4.Model.RefreshDataSourceRequest)
   field(:updateDimensionGroup, as: GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest)
   field(:appendDimension, as: GoogleApi.Sheets.V4.Model.AppendDimensionRequest)
   field(:duplicateFilterView, as: GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest)
@@ -181,9 +190,11 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   field(:deleteDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest)
   field(:randomizeRange, as: GoogleApi.Sheets.V4.Model.RandomizeRangeRequest)
   field(:appendCells, as: GoogleApi.Sheets.V4.Model.AppendCellsRequest)
+  field(:deleteDataSource, as: GoogleApi.Sheets.V4.Model.DeleteDataSourceRequest)
   field(:updateCells, as: GoogleApi.Sheets.V4.Model.UpdateCellsRequest)
   field(:addBanding, as: GoogleApi.Sheets.V4.Model.AddBandingRequest)
   field(:deleteEmbeddedObject, as: GoogleApi.Sheets.V4.Model.DeleteEmbeddedObjectRequest)
+  field(:addDataSource, as: GoogleApi.Sheets.V4.Model.AddDataSourceRequest)
   field(:findReplace, as: GoogleApi.Sheets.V4.Model.FindReplaceRequest)
   field(:cutPaste, as: GoogleApi.Sheets.V4.Model.CutPasteRequest)
   field(:updateProtectedRange, as: GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest)
@@ -201,6 +212,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
 
   field(:updateFilterView, as: GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest)
   field(:copyPaste, as: GoogleApi.Sheets.V4.Model.CopyPasteRequest)
+  field(:updateDataSource, as: GoogleApi.Sheets.V4.Model.UpdateDataSourceRequest)
   field(:unmergeCells, as: GoogleApi.Sheets.V4.Model.UnmergeCellsRequest)
   field(:createDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataRequest)
 

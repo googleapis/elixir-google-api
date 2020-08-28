@@ -22,6 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.BasicFilter do
   ## Attributes
 
   *   `criteria` (*type:* `%{optional(String.t) => GoogleApi.Sheets.V4.Model.FilterCriteria.t}`, *default:* `nil`) - The criteria for showing/hiding values per column. The map's key is the column index, and the value is the criteria for that column.
+  *   `filterSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.FilterSpec.t)`, *default:* `nil`) - The filter criteria per column. Both criteria and filter_specs are populated in responses. If both fields are specified in an update request, this field takes precedence.
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range the filter covers.
   *   `sortSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.SortSpec.t)`, *default:* `nil`) - The sort order per column. Later specifications are used when values are equal in the earlier specifications.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Sheets.V4.Model.BasicFilter do
 
   @type t :: %__MODULE__{
           :criteria => %{optional(String.t()) => GoogleApi.Sheets.V4.Model.FilterCriteria.t()},
+          :filterSpecs => list(GoogleApi.Sheets.V4.Model.FilterSpec.t()),
           :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
           :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t())
         }
 
   field(:criteria, as: GoogleApi.Sheets.V4.Model.FilterCriteria, type: :map)
+  field(:filterSpecs, as: GoogleApi.Sheets.V4.Model.FilterSpec, type: :list)
   field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
   field(:sortSpecs, as: GoogleApi.Sheets.V4.Model.SortSpec, type: :list)
 end
