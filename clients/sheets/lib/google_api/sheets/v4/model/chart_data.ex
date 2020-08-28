@@ -21,15 +21,24 @@ defmodule GoogleApi.Sheets.V4.Model.ChartData do
 
   ## Attributes
 
+  *   `aggregateType` (*type:* `String.t`, *default:* `nil`) - The aggregation type for the series of a data source chart. Not supported for regular charts.
+  *   `columnReference` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t`, *default:* `nil`) - The reference to the data source column that the data reads from.
+  *   `groupRule` (*type:* `GoogleApi.Sheets.V4.Model.ChartGroupRule.t`, *default:* `nil`) - The rule to group the data by if the ChartData backs the domain of a data source chart. Not supported for regular charts.
   *   `sourceRange` (*type:* `GoogleApi.Sheets.V4.Model.ChartSourceRange.t`, *default:* `nil`) - The source ranges of the data.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :aggregateType => String.t(),
+          :columnReference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t(),
+          :groupRule => GoogleApi.Sheets.V4.Model.ChartGroupRule.t(),
           :sourceRange => GoogleApi.Sheets.V4.Model.ChartSourceRange.t()
         }
 
+  field(:aggregateType)
+  field(:columnReference, as: GoogleApi.Sheets.V4.Model.DataSourceColumnReference)
+  field(:groupRule, as: GoogleApi.Sheets.V4.Model.ChartGroupRule)
   field(:sourceRange, as: GoogleApi.Sheets.V4.Model.ChartSourceRange)
 end
 

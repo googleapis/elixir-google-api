@@ -21,15 +21,19 @@ defmodule GoogleApi.Sheets.V4.Model.AutoResizeDimensionsRequest do
 
   ## Attributes
 
+  *   `dataSourceSheetDimensions` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange.t`, *default:* `nil`) - The dimensions on a data source sheet to automatically resize.
   *   `dimensions` (*type:* `GoogleApi.Sheets.V4.Model.DimensionRange.t`, *default:* `nil`) - The dimensions to automatically resize.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataSourceSheetDimensions =>
+            GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange.t(),
           :dimensions => GoogleApi.Sheets.V4.Model.DimensionRange.t()
         }
 
+  field(:dataSourceSheetDimensions, as: GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange)
   field(:dimensions, as: GoogleApi.Sheets.V4.Model.DimensionRange)
 end
 

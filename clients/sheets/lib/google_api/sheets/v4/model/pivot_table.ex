@@ -23,6 +23,9 @@ defmodule GoogleApi.Sheets.V4.Model.PivotTable do
 
   *   `columns` (*type:* `list(GoogleApi.Sheets.V4.Model.PivotGroup.t)`, *default:* `nil`) - Each column grouping in the pivot table.
   *   `criteria` (*type:* `%{optional(String.t) => GoogleApi.Sheets.V4.Model.PivotFilterCriteria.t}`, *default:* `nil`) - An optional mapping of filters per source column offset. The filters are applied before aggregating data into the pivot table. The map's key is the column offset of the source range that you want to filter, and the value is the criteria for that column. For example, if the source was `C10:E15`, a key of `0` will have the filter for column `C`, whereas the key `1` is for column `D`.
+  *   `dataExecutionStatus` (*type:* `GoogleApi.Sheets.V4.Model.DataExecutionStatus.t`, *default:* `nil`) - Output only. The data execution status for data source pivot tables.
+  *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - The ID of the data source the pivot table is reading data from.
+  *   `filterSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.PivotFilterSpec.t)`, *default:* `nil`) - The filters applied to the source columns before aggregating data for the pivot table. Both criteria and filter_specs are populated in responses. If both fields are specified in an update request, this field takes precedence.
   *   `rows` (*type:* `list(GoogleApi.Sheets.V4.Model.PivotGroup.t)`, *default:* `nil`) - Each row grouping in the pivot table.
   *   `source` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range the pivot table is reading data from.
   *   `valueLayout` (*type:* `String.t`, *default:* `nil`) - Whether values should be listed horizontally (as columns) or vertically (as rows).
@@ -36,6 +39,9 @@ defmodule GoogleApi.Sheets.V4.Model.PivotTable do
           :criteria => %{
             optional(String.t()) => GoogleApi.Sheets.V4.Model.PivotFilterCriteria.t()
           },
+          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t(),
+          :dataSourceId => String.t(),
+          :filterSpecs => list(GoogleApi.Sheets.V4.Model.PivotFilterSpec.t()),
           :rows => list(GoogleApi.Sheets.V4.Model.PivotGroup.t()),
           :source => GoogleApi.Sheets.V4.Model.GridRange.t(),
           :valueLayout => String.t(),
@@ -44,6 +50,9 @@ defmodule GoogleApi.Sheets.V4.Model.PivotTable do
 
   field(:columns, as: GoogleApi.Sheets.V4.Model.PivotGroup, type: :list)
   field(:criteria, as: GoogleApi.Sheets.V4.Model.PivotFilterCriteria, type: :map)
+  field(:dataExecutionStatus, as: GoogleApi.Sheets.V4.Model.DataExecutionStatus)
+  field(:dataSourceId)
+  field(:filterSpecs, as: GoogleApi.Sheets.V4.Model.PivotFilterSpec, type: :list)
   field(:rows, as: GoogleApi.Sheets.V4.Model.PivotGroup, type: :list)
   field(:source, as: GoogleApi.Sheets.V4.Model.GridRange)
   field(:valueLayout)

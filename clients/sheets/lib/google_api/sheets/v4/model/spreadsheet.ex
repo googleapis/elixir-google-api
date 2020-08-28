@@ -21,6 +21,8 @@ defmodule GoogleApi.Sheets.V4.Model.Spreadsheet do
 
   ## Attributes
 
+  *   `dataSourceSchedules` (*type:* `list(GoogleApi.Sheets.V4.Model.DataSourceRefreshSchedule.t)`, *default:* `nil`) - Output only. A list of data source refresh schedules.
+  *   `dataSources` (*type:* `list(GoogleApi.Sheets.V4.Model.DataSource.t)`, *default:* `nil`) - A list of external data sources connected with the spreadsheet.
   *   `developerMetadata` (*type:* `list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t)`, *default:* `nil`) - The developer metadata associated with a spreadsheet.
   *   `namedRanges` (*type:* `list(GoogleApi.Sheets.V4.Model.NamedRange.t)`, *default:* `nil`) - The named ranges defined in a spreadsheet.
   *   `properties` (*type:* `GoogleApi.Sheets.V4.Model.SpreadsheetProperties.t`, *default:* `nil`) - Overall properties of a spreadsheet.
@@ -32,6 +34,8 @@ defmodule GoogleApi.Sheets.V4.Model.Spreadsheet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataSourceSchedules => list(GoogleApi.Sheets.V4.Model.DataSourceRefreshSchedule.t()),
+          :dataSources => list(GoogleApi.Sheets.V4.Model.DataSource.t()),
           :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()),
           :namedRanges => list(GoogleApi.Sheets.V4.Model.NamedRange.t()),
           :properties => GoogleApi.Sheets.V4.Model.SpreadsheetProperties.t(),
@@ -40,6 +44,9 @@ defmodule GoogleApi.Sheets.V4.Model.Spreadsheet do
           :spreadsheetUrl => String.t()
         }
 
+  field(:dataSourceSchedules, as: GoogleApi.Sheets.V4.Model.DataSourceRefreshSchedule, type: :list)
+
+  field(:dataSources, as: GoogleApi.Sheets.V4.Model.DataSource, type: :list)
   field(:developerMetadata, as: GoogleApi.Sheets.V4.Model.DeveloperMetadata, type: :list)
   field(:namedRanges, as: GoogleApi.Sheets.V4.Model.NamedRange, type: :list)
   field(:properties, as: GoogleApi.Sheets.V4.Model.SpreadsheetProperties)

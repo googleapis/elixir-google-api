@@ -27,6 +27,8 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   *   `basicChart` (*type:* `GoogleApi.Sheets.V4.Model.BasicChartSpec.t`, *default:* `nil`) - A basic chart specification, can be one of many kinds of charts. See BasicChartType for the list of all charts this supports.
   *   `bubbleChart` (*type:* `GoogleApi.Sheets.V4.Model.BubbleChartSpec.t`, *default:* `nil`) - A bubble chart specification.
   *   `candlestickChart` (*type:* `GoogleApi.Sheets.V4.Model.CandlestickChartSpec.t`, *default:* `nil`) - A candlestick chart specification.
+  *   `dataSourceChartProperties` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceChartProperties.t`, *default:* `nil`) - If present, the field contains data source chart specific properties.
+  *   `filterSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.FilterSpec.t)`, *default:* `nil`) - The filters applied to the source data of the chart. Only supported for data source charts.
   *   `fontName` (*type:* `String.t`, *default:* `nil`) - The name of the font to use by default for all chart text (e.g. title, axis labels, legend). If a font is specified for a specific part of the chart it will override this font name.
   *   `hiddenDimensionStrategy` (*type:* `String.t`, *default:* `nil`) - Determines how the charts will use hidden rows or columns.
   *   `histogramChart` (*type:* `GoogleApi.Sheets.V4.Model.HistogramChartSpec.t`, *default:* `nil`) - A histogram chart specification.
@@ -34,6 +36,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   *   `orgChart` (*type:* `GoogleApi.Sheets.V4.Model.OrgChartSpec.t`, *default:* `nil`) - An org chart specification.
   *   `pieChart` (*type:* `GoogleApi.Sheets.V4.Model.PieChartSpec.t`, *default:* `nil`) - A pie chart specification.
   *   `scorecardChart` (*type:* `GoogleApi.Sheets.V4.Model.ScorecardChartSpec.t`, *default:* `nil`) - A scorecard chart specification.
+  *   `sortSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.SortSpec.t)`, *default:* `nil`) - The order to sort the chart data by. Only a single sort spec is supported. Only supported for data source charts.
   *   `subtitle` (*type:* `String.t`, *default:* `nil`) - The subtitle of the chart.
   *   `subtitleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The subtitle text format. Strikethrough and underline are not supported.
   *   `subtitleTextPosition` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - The subtitle text position. This field is optional.
@@ -53,6 +56,8 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
           :basicChart => GoogleApi.Sheets.V4.Model.BasicChartSpec.t(),
           :bubbleChart => GoogleApi.Sheets.V4.Model.BubbleChartSpec.t(),
           :candlestickChart => GoogleApi.Sheets.V4.Model.CandlestickChartSpec.t(),
+          :dataSourceChartProperties => GoogleApi.Sheets.V4.Model.DataSourceChartProperties.t(),
+          :filterSpecs => list(GoogleApi.Sheets.V4.Model.FilterSpec.t()),
           :fontName => String.t(),
           :hiddenDimensionStrategy => String.t(),
           :histogramChart => GoogleApi.Sheets.V4.Model.HistogramChartSpec.t(),
@@ -60,6 +65,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
           :orgChart => GoogleApi.Sheets.V4.Model.OrgChartSpec.t(),
           :pieChart => GoogleApi.Sheets.V4.Model.PieChartSpec.t(),
           :scorecardChart => GoogleApi.Sheets.V4.Model.ScorecardChartSpec.t(),
+          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t()),
           :subtitle => String.t(),
           :subtitleTextFormat => GoogleApi.Sheets.V4.Model.TextFormat.t(),
           :subtitleTextPosition => GoogleApi.Sheets.V4.Model.TextPosition.t(),
@@ -76,6 +82,8 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   field(:basicChart, as: GoogleApi.Sheets.V4.Model.BasicChartSpec)
   field(:bubbleChart, as: GoogleApi.Sheets.V4.Model.BubbleChartSpec)
   field(:candlestickChart, as: GoogleApi.Sheets.V4.Model.CandlestickChartSpec)
+  field(:dataSourceChartProperties, as: GoogleApi.Sheets.V4.Model.DataSourceChartProperties)
+  field(:filterSpecs, as: GoogleApi.Sheets.V4.Model.FilterSpec, type: :list)
   field(:fontName)
   field(:hiddenDimensionStrategy)
   field(:histogramChart, as: GoogleApi.Sheets.V4.Model.HistogramChartSpec)
@@ -83,6 +91,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   field(:orgChart, as: GoogleApi.Sheets.V4.Model.OrgChartSpec)
   field(:pieChart, as: GoogleApi.Sheets.V4.Model.PieChartSpec)
   field(:scorecardChart, as: GoogleApi.Sheets.V4.Model.ScorecardChartSpec)
+  field(:sortSpecs, as: GoogleApi.Sheets.V4.Model.SortSpec, type: :list)
   field(:subtitle)
   field(:subtitleTextFormat, as: GoogleApi.Sheets.V4.Model.TextFormat)
   field(:subtitleTextPosition, as: GoogleApi.Sheets.V4.Model.TextPosition)
