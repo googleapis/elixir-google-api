@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo do
   @moduledoc """
-  For display only. The specification of the endpoints for the test.
-  EndpointInfo is derived from source and destination Endpoint and validated
-  by the backend data plane model.
+  For display only. The specification of the endpoints for the test. EndpointInfo is derived from source and destination Endpoint and validated by the backend data plane model.
 
   ## Attributes
 

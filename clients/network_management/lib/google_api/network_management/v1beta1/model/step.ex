@@ -17,23 +17,21 @@
 
 defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   @moduledoc """
-  A simulated forwarding path is composed of multiple steps.
-  Each step has a well-defined state and an associated configuration.
+  A simulated forwarding path is composed of multiple steps. Each step has a well-defined state and an associated configuration.
 
   ## Attributes
 
   *   `abort` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.AbortInfo.t`, *default:* `nil`) - Display info of the final state "abort" and reason.
   *   `causesDrop` (*type:* `boolean()`, *default:* `nil`) - This is a step that leads to the final state Drop.
+  *   `cloudSqlInstance` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo.t`, *default:* `nil`) - Display info of a Cloud SQL instance.
   *   `deliver` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.DeliverInfo.t`, *default:* `nil`) - Display info of the final state "deliver" and reason.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the step. Usually this is a summary of the state.
   *   `drop` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.DropInfo.t`, *default:* `nil`) - Display info of the final state "drop" and reason.
-  *   `endpoint` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t`, *default:* `nil`) - Display info of the source and destination under analysis.
-      The endpiont info in an intermediate state may differ with the
-      initial input, as it might be modified by state like NAT,
-      or Connection Proxy.
+  *   `endpoint` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t`, *default:* `nil`) - Display info of the source and destination under analysis. The endpiont info in an intermediate state may differ with the initial input, as it might be modified by state like NAT, or Connection Proxy.
   *   `firewall` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.FirewallInfo.t`, *default:* `nil`) - Display info of a Compute Engine firewall rule.
   *   `forward` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ForwardInfo.t`, *default:* `nil`) - Display info of the final state "forward" and reason.
   *   `forwardingRule` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ForwardingRuleInfo.t`, *default:* `nil`) - Display info of a Compute Engine forwarding rule.
+  *   `gkeMaster` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo.t`, *default:* `nil`) - Display info of a Google Kubernetes Engine cluster master.
   *   `instance` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.InstanceInfo.t`, *default:* `nil`) - Display info of a Compute Engine instance.
   *   `loadBalancer` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerInfo.t`, *default:* `nil`) - Display info of the load balancers.
   *   `network` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo.t`, *default:* `nil`) - Display info of a GCP network.
@@ -49,6 +47,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   @type t :: %__MODULE__{
           :abort => GoogleApi.NetworkManagement.V1beta1.Model.AbortInfo.t(),
           :causesDrop => boolean(),
+          :cloudSqlInstance => GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo.t(),
           :deliver => GoogleApi.NetworkManagement.V1beta1.Model.DeliverInfo.t(),
           :description => String.t(),
           :drop => GoogleApi.NetworkManagement.V1beta1.Model.DropInfo.t(),
@@ -56,6 +55,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
           :firewall => GoogleApi.NetworkManagement.V1beta1.Model.FirewallInfo.t(),
           :forward => GoogleApi.NetworkManagement.V1beta1.Model.ForwardInfo.t(),
           :forwardingRule => GoogleApi.NetworkManagement.V1beta1.Model.ForwardingRuleInfo.t(),
+          :gkeMaster => GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo.t(),
           :instance => GoogleApi.NetworkManagement.V1beta1.Model.InstanceInfo.t(),
           :loadBalancer => GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerInfo.t(),
           :network => GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo.t(),
@@ -68,6 +68,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
 
   field(:abort, as: GoogleApi.NetworkManagement.V1beta1.Model.AbortInfo)
   field(:causesDrop)
+  field(:cloudSqlInstance, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudSQLInstanceInfo)
   field(:deliver, as: GoogleApi.NetworkManagement.V1beta1.Model.DeliverInfo)
   field(:description)
   field(:drop, as: GoogleApi.NetworkManagement.V1beta1.Model.DropInfo)
@@ -75,6 +76,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   field(:firewall, as: GoogleApi.NetworkManagement.V1beta1.Model.FirewallInfo)
   field(:forward, as: GoogleApi.NetworkManagement.V1beta1.Model.ForwardInfo)
   field(:forwardingRule, as: GoogleApi.NetworkManagement.V1beta1.Model.ForwardingRuleInfo)
+  field(:gkeMaster, as: GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo)
   field(:instance, as: GoogleApi.NetworkManagement.V1beta1.Model.InstanceInfo)
   field(:loadBalancer, as: GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerInfo)
   field(:network, as: GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo)

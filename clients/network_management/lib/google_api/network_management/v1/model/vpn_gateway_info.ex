@@ -26,9 +26,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.VpnGatewayInfo do
   *   `networkUri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine network where the VPN gateway is configured.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Name of a GCP region where this VPN gateway is configured.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a VPN gateway.
-  *   `vpnTunnelUri` (*type:* `String.t`, *default:* `nil`) - A VPN tunnel that is associated with this VPN gateway.
-      There may be multiple VPN tunnels configured on a VPN gateway, and only
-      the one relevant to the test is displayed.
+  *   `vpnTunnelUri` (*type:* `String.t`, *default:* `nil`) - A VPN tunnel that is associated with this VPN gateway. There may be multiple VPN tunnels configured on a VPN gateway, and only the one relevant to the test is displayed.
   """
 
   use GoogleApi.Gax.ModelBase

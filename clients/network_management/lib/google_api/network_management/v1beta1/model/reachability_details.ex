@@ -23,9 +23,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails do
 
   *   `error` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.Status.t`, *default:* `nil`) - The details of a failure or a cancellation of reachability analysis.
   *   `result` (*type:* `String.t`, *default:* `nil`) - The overall reachability result of the test.
-  *   `traces` (*type:* `list(GoogleApi.NetworkManagement.V1beta1.Model.Trace.t)`, *default:* `nil`) - Result may contain a list of traces if a test has multiple possible
-      paths in the network, such as when destination endpoint is a load balancer
-      with multiple backends.
+  *   `traces` (*type:* `list(GoogleApi.NetworkManagement.V1beta1.Model.Trace.t)`, *default:* `nil`) - Result may contain a list of traces if a test has multiple possible paths in the network, such as when destination endpoint is a load balancer with multiple backends.
   *   `verifyTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the reachability state was verified.
   """
 
