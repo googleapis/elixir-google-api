@@ -18,7 +18,7 @@
 defmodule GoogleApi.IAM.Mixfile do
   use Mix.Project
 
-  @version "0.28.1"
+  @version "0.28.2"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.IAM.Mixfile do
 
   defp description() do
     """
-    Identity and Access Management (IAM) API client library. Manages identity and access control for Google Cloud Platform resources, including the creation of service accounts, which you can use to authenticate to Google and make API calls.
+    Identity and Access Management (IAM) API client library.
     """
   end
 
