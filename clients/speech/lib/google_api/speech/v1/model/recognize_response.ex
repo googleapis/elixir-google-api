@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Speech.V1.Model.RecognizeResponse do
   @moduledoc """
-  The only message returned to the client by the `Recognize` method. It
-  contains the result as zero or more sequential `SpeechRecognitionResult`
-  messages.
+  The only message returned to the client by the `Recognize` method. It contains the result as zero or more sequential `SpeechRecognitionResult` messages.
 
   ## Attributes
 
-  *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to
-      sequential portions of audio.
+  *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to sequential portions of audio.
   """
 
   use GoogleApi.Gax.ModelBase

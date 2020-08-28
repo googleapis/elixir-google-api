@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeResponse do
   @moduledoc """
-  The only message returned to the client by the `LongRunningRecognize` method.
-  It contains the result as zero or more sequential `SpeechRecognitionResult`
-  messages. It is included in the `result.response` field of the `Operation`
-  returned by the `GetOperation` call of the `google::longrunning::Operations`
-  service.
+  The only message returned to the client by the `LongRunningRecognize` method. It contains the result as zero or more sequential `SpeechRecognitionResult` messages. It is included in the `result.response` field of the `Operation` returned by the `GetOperation` call of the `google::longrunning::Operations` service.
 
   ## Attributes
 
-  *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to
-      sequential portions of audio.
+  *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to sequential portions of audio.
   """
 
   use GoogleApi.Gax.ModelBase

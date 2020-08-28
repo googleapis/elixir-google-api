@@ -26,12 +26,7 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Performs asynchronous speech recognition: receive results via the
-  google.longrunning.Operations interface. Returns either an
-  `Operation.error` or an `Operation.response` which contains
-  a `LongRunningRecognizeResponse` message.
-  For more information on asynchronous speech recognition, see the
-  [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
+  Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an `Operation.error` or an `Operation.response` which contains a `LongRunningRecognizeResponse` message. For more information on asynchronous speech recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
 
   ## Parameters
 
@@ -87,8 +82,7 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   end
 
   @doc """
-  Performs synchronous speech recognition: receive results after all audio
-  has been sent and processed.
+  Performs synchronous speech recognition: receive results after all audio has been sent and processed.
 
   ## Parameters
 

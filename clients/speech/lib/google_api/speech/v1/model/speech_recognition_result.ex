@@ -21,13 +21,8 @@ defmodule GoogleApi.Speech.V1.Model.SpeechRecognitionResult do
 
   ## Attributes
 
-  *   `alternatives` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative.t)`, *default:* `nil`) - May contain one or more recognition hypotheses (up to the
-      maximum specified in `max_alternatives`).
-      These alternatives are ordered in terms of accuracy, with the top (first)
-      alternative being the most probable, as ranked by the recognizer.
-  *   `channelTag` (*type:* `integer()`, *default:* `nil`) - For multi-channel audio, this is the channel number corresponding to the
-      recognized result for the audio from that channel.
-      For audio_channel_count = N, its output values can range from '1' to 'N'.
+  *   `alternatives` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionAlternative.t)`, *default:* `nil`) - May contain one or more recognition hypotheses (up to the maximum specified in `max_alternatives`). These alternatives are ordered in terms of accuracy, with the top (first) alternative being the most probable, as ranked by the recognizer.
+  *   `channelTag` (*type:* `integer()`, *default:* `nil`) - For multi-channel audio, this is the channel number corresponding to the recognized result for the audio from that channel. For audio_channel_count = N, its output values can range from '1' to 'N'.
   """
 
   use GoogleApi.Gax.ModelBase
