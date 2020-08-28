@@ -18,7 +18,7 @@
 defmodule GoogleApi.IAMCredentials.Mixfile do
   use Mix.Project
 
-  @version "0.11.1"
+  @version "0.11.2"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.IAMCredentials.Mixfile do
 
   defp description() do
     """
-    IAM Service Account Credentials API client library. Creates short-lived credentials for impersonating IAM service accounts.
+    IAM Service Account Credentials API client library.  Creates short-lived credentials for impersonating IAM service accounts. *Note:* This API is tied to the IAM API (iam.googleapis.com). Enabling or disabling this API will also enable or disable the IAM API. 
     """
   end
 
