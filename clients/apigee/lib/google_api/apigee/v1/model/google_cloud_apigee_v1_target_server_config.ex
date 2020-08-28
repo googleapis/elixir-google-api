@@ -21,10 +21,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig do
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Target host name.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The target server revision name. Must be of the form 'organizations/{org}/environments/{env}/targetservers/{ts_id}/revisions/{rev}'.
-  *   `port` (*type:* `integer()`, *default:* `nil`) - Target port.
-  *   `tlsInfo` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig.t`, *default:* `nil`) - TLS settings for the target.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Host name of the target server.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Target server revision name in the following format: `organizations/{org}/environments/{env}/targetservers/{targetserver}/revisions/{rev}`
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Port number for the target server.
+  *   `tlsInfo` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig.t`, *default:* `nil`) - TLS settings for the target server.
   """
 
   use GoogleApi.Gax.ModelBase

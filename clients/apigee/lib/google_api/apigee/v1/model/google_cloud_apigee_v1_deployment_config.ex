@@ -21,12 +21,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
 
   ## Attributes
 
-  *   `attributes` (*type:* `map()`, *default:* `nil`) - Additional key-value metadata about the deployment.
-  *   `basePath` (*type:* `String.t`, *default:* `nil`) - Base path where the application needs to be hosted. Default value is assumed to be "/".
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the proxy bundle, as a uri.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the API or shared flow revision to be deployed. Must be of the form 'organizations/{org}/apis/{api}/revisions/{rev}' or 'organizations/{org}/sharedflows/{sf}/revisions/{rev}'.
-  *   `proxyUid` (*type:* `String.t`, *default:* `nil`) - The uid of the proxy revision.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id that will only change if the deployment is deleted and recreated.
+  *   `attributes` (*type:* `map()`, *default:* `nil`) - Additional key-value metadata for the deployment.
+  *   `basePath` (*type:* `String.t`, *default:* `nil`) - Base path where the application will be hosted. Defaults to "/".
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the API proxy bundle as a URI.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the API or shared flow revision to be deployed in the following format: `organizations/{org}/apis/{api}/revisions/{rev}` or `organizations/{org}/sharedflows/{sharedflow}/revisions/{rev}`
+  *   `proxyUid` (*type:* `String.t`, *default:* `nil`) - Unique ID of the API proxy revision.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Unique ID. The ID will only change if the deployment is deleted and recreated.
   """
 
   use GoogleApi.Gax.ModelBase

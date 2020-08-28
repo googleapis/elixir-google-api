@@ -21,9 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig do
 
   ## Attributes
 
-  *   `continueOnError` (*type:* `boolean()`, *default:* `nil`) - Should the flow abort after an error in the flow hook. Should default to true if unset.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the flow hook. Must be of the form 'organizations/{org}/environments/{env}/flowhooks/{point}'. Known points are PreProxyFlowHook, PostProxyFlowHook, PreTargetFlowHook, and PostTargetFlowHook
-  *   `sharedFlowName` (*type:* `String.t`, *default:* `nil`) - The name of the shared flow to invoke. Must be of the form 'organizations/{org}/sharedflows/{sharedflow}'.
+  *   `continueOnError` (*type:* `boolean()`, *default:* `nil`) - Flag that specifies whether the flow should abort after an error in the flow hook. Defaults to `true` (continue on error).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the flow hook in the following format: `organizations/{org}/environments/{env}/flowhooks/{point}`. Valid `point` values include: `PreProxyFlowHook`, `PostProxyFlowHook`, `PreTargetFlowHook`, and `PostTargetFlowHook`
+  *   `sharedFlowName` (*type:* `String.t`, *default:* `nil`) - Name of the shared flow to invoke in the following format: `organizations/{org}/sharedflows/{sharedflow}`
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig do
   @moduledoc """
-  A DataCollector and its configuration.
+  Data collector and its configuration.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the data collector. Must be of the form 'organizations/{org}/datacollectors/{dc}'.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The data type this DataCollector accepts.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the data collector in the following format: `organizations/{org}/datacollectors/{datacollector}`
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Data type accepted by the data collector.
   """
 
   use GoogleApi.Gax.ModelBase

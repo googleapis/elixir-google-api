@@ -21,15 +21,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig do
 
   ## Attributes
 
-  *   `ciphers` (*type:* `list(String.t)`, *default:* `nil`) - Whitelist of supported ciphers.
-  *   `clientAuthEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicates if client auth is enabled for the target. Enables two-way TLS.
-  *   `commonName` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CommonNameConfig.t`, *default:* `nil`) - Common name to validate the target against.
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enables one-way TLS.
-  *   `ignoreValidationErrors` (*type:* `boolean()`, *default:* `nil`) - If true, ignore TLS certificate validation errors.
-  *   `keyAlias` (*type:* `String.t`, *default:* `nil`) - The name of the Alias used for client side auth. It must be of the form: organizations/{org}/environments/{env}/keystores/{keystore}/aliases/{alias}
-  *   `keyAliasReference` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyAliasReference.t`, *default:* `nil`) - A pair of reference name and alias to use for client side auth.
-  *   `protocols` (*type:* `list(String.t)`, *default:* `nil`) - Whitelist of supported TLS protocols.
-  *   `trustStore` (*type:* `String.t`, *default:* `nil`) - The name of the Keystore or keystore reference containing trusted certificates for the server. It must be of either the form organizations/{org}/environments/{env}/keystores/{keystore} or organizations/{org}/environments/{env}/references/{reference}.
+  *   `ciphers` (*type:* `list(String.t)`, *default:* `nil`) - List of ciphers that are granted access.
+  *   `clientAuthEnabled` (*type:* `boolean()`, *default:* `nil`) - Flag that specifies whether client-side authentication is enabled for the target server. Enables two-way TLS.
+  *   `commonName` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CommonNameConfig.t`, *default:* `nil`) - Common name to validate the target server against.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Flag that specifies whether one-way TLS is enabled. Set to `true` to enable one-way TLS.
+  *   `ignoreValidationErrors` (*type:* `boolean()`, *default:* `nil`) - Flag that specifies whether to ignore TLS certificate validation errors. Set to `true` to ignore errors.
+  *   `keyAlias` (*type:* `String.t`, *default:* `nil`) - Name of the alias used for client-side authentication in the following format: `organizations/{org}/environments/{env}/keystores/{keystore}/aliases/{alias}`
+  *   `keyAliasReference` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyAliasReference.t`, *default:* `nil`) - Reference name and alias pair to use for client-side authentication.
+  *   `protocols` (*type:* `list(String.t)`, *default:* `nil`) - List of TLS protocols that are granted access.
+  *   `trustStore` (*type:* `String.t`, *default:* `nil`) - Name of the keystore or keystore reference containing trusted certificates for the server in the following format: `organizations/{org}/environments/{env}/keystores/{keystore}` or `organizations/{org}/environments/{env}/references/{reference}`
   """
 
   use GoogleApi.Gax.ModelBase
