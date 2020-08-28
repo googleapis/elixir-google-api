@@ -24,6 +24,9 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+      # View and manage your Google Cloud Platform billing accounts
+      "https://www.googleapis.com/auth/cloud-billing",
+
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform"
     ],
