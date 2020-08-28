@@ -27,6 +27,10 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
 
   * urlMaps are used by external HTTP(S) load balancers and Traffic Director. * regionUrlMaps are used by internal HTTP(S) load balancers.
 
+  For a list of supported URL map features by load balancer type, see the  Load balancing features: Routing and traffic management table.
+
+  For a list of supported URL map features for Traffic Director, see the  Traffic Director features: Routing and traffic management table.
+
   This resource defines mappings from host names and URL paths to either a backend service or a backend bucket.
 
   To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
@@ -37,16 +41,24 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
   *   `defaultRouteAction` (*type:* `GoogleApi.Compute.V1.Model.HttpRouteAction.t`, *default:* `nil`) - defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
       Only one of defaultRouteAction or defaultUrlRedirect must be set.
       UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
+
+      defaultRouteAction has no effect when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `defaultService` (*type:* `String.t`, *default:* `nil`) - The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
       Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
+
+      defaultService has no effect when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `defaultUrlRedirect` (*type:* `GoogleApi.Compute.V1.Model.HttpRedirectAction.t`, *default:* `nil`) - When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
       If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
+
+      Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
 
       To see the latest fingerprint, make a get() request to retrieve a UrlMap.
   *   `headerAction` (*type:* `GoogleApi.Compute.V1.Model.HttpHeaderAction.t`, *default:* `nil`) - Specifies changes to request and response headers that need to take effect for the selected backendService.
       The headerAction specified here take effect after headerAction specified under pathMatcher.
+
+      Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `hostRules` (*type:* `list(GoogleApi.Compute.V1.Model.HostRule.t)`, *default:* `nil`) - The list of HostRules to use against the URL.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#urlMap`) - [Output Only] Type of the resource. Always compute#urlMaps for url maps.
@@ -55,6 +67,8 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `tests` (*type:* `list(GoogleApi.Compute.V1.Model.UrlMapTest.t)`, *default:* `nil`) - The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
+
+      Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   """
 
   use GoogleApi.Gax.ModelBase

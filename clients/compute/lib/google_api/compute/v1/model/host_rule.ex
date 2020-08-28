@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Model.HostRule do
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `hosts` (*type:* `list(String.t)`, *default:* `nil`) - The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
+
+      * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `pathMatcher` (*type:* `String.t`, *default:* `nil`) - The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
   """
 

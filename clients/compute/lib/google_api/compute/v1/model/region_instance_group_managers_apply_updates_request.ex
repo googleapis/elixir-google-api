@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.RegionInstanceGroupManagersApplyUpdatesRequest do
   @moduledoc """
-  InstanceGroupManagers.applyUpdatesToInstances
+  RegionInstanceGroupManagers.applyUpdatesToInstances
 
   ## Attributes
 

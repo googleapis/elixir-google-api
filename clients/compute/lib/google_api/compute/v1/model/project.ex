@@ -35,7 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.Project do
   *   `quotas` (*type:* `list(GoogleApi.Compute.V1.Model.Quota.t)`, *default:* `nil`) - [Output Only] Quotas assigned to this project.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `usageExportLocation` (*type:* `GoogleApi.Compute.V1.Model.UsageExportLocation.t`, *default:* `nil`) - The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
-  *   `xpnProjectStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
+  *   `xpnProjectStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
   """
 
   use GoogleApi.Gax.ModelBase
