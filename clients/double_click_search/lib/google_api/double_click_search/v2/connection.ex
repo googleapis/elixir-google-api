@@ -28,5 +28,5 @@ defmodule GoogleApi.DoubleClickSearch.V2.Connection do
       "https://www.googleapis.com/auth/doubleclicksearch"
     ],
     otp_app: :google_api_double_click_search,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://doubleclicksearch.googleapis.com/"
 end
