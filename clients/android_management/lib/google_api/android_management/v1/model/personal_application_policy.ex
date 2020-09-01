@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.PersonalApplicationPolicy do
   @moduledoc """
-  Policies for apps on the personal profile of a company-owned device with a work profile.
+  Policies for apps in the personal profile of a company-owned device with a work profile.
 
   ## Attributes
 
