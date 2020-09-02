@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.CreateBackupMetadata do
   @moduledoc """
-  Metadata type for the operation returned by
-  CreateBackup.
+  Metadata type for the operation returned by CreateBackup.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.CheckConsistencyRequest do
   @moduledoc """
-  Request message for
-  google.bigtable.admin.v2.BigtableTableAdmin.CheckConsistency
+  Request message for google.bigtable.admin.v2.BigtableTableAdmin.CheckConsistency
 
   ## Attributes
 

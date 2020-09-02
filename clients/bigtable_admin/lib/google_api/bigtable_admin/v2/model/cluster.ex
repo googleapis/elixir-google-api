@@ -17,22 +17,14 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
   @moduledoc """
-  A resizable group of nodes in a particular cloud location, capable
-  of serving all Tables in the parent
-  Instance.
+  A resizable group of nodes in a particular cloud location, capable of serving all Tables in the parent Instance.
 
   ## Attributes
 
-  *   `defaultStorageType` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of storage used by this cluster to serve its
-      parent instance's tables, unless explicitly overridden.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - Immutable. The location where this cluster's nodes and storage reside. For best
-      performance, clients should be located as close as possible to this
-      cluster. Currently only zones are supported, so values should be of the
-      form `projects/{project}/locations/{zone}`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the cluster. Values are of the form
-      `projects/{project}/instances/{instance}/clusters/a-z*`.
-  *   `serveNodes` (*type:* `integer()`, *default:* `nil`) - Required. The number of nodes allocated to this cluster. More nodes enable higher
-      throughput and more consistent performance.
+  *   `defaultStorageType` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of storage used by this cluster to serve its parent instance's tables, unless explicitly overridden.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Immutable. The location where this cluster's nodes and storage reside. For best performance, clients should be located as close as possible to this cluster. Currently only zones are supported, so values should be of the form `projects/{project}/locations/{zone}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.
+  *   `serveNodes` (*type:* `integer()`, *default:* `nil`) - Required. The number of nodes allocated to this cluster. More nodes enable higher throughput and more consistent performance.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the cluster.
   """
 

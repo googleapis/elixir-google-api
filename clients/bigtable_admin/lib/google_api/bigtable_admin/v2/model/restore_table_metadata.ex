@@ -17,24 +17,14 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.RestoreTableMetadata do
   @moduledoc """
-  Metadata type for the long-running operation returned by
-  RestoreTable.
+  Metadata type for the long-running operation returned by RestoreTable.
 
   ## Attributes
 
   *   `backupInfo` (*type:* `GoogleApi.BigtableAdmin.V2.Model.BackupInfo.t`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the table being created and restored to.
-  *   `optimizeTableOperationName` (*type:* `String.t`, *default:* `nil`) - If exists, the name of the long-running operation that will be used to
-      track the post-restore optimization process to optimize the performance of
-      the restored table. The metadata type of the long-running operation is
-      OptimizeRestoreTableMetadata. The response type is
-      Empty. This long-running operation may be
-      automatically created by the system if applicable after the
-      RestoreTable long-running operation completes successfully. This operation
-      may not be created if the table is already optimized or the restore was
-      not successful.
-  *   `progress` (*type:* `GoogleApi.BigtableAdmin.V2.Model.OperationProgress.t`, *default:* `nil`) - The progress of the RestoreTable
-      operation.
+  *   `optimizeTableOperationName` (*type:* `String.t`, *default:* `nil`) - If exists, the name of the long-running operation that will be used to track the post-restore optimization process to optimize the performance of the restored table. The metadata type of the long-running operation is OptimizeRestoreTableMetadata. The response type is Empty. This long-running operation may be automatically created by the system if applicable after the RestoreTable long-running operation completes successfully. This operation may not be created if the table is already optimized or the restore was not successful.
+  *   `progress` (*type:* `GoogleApi.BigtableAdmin.V2.Model.OperationProgress.t`, *default:* `nil`) - The progress of the RestoreTable operation.
   *   `sourceType` (*type:* `String.t`, *default:* `nil`) - The type of the restore source.
   """
 

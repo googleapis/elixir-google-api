@@ -31,8 +31,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the project in which to create the new instance.
-      Values are of the form `projects/{project}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the project in which to create the new instance. Values are of the form `projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -103,8 +102,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the instance to be deleted.
-      Values are of the form `projects/{project}/instances/{instance}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the instance to be deleted. Values are of the form `projects/{project}/instances/{instance}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -177,8 +175,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested instance. Values are of the form
-      `projects/{project}/instances/{instance}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested instance. Values are of the form `projects/{project}/instances/{instance}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -246,14 +243,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for an instance resource. Returns an empty
-  policy if an instance exists but does not have a policy set.
+  Gets the access control policy for an instance resource. Returns an empty policy if an instance exists but does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -328,8 +323,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the project for which a list of instances is requested.
-      Values are of the form `projects/{project}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the project for which a list of instances is requested. Values are of the form `projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -397,14 +391,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Partially updates an instance within a project. This method can modify all
-  fields of an Instance and is the preferred way to update an Instance.
+  Partially updates an instance within a project. This method can modify all fields of an Instance and is the preferred way to update an Instance.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `instance.name`. The unique name of the instance. Values are of the form
-      `projects/{project}/instances/a-z+[a-z0-9]`.
+  *   `projects_id` (*type:* `String.t`) - Part of `instance.name`. The unique name of the instance. Values are of the form `projects/{project}/instances/a-z+[a-z0-9]`.
   *   `instances_id` (*type:* `String.t`) - Part of `instance.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -418,8 +410,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The subset of Instance fields which should be replaced.
-          Must be explicitly set.
+      *   `:updateMask` (*type:* `String.t`) - Required. The subset of Instance fields which should be replaced. Must be explicitly set.
       *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -477,14 +468,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on an instance resource. Replaces any
-  existing policy.
+  Sets the access control policy on an instance resource. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -559,8 +548,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -632,15 +620,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Updates an instance within a project. This method updates only the display
-  name and type for an Instance. To update other Instance properties, such as
-  labels, use PartialUpdateInstance.
+  Updates an instance within a project. This method updates only the display name and type for an Instance. To update other Instance properties, such as labels, use PartialUpdateInstance.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The unique name of the instance. Values are of the form
-      `projects/{project}/instances/a-z+[a-z0-9]`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The unique name of the instance. Values are of the form `projects/{project}/instances/a-z+[a-z0-9]`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -715,9 +700,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance in which to create the new app profile.
-      Values are of the form
-      `projects/{project}/instances/{instance}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance in which to create the new app profile. Values are of the form `projects/{project}/instances/{instance}`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -731,9 +714,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:appProfileId` (*type:* `String.t`) - Required. The ID to be used when referring to the new app profile within its
-          instance, e.g., just `myprofile` rather than
-          `projects/myproject/instances/myinstance/appProfiles/myprofile`.
+      *   `:appProfileId` (*type:* `String.t`) - Required. The ID to be used when referring to the new app profile within its instance, e.g., just `myprofile` rather than `projects/myproject/instances/myinstance/appProfiles/myprofile`.
       *   `:ignoreWarnings` (*type:* `boolean()`) - If true, ignore safety checks when creating the app profile.
       *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.AppProfile.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -798,8 +779,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the app profile to be deleted. Values are of the form
-      `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the app profile to be deleted. Values are of the form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `app_profiles_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -881,8 +861,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested app profile. Values are of the form
-      `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested app profile. Values are of the form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `app_profiles_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -962,11 +941,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance for which a list of app profiles is
-      requested. Values are of the form
-      `projects/{project}/instances/{instance}`.
-      Use `{instance} = '-'` to list AppProfiles for all Instances in a project,
-      e.g., `projects/myproject/instances/-`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance for which a list of app profiles is requested. Values are of the form `projects/{project}/instances/{instance}`. Use `{instance} = '-'` to list AppProfiles for all Instances in a project, e.g., `projects/myproject/instances/-`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -980,15 +955,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of results per page.
-
-          A page_size of zero lets the server choose the number of items to return.
-          A page_size which is strictly positive will return at most that many items.
-          A negative page_size will cause an error.
-
-          Following the first request, subsequent paginated calls are not required
-          to pass a page_size. If a page_size is set in subsequent calls, it must
-          match the page_size given in the first request.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of results per page. A page_size of zero lets the server choose the number of items to return. A page_size which is strictly positive will return at most that many items. A negative page_size will cause an error. Following the first request, subsequent paginated calls are not required to pass a page_size. If a page_size is set in subsequent calls, it must match the page_size given in the first request.
       *   `:pageToken` (*type:* `String.t`) - The value of `next_page_token` returned by a previous call.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1053,8 +1020,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `appProfile.name`. The unique name of the app profile. Values are of the form
-      `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `appProfile.name`. The unique name of the app profile. Values are of the form `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.
   *   `instances_id` (*type:* `String.t`) - Part of `appProfile.name`. See documentation of `projectsId`.
   *   `app_profiles_id` (*type:* `String.t`) - Part of `appProfile.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1070,8 +1036,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:ignoreWarnings` (*type:* `boolean()`) - If true, ignore safety checks when updating the app profile.
-      *   `:updateMask` (*type:* `String.t`) - Required. The subset of app profile fields which should be replaced.
-          If unset, all fields will be replaced.
+      *   `:updateMask` (*type:* `String.t`) - Required. The subset of app profile fields which should be replaced. If unset, all fields will be replaced.
       *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.AppProfile.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1141,9 +1106,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance in which to create the new cluster.
-      Values are of the form
-      `projects/{project}/instances/{instance}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance in which to create the new cluster. Values are of the form `projects/{project}/instances/{instance}`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1157,9 +1120,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clusterId` (*type:* `String.t`) - Required. The ID to be used when referring to the new cluster within its instance,
-          e.g., just `mycluster` rather than
-          `projects/myproject/instances/myinstance/clusters/mycluster`.
+      *   `:clusterId` (*type:* `String.t`) - Required. The ID to be used when referring to the new cluster within its instance, e.g., just `mycluster` rather than `projects/myproject/instances/myinstance/clusters/mycluster`.
       *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Cluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1222,8 +1183,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the cluster to be deleted. Values are of the form
-      `projects/{project}/instances/{instance}/clusters/{cluster}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the cluster to be deleted. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1300,8 +1260,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested cluster. Values are of the form
-      `projects/{project}/instances/{instance}/clusters/{cluster}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1378,10 +1337,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance for which a list of clusters is requested.
-      Values are of the form `projects/{project}/instances/{instance}`.
-      Use `{instance} = '-'` to list Clusters for all Instances in a project,
-      e.g., `projects/myproject/instances/-`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance for which a list of clusters is requested. Values are of the form `projects/{project}/instances/{instance}`. Use `{instance} = '-'` to list Clusters for all Instances in a project, e.g., `projects/myproject/instances/-`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1456,8 +1412,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The unique name of the cluster. Values are of the form
-      `projects/{project}/instances/{instance}/clusters/a-z*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1531,21 +1486,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Starts creating a new Cloud Bigtable Backup.  The returned backup
-  long-running operation can be used to
-  track creation of the backup. The
-  metadata field type is
-  CreateBackupMetadata. The
-  response field type is
-  Backup, if successful. Cancelling the returned operation will stop the
-  creation and delete the backup.
+  Starts creating a new Cloud Bigtable Backup. The returned backup long-running operation can be used to track creation of the backup. The metadata field type is CreateBackupMetadata. The response field type is Backup, if successful. Cancelling the returned operation will stop the creation and delete the backup.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. This must be one of the clusters in the instance in which this
-      table is located. The backup will be stored in this cluster. Values are
-      of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. This must be one of the clusters in the instance in which this table is located. The backup will be stored in this cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1560,12 +1506,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:backupId` (*type:* `String.t`) - Required. The id of the backup to be created. The `backup_id` along with
-          the parent `parent` are combined as {parent}/backups/{backup_id} to create
-          the full backup name, of the form:
-          `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup_id}`.
-          This string must be between 1 and 50 characters in length and match the
-          regex _a-zA-Z0-9*.
+      *   `:backupId` (*type:* `String.t`) - Required. The id of the backup to be created. The `backup_id` along with the parent `parent` are combined as {parent}/backups/{backup_id} to create the full backup name, of the form: `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup_id}`. This string must be between 1 and 50 characters in length and match the regex _a-zA-Z0-9*.
       *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Backup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1634,9 +1575,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the backup to delete.
-      Values are of the form
-      `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the backup to delete. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `backups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1720,9 +1659,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the backup.
-      Values are of the form
-      `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the backup. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `backups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1801,15 +1738,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a Table resource.
-  Returns an empty policy if the resource exists but does not have a policy
-  set.
+  Gets the access control policy for a Table resource. Returns an empty policy if the resource exists but does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `backups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1890,16 +1824,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Lists Cloud Bigtable backups. Returns both completed and pending
-  backups.
+  Lists Cloud Bigtable backups. Returns both completed and pending backups.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The cluster to list backups from.  Values are of the
-      form `projects/{project}/instances/{instance}/clusters/{cluster}`.
-      Use `{cluster} = '-'` to list backups for all clusters in an instance,
-      e.g., `projects/{project}/instances/{instance}/clusters/-`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The cluster to list backups from. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`. Use `{cluster} = '-'` to list backups for all clusters in an instance, e.g., `projects/{project}/instances/{instance}/clusters/-`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1914,64 +1844,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A filter expression that filters backups listed in the response.
-          The expression must specify the field name, a comparison operator,
-          and the value that you want to use for filtering. The value must be a
-          string, a number, or a boolean. The comparison operator must be
-          <, >, <=, >=, !=, =, or :. Colon ':' represents a HAS operator which is
-          roughly synonymous with equality. Filter rules are case insensitive.
-
-          The fields eligible for filtering are:
-            * `name`
-            * `source_table`
-            * `state`
-            * `start_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-            * `end_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-            * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-            * `size_bytes`
-
-          To filter on multiple expressions, provide each separate expression within
-          parentheses. By default, each expression is an AND expression. However,
-          you can include AND, OR, and NOT expressions explicitly.
-
-          Some examples of using filters are:
-
-            * `name:"exact"` --> The backup's name is the string "exact".
-            * `name:howl` --> The backup's name contains the string "howl".
-            * `source_table:prod`
-                   --> The source_table's name contains the string "prod".
-            * `state:CREATING` --> The backup is pending creation.
-            * `state:READY` --> The backup is fully created and ready for use.
-            * `(name:howl) AND (start_time < \\"2018-03-28T14:50:00Z\\")`
-                   --> The backup name contains the string "howl" and start_time
-                       of the backup is before 2018-03-28T14:50:00Z.
-            * `size_bytes > 10000000000` --> The backup's size is greater than 10GB
-      *   `:orderBy` (*type:* `String.t`) - An expression for specifying the sort order of the results of the request.
-          The string value should specify one or more fields in Backup. The full
-          syntax is described at https://aip.dev/132#ordering.
-
-          Fields supported are:
-             * name
-             * source_table
-             * expire_time
-             * start_time
-             * end_time
-             * size_bytes
-             * state
-
-          For example, "start_time". The default sorting order is ascending.
-          To specify descending order for the field, a suffix " desc" should
-          be appended to the field name. For example, "start_time desc".
-          Redundant space characters in the syntax are insigificant.
-
-          If order_by is empty, results will be sorted by `start_time` in descending
-          order starting from the most recently created backup.
-      *   `:pageSize` (*type:* `integer()`) - Number of backups to be returned in the response. If 0 or
-          less, defaults to the server's maximum allowed page size.
-      *   `:pageToken` (*type:* `String.t`) - If non-empty, `page_token` should contain a
-          next_page_token from a
-          previous ListBackupsResponse to the same `parent` and with the same
-          `filter`.
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters backups listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be <, >, <=, >=, !=, =, or :. Colon ':' represents a HAS operator which is roughly synonymous with equality. Filter rules are case insensitive. The fields eligible for filtering are: * `name` * `source_table` * `state` * `start_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) * `end_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) * `size_bytes` To filter on multiple expressions, provide each separate expression within parentheses. By default, each expression is an AND expression. However, you can include AND, OR, and NOT expressions explicitly. Some examples of using filters are: * `name:"exact"` --> The backup's name is the string "exact". * `name:howl` --> The backup's name contains the string "howl". * `source_table:prod` --> The source_table's name contains the string "prod". * `state:CREATING` --> The backup is pending creation. * `state:READY` --> The backup is fully created and ready for use. * `(name:howl) AND (start_time < \\"2018-03-28T14:50:00Z\\")` --> The backup name contains the string "howl" and start_time of the backup is before 2018-03-28T14:50:00Z. * `size_bytes > 10000000000` --> The backup's size is greater than 10GB
+      *   `:orderBy` (*type:* `String.t`) - An expression for specifying the sort order of the results of the request. The string value should specify one or more fields in Backup. The full syntax is described at https://aip.dev/132#ordering. Fields supported are: * name * source_table * expire_time * start_time * end_time * size_bytes * state For example, "start_time". The default sorting order is ascending. To specify descending order for the field, a suffix " desc" should be appended to the field name. For example, "start_time desc". Redundant space characters in the syntax are insigificant. If order_by is empty, results will be sorted by `start_time` in descending order starting from the most recently created backup.
+      *   `:pageSize` (*type:* `integer()`) - Number of backups to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.
+      *   `:pageToken` (*type:* `String.t`) - If non-empty, `page_token` should contain a next_page_token from a previous ListBackupsResponse to the same `parent` and with the same `filter`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2041,16 +1917,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `backup.name`. A globally unique identifier for the backup which cannot be
-      changed. Values are of the form
-      `projects/{project}/instances/{instance}/clusters/{cluster}/
-         backups/_a-zA-Z0-9*`
-      The final segment of the name must be between 1 and 50 characters
-      in length.
-
-      The backup is stored in the cluster identified by the prefix of the backup
-      name of the form
-      `projects/{project}/instances/{instance}/clusters/{cluster}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `backup.name`. A globally unique identifier for the backup which cannot be changed. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/ backups/_a-zA-Z0-9*` The final segment of the name must be between 1 and 50 characters in length. The backup is stored in the cluster identified by the prefix of the backup name of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `instances_id` (*type:* `String.t`) - Part of `backup.name`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `backup.name`. See documentation of `projectsId`.
   *   `backups_id` (*type:* `String.t`) - Part of `backup.name`. See documentation of `projectsId`.
@@ -2066,11 +1933,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A mask specifying which fields (e.g. `expire_time`) in the
-          Backup resource should be updated. This mask is relative to the Backup
-          resource, not to the request message. The field mask must always be
-          specified; this prevents any future fields from being erased accidentally
-          by clients that do not know about them.
+      *   `:updateMask` (*type:* `String.t`) - Required. A mask specifying which fields (e.g. `expire_time`) in the Backup resource should be updated. This mask is relative to the Backup resource, not to the request message. The field mask must always be specified; this prevents any future fields from being erased accidentally by clients that do not know about them.
       *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Backup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2137,14 +2000,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a Table resource.
-  Replaces any existing policy.
+  Sets the access control policy on a Table resource. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `backups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -2230,8 +2091,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `backups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -2314,16 +2174,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Checks replication consistency based on a consistency token, that is, if
-  replication has caught up based on the conditions specified in the token
-  and the check request.
+  Checks replication consistency based on a consistency token, that is, if replication has caught up based on the conditions specified in the token and the check request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the Table for which to check replication consistency.
-      Values are of the form
-      `projects/{project}/instances/{instance}/tables/{table}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the Table for which to check replication consistency. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2402,15 +2258,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Creates a new table in the specified instance.
-  The table can be created with a full set of initial column families,
-  specified in the request.
+  Creates a new table in the specified instance. The table can be created with a full set of initial column families, specified in the request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance in which to create the table.
-      Values are of the form `projects/{project}/instances/{instance}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance in which to create the table. Values are of the form `projects/{project}/instances/{instance}`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2485,9 +2338,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table to be deleted.
-      Values are of the form
-      `projects/{project}/instances/{instance}/tables/{table}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table to be deleted. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2559,16 +2410,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Permanently drop/delete a row range from a specified table. The request can
-  specify whether to delete all rows in a table, or only those that match a
-  particular prefix.
+  Permanently drop/delete a row range from a specified table. The request can specify whether to delete all rows in a table, or only those that match a particular prefix.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table on which to drop a range of rows.
-      Values are of the form
-      `projects/{project}/instances/{instance}/tables/{table}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table on which to drop a range of rows. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2645,17 +2492,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Generates a consistency token for a Table, which can be used in
-  CheckConsistency to check whether mutations to the table that finished
-  before this call started have been replicated. The tokens will be available
-  for 90 days.
+  Generates a consistency token for a Table, which can be used in CheckConsistency to check whether mutations to the table that finished before this call started have been replicated. The tokens will be available for 90 days.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the Table for which to create a consistency token.
-      Values are of the form
-      `projects/{project}/instances/{instance}/tables/{table}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the Table for which to create a consistency token. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2739,9 +2581,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested table.
-      Values are of the form
-      `projects/{project}/instances/{instance}/tables/{table}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested table. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2756,8 +2596,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:view` (*type:* `String.t`) - The view to be applied to the returned table's fields.
-          Defaults to `SCHEMA_VIEW` if unspecified.
+      *   `:view` (*type:* `String.t`) - The view to be applied to the returned table's fields. Defaults to `SCHEMA_VIEW` if unspecified.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2816,15 +2655,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a Table resource.
-  Returns an empty policy if the resource exists but does not have a policy
-  set.
+  Gets the access control policy for a Table resource. Returns an empty policy if the resource exists but does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2906,8 +2742,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance for which tables should be listed.
-      Values are of the form `projects/{project}/instances/{instance}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance for which tables should be listed. Values are of the form `projects/{project}/instances/{instance}`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2921,18 +2756,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of results per page.
-
-          A page_size of zero lets the server choose the number of items to return.
-          A page_size which is strictly positive will return at most that many items.
-          A negative page_size will cause an error.
-
-          Following the first request, subsequent paginated calls are not required
-          to pass a page_size. If a page_size is set in subsequent calls, it must
-          match the page_size given in the first request.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of results per page. A page_size of zero lets the server choose the number of items to return. A page_size which is strictly positive will return at most that many items. A negative page_size will cause an error. Following the first request, subsequent paginated calls are not required to pass a page_size. If a page_size is set in subsequent calls, it must match the page_size given in the first request.
       *   `:pageToken` (*type:* `String.t`) - The value of `next_page_token` returned by a previous call.
-      *   `:view` (*type:* `String.t`) - The view to be applied to the returned tables' fields.
-          Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
+      *   `:view` (*type:* `String.t`) - The view to be applied to the returned tables' fields. Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2990,17 +2816,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Performs a series of column family modifications on the specified table.
-  Either all or none of the modifications will occur before this method
-  returns, but data requests received prior to that point may see a table
-  where only some modifications have taken effect.
+  Performs a series of column family modifications on the specified table. Either all or none of the modifications will occur before this method returns, but data requests received prior to that point may see a table where only some modifications have taken effect.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table whose families should be modified.
-      Values are of the form
-      `projects/{project}/instances/{instance}/tables/{table}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table whose families should be modified. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3077,21 +2898,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Create a new table by restoring from a completed backup. The new table
-  must be in the same instance as the instance containing the backup.  The
-  returned table long-running operation can
-  be used to track the progress of the operation, and to cancel it.  The
-  metadata field type is
-  RestoreTableMetadata.  The
-  response type is
-  Table, if successful.
+  Create a new table by restoring from a completed backup. The new table must be in the same instance as the instance containing the backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the instance in which to create the restored
-      table. This instance must be the parent of the source backup. Values are
-      of the form `projects/<project>/instances/<instance>`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the instance in which to create the restored table. This instance must be the parent of the source backup. Values are of the form `projects//instances/`.
   *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3161,14 +2973,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a Table resource.
-  Replaces any existing policy.
+  Sets the access control policy on a Table resource. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3250,8 +3060,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

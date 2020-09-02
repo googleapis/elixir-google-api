@@ -17,23 +17,14 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
   @moduledoc """
-  A configuration object describing how Cloud Bigtable should treat traffic
-  from a particular end user application.
+  A configuration object describing how Cloud Bigtable should treat traffic from a particular end user application.
 
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Long form description of the use case for this AppProfile.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - Strongly validated etag for optimistic concurrency control. Preserve the
-      value returned from `GetAppProfile` when calling `UpdateAppProfile` to
-      fail the request if there has been a modification in the mean time. The
-      `update_mask` of the request need not include `etag` for this protection
-      to apply.
-      See [Wikipedia](https://en.wikipedia.org/wiki/HTTP_ETag) and
-      [RFC 7232](https://tools.ietf.org/html/rfc7232#section-2.3) for more
-      details.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Strongly validated etag for optimistic concurrency control. Preserve the value returned from `GetAppProfile` when calling `UpdateAppProfile` to fail the request if there has been a modification in the mean time. The `update_mask` of the request need not include `etag` for this protection to apply. See [Wikipedia](https://en.wikipedia.org/wiki/HTTP_ETag) and [RFC 7232](https://tools.ietf.org/html/rfc7232#section-2.3) for more details.
   *   `multiClusterRoutingUseAny` (*type:* `GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny.t`, *default:* `nil`) - Use a multi-cluster routing policy.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the app profile. Values are of the form
-      `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the app profile. Values are of the form `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.
   *   `singleClusterRouting` (*type:* `GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting.t`, *default:* `nil`) - Use a single-cluster routing policy.
   """
 

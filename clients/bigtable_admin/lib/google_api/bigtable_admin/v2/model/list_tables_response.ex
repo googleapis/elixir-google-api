@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.ListTablesResponse do
   @moduledoc """
-  Response message for
-  google.bigtable.admin.v2.BigtableTableAdmin.ListTables
+  Response message for google.bigtable.admin.v2.BigtableTableAdmin.ListTables
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Set if not all tables could be returned in a single response.
-      Pass this value to `page_token` in another request to get the next
-      page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Set if not all tables could be returned in a single response. Pass this value to `page_token` in another request to get the next page of results.
   *   `tables` (*type:* `list(GoogleApi.BigtableAdmin.V2.Model.Table.t)`, *default:* `nil`) - The tables present in the requested instance.
   """
 

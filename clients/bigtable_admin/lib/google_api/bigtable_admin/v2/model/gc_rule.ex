@@ -22,9 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GcRule do
   ## Attributes
 
   *   `intersection` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Intersection.t`, *default:* `nil`) - Delete cells that would be deleted by every nested rule.
-  *   `maxAge` (*type:* `String.t`, *default:* `nil`) - Delete cells in a column older than the given age.
-      Values must be at least one millisecond, and will be truncated to
-      microsecond granularity.
+  *   `maxAge` (*type:* `String.t`, *default:* `nil`) - Delete cells in a column older than the given age. Values must be at least one millisecond, and will be truncated to microsecond granularity.
   *   `maxNumVersions` (*type:* `integer()`, *default:* `nil`) - Delete all cells in a column except the most recent N.
   *   `union` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Union.t`, *default:* `nil`) - Delete cells that would be deleted by any nested rule.
   """

@@ -21,13 +21,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Modification do
 
   ## Attributes
 
-  *   `create` (*type:* `GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t`, *default:* `nil`) - Create a new column family with the specified schema, or fail if
-      one already exists with the given ID.
-  *   `drop` (*type:* `boolean()`, *default:* `nil`) - Drop (delete) the column family with the given ID, or fail if no such
-      family exists.
+  *   `create` (*type:* `GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t`, *default:* `nil`) - Create a new column family with the specified schema, or fail if one already exists with the given ID.
+  *   `drop` (*type:* `boolean()`, *default:* `nil`) - Drop (delete) the column family with the given ID, or fail if no such family exists.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the column family to be modified.
-  *   `update` (*type:* `GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t`, *default:* `nil`) - Update an existing column family to the specified schema, or fail
-      if no column family exists with the given ID.
+  *   `update` (*type:* `GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t`, *default:* `nil`) - Update an existing column family to the specified schema, or fail if no column family exists with the given ID.
   """
 
   use GoogleApi.Gax.ModelBase

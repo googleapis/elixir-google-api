@@ -24,14 +24,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateClusterMetadata do
   *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation failed or was completed successfully.
   *   `originalRequest` (*type:* `GoogleApi.BigtableAdmin.V2.Model.CreateClusterRequest.t`, *default:* `nil`) - The request that prompted the initiation of this CreateCluster operation.
   *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the original request was received.
-  *   `tables` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.TableProgress.t}`, *default:* `nil`) - Keys: the full `name` of each table that existed in the instance when
-      CreateCluster was first called, i.e.
-      `projects/<project>/instances/<instance>/tables/<table>`. Any table added
-      to the instance by a later API call will be created in the new cluster by
-      that API call, not this one.
-
-      Values: information on how much of a table's data has been copied to the
-      newly-created cluster so far.
+  *   `tables` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.TableProgress.t}`, *default:* `nil`) - Keys: the full `name` of each table that existed in the instance when CreateCluster was first called, i.e. `projects//instances//tables/`. Any table added to the instance by a later API call will be created in the new cluster by that API call, not this one. Values: information on how much of a table's data has been copied to the newly-created cluster so far.
   """
 
   use GoogleApi.Gax.ModelBase

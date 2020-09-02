@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.OperationProgress do
   @moduledoc """
-  Encapsulates progress related information for a Cloud Bigtable long
-  running operation.
+  Encapsulates progress related information for a Cloud Bigtable long running operation.
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - If set, the time at which this operation failed or was completed
-      successfully.
-  *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - Percent completion of the operation.
-      Values are between 0 and 100 inclusive.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - If set, the time at which this operation failed or was completed successfully.
+  *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - Percent completion of the operation. Values are between 0 and 100 inclusive.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time the request was received.
   """
 

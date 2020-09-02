@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.DropRowRangeRequest do
   @moduledoc """
-  Request message for
-  google.bigtable.admin.v2.BigtableTableAdmin.DropRowRange
+  Request message for google.bigtable.admin.v2.BigtableTableAdmin.DropRowRange
 
   ## Attributes
 
   *   `deleteAllDataFromTable` (*type:* `boolean()`, *default:* `nil`) - Delete all rows in the table. Setting this to false is a no-op.
-  *   `rowKeyPrefix` (*type:* `String.t`, *default:* `nil`) - Delete all rows that start with this row key prefix. Prefix cannot be
-      zero length.
+  *   `rowKeyPrefix` (*type:* `String.t`, *default:* `nil`) - Delete all rows that start with this row key prefix. Prefix cannot be zero length.
   """
 
   use GoogleApi.Gax.ModelBase

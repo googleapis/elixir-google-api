@@ -21,9 +21,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.TableProgress do
 
   ## Attributes
 
-  *   `estimatedCopiedBytes` (*type:* `String.t`, *default:* `nil`) - Estimate of the number of bytes copied so far for this table.
-      This will eventually reach 'estimated_size_bytes' unless the table copy
-      is CANCELLED.
+  *   `estimatedCopiedBytes` (*type:* `String.t`, *default:* `nil`) - Estimate of the number of bytes copied so far for this table. This will eventually reach 'estimated_size_bytes' unless the table copy is CANCELLED.
   *   `estimatedSizeBytes` (*type:* `String.t`, *default:* `nil`) - Estimate of the size of the table to be copied.
   *   `state` (*type:* `String.t`, *default:* `nil`) - 
   """

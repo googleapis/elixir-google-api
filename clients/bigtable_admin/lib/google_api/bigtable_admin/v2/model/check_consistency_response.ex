@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.CheckConsistencyResponse do
   @moduledoc """
-  Response message for
-  google.bigtable.admin.v2.BigtableTableAdmin.CheckConsistency
+  Response message for google.bigtable.admin.v2.BigtableTableAdmin.CheckConsistency
 
   ## Attributes
 
-  *   `consistent` (*type:* `boolean()`, *default:* `nil`) - True only if the token is consistent. A token is consistent if replication
-      has caught up with the restrictions specified in the request.
+  *   `consistent` (*type:* `boolean()`, *default:* `nil`) - True only if the token is consistent. A token is consistent if replication has caught up with the restrictions specified in the request.
   """
 
   use GoogleApi.Gax.ModelBase
