@@ -21,11 +21,22 @@ defmodule GoogleApi.CloudBuild.V1.Model.CancelBuildRequest do
 
   ## Attributes
 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. ID of the build.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the `Build` to retrieve. Format: `projects/{project}/locations/{location}/builds/{build}`
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the project.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :id => String.t(),
+          :name => String.t(),
+          :projectId => String.t()
+        }
+
+  field(:id)
+  field(:name)
+  field(:projectId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.CancelBuildRequest do
