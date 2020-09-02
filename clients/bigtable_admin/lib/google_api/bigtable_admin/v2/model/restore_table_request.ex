@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.RestoreTableRequest do
   @moduledoc """
-  The request for
-  RestoreTable.
+  The request for RestoreTable.
 
   ## Attributes
 
-  *   `backup` (*type:* `String.t`, *default:* `nil`) - Name of the backup from which to restore.  Values are of the form
-      `projects/<project>/instances/<instance>/clusters/<cluster>/backups/<backup>`.
-  *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The id of the table to create and restore to. This
-      table must not already exist. The `table_id` appended to
-      `parent` forms the full table name of the form
-      `projects/<project>/instances/<instance>/tables/<table_id>`.
+  *   `backup` (*type:* `String.t`, *default:* `nil`) - Name of the backup from which to restore. Values are of the form `projects//instances//clusters//backups/`.
+  *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The id of the table to create and restore to. This table must not already exist. The `table_id` appended to `parent` forms the full table name of the form `projects//instances//tables/`.
   """
 
   use GoogleApi.Gax.ModelBase

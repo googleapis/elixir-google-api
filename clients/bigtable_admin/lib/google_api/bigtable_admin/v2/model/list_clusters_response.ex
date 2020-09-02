@@ -22,11 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ListClustersResponse do
   ## Attributes
 
   *   `clusters` (*type:* `list(GoogleApi.BigtableAdmin.V2.Model.Cluster.t)`, *default:* `nil`) - The list of requested clusters.
-  *   `failedLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations from which Cluster information could not be retrieved,
-      due to an outage or some other transient condition.
-      Clusters from these locations may be missing from `clusters`,
-      or may only have partial information returned.
-      Values are of the form `projects/<project>/locations/<zone_id>`
+  *   `failedLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations from which Cluster information could not be retrieved, due to an outage or some other transient condition. Clusters from these locations may be missing from `clusters`, or may only have partial information returned. Values are of the form `projects//locations/`
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: This field is unused and ignored.
   """
 

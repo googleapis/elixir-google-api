@@ -22,13 +22,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ListAppProfilesResponse do
   ## Attributes
 
   *   `appProfiles` (*type:* `list(GoogleApi.BigtableAdmin.V2.Model.AppProfile.t)`, *default:* `nil`) - The list of requested app profiles.
-  *   `failedLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations from which AppProfile information could not be retrieved,
-      due to an outage or some other transient condition.
-      AppProfiles from these locations may be missing from `app_profiles`.
-      Values are of the form `projects/<project>/locations/<zone_id>`
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Set if not all app profiles could be returned in a single response.
-      Pass this value to `page_token` in another request to get the next
-      page of results.
+  *   `failedLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations from which AppProfile information could not be retrieved, due to an outage or some other transient condition. AppProfiles from these locations may be missing from `app_profiles`. Values are of the form `projects//locations/`
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Set if not all app profiles could be returned in a single response. Pass this value to `page_token` in another request to get the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

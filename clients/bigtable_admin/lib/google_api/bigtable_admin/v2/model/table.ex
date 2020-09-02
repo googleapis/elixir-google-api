@@ -17,27 +17,15 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.Table do
   @moduledoc """
-  A collection of user data indexed by row, column, and timestamp.
-  Each table is served using the resources of its parent cluster.
+  A collection of user data indexed by row, column, and timestamp. Each table is served using the resources of its parent cluster.
 
   ## Attributes
 
-  *   `clusterStates` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.ClusterState.t}`, *default:* `nil`) - Output only. Map from cluster ID to per-cluster table state.
-      If it could not be determined whether or not the table has data in a
-      particular cluster (for example, if its zone is unavailable), then
-      there will be an entry for the cluster with UNKNOWN `replication_status`.
-      Views: `REPLICATION_VIEW`, `FULL`
-  *   `columnFamilies` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t}`, *default:* `nil`) - The column families configured for this table, mapped by column family ID.
-      Views: `SCHEMA_VIEW`, `FULL`
-  *   `granularity` (*type:* `String.t`, *default:* `nil`) - Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
-      table. Timestamps not matching the granularity will be rejected.
-      If unspecified at creation time, the value will be set to `MILLIS`.
-      Views: `SCHEMA_VIEW`, `FULL`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the table. Values are of the form
-      `projects/{project}/instances/{instance}/tables/_a-zA-Z0-9*`.
-      Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
-  *   `restoreInfo` (*type:* `GoogleApi.BigtableAdmin.V2.Model.RestoreInfo.t`, *default:* `nil`) - Output only. If this table was restored from another data source (e.g. a backup), this
-      field will be populated with information about the restore.
+  *   `clusterStates` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.ClusterState.t}`, *default:* `nil`) - Output only. Map from cluster ID to per-cluster table state. If it could not be determined whether or not the table has data in a particular cluster (for example, if its zone is unavailable), then there will be an entry for the cluster with UNKNOWN `replication_status`. Views: `REPLICATION_VIEW`, `FULL`
+  *   `columnFamilies` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t}`, *default:* `nil`) - The column families configured for this table, mapped by column family ID. Views: `SCHEMA_VIEW`, `FULL`
+  *   `granularity` (*type:* `String.t`, *default:* `nil`) - Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this table. Timestamps not matching the granularity will be rejected. If unspecified at creation time, the value will be set to `MILLIS`. Views: `SCHEMA_VIEW`, `FULL`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the table. Values are of the form `projects/{project}/instances/{instance}/tables/_a-zA-Z0-9*`. Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
+  *   `restoreInfo` (*type:* `GoogleApi.BigtableAdmin.V2.Model.RestoreInfo.t`, *default:* `nil`) - Output only. If this table was restored from another data source (e.g. a backup), this field will be populated with information about the restore.
   """
 
   use GoogleApi.Gax.ModelBase

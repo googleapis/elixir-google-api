@@ -22,9 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ListBackupsResponse do
   ## Attributes
 
   *   `backups` (*type:* `list(GoogleApi.BigtableAdmin.V2.Model.Backup.t)`, *default:* `nil`) - The list of matching backups.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent
-      ListBackups call to fetch more
-      of the matching backups.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent ListBackups call to fetch more of the matching backups.
   """
 
   use GoogleApi.Gax.ModelBase

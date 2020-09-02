@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.GenerateConsistencyTokenRequest do
   @moduledoc """
-  Request message for
-  google.bigtable.admin.v2.BigtableTableAdmin.GenerateConsistencyToken
+  Request message for google.bigtable.admin.v2.BigtableTableAdmin.GenerateConsistencyToken
 
   ## Attributes
 

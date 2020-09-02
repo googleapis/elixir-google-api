@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.OptimizeRestoredTableMetadata do
   @moduledoc """
-  Metadata type for the long-running operation used to track the progress
-  of optimizations performed on a newly restored table. This long-running
-  operation is automatically created by the system after the successful
-  completion of a table restore, and cannot be cancelled.
+  Metadata type for the long-running operation used to track the progress of optimizations performed on a newly restored table. This long-running operation is automatically created by the system after the successful completion of a table restore, and cannot be cancelled.
 
   ## Attributes
 

@@ -22,11 +22,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.BackupInfo do
   ## Attributes
 
   *   `backup` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the backup.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. This time that the backup was finished. Row data in the
-      backup will be no newer than this timestamp.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. This time that the backup was finished. Row data in the backup will be no newer than this timestamp.
   *   `sourceTable` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the table the backup was created from.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the backup was started. Row data in the backup
-      will be no older than this timestamp.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the backup was started. Row data in the backup will be no older than this timestamp.
   """
 
   use GoogleApi.Gax.ModelBase
