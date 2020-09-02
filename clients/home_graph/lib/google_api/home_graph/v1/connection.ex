@@ -23,7 +23,10 @@ defmodule GoogleApi.HomeGraph.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [],
+    scopes: [
+      # New Service: https://www.googleapis.com/auth/homegraph
+      "https://www.googleapis.com/auth/homegraph"
+    ],
     otp_app: :google_api_home_graph,
     base_url: "https://homegraph.googleapis.com/"
 end
