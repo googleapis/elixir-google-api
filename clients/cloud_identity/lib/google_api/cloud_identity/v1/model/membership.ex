@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.Membership do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Membership in the format: `groups/{group_id}/memberships/{member_id}`, where group_id is the unique ID assigned to the Group to which Membership belongs to, and member_id is the unique ID assigned to the member Must be left blank while creating a Membership.
   *   `preferredMemberKey` (*type:* `GoogleApi.CloudIdentity.V1.Model.EntityKey.t`, *default:* `nil`) - Required. Immutable. EntityKey of the entity to be added as the member. Must be set while creating a Membership, read-only afterwards. Currently allowed entity types: `Users`, `Groups`.
   *   `roles` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.MembershipRole.t)`, *default:* `nil`) - Roles for a member within the Group. Currently supported MembershipRoles: `"MEMBER"`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the membership.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last updated timestamp of the Membership. Output only.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.Membership do
           :name => String.t(),
           :preferredMemberKey => GoogleApi.CloudIdentity.V1.Model.EntityKey.t(),
           :roles => list(GoogleApi.CloudIdentity.V1.Model.MembershipRole.t()),
+          :type => String.t(),
           :updateTime => DateTime.t()
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.Membership do
   field(:name)
   field(:preferredMemberKey, as: GoogleApi.CloudIdentity.V1.Model.EntityKey)
   field(:roles, as: GoogleApi.CloudIdentity.V1.Model.MembershipRole, type: :list)
+  field(:type)
   field(:updateTime, as: DateTime)
 end
 
