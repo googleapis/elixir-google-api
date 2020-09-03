@@ -26,7 +26,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   *   `adChoicesDestinationUrl` (*type:* `String.t`, *default:* `nil`) - The link to the Ad Preferences page. This is only supported for native ads.
   *   `adTechnologyProviders` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.CreativeAdTechnologyProviders.t`, *default:* `nil`) - 
   *   `advertiserId` (*type:* `list(String.t)`, *default:* `nil`) - Detected advertiser id, if any. Read-only. This field should not be set in requests.
-  *   `advertiserName` (*type:* `String.t`, *default:* `nil`) - The name of the company being advertised in the creative. The value provided must exist in the advertisers.txt file.
+  *   `advertiserName` (*type:* `String.t`, *default:* `nil`) - The name of the company being advertised in the creative. A list of advertisers is provided in the advertisers.txt file.
   *   `agencyId` (*type:* `String.t`, *default:* `nil`) - The agency id for this creative.
   *   `apiUploadTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - The last upload timestamp of this creative if it was uploaded via API. Read-only. The value of this field is generated, and will be ignored for uploads. (formatted RFC 3339 timestamp).
   *   `attribute` (*type:* `list(integer())`, *default:* `nil`) - List of buyer selectable attributes for the ads that may be shown from this snippet. Each attribute is represented by an integer as defined in  buyer-declarable-creative-attributes.txt.

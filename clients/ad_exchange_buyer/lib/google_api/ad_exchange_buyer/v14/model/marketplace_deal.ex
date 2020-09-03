@@ -36,6 +36,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal do
   *   `isSetupComplete` (*type:* `boolean()`, *default:* `nil`) - True, if the buyside inventory setup is complete for this deal. (readonly, except via OrderSetupCompleted action)
   *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#marketplaceDeal`) - Identifies what kind of resource this is. Value: the fixed string "adexchangebuyer#marketplaceDeal".
   *   `lastUpdateTimeMs` (*type:* `String.t`, *default:* `nil`) - The time (ms since epoch) when the deal was last updated. (readonly)
+  *   `makegoodRequestedReason` (*type:* `String.t`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the deal. (updatable)
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The product-id from which this deal was created. (readonly, except on create)
   *   `productRevisionNumber` (*type:* `String.t`, *default:* `nil`) - The revision number of the product that the deal was created from (readonly, except on create)
@@ -66,6 +67,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal do
           :isSetupComplete => boolean(),
           :kind => String.t(),
           :lastUpdateTimeMs => String.t(),
+          :makegoodRequestedReason => String.t(),
           :name => String.t(),
           :productId => String.t(),
           :productRevisionNumber => String.t(),
@@ -93,6 +95,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal do
   field(:isSetupComplete)
   field(:kind)
   field(:lastUpdateTimeMs)
+  field(:makegoodRequestedReason)
   field(:name)
   field(:productId)
   field(:productRevisionNumber)
