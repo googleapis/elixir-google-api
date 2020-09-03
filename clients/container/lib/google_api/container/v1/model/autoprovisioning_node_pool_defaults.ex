@@ -21,24 +21,39 @@ defmodule GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults do
 
   ## Attributes
 
+  *   `bootDiskKmsKey` (*type:* `String.t`, *default:* `nil`) - The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+  *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
+  *   `diskType` (*type:* `String.t`, *default:* `nil`) - Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd') If unspecified, the default disk type is 'pd-standard'
   *   `management` (*type:* `GoogleApi.Container.V1.Model.NodeManagement.t`, *default:* `nil`) - Specifies the node management options for NAP created node-pools.
+  *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum CPU platform to be used for NAP created node pools. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: Intel Haswell or minCpuPlatform: Intel Sandy Bridge. For more information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform) To unset the min cpu platform field pass "automatic" as field value.
   *   `oauthScopes` (*type:* `list(String.t)`, *default:* `nil`) - Scopes that are used by NAP when creating node pools.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs.
+  *   `shieldedInstanceConfig` (*type:* `GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Shielded Instance options.
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Specifies the upgrade settings for NAP created node pools
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bootDiskKmsKey => String.t(),
+          :diskSizeGb => integer(),
+          :diskType => String.t(),
           :management => GoogleApi.Container.V1.Model.NodeManagement.t(),
+          :minCpuPlatform => String.t(),
           :oauthScopes => list(String.t()),
           :serviceAccount => String.t(),
+          :shieldedInstanceConfig => GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t(),
           :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t()
         }
 
+  field(:bootDiskKmsKey)
+  field(:diskSizeGb)
+  field(:diskType)
   field(:management, as: GoogleApi.Container.V1.Model.NodeManagement)
+  field(:minCpuPlatform)
   field(:oauthScopes, type: :list)
   field(:serviceAccount)
+  field(:shieldedInstanceConfig, as: GoogleApi.Container.V1.Model.ShieldedInstanceConfig)
   field(:upgradeSettings, as: GoogleApi.Container.V1.Model.UpgradeSettings)
 end
 
