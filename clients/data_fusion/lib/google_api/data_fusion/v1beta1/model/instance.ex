@@ -25,6 +25,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   *   `apiEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. Endpoint on which the REST APIs is accessible.
   *   `availableVersion` (*type:* `list(GoogleApi.DataFusion.V1beta1.Model.Version.t)`, *default:* `nil`) - Available versions that the instance can be upgraded to using UpdateInstanceRequest.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
+  *   `dataprocServiceAccount` (*type:* `String.t`, *default:* `nil`) - User-managed service account to set on Dataproc when Cloud Data Fusion creates Dataproc to run data processing pipelines. This allows users to have fine-grained access control on Dataproc's accesses to cloud resources.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this instance.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for an instance.
   *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Option to enable Stackdriver Logging.
@@ -54,6 +55,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
           :apiEndpoint => String.t(),
           :availableVersion => list(GoogleApi.DataFusion.V1beta1.Model.Version.t()),
           :createTime => DateTime.t(),
+          :dataprocServiceAccount => String.t(),
           :description => String.t(),
           :displayName => String.t(),
           :enableStackdriverLogging => boolean(),
@@ -80,6 +82,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   field(:apiEndpoint)
   field(:availableVersion, as: GoogleApi.DataFusion.V1beta1.Model.Version, type: :list)
   field(:createTime, as: DateTime)
+  field(:dataprocServiceAccount)
   field(:description)
   field(:displayName)
   field(:enableStackdriverLogging)
