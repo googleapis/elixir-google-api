@@ -35,6 +35,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
   *   `overview` (*type:* `String.t`, *default:* `nil`) - Publisher provided overview.
   *   `profileId` (*type:* `integer()`, *default:* `nil`) - The pair of (seller.account_id, profile_id) uniquely identifies a publisher profile for a given publisher.
   *   `programmaticContact` (*type:* `String.t`, *default:* `nil`) - Programmatic contact for the publisher profile.
+  *   `publisherAppIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of app IDs represented in this pubisher profile. Empty if this is a parent profile. Deprecated in favor of publisher_app.
+  *   `publisherApps` (*type:* `list(GoogleApi.AdExchangeBuyer.V14.Model.MobileApplication.t)`, *default:* `nil`) - The list of apps represented in this pubisher profile. Empty if this is a parent profile.
   *   `publisherDomains` (*type:* `list(String.t)`, *default:* `nil`) - The list of domains represented in this publisher profile. Empty if this is a parent profile.
   *   `publisherProfileId` (*type:* `String.t`, *default:* `nil`) - Unique Id for publisher profile.
   *   `publisherProvidedForecast` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.PublisherProvidedForecast.t`, *default:* `nil`) - Publisher provided forecasting information.
@@ -62,6 +64,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
           :overview => String.t(),
           :profileId => integer(),
           :programmaticContact => String.t(),
+          :publisherAppIds => list(String.t()),
+          :publisherApps => list(GoogleApi.AdExchangeBuyer.V14.Model.MobileApplication.t()),
           :publisherDomains => list(String.t()),
           :publisherProfileId => String.t(),
           :publisherProvidedForecast =>
@@ -87,6 +91,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PublisherProfileApiProto do
   field(:overview)
   field(:profileId)
   field(:programmaticContact)
+  field(:publisherAppIds, type: :list)
+  field(:publisherApps, as: GoogleApi.AdExchangeBuyer.V14.Model.MobileApplication, type: :list)
   field(:publisherDomains, type: :list)
   field(:publisherProfileId)
 
