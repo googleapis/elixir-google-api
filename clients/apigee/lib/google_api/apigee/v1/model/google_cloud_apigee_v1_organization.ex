@@ -34,7 +34,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Apigee organization.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID associated with the Apigee organization.
   *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t`, *default:* `nil`) - Properties defined in the Apigee organization profile.
-  *   `runtimeType` (*type:* `String.t`, *default:* `nil`) - Output only. Runtime type of the Apigee organization based on the Apigee subscription purchased.
+  *   `runtimeType` (*type:* `String.t`, *default:* `nil`) - Required. Runtime type of the Apigee organization based on the Apigee subscription purchased.
   *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Output only. Subscription type of the Apigee organization. Valid values include trial (free, limited, and for evaluation purposes only) or paid (full subscription has been purchased). See [Apigee pricing](https://cloud.google.com/apigee/pricing/).
   *   `type` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee.
   """
