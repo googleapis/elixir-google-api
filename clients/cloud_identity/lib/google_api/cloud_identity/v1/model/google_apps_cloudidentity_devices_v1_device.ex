@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Device do
   @moduledoc """
-  A Device within the Cloud Identity Devices API. Represents a Device known to Google Cloud, independent of the device ownership, type, and whether it is assigned or in use by a user.
+   A Device within the Cloud Identity Devices API. Represents a Device known to Google Cloud, independent of the device ownership, type, and whether it is assigned or in use by a user.
 
   ## Attributes
 
