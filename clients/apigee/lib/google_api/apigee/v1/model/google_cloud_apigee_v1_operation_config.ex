@@ -23,9 +23,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig do
 
   *   `apiSource` (*type:* `String.t`, *default:* `nil`) - Required. api_source represents either a proxy or remote service name for which the resources, methods and quota are associated with.
   *   `attributes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t)`, *default:* `nil`) - custom attribute associated with the operation.
-  *   `methods` (*type:* `list(String.t)`, *default:* `nil`) - methods refers to the REST verbs as in https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html. When none specified, all verb types are allowed.
+  *   `operations` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation.t)`, *default:* `nil`) - operations is the list of resource/methods pair, belonging to proxy/remote service, upon which quota will applied on. Note that currently we allow only a single operation. The call will fail if more than one is provided.
   *   `quota` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota.t`, *default:* `nil`) - Quota parameters to be enforced for the resources, methods, api_source combination. If none specified, quota enforcement will not be done.
-  *   `resources` (*type:* `list(String.t)`, *default:* `nil`) - Required. resources represents a list of REST resource path associated with the proxy/remote service.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,16 +32,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig do
   @type t :: %__MODULE__{
           :apiSource => String.t(),
           :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()),
-          :methods => list(String.t()),
-          :quota => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota.t(),
-          :resources => list(String.t())
+          :operations => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation.t()),
+          :quota => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota.t()
         }
 
   field(:apiSource)
   field(:attributes, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute, type: :list)
-  field(:methods, type: :list)
+  field(:operations, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation, type: :list)
   field(:quota, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota)
-  field(:resources, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig do
