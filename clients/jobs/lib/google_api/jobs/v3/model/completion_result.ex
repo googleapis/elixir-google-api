@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Jobs.V3.Model.CompletionResult do
   @moduledoc """
-  Output only.
-
-  Resource that represents completion results.
+  Output only. Resource that represents completion results.
 
   ## Attributes
 

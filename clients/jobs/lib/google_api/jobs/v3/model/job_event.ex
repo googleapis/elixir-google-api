@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.Jobs.V3.Model.JobEvent do
   @moduledoc """
-  An event issued when a job seeker interacts with the application that
-  implements Cloud Talent Solution.
+  An event issued when a job seeker interacts with the application that implements Cloud Talent Solution.
 
   ## Attributes
 
-  *   `jobs` (*type:* `list(String.t)`, *default:* `nil`) - Required. The job name(s) associated with this event.
-      For example, if this is an impression event,
-      this field contains the identifiers of all jobs shown to the job seeker.
-      If this was a view event, this field contains the
-      identifier of the viewed job.
+  *   `jobs` (*type:* `list(String.t)`, *default:* `nil`) - Required. The job name(s) associated with this event. For example, if this is an impression event, this field contains the identifiers of all jobs shown to the job seeker. If this was a view event, this field contains the identifier of the viewed job.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the event (see JobEventType).
   """
 

@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.Jobs.V3.Model.HistogramResults do
   @moduledoc """
-  Output only.
-
-  Histogram results that match HistogramFacets specified in
-  SearchJobsRequest.
+  Output only. Histogram results that match HistogramFacets specified in SearchJobsRequest.
 
   ## Attributes
 
-  *   `compensationHistogramResults` (*type:* `list(GoogleApi.Jobs.V3.Model.CompensationHistogramResult.t)`, *default:* `nil`) - Specifies compensation field-based histogram results that match
-      HistogramFacets.compensation_histogram_requests.
-  *   `customAttributeHistogramResults` (*type:* `list(GoogleApi.Jobs.V3.Model.CustomAttributeHistogramResult.t)`, *default:* `nil`) - Specifies histogram results for custom attributes that match
-      HistogramFacets.custom_attribute_histogram_facets.
-  *   `simpleHistogramResults` (*type:* `list(GoogleApi.Jobs.V3.Model.HistogramResult.t)`, *default:* `nil`) - Specifies histogram results that matches
-      HistogramFacets.simple_histogram_facets.
+  *   `compensationHistogramResults` (*type:* `list(GoogleApi.Jobs.V3.Model.CompensationHistogramResult.t)`, *default:* `nil`) - Specifies compensation field-based histogram results that match HistogramFacets.compensation_histogram_requests.
+  *   `customAttributeHistogramResults` (*type:* `list(GoogleApi.Jobs.V3.Model.CustomAttributeHistogramResult.t)`, *default:* `nil`) - Specifies histogram results for custom attributes that match HistogramFacets.custom_attribute_histogram_facets.
+  *   `simpleHistogramResults` (*type:* `list(GoogleApi.Jobs.V3.Model.HistogramResult.t)`, *default:* `nil`) - Specifies histogram results that matches HistogramFacets.simple_histogram_facets.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Jobs.V3.Model.CreateCompanyRequest do
   @moduledoc """
-  Input only.
-
-  The Request of the CreateCompany method.
+  Input only. The Request of the CreateCompany method.
 
   ## Attributes
 

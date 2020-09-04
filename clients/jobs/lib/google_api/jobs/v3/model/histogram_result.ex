@@ -17,22 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.HistogramResult do
   @moduledoc """
-  Output only.
-
-  Result of a histogram call. The response contains the histogram map for the
-  search type specified by HistogramResult.field.
-  The response is a map of each filter value to the corresponding count of
-  jobs for that filter.
+  Output only. Result of a histogram call. The response contains the histogram map for the search type specified by HistogramResult.field. The response is a map of each filter value to the corresponding count of jobs for that filter.
 
   ## Attributes
 
   *   `searchType` (*type:* `String.t`, *default:* `nil`) - The Histogram search filters.
-  *   `values` (*type:* `map()`, *default:* `nil`) - A map from the values of field to the number of jobs with that value
-      in this search result.
-
-      Key: search type (filter names, such as the companyName).
-
-      Values: the count of jobs that match the filter for this search.
+  *   `values` (*type:* `map()`, *default:* `nil`) - A map from the values of field to the number of jobs with that value in this search result. Key: search type (filter names, such as the companyName). Values: the count of jobs that match the filter for this search.
   """
 
   use GoogleApi.Gax.ModelBase

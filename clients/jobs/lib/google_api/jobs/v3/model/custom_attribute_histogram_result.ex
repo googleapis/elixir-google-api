@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.Jobs.V3.Model.CustomAttributeHistogramResult do
   @moduledoc """
-  Output only.
-
-  Custom attribute histogram result.
+  Output only. Custom attribute histogram result.
 
   ## Attributes
 
   *   `key` (*type:* `String.t`, *default:* `nil`) - Stores the key of custom attribute the histogram is performed on.
-  *   `longValueHistogramResult` (*type:* `GoogleApi.Jobs.V3.Model.NumericBucketingResult.t`, *default:* `nil`) - Stores bucketed histogram counting result or min/max values for
-      custom attribute long values associated with `key`.
-  *   `stringValueHistogramResult` (*type:* `map()`, *default:* `nil`) - Stores a map from the values of string custom field associated
-      with `key` to the number of jobs with that value in this histogram result.
+  *   `longValueHistogramResult` (*type:* `GoogleApi.Jobs.V3.Model.NumericBucketingResult.t`, *default:* `nil`) - Stores bucketed histogram counting result or min/max values for custom attribute long values associated with `key`.
+  *   `stringValueHistogramResult` (*type:* `map()`, *default:* `nil`) - Stores a map from the values of string custom field associated with `key` to the number of jobs with that value in this histogram result.
   """
 
   use GoogleApi.Gax.ModelBase

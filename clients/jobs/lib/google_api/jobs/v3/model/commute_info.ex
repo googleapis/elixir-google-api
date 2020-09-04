@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.CommuteInfo do
   @moduledoc """
-  Output only.
-
-  Commute details related to this job.
+  Output only. Commute details related to this job.
 
   ## Attributes
 
   *   `jobLocation` (*type:* `GoogleApi.Jobs.V3.Model.Location.t`, *default:* `nil`) - Location used as the destination in the commute calculation.
-  *   `travelDuration` (*type:* `String.t`, *default:* `nil`) - The number of seconds required to travel to the job location from the
-      query location. A duration of 0 seconds indicates that the job is not
-      reachable within the requested duration, but was returned as part of an
-      expanded query.
+  *   `travelDuration` (*type:* `String.t`, *default:* `nil`) - The number of seconds required to travel to the job location from the query location. A duration of 0 seconds indicates that the job is not reachable within the requested duration, but was returned as part of an expanded query.
   """
 
   use GoogleApi.Gax.ModelBase

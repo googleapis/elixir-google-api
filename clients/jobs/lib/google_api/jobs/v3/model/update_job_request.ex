@@ -17,21 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.UpdateJobRequest do
   @moduledoc """
-  Input only.
-
-  Update job request.
+  Input only. Update job request.
 
   ## Attributes
 
   *   `job` (*type:* `GoogleApi.Jobs.V3.Model.Job.t`, *default:* `nil`) - Required. The Job to be updated.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional but strongly recommended to be provided for the best service
-      experience.
-
-      If update_mask is provided, only the specified fields in
-      job are updated. Otherwise all the fields are updated.
-
-      A field mask to restrict the fields that are updated. Only
-      top level fields of Job are supported.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional but strongly recommended to be provided for the best service experience. If update_mask is provided, only the specified fields in job are updated. Otherwise all the fields are updated. A field mask to restrict the fields that are updated. Only top level fields of Job are supported.
   """
 
   use GoogleApi.Gax.ModelBase

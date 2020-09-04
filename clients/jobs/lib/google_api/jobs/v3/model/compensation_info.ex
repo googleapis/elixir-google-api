@@ -21,21 +21,9 @@ defmodule GoogleApi.Jobs.V3.Model.CompensationInfo do
 
   ## Attributes
 
-  *   `annualizedBaseCompensationRange` (*type:* `GoogleApi.Jobs.V3.Model.CompensationRange.t`, *default:* `nil`) - Output only. Annualized base compensation range. Computed as
-      base compensation entry's CompensationEntry.compensation times
-      CompensationEntry.expected_units_per_year.
-
-      See CompensationEntry for explanation on compensation annualization.
-  *   `annualizedTotalCompensationRange` (*type:* `GoogleApi.Jobs.V3.Model.CompensationRange.t`, *default:* `nil`) - Output only. Annualized total compensation range. Computed as
-      all compensation entries' CompensationEntry.compensation times
-      CompensationEntry.expected_units_per_year.
-
-      See CompensationEntry for explanation on compensation annualization.
-  *   `entries` (*type:* `list(GoogleApi.Jobs.V3.Model.CompensationEntry.t)`, *default:* `nil`) - Optional. Job compensation information.
-
-      At most one entry can be of type
-      CompensationInfo.CompensationType.BASE, which is
-      referred as ** base compensation entry ** for the job.
+  *   `annualizedBaseCompensationRange` (*type:* `GoogleApi.Jobs.V3.Model.CompensationRange.t`, *default:* `nil`) - Output only. Annualized base compensation range. Computed as base compensation entry's CompensationEntry.compensation times CompensationEntry.expected_units_per_year. See CompensationEntry for explanation on compensation annualization.
+  *   `annualizedTotalCompensationRange` (*type:* `GoogleApi.Jobs.V3.Model.CompensationRange.t`, *default:* `nil`) - Output only. Annualized total compensation range. Computed as all compensation entries' CompensationEntry.compensation times CompensationEntry.expected_units_per_year. See CompensationEntry for explanation on compensation annualization.
+  *   `entries` (*type:* `list(GoogleApi.Jobs.V3.Model.CompensationEntry.t)`, *default:* `nil`) - Optional. Job compensation information. At most one entry can be of type CompensationInfo.CompensationType.BASE, which is referred as ** base compensation entry ** for the job.
   """
 
   use GoogleApi.Gax.ModelBase

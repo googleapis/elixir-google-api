@@ -21,8 +21,7 @@ defmodule GoogleApi.Jobs.V3.Model.CompanyDerivedInfo do
 
   ## Attributes
 
-  *   `headquartersLocation` (*type:* `GoogleApi.Jobs.V3.Model.Location.t`, *default:* `nil`) - A structured headquarters location of the company, resolved from
-      Company.hq_location if provided.
+  *   `headquartersLocation` (*type:* `GoogleApi.Jobs.V3.Model.Location.t`, *default:* `nil`) - A structured headquarters location of the company, resolved from Company.hq_location if provided.
   """
 
   use GoogleApi.Gax.ModelBase

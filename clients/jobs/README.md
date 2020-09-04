@@ -2,8 +2,7 @@
 
 Cloud Talent Solution API client library.
 
-Cloud Talent Solution provides the capability to create, read, update, and delete job postings, as well as search jobs based on keywords and filters.
-
+Cloud Talent Solution provides the capability to create, read, update, and delete job postings, as well as search jobs based on keywords and filters. 
 
 ## Installation
 

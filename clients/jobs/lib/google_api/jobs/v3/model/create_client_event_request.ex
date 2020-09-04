@@ -21,8 +21,7 @@ defmodule GoogleApi.Jobs.V3.Model.CreateClientEventRequest do
 
   ## Attributes
 
-  *   `clientEvent` (*type:* `GoogleApi.Jobs.V3.Model.ClientEvent.t`, *default:* `nil`) - Required. Events issued when end user interacts with customer's application that
-      uses Cloud Talent Solution.
+  *   `clientEvent` (*type:* `GoogleApi.Jobs.V3.Model.ClientEvent.t`, *default:* `nil`) - Required. Events issued when end user interacts with customer's application that uses Cloud Talent Solution.
   """
 
   use GoogleApi.Gax.ModelBase

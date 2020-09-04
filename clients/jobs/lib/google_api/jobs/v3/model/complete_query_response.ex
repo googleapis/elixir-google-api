@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.CompleteQueryResponse do
   @moduledoc """
-  Output only.
-
-  Response of auto-complete query.
+  Output only. Response of auto-complete query.
 
   ## Attributes
 
   *   `completionResults` (*type:* `list(GoogleApi.Jobs.V3.Model.CompletionResult.t)`, *default:* `nil`) - Results of the matching job/company candidates.
-  *   `metadata` (*type:* `GoogleApi.Jobs.V3.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request
-      tracking id.
+  *   `metadata` (*type:* `GoogleApi.Jobs.V3.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request tracking id.
   """
 
   use GoogleApi.Gax.ModelBase

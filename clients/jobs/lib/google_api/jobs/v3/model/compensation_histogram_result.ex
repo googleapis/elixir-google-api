@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.CompensationHistogramResult do
   @moduledoc """
-  Output only.
-
-  Compensation based histogram result.
+  Output only. Compensation based histogram result.
 
   ## Attributes
 
   *   `result` (*type:* `GoogleApi.Jobs.V3.Model.NumericBucketingResult.t`, *default:* `nil`) - Histogram result.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the request, corresponding to
-      CompensationHistogramRequest.type.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the request, corresponding to CompensationHistogramRequest.type.
   """
 
   use GoogleApi.Gax.ModelBase

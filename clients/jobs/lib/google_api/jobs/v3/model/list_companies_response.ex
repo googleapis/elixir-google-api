@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.ListCompaniesResponse do
   @moduledoc """
-  Output only.
-
-  The List companies response object.
+  Output only. The List companies response object.
 
   ## Attributes
 
   *   `companies` (*type:* `list(GoogleApi.Jobs.V3.Model.Company.t)`, *default:* `nil`) - Companies for the current client.
-  *   `metadata` (*type:* `GoogleApi.Jobs.V3.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request
-      tracking id.
+  *   `metadata` (*type:* `GoogleApi.Jobs.V3.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request tracking id.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
   """
 

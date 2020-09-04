@@ -18,7 +18,7 @@
 defmodule GoogleApi.Jobs.Mixfile do
   use Mix.Project
 
-  @version "0.13.0"
+  @version "0.13.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.Jobs.Mixfile do
 
   defp description() do
     """
-    Cloud Talent Solution API client library. Cloud Talent Solution provides the capability to create, read, update, and delete job postings, as well as search jobs based on keywords and filters.
-
+    Cloud Talent Solution API client library. Cloud Talent Solution provides the capability to create, read, update, and delete job postings, as well as search jobs based on keywords and filters. 
     """
   end
 
