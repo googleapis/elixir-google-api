@@ -24,8 +24,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
   *   `address` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The address of the location.
   *   `endDate` (*type:* `String.t`, *default:* `nil`) - The last date that this early vote site or drop off location may be used. This field is not populated for polling locations.
   *   `id` (*type:* `String.t`, *default:* `nil`) - An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.
-  *   `latitude` (*type:* `float()`, *default:* `nil`) - Latitude of the location, in degrees north of the equator. Only some locations -- generally, ballot drop boxes for vote-by-mail elections -- will have this set; for others, use a geocoding service like the Google Maps API to resolve the address to a geographic point.
-  *   `longitude` (*type:* `float()`, *default:* `nil`) - Longitude of the location, in degrees east of the Prime Meridian. Only some locations -- generally, ballot drop boxes for vote-by-mail elections -- will have this set; for others, use a geocoding service like the Google Maps API to resolve the address to a geographic point.
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - Latitude of the location, in degrees north of the equator. Note this field may not be available for some locations.
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - Longitude of the location, in degrees east of the Prime Meridian. Note this field may not be available for some locations.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the early vote site or drop off location. This field is not populated for polling locations.
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes about this location (e.g. accessibility ramp or entrance to use).
   *   `pollingHours` (*type:* `String.t`, *default:* `nil`) - A description of when this location is open.
