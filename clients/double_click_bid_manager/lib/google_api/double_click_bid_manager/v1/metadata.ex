@@ -20,7 +20,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1 do
   API client metadata for GoogleApi.DoubleClickBidManager.V1.
   """
 
-  @discovery_revision "20200819"
+  @discovery_revision "20200827"
 
   def discovery_revision(), do: @discovery_revision
 end
