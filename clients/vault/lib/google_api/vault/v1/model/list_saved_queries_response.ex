@@ -21,8 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.ListSavedQueriesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token to retrieve the next page of results in the list.
-      If this is empty, then there are no more saved queries to list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token to retrieve the next page of results in the list. If this is empty, then there are no more saved queries to list.
   *   `savedQueries` (*type:* `list(GoogleApi.Vault.V1.Model.SavedQuery.t)`, *default:* `nil`) - List of output saved queries.
   """
 

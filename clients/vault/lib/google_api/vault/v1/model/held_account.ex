@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Vault.V1.Model.HeldAccount do
   @moduledoc """
-  An account being held in a particular hold. This structure is immutable.
-  This can be either a single user or a google group, depending on the corpus.
+  An account being held in a particular hold. This structure is immutable. This can be either a single user or a google group, depending on the corpus.
 
   ## Attributes
 
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account's ID as provided by the
-      <a href="https://developers.google.com/admin-sdk/">Admin SDK</a>.
-  *   `email` (*type:* `String.t`, *default:* `nil`) - The primary email address of the account. If used as an input, this takes
-      precedence over account ID.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account's ID as provided by the Admin SDK.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The primary email address of the account. If used as an input, this takes precedence over account ID.
   *   `firstName` (*type:* `String.t`, *default:* `nil`) - Output only. The first name of the account holder.
   *   `holdTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the account was put on hold.
   *   `lastName` (*type:* `String.t`, *default:* `nil`) - Output only. The last name of the account holder.

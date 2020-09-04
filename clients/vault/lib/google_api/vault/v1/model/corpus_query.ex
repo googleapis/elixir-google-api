@@ -23,8 +23,7 @@ defmodule GoogleApi.Vault.V1.Model.CorpusQuery do
 
   *   `driveQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldDriveQuery.t`, *default:* `nil`) - Details pertaining to Drive holds. If set, corpus must be Drive.
   *   `groupsQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldGroupsQuery.t`, *default:* `nil`) - Details pertaining to Groups holds. If set, corpus must be Groups.
-  *   `hangoutsChatQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t`, *default:* `nil`) - Details pertaining to Hangouts Chat holds. If set, corpus must be
-      Hangouts Chat.
+  *   `hangoutsChatQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t`, *default:* `nil`) - Details pertaining to Hangouts Chat holds. If set, corpus must be Hangouts Chat.
   *   `mailQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldMailQuery.t`, *default:* `nil`) - Details pertaining to mail holds. If set, corpus must be mail.
   """
 

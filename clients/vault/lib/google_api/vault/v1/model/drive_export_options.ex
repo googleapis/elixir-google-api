@@ -21,10 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.DriveExportOptions do
 
   ## Attributes
 
-  *   `includeAccessInfo` (*type:* `boolean()`, *default:* `nil`) - Set to true to include access level information for users
-      with <a
-      href="https://support.google.com/vault/answer/6099459#metadata">indirect
-      access</a> to files.
+  *   `includeAccessInfo` (*type:* `boolean()`, *default:* `nil`) - Set to true to include access level information for users with indirect access to files.
   """
 
   use GoogleApi.Gax.ModelBase

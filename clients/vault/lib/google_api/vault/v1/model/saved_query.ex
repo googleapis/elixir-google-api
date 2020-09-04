@@ -21,14 +21,10 @@ defmodule GoogleApi.Vault.V1.Model.SavedQuery do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The server generated timestamp at which saved query was
-      created.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The server generated timestamp at which saved query was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of the saved query.
-  *   `matterId` (*type:* `String.t`, *default:* `nil`) - Output only. The matter ID of the associated matter.
-      The server does not look at this field during create and always uses matter
-      id in the URL.
-  *   `query` (*type:* `GoogleApi.Vault.V1.Model.Query.t`, *default:* `nil`) - The underlying Query object which contains all the information of the saved
-      query.
+  *   `matterId` (*type:* `String.t`, *default:* `nil`) - Output only. The matter ID of the associated matter. The server does not look at this field during create and always uses matter id in the URL.
+  *   `query` (*type:* `GoogleApi.Vault.V1.Model.Query.t`, *default:* `nil`) - The underlying Query object which contains all the information of the saved query.
   *   `savedQueryId` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the saved query.
   """
 

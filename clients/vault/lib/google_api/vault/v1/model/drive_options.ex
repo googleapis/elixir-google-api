@@ -23,9 +23,7 @@ defmodule GoogleApi.Vault.V1.Model.DriveOptions do
 
   *   `includeSharedDrives` (*type:* `boolean()`, *default:* `nil`) - Set to true to include shared drive.
   *   `includeTeamDrives` (*type:* `boolean()`, *default:* `nil`) - Set to true to include Team Drive.
-  *   `versionDate` (*type:* `DateTime.t`, *default:* `nil`) - Search the versions of the Drive file
-      as of the reference date. These timestamps are in GMT and
-      rounded down to the given date.
+  *   `versionDate` (*type:* `DateTime.t`, *default:* `nil`) - Search the versions of the Drive file as of the reference date. These timestamps are in GMT and rounded down to the given date.
   """
 
   use GoogleApi.Gax.ModelBase

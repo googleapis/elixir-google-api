@@ -17,23 +17,16 @@
 
 defmodule GoogleApi.Vault.V1.Model.Hold do
   @moduledoc """
-  Represents a hold within Vault. A hold restricts purging of
-  artifacts based on the combination of the query and accounts restrictions.
-  A hold can be configured to either apply to an explicitly configured set
-  of accounts, or can be applied to all members of an organizational unit.
+  Represents a hold within Vault. A hold restricts purging of artifacts based on the combination of the query and accounts restrictions. A hold can be configured to either apply to an explicitly configured set of accounts, or can be applied to all members of an organizational unit.
 
   ## Attributes
 
-  *   `accounts` (*type:* `list(GoogleApi.Vault.V1.Model.HeldAccount.t)`, *default:* `nil`) - If set, the hold applies to the enumerated accounts and org_unit must be
-      empty.
+  *   `accounts` (*type:* `list(GoogleApi.Vault.V1.Model.HeldAccount.t)`, *default:* `nil`) - If set, the hold applies to the enumerated accounts and org_unit must be empty.
   *   `corpus` (*type:* `String.t`, *default:* `nil`) - The corpus to be searched.
   *   `holdId` (*type:* `String.t`, *default:* `nil`) - The unique immutable ID of the hold. Assigned during creation.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the hold.
-  *   `orgUnit` (*type:* `GoogleApi.Vault.V1.Model.HeldOrgUnit.t`, *default:* `nil`) - If set, the hold applies to all members of the organizational unit and
-      accounts must be empty. This property is mutable. For groups holds,
-      set the accounts field.
-  *   `query` (*type:* `GoogleApi.Vault.V1.Model.CorpusQuery.t`, *default:* `nil`) - The corpus-specific query. If set, the corpusQuery must match corpus
-      type.
+  *   `orgUnit` (*type:* `GoogleApi.Vault.V1.Model.HeldOrgUnit.t`, *default:* `nil`) - If set, the hold applies to all members of the organizational unit and accounts must be empty. This property is mutable. For groups holds, set the accounts field.
+  *   `query` (*type:* `GoogleApi.Vault.V1.Model.CorpusQuery.t`, *default:* `nil`) - The corpus-specific query. If set, the corpusQuery must match corpus type.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time this hold was modified.
   """
 

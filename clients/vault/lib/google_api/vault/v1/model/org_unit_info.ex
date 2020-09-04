@@ -21,9 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.OrgUnitInfo do
 
   ## Attributes
 
-  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - Org unit to search, as provided by the
-      <a href="https://developers.google.com/admin-sdk/directory/">Admin SDK
-      Directory API</a>.
+  *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - Org unit to search, as provided by the Admin SDK Directory API.
   """
 
   use GoogleApi.Gax.ModelBase

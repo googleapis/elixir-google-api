@@ -21,10 +21,8 @@ defmodule GoogleApi.Vault.V1.Model.HeldGroupsQuery do
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time range for the search query. These timestamps are in GMT and
-      rounded down to the start of the given date.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time range for the search query. These timestamps are in GMT and
-      rounded down to the start of the given date.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.
   *   `terms` (*type:* `String.t`, *default:* `nil`) - The search terms for the hold.
   """
 
