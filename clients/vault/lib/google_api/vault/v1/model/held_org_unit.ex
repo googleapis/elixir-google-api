@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Vault.V1.Model.HeldOrgUnit do
   @moduledoc """
-  A organizational unit being held in a particular hold.
-  This structure is immutable.
+  A organizational unit being held in a particular hold. This structure is immutable.
 
   ## Attributes
 

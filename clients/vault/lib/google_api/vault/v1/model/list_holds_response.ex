@@ -22,8 +22,7 @@ defmodule GoogleApi.Vault.V1.Model.ListHoldsResponse do
   ## Attributes
 
   *   `holds` (*type:* `list(GoogleApi.Vault.V1.Model.Hold.t)`, *default:* `nil`) - The list of holds.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token to retrieve the next page of results in the list.
-      If this is empty, then there are no more holds to list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token to retrieve the next page of results in the list. If this is empty, then there are no more holds to list.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -148,9 +148,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Creates a new matter with the given name and description. The initial state
-  is open, and the owner is the method caller. Returns the created matter
-  with default view.
+  Creates a new matter with the given name and description. The initial state is open, and the owner is the method caller. Returns the created matter with default view.
 
   ## Parameters
 
@@ -339,11 +337,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The number of matters to return in the response.
-          Default and maximum are 100.
+      *   `:pageSize` (*type:* `integer()`) - The number of matters to return in the response. Default and maximum are 100.
       *   `:pageToken` (*type:* `String.t`) - The pagination token as returned in the response.
-      *   `:state` (*type:* `String.t`) - If set, list only matters with that specific state. The default is listing
-          matters of all states.
+      *   `:state` (*type:* `String.t`) - If set, list only matters with that specific state. The default is listing matters of all states.
       *   `:view` (*type:* `String.t`) - Specifies which parts of the matter to return in response.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -567,10 +563,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Updates the specified matter.
-  This updates only the name and description of the matter, identified by
-  matter ID. Changes to any other fields are ignored.
-  Returns the default view of the matter.
+  Updates the specified matter. This updates only the name and description of the matter, identified by matter ID. Changes to any other fields are ignored. Returns the default view of the matter.
 
   ## Parameters
 
@@ -891,9 +884,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Adds HeldAccounts to a hold. Returns a list of accounts that have been
-  successfully added. Accounts can only be added to an existing account-based
-  hold.
+  Adds HeldAccounts to a hold. Returns a list of accounts that have been successfully added. Accounts can only be added to an existing account-based hold.
 
   ## Parameters
 
@@ -1158,8 +1149,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Lists holds within a matter. An empty page token in ListHoldsResponse
-  denotes no more holds to list.
+  Lists holds within a matter. An empty page token in ListHoldsResponse denotes no more holds to list.
 
   ## Parameters
 
@@ -1177,10 +1167,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The number of holds to return in the response, between 0 and 100 inclusive.
-          Leaving this empty, or as 0, is the same as page_size = 100.
-      *   `:pageToken` (*type:* `String.t`) - The pagination token as returned in the response.
-          An empty token means start from the beginning.
+      *   `:pageSize` (*type:* `integer()`) - The number of holds to return in the response, between 0 and 100 inclusive. Leaving this empty, or as 0, is the same as page_size = 100.
+      *   `:pageToken` (*type:* `String.t`) - The pagination token as returned in the response. An empty token means start from the beginning.
       *   `:view` (*type:* `String.t`) - Specifies which parts of the Hold to return.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1226,9 +1214,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Removes HeldAccounts from a hold. Returns a list of statuses in the same
-  order as the request. If this request leaves the hold with no held
-  accounts, the hold will not apply to any accounts.
+  Removes HeldAccounts from a hold. Returns a list of statuses in the same order as the request. If this request leaves the hold with no held accounts, the hold will not apply to any accounts.
 
   ## Parameters
 
@@ -1303,9 +1289,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Updates the OU and/or query parameters of a hold. You cannot add accounts
-  to a hold that covers an OU, nor can you add OUs to a hold that covers
-  individual accounts. Accounts listed in the hold will be ignored.
+  Updates the OU and/or query parameters of a hold. You cannot add accounts to a hold that covers an OU, nor can you add OUs to a hold that covers individual accounts. Accounts listed in the hold will be ignored.
 
   ## Parameters
 
@@ -1377,9 +1361,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Adds a HeldAccount to a hold. Accounts can only be added to a hold that
-  has no held_org_unit set. Attempting to add an account to an OU-based
-  hold will result in an error.
+  Adds a HeldAccount to a hold. Accounts can only be added to a hold that has no held_org_unit set. Attempting to add an account to an OU-based hold will result in an error.
 
   ## Parameters
 
@@ -1452,8 +1434,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Removes a HeldAccount from a hold. If this request leaves the hold with
-  no held accounts, the hold will not apply to any accounts.
+  Removes a HeldAccount from a hold. If this request leaves the hold with no held accounts, the hold will not apply to any accounts.
 
   ## Parameters
 
@@ -1527,10 +1508,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Lists HeldAccounts for a hold. This will only list individually specified
-  held accounts. If the hold is on an OU, then use
-  <a href="https://developers.google.com/admin-sdk/">Admin SDK</a>
-  to enumerate its members.
+  Lists HeldAccounts for a hold. This will only list individually specified held accounts. If the hold is on an OU, then use Admin SDK to enumerate its members.
 
   ## Parameters
 
@@ -1608,8 +1586,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
-  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved query is to be
-      created.
+  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved query is to be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1668,8 +1645,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
-  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved query is to be
-      deleted.
+  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved query is to be deleted.
   *   `saved_query_id` (*type:* `String.t`) - ID of the saved query to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1739,8 +1715,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
-  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved query is to be
-      retrieved.
+  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved query is to be retrieved.
   *   `saved_query_id` (*type:* `String.t`) - ID of the saved query to be retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1806,14 +1781,12 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   end
 
   @doc """
-  Lists saved queries within a matter. An empty page token in
-  ListSavedQueriesResponse denotes no more saved queries to list.
+  Lists saved queries within a matter. An empty page token in ListSavedQueriesResponse denotes no more saved queries to list.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
-  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved queries are to be
-      retrieved.
+  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved queries are to be retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1827,8 +1800,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of saved queries to return.
-      *   `:pageToken` (*type:* `String.t`) - The pagination token as returned in the previous response.
-          An empty token means start from the beginning.
+      *   `:pageToken` (*type:* `String.t`) - The pagination token as returned in the previous response. An empty token means start from the beginning.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

@@ -21,8 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.RemoveHeldAccountsResponse do
 
   ## Attributes
 
-  *   `statuses` (*type:* `list(GoogleApi.Vault.V1.Model.Status.t)`, *default:* `nil`) - A list of statuses for deleted accounts. Results have the
-      same order as the request.
+  *   `statuses` (*type:* `list(GoogleApi.Vault.V1.Model.Status.t)`, *default:* `nil`) - A list of statuses for deleted accounts. Results have the same order as the request.
   """
 
   use GoogleApi.Gax.ModelBase

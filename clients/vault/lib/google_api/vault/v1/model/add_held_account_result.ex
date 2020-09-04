@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Vault.V1.Model.AddHeldAccountResult do
   @moduledoc """
-  A status detailing the status of each account creation, and the
-  HeldAccount, if successful.
+  A status detailing the status of each account creation, and the HeldAccount, if successful.
 
   ## Attributes
 

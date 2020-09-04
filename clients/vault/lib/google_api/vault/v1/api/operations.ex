@@ -26,10 +26,7 @@ defmodule GoogleApi.Vault.V1.Api.Operations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes a long-running operation. This method indicates that the client is
-  no longer interested in the operation result. It does not cancel the
-  operation. If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.
 
   ## Parameters
 

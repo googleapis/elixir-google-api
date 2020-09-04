@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Vault.V1.Model.MatterPermission do
   @moduledoc """
-  Currently each matter only has one owner, and all others are collaborators.
-  When an account is purged, its corresponding MatterPermission resources
-  cease to exist.
+  Currently each matter only has one owner, and all others are collaborators. When an account is purged, its corresponding MatterPermission resources cease to exist.
 
   ## Attributes
 
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account ID, as provided by <a
-      href="https://developers.google.com/admin-sdk/">Admin SDK</a>.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account ID, as provided by Admin SDK.
   *   `role` (*type:* `String.t`, *default:* `nil`) - The user's role in this matter.
   """
 

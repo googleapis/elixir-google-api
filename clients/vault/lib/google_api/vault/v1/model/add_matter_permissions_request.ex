@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.Vault.V1.Model.AddMatterPermissionsRequest do
   @moduledoc """
-  Add an account with the permission specified. The role cannot be owner.
-  If an account already has a role in the matter, it will be
-  overwritten.
+  Add an account with the permission specified. The role cannot be owner. If an account already has a role in the matter, it will be overwritten.
 
   ## Attributes
 
-  *   `ccMe` (*type:* `boolean()`, *default:* `nil`) - Only relevant if send_emails is true.
-      True to CC requestor in the email message.
-      False to not CC requestor.
+  *   `ccMe` (*type:* `boolean()`, *default:* `nil`) - Only relevant if send_emails is true. True to CC requestor in the email message. False to not CC requestor.
   *   `matterPermission` (*type:* `GoogleApi.Vault.V1.Model.MatterPermission.t`, *default:* `nil`) - The MatterPermission to add.
-  *   `sendEmails` (*type:* `boolean()`, *default:* `nil`) - True to send notification email to the added account.
-      False to not send notification email.
+  *   `sendEmails` (*type:* `boolean()`, *default:* `nil`) - True to send notification email to the added account. False to not send notification email.
   """
 
   use GoogleApi.Gax.ModelBase

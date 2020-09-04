@@ -21,8 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.SharedDriveInfo do
 
   ## Attributes
 
-  *   `sharedDriveIds` (*type:* `list(String.t)`, *default:* `nil`) - List of Shared drive IDs, as provided by <a
-      href="https://developers.google.com/drive">Drive API</a>.
+  *   `sharedDriveIds` (*type:* `list(String.t)`, *default:* `nil`) - List of Shared drive IDs, as provided by Drive API.
   """
 
   use GoogleApi.Gax.ModelBase
