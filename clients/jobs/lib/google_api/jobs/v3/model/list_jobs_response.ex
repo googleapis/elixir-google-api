@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.ListJobsResponse do
   @moduledoc """
-  Output only.
-
-  List jobs response.
+  Output only. List jobs response.
 
   ## Attributes
 
-  *   `jobs` (*type:* `list(GoogleApi.Jobs.V3.Model.Job.t)`, *default:* `nil`) - The Jobs for a given company.
-
-      The maximum number of items returned is based on the limit field
-      provided in the request.
-  *   `metadata` (*type:* `GoogleApi.Jobs.V3.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request
-      tracking id.
+  *   `jobs` (*type:* `list(GoogleApi.Jobs.V3.Model.Job.t)`, *default:* `nil`) - The Jobs for a given company. The maximum number of items returned is based on the limit field provided in the request.
+  *   `metadata` (*type:* `GoogleApi.Jobs.V3.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request tracking id.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
   """
 

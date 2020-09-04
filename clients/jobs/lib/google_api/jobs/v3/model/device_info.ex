@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.DeviceInfo do
   @moduledoc """
-  Device information collected from the job seeker, candidate, or
-  other entity conducting the job search. Providing this information improves
-  the quality of the search results across devices.
+  Device information collected from the job seeker, candidate, or other entity conducting the job search. Providing this information improves the quality of the search results across devices.
 
   ## Attributes
 
   *   `deviceType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of the device.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. A device-specific ID. The ID must be a unique identifier that
-      distinguishes the device from other devices.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. A device-specific ID. The ID must be a unique identifier that distinguishes the device from other devices.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Jobs.V3.Model.SpellingCorrection do
   @moduledoc """
-  Output only.
-
-  Spell check result.
+  Output only. Spell check result.
 
   ## Attributes
 

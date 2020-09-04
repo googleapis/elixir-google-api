@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.JobDerivedInfo do
   @moduledoc """
-  Output only.
-
-  Derived details about the job posting.
+  Output only. Derived details about the job posting.
 
   ## Attributes
 
   *   `jobCategories` (*type:* `list(String.t)`, *default:* `nil`) - Job categories derived from Job.title and Job.description.
-  *   `locations` (*type:* `list(GoogleApi.Jobs.V3.Model.Location.t)`, *default:* `nil`) - Structured locations of the job, resolved from Job.addresses.
-
-      locations are exactly matched to Job.addresses in the same
-      order.
+  *   `locations` (*type:* `list(GoogleApi.Jobs.V3.Model.Location.t)`, *default:* `nil`) - Structured locations of the job, resolved from Job.addresses. locations are exactly matched to Job.addresses in the same order.
   """
 
   use GoogleApi.Gax.ModelBase

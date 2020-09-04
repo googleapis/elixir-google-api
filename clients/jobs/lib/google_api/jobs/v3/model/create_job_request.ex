@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Jobs.V3.Model.CreateJobRequest do
   @moduledoc """
-  Input only.
-
-  Create job request.
+  Input only. Create job request.
 
   ## Attributes
 

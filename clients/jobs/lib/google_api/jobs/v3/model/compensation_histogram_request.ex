@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.CompensationHistogramRequest do
   @moduledoc """
-  Input only.
-
-  Compensation based histogram request.
+  Input only. Compensation based histogram request.
 
   ## Attributes
 
   *   `bucketingOption` (*type:* `GoogleApi.Jobs.V3.Model.NumericBucketingOption.t`, *default:* `nil`) - Required. Numeric histogram options, like buckets, whether include min or max value.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of the request, representing which field the histogramming should be
-      performed over. A single request can only specify one histogram of each
-      `CompensationHistogramRequestType`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of the request, representing which field the histogramming should be performed over. A single request can only specify one histogram of each `CompensationHistogramRequestType`.
   """
 
   use GoogleApi.Gax.ModelBase

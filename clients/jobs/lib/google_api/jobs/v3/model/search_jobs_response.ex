@@ -17,37 +17,19 @@
 
 defmodule GoogleApi.Jobs.V3.Model.SearchJobsResponse do
   @moduledoc """
-  Output only.
-
-  Response for SearchJob method.
+  Output only. Response for SearchJob method.
 
   ## Attributes
 
-  *   `broadenedQueryJobsCount` (*type:* `integer()`, *default:* `nil`) - If query broadening is enabled, we may append additional results from the
-      broadened query. This number indicates how many of the jobs returned in the
-      jobs field are from the broadened query. These results are always at the
-      end of the jobs list. In particular, a value of 0, or if the field isn't
-      set, all the jobs in the jobs list are from the original
-      (without broadening) query. If this field is non-zero, subsequent requests
-      with offset after this result set should contain all broadened results.
-  *   `estimatedTotalSize` (*type:* `integer()`, *default:* `nil`) - An estimation of the number of jobs that match the specified query.
-
-      This number is not guaranteed to be accurate. For accurate results,
-      see enable_precise_result_size.
-  *   `histogramResults` (*type:* `GoogleApi.Jobs.V3.Model.HistogramResults.t`, *default:* `nil`) - The histogram results that match specified
-      SearchJobsRequest.histogram_facets.
-  *   `locationFilters` (*type:* `list(GoogleApi.Jobs.V3.Model.Location.t)`, *default:* `nil`) - The location filters that the service applied to the specified query. If
-      any filters are lat-lng based, the JobLocation.location_type is
-      JobLocation.LocationType#LOCATION_TYPE_UNSPECIFIED.
+  *   `broadenedQueryJobsCount` (*type:* `integer()`, *default:* `nil`) - If query broadening is enabled, we may append additional results from the broadened query. This number indicates how many of the jobs returned in the jobs field are from the broadened query. These results are always at the end of the jobs list. In particular, a value of 0, or if the field isn't set, all the jobs in the jobs list are from the original (without broadening) query. If this field is non-zero, subsequent requests with offset after this result set should contain all broadened results.
+  *   `estimatedTotalSize` (*type:* `integer()`, *default:* `nil`) - An estimation of the number of jobs that match the specified query. This number is not guaranteed to be accurate. For accurate results, see SearchJobsResponse.total_size.
+  *   `histogramResults` (*type:* `GoogleApi.Jobs.V3.Model.HistogramResults.t`, *default:* `nil`) - The histogram results that match specified SearchJobsRequest.histogram_facets.
+  *   `locationFilters` (*type:* `list(GoogleApi.Jobs.V3.Model.Location.t)`, *default:* `nil`) - The location filters that the service applied to the specified query. If any filters are lat-lng based, the JobLocation.location_type is JobLocation.LocationType#LOCATION_TYPE_UNSPECIFIED.
   *   `matchingJobs` (*type:* `list(GoogleApi.Jobs.V3.Model.MatchingJob.t)`, *default:* `nil`) - The Job entities that match the specified SearchJobsRequest.
-  *   `metadata` (*type:* `GoogleApi.Jobs.V3.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request
-      tracking id.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that specifies the starting position of the next page of results.
-      This field is empty if there are no more results.
+  *   `metadata` (*type:* `GoogleApi.Jobs.V3.Model.ResponseMetadata.t`, *default:* `nil`) - Additional information for the API invocation, such as the request tracking id.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that specifies the starting position of the next page of results. This field is empty if there are no more results.
   *   `spellCorrection` (*type:* `GoogleApi.Jobs.V3.Model.SpellingCorrection.t`, *default:* `nil`) - The spell checking result, and correction.
-  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The precise result count, which is available only if the client set
-      enable_precise_result_size to `true`, or if the response
-      is the last page of results. Otherwise, the value is `-1`.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The precise result count with limit 100,000.
   """
 
   use GoogleApi.Gax.ModelBase

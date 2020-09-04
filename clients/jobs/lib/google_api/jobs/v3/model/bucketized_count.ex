@@ -22,8 +22,7 @@ defmodule GoogleApi.Jobs.V3.Model.BucketizedCount do
   ## Attributes
 
   *   `count` (*type:* `integer()`, *default:* `nil`) - Number of jobs whose numeric field value fall into `range`.
-  *   `range` (*type:* `GoogleApi.Jobs.V3.Model.BucketRange.t`, *default:* `nil`) - Bucket range on which histogram was performed for the numeric field,
-      that is, the count represents number of jobs in this range.
+  *   `range` (*type:* `GoogleApi.Jobs.V3.Model.BucketRange.t`, *default:* `nil`) - Bucket range on which histogram was performed for the numeric field, that is, the count represents number of jobs in this range.
   """
 
   use GoogleApi.Gax.ModelBase

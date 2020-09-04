@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Jobs.V3.Model.ResponseMetadata do
   @moduledoc """
-  Output only.
-
-  Additional information returned to client, such as debugging information.
+  Output only. Additional information returned to client, such as debugging information.
 
   ## Attributes
 
-  *   `requestId` (*type:* `String.t`, *default:* `nil`) - A unique id associated with this call.
-      This id is logged for tracking purposes.
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - A unique id associated with this call. This id is logged for tracking purposes.
   """
 
   use GoogleApi.Gax.ModelBase

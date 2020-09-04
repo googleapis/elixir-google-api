@@ -17,21 +17,12 @@
 
 defmodule GoogleApi.Jobs.V3.Model.UpdateCompanyRequest do
   @moduledoc """
-  Input only.
-
-  Request for updating a specified company.
+  Input only. Request for updating a specified company.
 
   ## Attributes
 
   *   `company` (*type:* `GoogleApi.Jobs.V3.Model.Company.t`, *default:* `nil`) - Required. The company resource to replace the current resource in the system.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional but strongly recommended for the best service
-      experience.
-
-      If update_mask is provided, only the specified fields in
-      company are updated. Otherwise all the fields are updated.
-
-      A field mask to specify the company fields to be updated. Only
-      top level fields of Company are supported.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional but strongly recommended for the best service experience. If update_mask is provided, only the specified fields in company are updated. Otherwise all the fields are updated. A field mask to specify the company fields to be updated. Only top level fields of Company are supported.
   """
 
   use GoogleApi.Gax.ModelBase

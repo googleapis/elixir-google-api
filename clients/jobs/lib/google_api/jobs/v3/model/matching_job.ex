@@ -17,24 +17,15 @@
 
 defmodule GoogleApi.Jobs.V3.Model.MatchingJob do
   @moduledoc """
-  Output only.
-
-  Job entry with metadata inside SearchJobsResponse.
+  Output only. Job entry with metadata inside SearchJobsResponse.
 
   ## Attributes
 
-  *   `commuteInfo` (*type:* `GoogleApi.Jobs.V3.Model.CommuteInfo.t`, *default:* `nil`) - Commute information which is generated based on specified
-       CommuteFilter.
+  *   `commuteInfo` (*type:* `GoogleApi.Jobs.V3.Model.CommuteInfo.t`, *default:* `nil`) - Commute information which is generated based on specified CommuteFilter.
   *   `job` (*type:* `GoogleApi.Jobs.V3.Model.Job.t`, *default:* `nil`) - Job resource that matches the specified SearchJobsRequest.
-  *   `jobSummary` (*type:* `String.t`, *default:* `nil`) - A summary of the job with core information that's displayed on the search
-      results listing page.
-  *   `jobTitleSnippet` (*type:* `String.t`, *default:* `nil`) - Contains snippets of text from the Job.job_title field most
-      closely matching a search query's keywords, if available. The matching
-      query keywords are enclosed in HTML bold tags.
-  *   `searchTextSnippet` (*type:* `String.t`, *default:* `nil`) - Contains snippets of text from the Job.description and similar
-      fields that most closely match a search query's keywords, if available.
-      All HTML tags in the original fields are stripped when returned in this
-      field, and matching query keywords are enclosed in HTML bold tags.
+  *   `jobSummary` (*type:* `String.t`, *default:* `nil`) - A summary of the job with core information that's displayed on the search results listing page.
+  *   `jobTitleSnippet` (*type:* `String.t`, *default:* `nil`) - Contains snippets of text from the Job.job_title field most closely matching a search query's keywords, if available. The matching query keywords are enclosed in HTML bold tags.
+  *   `searchTextSnippet` (*type:* `String.t`, *default:* `nil`) - Contains snippets of text from the Job.description and similar fields that most closely match a search query's keywords, if available. All HTML tags in the original fields are stripped when returned in this field, and matching query keywords are enclosed in HTML bold tags.
   """
 
   use GoogleApi.Gax.ModelBase
