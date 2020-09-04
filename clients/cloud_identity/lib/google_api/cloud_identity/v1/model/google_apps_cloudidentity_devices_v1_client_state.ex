@@ -26,11 +26,11 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Clien
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the client state data was created.
   *   `customId` (*type:* `String.t`, *default:* `nil`) - This field may be used to store a unique identifier for the API resource within which these CustomAttributes are a field.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The token that needs to be passed back for concurrency control in updates. Token needs to be passed back in UpdateRequest
-  *   `healthScore` (*type:* `String.t`, *default:* `nil`) - The Health score of the resource
+  *   `healthScore` (*type:* `String.t`, *default:* `nil`) - The Health score of the resource. The Health score is the callers specification of the condition of the device from a usability point of view. For example, a third-party device management provider may specify a health score based on its compliance with organizational policies.
   *   `keyValuePairs` (*type:* `%{optional(String.t) => GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1CustomAttributeValue.t}`, *default:* `nil`) - The map of key-value attributes stored by callers specific to a device. The total serialized length of this map may not exceed 10KB. No limit is placed on the number of attributes in a map.
   *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the client state data was last updated.
   *   `managed` (*type:* `String.t`, *default:* `nil`) - The management state of the resource as specified by the API client.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the ClientState in format: `devices/{device_id}/deviceUsers/{device_user_id}/clientState/{partner_id}`, where partner_id corresponds to the partner storing the data.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the ClientState in format: `devices/{device_id}/deviceUsers/{device_user_id}/clientState/{partner_id}`, where partner_id corresponds to the partner storing the data. For partners belonging to the "BeyondCorp Alliance", this is the partner ID specified to you by Google. For all other callers, this is a string of the form: `{customer_id}-suffix`, where `customer_id` is your customer id. The suffix is any string the caller specifies. This string will be displayed verbatim in the administration console.
   *   `ownerType` (*type:* `String.t`, *default:* `nil`) - Output only. The owner of the ClientState
   *   `scoreReason` (*type:* `String.t`, *default:* `nil`) - A descriptive cause of the health score.
   """

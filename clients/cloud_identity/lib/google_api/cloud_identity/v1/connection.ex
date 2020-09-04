@@ -24,6 +24,9 @@ defmodule GoogleApi.CloudIdentity.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+      # See your device details
+      "https://www.googleapis.com/auth/cloud-identity.devices.lookup",
+
       # See, change, create, and delete any of the Cloud Identity Groups that you can access, including the members of each group
       "https://www.googleapis.com/auth/cloud-identity.groups",
 
