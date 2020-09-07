@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.DigitalAssetLinks.V1.Model.Asset do
   @moduledoc """
-  Uniquely identifies an asset.
-
-  A digital asset is an identifiable and addressable online entity that
-  typically provides some service or content.  Examples of assets are websites,
-  Android apps, Twitter feeds, and Plus Pages.
+  Uniquely identifies an asset. A digital asset is an identifiable and addressable online entity that typically provides some service or content. Examples of assets are websites, Android apps, Twitter feeds, and Plus Pages.
 
   ## Attributes
 

@@ -21,21 +21,9 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.ListResponse do
 
   ## Attributes
 
-  *   `debugString` (*type:* `String.t`, *default:* `nil`) - Human-readable message containing information intended to help end users
-      understand, reproduce and debug the result.
-
-
-      The message will be in English and we are currently not planning to offer
-      any translations.
-
-      Please note that no guarantees are made about the contents or format of
-      this string.  Any aspect of it may be subject to change without notice.
-      You should not attempt to programmatically parse this data.  For
-      programmatic access, use the error_code field below.
+  *   `debugString` (*type:* `String.t`, *default:* `nil`) - Human-readable message containing information intended to help end users understand, reproduce and debug the result. The message will be in English and we are currently not planning to offer any translations. Please note that no guarantees are made about the contents or format of this string. Any aspect of it may be subject to change without notice. You should not attempt to programmatically parse this data. For programmatic access, use the error_code field below.
   *   `errorCode` (*type:* `list(String.t)`, *default:* `nil`) - Error codes that describe the result of the List operation.
-  *   `maxAge` (*type:* `String.t`, *default:* `nil`) - From serving time, how much longer the response should be considered valid
-      barring further updates.
-      REQUIRED
+  *   `maxAge` (*type:* `String.t`, *default:* `nil`) - From serving time, how much longer the response should be considered valid barring further updates. REQUIRED
   *   `statements` (*type:* `list(GoogleApi.DigitalAssetLinks.V1.Model.Statement.t)`, *default:* `nil`) - A list of all the matching statements that have been found.
   """
 

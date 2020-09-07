@@ -17,36 +17,13 @@
 
 defmodule GoogleApi.DigitalAssetLinks.V1.Model.Statement do
   @moduledoc """
-  Describes a reliable statement that has been made about the relationship
-  between a source asset and a target asset.
-
-  Statements are always made by the source asset, either directly or by
-  delegating to a statement list that is stored elsewhere.
-
-  For more detailed definitions of statements and assets, please refer
-  to our [API documentation landing
-  page](/digital-asset-links/v1/getting-started).
+  Describes a reliable statement that has been made about the relationship between a source asset and a target asset. Statements are always made by the source asset, either directly or by delegating to a statement list that is stored elsewhere. For more detailed definitions of statements and assets, please refer to our [API documentation landing page](/digital-asset-links/v1/getting-started).
 
   ## Attributes
 
-  *   `relation` (*type:* `String.t`, *default:* `nil`) - The relation identifies the use of the statement as intended by the source
-      asset's owner (that is, the person or entity who issued the statement).
-      Every complete statement has a relation.
-
-      We identify relations with strings of the format `<kind>/<detail>`, where
-      `<kind>` must be one of a set of pre-defined purpose categories, and
-      `<detail>` is a free-form lowercase alphanumeric string that describes the
-      specific use case of the statement.
-
-      Refer to [our API documentation](/digital-asset-links/v1/relation-strings)
-      for the current list of supported relations.
-
-      Example: `delegate_permission/common.handle_all_urls`
-      REQUIRED
-  *   `source` (*type:* `GoogleApi.DigitalAssetLinks.V1.Model.Asset.t`, *default:* `nil`) - Every statement has a source asset.
-      REQUIRED
-  *   `target` (*type:* `GoogleApi.DigitalAssetLinks.V1.Model.Asset.t`, *default:* `nil`) - Every statement has a target asset.
-      REQUIRED
+  *   `relation` (*type:* `String.t`, *default:* `nil`) - The relation identifies the use of the statement as intended by the source asset's owner (that is, the person or entity who issued the statement). Every complete statement has a relation. We identify relations with strings of the format `/`, where `` must be one of a set of pre-defined purpose categories, and `` is a free-form lowercase alphanumeric string that describes the specific use case of the statement. Refer to [our API documentation](/digital-asset-links/v1/relation-strings) for the current list of supported relations. Example: `delegate_permission/common.handle_all_urls` REQUIRED
+  *   `source` (*type:* `GoogleApi.DigitalAssetLinks.V1.Model.Asset.t`, *default:* `nil`) - Every statement has a source asset. REQUIRED
+  *   `target` (*type:* `GoogleApi.DigitalAssetLinks.V1.Model.Asset.t`, *default:* `nil`) - Every statement has a target asset. REQUIRED
   """
 
   use GoogleApi.Gax.ModelBase
