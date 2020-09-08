@@ -56,7 +56,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
       - "public" - The event is public and event details are visible to all readers of the calendar. 
       - "private" - The event is private and only event attendees may view event details. 
       - "confidential" - The event is private. This value is provided for compatibility reasons.
-  *   `gadget` (*type:* `GoogleApi.Calendar.V3.Model.EventGadget.t`, *default:* `nil`) - A gadget that extends this event.
+  *   `gadget` (*type:* `GoogleApi.Calendar.V3.Model.EventGadget.t`, *default:* `nil`) - A gadget that extends this event. Gadgets are deprecated; this structure is instead only used for returning birthday calendar metadata.
   *   `colorId` (*type:* `String.t`, *default:* `nil`) - The color of the event. This is an ID referring to an entry in the event section of the colors definition (see the  colors endpoint). Optional.
   *   `guestsCanInviteOthers` (*type:* `boolean()`, *default:* `true`) - Whether attendees other than the organizer can invite others to the event. Optional. The default is True.
   *   `extendedProperties` (*type:* `GoogleApi.Calendar.V3.Model.EventExtendedProperties.t`, *default:* `nil`) - Extended properties of the event.

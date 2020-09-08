@@ -17,20 +17,20 @@
 
 defmodule GoogleApi.Calendar.V3.Model.EventGadget do
   @moduledoc """
-  A gadget that extends this event.
+  A gadget that extends this event. Gadgets are deprecated; this structure is instead only used for returning birthday calendar metadata.
 
   ## Attributes
 
-  *   `display` (*type:* `String.t`, *default:* `nil`) - The gadget's display mode. Optional. Possible values are:  
+  *   `display` (*type:* `String.t`, *default:* `nil`) - The gadget's display mode. Deprecated. Possible values are:  
       - "icon" - The gadget displays next to the event's title in the calendar view. 
       - "chip" - The gadget displays when the event is clicked.
-  *   `height` (*type:* `integer()`, *default:* `nil`) - The gadget's height in pixels. The height must be an integer greater than 0. Optional.
-  *   `iconLink` (*type:* `String.t`, *default:* `nil`) - The gadget's icon URL. The URL scheme must be HTTPS.
-  *   `link` (*type:* `String.t`, *default:* `nil`) - The gadget's URL. The URL scheme must be HTTPS.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - The gadget's height in pixels. The height must be an integer greater than 0. Optional. Deprecated.
+  *   `iconLink` (*type:* `String.t`, *default:* `nil`) - The gadget's icon URL. The URL scheme must be HTTPS. Deprecated.
+  *   `link` (*type:* `String.t`, *default:* `nil`) - The gadget's URL. The URL scheme must be HTTPS. Deprecated.
   *   `preferences` (*type:* `map()`, *default:* `nil`) - Preferences.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The gadget's title.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The gadget's type.
-  *   `width` (*type:* `integer()`, *default:* `nil`) - The gadget's width in pixels. The width must be an integer greater than 0. Optional.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The gadget's title. Deprecated.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The gadget's type. Deprecated.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - The gadget's width in pixels. The width must be an integer greater than 0. Optional. Deprecated.
   """
 
   use GoogleApi.Gax.ModelBase
