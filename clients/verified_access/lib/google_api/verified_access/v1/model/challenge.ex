@@ -21,8 +21,7 @@ defmodule GoogleApi.VerifiedAccess.V1.Model.Challenge do
 
   ## Attributes
 
-  *   `alternativeChallenge` (*type:* `GoogleApi.VerifiedAccess.V1.Model.SignedData.t`, *default:* `nil`) - Challenge generated with the old signing key
-      (this will only be present during key rotation)
+  *   `alternativeChallenge` (*type:* `GoogleApi.VerifiedAccess.V1.Model.SignedData.t`, *default:* `nil`) - Challenge generated with the old signing key (this will only be present during key rotation)
   *   `challenge` (*type:* `GoogleApi.VerifiedAccess.V1.Model.SignedData.t`, *default:* `nil`) - Generated challenge
   """
 
