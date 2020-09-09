@@ -22,12 +22,7 @@ defmodule GoogleApi.VerifiedAccess.V1.Model.VerifyChallengeResponseRequest do
   ## Attributes
 
   *   `challengeResponse` (*type:* `GoogleApi.VerifiedAccess.V1.Model.SignedData.t`, *default:* `nil`) - The generated response to the challenge
-  *   `expectedIdentity` (*type:* `String.t`, *default:* `nil`) - Service can optionally provide identity information about the device
-      or user associated with the key.
-      For an EMK, this value is the enrolled domain.
-      For an EUK, this value is the user's email address.
-      If present, this value will be checked against contents
-      of the response, and verification will fail if there is no match.
+  *   `expectedIdentity` (*type:* `String.t`, *default:* `nil`) - Service can optionally provide identity information about the device or user associated with the key. For an EMK, this value is the enrolled domain. For an EUK, this value is the user's email address. If present, this value will be checked against contents of the response, and verification will fail if there is no match.
   """
 
   use GoogleApi.Gax.ModelBase
