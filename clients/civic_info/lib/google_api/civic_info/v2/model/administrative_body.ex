@@ -25,6 +25,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
   *   `ballotInfoUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body to give contest information to the voter.
   *   `correspondenceAddress` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The mailing address of this administrative body.
   *   `electionInfoUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for looking up general election information.
+  *   `electionNoticeText` (*type:* `String.t`, *default:* `nil`) - A last minute or emergency notification text provided by this administrative body.
+  *   `electionNoticeUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for additional information related to the last minute or emergency notification.
   *   `electionOfficials` (*type:* `list(GoogleApi.CivicInfo.V2.Model.ElectionOfficial.t)`, *default:* `nil`) - The election officials for this election administrative body.
   *   `electionRegistrationConfirmationUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for confirming that the voter is registered to vote.
   *   `electionRegistrationUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for looking up how to register to vote.
@@ -43,6 +45,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
           :ballotInfoUrl => String.t(),
           :correspondenceAddress => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t(),
           :electionInfoUrl => String.t(),
+          :electionNoticeText => String.t(),
+          :electionNoticeUrl => String.t(),
           :electionOfficials => list(GoogleApi.CivicInfo.V2.Model.ElectionOfficial.t()),
           :electionRegistrationConfirmationUrl => String.t(),
           :electionRegistrationUrl => String.t(),
@@ -58,6 +62,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
   field(:ballotInfoUrl)
   field(:correspondenceAddress, as: GoogleApi.CivicInfo.V2.Model.SimpleAddressType)
   field(:electionInfoUrl)
+  field(:electionNoticeText)
+  field(:electionNoticeUrl)
   field(:electionOfficials, as: GoogleApi.CivicInfo.V2.Model.ElectionOfficial, type: :list)
   field(:electionRegistrationConfirmationUrl)
   field(:electionRegistrationUrl)
