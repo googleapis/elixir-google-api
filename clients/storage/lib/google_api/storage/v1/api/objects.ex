@@ -44,7 +44,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:destinationPredefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to the destination object.
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
-      *   `:kmsKeyName` (*type:* `String.t`) - Not currently supported. Specifying the parameter causes the request to fail with status code 400 - Bad Request.
+      *   `:kmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.ComposeRequest.t`) - 

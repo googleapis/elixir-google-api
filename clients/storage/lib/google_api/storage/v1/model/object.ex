@@ -37,7 +37,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   *   `generation` (*type:* `String.t`, *default:* `nil`) - The content generation of this object. Used for object versioning.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the object, including the bucket name, object name, and generation number.
   *   `kind` (*type:* `String.t`, *default:* `storage#object`) - The kind of item this is. For objects, this is always storage#object.
-  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Cloud KMS Key used to encrypt this object, if the object is encrypted by such a key.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Not currently supported. Specifying the parameter causes the request to fail with status code 400 - Bad Request.
   *   `md5Hash` (*type:* `String.t`, *default:* `nil`) - MD5 hash of the data; encoded using base64. For more information about using the MD5 hash, see Hashes and ETags: Best Practices.
   *   `mediaLink` (*type:* `String.t`, *default:* `nil`) - Media download link.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - User-provided metadata, in key/value pairs.
