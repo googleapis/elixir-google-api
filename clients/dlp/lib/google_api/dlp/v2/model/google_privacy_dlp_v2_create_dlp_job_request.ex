@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateDlpJobRequest do
   ## Attributes
 
   *   `inspectJob` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig.t`, *default:* `nil`) - Set to control what and how to inspect.
-  *   `jobId` (*type:* `String.t`, *default:* `nil`) - The job id can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: `[a-zA-Z\\\\d-_]+`. The maximum length is 100 characters. Can be empty to allow the system to generate one.
+  *   `jobId` (*type:* `String.t`, *default:* `nil`) - The job id can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: `[a-zA-Z\\d-_]+`. The maximum length is 100 characters. Can be empty to allow the system to generate one.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   *   `riskJob` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RiskAnalysisJobConfig.t`, *default:* `nil`) - Set to choose what metric to calculate.
   """
