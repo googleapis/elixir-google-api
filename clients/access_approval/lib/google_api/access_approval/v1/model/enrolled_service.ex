@@ -21,7 +21,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.EnrolledService do
 
   ## Attributes
 
-  *   `cloudProduct` (*type:* `String.t`, *default:* `nil`) - The product for which Access Approval will be enrolled. Allowed values are listed below (case-sensitive): 1. all 2. appengine.googleapis.com 3. bigquery.googleapis.com 4. bigtable.googleapis.com 5. cloudkms.googleapis.com 6. compute.googleapis.com 7. dataflow.googleapis.com 8. iam.googleapis.com 9. pubsub.googleapis.com 10. storage.googleapis.com 
+  *   `cloudProduct` (*type:* `String.t`, *default:* `nil`) - The product for which Access Approval will be enrolled. Allowed values are listed below (case-sensitive): 1. all 2. ga-only 3. appengine.googleapis.com 4. bigquery.googleapis.com 5. bigtable.googleapis.com 6. cloudkms.googleapis.com 7. compute.googleapis.com 8. dataflow.googleapis.com 9. iam.googleapis.com 10. pubsub.googleapis.com 11. storage.googleapis.com Note: 'all' will enroll the resource in all products supported at both 'GA' and 'Preview' levels. 'ga-only' will only enroll the resource in products supported at 'GA' level.
   *   `enrollmentLevel` (*type:* `String.t`, *default:* `nil`) - The enrollment level of the service.
   """
 
