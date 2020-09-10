@@ -21,6 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3BatchPr
 
   ## Attributes
 
+  *   `humanReviewOperation` (*type:* `String.t`, *default:* `nil`) - The name of the operation triggered by the processed document. If the human review process is not triggered, this field will be empty. It has the same response type and metadata as the long running operation returned by ReviewDocument method.
   *   `inputGcsSource` (*type:* `String.t`, *default:* `nil`) - The source of the document, same as the [input_gcs_source] field in the request when the batch process started. The batch process is started by take snapshot of that document, since a user can move or change that document during the process.
   *   `outputGcsDestination` (*type:* `String.t`, *default:* `nil`) - The output_gcs_destination (in the request as 'output_gcs_destination') of the processed document if it was successful, otherwise empty.
   *   `status` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t`, *default:* `nil`) - The status of the processing of the document.
@@ -29,11 +30,13 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3BatchPr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :humanReviewOperation => String.t(),
           :inputGcsSource => String.t(),
           :outputGcsDestination => String.t(),
           :status => GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t()
         }
 
+  field(:humanReviewOperation)
   field(:inputGcsSource)
   field(:outputGcsDestination)
   field(:status, as: GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus)

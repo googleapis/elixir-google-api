@@ -27,8 +27,10 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
   *   `error` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Any error that occurred while processing this document.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - An IANA published MIME type (also referred to as media type). For more information, see https://www.iana.org/assignments/media-types/media-types.xhtml.
   *   `pages` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPage.t)`, *default:* `nil`) - Visual page layout for the Document.
+  *   `revisions` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentRevision.t)`, *default:* `nil`) - Revision history of this document.
   *   `shardInfo` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentShardInfo.t`, *default:* `nil`) - Information about the sharding if this document is sharded part of a larger document. If the document is not sharded, this message is not specified.
   *   `text` (*type:* `String.t`, *default:* `nil`) - UTF-8 encoded text in reading order from the document.
+  *   `textChanges` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentTextChange.t)`, *default:* `nil`) - A list of text corrections made to [Document.text]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other.
   *   `textStyles` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentStyle.t)`, *default:* `nil`) - Styles for the Document.text.
   *   `translations` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentTranslation.t)`, *default:* `nil`) - A list of translations on Document.text. For document shards, translations in this list may cross shard boundaries.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Currently supports Google Cloud Storage URI of the form `gs://bucket_name/object_name`. Object versioning is not supported. See [Google Cloud Storage Request URIs](https://cloud.google.com/storage/docs/reference-uris) for more info.
@@ -50,9 +52,17 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
           :mimeType => String.t(),
           :pages =>
             list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPage.t()),
+          :revisions =>
+            list(
+              GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentRevision.t()
+            ),
           :shardInfo =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentShardInfo.t(),
           :text => String.t(),
+          :textChanges =>
+            list(
+              GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentTextChange.t()
+            ),
           :textStyles =>
             list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentStyle.t()),
           :translations =>
@@ -82,11 +92,21 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
     type: :list
   )
 
+  field(:revisions,
+    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentRevision,
+    type: :list
+  )
+
   field(:shardInfo,
     as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentShardInfo
   )
 
   field(:text)
+
+  field(:textChanges,
+    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentTextChange,
+    type: :list
+  )
 
   field(:textStyles,
     as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentStyle,
