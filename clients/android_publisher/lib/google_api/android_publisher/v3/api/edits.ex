@@ -697,6 +697,83 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_edits_apks_upload_resumable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def androidpublisher_edits_apks_upload_resumable(
+        connection,
+        package_name,
+        edit_id,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/resumable/upload/androidpublisher/v3/applications/{packageName}/edits/{editId}/apks",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
+  end
+
+  @doc """
+  Uploads an APK and adds to the current edit.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
+  *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
@@ -1025,6 +1102,85 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_edits_bundles_upload_resumable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def androidpublisher_edits_bundles_upload_resumable(
+        connection,
+        package_name,
+        edit_id,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :ackBundleInstallationWarning => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/resumable/upload/androidpublisher/v3/applications/{packageName}/edits/{editId}/bundles",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
+  end
+
+  @doc """
+  Uploads a new Android App Bundle to this edit. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See [Timeouts and Errors](https://developers.google.com/api-client-library/java/google-api-java-client/errors) for an example in java.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
+  *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
@@ -1291,6 +1447,92 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse{}]
     )
+  end
+
+  @doc """
+  Uploads a new deobfuscation file and attaches to the specified APK.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app.
+  *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose Deobfuscation File is being uploaded.
+  *   `deobfuscation_file_type` (*type:* `String.t`) - The type of the deobfuscation file.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_edits_deobfuscationfiles_upload_resumable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def androidpublisher_edits_deobfuscationfiles_upload_resumable(
+        connection,
+        package_name,
+        edit_id,
+        apk_version_code,
+        deobfuscation_file_type,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/resumable/upload/androidpublisher/v3/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/deobfuscationFiles/{deobfuscationFileType}",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "apkVersionCode" => apk_version_code,
+          "deobfuscationFileType" =>
+            URI.encode(deobfuscation_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
@@ -2070,6 +2312,92 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
   *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being read or modified.
   *   `expansion_file_type` (*type:* `String.t`) - The file type of the expansion file configuration which is being updated.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_edits_expansionfiles_upload_resumable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def androidpublisher_edits_expansionfiles_upload_resumable(
+        connection,
+        package_name,
+        edit_id,
+        apk_version_code,
+        expansion_file_type,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/resumable/upload/androidpublisher/v3/applications/{packageName}/edits/{editId}/apks/{apkVersionCode}/expansionFiles/{expansionFileType}",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "apkVersionCode" => apk_version_code,
+          "expansionFileType" =>
+            URI.encode(expansion_file_type, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
+  end
+
+  @doc """
+  Uploads a new expansion file and attaches to the specified APK.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
+  *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
+  *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose expansion file configuration is being read or modified.
+  *   `expansion_file_type` (*type:* `String.t`) - The file type of the expansion file configuration which is being updated.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
@@ -2598,6 +2926,91 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse{}]
     )
+  end
+
+  @doc """
+  Uploads an image of the specified language and image type, and adds to the edit.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
+  *   `edit_id` (*type:* `String.t`) - Identifier of the edit.
+  *   `language` (*type:* `String.t`) - Language localization code (a BCP-47 language tag; for example, "de-AT" for Austrian German). Providing a language that is not supported by the App is a no-op.
+  *   `image_type` (*type:* `String.t`) - Type of the Image.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_edits_images_upload_resumable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def androidpublisher_edits_images_upload_resumable(
+        connection,
+        package_name,
+        edit_id,
+        language,
+        image_type,
+        upload_type,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/resumable/upload/androidpublisher/v3/applications/{packageName}/edits/{editId}/listings/{language}/{imageType}",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "editId" => URI.encode(edit_id, &URI.char_unreserved?/1),
+          "language" => URI.encode(language, &URI.char_unreserved?/1),
+          "imageType" => URI.encode(image_type, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
