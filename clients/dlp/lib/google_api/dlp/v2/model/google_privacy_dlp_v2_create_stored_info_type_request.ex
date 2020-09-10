@@ -23,7 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateStoredInfoTypeRequest d
 
   *   `config` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t`, *default:* `nil`) - Required. Configuration of the storedInfoType to create.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
-  *   `storedInfoTypeId` (*type:* `String.t`, *default:* `nil`) - The storedInfoType ID can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: `[a-zA-Z\\\\d-_]+`. The maximum length is 100 characters. Can be empty to allow the system to generate one.
+  *   `storedInfoTypeId` (*type:* `String.t`, *default:* `nil`) - The storedInfoType ID can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: `[a-zA-Z\\d-_]+`. The maximum length is 100 characters. Can be empty to allow the system to generate one.
   """
 
   use GoogleApi.Gax.ModelBase
