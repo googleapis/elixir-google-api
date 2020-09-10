@@ -22,9 +22,13 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Optional. Confidence of detected Schema entity. Range [0, 1].
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. Canonical id. This will be a unique value in the entity list for this document.
   *   `mentionId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use `id` field instead.
   *   `mentionText` (*type:* `String.t`, *default:* `nil`) - Text value in the document e.g. `1600 Amphitheatre Pkwy`.
   *   `normalizedValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentEntityNormalizedValue.t`, *default:* `nil`) - Optional. Normalized entity value. Absent if the extracted value could not be converted or the type (e.g. address) is not supported for certain parsers. This field is also only populated for certain supported document types.
+  *   `pageAnchor` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageAnchor.t`, *default:* `nil`) - Optional. Represents the provenance of this entity wrt. the location on the page where it was found.
+  *   `properties` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentEntity.t)`, *default:* `nil`) - Optional. Entities can be nested to form a hierarchical data structure representing the content in the document.
+  *   `provenance` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentProvenance.t`, *default:* `nil`) - Optional. The history of this annotation.
   *   `redacted` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the entity will be redacted for de-identification purposes.
   *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentTextAnchor.t`, *default:* `nil`) - Provenance of the entity. Text anchor indexing into the Document.text.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Entity type from a schema e.g. `Address`.
@@ -34,10 +38,19 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
 
   @type t :: %__MODULE__{
           :confidence => number(),
+          :id => String.t(),
           :mentionId => String.t(),
           :mentionText => String.t(),
           :normalizedValue =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentEntityNormalizedValue.t(),
+          :pageAnchor =>
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageAnchor.t(),
+          :properties =>
+            list(
+              GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentEntity.t()
+            ),
+          :provenance =>
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentProvenance.t(),
           :redacted => boolean(),
           :textAnchor =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentTextAnchor.t(),
@@ -45,12 +58,26 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
         }
 
   field(:confidence)
+  field(:id)
   field(:mentionId)
   field(:mentionText)
 
   field(:normalizedValue,
     as:
       GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentEntityNormalizedValue
+  )
+
+  field(:pageAnchor,
+    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageAnchor
+  )
+
+  field(:properties,
+    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentEntity,
+    type: :list
+  )
+
+  field(:provenance,
+    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentProvenance
   )
 
   field(:redacted)
