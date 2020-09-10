@@ -21,22 +21,22 @@ defmodule GoogleApi.AppEngine.V1.Model.Instance do
 
   ## Attributes
 
-  *   `appEngineRelease` (*type:* `String.t`, *default:* `nil`) - App Engine release this instance is running on.@OutputOnly
-  *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability of the instance.@OutputOnly
-  *   `averageLatency` (*type:* `integer()`, *default:* `nil`) - Average latency (ms) over the last minute.@OutputOnly
-  *   `errors` (*type:* `integer()`, *default:* `nil`) - Number of errors since this instance was started.@OutputOnly
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the instance within the version. Example: instance-1.@OutputOnly
-  *   `memoryUsage` (*type:* `String.t`, *default:* `nil`) - Total memory in use (bytes).@OutputOnly
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the Instance resource in the API. Example: apps/myapp/services/default/versions/v1/instances/instance-1.@OutputOnly
-  *   `qps` (*type:* `number()`, *default:* `nil`) - Average queries per second (QPS) over the last minute.@OutputOnly
-  *   `requests` (*type:* `integer()`, *default:* `nil`) - Number of requests since this instance was started.@OutputOnly
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time that this instance was started.@OutputOnly
-  *   `vmDebugEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether this instance is in debug mode. Only applicable for instances in App Engine flexible environment.@OutputOnly
-  *   `vmId` (*type:* `String.t`, *default:* `nil`) - Virtual machine ID of this instance. Only applicable for instances in App Engine flexible environment.@OutputOnly
-  *   `vmIp` (*type:* `String.t`, *default:* `nil`) - The IP address of this instance. Only applicable for instances in App Engine flexible environment.@OutputOnly
-  *   `vmName` (*type:* `String.t`, *default:* `nil`) - Name of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.@OutputOnly
-  *   `vmStatus` (*type:* `String.t`, *default:* `nil`) - Status of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.@OutputOnly
-  *   `vmZoneName` (*type:* `String.t`, *default:* `nil`) - Zone where the virtual machine is located. Only applicable for instances in App Engine flexible environment.@OutputOnly
+  *   `appEngineRelease` (*type:* `String.t`, *default:* `nil`) - Output only. App Engine release this instance is running on.
+  *   `availability` (*type:* `String.t`, *default:* `nil`) - Output only. Availability of the instance.
+  *   `averageLatency` (*type:* `integer()`, *default:* `nil`) - Output only. Average latency (ms) over the last minute.
+  *   `errors` (*type:* `integer()`, *default:* `nil`) - Output only. Number of errors since this instance was started.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Relative name of the instance within the version. Example: instance-1.
+  *   `memoryUsage` (*type:* `String.t`, *default:* `nil`) - Output only. Total memory in use (bytes).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full path to the Instance resource in the API. Example: apps/myapp/services/default/versions/v1/instances/instance-1.
+  *   `qps` (*type:* `number()`, *default:* `nil`) - Output only. Average queries per second (QPS) over the last minute.
+  *   `requests` (*type:* `integer()`, *default:* `nil`) - Output only. Number of requests since this instance was started.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time that this instance was started.@OutputOnly
+  *   `vmDebugEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this instance is in debug mode. Only applicable for instances in App Engine flexible environment.
+  *   `vmId` (*type:* `String.t`, *default:* `nil`) - Output only. Virtual machine ID of this instance. Only applicable for instances in App Engine flexible environment.
+  *   `vmIp` (*type:* `String.t`, *default:* `nil`) - Output only. The IP address of this instance. Only applicable for instances in App Engine flexible environment.
+  *   `vmName` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.
+  *   `vmStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.
+  *   `vmZoneName` (*type:* `String.t`, *default:* `nil`) - Output only. Zone where the virtual machine is located. Only applicable for instances in App Engine flexible environment.
   """
 
   use GoogleApi.Gax.ModelBase

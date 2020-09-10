@@ -23,6 +23,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Service do
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the service within the application. Example: default.@OutputOnly
   *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the Service resource in the API. Example: apps/myapp/services/default.@OutputOnly
+  *   `networkSettings` (*type:* `GoogleApi.AppEngine.V1.Model.NetworkSettings.t`, *default:* `nil`) - Ingress settings for this service. Will apply to all versions.
   *   `split` (*type:* `GoogleApi.AppEngine.V1.Model.TrafficSplit.t`, *default:* `nil`) - Mapping that defines fractional HTTP traffic diversion to different versions within the service.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.AppEngine.V1.Model.Service do
   @type t :: %__MODULE__{
           :id => String.t(),
           :name => String.t(),
+          :networkSettings => GoogleApi.AppEngine.V1.Model.NetworkSettings.t(),
           :split => GoogleApi.AppEngine.V1.Model.TrafficSplit.t()
         }
 
   field(:id)
   field(:name)
+  field(:networkSettings, as: GoogleApi.AppEngine.V1.Model.NetworkSettings)
   field(:split, as: GoogleApi.AppEngine.V1.Model.TrafficSplit)
 end
 
