@@ -25,7 +25,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1WebhookReque
   *   `originalDetectIntentRequest` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1OriginalDetectIntentRequest.t`, *default:* `nil`) - Optional. The contents of the original request that was passed to `[Streaming]DetectIntent` call.
   *   `queryResult` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult.t`, *default:* `nil`) - The result of the conversational query or event processing. Contains the same value as `[Streaming]DetectIntentResponse.query_result`.
   *   `responseId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the response. Contains the same value as `[Streaming]DetectIntentResponse.response_id`.
-  *   `session` (*type:* `String.t`, *default:* `nil`) - The unique identifier of detectIntent request session. Can be used to identify end-user inside webhook implementation. Format: `projects//agent/sessions/`, or `projects//agent/environments//users//sessions/`.
+  *   `session` (*type:* `String.t`, *default:* `nil`) - The unique identifier of detectIntent request session. Can be used to identify end-user inside webhook implementation. Supported formats: - `projects//agent/sessions/, - `projects//locations//agent/sessions/`, - `projects//agent/environments//users//sessions/`, - `projects//locations//agent/environments//users//sessions/`,
   """
 
   use GoogleApi.Gax.ModelBase
