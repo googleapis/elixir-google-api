@@ -22,15 +22,18 @@ defmodule GoogleApi.Container.V1.Model.CloudRunConfig do
   ## Attributes
 
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether Cloud Run addon is enabled for this cluster.
+  *   `loadBalancerType` (*type:* `String.t`, *default:* `nil`) - Which load balancer type is installed for Cloud Run.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disabled => boolean()
+          :disabled => boolean(),
+          :loadBalancerType => String.t()
         }
 
   field(:disabled)
+  field(:loadBalancerType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.CloudRunConfig do
