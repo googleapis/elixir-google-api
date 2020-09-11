@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
 
   ## Attributes
 
+  *   `allowPlaybackInterruption` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
   *   `ssml` (*type:* `String.t`, *default:* `nil`) - The SSML text to be synthesized. For more information, see [SSML](/speech/text-to-speech/docs/ssml).
   *   `text` (*type:* `String.t`, *default:* `nil`) - The raw text to be synthesized.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allowPlaybackInterruption => boolean(),
           :ssml => String.t(),
           :text => String.t()
         }
 
+  field(:allowPlaybackInterruption)
   field(:ssml)
   field(:text)
 end

@@ -26,7 +26,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityType d
   *   `enableFuzzyExtraction` (*type:* `boolean()`, *default:* `nil`) - Optional. Enables fuzzy entity extraction during classification.
   *   `entities` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityTypeEntity.t)`, *default:* `nil`) - Optional. The collection of entity entries associated with the entity type.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Required. Indicates the kind of entity type.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the entity type. Required for EntityTypes.UpdateEntityType and EntityTypes.BatchUpdateEntityTypes methods. Format: `projects//agent/entityTypes/`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the entity type. Required for EntityTypes.UpdateEntityType and EntityTypes.BatchUpdateEntityTypes methods. Supported formats: - `projects//agent/entityTypes/` - `projects//locations//agent/entityTypes/`
   """
 
   use GoogleApi.Gax.ModelBase
