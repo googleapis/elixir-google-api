@@ -37,6 +37,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE.
   *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output-only] [Deprecated] Use the bytes processed in the query statistics instead.
   *   `totalSlotMs` (*type:* `String.t`, *default:* `nil`) - [Output-only] Slot-milliseconds for the job.
+  *   `transactionInfoTemplate` (*type:* `GoogleApi.BigQuery.V2.Model.TransactionInfo.t`, *default:* `nil`) - [Output-only] [Alpha] Information of the multi-statement transaction if this job is part of one.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -59,7 +60,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
           :scriptStatistics => GoogleApi.BigQuery.V2.Model.ScriptStatistics.t(),
           :startTime => String.t(),
           :totalBytesProcessed => String.t(),
-          :totalSlotMs => String.t()
+          :totalSlotMs => String.t(),
+          :transactionInfoTemplate => GoogleApi.BigQuery.V2.Model.TransactionInfo.t()
         }
 
   field(:completionRatio)
@@ -83,6 +85,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   field(:startTime)
   field(:totalBytesProcessed)
   field(:totalSlotMs)
+  field(:transactionInfoTemplate, as: GoogleApi.BigQuery.V2.Model.TransactionInfo)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics do
