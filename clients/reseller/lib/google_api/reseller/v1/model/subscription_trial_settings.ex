@@ -21,9 +21,7 @@ defmodule GoogleApi.Reseller.V1.Model.SubscriptionTrialSettings do
 
   ## Attributes
 
-  *   `isInTrial` (*type:* `boolean()`, *default:* `nil`) - Determines if a subscription's plan is in a 30-day free trial or not:
-      - true — The plan is in trial.
-      - false — The plan is not in trial.
+  *   `isInTrial` (*type:* `boolean()`, *default:* `nil`) - Determines if a subscription's plan is in a 30-day free trial or not: - true — The plan is in trial. - false — The plan is not in trial. 
   *   `trialEndTime` (*type:* `String.t`, *default:* `nil`) - Date when the trial ends. The value is in milliseconds using the UNIX Epoch format. See an example Epoch converter.
   """
 

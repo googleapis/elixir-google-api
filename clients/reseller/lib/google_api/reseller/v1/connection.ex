@@ -31,5 +31,5 @@ defmodule GoogleApi.Reseller.V1.Connection do
       "https://www.googleapis.com/auth/apps.order.readonly"
     ],
     otp_app: :google_api_reseller,
-    base_url: "https://www.googleapis.com/apps/reseller/v1/"
+    base_url: "https://www.googleapis.com/"
 end
