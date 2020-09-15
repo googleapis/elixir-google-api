@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration do
   @moduledoc """
-  Read-replica configuration for connecting to the on-premises master.
+  Read-replica configuration for connecting to the on-premises primary instance.
 
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#demoteMasterConfiguration*.
-  *   `mysqlReplicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterMySqlReplicaConfiguration.t`, *default:* `nil`) - MySQL specific configuration when replicating from a MySQL on-premises master. Replication configuration information such as the username, password, certificates, and keys are not stored in the instance metadata. The configuration information is used only to set up the replication connection and is stored by MySQL in a file named *master.info* in the data directory.
+  *   `mysqlReplicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterMySqlReplicaConfiguration.t`, *default:* `nil`) - MySQL specific configuration when replicating from a MySQL on-premises primary instance. Replication configuration information such as the username, password, certificates, and keys are not stored in the instance metadata. The configuration information is used only to set up the replication connection and is stored by MySQL in a file named *master.info* in the data directory.
   """
 
   use GoogleApi.Gax.ModelBase

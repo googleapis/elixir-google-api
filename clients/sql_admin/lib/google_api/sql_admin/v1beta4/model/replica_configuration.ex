@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration do
   @moduledoc """
-  Read-replica configuration for connecting to the master.
+  Read-replica configuration for connecting to the primary instance.
 
   ## Attributes
 
-  *   `failoverTarget` (*type:* `boolean()`, *default:* `nil`) - Specifies if the replica is the failover target. If the field is set to *true* the replica will be designated as a failover replica. In case the master instance fails, the replica instance will be promoted as the new master instance. Only one replica can be specified as failover target, and the replica has to be in different zone with the master instance.
+  *   `failoverTarget` (*type:* `boolean()`, *default:* `nil`) - Specifies if the replica is the failover target. If the field is set to *true* the replica will be designated as a failover replica. In case the primary instance fails, the replica instance will be promoted as the new primary instance. Only one replica can be specified as failover target, and the replica has to be in different zone with the primary instance.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#replicaConfiguration*.
-  *   `mysqlReplicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration.t`, *default:* `nil`) - MySQL specific configuration when replicating from a MySQL on-premises master. Replication configuration information such as the username, password, certificates, and keys are not stored in the instance metadata. The configuration information is used only to set up the replication connection and is stored by MySQL in a file named *master.info* in the data directory.
+  *   `mysqlReplicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration.t`, *default:* `nil`) - MySQL specific configuration when replicating from a MySQL on-premises primary instance. Replication configuration information such as the username, password, certificates, and keys are not stored in the instance metadata. The configuration information is used only to set up the replication connection and is stored by MySQL in a file named *master.info* in the data directory.
   """
 
   use GoogleApi.Gax.ModelBase

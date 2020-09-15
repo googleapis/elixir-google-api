@@ -104,7 +104,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Projects do
   end
 
   @doc """
-  Start External master migration.
+  Start External primary instance migration.
 
   ## Parameters
 
@@ -179,7 +179,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Projects do
   end
 
   @doc """
-  Verify External master external sync settings.
+  Verify External primary instance external sync settings.
 
   ## Parameters
 

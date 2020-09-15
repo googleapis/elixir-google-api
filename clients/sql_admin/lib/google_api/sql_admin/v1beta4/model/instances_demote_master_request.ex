@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest do
   @moduledoc """
-  Database demote master request.
+  Database demote primary instance request.
 
   ## Attributes
 
