@@ -31,7 +31,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.MySqlReplicaConfiguration do
   *   `password` (*type:* `String.t`, *default:* `nil`) - The password for the replication connection.
   *   `sslCipher` (*type:* `String.t`, *default:* `nil`) - A list of permissible ciphers to use for SSL encryption.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The username for the replication connection.
-  *   `verifyServerCertificate` (*type:* `boolean()`, *default:* `nil`) - Whether or not to check the master's Common Name value in the certificate that it sends during the SSL handshake.
+  *   `verifyServerCertificate` (*type:* `boolean()`, *default:* `nil`) - Whether or not to check the primary instance's Common Name value in the certificate that it sends during the SSL handshake.
   """
 
   use GoogleApi.Gax.ModelBase

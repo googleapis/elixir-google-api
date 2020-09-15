@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError do
   @moduledoc """
-  External master migration setting error.
+  External primary instance migration setting error.
 
   ## Attributes
 
