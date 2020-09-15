@@ -33,17 +33,19 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
   *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
   *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
-  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests.
-      Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes.
-      If the userId is suspended, the license status changes.
+  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests. Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes. If the userId is suspended, the license status changes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -68,19 +70,23 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
+      |> Request.url("/apps/licensing/v1/product/{productId}/sku/{skuId}/user/{userId}", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
         "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -101,17 +107,19 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
   *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
   *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
-  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests.
-      Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes.
-      If the userId is suspended, the license status changes.
+  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests. Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes. If the userId is suspended, the license status changes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -139,19 +147,23 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
+      |> Request.url("/apps/licensing/v1/product/{productId}/sku/{skuId}/user/{userId}", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
         "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -173,13 +185,17 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
   *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -206,20 +222,24 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{productId}/sku/{skuId}/user", %{
+      |> Request.url("/apps/licensing/v1/product/{productId}/sku/{skuId}/user", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1)
       })
@@ -238,16 +258,19 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
   *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
-  *   `customer_id` (*type:* `String.t`) - Customer's customerId. A previous version of this API accepted the primary domain name as a value for this field.
-      If the customer is suspended, the server returns an error.
+  *   `customer_id` (*type:* `String.t`) - Customer's customerId. A previous version of this API accepted the primary domain name as a value for this field. If the customer is suspended, the server returns an error.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:maxResults` (*type:* `integer()`) - The maxResults query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.
       *   `:pageToken` (*type:* `String.t`) - Token to fetch the next page of data. The maxResults query string is related to the pageToken since maxResults determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -275,13 +298,17 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :maxResults => :query,
       :pageToken => :query
     }
@@ -289,7 +316,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{productId}/users", %{
+      |> Request.url("/apps/licensing/v1/product/{productId}/users", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :customerId, customer_id)
@@ -309,16 +336,19 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
   *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
   *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
-  *   `customer_id` (*type:* `String.t`) - Customer's customerId. A previous version of this API accepted the primary domain name as a value for this field.
-      If the customer is suspended, the server returns an error.
+  *   `customer_id` (*type:* `String.t`) - Customer's customerId. A previous version of this API accepted the primary domain name as a value for this field. If the customer is suspended, the server returns an error.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:maxResults` (*type:* `integer()`) - The maxResults query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.
       *   `:pageToken` (*type:* `String.t`) - Token to fetch the next page of data. The maxResults query string is related to the pageToken since maxResults determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -348,13 +378,17 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :maxResults => :query,
       :pageToken => :query
     }
@@ -362,7 +396,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{productId}/sku/{skuId}/users", %{
+      |> Request.url("/apps/licensing/v1/product/{productId}/sku/{skuId}/users", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1)
       })
@@ -376,24 +410,26 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   end
 
   @doc """
-  Reassign a user's product SKU with a different SKU in the same product. This method supports patch semantics.
+  Patch a Licensing info via Apiary Patch Orchestration
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
   *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
   *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
-  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests.
-      Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes.
-      If the userId is suspended, the license status changes.
+  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests. Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes. If the userId is suspended, the license status changes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Licensing.V1.Model.LicenseAssignment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -422,20 +458,24 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
+      |> Request.url("/apps/licensing/v1/product/{productId}/sku/{skuId}/user/{userId}", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
         "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -456,17 +496,19 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
   *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
   *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
-  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests.
-      Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes.
-      If the userId is suspended, the license status changes.
+  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests. Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes. If the userId is suspended, the license status changes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Licensing.V1.Model.LicenseAssignment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -495,20 +537,24 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/{productId}/sku/{skuId}/user/{userId}", %{
+      |> Request.url("/apps/licensing/v1/product/{productId}/sku/{skuId}/user/{userId}", %{
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1),
         "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))

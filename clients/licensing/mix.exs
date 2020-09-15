@@ -18,7 +18,7 @@
 defmodule GoogleApi.Licensing.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.13.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Licensing.Mixfile do
 
   defp description() do
     """
-    Licensing API client library. Licensing API to view and manage licenses for your domain
+    Enterprise License Manager API client library. The Google Enterprise License Manager API's allows you to license apps for all the users of a domain managed by you.
     """
   end
 

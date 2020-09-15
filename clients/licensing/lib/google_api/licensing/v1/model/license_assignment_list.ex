@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentList do
   @moduledoc """
-  LicesnseAssignment List for a given product/sku for a customer.
+
 
   ## Attributes
 
