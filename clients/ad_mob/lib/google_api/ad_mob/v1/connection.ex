@@ -23,7 +23,10 @@ defmodule GoogleApi.AdMob.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [],
+    scopes: [
+      # See your AdMob data
+      "https://www.googleapis.com/auth/admob.report"
+    ],
     otp_app: :google_api_ad_mob,
     base_url: "https://admob.googleapis.com/"
 end
