@@ -24,6 +24,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ParserConfig do
   *   `allowNullHeader` (*type:* `boolean()`, *default:* `nil`) - Determines whether messages with no header are allowed.
   *   `schema` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SchemaPackage.t`, *default:* `nil`) - Schemas used to parse messages in this store, if schematized parsing is desired.
   *   `segmentTerminator` (*type:* `String.t`, *default:* `nil`) - Byte(s) to use as the segment terminator. If this is unset, '\\r' is used as segment terminator, matching the HL7 version 2 specification.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Immutable. Determines the version of the unschematized parser to be used when `schema` is not given. This field is immutable after store creation.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ParserConfig do
   @type t :: %__MODULE__{
           :allowNullHeader => boolean(),
           :schema => GoogleApi.HealthCare.V1beta1.Model.SchemaPackage.t(),
-          :segmentTerminator => String.t()
+          :segmentTerminator => String.t(),
+          :version => String.t()
         }
 
   field(:allowNullHeader)
   field(:schema, as: GoogleApi.HealthCare.V1beta1.Model.SchemaPackage)
   field(:segmentTerminator)
+  field(:version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.ParserConfig do
