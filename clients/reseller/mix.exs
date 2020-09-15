@@ -18,7 +18,7 @@
 defmodule GoogleApi.Reseller.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.13.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Reseller.Mixfile do
 
   defp description() do
     """
-    Enterprise Apps Reseller API client library. Creates and manages your customers and their subscriptions.
+    Enterprise Apps Reseller API client library. Perform common functions that are available on the Google Apps Reseller Console at scale like placing orders and viewing customer information
     """
   end
 

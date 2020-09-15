@@ -2,7 +2,7 @@
 
 Enterprise Apps Reseller API client library.
 
-Creates and manages your customers and their subscriptions.
+Perform common functions that are available on the Google Apps Reseller Console at scale like placing orders and viewing customer information
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_reseller, "~> 0.12"}]
+  [{:google_api_reseller, "~> 0.13"}]
 end
 ```
 
