@@ -21,15 +21,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobExecutionDetails do
 
   ## Attributes
 
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If present, this response does not contain all requested tasks. To obtain the next page of results, repeat the request with page_token set to this value.
   *   `stages` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.StageSummary.t)`, *default:* `nil`) - The stages of the job execution.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :nextPageToken => String.t(),
           :stages => list(GoogleApi.Dataflow.V1b3.Model.StageSummary.t())
         }
 
+  field(:nextPageToken)
   field(:stages, as: GoogleApi.Dataflow.V1b3.Model.StageSummary, type: :list)
 end
 
