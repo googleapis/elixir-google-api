@@ -21,7 +21,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
 
   ## Attributes
 
-  *   `manualScaling` (*type:* `GoogleApi.AppEngine.V1.Model.ManualScaling.t`, *default:* `nil`) - A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.
+  *   `manualScaling` (*type:* `GoogleApi.AppEngine.V1.Model.ManualScaling.t`, *default:* `nil`) - A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time. Manually scaled versions are sometimes referred to as "backends".
   *   `errorHandlers` (*type:* `list(GoogleApi.AppEngine.V1.Model.ErrorHandler.t)`, *default:* `nil`) - Custom static error pages. Limited to 10KB per page.Only returned in GET requests if view=FULL is set.
   *   `basicScaling` (*type:* `GoogleApi.AppEngine.V1.Model.BasicScaling.t`, *default:* `nil`) - A service with basic scaling will create an instance when the application receives a request. The instance will be turned down when the app becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity.
   *   `nobuildFilesRegex` (*type:* `String.t`, *default:* `nil`) - Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set.
@@ -57,7 +57,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
   *   `diskUsageBytes` (*type:* `String.t`, *default:* `nil`) - Total size in bytes of all the files that are included in this version and currently hosted on the App Engine disk.@OutputOnly
   *   `threadsafe` (*type:* `boolean()`, *default:* `nil`) - Whether multiple requests can be dispatched to this version at once.
   *   `runtime` (*type:* `String.t`, *default:* `nil`) - Desired runtime. Example: python27.
-  *   `automaticScaling` (*type:* `GoogleApi.AppEngine.V1.Model.AutomaticScaling.t`, *default:* `nil`) - Automatic scaling is based on request rate, response latencies, and other application metrics.
+  *   `automaticScaling` (*type:* `GoogleApi.AppEngine.V1.Model.AutomaticScaling.t`, *default:* `nil`) - Automatic scaling is based on request rate, response latencies, and other application metrics. Instances are dynamically created and destroyed as needed in order to handle traffic.
   *   `healthCheck` (*type:* `GoogleApi.AppEngine.V1.Model.HealthCheck.t`, *default:* `nil`) - Configures health checking for instances. Unhealthy instances are stopped and replaced with new instances. Only applicable in the App Engine flexible environment.Only returned in GET requests if view=FULL is set.
   """
 
