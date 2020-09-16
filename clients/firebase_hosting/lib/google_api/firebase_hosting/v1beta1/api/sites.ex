@@ -1133,7 +1133,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:sizeBytes` (*type:* `String.t`) - The self-reported size of the version. This value is used for a pre-emptive quota check for legacy version uploads.
-      *   `:versionId` (*type:* `String.t`) - A unique id for the new version. This is only specified for legacy version creations.
+      *   `:versionId` (*type:* `String.t`) - A unique id for the new version. This is was only specified for legacy version creations, and should be blank.
       *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Version.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
