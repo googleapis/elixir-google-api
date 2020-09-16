@@ -18,7 +18,7 @@
 defmodule GoogleApi.Testing.Mixfile do
   use Mix.Project
 
-  @version "0.20.0"
+  @version "0.20.1"
 
   def project() do
     [
