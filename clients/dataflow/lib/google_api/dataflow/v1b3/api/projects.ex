@@ -1789,6 +1789,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - If specified, determines the maximum number of stages to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.
+      *   `:pageToken` (*type:* `String.t`) - If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1826,7 +1828,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
