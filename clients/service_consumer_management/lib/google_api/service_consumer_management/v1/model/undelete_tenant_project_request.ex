@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.UndeleteTenantProjectRequ
 
   ## Attributes
 
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - Tag of the resource within the tenancy unit.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Required. Tag of the resource within the tenancy unit.
   """
 
   use GoogleApi.Gax.ModelBase

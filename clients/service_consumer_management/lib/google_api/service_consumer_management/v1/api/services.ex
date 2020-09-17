@@ -31,7 +31,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Service for which search is performed. services/{service} {service} the name of a service, for example 'service.googleapis.com'.
+  *   `parent` (*type:* `String.t`) - Required. Service for which search is performed. services/{service} {service} the name of a service, for example 'service.googleapis.com'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -108,7 +108,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `parent` (*type:* `String.t`) - Required. Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -181,7 +181,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `name` (*type:* `String.t`) - Required. Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -254,7 +254,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the tenancy unit that the project will be attached to. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `name` (*type:* `String.t`) - Required. Name of the tenancy unit that the project will be attached to. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -327,7 +327,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - services/{service}/{collection id}/{resource id} {collection id} is the cloud resource collection type representing the service consumer, for example 'projects', or 'organizations'. {resource id} is the consumer numeric id, such as project number: '123456'. {service} the name of a managed service, such as 'service.googleapis.com'. Enables service binding using the new tenancy unit.
+  *   `parent` (*type:* `String.t`) - Required. services/{service}/{collection id}/{resource id} {collection id} is the cloud resource collection type representing the service consumer, for example 'projects', or 'organizations'. {resource id} is the consumer numeric id, such as project number: '123456'. {service} the name of a managed service, such as 'service.googleapis.com'. Enables service binding using the new tenancy unit.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -400,7 +400,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the tenancy unit to be deleted.
+  *   `name` (*type:* `String.t`) - Required. Name of the tenancy unit to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -471,7 +471,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `name` (*type:* `String.t`) - Required. Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -544,7 +544,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Managed service and service consumer. Required. services/{service}/{collection id}/{resource id} {collection id} is the cloud resource collection type representing the service consumer, for example 'projects', or 'organizations'. {resource id} is the consumer numeric id, such as project number: '123456'. {service} the name of a service, such as 'service.googleapis.com'.
+  *   `parent` (*type:* `String.t`) - Required. Managed service and service consumer. Required. services/{service}/{collection id}/{resource id} {collection id} is the cloud resource collection type representing the service consumer, for example 'projects', or 'organizations'. {resource id} is the consumer numeric id, such as project number: '123456'. {service} the name of a service, such as 'service.googleapis.com'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -557,9 +557,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter expression over tenancy resources field. Optional.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of results returned by this request.
-      *   `:pageToken` (*type:* `String.t`) - The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of `nextPageToken` from the previous response.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter expression over tenancy resources field. Optional.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results returned by this request.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of `nextPageToken` from the previous response.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -621,7 +621,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `name` (*type:* `String.t`) - Required. Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -694,7 +694,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
+  *   `name` (*type:* `String.t`) - Required. Name of the tenancy unit. Such as 'services/service.googleapis.com/projects/12345/tenancyUnits/abcd'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
