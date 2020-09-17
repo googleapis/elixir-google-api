@@ -23,7 +23,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AttachTenantProjectReques
 
   *   `externalResource` (*type:* `String.t`, *default:* `nil`) - When attaching an external project, this is in the format of `projects/{project_number}`.
   *   `reservedResource` (*type:* `String.t`, *default:* `nil`) - When attaching a reserved project already in tenancy units, this is the tag of a tenant resource under the tenancy unit for the managed service's service producer project. The reserved tenant resource must be in an active state.
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - Tag of the tenant resource after attachment. Must be less than 128 characters. Required.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Required. Tag of the tenant resource after attachment. Must be less than 128 characters. Required.
   """
 
   use GoogleApi.Gax.ModelBase
