@@ -21,7 +21,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Replica do
 
   ## Attributes
 
-  *   `customerManagedEncryption` (*type:* `GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption.t`, *default:* `nil`) - Optional. The customer-managed encryption configuration of the User-Managed Replica. If no configuration is provided, Google-managed default encryption is used. Updates to the Secret encryption configuration do not apply retroactively to existing SecretVersions.
+  *   `customerManagedEncryption` (*type:* `GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption.t`, *default:* `nil`) - Optional. The customer-managed encryption configuration of the User-Managed Replica. If no configuration is provided, Google-managed default encryption is used. Updates to the Secret encryption configuration only apply to SecretVersions added afterwards. They do not apply retroactively to existing SecretVersions.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The canonical IDs of the location to replicate data. For example: `"us-east1"`.
   """
 
