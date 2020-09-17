@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsRefundOperation do
 
   ## Attributes
 
-  *   `fullRefund` (*type:* `boolean()`, *default:* `nil`) - If true, the item will be fully refunded. // Allowed only when payment_type is FOP. Merchant can choose this refund option to indicate the full remaining amount of corresponding object to be refunded to the customer via FOP.
+  *   `fullRefund` (*type:* `boolean()`, *default:* `nil`) - If true, the item will be fully refunded. Allowed only when payment_type is FOP. Merchant can choose this refund option to indicate the full remaining amount of corresponding object to be refunded to the customer via FOP.
   *   `partialRefund` (*type:* `GoogleApi.Content.V21.Model.OrderreturnsPartialRefund.t`, *default:* `nil`) - If this is set, the item will be partially refunded. Merchant can choose this refund option to specify the customized amount that to be refunded to the customer.
   *   `paymentType` (*type:* `String.t`, *default:* `nil`) - The payment way of issuing refund. Default value is ORIGINAL_FOP if not set.
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
