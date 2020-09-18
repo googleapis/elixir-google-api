@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
   @moduledoc """
-  Common config settings for resources of Compute Engine cluster instances, applicable to all instances in the cluster. NEXT ID: 13
+  Common config settings for resources of Compute Engine cluster instances, applicable to all instances in the cluster. NEXT ID: 14
 
   ## Attributes
 
