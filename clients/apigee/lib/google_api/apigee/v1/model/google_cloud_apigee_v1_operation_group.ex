@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup do
 
   ## Attributes
 
-  *   `operationConfigType` (*type:* `String.t`, *default:* `nil`) - Identfies whether the configuration is for Apigee proxy or a remote service. Possible values are "proxy" and "remote_service". If none specified, the default is "proxy". "proxy" is used when Apigee proxies are associated with the API product. "remote_service" is used when non-Apigee proxy like Envoy is used, and is associated with the API product.
+  *   `operationConfigType` (*type:* `String.t`, *default:* `nil`) - Identfies whether the configuration is for Apigee proxy or a remote service. Possible values are "proxy" and "remoteservice". If none specified, the default is "proxy". "proxy" is used when Apigee proxies are associated with the API product. "remoteservice" is used when non-Apigee proxy like Envoy is used, and is associated with the API product.
   *   `operationConfigs` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig.t)`, *default:* `nil`) - Required. A list of OperationConfig for either Apigee proxies or other other remote services, that are associated with this API product.
   """
 
