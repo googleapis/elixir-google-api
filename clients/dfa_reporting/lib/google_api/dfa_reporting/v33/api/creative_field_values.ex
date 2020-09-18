@@ -358,6 +358,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
   *   `creative_field_id` (*type:* `String.t`) - CreativeField ID.
+  *   `id` (*type:* `String.t`) - CreativeFieldValue ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -370,7 +371,6 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:id` (*type:* `String.t`) - CreativeFieldValue ID.
       *   `:body` (*type:* `GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -383,6 +383,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -393,6 +394,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
         connection,
         profile_id,
         creative_field_id,
+        id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -408,7 +410,6 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :id => :query,
       :body => :body
     }
 
@@ -422,6 +423,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
           "creativeFieldId" => URI.encode(creative_field_id, &URI.char_unreserved?/1)
         }
       )
+      |> Request.add_param(:query, :id, id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

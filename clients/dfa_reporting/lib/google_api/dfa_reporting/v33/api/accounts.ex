@@ -172,6 +172,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Accounts do
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
+  *   `id` (*type:* `String.t`) - Account ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -184,7 +185,6 @@ defmodule GoogleApi.DFAReporting.V33.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:id` (*type:* `String.t`) - Account ID.
       *   `:body` (*type:* `GoogleApi.DFAReporting.V33.Model.Account.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -193,11 +193,17 @@ defmodule GoogleApi.DFAReporting.V33.Api.Accounts do
   *   `{:ok, %GoogleApi.DFAReporting.V33.Model.Account{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec dfareporting_accounts_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec dfareporting_accounts_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Account.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def dfareporting_accounts_patch(connection, profile_id, optional_params \\ [], opts \\ []) do
+  def dfareporting_accounts_patch(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -210,7 +216,6 @@ defmodule GoogleApi.DFAReporting.V33.Api.Accounts do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :id => :query,
       :body => :body
     }
 
@@ -220,6 +225,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Accounts do
       |> Request.url("/dfareporting/v3.3/userprofiles/{profileId}/accounts", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :id, id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

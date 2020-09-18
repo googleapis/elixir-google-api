@@ -307,6 +307,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserRoles do
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V34.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
+  *   `id` (*type:* `String.t`) - UserRole ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -319,7 +320,6 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserRoles do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:id` (*type:* `String.t`) - UserRole ID.
       *   `:body` (*type:* `GoogleApi.DFAReporting.V34.Model.UserRole.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -328,11 +328,17 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserRoles do
   *   `{:ok, %GoogleApi.DFAReporting.V34.Model.UserRole{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec dfareporting_user_roles_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec dfareporting_user_roles_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.UserRole.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def dfareporting_user_roles_patch(connection, profile_id, optional_params \\ [], opts \\ []) do
+  def dfareporting_user_roles_patch(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -345,7 +351,6 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserRoles do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :id => :query,
       :body => :body
     }
 
@@ -355,6 +360,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserRoles do
       |> Request.url("/dfareporting/v3.4/userprofiles/{profileId}/userRoles", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :id, id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
