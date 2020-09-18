@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudAsset.V1 do
   API client metadata for GoogleApi.CloudAsset.V1.
   """
 
-  @discovery_revision "20200810"
+  @discovery_revision "20200911"
 
   def discovery_revision(), do: @discovery_revision
 end
