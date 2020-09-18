@@ -36,6 +36,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision ID of the environment configuration. The higher the value, the more recently the configuration was deployed.
   *   `sequenceNumber` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: Use revision_id.
   *   `targets` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig.t)`, *default:* `nil`) - List of target servers in the environment. Disabled target servers are not displayed.
+  *   `traceConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfig.t`, *default:* `nil`) - Trace configurations. Contains config for the environment and config overrides for specific API proxies.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Unique ID for the environment configuration. The ID will only change if the environment is deleted and recreated.
   """
 
@@ -59,6 +60,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
           :revisionId => String.t(),
           :sequenceNumber => String.t(),
           :targets => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig.t()),
+          :traceConfig => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfig.t(),
           :uid => String.t()
         }
 
@@ -94,6 +96,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
 
   field(:targets, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig, type: :list)
 
+  field(:traceConfig, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfig)
   field(:uid)
 end
 
