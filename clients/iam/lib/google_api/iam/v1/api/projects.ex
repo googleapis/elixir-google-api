@@ -1527,7 +1527,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a ServiceAccountKey.
+  Deletes a ServiceAccountKey. Deleting a service account key does not revoke short-lived credentials that have been issued based on the service account key.
 
   ## Parameters
 
