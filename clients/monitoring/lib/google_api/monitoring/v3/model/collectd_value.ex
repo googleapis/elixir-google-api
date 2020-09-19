@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.CollectdValue do
 
   ## Attributes
 
-  *   `dataSourceName` (*type:* `String.t`, *default:* `nil`) - The data source for the collectd value. For example there are two data sources for network measurements: "rx" and "tx".
+  *   `dataSourceName` (*type:* `String.t`, *default:* `nil`) - The data source for the collectd value. For example, there are two data sources for network measurements: "rx" and "tx".
   *   `dataSourceType` (*type:* `String.t`, *default:* `nil`) - The type of measurement.
   *   `value` (*type:* `GoogleApi.Monitoring.V3.Model.TypedValue.t`, *default:* `nil`) - The measurement value.
   """

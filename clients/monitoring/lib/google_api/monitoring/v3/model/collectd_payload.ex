@@ -28,7 +28,7 @@ defmodule GoogleApi.Monitoring.V3.Model.CollectdPayload do
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the interval.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The measurement type. Example: "memory".
   *   `typeInstance` (*type:* `String.t`, *default:* `nil`) - The measurement type instance. Example: "used".
-  *   `values` (*type:* `list(GoogleApi.Monitoring.V3.Model.CollectdValue.t)`, *default:* `nil`) - The measured values during this time interval. Each value must have a different dataSourceName.
+  *   `values` (*type:* `list(GoogleApi.Monitoring.V3.Model.CollectdValue.t)`, *default:* `nil`) - The measured values during this time interval. Each value must have a different data_source_name.
   """
 
   use GoogleApi.Gax.ModelBase
