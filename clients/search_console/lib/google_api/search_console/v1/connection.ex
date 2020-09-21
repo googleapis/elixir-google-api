@@ -23,7 +23,13 @@ defmodule GoogleApi.SearchConsole.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [],
+    scopes: [
+      # View and manage Search Console data for your verified sites
+      "https://www.googleapis.com/auth/webmasters",
+
+      # View Search Console data for your verified sites
+      "https://www.googleapis.com/auth/webmasters.readonly"
+    ],
     otp_app: :google_api_search_console,
     base_url: "https://searchconsole.googleapis.com/"
 end
