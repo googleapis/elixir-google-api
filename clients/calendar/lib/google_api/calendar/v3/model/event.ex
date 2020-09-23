@@ -35,7 +35,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the event. Can contain HTML. Optional.
   *   `kind` (*type:* `String.t`, *default:* `calendar#event`) - Type of the resource ("calendar#event").
   *   `guestsCanModify` (*type:* `boolean()`, *default:* `false`) - Whether attendees other than the organizer can modify the event. Optional. The default is False.
-  *   `attendees` (*type:* `list(GoogleApi.Calendar.V3.Model.EventAttendee.t)`, *default:* `nil`) - The attendees of the event. See the Events with attendees guide for more information on scheduling events with other calendar users.
+  *   `attendees` (*type:* `list(GoogleApi.Calendar.V3.Model.EventAttendee.t)`, *default:* `nil`) - The attendees of the event. See the Events with attendees guide for more information on scheduling events with other calendar users. Service accounts need to use domain-wide delegation of authority to populate the attendee list.
   *   `start` (*type:* `GoogleApi.Calendar.V3.Model.EventDateTime.t`, *default:* `nil`) - The (inclusive) start time of the event. For a recurring event, this is the start time of the first instance.
   *   `creator` (*type:* `GoogleApi.Calendar.V3.Model.EventCreator.t`, *default:* `nil`) - The creator of the event. Read-only.
   *   `anyoneCanAddSelf` (*type:* `boolean()`, *default:* `false`) - Whether anyone can invite themselves to the event (currently works for Google+ events only). Optional. The default is False.
