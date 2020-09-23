@@ -23,25 +23,17 @@ defmodule GoogleApi.CloudIdentity.V1.Model.ModifyMembershipRolesRequest do
 
   *   `addRoles` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.MembershipRole.t)`, *default:* `nil`) - The `MembershipRole`s to be added. Adding or removing roles in the same request as updating roles is not supported. Must not be set if `update_roles_params` is set.
   *   `removeRoles` (*type:* `list(String.t)`, *default:* `nil`) - The `name`s of the `MembershipRole`s to be removed. Adding or removing roles in the same request as updating roles is not supported. It is not possible to remove the `MEMBER` `MembershipRole`. If you wish to delete a `Membership`, call MembershipsService.DeleteMembership instead. Must not contain `MEMBER`. Must not be set if `update_roles_params` is set.
-  *   `updateRolesParams` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.UpdateMembershipRolesParams.t)`, *default:* `nil`) - The `MembershipRole`s to be updated. Updating roles in the same request as adding or removing roles is not supported. Must not be set if either `add_roles` or `remove_roles` is set.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :addRoles => list(GoogleApi.CloudIdentity.V1.Model.MembershipRole.t()),
-          :removeRoles => list(String.t()),
-          :updateRolesParams =>
-            list(GoogleApi.CloudIdentity.V1.Model.UpdateMembershipRolesParams.t())
+          :removeRoles => list(String.t())
         }
 
   field(:addRoles, as: GoogleApi.CloudIdentity.V1.Model.MembershipRole, type: :list)
   field(:removeRoles, type: :list)
-
-  field(:updateRolesParams,
-    as: GoogleApi.CloudIdentity.V1.Model.UpdateMembershipRolesParams,
-    type: :list
-  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudIdentity.V1.Model.ModifyMembershipRolesRequest do
