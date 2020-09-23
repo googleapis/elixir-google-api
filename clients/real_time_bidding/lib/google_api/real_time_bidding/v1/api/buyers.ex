@@ -308,7 +308,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RealTimeBidding.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the creative to update. See creative.name.
+  *   `name` (*type:* `String.t`) - Name of the creative. Follows the pattern `buyers/{buyer}/creatives/{creative}`, where `{buyer}` represents the account ID of the buyer who owns the creative, and `{creative}` is the buyer-specific creative ID that references this creative in the bid response.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
