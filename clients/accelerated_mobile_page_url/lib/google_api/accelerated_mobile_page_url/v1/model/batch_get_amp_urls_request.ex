@@ -22,9 +22,7 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsRequest do
   ## Attributes
 
   *   `lookupStrategy` (*type:* `String.t`, *default:* `nil`) - The lookup_strategy being requested.
-  *   `urls` (*type:* `list(String.t)`, *default:* `nil`) - List of URLs to look up for the paired AMP URLs.
-      The URLs are case-sensitive. Up to 50 URLs per lookup
-      (see [Usage Limits](/amp/cache/reference/limits)).
+  *   `urls` (*type:* `list(String.t)`, *default:* `nil`) - List of URLs to look up for the paired AMP URLs. The URLs are case-sensitive. Up to 50 URLs per lookup (see [Usage Limits](/amp/cache/reference/limits)).
   """
 
   use GoogleApi.Gax.ModelBase

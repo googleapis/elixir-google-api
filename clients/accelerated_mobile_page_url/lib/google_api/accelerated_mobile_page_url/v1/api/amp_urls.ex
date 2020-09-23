@@ -26,8 +26,7 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Api.AmpUrls do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns AMP URL(s) and equivalent
-  [AMP Cache URL(s)](/amp/cache/overview#amp-cache-url-format).
+  Returns AMP URL(s) and equivalent [AMP Cache URL(s)](/amp/cache/overview#amp-cache-url-format).
 
   ## Parameters
 
