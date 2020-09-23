@@ -23,8 +23,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.NotificationConfig do
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the notification config (max of 1024 characters).
   *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of this notification config. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/notificationConfigs/notify_public_bucket".
-  *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - The PubSub topic to send notifications to. Its format is "projects/[project_id]/topics/[topic]".
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. The service account that needs "pubsub.topics.publish" permission to publish to the PubSub topic.
+  *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - The Pub/Sub topic to send notifications to. Its format is "projects/[project_id]/topics/[topic]".
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. The service account that needs "pubsub.topics.publish" permission to publish to the Pub/Sub topic.
   *   `streamingConfig` (*type:* `GoogleApi.SecurityCenter.V1.Model.StreamingConfig.t`, *default:* `nil`) - The config for triggering streaming-based notifications.
   """
 
