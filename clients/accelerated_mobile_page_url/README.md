@@ -2,8 +2,7 @@
 
 Accelerated Mobile Pages (AMP) URL API client library.
 
-Retrieves the list of AMP URLs (and equivalent AMP Cache URLs) for a given list of public URL(s).
-
+Retrieves the list of AMP URLs (and equivalent AMP Cache URLs) for a given list of public URL(s). 
 
 ## Installation
 

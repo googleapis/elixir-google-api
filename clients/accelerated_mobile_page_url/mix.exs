@@ -18,7 +18,7 @@
 defmodule GoogleApi.AcceleratedMobilePageUrl.Mixfile do
   use Mix.Project
 
-  @version "0.10.0"
+  @version "0.10.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.Mixfile do
 
   defp description() do
     """
-    Accelerated Mobile Pages (AMP) URL API client library. Retrieves the list of AMP URLs (and equivalent AMP Cache URLs) for a given list of public URL(s).
-
+    Accelerated Mobile Pages (AMP) URL API client library. Retrieves the list of AMP URLs (and equivalent AMP Cache URLs) for a given list of public URL(s). 
     """
   end
 

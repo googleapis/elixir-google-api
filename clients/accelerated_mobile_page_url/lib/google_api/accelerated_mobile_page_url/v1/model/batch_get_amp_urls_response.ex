@@ -21,10 +21,7 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsResponse do
 
   ## Attributes
 
-  *   `ampUrls` (*type:* `list(GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl.t)`, *default:* `nil`) - For each URL in BatchAmpUrlsRequest, the URL response. The response might
-      not be in the same order as URLs in the batch request.
-      If BatchAmpUrlsRequest contains duplicate URLs, AmpUrl is generated
-      only once.
+  *   `ampUrls` (*type:* `list(GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl.t)`, *default:* `nil`) - For each URL in BatchAmpUrlsRequest, the URL response. The response might not be in the same order as URLs in the batch request. If BatchAmpUrlsRequest contains duplicate URLs, AmpUrl is generated only once.
   *   `urlErrors` (*type:* `list(GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrlError.t)`, *default:* `nil`) - The errors for requested URLs that have no AMP URL.
   """
 
