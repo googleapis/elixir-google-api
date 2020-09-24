@@ -4087,7 +4087,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a filter.
+  Creates a filter. Note: you can only create a maximum of 1,000 filters.
 
   ## Parameters
 
