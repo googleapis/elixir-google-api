@@ -27,6 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails 
   *   `kMapEstimationResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationResult.t`, *default:* `nil`) - K-map result
   *   `lDiversityResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityResult.t`, *default:* `nil`) - L-divesity result
   *   `numericalStatsResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsResult.t`, *default:* `nil`) - Numerical stats result
+  *   `requestedOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedRiskAnalysisOptions.t`, *default:* `nil`) - The configuration used for this job.
   *   `requestedPrivacyMetric` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric.t`, *default:* `nil`) - Privacy metric to compute.
   *   `requestedSourceTable` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - Input dataset to compute metrics over.
   """
@@ -44,6 +45,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails 
           :lDiversityResult => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityResult.t(),
           :numericalStatsResult =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsResult.t(),
+          :requestedOptions =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedRiskAnalysisOptions.t(),
           :requestedPrivacyMetric => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric.t(),
           :requestedSourceTable => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t()
         }
@@ -60,6 +63,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails 
   field(:kMapEstimationResult, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationResult)
   field(:lDiversityResult, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityResult)
   field(:numericalStatsResult, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsResult)
+
+  field(:requestedOptions,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedRiskAnalysisOptions
+  )
+
   field(:requestedPrivacyMetric, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric)
   field(:requestedSourceTable, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable)
 end
