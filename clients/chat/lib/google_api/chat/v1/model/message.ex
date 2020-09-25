@@ -31,6 +31,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name, in the form "spaces/*/messages/*". Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
   *   `previewText` (*type:* `String.t`, *default:* `nil`) - Text for generating preview chips. This text will not be displayed to the user, but any links to images, web pages, videos, etc. included here will generate preview chips.
   *   `sender` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The user who created the message.
+  *   `slashCommand` (*type:* `GoogleApi.Chat.V1.Model.SlashCommand.t`, *default:* `nil`) - Slash command information, if applicable.
   *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space the message belongs to.
   *   `text` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message.
   *   `thread` (*type:* `GoogleApi.Chat.V1.Model.Thread.t`, *default:* `nil`) - The thread the message belongs to.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
           :name => String.t(),
           :previewText => String.t(),
           :sender => GoogleApi.Chat.V1.Model.User.t(),
+          :slashCommand => GoogleApi.Chat.V1.Model.SlashCommand.t(),
           :space => GoogleApi.Chat.V1.Model.Space.t(),
           :text => String.t(),
           :thread => GoogleApi.Chat.V1.Model.Thread.t()
@@ -64,6 +66,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   field(:name)
   field(:previewText)
   field(:sender, as: GoogleApi.Chat.V1.Model.User)
+  field(:slashCommand, as: GoogleApi.Chat.V1.Model.SlashCommand)
   field(:space, as: GoogleApi.Chat.V1.Model.Space)
   field(:text)
   field(:thread, as: GoogleApi.Chat.V1.Model.Thread)
