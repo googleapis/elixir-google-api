@@ -22,6 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
   ## Attributes
 
   *   `length` (*type:* `integer()`, *default:* `nil`) - Length of the substring in the plain-text message body this annotation corresponds to.
+  *   `slashCommand` (*type:* `GoogleApi.Chat.V1.Model.SlashCommandMetadata.t`, *default:* `nil`) - The metadata for a slash command.
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - Start index (0-based, inclusive) in the plain-text message body this annotation corresponds to.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this annotation.
   *   `userMention` (*type:* `GoogleApi.Chat.V1.Model.UserMentionMetadata.t`, *default:* `nil`) - The metadata of user mention.
@@ -31,12 +32,14 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
 
   @type t :: %__MODULE__{
           :length => integer(),
+          :slashCommand => GoogleApi.Chat.V1.Model.SlashCommandMetadata.t(),
           :startIndex => integer(),
           :type => String.t(),
           :userMention => GoogleApi.Chat.V1.Model.UserMentionMetadata.t()
         }
 
   field(:length)
+  field(:slashCommand, as: GoogleApi.Chat.V1.Model.SlashCommandMetadata)
   field(:startIndex)
   field(:type)
   field(:userMention, as: GoogleApi.Chat.V1.Model.UserMentionMetadata)
