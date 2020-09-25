@@ -22,9 +22,7 @@ defmodule GoogleApi.SourceRepo.V1.Model.UpdateRepoRequest do
   ## Attributes
 
   *   `repo` (*type:* `GoogleApi.SourceRepo.V1.Model.Repo.t`, *default:* `nil`) - The new configuration for the repository.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - A FieldMask specifying which fields of the repo to modify. Only the fields
-      in the mask will be modified. If no mask is provided, this request is
-      no-op.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - A FieldMask specifying which fields of the repo to modify. Only the fields in the mask will be modified. If no mask is provided, this request is no-op.
   """
 
   use GoogleApi.Gax.ModelBase

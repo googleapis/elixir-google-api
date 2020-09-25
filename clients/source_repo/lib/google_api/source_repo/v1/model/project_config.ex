@@ -22,9 +22,8 @@ defmodule GoogleApi.SourceRepo.V1.Model.ProjectConfig do
   ## Attributes
 
   *   `enablePrivateKeyCheck` (*type:* `boolean()`, *default:* `nil`) - Reject a Git push that contains a private key.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the project. Values are of the form `projects/<project>`.
-  *   `pubsubConfigs` (*type:* `%{optional(String.t) => GoogleApi.SourceRepo.V1.Model.PubsubConfig.t}`, *default:* `nil`) - How this project publishes a change in the repositories through Cloud
-      Pub/Sub. Keyed by the topic names.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the project. Values are of the form `projects/`.
+  *   `pubsubConfigs` (*type:* `%{optional(String.t) => GoogleApi.SourceRepo.V1.Model.PubsubConfig.t}`, *default:* `nil`) - How this project publishes a change in the repositories through Cloud Pub/Sub. Keyed by the topic names.
   """
 
   use GoogleApi.Gax.ModelBase

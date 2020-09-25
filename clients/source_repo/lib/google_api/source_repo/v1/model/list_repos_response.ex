@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.SourceRepo.V1.Model.ListReposResponse do
   @moduledoc """
-  Response for ListRepos.  The size is not set in the returned repositories.
+  Response for ListRepos. The size is not set in the returned repositories.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If non-empty, additional repositories exist within the project. These
-      can be retrieved by including this value in the next ListReposRequest's
-      page_token field.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If non-empty, additional repositories exist within the project. These can be retrieved by including this value in the next ListReposRequest's page_token field.
   *   `repos` (*type:* `list(GoogleApi.SourceRepo.V1.Model.Repo.t)`, *default:* `nil`) - The listed repos.
   """
 

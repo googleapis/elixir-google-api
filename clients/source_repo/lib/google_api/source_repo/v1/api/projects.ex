@@ -31,8 +31,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the requested project. Values are of the form
-      `projects/<project>`.
+  *   `name` (*type:* `String.t`) - The name of the requested project. Values are of the form `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -91,8 +90,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the requested project. Values are of the form
-      `projects/<project>`.
+  *   `name` (*type:* `String.t`) - The name of the requested project. Values are of the form `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -148,16 +146,12 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   end
 
   @doc """
-  Creates a repo in the given project with the given name.
-
-  If the named repository already exists, `CreateRepo` returns
-  `ALREADY_EXISTS`.
+  Creates a repo in the given project with the given name. If the named repository already exists, `CreateRepo` returns `ALREADY_EXISTS`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The project in which to create the repo. Values are of the form
-      `projects/<project>`.
+  *   `parent` (*type:* `String.t`) - The project in which to create the repo. Values are of the form `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -216,8 +210,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the repo to delete. Values are of the form
-      `projects/<project>/repos/<repo>`.
+  *   `name` (*type:* `String.t`) - The name of the repo to delete. Values are of the form `projects//repos/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -274,8 +267,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the requested repository. Values are of the form
-      `projects/<project>/repos/<repo>`.
+  *   `name` (*type:* `String.t`) - The name of the requested repository. Values are of the form `projects//repos/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -327,15 +319,12 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -348,18 +337,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -410,14 +388,12 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   end
 
   @doc """
-  Returns all repos belonging to a project. The sizes of the repos are
-  not set by ListRepos.  To get the size of a repo, use GetRepo.
+  Returns all repos belonging to a project. The sizes of the repos are not set by ListRepos. To get the size of a repo, use GetRepo.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The project ID whose repos should be listed. Values are of the form
-      `projects/<project>`.
+  *   `name` (*type:* `String.t`) - The project ID whose repos should be listed. Values are of the form `projects/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -430,11 +406,8 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of repositories to return; between 1 and 500.
-          If not set or zero, defaults to 100 at the server.
-      *   `:pageToken` (*type:* `String.t`) - Resume listing repositories where a prior ListReposResponse
-          left off. This is an opaque token that must be obtained from
-          a recent, prior ListReposResponse's next_page_token field.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of repositories to return; between 1 and 500. If not set or zero, defaults to 100 at the server.
+      *   `:pageToken` (*type:* `String.t`) - Resume listing repositories where a prior ListReposResponse left off. This is an opaque token that must be obtained from a recent, prior ListReposResponse's next_page_token field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -483,8 +456,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the requested repository. Values are of the form
-      `projects/<project>/repos/<repo>`.
+  *   `name` (*type:* `String.t`) - The name of the requested repository. Values are of the form `projects//repos/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -538,14 +510,12 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -609,15 +579,12 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   end
 
   @doc """
-  Synchronize a connected repo.
-
-  The response contains SyncRepoMetadata in the metadata field.
+  Synchronize a connected repo. The response contains SyncRepoMetadata in the metadata field.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the repo to synchronize. Values are of the form
-      `projects/<project>/repos/<repo>`.
+  *   `name` (*type:* `String.t`) - The name of the repo to synchronize. Values are of the form `projects//repos/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -673,15 +640,12 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SourceRepo.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

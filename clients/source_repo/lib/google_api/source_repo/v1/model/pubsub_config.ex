@@ -22,14 +22,8 @@ defmodule GoogleApi.SourceRepo.V1.Model.PubsubConfig do
   ## Attributes
 
   *   `messageFormat` (*type:* `String.t`, *default:* `nil`) - The format of the Cloud Pub/Sub messages.
-  *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Email address of the service account used for publishing Cloud Pub/Sub
-      messages. This service account needs to be in the same project as the
-      PubsubConfig. When added, the caller needs to have
-      iam.serviceAccounts.actAs permission on this service account. If
-      unspecified, it defaults to the compute engine default service account.
-  *   `topic` (*type:* `String.t`, *default:* `nil`) - A topic of Cloud Pub/Sub. Values are of the form
-      `projects/<project>/topics/<topic>`. The project needs to be the same
-      project as this config is in.
+  *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Email address of the service account used for publishing Cloud Pub/Sub messages. This service account needs to be in the same project as the PubsubConfig. When added, the caller needs to have iam.serviceAccounts.actAs permission on this service account. If unspecified, it defaults to the compute engine default service account.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - A topic of Cloud Pub/Sub. Values are of the form `projects//topics/`. The project needs to be the same project as this config is in.
   """
 
   use GoogleApi.Gax.ModelBase
