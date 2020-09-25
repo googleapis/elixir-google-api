@@ -23,7 +23,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Searc
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used to retrieve the next page of results.
   *   `results` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SearchCatalogResult.t)`, *default:* `nil`) - Search results.
-  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable locations. Search result does not include data from those locations. Users can get additional information on the error by repeating the search request with a more restrictive parameter -- setting the value for `SearchDataCatalogRequest.scope.include_locations`.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable locations. Search result does not include data from those locations. Users can get additional information on the error by repeating the search request with a more restrictive parameter -- setting the value for `SearchDataCatalogRequest.scope.restricted_locations`.
   """
 
   use GoogleApi.Gax.ModelBase
