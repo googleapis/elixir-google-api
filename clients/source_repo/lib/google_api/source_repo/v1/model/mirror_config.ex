@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.SourceRepo.V1.Model.MirrorConfig do
   @moduledoc """
-  Configuration to automatically mirror a repository from another
-  hosting service, for example GitHub or Bitbucket.
+  Configuration to automatically mirror a repository from another hosting service, for example GitHub or Bitbucket.
 
   ## Attributes
 
-  *   `deployKeyId` (*type:* `String.t`, *default:* `nil`) - ID of the SSH deploy key at the other hosting service.
-      Removing this key from the other service would deauthorize
-      Google Cloud Source Repositories from mirroring.
+  *   `deployKeyId` (*type:* `String.t`, *default:* `nil`) - ID of the SSH deploy key at the other hosting service. Removing this key from the other service would deauthorize Google Cloud Source Repositories from mirroring.
   *   `url` (*type:* `String.t`, *default:* `nil`) - URL of the main repository at the other hosting service.
-  *   `webhookId` (*type:* `String.t`, *default:* `nil`) - ID of the webhook listening to updates to trigger mirroring.
-      Removing this webhook from the other hosting service will stop
-      Google Cloud Source Repositories from receiving notifications,
-      and thereby disabling mirroring.
+  *   `webhookId` (*type:* `String.t`, *default:* `nil`) - ID of the webhook listening to updates to trigger mirroring. Removing this webhook from the other hosting service will stop Google Cloud Source Repositories from receiving notifications, and thereby disabling mirroring.
   """
 
   use GoogleApi.Gax.ModelBase

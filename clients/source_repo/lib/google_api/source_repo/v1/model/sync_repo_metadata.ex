@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.SourceRepo.V1.Model.SyncRepoMetadata do
   @moduledoc """
-  Metadata of SyncRepo.
-
-  This message is in the metadata field of Operation.
+  Metadata of SyncRepo. This message is in the metadata field of Operation.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the repo being synchronized. Values are of the form
-      `projects/<project>/repos/<repo>`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the repo being synchronized. Values are of the form `projects//repos/`.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation is started.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - The latest status message on syncing the repository.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation's status message is updated.

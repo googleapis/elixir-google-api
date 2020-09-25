@@ -22,9 +22,7 @@ defmodule GoogleApi.SourceRepo.V1.Model.UpdateProjectConfigRequest do
   ## Attributes
 
   *   `projectConfig` (*type:* `GoogleApi.SourceRepo.V1.Model.ProjectConfig.t`, *default:* `nil`) - The new configuration for the project.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - A FieldMask specifying which fields of the project_config to modify. Only
-      the fields in the mask will be modified. If no mask is provided, this
-      request is no-op.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - A FieldMask specifying which fields of the project_config to modify. Only the fields in the mask will be modified. If no mask is provided, this request is no-op.
   """
 
   use GoogleApi.Gax.ModelBase

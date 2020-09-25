@@ -21,17 +21,11 @@ defmodule GoogleApi.SourceRepo.V1.Model.Repo do
 
   ## Attributes
 
-  *   `mirrorConfig` (*type:* `GoogleApi.SourceRepo.V1.Model.MirrorConfig.t`, *default:* `nil`) - How this repository mirrors a repository managed by another service.
-      Read-only field.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the repository, of the form
-      `projects/<project>/repos/<repo>`.  The repo name may contain slashes.
-      eg, `projects/myproject/repos/name/with/slash`
-  *   `pubsubConfigs` (*type:* `%{optional(String.t) => GoogleApi.SourceRepo.V1.Model.PubsubConfig.t}`, *default:* `nil`) - How this repository publishes a change in the repository through Cloud
-      Pub/Sub. Keyed by the topic names.
-  *   `size` (*type:* `String.t`, *default:* `nil`) - The disk usage of the repo, in bytes. Read-only field. Size is only
-      returned by GetRepo.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - URL to clone the repository from Google Cloud Source Repositories.
-      Read-only field.
+  *   `mirrorConfig` (*type:* `GoogleApi.SourceRepo.V1.Model.MirrorConfig.t`, *default:* `nil`) - How this repository mirrors a repository managed by another service. Read-only field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the repository, of the form `projects//repos/`. The repo name may contain slashes. eg, `projects/myproject/repos/name/with/slash`
+  *   `pubsubConfigs` (*type:* `%{optional(String.t) => GoogleApi.SourceRepo.V1.Model.PubsubConfig.t}`, *default:* `nil`) - How this repository publishes a change in the repository through Cloud Pub/Sub. Keyed by the topic names.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - The disk usage of the repo, in bytes. Read-only field. Size is only returned by GetRepo.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL to clone the repository from Google Cloud Source Repositories. Read-only field.
   """
 
   use GoogleApi.Gax.ModelBase
