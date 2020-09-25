@@ -22,7 +22,6 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Deployment do
   ## Attributes
 
   *   `apiProxy` (*type:* `String.t`, *default:* `nil`) - API proxy.
-  *   `basePath` (*type:* `String.t`, *default:* `nil`) - Base path for the deployment.
   *   `deployStartTime` (*type:* `String.t`, *default:* `nil`) - Time the API proxy was marked `deployed` in the control plane in millisconds since epoch.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Environment.
   *   `errors` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Errors reported for this deployment. Populated only when state == ERROR. This field is not populated in List APIs.
@@ -37,7 +36,6 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Deployment do
 
   @type t :: %__MODULE__{
           :apiProxy => String.t(),
-          :basePath => String.t(),
           :deployStartTime => String.t(),
           :environment => String.t(),
           :errors => list(GoogleApi.Apigee.V1.Model.GoogleRpcStatus.t()),
@@ -53,7 +51,6 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Deployment do
         }
 
   field(:apiProxy)
-  field(:basePath)
   field(:deployStartTime)
   field(:environment)
   field(:errors, as: GoogleApi.Apigee.V1.Model.GoogleRpcStatus, type: :list)
