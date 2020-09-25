@@ -78,7 +78,7 @@ defmodule GoogleApi.Content.V21.Api.Localinventory do
   end
 
   @doc """
-  Update the local inventory of a product in your Merchant Center account.
+  Updates the local inventory of a product in your Merchant Center account.
 
   ## Parameters
 
