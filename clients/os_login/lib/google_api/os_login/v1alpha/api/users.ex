@@ -31,7 +31,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The unique ID for the user in format `users/{user}`.
+  *   `name` (*type:* `String.t`) - Required. The unique ID for the user in format `users/{user}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -161,7 +161,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - A reference to the POSIX account to update. POSIX accounts are identified by the project ID they are associated with. A reference to the POSIX account is in format `users/{user}/projects/{project}`.
+  *   `name` (*type:* `String.t`) - Required. A reference to the POSIX account to update. POSIX accounts are identified by the project ID they are associated with. A reference to the POSIX account is in format `users/{user}/projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -222,7 +222,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format `users/{user}/sshPublicKeys/{fingerprint}`.
+  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -281,7 +281,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fingerprint of the public key to retrieve. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format `users/{user}/sshPublicKeys/{fingerprint}`.
+  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to retrieve. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -340,7 +340,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format `users/{user}/sshPublicKeys/{fingerprint}`.
+  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to update. Public keys are identified by their SHA-256 fingerprint. The fingerprint of the public key is in format `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

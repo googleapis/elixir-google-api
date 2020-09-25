@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
   @moduledoc """
-  A response message from importing an SSH public key.
+  A response message for importing an SSH public key.
 
   ## Attributes
 
