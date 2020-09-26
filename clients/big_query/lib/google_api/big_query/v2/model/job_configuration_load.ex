@@ -26,6 +26,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   *   `autodetect` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates if we should automatically infer the options and schema for CSV and JSON sources.
   *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - [Beta] Clustering specification for the destination table. Must be specified with time-based partitioning, data in the table will be first partitioned and subsequently clustered.
   *   `createDisposition` (*type:* `String.t`, *default:* `nil`) - [Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion.
+  *   `decimalTargetTypes` (*type:* `list(String.t)`, *default:* `nil`) - [Trusted Tester] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. For example: suppose decimal_target_type = ["NUMERIC", "BIGNUMERIC"]. Then if (precision,scale) is: * (38,9) -> NUMERIC; * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); * (76,38) -> BIGNUMERIC; * (77,38) -> BIGNUMERIC (error if value exeeds supported range). For duplicated types in this field, only one will be considered and the rest will be ignored. The order of the types in this field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as ["NUMERIC", "BIGNUMERIC"] and NUMERIC always takes precedence over BIGNUMERIC.
   *   `destinationEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
   *   `destinationTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] The destination table to load the data into.
   *   `destinationTableProperties` (*type:* `GoogleApi.BigQuery.V2.Model.DestinationTableProperties.t`, *default:* `nil`) - [Beta] [Optional] Properties with which to create the destination table if it is new.
@@ -58,6 +59,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
           :autodetect => boolean(),
           :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t(),
           :createDisposition => String.t(),
+          :decimalTargetTypes => list(String.t()),
           :destinationEncryptionConfiguration =>
             GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t(),
           :destinationTable => GoogleApi.BigQuery.V2.Model.TableReference.t(),
@@ -89,6 +91,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   field(:autodetect)
   field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)
   field(:createDisposition)
+  field(:decimalTargetTypes, type: :list)
 
   field(:destinationEncryptionConfiguration,
     as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration
