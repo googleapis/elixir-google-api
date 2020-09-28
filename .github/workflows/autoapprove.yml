@@ -16,7 +16,7 @@ jobs:
       - name: AutoApprove
         uses: actions/github-script@v2
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.YOSHI_APPROVER_TOKEN}}
           script: |
             if (context.payload.sender.login != "yoshi-automation") {
               core.error("AutoApprove: Not running for this sender.");
