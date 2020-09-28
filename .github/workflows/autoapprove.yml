@@ -10,6 +10,7 @@ on:
 jobs:
   auto-approve:
     runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'autosynth')
     env:
       ENABLE_AUTO_APPROVE: ${{ secrets.ENABLE_AUTO_APPROVE }}
     steps:
