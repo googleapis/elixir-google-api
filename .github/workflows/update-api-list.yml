@@ -42,7 +42,7 @@ jobs:
         if: ${{ env.FOUND_CHANGES == 'true' }}
         uses: actions/github-script@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
           script: |
             const existing = await github.pulls.list({
               owner: context.repo.owner,
