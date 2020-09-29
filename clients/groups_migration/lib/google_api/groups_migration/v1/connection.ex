@@ -28,5 +28,5 @@ defmodule GoogleApi.GroupsMigration.V1.Connection do
       "https://www.googleapis.com/auth/apps.groups.migration"
     ],
     otp_app: :google_api_groups_migration,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://groupsmigration.googleapis.com/"
 end
