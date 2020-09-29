@@ -77,14 +77,12 @@
   {
     "version": "v1alpha",
     "url": "https://analyticsadmin.googleapis.com/$discovery/rest?version=v1alpha",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Analyticsadmin"
+    "name": "AnalyticsAdmin"
   },
   {
     "version": "v1alpha",
     "url": "https://analyticsdata.googleapis.com/$discovery/rest?version=v1alpha",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Analyticsdata"
+    "name": "AnalyticsData"
   },
   {
     "version": "v4",
@@ -99,7 +97,6 @@
   {
     "version": "v1",
     "url": "https://androidenterprise.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/androidenterprise/v1/rest",
     "name": "AndroidEnterprise"
   },
   {
@@ -110,14 +107,12 @@
   {
     "version": "v3",
     "url": "https://androidpublisher.googleapis.com/$discovery/rest?version=v3",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/androidpublisher/v3/rest",
     "name": "AndroidPublisher"
   },
   {
     "version": "v1alpha2",
     "url": "https://apigateway.googleapis.com/$discovery/rest?version=v1alpha2",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Apigateway"
+    "name": "APIGateway"
   },
   {
     "version": "v1",
@@ -142,13 +137,11 @@
   {
     "version": "v1beta1",
     "url": "https://assuredworkloads.googleapis.com/$discovery/rest?version=v1beta1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Assuredworkloads"
+    "name": "AssuredWorkloads"
   },
   {
     "version": "v2",
     "url": "https://bigquery.googleapis.com/$discovery/rest?version=v2",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/bigquery/v2/rest",
     "name": "BigQuery"
   },
   {
@@ -189,7 +182,6 @@
   {
     "version": "v1",
     "url": "https://books.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/books/v1/rest",
     "name": "Books"
   },
   {
@@ -390,19 +382,16 @@
   {
     "version": "v2",
     "url": "https://deploymentmanager.googleapis.com/$discovery/rest?version=v2",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/deploymentmanager/v2/rest",
     "name": "DeploymentManager"
   },
   {
     "version": "v3.3",
     "url": "https://dfareporting.googleapis.com/$discovery/rest?version=v3.3",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/dfareporting/v3.3/rest",
     "name": "DFAReporting"
   },
   {
     "version": "v3.4",
     "url": "https://dfareporting.googleapis.com/$discovery/rest?version=v3.4",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/dfareporting/v3.4/rest",
     "name": "DFAReporting"
   },
   {
@@ -418,7 +407,6 @@
   {
     "version": "v1",
     "url": "https://discovery.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/discovery/v1/rest",
     "name": "Discovery"
   },
   {
@@ -454,19 +442,16 @@
   {
     "version": "v1",
     "url": "https://doubleclickbidmanager.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/doubleclickbidmanager/v1/rest",
     "name": "DoubleClickBidManager"
   },
   {
     "version": "v1.1",
     "url": "https://doubleclickbidmanager.googleapis.com/$discovery/rest?version=v1.1",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/doubleclickbidmanager/v1.1/rest",
     "name": "DoubleClickBidManager"
   },
   {
     "version": "v2",
     "url": "https://doubleclicksearch.googleapis.com/$discovery/rest?version=v2",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/doubleclicksearch/v2/rest",
     "name": "DoubleClickSearch"
   },
   {
@@ -537,7 +522,6 @@
   {
     "version": "v1",
     "url": "https://fitness.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
     "name": "Fitness"
   },
   {
@@ -578,7 +562,6 @@
   {
     "version": "v1",
     "url": "https://gmail.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest",
     "name": "Gmail"
   },
   {
@@ -589,13 +572,11 @@
   {
     "version": "v1",
     "url": "https://groupsmigration.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Groupsmigration"
+    "name": "GroupsMigration"
   },
   {
     "version": "v1",
     "url": "https://groupssettings.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/groupssettings/v1/rest",
     "name": "GroupsSettings"
   },
   {
@@ -671,8 +652,7 @@
   {
     "version": "v1",
     "url": "https://localservices.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Localservices"
+    "name": "LocalServices"
   },
   {
     "version": "v2",
@@ -697,7 +677,6 @@
   {
     "version": "v1",
     "url": "https://memcache.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: No longer in discovery. Consider removal.",
     "name": "Memcache"
   },
   {
@@ -758,8 +737,7 @@
   {
     "version": "v1",
     "url": "https://playcustomapp.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Playcustomapp"
+    "name": "PlayCustomApp"
   },
   {
     "version": "v1",
@@ -914,7 +892,6 @@
   {
     "version": "v1",
     "url": "https://siteverification.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/siteVerification/v1/rest",
     "name": "SiteVerification"
   },
   {
@@ -925,8 +902,7 @@
   {
     "version": "v1",
     "url": "https://smartdevicemanagement.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Smartdevicemanagement"
+    "name": "SmartDeviceManagement"
   },
   {
     "version": "v1",
@@ -966,19 +942,16 @@
   {
     "version": "v1",
     "url": "https://sts.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Sts"
+    "name": "STS"
   },
   {
     "version": "v2",
     "url": "https://tagmanager.googleapis.com/$discovery/rest?version=v2",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/tagmanager/v2/rest",
     "name": "TagManager"
   },
   {
     "version": "v1",
     "url": "https://tasks.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Url changed from https://www.googleapis.com/discovery/v1/apis/tasks/v1/rest",
     "name": "Tasks"
   },
   {
@@ -1044,8 +1017,7 @@
   {
     "version": "v1",
     "url": "https://webfonts.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Webfonts"
+    "name": "WebFonts"
   },
   {
     "version": "v3",
@@ -1065,13 +1037,11 @@
   {
     "version": "v1beta",
     "url": "https://workflowexecutions.googleapis.com/$discovery/rest?version=v1beta",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Workflowexecutions"
+    "name": "WorkflowExecutions"
   },
   {
     "version": "v1beta",
     "url": "https://workflows.googleapis.com/$discovery/rest?version=v1beta",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
     "name": "Workflows"
   },
   {
