@@ -34,6 +34,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   *   `purchaseToken` (*type:* `String.t`, *default:* `nil`) - The purchase token generated to identify this purchase.
   *   `purchaseType` (*type:* `integer()`, *default:* `nil`) - The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) 2. Rewarded (i.e. from watching a video ad instead of paying)
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity associated with the purchase of the inapp product.
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - ISO 3166-1 alpha-2 billing region code of the user at the time the product was granted.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -51,7 +52,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
           :purchaseTimeMillis => String.t(),
           :purchaseToken => String.t(),
           :purchaseType => integer(),
-          :quantity => integer()
+          :quantity => integer(),
+          :regionCode => String.t()
         }
 
   field(:acknowledgementState)
@@ -67,6 +69,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   field(:purchaseToken)
   field(:purchaseType)
   field(:quantity)
+  field(:regionCode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
