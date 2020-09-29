@@ -75,7 +75,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/fitness/v1/users/{userId}/dataSources", %{
+      |> Request.url("/{userId}/dataSources", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -147,7 +147,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/fitness/v1/users/{userId}/dataSources/{dataSourceId}", %{
+      |> Request.url("/{userId}/dataSources/{dataSourceId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "dataSourceId" => URI.encode(data_source_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -220,7 +220,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/fitness/v1/users/{userId}/dataSources/{dataSourceId}", %{
+      |> Request.url("/{userId}/dataSources/{dataSourceId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "dataSourceId" => URI.encode(data_source_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -282,7 +282,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/fitness/v1/users/{userId}/dataSources", %{
+      |> Request.url("/{userId}/dataSources", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -356,7 +356,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/fitness/v1/users/{userId}/dataSources/{dataSourceId}", %{
+      |> Request.url("/{userId}/dataSources/{dataSourceId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "dataSourceId" => URI.encode(data_source_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -433,7 +433,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/fitness/v1/users/{userId}/dataSources/{dataSourceId}/dataPointChanges", %{
+      |> Request.url("/{userId}/dataSources/{dataSourceId}/dataPointChanges", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1)
       })
@@ -512,14 +512,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/fitness/v1/users/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}",
-        %{
-          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-          "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
-          "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -594,14 +591,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/fitness/v1/users/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}",
-        %{
-          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-          "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
-          "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -676,14 +670,11 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/fitness/v1/users/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}",
-        %{
-          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-          "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
-          "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "dataSourceId" => URI.encode(data_source_id, &URI.char_unreserved?/1),
+        "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -742,7 +733,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/fitness/v1/users/{userId}/dataset:aggregate", %{
+      |> Request.url("/{userId}/dataset:aggregate", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -813,7 +804,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/fitness/v1/users/{userId}/sessions/{sessionId}", %{
+      |> Request.url("/{userId}/sessions/{sessionId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "sessionId" => URI.encode(session_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -883,7 +874,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/fitness/v1/users/{userId}/sessions", %{
+      |> Request.url("/{userId}/sessions", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -957,7 +948,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/fitness/v1/users/{userId}/sessions/{sessionId}", %{
+      |> Request.url("/{userId}/sessions/{sessionId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "sessionId" => URI.encode(session_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
