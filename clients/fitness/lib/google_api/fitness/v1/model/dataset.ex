@@ -25,7 +25,7 @@ defmodule GoogleApi.Fitness.V1.Model.Dataset do
   *   `maxEndTimeNs` (*type:* `String.t`, *default:* `nil`) - The largest end time of all data points in this possibly partial representation of the dataset. Time is in nanoseconds from epoch. This should also match the second part of the dataset identifier.
   *   `minStartTimeNs` (*type:* `String.t`, *default:* `nil`) - The smallest start time of all data points in this possibly partial representation of the dataset. Time is in nanoseconds from epoch. This should also match the first part of the dataset identifier.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - This token will be set when a dataset is received in response to a GET request and the dataset is too large to be included in a single response. Provide this value in a subsequent GET request to return the next page of data points within this dataset.
-  *   `point` (*type:* `list(GoogleApi.Fitness.V1.Model.DataPoint.t)`, *default:* `nil`) - A partial list of data points contained in the dataset, ordered by largest endTimeNanos first. This list is considered complete when retrieving a small dataset and partial when patching a dataset or retrieving a dataset that is too large to include in a single response.
+  *   `point` (*type:* `list(GoogleApi.Fitness.V1.Model.DataPoint.t)`, *default:* `nil`) - A partial list of data points contained in the dataset, ordered by endTimeNanos. This list is considered complete when retrieving a small dataset and partial when patching a dataset or retrieving a dataset that is too large to include in a single response.
   """
 
   use GoogleApi.Gax.ModelBase
