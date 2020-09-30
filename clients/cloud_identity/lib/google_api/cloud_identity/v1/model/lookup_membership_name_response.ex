@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.LookupMembershipNameResponse do
   @moduledoc """
-
+  The response message for MembershipsService.LookupMembershipName.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the Membership being looked up. Format: `groups/{group_id}/memberships/{member_id}`, where `group_id` is the unique ID assigned to the Group to which Membership belongs to, and `member_id` is the unique ID assigned to the member.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The [resource name](https://cloud.google.com/apis/design/resource_names) of the looked-up `Membership`. Must be of the form `groups/{group_id}/memberships/{membership_id}`.
   """
 
   use GoogleApi.Gax.ModelBase
