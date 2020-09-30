@@ -22,9 +22,9 @@ defmodule GoogleApi.Sheets.V4.Model.DataSource do
   ## Attributes
 
   *   `calculatedColumns` (*type:* `list(GoogleApi.Sheets.V4.Model.DataSourceColumn.t)`, *default:* `nil`) - All calculated columns in the data source.
-  *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - The spreadsheet-scoped unique ID that identifies the data source.
-  *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The ID of the Sheet connected with the data source. The field cannot be changed once set. When creating a data source, an associated SheetType.DATA_SOURCE sheet is also created, if the field is not specified, the ID of the created sheet will be randomly generated.
-  *   `spec` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceSpec.t`, *default:* `nil`) - The DataSourceSpec.
+  *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - The spreadsheet-scoped unique ID that identifies the data source. Example: 1080547365.
+  *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The ID of the Sheet connected with the data source. The field cannot be changed once set. When creating a data source, an associated DATA_SOURCE sheet is also created, if the field is not specified, the ID of the created sheet will be randomly generated.
+  *   `spec` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceSpec.t`, *default:* `nil`) - The DataSourceSpec for the data source connected with this spreadsheet.
   """
 
   use GoogleApi.Gax.ModelBase

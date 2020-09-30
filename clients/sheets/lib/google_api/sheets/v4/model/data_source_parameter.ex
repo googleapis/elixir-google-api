@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceParameter do
   @moduledoc """
-  A parameter in a data source's query. The parameter allows user to pass in values from the spreadsheet into a query.
+  A parameter in a data source's query. The parameter allows the user to pass in values from the spreadsheet into a query.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Named parameter. Must be a legitimate identifier for the DataSource that supports it. For example, BigQuery identifier
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Named parameter. Must be a legitimate identifier for the DataSource that supports it. For example, [BigQuery identifier](https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical#identifiers).
   *   `namedRangeId` (*type:* `String.t`, *default:* `nil`) - ID of a NamedRange. Its size must be 1x1.
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - A range that contains the value of the parameter. Its size must be 1x1.
   """

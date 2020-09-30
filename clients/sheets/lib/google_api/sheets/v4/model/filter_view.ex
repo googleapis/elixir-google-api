@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.FilterView do
 
   ## Attributes
 
-  *   `criteria` (*type:* `%{optional(String.t) => GoogleApi.Sheets.V4.Model.FilterCriteria.t}`, *default:* `nil`) - The criteria for showing/hiding values per column. The map's key is the column index, and the value is the criteria for that column.
+  *   `criteria` (*type:* `%{optional(String.t) => GoogleApi.Sheets.V4.Model.FilterCriteria.t}`, *default:* `nil`) - The criteria for showing/hiding values per column. The map's key is the column index, and the value is the criteria for that column. This field is deprecated in favor of filter_specs.
   *   `filterSpecs` (*type:* `list(GoogleApi.Sheets.V4.Model.FilterSpec.t)`, *default:* `nil`) - The filter criteria for showing/hiding values per column. Both criteria and filter_specs are populated in responses. If both fields are specified in an update request, this field takes precedence.
   *   `filterViewId` (*type:* `integer()`, *default:* `nil`) - The ID of the filter view.
   *   `namedRangeId` (*type:* `String.t`, *default:* `nil`) - The named range this filter view is backed by, if any. When writing, only one of range or named_range_id may be set.

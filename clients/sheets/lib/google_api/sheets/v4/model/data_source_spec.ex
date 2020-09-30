@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceSpec do
   @moduledoc """
-  The specification of a data source.
+  This specifies the details of the data source. For example, for BigQuery, this specifies information about the BigQuery source.
 
   ## Attributes
 
   *   `bigQuery` (*type:* `GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec.t`, *default:* `nil`) - A BigQueryDataSourceSpec.
-  *   `parameters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataSourceParameter.t)`, *default:* `nil`) - The parameters of the data source.
+  *   `parameters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataSourceParameter.t)`, *default:* `nil`) - The parameters of the data source, used when querying the data source.
   """
 
   use GoogleApi.Gax.ModelBase

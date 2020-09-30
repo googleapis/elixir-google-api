@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceSheetProperties do
   @moduledoc """
-  Additional properties of a SheetType.DATA_SOURCE sheet.
+  Additional properties of a DATA_SOURCE sheet.
 
   ## Attributes
 
   *   `columns` (*type:* `list(GoogleApi.Sheets.V4.Model.DataSourceColumn.t)`, *default:* `nil`) - The columns displayed on the sheet, corresponding to the values in RowData.
   *   `dataExecutionStatus` (*type:* `GoogleApi.Sheets.V4.Model.DataExecutionStatus.t`, *default:* `nil`) - The data execution status.
-  *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - ID of the DataSource the sheet connected with.
+  *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - ID of the DataSource the sheet is connected to.
   """
 
   use GoogleApi.Gax.ModelBase

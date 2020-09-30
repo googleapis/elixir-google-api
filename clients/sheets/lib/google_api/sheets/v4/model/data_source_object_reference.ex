@@ -21,11 +21,11 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceObjectReference do
 
   ## Attributes
 
-  *   `chartId` (*type:* `integer()`, *default:* `nil`) - References to a DataSourceChart.
+  *   `chartId` (*type:* `integer()`, *default:* `nil`) - References to a data source chart.
   *   `dataSourceFormulaCell` (*type:* `GoogleApi.Sheets.V4.Model.GridCoordinate.t`, *default:* `nil`) - References to a cell containing DataSourceFormula.
   *   `dataSourcePivotTableAnchorCell` (*type:* `GoogleApi.Sheets.V4.Model.GridCoordinate.t`, *default:* `nil`) - References to a data source PivotTable anchored at the cell.
   *   `dataSourceTableAnchorCell` (*type:* `GoogleApi.Sheets.V4.Model.GridCoordinate.t`, *default:* `nil`) - References to a DataSourceTable anchored at the cell.
-  *   `sheetId` (*type:* `String.t`, *default:* `nil`) - References to a SheetType.DATA_SOURCE sheet.
+  *   `sheetId` (*type:* `String.t`, *default:* `nil`) - References to a DATA_SOURCE sheet.
   """
 
   use GoogleApi.Gax.ModelBase

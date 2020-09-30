@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.AddDataSourceRequest do
   @moduledoc """
-  Adds a data source. After the data source is added successfully, an associated DataSource sheet is created and an execution is triggered to refresh the sheet to read data from the data source. The request requires an additional bigquery.readonly OAuth scope.
+  Adds a data source. After the data source is added successfully, an associated DATA_SOURCE sheet is created and an execution is triggered to refresh the sheet to read data from the data source. The request requires an additional `bigquery.readonly` OAuth scope.
 
   ## Attributes
 

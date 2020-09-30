@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteSheetRequest do
 
   ## Attributes
 
-  *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The ID of the sheet to delete.
+  *   `sheetId` (*type:* `integer()`, *default:* `nil`) - The ID of the sheet to delete. If the sheet is of SheetType.DATA_SOURCE type, the associated DataSource is also deleted.
   """
 
   use GoogleApi.Gax.ModelBase

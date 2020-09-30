@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceTable do
   @moduledoc """
-  A data source table, allowing to import a static table of data from the DataSource into Sheets. This is also known as "Extract" in the Sheets editor.
+  A data source table, which allows the user to import a static table of data from the DataSource into Sheets. This is also known as "Extract" in the Sheets editor.
 
   ## Attributes
 

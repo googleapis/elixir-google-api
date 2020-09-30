@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceColumnReference do
   @moduledoc """
-  An unique identifier that references to a data source column.
+  An unique identifier that references a data source column.
 
   ## Attributes
 

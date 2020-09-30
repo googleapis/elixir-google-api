@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshMonthlySchedule do
   @moduledoc """
-  Schedule refreshes in a time interval on specified days in a month and repeats monthly.
+  A monthly schedule for data to refresh on specific days in the month in a given time interval.
 
   ## Attributes
 

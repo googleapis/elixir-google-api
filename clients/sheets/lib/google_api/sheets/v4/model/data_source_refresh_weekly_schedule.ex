@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshWeeklySchedule do
   @moduledoc """
-  Schedule refreshes in a time interval on specified days in a week and repeats weekly.
+  A weekly schedule for data to refresh on specific days in a given time interval.
 
   ## Attributes
 

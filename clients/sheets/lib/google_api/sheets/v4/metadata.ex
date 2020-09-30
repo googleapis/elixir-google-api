@@ -20,7 +20,7 @@ defmodule GoogleApi.Sheets.V4 do
   API client metadata for GoogleApi.Sheets.V4.
   """
 
-  @discovery_revision "20200908"
+  @discovery_revision "20200922"
 
   def discovery_revision(), do: @discovery_revision
 end

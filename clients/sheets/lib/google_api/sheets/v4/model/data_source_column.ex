@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceColumn do
   @moduledoc """
-  A data source column.
+  A column in a data source.
 
   ## Attributes
 
