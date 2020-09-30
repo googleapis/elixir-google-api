@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.Membership do
   @moduledoc """
-  Resource representing a Membership within a Group
+  A membership within the Cloud Identity Groups API. A `Membership` defines a relationship between a `Group` and an entity belonging to that `Group`, referred to as a "member".
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation timestamp of the Membership. Output only.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Membership in the format: `groups/{group_id}/memberships/{member_id}`, where group_id is the unique ID assigned to the Group to which Membership belongs to, and member_id is the unique ID assigned to the member Must be left blank while creating a Membership.
-  *   `preferredMemberKey` (*type:* `GoogleApi.CloudIdentity.V1.Model.EntityKey.t`, *default:* `nil`) - Required. Immutable. EntityKey of the entity to be added as the member. Must be set while creating a Membership, read-only afterwards. Currently allowed entity types: `Users`, `Groups`.
-  *   `roles` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.MembershipRole.t)`, *default:* `nil`) - Roles for a member within the Group. Currently supported MembershipRoles: `"MEMBER"`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the `Membership` was created.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership`. Shall be of the form `groups/{group_id}/memberships/{membership_id}`.
+  *   `preferredMemberKey` (*type:* `GoogleApi.CloudIdentity.V1.Model.EntityKey.t`, *default:* `nil`) - Required. Immutable. The `EntityKey` of the member.
+  *   `roles` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.MembershipRole.t)`, *default:* `nil`) - The `MembershipRole`s that apply to the `Membership`. If unspecified, defaults to a single `MembershipRole` with `name` `MEMBER`. Must not contain duplicate `MembershipRole`s with the same `name`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the membership.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last updated timestamp of the Membership. Output only.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the `Membership` was last updated.
   """
 
   use GoogleApi.Gax.ModelBase

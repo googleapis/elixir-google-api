@@ -86,12 +86,12 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Deletes a Group.
+  Deletes a `Group`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Group in the format: `groups/{group_id}`, where `group_id` is the unique ID assigned to the Group.
+  *   `name` (*type:* `String.t`) - Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Group` to retrieve. Must be of the form `groups/{group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -145,12 +145,12 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Retrieves a Group.
+  Retrieves a `Group`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Group in the format: `groups/{group_id}`, where `group_id` is the unique ID assigned to the Group.
+  *   `name` (*type:* `String.t`) - Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Group` to retrieve. Must be of the form `groups/{group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -204,7 +204,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Lists groups within a customer or a domain.
+  Lists the `Group`s under a customer or namespace.
 
   ## Parameters
 
@@ -221,10 +221,10 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The default page size is 200 (max 1000) for the BASIC view, and 50 (max 500) for the FULL view.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
-      *   `:parent` (*type:* `String.t`) - Required. Customer ID to list all groups from.
-      *   `:view` (*type:* `String.t`) - Group resource view to be returned. Defaults to [View.BASIC]().
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `View.BASIC` and to 50 for `View.FULL`. Must not be greater than 1000 for `View.BASIC` or 500 for `View.FULL`.
+      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous list request, if any.
+      *   `:parent` (*type:* `String.t`) - Required. The parent resource under which to list all `Group`s. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups.
+      *   `:view` (*type:* `String.t`) - The level of detail to be returned. If unspecified, defaults to `View.BASIC`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -268,7 +268,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Looks up [resource name](https://cloud.google.com/apis/design/resource_names) of a Group by its EntityKey.
+  Looks up the [resource name](https://cloud.google.com/apis/design/resource_names) of a `Group` by its `EntityKey`.
 
   ## Parameters
 
@@ -285,8 +285,8 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"groupKey.id"` (*type:* `String.t`) - The ID of the entity within the given namespace. The ID must be unique within its namespace.
-      *   `:"groupKey.namespace"` (*type:* `String.t`) - Namespaces provide isolation for IDs, so an ID only needs to be unique within its namespace. Namespaces are currently only created as part of IdentitySource creation from Admin Console. A namespace `"identitysources/{identity_source_id}"` is created corresponding to every Identity Source `identity_source_id`.
+      *   `:"groupKey.id"` (*type:* `String.t`) - The ID of the entity. For Google-managed entities, the `id` should be the email address of an existing group or user. For external-identity-mapped entities, the `id` must be a string conforming to the Identity Source's requirements. Must be unique within a `namespace`.
+      *   `:"groupKey.namespace"` (*type:* `String.t`) - The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -330,12 +330,12 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Updates a Group.
+  Updates a `Group`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Group in the format: `groups/{group_id}`, where group_id is the unique ID assigned to the Group. Must be left blank while creating a Group.
+  *   `name` (*type:* `String.t`) - Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Group`. Shall be of the form `groups/{group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -348,7 +348,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Editable fields: `display_name`, `description`
+      *   `:updateMask` (*type:* `String.t`) - Required. The fully-qualified names of fields to update. May only contain the following fields: `display_name`, `description`.
       *   `:body` (*type:* `GoogleApi.CloudIdentity.V1.Model.Group.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -393,7 +393,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Searches for Groups.
+  Searches for `Group`s matching a specified query.
 
   ## Parameters
 
@@ -410,10 +410,10 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The default page size is 200 (max 1000) for the BASIC view, and 50 (max 500) for the FULL view.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous search request, if any.
-      *   `:query` (*type:* `String.t`) - Required. `Required`. Query string for performing search on groups. Users can search on parent and label attributes of groups. EXACT match ('==') is supported on parent, and CONTAINS match ('in') is supported on labels.
-      *   `:view` (*type:* `String.t`) - Group resource view to be returned. Defaults to [View.BASIC]().
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `GroupView.BASIC` and 50 for `GroupView.FULL`. Must not be greater than 1000 for `GroupView.BASIC` or 500 for `GroupView.FULL`.
+      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous search request, if any.
+      *   `:query` (*type:* `String.t`) - Required. The search query. Must be specified in [Common Expression Language](https://opensource.google/projects/cel). May only contain equality operators on the parent and inclusion operators on labels (e.g., `parent == 'customers/{customer_id}' && 'cloudidentity.googleapis.com/groups.discussion_forum' in labels`).
+      *   `:view` (*type:* `String.t`) - The level of detail to be returned. If unspecified, defaults to `View.BASIC`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -457,12 +457,12 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Creates a Membership.
+  Creates a `Membership`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Group to create Membership within. Format: `groups/{group_id}`, where `group_id` is the unique ID assigned to the Group.
+  *   `parent` (*type:* `String.t`) - Required. The parent `Group` resource under which to create the `Membership`. Must be of the form `groups/{group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -528,12 +528,12 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Deletes a Membership.
+  Deletes a `Membership`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Membership to be deleted. Format: `groups/{group_id}/memberships/{member_id}`, where `group_id` is the unique ID assigned to the Group to which Membership belongs to, and member_id is the unique ID assigned to the member.
+  *   `name` (*type:* `String.t`) - Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership` to delete. Must be of the form `groups/{group_id}/memberships/{membership_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -592,12 +592,12 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Retrieves a Membership.
+  Retrieves a `Membership`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Membership to be retrieved. Format: `groups/{group_id}/memberships/{member_id}`, where `group_id` is the unique id assigned to the Group to which Membership belongs to, and `member_id` is the unique ID assigned to the member.
+  *   `name` (*type:* `String.t`) - Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership` to retrieve. Must be of the form `groups/{group_id}/memberships/{membership_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -651,12 +651,12 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Lists Memberships within a Group.
+  Lists the `Membership`s within a `Group`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Group to list Memberships within. Format: `groups/{group_id}`, where `group_id` is the unique ID assigned to the Group.
+  *   `parent` (*type:* `String.t`) - Required. The parent `Group` resource under which to lookup the `Membership` name. Must be of the form `groups/{group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -669,9 +669,9 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The default page size is 200 (max 1000) for the BASIC view, and 50 (max 500) for the FULL view.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
-      *   `:view` (*type:* `String.t`) - Membership resource view to be returned. Defaults to View.BASIC.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `GroupView.BASIC` and to 50 for `GroupView.FULL`. Must not be greater than 1000 for `GroupView.BASIC` or 500 for `GroupView.FULL`.
+      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous search request, if any.
+      *   `:view` (*type:* `String.t`) - The level of detail to be returned. If unspecified, defaults to `View.BASIC`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -723,12 +723,12 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  Looks up [resource name](https://cloud.google.com/apis/design/resource_names) of a Membership within a Group by member's EntityKey.
+  Looks up the [resource name](https://cloud.google.com/apis/design/resource_names) of a `Membership` by its `EntityKey`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Group to lookup Membership within. Format: `groups/{group_id}`, where `group_id` is the unique ID assigned to the Group.
+  *   `parent` (*type:* `String.t`) - Required. The parent `Group` resource under which to lookup the `Membership` name. Must be of the form `groups/{group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -741,8 +741,8 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"memberKey.id"` (*type:* `String.t`) - The ID of the entity within the given namespace. The ID must be unique within its namespace.
-      *   `:"memberKey.namespace"` (*type:* `String.t`) - Namespaces provide isolation for IDs, so an ID only needs to be unique within its namespace. Namespaces are currently only created as part of IdentitySource creation from Admin Console. A namespace `"identitysources/{identity_source_id}"` is created corresponding to every Identity Source `identity_source_id`.
+      *   `:"memberKey.id"` (*type:* `String.t`) - The ID of the entity. For Google-managed entities, the `id` should be the email address of an existing group or user. For external-identity-mapped entities, the `id` must be a string conforming to the Identity Source's requirements. Must be unique within a `namespace`.
+      *   `:"memberKey.namespace"` (*type:* `String.t`) - The namespace in which the entity exists. If not specified, the `EntityKey` represents a Google-managed entity such as a Google user or a Google Group. If specified, the `EntityKey` represents an external-identity-mapped group. The namespace must correspond to an identity source created in Admin Console and must be in the form of `identitysources/{identity_source_id}.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

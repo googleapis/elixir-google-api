@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.MembershipRole do
   @moduledoc """
-  Resource representing a role within a Membership.
+  A membership role within the Cloud Identity Groups API. A `MembershipRole` defines the privileges granted to a `Membership`.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - MembershipRole in string format. Currently supported MembershipRoles: `"MEMBER"`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the `MembershipRole`. Must be one of `OWNER`, `MANAGER`, `MEMBER`.
   """
 
   use GoogleApi.Gax.ModelBase

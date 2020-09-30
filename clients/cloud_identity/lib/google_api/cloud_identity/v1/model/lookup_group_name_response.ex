@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.LookupGroupNameResponse do
   @moduledoc """
-
+  The response message for GroupsService.LookupGroupName.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the Group in the format: `groups/{group_id}`, where `group_id` is the unique ID assigned to the Group.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The [resource name](https://cloud.google.com/apis/design/resource_names) of the looked-up `Group`.
   """
 
   use GoogleApi.Gax.ModelBase

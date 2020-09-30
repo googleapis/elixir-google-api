@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.ListMembershipsResponse do
   @moduledoc """
-
+  The response message for MembershipsService.ListMemberships.
 
   ## Attributes
 
-  *   `memberships` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.Membership.t)`, *default:* `nil`) - List of Memberships.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results available for listing.
+  *   `memberships` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.Membership.t)`, *default:* `nil`) - The `Membership`s under the specified `parent`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A continuation token to retrieve the next page of results, or empty if there are no more results available.
   """
 
   use GoogleApi.Gax.ModelBase

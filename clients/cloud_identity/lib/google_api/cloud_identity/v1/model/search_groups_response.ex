@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.SearchGroupsResponse do
   @moduledoc """
-
+  The response message for GroupsService.SearchGroups.
 
   ## Attributes
 
-  *   `groups` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.Group.t)`, *default:* `nil`) - List of Groups satisfying the search query.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results available for specified query.
+  *   `groups` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.Group.t)`, *default:* `nil`) - The `Group`s that match the search query.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A continuation token to retrieve the next page of results, or empty if there are no more results available.
   """
 
   use GoogleApi.Gax.ModelBase
