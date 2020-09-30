@@ -28,5 +28,5 @@ defmodule GoogleApi.PlayCustomApp.V1.Connection do
       "https://www.googleapis.com/auth/androidpublisher"
     ],
     otp_app: :google_api_play_custom_app,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://playcustomapp.googleapis.com/"
 end

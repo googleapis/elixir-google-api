@@ -20,7 +20,7 @@ defmodule GoogleApi.PlayCustomApp.V1 do
   API client metadata for GoogleApi.PlayCustomApp.V1.
   """
 
-  @discovery_revision "20200801"
+  @discovery_revision "20200929"
 
   def discovery_revision(), do: @discovery_revision
 end
