@@ -22,6 +22,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   ## Attributes
 
   *   `alternativeLocationId` (*type:* `String.t`, *default:* `nil`) - Optional. Only applicable to STANDARD_HA tier which protects the instance against zonal failures by provisioning it across two zones. If provided, it must be a different zone from the one provided in location_id.
+  *   `authEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to "true" AUTH is enabled on the instance. Default value is "false" meaning AUTH is disabled.
   *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Google Compute Engine [network](https://cloud.google.com/vpc/docs/vpc) to which the instance is connected. If left unspecified, the `default` network will be used.
   *   `connectMode` (*type:* `String.t`, *default:* `nil`) - Optional. The network connect mode of the Redis instance. If not provided, the connect mode defaults to DIRECT_PEERING.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
 
   @type t :: %__MODULE__{
           :alternativeLocationId => String.t(),
+          :authEnabled => boolean(),
           :authorizedNetwork => String.t(),
           :connectMode => String.t(),
           :createTime => DateTime.t(),
@@ -67,6 +69,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
         }
 
   field(:alternativeLocationId)
+  field(:authEnabled)
   field(:authorizedNetwork)
   field(:connectMode)
   field(:createTime, as: DateTime)
