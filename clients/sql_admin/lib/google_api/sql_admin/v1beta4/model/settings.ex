@@ -22,6 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   ## Attributes
 
   *   `activationPolicy` (*type:* `String.t`, *default:* `nil`) - The activation policy specifies when the instance is activated; it is applicable only when the instance state is RUNNABLE. Valid values: *ALWAYS*: The instance is on, and remains so even in the absence of connection requests. *NEVER*: The instance is off; it is not activated, even if a connection request arrives.
+  *   `activeDirectoryConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlActiveDirectoryConfig.t`, *default:* `nil`) - Active Directory configuration, for now relevant only for SQL Server
   *   `authorizedGaeApplications` (*type:* `list(String.t)`, *default:* `nil`) - The App Engine app IDs that can access this instance. (Deprecated) Applied to First Generation instances only.
   *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Availability type. Potential values: *ZONAL*: The instance serves data from only one zone. Outages in that zone affect data accessibility. *REGIONAL*: The instance can serve data from more than one zone in a region (it is highly available). For more information, see Overview of the High Availability Configuration.
   *   `backupConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration.t`, *default:* `nil`) - The daily backup configuration for the instance.
@@ -31,10 +32,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of data disk: PD_SSD (default) or PD_HDD. Not used for First Generation instances.
   *   `databaseFlags` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags.t)`, *default:* `nil`) - The database flags passed to the instance at startup.
   *   `databaseReplicationEnabled` (*type:* `boolean()`, *default:* `nil`) - Configuration specific to read replica instances. Indicates whether replication is enabled or not.
+  *   `denyMaintenancePeriods` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.DenyMaintenancePeriod.t)`, *default:* `nil`) - Deny maintenance periods
   *   `ipConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration.t`, *default:* `nil`) - The settings for IP Management. This allows to enable or disable the instance IP and manage which external networks can connect to the instance. The IPv4 address cannot be disabled for Second Generation instances.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#settings*.
   *   `locationPreference` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference.t`, *default:* `nil`) - The location preference settings. This allows the instance to be located as near as possible to either an App Engine app or Compute Engine zone for better performance. App Engine co-location was only applicable to First Generation instances.
-  *   `maintenanceDenyPeriods` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceDenyPeriod.t)`, *default:* `nil`) - Maintenance deny periods
   *   `maintenanceWindow` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow.t`, *default:* `nil`) - The maintenance window for this instance. This specifies when the instance can be restarted for maintenance purposes.
   *   `pricingPlan` (*type:* `String.t`, *default:* `nil`) - The pricing plan for this instance. This can be either *PER_USE* or *PACKAGE*. Only *PER_USE* is supported for Second Generation instances.
   *   `replicationType` (*type:* `String.t`, *default:* `nil`) - The type of replication this instance uses. This can be either *ASYNCHRONOUS* or *SYNCHRONOUS*. (Deprecated_ This property was only applicable to First Generation instances.
@@ -49,6 +50,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
 
   @type t :: %__MODULE__{
           :activationPolicy => String.t(),
+          :activeDirectoryConfig => GoogleApi.SQLAdmin.V1beta4.Model.SqlActiveDirectoryConfig.t(),
           :authorizedGaeApplications => list(String.t()),
           :availabilityType => String.t(),
           :backupConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration.t(),
@@ -58,11 +60,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
           :dataDiskType => String.t(),
           :databaseFlags => list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags.t()),
           :databaseReplicationEnabled => boolean(),
+          :denyMaintenancePeriods =>
+            list(GoogleApi.SQLAdmin.V1beta4.Model.DenyMaintenancePeriod.t()),
           :ipConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration.t(),
           :kind => String.t(),
           :locationPreference => GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference.t(),
-          :maintenanceDenyPeriods =>
-            list(GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceDenyPeriod.t()),
           :maintenanceWindow => GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow.t(),
           :pricingPlan => String.t(),
           :replicationType => String.t(),
@@ -74,6 +76,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
         }
 
   field(:activationPolicy)
+  field(:activeDirectoryConfig, as: GoogleApi.SQLAdmin.V1beta4.Model.SqlActiveDirectoryConfig)
   field(:authorizedGaeApplications, type: :list)
   field(:availabilityType)
   field(:backupConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration)
@@ -83,15 +86,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   field(:dataDiskType)
   field(:databaseFlags, as: GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags, type: :list)
   field(:databaseReplicationEnabled)
-  field(:ipConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration)
-  field(:kind)
-  field(:locationPreference, as: GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference)
 
-  field(:maintenanceDenyPeriods,
-    as: GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceDenyPeriod,
+  field(:denyMaintenancePeriods,
+    as: GoogleApi.SQLAdmin.V1beta4.Model.DenyMaintenancePeriod,
     type: :list
   )
 
+  field(:ipConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration)
+  field(:kind)
+  field(:locationPreference, as: GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference)
   field(:maintenanceWindow, as: GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow)
   field(:pricingPlan)
   field(:replicationType)

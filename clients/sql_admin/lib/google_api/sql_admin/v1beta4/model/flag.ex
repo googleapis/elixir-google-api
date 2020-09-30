@@ -23,7 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
 
   *   `allowedIntValues` (*type:* `list(String.t)`, *default:* `nil`) - Use this field if only certain integers are accepted. Can be combined with min_value and max_value to add additional values.
   *   `allowedStringValues` (*type:* `list(String.t)`, *default:* `nil`) - For *STRING* flags, a list of strings that the value can be set to.
-  *   `appliesTo` (*type:* `list(String.t)`, *default:* `nil`) - The database version this flag applies to. Can be *MYSQL_5_5*, *MYSQL_5_6*, or *MYSQL_5_7*. *MYSQL_5_7* is applicable only to Second Generation instances.
+  *   `appliesTo` (*type:* `list(String.t)`, *default:* `nil`) - The database version this flag applies to. Can be *MYSQL_8_0*, *MYSQL_5_6*, or *MYSQL_5_7*.
   *   `inBeta` (*type:* `boolean()`, *default:* `nil`) - Whether or not the flag is considered in beta.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#flag*.
   *   `maxValue` (*type:* `String.t`, *default:* `nil`) - For *INTEGER* flags, the maximum allowed value.
