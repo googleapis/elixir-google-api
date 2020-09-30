@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.ScorecardChartSpec do
 
   ## Attributes
 
-  *   `aggregateType` (*type:* `String.t`, *default:* `nil`) - The aggregation type for key and baseline chart data in scorecard chart. This field is optional.
+  *   `aggregateType` (*type:* `String.t`, *default:* `nil`) - The aggregation type for key and baseline chart data in scorecard chart. This field is not supported for data source charts. Use the ChartData.aggregateType field of the key_value_data or baseline_value_data instead for data source charts. This field is optional.
   *   `baselineValueData` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data for scorecard baseline value. This field is optional.
   *   `baselineValueFormat` (*type:* `GoogleApi.Sheets.V4.Model.BaselineValueFormat.t`, *default:* `nil`) - Formatting options for baseline value. This field is needed only if baseline_value_data is specified.
   *   `customFormatOptions` (*type:* `GoogleApi.Sheets.V4.Model.ChartCustomNumberFormatOptions.t`, *default:* `nil`) - Custom formatting options for numeric key/baseline values in scorecard chart. This field is used only when number_format_source is set to CUSTOM. This field is optional.

@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.CellData do
 
   ## Attributes
 
-  *   `dataSourceFormula` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceFormula.t`, *default:* `nil`) - Output only. Information about a data source formula on the cell. The field is set if user_entered_value is a formula referencing some [SheetType.DATA_SOURCE] sheet, e.g `=SUM(DataSheet!Column)`.
+  *   `dataSourceFormula` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceFormula.t`, *default:* `nil`) - Output only. Information about a data source formula on the cell. The field is set if user_entered_value is a formula referencing some DATA_SOURCE sheet, e.g `=SUM(DataSheet!Column)`.
   *   `dataSourceTable` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceTable.t`, *default:* `nil`) - A data source table anchored at this cell. The size of data source table itself is computed dynamically based on its configuration. Only the first cell of the data source table contains the data source table definition. The other cells will contain the display values of the data source table result in their effective_value fields.
   *   `dataValidation` (*type:* `GoogleApi.Sheets.V4.Model.DataValidationRule.t`, *default:* `nil`) - A data validation rule on the cell, if any. When writing, the new data validation rule will overwrite any prior rule.
   *   `effectiveFormat` (*type:* `GoogleApi.Sheets.V4.Model.CellFormat.t`, *default:* `nil`) - The effective format being used by the cell. This includes the results of applying any conditional formatting and, if the cell contains a formula, the computed number format. If the effective format is the default format, effective format will not be written. This field is read-only.

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshSchedule do
   @moduledoc """
-  The data source refresh schedule. All data sources in the spreadsheet are scheduled to refresh in a future time interval. The time interval size defaults to the one defined in the Sheets editor. For example, if a daily schedule at start time of 8am is scheduled, and the time interval is 4 hours, the scheduled refresh will happen between 8am and 12pm every day.
+  Schedule for refreshing the data source. Data sources in the spreadsheet are refreshed within a time interval. You can specify the start time by clicking the Scheduled Refresh button in the Sheets editor, but the interval is fixed at 4 hours. For example, if you specify a start time of 8am , the refresh will take place between 8am and 12pm every day.
 
   ## Attributes
 
@@ -25,7 +25,7 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshSchedule do
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - True if the refresh schedule is enabled, or false otherwise.
   *   `monthlySchedule` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceRefreshMonthlySchedule.t`, *default:* `nil`) - Monthly refresh schedule.
   *   `nextRun` (*type:* `GoogleApi.Sheets.V4.Model.Interval.t`, *default:* `nil`) - Output only. The time interval of the next run.
-  *   `refreshScope` (*type:* `String.t`, *default:* `nil`) - The scope of the refresh.
+  *   `refreshScope` (*type:* `String.t`, *default:* `nil`) - The scope of the refresh. Must be ALL_DATA_SOURCES.
   *   `weeklySchedule` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceRefreshWeeklySchedule.t`, *default:* `nil`) - Weekly refresh schedule.
   """
 

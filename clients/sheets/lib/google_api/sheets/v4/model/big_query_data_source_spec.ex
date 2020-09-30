@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec do
   @moduledoc """
-  The specification of a BigQuery data source.
+  The specification of a BigQuery data source that's connected to a sheet.
 
   ## Attributes
 

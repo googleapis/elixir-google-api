@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshDailySchedule do
   @moduledoc """
-  Schedule refreshes in a time interval everyday.
+  A schedule for data to refresh every day in a given time interval.
 
   ## Attributes
 

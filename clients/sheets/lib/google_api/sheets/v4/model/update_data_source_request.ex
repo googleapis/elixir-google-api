@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Sheets.V4.Model.UpdateDataSourceRequest do
   @moduledoc """
-  Updates a data source. After the data source is updated successfully, an execution is triggered to refresh the associated DataSource sheet to read data from the updated data source. The request requires an additional bigquery.readonly OAuth scope.
+  Updates a data source. After the data source is updated successfully, an execution is triggered to refresh the associated DATA_SOURCE sheet to read data from the updated data source. The request requires an additional `bigquery.readonly` OAuth scope.
 
   ## Attributes
 
   *   `dataSource` (*type:* `GoogleApi.Sheets.V4.Model.DataSource.t`, *default:* `nil`) - The data source to update.
-  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root 'dataSource' is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field.
+  *   `fields` (*type:* `String.t`, *default:* `nil`) - The fields that should be updated. At least one field must be specified. The root `dataSource` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange do
   @moduledoc """
-  A range along a single dimension on a DataSource sheet.
+  A range along a single dimension on a DATA_SOURCE sheet.
 
   ## Attributes
 
