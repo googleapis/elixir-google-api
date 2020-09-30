@@ -166,7 +166,7 @@ defmodule GoogleApi.Memcache.V1beta2.Api.Projects do
   end
 
   @doc """
-  ApplyParameters will update current set of Parameters to the set of specified nodes of the Memcached Instance.
+  ApplyParameters will restart the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.
 
   ## Parameters
 
@@ -248,7 +248,7 @@ defmodule GoogleApi.Memcache.V1beta2.Api.Projects do
   end
 
   @doc """
-  Creates a new Instance in a given project and location.
+  Creates a new Instance in a given location.
 
   ## Parameters
 
@@ -267,7 +267,7 @@ defmodule GoogleApi.Memcache.V1beta2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:instanceId` (*type:* `String.t`) - Required. The logical name of the Memcached instance in the user project with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-40 characters. * Must end with a number or a letter. * Must be unique within the user project / location
+      *   `:instanceId` (*type:* `String.t`) - Required. The logical name of the Memcached instance in the user project with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-40 characters. * Must end with a number or a letter. * Must be unique within the user project / location If any of the above are not met, will raise an invalid argument error.
       *   `:body` (*type:* `GoogleApi.Memcache.V1beta2.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -485,7 +485,7 @@ defmodule GoogleApi.Memcache.V1beta2.Api.Projects do
   end
 
   @doc """
-  Lists Instances in a given project and location.
+  Lists Instances in a given location.
 
   ## Parameters
 
