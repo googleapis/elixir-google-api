@@ -28,7 +28,6 @@ defmodule GoogleApi.YouTube.V3.Model.Channel do
   *   `conversionPings` (*type:* `GoogleApi.YouTube.V3.Model.ChannelConversionPings.t`, *default:* `nil`) - The conversionPings object encapsulates information about conversion pings that need to be respected by the channel.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel.
-  *   `invideoPromotion` (*type:* `GoogleApi.YouTube.V3.Model.InvideoPromotion.t`, *default:* `nil`) - The invideoPromotion object encapsulates information about promotion campaign associated with the channel.
   *   `kind` (*type:* `String.t`, *default:* `youtube#channel`) - Identifies what kind of resource this is. Value: the fixed string "youtube#channel".
   *   `localizations` (*type:* `%{optional(String.t) => GoogleApi.YouTube.V3.Model.ChannelLocalization.t}`, *default:* `nil`) - Localizations for different languages
   *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the channel, such as its title, description, and thumbnail images.
@@ -47,7 +46,6 @@ defmodule GoogleApi.YouTube.V3.Model.Channel do
           :conversionPings => GoogleApi.YouTube.V3.Model.ChannelConversionPings.t(),
           :etag => String.t(),
           :id => String.t(),
-          :invideoPromotion => GoogleApi.YouTube.V3.Model.InvideoPromotion.t(),
           :kind => String.t(),
           :localizations => %{
             optional(String.t()) => GoogleApi.YouTube.V3.Model.ChannelLocalization.t()
@@ -65,7 +63,6 @@ defmodule GoogleApi.YouTube.V3.Model.Channel do
   field(:conversionPings, as: GoogleApi.YouTube.V3.Model.ChannelConversionPings)
   field(:etag)
   field(:id)
-  field(:invideoPromotion, as: GoogleApi.YouTube.V3.Model.InvideoPromotion)
   field(:kind)
   field(:localizations, as: GoogleApi.YouTube.V3.Model.ChannelLocalization, type: :map)
   field(:snippet, as: GoogleApi.YouTube.V3.Model.ChannelSnippet)
