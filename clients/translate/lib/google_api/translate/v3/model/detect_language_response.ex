@@ -21,7 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.DetectLanguageResponse do
 
   ## Attributes
 
-  *   `languages` (*type:* `list(GoogleApi.Translate.V3.Model.DetectedLanguage.t)`, *default:* `nil`) - A list of detected languages sorted by detection confidence in descending order. The most probable language first.
+  *   `languages` (*type:* `list(GoogleApi.Translate.V3.Model.DetectedLanguage.t)`, *default:* `nil`) - The most probable language detected by the Translation API. For each request, the Translation API will always return only one result.
   """
 
   use GoogleApi.Gax.ModelBase
