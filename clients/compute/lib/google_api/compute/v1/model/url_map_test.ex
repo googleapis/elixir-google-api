@@ -22,9 +22,10 @@ defmodule GoogleApi.Compute.V1.Model.UrlMapTest do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of this test case.
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Host portion of the URL.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Host portion of the URL. If headers contains a host header, then host must also match the header value.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Path portion of the URL.
-  *   `service` (*type:* `String.t`, *default:* `nil`) - Expected BackendService resource the given URL should be mapped to.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - Expected BackendService or BackendBucket resource the given URL should be mapped to.
+      service cannot be set if expectedRedirectResponseCode is set.
   """
 
   use GoogleApi.Gax.ModelBase

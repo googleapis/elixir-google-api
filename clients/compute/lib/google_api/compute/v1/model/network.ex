@@ -36,6 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
   *   `gatewayIPv4` (*type:* `String.t`, *default:* `nil`) - [Output Only] The gateway address for default routing out of the network, selected by GCP.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#network`) - [Output Only] Type of the resource. Always compute#network for networks.
+  *   `mtu` (*type:* `integer()`, *default:* `nil`) - Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
   *   `peerings` (*type:* `list(GoogleApi.Compute.V1.Model.NetworkPeering.t)`, *default:* `nil`) - [Output Only] A list of network peerings for the resource.
   *   `routingConfig` (*type:* `GoogleApi.Compute.V1.Model.NetworkRoutingConfig.t`, *default:* `nil`) - The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
@@ -53,6 +54,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
           :gatewayIPv4 => String.t(),
           :id => String.t(),
           :kind => String.t(),
+          :mtu => integer(),
           :name => String.t(),
           :peerings => list(GoogleApi.Compute.V1.Model.NetworkPeering.t()),
           :routingConfig => GoogleApi.Compute.V1.Model.NetworkRoutingConfig.t(),
@@ -67,6 +69,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
   field(:gatewayIPv4)
   field(:id)
   field(:kind)
+  field(:mtu)
   field(:name)
   field(:peerings, as: GoogleApi.Compute.V1.Model.NetworkPeering, type: :list)
   field(:routingConfig, as: GoogleApi.Compute.V1.Model.NetworkRoutingConfig)

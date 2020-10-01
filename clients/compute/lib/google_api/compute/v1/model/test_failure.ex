@@ -21,10 +21,10 @@ defmodule GoogleApi.Compute.V1.Model.TestFailure do
 
   ## Attributes
 
-  *   `actualService` (*type:* `String.t`, *default:* `nil`) - 
-  *   `expectedService` (*type:* `String.t`, *default:* `nil`) - 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - 
-  *   `path` (*type:* `String.t`, *default:* `nil`) - 
+  *   `actualService` (*type:* `String.t`, *default:* `nil`) - BackendService or BackendBucket returned by load balancer.
+  *   `expectedService` (*type:* `String.t`, *default:* `nil`) - Expected BackendService or BackendBucket resource the given URL should be mapped to.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Host portion of the URL.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Path portion including query parameters in the URL.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -45,7 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
       Customer-supplied encryption keys do not protect access to metadata of the snapshot.
 
       If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
-  *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - [Output Only] The source disk used to create this snapshot.
+  *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - The source disk used to create this snapshot.
   *   `sourceDiskEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
   *   `sourceDiskId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
