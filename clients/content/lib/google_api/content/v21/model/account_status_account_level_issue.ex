@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.AccountStatusAccountLevelIssue do
   ## Attributes
 
   *   `country` (*type:* `String.t`, *default:* `nil`) - Country for which this issue is reported.
-  *   `destination` (*type:* `String.t`, *default:* `nil`) - The destination the issue applies to.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - The destination the issue applies to. If this field is empty then the issue applies to all available destinations.
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Additional details about the issue.
   *   `documentation` (*type:* `String.t`, *default:* `nil`) - The URL of a web page to help resolving this issue.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Issue identifier.
