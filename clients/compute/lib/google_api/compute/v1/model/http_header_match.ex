@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpHeaderMatch do
   *   `headerName` (*type:* `String.t`, *default:* `nil`) - The name of the HTTP header to match.
       For matching against the HTTP request's authority, use a headerMatch with the header name ":authority".
       For matching a request's method, use the headerName ":method".
+      When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
   *   `invertMatch` (*type:* `boolean()`, *default:* `nil`) - If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met.
       The default setting is false.
   *   `prefixMatch` (*type:* `String.t`, *default:* `nil`) - The value of the header must start with the contents of prefixMatch.

@@ -82,7 +82,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `network` (*type:* `String.t`, *default:* `nil`) - This field is not used for external load balancing.
 
-      For INTERNAL and INTERNAL_SELF_MANAGED load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+      For internal load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
   *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.
 
       For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
@@ -116,7 +116,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - [Output Only] The internal fully qualified service name for this Forwarding Rule.
 
       This field is only used for internal load balancing.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - This field is only used for INTERNAL load balancing.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - This field is only used for internal load balancing.
 
       For internal load balancing, this field identifies the subnetwork that the load balanced IP should belong to for this Forwarding Rule.
 

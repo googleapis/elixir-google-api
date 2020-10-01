@@ -27,6 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedList do
   *   `kind` (*type:* `String.t`, *default:* `compute#resourcePolicyAggregatedList`) - Type of resource.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource.
+  *   `unreachables` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] Unreachable resources.
   *   `warning` (*type:* `GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedListWarning.t`, *default:* `nil`) - [Output Only] Informational warning message.
   """
 
@@ -41,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedList do
           :kind => String.t(),
           :nextPageToken => String.t(),
           :selfLink => String.t(),
+          :unreachables => list(String.t()),
           :warning => GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedListWarning.t()
         }
 
@@ -50,6 +52,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedList do
   field(:kind)
   field(:nextPageToken)
   field(:selfLink)
+  field(:unreachables, type: :list)
   field(:warning, as: GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedListWarning)
 end
 

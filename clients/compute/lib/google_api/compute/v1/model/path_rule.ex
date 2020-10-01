@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.PathRule do
       Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
   *   `urlRedirect` (*type:* `GoogleApi.Compute.V1.Model.HttpRedirectAction.t`, *default:* `nil`) - When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
       If urlRedirect is specified, service or routeAction must not be set.
+      Not supported when the URL map is bound to target gRPC proxy.
   """
 
   use GoogleApi.Gax.ModelBase

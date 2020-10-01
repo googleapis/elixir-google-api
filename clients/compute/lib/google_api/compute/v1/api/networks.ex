@@ -290,6 +290,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -313,7 +314,8 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
       :filter => :query,
       :maxResults => :query,
       :orderBy => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -363,6 +365,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
       *   `:peeringName` (*type:* `String.t`) - The response will show routes exchanged over the given peering connection.
       *   `:region` (*type:* `String.t`) - The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -401,7 +404,8 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
       :orderBy => :query,
       :pageToken => :query,
       :peeringName => :query,
-      :region => :query
+      :region => :query,
+      :returnPartialSuccess => :query
     }
 
     request =

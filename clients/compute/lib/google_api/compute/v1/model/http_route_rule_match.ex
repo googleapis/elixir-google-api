@@ -28,14 +28,17 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteRuleMatch do
   *   `ignoreCase` (*type:* `boolean()`, *default:* `nil`) - Specifies that prefixMatch and fullPathMatch matches are case sensitive.
       The default value is false.
       ignoreCase must not be used with regexMatch.
+      Not supported when the URL map is bound to target gRPC proxy.
   *   `metadataFilters` (*type:* `list(GoogleApi.Compute.V1.Model.MetadataFilter.t)`, *default:* `nil`) - Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. When there is a match, the relevant routing configuration is made available to those proxies.
       For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadataFilters are specified, all of them need to be satisfied in order to be considered a match.
       metadataFilters specified here will be applied after those specified in ForwardingRule that refers to the UrlMap this HttpRouteRuleMatch belongs to.
       metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+      Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `prefixMatch` (*type:* `String.t`, *default:* `nil`) - For satisfying the matchRule condition, the request's path must begin with the specified prefixMatch. prefixMatch must begin with a /.
       The value must be between 1 and 1024 characters.
       Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
   *   `queryParameterMatches` (*type:* `list(GoogleApi.Compute.V1.Model.HttpQueryParameterMatch.t)`, *default:* `nil`) - Specifies a list of query parameter match criteria, all of which must match corresponding query parameters in the request.
+      Not supported when the URL map is bound to target gRPC proxy.
   *   `regexMatch` (*type:* `String.t`, *default:* `nil`) - For satisfying the matchRule condition, the path of the request must satisfy the regular expression specified in regexMatch after removing any query parameters and anchor supplied with the original URL. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript 
       Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
       Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.

@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   ## Attributes
 
   *   `canIpForward` (*type:* `boolean()`, *default:* `nil`) - Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+  *   `confidentialInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t`, *default:* `nil`) - Specifies the Confidential Instance options.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional text description for the instances that are created from these properties.
   *   `disks` (*type:* `list(GoogleApi.Compute.V1.Model.AttachedDisk.t)`, *default:* `nil`) - An array of disks that are associated with the instances that are created from these properties.
   *   `guestAccelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of guest accelerator cards' type and count to use for instances created from these properties.
@@ -43,6 +44,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
 
   @type t :: %__MODULE__{
           :canIpForward => boolean(),
+          :confidentialInstanceConfig =>
+            GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t(),
           :description => String.t(),
           :disks => list(GoogleApi.Compute.V1.Model.AttachedDisk.t()),
           :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()),
@@ -61,6 +64,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
         }
 
   field(:canIpForward)
+  field(:confidentialInstanceConfig, as: GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig)
   field(:description)
   field(:disks, as: GoogleApi.Compute.V1.Model.AttachedDisk, type: :list)
   field(:guestAccelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)

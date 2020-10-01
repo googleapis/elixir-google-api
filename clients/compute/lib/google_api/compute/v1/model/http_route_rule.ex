@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteRule do
   *   `headerAction` (*type:* `GoogleApi.Compute.V1.Model.HttpHeaderAction.t`, *default:* `nil`) - Specifies changes to request and response headers that need to take effect for the selected backendService.
       The headerAction specified here are applied before the matching pathMatchers[].headerAction and after pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction 
       Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+      Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `matchRules` (*type:* `list(GoogleApi.Compute.V1.Model.HttpRouteRuleMatch.t)`, *default:* `nil`) - The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.
   *   `priority` (*type:* `integer()`, *default:* `nil`) - For routeRules within a given pathMatcher, priority determines the order in which load balancer will interpret routeRules. RouteRules are evaluated in order of priority, from the lowest to highest number. The priority of a rule decreases as its number increases (1, 2, 3, N+1). The first rule that matches the request is applied.
       You cannot configure two or more routeRules with the same priority. Priority for each rule must be set to a number between 0 and 2147483647 inclusive.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteRule do
       Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
   *   `urlRedirect` (*type:* `GoogleApi.Compute.V1.Model.HttpRedirectAction.t`, *default:* `nil`) - When this rule is matched, the request is redirected to a URL specified by urlRedirect.
       If urlRedirect is specified, service or routeAction must not be set.
+      Not supported when the URL map is bound to target gRPC proxy.
   """
 
   use GoogleApi.Gax.ModelBase

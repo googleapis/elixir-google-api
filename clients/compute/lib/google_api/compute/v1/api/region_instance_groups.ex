@@ -124,6 +124,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -159,7 +160,8 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
       :filter => :query,
       :maxResults => :query,
       :orderBy => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -208,6 +210,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
       *   `:body` (*type:* `GoogleApi.Compute.V1.Model.RegionInstanceGroupsListInstancesRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -247,6 +250,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
       :maxResults => :query,
       :orderBy => :query,
       :pageToken => :query,
+      :returnPartialSuccess => :query,
       :body => :body
     }
 

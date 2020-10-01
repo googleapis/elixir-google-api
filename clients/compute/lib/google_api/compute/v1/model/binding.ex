@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Binding do
 
   ## Attributes
 
+  *   `bindingId` (*type:* `String.t`, *default:* `nil`) - A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
   *   `condition` (*type:* `GoogleApi.Compute.V1.Model.Expr.t`, *default:* `nil`) - The condition that is associated with this binding.
 
       If the condition evaluates to `true`, then this binding applies to the current request.
@@ -57,11 +58,13 @@ defmodule GoogleApi.Compute.V1.Model.Binding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bindingId => String.t(),
           :condition => GoogleApi.Compute.V1.Model.Expr.t(),
           :members => list(String.t()),
           :role => String.t()
         }
 
+  field(:bindingId)
   field(:condition, as: GoogleApi.Compute.V1.Model.Expr)
   field(:members, type: :list)
   field(:role)

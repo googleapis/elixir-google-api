@@ -130,6 +130,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -164,7 +165,8 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
       :includeAllScopes => :query,
       :maxResults => :query,
       :orderBy => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -257,7 +259,9 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   end
 
   @doc """
-  Returns the specified instance group. Gets a list of available instance groups by making a list() request.
+  Returns the specified zonal instance group. Get a list of available zonal instance groups by making a list() request.
+
+  For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods instead.
 
   ## Parameters
 
@@ -391,7 +395,9 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   end
 
   @doc """
-  Retrieves the list of instance groups that are located in the specified project and zone.
+  Retrieves the list of zonal instance group resources contained within the specified zone.
+
+  For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods instead.
 
   ## Parameters
 
@@ -420,6 +426,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -449,7 +456,8 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
       :filter => :query,
       :maxResults => :query,
       :orderBy => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -498,6 +506,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
       *   `:body` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupsListInstancesRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -537,6 +546,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
       :maxResults => :query,
       :orderBy => :query,
       :pageToken => :query,
+      :returnPartialSuccess => :query,
       :body => :body
     }
 

@@ -130,6 +130,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -154,7 +155,8 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
       :includeAllScopes => :query,
       :maxResults => :query,
       :orderBy => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -188,7 +190,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:guestFlush` (*type:* `boolean()`) - [Input Only] Specifies to create an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
+      *   `:guestFlush` (*type:* `boolean()`) - [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
       *   `:requestId` (*type:* `String.t`) - An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
 
           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
@@ -532,6 +534,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -553,7 +556,8 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
       :filter => :query,
       :maxResults => :query,
       :orderBy => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =

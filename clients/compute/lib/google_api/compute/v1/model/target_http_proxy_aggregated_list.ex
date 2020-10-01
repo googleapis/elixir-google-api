@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpProxyAggregatedList do
   *   `kind` (*type:* `String.t`, *default:* `compute#targetHttpProxyAggregatedList`) - [Output Only] Type of resource. Always compute#targetHttpProxyAggregatedList for lists of Target HTTP Proxies.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource.
+  *   `unreachables` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] Unreachable resources.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpProxyAggregatedList do
           },
           :kind => String.t(),
           :nextPageToken => String.t(),
-          :selfLink => String.t()
+          :selfLink => String.t(),
+          :unreachables => list(String.t())
         }
 
   field(:id)
@@ -45,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpProxyAggregatedList do
   field(:kind)
   field(:nextPageToken)
   field(:selfLink)
+  field(:unreachables, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.TargetHttpProxyAggregatedList do

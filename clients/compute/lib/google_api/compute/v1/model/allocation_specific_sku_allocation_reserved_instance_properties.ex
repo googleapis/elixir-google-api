@@ -24,9 +24,6 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInst
   *   `guestAccelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Specifies accelerator type and count.
   *   `localSsds` (*type:* `list(GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.t)`, *default:* `nil`) - Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
-  *   `maintenanceInterval` (*type:* `String.t`, *default:* `nil`) - Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this VM as a Stable Fleet VM.
-
-      See go/stable-fleet-ug for more details.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum cpu platform the reservation.
   """
 
@@ -39,7 +36,6 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInst
               GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.t()
             ),
           :machineType => String.t(),
-          :maintenanceInterval => String.t(),
           :minCpuPlatform => String.t()
         }
 
@@ -52,7 +48,6 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInst
   )
 
   field(:machineType)
-  field(:maintenanceInterval)
   field(:minCpuPlatform)
 end
 
