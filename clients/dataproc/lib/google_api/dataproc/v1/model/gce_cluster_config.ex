@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
   @moduledoc """
-  Common config settings for resources of Compute Engine cluster instances, applicable to all instances in the cluster. NEXT ID: 14
+  Common config settings for resources of Compute Engine cluster instances, applicable to all instances in the cluster.
 
   ## Attributes
 
   *   `internalIpOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, all instances in the cluster will only have internal IP addresses. By default, clusters are not restricted to internal IP addresses, and will have ephemeral external IP addresses assigned to each instance. This internal_ip_only restriction can only be enabled for subnetwork enabled networks, and all off-cluster dependencies must be configured to be accessible without external IP addresses.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - The Compute Engine metadata entries to add to all instances (see Project and instance metadata (https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
   *   `networkUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine network to be used for machine communications. Cannot be specified with subnetwork_uri. If neither network_uri nor subnetwork_uri is specified, the "default" network of the project is used, if it exists. Cannot be a "Custom Subnet Network" (see Using Subnetworks (https://cloud.google.com/compute/docs/subnetworks) for more information).A full URL, partial URI, or short name are valid. Examples: https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default projects/[project_id]/regions/global/default default
+  *   `nodeGroupAffinity` (*type:* `GoogleApi.Dataproc.V1.Model.NodeGroupAffinity.t`, *default:* `nil`) - Optional. Node Group Affinity for sole-tenant clusters.
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - Optional. The type of IPv6 access for a cluster.
   *   `reservationAffinity` (*type:* `GoogleApi.Dataproc.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Optional. Reservation Affinity for consuming Zonal reservation.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The Dataproc service account (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_dataproc) (also see VM Data Plane identity (https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity)) used by Dataproc cluster VM instances to access Google Cloud Platform services.If not specified, the Compute Engine default service account (https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
           :internalIpOnly => boolean(),
           :metadata => map(),
           :networkUri => String.t(),
+          :nodeGroupAffinity => GoogleApi.Dataproc.V1.Model.NodeGroupAffinity.t(),
           :privateIpv6GoogleAccess => String.t(),
           :reservationAffinity => GoogleApi.Dataproc.V1.Model.ReservationAffinity.t(),
           :serviceAccount => String.t(),
@@ -51,6 +53,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
   field(:internalIpOnly)
   field(:metadata, type: :map)
   field(:networkUri)
+  field(:nodeGroupAffinity, as: GoogleApi.Dataproc.V1.Model.NodeGroupAffinity)
   field(:privateIpv6GoogleAccess)
   field(:reservationAffinity, as: GoogleApi.Dataproc.V1.Model.ReservationAffinity)
   field(:serviceAccount)
