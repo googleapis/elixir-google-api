@@ -26,7 +26,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates an Apigee organization. See [Create an organization](https://docs.apigee.com/hybrid/latest/precog-provision).
+  Creates an Apigee organization. See [Create an Apigee organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org).
 
   ## Parameters
 
@@ -86,7 +86,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the profile for an Apigee organization. See [Organizations](https://docs.apigee.com/hybrid/latest/terminology#organizations).
+  Gets the profile for an Apigee organization. See [Understanding organizations](https://cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure).
 
   ## Parameters
 
@@ -218,7 +218,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists the service accounts with the permissions required to allow the Synchronizer to download environment data from the control plane. An ETag is returned in the response to `getSyncAuthorization`. Pass that ETag when calling [setSyncAuthorization](setSyncAuthorization) to ensure that you are updating the correct version. If you don't pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Enable Synchronizer access](https://docs.apigee.com/hybrid/latest/synchronizer-access#enable-synchronizer-access). **Note**: Available to Apigee hybrid only.
+  Lists the service accounts with the permissions required to allow the Synchronizer to download environment data from the control plane. An ETag is returned in the response to `getSyncAuthorization`. Pass that ETag when calling [setSyncAuthorization](setSyncAuthorization) to ensure that you are updating the correct version. If you don't pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Configure the Synchronizer](https://cloud.google.com/apigee/docs/hybrid/latest/synchronizer-access). **Note**: Available to Apigee hybrid only.
 
   ## Parameters
 
@@ -291,7 +291,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists the Apigee organizations and associated GCP projects that you have permission to access. See [Organizations](https://docs.apigee.com/hybrid/latest/terminology#organizations).
+  Lists the Apigee organizations and associated GCP projects that you have permission to access. See [Understanding organizations](https://cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure).
 
   ## Parameters
 
@@ -352,7 +352,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Sets the permissions required to allow the Synchronizer to download environment data from the control plane. You must call this API to enable proper functioning of hybrid. Pass the ETag when calling `setSyncAuthorization` to ensure that you are updating the correct version. To get an ETag, call [getSyncAuthorization](getSyncAuthorization). If you don't pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Enable Synchronizer access](https://docs.apigee.com/hybrid/latest/synchronizer-access#enable-synchronizer-access). **Note**: Available to Apigee hybrid only.
+  Sets the permissions required to allow the Synchronizer to download environment data from the control plane. You must call this API to enable proper functioning of hybrid. Pass the ETag when calling `setSyncAuthorization` to ensure that you are updating the correct version. To get an ETag, call [getSyncAuthorization](getSyncAuthorization). If you don't pass the ETag in the call to `setSyncAuthorization`, then the existing authorization is overwritten indiscriminately. For more information, see [Configure the Synchronizer](https://cloud.google.com/apigee/docs/hybrid/latest/synchronizer-access). **Note**: Available to Apigee hybrid only.
 
   ## Parameters
 
@@ -5271,7 +5271,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization in the following format: `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the environment group in the following format: `organizations/{org}/envgroups/{envgroup}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5696,7 +5696,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the IAM policy on an environment. For more information, see [Manage users, roles, and permissions using the API](https://docs.apigee.com/hybrid/latest/manage-users-roles). You must have the `apigee.environments.getIamPolicy` permission to call this API.
+  Gets the IAM policy on an environment. For more information, see [Manage users, roles, and permissions using the API](https://cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles). You must have the `apigee.environments.getIamPolicy` permission to call this API.
 
   ## Parameters
 
@@ -5767,7 +5767,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Sets the IAM policy on an environment, if the policy already exists it will be replaced. For more information, see [Manage users, roles, and permissions using the API](https://docs.apigee.com/hybrid/latest/manage-users-roles). You must have the `apigee.environments.setIamPolicy` permission to call this API.
+  Sets the IAM policy on an environment, if the policy already exists it will be replaced. For more information, see [Manage users, roles, and permissions using the API](https://cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles). You must have the `apigee.environments.setIamPolicy` permission to call this API.
 
   ## Parameters
 
