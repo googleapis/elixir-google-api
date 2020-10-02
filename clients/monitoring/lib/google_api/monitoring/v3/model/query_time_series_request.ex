@@ -23,7 +23,7 @@ defmodule GoogleApi.Monitoring.V3.Model.QueryTimeSeriesRequest do
 
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - A positive number that is the maximum number of time_series_data to return.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
-  *   `query` (*type:* `String.t`, *default:* `nil`) - Required. The query in the monitoring query language format. The default time zone is in UTC.
+  *   `query` (*type:* `String.t`, *default:* `nil`) - Required. The query in the Monitoring Query Language (https://cloud.google.com/monitoring/mql/reference) format. The default time zone is in UTC.
   """
 
   use GoogleApi.Gax.ModelBase
