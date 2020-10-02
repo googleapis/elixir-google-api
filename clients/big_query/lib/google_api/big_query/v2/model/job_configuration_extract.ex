@@ -22,7 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationExtract do
   ## Attributes
 
   *   `compression` (*type:* `String.t`, *default:* `nil`) - [Optional] The compression type to use for exported files. Possible values include GZIP, DEFLATE, SNAPPY, and NONE. The default value is NONE. DEFLATE and SNAPPY are only supported for Avro. Not applicable when extracting models.
-  *   `destinationFormat` (*type:* `String.t`, *default:* `nil`) - [Optional] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON or AVRO for tables and ML_TF_SAVED_MODEL or ML_XGBOOST_BOOSTER for models. The default value for tables is CSV. Tables with nested or repeated fields cannot be exported as CSV. The default value for models is ML_TF_SAVED_MODEL.
+  *   `destinationFormat` (*type:* `String.t`, *default:* `nil`) - [Optional] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON, PARQUET or AVRO for tables and ML_TF_SAVED_MODEL or ML_XGBOOST_BOOSTER for models. The default value for tables is CSV. Tables with nested or repeated fields cannot be exported as CSV. The default value for models is ML_TF_SAVED_MODEL.
   *   `destinationUri` (*type:* `String.t`, *default:* `nil`) - [Pick one] DEPRECATED: Use destinationUris instead, passing only one URI as necessary. The fully-qualified Google Cloud Storage URI where the extracted table should be written.
   *   `destinationUris` (*type:* `list(String.t)`, *default:* `nil`) - [Pick one] A list of fully-qualified Google Cloud Storage URIs where the extracted table should be written.
   *   `fieldDelimiter` (*type:* `String.t`, *default:* `nil`) - [Optional] Delimiter to use between fields in the exported data. Default is ','. Not applicable when extracting models.

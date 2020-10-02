@@ -35,6 +35,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See Creating and Updating Dataset Labels for more information.
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location where the dataset should reside. The default value is US. See details at https://cloud.google.com/bigquery/docs/locations.
+  *   `satisfiesPZS` (*type:* `boolean()`, *default:* `nil`) - [Output-only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output-only] A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource.
   """
 
@@ -56,6 +57,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
           :labels => map(),
           :lastModifiedTime => String.t(),
           :location => String.t(),
+          :satisfiesPZS => boolean(),
           :selfLink => String.t()
         }
 
@@ -73,6 +75,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   field(:labels, type: :map)
   field(:lastModifiedTime)
   field(:location)
+  field(:satisfiesPZS)
   field(:selfLink)
 end
 
