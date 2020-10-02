@@ -48,7 +48,6 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   *   `versioning` (*type:* `GoogleApi.Storage.V1.Model.BucketVersioning.t`, *default:* `nil`) - The bucket's versioning configuration.
   *   `website` (*type:* `GoogleApi.Storage.V1.Model.BucketWebsite.t`, *default:* `nil`) - The bucket's website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the Static Website Examples for more information.
   *   `zoneAffinity` (*type:* `list(String.t)`, *default:* `nil`) - The zone or zones from which the bucket is intended to use zonal quota. Requests for data from outside the specified affinities are still allowed but won't be able to use zonal quota. The zone or zones need to be within the bucket location otherwise the requests will fail with a 400 Bad Request response.
-  *   `zoneSeparation` (*type:* `boolean()`, *default:* `nil`) - If set, objects placed in this bucket are required to be separated by disaster domain.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -80,8 +79,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :updated => DateTime.t(),
           :versioning => GoogleApi.Storage.V1.Model.BucketVersioning.t(),
           :website => GoogleApi.Storage.V1.Model.BucketWebsite.t(),
-          :zoneAffinity => list(String.t()),
-          :zoneSeparation => boolean()
+          :zoneAffinity => list(String.t())
         }
 
   field(:acl, as: GoogleApi.Storage.V1.Model.BucketAccessControl, type: :list)
@@ -111,7 +109,6 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   field(:versioning, as: GoogleApi.Storage.V1.Model.BucketVersioning)
   field(:website, as: GoogleApi.Storage.V1.Model.BucketWebsite)
   field(:zoneAffinity, type: :list)
-  field(:zoneSeparation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Bucket do
