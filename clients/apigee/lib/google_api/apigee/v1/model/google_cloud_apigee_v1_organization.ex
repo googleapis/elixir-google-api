@@ -21,9 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
 
   ## Attributes
 
-  *   `analyticsRegion` (*type:* `String.t`, *default:* `nil`) - Required. Primary GCP region for analytics data storage. For valid values, see [Create an organization](https://docs.apigee.com/hybrid/latest/precog-provision).
+  *   `analyticsRegion` (*type:* `String.t`, *default:* `nil`) - Required. Primary GCP region for analytics data storage. For valid values, see [Create an Apigee organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org).
   *   `attributes` (*type:* `list(String.t)`, *default:* `nil`) - Not used by Apigee.
-  *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Compute Engine network used for ServiceNetworking to be peered with Apigee runtime instances. See [Getting started with the Service Networking API](https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started). Valid only when [RuntimeType] is set to CLOUD. The value can be updated only when there are no runtime instances. For example: "default". **Note:** Not supported for Apigee hybrid.
+  *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Compute Engine network used for Service Networking to be peered with Apigee runtime instances. See [Getting started with the Service Networking API](https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started). Valid only when [RuntimeType] is set to CLOUD. The value can be updated only when there are no runtime instances. For example: "default". **Note:** Not supported for Apigee hybrid.
   *   `caCertificate` (*type:* `String.t`, *default:* `nil`) - Output only. Base64-encoded public certificate for the root CA of the Apigee organization. Valid only when [RuntimeType] is CLOUD.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization was created in milliseconds since epoch.
   *   `customerName` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee.
