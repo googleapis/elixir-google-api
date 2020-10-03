@@ -171,7 +171,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessApproval.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the settings. Format is one of: 1. "projects/{project_id}/accessApprovalSettings" 2. "folders/{folder_id}/accessApprovalSettings" 3. "organizations/{organization_id}/accessApprovalSettings" 
+  *   `name` (*type:* `String.t`) - The resource name of the settings. Format is one of: * "projects/{project}/accessApprovalSettings" * "folders/{folder}/accessApprovalSettings" * "organizations/{organization}/accessApprovalSettings"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -457,7 +457,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessApproval.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource. This may be "projects/{project_id}", "folders/{folder_id}", or "organizations/{organization_id}".
+  *   `parent` (*type:* `String.t`) - The parent resource. This may be "projects/{project}", "folders/{folder}", or "organizations/{organization}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -470,7 +470,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - A filter on the type of approval requests to retrieve. Must be one of the following values: 1. [not set]: Requests that are pending or have active approvals. 2. ALL: All requests. 3. PENDING: Only pending requests. 4. ACTIVE: Only active (i.e. currently approved) requests. 5. DISMISSED: Only dismissed (including expired) requests. 6. HISTORY: Active and dismissed (including expired) requests. 
+      *   `:filter` (*type:* `String.t`) - A filter on the type of approval requests to retrieve. Must be one of the following values: * [not set]: Requests that are pending or have active approvals. * ALL: All requests. * PENDING: Only pending requests. * ACTIVE: Only active (i.e. currently approved) requests. * DISMISSED: Only dismissed (including expired) requests. * HISTORY: Active and dismissed (including expired) requests.
       *   `:pageSize` (*type:* `integer()`) - Requested page size.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return.
   *   `opts` (*type:* `keyword()`) - Call options

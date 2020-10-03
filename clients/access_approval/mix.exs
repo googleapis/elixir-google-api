@@ -18,7 +18,7 @@
 defmodule GoogleApi.AccessApproval.Mixfile do
   use Mix.Project
 
-  @version "0.8.2"
+  @version "0.8.3"
 
   def project() do
     [
