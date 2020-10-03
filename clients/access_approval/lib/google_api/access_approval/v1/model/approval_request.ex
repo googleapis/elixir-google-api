@@ -23,7 +23,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApprovalRequest do
 
   *   `approve` (*type:* `GoogleApi.AccessApproval.V1.Model.ApproveDecision.t`, *default:* `nil`) - Access was approved.
   *   `dismiss` (*type:* `GoogleApi.AccessApproval.V1.Model.DismissDecision.t`, *default:* `nil`) - The request was dismissed.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the request. Format is "{projects|folders|organizations}/{id}/approvalRequests/{approval_request_id}".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the request. Format is "{projects|folders|organizations}/{id}/approvalRequests/{approval_request}".
   *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which approval was requested.
   *   `requestedExpiration` (*type:* `DateTime.t`, *default:* `nil`) - The requested expiration for the approval. If the request is approved, access will be granted from the time of approval until the expiration time.
   *   `requestedLocations` (*type:* `GoogleApi.AccessApproval.V1.Model.AccessLocations.t`, *default:* `nil`) - The locations for which approval is being requested.
