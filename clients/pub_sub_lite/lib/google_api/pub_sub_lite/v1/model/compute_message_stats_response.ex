@@ -24,7 +24,7 @@ defmodule GoogleApi.PubSubLite.V1.Model.ComputeMessageStatsResponse do
   *   `messageBytes` (*type:* `String.t`, *default:* `nil`) - The number of quota bytes accounted to these messages.
   *   `messageCount` (*type:* `String.t`, *default:* `nil`) - The count of messages.
   *   `minimumEventTime` (*type:* `DateTime.t`, *default:* `nil`) - The minimum event timestamp across these messages. For the purposes of this computation, if a message does not have an event time, we use the publish time. The timestamp will be unset if there are no messages.
-  *   `minimumPublishTime` (*type:* `DateTime.t`, *default:* `nil`) - The minimum publish timestamp across these messages. Note that publish timestamps within a partition are non-decreasing. The timestamp will be unset if there are no messages.
+  *   `minimumPublishTime` (*type:* `DateTime.t`, *default:* `nil`) - The minimum publish timestamp across these messages. Note that publish timestamps within a partition are not guaranteed to be non-decreasing. The timestamp will be unset if there are no messages.
   """
 
   use GoogleApi.Gax.ModelBase
