@@ -18,7 +18,7 @@
 defmodule GoogleApi.OSConfig.Mixfile do
   use Mix.Project
 
-  @version "0.7.0"
+  @version "0.8.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.OSConfig.Mixfile do
 
   defp description() do
     """
-    Cloud OS Config API client library. OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.
+    OS Config API client library. OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.OSConfig.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/os_config",
-        "Homepage" => "https://cloud.google.com/"
+        "Homepage" => "https://cloud.google.com/compute/docs/manage-os"
       }
     ]
   end
