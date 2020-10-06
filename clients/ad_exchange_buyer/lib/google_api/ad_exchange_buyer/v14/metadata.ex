@@ -20,7 +20,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14 do
   API client metadata for GoogleApi.AdExchangeBuyer.V14.
   """
 
-  @discovery_revision "20200901"
+  @discovery_revision "20201004"
 
   def discovery_revision(), do: @discovery_revision
 end

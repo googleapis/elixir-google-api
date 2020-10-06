@@ -26,6 +26,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue do
   *   `demogAgeCriteriaValue` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogAgeCriteria.t`, *default:* `nil`) - 
   *   `demogGenderCriteriaValue` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogGenderCriteria.t`, *default:* `nil`) - 
   *   `longValue` (*type:* `String.t`, *default:* `nil`) - The long value to exclude/include.
+  *   `requestPlatformTargetingValue` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueRequestPlatformTargeting.t`, *default:* `nil`) - 
   *   `stringValue` (*type:* `String.t`, *default:* `nil`) - The string value to exclude/include.
   """
 
@@ -41,6 +42,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue do
           :demogGenderCriteriaValue =>
             GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDemogGenderCriteria.t(),
           :longValue => String.t(),
+          :requestPlatformTargetingValue =>
+            GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueRequestPlatformTargeting.t(),
           :stringValue => String.t()
         }
 
@@ -59,6 +62,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue do
   )
 
   field(:longValue)
+
+  field(:requestPlatformTargetingValue,
+    as: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueRequestPlatformTargeting
+  )
+
   field(:stringValue)
 end
 
