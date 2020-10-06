@@ -23,10 +23,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
 
   *   `error` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t`, *default:* `nil`) - If set, indicates an error. Note that for a single `AnnotateVideoRequest` some videos may succeed and some may fail.
   *   `explicitAnnotation` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation.t`, *default:* `nil`) - Explicit content annotation.
+  *   `faceDetectionAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_FaceDetectionAnnotation.t)`, *default:* `nil`) - Face detection annotations.
   *   `frameLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Label annotations on frame level. There is exactly one element for each unique label.
   *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in [Cloud Storage](https://cloud.google.com/storage/).
   *   `logoRecognitionAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LogoRecognitionAnnotation.t)`, *default:* `nil`) - Annotations for list of logos detected, tracked and recognized in video.
   *   `objectAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation.t)`, *default:* `nil`) - Annotations for list of objects detected and tracked in video.
+  *   `personDetectionAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_PersonDetectionAnnotation.t)`, *default:* `nil`) - Person detection annotations.
   *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_VideoSegment.t`, *default:* `nil`) - Video segment on which the annotation is run.
   *   `segmentLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on video level or user-specified segment level. There is exactly one element for each unique label.
   *   `segmentPresenceLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
@@ -43,6 +45,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
           :error => GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t(),
           :explicitAnnotation =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation.t(),
+          :faceDetectionAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_FaceDetectionAnnotation.t()
+            ),
           :frameLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t()
@@ -55,6 +61,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
           :objectAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation.t()
+            ),
+          :personDetectionAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_PersonDetectionAnnotation.t()
             ),
           :segment =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_VideoSegment.t(),
@@ -95,6 +105,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation
   )
 
+  field(:faceDetectionAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_FaceDetectionAnnotation,
+    type: :list
+  )
+
   field(:frameLabelAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation,
     type: :list
@@ -111,6 +127,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
   field(:objectAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation,
+    type: :list
+  )
+
+  field(:personDetectionAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_PersonDetectionAnnotation,
     type: :list
   )
 
