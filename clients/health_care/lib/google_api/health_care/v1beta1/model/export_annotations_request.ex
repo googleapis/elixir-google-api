@@ -23,7 +23,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportAnnotationsRequest do
 
   *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination, which requires two IAM roles: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`.
   *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsDestination.t`, *default:* `nil`) - The Cloud Storage destination, which requires the `roles/storage.objectAdmin` Cloud IAM role.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Annotation store to export annotations to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,8 +31,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportAnnotationsRequest do
           :bigqueryDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationBigQueryDestination.t(),
           :gcsDestination =>
-            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsDestination.t(),
-          :name => String.t()
+            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsDestination.t()
         }
 
   field(:bigqueryDestination,
@@ -44,8 +42,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportAnnotationsRequest do
   field(:gcsDestination,
     as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsDestination
   )
-
-  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.ExportAnnotationsRequest do

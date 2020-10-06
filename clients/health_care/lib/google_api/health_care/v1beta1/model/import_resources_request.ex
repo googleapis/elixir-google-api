@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ImportResourcesRequest do
   @moduledoc """
-   Request to import resources.
+  Request to import resources.
 
   ## Attributes
 
   *   `contentStructure` (*type:* `String.t`, *default:* `nil`) - The content structure in the source location. If not specified, the server treats the input source files as BUNDLE.
-  *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestGcsSource.t`, *default:* `nil`) - Cloud Storage source data location and import configuration. The Cloud Storage location requires the `roles/storage.objectViewer` Cloud IAM role. Each Cloud Storage object should be a text file that contains the format specified in ContentStructure.
+  *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsSource.t`, *default:* `nil`) - Cloud Storage source data location and import configuration. The Cloud Storage location requires the `roles/storage.objectViewer` Cloud IAM role. The Healthcare Service Agent Each Cloud Storage object should be a text file that contains the format specified in ContentStructure.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,13 +30,13 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImportResourcesRequest do
   @type t :: %__MODULE__{
           :contentStructure => String.t(),
           :gcsSource =>
-            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestGcsSource.t()
+            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsSource.t()
         }
 
   field(:contentStructure)
 
   field(:gcsSource,
-    as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestGcsSource
+    as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsSource
   )
 end
 

@@ -21,16 +21,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1Deident
 
   ## Attributes
 
-  *   `successResourceCount` (*type:* `String.t`, *default:* `nil`) - Number of resources successfully processed.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-          :successResourceCount => String.t()
-        }
-
-  field(:successResourceCount)
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder,

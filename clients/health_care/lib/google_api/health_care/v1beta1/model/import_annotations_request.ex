@@ -22,22 +22,18 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImportAnnotationsRequest do
   ## Attributes
 
   *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsSource.t`, *default:* `nil`) - 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Annotation store to which the server imports annotations, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :gcsSource =>
-            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsSource.t(),
-          :name => String.t()
+            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsSource.t()
         }
 
   field(:gcsSource,
     as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsSource
   )
-
-  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.ImportAnnotationsRequest do

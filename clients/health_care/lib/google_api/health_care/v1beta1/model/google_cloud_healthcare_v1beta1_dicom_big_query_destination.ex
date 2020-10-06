@@ -21,19 +21,22 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBi
 
   ## Attributes
 
-  *   `force` (*type:* `boolean()`, *default:* `nil`) - If the destination table already exists and this flag is `TRUE`, the table is overwritten by the contents of the DICOM store. If the flag is not set and the destination table already exists, the export call returns an error.
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - Use `write_disposition` instead. If `write_disposition` is specified, this parameter is ignored. force=false is equivalent to write_disposition=WRITE_EMPTY and force=true is equivalent to write_disposition=WRITE_TRUNCATE.
   *   `tableUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to a table, up to 2000 characters long, in the format `bq://projectId.bqDatasetId.tableId`
+  *   `writeDisposition` (*type:* `String.t`, *default:* `nil`) - Determines whether the existing table in the destination is to be overwritten or appended to. If a write_disposition is specified, the `force` parameter is ignored.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :force => boolean(),
-          :tableUri => String.t()
+          :tableUri => String.t(),
+          :writeDisposition => String.t()
         }
 
   field(:force)
   field(:tableUri)
+  field(:writeDisposition)
 end
 
 defimpl Poison.Decoder,

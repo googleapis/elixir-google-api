@@ -1075,10 +1075,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `evalStore`. The Annotation store to compare against `golden_store`, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `evalStore`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `evalStore`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `evalStore`. See documentation of `projectsId`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The Annotation store to compare against `golden_store`, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1161,10 +1161,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `annotationStore`. The name of the Annotation store to export annotations to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `annotationStore`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `annotationStore`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `annotationStore`. See documentation of `projectsId`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the Annotation store to export annotations to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1418,10 +1418,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `annotationStore`. The name of the Annotation store to which the server imports annotations, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `annotationStore`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `annotationStore`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `annotationStore`. See documentation of `projectsId`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the Annotation store to which the server imports annotations, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3635,7 +3635,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The update mask that applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask. The `description`, `possible_values`, `consent_default_values`, and `data_mapping_default_value` fields are allowed to be updated. The updated `possible_values` must contain all values from the previous `possible_values`.
+      *   `:updateMask` (*type:* `String.t`) - The update mask that applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask. The `description`, `allowed_values`, `consent_default_values`, and `data_mapping_default_value` fields are allowed to be updated. The updated `allowed_values` must contain all values from the previous `allowed_values`.
       *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.AttributeDefinition.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4525,7 +4525,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Restricts the consents returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings The fields available for filtering are: - user_id - consent_artifact - state - state_change_time
+      *   `:filter` (*type:* `String.t`) - Restricts the consents returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings The fields available for filtering are: - user_id - consent_artifact - state - revision_create_time
       *   `:pageSize` (*type:* `integer()`) - Limit on the number of consents to return in a single response. If zero the default page size of 100 is used.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -6789,7 +6789,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  DeleteStudy deletes all instances within the given study. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. For samples that show how to call DeleteStudy, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance).
+  DeleteStudyAsync deletes all instances within the given study using an operation. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Inserting instances into a study while a delete operation is running for that study could result in the new instances not appearing in search results until the deletion operation finishes.
 
   ## Parameters
 
@@ -6815,7 +6815,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
   @spec healthcare_projects_locations_datasets_dicom_stores_studies_delete(
@@ -6828,7 +6828,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_delete(
@@ -6873,7 +6873,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Empty{}])
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Operation{}])
   end
 
   @doc """
@@ -7319,7 +7319,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  DeleteSeries deletes all instances within the given study and series. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. For samples that show how to call DeleteSeries, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance).
+  DeleteSeriesAsync deletes all instances within the given study and series using an operation. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Inserting instances into a series while a delete operation is running for that series could result in the new instances not appearing in search results until the deletion operation finishes.
 
   ## Parameters
 
@@ -7346,7 +7346,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
   @spec healthcare_projects_locations_datasets_dicom_stores_studies_series_delete(
@@ -7360,7 +7360,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_delete(
@@ -7407,7 +7407,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Empty{}])
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Operation{}])
   end
 
   @doc """
@@ -8525,7 +8525,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-   Export resources from the FHIR store to the specified destination. This method returns an Operation that can be used to track the status of the export by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ExportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata.
+  Export resources from the FHIR store to the specified destination. This method returns an Operation that can be used to track the status of the export by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ExportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata.
 
   ## Parameters
 
@@ -8781,7 +8781,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-   Import resources to the FHIR store by loading data from the specified sources. This method is optimized to load large quantities of data using import semantics that ignore some FHIR store configuration options and are not suitable for all use cases. It is primarily intended to load data into an empty FHIR store that is not being used by other clients. In cases where this method is not appropriate, consider using ExecuteBundle to load data. Every resource in the input must contain a client-supplied ID. Each resource is stored using the supplied ID regardless of the enable_update_create setting on the FHIR store. The import process does not enforce referential integrity, regardless of the disable_referential_integrity setting on the FHIR store. This allows the import of resources with arbitrary interdependencies without considering grouping or ordering, but if the input data contains invalid references or if some resources fail to be imported, the FHIR store might be left in a state that violates referential integrity. The import process does not trigger Cloud Pub/Sub notification or BigQuery streaming update, regardless of how those are configured on the FHIR store. If a resource with the specified ID already exists, the most recent version of the resource is overwritten without creating a new historical version, regardless of the disable_resource_versioning setting on the FHIR store. If transient failures occur during the import, it is possible that successfully imported resources will be overwritten more than once. The import operation is idempotent unless the input data contains multiple valid resources with the same ID but different contents. In that case, after the import completes, the store contains exactly one resource with that ID but there is no ordering guarantee on which version of the contents it will have. The operation result counters do not count duplicate IDs as an error and count one success for each resource in the input, which might result in a success count larger than the number of resources in the FHIR store. This often occurs when importing data organized in bundles produced by Patient-everything where each bundle contains its own copy of a resource such as Practitioner that might be referred to by many patients. If some resources fail to import, for example due to parsing errors, successfully imported resources are not rolled back. The location and format of the input data is specified by the parameters below. Note that if no format is specified, this method assumes the `BUNDLE` format. When using the `BUNDLE` format this method ignores the `Bundle.type` field, except that `history` bundles are rejected, and does not apply any of the bundle processing semantics for batch or transaction bundles. Unlike in ExecuteBundle, transaction bundles are not executed as a single transaction and bundle-internal references are not rewritten. The bundle is treated as a collection of resources to be written as provided in `Bundle.entry.resource`, ignoring `Bundle.entry.request`. As an example, this allows the import of `searchset` bundles produced by a FHIR search or Patient-everything operation. This method returns an Operation that can be used to track the status of the import by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ImportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata.
+  Import resources to the FHIR store by loading data from the specified sources. This method is optimized to load large quantities of data using import semantics that ignore some FHIR store configuration options and are not suitable for all use cases. It is primarily intended to load data into an empty FHIR store that is not being used by other clients. In cases where this method is not appropriate, consider using ExecuteBundle to load data. Every resource in the input must contain a client-supplied ID. Each resource is stored using the supplied ID regardless of the enable_update_create setting on the FHIR store. The import process does not enforce referential integrity, regardless of the disable_referential_integrity setting on the FHIR store. This allows the import of resources with arbitrary interdependencies without considering grouping or ordering, but if the input data contains invalid references or if some resources fail to be imported, the FHIR store might be left in a state that violates referential integrity. The import process does not trigger Pub/Sub notification or BigQuery streaming update, regardless of how those are configured on the FHIR store. If a resource with the specified ID already exists, the most recent version of the resource is overwritten without creating a new historical version, regardless of the disable_resource_versioning setting on the FHIR store. If transient failures occur during the import, it is possible that successfully imported resources will be overwritten more than once. The import operation is idempotent unless the input data contains multiple valid resources with the same ID but different contents. In that case, after the import completes, the store contains exactly one resource with that ID but there is no ordering guarantee on which version of the contents it will have. The operation result counters do not count duplicate IDs as an error and count one success for each resource in the input, which might result in a success count larger than the number of resources in the FHIR store. This often occurs when importing data organized in bundles produced by Patient-everything where each bundle contains its own copy of a resource such as Practitioner that might be referred to by many patients. If some resources fail to import, for example due to parsing errors, successfully imported resources are not rolled back. The location and format of the input data are specified by the parameters in ImportResourcesRequest. Note that if no format is specified, this method assumes the `BUNDLE` format. When using the `BUNDLE` format this method ignores the `Bundle.type` field, except that `history` bundles are rejected, and does not apply any of the bundle processing semantics for batch or transaction bundles. Unlike in ExecuteBundle, transaction bundles are not executed as a single transaction and bundle-internal references are not rewritten. The bundle is treated as a collection of resources to be written as provided in `Bundle.entry.resource`, ignoring `Bundle.entry.request`. As an example, this allows the import of `searchset` bundles produced by a FHIR search or Patient-everything operation. This method returns an Operation that can be used to track the status of the import by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ImportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata.
 
   ## Parameters
 
