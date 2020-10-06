@@ -18,7 +18,7 @@
 defmodule GoogleApi.AdMob.Mixfile do
   use Mix.Project
 
-  @version "0.6.0"
+  @version "0.6.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.AdMob.Mixfile do
 
   defp description() do
     """
-    AdMob API client library. The Google AdMob API lets you programmatically get reports on earnings. 
+    AdMob API client library. The AdMob API allows publishers to programmatically get information about their AdMob account. 
     """
   end
 
