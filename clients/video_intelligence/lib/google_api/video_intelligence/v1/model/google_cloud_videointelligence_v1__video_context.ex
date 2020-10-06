@@ -22,8 +22,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Vi
   ## Attributes
 
   *   `explicitContentDetectionConfig` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ExplicitContentDetectionConfig.t`, *default:* `nil`) - Config for EXPLICIT_CONTENT_DETECTION.
+  *   `faceDetectionConfig` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_FaceDetectionConfig.t`, *default:* `nil`) - Config for FACE_DETECTION.
   *   `labelDetectionConfig` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelDetectionConfig.t`, *default:* `nil`) - Config for LABEL_DETECTION.
   *   `objectTrackingConfig` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ObjectTrackingConfig.t`, *default:* `nil`) - Config for OBJECT_TRACKING.
+  *   `personDetectionConfig` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_PersonDetectionConfig.t`, *default:* `nil`) - Config for PERSON_DETECTION.
   *   `segments` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_VideoSegment.t)`, *default:* `nil`) - Video segments to annotate. The segments may overlap and are not required to be contiguous or span the whole video. If unspecified, each video is treated as a single segment.
   *   `shotChangeDetectionConfig` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ShotChangeDetectionConfig.t`, *default:* `nil`) - Config for SHOT_CHANGE_DETECTION.
   *   `speechTranscriptionConfig` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_SpeechTranscriptionConfig.t`, *default:* `nil`) - Config for SPEECH_TRANSCRIPTION.
@@ -35,10 +37,14 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Vi
   @type t :: %__MODULE__{
           :explicitContentDetectionConfig =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ExplicitContentDetectionConfig.t(),
+          :faceDetectionConfig =>
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_FaceDetectionConfig.t(),
           :labelDetectionConfig =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelDetectionConfig.t(),
           :objectTrackingConfig =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ObjectTrackingConfig.t(),
+          :personDetectionConfig =>
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_PersonDetectionConfig.t(),
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_VideoSegment.t()
@@ -56,12 +62,20 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Vi
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ExplicitContentDetectionConfig
   )
 
+  field(:faceDetectionConfig,
+    as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_FaceDetectionConfig
+  )
+
   field(:labelDetectionConfig,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelDetectionConfig
   )
 
   field(:objectTrackingConfig,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ObjectTrackingConfig
+  )
+
+  field(:personDetectionConfig,
+    as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_PersonDetectionConfig
   )
 
   field(:segments,
