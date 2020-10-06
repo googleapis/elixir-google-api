@@ -89,7 +89,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
-  *   `job_name` (*type:* `String.t`) - Required. The job to get.
+  *   `job_name` (*type:* `String.t`) - " Required. The job to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
