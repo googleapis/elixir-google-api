@@ -142,6 +142,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:tagPartner` (*type:* `String.t`) - Tag partner to include in the ad code snippet.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -171,7 +172,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :tagPartner => :query
     }
 
     request =
