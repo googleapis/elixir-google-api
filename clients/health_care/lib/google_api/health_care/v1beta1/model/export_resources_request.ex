@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ExportResourcesRequest do
   @moduledoc """
-   Request to export resources.
+  Request to export resources.
 
   ## Attributes
 
   *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination. The BigQuery location requires two IAM roles: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one BigQuery table per resource type.
-  *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination. The Cloud Storage location requires the `roles/storage.objectAdmin` Cloud IAM role. The exported outputs are organized by FHIR resource types. The server creates one object per resource type. Each object contains newline delimited JSON, and each line is a FHIR resource.
+  *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination. The Cloud Storage location requires the `roles/storage.objectAdmin` Cloud IAM role. The exported outputs are organized by FHIR resource types. The server creates one object per resource type. Each object contains newline delimited JSON, and each line is a FHIR resource.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,7 +31,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportResourcesRequest do
           :bigqueryDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBigQueryDestination.t(),
           :gcsDestination =>
-            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestGcsDestination.t()
+            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsDestination.t()
         }
 
   field(:bigqueryDestination,
@@ -39,7 +39,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportResourcesRequest do
   )
 
   field(:gcsDestination,
-    as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestGcsDestination
+    as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsDestination
   )
 end
 

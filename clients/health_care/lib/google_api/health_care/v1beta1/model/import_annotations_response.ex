@@ -21,19 +21,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImportAnnotationsResponse do
 
   ## Attributes
 
-  *   `annotationStore` (*type:* `String.t`, *default:* `nil`) - The annotation_store that the annotations were imported to, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `successCount` (*type:* `String.t`, *default:* `nil`) - The number of the input annotations. All input have been imported successfully.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-          :annotationStore => String.t(),
-          :successCount => String.t()
-        }
-
-  field(:annotationStore)
-  field(:successCount)
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.ImportAnnotationsResponse do

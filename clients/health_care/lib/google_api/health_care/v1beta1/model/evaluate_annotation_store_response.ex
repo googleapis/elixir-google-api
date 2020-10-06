@@ -21,25 +21,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreResponse do
 
   ## Attributes
 
-  *   `evalStore` (*type:* `String.t`, *default:* `nil`) - The evaluated Annotation store, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `goldenCount` (*type:* `String.t`, *default:* `nil`) - The number of Annotations in the ground truth Annotation store successfully processed.
-  *   `goldenStore` (*type:* `String.t`, *default:* `nil`) - The ground truth Annotation store, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `matchedCount` (*type:* `String.t`, *default:* `nil`) - The number of Annotations in the eval store that match with corresponding annotations in the ground truth Annotation store. Two matched annotations both annotate the same resource defined in AnnotationSource.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-          :evalStore => String.t(),
-          :goldenCount => String.t(),
-          :goldenStore => String.t(),
-          :matchedCount => String.t()
-        }
-
-  field(:evalStore)
-  field(:goldenCount)
-  field(:goldenStore)
-  field(:matchedCount)
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreResponse do

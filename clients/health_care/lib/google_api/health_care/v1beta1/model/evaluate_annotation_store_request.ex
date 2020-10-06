@@ -26,7 +26,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreRequest do
   *   `goldenInfoTypeMapping` (*type:* `map()`, *default:* `nil`) - Optional. Similar to `eval_info_type_mapping`, infoType mapping for `golden_store`.
   *   `goldenStore` (*type:* `String.t`, *default:* `nil`) - The Annotation store to use as ground truth, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `infoTypeConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig.t`, *default:* `nil`) - 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The Annotation store to compare against `golden_store`, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,8 +36,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreRequest do
           :evalInfoTypeMapping => map(),
           :goldenInfoTypeMapping => map(),
           :goldenStore => String.t(),
-          :infoTypeConfig => GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig.t(),
-          :name => String.t()
+          :infoTypeConfig => GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig.t()
         }
 
   field(:bigqueryDestination,
@@ -50,7 +48,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreRequest do
   field(:goldenInfoTypeMapping, type: :map)
   field(:goldenStore)
   field(:infoTypeConfig, as: GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig)
-  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreRequest do
