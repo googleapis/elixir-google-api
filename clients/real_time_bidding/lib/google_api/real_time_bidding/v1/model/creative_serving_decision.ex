@@ -21,7 +21,6 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
 
   ## Attributes
 
-  *   `adTechnologyProviders` (*type:* `GoogleApi.RealTimeBidding.V1.Model.AdTechnologyProviders.t`, *default:* `nil`) - The detected ad technology providers.
   *   `chinaServingStatus` (*type:* `GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t`, *default:* `nil`) - The serving status of this creative in China. When approved or disapproved, this status applies to both deals and open auction in China. When pending review, this creative is allowed to serve for deals but not for open auction.
   *   `dealsServingStatus` (*type:* `GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t`, *default:* `nil`) - Status of this creative when bidding on PG and PD deals (outside of Russia and China).
   *   `detectedAdvertisers` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand.t)`, *default:* `nil`) - Detected advertisers and brands.
@@ -40,7 +39,6 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adTechnologyProviders => GoogleApi.RealTimeBidding.V1.Model.AdTechnologyProviders.t(),
           :chinaServingStatus => GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t(),
           :dealsServingStatus => GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t(),
           :detectedAdvertisers => list(GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand.t()),
@@ -56,7 +54,6 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
           :russiaServingStatus => GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t()
         }
 
-  field(:adTechnologyProviders, as: GoogleApi.RealTimeBidding.V1.Model.AdTechnologyProviders)
   field(:chinaServingStatus, as: GoogleApi.RealTimeBidding.V1.Model.ServingStatus)
   field(:dealsServingStatus, as: GoogleApi.RealTimeBidding.V1.Model.ServingStatus)
 
