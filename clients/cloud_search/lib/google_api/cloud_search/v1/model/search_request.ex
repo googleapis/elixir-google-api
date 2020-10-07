@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchRequest do
 
   *   `dataSourceRestrictions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t)`, *default:* `nil`) - The sources to use for querying. If not specified, all data sources from the current search application are used.
   *   `facetOptions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.FacetOptions.t)`, *default:* `nil`) - 
-  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Maximum number of search results to return in one page. Valid values are between 1 and 100, inclusive. Default value is 10.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Maximum number of search results to return in one page. Valid values are between 1 and 100, inclusive. Default value is 10. Minimum value is 50 when results beyond 2000 are requested.
   *   `query` (*type:* `String.t`, *default:* `nil`) - The raw query string. See supported search operators in the [Cloud search Cheat Sheet](https://support.google.com/a/users/answer/9299929)
   *   `queryInterpretationOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.QueryInterpretationOptions.t`, *default:* `nil`) - Options to interpret the user query.
   *   `requestOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.RequestOptions.t`, *default:* `nil`) - Request options, such as the search application and user timezone.
