@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults do
   @moduledoc """
-  Streaming annotation results corresponding to a portion of the video that is currently being processed.
+  Streaming annotation results corresponding to a portion of the video that is currently being processed. Only ONE type of annotation will be specified in the response.
 
   ## Attributes
 
   *   `explicitAnnotation` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation.t`, *default:* `nil`) - Explicit content annotation results.
+  *   `frameTimestamp` (*type:* `String.t`, *default:* `nil`) - Timestamp of the processed frame in microseconds.
   *   `labelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation.t)`, *default:* `nil`) - Label annotation results.
   *   `objectAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation.t)`, *default:* `nil`) - Object tracking results.
   *   `shotAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment.t)`, *default:* `nil`) - Shot annotation results. Each shot is represented as a video segment.
@@ -32,6 +33,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   @type t :: %__MODULE__{
           :explicitAnnotation =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation.t(),
+          :frameTimestamp => String.t(),
           :labelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation.t()
@@ -50,6 +52,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation
   )
+
+  field(:frameTimestamp)
 
   field(:labelAnnotations,
     as:
