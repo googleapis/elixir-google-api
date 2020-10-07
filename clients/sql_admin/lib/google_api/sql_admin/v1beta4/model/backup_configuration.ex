@@ -21,6 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
 
   ## Attributes
 
+  *   `backupRetentionSettings` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BackupRetentionSettings.t`, *default:* `nil`) - Backup retention settings.
   *   `binaryLogEnabled` (*type:* `boolean()`, *default:* `nil`) - (MySQL only) Whether binary log is enabled. If backup configuration is disabled, binarylog must be disabled as well.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether this configuration is enabled.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#backupConfiguration*.
@@ -28,20 +29,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
   *   `pointInTimeRecoveryEnabled` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
   *   `replicationLogArchivingEnabled` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - Start time for the daily backup configuration in UTC timezone in the 24 hour format - *HH:MM*.
+  *   `transactionLogRetentionDays` (*type:* `integer()`, *default:* `nil`) - The number of days of transaction logs we retain for point in time restore, from 1-7.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :backupRetentionSettings =>
+            GoogleApi.SQLAdmin.V1beta4.Model.BackupRetentionSettings.t(),
           :binaryLogEnabled => boolean(),
           :enabled => boolean(),
           :kind => String.t(),
           :location => String.t(),
           :pointInTimeRecoveryEnabled => boolean(),
           :replicationLogArchivingEnabled => boolean(),
-          :startTime => String.t()
+          :startTime => String.t(),
+          :transactionLogRetentionDays => integer()
         }
 
+  field(:backupRetentionSettings, as: GoogleApi.SQLAdmin.V1beta4.Model.BackupRetentionSettings)
   field(:binaryLogEnabled)
   field(:enabled)
   field(:kind)
@@ -49,6 +55,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
   field(:pointInTimeRecoveryEnabled)
   field(:replicationLogArchivingEnabled)
   field(:startTime)
+  field(:transactionLogRetentionDays)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
