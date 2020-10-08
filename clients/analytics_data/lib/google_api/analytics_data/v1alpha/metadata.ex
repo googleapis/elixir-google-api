@@ -20,7 +20,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha do
   API client metadata for GoogleApi.AnalyticsData.V1alpha.
   """
 
-  @discovery_revision "20200925"
+  @discovery_revision "20201006"
 
   def discovery_revision(), do: @discovery_revision
 end
