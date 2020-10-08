@@ -54,6 +54,12 @@ defmodule GoogleApi.Fitness.V1.Connection do
       # See and add to info about your body temperature in Google Fit. I consent to Google sharing my body temperature information with this app.
       "https://www.googleapis.com/auth/fitness.body_temperature.write",
 
+      # See your heart rate data in Google Fit. I consent to Google sharing my heart rate information with this app.
+      "https://www.googleapis.com/auth/fitness.heart_rate.read",
+
+      # See and add to your heart rate data in Google Fit. I consent to Google sharing my heart rate information with this app.
+      "https://www.googleapis.com/auth/fitness.heart_rate.write",
+
       # See your Google Fit speed and distance data
       "https://www.googleapis.com/auth/fitness.location.read",
 
@@ -76,7 +82,13 @@ defmodule GoogleApi.Fitness.V1.Connection do
       "https://www.googleapis.com/auth/fitness.reproductive_health.read",
 
       # See and add info about your reproductive health in Google Fit. I consent to Google sharing my reproductive health information with this app.
-      "https://www.googleapis.com/auth/fitness.reproductive_health.write"
+      "https://www.googleapis.com/auth/fitness.reproductive_health.write",
+
+      # See your sleep data in Google Fit. I consent to Google sharing my sleep information with this app.
+      "https://www.googleapis.com/auth/fitness.sleep.read",
+
+      # See and add to your sleep data in Google Fit. I consent to Google sharing my sleep information with this app.
+      "https://www.googleapis.com/auth/fitness.sleep.write"
     ],
     otp_app: :google_api_fitness,
     base_url: "https://fitness.googleapis.com/fitness/v1/users/"
