@@ -23,17 +23,23 @@ defmodule GoogleApi.Testing.V1.Model.IosTestSetup do
 
   *   `additionalIpas` (*type:* `list(GoogleApi.Testing.V1.Model.FileReference.t)`, *default:* `nil`) - iOS apps to install in addition to those being directly tested.
   *   `networkProfile` (*type:* `String.t`, *default:* `nil`) - The network traffic profile used for running the test. Available network profiles can be queried by using the NETWORK_CONFIGURATION environment type when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
+  *   `pullDirectories` (*type:* `list(GoogleApi.Testing.V1.Model.IosDeviceFile.t)`, *default:* `nil`) - List of directories on the device to upload to Cloud Storage at the end of the test. Directories should either be in a shared directory (e.g. /private/var/mobile/Media) or within an accessible directory inside the app's filesystem (e.g. /Documents) by specifying the bundle id.
+  *   `pushFiles` (*type:* `list(GoogleApi.Testing.V1.Model.IosDeviceFile.t)`, *default:* `nil`) - List of files to push to the device before starting the test.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :additionalIpas => list(GoogleApi.Testing.V1.Model.FileReference.t()),
-          :networkProfile => String.t()
+          :networkProfile => String.t(),
+          :pullDirectories => list(GoogleApi.Testing.V1.Model.IosDeviceFile.t()),
+          :pushFiles => list(GoogleApi.Testing.V1.Model.IosDeviceFile.t())
         }
 
   field(:additionalIpas, as: GoogleApi.Testing.V1.Model.FileReference, type: :list)
   field(:networkProfile)
+  field(:pullDirectories, as: GoogleApi.Testing.V1.Model.IosDeviceFile, type: :list)
+  field(:pushFiles, as: GoogleApi.Testing.V1.Model.IosDeviceFile, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Testing.V1.Model.IosTestSetup do
