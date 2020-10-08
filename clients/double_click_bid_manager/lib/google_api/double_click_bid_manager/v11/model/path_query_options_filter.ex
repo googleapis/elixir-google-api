@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V11.Model.PathQueryOptionsFilter do
   @moduledoc """
-  Dimension Filter for a Path Filter.
+  Dimension Filter on path events.
 
   ## Attributes
 
