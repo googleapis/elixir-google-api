@@ -22,6 +22,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   ## Attributes
 
   *   `dockerCacheHit` (*type:* `boolean()`, *default:* `nil`) - Indicates whether we are using a cached Docker image (true) or had to pull the Docker image (false) for this command.
+  *   `dockerImageName` (*type:* `String.t`, *default:* `nil`) - Docker Image name.
   *   `inputCacheMiss` (*type:* `number()`, *default:* `nil`) - The input cache miss ratio.
   *   `numErrors` (*type:* `String.t`, *default:* `nil`) - The number of errors reported.
   *   `numWarnings` (*type:* `String.t`, *default:* `nil`) - The number of warnings reported.
@@ -31,12 +32,14 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
 
   @type t :: %__MODULE__{
           :dockerCacheHit => boolean(),
+          :dockerImageName => String.t(),
           :inputCacheMiss => number(),
           :numErrors => String.t(),
           :numWarnings => String.t()
         }
 
   field(:dockerCacheHit)
+  field(:dockerImageName)
   field(:inputCacheMiss)
   field(:numErrors)
   field(:numWarnings)
