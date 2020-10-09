@@ -22,18 +22,27 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule do
   ## Attributes
 
   *   `basepath` (*type:* `String.t`, *default:* `nil`) - URI path prefix used to route to the specified environment. May contain one or more wildcards. For example, path segments consisting of a single `*` character will match any string.
+  *   `envGroupRevision` (*type:* `String.t`, *default:* `nil`) - The env group config revision_id when this rule was added or last updated. This value is set when the rule is created and will only update if the the environment_id changes. It is used to determine if the runtime is up to date with respect to this rule. This field is omitted from the IngressConfig unless the GetDeployedIngressConfig API is called with debug=true.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Name of an environment bound to the environment group in the following format: `organizations/{org}/environments/{env}`.
+  *   `receiver` (*type:* `String.t`, *default:* `nil`) - The resource name of the proxy revision that is receiving this basepath in the following format: `organizations/{org}/apis/{api}/revisions/{rev}`. This field is omitted from the IngressConfig unless the GetDeployedIngressConfig API is called with debug=true.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The unix timestamp when this rule was updated. This is updated whenever env_group_revision is updated. This field is omitted from the IngressConfig unless the GetDeployedIngressConfig API is called with debug=true.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :basepath => String.t(),
-          :environment => String.t()
+          :envGroupRevision => String.t(),
+          :environment => String.t(),
+          :receiver => String.t(),
+          :updateTime => DateTime.t()
         }
 
   field(:basepath)
+  field(:envGroupRevision)
   field(:environment)
+  field(:receiver)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule do
