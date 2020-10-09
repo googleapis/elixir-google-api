@@ -21,7 +21,6 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Devi
 
   ## Attributes
 
-  *   `assignee` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the structure/room where the device is assigned to. For example: "enterprises/XYZ/structures/ABC" or "enterprises/XYZ/structures/ABC/rooms/123"
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the device. For example: "enterprises/XYZ/devices/123".
   *   `parentRelations` (*type:* `list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1ParentRelation.t)`, *default:* `nil`) - Assignee details of the device.
   *   `traits` (*type:* `map()`, *default:* `nil`) - Output only. Device traits.
@@ -31,7 +30,6 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Devi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignee => String.t(),
           :name => String.t(),
           :parentRelations =>
             list(
@@ -41,7 +39,6 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Devi
           :type => String.t()
         }
 
-  field(:assignee)
   field(:name)
 
   field(:parentRelations,
