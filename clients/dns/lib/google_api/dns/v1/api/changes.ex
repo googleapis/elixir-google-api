@@ -32,7 +32,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -95,7 +95,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or ID.
   *   `change_id` (*type:* `String.t`) - The identifier of the requested change, from a previous ResourceRecordSetsChangeResponse.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -174,7 +174,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
