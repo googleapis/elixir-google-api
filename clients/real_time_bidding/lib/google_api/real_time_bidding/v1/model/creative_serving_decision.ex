@@ -21,8 +21,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
 
   ## Attributes
 
-  *   `chinaServingStatus` (*type:* `GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t`, *default:* `nil`) - The serving status of this creative in China. When approved or disapproved, this status applies to both deals and open auction in China. When pending review, this creative is allowed to serve for deals but not for open auction.
-  *   `dealsServingStatus` (*type:* `GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t`, *default:* `nil`) - Status of this creative when bidding on PG and PD deals (outside of Russia and China).
+  *   `chinaPolicyCompliance` (*type:* `GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t`, *default:* `nil`) - The policy compliance of this creative in China. When approved or disapproved, this applies to both deals and open auction in China. When pending review, this creative is allowed to serve for deals but not for open auction.
+  *   `dealsPolicyCompliance` (*type:* `GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t`, *default:* `nil`) - Policy compliance of this creative when bidding on Programmatic Guaranteed and Preferred Deals (outside of Russia and China).
   *   `detectedAdvertisers` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand.t)`, *default:* `nil`) - Detected advertisers and brands.
   *   `detectedAttributes` (*type:* `list(String.t)`, *default:* `nil`) - Publisher-excludable attributes that were detected for this creative. Can be used to filter the response of the creatives.list method. If the `excluded_attribute` field of a [bid request](https://developers.google.com/authorized-buyers/rtb/downloads/realtime-bidding-proto) contains one of the attributes that were declared or detected for a given creative, and a bid is submitted with that creative, the bid will be filtered before the auction.
   *   `detectedClickThroughUrls` (*type:* `list(String.t)`, *default:* `nil`) - The set of detected destination URLs for the creative. Can be used to filter the response of the creatives.list method.
@@ -32,15 +32,16 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
   *   `detectedSensitiveCategories` (*type:* `list(integer())`, *default:* `nil`) - Detected sensitive categories, if any. Can be used to filter the response of the creatives.list method. See the ad-sensitive-categories.txt file in the technical documentation for a list of IDs. You should use these IDs along with the excluded-sensitive-category field in the bid request to filter your bids.
   *   `detectedVendorIds` (*type:* `list(integer())`, *default:* `nil`) - IDs of the ad technology vendors that were detected to be used by this creative. See https://storage.googleapis.com/adx-rtb-dictionaries/vendors.txt for possible values. Can be used to filter the response of the creatives.list method. If the `allowed_vendor_type` field of a [bid request](https://developers.google.com/authorized-buyers/rtb/downloads/realtime-bidding-proto) does not contain one of the vendor type IDs that were declared or detected for a given creative, and a bid is submitted with that creative, the bid will be filtered before the auction.
   *   `lastStatusUpdate` (*type:* `DateTime.t`, *default:* `nil`) - The last time the creative status was updated. Can be used to filter the response of the creatives.list method.
-  *   `openAuctionServingStatus` (*type:* `GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t`, *default:* `nil`) - Status of this creative when bidding in open auction, private auction, or auction packages (outside of Russia and China).
-  *   `russiaServingStatus` (*type:* `GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t`, *default:* `nil`) - The serving status of this creative in Russia. When approved or disapproved, this status applies to both deals and open auction in Russia. When pending review, this creative is allowed to serve for deals but not for open auction.
+  *   `networkPolicyCompliance` (*type:* `GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t`, *default:* `nil`) - Policy compliance of this creative when bidding in open auction, private auction, or auction packages (outside of Russia and China).
+  *   `platformPolicyCompliance` (*type:* `GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t`, *default:* `nil`) - Policy compliance of this creative when bidding in Open Bidding (outside of Russia and China). For the list of platform policies, see: https://support.google.com/platformspolicy/answer/3013851.
+  *   `russiaPolicyCompliance` (*type:* `GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t`, *default:* `nil`) - The policy compliance of this creative in Russia. When approved or disapproved, this applies to both deals and open auction in Russia. When pending review, this creative is allowed to serve for deals but not for open auction.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chinaServingStatus => GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t(),
-          :dealsServingStatus => GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t(),
+          :chinaPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t(),
+          :dealsPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t(),
           :detectedAdvertisers => list(GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand.t()),
           :detectedAttributes => list(String.t()),
           :detectedClickThroughUrls => list(String.t()),
@@ -50,12 +51,13 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
           :detectedSensitiveCategories => list(integer()),
           :detectedVendorIds => list(integer()),
           :lastStatusUpdate => DateTime.t(),
-          :openAuctionServingStatus => GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t(),
-          :russiaServingStatus => GoogleApi.RealTimeBidding.V1.Model.ServingStatus.t()
+          :networkPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t(),
+          :platformPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t(),
+          :russiaPolicyCompliance => GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t()
         }
 
-  field(:chinaServingStatus, as: GoogleApi.RealTimeBidding.V1.Model.ServingStatus)
-  field(:dealsServingStatus, as: GoogleApi.RealTimeBidding.V1.Model.ServingStatus)
+  field(:chinaPolicyCompliance, as: GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance)
+  field(:dealsPolicyCompliance, as: GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance)
 
   field(:detectedAdvertisers,
     as: GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand,
@@ -70,8 +72,9 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
   field(:detectedSensitiveCategories, type: :list)
   field(:detectedVendorIds, type: :list)
   field(:lastStatusUpdate, as: DateTime)
-  field(:openAuctionServingStatus, as: GoogleApi.RealTimeBidding.V1.Model.ServingStatus)
-  field(:russiaServingStatus, as: GoogleApi.RealTimeBidding.V1.Model.ServingStatus)
+  field(:networkPolicyCompliance, as: GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance)
+  field(:platformPolicyCompliance, as: GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance)
+  field(:russiaPolicyCompliance, as: GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
