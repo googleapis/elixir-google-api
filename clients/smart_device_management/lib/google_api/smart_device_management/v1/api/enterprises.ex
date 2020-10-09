@@ -197,7 +197,6 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       *   `:filter` (*type:* `String.t`) - Optional filter to list devices. Filters can match the exact assignee (could be a structure or a room). E.g. 'assignee=enterprises/XYZ/structures/abc' Also could filter by parent (group): 'parent=enterprises/XYZ/groups/jkl' or filter by device custom name (substring match): 'customName=wing'
       *   `:pageSize` (*type:* `integer()`) - Optional requested page size. Server may return fewer devices than requested. If unspecified, server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - Optional token of the page to retrieve.
-      *   `:view` (*type:* `String.t`) - Additional details that need to be provided for the device.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -235,8 +234,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       :upload_protocol => :query,
       :filter => :query,
       :pageSize => :query,
-      :pageToken => :query,
-      :view => :query
+      :pageToken => :query
     }
 
     request =
