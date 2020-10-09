@@ -30,6 +30,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   *   `location` (*type:* `String.t`, *default:* `nil`) - Required. Compute Engine location where the instance resides.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource ID of the instance. Values must match the regular expression `^a-z{0,30}[a-z\\d]$`.
   *   `port` (*type:* `String.t`, *default:* `nil`) - Output only. Port number of the exposed Apigee endpoint.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the instance. Values other than ACTIVE means the resource is not ready to use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +44,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
           :lastModifiedAt => String.t(),
           :location => String.t(),
           :name => String.t(),
-          :port => String.t()
+          :port => String.t(),
+          :state => String.t()
         }
 
   field(:createdAt)
@@ -55,6 +57,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   field(:location)
   field(:name)
   field(:port)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
