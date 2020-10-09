@@ -21,10 +21,10 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1ExchangeTokenRequest do
 
   ## Attributes
 
-  *   `grantType` (*type:* `String.t`, *default:* `nil`) - Required. The grant type. Must be `urn:ietf:params:oauth:grant-type:token-exchange`, which indicates a token exchange is requested.
+  *   `grantType` (*type:* `String.t`, *default:* `nil`) - Required. The grant type. Must be `urn:ietf:params:oauth:grant-type:token-exchange`, which indicates a token exchange.
   *   `options` (*type:* `String.t`, *default:* `nil`) - A set of features that Security Token Service supports, in addition to the standard OAuth 2.0 token exchange, formatted as a serialized JSON object of Options.
   *   `requestedTokenType` (*type:* `String.t`, *default:* `nil`) - Required. An identifier for the type of requested security token. Must be `urn:ietf:params:oauth:token-type:access_token`.
-  *   `subjectToken` (*type:* `String.t`, *default:* `nil`) - Required. Input subject token. You can use a Google-issued OAuth 2.0 access token with this field to obtain an access token with new security attributes applied, such as an AccessBoundary. Applying additional security attributes on access tokens that already contain security attributes is not allowed.
+  *   `subjectToken` (*type:* `String.t`, *default:* `nil`) - Required. The input token. You can use a Google-issued OAuth 2.0 access token with this field to obtain an access token with new security attributes applied, such as a Credential Access Boundary. If an access token already contains security attributes, you cannot apply additional security attributes.
   *   `subjectTokenType` (*type:* `String.t`, *default:* `nil`) - Required. An identifier that indicates the type of the security token in the `subject_token` parameter. Must be `urn:ietf:params:oauth:token-type:access_token`.
   """
 
