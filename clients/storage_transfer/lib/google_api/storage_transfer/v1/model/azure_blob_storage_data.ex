@@ -21,7 +21,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData do
 
   ## Attributes
 
-  *   `azureCredentials` (*type:* `GoogleApi.StorageTransfer.V1.Model.AzureCredentials.t`, *default:* `nil`) - Required. Credentials used to authenticate API requests to Azure.
+  *   `azureCredentials` (*type:* `GoogleApi.StorageTransfer.V1.Model.AzureCredentials.t`, *default:* `nil`) - Required. Input only. Credentials used to authenticate API requests to Azure.
   *   `container` (*type:* `String.t`, *default:* `nil`) - Required. The container to transfer from the Azure Storage account.
   *   `storageAccount` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Azure Storage account.
   """
