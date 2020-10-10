@@ -121,7 +121,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       For internal load balancing, this field identifies the subnetwork that the load balanced IP should belong to for this Forwarding Rule.
 
       If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must live in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only targetHttpProxy and targetGrpcProxy are valid, not targetHttpsProxy.
+  *   `target` (*type:* `String.t`, *default:* `nil`) - The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
   """
 
   use GoogleApi.Gax.ModelBase

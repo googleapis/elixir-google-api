@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupAutoscalingPolicy do
 
   ## Attributes
 
-  *   `maxNodes` (*type:* `integer()`, *default:* `nil`) - The maximum number of nodes that the group should have.
+  *   `maxNodes` (*type:* `integer()`, *default:* `nil`) - The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
   *   `minNodes` (*type:* `integer()`, *default:* `nil`) - The minimum number of nodes that the group should have.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
   """
