@@ -34,6 +34,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.VirtualMachine do
   *   `nvidiaDriverVersion` (*type:* `String.t`, *default:* `nil`) - The NVIDIA driver version to use when attaching an NVIDIA GPU accelerator. The version specified here must be compatible with the GPU libraries contained in the container being executed, and must be one of the drivers hosted in the `nvidia-drivers-us-public` bucket on Google Cloud Storage.
   *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - If true, allocate a preemptible VM.
   *   `serviceAccount` (*type:* `GoogleApi.LifeSciences.V2beta.Model.ServiceAccount.t`, *default:* `nil`) - The service account to install on the VM. This account does not need any permissions other than those required by the pipeline.
+  *   `volumes` (*type:* `list(GoogleApi.LifeSciences.V2beta.Model.Volume.t)`, *default:* `nil`) - The list of disks and other storage to create or attach to the VM.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -51,7 +52,8 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.VirtualMachine do
           :network => GoogleApi.LifeSciences.V2beta.Model.Network.t(),
           :nvidiaDriverVersion => String.t(),
           :preemptible => boolean(),
-          :serviceAccount => GoogleApi.LifeSciences.V2beta.Model.ServiceAccount.t()
+          :serviceAccount => GoogleApi.LifeSciences.V2beta.Model.ServiceAccount.t(),
+          :volumes => list(GoogleApi.LifeSciences.V2beta.Model.Volume.t())
         }
 
   field(:accelerators, as: GoogleApi.LifeSciences.V2beta.Model.Accelerator, type: :list)
@@ -67,6 +69,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.VirtualMachine do
   field(:nvidiaDriverVersion)
   field(:preemptible)
   field(:serviceAccount, as: GoogleApi.LifeSciences.V2beta.Model.ServiceAccount)
+  field(:volumes, as: GoogleApi.LifeSciences.V2beta.Model.Volume, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.LifeSciences.V2beta.Model.VirtualMachine do

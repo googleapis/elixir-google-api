@@ -20,7 +20,7 @@ defmodule GoogleApi.LifeSciences.V2beta do
   API client metadata for GoogleApi.LifeSciences.V2beta.
   """
 
-  @discovery_revision "20200806"
+  @discovery_revision "20201001"
 
   def discovery_revision(), do: @discovery_revision
 end
