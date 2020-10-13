@@ -26,7 +26,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.Contest do
   *   `candidates` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Candidate.t)`, *default:* `nil`) - The candidate choices for this contest.
   *   `district` (*type:* `GoogleApi.CivicInfo.V2.Model.ElectoralDistrict.t`, *default:* `nil`) - Information about the electoral district that this contest is in.
   *   `electorateSpecifications` (*type:* `String.t`, *default:* `nil`) - A description of any additional eligibility requirements for voting in this contest.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.
   *   `level` (*type:* `list(String.t)`, *default:* `nil`) - The levels of government of the office for this contest. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at "locality" level, but also effectively at both "administrative-area-2" and "administrative-area-1".
   *   `numberElected` (*type:* `String.t`, *default:* `nil`) - The number of candidates that will be elected to office in this contest.
   *   `numberVotingFor` (*type:* `String.t`, *default:* `nil`) - The number of candidates that a voter may vote for in this contest.
@@ -57,7 +56,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.Contest do
           :candidates => list(GoogleApi.CivicInfo.V2.Model.Candidate.t()),
           :district => GoogleApi.CivicInfo.V2.Model.ElectoralDistrict.t(),
           :electorateSpecifications => String.t(),
-          :id => String.t(),
           :level => list(String.t()),
           :numberElected => String.t(),
           :numberVotingFor => String.t(),
@@ -85,7 +83,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.Contest do
   field(:candidates, as: GoogleApi.CivicInfo.V2.Model.Candidate, type: :list)
   field(:district, as: GoogleApi.CivicInfo.V2.Model.ElectoralDistrict)
   field(:electorateSpecifications)
-  field(:id)
   field(:level, type: :list)
   field(:numberElected)
   field(:numberVotingFor)

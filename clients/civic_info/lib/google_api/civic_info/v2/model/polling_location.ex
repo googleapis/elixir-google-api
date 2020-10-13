@@ -23,7 +23,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
 
   *   `address` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The address of the location.
   *   `endDate` (*type:* `String.t`, *default:* `nil`) - The last date that this early vote site or drop off location may be used. This field is not populated for polling locations.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.
   *   `latitude` (*type:* `float()`, *default:* `nil`) - Latitude of the location, in degrees north of the equator. Note this field may not be available for some locations.
   *   `longitude` (*type:* `float()`, *default:* `nil`) - Longitude of the location, in degrees east of the Prime Meridian. Note this field may not be available for some locations.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the early vote site or drop off location. This field is not populated for polling locations.
@@ -39,7 +38,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
   @type t :: %__MODULE__{
           :address => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t(),
           :endDate => String.t(),
-          :id => String.t(),
           :latitude => float(),
           :longitude => float(),
           :name => String.t(),
@@ -52,7 +50,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
 
   field(:address, as: GoogleApi.CivicInfo.V2.Model.SimpleAddressType)
   field(:endDate)
-  field(:id)
   field(:latitude)
   field(:longitude)
   field(:name)
