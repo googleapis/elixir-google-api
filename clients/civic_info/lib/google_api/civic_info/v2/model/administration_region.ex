@@ -22,7 +22,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrationRegion do
   ## Attributes
 
   *   `electionAdministrationBody` (*type:* `GoogleApi.CivicInfo.V2.Model.AdministrativeBody.t`, *default:* `nil`) - The election administration body for this area.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.
   *   `local_jurisdiction` (*type:* `GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t`, *default:* `nil`) - The city or county that provides election information for this voter. This object can have the same elements as state.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the jurisdiction.
   *   `sources` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Source.t)`, *default:* `nil`) - A list of sources for this area. If multiple sources are listed the data has been aggregated from those sources.
@@ -32,14 +31,12 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrationRegion do
 
   @type t :: %__MODULE__{
           :electionAdministrationBody => GoogleApi.CivicInfo.V2.Model.AdministrativeBody.t(),
-          :id => String.t(),
           :local_jurisdiction => GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t(),
           :name => String.t(),
           :sources => list(GoogleApi.CivicInfo.V2.Model.Source.t())
         }
 
   field(:electionAdministrationBody, as: GoogleApi.CivicInfo.V2.Model.AdministrativeBody)
-  field(:id)
   field(:local_jurisdiction, as: GoogleApi.CivicInfo.V2.Model.AdministrationRegion)
   field(:name)
   field(:sources, as: GoogleApi.CivicInfo.V2.Model.Source, type: :list)
