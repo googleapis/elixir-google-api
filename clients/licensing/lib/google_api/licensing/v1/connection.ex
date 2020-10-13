@@ -28,5 +28,5 @@ defmodule GoogleApi.Licensing.V1.Connection do
       "https://www.googleapis.com/auth/apps.licensing"
     ],
     otp_app: :google_api_licensing,
-    base_url: "https://licensing.googleapis.com/"
+    base_url: "https://www.googleapis.com/"
 end
