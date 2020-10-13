@@ -223,7 +223,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) - 
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -345,7 +345,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) - 
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -543,7 +543,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.QueryRequest.t`) - 
+      *   `:location` (*type:* `String.t`) - The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+      *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.QueryRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -564,6 +565,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :location => :query,
       :body => :body
     }
 
