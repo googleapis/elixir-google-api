@@ -270,6 +270,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
   *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -294,12 +295,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidpublisher_purchases_subscriptions_cancel(
         connection,
         package_name,
+        subscription_id,
         token,
         optional_params \\ [],
         opts \\ []
@@ -322,9 +325,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/androidpublisher/v3/applications/{packageName}/purchases/subscriptions/tokens/{token}:cancel",
+        "/androidpublisher/v3/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:cancel",
         %{
           "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1),
           "token" => URI.encode(token, &URI.char_unreserved?/1)
         }
       )
