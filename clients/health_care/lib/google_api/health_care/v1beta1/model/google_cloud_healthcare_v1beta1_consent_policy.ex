@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1Consent
 
   ## Attributes
 
-  *   `authorizationRule` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Expr.t`, *default:* `nil`) - The request conditions to meet to grant access.
+  *   `authorizationRule` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Expr.t`, *default:* `nil`) - The request conditions to meet to grant access. In addition to any supported comparison operators, authorization rules may have `IN` operator as well as at most 10 logical operators that are limited to `AND` (`&&`), `OR` (`||`).
   *   `resourceAttributes` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Attribute.t)`, *default:* `nil`) - The data resources that this policy applies to. A data resource is a match if it matches all the attributes listed here.
   """
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImportMessagesRequest do
 
   ## Attributes
 
-  *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GcsSource.t`, *default:* `nil`) - Cloud Storage source data location and import configuration. The Cloud Storage location requires the `roles/storage.objectViewer` Cloud IAM role.
+  *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GcsSource.t`, *default:* `nil`) - Cloud Storage source data location and import configuration. The Cloud Healthcare Service Agent requires the `roles/storage.objectViewer` Cloud IAM roles on the Cloud Storage location.
   """
 
   use GoogleApi.Gax.ModelBase
