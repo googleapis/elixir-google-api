@@ -236,14 +236,14 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Api.Domains do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"endDate.day"` (*type:* `integer()`) - Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a year by itself or a year and month where the day is not significant.
-      *   `:"endDate.month"` (*type:* `integer()`) - Month of year. Must be from 1 to 12, or 0 if specifying a year without a month and day.
-      *   `:"endDate.year"` (*type:* `integer()`) - Year of date. Must be from 1 to 9999, or 0 if specifying a date without a year.
+      *   `:"endDate.day"` (*type:* `integer()`) - Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+      *   `:"endDate.month"` (*type:* `integer()`) - Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+      *   `:"endDate.year"` (*type:* `integer()`) - Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
       *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer TrafficStats than requested. If unspecified, server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any. This is the value of ListTrafficStatsResponse.next_page_token returned from the previous call to `ListTrafficStats` method.
-      *   `:"startDate.day"` (*type:* `integer()`) - Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a year by itself or a year and month where the day is not significant.
-      *   `:"startDate.month"` (*type:* `integer()`) - Month of year. Must be from 1 to 12, or 0 if specifying a year without a month and day.
-      *   `:"startDate.year"` (*type:* `integer()`) - Year of date. Must be from 1 to 9999, or 0 if specifying a date without a year.
+      *   `:"startDate.day"` (*type:* `integer()`) - Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+      *   `:"startDate.month"` (*type:* `integer()`) - Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+      *   `:"startDate.year"` (*type:* `integer()`) - Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
