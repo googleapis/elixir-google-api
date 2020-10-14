@@ -22,7 +22,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImportResourcesRequest do
   ## Attributes
 
   *   `contentStructure` (*type:* `String.t`, *default:* `nil`) - The content structure in the source location. If not specified, the server treats the input source files as BUNDLE.
-  *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsSource.t`, *default:* `nil`) - Cloud Storage source data location and import configuration. The Cloud Storage location requires the `roles/storage.objectViewer` Cloud IAM role. The Healthcare Service Agent Each Cloud Storage object should be a text file that contains the format specified in ContentStructure.
+  *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsSource.t`, *default:* `nil`) - Cloud Storage source data location and import configuration. The Cloud Healthcare Service Agent requires the `roles/storage.objectViewer` Cloud IAM roles on the Cloud Storage location. The Healthcare Service Agent Each Cloud Storage object should be a text file that contains the format specified in ContentStructure.
   """
 
   use GoogleApi.Gax.ModelBase
