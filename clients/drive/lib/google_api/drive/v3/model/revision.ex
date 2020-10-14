@@ -33,7 +33,7 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
   *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename used to create this revision. This is only applicable to files with binary content in Drive.
   *   `publishAuto` (*type:* `boolean()`, *default:* `nil`) - Whether subsequent revisions will be automatically republished. This is only applicable to Google Docs.
   *   `published` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published. This is only applicable to Google Docs.
-  *   `publishedLink` (*type:* `String.t`, *default:* `nil`) - A link to the published revision.
+  *   `publishedLink` (*type:* `String.t`, *default:* `nil`) - A link to the published revision. This is only populated for Google Sites files.
   *   `publishedOutsideDomain` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published outside the domain. This is only applicable to Google Docs.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the revision's content in bytes. This is only applicable to files with binary content in Drive.
   """
