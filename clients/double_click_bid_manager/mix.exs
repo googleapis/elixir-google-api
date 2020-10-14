@@ -18,7 +18,7 @@
 defmodule GoogleApi.DoubleClickBidManager.Mixfile do
   use Mix.Project
 
-  @version "0.20.2"
+  @version "0.20.3"
 
   def project() do
     [
