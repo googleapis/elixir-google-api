@@ -36,7 +36,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.Creative do
   *   `declaredVendorIds` (*type:* `list(integer())`, *default:* `nil`) - IDs for the declared ad technology vendors that may be used by this creative. See https://storage.googleapis.com/adx-rtb-dictionaries/vendors.txt for possible values. Can be used to filter the response of the creatives.list method.
   *   `html` (*type:* `GoogleApi.RealTimeBidding.V1.Model.HtmlContent.t`, *default:* `nil`) - An HTML creative.
   *   `impressionTrackingUrls` (*type:* `list(String.t)`, *default:* `nil`) - The set of URLs to be called to record an impression.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the creative. Follows the pattern `buyers/{buyer}/creatives/{creative}`, where `{buyer}` represents the account ID of the buyer who owns the creative, and `{creative}` is the buyer-specific creative ID that references this creative in the bid response.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the creative. Follows the pattern `buyers/{buyer}/creatives/{creative}`, where `{buyer}` represents the account ID of the buyer who owns the creative, and `{creative}` is the buyer-specific creative ID that references this creative in the bid response.
   *   `native` (*type:* `GoogleApi.RealTimeBidding.V1.Model.NativeContent.t`, *default:* `nil`) - A native creative.
   *   `restrictedCategories` (*type:* `list(String.t)`, *default:* `nil`) - All restricted categories for the ads that may be shown from this creative.
   *   `version` (*type:* `integer()`, *default:* `nil`) - Output only. The version of this creative. Version for a new creative is 1 and it increments during subsequent creative updates.
