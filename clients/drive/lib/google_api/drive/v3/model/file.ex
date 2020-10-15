@@ -52,7 +52,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
       Entries with null values are cleared in update and copy requests.
   *   `version` (*type:* `String.t`, *default:* `nil`) - A monotonically increasing version number for the file. This reflects every change made to the file on the server, even those not visible to the user.
   *   `hasThumbnail` (*type:* `boolean()`, *default:* `nil`) - Whether this file has a thumbnail. This does not indicate whether the requesting app has access to the thumbnail. To check access, look for the presence of the thumbnailLink field.
-  *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content.
+  *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content. If the file isn't shared publicly, the URL returned in Files.thumbnailLink must be fetched using a credentialed request.
   *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename of the uploaded content if available, or else the original value of the name field. This is only available for files with binary content in Google Drive.
   *   `explicitlyTrashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been explicitly trashed, as opposed to recursively trashed from a parent folder.
   *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Google Docs to specific formats.
