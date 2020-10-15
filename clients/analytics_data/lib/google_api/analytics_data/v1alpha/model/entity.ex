@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Entity do
 
   ## Attributes
 
-  *   `propertyId` (*type:* `String.t`, *default:* `nil`) - A Google Analytics App + Web property id.
+  *   `propertyId` (*type:* `String.t`, *default:* `nil`) - A Google Analytics GA4 property id.
   """
 
   use GoogleApi.Gax.ModelBase
