@@ -20,7 +20,7 @@ defmodule GoogleApi.BigQuery.V2 do
   API client metadata for GoogleApi.BigQuery.V2.
   """
 
-  @discovery_revision "20200925"
+  @discovery_revision "20201007"
 
   def discovery_revision(), do: @discovery_revision
 end
