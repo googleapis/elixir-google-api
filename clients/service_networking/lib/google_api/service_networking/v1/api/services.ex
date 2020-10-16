@@ -1158,7 +1158,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   end
 
   @doc """
-  Service producers can use this method to add roles in the shared VPC host project. Each role is bound to the provided member. Each role must be selected from within a whitelisted set of roles. Each role is applied at only the granularity specified in the whitelist.
+  Service producers can use this method to add roles in the shared VPC host project. Each role is bound to the provided member. Each role must be selected from within an allowlisted set of roles. Each role is applied at only the granularity specified in the allowlist.
 
   ## Parameters
 
