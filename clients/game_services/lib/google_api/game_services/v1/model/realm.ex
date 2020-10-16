@@ -25,7 +25,7 @@ defmodule GoogleApi.GameServices.V1.Model.Realm do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human readable description of the realm.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this realm. Each label is a key-value pair.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the realm. Uses the form: `projects/{project}/locations/{location}/realms/{realm}`. For example, `projects/my-project/locations/{location}/realms/my-realm`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the realm, in the following form: `projects/{project}/locations/{location}/realms/{realm}`. For example, `projects/my-project/locations/{location}/realms/my-realm`.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Required. Time zone where all policies targeting this realm are evaluated. The value of this field must be from the IANA time zone database: https://www.iana.org/time-zones.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
   """
