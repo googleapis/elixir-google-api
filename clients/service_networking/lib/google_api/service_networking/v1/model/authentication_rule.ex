@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AuthenticationRule do
 
   ## Attributes
 
-  *   `allowWithoutCredential` (*type:* `boolean()`, *default:* `nil`) - If true, the service accepts API keys without any other credential.
+  *   `allowWithoutCredential` (*type:* `boolean()`, *default:* `nil`) - If true, the service accepts API keys without any other credential. This flag only applies to HTTP and gRPC requests.
   *   `oauth` (*type:* `GoogleApi.ServiceNetworking.V1.Model.OAuthRequirements.t`, *default:* `nil`) - The requirements for OAuth credentials.
   *   `requirements` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.AuthRequirement.t)`, *default:* `nil`) - Requirements for additional authentication providers.
   *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies. Refer to selector for syntax details.
