@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccountSummary do
   @moduledoc """
-  A virtual resource representing an overview of an account and all its child App+Web properties.
+  A virtual resource representing an overview of an account and all its child GA4 properties.
 
   ## Attributes
 
