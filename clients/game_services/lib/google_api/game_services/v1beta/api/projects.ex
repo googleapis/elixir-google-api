@@ -159,7 +159,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Uses the form: `projects/{project}/locations/{location}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -232,7 +232,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to delete. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to delete, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -301,7 +301,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -374,7 +374,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to retrieve. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to retrieve, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -516,7 +516,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to retrieve. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to retrieve, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -587,7 +587,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Uses the form: `projects/{project}/locations/{location}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -666,7 +666,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the game server deployment. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment`.
+  *   `name` (*type:* `String.t`) - The resource name of the game server deployment, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -739,7 +739,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
+  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -965,7 +965,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
+  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1038,7 +1038,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1111,7 +1111,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server config to delete. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server config to delete, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1180,7 +1180,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server config to retrieve. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server config to retrieve, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1249,7 +1249,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/*`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1614,7 +1614,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Uses the form: `projects/{project}/locations/{location}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1687,7 +1687,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the realm to delete. Uses the form: `projects/{project}/locations/{location}/realms/{realm}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the realm to delete, in the following form: `projects/{project}/locations/{location}/realms/{realm}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1756,7 +1756,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the realm to retrieve. Uses the form: `projects/{project}/locations/{location}/realms/{realm}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the realm to retrieve, in the following form: `projects/{project}/locations/{location}/realms/{realm}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1825,7 +1825,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Uses the form: `projects/{project}/locations/{location}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1904,7 +1904,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the realm. Uses the form: `projects/{project}/locations/{location}/realms/{realm}`. For example, `projects/my-project/locations/{location}/realms/my-realm`.
+  *   `name` (*type:* `String.t`) - The resource name of the realm, in the following form: `projects/{project}/locations/{location}/realms/{realm}`. For example, `projects/my-project/locations/{location}/realms/my-realm`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1977,7 +1977,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the realm. Uses the form: `projects/{project}/locations/{location}/realms/{realm}`. For example, `projects/my-project/locations/{location}/realms/my-realm`.
+  *   `name` (*type:* `String.t`) - The resource name of the realm, in the following form: `projects/{project}/locations/{location}/realms/{realm}`. For example, `projects/my-project/locations/{location}/realms/my-realm`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2054,7 +2054,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Uses the form: `projects/{project}/locations/{location}/realms/{realm-id}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}/realms/{realm-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2127,7 +2127,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete. Uses the form: `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete, in the following form: `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2196,7 +2196,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to retrieve. Uses the form: `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to retrieve, in the following form: `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2265,7 +2265,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Uses the form: "projects/{project}/locations/{location}/realms/{realm}".
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: "projects/{project}/locations/{location}/realms/{realm}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2344,7 +2344,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster. Uses the form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster, in the following form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2417,7 +2417,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name. Uses the form: `projects/{project}/locations/{location}/realms/{realm}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, in the following form: `projects/{project}/locations/{location}/realms/{realm}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2495,7 +2495,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete. Uses the form: `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete, in the following form: `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2569,7 +2569,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster. Uses the form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster, in the following form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

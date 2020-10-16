@@ -25,7 +25,7 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerConfig do
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the game server config.
   *   `fleetConfigs` (*type:* `list(GoogleApi.GameServices.V1.Model.FleetConfig.t)`, *default:* `nil`) - FleetConfig contains a list of Agones fleet specs. Only one FleetConfig is allowed.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this game server config. Each label is a key-value pair.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the game server config. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the game server config, in the following form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`. For example, `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
   *   `scalingConfigs` (*type:* `list(GoogleApi.GameServices.V1.Model.ScalingConfig.t)`, *default:* `nil`) - The autoscaling settings.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
   """

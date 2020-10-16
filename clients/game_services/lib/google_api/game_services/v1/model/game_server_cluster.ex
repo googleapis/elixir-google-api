@@ -26,7 +26,7 @@ defmodule GoogleApi.GameServices.V1.Model.GameServerCluster do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human readable description of the cluster.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this game server cluster. Each label is a key-value pair.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the game server cluster. Uses the form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the game server cluster, in the following form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
   """
 
