@@ -110,8 +110,8 @@
     "name": "AndroidPublisher"
   },
   {
-    "version": "v1alpha2",
-    "url": "https://apigateway.googleapis.com/$discovery/rest?version=v1alpha2",
+    "version": "v1beta",
+    "url": "https://apigateway.googleapis.com/$discovery/rest?version=v1beta",
     "name": "APIGateway"
   },
   {
@@ -123,11 +123,6 @@
     "version": "v1",
     "url": "https://appengine.googleapis.com/$discovery/rest?version=v1",
     "name": "AppEngine"
-  },
-  {
-    "version": "v1",
-    "url": "https://www.googleapis.com/discovery/v1/apis/appsactivity/v1/rest",
-    "name": "AppsActivity"
   },
   {
     "version": "v1beta1",
@@ -163,6 +158,11 @@
     "version": "v2",
     "url": "https://bigtableadmin.googleapis.com/$discovery/rest?version=v2",
     "name": "BigtableAdmin"
+  },
+  {
+    "version": "v1",
+    "url": "https://billingbudgets.googleapis.com/$discovery/rest?version=v1",
+    "name": "BillingBudgets"
   },
   {
     "version": "v1beta1",
@@ -432,6 +432,11 @@
   {
     "version": "v1beta2",
     "url": "https://documentai.googleapis.com/$discovery/rest?version=v1beta2",
+    "name": "DocumentAI"
+  },
+  {
+    "version": "v1beta3",
+    "url": "https://documentai.googleapis.com/$discovery/rest?version=v1beta3",
     "name": "DocumentAI"
   },
   {
@@ -753,6 +758,11 @@
     "version": "v1",
     "url": "https://poly.googleapis.com/$discovery/rest?version=v1",
     "name": "Poly"
+  },
+  {
+    "version": "v1",
+    "url": "https://programmablesearchelement.googleapis.com/$discovery/rest?version=v1",
+    "name": "ProgrammableSearchElement"
   },
   {
     "version": "v1",
