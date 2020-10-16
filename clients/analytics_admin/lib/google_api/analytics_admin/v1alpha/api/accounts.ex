@@ -225,7 +225,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   end
 
   @doc """
-  Returns all accounts accessible by the caller. Note that these accounts might not currently have App+Web properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.
+  Returns all accounts accessible by the caller. Note that these accounts might not currently have GA4 properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.
 
   ## Parameters
 
