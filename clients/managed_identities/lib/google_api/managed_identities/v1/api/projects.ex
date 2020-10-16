@@ -114,7 +114,6 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The standard list filter.
-      *   `:includeUnrevealedLocations` (*type:* `boolean()`) - If true, the returned list will include locations which are not yet revealed.
       *   `:pageSize` (*type:* `integer()`) - The standard list page size.
       *   `:pageToken` (*type:* `String.t`) - The standard list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -152,7 +151,6 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
-      :includeUnrevealedLocations => :query,
       :pageSize => :query,
       :pageToken => :query
     }
