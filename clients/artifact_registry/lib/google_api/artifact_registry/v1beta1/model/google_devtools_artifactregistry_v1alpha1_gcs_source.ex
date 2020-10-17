@@ -22,15 +22,18 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.GoogleDevtoolsArtifactregistr
   ## Attributes
 
   *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - Cloud Storage paths URI (e.g., gs://my_bucket//my_object).
+  *   `useWildcards` (*type:* `boolean()`, *default:* `nil`) - Supports URI wildcards for matching multiple objects from a single URI.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uris => list(String.t())
+          :uris => list(String.t()),
+          :useWildcards => boolean()
         }
 
   field(:uris, type: :list)
+  field(:useWildcards)
 end
 
 defimpl Poison.Decoder,
