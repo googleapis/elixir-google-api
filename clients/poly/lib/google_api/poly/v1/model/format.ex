@@ -17,26 +17,14 @@
 
 defmodule GoogleApi.Poly.V1.Model.Format do
   @moduledoc """
-  The same asset can be represented in different formats, for example,
-  a [WaveFront .obj](//en.wikipedia.org/wiki/Wavefront_.obj_file) file with its
-  corresponding .mtl file or a [Khronos glTF](//www.khronos.org/gltf) file
-  with its corresponding .glb binary data. A format refers to a specific
-  representation of an asset and contains all information needed to
-  retrieve and describe this representation.
+  The same asset can be represented in different formats, for example, a [WaveFront .obj](//en.wikipedia.org/wiki/Wavefront_.obj_file) file with its corresponding .mtl file or a [Khronos glTF](//www.khronos.org/gltf) file with its corresponding .glb binary data. A format refers to a specific representation of an asset and contains all information needed to retrieve and describe this representation.
 
   ## Attributes
 
   *   `formatComplexity` (*type:* `GoogleApi.Poly.V1.Model.FormatComplexity.t`, *default:* `nil`) - Complexity stats about this representation of the asset.
-  *   `formatType` (*type:* `String.t`, *default:* `nil`) - A short string that identifies the format type of this representation.
-      Possible values are: `FBX`, `GLTF`, `GLTF2`, `OBJ`, and `TILT`.
-  *   `resources` (*type:* `list(GoogleApi.Poly.V1.Model.File.t)`, *default:* `nil`) - A list of dependencies of the root element. May include, but is not
-      limited to, materials, textures, and shader programs.
-  *   `root` (*type:* `GoogleApi.Poly.V1.Model.File.t`, *default:* `nil`) - The root of the file hierarchy. This will always be populated.
-      For some format_types - such as `TILT`, which are
-      self-contained - this is all of the data.
-
-      Other types - such as `OBJ` - often reference other data elements.
-      These are contained in the resources field.
+  *   `formatType` (*type:* `String.t`, *default:* `nil`) - A short string that identifies the format type of this representation. Possible values are: `FBX`, `GLTF`, `GLTF2`, `OBJ`, and `TILT`.
+  *   `resources` (*type:* `list(GoogleApi.Poly.V1.Model.File.t)`, *default:* `nil`) - A list of dependencies of the root element. May include, but is not limited to, materials, textures, and shader programs.
+  *   `root` (*type:* `GoogleApi.Poly.V1.Model.File.t`, *default:* `nil`) - The root of the file hierarchy. This will always be populated. For some format_types - such as `TILT`, which are self-contained - this is all of the data. Other types - such as `OBJ` - often reference other data elements. These are contained in the resources field.
   """
 
   use GoogleApi.Gax.ModelBase

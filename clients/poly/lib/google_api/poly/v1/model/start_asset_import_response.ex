@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.Poly.V1.Model.StartAssetImportResponse do
   @moduledoc """
-  A response message from a request to
-  startImport. This is returned in the response
-  field of the Operation.
+  A response message from a request to startImport. This is returned in the response field of the Operation.
 
   ## Attributes
 
-  *   `assetId` (*type:* `String.t`, *default:* `nil`) - The id of newly created asset. If this is empty when the operation is
-      complete it means the import failed. Please refer to the
-      assetImportMessages field to understand what went wrong.
+  *   `assetId` (*type:* `String.t`, *default:* `nil`) - The id of newly created asset. If this is empty when the operation is complete it means the import failed. Please refer to the assetImportMessages field to understand what went wrong.
   *   `assetImportId` (*type:* `String.t`, *default:* `nil`) - The id of the asset import.
-  *   `assetImportMessages` (*type:* `list(GoogleApi.Poly.V1.Model.AssetImportMessage.t)`, *default:* `nil`) - The message from the asset import. This will contain any warnings
-      (or - in the case of failure - errors) that occurred during import.
+  *   `assetImportMessages` (*type:* `list(GoogleApi.Poly.V1.Model.AssetImportMessage.t)`, *default:* `nil`) - The message from the asset import. This will contain any warnings (or - in the case of failure - errors) that occurred during import.
   *   `publishUrl` (*type:* `String.t`, *default:* `nil`) - The publish URL for the asset.
   """
 

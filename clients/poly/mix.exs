@@ -18,7 +18,7 @@
 defmodule GoogleApi.Poly.Mixfile do
   use Mix.Project
 
-  @version "0.9.0"
+  @version "0.9.1"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.Poly.Mixfile do
 
   defp description() do
     """
-    Poly API client library. The Poly API provides read access to assets hosted on <a href="https://poly.google.com">poly.google.com</a> to all, and upload access to <a href="https://poly.google.com">poly.google.com</a> for whitelisted accounts.
-
+    Poly API client library. The Poly API provides read access to assets hosted on poly.google.com to all, and upload access to poly.google.com for whitelisted accounts. 
     """
   end
 

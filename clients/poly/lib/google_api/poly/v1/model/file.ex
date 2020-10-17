@@ -17,18 +17,12 @@
 
 defmodule GoogleApi.Poly.V1.Model.File do
   @moduledoc """
-  Represents a file in Poly, which can be a root,
-  resource, or thumbnail file.
+  Represents a file in Poly, which can be a root, resource, or thumbnail file.
 
   ## Attributes
 
-  *   `contentType` (*type:* `String.t`, *default:* `nil`) - The MIME content-type, such as `image/png`.
-      For more information, see
-      [MIME
-      types](//developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types).
-  *   `relativePath` (*type:* `String.t`, *default:* `nil`) - The path of the resource file relative to the
-      root file. For root or thumbnail files,
-      this is just the filename.
+  *   `contentType` (*type:* `String.t`, *default:* `nil`) - The MIME content-type, such as `image/png`. For more information, see [MIME types](//developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types).
+  *   `relativePath` (*type:* `String.t`, *default:* `nil`) - The path of the resource file relative to the root file. For root or thumbnail files, this is just the filename.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL where the file data can be retrieved.
   """
 

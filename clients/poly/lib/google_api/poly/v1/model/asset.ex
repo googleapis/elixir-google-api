@@ -17,37 +17,23 @@
 
 defmodule GoogleApi.Poly.V1.Model.Asset do
   @moduledoc """
-  Represents and describes an asset in the Poly library. An asset is a 3D model
-  or scene created using [Tilt Brush](//www.tiltbrush.com),
-  [Blocks](//vr.google.com/blocks/), or any 3D program that produces a file
-  that can be upload to Poly.
+  Represents and describes an asset in the Poly library. An asset is a 3D model or scene created using [Tilt Brush](//www.tiltbrush.com), [Blocks](//vr.google.com/blocks/), or any 3D program that produces a file that can be upload to Poly.
 
   ## Attributes
 
-  *   `authorName` (*type:* `String.t`, *default:* `nil`) - The author's publicly visible name. Use this name when giving credit to the
-      author. For more information, see [Licensing](/poly/discover/licensing).
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - For published assets, the time when the asset was published.
-      For unpublished assets, the time when the asset was created.
+  *   `authorName` (*type:* `String.t`, *default:* `nil`) - The author's publicly visible name. Use this name when giving credit to the author. For more information, see [Licensing](/poly/discover/licensing).
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - For published assets, the time when the asset was published. For unpublished assets, the time when the asset was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The human-readable description, set by the asset's author.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human-readable name, set by the asset's author.
-  *   `formats` (*type:* `list(GoogleApi.Poly.V1.Model.Format.t)`, *default:* `nil`) - A list of Formats where each
-      format describes one representation of the asset.
+  *   `formats` (*type:* `list(GoogleApi.Poly.V1.Model.Format.t)`, *default:* `nil`) - A list of Formats where each format describes one representation of the asset.
   *   `isCurated` (*type:* `boolean()`, *default:* `nil`) - Whether this asset has been curated by the Poly team.
-  *   `license` (*type:* `String.t`, *default:* `nil`) - The license under which the author has made the asset available
-      for use, if any.
-  *   `metadata` (*type:* `String.t`, *default:* `nil`) - Application-defined opaque metadata for this asset. This field is only
-      returned when querying for the signed-in user's own assets, not for public
-      assets. This string is limited to 1K chars. It is up to the creator of
-      the asset to define the format for this string (for example, JSON).
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier for the asset in the form:
-      `assets/{ASSET_ID}`.
-  *   `presentationParams` (*type:* `GoogleApi.Poly.V1.Model.PresentationParams.t`, *default:* `nil`) - Hints for displaying the asset. Note that these parameters are not
-      immutable; the author of an asset may change them post-publication.
+  *   `license` (*type:* `String.t`, *default:* `nil`) - The license under which the author has made the asset available for use, if any.
+  *   `metadata` (*type:* `String.t`, *default:* `nil`) - Application-defined opaque metadata for this asset. This field is only returned when querying for the signed-in user's own assets, not for public assets. This string is limited to 1K chars. It is up to the creator of the asset to define the format for this string (for example, JSON).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier for the asset in the form: `assets/{ASSET_ID}`.
+  *   `presentationParams` (*type:* `GoogleApi.Poly.V1.Model.PresentationParams.t`, *default:* `nil`) - Hints for displaying the asset. Note that these parameters are not immutable; the author of an asset may change them post-publication.
   *   `remixInfo` (*type:* `GoogleApi.Poly.V1.Model.RemixInfo.t`, *default:* `nil`) - The remix info for the asset.
   *   `thumbnail` (*type:* `GoogleApi.Poly.V1.Model.File.t`, *default:* `nil`) - The thumbnail image for the asset.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the asset was last modified. For published assets, whose
-      contents are immutable, the update time changes only when metadata
-      properties, such as visibility, are updated.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the asset was last modified. For published assets, whose contents are immutable, the update time changes only when metadata properties, such as visibility, are updated.
   *   `visibility` (*type:* `String.t`, *default:* `nil`) - The visibility of the asset and who can access it.
   """
 

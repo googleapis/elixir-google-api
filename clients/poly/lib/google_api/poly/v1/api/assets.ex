@@ -26,10 +26,7 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns detailed information about an asset given its name.
-  PRIVATE assets are returned only if
-   the currently authenticated user (via OAuth token) is the author of the
-   asset.
+  Returns detailed information about an asset given its name. PRIVATE assets are returned only if the currently authenticated user (via OAuth token) is the author of the asset.
 
   ## Parameters
 
@@ -86,9 +83,7 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
   end
 
   @doc """
-  Lists all public, remixable assets. These are assets with an access level
-  of PUBLIC and published under the
-  CC-By license.
+  Lists all public, remixable assets. These are assets with an access level of PUBLIC and published under the CC-By license.
 
   ## Parameters
 
@@ -105,29 +100,14 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:category` (*type:* `String.t`) - Filter assets based on the specified category. Supported values are:
-          `animals`, `architecture`, `art`, `food`, `nature`, `objects`, `people`,
-          `scenes`, `technology`, and `transport`.
+      *   `:category` (*type:* `String.t`) - Filter assets based on the specified category. Supported values are: `animals`, `architecture`, `art`, `food`, `nature`, `objects`, `people`, `scenes`, `technology`, and `transport`.
       *   `:curated` (*type:* `boolean()`) - Return only assets that have been curated by the Poly team.
-      *   `:format` (*type:* `String.t`) - Return only assets with the matching format. Acceptable values are:
-          `BLOCKS`, `FBX`, `GLTF`, `GLTF2`, `OBJ`, `TILT`.
-      *   `:keywords` (*type:* `String.t`) - One or more search terms to be matched against all text that Poly has
-          indexed for assets, which includes display_name,
-          description, and tags. Multiple keywords should be
-          separated by spaces.
-      *   `:maxComplexity` (*type:* `String.t`) - Returns assets that are of the specified complexity or less. Defaults to
-          COMPLEX. For example, a request for
-          MEDIUM assets also includes
-          SIMPLE assets.
-      *   `:orderBy` (*type:* `String.t`) - Specifies an ordering for assets. Acceptable values are:
-          `BEST`, `NEWEST`, `OLDEST`. Defaults to `BEST`, which ranks assets
-          based on a combination of popularity and other features.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of assets to be returned. This value must be between `1`
-          and `100`. Defaults to `20`.
-      *   `:pageToken` (*type:* `String.t`) - Specifies a continuation token from a previous search whose results were
-          split into multiple pages. To get the next page, submit the same request
-          specifying the value from
-          next_page_token.
+      *   `:format` (*type:* `String.t`) - Return only assets with the matching format. Acceptable values are: `BLOCKS`, `FBX`, `GLTF`, `GLTF2`, `OBJ`, `TILT`.
+      *   `:keywords` (*type:* `String.t`) - One or more search terms to be matched against all text that Poly has indexed for assets, which includes display_name, description, and tags. Multiple keywords should be separated by spaces.
+      *   `:maxComplexity` (*type:* `String.t`) - Returns assets that are of the specified complexity or less. Defaults to COMPLEX. For example, a request for MEDIUM assets also includes SIMPLE assets.
+      *   `:orderBy` (*type:* `String.t`) - Specifies an ordering for assets. Acceptable values are: `BEST`, `NEWEST`, `OLDEST`. Defaults to `BEST`, which ranks assets based on a combination of popularity and other features.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of assets to be returned. This value must be between `1` and `100`. Defaults to `20`.
+      *   `:pageToken` (*type:* `String.t`) - Specifies a continuation token from a previous search whose results were split into multiple pages. To get the next page, submit the same request specifying the value from next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

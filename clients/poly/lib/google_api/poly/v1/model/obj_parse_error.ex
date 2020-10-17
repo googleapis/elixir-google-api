@@ -24,8 +24,7 @@ defmodule GoogleApi.Poly.V1.Model.ObjParseError do
   *   `code` (*type:* `String.t`, *default:* `nil`) - The type of problem found (required).
   *   `endIndex` (*type:* `integer()`, *default:* `nil`) - The ending character index at which the problem was found.
   *   `filePath` (*type:* `String.t`, *default:* `nil`) - The file path in which the problem was found.
-  *   `line` (*type:* `String.t`, *default:* `nil`) - The text of the line. Note that this may be truncated if the line was very
-      long. This may not include the error if it occurs after line truncation.
+  *   `line` (*type:* `String.t`, *default:* `nil`) - The text of the line. Note that this may be truncated if the line was very long. This may not include the error if it occurs after line truncation.
   *   `lineNumber` (*type:* `integer()`, *default:* `nil`) - Line number at which the problem was found.
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The starting character index at which the problem was found.
   """

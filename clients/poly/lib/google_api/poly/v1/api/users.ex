@@ -26,19 +26,12 @@ defmodule GoogleApi.Poly.V1.Api.Users do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists assets authored by the given user. Only the value 'me', representing
-  the currently-authenticated user, is supported. May include assets with an
-  access level of PRIVATE or
-  UNLISTED and assets which are
-  All Rights Reserved for the
-  currently-authenticated user.
+  Lists assets authored by the given user. Only the value 'me', representing the currently-authenticated user, is supported. May include assets with an access level of PRIVATE or UNLISTED and assets which are All Rights Reserved for the currently-authenticated user.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Poly.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - A valid user id. Currently, only the special value 'me', representing the
-      currently-authenticated user is supported. To use 'me', you must pass
-      an OAuth token with the request.
+  *   `name` (*type:* `String.t`) - A valid user id. Currently, only the special value 'me', representing the currently-authenticated user is supported. To use 'me', you must pass an OAuth token with the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -51,21 +44,11 @@ defmodule GoogleApi.Poly.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:format` (*type:* `String.t`) - Return only assets with the matching format. Acceptable values are:
-          `BLOCKS`, `FBX`, `GLTF`, `GLTF2`, `OBJ`, and `TILT`.
-      *   `:orderBy` (*type:* `String.t`) - Specifies an ordering for assets. Acceptable values are:
-          `BEST`, `NEWEST`, `OLDEST`. Defaults to `BEST`, which ranks assets
-          based on a combination of popularity and other features.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of assets to be returned. This value must be between `1`
-          and `100`. Defaults to `20`.
-      *   `:pageToken` (*type:* `String.t`) - Specifies a continuation token from a previous search whose results were
-          split into multiple pages. To get the next page, submit the same request
-          specifying the value from
-          next_page_token.
-      *   `:visibility` (*type:* `String.t`) - The visibility of the assets to be returned.
-          Defaults to
-          VISIBILITY_UNSPECIFIED
-          which returns all assets.
+      *   `:format` (*type:* `String.t`) - Return only assets with the matching format. Acceptable values are: `BLOCKS`, `FBX`, `GLTF`, `GLTF2`, `OBJ`, and `TILT`.
+      *   `:orderBy` (*type:* `String.t`) - Specifies an ordering for assets. Acceptable values are: `BEST`, `NEWEST`, `OLDEST`. Defaults to `BEST`, which ranks assets based on a combination of popularity and other features.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of assets to be returned. This value must be between `1` and `100`. Defaults to `20`.
+      *   `:pageToken` (*type:* `String.t`) - Specifies a continuation token from a previous search whose results were split into multiple pages. To get the next page, submit the same request specifying the value from next_page_token.
+      *   `:visibility` (*type:* `String.t`) - The visibility of the assets to be returned. Defaults to VISIBILITY_UNSPECIFIED which returns all assets.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -112,16 +95,12 @@ defmodule GoogleApi.Poly.V1.Api.Users do
   end
 
   @doc """
-  Lists assets that the user has liked. Only the value 'me', representing
-  the currently-authenticated user, is supported. May include assets with an
-  access level of UNLISTED.
+  Lists assets that the user has liked. Only the value 'me', representing the currently-authenticated user, is supported. May include assets with an access level of UNLISTED.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Poly.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - A valid user id. Currently, only the special value 'me', representing the
-      currently-authenticated user is supported. To use 'me', you must pass
-      an OAuth token with the request.
+  *   `name` (*type:* `String.t`) - A valid user id. Currently, only the special value 'me', representing the currently-authenticated user is supported. To use 'me', you must pass an OAuth token with the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -134,17 +113,10 @@ defmodule GoogleApi.Poly.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:format` (*type:* `String.t`) - Return only assets with the matching format. Acceptable values are:
-          `BLOCKS`, `FBX`, `GLTF`, `GLTF2`, `OBJ`, `TILT`.
-      *   `:orderBy` (*type:* `String.t`) - Specifies an ordering for assets. Acceptable values are:
-          `BEST`, `NEWEST`, `OLDEST`, 'LIKED_TIME'. Defaults to `LIKED_TIME`, which
-          ranks assets based on how recently they were liked.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of assets to be returned. This value must be between `1`
-          and `100`. Defaults to `20`.
-      *   `:pageToken` (*type:* `String.t`) - Specifies a continuation token from a previous search whose results were
-          split into multiple pages. To get the next page, submit the same request
-          specifying the value from
-          next_page_token.
+      *   `:format` (*type:* `String.t`) - Return only assets with the matching format. Acceptable values are: `BLOCKS`, `FBX`, `GLTF`, `GLTF2`, `OBJ`, `TILT`.
+      *   `:orderBy` (*type:* `String.t`) - Specifies an ordering for assets. Acceptable values are: `BEST`, `NEWEST`, `OLDEST`, 'LIKED_TIME'. Defaults to `LIKED_TIME`, which ranks assets based on how recently they were liked.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of assets to be returned. This value must be between `1` and `100`. Defaults to `20`.
+      *   `:pageToken` (*type:* `String.t`) - Specifies a continuation token from a previous search whose results were split into multiple pages. To get the next page, submit the same request specifying the value from next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
