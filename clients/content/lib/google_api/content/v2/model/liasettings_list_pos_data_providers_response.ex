@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsListPosDataProvidersResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `content#liasettingsListPosDataProvidersResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsListPosDataProvidersResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsListPosDataProvidersResponse".
   *   `posDataProviders` (*type:* `list(GoogleApi.Content.V2.Model.PosDataProviders.t)`, *default:* `nil`) - The list of POS data providers for each eligible country
   """
 

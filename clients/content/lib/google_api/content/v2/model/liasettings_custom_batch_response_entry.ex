@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsCustomBatchResponseEntry do
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry to which this entry responds.
   *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if, and only if, the request failed.
   *   `gmbAccounts` (*type:* `GoogleApi.Content.V2.Model.GmbAccounts.t`, *default:* `nil`) - The the list of accessible GMB accounts.
-  *   `kind` (*type:* `String.t`, *default:* `content#liasettingsCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "`content#liasettingsCustomBatchResponseEntry`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#liasettingsCustomBatchResponseEntry`"
   *   `liaSettings` (*type:* `GoogleApi.Content.V2.Model.LiaSettings.t`, *default:* `nil`) - The retrieved or updated Lia settings.
   *   `posDataProviders` (*type:* `list(GoogleApi.Content.V2.Model.PosDataProviders.t)`, *default:* `nil`) - The list of POS data providers.
   """

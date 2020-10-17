@@ -21,26 +21,8 @@ defmodule GoogleApi.Content.V2.Model.InventoryPickup do
 
   ## Attributes
 
-  *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - Whether store pickup is available for this offer and whether the pickup option should be shown as buy, reserve, or not supported. Only supported for local inventory. Unless the value is "not supported", must be submitted together with `pickupSla`.
-
-      Acceptable values are:  
-      - "`buy`" 
-      - "`not supported`" 
-      - "`reserve`" 
-      - "`ship to store`"
-  *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - The expected date that an order will be ready for pickup, relative to when the order is placed. Only supported for local inventory. Must be submitted together with `pickupMethod`.
-
-      Acceptable values are:  
-      - "`five day`" 
-      - "`four day`" 
-      - "`multi day`" 
-      - "`multi week`" 
-      - "`next day`" 
-      - "`same day`" 
-      - "`seven day`" 
-      - "`six day`" 
-      - "`three day`" 
-      - "`two day`"
+  *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - Whether store pickup is available for this offer and whether the pickup option should be shown as buy, reserve, or not supported. Only supported for local inventory. Unless the value is "not supported", must be submitted together with `pickupSla`. Acceptable values are: - "`buy`" - "`not supported`" - "`reserve`" - "`ship to store`" 
+  *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - The expected date that an order will be ready for pickup, relative to when the order is placed. Only supported for local inventory. Must be submitted together with `pickupMethod`. Acceptable values are: - "`five day`" - "`four day`" - "`multi day`" - "`multi week`" - "`next day`" - "`same day`" - "`seven day`" - "`six day`" - "`three day`" - "`two day`" 
   """
 
   use GoogleApi.Gax.ModelBase

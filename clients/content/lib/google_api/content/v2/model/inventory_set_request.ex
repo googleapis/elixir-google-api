@@ -21,12 +21,7 @@ defmodule GoogleApi.Content.V2.Model.InventorySetRequest do
 
   ## Attributes
 
-  *   `availability` (*type:* `String.t`, *default:* `nil`) - The availability of the product.
-
-      Acceptable values are:  
-      - "`in stock`" 
-      - "`out of stock`" 
-      - "`preorder`"
+  *   `availability` (*type:* `String.t`, *default:* `nil`) - The availability of the product. Acceptable values are: - "`in stock`" - "`out of stock`" - "`preorder`" 
   *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products.
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products.
   *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products.

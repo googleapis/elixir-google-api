@@ -28,5 +28,5 @@ defmodule GoogleApi.Content.V2.Connection do
       "https://www.googleapis.com/auth/content"
     ],
     otp_app: :google_api_content,
-    base_url: "https://www.googleapis.com/content/v2/"
+    base_url: "https://shoppingcontent.googleapis.com/"
 end

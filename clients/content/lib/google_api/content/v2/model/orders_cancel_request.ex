@@ -22,19 +22,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCancelRequest do
   ## Attributes
 
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation.
-
-      Acceptable values are:  
-      - "`customerInitiatedCancel`" 
-      - "`invalidCoupon`" 
-      - "`malformedShippingAddress`" 
-      - "`noInventory`" 
-      - "`other`" 
-      - "`priceError`" 
-      - "`shippingPriceError`" 
-      - "`taxError`" 
-      - "`undeliverableShippingAddress`" 
-      - "`unsupportedPoBoxAddress`"
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation. Acceptable values are: - "`customerInitiatedCancel`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`noInventory`" - "`other`" - "`priceError`" - "`shippingPriceError`" - "`taxError`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" 
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 

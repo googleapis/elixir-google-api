@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchResponseEntry do
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry to which this entry responds.
   *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if, and only if, the request failed.
-  *   `kind` (*type:* `String.t`, *default:* `content#shippingsettingsCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "`content#shippingsettingsCustomBatchResponseEntry`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#shippingsettingsCustomBatchResponseEntry`"
   *   `shippingSettings` (*type:* `GoogleApi.Content.V2.Model.ShippingSettings.t`, *default:* `nil`) - The retrieved or updated account shipping settings.
   """
 

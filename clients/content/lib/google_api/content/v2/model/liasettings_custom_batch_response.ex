@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsCustomBatchResponse do
   ## Attributes
 
   *   `entries` (*type:* `list(GoogleApi.Content.V2.Model.LiasettingsCustomBatchResponseEntry.t)`, *default:* `nil`) - The result of the execution of the batch requests.
-  *   `kind` (*type:* `String.t`, *default:* `content#liasettingsCustomBatchResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsCustomBatchResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsCustomBatchResponse".
   """
 
   use GoogleApi.Gax.ModelBase
