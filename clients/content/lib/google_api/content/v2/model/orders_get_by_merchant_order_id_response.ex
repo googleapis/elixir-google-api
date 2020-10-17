@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersGetByMerchantOrderIdResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `content#ordersGetByMerchantOrderIdResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersGetByMerchantOrderIdResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersGetByMerchantOrderIdResponse".
   *   `order` (*type:* `GoogleApi.Content.V2.Model.Order.t`, *default:* `nil`) - The requested order.
   """
 

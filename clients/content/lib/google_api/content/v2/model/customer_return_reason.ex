@@ -22,23 +22,7 @@ defmodule GoogleApi.Content.V2.Model.CustomerReturnReason do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the reason.
-  *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - Code of the return reason.
-
-      Acceptable values are:  
-      - "`betterPriceFound`" 
-      - "`changedMind`" 
-      - "`damagedOrDefectiveItem`" 
-      - "`didNotMatchDescription`" 
-      - "`doesNotFit`" 
-      - "`expiredItem`" 
-      - "`incorrectItemReceived`" 
-      - "`noLongerNeeded`" 
-      - "`notSpecified`" 
-      - "`orderedWrongItem`" 
-      - "`other`" 
-      - "`qualityNotExpected`" 
-      - "`receivedTooLate`" 
-      - "`undeliverable`"
+  *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - Code of the return reason. Acceptable values are: - "`betterPriceFound`" - "`changedMind`" - "`damagedOrDefectiveItem`" - "`didNotMatchDescription`" - "`doesNotFit`" - "`expiredItem`" - "`incorrectItemReceived`" - "`noLongerNeeded`" - "`notSpecified`" - "`orderedWrongItem`" - "`other`" - "`qualityNotExpected`" - "`receivedTooLate`" - "`undeliverable`" 
   """
 
   use GoogleApi.Gax.ModelBase

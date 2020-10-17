@@ -26,12 +26,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue do
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Additional details about the issue.
   *   `documentation` (*type:* `String.t`, *default:* `nil`) - The URL of a web page to help resolving this issue.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Issue identifier.
-  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of the issue.
-
-      Acceptable values are:  
-      - "`critical`" 
-      - "`error`" 
-      - "`suggestion`"
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of the issue. Acceptable values are: - "`critical`" - "`error`" - "`suggestion`" 
   *   `title` (*type:* `String.t`, *default:* `nil`) - Short description of the issue.
   """
 

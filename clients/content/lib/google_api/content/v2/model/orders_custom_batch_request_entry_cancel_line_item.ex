@@ -27,19 +27,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryCancelLineItem
   *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The ID of the line item to cancel. Either lineItemId or productId is required.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity to cancel.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation.
-
-      Acceptable values are:  
-      - "`customerInitiatedCancel`" 
-      - "`invalidCoupon`" 
-      - "`malformedShippingAddress`" 
-      - "`noInventory`" 
-      - "`other`" 
-      - "`priceError`" 
-      - "`shippingPriceError`" 
-      - "`taxError`" 
-      - "`undeliverableShippingAddress`" 
-      - "`unsupportedPoBoxAddress`"
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation. Acceptable values are: - "`customerInitiatedCancel`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`noInventory`" - "`other`" - "`priceError`" - "`shippingPriceError`" - "`taxError`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" 
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 

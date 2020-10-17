@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsSetPosDataProviderResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `content#liasettingsSetPosDataProviderResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsSetPosDataProviderResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#liasettingsSetPosDataProviderResponse".
   """
 
   use GoogleApi.Gax.ModelBase
