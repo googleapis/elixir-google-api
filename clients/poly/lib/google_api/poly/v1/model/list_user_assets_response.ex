@@ -21,10 +21,7 @@ defmodule GoogleApi.Poly.V1.Model.ListUserAssetsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token for retrieving the next page. If empty,
-      indicates that there are no more pages. To get the next page, submit the
-      same request specifying this value as the
-      page_token.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token for retrieving the next page. If empty, indicates that there are no more pages. To get the next page, submit the same request specifying this value as the page_token.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of assets in the list, without pagination.
   *   `userAssets` (*type:* `list(GoogleApi.Poly.V1.Model.UserAsset.t)`, *default:* `nil`) - A list of UserAssets matching the request.
   """

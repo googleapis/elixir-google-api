@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.Poly.V1.Model.RemixInfo do
   @moduledoc """
-  Info about the sources of this asset (i.e. assets that were remixed to
-  create this asset).
+  Info about the sources of this asset (i.e. assets that were remixed to create this asset).
 
   ## Attributes
 
-  *   `sourceAsset` (*type:* `list(String.t)`, *default:* `nil`) - Resource ids for the sources of this remix, of the form:
-      `assets/{ASSET_ID}`
+  *   `sourceAsset` (*type:* `list(String.t)`, *default:* `nil`) - Resource ids for the sources of this remix, of the form: `assets/{ASSET_ID}`
   """
 
   use GoogleApi.Gax.ModelBase
