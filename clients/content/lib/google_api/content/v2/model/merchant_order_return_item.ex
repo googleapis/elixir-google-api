@@ -26,7 +26,14 @@ defmodule GoogleApi.Content.V2.Model.MerchantOrderReturnItem do
   *   `merchantReturnReason` (*type:* `GoogleApi.Content.V2.Model.RefundReason.t`, *default:* `nil`) - The reason that merchant chooses to accept a return item.
   *   `product` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemProduct.t`, *default:* `nil`) - Product data from the time of the order placement.
   *   `returnShipmentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the return shipments that this return item belongs to.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the item. Acceptable values are: - "`canceled`" - "`new`" - "`received`" - "`refunded`" - "`rejected`" 
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the item.
+
+      Acceptable values are:  
+      - "`canceled`" 
+      - "`new`" 
+      - "`received`" 
+      - "`refunded`" 
+      - "`rejected`"
   """
 
   use GoogleApi.Gax.ModelBase

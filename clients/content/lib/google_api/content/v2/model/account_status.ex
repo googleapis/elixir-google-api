@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account for which the status is reported.
   *   `accountLevelIssues` (*type:* `list(GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue.t)`, *default:* `nil`) - A list of account level issues.
   *   `dataQualityIssues` (*type:* `list(GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue.t)`, *default:* `nil`) - DEPRECATED - never populated.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#accountStatus`"
+  *   `kind` (*type:* `String.t`, *default:* `content#accountStatus`) - Identifies what kind of resource this is. Value: the fixed string "`content#accountStatus`"
   *   `products` (*type:* `list(GoogleApi.Content.V2.Model.AccountStatusProducts.t)`, *default:* `nil`) - List of product-related data by channel, destination, and country. Data in this field may be delayed by up to 30 minutes.
   *   `websiteClaimed` (*type:* `boolean()`, *default:* `nil`) - Whether the account's website is claimed or not.
   """

@@ -21,8 +21,12 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateChargeInvoiceResponse do
 
   ## Attributes
 
-  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution. Acceptable values are: - "`duplicate`" - "`executed`" 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#orderinvoicesCreateChargeInvoiceResponse".
+  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
+
+      Acceptable values are:  
+      - "`duplicate`" 
+      - "`executed`"
+  *   `kind` (*type:* `String.t`, *default:* `content#orderinvoicesCreateChargeInvoiceResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#orderinvoicesCreateChargeInvoiceResponse".
   """
 
   use GoogleApi.Gax.ModelBase

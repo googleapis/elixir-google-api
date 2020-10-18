@@ -25,7 +25,22 @@ defmodule GoogleApi.Content.V2.Model.OrdersReturnLineItemRequest do
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity to return.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" 
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
+
+      Acceptable values are:  
+      - "`customerDiscretionaryReturn`" 
+      - "`customerInitiatedMerchantCancel`" 
+      - "`deliveredTooLate`" 
+      - "`expiredItem`" 
+      - "`invalidCoupon`" 
+      - "`malformedShippingAddress`" 
+      - "`other`" 
+      - "`productArrivedDamaged`" 
+      - "`productNotAsDescribed`" 
+      - "`qualityNotAsExpected`" 
+      - "`undeliverableShippingAddress`" 
+      - "`unsupportedPoBoxAddress`" 
+      - "`wrongProductShipped`"
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 

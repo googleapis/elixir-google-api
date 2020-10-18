@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponse do
   ## Attributes
 
   *   `entries` (*type:* `list(GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchResponseEntry.t)`, *default:* `nil`) - The result of the execution of the batch requests.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#datafeedstatusesCustomBatchResponse".
+  *   `kind` (*type:* `String.t`, *default:* `content#datafeedstatusesCustomBatchResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#datafeedstatusesCustomBatchResponse".
   """
 
   use GoogleApi.Gax.ModelBase

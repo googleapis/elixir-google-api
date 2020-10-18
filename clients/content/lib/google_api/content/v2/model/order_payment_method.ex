@@ -26,7 +26,16 @@ defmodule GoogleApi.Content.V2.Model.OrderPaymentMethod do
   *   `expirationYear` (*type:* `integer()`, *default:* `nil`) - The card expiration year (4-digit, e.g. 2015).
   *   `lastFourDigits` (*type:* `String.t`, *default:* `nil`) - The last four digits of the card number.
   *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The billing phone number.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of instrument. Acceptable values are: - "`AMEX`" - "`DISCOVER`" - "`JCB`" - "`MASTERCARD`" - "`UNIONPAY`" - "`VISA`" - "``" 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of instrument.
+
+      Acceptable values are:  
+      - "`AMEX`" 
+      - "`DISCOVER`" 
+      - "`JCB`" 
+      - "`MASTERCARD`" 
+      - "`UNIONPAY`" 
+      - "`VISA`" 
+      - "``"
   """
 
   use GoogleApi.Gax.ModelBase

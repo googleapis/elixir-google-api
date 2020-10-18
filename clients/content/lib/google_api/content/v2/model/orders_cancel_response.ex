@@ -21,8 +21,12 @@ defmodule GoogleApi.Content.V2.Model.OrdersCancelResponse do
 
   ## Attributes
 
-  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution. Acceptable values are: - "`duplicate`" - "`executed`" 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersCancelResponse".
+  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
+
+      Acceptable values are:  
+      - "`duplicate`" 
+      - "`executed`"
+  *   `kind` (*type:* `String.t`, *default:* `content#ordersCancelResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersCancelResponse".
   """
 
   use GoogleApi.Gax.ModelBase

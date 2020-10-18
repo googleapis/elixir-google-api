@@ -22,7 +22,11 @@ defmodule GoogleApi.Content.V2.Model.OrderAddress do
   ## Attributes
 
   *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (e.g. "US").
-  *   `fullAddress` (*type:* `list(String.t)`, *default:* `nil`) - Strings representing the lines of the printed label for mailing the order, for example: John Smith 1600 Amphitheatre Parkway Mountain View, CA, 94043 United States 
+  *   `fullAddress` (*type:* `list(String.t)`, *default:* `nil`) - Strings representing the lines of the printed label for mailing the order, for example:
+      John Smith
+      1600 Amphitheatre Parkway
+      Mountain View, CA, 94043
+      United States
   *   `isPostOfficeBox` (*type:* `boolean()`, *default:* `nil`) - Whether the address is a post office box.
   *   `locality` (*type:* `String.t`, *default:* `nil`) - City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs).
   *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal Code or ZIP (e.g. "94043").

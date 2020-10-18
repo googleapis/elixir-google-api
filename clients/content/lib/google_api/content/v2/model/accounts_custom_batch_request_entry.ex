@@ -28,7 +28,15 @@ defmodule GoogleApi.Content.V2.Model.AccountsCustomBatchRequestEntry do
   *   `labelIds` (*type:* `list(String.t)`, *default:* `nil`) - Label IDs for the 'updatelabels' request.
   *   `linkRequest` (*type:* `GoogleApi.Content.V2.Model.AccountsCustomBatchRequestEntryLinkRequest.t`, *default:* `nil`) - Details about the `link` request.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`claimWebsite`" - "`delete`" - "`get`" - "`insert`" - "`link`" - "`update`" 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "`claimWebsite`" 
+      - "`delete`" 
+      - "`get`" 
+      - "`insert`" 
+      - "`link`" 
+      - "`update`"
   *   `overwrite` (*type:* `boolean()`, *default:* `nil`) - Only applicable if the method is `claimwebsite`. Indicates whether or not to take the claim from another account in case there is a conflict.
   """
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.PosCustomBatchResponse do
   ## Attributes
 
   *   `entries` (*type:* `list(GoogleApi.Content.V2.Model.PosCustomBatchResponseEntry.t)`, *default:* `nil`) - The result of the execution of the batch requests.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#posCustomBatchResponse".
+  *   `kind` (*type:* `String.t`, *default:* `content#posCustomBatchResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#posCustomBatchResponse".
   """
 
   use GoogleApi.Gax.ModelBase

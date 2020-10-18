@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.DatafeedsFetchNowResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#datafeedsFetchNowResponse".
+  *   `kind` (*type:* `String.t`, *default:* `content#datafeedsFetchNowResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#datafeedsFetchNowResponse".
   """
 
   use GoogleApi.Gax.ModelBase

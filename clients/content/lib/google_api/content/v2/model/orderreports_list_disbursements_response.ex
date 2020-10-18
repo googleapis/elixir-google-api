@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.OrderreportsListDisbursementsResponse do
   ## Attributes
 
   *   `disbursements` (*type:* `list(GoogleApi.Content.V2.Model.OrderReportDisbursement.t)`, *default:* `nil`) - The list of disbursements.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#orderreportsListDisbursementsResponse".
+  *   `kind` (*type:* `String.t`, *default:* `content#orderreportsListDisbursementsResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#orderreportsListDisbursementsResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of disbursements.
   """
 

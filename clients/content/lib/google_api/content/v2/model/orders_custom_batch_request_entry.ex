@@ -27,7 +27,24 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntry do
   *   `inStoreRefundLineItem` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryInStoreRefundLineItem.t`, *default:* `nil`) - Required for `inStoreReturnLineItem` method.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
   *   `merchantOrderId` (*type:* `String.t`, *default:* `nil`) - The merchant order ID. Required for `updateMerchantOrderId` and `getByMerchantOrderId` methods.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`acknowledge`" - "`cancel`" - "`cancelLineItem`" - "`get`" - "`getByMerchantOrderId`" - "`inStoreRefundLineItem`" - "`refund`" - "`rejectReturnLineItem`" - "`returnLineItem`" - "`returnRefundLineItem`" - "`setLineItemMetadata`" - "`shipLineItems`" - "`updateLineItemShippingDetails`" - "`updateMerchantOrderId`" - "`updateShipment`" 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "`acknowledge`" 
+      - "`cancel`" 
+      - "`cancelLineItem`" 
+      - "`get`" 
+      - "`getByMerchantOrderId`" 
+      - "`inStoreRefundLineItem`" 
+      - "`refund`" 
+      - "`rejectReturnLineItem`" 
+      - "`returnLineItem`" 
+      - "`returnRefundLineItem`" 
+      - "`setLineItemMetadata`" 
+      - "`shipLineItems`" 
+      - "`updateLineItemShippingDetails`" 
+      - "`updateMerchantOrderId`" 
+      - "`updateShipment`"
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order. Required for all methods beside `get` and `getByMerchantOrderId`.
   *   `orderId` (*type:* `String.t`, *default:* `nil`) - The ID of the order. Required for all methods beside `getByMerchantOrderId`.
   *   `refund` (*type:* `GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRefund.t`, *default:* `nil`) - Required for `refund` method.
