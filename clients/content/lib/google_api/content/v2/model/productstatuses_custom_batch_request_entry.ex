@@ -25,7 +25,10 @@ defmodule GoogleApi.Content.V2.Model.ProductstatusesCustomBatchRequestEntry do
   *   `destinations` (*type:* `list(String.t)`, *default:* `nil`) - If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
   *   `includeAttributes` (*type:* `boolean()`, *default:* `nil`) - 
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`get`" 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "`get`"
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product whose status to get.
   """
 

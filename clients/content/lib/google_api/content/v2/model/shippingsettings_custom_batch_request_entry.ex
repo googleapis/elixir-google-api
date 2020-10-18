@@ -24,7 +24,11 @@ defmodule GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchRequestEntry do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account for which to get/update account shipping settings.
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry. Acceptable values are: - "`get`" - "`update`" 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "`get`" 
+      - "`update`"
   *   `shippingSettings` (*type:* `GoogleApi.Content.V2.Model.ShippingSettings.t`, *default:* `nil`) - The account shipping settings to update. Only defined if the method is `update`.
   """
 

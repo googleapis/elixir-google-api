@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.ProductstatusesListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#productstatusesListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `content#productstatusesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#productstatusesListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of products statuses.
   *   `resources` (*type:* `list(GoogleApi.Content.V2.Model.ProductStatus.t)`, *default:* `nil`) - 
   """

@@ -21,7 +21,12 @@ defmodule GoogleApi.Content.V2.Model.TestOrderCustomer do
 
   ## Attributes
 
-  *   `email` (*type:* `String.t`, *default:* `nil`) - Required. Email address of the customer. Acceptable values are: - "`pog.dwight.schrute@gmail.com`" - "`pog.jim.halpert@gmail.com`" - "`penpog.pam.beesly@gmail.comding`" 
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Required. Email address of the customer.
+
+      Acceptable values are:  
+      - "`pog.dwight.schrute@gmail.com`" 
+      - "`pog.jim.halpert@gmail.com`" 
+      - "`penpog.pam.beesly@gmail.comding`"
   *   `explicitMarketingPreference` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Please use marketingRightsInfo instead.
   *   `fullName` (*type:* `String.t`, *default:* `nil`) - Full name of the customer.
   *   `marketingRightsInfo` (*type:* `GoogleApi.Content.V2.Model.TestOrderCustomerMarketingRightsInfo.t`, *default:* `nil`) - Customer's marketing preferences.

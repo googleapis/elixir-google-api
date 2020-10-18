@@ -22,7 +22,18 @@ defmodule GoogleApi.Content.V2.Model.CustomAttribute do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the attribute. Underscores will be replaced by spaces upon insertion.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the attribute. Acceptable values are: - "`boolean`" - "`datetimerange`" - "`float`" - "`group`" - "`int`" - "`price`" - "`text`" - "`time`" - "`url`" 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the attribute.
+
+      Acceptable values are:  
+      - "`boolean`" 
+      - "`datetimerange`" 
+      - "`float`" 
+      - "`group`" 
+      - "`int`" 
+      - "`price`" 
+      - "`text`" 
+      - "`time`" 
+      - "`url`"
   *   `unit` (*type:* `String.t`, *default:* `nil`) - Free-form unit of the attribute. Unit can only be used for values of type int, float, or price.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the attribute.
   """

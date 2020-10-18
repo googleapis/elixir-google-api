@@ -25,13 +25,22 @@ defmodule GoogleApi.Content.V2.Model.Service do
   *   `currency` (*type:* `String.t`, *default:* `nil`) - The CLDR code of the currency to which this service applies. Must match that of the prices in rate groups.
   *   `deliveryCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the country to which the service applies. Required.
   *   `deliveryTime` (*type:* `GoogleApi.Content.V2.Model.DeliveryTime.t`, *default:* `nil`) - Time spent in various aspects from order to the delivery of the product. Required.
-  *   `eligibility` (*type:* `String.t`, *default:* `nil`) - Eligibility for this service. Acceptable values are: - "`All scenarios`" - "`All scenarios except Shopping Actions`" - "`Shopping Actions`" 
+  *   `eligibility` (*type:* `String.t`, *default:* `nil`) - Eligibility for this service.
+
+      Acceptable values are:  
+      - "`All scenarios`" 
+      - "`All scenarios except Shopping Actions`" 
+      - "`Shopping Actions`"
   *   `minimumOrderValue` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Minimum order value for this service. If set, indicates that customers will have to spend at least this amount. All prices within a service must have the same currency. Cannot be set together with minimum_order_value_table.
   *   `minimumOrderValueTable` (*type:* `GoogleApi.Content.V2.Model.MinimumOrderValueTable.t`, *default:* `nil`) - Table of per store minimum order values for the pickup fulfillment type. Cannot be set together with minimum_order_value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Free-form name of the service. Must be unique within target account. Required.
   *   `pickupService` (*type:* `GoogleApi.Content.V2.Model.PickupCarrierService.t`, *default:* `nil`) - The carrier-service pair delivering items to collection points. The list of supported pickup services can be retrieved via the `getSupportedPickupServices` method. Required if and only if the service delivery type is `pickup`.
   *   `rateGroups` (*type:* `list(GoogleApi.Content.V2.Model.RateGroup.t)`, *default:* `nil`) - Shipping rate group definitions. Only the last one is allowed to have an empty `applicableShippingLabels`, which means "everything else". The other `applicableShippingLabels` must not overlap.
-  *   `shipmentType` (*type:* `String.t`, *default:* `nil`) - Type of locations this service ships orders to. Acceptable values are: - "`delivery`" - "`pickup`" 
+  *   `shipmentType` (*type:* `String.t`, *default:* `nil`) - Type of locations this service ships orders to.
+
+      Acceptable values are:  
+      - "`delivery`" 
+      - "`pickup`"
   """
 
   use GoogleApi.Gax.ModelBase

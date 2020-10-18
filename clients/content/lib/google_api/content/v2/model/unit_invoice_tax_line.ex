@@ -23,7 +23,12 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoiceTaxLine do
 
   *   `taxAmount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - [required] Tax amount for the tax type.
   *   `taxName` (*type:* `String.t`, *default:* `nil`) - Optional name of the tax type. This should only be provided if `taxType` is `otherFeeTax`.
-  *   `taxType` (*type:* `String.t`, *default:* `nil`) - [required] Type of the tax. Acceptable values are: - "`otherFee`" - "`otherFeeTax`" - "`sales`" 
+  *   `taxType` (*type:* `String.t`, *default:* `nil`) - [required] Type of the tax.
+
+      Acceptable values are:  
+      - "`otherFee`" 
+      - "`otherFeeTax`" 
+      - "`sales`"
   """
 
   use GoogleApi.Gax.ModelBase

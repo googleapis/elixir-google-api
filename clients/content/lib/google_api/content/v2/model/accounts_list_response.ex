@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.AccountsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#accountsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `content#accountsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#accountsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of accounts.
   *   `resources` (*type:* `list(GoogleApi.Content.V2.Model.Account.t)`, *default:* `nil`) - 
   """

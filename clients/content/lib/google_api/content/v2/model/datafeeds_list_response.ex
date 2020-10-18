@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.DatafeedsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#datafeedsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `content#datafeedsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#datafeedsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of datafeeds.
   *   `resources` (*type:* `list(GoogleApi.Content.V2.Model.Datafeed.t)`, *default:* `nil`) - 
   """

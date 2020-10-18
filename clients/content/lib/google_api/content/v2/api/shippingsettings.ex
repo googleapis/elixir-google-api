@@ -32,17 +32,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:dryRun` (*type:* `boolean()`) - Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
       *   `:body` (*type:* `GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -58,17 +54,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
           | {:error, any()}
   def content_shippingsettings_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
+      :userIp => :query,
       :dryRun => :query,
       :body => :body
     }
@@ -76,7 +68,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/shippingsettings/batch", %{})
+      |> Request.url("/shippingsettings/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -96,17 +88,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to get/update shipping settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -132,23 +120,19 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         opts \\ []
       ) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
+      :userIp => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/shippingsettings/{accountId}", %{
+      |> Request.url("/{merchantId}/shippingsettings/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -168,17 +152,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the account for which to retrieve the supported carriers.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -202,23 +182,19 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         opts \\ []
       ) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
+      :userIp => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/supportedCarriers", %{
+      |> Request.url("/{merchantId}/supportedCarriers", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -239,17 +215,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the account for which to retrieve the supported holidays.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -273,23 +245,19 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         opts \\ []
       ) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
+      :userIp => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/supportedHolidays", %{
+      |> Request.url("/{merchantId}/supportedHolidays", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -310,17 +278,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the account for which to retrieve the supported pickup services.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -344,23 +308,19 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         opts \\ []
       ) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
+      :userIp => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/supportedPickupServices", %{
+      |> Request.url("/{merchantId}/supportedPickupServices", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -382,17 +342,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. This must be a multi-client account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of shipping settings to return in the response, used for paging.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -408,17 +364,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
           | {:error, any()}
   def content_shippingsettings_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
+      :userIp => :query,
       :maxResults => :query,
       :pageToken => :query
     }
@@ -426,7 +378,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/shippingsettings", %{
+      |> Request.url("/{merchantId}/shippingsettings", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -448,17 +400,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to get/update shipping settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:dryRun` (*type:* `boolean()`) - Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
       *   `:body` (*type:* `GoogleApi.Content.V2.Model.ShippingSettings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -486,17 +434,13 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
         opts \\ []
       ) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
+      :userIp => :query,
       :dryRun => :query,
       :body => :body
     }
@@ -504,7 +448,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/content/v2/{merchantId}/shippingsettings/{accountId}", %{
+      |> Request.url("/{merchantId}/shippingsettings/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })

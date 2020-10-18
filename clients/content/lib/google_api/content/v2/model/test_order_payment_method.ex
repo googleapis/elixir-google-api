@@ -24,8 +24,19 @@ defmodule GoogleApi.Content.V2.Model.TestOrderPaymentMethod do
   *   `expirationMonth` (*type:* `integer()`, *default:* `nil`) - The card expiration month (January = 1, February = 2 etc.).
   *   `expirationYear` (*type:* `integer()`, *default:* `nil`) - The card expiration year (4-digit, e.g. 2015).
   *   `lastFourDigits` (*type:* `String.t`, *default:* `nil`) - The last four digits of the card number.
-  *   `predefinedBillingAddress` (*type:* `String.t`, *default:* `nil`) - The billing address. Acceptable values are: - "`dwight`" - "`jim`" - "`pam`" 
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of instrument. Note that real orders might have different values than the four values accepted by `createTestOrder`. Acceptable values are: - "`AMEX`" - "`DISCOVER`" - "`MASTERCARD`" - "`VISA`" 
+  *   `predefinedBillingAddress` (*type:* `String.t`, *default:* `nil`) - The billing address.
+
+      Acceptable values are:  
+      - "`dwight`" 
+      - "`jim`" 
+      - "`pam`"
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of instrument. Note that real orders might have different values than the four values accepted by `createTestOrder`.
+
+      Acceptable values are:  
+      - "`AMEX`" 
+      - "`DISCOVER`" 
+      - "`MASTERCARD`" 
+      - "`VISA`"
   """
 
   use GoogleApi.Gax.ModelBase

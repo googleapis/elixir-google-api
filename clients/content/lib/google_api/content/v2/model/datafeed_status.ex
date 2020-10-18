@@ -21,15 +21,21 @@ defmodule GoogleApi.Content.V2.Model.DatafeedStatus do
 
   ## Attributes
 
-  *   `country` (*type:* `String.t`, *default:* `nil`) - The country for which the status is reported, represented as a CLDR territory code.
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The country for which the status is reported, represented as a  CLDR territory code.
   *   `datafeedId` (*type:* `String.t`, *default:* `nil`) - The ID of the feed for which the status is reported.
   *   `errors` (*type:* `list(GoogleApi.Content.V2.Model.DatafeedStatusError.t)`, *default:* `nil`) - The list of errors occurring in the feed.
   *   `itemsTotal` (*type:* `String.t`, *default:* `nil`) - The number of items in the feed that were processed.
   *   `itemsValid` (*type:* `String.t`, *default:* `nil`) - The number of items in the feed that were valid.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#datafeedStatus`"
+  *   `kind` (*type:* `String.t`, *default:* `content#datafeedStatus`) - Identifies what kind of resource this is. Value: the fixed string "`content#datafeedStatus`"
   *   `language` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language for which the status is reported.
   *   `lastUploadDate` (*type:* `String.t`, *default:* `nil`) - The last date at which the feed was uploaded.
-  *   `processingStatus` (*type:* `String.t`, *default:* `nil`) - The processing status of the feed. Acceptable values are: - "`"`failure`": The feed could not be processed or all items had errors.`" - "`in progress`": The feed is being processed. - "`none`": The feed has not yet been processed. For example, a feed that has never been uploaded will have this processing status. - "`success`": The feed was processed successfully, though some items might have had errors. 
+  *   `processingStatus` (*type:* `String.t`, *default:* `nil`) - The processing status of the feed.
+
+      Acceptable values are:  
+      - "`"`failure`": The feed could not be processed or all items had errors.`" 
+      - "`in progress`": The feed is being processed. 
+      - "`none`": The feed has not yet been processed. For example, a feed that has never been uploaded will have this processing status. 
+      - "`success`": The feed was processed successfully, though some items might have had errors.
   *   `warnings` (*type:* `list(GoogleApi.Content.V2.Model.DatafeedStatusError.t)`, *default:* `nil`) - The list of errors occurring in the feed.
   """
 

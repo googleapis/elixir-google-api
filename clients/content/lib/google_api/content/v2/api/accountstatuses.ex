@@ -32,17 +32,13 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:body` (*type:* `GoogleApi.Content.V2.Model.AccountstatusesCustomBatchRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -57,24 +53,20 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
           | {:error, any()}
   def content_accountstatuses_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
+      :userIp => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/content/v2/accountstatuses/batch", %{})
+      |> Request.url("/accountstatuses/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -94,17 +86,13 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:destinations` (*type:* `list(String.t)`) - If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -131,24 +119,20 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
         opts \\ []
       ) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
+      :userIp => :query,
       :destinations => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/accountstatuses/{accountId}", %{
+      |> Request.url("/{merchantId}/accountstatuses/{accountId}", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -168,17 +152,13 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. This must be a multi-client account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:destinations` (*type:* `list(String.t)`) - If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of account statuses to return in the response, used for paging.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
@@ -195,17 +175,13 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
           | {:error, any()}
   def content_accountstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
-      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
+      :userIp => :query,
       :destinations => :query,
       :maxResults => :query,
       :pageToken => :query
@@ -214,7 +190,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/content/v2/{merchantId}/accountstatuses", %{
+      |> Request.url("/{merchantId}/accountstatuses", %{
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
