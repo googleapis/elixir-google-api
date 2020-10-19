@@ -440,6 +440,11 @@
     "name": "DocumentAI"
   },
   {
+    "version": "v1alpha2",
+    "url": "https://domains.googleapis.com/$discovery/rest?version=v1alpha2",
+    "name": "Domains"
+  },
+  {
     "version": "v1",
     "url": "https://domainsrdap.googleapis.com/$discovery/rest?version=v1",
     "name": "DomainsRDAP"
@@ -761,11 +766,6 @@
   },
   {
     "version": "v1",
-    "url": "https://programmablesearchelement.googleapis.com/$discovery/rest?version=v1",
-    "name": "ProgrammableSearchElement"
-  },
-  {
-    "version": "v1",
     "url": "https://pubsub.googleapis.com/$discovery/rest?version=v1",
     "name": "PubSub"
   },
@@ -1056,7 +1056,7 @@
   },
   {
     "version": "v3",
-    "url": "https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest",
+    "url": "https://youtube.googleapis.com/$discovery/rest?version=v3",
     "name": "YouTube"
   },
   {
