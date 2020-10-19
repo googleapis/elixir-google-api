@@ -766,11 +766,6 @@
   },
   {
     "version": "v1",
-    "url": "https://programmablesearchelement.googleapis.com/$discovery/rest?version=v1",
-    "name": "ProgrammableSearchElement"
-  },
-  {
-    "version": "v1",
     "url": "https://pubsub.googleapis.com/$discovery/rest?version=v1",
     "name": "PubSub"
   },
