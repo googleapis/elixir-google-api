@@ -18,7 +18,7 @@
 defmodule GoogleApi.DLP.Mixfile do
   use Mix.Project
 
-  @version "0.38.1"
+  @version "0.38.2"
 
   def project() do
     [
