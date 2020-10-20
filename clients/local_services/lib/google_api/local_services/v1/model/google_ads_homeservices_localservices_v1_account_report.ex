@@ -22,6 +22,7 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1A
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the GLS account.
+  *   `aggregatorInfo` (*type:* `GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo.t`, *default:* `nil`) - Aggregator specific information related to the account.
   *   `averageFiveStarRating` (*type:* `float()`, *default:* `nil`) - Average review rating score from 1-5 stars.
   *   `averageWeeklyBudget` (*type:* `float()`, *default:* `nil`) - Average weekly budget in the currency code of the account.
   *   `businessName` (*type:* `String.t`, *default:* `nil`) - Business name of the account.
@@ -42,6 +43,8 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1A
 
   @type t :: %__MODULE__{
           :accountId => String.t(),
+          :aggregatorInfo =>
+            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo.t(),
           :averageFiveStarRating => float(),
           :averageWeeklyBudget => float(),
           :businessName => String.t(),
@@ -59,6 +62,11 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1A
         }
 
   field(:accountId)
+
+  field(:aggregatorInfo,
+    as: GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo
+  )
+
   field(:averageFiveStarRating)
   field(:averageWeeklyBudget)
   field(:businessName)
