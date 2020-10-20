@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.ListBuildsResponse do
   ## Attributes
 
   *   `builds` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Build.t)`, *default:* `nil`) - Builds will be sorted by `create_time`, descending.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to receive the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to receive the next page of results. This will be absent if the end of the response list has been reached.
   """
 
   use GoogleApi.Gax.ModelBase

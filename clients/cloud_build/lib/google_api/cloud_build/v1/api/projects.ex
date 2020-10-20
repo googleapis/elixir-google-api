@@ -255,7 +255,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The raw filter text to constrain the results.
       *   `:pageSize` (*type:* `integer()`) - Number of results to return in the list.
-      *   `:pageToken` (*type:* `String.t`) - Token to provide to skip to a particular spot in the list.
+      *   `:pageToken` (*type:* `String.t`) - The page token for the next page of Builds. If unspecified, the first page of results is returned. If the token is rejected for any reason, INVALID_ARGUMENT will be thrown. In this case, the token should be discarded, and pagination should be restarted from the first page of results. See https://google.aip.dev/158 for more.
       *   `:parent` (*type:* `String.t`) - The parent of the collection of `Builds`. Format: `projects/{project}/locations/location`
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -634,7 +634,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The raw filter text to constrain the results.
       *   `:pageSize` (*type:* `integer()`) - Number of results to return in the list.
-      *   `:pageToken` (*type:* `String.t`) - Token to provide to skip to a particular spot in the list.
+      *   `:pageToken` (*type:* `String.t`) - The page token for the next page of Builds. If unspecified, the first page of results is returned. If the token is rejected for any reason, INVALID_ARGUMENT will be thrown. In this case, the token should be discarded, and pagination should be restarted from the first page of results. See https://google.aip.dev/158 for more.
       *   `:projectId` (*type:* `String.t`) - Required. ID of the project.
   *   `opts` (*type:* `keyword()`) - Call options
 
