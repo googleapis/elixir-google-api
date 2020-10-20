@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Metadata do
 
   ## Attributes
 
-  *   `dimensions` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionMetadata.t)`, *default:* `nil`) - The dimensions descriptions.
+  *   `dimensions` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.DimensionMetadata.t)`, *default:* `nil`) - The dimension descriptions.
   *   `metrics` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.MetricMetadata.t)`, *default:* `nil`) - The metric descriptions.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of this metadata.
   """
