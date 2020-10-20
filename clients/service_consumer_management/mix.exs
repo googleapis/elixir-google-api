@@ -18,7 +18,7 @@
 defmodule GoogleApi.ServiceConsumerManagement.Mixfile do
   use Mix.Project
 
-  @version "0.24.5"
+  @version "0.24.6"
 
   def project() do
     [
