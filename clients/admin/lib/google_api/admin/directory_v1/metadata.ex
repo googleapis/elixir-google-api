@@ -20,7 +20,7 @@ defmodule GoogleApi.Admin.Directory_v1 do
   API client metadata for GoogleApi.Admin.Directory_v1.
   """
 
-  @discovery_revision "20201013"
+  @discovery_revision "20201020"
 
   def discovery_revision(), do: @discovery_revision
 end

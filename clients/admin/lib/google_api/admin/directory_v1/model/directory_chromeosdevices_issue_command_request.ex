@@ -22,7 +22,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesIssueComman
   ## Attributes
 
   *   `commandType` (*type:* `String.t`, *default:* `nil`) - The type of command.
-  *   `payload` (*type:* `String.t`, *default:* `nil`) - The payload for the command, provide it only if command supports it. The following commands support adding payload: - SET_VOLUME: Payload is a JSON object in the form: { "volume": 50 }. The volume has to be an integer in the range [0,100].
+  *   `payload` (*type:* `String.t`, *default:* `nil`) - The payload for the command, provide it only if command supports it. The following commands support adding payload: - SET_VOLUME: Payload is a stringified JSON object in the form: { "volume": 50 }. The volume has to be an integer in the range [0,100].
   """
 
   use GoogleApi.Gax.ModelBase
