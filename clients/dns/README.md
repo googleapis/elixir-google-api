@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_dns, "~> 0.19"}]
+  [{:google_api_dns, "~> 0.20"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [http://developers.google.com/cloud-dns](http://developers.google.com/cloud-dns).
+Product documentation is available at [https://cloud.google.com/dns/docs](https://cloud.google.com/dns/docs).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_dns](https://hexdocs.pm/google_api_dns).

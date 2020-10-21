@@ -18,7 +18,7 @@
 defmodule GoogleApi.DNS.Mixfile do
   use Mix.Project
 
-  @version "0.19.0"
+  @version "0.20.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.DNS.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/dns",
-        "Homepage" => "http://developers.google.com/cloud-dns"
+        "Homepage" => "https://cloud.google.com/dns/docs"
       }
     ]
   end
