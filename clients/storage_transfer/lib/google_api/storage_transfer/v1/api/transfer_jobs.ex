@@ -90,6 +90,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
   *   `job_name` (*type:* `String.t`) - Required. " The job to get.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that owns the job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -102,7 +103,6 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:projectId` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform Console project that owns the job.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -110,11 +110,23 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   *   `{:ok, %GoogleApi.StorageTransfer.V1.Model.TransferJob{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec storagetransfer_transfer_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec storagetransfer_transfer_jobs_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def storagetransfer_transfer_jobs_get(connection, job_name, optional_params \\ [], opts \\ []) do
+  def storagetransfer_transfer_jobs_get(
+        connection,
+        job_name,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -126,8 +138,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :projectId => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -136,6 +147,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       |> Request.url("/v1/{+jobName}", %{
         "jobName" => URI.encode(job_name, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :projectId, project_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -150,6 +162,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
+  *   `filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of: `{"projectId":"my_project_id", "jobNames":["jobid1","jobid2",...], "jobStatuses":["status1","status2",...]}` Since `jobNames` and `jobStatuses` support multiple values, their values must be specified with array notation. `projectId` is required. `jobNames` and `jobStatuses` are optional. The valid values for `jobStatuses` are case-insensitive: ENABLED, DISABLED, and DELETED.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -162,7 +175,6 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of: {"project_id":"my_project_id", "job_names":["jobid1","jobid2",...], "job_statuses":["status1","status2",...]}. Since `job_names` and `job_statuses` support multiple values, their values must be specified with array notation. `project``_``id` is required. `job_names` and `job_statuses` are optional. The valid values for `job_statuses` are case-insensitive: ENABLED, DISABLED, and DELETED.
       *   `:pageSize` (*type:* `integer()`) - The list page size. The max allowed value is 256.
       *   `:pageToken` (*type:* `String.t`) - The list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -172,11 +184,11 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   *   `{:ok, %GoogleApi.StorageTransfer.V1.Model.ListTransferJobsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec storagetransfer_transfer_jobs_list(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec storagetransfer_transfer_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.ListTransferJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def storagetransfer_transfer_jobs_list(connection, optional_params \\ [], opts \\ []) do
+  def storagetransfer_transfer_jobs_list(connection, filter, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -189,7 +201,6 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :filter => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -198,6 +209,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/transferJobs", %{})
+      |> Request.add_param(:query, :filter, filter)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

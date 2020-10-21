@@ -167,6 +167,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
 
   *   `connection` (*type:* `GoogleApi.StorageTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The value `transferOperations`.
+  *   `filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of: `{"projectId":"my_project_id", "jobNames":["jobid1","jobid2",...], "operationNames":["opid1","opid2",...], "transferStatuses":["status1","status2",...]}` Since `jobNames`, `operationNames`, and `transferStatuses` support multiple values, they must be specified with array notation. `projectId` is required. `jobNames`, `operationNames`, and `transferStatuses` are optional. The valid values for `transferStatuses` are case-insensitive: IN_PROGRESS, PAUSED, SUCCESS, FAILED, and ABORTED.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -179,7 +180,6 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of: {"project_id":"my_project_id", "job_names":["jobid1","jobid2",...], "operation_names":["opid1","opid2",...], "transfer_statuses":["status1","status2",...]}. Since `job_names`, `operation_names`, and `transfer_statuses` support multiple values, they must be specified with array notation. `project``_``id` is required. `job_names`, `operation_names`, and `transfer_statuses` are optional. The valid values for `transfer_statuses` are case-insensitive: IN_PROGRESS, PAUSED, SUCCESS, FAILED, and ABORTED.
       *   `:pageSize` (*type:* `integer()`) - The list page size. The max allowed value is 256.
       *   `:pageToken` (*type:* `String.t`) - The list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -192,6 +192,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   @spec storagetransfer_transfer_operations_list(
           Tesla.Env.client(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -201,6 +202,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
   def storagetransfer_transfer_operations_list(
         connection,
         name,
+        filter,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -216,7 +218,6 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :filter => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -227,6 +228,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :filter, filter)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

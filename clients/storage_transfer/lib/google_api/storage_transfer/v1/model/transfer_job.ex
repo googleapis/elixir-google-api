@@ -25,6 +25,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   *   `deletionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the transfer job was deleted.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description provided by the user for the job. Its max length is 1024 bytes when Unicode-encoded.
   *   `lastModificationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the transfer job was last modified.
+  *   `latestOperationName` (*type:* `String.t`, *default:* `nil`) - The name of the most recently started TransferOperation of this JobConfig. Present if and only if at least one TransferOperation has been created for this JobConfig.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A unique name (within the transfer project) assigned when the job is created. If this field is empty in a CreateTransferJobRequest, Storage Transfer Service will assign a unique name. Otherwise, the specified name is used as the unique name for this job. If the specified name is in use by a job, the creation request fails with an ALREADY_EXISTS error. This name must start with `"transferJobs/"` prefix and end with a letter or a number, and should be no more than 128 characters. Example: `"transferJobs/[A-Za-z0-9-._~]*[A-Za-z0-9]$"` Invalid job names will fail with an INVALID_ARGUMENT error.
   *   `notificationConfig` (*type:* `GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Cloud Platform Project that owns the job.
@@ -40,6 +41,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
           :deletionTime => DateTime.t(),
           :description => String.t(),
           :lastModificationTime => DateTime.t(),
+          :latestOperationName => String.t(),
           :name => String.t(),
           :notificationConfig => GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t(),
           :projectId => String.t(),
@@ -52,6 +54,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   field(:deletionTime, as: DateTime)
   field(:description)
   field(:lastModificationTime, as: DateTime)
+  field(:latestOperationName)
   field(:name)
   field(:notificationConfig, as: GoogleApi.StorageTransfer.V1.Model.NotificationConfig)
   field(:projectId)
