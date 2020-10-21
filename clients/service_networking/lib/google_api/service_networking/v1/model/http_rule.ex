@@ -22,7 +22,6 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.HttpRule do
   ## Attributes
 
   *   `additionalBindings` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t)`, *default:* `nil`) - Additional HTTP bindings for the selector. Nested bindings must not contain an `additional_bindings` field themselves (that is, the nesting may only be one level deep).
-  *   `allowHalfDuplex` (*type:* `boolean()`, *default:* `nil`) - When this flag is set to true, HTTP requests will be allowed to invoke a half-duplex streaming method.
   *   `body` (*type:* `String.t`, *default:* `nil`) - The name of the request field whose value is mapped to the HTTP request body, or `*` for mapping all request fields not captured by the path pattern to the HTTP body, or omitted for not having any HTTP request body. NOTE: the referred field must be present at the top-level of the request message type.
   *   `custom` (*type:* `GoogleApi.ServiceNetworking.V1.Model.CustomHttpPattern.t`, *default:* `nil`) - The custom pattern is used for specifying an HTTP method that is not included in the `pattern` field, such as HEAD, or "*" to leave the HTTP method unspecified for this rule. The wild-card rule is useful for services that provide content to Web (HTML) clients.
   *   `delete` (*type:* `String.t`, *default:* `nil`) - Maps to HTTP DELETE. Used for deleting a resource.
@@ -38,7 +37,6 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.HttpRule do
 
   @type t :: %__MODULE__{
           :additionalBindings => list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t()),
-          :allowHalfDuplex => boolean(),
           :body => String.t(),
           :custom => GoogleApi.ServiceNetworking.V1.Model.CustomHttpPattern.t(),
           :delete => String.t(),
@@ -51,7 +49,6 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.HttpRule do
         }
 
   field(:additionalBindings, as: GoogleApi.ServiceNetworking.V1.Model.HttpRule, type: :list)
-  field(:allowHalfDuplex)
   field(:body)
   field(:custom, as: GoogleApi.ServiceNetworking.V1.Model.CustomHttpPattern)
   field(:delete)
