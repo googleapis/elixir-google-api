@@ -23,6 +23,7 @@ defmodule GoogleApi.Chat.V1.Model.User do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user's display name.
   *   `domainId` (*type:* `String.t`, *default:* `nil`) - Obfuscated domain information.
+  *   `isAnonymous` (*type:* `boolean()`, *default:* `nil`) - Set to true if none of the depending services (Gaia, PeopleApi) returns any info for this user.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name, in the format "users/*".
   *   `type` (*type:* `String.t`, *default:* `nil`) - User type.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.Chat.V1.Model.User do
   @type t :: %__MODULE__{
           :displayName => String.t(),
           :domainId => String.t(),
+          :isAnonymous => boolean(),
           :name => String.t(),
           :type => String.t()
         }
 
   field(:displayName)
   field(:domainId)
+  field(:isAnonymous)
   field(:name)
   field(:type)
 end
