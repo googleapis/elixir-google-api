@@ -24,7 +24,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadRequest do
   *   `fileTypes` (*type:* `list(String.t)`, *default:* `nil`) - File types that will be returned. If INVENTORY_SOURCE is requested, no other file types may be requested. Acceptable values are: - "AD" - "AD_GROUP" - "CAMPAIGN" - "INSERTION_ORDER" - "INVENTORY_SOURCE" - "LINE_ITEM" 
   *   `filterIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the specified filter type. This is used to filter entities to fetch. At least one ID must be specified.
   *   `filterType` (*type:* `String.t`, *default:* `nil`) - Filter type used to filter entities to fetch. PARTNER_ID and INVENTORY_SOURCE_ID may only be used when downloading inventory sources.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - SDF Version (column names, types, order) in which the entities will be returned. Default to 5.2.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - SDF Version (column names, types, order) in which the entities will be returned. Default to 5.
   """
 
   use GoogleApi.Gax.ModelBase
