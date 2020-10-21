@@ -23,9 +23,17 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
 
   * [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) * [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
 
-  Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load balancers can use either regional or global health checks. All other types of GCP load balancers and managed instance group auto-healing must use global health checks. For more information, read Health Check Concepts.
+  Internal HTTP(S) load balancers must use regional health checks (`compute.v1.regionHealthChecks`).
 
-  To perform health checks on network load balancers, you must use either httpHealthChecks or httpsHealthChecks.
+  Traffic Director must use global health checks (`compute.v1.HealthChecks`).
+
+  Internal TCP/UDP load balancers can use either regional or global health checks (`compute.v1.regionHealthChecks` or `compute.v1.HealthChecks`).
+
+  External HTTP(S), TCP proxy, and SSL proxy load balancers as well as managed instance group auto-healing must use global health checks (`compute.v1.HealthChecks`).
+
+  Network load balancers must use legacy HTTP health checks (httpHealthChecks).
+
+  For more information, see Health checks overview.
 
   ## Attributes
 
