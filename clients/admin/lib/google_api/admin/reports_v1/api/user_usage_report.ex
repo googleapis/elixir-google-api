@@ -47,6 +47,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customerId` (*type:* `String.t`) - The unique ID of the customer to retrieve data for.
       *   `:filters` (*type:* `String.t`) - The filters query string is a comma-separated list of an application's event parameters where the parameter's value is manipulated by a relational operator. The filters query string includes the name of the application whose usage is returned in the report. The application values for the Users Usage Report include accounts, docs, and gmail. Filters are in the form [application name]:parameter name[parameter value],.... In this example, the <> 'not equal to' operator is URL-encoded in the request's query string (%3C%3E): GET https://www.googleapis.com/admin/reports/v1/usage/users/all/dates/2013-03-03 ?parameters=accounts:last_login_time &filters=accounts:last_login_time>2010-10-28T10:26:35.000Z The relational operators include: - == - 'equal to'. - <> - 'not equal to'. It is URL-encoded (%3C%3E). - < - 'less than'. It is URL-encoded (%3C). - <= - 'less than or equal to'. It is URL-encoded (%3C=). - > - 'greater than'. It is URL-encoded (%3E). - >= - 'greater than or equal to'. It is URL-encoded (%3E=). 
+      *   `:groupIdFilter` (*type:* `String.t`) - Comma separated group ids (obfuscated) on which user activities are filtered, i.e, the response will contain activities for only those users that are a part of at least one of the group ids mentioned here. Format: "id:abc123,id:xyz456"
       *   `:maxResults` (*type:* `integer()`) - Determines how many activity records are shown on each response page. For example, if the request sets maxResults=1 and the report has two activities, the report has two pages. The response's nextPageToken property has the token to the second page. The maxResults query string is optional.
       *   `:orgUnitID` (*type:* `String.t`) - ID of the organizational unit to report on. User activity will be shown only for users who belong to the specified organizational unit. Data before Dec 17, 2018 doesn't appear in the filtered results.
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page. A report with multiple pages has a nextPageToken property in the response. In your follow-on request getting the next page of the report, enter the nextPageToken value in the pageToken query string.
@@ -83,6 +84,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
       :upload_protocol => :query,
       :customerId => :query,
       :filters => :query,
+      :groupIdFilter => :query,
       :maxResults => :query,
       :orgUnitID => :query,
       :pageToken => :query,
