@@ -22,15 +22,18 @@ defmodule GoogleApi.Dataproc.V1.Model.JobScheduling do
   ## Attributes
 
   *   `maxFailuresPerHour` (*type:* `integer()`, *default:* `nil`) - Optional. Maximum number of times per hour a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed.A job may be reported as thrashing if driver exits with non-zero code 4 times within 10 minute window.Maximum value is 10.
+  *   `maxFailuresTotal` (*type:* `integer()`, *default:* `nil`) - Optional. Maximum number of times in total a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed. Maximum value is 240
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxFailuresPerHour => integer()
+          :maxFailuresPerHour => integer(),
+          :maxFailuresTotal => integer()
         }
 
   field(:maxFailuresPerHour)
+  field(:maxFailuresTotal)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.JobScheduling do
