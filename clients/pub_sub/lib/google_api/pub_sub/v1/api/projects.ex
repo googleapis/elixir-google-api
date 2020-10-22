@@ -1398,7 +1398,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   end
 
   @doc """
-  Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided in the request. Snapshots are used in [Seek]( https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. Note that both the subscription and the snapshot must be on the same topic.
+  Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided in the request. Snapshots are used in [Seek] (https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. Note that both the subscription and the snapshot must be on the same topic.
 
   ## Parameters
 
@@ -1623,7 +1623,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   end
 
   @doc """
-  Creates the given topic with the given name. See the [resource name rules]( https://cloud.google.com/pubsub/docs/admin#resource_names).
+  Creates the given topic with the given name. See the [resource name rules] (https://cloud.google.com/pubsub/docs/admin#resource_names).
 
   ## Parameters
 
