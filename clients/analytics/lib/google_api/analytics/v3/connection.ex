@@ -46,5 +46,5 @@ defmodule GoogleApi.Analytics.V3.Connection do
       "https://www.googleapis.com/auth/analytics.user.deletion"
     ],
     otp_app: :google_api_analytics,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://analytics.googleapis.com/"
 end
