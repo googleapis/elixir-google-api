@@ -31,6 +31,7 @@ defmodule GoogleApi.Books.V1.Api.Series do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `series_id` (*type:* `list(String.t)`) - String that identifies the series
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -43,7 +44,6 @@ defmodule GoogleApi.Books.V1.Api.Series do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:series_id` (*type:* `list(String.t)`) - String that identifies the series
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -51,9 +51,9 @@ defmodule GoogleApi.Books.V1.Api.Series do
   *   `{:ok, %GoogleApi.Books.V1.Model.Series{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_series_get(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec books_series_get(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Series.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
-  def books_series_get(connection, optional_params \\ [], opts \\ []) do
+  def books_series_get(connection, series_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -65,14 +65,14 @@ defmodule GoogleApi.Books.V1.Api.Series do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :series_id => :query
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/books/v1/series/get", %{})
+      |> Request.add_param(:query, :series_id, series_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -87,6 +87,7 @@ defmodule GoogleApi.Books.V1.Api.Series do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `series_id` (*type:* `String.t`) - String that identifies the series
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -101,7 +102,6 @@ defmodule GoogleApi.Books.V1.Api.Series do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:page_size` (*type:* `integer()`) - Number of maximum results per page to be included in the response.
       *   `:page_token` (*type:* `String.t`) - The value of the nextToken from the previous page.
-      *   `:series_id` (*type:* `String.t`) - String that identifies the series
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -109,11 +109,11 @@ defmodule GoogleApi.Books.V1.Api.Series do
   *   `{:ok, %GoogleApi.Books.V1.Model.Seriesmembership{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_series_membership_get(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec books_series_membership_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Seriesmembership.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def books_series_membership_get(connection, optional_params \\ [], opts \\ []) do
+  def books_series_membership_get(connection, series_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -127,14 +127,14 @@ defmodule GoogleApi.Books.V1.Api.Series do
       :uploadType => :query,
       :upload_protocol => :query,
       :page_size => :query,
-      :page_token => :query,
-      :series_id => :query
+      :page_token => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/books/v1/series/membership/get", %{})
+      |> Request.add_param(:query, :series_id, series_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

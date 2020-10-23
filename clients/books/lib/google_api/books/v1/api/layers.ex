@@ -166,6 +166,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   *   `volume_id` (*type:* `String.t`) - The volume to retrieve annotations for.
   *   `layer_id` (*type:* `String.t`) - The ID for the layer to get the annotations.
   *   `annotation_data_id` (*type:* `String.t`) - The ID of the annotation data to retrieve.
+  *   `content_version` (*type:* `String.t`) - The content version for the volume you are trying to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -179,7 +180,6 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowWebDefinitions` (*type:* `boolean()`) - For the dictionary layer. Whether or not to allow web definitions.
-      *   `:contentVersion` (*type:* `String.t`) - The content version for the volume you are trying to retrieve.
       *   `:h` (*type:* `integer()`) - The requested pixel height for any images. If height is provided width must also be provided.
       *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
       *   `:scale` (*type:* `integer()`) - The requested scale for the image.
@@ -197,6 +197,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
           String.t(),
           String.t(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -208,6 +209,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         volume_id,
         layer_id,
         annotation_data_id,
+        content_version,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -224,7 +226,6 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       :uploadType => :query,
       :upload_protocol => :query,
       :allowWebDefinitions => :query,
-      :contentVersion => :query,
       :h => :query,
       :locale => :query,
       :scale => :query,
@@ -241,6 +242,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "annotationDataId" =>
           URI.encode(annotation_data_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
+      |> Request.add_param(:query, :contentVersion, content_version)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -257,6 +259,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `volume_id` (*type:* `String.t`) - The volume to retrieve annotation data for.
   *   `layer_id` (*type:* `String.t`) - The ID for the layer to get the annotation data.
+  *   `content_version` (*type:* `String.t`) - The content version for the requested volume.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -270,7 +273,6 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:annotationDataId` (*type:* `list(String.t)`) - The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.
-      *   `:contentVersion` (*type:* `String.t`) - The content version for the requested volume.
       *   `:h` (*type:* `integer()`) - The requested pixel height for any images. If height is provided width must also be provided.
       *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
@@ -291,6 +293,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -301,6 +304,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         connection,
         volume_id,
         layer_id,
+        content_version,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -317,7 +321,6 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       :uploadType => :query,
       :upload_protocol => :query,
       :annotationDataId => :query,
-      :contentVersion => :query,
       :h => :query,
       :locale => :query,
       :maxResults => :query,
@@ -336,6 +339,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
         "layerId" => URI.encode(layer_id, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :contentVersion, content_version)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -436,6 +440,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `volume_id` (*type:* `String.t`) - The volume to retrieve annotations for.
   *   `layer_id` (*type:* `String.t`) - The ID for the layer to get the annotations.
+  *   `content_version` (*type:* `String.t`) - The content version for the requested volume.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -448,7 +453,6 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:contentVersion` (*type:* `String.t`) - The content version for the requested volume.
       *   `:endOffset` (*type:* `String.t`) - The end offset to end retrieving data from.
       *   `:endPosition` (*type:* `String.t`) - The end position to end retrieving data from.
       *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
@@ -472,6 +476,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -482,6 +487,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         connection,
         volume_id,
         layer_id,
+        content_version,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -497,7 +503,6 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :contentVersion => :query,
       :endOffset => :query,
       :endPosition => :query,
       :locale => :query,
@@ -519,6 +524,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
         "layerId" => URI.encode(layer_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
+      |> Request.add_param(:query, :contentVersion, content_version)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

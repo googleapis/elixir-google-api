@@ -233,6 +233,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `layer_ids` (*type:* `list(String.t)`) - Array of layer IDs to get the summary for.
+  *   `volume_id` (*type:* `String.t`) - Volume id to get the summary for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -245,8 +247,6 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:layerIds` (*type:* `list(String.t)`) - Array of layer IDs to get the summary for.
-      *   `:volumeId` (*type:* `String.t`) - Volume id to get the summary for.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -254,11 +254,23 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   *   `{:ok, %GoogleApi.Books.V1.Model.AnnotationsSummary{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_mylibrary_annotations_summary(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec books_mylibrary_annotations_summary(
+          Tesla.Env.client(),
+          list(String.t()),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Books.V1.Model.AnnotationsSummary.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def books_mylibrary_annotations_summary(connection, optional_params \\ [], opts \\ []) do
+  def books_mylibrary_annotations_summary(
+        connection,
+        layer_ids,
+        volume_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -270,15 +282,15 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :layerIds => :query,
-      :volumeId => :query
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
       |> Request.url("/books/v1/mylibrary/annotations/summary", %{})
+      |> Request.add_param(:query, :layerIds, layer_ids)
+      |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -360,6 +372,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `shelf` (*type:* `String.t`) - ID of bookshelf to which to add a volume.
+  *   `volume_id` (*type:* `String.t`) - ID of volume to add.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -374,7 +387,6 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:reason` (*type:* `String.t`) - The reason for which the book is added to the library.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:volumeId` (*type:* `String.t`) - ID of volume to add.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -385,10 +397,17 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   @spec books_mylibrary_bookshelves_add_volume(
           Tesla.Env.client(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
-  def books_mylibrary_bookshelves_add_volume(connection, shelf, optional_params \\ [], opts \\ []) do
+  def books_mylibrary_bookshelves_add_volume(
+        connection,
+        shelf,
+        volume_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -402,8 +421,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       :uploadType => :query,
       :upload_protocol => :query,
       :reason => :query,
-      :source => :query,
-      :volumeId => :query
+      :source => :query
     }
 
     request =
@@ -412,6 +430,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/books/v1/mylibrary/bookshelves/{shelf}/addVolume", %{
         "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -610,6 +629,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `shelf` (*type:* `String.t`) - ID of bookshelf with the volume.
+  *   `volume_id` (*type:* `String.t`) - ID of volume to move.
+  *   `volume_position` (*type:* `integer()`) - Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -623,8 +644,6 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:volumeId` (*type:* `String.t`) - ID of volume to move.
-      *   `:volumePosition` (*type:* `integer()`) - Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -635,12 +654,16 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   @spec books_mylibrary_bookshelves_move_volume(
           Tesla.Env.client(),
           String.t(),
+          String.t(),
+          integer(),
           keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def books_mylibrary_bookshelves_move_volume(
         connection,
         shelf,
+        volume_id,
+        volume_position,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -656,9 +679,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :source => :query,
-      :volumeId => :query,
-      :volumePosition => :query
+      :source => :query
     }
 
     request =
@@ -667,6 +688,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/books/v1/mylibrary/bookshelves/{shelf}/moveVolume", %{
         "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :volumeId, volume_id)
+      |> Request.add_param(:query, :volumePosition, volume_position)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -682,6 +705,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `shelf` (*type:* `String.t`) - ID of bookshelf from which to remove a volume.
+  *   `volume_id` (*type:* `String.t`) - ID of volume to remove.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -696,7 +720,6 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:reason` (*type:* `String.t`) - The reason for which the book is removed from the library.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:volumeId` (*type:* `String.t`) - ID of volume to remove.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -707,12 +730,14 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   @spec books_mylibrary_bookshelves_remove_volume(
           Tesla.Env.client(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def books_mylibrary_bookshelves_remove_volume(
         connection,
         shelf,
+        volume_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -729,8 +754,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       :uploadType => :query,
       :upload_protocol => :query,
       :reason => :query,
-      :source => :query,
-      :volumeId => :query
+      :source => :query
     }
 
     request =
@@ -739,6 +763,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/books/v1/mylibrary/bookshelves/{shelf}/removeVolume", %{
         "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -902,6 +927,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `volume_id` (*type:* `String.t`) - ID of volume for which to update the reading position.
+  *   `position` (*type:* `String.t`) - Position string for the new volume reading position.
+  *   `timestamp` (*type:* `String.t`) - RFC 3339 UTC format timestamp associated with this reading position.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -917,9 +944,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       *   `:action` (*type:* `String.t`) - Action that caused this reading position to be set.
       *   `:contentVersion` (*type:* `String.t`) - Volume content version for which this reading position applies.
       *   `:deviceCookie` (*type:* `String.t`) - Random persistent device cookie optional on set position.
-      *   `:position` (*type:* `String.t`) - Position string for the new volume reading position.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:timestamp` (*type:* `String.t`) - RFC 3339 UTC format timestamp associated with this reading position.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -930,12 +955,16 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   @spec books_mylibrary_readingpositions_set_position(
           Tesla.Env.client(),
           String.t(),
+          String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) :: {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def books_mylibrary_readingpositions_set_position(
         connection,
         volume_id,
+        position,
+        timestamp,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -954,9 +983,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       :action => :query,
       :contentVersion => :query,
       :deviceCookie => :query,
-      :position => :query,
-      :source => :query,
-      :timestamp => :query
+      :source => :query
     }
 
     request =
@@ -965,6 +992,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.url("/books/v1/mylibrary/readingpositions/{volumeId}/setPosition", %{
         "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :position, position)
+      |> Request.add_param(:query, :timestamp, timestamp)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

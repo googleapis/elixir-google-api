@@ -31,6 +31,7 @@ defmodule GoogleApi.Books.V1.Api.Dictionary do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `cpksver` (*type:* `String.t`) - The device/version ID from which to request the data.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -43,7 +44,6 @@ defmodule GoogleApi.Books.V1.Api.Dictionary do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:cpksver` (*type:* `String.t`) - The device/version ID from which to request the data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -51,9 +51,18 @@ defmodule GoogleApi.Books.V1.Api.Dictionary do
   *   `{:ok, %GoogleApi.Books.V1.Model.Metadata{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_dictionary_list_offline_metadata(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Metadata.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
-  def books_dictionary_list_offline_metadata(connection, optional_params \\ [], opts \\ []) do
+  @spec books_dictionary_list_offline_metadata(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Books.V1.Model.Metadata.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def books_dictionary_list_offline_metadata(
+        connection,
+        cpksver,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -65,14 +74,14 @@ defmodule GoogleApi.Books.V1.Api.Dictionary do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :cpksver => :query
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
       |> Request.url("/books/v1/dictionary/listOfflineMetadata", %{})
+      |> Request.add_param(:query, :cpksver, cpksver)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

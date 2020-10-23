@@ -89,6 +89,8 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `cpksver` (*type:* `String.t`) - The device/version ID from which to release the restriction.
+  *   `volume_ids` (*type:* `list(String.t)`) - The volume(s) to release restrictions for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -101,10 +103,8 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:cpksver` (*type:* `String.t`) - The device/version ID from which to release the restriction.
       *   `:locale` (*type:* `String.t`) - ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:volumeIds` (*type:* `list(String.t)`) - The volume(s) to release restrictions for.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -112,11 +112,23 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   *   `{:ok, %GoogleApi.Books.V1.Model.DownloadAccesses{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_myconfig_release_download_access(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec books_myconfig_release_download_access(
+          Tesla.Env.client(),
+          String.t(),
+          list(String.t()),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Books.V1.Model.DownloadAccesses.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def books_myconfig_release_download_access(connection, optional_params \\ [], opts \\ []) do
+  def books_myconfig_release_download_access(
+        connection,
+        cpksver,
+        volume_ids,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -129,16 +141,16 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :cpksver => :query,
       :locale => :query,
-      :source => :query,
-      :volumeIds => :query
+      :source => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
       |> Request.url("/books/v1/myconfig/releaseDownloadAccess", %{})
+      |> Request.add_param(:query, :cpksver, cpksver)
+      |> Request.add_param(:query, :volumeIds, volume_ids)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -153,6 +165,10 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `cpksver` (*type:* `String.t`) - The device/version ID from which to request the restrictions.
+  *   `nonce` (*type:* `String.t`) - The client nonce value.
+  *   `source` (*type:* `String.t`) - String to identify the originator of this request.
+  *   `volume_id` (*type:* `String.t`) - The volume to request concurrent/download restrictions for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -165,12 +181,8 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:cpksver` (*type:* `String.t`) - The device/version ID from which to request the restrictions.
       *   `:licenseTypes` (*type:* `String.t`) - The type of access license to request. If not specified, the default is BOTH.
       *   `:locale` (*type:* `String.t`) - ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
-      *   `:nonce` (*type:* `String.t`) - The client nonce value.
-      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:volumeId` (*type:* `String.t`) - The volume to request concurrent/download restrictions for.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -178,11 +190,27 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   *   `{:ok, %GoogleApi.Books.V1.Model.RequestAccessData{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_myconfig_request_access(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec books_myconfig_request_access(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Books.V1.Model.RequestAccessData.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def books_myconfig_request_access(connection, optional_params \\ [], opts \\ []) do
+  def books_myconfig_request_access(
+        connection,
+        cpksver,
+        nonce,
+        source,
+        volume_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -195,18 +223,18 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :cpksver => :query,
       :licenseTypes => :query,
-      :locale => :query,
-      :nonce => :query,
-      :source => :query,
-      :volumeId => :query
+      :locale => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
       |> Request.url("/books/v1/myconfig/requestAccess", %{})
+      |> Request.add_param(:query, :cpksver, cpksver)
+      |> Request.add_param(:query, :nonce, nonce)
+      |> Request.add_param(:query, :source, source)
+      |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -221,6 +249,9 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `cpksver` (*type:* `String.t`) - The device/version ID from which to release the restriction.
+  *   `nonce` (*type:* `String.t`) - The client nonce value.
+  *   `source` (*type:* `String.t`) - String to identify the originator of this request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -233,13 +264,10 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:cpksver` (*type:* `String.t`) - The device/version ID from which to release the restriction.
       *   `:features` (*type:* `list(String.t)`) - List of features supported by the client, i.e., 'RENTALS'
       *   `:includeNonComicsSeries` (*type:* `boolean()`) - Set to true to include non-comics series. Defaults to false.
       *   `:locale` (*type:* `String.t`) - ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
-      *   `:nonce` (*type:* `String.t`) - The client nonce value.
       *   `:showPreorders` (*type:* `boolean()`) - Set to true to show pre-ordered books. Defaults to false.
-      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
       *   `:volumeIds` (*type:* `list(String.t)`) - The volume(s) to request download restrictions for.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -248,9 +276,22 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   *   `{:ok, %GoogleApi.Books.V1.Model.Volumes{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_myconfig_sync_volume_licenses(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
-  def books_myconfig_sync_volume_licenses(connection, optional_params \\ [], opts \\ []) do
+  @spec books_myconfig_sync_volume_licenses(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def books_myconfig_sync_volume_licenses(
+        connection,
+        cpksver,
+        nonce,
+        source,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -263,13 +304,10 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :cpksver => :query,
       :features => :query,
       :includeNonComicsSeries => :query,
       :locale => :query,
-      :nonce => :query,
       :showPreorders => :query,
-      :source => :query,
       :volumeIds => :query
     }
 
@@ -277,6 +315,9 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/books/v1/myconfig/syncVolumeLicenses", %{})
+      |> Request.add_param(:query, :cpksver, cpksver)
+      |> Request.add_param(:query, :nonce, nonce)
+      |> Request.add_param(:query, :source, source)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

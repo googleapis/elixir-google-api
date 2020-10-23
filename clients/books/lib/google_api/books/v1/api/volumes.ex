@@ -100,6 +100,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `q` (*type:* `String.t`) - Full-text search query string.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -122,7 +123,6 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       *   `:partner` (*type:* `String.t`) - Restrict and brand results for partner ID.
       *   `:printType` (*type:* `String.t`) - Restrict to books or magazines.
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
-      *   `:q` (*type:* `String.t`) - Full-text search query string.
       *   `:showPreorders` (*type:* `boolean()`) - Set to true to show books available for preorder. Defaults to false.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
       *   `:startIndex` (*type:* `integer()`) - Index of the first result to return (starts at 0)
@@ -133,9 +133,9 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   *   `{:ok, %GoogleApi.Books.V1.Model.Volumes{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_volumes_list(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec books_volumes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
-  def books_volumes_list(connection, optional_params \\ [], opts \\ []) do
+  def books_volumes_list(connection, q, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -158,7 +158,6 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       :partner => :query,
       :printType => :query,
       :projection => :query,
-      :q => :query,
       :showPreorders => :query,
       :source => :query,
       :startIndex => :query
@@ -168,6 +167,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/books/v1/volumes", %{})
+      |> Request.add_param(:query, :q, q)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -375,6 +375,8 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `rating` (*type:* `String.t`) - Rating to be given to the volume.
+  *   `volume_id` (*type:* `String.t`) - ID of the source volume.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -388,9 +390,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
-      *   `:rating` (*type:* `String.t`) - Rating to be given to the volume.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:volumeId` (*type:* `String.t`) - ID of the source volume.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -398,11 +398,23 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   *   `{:ok, %GoogleApi.Books.V1.Model.BooksVolumesRecommendedRateResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_volumes_recommended_rate(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec books_volumes_recommended_rate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Books.V1.Model.BooksVolumesRecommendedRateResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def books_volumes_recommended_rate(connection, optional_params \\ [], opts \\ []) do
+  def books_volumes_recommended_rate(
+        connection,
+        rating,
+        volume_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -416,15 +428,15 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       :uploadType => :query,
       :upload_protocol => :query,
       :locale => :query,
-      :rating => :query,
-      :source => :query,
-      :volumeId => :query
+      :source => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
       |> Request.url("/books/v1/volumes/recommended/rate", %{})
+      |> Request.add_param(:query, :rating, rating)
+      |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
