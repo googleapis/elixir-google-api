@@ -22,6 +22,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.ServiceAccountDelegationInfo do
   ## Attributes
 
   *   `firstPartyPrincipal` (*type:* `GoogleApi.ServiceControl.V1.Model.FirstPartyPrincipal.t`, *default:* `nil`) - First party (Google) identity as the real authority.
+  *   `principalSubject` (*type:* `String.t`, *default:* `nil`) - A string representing the principal_subject associated with the identity. See go/3pical for more info on how principal_subject is formatted.
   *   `thirdPartyPrincipal` (*type:* `GoogleApi.ServiceControl.V1.Model.ThirdPartyPrincipal.t`, *default:* `nil`) - Third party identity as the real authority.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.ServiceControl.V1.Model.ServiceAccountDelegationInfo do
 
   @type t :: %__MODULE__{
           :firstPartyPrincipal => GoogleApi.ServiceControl.V1.Model.FirstPartyPrincipal.t(),
+          :principalSubject => String.t(),
           :thirdPartyPrincipal => GoogleApi.ServiceControl.V1.Model.ThirdPartyPrincipal.t()
         }
 
   field(:firstPartyPrincipal, as: GoogleApi.ServiceControl.V1.Model.FirstPartyPrincipal)
+  field(:principalSubject)
   field(:thirdPartyPrincipal, as: GoogleApi.ServiceControl.V1.Model.ThirdPartyPrincipal)
 end
 
