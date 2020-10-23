@@ -22,7 +22,8 @@ defmodule GoogleApi.TagManager.V2.Model.Entity do
   ## Attributes
 
   *   `changeStatus` (*type:* `String.t`, *default:* `nil`) - Represents how the entity has been changed in the workspace.
-  *   `folder` (*type:* `GoogleApi.TagManager.V2.Model.Folder.t`, *default:* `nil`) - The Folder being represented by the entity.
+  *   `client` (*type:* `GoogleApi.TagManager.V2.Model.Client.t`, *default:* `nil`) - The client being represented by the entity.
+  *   `folder` (*type:* `GoogleApi.TagManager.V2.Model.Folder.t`, *default:* `nil`) - The folder being represented by the entity.
   *   `tag` (*type:* `GoogleApi.TagManager.V2.Model.Tag.t`, *default:* `nil`) - The tag being represented by the entity.
   *   `trigger` (*type:* `GoogleApi.TagManager.V2.Model.Trigger.t`, *default:* `nil`) - The trigger being represented by the entity.
   *   `variable` (*type:* `GoogleApi.TagManager.V2.Model.Variable.t`, *default:* `nil`) - The variable being represented by the entity.
@@ -32,6 +33,7 @@ defmodule GoogleApi.TagManager.V2.Model.Entity do
 
   @type t :: %__MODULE__{
           :changeStatus => String.t(),
+          :client => GoogleApi.TagManager.V2.Model.Client.t(),
           :folder => GoogleApi.TagManager.V2.Model.Folder.t(),
           :tag => GoogleApi.TagManager.V2.Model.Tag.t(),
           :trigger => GoogleApi.TagManager.V2.Model.Trigger.t(),
@@ -39,6 +41,7 @@ defmodule GoogleApi.TagManager.V2.Model.Entity do
         }
 
   field(:changeStatus)
+  field(:client, as: GoogleApi.TagManager.V2.Model.Client)
   field(:folder, as: GoogleApi.TagManager.V2.Model.Folder)
   field(:tag, as: GoogleApi.TagManager.V2.Model.Tag)
   field(:trigger, as: GoogleApi.TagManager.V2.Model.Trigger)
