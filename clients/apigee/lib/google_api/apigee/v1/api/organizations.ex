@@ -7915,7 +7915,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates an alias from a key, certificate pair. The structure of the request is controlled by the `format` query parameter: * `keycertfile` - Separate PEM-encoded key and certificate files are uploaded. The request must have `Content-Type: multipart/form-data` and include fields `keyFile` and `certFile`. If uploading to a truststore, omit `keyFile`. * `pkcs12` - A PKCS12 file is uploaded. The request must have `Content-Type: multipart/form-data` with the file provided in the only field. * `selfsignedcert` - A new private key and certificate are generated. The request must have `Content-Type: application/json` and a body of CertificateGenerationSpec.
+  Creates an alias from a key, certificate pair. The structure of the request is controlled by the `format` query parameter: * `keycertfile` - Separate PEM-encoded key and certificate files are uploaded. The request must have `Content-Type: multipart/form-data` and include fields `keyFile` and `certFile`. If uploading to a truststore, omit `keyFile`. A `password` field should be provided for encrypted keys. * `pkcs12` - A PKCS12 file is uploaded. The request must have `Content-Type: multipart/form-data` with the file provided in the `file` field and a `password` field if the file is encrypted. * `selfsignedcert` - A new private key and certificate are generated. The request must have `Content-Type: application/json` and a body of CertificateGenerationSpec.
 
   ## Parameters
 
@@ -9176,7 +9176,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Creates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
+  Creates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files).
 
   ## Parameters
 
@@ -9253,7 +9253,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Deletes a resource file. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
+  Deletes a resource file. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files).
 
   ## Parameters
 
@@ -9332,7 +9332,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the contents of a resource file. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
+  Gets the contents of a resource file. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files).
 
   ## Parameters
 
@@ -9409,7 +9409,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all resource files. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
+  Lists all resource files, optionally filtering by type. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files).
 
   ## Parameters
 
@@ -9483,7 +9483,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Lists all resource files. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
+  Lists all resource files, optionally filtering by type. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files).
 
   ## Parameters
 
@@ -9559,7 +9559,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   end
 
   @doc """
-  Updates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](/api-platform/develop/resource-files).
+  Updates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files).
 
   ## Parameters
 
