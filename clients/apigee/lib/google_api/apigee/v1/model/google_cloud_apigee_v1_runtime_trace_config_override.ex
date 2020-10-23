@@ -26,7 +26,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfigOverrid
   *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp that the revision was created or updated.
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision number which can be used by the runtime to detect if the trace config override has changed between two versions.
   *   `samplingConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceSamplingConfig.t`, *default:* `nil`) - Trace configuration override for a specific API proxy in an environment.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - Unique ID for the configuration override. The ID will only change if the override is deleted and recreated.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Unique ID for the configuration override. The ID will only change if the override is deleted and recreated. Corresponds to name's "override" field.
   """
 
   use GoogleApi.Gax.ModelBase

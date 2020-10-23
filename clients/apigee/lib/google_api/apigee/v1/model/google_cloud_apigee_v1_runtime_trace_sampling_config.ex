@@ -17,38 +17,21 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceSamplingConfig do
   @moduledoc """
-  NEXT ID: 6 RuntimeTraceSamplingConfig represents the detail settings of distributed tracing. Only the fields that are defined in the distributed trace configuration can be overridden using the distribute trace configuration override APIs.
+  NEXT ID: 3 RuntimeTraceSamplingConfig represents the detail settings of distributed tracing. Only the fields that are defined in the distributed trace configuration can be overridden using the distribute trace configuration override APIs.
 
   ## Attributes
 
-  *   `errorSources` (*type:* `list(String.t)`, *default:* `nil`) - Error sources from which to capture errors. If none are specified, error codes are captured from all sources.
-  *   `responseCodeRanges` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceSamplingConfigResponseCodeRange.t)`, *default:* `nil`) - List of response code ranges.
-  *   `responseCodes` (*type:* `list(integer())`, *default:* `nil`) - List of single response codes.
   *   `sampler` (*type:* `String.t`, *default:* `nil`) - Sampler of distributed tracing. OFF is the default value.
-  *   `samplingRate` (*type:* `number()`, *default:* `nil`) - Field sampling rate. This value is only valid when is only applicable when sampling value is probabilistic(PROBABILITY). The supported values are > 0 and <= 0.5.
+  *   `samplingRate` (*type:* `number()`, *default:* `nil`) - Field sampling rate. This value is only applicable when using the PROBABILITY sampler. The supported values are > 0 and <= 0.5.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorSources => list(String.t()),
-          :responseCodeRanges =>
-            list(
-              GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceSamplingConfigResponseCodeRange.t()
-            ),
-          :responseCodes => list(integer()),
           :sampler => String.t(),
           :samplingRate => number()
         }
 
-  field(:errorSources, type: :list)
-
-  field(:responseCodeRanges,
-    as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceSamplingConfigResponseCodeRange,
-    type: :list
-  )
-
-  field(:responseCodes, type: :list)
   field(:sampler)
   field(:samplingRate)
 end
