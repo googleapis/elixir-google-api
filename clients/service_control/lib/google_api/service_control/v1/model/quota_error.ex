@@ -23,6 +23,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.QuotaError do
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - Error code.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Free-form text that provides details on the cause of the error.
+  *   `status` (*type:* `GoogleApi.ServiceControl.V1.Model.Status.t`, *default:* `nil`) - Contains additional information about the quota error. If available, `status.code` will be non zero.
   *   `subject` (*type:* `String.t`, *default:* `nil`) - Subject to whom this error applies. See the specific enum for more details on this field. For example, "clientip:" or "project:".
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.ServiceControl.V1.Model.QuotaError do
   @type t :: %__MODULE__{
           :code => String.t(),
           :description => String.t(),
+          :status => GoogleApi.ServiceControl.V1.Model.Status.t(),
           :subject => String.t()
         }
 
   field(:code)
   field(:description)
+  field(:status, as: GoogleApi.ServiceControl.V1.Model.Status)
   field(:subject)
 end
 
