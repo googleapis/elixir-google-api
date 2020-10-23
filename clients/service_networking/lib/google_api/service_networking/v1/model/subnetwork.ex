@@ -25,6 +25,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Subnetwork do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Subnetwork name. See https://cloud.google.com/compute/docs/vpc/
   *   `network` (*type:* `String.t`, *default:* `nil`) - In the Shared VPC host project, the VPC network that's peered with the consumer network. For example: `projects/1234321/global/networks/host-network`
   *   `outsideAllocation` (*type:* `boolean()`, *default:* `nil`) - This is a discovered subnet that is not within the current consumer allocated ranges.
+  *   `secondaryIpRanges` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRange.t)`, *default:* `nil`) - List of secondary IP ranges in this subnetwork.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,16 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Subnetwork do
           :ipCidrRange => String.t(),
           :name => String.t(),
           :network => String.t(),
-          :outsideAllocation => boolean()
+          :outsideAllocation => boolean(),
+          :secondaryIpRanges => list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRange.t())
         }
 
   field(:ipCidrRange)
   field(:name)
   field(:network)
   field(:outsideAllocation)
+
+  field(:secondaryIpRanges, as: GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRange, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.Subnetwork do
