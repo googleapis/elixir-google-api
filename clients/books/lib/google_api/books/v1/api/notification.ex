@@ -31,6 +31,7 @@ defmodule GoogleApi.Books.V1.Api.Notification do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `notification_id` (*type:* `String.t`) - String to identify the notification.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -44,7 +45,6 @@ defmodule GoogleApi.Books.V1.Api.Notification do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating notification title and body.
-      *   `:notification_id` (*type:* `String.t`) - String to identify the notification.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -53,11 +53,11 @@ defmodule GoogleApi.Books.V1.Api.Notification do
   *   `{:ok, %GoogleApi.Books.V1.Model.Notification{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_notification_get(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec books_notification_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Notification.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def books_notification_get(connection, optional_params \\ [], opts \\ []) do
+  def books_notification_get(connection, notification_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -71,7 +71,6 @@ defmodule GoogleApi.Books.V1.Api.Notification do
       :uploadType => :query,
       :upload_protocol => :query,
       :locale => :query,
-      :notification_id => :query,
       :source => :query
     }
 
@@ -79,6 +78,7 @@ defmodule GoogleApi.Books.V1.Api.Notification do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/books/v1/notification/get", %{})
+      |> Request.add_param(:query, :notification_id, notification_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

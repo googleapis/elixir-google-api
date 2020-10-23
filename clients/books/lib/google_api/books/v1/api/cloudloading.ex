@@ -95,6 +95,7 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
+  *   `volume_id` (*type:* `String.t`) - The id of the book to be removed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -107,7 +108,6 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:volumeId` (*type:* `String.t`) - The id of the book to be removed.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -115,9 +115,9 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
   *   `{:ok, %GoogleApi.Books.V1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_cloudloading_delete_book(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec books_cloudloading_delete_book(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
-  def books_cloudloading_delete_book(connection, optional_params \\ [], opts \\ []) do
+  def books_cloudloading_delete_book(connection, volume_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -129,14 +129,14 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :volumeId => :query
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
       |> Request.url("/books/v1/cloudloading/deleteBook", %{})
+      |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
