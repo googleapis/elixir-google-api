@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ContainerSpec do
 
   ## Attributes
 
+  *   `defaultEnvironment` (*type:* `GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment.t`, *default:* `nil`) - Default runtime environment for the job.
   *   `image` (*type:* `String.t`, *default:* `nil`) - Name of the docker container image. E.g., gcr.io/project/some-image
   *   `metadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t`, *default:* `nil`) - Metadata describing a template including description and validation rules.
   *   `sdkInfo` (*type:* `GoogleApi.Dataflow.V1b3.Model.SDKInfo.t`, *default:* `nil`) - Required. SDK info of the Flex Template.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ContainerSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :defaultEnvironment => GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment.t(),
           :image => String.t(),
           :metadata => GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t(),
           :sdkInfo => GoogleApi.Dataflow.V1b3.Model.SDKInfo.t()
         }
 
+  field(:defaultEnvironment, as: GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment)
   field(:image)
   field(:metadata, as: GoogleApi.Dataflow.V1b3.Model.TemplateMetadata)
   field(:sdkInfo, as: GoogleApi.Dataflow.V1b3.Model.SDKInfo)
