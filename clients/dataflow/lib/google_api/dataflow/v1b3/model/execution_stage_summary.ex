@@ -28,6 +28,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Type of tranform this stage is executing.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Dataflow service generated name for this stage.
   *   `outputSource` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.StageSource.t)`, *default:* `nil`) - Output sources for this stage.
+  *   `prerequisiteStage` (*type:* `list(String.t)`, *default:* `nil`) - Other stages that must complete before this stage can run.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary do
           :inputSource => list(GoogleApi.Dataflow.V1b3.Model.StageSource.t()),
           :kind => String.t(),
           :name => String.t(),
-          :outputSource => list(GoogleApi.Dataflow.V1b3.Model.StageSource.t())
+          :outputSource => list(GoogleApi.Dataflow.V1b3.Model.StageSource.t()),
+          :prerequisiteStage => list(String.t())
         }
 
   field(:componentSource, as: GoogleApi.Dataflow.V1b3.Model.ComponentSource, type: :list)
@@ -49,6 +51,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary do
   field(:kind)
   field(:name)
   field(:outputSource, as: GoogleApi.Dataflow.V1b3.Model.StageSource, type: :list)
+  field(:prerequisiteStage, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ExecutionStageSummary do
