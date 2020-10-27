@@ -31,7 +31,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Api.Properties do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsData.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the metadata to retrieve. This name field is specified in the URL path and not URL parameters. Property is a numeric Google Analytics GA4 Property identifier. Example: properties/1234/metadata
+  *   `name` (*type:* `String.t`) - Required. The resource name of the metadata to retrieve. This name field is specified in the URL path and not URL parameters. Property is a numeric Google Analytics GA4 Property identifier. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/trusted-testing/analytics-data/property-id). Example: properties/1234/metadata
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
