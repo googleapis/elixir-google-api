@@ -194,7 +194,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional filter to list devices. Filters can match the exact assignee (could be a structure or a room). E.g. 'assignee=enterprises/XYZ/structures/abc' Also could filter by parent (group): 'parent=enterprises/XYZ/groups/jkl' or filter by device custom name (substring match): 'customName=wing'
+      *   `:filter` (*type:* `String.t`) - Optional filter to list devices. Filters can be done on: Device custom name (substring match): 'customName=wing'
       *   `:pageSize` (*type:* `integer()`) - Optional requested page size. Server may return fewer devices than requested. If unspecified, server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - Optional token of the page to retrieve.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -348,7 +348,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional filter to list structures. Filters can match the exact album assigned to the structure. E.g. 'album=enterprises/XYZ/albums/abc' It also support filtering by parent (only groups for now): E.g. 'parent=enterprises/XYZ/groups/124'
+      *   `:filter` (*type:* `String.t`) - Optional filter to list structures.
       *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer structures than requested. If unspecified, server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - The token of the page to retrieve.
   *   `opts` (*type:* `keyword()`) - Call options

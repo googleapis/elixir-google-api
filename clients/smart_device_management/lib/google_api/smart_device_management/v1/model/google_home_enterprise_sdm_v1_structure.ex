@@ -22,7 +22,6 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Stru
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the structure. For example: "enterprises/XYZ/structures/ABC".
-  *   `parentRelations` (*type:* `list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1StructureParentRelation.t)`, *default:* `nil`) - Assignee details of the structure.
   *   `traits` (*type:* `map()`, *default:* `nil`) - Structure traits.
   """
 
@@ -30,20 +29,10 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Stru
 
   @type t :: %__MODULE__{
           :name => String.t(),
-          :parentRelations =>
-            list(
-              GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1StructureParentRelation.t()
-            ),
           :traits => map()
         }
 
   field(:name)
-
-  field(:parentRelations,
-    as: GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1StructureParentRelation,
-    type: :list
-  )
-
   field(:traits, type: :map)
 end
 
