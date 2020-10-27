@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AnalyticsData.V1alpha.Model.Dimension do
   @moduledoc """
-  Dimensions are attributes of your data. For example, the dimension City indicates the city, for example, "Paris" or "New York", from which an event originates. Requests are allowed up to 8 dimensions.
+  Dimensions are attributes of your data. For example, the dimension city indicates the city from which an event originates. Dimension values in report responses are strings; for example, city could be "Paris" or "New York". Requests are allowed up to 8 dimensions.
 
   ## Attributes
 
   *   `dimensionExpression` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.DimensionExpression.t`, *default:* `nil`) - One dimension can be the result of an expression of multiple dimensions. For example, dimension "country, city": concatenate(country, ", ", city).
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the dimension.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the dimension. See the [API Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions) for the list of dimension names. If `dimensionExpression` is specified, `name` can be any string that you would like. For example if a `dimensionExpression` concatenates `country` and `city`, you could call that dimension `countryAndCity`. Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`, `dimensionExpression`, and `pivots`.
   """
 
   use GoogleApi.Gax.ModelBase
