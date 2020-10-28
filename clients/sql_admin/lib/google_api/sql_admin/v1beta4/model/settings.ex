@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   ## Attributes
 
   *   `activationPolicy` (*type:* `String.t`, *default:* `nil`) - The activation policy specifies when the instance is activated; it is applicable only when the instance state is RUNNABLE. Valid values: *ALWAYS*: The instance is on, and remains so even in the absence of connection requests. *NEVER*: The instance is off; it is not activated, even if a connection request arrives.
-  *   `activeDirectoryConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlActiveDirectoryConfig.t`, *default:* `nil`) - Active Directory configuration, for now relevant only for SQL Server
+  *   `activeDirectoryConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlActiveDirectoryConfig.t`, *default:* `nil`) - Active Directory configuration, relevant only for Cloud SQL for SQL Server.
   *   `authorizedGaeApplications` (*type:* `list(String.t)`, *default:* `nil`) - The App Engine app IDs that can access this instance. (Deprecated) Applied to First Generation instances only.
   *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Availability type. Potential values: *ZONAL*: The instance serves data from only one zone. Outages in that zone affect data accessibility. *REGIONAL*: The instance can serve data from more than one zone in a region (it is highly available). For more information, see Overview of the High Availability Configuration.
   *   `backupConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration.t`, *default:* `nil`) - The daily backup configuration for the instance.

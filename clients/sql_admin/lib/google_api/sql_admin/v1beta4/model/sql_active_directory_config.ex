@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlActiveDirectoryConfig do
   @moduledoc """
-  Active Directory configuration, for now relevant only for SQL Server
+  Active Directory configuration, relevant only for Cloud SQL for SQL Server.
 
   ## Attributes
 
-  *   `domain` (*type:* `String.t`, *default:* `nil`) - Domain name
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This will be always sql#activeDirectoryConfig.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - The name of the domain (e.g., mydomain.com).
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always sql#activeDirectoryConfig.
   """
 
   use GoogleApi.Gax.ModelBase

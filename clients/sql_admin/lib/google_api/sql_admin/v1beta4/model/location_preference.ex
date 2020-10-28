@@ -23,6 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference do
 
   *   `followGaeApplication` (*type:* `String.t`, *default:* `nil`) - The App Engine application to follow, it must be in the same region as the Cloud SQL instance.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#locationPreference*.
+  *   `secondaryZone` (*type:* `String.t`, *default:* `nil`) - The preferred Compute Engine zone for the secondary/failover (for example: us-central1-a, us-central1-b, etc.). Reserved for future use.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - The preferred Compute Engine zone (for example: us-central1-a, us-central1-b, etc.).
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference do
   @type t :: %__MODULE__{
           :followGaeApplication => String.t(),
           :kind => String.t(),
+          :secondaryZone => String.t(),
           :zone => String.t()
         }
 
   field(:followGaeApplication)
   field(:kind)
+  field(:secondaryZone)
   field(:zone)
 end
 
