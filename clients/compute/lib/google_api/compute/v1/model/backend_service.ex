@@ -106,6 +106,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this backend service.
+  *   `securitySettings` (*type:* `GoogleApi.Compute.V1.Model.SecuritySettings.t`, *default:* `nil`) - This field specifies the security policy that applies to this backend service. This field is applicable to either:  
+      - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
+      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `sessionAffinity` (*type:* `String.t`, *default:* `nil`) - Type of session affinity to use. The default is NONE. Session affinity is not applicable if the --protocol is UDP.
 
@@ -149,6 +152,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :protocol => String.t(),
           :region => String.t(),
           :securityPolicy => String.t(),
+          :securitySettings => GoogleApi.Compute.V1.Model.SecuritySettings.t(),
           :selfLink => String.t(),
           :sessionAffinity => String.t(),
           :timeoutSec => integer()
@@ -181,6 +185,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:protocol)
   field(:region)
   field(:securityPolicy)
+  field(:securitySettings, as: GoogleApi.Compute.V1.Model.SecuritySettings)
   field(:selfLink)
   field(:sessionAffinity)
   field(:timeoutSec)

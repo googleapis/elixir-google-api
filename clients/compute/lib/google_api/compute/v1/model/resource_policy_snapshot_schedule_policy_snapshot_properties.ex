@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySnapsho
 
   ## Attributes
 
+  *   `chainName` (*type:* `String.t`, *default:* `nil`) - Chain name that the snapshot is created in.
   *   `guestFlush` (*type:* `boolean()`, *default:* `nil`) - Indication to perform a 'guest aware' snapshot.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
   *   `storageLocations` (*type:* `list(String.t)`, *default:* `nil`) - Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
@@ -29,11 +30,13 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySnapsho
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :chainName => String.t(),
           :guestFlush => boolean(),
           :labels => map(),
           :storageLocations => list(String.t())
         }
 
+  field(:chainName)
   field(:guestFlush)
   field(:labels, type: :map)
   field(:storageLocations, type: :list)

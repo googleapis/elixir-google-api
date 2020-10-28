@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetPool do
 
   ## Attributes
 
-  *   `backupPool` (*type:* `String.t`, *default:* `nil`) - This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+  *   `backupPool` (*type:* `String.t`, *default:* `nil`) - The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
 
       backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
 
