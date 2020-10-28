@@ -46,5 +46,5 @@ defmodule GoogleApi.YouTube.V3.Connection do
       "https://www.googleapis.com/auth/youtubepartner-channel-audit"
     ],
     otp_app: :google_api_you_tube,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://youtube.googleapis.com/"
 end
