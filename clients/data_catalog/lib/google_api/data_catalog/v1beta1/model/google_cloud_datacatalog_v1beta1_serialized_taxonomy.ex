@@ -21,6 +21,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Seria
 
   ## Attributes
 
+  *   `activatedPolicyTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of policy types that are activated for a taxonomy.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the serialized taxonomy. The length of the description is limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an empty description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
   *   `policyTags` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SerializedPolicyTag.t)`, *default:* `nil`) - Top level policy tags associated with the taxonomy if any.
@@ -29,6 +30,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Seria
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :activatedPolicyTypes => list(String.t()),
           :description => String.t(),
           :displayName => String.t(),
           :policyTags =>
@@ -37,6 +39,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Seria
             )
         }
 
+  field(:activatedPolicyTypes, type: :list)
   field(:description)
   field(:displayName)
 

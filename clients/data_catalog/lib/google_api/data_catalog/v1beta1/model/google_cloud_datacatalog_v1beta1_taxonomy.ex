@@ -25,6 +25,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxon
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of this taxonomy. It must: contain only unicode characters, tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes long when encoded in UTF-8. If not set, defaults to an empty description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. User defined name of this taxonomy. It must: contain only unicode letters, numbers, underscores, dashes and spaces; not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
+  *   `policyTagCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of policy tags contained in this taxonomy.
+  *   `taxonomyTimestamps` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t`, *default:* `nil`) - Output only. Timestamps about this taxonomy. Only create_time and update_time are used.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +35,21 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxon
           :activatedPolicyTypes => list(String.t()),
           :description => String.t(),
           :displayName => String.t(),
-          :name => String.t()
+          :name => String.t(),
+          :policyTagCount => integer(),
+          :taxonomyTimestamps =>
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t()
         }
 
   field(:activatedPolicyTypes, type: :list)
   field(:description)
   field(:displayName)
   field(:name)
+  field(:policyTagCount)
+
+  field(:taxonomyTimestamps,
+    as: GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps
+  )
 end
 
 defimpl Poison.Decoder,
