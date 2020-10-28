@@ -266,6 +266,8 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   @doc """
   Initiates a cache invalidation operation, invalidating the specified path, scoped to the specified UrlMap.
 
+  For more information, see [Invalidating cached content](/cdn/docs/invalidating-cached-content).
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server

@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   ## Attributes
 
   *   `autoCreated` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
+  *   `chainName` (*type:* `String.t`, *default:* `nil`) - Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - [Output Only] Size of the source disk, specified in GB.
@@ -58,6 +59,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
 
   @type t :: %__MODULE__{
           :autoCreated => boolean(),
+          :chainName => String.t(),
           :creationTimestamp => String.t(),
           :description => String.t(),
           :diskSizeGb => String.t(),
@@ -81,6 +83,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
         }
 
   field(:autoCreated)
+  field(:chainName)
   field(:creationTimestamp)
   field(:description)
   field(:diskSizeGb)

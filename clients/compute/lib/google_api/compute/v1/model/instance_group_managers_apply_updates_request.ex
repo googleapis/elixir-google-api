@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagersApplyUpdatesRequest do
 
   ## Attributes
 
+  *   `allInstances` (*type:* `boolean()`, *default:* `nil`) - Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
   *   `instances` (*type:* `list(String.t)`, *default:* `nil`) - The list of URLs of one or more instances for which you want to apply updates. Each URL can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
   *   `minimalAction` (*type:* `String.t`, *default:* `nil`) - The minimal action that you want to perform on each instance during the update:  
       - REPLACE: At minimum, delete the instance and create it again. 
@@ -37,11 +38,13 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagersApplyUpdatesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allInstances => boolean(),
           :instances => list(String.t()),
           :minimalAction => String.t(),
           :mostDisruptiveAllowedAction => String.t()
         }
 
+  field(:allInstances)
   field(:instances, type: :list)
   field(:minimalAction)
   field(:mostDisruptiveAllowedAction)
