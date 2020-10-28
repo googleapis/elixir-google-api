@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchResponseEntry 
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
   *   `errors` (*type:* `GoogleApi.Content.V21.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
-  *   `kind` (*type:* `String.t`, *default:* `content#regionalinventoryCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#regionalinventoryCustomBatchResponseEntry".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#regionalinventoryCustomBatchResponseEntry".
   *   `regionalInventory` (*type:* `GoogleApi.Content.V21.Model.RegionalInventory.t`, *default:* `nil`) - Price and availability of the product.
   """
 

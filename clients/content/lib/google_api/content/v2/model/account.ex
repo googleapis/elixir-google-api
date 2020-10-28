@@ -22,11 +22,11 @@ defmodule GoogleApi.Content.V2.Model.Account do
   ## Attributes
 
   *   `adultContent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the merchant sells adult content.
-  *   `adwordsLinks` (*type:* `list(GoogleApi.Content.V2.Model.AccountAdwordsLink.t)`, *default:* `nil`) - List of linked AdWords accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the AdWords interface or through the  AdWords API. To delete an active link, or to cancel a link request, remove it from the list.
+  *   `adwordsLinks` (*type:* `list(GoogleApi.Content.V2.Model.AccountAdwordsLink.t)`, *default:* `nil`) - List of linked AdWords accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the AdWords interface or through the AdWords API. To delete an active link, or to cancel a link request, remove it from the list.
   *   `businessInformation` (*type:* `GoogleApi.Content.V2.Model.AccountBusinessInformation.t`, *default:* `nil`) - The business information of the account.
   *   `googleMyBusinessLink` (*type:* `GoogleApi.Content.V2.Model.AccountGoogleMyBusinessLink.t`, *default:* `nil`) - The GMB account which is linked or in the process of being linked with the Merchant Center account.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required for update. Merchant Center account ID.
-  *   `kind` (*type:* `String.t`, *default:* `content#account`) - Identifies what kind of resource this is. Value: the fixed string "`content#account`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#account`"
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Display name for the account.
   *   `reviewsUrl` (*type:* `String.t`, *default:* `nil`) - [DEPRECATED] This field is never returned and will be ignored if provided.
   *   `sellerId` (*type:* `String.t`, *default:* `nil`) - Client-specific, locally-unique, internal ID for the child account.

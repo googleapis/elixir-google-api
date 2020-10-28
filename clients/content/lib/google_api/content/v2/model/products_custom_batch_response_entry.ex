@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchResponseEntry do
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
   *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
-  *   `kind` (*type:* `String.t`, *default:* `content#productsCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "`content#productsCustomBatchResponseEntry`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#productsCustomBatchResponseEntry`"
   *   `product` (*type:* `GoogleApi.Content.V2.Model.Product.t`, *default:* `nil`) - The inserted product. Only defined if the method is `insert` and if the request was successful.
   """
 

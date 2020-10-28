@@ -21,11 +21,7 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusProducts do
 
   ## Attributes
 
-  *   `channel` (*type:* `String.t`, *default:* `nil`) - The channel the data applies to.
-
-      Acceptable values are:  
-      - "`local`" 
-      - "`online`"
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - The channel the data applies to. Acceptable values are: - "`local`" - "`online`" 
   *   `country` (*type:* `String.t`, *default:* `nil`) - The country the data applies to.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The destination the data applies to.
   *   `itemLevelIssues` (*type:* `list(GoogleApi.Content.V2.Model.AccountStatusItemLevelIssue.t)`, *default:* `nil`) - List of item-level issues.

@@ -18,7 +18,7 @@
 defmodule GoogleApi.Content.Mixfile do
   use Mix.Project
 
-  @version "0.44.0"
+  @version "0.45.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Content.Mixfile do
 
   defp description() do
     """
-    Content API for Shopping client library. Manages product items, inventory, and Merchant Center accounts for Google Shopping.
+    Content API for Shopping client library. Manage your product listings and accounts for Google Shopping
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Content.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/content",
-        "Homepage" => "https://developers.google.com/shopping-content"
+        "Homepage" => "https://developers.google.com/shopping-content/v2/"
       }
     ]
   end

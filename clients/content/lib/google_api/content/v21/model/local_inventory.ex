@@ -23,8 +23,8 @@ defmodule GoogleApi.Content.V21.Model.LocalInventory do
 
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability of the product. For accepted attribute values, see the local product inventory feed specification.
   *   `instoreProductLocation` (*type:* `String.t`, *default:* `nil`) - In-store product location.
-  *   `kind` (*type:* `String.t`, *default:* `content#localInventory`) - Identifies what kind of resource this is. Value: the fixed string "`content#localInventory`"
-  *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - Supported pickup method for this offer. Unless the value is "not supported", this field must be submitted together with `pickupSla`. For accepted attribute values, see the local product inventory feed specification.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#localInventory`"
+  *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - Supported pickup method for this offer. Unless the value is "not supported", this field must be submitted together with `pickupSla`. For accepted attribute values, see the local product inventory feed // specification.
   *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - Expected date that an order will be ready for pickup relative to the order date. Must be submitted together with `pickupMethod`. For accepted attribute values, see the local product inventory feed specification.
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Price of the product.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - Quantity of the product. Must be nonnegative.

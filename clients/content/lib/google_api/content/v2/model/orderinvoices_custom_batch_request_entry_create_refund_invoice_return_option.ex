@@ -22,22 +22,7 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateR
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional description of the return reason.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - [required] Reason for the return.
-
-      Acceptable values are:  
-      - "`customerDiscretionaryReturn`" 
-      - "`customerInitiatedMerchantCancel`" 
-      - "`deliveredTooLate`" 
-      - "`expiredItem`" 
-      - "`invalidCoupon`" 
-      - "`malformedShippingAddress`" 
-      - "`other`" 
-      - "`productArrivedDamaged`" 
-      - "`productNotAsDescribed`" 
-      - "`qualityNotAsExpected`" 
-      - "`undeliverableShippingAddress`" 
-      - "`unsupportedPoBoxAddress`" 
-      - "`wrongProductShipped`"
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - [required] Reason for the return. Acceptable values are: - "`customerDiscretionaryReturn`" - "`customerInitiatedMerchantCancel`" - "`deliveredTooLate`" - "`expiredItem`" - "`invalidCoupon`" - "`malformedShippingAddress`" - "`other`" - "`productArrivedDamaged`" - "`productNotAsDescribed`" - "`qualityNotAsExpected`" - "`undeliverableShippingAddress`" - "`unsupportedPoBoxAddress`" - "`wrongProductShipped`" 
   """
 
   use GoogleApi.Gax.ModelBase

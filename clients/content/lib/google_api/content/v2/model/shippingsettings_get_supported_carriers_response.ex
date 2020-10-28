@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedCarriersRespons
   ## Attributes
 
   *   `carriers` (*type:* `list(GoogleApi.Content.V2.Model.CarriersCarrier.t)`, *default:* `nil`) - A list of supported carriers. May be empty.
-  *   `kind` (*type:* `String.t`, *default:* `content#shippingsettingsGetSupportedCarriersResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsGetSupportedCarriersResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsGetSupportedCarriersResponse".
   """
 
   use GoogleApi.Gax.ModelBase

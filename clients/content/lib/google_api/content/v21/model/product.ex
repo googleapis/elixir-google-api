@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.Product do
   @moduledoc """
-  Required product attributes are primarily defined by the products data specification. See the  Products Data Specification Help Center article for information.
-
-  Some attributes are country-specific, so make sure you select the appropriate country in the drop-down selector at the top of the page.  
-
-  Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
+   Required product attributes are primarily defined by the products data specification. See the Products Data Specification Help Center article for information. Some attributes are country-specific, so make sure you select the appropriate country in the drop-down selector at the top of the page. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
 
   ## Attributes
 
@@ -33,8 +29,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `color` (*type:* `String.t`, *default:* `nil`) - Color of the item.
   *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - Shared identifier for all variants of the same product.
   *   `maxHandlingTime` (*type:* `String.t`, *default:* `nil`) - Maximal product handling time (in business days).
-  *   `offerId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details.
-      Note: Content API methods that operate on products take the REST ID of the product, not this identifier.
+  *   `offerId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details. *Note:* Content API methods that operate on products take the REST ID of the product, *not* this identifier.
   *   `productHighlights` (*type:* `list(String.t)`, *default:* `nil`) - Bullet points describing the most relevant highlights of a product.
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign.
   *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (e.g. polka dots).
@@ -54,7 +49,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `displayAdsId` (*type:* `String.t`, *default:* `nil`) - An identifier for an item for dynamic remarketing campaigns.
   *   `displayAdsLink` (*type:* `String.t`, *default:* `nil`) - URL directly to your item's landing page for dynamic remarketing campaigns.
   *   `loyaltyPoints` (*type:* `GoogleApi.Content.V21.Model.LoyaltyPoints.t`, *default:* `nil`) - Loyalty points that users receive after purchasing the item. Japan only.
-  *   `kind` (*type:* `String.t`, *default:* `content#product`) - Identifies what kind of resource this is. Value: the fixed string "`content#product`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#product`"
   *   `displayAdsValue` (*type:* `float()`, *default:* `nil`) - Offer margin for dynamic remarketing campaigns.
   *   `shippingLabel` (*type:* `String.t`, *default:* `nil`) - The shipping label of the product, used to group product in account-level shipping rules.
   *   `sizeSystem` (*type:* `String.t`, *default:* `nil`) - System in which the size is specified. Recommended for apparel items.
@@ -77,22 +72,17 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `material` (*type:* `String.t`, *default:* `nil`) - The material of which the item is made.
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
   *   `expirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in `productstatuses` as `googleExpirationDate` and might be earlier if `expirationDate` is too far in the future.
-  *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see products data specification).
+  *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see products data specification ).
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
   *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Custom label 4 for custom grouping of items in a Shopping campaign.
   *   `minHandlingTime` (*type:* `String.t`, *default:* `nil`) - Minimal product handling time (in business days).
-  *   `channel` (*type:* `String.t`, *default:* `nil`) - Required. The item's channel (online or local).
-
-      Acceptable values are:  
-      - "`local`" 
-      - "`online`"
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - Required. The item's channel (online or local). Acceptable values are: - "`local`" - "`online`" 
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Price of the item.
   *   `minEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
   *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - Target age group of the item.
   *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of items in a Shopping campaign.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their `productId` parameter.
-      The REST ID for a product is of the form channel:contentLanguage:targetCountry: offerId.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their `productId` parameter. The REST ID for a product is of the form channel:contentLanguage: targetCountry: offerId.
   *   `shippingLength` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Length of the item for shipping.
   *   `shippingWeight` (*type:* `GoogleApi.Content.V21.Model.ProductShippingWeight.t`, *default:* `nil`) - Weight of the item for shipping.
   *   `shoppingAdsExcludedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) to exclude the offer from Shopping Ads destination. Countries from this list are removed from countries configured in MC feed settings.
@@ -110,12 +100,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `energyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `promotionIds` (*type:* `list(String.t)`, *default:* `nil`) - The unique ID of a promotion.
   *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code for the item.
-  *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the offer, i.e., how the offer was created.
-
-      Acceptable values are:  
-      - "`api`" 
-      - "`crawl`" 
-      - "`feed`"
+  *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the offer, i.e., how the offer was created. Acceptable values are: - "`api`" - "`crawl`" - "`feed`" 
   """
 
   use GoogleApi.Gax.ModelBase

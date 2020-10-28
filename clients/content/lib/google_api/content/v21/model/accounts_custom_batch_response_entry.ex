@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchResponseEntry do
   *   `account` (*type:* `GoogleApi.Content.V21.Model.Account.t`, *default:* `nil`) - The retrieved, created, or updated account. Not defined if the method was `delete`, `claimwebsite` or `link`.
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
   *   `errors` (*type:* `GoogleApi.Content.V21.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
-  *   `kind` (*type:* `String.t`, *default:* `content#accountsCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "`content#accountsCustomBatchResponseEntry`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#accountsCustomBatchResponseEntry`"
   """
 
   use GoogleApi.Gax.ModelBase

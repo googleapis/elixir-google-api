@@ -22,17 +22,7 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransactionTransaction do
   ## Attributes
 
   *   `postDate` (*type:* `String.t`, *default:* `nil`) - The time on which the event occurred in ISO 8601 format.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the transaction that occurred.
-
-      Acceptable values are:  
-      - "`order`" 
-      - "`reversal`" 
-      - "`orderRefund`" 
-      - "`reversalRefund`" 
-      - "`issueRelatedRefundAndReplacement`" 
-      - "`returnLabelShippingFeeTransaction`" 
-      - "`reversalIssueRelatedRefundAndReplacement`" 
-      - "`reversalReturnLabelShippingFeeTransaction`"
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the transaction that occurred. Acceptable values are: - "`order`" - "`reversal`" - "`orderRefund`" - "`reversalRefund`" - "`issueRelatedRefundAndReplacement`" - "`returnLabelShippingFeeTransaction`" - "`reversalIssueRelatedRefundAndReplacement`" - "`reversalReturnLabelShippingFeeTransaction`" 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.SettlementreportsListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `content#settlementreportsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#settlementreportsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#settlementreportsListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the retrieval of the next page of returns.
   *   `resources` (*type:* `list(GoogleApi.Content.V21.Model.SettlementReport.t)`, *default:* `nil`) - 
   """

@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.Account do
   *   `cssId` (*type:* `String.t`, *default:* `nil`) - ID of CSS the account belongs to.
   *   `googleMyBusinessLink` (*type:* `GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink.t`, *default:* `nil`) - The GMB account which is linked or in the process of being linked with the Merchant Center account.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required for update. Merchant Center account ID.
-  *   `kind` (*type:* `String.t`, *default:* `content#account`) - Identifies what kind of resource this is. Value: the fixed string "`content#account`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#account`"
   *   `labelIds` (*type:* `list(String.t)`, *default:* `nil`) - List of label IDs that are assigned to the account by CSS.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Display name for the account.
   *   `sellerId` (*type:* `String.t`, *default:* `nil`) - Client-specific, locally-unique, internal ID for the child account.

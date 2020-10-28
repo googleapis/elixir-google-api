@@ -24,11 +24,7 @@ defmodule GoogleApi.Content.V21.Model.OrdersRefundOrderRequest do
   *   `amount` (*type:* `GoogleApi.Content.V21.Model.MonetaryAmount.t`, *default:* `nil`) - The amount that is refunded. If this is not the first refund for the order, this should be the newly refunded amount.
   *   `fullRefund` (*type:* `boolean()`, *default:* `nil`) - If true, the full order will be refunded, including shipping. If this is true, amount should not be provided and will be ignored.
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the refund.
-
-      Acceptable values are:  
-      - "`courtesyAdjustment`" 
-      - "`other`"
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the refund. Acceptable values are: - "`courtesyAdjustment`" - "`other`" 
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 

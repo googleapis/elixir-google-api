@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.OrdersCancelTestOrderByCustomerResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `content#ordersCancelTestOrderByCustomerResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersCancelTestOrderByCustomerResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersCancelTestOrderByCustomerResponse".
   """
 
   use GoogleApi.Gax.ModelBase

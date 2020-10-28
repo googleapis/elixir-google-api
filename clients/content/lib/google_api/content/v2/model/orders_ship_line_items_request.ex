@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.OrdersShipLineItemsRequest do
 
   ## Attributes
 
-  *   `carrier` (*type:* `String.t`, *default:* `nil`) - Deprecated. Please use shipmentInfo instead. The carrier handling the shipment. See `shipments[].carrier` in the  Orders resource representation for a list of acceptable values.
+  *   `carrier` (*type:* `String.t`, *default:* `nil`) - Deprecated. Please use shipmentInfo instead. The carrier handling the shipment. See `shipments[].carrier` in the Orders resource representation for a list of acceptable values.
   *   `lineItems` (*type:* `list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t)`, *default:* `nil`) - Line items to ship.
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
   *   `shipmentGroupId` (*type:* `String.t`, *default:* `nil`) - ID of the shipment group. Required for orders that use the orderinvoices service.

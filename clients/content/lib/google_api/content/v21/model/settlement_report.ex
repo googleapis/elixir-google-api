@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Content.V21.Model.SettlementReport do
   @moduledoc """
-  Settlement reports detail order-level and item-level credits and debits between you and Google.
+   Settlement reports detail order-level and item-level credits and debits between you and Google.
 
   ## Attributes
 
   *   `endDate` (*type:* `String.t`, *default:* `nil`) - The end date on which all transactions are included in the report, in ISO 8601 format.
-  *   `kind` (*type:* `String.t`, *default:* `content#settlementReport`) - Identifies what kind of resource this is. Value: the fixed string "`content#settlementReport`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#settlementReport`"
   *   `previousBalance` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The residual amount from the previous invoice. This is set only if the previous invoices are not paid because of negative balance.
   *   `settlementId` (*type:* `String.t`, *default:* `nil`) - The ID of the settlement report.
   *   `startDate` (*type:* `String.t`, *default:* `nil`) - The start date on which all transactions are included in the report, in ISO 8601 format.

@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.PosInventoryResponse do
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number.
   *   `itemId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the item.
-  *   `kind` (*type:* `String.t`, *default:* `content#posInventoryResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#posInventoryResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#posInventoryResponse".
   *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Required. The current price of the item.
   *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The available quantity of the item.
   *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business.
