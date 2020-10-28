@@ -23,7 +23,7 @@ defmodule GoogleApi.People.V1.Model.UpdateContactPhotoRequest do
 
   *   `personFields` (*type:* `String.t`, *default:* `nil`) - Optional. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Defaults to empty if not set, which will skip the post mutate get. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * clientData * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * locations * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * sipAddresses * skills * urls * userDefined
   *   `photoBytes` (*type:* `String.t`, *default:* `nil`) - Required. Raw photo bytes
-  *   `sources` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A mask of what source types to return. Defaults to ReadSourceType.CONTACT and ReadSourceType.PROFILE if not set.
+  *   `sources` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A mask of what source types to return. Defaults to READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
   """
 
   use GoogleApi.Gax.ModelBase
