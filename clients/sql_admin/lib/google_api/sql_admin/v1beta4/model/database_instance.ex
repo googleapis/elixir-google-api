@@ -43,7 +43,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `replicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t`, *default:* `nil`) - Configuration specific to failover replicas and read replicas.
   *   `replicaNames` (*type:* `list(String.t)`, *default:* `nil`) - The replicas of the instance.
   *   `rootPassword` (*type:* `String.t`, *default:* `nil`) - Initial root password. Use only on creation.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - The status indicating if instance satisfies physical zone separation. Reserved for future use.
   *   `scheduledMaintenance` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance.t`, *default:* `nil`) - The start time of any upcoming scheduled maintenance for this instance.
+  *   `secondaryGceZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone that the failover instance is currently serving from for a regional instance. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary/failover zone. Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `serverCaCert` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t`, *default:* `nil`) - SSL configuration.
   *   `serviceAccountEmailAddress` (*type:* `String.t`, *default:* `nil`) - The service account email address assigned to the instance. This property is applicable only to Second Generation instances.
@@ -80,7 +82,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :replicaConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t(),
           :replicaNames => list(String.t()),
           :rootPassword => String.t(),
+          :satisfiesPzs => boolean(),
           :scheduledMaintenance => GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance.t(),
+          :secondaryGceZone => String.t(),
           :selfLink => String.t(),
           :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t(),
           :serviceAccountEmailAddress => String.t(),
@@ -115,7 +119,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:replicaConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration)
   field(:replicaNames, type: :list)
   field(:rootPassword)
+  field(:satisfiesPzs)
   field(:scheduledMaintenance, as: GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance)
+  field(:secondaryGceZone)
   field(:selfLink)
   field(:serverCaCert, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert)
   field(:serviceAccountEmailAddress)
