@@ -21,12 +21,8 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsCreateOrderReturnResponse do
 
   ## Attributes
 
-  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
-
-      Acceptable values are:  
-      - "`duplicate`" 
-      - "`executed`"
-  *   `kind` (*type:* `String.t`, *default:* `content#orderreturnsCreateOrderReturnResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#orderreturnsCreateOrderReturnResponse".
+  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution. Acceptable values are: - "`duplicate`" - "`executed`" 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#orderreturnsCreateOrderReturnResponse".
   *   `orderReturn` (*type:* `GoogleApi.Content.V21.Model.MerchantOrderReturn.t`, *default:* `nil`) - Created order return.
   """
 

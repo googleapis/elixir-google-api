@@ -2,7 +2,7 @@
 
 Content API for Shopping client library.
 
-Manages product items, inventory, and Merchant Center accounts for Google Shopping.
+Manage your product listings and accounts for Google Shopping
 
 ## Installation
 
@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_content, "~> 0.44"}]
+  [{:google_api_content, "~> 0.45"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/shopping-content](https://developers.google.com/shopping-content).
+Product documentation is available at [https://developers.google.com/shopping-content/v2/](https://developers.google.com/shopping-content/v2/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_content](https://hexdocs.pm/google_api_content).

@@ -31,14 +31,7 @@ defmodule GoogleApi.Content.V21.Model.MerchantOrderReturnItem do
   *   `returnShipmentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the return shipments that this return item belongs to.
   *   `shipmentGroupId` (*type:* `String.t`, *default:* `nil`) - ID of the original shipment group. Provided for shipments with invoice support.
   *   `shipmentUnitId` (*type:* `String.t`, *default:* `nil`) - ID of the shipment unit assigned by the merchant. Provided for shipments with invoice support.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the item.
-
-      Acceptable values are:  
-      - "`canceled`" 
-      - "`new`" 
-      - "`received`" 
-      - "`refunded`" 
-      - "`rejected`"
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the item. Acceptable values are: - "`canceled`" - "`new`" - "`received`" - "`refunded`" - "`rejected`" 
   """
 
   use GoogleApi.Gax.ModelBase

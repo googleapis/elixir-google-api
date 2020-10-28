@@ -23,23 +23,7 @@ defmodule GoogleApi.Content.V21.Model.OrdersRefundItemRequest do
 
   *   `items` (*type:* `list(GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryRefundItemItem.t)`, *default:* `nil`) - The items that are refunded. Either Item or Shipping must be provided in the request.
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the refund.
-
-      Acceptable values are:  
-      - "`shippingCostAdjustment`" 
-      - "`priceAdjustment`" 
-      - "`taxAdjustment`" 
-      - "`feeAdjustment`" 
-      - "`courtesyAdjustment`" 
-      - "`adjustment`" 
-      - "`customerCancelled`" 
-      - "`noInventory`" 
-      - "`productNotAsDescribed`" 
-      - "`undeliverableShippingAddress`" 
-      - "`wrongProductShipped`" 
-      - "`lateShipmentCredit`" 
-      - "`deliveredLateByCarrier`" 
-      - "`productArrivedDamaged`"
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the refund. Acceptable values are: - "`shippingCostAdjustment`" - "`priceAdjustment`" - "`taxAdjustment`" - "`feeAdjustment`" - "`courtesyAdjustment`" - "`adjustment`" - "`customerCancelled`" - "`noInventory`" - "`productNotAsDescribed`" - "`undeliverableShippingAddress`" - "`wrongProductShipped`" - "`lateShipmentCredit`" - "`deliveredLateByCarrier`" - "`productArrivedDamaged`" 
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   *   `shipping` (*type:* `GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryRefundItemShipping.t`, *default:* `nil`) - The refund on shipping. Optional, but either Item or Shipping must be provided in the request.
   """

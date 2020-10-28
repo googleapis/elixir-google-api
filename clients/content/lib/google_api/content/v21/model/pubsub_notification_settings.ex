@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.Content.V21.Model.PubsubNotificationSettings do
   @moduledoc """
-  Settings for Pub/Sub notifications, all methods require that the caller is a direct user of the merchant center account. (== resource_for v2.1.pubsubnotificationsettings ==)
+  Settings for Pub/Sub notifications, all methods require that the caller is a direct user of the merchant center account.
 
   ## Attributes
 
   *   `cloudTopicName` (*type:* `String.t`, *default:* `nil`) - Cloud pub/sub topic to which notifications are sent (read-only).
-  *   `kind` (*type:* `String.t`, *default:* `content#pubsubNotificationSettings`) - Identifies what kind of resource this is. Value: the fixed string "`content#pubsubNotificationSettings`"
-  *   `registeredEvents` (*type:* `list(String.t)`, *default:* `nil`) - List of event types.
-
-      Acceptable values are:  
-      - "`orderPendingShipment`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#pubsubNotificationSettings`"
+  *   `registeredEvents` (*type:* `list(String.t)`, *default:* `nil`) - List of event types. Acceptable values are: - "`orderPendingShipment`" 
   """
 
   use GoogleApi.Gax.ModelBase

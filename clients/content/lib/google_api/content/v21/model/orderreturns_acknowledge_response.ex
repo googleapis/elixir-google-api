@@ -21,12 +21,8 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsAcknowledgeResponse do
 
   ## Attributes
 
-  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
-
-      Acceptable values are:  
-      - "`duplicate`" 
-      - "`executed`"
-  *   `kind` (*type:* `String.t`, *default:* `content#orderreturnsAcknowledgeResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#orderreturnsAcknowledgeResponse".
+  *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution. Acceptable values are: - "`duplicate`" - "`executed`" 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#orderreturnsAcknowledgeResponse".
   """
 
   use GoogleApi.Gax.ModelBase

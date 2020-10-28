@@ -23,12 +23,7 @@ defmodule GoogleApi.Content.V21.Model.TestOrderPickupDetails do
 
   *   `locationCode` (*type:* `String.t`, *default:* `nil`) - Required. Code of the location defined by provider or merchant.
   *   `pickupLocationAddress` (*type:* `GoogleApi.Content.V21.Model.TestOrderAddress.t`, *default:* `nil`) - Required. Pickup location address.
-  *   `pickupLocationType` (*type:* `String.t`, *default:* `nil`) - Pickup location type.
-
-      Acceptable values are:  
-      - "`locker`" 
-      - "`store`" 
-      - "`curbside`"
+  *   `pickupLocationType` (*type:* `String.t`, *default:* `nil`) - Pickup location type. Acceptable values are: - "`locker`" - "`store`" - "`curbside`" 
   *   `pickupPersons` (*type:* `list(GoogleApi.Content.V21.Model.TestOrderPickupDetailsPickupPerson.t)`, *default:* `nil`) - Required. all pickup persons set by users.
   """
 

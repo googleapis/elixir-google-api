@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.LiaSettings do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account to which these LIA settings belong. Ignored upon update, always present in get request responses.
   *   `countrySettings` (*type:* `list(GoogleApi.Content.V2.Model.LiaCountrySettings.t)`, *default:* `nil`) - The LIA settings for each country.
-  *   `kind` (*type:* `String.t`, *default:* `content#liaSettings`) - Identifies what kind of resource this is. Value: the fixed string "`content#liaSettings`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#liaSettings`"
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.PosListResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `content#posListResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#posListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#posListResponse".
   *   `resources` (*type:* `list(GoogleApi.Content.V21.Model.PosStore.t)`, *default:* `nil`) - 
   """
 

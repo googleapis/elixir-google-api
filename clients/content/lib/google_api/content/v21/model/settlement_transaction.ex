@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Content.V21.Model.SettlementTransaction do
   @moduledoc """
-  Settlement transactions give a detailed breakdown of the  settlement report. (== resource_for v2.1.settlementtransactions ==)
+  Settlement transactions give a detailed breakdown of the settlement report.
 
   ## Attributes
 
   *   `amount` (*type:* `GoogleApi.Content.V21.Model.SettlementTransactionAmount.t`, *default:* `nil`) - The amount for the transaction.
   *   `identifiers` (*type:* `GoogleApi.Content.V21.Model.SettlementTransactionIdentifiers.t`, *default:* `nil`) - Identifiers of the transaction.
-  *   `kind` (*type:* `String.t`, *default:* `content#settlementTransaction`) - Identifies what kind of resource this is. Value: the fixed string "`content#settlementTransaction`"
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#settlementTransaction`"
   *   `transaction` (*type:* `GoogleApi.Content.V21.Model.SettlementTransactionTransaction.t`, *default:* `nil`) - Details of the transaction.
   """
 

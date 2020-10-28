@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.LocalinventoryCustomBatchResponse do
   ## Attributes
 
   *   `entries` (*type:* `list(GoogleApi.Content.V21.Model.LocalinventoryCustomBatchResponseEntry.t)`, *default:* `nil`) - The result of the execution of the batch requests.
-  *   `kind` (*type:* `String.t`, *default:* `content#localinventoryCustomBatchResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#localinventoryCustomBatchResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#localinventoryCustomBatchResponse".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -25,11 +25,7 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemShippingDetails do
   *   `method` (*type:* `GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod.t`, *default:* `nil`) - Required. Details of the shipping method.
   *   `pickupPromiseInMinutes` (*type:* `integer()`, *default:* `nil`) - The promised time in minutes in which the order will be ready for pickup. This only applies to buy-online-pickup-in-store same-day order.
   *   `shipByDate` (*type:* `String.t`, *default:* `nil`) - Required. The ship by date, in ISO 8601 format.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of shipment. Indicates whether `deliveryDetails` or `pickupDetails` is applicable for this shipment.
-
-      Acceptable values are:  
-      - "`delivery`" 
-      - "`pickup`"
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of shipment. Indicates whether `deliveryDetails` or `pickupDetails` is applicable for this shipment. Acceptable values are: - "`delivery`" - "`pickup`" 
   """
 
   use GoogleApi.Gax.ModelBase

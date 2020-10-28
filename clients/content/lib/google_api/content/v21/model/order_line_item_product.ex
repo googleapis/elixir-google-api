@@ -22,12 +22,7 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemProduct do
   ## Attributes
 
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
-  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
-
-      Acceptable values are:  
-      - "`new`" 
-      - "`refurbished`" 
-      - "`used`"
+  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item. Acceptable values are: - "`new`" - "`refurbished`" - "`used`" 
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
   *   `fees` (*type:* `list(GoogleApi.Content.V21.Model.OrderLineItemProductFee.t)`, *default:* `nil`) - Associated fees at order creation time.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item.
@@ -38,7 +33,7 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemProduct do
   *   `offerId` (*type:* `String.t`, *default:* `nil`) - An identifier of the item.
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Price of the item.
   *   `shownImage` (*type:* `String.t`, *default:* `nil`) - URL to the cached image shown to the user when order was placed.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the target country of the product.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory // code of the target country of the product.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the product.
   *   `variantAttributes` (*type:* `list(GoogleApi.Content.V21.Model.OrderLineItemProductVariantAttribute.t)`, *default:* `nil`) - Variant attributes for the item. These are dimensions of the product, such as color, gender, material, pattern, and size. You can find a comprehensive list of variant attributes here.
   """

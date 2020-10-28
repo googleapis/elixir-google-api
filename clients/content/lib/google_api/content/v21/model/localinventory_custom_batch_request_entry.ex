@@ -24,10 +24,7 @@ defmodule GoogleApi.Content.V21.Model.LocalinventoryCustomBatchRequestEntry do
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `localInventory` (*type:* `GoogleApi.Content.V21.Model.LocalInventory.t`, *default:* `nil`) - Local inventory of the product.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - Method of the batch request entry.
-
-      Acceptable values are:  
-      - "`insert`"
+  *   `method` (*type:* `String.t`, *default:* `nil`) - Method of the batch request entry. Acceptable values are: - "`insert`" 
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product for which to update local inventory.
   """
 

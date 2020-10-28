@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.ShippingsettingsGetSupportedHolidaysRespon
   ## Attributes
 
   *   `holidays` (*type:* `list(GoogleApi.Content.V21.Model.HolidaysHoliday.t)`, *default:* `nil`) - A list of holidays applicable for delivery guarantees. May be empty.
-  *   `kind` (*type:* `String.t`, *default:* `content#shippingsettingsGetSupportedHolidaysResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsGetSupportedHolidaysResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsGetSupportedHolidaysResponse".
   """
 
   use GoogleApi.Gax.ModelBase
