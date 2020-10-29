@@ -27,9 +27,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Manifest do
   *   `imports` (*type:* `list(GoogleApi.DeploymentManager.V2.Model.ImportFile.t)`, *default:* `nil`) - Output only. The imported files for this manifest.
   *   `insertTime` (*type:* `String.t`, *default:* `nil`) - Output only. Creation timestamp in RFC3339 text format.
   *   `layout` (*type:* `String.t`, *default:* `nil`) - Output only. The YAML layout for this manifest.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only.
-
-      The name of the manifest.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the manifest.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Self link for the manifest.
   """
 

@@ -37,5 +37,5 @@ defmodule GoogleApi.DeploymentManager.V2.Connection do
       "https://www.googleapis.com/auth/ndev.cloudman.readonly"
     ],
     otp_app: :google_api_deployment_manager,
-    base_url: "https://www.googleapis.com/deploymentmanager/v2/projects/"
+    base_url: "https://deploymentmanager.googleapis.com/"
 end

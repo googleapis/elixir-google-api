@@ -18,7 +18,7 @@
 defmodule GoogleApi.DeploymentManager.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.13.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.DeploymentManager.Mixfile do
 
   defp description() do
     """
-    Google Cloud Deployment Manager API client library. Declares, configures, and deploys complex solutions on Google Cloud Platform.
+    Cloud Deployment Manager V2 API client library. The Google Cloud Deployment Manager v2 API provides services for configuring, deploying, and viewing Google Cloud services and APIs via templates which specify deployments of Cloud resources.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.DeploymentManager.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/deployment_manager",
-        "Homepage" => "https://cloud.google.com/deployment-manager/"
+        "Homepage" => "http://cloud.google.com/deployment-manager"
       }
     ]
   end
