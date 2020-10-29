@@ -21,7 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.TranslateTextRequest do
 
   ## Attributes
 
-  *   `contents` (*type:* `list(String.t)`, *default:* `nil`) - Required. The content of the input in string format. We recommend the total content be less than 30k codepoints. Use BatchTranslateText for larger text.
+  *   `contents` (*type:* `list(String.t)`, *default:* `nil`) - Required. The content of the input in string format. We recommend the total content be less than 30k codepoints. The max length of this field is 1024. Use BatchTranslateText for larger text.
   *   `glossaryConfig` (*type:* `GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t`, *default:* `nil`) - Optional. Glossary to be applied. The glossary must be within the same region (have the same location-id) as the model, otherwise an INVALID_ARGUMENT (400) error is returned.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata for the request. Label keys and values can be no longer than 63 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter. See https://cloud.google.com/translate/docs/advanced/labels for more information.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Optional. The format of the source text, for example, "text/html", "text/plain". If left blank, the MIME type defaults to "text/html".
