@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DeploymentManager.V2.Model.DeploymentUpdateLabelEntry do
   @moduledoc """
-
+  Label object for DeploymentUpdate
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - 
-  *   `value` (*type:* `String.t`, *default:* `nil`) - 
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Key of the label
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Value of the label
   """
 
   use GoogleApi.Gax.ModelBase
