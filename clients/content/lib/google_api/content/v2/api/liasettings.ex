@@ -358,6 +358,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which GMB access is requested.
+  *   `gmb_email` (*type:* `String.t`) - The email of the Google My Business account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -370,7 +371,6 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gmbEmail` (*type:* `String.t`) - The email of the Google My Business account.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -380,6 +380,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   """
   @spec content_liasettings_requestgmbaccess(
           Tesla.Env.client(),
+          String.t(),
           String.t(),
           String.t(),
           keyword(),
@@ -392,6 +393,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         connection,
         merchant_id,
         account_id,
+        gmb_email,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -406,8 +408,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :gmbEmail => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -417,6 +418,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :gmbEmail, gmb_email)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -518,6 +520,10 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
+  *   `country` (*type:* `String.t`) - The country for which inventory verification is requested.
+  *   `language` (*type:* `String.t`) - The language for which inventory verification is requested.
+  *   `contact_name` (*type:* `String.t`) - The name of the inventory verification contact.
+  *   `contact_email` (*type:* `String.t`) - The email of the inventory verification contact.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -530,10 +536,6 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:contactEmail` (*type:* `String.t`) - The email of the inventory verification contact.
-      *   `:contactName` (*type:* `String.t`) - The name of the inventory verification contact.
-      *   `:country` (*type:* `String.t`) - The country for which inventory verification is requested.
-      *   `:language` (*type:* `String.t`) - The language for which inventory verification is requested.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -543,6 +545,10 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   """
   @spec content_liasettings_setinventoryverificationcontact(
           Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
           String.t(),
           String.t(),
           keyword(),
@@ -555,6 +561,10 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         connection,
         merchant_id,
         account_id,
+        country,
+        language,
+        contact_name,
+        contact_email,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -569,11 +579,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :contactEmail => :query,
-      :contactName => :query,
-      :country => :query,
-      :language => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -586,6 +592,10 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
           "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
         }
       )
+      |> Request.add_param(:query, :country, country)
+      |> Request.add_param(:query, :language, language)
+      |> Request.add_param(:query, :contactName, contact_name)
+      |> Request.add_param(:query, :contactEmail, contact_email)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -605,6 +615,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to retrieve accessible Google My Business accounts.
+  *   `country` (*type:* `String.t`) - The country for which the POS data provider is selected.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -617,7 +628,6 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:country` (*type:* `String.t`) - The country for which the POS data provider is selected.
       *   `:posDataProviderId` (*type:* `String.t`) - The ID of POS data provider.
       *   `:posExternalAccountId` (*type:* `String.t`) - The account ID by which this merchant is known to the POS data provider.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -631,6 +641,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
           Tesla.Env.client(),
           String.t(),
           String.t(),
+          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -641,6 +652,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         connection,
         merchant_id,
         account_id,
+        country,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -656,7 +668,6 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :country => :query,
       :posDataProviderId => :query,
       :posExternalAccountId => :query
     }
@@ -668,6 +679,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :country, country)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
