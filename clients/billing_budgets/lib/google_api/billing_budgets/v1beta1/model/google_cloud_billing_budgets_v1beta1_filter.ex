@@ -21,6 +21,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
 
   ## Attributes
 
+  *   `creditTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of credit types to be subtracted from gross cost to determine the spend for threshold calculations if and only if credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be empty. See credits.type at https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema for a list of acceptable credit type values in this field.
   *   `creditTypesTreatment` (*type:* `String.t`, *default:* `nil`) - Optional. If not set, default behavior is `INCLUDE_ALL_CREDITS`.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A single label and value pair specifying that usage from only this set of labeled resources should be included in the budget. Currently, multiple entries or multiple values per entry are not allowed. If omitted, the report will include all labeled and unlabeled usage.
   *   `projects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of projects of the form `projects/{project}`, specifying that usage from only this set of projects should be included in the budget. If omitted, the report will include all usage for the billing account, regardless of which project the usage occurred on. Only zero or one project can be specified currently.
@@ -31,6 +32,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :creditTypes => list(String.t()),
           :creditTypesTreatment => String.t(),
           :labels => map(),
           :projects => list(String.t()),
@@ -38,6 +40,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
           :subaccounts => list(String.t())
         }
 
+  field(:creditTypes, type: :list)
   field(:creditTypesTreatment)
   field(:labels, type: :map)
   field(:projects, type: :list)
