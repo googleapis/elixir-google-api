@@ -34,6 +34,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Apigee organization.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID associated with the Apigee organization.
   *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t`, *default:* `nil`) - Properties defined in the Apigee organization profile.
+  *   `runtimeDatabaseEncryptionKeyName` (*type:* `String.t`, *default:* `nil`) - Cloud KMS key name used for encrypting the data that is stored and replicated across runtime instances. Update is not allowed after the organization is created. If not specified, a Google-Managed encryption key will be used. Valid only when [RuntimeType] is CLOUD. For example: "projects/foo/locations/us/keyRings/bar/cryptoKeys/baz". **Note:** Not supported for Apigee hybrid.
   *   `runtimeType` (*type:* `String.t`, *default:* `nil`) - Required. Runtime type of the Apigee organization based on the Apigee subscription purchased.
   *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Output only. Subscription type of the Apigee organization. Valid values include trial (free, limited, and for evaluation purposes only) or paid (full subscription has been purchased). See [Apigee pricing](https://cloud.google.com/apigee/pricing/).
   *   `type` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee.
@@ -55,6 +56,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
           :name => String.t(),
           :projectId => String.t(),
           :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t(),
+          :runtimeDatabaseEncryptionKeyName => String.t(),
           :runtimeType => String.t(),
           :subscriptionType => String.t(),
           :type => String.t()
@@ -73,6 +75,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   field(:name)
   field(:projectId)
   field(:properties, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties)
+  field(:runtimeDatabaseEncryptionKeyName)
   field(:runtimeType)
   field(:subscriptionType)
   field(:type)
