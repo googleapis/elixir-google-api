@@ -26,6 +26,172 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Analyzes IAM policies to answer which identities have what accesses on which resources.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
+  *   `v1_id` (*type:* `String.t`) - Part of `analysisQuery.scope`. Required. The relative name of the root asset. Only resources and IAM policies within the scope will be analyzed. This can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"). To know how to get organization id, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-organization#retrieving_your_organization_id). To know how to get folder or project id, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-folders#viewing_or_listing_folders_and_projects).
+  *   `v1_id1` (*type:* `String.t`) - Part of `analysisQuery.scope`. See documentation of `v1Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"analysisQuery.accessSelector.permissions"` (*type:* `list(String.t)`) - Optional. The permissions to appear in result.
+      *   `:"analysisQuery.accessSelector.roles"` (*type:* `list(String.t)`) - Optional. The roles to appear in result.
+      *   `:"analysisQuery.identitySelector.identity"` (*type:* `String.t`) - Required. The identity appear in the form of members in [IAM policy binding](https://cloud.google.com/iam/reference/rest/v1/Binding). The examples of supported forms are: "user:mike@example.com", "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-id@appspot.gserviceaccount.com". Notice that wildcard characters (such as * and ?) are not supported. You must give a specific identity.
+      *   `:"analysisQuery.options.analyzeServiceAccountImpersonation"` (*type:* `boolean()`) - Optional. If true, the response will include access analysis from identities to resources via service account impersonation. This is a very expensive operation, because many derived queries will be executed. We highly recommend you use AssetService.AnalyzeIamPolicyLongrunning rpc instead. For example, if the request analyzes for which resources user A has permission P, and there's an IAM policy states user A has iam.serviceAccounts.getAccessToken permission to a service account SA, and there's another IAM policy states service account SA has permission P to a GCP folder F, then user A potentially has access to the GCP folder F. And those advanced analysis results will be included in AnalyzeIamPolicyResponse.service_account_impersonation_analysis. Another example, if the request analyzes for who has permission P to a GCP folder F, and there's an IAM policy states user A has iam.serviceAccounts.actAs permission to a service account SA, and there's another IAM policy states service account SA has permission P to the GCP folder F, then user A potentially has access to the GCP folder F. And those advanced analysis results will be included in AnalyzeIamPolicyResponse.service_account_impersonation_analysis. Default is false.
+      *   `:"analysisQuery.options.expandGroups"` (*type:* `boolean()`) - Optional. If true, the identities section of the result will expand any Google groups appearing in an IAM policy binding. If IamPolicyAnalysisQuery.identity_selector is specified, the identity in the result will be determined by the selector, and this flag is not allowed to set. Default is false.
+      *   `:"analysisQuery.options.expandResources"` (*type:* `boolean()`) - Optional. If true and IamPolicyAnalysisQuery.resource_selector is not specified, the resource section of the result will expand any resource attached to an IAM policy to include resources lower in the resource hierarchy. For example, if the request analyzes for which resources user A has permission P, and the results include an IAM policy with P on a GCP folder, the results will also include resources in that folder with permission P. If true and IamPolicyAnalysisQuery.resource_selector is specified, the resource section of the result will expand the specified resource to include resources lower in the resource hierarchy. Only project or lower resources are supported. Folder and organization resource cannot be used together with this option. For example, if the request analyzes for which users have permission P on a GCP project with this option enabled, the results will include all users who have permission P on that project or any lower resource. Default is false.
+      *   `:"analysisQuery.options.expandRoles"` (*type:* `boolean()`) - Optional. If true, the access section of result will expand any roles appearing in IAM policy bindings to include their permissions. If IamPolicyAnalysisQuery.access_selector is specified, the access section of the result will be determined by the selector, and this flag is not allowed to set. Default is false.
+      *   `:"analysisQuery.options.outputGroupEdges"` (*type:* `boolean()`) - Optional. If true, the result will output group identity edges, starting from the binding's group members, to any expanded identities. Default is false.
+      *   `:"analysisQuery.options.outputResourceEdges"` (*type:* `boolean()`) - Optional. If true, the result will output resource edges, starting from the policy attached resource, to any expanded resources. Default is false.
+      *   `:"analysisQuery.resourceSelector.fullResourceName"` (*type:* `String.t`) - Required. The [full resource name] (https://cloud.google.com/asset-inventory/docs/resource-name-format) of a resource of [supported resource types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#analyzable_asset_types).
+      *   `:executionTimeout` (*type:* `String.t`) - Optional. Amount of time executable has to complete. See JSON representation of [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json). If this field is set with a value less than the RPC deadline, and the execution of your query hasn't finished in the specified execution timeout, you will get a response with partial result. Otherwise, your query's execution will continue until the RPC deadline. If it's not finished until then, you will get a DEADLINE_EXCEEDED error. Default is empty.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudasset_analyze_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def cloudasset_analyze_iam_policy(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :"analysisQuery.accessSelector.permissions" => :query,
+      :"analysisQuery.accessSelector.roles" => :query,
+      :"analysisQuery.identitySelector.identity" => :query,
+      :"analysisQuery.options.analyzeServiceAccountImpersonation" => :query,
+      :"analysisQuery.options.expandGroups" => :query,
+      :"analysisQuery.options.expandResources" => :query,
+      :"analysisQuery.options.expandRoles" => :query,
+      :"analysisQuery.options.outputGroupEdges" => :query,
+      :"analysisQuery.options.outputResourceEdges" => :query,
+      :"analysisQuery.resourceSelector.fullResourceName" => :query,
+      :executionTimeout => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeIamPolicy", %{
+        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
+        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyResponse{}]
+    )
+  end
+
+  @doc """
+  Analyzes IAM policies asynchronously to answer which identities have what accesses on which resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination. For Cloud Storage destination, the output format is the JSON format that represents a AnalyzeIamPolicyResponse. This method implements the google.longrunning.Operation, which allows you to track the operation status. We recommend intervals of at least 2 seconds with exponential backoff retry to poll the operation result. The metadata contains the request to help callers to map responses to requests.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
+  *   `v1_id` (*type:* `String.t`) - Part of `analysisQuery.scope`. Required. The relative name of the root asset. Only resources and IAM policies within the scope will be analyzed. This can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"). To know how to get organization id, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-organization#retrieving_your_organization_id). To know how to get folder or project id, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-folders#viewing_or_listing_folders_and_projects).
+  *   `v1_id1` (*type:* `String.t`) - Part of `analysisQuery.scope`. See documentation of `v1Id`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyLongrunningRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudAsset.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudasset_analyze_iam_policy_longrunning(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def cloudasset_analyze_iam_policy_longrunning(
+        connection,
+        v1_id,
+        v1_id1,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeIamPolicyLongrunning", %{
+        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
+        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudAsset.V1.Model.Operation{}])
+  end
+
+  @doc """
   Batch gets the update history of assets that overlap a time window. For IAM_POLICY content, this API outputs history when the asset and its attached IAM POLICY both exist. This can create gaps in the output history. Otherwise, this API outputs history with asset in both non-delete or deleted status. If a specified asset does not exist, this API returns an INVALID_ARGUMENT error.
 
   ## Parameters
