@@ -23,7 +23,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferOptions do
 
   *   `deleteObjectsFromSourceAfterTransfer` (*type:* `boolean()`, *default:* `nil`) - Whether objects should be deleted from the source after they are transferred to the sink. **Note:** This option and delete_objects_unique_in_sink are mutually exclusive.
   *   `deleteObjectsUniqueInSink` (*type:* `boolean()`, *default:* `nil`) - Whether objects that exist only in the sink should be deleted. **Note:** This option and delete_objects_from_source_after_transfer are mutually exclusive.
-  *   `overwriteObjectsAlreadyExistingInSink` (*type:* `boolean()`, *default:* `nil`) - Whether overwriting objects that already exist in the sink is allowed.
+  *   `overwriteObjectsAlreadyExistingInSink` (*type:* `boolean()`, *default:* `nil`) - When to overwrite objects that already exist in the sink. The default is that only objects that are different from the source are ovewritten. If true, all objects in the sink whose name matches an object in the source will be overwritten with the source object.
   """
 
   use GoogleApi.Gax.ModelBase
