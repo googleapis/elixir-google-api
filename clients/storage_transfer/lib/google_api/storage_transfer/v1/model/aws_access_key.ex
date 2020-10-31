@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.AwsAccessKey do
   @moduledoc """
-  AWS access key (see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)).
+  AWS access key (see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)). For information on our data retention policy for user credentials, see [User credentials](data-retention#user-credentials).
 
   ## Attributes
 
