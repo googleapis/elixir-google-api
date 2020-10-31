@@ -21,6 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.IntegralAdScience do
 
   ## Attributes
 
+  *   `customSegmentId` (*type:* `list(String.t)`, *default:* `nil`) - The custom segment ID provided by Integral Ad Science. The ID must be between `1000001` and `1999999`, inclusive.
   *   `displayViewability` (*type:* `String.t`, *default:* `nil`) - Display Viewability section (applicable to display line items only).
   *   `excludeUnrateable` (*type:* `boolean()`, *default:* `nil`) - Brand Safety - **Unrateable**.
   *   `excludedAdFraudRisk` (*type:* `String.t`, *default:* `nil`) - Ad Fraud settings.
@@ -39,6 +40,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.IntegralAdScience do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customSegmentId => list(String.t()),
           :displayViewability => String.t(),
           :excludeUnrateable => boolean(),
           :excludedAdFraudRisk => String.t(),
@@ -54,6 +56,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.IntegralAdScience do
           :videoViewability => String.t()
         }
 
+  field(:customSegmentId, type: :list)
   field(:displayViewability)
   field(:excludeUnrateable)
   field(:excludedAdFraudRisk)
