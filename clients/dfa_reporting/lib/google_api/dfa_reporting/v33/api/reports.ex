@@ -31,7 +31,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `report_id` (*type:* `String.t`) - The ID of the report.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -101,7 +101,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `report_id` (*type:* `String.t`) - The ID of the report.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -168,7 +168,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -229,7 +229,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -373,7 +373,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `report_id` (*type:* `String.t`) - The ID of the report.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -442,7 +442,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `report_id` (*type:* `String.t`) - The ID of the report.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -517,7 +517,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -591,7 +591,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `report_id` (*type:* `String.t`) - The ID of the report.
   *   `file_id` (*type:* `String.t`) - The ID of the report file.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -676,7 +676,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `report_id` (*type:* `String.t`) - The ID of the parent report.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.CompanionSetting do
   ## Attributes
 
   *   `companionsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether companions are disabled for this placement.
-  *   `enabledSizes` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Size.t)`, *default:* `nil`) - Whitelist of companion sizes to be served to this placement. Set this list to null or empty to serve all companion sizes.
+  *   `enabledSizes` (*type:* `list(GoogleApi.DFAReporting.V34.Model.Size.t)`, *default:* `nil`) - Allowlist of companion sizes to be served to this placement. Set this list to null or empty to serve all companion sizes.
   *   `imageOnly` (*type:* `boolean()`, *default:* `nil`) - Whether to serve only static images as companions.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#companionSetting".
   """
