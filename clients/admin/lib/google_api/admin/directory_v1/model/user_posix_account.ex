@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.UserPosixAccount do
   @moduledoc """
-  JSON template for a POSIX account entry. Description of the field family: go/fbs-posix.
+  JSON template for a POSIX account entry.
 
   ## Attributes
 

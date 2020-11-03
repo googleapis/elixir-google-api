@@ -106,5 +106,5 @@ defmodule GoogleApi.Admin.Directory_v1.Connection do
       "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_admin,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://admin.googleapis.com/"
 end
