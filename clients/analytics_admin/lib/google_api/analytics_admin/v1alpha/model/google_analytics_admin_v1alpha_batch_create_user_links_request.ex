@@ -21,8 +21,8 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatc
 
   ## Attributes
 
-  *   `notifyNewUsers` (*type:* `boolean()`, *default:* `nil`) - Optional. If notify_new_users is set, then email new users that they've been given permissions on the resource.
-  *   `requests` (*type:* `list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCreateUserLinkRequest.t)`, *default:* `nil`) - The requests specifying the user links to create. A maximum of 1000 user links can be created in a batch.
+  *   `notifyNewUsers` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, then email the new users notifying them that they've been granted permissions to the resource. Regardless of whether this is set or not, notify_new_user field inside each individual request is ignored.
+  *   `requests` (*type:* `list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCreateUserLinkRequest.t)`, *default:* `nil`) - Required. The requests specifying the user links to create. A maximum of 1000 user links can be created in a batch.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCrea
 
   ## Attributes
 
-  *   `notifyNewUser` (*type:* `boolean()`, *default:* `nil`) - Optional. If notify_new_user is set, then email new user that they've been given permissions on the resource.
+  *   `notifyNewUser` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, then email the new user notifying them that they've been granted permissions to the resource.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. Example format: accounts/1234
   *   `userLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t`, *default:* `nil`) - Required. The user link to create.
   """
