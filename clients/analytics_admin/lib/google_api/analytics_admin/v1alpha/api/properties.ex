@@ -2134,7 +2134,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:notifyNewUser` (*type:* `boolean()`) - Optional. If notify_new_user is set, then email new user that they've been given permissions on the resource.
+      *   `:notifyNewUser` (*type:* `boolean()`) - Optional. If set, then email the new user notifying them that they've been granted permissions to the resource.
       *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

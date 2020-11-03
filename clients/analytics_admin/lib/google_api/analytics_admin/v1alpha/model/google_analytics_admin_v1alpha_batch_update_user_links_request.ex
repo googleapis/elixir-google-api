@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatc
 
   ## Attributes
 
-  *   `requests` (*type:* `list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUpdateUserLinkRequest.t)`, *default:* `nil`) - The requests specifying the user links to update. A maximum of 1000 user links can be updated in a batch.
+  *   `requests` (*type:* `list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUpdateUserLinkRequest.t)`, *default:* `nil`) - Required. The requests specifying the user links to update. A maximum of 1000 user links can be updated in a batch.
   """
 
   use GoogleApi.Gax.ModelBase
