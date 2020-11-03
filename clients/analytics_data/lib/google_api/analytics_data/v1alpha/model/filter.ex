@@ -24,7 +24,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Filter do
   *   `betweenFilter` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.BetweenFilter.t`, *default:* `nil`) - A filter for two values.
   *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The dimension name or metric name. Must be a name defined in dimensions or metrics.
   *   `inListFilter` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.InListFilter.t`, *default:* `nil`) - A filter for in list values.
-  *   `nullFilter` (*type:* `boolean()`, *default:* `nil`) - A filter for null values.
+  *   `nullFilter` (*type:* `boolean()`, *default:* `nil`) - A filter for null values. If True, a null dimension value is matched by this filter. Null filter is commonly used inside a NOT filter expression. For example, a NOT expression of a null filter removes rows when a dimension is null.
   *   `numericFilter` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.NumericFilter.t`, *default:* `nil`) - A filter for numeric or date values.
   *   `stringFilter` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.StringFilter.t`, *default:* `nil`) - Strings related filter.
   """
