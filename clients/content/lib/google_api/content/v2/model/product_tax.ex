@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V2.Model.ProductTax do
   *   `postalCode` (*type:* `String.t`, *default:* `nil`) - The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*.
   *   `rate` (*type:* `float()`, *default:* `nil`) - The percentage of tax rate that applies to the item price.
   *   `region` (*type:* `String.t`, *default:* `nil`) - The geographic region to which the tax rate applies.
-  *   `taxShip` (*type:* `boolean()`, *default:* `nil`) - Set to true if tax is charged on shipping.
+  *   `taxShip` (*type:* `boolean()`, *default:* `nil`) - Should be set to true if tax is charged on shipping.
   """
 
   use GoogleApi.Gax.ModelBase
