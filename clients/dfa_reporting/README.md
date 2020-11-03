@@ -1,6 +1,6 @@
 # GoogleApi.DFAReporting
 
-DCM/DFA Reporting And Trafficking API client library.
+Campaign Manager 360 API client library.
 
 Manage your DoubleClick Campaign Manager ad campaigns and reports.
 

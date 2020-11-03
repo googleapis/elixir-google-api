@@ -97,7 +97,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Files do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V34.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA profile ID.
+  *   `profile_id` (*type:* `String.t`) - The Campaign Manager 360 user profile ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

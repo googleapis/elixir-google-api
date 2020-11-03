@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.SiteTranscodeSetting do
 
   ## Attributes
 
-  *   `enabledVideoFormats` (*type:* `list(integer())`, *default:* `nil`) - Whitelist of video formats to be served to this site template. Set this list to null or empty to serve all video formats.
+  *   `enabledVideoFormats` (*type:* `list(integer())`, *default:* `nil`) - Allowlist of video formats to be served to this site template. Set this list to null or empty to serve all video formats.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteTranscodeSetting".
   """
 
