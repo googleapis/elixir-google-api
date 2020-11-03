@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
 
   *   `sizes` (*type:* `list(String.t)`, *default:* `nil`) - Size of the item. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same `itemGroupId` value (see size definition).
   *   `identifierExists` (*type:* `boolean()`, *default:* `nil`) - False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada.
-  *   `adult` (*type:* `boolean()`, *default:* `nil`) - Set to true if the item is targeted towards adults.
+  *   `adult` (*type:* `boolean()`, *default:* `nil`) - Should be set to true if the item is targeted towards adults.
   *   `unitPricingBaseMeasure` (*type:* `GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure.t`, *default:* `nil`) - The preference of the denominator of the unit price.
   *   `productType` (*type:* `String.t`, *default:* `nil`) - Your category of the item (formatted as in products data specification).
   *   `adwordsLabels` (*type:* `list(String.t)`, *default:* `nil`) - Similar to adwords_grouping, but only works on CPC.
