@@ -24,6 +24,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails do
   *   `abortCause` (*type:* `String.t`, *default:* `nil`) - Causes that the probing was aborted.
   *   `endpointInfo` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t`, *default:* `nil`) - Derived from the test input. The actual source and destination endpoint where the probing was run.
   *   `error` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.Status.t`, *default:* `nil`) - The details of an internal failure or a cancellation of reachability analysis.
+  *   `probingLatency` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution.t`, *default:* `nil`) - One way probing latency distribution. The latency is measured as duration of packet traversal of Google Cloud network, from source to destination endpoint.
   *   `result` (*type:* `String.t`, *default:* `nil`) - The overall reachability result of the test.
   *   `sentProbeCount` (*type:* `integer()`, *default:* `nil`) - Number of probes sent.
   *   `successfulProbeCount` (*type:* `integer()`, *default:* `nil`) - Number of probes that reached destination.
@@ -36,6 +37,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails do
           :abortCause => String.t(),
           :endpointInfo => GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t(),
           :error => GoogleApi.NetworkManagement.V1beta1.Model.Status.t(),
+          :probingLatency => GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution.t(),
           :result => String.t(),
           :sentProbeCount => integer(),
           :successfulProbeCount => integer(),
@@ -45,6 +47,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails do
   field(:abortCause)
   field(:endpointInfo, as: GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo)
   field(:error, as: GoogleApi.NetworkManagement.V1beta1.Model.Status)
+  field(:probingLatency, as: GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution)
   field(:result)
   field(:sentProbeCount)
   field(:successfulProbeCount)
