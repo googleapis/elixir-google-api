@@ -21,8 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.MeasurementConfig do
 
   ## Attributes
 
-  *   `dv360ToCmCostReportingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not to report DV360 cost to CM.
-  *   `dv360ToCmDataSharingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not to include DV360 data in CM data transfer reports.
+  *   `dv360ToCmCostReportingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not to report DV360 cost to CM360.
+  *   `dv360ToCmDataSharingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not to include DV360 data in CM360 data transfer reports.
   """
 
   use GoogleApi.Gax.ModelBase
