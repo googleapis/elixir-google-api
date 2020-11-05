@@ -1498,6 +1498,7 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
       *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+      *   `:resourceNames` (*type:* `list(String.t)`) - Optional. The resource name that owns the logs: projects/PROJECT_ID/locations/LOCATION_ID/buckets/BUCKET_ID/views/VIEW_ID organization/ORGANIZATION_ID/locations/LOCATION_ID/buckets/BUCKET_ID/views/VIEW_ID billingAccounts/BILLING_ACCOUNT_ID/locations/LOCATION_ID/buckets/BUCKET_ID/views/VIEW_ID folders/FOLDER_ID/locations/LOCATION_ID/buckets/BUCKET_ID/views/VIEW_IDTo support legacy queries, it could also be: "projects/PROJECT_ID" "organizations/ORGANIZATION_ID" "billingAccounts/BILLING_ACCOUNT_ID" "folders/FOLDER_ID"
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1528,7 +1529,8 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :resourceNames => :query
     }
 
     request =
