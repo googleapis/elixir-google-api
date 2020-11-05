@@ -21,15 +21,21 @@ defmodule GoogleApi.Sheets.V4.Model.PivotFilterCriteria do
 
   ## Attributes
 
+  *   `condition` (*type:* `GoogleApi.Sheets.V4.Model.BooleanCondition.t`, *default:* `nil`) - A condition that must be true for values to be shown. (`visibleValues` does not override this -- even if a value is listed there, it is still hidden if it does not meet the condition.) Condition values that refer to ranges in A1-notation are evaluated relative to the pivot table sheet. References are treated absolutely, so are not filled down the pivot table. For example, a condition value of `=A1` on "Pivot Table 1" is treated as `'Pivot Table 1'!$A$1`. The source data of the pivot table can be referenced by column header name. For example, if the source data has columns named "Revenue" and "Cost" and a condition is applied to the "Revenue" column with type `NUMBER_GREATER` and value `=Cost`, then only columns where "Revenue" > "Cost" are included.
+  *   `visibleByDefault` (*type:* `boolean()`, *default:* `nil`) - Whether values are visible by default. If true, the visible_values are ignored, all values that meet condition (if specified) are shown. If false, values that are both in visible_values and meet condition are shown.
   *   `visibleValues` (*type:* `list(String.t)`, *default:* `nil`) - Values that should be included. Values not listed here are excluded.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
+          :visibleByDefault => boolean(),
           :visibleValues => list(String.t())
         }
 
+  field(:condition, as: GoogleApi.Sheets.V4.Model.BooleanCondition)
+  field(:visibleByDefault)
   field(:visibleValues, type: :list)
 end
 
