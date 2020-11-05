@@ -21,7 +21,7 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
 
   ## Attributes
 
-  *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Google Docs to specific formats.
+  *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Docs Editors files to specific formats.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the revision.
   *   `keepForever` (*type:* `boolean()`, *default:* `nil`) - Whether to keep this revision forever, even if it is no longer the head revision. If not set, the revision will be automatically purged 30 days after newer content is uploaded. This can be set on a maximum of 200 revisions for a file.
       This field is only applicable to files with binary content in Drive.
@@ -31,10 +31,10 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the revision.
   *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the revision was modified (RFC 3339 date-time).
   *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename used to create this revision. This is only applicable to files with binary content in Drive.
-  *   `publishAuto` (*type:* `boolean()`, *default:* `nil`) - Whether subsequent revisions will be automatically republished. This is only applicable to Google Docs.
-  *   `published` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published. This is only applicable to Google Docs.
+  *   `publishAuto` (*type:* `boolean()`, *default:* `nil`) - Whether subsequent revisions will be automatically republished. This is only applicable to Docs Editors files.
+  *   `published` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published. This is only applicable to Docs Editors files.
   *   `publishedLink` (*type:* `String.t`, *default:* `nil`) - A link to the published revision. This is only populated for Google Sites files.
-  *   `publishedOutsideDomain` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published outside the domain. This is only applicable to Google Docs.
+  *   `publishedOutsideDomain` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published outside the domain. This is only applicable to Docs Editors files.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the revision's content in bytes. This is only applicable to files with binary content in Drive.
   """
 

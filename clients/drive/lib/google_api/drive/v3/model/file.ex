@@ -55,7 +55,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content. If the file isn't shared publicly, the URL returned in Files.thumbnailLink must be fetched using a credentialed request.
   *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename of the uploaded content if available, or else the original value of the name field. This is only available for files with binary content in Google Drive.
   *   `explicitlyTrashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been explicitly trashed, as opposed to recursively trashed from a parent folder.
-  *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Google Docs to specific formats.
+  *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Docs Editors files to specific formats.
   *   `modifiedByMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by the user (RFC 3339 date-time).
   *   `quotaBytesUsed` (*type:* `String.t`, *default:* `nil`) - The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with keepForever enabled.
   *   `owners` (*type:* `list(GoogleApi.Drive.V3.Model.User.t)`, *default:* `nil`) - The owners of the file. Currently, only certain legacy files may have more than one owner. Not populated for items in shared drives.
