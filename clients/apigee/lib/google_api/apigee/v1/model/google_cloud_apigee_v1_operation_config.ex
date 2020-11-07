@@ -21,10 +21,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig do
 
   ## Attributes
 
-  *   `apiSource` (*type:* `String.t`, *default:* `nil`) - Required. api_source represents either a proxy or remote service name for which the resources, methods and quota are associated with.
-  *   `attributes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t)`, *default:* `nil`) - custom attribute associated with the operation.
-  *   `operations` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation.t)`, *default:* `nil`) - operations is the list of resource/methods pair, belonging to proxy/remote service, upon which quota will applied on. Note that currently we allow only a single operation. The call will fail if more than one is provided.
-  *   `quota` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota.t`, *default:* `nil`) - Quota parameters to be enforced for the resources, methods, api_source combination. If none specified, quota enforcement will not be done.
+  *   `apiSource` (*type:* `String.t`, *default:* `nil`) - Required. API proxy or remote service name with which the resources, methods, and quota are associated.
+  *   `attributes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t)`, *default:* `nil`) - Custom attributes associated with the operation.
+  *   `operations` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation.t)`, *default:* `nil`) - List of resource/method pairs for the proxy/remote service, upon which quota will applied. **Note**: Currently, you can specify only a single resource/method pair. The call will fail if more than one resource/method pair is provided.
+  *   `quota` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota.t`, *default:* `nil`) - Quota parameters to be enforced for the resources, methods, api_source combination. If none are specified, quota enforcement will not be done.
   """
 
   use GoogleApi.Gax.ModelBase
