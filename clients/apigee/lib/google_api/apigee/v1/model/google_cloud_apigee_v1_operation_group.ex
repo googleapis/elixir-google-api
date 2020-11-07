@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup do
   @moduledoc """
-  The OperationGroup contains a list of configuration details associated with Apigee proxies or Remote services. Remote services are non-Apigee Edge proxies. eg, Istio-Envoy.
+  List of operation configuration details associated with Apigee API proxies or remote services. Remote services are non-Apigee proxies, such as Istio-Envoy.
 
   ## Attributes
 
-  *   `operationConfigType` (*type:* `String.t`, *default:* `nil`) - Identfies whether the configuration is for Apigee proxy or a remote service. Possible values are "proxy" and "remoteservice". If none specified, the default is "proxy". "proxy" is used when Apigee proxies are associated with the API product. "remoteservice" is used when non-Apigee proxy like Envoy is used, and is associated with the API product.
-  *   `operationConfigs` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig.t)`, *default:* `nil`) - Required. A list of OperationConfig for either Apigee proxies or other other remote services, that are associated with this API product.
+  *   `operationConfigType` (*type:* `String.t`, *default:* `nil`) - Flag that specifes whether the configuration is for Apigee API proxy or a remote service. Valid values are `proxy` or `remoteservice`. Defaults to `proxy`. Set to `proxy` when Apigee API proxies are associated with the API product. Set to `remoteservice` when non-Apigee proxies like Istio-Envoy are associated with the API product.
+  *   `operationConfigs` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig.t)`, *default:* `nil`) - Required. List of operation configurations for either Apigee API proxies or other remote services that are associated with this API product.
   """
 
   use GoogleApi.Gax.ModelBase
