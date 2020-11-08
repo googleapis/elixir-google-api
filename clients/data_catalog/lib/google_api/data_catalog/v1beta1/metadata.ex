@@ -20,7 +20,7 @@ defmodule GoogleApi.DataCatalog.V1beta1 do
   API client metadata for GoogleApi.DataCatalog.V1beta1.
   """
 
-  @discovery_revision "20201021"
+  @discovery_revision "20201102"
 
   def discovery_revision(), do: @discovery_revision
 end
