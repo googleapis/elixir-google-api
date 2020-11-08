@@ -310,7 +310,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:readMask` (*type:* `String.t`) - Optional. Read mask is used for a more granular control over what the API returns. By it includes all fields in Queue except for stats.
+      *   `:readMask` (*type:* `String.t`) - Optional. Read mask is used for a more granular control over what the API returns. If the mask is not present all fields will be returned except [Queue.stats], if the mask is set to "*" all fields including [Queue.stats] will be returned, otherwise only the fields explicitly specified in the mask will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -455,6 +455,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       *   `:filter` (*type:* `String.t`) - `filter` can be used to specify a subset of queues. Any Queue field can be used as a filter and several operators as supported. For example: `<=, <, >=, >, !=, =, :`. The filter syntax is the same as described in [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters). Sample filter "app_engine_http_target: *". Note that using filters might cause fewer queues than the requested_page size to be returned.
       *   `:pageSize` (*type:* `integer()`) - Requested page size. The maximum page size is 9800. If unspecified, the page size will be the maximum. Fewer queues than requested might be returned, even if more queues exist; use the next_page_token in the response to determine if more queues exist.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return. To request the first page results, page_token must be empty. To request the next page of results, page_token must be the value of next_page_token returned from the previous call to ListQueues method. It is an error to switch the value of the filter while iterating through pages.
+      *   `:readMask` (*type:* `String.t`) - Optional. Read mask is used for a more granular control over what the API returns. If the mask is not present all fields will be returned except [Queue.stats], if the mask is set to "*" all fields including [Queue.stats] will be returned, otherwise only the fields explicitly specified in the mask will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -491,7 +492,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       :upload_protocol => :query,
       :filter => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :readMask => :query
     }
 
     request =
