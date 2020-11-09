@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleRestrictionBoundary do
 
   ## Attributes
 
-  *   `percentageDelta` (*type:* `integer()`, *default:* `nil`) - The percentage delta relative to the offer selling price. This field is signed. It must be negative in floor. When it is used in floor, it should be > -100. If an offer is selling at $10 and this field is -30 in floor, the repricing rule only applies if the calculated new price is >= $7.
-  *   `priceDelta` (*type:* `String.t`, *default:* `nil`) - The price micros relative to the offer selling price. This field is signed. It must be negative in floor. If an offer is selling at $10 and this field is -$2 in floor, the repricing rule only applies if the calculated new price is >= $8.
+  *   `percentageDelta` (*type:* `integer()`, *default:* `nil`) - The percentage delta relative to the offer selling price. This field is signed. It must be negative in floor. When it is used in floor, it should be > -100. For example, if an offer is selling at $10 and this field is -30 in floor, the repricing rule only applies if the calculated new price is >= $7.
+  *   `priceDelta` (*type:* `String.t`, *default:* `nil`) - The price micros relative to the offer selling price. This field is signed. It must be negative in floor. For example, if an offer is selling at $10 and this field is -$2 in floor, the repricing rule only applies if the calculated new price is >= $8.
   """
 
   use GoogleApi.Gax.ModelBase
