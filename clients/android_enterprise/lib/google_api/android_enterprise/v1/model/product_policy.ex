@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
   ## Attributes
 
   *   `autoInstallPolicy` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy.t`, *default:* `nil`) - The auto-install policy for the product.
+  *   `autoUpdateMode` (*type:* `String.t`, *default:* `nil`) - The auto-update mode for the product.
   *   `managedConfiguration` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t`, *default:* `nil`) - The managed configuration for the product.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product. For example, "app:com.google.android.gm".
   *   `trackIds` (*type:* `list(String.t)`, *default:* `nil`) - Grants the device visibility to the specified product release track(s), identified by trackIds. The list of release tracks of a product can be obtained by calling Products.Get.
@@ -32,6 +33,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
 
   @type t :: %__MODULE__{
           :autoInstallPolicy => GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy.t(),
+          :autoUpdateMode => String.t(),
           :managedConfiguration => GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t(),
           :productId => String.t(),
           :trackIds => list(String.t()),
@@ -39,6 +41,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy do
         }
 
   field(:autoInstallPolicy, as: GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy)
+  field(:autoUpdateMode)
   field(:managedConfiguration, as: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration)
   field(:productId)
   field(:trackIds, type: :list)
