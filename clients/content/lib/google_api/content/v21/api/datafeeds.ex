@@ -151,7 +151,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeeds do
   end
 
   @doc """
-  Invokes a fetch for the datafeed in your Merchant Center account.
+  Invokes a fetch for the datafeed in your Merchant Center account. If you need to call this method more than once per day, we recommend you use the Products service to update your product data.
 
   ## Parameters
 
