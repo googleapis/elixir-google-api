@@ -22,6 +22,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportDicomDataRequest do
   ## Attributes
 
   *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination. You can only export to a BigQuery dataset that's in the same project as the DICOM store you're exporting from. The Cloud Healthcare Service Agent requires two IAM roles on the BigQuery location: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`.
+  *   `filterConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig.t`, *default:* `nil`) - Specifies the filter configuration.
   *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination. The Cloud Healthcare Service Agent requires the `roles/storage.objectAdmin` Cloud IAM roles on the Cloud Storage location.
   """
 
@@ -30,6 +31,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportDicomDataRequest do
   @type t :: %__MODULE__{
           :bigqueryDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBigQueryDestination.t(),
+          :filterConfig => GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig.t(),
           :gcsDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsDestination.t()
         }
@@ -37,6 +39,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportDicomDataRequest do
   field(:bigqueryDestination,
     as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBigQueryDestination
   )
+
+  field(:filterConfig, as: GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig)
 
   field(:gcsDestination,
     as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsDestination
