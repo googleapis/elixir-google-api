@@ -490,7 +490,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only. The UI extracts the location and workload name from this string, since they aren't set directly on the workload object. If the format of this field changes, the UI should likely be updated. LINT.IfChange LINT.ThenChange(//depot/google3/cloud/console/web/compliance/assurant/common/workload_helper.ts)
+  *   `name` (*type:* `String.t`) - Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

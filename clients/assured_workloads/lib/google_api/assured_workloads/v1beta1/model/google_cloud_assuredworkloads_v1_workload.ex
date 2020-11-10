@@ -31,7 +31,8 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   *   `fedrampModerateSettings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadFedrampModerateSettings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
   *   `il4Settings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadIL4Settings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for IL4.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels applied to the workload.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only. The UI extracts the location and workload name from this string, since they aren't set directly on the workload object. If the format of this field changes, the UI should likely be updated. LINT.IfChange LINT.ThenChange(//depot/google3/cloud/console/web/compliance/assurant/common/workload_helper.ts)
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only.
+  *   `provisionedResourcesParent` (*type:* `String.t`, *default:* `nil`) - Input only. The parent resource for the resources managed by this Assured Workload. May be either an organization or a folder. Must be the same or a child of the Workload parent. If not specified all resources are created under the Workload parent. Formats: folders/{folder_id} organizations/{organization_id}
   *   `resources` (*type:* `list(GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceInfo.t)`, *default:* `nil`) - Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only.
   """
 
@@ -53,6 +54,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
             GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadIL4Settings.t(),
           :labels => map(),
           :name => String.t(),
+          :provisionedResourcesParent => String.t(),
           :resources =>
             list(
               GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceInfo.t()
@@ -86,6 +88,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
 
   field(:labels, type: :map)
   field(:name)
+  field(:provisionedResourcesParent)
 
   field(:resources,
     as:
