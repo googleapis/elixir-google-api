@@ -25,6 +25,9 @@ defmodule GoogleApi.AdMob.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # See your AdMob data
+      "https://www.googleapis.com/auth/admob.readonly",
+
+      # See your AdMob data
       "https://www.googleapis.com/auth/admob.report"
     ],
     otp_app: :google_api_ad_mob,
