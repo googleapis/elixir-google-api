@@ -325,7 +325,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Gets a bucket (Beta).
+  Gets a bucket.
 
   ## Parameters
 
@@ -404,7 +404,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Lists buckets (Beta).
+  Lists buckets.
 
   ## Parameters
 
@@ -485,7 +485,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Updates a bucket. This method replaces the following fields in the existing bucket with values from the new bucket: retention_periodIf the retention period is decreased and the bucket is locked, FAILED_PRECONDITION will be returned.If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION will be returned.A buckets region may not be modified after it is created. This method is in Beta.
+  Updates a bucket. This method replaces the following fields in the existing bucket with values from the new bucket: retention_periodIf the retention period is decreased and the bucket is locked, FAILED_PRECONDITION will be returned.If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION will be returned.A buckets region may not be modified after it is created.
 
   ## Parameters
 
@@ -902,7 +902,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Lists views on a bucket..
+  Lists views on a bucket.
 
   ## Parameters
 

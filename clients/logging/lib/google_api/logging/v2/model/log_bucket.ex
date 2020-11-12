@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Logging.V2.Model.LogBucket do
   @moduledoc """
-  Describes a repository of logs (Beta).
+  Describes a repository of logs.
 
   ## Attributes
 

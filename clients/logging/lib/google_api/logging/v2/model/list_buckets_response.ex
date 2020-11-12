@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Logging.V2.Model.ListBucketsResponse do
   @moduledoc """
-  The response from ListBuckets (Beta).
+  The response from ListBuckets.
 
   ## Attributes
 
