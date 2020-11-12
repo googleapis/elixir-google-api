@@ -377,8 +377,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - Broadcast to transition.
   *   `broadcast_status` (*type:* `String.t`) - The status to which the broadcast is going to transition.
+  *   `id` (*type:* `String.t`) - Broadcast to transition.
   *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -414,8 +414,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
           | {:error, any()}
   def youtube_live_broadcasts_transition(
         connection,
-        id,
         broadcast_status,
+        id,
         part,
         optional_params \\ [],
         opts \\ []
@@ -440,8 +440,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/youtube/v3/liveBroadcasts/transition", %{})
-      |> Request.add_param(:query, :id, id)
       |> Request.add_param(:query, :broadcastStatus, broadcast_status)
+      |> Request.add_param(:query, :id, id)
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

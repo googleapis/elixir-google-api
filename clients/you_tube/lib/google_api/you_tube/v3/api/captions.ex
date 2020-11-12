@@ -470,8 +470,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `video_id` (*type:* `String.t`) - Returns the captions for the specified video.
   *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies a comma-separated list of one or more caption resource parts that the API response will include. The part names that you can include in the parameter value are id and snippet.
+  *   `video_id` (*type:* `String.t`) - Returns the captions for the specified video.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -496,15 +496,15 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_list(
           Tesla.Env.client(),
-          String.t(),
           list(String.t()),
+          String.t(),
           keyword(),
           keyword()
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.CaptionListResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def youtube_captions_list(connection, video_id, part, optional_params \\ [], opts \\ []) do
+  def youtube_captions_list(connection, part, video_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -526,8 +526,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/youtube/v3/captions", %{})
-      |> Request.add_param(:query, :videoId, video_id)
       |> Request.add_param(:query, :part, part)
+      |> Request.add_param(:query, :videoId, video_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
