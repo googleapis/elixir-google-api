@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunReportResponse do
   *   `metricHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.MetricHeader.t)`, *default:* `nil`) - Describes metric columns. The number of MetricHeaders and ordering of MetricHeaders matches the metrics present in rows.
   *   `minimums` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t)`, *default:* `nil`) - If requested, the minimum values of metrics.
   *   `propertyQuota` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.PropertyQuota.t`, *default:* `nil`) - This Analytics Property's quota state including this request.
-  *   `rowCount` (*type:* `integer()`, *default:* `nil`) - The total number of rows in the query result, regardless of the number of rows returned in the response. For example if a query returns 175 rows and includes limit = 50 in the API request, the response will contain row_count = 175 but only 50 rows.
+  *   `rowCount` (*type:* `integer()`, *default:* `nil`) - The total number of rows in the query result, regardless of the number of rows returned in the response. For example if a query returns 175 rows and includes limit = 50 in the API request, the response will contain row_count = 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](basics#pagination).
   *   `rows` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t)`, *default:* `nil`) - Rows of dimension value combinations and metric values in the report.
   *   `totals` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.Row.t)`, *default:* `nil`) - If requested, the totaled values of metrics.
   """
