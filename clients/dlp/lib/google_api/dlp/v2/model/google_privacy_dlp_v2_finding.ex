@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when finding was detected.
+  *   `findingId` (*type:* `String.t`, *default:* `nil`) - The unique finding id.
   *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - The type of content that might have been found. Provided if `excluded_types` is false.
   *   `jobCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time the job started that produced this finding.
   *   `jobName` (*type:* `String.t`, *default:* `nil`) - The job that stored the finding.
@@ -39,6 +40,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t(),
+          :findingId => String.t(),
           :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t(),
           :jobCreateTime => DateTime.t(),
           :jobName => String.t(),
@@ -53,6 +55,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
         }
 
   field(:createTime, as: DateTime)
+  field(:findingId)
   field(:infoType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType)
   field(:jobCreateTime, as: DateTime)
   field(:jobName)
