@@ -30,7 +30,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by anyone (RFC 3339 date-time).
       Note that setting modifiedTime will also update modifiedByMeTime for the user.
   *   `contentRestrictions` (*type:* `list(GoogleApi.Drive.V3.Model.ContentRestriction.t)`, *default:* `nil`) - Restrictions for accessing the content of the file. Only populated if such a restriction exists.
-  *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the file's content in bytes. This is only applicable to files with binary content in Google Drive.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the file's content in bytes. This is applicable to binary files in Google Drive and Google Docs files.
   *   `spaces` (*type:* `list(String.t)`, *default:* `nil`) - The list of spaces which contain the file. The currently supported values are 'drive', 'appDataFolder' and 'photos'.
   *   `trashingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - If the file has been explicitly trashed, the user who trashed it. Only populated for items in shared drives.
   *   `ownedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the user owns the file. Not populated for items in shared drives.
