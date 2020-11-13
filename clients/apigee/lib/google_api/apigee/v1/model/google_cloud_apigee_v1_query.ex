@@ -23,6 +23,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Query do
 
   *   `csvDelimiter` (*type:* `String.t`, *default:* `nil`) - Delimiter used in the CSV file, if `outputFormat` is set to `csv`. Defaults to the `,` (comma) character. Supported delimiter characters include comma (`,`), pipe (`|`), and tab (`\\t`).
   *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of dimensions. https://docs.apigee.com/api-platform/analytics/analytics-reference#dimensions
+  *   `envgroupHostname` (*type:* `String.t`, *default:* `nil`) - Hostname needs to be specified if query intends to run at host level. This field is only allowed when query is submitted by CreateHostAsyncQuery where analytics data will be grouped by organization and hostname.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Boolean expression that can be used to filter data. Filter expressions can be combined using AND/OR terms and should be fully parenthesized to avoid ambiguity. See Analytics metrics, dimensions, and filters reference https://docs.apigee.com/api-platform/analytics/analytics-reference for more information on the fields available to filter on. For more information on the tokens that you use to build filter expressions, see Filter expression syntax. https://docs.apigee.com/api-platform/analytics/asynch-reports-api#filter-expression-syntax
   *   `groupByTimeUnit` (*type:* `String.t`, *default:* `nil`) - Time unit used to group the result set. Valid values include: second, minute, hour, day, week, or month. If a query includes groupByTimeUnit, then the result is an aggregation based on the specified time unit and the resultant timestamp does not include milliseconds precision. If a query omits groupByTimeUnit, then the resultant timestamp includes milliseconds precision.
   *   `limit` (*type:* `integer()`, *default:* `nil`) - Maximum number of rows that can be returned in the result.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Query do
   @type t :: %__MODULE__{
           :csvDelimiter => String.t(),
           :dimensions => list(String.t()),
+          :envgroupHostname => String.t(),
           :filter => String.t(),
           :groupByTimeUnit => String.t(),
           :limit => integer(),
@@ -50,6 +52,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Query do
 
   field(:csvDelimiter)
   field(:dimensions, type: :list)
+  field(:envgroupHostname)
   field(:filter)
   field(:groupByTimeUnit)
   field(:limit)
