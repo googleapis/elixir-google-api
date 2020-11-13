@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device_id}`, where device_id is the unique ID assigned to the Device, and device_user_id is the unique ID assigned to the User.
+  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device_id}`, where device_id is the unique ID assigned to the Device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
