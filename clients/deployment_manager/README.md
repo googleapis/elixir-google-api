@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_deployment_manager, "~> 0.14"}]
+  [{:google_api_deployment_manager, "~> 0.15"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [http://cloud.google.com/deployment-manager](http://cloud.google.com/deployment-manager).
+Product documentation is available at [https://cloud.google.com/deployment-manager](https://cloud.google.com/deployment-manager).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_deployment_manager](https://hexdocs.pm/google_api_deployment_manager).
