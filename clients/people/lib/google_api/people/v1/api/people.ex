@@ -26,7 +26,7 @@ defmodule GoogleApi.People.V1.Api.People do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a new contact and return the person resource for that contact. The request throws a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names
+  Create a new contact and return the person resource for that contact. The request returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names
 
   ## Parameters
 
@@ -206,7 +206,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides information about a person by specifying a resource name. Use `people/me` to indicate the authenticated user. The request throws a 400 error if 'personFields' is not specified.
+  Provides information about a person by specifying a resource name. Use `people/me` to indicate the authenticated user. The request returns a 400 error if 'personFields' is not specified.
 
   ## Parameters
 
@@ -269,7 +269,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides information about a list of specific people by specifying a list of requested resource names. Use `people/me` to indicate the authenticated user. The request throws a 400 error if 'personFields' is not specified.
+  Provides information about a list of specific people by specifying a list of requested resource names. Use `people/me` to indicate the authenticated user. The request returns a 400 error if 'personFields' is not specified.
 
   ## Parameters
 
@@ -599,7 +599,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides a list of the authenticated user's contacts. The request throws a 400 error if 'personFields' is not specified.
+  Provides a list of the authenticated user's contacts. The request returns a 400 error if `personFields` is not specified. The request returns a 410 error if `sync_token` is specified and is expired. Sync tokens expire after 7 days. A request without `sync_token` should be made and all contacts should be synced.
 
   ## Parameters
 
