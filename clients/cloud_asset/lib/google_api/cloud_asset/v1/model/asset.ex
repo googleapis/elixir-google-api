@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
   *   `iamPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.Policy.t`, *default:* `nil`) - A representation of the Cloud IAM policy set on a Google Cloud resource. There can be a maximum of one Cloud IAM policy set on any given resource. In addition, Cloud IAM policies inherit their granted access scope from any policies set on parent resources in the resource hierarchy. Therefore, the effectively policy is the union of both the policy set on this resource and each policy set on all of the resource's ancestry resource levels in the hierarchy. See [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for more information.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full name of the asset. Example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1` See [Resource names](https://cloud.google.com/apis/design/resource_names#full_resource_name) for more information.
   *   `orgPolicy` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy.t)`, *default:* `nil`) - A representation of an [organization policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy). There can be more than one organization policy with different constraints set on a given resource.
+  *   `osInventory` (*type:* `GoogleApi.CloudAsset.V1.Model.Inventory.t`, *default:* `nil`) - A representation of runtime OS Inventory information. See [this topic](https://cloud.google.com/compute/docs/instances/os-inventory-management) for more information.
   *   `resource` (*type:* `GoogleApi.CloudAsset.V1.Model.Resource.t`, *default:* `nil`) - A representation of the resource.
   *   `servicePerimeter` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t`, *default:* `nil`) - Please also refer to the [service perimeter user guide](https://cloud.google.com/vpc-service-controls/docs/overview).
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of an asset. update_time is updated when create/update/delete operation is performed.
@@ -45,6 +46,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
           :iamPolicy => GoogleApi.CloudAsset.V1.Model.Policy.t(),
           :name => String.t(),
           :orgPolicy => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy.t()),
+          :osInventory => GoogleApi.CloudAsset.V1.Model.Inventory.t(),
           :resource => GoogleApi.CloudAsset.V1.Model.Resource.t(),
           :servicePerimeter =>
             GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t(),
@@ -64,6 +66,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
   field(:iamPolicy, as: GoogleApi.CloudAsset.V1.Model.Policy)
   field(:name)
   field(:orgPolicy, as: GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy, type: :list)
+  field(:osInventory, as: GoogleApi.CloudAsset.V1.Model.Inventory)
   field(:resource, as: GoogleApi.CloudAsset.V1.Model.Resource)
 
   field(:servicePerimeter,
