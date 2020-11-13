@@ -22,6 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Stats do
   ## Attributes
 
   *   `environments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats.t)`, *default:* `nil`) - This field contains a list of query results on environment level.
+  *   `hosts` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsHostStats.t)`, *default:* `nil`) - This field contains a list of query results grouped by host.
   *   `metaData` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t`, *default:* `nil`) - This field contains the metadata information.
   """
 
@@ -30,6 +31,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Stats do
   @type t :: %__MODULE__{
           :environments =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats.t()),
+          :hosts => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsHostStats.t()),
           :metaData => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t()
         }
 
@@ -38,6 +40,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Stats do
     type: :list
   )
 
+  field(:hosts, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsHostStats, type: :list)
   field(:metaData, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata)
 end
 
