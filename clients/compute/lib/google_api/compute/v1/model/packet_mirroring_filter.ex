@@ -23,17 +23,20 @@ defmodule GoogleApi.Compute.V1.Model.PacketMirroringFilter do
 
   *   `IPProtocols` (*type:* `list(String.t)`, *default:* `nil`) - Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
   *   `cidrRanges` (*type:* `list(String.t)`, *default:* `nil`) - IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
+  *   `direction` (*type:* `String.t`, *default:* `nil`) - Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :IPProtocols => list(String.t()),
-          :cidrRanges => list(String.t())
+          :cidrRanges => list(String.t()),
+          :direction => String.t()
         }
 
   field(:IPProtocols, type: :list)
   field(:cidrRanges, type: :list)
+  field(:direction)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.PacketMirroringFilter do

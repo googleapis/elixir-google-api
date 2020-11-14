@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.DistributionPolicy do
 
   ## Attributes
 
-  *   `zones` (*type:* `list(GoogleApi.Compute.V1.Model.DistributionPolicyZoneConfiguration.t)`, *default:* `nil`) - Zones where the regional managed instance group will create and manage instances.
+  *   `zones` (*type:* `list(GoogleApi.Compute.V1.Model.DistributionPolicyZoneConfiguration.t)`, *default:* `nil`) - Zones where the regional managed instance group will create and manage its instances.
   """
 
   use GoogleApi.Gax.ModelBase
