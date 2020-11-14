@@ -22,7 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
   ## Attributes
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the advertiser the insertion order belongs to.
-  *   `bidStrategy` (*type:* `GoogleApi.DisplayVideo.V1.Model.BiddingStrategy.t`, *default:* `nil`) - Optional. The bidding strategy of the insertion order. By default, fixed_bid is set.
+  *   `bidStrategy` (*type:* `GoogleApi.DisplayVideo.V1.Model.BiddingStrategy.t`, *default:* `nil`) - The bidding strategy of the insertion order. By default, fixed_bid is set.
   *   `budget` (*type:* `GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudget.t`, *default:* `nil`) - Required. The budget allocation settings of the insertion order.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique ID of the campaign that the insertion order belongs to.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the insertion order. Must be UTF-8 encoded with a maximum size of 240 bytes.

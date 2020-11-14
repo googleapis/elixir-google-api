@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ManualTrigger do
   @moduledoc """
-  A single manual trigger in Display & Video 360 (DV360).
+  A single manual trigger in Display & Video 360.
 
   ## Attributes
 
