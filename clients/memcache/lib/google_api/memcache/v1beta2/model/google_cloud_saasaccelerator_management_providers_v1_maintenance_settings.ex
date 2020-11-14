@@ -22,15 +22,20 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
   ## Attributes
 
   *   `exclude` (*type:* `boolean()`, *default:* `nil`) - Optional. Exclude instance from maintenance. When true, rollout service will not attempt maintenance on the instance. Rollout service will include the instance in reported rollout progress as not attempted.
+  *   `maintenancePolicies` (*type:* `%{optional(String.t) => GoogleApi.Memcache.V1beta2.Model.MaintenancePolicy.t}`, *default:* `nil`) - Optional. The MaintenancePolicies that have been attached to the instance. The key must be of the type name of the oneof policy name defined in MaintenancePolicy, and the embedded policy must define the same policy type. For complete details of MaintenancePolicy, please refer to go/cloud-saas-mw-ug. If only the name is needed (like in the deprecated Instance.maintenance_policy_names field) then only populate MaintenancePolicy.name.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exclude => boolean()
+          :exclude => boolean(),
+          :maintenancePolicies => %{
+            optional(String.t()) => GoogleApi.Memcache.V1beta2.Model.MaintenancePolicy.t()
+          }
         }
 
   field(:exclude)
+  field(:maintenancePolicies, as: GoogleApi.Memcache.V1beta2.Model.MaintenancePolicy, type: :map)
 end
 
 defimpl Poison.Decoder,
