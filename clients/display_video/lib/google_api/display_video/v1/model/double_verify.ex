@@ -24,7 +24,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DoubleVerify do
   *   `appStarRating` (*type:* `GoogleApi.DisplayVideo.V1.Model.DoubleVerifyAppStarRating.t`, *default:* `nil`) - Avoid bidding on apps with the star ratings.
   *   `avoidedAgeRatings` (*type:* `list(String.t)`, *default:* `nil`) - Avoid bidding on apps with the age rating.
   *   `brandSafetyCategories` (*type:* `GoogleApi.DisplayVideo.V1.Model.DoubleVerifyBrandSafetyCategories.t`, *default:* `nil`) - DV Brand Safety Controls.
-  *   `customSegmentId` (*type:* `String.t`, *default:* `nil`) - The custom segment ID provided by DoubleVerify. The ID must start with "51" and consist of eight digits. Custom segment id cannot be specified along with any of the following fields: * brand_safety_categories * avoided_age_ratings * app_star_rating * fraud_invalid_traffic
+  *   `customSegmentId` (*type:* `String.t`, *default:* `nil`) - The custom segment ID provided by DoubleVerify. The ID must start with "51" and consist of eight digits. Custom segment ID cannot be specified along with any of the following fields: * brand_safety_categories * avoided_age_ratings * app_star_rating * fraud_invalid_traffic
   *   `displayViewability` (*type:* `GoogleApi.DisplayVideo.V1.Model.DoubleVerifyDisplayViewability.t`, *default:* `nil`) - Display viewability settings (applicable to display line items only).
   *   `fraudInvalidTraffic` (*type:* `GoogleApi.DisplayVideo.V1.Model.DoubleVerifyFraudInvalidTraffic.t`, *default:* `nil`) - Avoid Sites and Apps with historical Fraud & IVT Rates.
   *   `videoViewability` (*type:* `GoogleApi.DisplayVideo.V1.Model.DoubleVerifyVideoViewability.t`, *default:* `nil`) - Video viewability settings (applicable to video line items only).

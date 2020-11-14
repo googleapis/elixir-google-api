@@ -4350,7 +4350,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Lists manual triggers that are accessible to the current user for a given advertiser id. The order is defined by the order_by parameter. A single advertiser_id is required.
+  Lists manual triggers that are accessible to the current user for a given advertiser ID. The order is defined by the order_by parameter. A single advertiser_id is required.
 
   ## Parameters
 
