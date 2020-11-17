@@ -22,6 +22,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Volume do
   ## Attributes
 
   *   `existingDisk` (*type:* `GoogleApi.LifeSciences.V2beta.Model.ExistingDisk.t`, *default:* `nil`) - Configuration for a existing disk.
+  *   `nfsMount` (*type:* `GoogleApi.LifeSciences.V2beta.Model.NFSMount.t`, *default:* `nil`) - Configuration for an NFS mount.
   *   `persistentDisk` (*type:* `GoogleApi.LifeSciences.V2beta.Model.PersistentDisk.t`, *default:* `nil`) - Configuration for a persistent disk.
   *   `volume` (*type:* `String.t`, *default:* `nil`) - A user-supplied name for the volume. Used when mounting the volume into `Actions`. The name must contain only upper and lowercase alphanumeric characters and hyphens and cannot start with a hyphen.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Volume do
 
   @type t :: %__MODULE__{
           :existingDisk => GoogleApi.LifeSciences.V2beta.Model.ExistingDisk.t(),
+          :nfsMount => GoogleApi.LifeSciences.V2beta.Model.NFSMount.t(),
           :persistentDisk => GoogleApi.LifeSciences.V2beta.Model.PersistentDisk.t(),
           :volume => String.t()
         }
 
   field(:existingDisk, as: GoogleApi.LifeSciences.V2beta.Model.ExistingDisk)
+  field(:nfsMount, as: GoogleApi.LifeSciences.V2beta.Model.NFSMount)
   field(:persistentDisk, as: GoogleApi.LifeSciences.V2beta.Model.PersistentDisk)
   field(:volume)
 end
