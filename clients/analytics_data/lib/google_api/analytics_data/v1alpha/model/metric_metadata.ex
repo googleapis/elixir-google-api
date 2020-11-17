@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.MetricMetadata do
   ## Attributes
 
   *   `apiName` (*type:* `String.t`, *default:* `nil`) - A metric name. Useable in [Metric](#Metric)'s `name`. For example, `eventCount`.
+  *   `customDefinition` (*type:* `boolean()`, *default:* `nil`) - True if the metric is a custom metric for this property.
   *   `deprecatedApiNames` (*type:* `list(String.t)`, *default:* `nil`) - Still usable but deprecated names for this metric. If populated, this metric is available by either `apiName` or one of `deprecatedApiNames` for a period of time. After the deprecation period, the metric will be available only by `apiName`.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of how this metric is used and calculated.
   *   `expression` (*type:* `String.t`, *default:* `nil`) - The mathematical expression for this derived metric. Can be used in [Metric](#Metric)'s `expression` field for equivalent reports. Most metrics are not expressions, and for non-expressions, this field is empty.
@@ -33,6 +34,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.MetricMetadata do
 
   @type t :: %__MODULE__{
           :apiName => String.t(),
+          :customDefinition => boolean(),
           :deprecatedApiNames => list(String.t()),
           :description => String.t(),
           :expression => String.t(),
@@ -41,6 +43,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.MetricMetadata do
         }
 
   field(:apiName)
+  field(:customDefinition)
   field(:deprecatedApiNames, type: :list)
   field(:description)
   field(:expression)
