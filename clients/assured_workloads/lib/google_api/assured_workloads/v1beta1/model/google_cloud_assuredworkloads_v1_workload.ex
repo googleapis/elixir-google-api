@@ -22,14 +22,11 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   ## Attributes
 
   *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`.
-  *   `cjisSettings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadCJISSettings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for CJIS.
   *   `complianceRegime` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Compliance Regime associated with this workload.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Immutable. The Workload creation timestamp.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. ETag of the workload, it is calculated on the basis of the Workload contents. It will be used in Update & Delete operations.
-  *   `fedrampHighSettings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadFedrampHighSettings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
-  *   `fedrampModerateSettings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadFedrampModerateSettings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
-  *   `il4Settings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadIL4Settings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for IL4.
+  *   `kmsSettings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadKMSSettings.t`, *default:* `nil`) - Input only. Settings used to create a CMEK crypto key. When set a project with a KMS CMEK key is provisioned. This field is mandatory for a subset of Compliance Regimes.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels applied to the workload.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only.
   *   `provisionedResourcesParent` (*type:* `String.t`, *default:* `nil`) - Input only. The parent resource for the resources managed by this Assured Workload. May be either an organization or a folder. Must be the same or a child of the Workload parent. If not specified all resources are created under the Workload parent. Formats: folders/{folder_id} organizations/{organization_id}
@@ -40,18 +37,12 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
 
   @type t :: %__MODULE__{
           :billingAccount => String.t(),
-          :cjisSettings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadCJISSettings.t(),
           :complianceRegime => String.t(),
           :createTime => DateTime.t(),
           :displayName => String.t(),
           :etag => String.t(),
-          :fedrampHighSettings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadFedrampHighSettings.t(),
-          :fedrampModerateSettings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadFedrampModerateSettings.t(),
-          :il4Settings =>
-            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadIL4Settings.t(),
+          :kmsSettings =>
+            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadKMSSettings.t(),
           :labels => map(),
           :name => String.t(),
           :provisionedResourcesParent => String.t(),
@@ -62,28 +53,13 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
         }
 
   field(:billingAccount)
-
-  field(:cjisSettings,
-    as: GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadCJISSettings
-  )
-
   field(:complianceRegime)
   field(:createTime, as: DateTime)
   field(:displayName)
   field(:etag)
 
-  field(:fedrampHighSettings,
-    as:
-      GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadFedrampHighSettings
-  )
-
-  field(:fedrampModerateSettings,
-    as:
-      GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadFedrampModerateSettings
-  )
-
-  field(:il4Settings,
-    as: GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadIL4Settings
+  field(:kmsSettings,
+    as: GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1WorkloadKMSSettings
   )
 
   field(:labels, type: :map)
