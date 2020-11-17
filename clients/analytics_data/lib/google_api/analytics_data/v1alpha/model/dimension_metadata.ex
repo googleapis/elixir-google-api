@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.DimensionMetadata do
   ## Attributes
 
   *   `apiName` (*type:* `String.t`, *default:* `nil`) - This dimension's name. Useable in [Dimension](#Dimension)'s `name`. For example, `eventName`.
+  *   `customDefinition` (*type:* `boolean()`, *default:* `nil`) - True if the dimension is a custom dimension for this property.
   *   `deprecatedApiNames` (*type:* `list(String.t)`, *default:* `nil`) - Still usable but deprecated names for this dimension. If populated, this dimension is available by either `apiName` or one of `deprecatedApiNames` for a period of time. After the deprecation period, the dimension will be available only by `apiName`.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of how this dimension is used and calculated.
   *   `uiName` (*type:* `String.t`, *default:* `nil`) - This dimension's name within the Google Analytics user interface. For example, `Event name`.
@@ -31,12 +32,14 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.DimensionMetadata do
 
   @type t :: %__MODULE__{
           :apiName => String.t(),
+          :customDefinition => boolean(),
           :deprecatedApiNames => list(String.t()),
           :description => String.t(),
           :uiName => String.t()
         }
 
   field(:apiName)
+  field(:customDefinition)
   field(:deprecatedApiNames, type: :list)
   field(:description)
   field(:uiName)
