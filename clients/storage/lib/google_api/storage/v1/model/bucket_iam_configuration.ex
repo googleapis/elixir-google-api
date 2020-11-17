@@ -22,6 +22,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketIamConfiguration do
   ## Attributes
 
   *   `bucketPolicyOnly` (*type:* `GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly.t`, *default:* `nil`) - The bucket's uniform bucket-level access configuration. The feature was formerly known as Bucket Policy Only. For backward compatibility, this field will be populated with identical information as the uniformBucketLevelAccess field. We recommend using the uniformBucketLevelAccess field to enable and disable the feature.
+  *   `publicAccessPrevention` (*type:* `String.t`, *default:* `nil`) - The bucket's Public Access Prevention configuration. Currently, 'unspecified' and 'enforced' are supported.
   *   `uniformBucketLevelAccess` (*type:* `GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAccess.t`, *default:* `nil`) - The bucket's uniform bucket-level access configuration.
   """
 
@@ -30,11 +31,13 @@ defmodule GoogleApi.Storage.V1.Model.BucketIamConfiguration do
   @type t :: %__MODULE__{
           :bucketPolicyOnly =>
             GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly.t(),
+          :publicAccessPrevention => String.t(),
           :uniformBucketLevelAccess =>
             GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAccess.t()
         }
 
   field(:bucketPolicyOnly, as: GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly)
+  field(:publicAccessPrevention)
 
   field(:uniformBucketLevelAccess,
     as: GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAccess
