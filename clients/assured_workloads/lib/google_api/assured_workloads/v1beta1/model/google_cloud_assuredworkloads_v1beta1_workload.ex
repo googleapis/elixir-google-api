@@ -30,6 +30,7 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   *   `fedrampHighSettings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadFedrampHighSettings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High.
   *   `fedrampModerateSettings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadFedrampModerateSettings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
   *   `il4Settings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadIL4Settings.t`, *default:* `nil`) - Required. Input only. Immutable. Settings specific to resources needed for IL4.
+  *   `kmsSettings` (*type:* `GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadKMSSettings.t`, *default:* `nil`) - Input only. Settings used to create a CMEK crypto key. When set a project with a KMS CMEK key is provisioned. This field is mandatory for a subset of Compliance Regimes.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels applied to the workload.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only.
   *   `provisionedResourcesParent` (*type:* `String.t`, *default:* `nil`) - Input only. The parent resource for the resources managed by this Assured Workload. May be either an organization or a folder. Must be the same or a child of the Workload parent. If not specified all resources are created under the Workload parent. Formats: folders/{folder_id} organizations/{organization_id}
@@ -52,6 +53,8 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
             GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadFedrampModerateSettings.t(),
           :il4Settings =>
             GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadIL4Settings.t(),
+          :kmsSettings =>
+            GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadKMSSettings.t(),
           :labels => map(),
           :name => String.t(),
           :provisionedResourcesParent => String.t(),
@@ -86,6 +89,11 @@ defmodule GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1
   field(:il4Settings,
     as:
       GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadIL4Settings
+  )
+
+  field(:kmsSettings,
+    as:
+      GoogleApi.AssuredWorkloads.V1beta1.Model.GoogleCloudAssuredworkloadsV1beta1WorkloadKMSSettings
   )
 
   field(:labels, type: :map)
