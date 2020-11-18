@@ -21,6 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.AssetDiscoveryConfig do
 
   ## Attributes
 
+  *   `folderIds` (*type:* `list(String.t)`, *default:* `nil`) - The folder ids to use for filtering asset discovery. It consists of only digits, e.g., 756619654966.
   *   `inclusionMode` (*type:* `String.t`, *default:* `nil`) - The mode to use for filtering asset discovery.
   *   `projectIds` (*type:* `list(String.t)`, *default:* `nil`) - The project ids to use for filtering asset discovery.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.AssetDiscoveryConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :folderIds => list(String.t()),
           :inclusionMode => String.t(),
           :projectIds => list(String.t())
         }
 
+  field(:folderIds, type: :list)
   field(:inclusionMode)
   field(:projectIds, type: :list)
 end

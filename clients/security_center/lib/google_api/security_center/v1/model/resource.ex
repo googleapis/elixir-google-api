@@ -21,6 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Resource do
 
   ## Attributes
 
+  *   `folders` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Folder.t)`, *default:* `nil`) - Contains a Folder message for each folder in the assets ancestry. The first folder is the deepest nested folder, and the last folder is the folder directly under the Organization.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of resource's parent.
   *   `parentName` (*type:* `String.t`, *default:* `nil`) - The full resource name of resource's parent.
@@ -31,6 +32,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Resource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :folders => list(GoogleApi.SecurityCenter.V1.Model.Folder.t()),
           :name => String.t(),
           :parentDisplayName => String.t(),
           :parentName => String.t(),
@@ -38,6 +40,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Resource do
           :projectName => String.t()
         }
 
+  field(:folders, as: GoogleApi.SecurityCenter.V1.Model.Folder, type: :list)
   field(:name)
   field(:parentDisplayName)
   field(:parentName)
