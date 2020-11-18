@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudIot.V1 do
   API client metadata for GoogleApi.CloudIot.V1.
   """
 
-  @discovery_revision "20201027"
+  @discovery_revision "20201110"
 
   def discovery_revision(), do: @discovery_revision
 end
