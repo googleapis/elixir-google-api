@@ -21,7 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.BatchCreateNotesRequest do
 
   ## Attributes
 
-  *   `notes` (*type:* `%{optional(String.t) => GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t}`, *default:* `nil`) - Required. The notes to create. Max allowed length is 1000.
+  *   `notes` (*type:* `%{optional(String.t) => GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t}`, *default:* `nil`) - Required. The notes to create, the key is expected to be the note ID. Max allowed length is 1000.
   """
 
   use GoogleApi.Gax.ModelBase
