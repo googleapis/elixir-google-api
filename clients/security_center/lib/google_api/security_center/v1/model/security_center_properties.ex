@@ -21,6 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties do
 
   ## Attributes
 
+  *   `folders` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Folder.t)`, *default:* `nil`) - Contains a Folder message for each folder in the assets ancestry. The first folder is the deepest nested folder, and the last folder is the folder directly under the Organization.
   *   `resourceDisplayName` (*type:* `String.t`, *default:* `nil`) - The user defined display name for this resource.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The full resource name of the Google Cloud resource this asset represents. This field is immutable after create time. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `resourceOwners` (*type:* `list(String.t)`, *default:* `nil`) - Owners of the Google Cloud resource.
@@ -34,6 +35,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :folders => list(GoogleApi.SecurityCenter.V1.Model.Folder.t()),
           :resourceDisplayName => String.t(),
           :resourceName => String.t(),
           :resourceOwners => list(String.t()),
@@ -44,6 +46,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties do
           :resourceType => String.t()
         }
 
+  field(:folders, as: GoogleApi.SecurityCenter.V1.Model.Folder, type: :list)
   field(:resourceDisplayName)
   field(:resourceName)
   field(:resourceOwners, type: :list)
