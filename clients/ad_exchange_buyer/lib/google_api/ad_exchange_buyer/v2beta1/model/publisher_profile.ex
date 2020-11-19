@@ -30,6 +30,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
   *   `isParent` (*type:* `boolean()`, *default:* `nil`) - Indicates if this profile is the parent profile of the seller. A parent profile represents all the inventory from the seller, as opposed to child profile that is created to brand a portion of inventory. One seller should have only one parent publisher profile, and can have multiple child profiles. Publisher profiles for the same seller will have same value of field google.ads.adexchange.buyer.v2beta1.PublisherProfile.seller. See https://support.google.com/admanager/answer/6035806 for details.
   *   `logoUrl` (*type:* `String.t`, *default:* `nil`) - A Google public URL to the logo for this publisher profile. The logo is stored as a PNG, JPG, or GIF image.
   *   `mediaKitUrl` (*type:* `String.t`, *default:* `nil`) - URL to additional marketing and sales materials.
+  *   `mobileApps` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfileMobileApplication.t)`, *default:* `nil`) - The list of apps represented in this publisher profile. Empty if this is a parent profile.
   *   `overview` (*type:* `String.t`, *default:* `nil`) - Overview of the publisher.
   *   `programmaticDealsContact` (*type:* `String.t`, *default:* `nil`) - Contact information for programmatic deals. This is free text entered by the publisher and may include information like names, phone numbers and email addresses.
   *   `publisherProfileId` (*type:* `String.t`, *default:* `nil`) - Unique ID for publisher profile.
@@ -51,6 +52,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
           :isParent => boolean(),
           :logoUrl => String.t(),
           :mediaKitUrl => String.t(),
+          :mobileApps =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfileMobileApplication.t()),
           :overview => String.t(),
           :programmaticDealsContact => String.t(),
           :publisherProfileId => String.t(),
@@ -69,6 +72,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
   field(:isParent)
   field(:logoUrl)
   field(:mediaKitUrl)
+
+  field(:mobileApps,
+    as: GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfileMobileApplication,
+    type: :list
+  )
+
   field(:overview)
   field(:programmaticDealsContact)
   field(:publisherProfileId)
