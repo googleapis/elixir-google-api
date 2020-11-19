@@ -21,8 +21,8 @@ defmodule GoogleApi.People.V1.Model.ModifyContactGroupMembersRequest do
 
   ## Attributes
 
-  *   `resourceNamesToAdd` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The resource names of the contact people to add in the form of `people/{person_id}`.
-  *   `resourceNamesToRemove` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The resource names of the contact people to remove in the form of `people/{person_id}`.
+  *   `resourceNamesToAdd` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The resource names of the contact people to add in the form of `people/{person_id}`. The total number of resource names in `resource_names_to_add` and `resource_names_to_remove` must be less than or equal to 1000.
+  *   `resourceNamesToRemove` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The resource names of the contact people to remove in the form of `people/{person_id}`. The total number of resource names in `resource_names_to_add` and `resource_names_to_remove` must be less than or equal to 1000.
   """
 
   use GoogleApi.Gax.ModelBase
