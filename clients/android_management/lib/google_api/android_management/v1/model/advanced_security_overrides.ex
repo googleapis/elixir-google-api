@@ -21,15 +21,18 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides do
 
   ## Attributes
 
+  *   `commonCriteriaMode` (*type:* `String.t`, *default:* `nil`) - Controls Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC). Enabling Common Criteria Mode increases certain security components on a device, including AES-GCM encryption of Bluetooth Long Term Keys, and Wi-Fi configuration stores.Warning: Common Criteria Mode enforces a strict security model typically only required for IT products used in national security systems and other highly sensitive organizations. Standard device use may be affected. Only enabled if required.
   *   `untrustedAppsPolicy` (*type:* `String.t`, *default:* `nil`) - The policy for untrusted apps (apps from unknown sources) enforced on the device. Replaces install_unknown_sources_allowed (deprecated).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :commonCriteriaMode => String.t(),
           :untrustedAppsPolicy => String.t()
         }
 
+  field(:commonCriteriaMode)
   field(:untrustedAppsPolicy)
 end
 
