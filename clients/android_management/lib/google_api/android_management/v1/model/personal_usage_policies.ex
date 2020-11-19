@@ -25,7 +25,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies do
   *   `cameraDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether camera is disabled.
   *   `maxDaysWithWorkOff` (*type:* `integer()`, *default:* `nil`) - Controls how long the work profile can stay off.
   *   `personalApplications` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PersonalApplicationPolicy.t)`, *default:* `nil`) - Policy applied to applications in the personal profile.
-  *   `personalPlayStoreMode` (*type:* `String.t`, *default:* `nil`) - Used together with personal_applications to control how apps in the personal profile are allowed or blocked.
+  *   `personalPlayStoreMode` (*type:* `String.t`, *default:* `nil`) - Used together with personalApplications to control how apps in the personal profile are allowed or blocked.
   *   `screenCaptureDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether screen capture is disabled.
   """
 

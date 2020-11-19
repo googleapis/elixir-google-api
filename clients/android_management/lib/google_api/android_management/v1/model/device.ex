@@ -47,6 +47,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   *   `lastPolicySyncTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the device fetched its policy.
   *   `user` (*type:* `GoogleApi.AndroidManagement.V1.Model.User.t`, *default:* `nil`) - The user who owns the device.
   *   `systemProperties` (*type:* `map()`, *default:* `nil`) - Map of selected system properties name and value related to the device. This information is only available if systemPropertiesEnabled is true in the device's policy.
+  *   `commonCriteriaModeInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo.t`, *default:* `nil`) - Information about Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC).This information is only available if statusReportingSettings.commonCriteriaModeEnabled is true in the device's policy.
   *   `enrollmentTime` (*type:* `DateTime.t`, *default:* `nil`) - The time of device enrollment.
   *   `appliedPolicyVersion` (*type:* `String.t`, *default:* `nil`) - The version of the policy currently applied to the device.
   *   `policyName` (*type:* `String.t`, *default:* `nil`) - The name of the policy applied to the device, in the form enterprises/{enterpriseId}/policies/{policyId}. If not specified, the policy_name for the device's user is applied. This field can be modified by a patch request. You can specify only the policyId when calling enterprises.devices.patch, as long as the policyId doesn’t contain any slashes. The rest of the policy name is inferred.
@@ -87,6 +88,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
           :lastPolicySyncTime => DateTime.t(),
           :user => GoogleApi.AndroidManagement.V1.Model.User.t(),
           :systemProperties => map(),
+          :commonCriteriaModeInfo =>
+            GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo.t(),
           :enrollmentTime => DateTime.t(),
           :appliedPolicyVersion => String.t(),
           :policyName => String.t(),
@@ -141,6 +144,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   field(:lastPolicySyncTime, as: DateTime)
   field(:user, as: GoogleApi.AndroidManagement.V1.Model.User)
   field(:systemProperties, type: :map)
+  field(:commonCriteriaModeInfo, as: GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo)
   field(:enrollmentTime, as: DateTime)
   field(:appliedPolicyVersion)
   field(:policyName)
