@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DataSource do
 
   ## Attributes
 
-  *   `disableModifications` (*type:* `boolean()`, *default:* `nil`) - If true, Indexing API rejects any modification calls to this datasource such as create, update, and delete. Disabling this does not imply halting process of previously accepted data.
+  *   `disableModifications` (*type:* `boolean()`, *default:* `nil`) - If true, sets the datasource to read-only mode. In read-only mode, the Indexing API rejects any requests to index or delete items in this source. Enabling read-only mode does not stop the processing of previously accepted data.
   *   `disableServing` (*type:* `boolean()`, *default:* `nil`) - Disable serving any search or assist results.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the datasource The maximum length is 300 characters.
   *   `indexingServiceAccounts` (*type:* `list(String.t)`, *default:* `nil`) - List of service accounts that have indexing access.
