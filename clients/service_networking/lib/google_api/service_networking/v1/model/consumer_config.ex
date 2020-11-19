@@ -30,7 +30,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
   *   `producerImportCustomRoutes` (*type:* `boolean()`, *default:* `nil`) - Import custom routes flag value for peering from producer to consumer.
   *   `producerImportSubnetRoutesWithPublicIp` (*type:* `boolean()`, *default:* `nil`) - Import subnet routes with public ip flag value for peering from producer to consumer.
   *   `producerNetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The VPC host network that is used to host managed service instances. In the format, projects/{project}/global/networks/{network} where {project} is the project number e.g. '12345' and {network} is the network name.
-  *   `reservedRanges` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The name of the allocated IP address ranges for this private service access connection.
+  *   `reservedRanges` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.GoogleCloudServicenetworkingV1ConsumerConfigReservedRange.t)`, *default:* `nil`) - Output only. The reserved ranges associated with this private service access connection.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,7 +45,10 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
           :producerImportCustomRoutes => boolean(),
           :producerImportSubnetRoutesWithPublicIp => boolean(),
           :producerNetwork => String.t(),
-          :reservedRanges => list(String.t())
+          :reservedRanges =>
+            list(
+              GoogleApi.ServiceNetworking.V1.Model.GoogleCloudServicenetworkingV1ConsumerConfigReservedRange.t()
+            )
         }
 
   field(:consumerExportCustomRoutes)
@@ -57,7 +60,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
   field(:producerImportCustomRoutes)
   field(:producerImportSubnetRoutesWithPublicIp)
   field(:producerNetwork)
-  field(:reservedRanges, type: :list)
+
+  field(:reservedRanges,
+    as:
+      GoogleApi.ServiceNetworking.V1.Model.GoogleCloudServicenetworkingV1ConsumerConfigReservedRange,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
