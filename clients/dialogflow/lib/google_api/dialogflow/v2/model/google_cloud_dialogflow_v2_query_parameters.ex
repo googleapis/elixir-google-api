@@ -28,6 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   *   `sentimentAnalysisRequestConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t`, *default:* `nil`) - Configures the type of sentiment analysis to perform. If not provided, sentiment analysis is not performed.
   *   `sessionEntityTypes` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t)`, *default:* `nil`) - Additional session entity types to replace or extend developer entity types with. The entity synonyms apply to all languages and persist for the session of this query.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of this conversational query from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York, Europe/Paris. If not provided, the time zone specified in agent settings is used.
+  *   `webhookHeaders` (*type:* `map()`, *default:* `nil`) - This field can be used to pass HTTP headers for a webhook call. These headers will be sent to webhook along with the headers that have been configured through Dialogflow web console. The headers defined within this field will overwrite the headers configured through Dialogflow console if there is a conflict. Header names are case-insensitive. Google's specified headers are not allowed. Including: "Host", "Content-Length", "Connection", "From", "User-Agent", "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For", etc.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t(),
           :sessionEntityTypes =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()),
-          :timeZone => String.t()
+          :timeZone => String.t(),
+          :webhookHeaders => map()
         }
 
   field(:contexts, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context, type: :list)
@@ -59,6 +61,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   )
 
   field(:timeZone)
+  field(:webhookHeaders, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters do
