@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery do
   @moduledoc """
-  IAM policy analysis query message.
+  ## LINT.IfChange Keep in sync with ## logs/proto/cloud_asset_inventory/iam_policy_analyzer_log.proto IAM policy analysis query message.
 
   ## Attributes
 
