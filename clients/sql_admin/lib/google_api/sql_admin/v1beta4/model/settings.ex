@@ -33,6 +33,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
   *   `databaseFlags` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags.t)`, *default:* `nil`) - The database flags passed to the instance at startup.
   *   `databaseReplicationEnabled` (*type:* `boolean()`, *default:* `nil`) - Configuration specific to read replica instances. Indicates whether replication is enabled or not.
   *   `denyMaintenancePeriods` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.DenyMaintenancePeriod.t)`, *default:* `nil`) - Deny maintenance periods
+  *   `insightsConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InsightsConfig.t`, *default:* `nil`) - Insights configuration, for now relevant only for Postgres.
   *   `ipConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration.t`, *default:* `nil`) - The settings for IP Management. This allows to enable or disable the instance IP and manage which external networks can connect to the instance. The IPv4 address cannot be disabled for Second Generation instances.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#settings*.
   *   `locationPreference` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference.t`, *default:* `nil`) - The location preference settings. This allows the instance to be located as near as possible to either an App Engine app or Compute Engine zone for better performance. App Engine co-location was only applicable to First Generation instances.
@@ -62,6 +63,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
           :databaseReplicationEnabled => boolean(),
           :denyMaintenancePeriods =>
             list(GoogleApi.SQLAdmin.V1beta4.Model.DenyMaintenancePeriod.t()),
+          :insightsConfig => GoogleApi.SQLAdmin.V1beta4.Model.InsightsConfig.t(),
           :ipConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration.t(),
           :kind => String.t(),
           :locationPreference => GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference.t(),
@@ -92,6 +94,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
     type: :list
   )
 
+  field(:insightsConfig, as: GoogleApi.SQLAdmin.V1beta4.Model.InsightsConfig)
   field(:ipConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration)
   field(:kind)
   field(:locationPreference, as: GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference)
