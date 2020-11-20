@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.DomainMapping do
   @moduledoc """
-  Resource to hold the state and status of a user's domain mapping.
+  Resource to hold the state and status of a user's domain mapping. NOTE: This resource is currently in Beta.
 
   ## Attributes
 
