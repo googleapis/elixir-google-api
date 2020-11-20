@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_analytics_data, "~> 0.6"}]
+  [{:google_api_analytics_data, "~> 0.7"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/analytics/trusted-testing/analytics-data/](https://developers.google.com/analytics/trusted-testing/analytics-data/).
+Product documentation is available at [https://developers.google.com/analytics/devguides/reporting/data/v1/](https://developers.google.com/analytics/devguides/reporting/data/v1/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_analytics_data](https://hexdocs.pm/google_api_analytics_data).
