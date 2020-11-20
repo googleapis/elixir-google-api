@@ -20,7 +20,7 @@ defmodule GoogleApi.Monitoring.V3 do
   API client metadata for GoogleApi.Monitoring.V3.
   """
 
-  @discovery_revision "20201019"
+  @discovery_revision "20201116"
 
   def discovery_revision(), do: @discovery_revision
 end

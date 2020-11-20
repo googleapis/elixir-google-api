@@ -2665,7 +2665,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. A unique resource name for this Uptime check configuration. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] This field should be omitted when creating the Uptime check configuration; on create, the resource name is assigned by the server and included in the response.
+  *   `projects_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. A unique resource name for this Uptime check configuration. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] [PROJECT_ID_OR_NUMBER] is the Workspace host project associated with the Uptime check.This field should be omitted when creating the Uptime check configuration; on create, the resource name is assigned by the server and included in the response.
   *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
