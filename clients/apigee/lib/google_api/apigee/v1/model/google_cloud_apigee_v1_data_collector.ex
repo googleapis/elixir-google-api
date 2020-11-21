@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollector do
   @moduledoc """
-  Data Collector configuration.
+  Data collector configuration.
 
   ## Attributes
 
-  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the Data Collector was created in milliseconds since the epoch.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the Data Collector.
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the data collector was created in milliseconds since the epoch.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the data collector.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the Data Collector was last updated in milliseconds since the epoch.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - ID of the Data Collector.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of data this DataCollector will collect.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - ID of the data collector. Must begin with `dc_`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of data this data collector will collect.
   """
 
   use GoogleApi.Gax.ModelBase

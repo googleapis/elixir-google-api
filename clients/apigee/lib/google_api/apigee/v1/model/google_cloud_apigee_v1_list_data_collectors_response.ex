@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListDataCollectorsRespons
 
   ## Attributes
 
-  *   `dataCollectors` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollector.t)`, *default:* `nil`) - Data Collectors in the specified organization.
+  *   `dataCollectors` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollector.t)`, *default:* `nil`) - Data collectors in the specified organization.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListDataCollectors request to retrieve the next page. If omitted, no subsequent pages exist.
   """
 
