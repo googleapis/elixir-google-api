@@ -2518,7 +2518,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization in which to create the Data Collector in the following format: `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization in which to create the data collector in the following format: `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2531,7 +2531,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dataCollectorId` (*type:* `String.t`) - ID of the Data Collector. Overrides any ID in the Data Collector resource.
+      *   `:dataCollectorId` (*type:* `String.t`) - ID of the data collector. Overrides any ID in the data collector resource. Must begin with `dc_`.
       *   `:body` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollector.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2593,7 +2593,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Data Collector in the following format: `organizations/{org}/datacollectors/{data_collector_id}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the data collector in the following format: `organizations/{org}/datacollectors/{data_collector_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2662,7 +2662,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Data Collector in the following format: `organizations/{org}/datacollectors/{data_collector_id}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the data collector in the following format: `organizations/{org}/datacollectors/{data_collector_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2728,7 +2728,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Name of the organization for which to list Data Collectors in the following format: `organizations/{org}`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization for which to list data collectors in the following format: `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2741,7 +2741,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of Data Collectors to return. The page size defaults to 25.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of data collectors to return. The page size defaults to 25.
       *   `:pageToken` (*type:* `String.t`) - Page token, returned from a previous ListDataCollectors call, that you can use to retrieve the next page.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2803,7 +2803,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Data Collector in the following format: `organizations/{org}/datacollectors/{data_collector_id}`.
+  *   `name` (*type:* `String.t`) - Required. Name of the data collector in the following format: `organizations/{org}/datacollectors/{data_collector_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
