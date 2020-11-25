@@ -26,6 +26,7 @@ defmodule GoogleApi.Vault.V1.Model.ExportOptions do
   *   `hangoutsChatOptions` (*type:* `GoogleApi.Vault.V1.Model.HangoutsChatExportOptions.t`, *default:* `nil`) - Option available for hangouts chat export.
   *   `mailOptions` (*type:* `GoogleApi.Vault.V1.Model.MailExportOptions.t`, *default:* `nil`) - Option available for mail export.
   *   `region` (*type:* `String.t`, *default:* `nil`) - The requested export location.
+  *   `voiceOptions` (*type:* `GoogleApi.Vault.V1.Model.VoiceExportOptions.t`, *default:* `nil`) - Option available for voice export.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.Vault.V1.Model.ExportOptions do
           :groupsOptions => GoogleApi.Vault.V1.Model.GroupsExportOptions.t(),
           :hangoutsChatOptions => GoogleApi.Vault.V1.Model.HangoutsChatExportOptions.t(),
           :mailOptions => GoogleApi.Vault.V1.Model.MailExportOptions.t(),
-          :region => String.t()
+          :region => String.t(),
+          :voiceOptions => GoogleApi.Vault.V1.Model.VoiceExportOptions.t()
         }
 
   field(:driveOptions, as: GoogleApi.Vault.V1.Model.DriveExportOptions)
@@ -43,6 +45,7 @@ defmodule GoogleApi.Vault.V1.Model.ExportOptions do
   field(:hangoutsChatOptions, as: GoogleApi.Vault.V1.Model.HangoutsChatExportOptions)
   field(:mailOptions, as: GoogleApi.Vault.V1.Model.MailExportOptions)
   field(:region)
+  field(:voiceOptions, as: GoogleApi.Vault.V1.Model.VoiceExportOptions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.ExportOptions do

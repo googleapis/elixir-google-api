@@ -25,6 +25,7 @@ defmodule GoogleApi.Vault.V1.Model.CorpusQuery do
   *   `groupsQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldGroupsQuery.t`, *default:* `nil`) - Details pertaining to Groups holds. If set, corpus must be Groups.
   *   `hangoutsChatQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t`, *default:* `nil`) - Details pertaining to Hangouts Chat holds. If set, corpus must be Hangouts Chat.
   *   `mailQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldMailQuery.t`, *default:* `nil`) - Details pertaining to mail holds. If set, corpus must be mail.
+  *   `voiceQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldVoiceQuery.t`, *default:* `nil`) - Details pertaining to Voice holds. If set, corpus must be Voice.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Vault.V1.Model.CorpusQuery do
           :driveQuery => GoogleApi.Vault.V1.Model.HeldDriveQuery.t(),
           :groupsQuery => GoogleApi.Vault.V1.Model.HeldGroupsQuery.t(),
           :hangoutsChatQuery => GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t(),
-          :mailQuery => GoogleApi.Vault.V1.Model.HeldMailQuery.t()
+          :mailQuery => GoogleApi.Vault.V1.Model.HeldMailQuery.t(),
+          :voiceQuery => GoogleApi.Vault.V1.Model.HeldVoiceQuery.t()
         }
 
   field(:driveQuery, as: GoogleApi.Vault.V1.Model.HeldDriveQuery)
   field(:groupsQuery, as: GoogleApi.Vault.V1.Model.HeldGroupsQuery)
   field(:hangoutsChatQuery, as: GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery)
   field(:mailQuery, as: GoogleApi.Vault.V1.Model.HeldMailQuery)
+  field(:voiceQuery, as: GoogleApi.Vault.V1.Model.HeldVoiceQuery)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.CorpusQuery do

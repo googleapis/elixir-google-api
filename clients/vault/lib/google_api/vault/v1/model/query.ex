@@ -37,6 +37,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   *   `teamDriveInfo` (*type:* `GoogleApi.Vault.V1.Model.TeamDriveInfo.t`, *default:* `nil`) - When 'TEAM_DRIVE' is chosen as search method, team_drive_info needs to be specified.
   *   `terms` (*type:* `String.t`, *default:* `nil`) - The corpus-specific search operators used to generate search results.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone name. It should be an IANA TZ name, such as "America/Los_Angeles". For more information, see Time Zone.
+  *   `voiceOptions` (*type:* `GoogleApi.Vault.V1.Model.VoiceOptions.t`, *default:* `nil`) - For voice search, specify more options in this field.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -57,7 +58,8 @@ defmodule GoogleApi.Vault.V1.Model.Query do
           :startTime => DateTime.t(),
           :teamDriveInfo => GoogleApi.Vault.V1.Model.TeamDriveInfo.t(),
           :terms => String.t(),
-          :timeZone => String.t()
+          :timeZone => String.t(),
+          :voiceOptions => GoogleApi.Vault.V1.Model.VoiceOptions.t()
         }
 
   field(:accountInfo, as: GoogleApi.Vault.V1.Model.AccountInfo)
@@ -76,6 +78,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   field(:teamDriveInfo, as: GoogleApi.Vault.V1.Model.TeamDriveInfo)
   field(:terms)
   field(:timeZone)
+  field(:voiceOptions, as: GoogleApi.Vault.V1.Model.VoiceOptions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vault.V1.Model.Query do
