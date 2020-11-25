@@ -81,7 +81,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/instanceGroups/{instanceGroup}", %{
+      |> Request.url("/projects/{project}/regions/{region}/instanceGroups/{instanceGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "instanceGroup" => URI.encode(instance_group, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -167,7 +167,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/instanceGroups", %{
+      |> Request.url("/projects/{project}/regions/{region}/instanceGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -258,7 +258,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroups/{instanceGroup}/listInstances",
+        "/projects/{project}/regions/{region}/instanceGroups/{instanceGroup}/listInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -338,7 +338,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroups/{instanceGroup}/setNamedPorts",
+        "/projects/{project}/regions/{region}/instanceGroups/{instanceGroup}/setNamedPorts",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),

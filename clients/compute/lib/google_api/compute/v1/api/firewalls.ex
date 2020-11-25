@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/firewalls/{firewall}", %{
+      |> Request.url("/projects/{project}/global/firewalls/{firewall}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "firewall" => URI.encode(firewall, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -121,7 +121,7 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/firewalls/{firewall}", %{
+      |> Request.url("/projects/{project}/global/firewalls/{firewall}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "firewall" => URI.encode(firewall, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -179,7 +179,7 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/firewalls", %{
+      |> Request.url("/projects/{project}/global/firewalls", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -250,7 +250,7 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/firewalls", %{
+      |> Request.url("/projects/{project}/global/firewalls", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -308,7 +308,7 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/global/firewalls/{firewall}", %{
+      |> Request.url("/projects/{project}/global/firewalls/{firewall}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "firewall" => URI.encode(firewall, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -367,7 +367,7 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/{project}/global/firewalls/{firewall}", %{
+      |> Request.url("/projects/{project}/global/firewalls/{firewall}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "firewall" => URI.encode(firewall, &(URI.char_unreserved?(&1) || &1 == ?/))
       })

@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/licenses/{license}", %{
+      |> Request.url("/projects/{project}/global/licenses/{license}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "license" => URI.encode(license, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -121,7 +121,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/licenses/{license}", %{
+      |> Request.url("/projects/{project}/global/licenses/{license}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "license" => URI.encode(license, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -185,7 +185,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/licenses/{resource}/getIamPolicy", %{
+      |> Request.url("/projects/{project}/global/licenses/{resource}/getIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -243,7 +243,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/licenses", %{
+      |> Request.url("/projects/{project}/global/licenses", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -314,7 +314,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/licenses", %{
+      |> Request.url("/projects/{project}/global/licenses", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -377,7 +377,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/licenses/{resource}/setIamPolicy", %{
+      |> Request.url("/projects/{project}/global/licenses/{resource}/setIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -444,7 +444,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/licenses/{resource}/testIamPermissions", %{
+      |> Request.url("/projects/{project}/global/licenses/{resource}/testIamPermissions", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })

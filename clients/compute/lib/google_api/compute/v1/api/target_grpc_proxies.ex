@@ -82,7 +82,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/targetGrpcProxies/{targetGrpcProxy}", %{
+      |> Request.url("/projects/{project}/global/targetGrpcProxies/{targetGrpcProxy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "targetGrpcProxy" =>
           URI.encode(target_grpc_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -148,7 +148,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/targetGrpcProxies/{targetGrpcProxy}", %{
+      |> Request.url("/projects/{project}/global/targetGrpcProxies/{targetGrpcProxy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "targetGrpcProxy" =>
           URI.encode(target_grpc_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -207,7 +207,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/targetGrpcProxies", %{
+      |> Request.url("/projects/{project}/global/targetGrpcProxies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -278,7 +278,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/targetGrpcProxies", %{
+      |> Request.url("/projects/{project}/global/targetGrpcProxies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -348,7 +348,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/global/targetGrpcProxies/{targetGrpcProxy}", %{
+      |> Request.url("/projects/{project}/global/targetGrpcProxies/{targetGrpcProxy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "targetGrpcProxy" =>
           URI.encode(target_grpc_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))

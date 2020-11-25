@@ -97,7 +97,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/nodeTemplates", %{
+      |> Request.url("/projects/{project}/aggregated/nodeTemplates", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -168,7 +168,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/nodeTemplates/{nodeTemplate}", %{
+      |> Request.url("/projects/{project}/regions/{region}/nodeTemplates/{nodeTemplate}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "nodeTemplate" => URI.encode(node_template, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -237,7 +237,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/nodeTemplates/{nodeTemplate}", %{
+      |> Request.url("/projects/{project}/regions/{region}/nodeTemplates/{nodeTemplate}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "nodeTemplate" => URI.encode(node_template, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -305,11 +305,14 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/nodeTemplates/{resource}/getIamPolicy", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/nodeTemplates/{resource}/getIamPolicy",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -377,7 +380,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/nodeTemplates", %{
+      |> Request.url("/projects/{project}/regions/{region}/nodeTemplates", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -456,7 +459,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/nodeTemplates", %{
+      |> Request.url("/projects/{project}/regions/{region}/nodeTemplates", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -523,11 +526,14 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/nodeTemplates/{resource}/setIamPolicy", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/nodeTemplates/{resource}/setIamPolicy",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -594,11 +600,14 @@ defmodule GoogleApi.Compute.V1.Api.NodeTemplates do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/nodeTemplates/{resource}/testIamPermissions", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/nodeTemplates/{resource}/testIamPermissions",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

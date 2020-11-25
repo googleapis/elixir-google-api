@@ -87,7 +87,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/disks/{disk}/addResourcePolicies", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks/{disk}/addResourcePolicies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
@@ -162,7 +162,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/disks/{disk}/createSnapshot", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks/{disk}/createSnapshot", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
@@ -235,7 +235,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/disks/{disk}", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks/{disk}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -301,7 +301,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/disks/{disk}", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks/{disk}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -369,7 +369,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/disks/{resource}/getIamPolicy", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks/{resource}/getIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -437,7 +437,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/disks", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -514,7 +514,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/disks", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -588,11 +588,14 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/disks/{disk}/removeResourcePolicies", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "disk" => URI.encode(disk, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/disks/{disk}/removeResourcePolicies",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "disk" => URI.encode(disk, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -663,7 +666,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/disks/{disk}/resize", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks/{disk}/resize", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
@@ -731,7 +734,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/disks/{resource}/setIamPolicy", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks/{resource}/setIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -806,7 +809,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/disks/{resource}/setLabels", %{
+      |> Request.url("/projects/{project}/regions/{region}/disks/{resource}/setLabels", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -877,11 +880,14 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/disks/{resource}/testIamPermissions", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/disks/{resource}/testIamPermissions",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

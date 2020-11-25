@@ -85,7 +85,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/autoscalers/{autoscaler}", %{
+      |> Request.url("/projects/{project}/regions/{region}/autoscalers/{autoscaler}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "autoscaler" => URI.encode(autoscaler, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -154,7 +154,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/autoscalers/{autoscaler}", %{
+      |> Request.url("/projects/{project}/regions/{region}/autoscalers/{autoscaler}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "autoscaler" => URI.encode(autoscaler, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -226,7 +226,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/autoscalers", %{
+      |> Request.url("/projects/{project}/regions/{region}/autoscalers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -311,7 +311,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/autoscalers", %{
+      |> Request.url("/projects/{project}/regions/{region}/autoscalers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -384,7 +384,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/regions/{region}/autoscalers", %{
+      |> Request.url("/projects/{project}/regions/{region}/autoscalers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -457,7 +457,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/{project}/regions/{region}/autoscalers", %{
+      |> Request.url("/projects/{project}/regions/{region}/autoscalers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })

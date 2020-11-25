@@ -85,7 +85,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/global/networkEndpointGroups/{networkEndpointGroup}/attachNetworkEndpoints",
+        "/projects/{project}/global/networkEndpointGroups/{networkEndpointGroup}/attachNetworkEndpoints",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "networkEndpointGroup" => URI.encode(network_endpoint_group, &URI.char_unreserved?/1)
@@ -156,7 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/networkEndpointGroups/{networkEndpointGroup}", %{
+      |> Request.url("/projects/{project}/global/networkEndpointGroups/{networkEndpointGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "networkEndpointGroup" =>
           URI.encode(network_endpoint_group, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -229,7 +229,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/global/networkEndpointGroups/{networkEndpointGroup}/detachNetworkEndpoints",
+        "/projects/{project}/global/networkEndpointGroups/{networkEndpointGroup}/detachNetworkEndpoints",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "networkEndpointGroup" => URI.encode(network_endpoint_group, &URI.char_unreserved?/1)
@@ -296,7 +296,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/networkEndpointGroups/{networkEndpointGroup}", %{
+      |> Request.url("/projects/{project}/global/networkEndpointGroups/{networkEndpointGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "networkEndpointGroup" =>
           URI.encode(network_endpoint_group, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -365,7 +365,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/networkEndpointGroups", %{
+      |> Request.url("/projects/{project}/global/networkEndpointGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -446,7 +446,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/networkEndpointGroups", %{
+      |> Request.url("/projects/{project}/global/networkEndpointGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -531,7 +531,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/global/networkEndpointGroups/{networkEndpointGroup}/listNetworkEndpoints",
+        "/projects/{project}/global/networkEndpointGroups/{networkEndpointGroup}/listNetworkEndpoints",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "networkEndpointGroup" => URI.encode(network_endpoint_group, &URI.char_unreserved?/1)

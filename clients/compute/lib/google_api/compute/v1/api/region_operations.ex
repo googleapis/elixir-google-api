@@ -78,7 +78,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionOperations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/operations/{operation}", %{
+      |> Request.url("/projects/{project}/regions/{region}/operations/{operation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "operation" => URI.encode(operation, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -145,7 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionOperations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/operations/{operation}", %{
+      |> Request.url("/projects/{project}/regions/{region}/operations/{operation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "operation" => URI.encode(operation, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -231,7 +231,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionOperations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/operations", %{
+      |> Request.url("/projects/{project}/regions/{region}/operations", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -301,7 +301,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionOperations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/operations/{operation}/wait", %{
+      |> Request.url("/projects/{project}/regions/{region}/operations/{operation}/wait", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "operation" => URI.encode(operation, &URI.char_unreserved?/1)

@@ -97,7 +97,7 @@ defmodule GoogleApi.Compute.V1.Api.MachineTypes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/machineTypes", %{
+      |> Request.url("/projects/{project}/aggregated/machineTypes", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -164,7 +164,7 @@ defmodule GoogleApi.Compute.V1.Api.MachineTypes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/machineTypes/{machineType}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/machineTypes/{machineType}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "machineType" => URI.encode(machine_type, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -244,7 +244,7 @@ defmodule GoogleApi.Compute.V1.Api.MachineTypes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/machineTypes", %{
+      |> Request.url("/projects/{project}/zones/{zone}/machineTypes", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })

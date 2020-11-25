@@ -87,7 +87,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}/addNodes", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}/addNodes", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
@@ -162,7 +162,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/nodeGroups", %{
+      |> Request.url("/projects/{project}/aggregated/nodeGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -233,7 +233,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "nodeGroup" => URI.encode(node_group, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -308,7 +308,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}/deleteNodes", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}/deleteNodes", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
@@ -375,7 +375,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "nodeGroup" => URI.encode(node_group, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -443,7 +443,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{resource}/getIamPolicy", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups/{resource}/getIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -518,7 +518,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -592,7 +592,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -680,7 +680,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}/listNodes", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}/listNodes", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
@@ -755,7 +755,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "nodeGroup" => URI.encode(node_group, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -823,7 +823,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{resource}/setIamPolicy", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups/{resource}/setIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -898,7 +898,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{nodeGroup}/setNodeTemplate", %{
+      |> Request.url("/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}/setNodeTemplate", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
@@ -969,11 +969,14 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/nodeGroups/{resource}/testIamPermissions", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/nodeGroups/{resource}/testIamPermissions",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

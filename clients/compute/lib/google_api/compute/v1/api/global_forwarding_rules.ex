@@ -82,7 +82,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/forwardingRules/{forwardingRule}", %{
+      |> Request.url("/projects/{project}/global/forwardingRules/{forwardingRule}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "forwardingRule" => URI.encode(forwarding_rule, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -147,7 +147,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/forwardingRules/{forwardingRule}", %{
+      |> Request.url("/projects/{project}/global/forwardingRules/{forwardingRule}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "forwardingRule" => URI.encode(forwarding_rule, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -215,7 +215,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/forwardingRules", %{
+      |> Request.url("/projects/{project}/global/forwardingRules", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -286,7 +286,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/forwardingRules", %{
+      |> Request.url("/projects/{project}/global/forwardingRules", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -356,7 +356,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/global/forwardingRules/{forwardingRule}", %{
+      |> Request.url("/projects/{project}/global/forwardingRules/{forwardingRule}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "forwardingRule" => URI.encode(forwarding_rule, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -427,7 +427,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/forwardingRules/{forwardingRule}/setTarget", %{
+      |> Request.url("/projects/{project}/global/forwardingRules/{forwardingRule}/setTarget", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "forwardingRule" => URI.encode(forwarding_rule, &URI.char_unreserved?/1)
       })

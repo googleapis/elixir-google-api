@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/routes/{route}", %{
+      |> Request.url("/projects/{project}/global/routes/{route}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "route" => URI.encode(route, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -121,7 +121,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/routes/{route}", %{
+      |> Request.url("/projects/{project}/global/routes/{route}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "route" => URI.encode(route, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -179,7 +179,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/routes", %{
+      |> Request.url("/projects/{project}/global/routes", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -248,7 +248,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/routes", %{
+      |> Request.url("/projects/{project}/global/routes", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

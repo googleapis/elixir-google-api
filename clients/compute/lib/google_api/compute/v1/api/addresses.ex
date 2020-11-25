@@ -87,7 +87,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/addresses", %{
+      |> Request.url("/projects/{project}/aggregated/addresses", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -158,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/addresses/{address}", %{
+      |> Request.url("/projects/{project}/regions/{region}/addresses/{address}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "address" => URI.encode(address, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -225,7 +225,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/addresses/{address}", %{
+      |> Request.url("/projects/{project}/regions/{region}/addresses/{address}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "address" => URI.encode(address, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -285,7 +285,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/addresses", %{
+      |> Request.url("/projects/{project}/regions/{region}/addresses", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -358,7 +358,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/addresses", %{
+      |> Request.url("/projects/{project}/regions/{region}/addresses", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })

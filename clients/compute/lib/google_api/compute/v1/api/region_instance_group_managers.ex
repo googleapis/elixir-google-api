@@ -92,7 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/abandonInstances",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/abandonInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -164,7 +164,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/applyUpdatesToInstances",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/applyUpdatesToInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -242,7 +242,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/createInstances",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/createInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -318,7 +318,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:delete)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -401,7 +401,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/deleteInstances",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/deleteInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -473,7 +473,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/deletePerInstanceConfigs",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/deletePerInstanceConfigs",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -545,7 +545,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -622,7 +622,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/instanceGroupManagers", %{
+      |> Request.url("/projects/{project}/regions/{region}/instanceGroupManagers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -707,7 +707,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/instanceGroupManagers", %{
+      |> Request.url("/projects/{project}/regions/{region}/instanceGroupManagers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -798,7 +798,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listErrors",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listErrors",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -893,7 +893,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -988,7 +988,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listPerInstanceConfigs",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listPerInstanceConfigs",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -1069,7 +1069,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:patch)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -1148,7 +1148,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/patchPerInstanceConfigs",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/patchPerInstanceConfigs",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -1230,7 +1230,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/recreateInstances",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/recreateInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -1313,7 +1313,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/resize",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/resize",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -1392,7 +1392,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -1470,7 +1470,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setTargetPools",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setTargetPools",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -1548,7 +1548,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/updatePerInstanceConfigs",
+        "/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/updatePerInstanceConfigs",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),

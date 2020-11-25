@@ -82,7 +82,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/instanceTemplates/{instanceTemplate}", %{
+      |> Request.url("/projects/{project}/global/instanceTemplates/{instanceTemplate}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instanceTemplate" =>
           URI.encode(instance_template, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -148,7 +148,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/instanceTemplates/{instanceTemplate}", %{
+      |> Request.url("/projects/{project}/global/instanceTemplates/{instanceTemplate}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instanceTemplate" =>
           URI.encode(instance_template, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -213,7 +213,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/instanceTemplates/{resource}/getIamPolicy", %{
+      |> Request.url("/projects/{project}/global/instanceTemplates/{resource}/getIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -271,7 +271,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/instanceTemplates", %{
+      |> Request.url("/projects/{project}/global/instanceTemplates", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -342,7 +342,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/instanceTemplates", %{
+      |> Request.url("/projects/{project}/global/instanceTemplates", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -405,7 +405,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/instanceTemplates/{resource}/setIamPolicy", %{
+      |> Request.url("/projects/{project}/global/instanceTemplates/{resource}/setIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -472,10 +472,13 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/instanceTemplates/{resource}/testIamPermissions", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/global/instanceTemplates/{resource}/testIamPermissions",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

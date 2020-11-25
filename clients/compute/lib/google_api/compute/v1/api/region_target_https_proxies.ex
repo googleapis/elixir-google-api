@@ -85,12 +85,15 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/targetHttpsProxies/{targetHttpsProxy}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "targetHttpsProxy" =>
-          URI.encode(target_https_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/targetHttpsProxies/{targetHttpsProxy}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "targetHttpsProxy" =>
+            URI.encode(target_https_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -155,12 +158,15 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/targetHttpsProxies/{targetHttpsProxy}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "targetHttpsProxy" =>
-          URI.encode(target_https_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/targetHttpsProxies/{targetHttpsProxy}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "targetHttpsProxy" =>
+            URI.encode(target_https_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -228,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/targetHttpsProxies", %{
+      |> Request.url("/projects/{project}/regions/{region}/targetHttpsProxies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -313,7 +319,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/targetHttpsProxies", %{
+      |> Request.url("/projects/{project}/regions/{region}/targetHttpsProxies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -388,7 +394,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/targetHttpsProxies/{targetHttpsProxy}/setSslCertificates",
+        "/projects/{project}/regions/{region}/targetHttpsProxies/{targetHttpsProxy}/setSslCertificates",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -466,7 +472,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/targetHttpsProxies/{targetHttpsProxy}/setUrlMap",
+        "/projects/{project}/regions/{region}/targetHttpsProxies/{targetHttpsProxy}/setUrlMap",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),

@@ -86,7 +86,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNetworkEndpointGroups do
       Request.new()
       |> Request.method(:delete)
       |> Request.url(
-        "/{project}/regions/{region}/networkEndpointGroups/{networkEndpointGroup}",
+        "/projects/{project}/regions/{region}/networkEndpointGroups/{networkEndpointGroup}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -159,7 +159,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNetworkEndpointGroups do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{project}/regions/{region}/networkEndpointGroups/{networkEndpointGroup}",
+        "/projects/{project}/regions/{region}/networkEndpointGroups/{networkEndpointGroup}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -234,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNetworkEndpointGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/networkEndpointGroups", %{
+      |> Request.url("/projects/{project}/regions/{region}/networkEndpointGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -319,7 +319,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNetworkEndpointGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/networkEndpointGroups", %{
+      |> Request.url("/projects/{project}/regions/{region}/networkEndpointGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })

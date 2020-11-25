@@ -79,7 +79,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDiskTypes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/diskTypes/{diskType}", %{
+      |> Request.url("/projects/{project}/regions/{region}/diskTypes/{diskType}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "diskType" => URI.encode(disk_type, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -165,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDiskTypes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/diskTypes", %{
+      |> Request.url("/projects/{project}/regions/{region}/diskTypes", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })

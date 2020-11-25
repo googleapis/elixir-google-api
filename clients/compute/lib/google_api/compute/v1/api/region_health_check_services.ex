@@ -85,12 +85,15 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/healthCheckServices/{healthCheckService}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "healthCheckService" =>
-          URI.encode(health_check_service, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/healthCheckServices/{healthCheckService}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "healthCheckService" =>
+            URI.encode(health_check_service, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -155,12 +158,15 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/healthCheckServices/{healthCheckService}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "healthCheckService" =>
-          URI.encode(health_check_service, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/healthCheckServices/{healthCheckService}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "healthCheckService" =>
+            URI.encode(health_check_service, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -228,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/healthCheckServices", %{
+      |> Request.url("/projects/{project}/regions/{region}/healthCheckServices", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -313,7 +319,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/healthCheckServices", %{
+      |> Request.url("/projects/{project}/regions/{region}/healthCheckServices", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -387,12 +393,15 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthCheckServices do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/regions/{region}/healthCheckServices/{healthCheckService}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "healthCheckService" =>
-          URI.encode(health_check_service, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/healthCheckServices/{healthCheckService}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "healthCheckService" =>
+            URI.encode(health_check_service, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

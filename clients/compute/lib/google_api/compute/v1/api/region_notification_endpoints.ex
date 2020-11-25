@@ -86,7 +86,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNotificationEndpoints do
       Request.new()
       |> Request.method(:delete)
       |> Request.url(
-        "/{project}/regions/{region}/notificationEndpoints/{notificationEndpoint}",
+        "/projects/{project}/regions/{region}/notificationEndpoints/{notificationEndpoint}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -159,7 +159,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNotificationEndpoints do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{project}/regions/{region}/notificationEndpoints/{notificationEndpoint}",
+        "/projects/{project}/regions/{region}/notificationEndpoints/{notificationEndpoint}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -234,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNotificationEndpoints do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/notificationEndpoints", %{
+      |> Request.url("/projects/{project}/regions/{region}/notificationEndpoints", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -319,7 +319,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNotificationEndpoints do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/notificationEndpoints", %{
+      |> Request.url("/projects/{project}/regions/{region}/notificationEndpoints", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
