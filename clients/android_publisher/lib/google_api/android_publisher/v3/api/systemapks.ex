@@ -31,7 +31,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app.
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `version_code` (*type:* `String.t`) - The version code of the App Bundle.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -109,7 +109,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app.
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `version_code` (*type:* `String.t`) - The version code of the App Bundle.
   *   `variant_id` (*type:* `integer()`) - The ID of a previously created system APK variant.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -191,7 +191,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app.
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `version_code` (*type:* `String.t`) - The version code of the App Bundle.
   *   `variant_id` (*type:* `integer()`) - The ID of a previously created system APK variant.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -271,7 +271,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Systemapks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app.
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `version_code` (*type:* `String.t`) - The version code of the App Bundle.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
