@@ -21,7 +21,8 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Model.IpReputation do
 
   ## Attributes
 
-  *   `numIps` (*type:* `String.t`, *default:* `nil`) - Total number of unique IPs in this reputation category. This metric only pertains to traffic that passed [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/).
+  *   `ipCount` (*type:* `String.t`, *default:* `nil`) - Total number of unique IPs in this reputation category. This metric only pertains to traffic that passed [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/).
+  *   `numIps` (*type:* `String.t`, *default:* `nil`) - Total number of unique IPs in this reputation category. This metric only pertains to traffic that passed [SPF](http://www.openspf.org/) or [DKIM](http://www.dkim.org/). Deprecated to be complied with ApiLinter for Quantities. Use ip_count instead.
   *   `reputation` (*type:* `String.t`, *default:* `nil`) - The reputation category this IP reputation represents.
   *   `sampleIps` (*type:* `list(String.t)`, *default:* `nil`) - A sample of IPs in this reputation category.
   """
@@ -29,11 +30,13 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Model.IpReputation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :ipCount => String.t(),
           :numIps => String.t(),
           :reputation => String.t(),
           :sampleIps => list(String.t())
         }
 
+  field(:ipCount)
   field(:numIps)
   field(:reputation)
   field(:sampleIps, type: :list)
