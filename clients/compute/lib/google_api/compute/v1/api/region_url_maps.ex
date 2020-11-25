@@ -81,7 +81,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/urlMaps/{urlMap}", %{
+      |> Request.url("/projects/{project}/regions/{region}/urlMaps/{urlMap}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "urlMap" => URI.encode(url_map, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -147,7 +147,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/urlMaps/{urlMap}", %{
+      |> Request.url("/projects/{project}/regions/{region}/urlMaps/{urlMap}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "urlMap" => URI.encode(url_map, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -215,7 +215,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/urlMaps", %{
+      |> Request.url("/projects/{project}/regions/{region}/urlMaps", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -294,7 +294,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/urlMaps", %{
+      |> Request.url("/projects/{project}/regions/{region}/urlMaps", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -364,7 +364,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/regions/{region}/urlMaps/{urlMap}", %{
+      |> Request.url("/projects/{project}/regions/{region}/urlMaps/{urlMap}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "urlMap" => URI.encode(url_map, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -435,7 +435,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/{project}/regions/{region}/urlMaps/{urlMap}", %{
+      |> Request.url("/projects/{project}/regions/{region}/urlMaps/{urlMap}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "urlMap" => URI.encode(url_map, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -506,7 +506,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/urlMaps/{urlMap}/validate", %{
+      |> Request.url("/projects/{project}/regions/{region}/urlMaps/{urlMap}/validate", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "urlMap" => URI.encode(url_map, &URI.char_unreserved?/1)

@@ -87,7 +87,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/reservations", %{
+      |> Request.url("/projects/{project}/aggregated/reservations", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -158,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/zones/{zone}/reservations/{reservation}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/reservations/{reservation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "reservation" => URI.encode(reservation, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -227,7 +227,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/reservations/{reservation}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/reservations/{reservation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "reservation" => URI.encode(reservation, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -295,7 +295,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/reservations/{resource}/getIamPolicy", %{
+      |> Request.url("/projects/{project}/zones/{zone}/reservations/{resource}/getIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -361,7 +361,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/reservations", %{
+      |> Request.url("/projects/{project}/zones/{zone}/reservations", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -440,7 +440,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/reservations", %{
+      |> Request.url("/projects/{project}/zones/{zone}/reservations", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -514,7 +514,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/reservations/{reservation}/resize", %{
+      |> Request.url("/projects/{project}/zones/{zone}/reservations/{reservation}/resize", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "reservation" => URI.encode(reservation, &URI.char_unreserved?/1)
@@ -582,7 +582,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/reservations/{resource}/setIamPolicy", %{
+      |> Request.url("/projects/{project}/zones/{zone}/reservations/{resource}/setIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -653,11 +653,14 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/reservations/{resource}/testIamPermissions", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/reservations/{resource}/testIamPermissions",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

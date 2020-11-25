@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/images/{image}", %{
+      |> Request.url("/projects/{project}/global/images/{image}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "image" => URI.encode(image, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -131,7 +131,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/images/{image}/deprecate", %{
+      |> Request.url("/projects/{project}/global/images/{image}/deprecate", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "image" => URI.encode(image, &URI.char_unreserved?/1)
       })
@@ -182,7 +182,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/images/{image}", %{
+      |> Request.url("/projects/{project}/global/images/{image}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "image" => URI.encode(image, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -244,7 +244,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/images/family/{family}", %{
+      |> Request.url("/projects/{project}/global/images/family/{family}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "family" => URI.encode(family, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -308,7 +308,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/images/{resource}/getIamPolicy", %{
+      |> Request.url("/projects/{project}/global/images/{resource}/getIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -368,7 +368,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/images", %{
+      |> Request.url("/projects/{project}/global/images", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -437,7 +437,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/images", %{
+      |> Request.url("/projects/{project}/global/images", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -495,7 +495,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/global/images/{image}", %{
+      |> Request.url("/projects/{project}/global/images/{image}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "image" => URI.encode(image, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -559,7 +559,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/images/{resource}/setIamPolicy", %{
+      |> Request.url("/projects/{project}/global/images/{resource}/setIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -618,7 +618,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/images/{resource}/setLabels", %{
+      |> Request.url("/projects/{project}/global/images/{resource}/setLabels", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -685,7 +685,7 @@ defmodule GoogleApi.Compute.V1.Api.Images do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/images/{resource}/testIamPermissions", %{
+      |> Request.url("/projects/{project}/global/images/{resource}/testIamPermissions", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })

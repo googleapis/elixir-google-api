@@ -82,7 +82,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/sslPolicies/{sslPolicy}", %{
+      |> Request.url("/projects/{project}/global/sslPolicies/{sslPolicy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "sslPolicy" => URI.encode(ssl_policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -133,7 +133,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/sslPolicies/{sslPolicy}", %{
+      |> Request.url("/projects/{project}/global/sslPolicies/{sslPolicy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "sslPolicy" => URI.encode(ssl_policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -191,7 +191,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/sslPolicies", %{
+      |> Request.url("/projects/{project}/global/sslPolicies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -262,7 +262,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/sslPolicies", %{
+      |> Request.url("/projects/{project}/global/sslPolicies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -343,7 +343,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/sslPolicies/listAvailableFeatures", %{
+      |> Request.url("/projects/{project}/global/sslPolicies/listAvailableFeatures", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -415,7 +415,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/global/sslPolicies/{sslPolicy}", %{
+      |> Request.url("/projects/{project}/global/sslPolicies/{sslPolicy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "sslPolicy" => URI.encode(ssl_policy, &(URI.char_unreserved?(&1) || &1 == ?/))
       })

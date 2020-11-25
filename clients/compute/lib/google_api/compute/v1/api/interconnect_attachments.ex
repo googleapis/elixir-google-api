@@ -97,7 +97,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/interconnectAttachments", %{
+      |> Request.url("/projects/{project}/aggregated/interconnectAttachments", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -171,7 +171,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       Request.new()
       |> Request.method(:delete)
       |> Request.url(
-        "/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
+        "/projects/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -244,7 +244,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
+        "/projects/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -321,7 +321,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/interconnectAttachments", %{
+      |> Request.url("/projects/{project}/regions/{region}/interconnectAttachments", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -406,7 +406,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/interconnectAttachments", %{
+      |> Request.url("/projects/{project}/regions/{region}/interconnectAttachments", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -481,7 +481,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       Request.new()
       |> Request.method(:patch)
       |> Request.url(
-        "/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
+        "/projects/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),

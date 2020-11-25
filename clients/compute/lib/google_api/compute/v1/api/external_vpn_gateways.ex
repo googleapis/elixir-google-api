@@ -82,7 +82,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/externalVpnGateways/{externalVpnGateway}", %{
+      |> Request.url("/projects/{project}/global/externalVpnGateways/{externalVpnGateway}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "externalVpnGateway" =>
           URI.encode(external_vpn_gateway, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -148,7 +148,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/externalVpnGateways/{externalVpnGateway}", %{
+      |> Request.url("/projects/{project}/global/externalVpnGateways/{externalVpnGateway}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "externalVpnGateway" =>
           URI.encode(external_vpn_gateway, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -207,7 +207,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/externalVpnGateways", %{
+      |> Request.url("/projects/{project}/global/externalVpnGateways", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -278,7 +278,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/externalVpnGateways", %{
+      |> Request.url("/projects/{project}/global/externalVpnGateways", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -342,7 +342,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/externalVpnGateways/{resource}/setLabels", %{
+      |> Request.url("/projects/{project}/global/externalVpnGateways/{resource}/setLabels", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -409,10 +409,13 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/externalVpnGateways/{resource}/testIamPermissions", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/global/externalVpnGateways/{resource}/testIamPermissions",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

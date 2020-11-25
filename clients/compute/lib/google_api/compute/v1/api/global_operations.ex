@@ -97,7 +97,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/operations", %{
+      |> Request.url("/projects/{project}/aggregated/operations", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -158,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/operations/{operation}", %{
+      |> Request.url("/projects/{project}/global/operations/{operation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "operation" => URI.encode(operation, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -221,7 +221,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/operations/{operation}", %{
+      |> Request.url("/projects/{project}/global/operations/{operation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "operation" => URI.encode(operation, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -293,7 +293,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/operations", %{
+      |> Request.url("/projects/{project}/global/operations", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -359,7 +359,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/operations/{operation}/wait", %{
+      |> Request.url("/projects/{project}/global/operations/{operation}/wait", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "operation" => URI.encode(operation, &URI.char_unreserved?/1)
       })

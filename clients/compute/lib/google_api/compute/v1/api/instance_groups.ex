@@ -87,11 +87,14 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instanceGroups/{instanceGroup}/addInstances", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instanceGroups/{instanceGroup}/addInstances",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -172,7 +175,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/instanceGroups", %{
+      |> Request.url("/projects/{project}/aggregated/instanceGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -245,7 +248,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/zones/{zone}/instanceGroups/{instanceGroup}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instanceGroups/{instanceGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instanceGroup" => URI.encode(instance_group, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -316,7 +319,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instanceGroups/{instanceGroup}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instanceGroups/{instanceGroup}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instanceGroup" => URI.encode(instance_group, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -382,7 +385,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instanceGroups", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instanceGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -463,7 +466,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instanceGroups", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instanceGroups", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -553,11 +556,14 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instanceGroups/{instanceGroup}/listInstances", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instanceGroups/{instanceGroup}/listInstances",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -632,11 +638,14 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instanceGroups/{instanceGroup}/removeInstances", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instanceGroups/{instanceGroup}/removeInstances",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -707,11 +716,14 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instanceGroups/{instanceGroup}/setNamedPorts", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instanceGroups/{instanceGroup}/setNamedPorts",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

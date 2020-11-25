@@ -41,6 +41,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   *   `cloudRouterIpAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `customerRouterIpAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
+  *   `dataplaneVersion` (*type:* `integer()`, *default:* `nil`) - [Output Only] Dataplane version for this InterconnectAttachment.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource.
   *   `edgeAvailabilityDomain` (*type:* `String.t`, *default:* `nil`) - Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: 
       - AVAILABILITY_DOMAIN_ANY 
@@ -84,6 +85,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
           :cloudRouterIpAddress => String.t(),
           :creationTimestamp => String.t(),
           :customerRouterIpAddress => String.t(),
+          :dataplaneVersion => integer(),
           :description => String.t(),
           :edgeAvailabilityDomain => String.t(),
           :googleReferenceId => String.t(),
@@ -112,6 +114,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   field(:cloudRouterIpAddress)
   field(:creationTimestamp)
   field(:customerRouterIpAddress)
+  field(:dataplaneVersion)
   field(:description)
   field(:edgeAvailabilityDomain)
   field(:googleReferenceId)

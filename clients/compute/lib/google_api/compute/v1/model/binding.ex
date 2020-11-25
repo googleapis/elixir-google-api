@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Binding do
 
   ## Attributes
 
-  *   `bindingId` (*type:* `String.t`, *default:* `nil`) - A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
+  *   `bindingId` (*type:* `String.t`, *default:* `nil`) - 
   *   `condition` (*type:* `GoogleApi.Compute.V1.Model.Expr.t`, *default:* `nil`) - The condition that is associated with this binding.
 
       If the condition evaluates to `true`, then this binding applies to the current request.

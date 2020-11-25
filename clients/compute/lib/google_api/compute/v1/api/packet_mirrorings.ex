@@ -97,7 +97,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/packetMirrorings", %{
+      |> Request.url("/projects/{project}/aggregated/packetMirrorings", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -170,7 +170,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/packetMirrorings/{packetMirroring}", %{
+      |> Request.url("/projects/{project}/regions/{region}/packetMirrorings/{packetMirroring}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "packetMirroring" => URI.encode(packet_mirroring, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -239,7 +239,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/packetMirrorings/{packetMirroring}", %{
+      |> Request.url("/projects/{project}/regions/{region}/packetMirrorings/{packetMirroring}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "packetMirroring" => URI.encode(packet_mirroring, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -311,7 +311,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/packetMirrorings", %{
+      |> Request.url("/projects/{project}/regions/{region}/packetMirrorings", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -396,7 +396,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/packetMirrorings", %{
+      |> Request.url("/projects/{project}/regions/{region}/packetMirrorings", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -470,7 +470,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/regions/{region}/packetMirrorings/{packetMirroring}", %{
+      |> Request.url("/projects/{project}/regions/{region}/packetMirrorings/{packetMirroring}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "packetMirroring" => URI.encode(packet_mirroring, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -542,7 +542,7 @@ defmodule GoogleApi.Compute.V1.Api.PacketMirrorings do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/packetMirrorings/{resource}/testIamPermissions",
+        "/projects/{project}/regions/{region}/packetMirrorings/{resource}/testIamPermissions",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),

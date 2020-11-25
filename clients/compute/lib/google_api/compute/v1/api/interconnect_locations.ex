@@ -78,7 +78,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/interconnectLocations/{interconnectLocation}", %{
+      |> Request.url("/projects/{project}/global/interconnectLocations/{interconnectLocation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "interconnectLocation" =>
           URI.encode(interconnect_location, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -151,7 +151,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/interconnectLocations", %{
+      |> Request.url("/projects/{project}/global/interconnectLocations", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

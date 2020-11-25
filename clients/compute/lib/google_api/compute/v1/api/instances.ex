@@ -87,7 +87,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/instances", %{
+      |> Request.url("/projects/{project}/aggregated/instances", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -156,11 +156,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{resource}/testIamPermissions", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{resource}/testIamPermissions",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -229,7 +232,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/reset", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/reset", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -304,7 +307,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/setServiceAccount", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/setServiceAccount", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -379,7 +382,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/setTags", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/setTags", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -455,7 +458,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:patch)
       |> Request.url(
-        "/{project}/zones/{zone}/instances/{instance}/updateShieldedInstanceConfig",
+        "/projects/{project}/zones/{zone}/instances/{instance}/updateShieldedInstanceConfig",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -530,7 +533,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/stop", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/stop", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -608,7 +611,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/addAccessConfig", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/addAccessConfig", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -676,11 +679,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/simulateMaintenanceEvent", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/simulateMaintenanceEvent",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -744,7 +750,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{resource}/setIamPolicy", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{resource}/setIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -819,11 +825,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/startWithEncryptionKey", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/startWithEncryptionKey",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -894,11 +903,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/setMachineResources", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/setMachineResources",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -969,7 +981,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/setLabels", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/setLabels", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -1036,7 +1048,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -1111,7 +1123,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/setScheduling", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/setScheduling", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -1190,7 +1202,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -1263,7 +1275,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -1339,7 +1351,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/detachDisk", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/detachDisk", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -1415,7 +1427,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/setMinCpuPlatform", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/setMinCpuPlatform", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -1493,11 +1505,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/updateAccessConfig", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/updateAccessConfig",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1562,7 +1577,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instances/{resource}/getIamPolicy", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{resource}/getIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -1635,11 +1650,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/getGuestAttributes", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/getGuestAttributes",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1714,11 +1732,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/deleteAccessConfig", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/deleteAccessConfig",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_param(:query, :accessConfig, access_config)
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1791,11 +1812,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/removeResourcePolicies", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/removeResourcePolicies",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1866,11 +1890,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/updateDisplayDevice", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/updateDisplayDevice",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1941,7 +1968,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/setMetadata", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/setMetadata", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -2011,7 +2038,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{project}/zones/{zone}/instances/{instance}/getShieldedInstanceIdentity",
+        "/projects/{project}/zones/{zone}/instances/{instance}/getShieldedInstanceIdentity",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -2082,7 +2109,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/screenshot", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/screenshot", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -2155,7 +2182,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/start", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/start", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -2230,11 +2257,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{resource}/setDeletionProtection", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{resource}/setDeletionProtection",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2305,11 +2335,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/addResourcePolicies", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/addResourcePolicies",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2394,7 +2427,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/referrers", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/referrers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -2471,7 +2504,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/attachDisk", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/attachDisk", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -2546,7 +2579,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/setMachineType", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/setMachineType", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -2613,7 +2646,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -2688,7 +2721,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       Request.new()
       |> Request.method(:patch)
       |> Request.url(
-        "/{project}/zones/{zone}/instances/{instance}/setShieldedInstanceIntegrityPolicy",
+        "/projects/{project}/zones/{zone}/instances/{instance}/setShieldedInstanceIntegrityPolicy",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -2768,11 +2801,14 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/updateNetworkInterface", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/updateNetworkInterface",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2848,7 +2884,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/setDiskAutoDelete", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/setDiskAutoDelete", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -2927,7 +2963,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instances/{instance}/serialPort", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances/{instance}/serialPort", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
@@ -3001,7 +3037,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instances", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instances", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })

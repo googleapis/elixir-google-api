@@ -97,7 +97,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/targetHttpsProxies", %{
+      |> Request.url("/projects/{project}/aggregated/targetHttpsProxies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -167,7 +167,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/targetHttpsProxies/{targetHttpsProxy}", %{
+      |> Request.url("/projects/{project}/global/targetHttpsProxies/{targetHttpsProxy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "targetHttpsProxy" =>
           URI.encode(target_https_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -233,7 +233,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/targetHttpsProxies/{targetHttpsProxy}", %{
+      |> Request.url("/projects/{project}/global/targetHttpsProxies/{targetHttpsProxy}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "targetHttpsProxy" =>
           URI.encode(target_https_proxy, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -292,7 +292,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/targetHttpsProxies", %{
+      |> Request.url("/projects/{project}/global/targetHttpsProxies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -363,7 +363,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/targetHttpsProxies", %{
+      |> Request.url("/projects/{project}/global/targetHttpsProxies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -433,10 +433,13 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/targetHttpsProxies/{targetHttpsProxy}/setQuicOverride", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/global/targetHttpsProxies/{targetHttpsProxy}/setQuicOverride",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -504,10 +507,13 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/targetHttpsProxies/{targetHttpsProxy}/setSslCertificates", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/targetHttpsProxies/{targetHttpsProxy}/setSslCertificates",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -575,10 +581,13 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/targetHttpsProxies/{targetHttpsProxy}/setSslPolicy", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/global/targetHttpsProxies/{targetHttpsProxy}/setSslPolicy",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -646,7 +655,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/targetHttpsProxies/{targetHttpsProxy}/setUrlMap", %{
+      |> Request.url("/projects/{project}/targetHttpsProxies/{targetHttpsProxy}/setUrlMap", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "targetHttpsProxy" => URI.encode(target_https_proxy, &URI.char_unreserved?/1)
       })

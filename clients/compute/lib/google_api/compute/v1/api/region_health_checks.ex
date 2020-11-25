@@ -85,7 +85,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/healthChecks/{healthCheck}", %{
+      |> Request.url("/projects/{project}/regions/{region}/healthChecks/{healthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "healthCheck" => URI.encode(health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -154,7 +154,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/healthChecks/{healthCheck}", %{
+      |> Request.url("/projects/{project}/regions/{region}/healthChecks/{healthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "healthCheck" => URI.encode(health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -226,7 +226,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/healthChecks", %{
+      |> Request.url("/projects/{project}/regions/{region}/healthChecks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -311,7 +311,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/healthChecks", %{
+      |> Request.url("/projects/{project}/regions/{region}/healthChecks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -385,7 +385,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/regions/{region}/healthChecks/{healthCheck}", %{
+      |> Request.url("/projects/{project}/regions/{region}/healthChecks/{healthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "healthCheck" => URI.encode(health_check, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -460,7 +460,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/{project}/regions/{region}/healthChecks/{healthCheck}", %{
+      |> Request.url("/projects/{project}/regions/{region}/healthChecks/{healthCheck}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "healthCheck" => URI.encode(health_check, &(URI.char_unreserved?(&1) || &1 == ?/))

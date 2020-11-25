@@ -78,7 +78,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/zones/{zone}/operations/{operation}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/operations/{operation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "operation" => URI.encode(operation, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -145,7 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/operations/{operation}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/operations/{operation}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "operation" => URI.encode(operation, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -225,7 +225,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/operations", %{
+      |> Request.url("/projects/{project}/zones/{zone}/operations", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -295,7 +295,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/operations/{operation}/wait", %{
+      |> Request.url("/projects/{project}/zones/{zone}/operations/{operation}/wait", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "operation" => URI.encode(operation, &URI.char_unreserved?/1)

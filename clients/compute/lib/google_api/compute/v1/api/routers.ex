@@ -87,7 +87,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/routers", %{
+      |> Request.url("/projects/{project}/aggregated/routers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -158,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/routers/{router}", %{
+      |> Request.url("/projects/{project}/regions/{region}/routers/{router}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "router" => URI.encode(router, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -217,7 +217,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/routers/{router}", %{
+      |> Request.url("/projects/{project}/regions/{region}/routers/{router}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "router" => URI.encode(router, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -306,7 +306,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/routers/{router}/getNatMappingInfo", %{
+      |> Request.url("/projects/{project}/regions/{region}/routers/{router}/getNatMappingInfo", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "router" => URI.encode(router, &URI.char_unreserved?/1)
@@ -375,7 +375,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/routers/{router}/getRouterStatus", %{
+      |> Request.url("/projects/{project}/regions/{region}/routers/{router}/getRouterStatus", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "router" => URI.encode(router, &URI.char_unreserved?/1)
@@ -435,7 +435,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/routers", %{
+      |> Request.url("/projects/{project}/regions/{region}/routers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -508,7 +508,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/routers", %{
+      |> Request.url("/projects/{project}/regions/{region}/routers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -582,7 +582,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/regions/{region}/routers/{router}", %{
+      |> Request.url("/projects/{project}/regions/{region}/routers/{router}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "router" => URI.encode(router, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -653,7 +653,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/routers/{router}/preview", %{
+      |> Request.url("/projects/{project}/regions/{region}/routers/{router}/preview", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "router" => URI.encode(router, &URI.char_unreserved?/1)
@@ -728,7 +728,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/{project}/regions/{region}/routers/{router}", %{
+      |> Request.url("/projects/{project}/regions/{region}/routers/{router}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "router" => URI.encode(router, &(URI.char_unreserved?(&1) || &1 == ?/))

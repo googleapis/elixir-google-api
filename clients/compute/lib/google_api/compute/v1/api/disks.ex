@@ -87,7 +87,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/disks/{disk}/addResourcePolicies", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{disk}/addResourcePolicies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
@@ -162,7 +162,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/disks", %{
+      |> Request.url("/projects/{project}/aggregated/disks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -237,7 +237,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/disks/{disk}/createSnapshot", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{disk}/createSnapshot", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
@@ -303,7 +303,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/zones/{zone}/disks/{disk}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{disk}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -362,7 +362,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/disks/{disk}", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{disk}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -430,7 +430,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/disks/{resource}/getIamPolicy", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{resource}/getIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -492,7 +492,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/disks", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -563,7 +563,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/disks", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -637,7 +637,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/disks/{disk}/removeResourcePolicies", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{disk}/removeResourcePolicies", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
@@ -705,7 +705,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/disks/{disk}/resize", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{disk}/resize", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
@@ -773,7 +773,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/disks/{resource}/setIamPolicy", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{resource}/setIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -848,7 +848,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/disks/{resource}/setLabels", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{resource}/setLabels", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
@@ -919,7 +919,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/disks/{resource}/testIamPermissions", %{
+      |> Request.url("/projects/{project}/zones/{zone}/disks/{resource}/testIamPermissions", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)

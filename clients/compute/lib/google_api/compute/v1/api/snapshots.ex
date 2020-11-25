@@ -72,7 +72,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/snapshots/{snapshot}", %{
+      |> Request.url("/projects/{project}/global/snapshots/{snapshot}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "snapshot" => URI.encode(snapshot, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -123,7 +123,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/snapshots/{snapshot}", %{
+      |> Request.url("/projects/{project}/global/snapshots/{snapshot}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "snapshot" => URI.encode(snapshot, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -187,7 +187,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/snapshots/{resource}/getIamPolicy", %{
+      |> Request.url("/projects/{project}/global/snapshots/{resource}/getIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -259,7 +259,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/snapshots", %{
+      |> Request.url("/projects/{project}/global/snapshots", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -322,7 +322,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/snapshots/{resource}/setIamPolicy", %{
+      |> Request.url("/projects/{project}/global/snapshots/{resource}/setIamPolicy", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -387,7 +387,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/snapshots/{resource}/setLabels", %{
+      |> Request.url("/projects/{project}/global/snapshots/{resource}/setLabels", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
@@ -454,7 +454,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/snapshots/{resource}/testIamPermissions", %{
+      |> Request.url("/projects/{project}/global/snapshots/{resource}/testIamPermissions", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })

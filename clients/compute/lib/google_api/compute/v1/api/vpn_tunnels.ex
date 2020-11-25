@@ -87,7 +87,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/vpnTunnels", %{
+      |> Request.url("/projects/{project}/aggregated/vpnTunnels", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -158,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/vpnTunnels/{vpnTunnel}", %{
+      |> Request.url("/projects/{project}/regions/{region}/vpnTunnels/{vpnTunnel}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "vpnTunnel" => URI.encode(vpn_tunnel, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -225,7 +225,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/vpnTunnels/{vpnTunnel}", %{
+      |> Request.url("/projects/{project}/regions/{region}/vpnTunnels/{vpnTunnel}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "vpnTunnel" => URI.encode(vpn_tunnel, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -291,7 +291,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/vpnTunnels", %{
+      |> Request.url("/projects/{project}/regions/{region}/vpnTunnels", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -364,7 +364,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/vpnTunnels", %{
+      |> Request.url("/projects/{project}/regions/{region}/vpnTunnels", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })

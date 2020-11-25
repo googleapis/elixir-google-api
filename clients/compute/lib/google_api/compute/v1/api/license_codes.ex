@@ -78,7 +78,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/licenseCodes/{licenseCode}", %{
+      |> Request.url("/projects/{project}/global/licenseCodes/{licenseCode}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "licenseCode" => URI.encode(license_code, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -145,7 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/licenseCodes/{resource}/testIamPermissions", %{
+      |> Request.url("/projects/{project}/global/licenseCodes/{resource}/testIamPermissions", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })

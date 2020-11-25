@@ -84,10 +84,13 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/backendBuckets/{backendBucket}/addSignedUrlKey", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/global/backendBuckets/{backendBucket}/addSignedUrlKey",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -153,7 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/global/backendBuckets/{backendBucket}", %{
+      |> Request.url("/projects/{project}/global/backendBuckets/{backendBucket}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "backendBucket" => URI.encode(backend_bucket, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -225,10 +228,13 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/backendBuckets/{backendBucket}/deleteSignedUrlKey", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/global/backendBuckets/{backendBucket}/deleteSignedUrlKey",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_param(:query, :keyName, key_name)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -291,7 +297,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/backendBuckets/{backendBucket}", %{
+      |> Request.url("/projects/{project}/global/backendBuckets/{backendBucket}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "backendBucket" => URI.encode(backend_bucket, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -349,7 +355,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/global/backendBuckets", %{
+      |> Request.url("/projects/{project}/global/backendBuckets", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -420,7 +426,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/global/backendBuckets", %{
+      |> Request.url("/projects/{project}/global/backendBuckets", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -490,7 +496,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/global/backendBuckets/{backendBucket}", %{
+      |> Request.url("/projects/{project}/global/backendBuckets/{backendBucket}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "backendBucket" => URI.encode(backend_bucket, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
@@ -561,7 +567,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/{project}/global/backendBuckets/{backendBucket}", %{
+      |> Request.url("/projects/{project}/global/backendBuckets/{backendBucket}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "backendBucket" => URI.encode(backend_bucket, &(URI.char_unreserved?(&1) || &1 == ?/))
       })

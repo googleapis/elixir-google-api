@@ -92,7 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/abandonInstances",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/abandonInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -179,7 +179,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/instanceGroupManagers", %{
+      |> Request.url("/projects/{project}/aggregated/instanceGroupManagers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -249,7 +249,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/applyUpdatesToInstances",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/applyUpdatesToInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -327,7 +327,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/createInstances",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/createInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -402,12 +402,15 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instanceGroupManager" =>
-          URI.encode(instance_group_manager, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instanceGroupManager" =>
+            URI.encode(instance_group_manager, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -483,7 +486,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/deleteInstances",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/deleteInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -555,7 +558,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/deletePerInstanceConfigs",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/deletePerInstanceConfigs",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -626,12 +629,15 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instanceGroupManager" =>
-          URI.encode(instance_group_manager, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instanceGroupManager" =>
+            URI.encode(instance_group_manager, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -701,7 +707,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/zones/{zone}/instanceGroupManagers", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instanceGroupManagers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -786,7 +792,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/zones/{zone}/instanceGroupManagers", %{
+      |> Request.url("/projects/{project}/zones/{zone}/instanceGroupManagers", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
@@ -875,7 +881,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/listErrors",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/listErrors",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -969,7 +975,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -1064,7 +1070,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/listPerInstanceConfigs",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/listPerInstanceConfigs",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -1144,12 +1150,15 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "zone" => URI.encode(zone, &URI.char_unreserved?/1),
-        "instanceGroupManager" =>
-          URI.encode(instance_group_manager, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instanceGroupManager" =>
+            URI.encode(instance_group_manager, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1221,7 +1230,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/patchPerInstanceConfigs",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/patchPerInstanceConfigs",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -1303,7 +1312,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/recreateInstances",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/recreateInstances",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -1390,7 +1399,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/resize",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/resize",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -1469,7 +1478,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -1547,7 +1556,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setTargetPools",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setTargetPools",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),
@@ -1625,7 +1634,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/updatePerInstanceConfigs",
+        "/projects/{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/updatePerInstanceConfigs",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "zone" => URI.encode(zone, &URI.char_unreserved?/1),

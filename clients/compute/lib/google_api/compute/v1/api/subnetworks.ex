@@ -87,7 +87,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/subnetworks", %{
+      |> Request.url("/projects/{project}/aggregated/subnetworks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -158,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/{project}/regions/{region}/subnetworks/{subnetwork}", %{
+      |> Request.url("/projects/{project}/regions/{region}/subnetworks/{subnetwork}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "subnetwork" => URI.encode(subnetwork, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -233,11 +233,14 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/subnetworks/{subnetwork}/expandIpCidrRange", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "subnetwork" => URI.encode(subnetwork, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/subnetworks/{subnetwork}/expandIpCidrRange",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "subnetwork" => URI.encode(subnetwork, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -302,7 +305,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/subnetworks/{subnetwork}", %{
+      |> Request.url("/projects/{project}/regions/{region}/subnetworks/{subnetwork}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "subnetwork" => URI.encode(subnetwork, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -370,11 +373,14 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/subnetworks/{resource}/getIamPolicy", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/subnetworks/{resource}/getIamPolicy",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -436,7 +442,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/subnetworks", %{
+      |> Request.url("/projects/{project}/regions/{region}/subnetworks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -509,7 +515,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/regions/{region}/subnetworks", %{
+      |> Request.url("/projects/{project}/regions/{region}/subnetworks", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
@@ -581,7 +587,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/aggregated/subnetworks/listUsable", %{
+      |> Request.url("/projects/{project}/aggregated/subnetworks/listUsable", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -595,7 +601,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Patches the specified subnetwork with the data included in the request. Only certain fields can up updated with a patch request as indicated in the field descriptions. You must specify the current fingerprint of the subnetwork resource being patched.
+  Patches the specified subnetwork with the data included in the request. Only certain fields can be updated with a patch request as indicated in the field descriptions. You must specify the current fingerprint of the subnetwork resource being patched.
 
   ## Parameters
 
@@ -658,7 +664,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{project}/regions/{region}/subnetworks/{subnetwork}", %{
+      |> Request.url("/projects/{project}/regions/{region}/subnetworks/{subnetwork}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "region" => URI.encode(region, &URI.char_unreserved?/1),
         "subnetwork" => URI.encode(subnetwork, &(URI.char_unreserved?(&1) || &1 == ?/))
@@ -726,11 +732,14 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/subnetworks/{resource}/setIamPolicy", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/subnetworks/{resource}/setIamPolicy",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -802,7 +811,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{project}/regions/{region}/subnetworks/{subnetwork}/setPrivateIpGoogleAccess",
+        "/projects/{project}/regions/{region}/subnetworks/{subnetwork}/setPrivateIpGoogleAccess",
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "region" => URI.encode(region, &URI.char_unreserved?/1),
@@ -875,11 +884,14 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/regions/{region}/subnetworks/{resource}/testIamPermissions", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "region" => URI.encode(region, &URI.char_unreserved?/1),
-        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{project}/regions/{region}/subnetworks/{resource}/testIamPermissions",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "region" => URI.encode(region, &URI.char_unreserved?/1),
+          "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

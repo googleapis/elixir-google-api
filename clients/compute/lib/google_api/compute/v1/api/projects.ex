@@ -69,7 +69,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/disableXpnHost", %{
+      |> Request.url("/projects/{project}/disableXpnHost", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -136,7 +136,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/disableXpnResource", %{
+      |> Request.url("/projects/{project}/disableXpnResource", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -191,7 +191,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/enableXpnHost", %{
+      |> Request.url("/projects/{project}/enableXpnHost", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -248,7 +248,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/enableXpnResource", %{
+      |> Request.url("/projects/{project}/enableXpnResource", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -297,7 +297,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}", %{
+      |> Request.url("/projects/{project}", %{
         "project" => URI.encode(project, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -346,7 +346,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/getXpnHost", %{
+      |> Request.url("/projects/{project}/getXpnHost", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -417,7 +417,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/getXpnResources", %{
+      |> Request.url("/projects/{project}/getXpnResources", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -490,7 +490,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/listXpnHosts", %{
+      |> Request.url("/projects/{project}/listXpnHosts", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -547,7 +547,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/moveDisk", %{
+      |> Request.url("/projects/{project}/moveDisk", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -604,7 +604,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/moveInstance", %{
+      |> Request.url("/projects/{project}/moveInstance", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -671,7 +671,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/setCommonInstanceMetadata", %{
+      |> Request.url("/projects/{project}/setCommonInstanceMetadata", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -738,7 +738,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/setDefaultNetworkTier", %{
+      |> Request.url("/projects/{project}/setDefaultNetworkTier", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -805,7 +805,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{project}/setUsageExportBucket", %{
+      |> Request.url("/projects/{project}/setUsageExportBucket", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
