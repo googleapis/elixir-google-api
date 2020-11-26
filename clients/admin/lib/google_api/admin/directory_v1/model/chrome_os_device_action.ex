@@ -21,8 +21,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceAction do
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - Action to be taken on the ChromeOs Device
-  *   `deprovisionReason` (*type:* `String.t`, *default:* `nil`) - 
+  *   `action` (*type:* `String.t`, *default:* `nil`) - Action to be taken on the Chrome OS device.
+  *   `deprovisionReason` (*type:* `String.t`, *default:* `nil`) - Only used when the action is `deprovision`. With the `deprovision` action, this field is required. *Note*: The deprovision reason is audited because it might have implications on licenses for perpetual subscription customers.
   """
 
   use GoogleApi.Gax.ModelBase

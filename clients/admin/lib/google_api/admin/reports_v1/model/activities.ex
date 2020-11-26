@@ -23,8 +23,8 @@ defmodule GoogleApi.Admin.Reports_v1.Model.Activities do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `items` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.Activity.t)`, *default:* `nil`) - Each activity record in the response.
-  *   `kind` (*type:* `String.t`, *default:* `admin#reports#activities`) - The type of API resource. For an activity report, the value is reports#activities.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token for retrieving the follow-on next page of the report. The nextPageToken value is used in the request's pageToken query string.
+  *   `kind` (*type:* `String.t`, *default:* `admin#reports#activities`) - The type of API resource. For an activity report, the value is `reports#activities`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token for retrieving the follow-on next page of the report. The `nextPageToken` value is used in the request's `pageToken` query string.
   """
 
   use GoogleApi.Gax.ModelBase

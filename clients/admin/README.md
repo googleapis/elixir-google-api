@@ -1,6 +1,6 @@
 # GoogleApi.Admin
 
-Admin SDK client library.
+Admin SDK API client library.
 
 Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_admin, "~> 0.25"}]
+  [{:google_api_admin, "~> 0.26"}]
 end
 ```
 

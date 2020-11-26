@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Asp do
   @moduledoc """
-  The template that returns individual ASP (Access Code) data.
+  An application-specific password (ASP) is used with applications that do not accept a verification code when logging into the application on certain devices. The ASP access code is used instead of the login and password you commonly use when accessing an application through a browser. For more information about ASPs and how to create one, see the [help center](//http://support.google.com/a/bin/answer.py?amp;answer=1032419).
 
   ## Attributes
 
   *   `codeId` (*type:* `integer()`, *default:* `nil`) - The unique ID of the ASP.
-  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - The time when the ASP was created. Expressed in Unix time format.
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - The time when the ASP was created. Expressed in [Unix time](http://en.wikipedia.org/wiki/Epoch_time) format.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the ASP.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#asp`) - The type of the API resource. This is always admin#directory#asp.
-  *   `lastTimeUsed` (*type:* `String.t`, *default:* `nil`) - The time when the ASP was last used. Expressed in Unix time format.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the application that the user, represented by their userId, entered when the ASP was created.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#asp`) - The type of the API resource. This is always `admin#directory#asp`.
+  *   `lastTimeUsed` (*type:* `String.t`, *default:* `nil`) - The time when the ASP was last used. Expressed in [Unix time](http://en.wikipedia.org/wiki/Epoch_time) format.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the application that the user, represented by their `userId`, entered when the ASP was created.
   *   `userKey` (*type:* `String.t`, *default:* `nil`) - The unique ID of the user who issued the ASP.
   """
 

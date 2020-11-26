@@ -22,9 +22,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Role do
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `isSuperAdminRole` (*type:* `boolean()`, *default:* `nil`) - Returns true if the role is a super admin role.
-  *   `isSystemRole` (*type:* `boolean()`, *default:* `nil`) - Returns true if this is a pre-defined system role.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#role`) - The type of the API resource. This is always admin#directory#role.
+  *   `isSuperAdminRole` (*type:* `boolean()`, *default:* `nil`) - Returns `true` if the role is a super admin role.
+  *   `isSystemRole` (*type:* `boolean()`, *default:* `nil`) - Returns `true` if this is a pre-defined system role.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#role`) - The type of the API resource. This is always `admin#directory#role`.
   *   `roleDescription` (*type:* `String.t`, *default:* `nil`) - A short description of the role.
   *   `roleId` (*type:* `String.t`, *default:* `nil`) - ID of the role.
   *   `roleName` (*type:* `String.t`, *default:* `nil`) - Name of the role.

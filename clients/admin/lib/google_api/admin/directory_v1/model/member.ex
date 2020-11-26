@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Member do
   @moduledoc """
-
+  A Google Groups member can be a user or another group. This member can be inside or outside of your account's domains. For more information about common group member tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-group-members).
 
   ## Attributes
 
-  *   `delivery_settings` (*type:* `String.t`, *default:* `nil`) - Delivery settings of member
-  *   `email` (*type:* `String.t`, *default:* `nil`) - Email of member (Read-only)
+  *   `delivery_settings` (*type:* `String.t`, *default:* `nil`) - Defines mail delivery preferences of member. This is only supported by create/update/get.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The member's email address. A member can be a user or another group. This property is required when adding a member to a group. The `email` must be unique and cannot be an alias of another group. If the email address is changed, the API automatically reflects the email address changes.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of group (Read-only) Unique identifier of member (Read-only) The unique ID of the group member. A member id can be used as a member request URI's memberKey.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#member`) - Kind of resource this is.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - Role of member
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of the group member. A member `id` can be used as a member request URI's `memberKey`.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#member`) - The type of the API resource. For Members resources, the value is `admin#directory#member`.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The member's role in a group. The API returns an error for cycles in group memberships. For example, if `group1` is a member of `group2`, `group2` cannot be a member of `group1`. For more information about a member's role, see the [administration help center](http://support.google.com/a/bin/answer.py?answer=167094).
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of member (Immutable)
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of member (Immutable)
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of group member.
   """
 
   use GoogleApi.Gax.ModelBase

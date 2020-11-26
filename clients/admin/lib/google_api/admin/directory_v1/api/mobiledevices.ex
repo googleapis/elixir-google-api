@@ -26,13 +26,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Take action on Mobile Device
+  Takes an action that affects a mobile device. For example, remotely wiping a device.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `resource_id` (*type:* `String.t`) - Immutable ID of Mobile Device
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `resource_id` (*type:* `String.t`) - The unique ID the API service uses to identify the mobile device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -101,13 +101,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
   end
 
   @doc """
-  Delete Mobile Device
+  Removes a mobile device.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `resource_id` (*type:* `String.t`) - Immutable ID of Mobile Device
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `resource_id` (*type:* `String.t`) - The unique ID the API service uses to identify the mobile device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -171,13 +171,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
   end
 
   @doc """
-  Retrieve Mobile Device
+  Retrieves a mobile device's properties.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `resource_id` (*type:* `String.t`) - Immutable ID of Mobile Device
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `resource_id` (*type:* `String.t`) - The unique ID the API service uses to identify the mobile device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -246,12 +246,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
   end
 
   @doc """
-  Retrieve all Mobile Devices of a customer (paginated)
+  Retrieves a paginated list of all mobile devices for an account.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -265,11 +265,11 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return. Max allowed value is 100.
-      *   `:orderBy` (*type:* `String.t`) - Column to use for sorting results
+      *   `:orderBy` (*type:* `String.t`) - Device property to use for sorting results.
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
       *   `:query` (*type:* `String.t`) - Search string in the format given at http://support.google.com/a/bin/answer.py?answer=1408863#search
-      *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Only of use when orderBy is also used
+      *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Must be used with the `orderBy` parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

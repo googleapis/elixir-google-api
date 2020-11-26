@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Building do
 
   ## Attributes
 
-  *   `address` (*type:* `GoogleApi.Admin.Directory_v1.Model.BuildingAddress.t`, *default:* `nil`) - The postal address of the building. See PostalAddress for details. Note that only a single address line and region code are required.
+  *   `address` (*type:* `GoogleApi.Admin.Directory_v1.Model.BuildingAddress.t`, *default:* `nil`) - The postal address of the building. See [`PostalAddress`](/my-business/reference/rest/v4/PostalAddress) for details. Note that only a single address line and region code are required.
   *   `buildingId` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the building. The maximum length is 100 characters.
   *   `buildingName` (*type:* `String.t`, *default:* `nil`) - The building name as seen by users in Calendar. Must be unique for the customer. For example, "NYC-CHEL". The maximum length is 100 characters.
   *   `coordinates` (*type:* `GoogleApi.Admin.Directory_v1.Model.BuildingCoordinates.t`, *default:* `nil`) - The geographic coordinates of the center of the building, expressed as latitude and longitude in decimal degrees.

@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Tokens do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `items` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Token.t)`, *default:* `nil`) - A list of Token resources.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#tokenList`) - The type of the API resource. This is always admin#directory#tokenList.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#tokenList`) - The type of the API resource. This is always `admin#directory#tokenList`.
   """
 
   use GoogleApi.Gax.ModelBase

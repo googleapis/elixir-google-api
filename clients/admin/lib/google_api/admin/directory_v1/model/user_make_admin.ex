@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserMakeAdmin do
 
   ## Attributes
 
-  *   `status` (*type:* `boolean()`, *default:* `nil`) - Boolean indicating new admin status of the user
+  *   `status` (*type:* `boolean()`, *default:* `nil`) - Indicates the administrator status of the user.
   """
 
   use GoogleApi.Gax.ModelBase

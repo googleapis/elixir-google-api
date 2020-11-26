@@ -26,13 +26,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Take action on Chrome OS Device
+  Takes an action that affects a Chrome OS Device. This includes deprovisioning, disabling, and re-enabling devices. *Warning:* * Deprovisioning a device will stop device policy syncing and remove device-level printers. After a device is deprovisioned, it must be wiped before it can be re-enrolled. * Lost or stolen devices should use the disable action. * Re-enabling a disabled device will consume a device license. If you do not have sufficient licenses available when completing the re-enable action, you will receive an error. For more information about deprovisioning and disabling devices, visit the [help center](https://support.google.com/chrome/a/answer/3523633).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `resource_id` (*type:* `String.t`) - Immutable ID of Chrome OS Device
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `resource_id` (*type:* `String.t`) - The unique ID of the device. The `resourceId`s are returned in the response from the [chromeosdevices.list](/admin-sdk/directory/v1/reference/chromeosdevices/list) method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -101,13 +101,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   end
 
   @doc """
-  Retrieve Chrome OS Device
+  Retrieves a Chrome OS device's properties.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `device_id` (*type:* `String.t`) - Immutable ID of Chrome OS Device
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `device_id` (*type:* `String.t`) - The unique ID of the device. The `deviceId`s are returned in the response from the [chromeosdevices.list](/admin-sdk/directory/v1/reference/chromeosdevices/list) method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -120,7 +120,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
+      *   `:projection` (*type:* `String.t`) - Determines whether the response contains the full list of properties or only a subset.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -176,12 +176,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   end
 
   @doc """
-  Retrieve all Chrome OS Devices of a customer (paginated)
+  Retrieves a paginated list of Chrome OS devices within an account.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -195,12 +195,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
-      *   `:orderBy` (*type:* `String.t`) - Column to use for sorting results
-      *   `:orgUnitPath` (*type:* `String.t`) - Full path of the organizational unit or its ID
-      *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
+      *   `:orderBy` (*type:* `String.t`) - Device property to use for sorting results.
+      *   `:orgUnitPath` (*type:* `String.t`) - The full path of the organizational unit or its unique ID.
+      *   `:pageToken` (*type:* `String.t`) - The `pageToken` query parameter is used to request the next page of query results. The follow-on request's `pageToken` query parameter is the `nextPageToken` from your previous response.
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
       *   `:query` (*type:* `String.t`) - Search string in the format given at http://support.google.com/chromeos/a/bin/answer.py?answer=1698333
-      *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Only of use when orderBy is also used
+      *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Must be used with the `orderBy` parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -249,7 +249,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   end
 
   @doc """
-  Move or insert multiple Chrome OS Devices to organizational unit
+  Move or insert multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once.
 
   ## Parameters
 
@@ -324,13 +324,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   end
 
   @doc """
-  Patch Chrome OS Device
+  Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `device_id` (*type:* `String.t`) - Immutable ID of Chrome OS Device
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `device_id` (*type:* `String.t`) - The unique ID of the device. The `deviceId`s are returned in the response from the [chromeosdevices.list](/admin-sdk/v1/reference/chromeosdevices/list) method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -401,13 +401,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   end
 
   @doc """
-  Update Chrome OS Device
+  Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `device_id` (*type:* `String.t`) - Immutable ID of Chrome OS Device
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `device_id` (*type:* `String.t`) - The unique ID of the device. The `deviceId`s are returned in the response from the [chromeosdevices.list](/admin-sdk/v1/reference/chromeosdevices/list) method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

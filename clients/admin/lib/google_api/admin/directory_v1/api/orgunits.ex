@@ -26,13 +26,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Remove organizational unit
+  Removes an organizational unit.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `org_unit_path` (*type:* `String.t`) - Full path of the organizational unit or its ID
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `org_unit_path` (*type:* `String.t`) - The full path of the organizational unit or its unique ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -96,13 +96,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   end
 
   @doc """
-  Retrieve organizational unit
+  Retrieves an organizational unit.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `org_unit_path` (*type:* `String.t`) - Full path of the organizational unit or its ID
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `org_unit_path` (*type:* `String.t`) - The full path of the organizational unit or its unique ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -163,12 +163,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   end
 
   @doc """
-  Add organizational unit
+  Adds an organizational unit.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -224,12 +224,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   end
 
   @doc """
-  Retrieve all organizational units
+  Retrieves a list of all organizational units for an account.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -242,8 +242,8 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orgUnitPath` (*type:* `String.t`) - the URL-encoded organizational unit's path or its ID
-      *   `:type` (*type:* `String.t`) - Whether to return all sub-organizations or just immediate children
+      *   `:orgUnitPath` (*type:* `String.t`) - The full path to the organizational unit or its unique ID. Returns the children of the specified organizational unit.
+      *   `:type` (*type:* `String.t`) - Whether to return all sub-organizations or just immediate children.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -287,13 +287,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   end
 
   @doc """
-  Patch organization unit via Apiary Patch Orchestration
+  Updates an organizational unit. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch)
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `org_unit_path` (*type:* `String.t`) - Full path of the organizational unit or its ID
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `org_unit_path` (*type:* `String.t`) - The full path of the organizational unit or its unique ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -356,13 +356,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   end
 
   @doc """
-  Update organizational unit
+  Updates an organizational unit.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
-  *   `org_unit_path` (*type:* `String.t`) - Full path of the organizational unit or its ID
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `org_unit_path` (*type:* `String.t`) - The full path of the organizational unit or its unique ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

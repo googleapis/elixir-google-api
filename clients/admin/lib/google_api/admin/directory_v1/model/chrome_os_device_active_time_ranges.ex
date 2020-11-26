@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges do
 
   ## Attributes
 
-  *   `activeTime` (*type:* `integer()`, *default:* `nil`) - Duration in milliseconds
+  *   `activeTime` (*type:* `integer()`, *default:* `nil`) - Duration of usage in milliseconds.
   *   `date` (*type:* `Date.t`, *default:* `nil`) - Date of usage
   """
 

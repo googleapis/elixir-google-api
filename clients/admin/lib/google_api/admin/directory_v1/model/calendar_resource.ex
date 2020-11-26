@@ -28,7 +28,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.CalendarResource do
   *   `floorName` (*type:* `String.t`, *default:* `nil`) - Name of the floor a resource is located on.
   *   `floorSection` (*type:* `String.t`, *default:* `nil`) - Name of the section within a floor a resource is located in.
   *   `generatedResourceName` (*type:* `String.t`, *default:* `nil`) - The read-only auto-generated name of the calendar resource which includes metadata about the resource such as building name, floor, capacity, etc. For example, "NYC-2-Training Room 1A (16)".
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#resources#calendars#CalendarResource`) - The type of the resource. For calendar resources, the value is admin#directory#resources#calendars#CalendarResource.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#resources#calendars#CalendarResource`) - The type of the resource. For calendar resources, the value is `admin#directory#resources#calendars#CalendarResource`.
   *   `resourceCategory` (*type:* `String.t`, *default:* `nil`) - The category of the calendar resource. Either CONFERENCE_ROOM or OTHER. Legacy data is set to CATEGORY_UNKNOWN.
   *   `resourceDescription` (*type:* `String.t`, *default:* `nil`) - Description of the resource, visible only to admins.
   *   `resourceEmail` (*type:* `String.t`, *default:* `nil`) - The read-only email for the calendar resource. Generated as part of creating a new calendar resource.

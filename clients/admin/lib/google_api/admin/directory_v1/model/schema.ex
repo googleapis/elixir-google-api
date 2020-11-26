@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.Schema do
   @moduledoc """
-  JSON template for Schema resource in Directory API.
+  The type of API resource. For Schema resources, this is always `admin#directory#schema`.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for the schema.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `fields` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpec.t)`, *default:* `nil`) - Fields of Schema
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - The ETag of the resource.
+  *   `fields` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpec.t)`, *default:* `nil`) - A list of fields in the schema.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#schema`) - Kind of resource this is.
-  *   `schemaId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of Schema (Read-only)
-  *   `schemaName` (*type:* `String.t`, *default:* `nil`) - Schema name
+  *   `schemaId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the schema (Read-only)
+  *   `schemaName` (*type:* `String.t`, *default:* `nil`) - The schema's name.
   """
 
   use GoogleApi.Gax.ModelBase

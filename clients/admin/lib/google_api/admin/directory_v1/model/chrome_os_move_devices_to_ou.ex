@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsMoveDevicesToOu do
 
   ## Attributes
 
-  *   `deviceIds` (*type:* `list(String.t)`, *default:* `nil`) - ChromeOs Devices to be moved to OU
+  *   `deviceIds` (*type:* `list(String.t)`, *default:* `nil`) - Chrome OS devices to be moved to OU
   """
 
   use GoogleApi.Gax.ModelBase

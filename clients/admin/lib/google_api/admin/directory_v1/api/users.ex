@@ -26,12 +26,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Delete user
+  Deletes a user.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -83,12 +83,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  retrieve user
+  Retrieves a user.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -101,9 +101,9 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customFieldMask` (*type:* `String.t`) - Comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when projection=custom.
+      *   `:customFieldMask` (*type:* `String.t`) - A comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when `projection=custom`.
       *   `:projection` (*type:* `String.t`) - What subset of fields to fetch for this user.
-      *   `:viewType` (*type:* `String.t`) - Whether to fetch the ADMIN_VIEW or DOMAIN_PUBLIC view of the user.
+      *   `:viewType` (*type:* `String.t`) - Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -148,7 +148,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  create user.
+  Creates a user.
 
   ## Parameters
 
@@ -206,7 +206,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Retrieve either deleted users or all users in a domain (paginated)
+  Retrieves a paginated list of either deleted users or all users in a domain.
 
   ## Parameters
 
@@ -223,17 +223,17 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customFieldMask` (*type:* `String.t`) - Comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when projection=custom.
-      *   `:customer` (*type:* `String.t`) - Immutable ID of the G Suite account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
-      *   `:domain` (*type:* `String.t`) - Name of the domain. Fill this field to get users from only this domain. To return all users in a multi-domain fill customer field instead.
+      *   `:customFieldMask` (*type:* `String.t`) - A comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when `projection=custom`.
+      *   `:customer` (*type:* `String.t`) - The unique ID for the customer's G Suite account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users). Either the `customer` or the `domain` parameter must be provided.
+      *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
-      *   `:orderBy` (*type:* `String.t`) - Column to use for sorting results
+      *   `:orderBy` (*type:* `String.t`) - Property to use for sorting results.
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
       *   `:projection` (*type:* `String.t`) - What subset of fields to fetch for this user.
-      *   `:query` (*type:* `String.t`) - Query string search. Should be of the form "". Complete documentation is at https: //developers.google.com/admin-sdk/directory/v1/guides/search-users
-      *   `:showDeleted` (*type:* `String.t`) - If set to true, retrieves the list of deleted users. (Default: false)
+      *   `:query` (*type:* `String.t`) - Query string for searching user fields. For more information on constructing user queries, see [Search for Users](/admin-sdk/directory/v1/guides/search-users).
+      *   `:showDeleted` (*type:* `String.t`) - If set to `true`, retrieves the list of deleted users. (Default: `false`)
       *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order.
-      *   `:viewType` (*type:* `String.t`) - Whether to fetch the ADMIN_VIEW or DOMAIN_PUBLIC view of the user.
+      *   `:viewType` (*type:* `String.t`) - Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -284,12 +284,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  change admin status of a user
+  Makes a user a super administrator.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user as admin
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -343,12 +343,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Patch Users via Apiary Patch Orchestration
+  Updates a user using patch semantics. The update method should be used instead, since it also supports patch semantics and has better performance. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user. If ID, it should match with id of user object
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -461,7 +461,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Undelete a deleted user
+  Undeletes a deleted user.
 
   ## Parameters
 
@@ -520,12 +520,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  update user
+  Updates a user. This method supports patch semantics, meaning you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user. If ID, it should match with id of user object
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -601,7 +601,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:customFieldMask` (*type:* `String.t`) - Comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when projection=custom.
       *   `:customer` (*type:* `String.t`) - Immutable ID of the G Suite account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
       *   `:domain` (*type:* `String.t`) - Name of the domain. Fill this field to get users from only this domain. To return all users in a multi-domain fill customer field instead."
-      *   `:event` (*type:* `String.t`) - Event on which subscription is intended
+      *   `:event` (*type:* `String.t`) - Events to watch for.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:orderBy` (*type:* `String.t`) - Column to use for sorting results
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
@@ -609,7 +609,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:query` (*type:* `String.t`) - Query string search. Should be of the form "". Complete documentation is at https: //developers.google.com/admin-sdk/directory/v1/guides/search-users
       *   `:showDeleted` (*type:* `String.t`) - If set to true, retrieves the list of deleted users. (Default: false)
       *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order.
-      *   `:viewType` (*type:* `String.t`) - Whether to fetch the ADMIN_VIEW or DOMAIN_PUBLIC view of the user.
+      *   `:viewType` (*type:* `String.t`) - Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin).
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.Channel.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -663,13 +663,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Remove a alias for the user
+  Removes an alias.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user
-  *   `alias` (*type:* `String.t`) - The alias to be removed
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
+  *   `alias` (*type:* `String.t`) - The alias to be removed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -733,12 +733,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Add a alias for the user
+  Adds an alias.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -794,12 +794,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  List all aliases for a user
+  Lists all aliases for a user.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -853,7 +853,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Watch for changes in users list
+  Watch for changes in users list.
 
   ## Parameters
 
@@ -871,7 +871,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:event` (*type:* `String.t`) - Event on which subscription is intended (if subscribing)
+      *   `:event` (*type:* `String.t`) - Events to watch for.
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.Channel.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -916,12 +916,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Remove photos for the user
+  Removes the user's photo.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -973,12 +973,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Retrieve photo of a user
+  Retrieves the user's photo.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1032,12 +1032,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Patch Photo via Apiary Patch Orchestration
+  Adds a photo for the user. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1093,12 +1093,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Add a photo for the user
+  Adds a photo for the user.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `user_key` (*type:* `String.t`) - Email or immutable ID of the user
+  *   `user_key` (*type:* `String.t`) - Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

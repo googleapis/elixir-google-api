@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue do
   @moduledoc """
-  Nested parameter value pairs associated with this parameter. Complex value type for a parameter are returned as a list of parameter values. For example, the address parameter may have a value as [{parameter: [{name: city, value: abc}]}]
+  Nested parameter value pairs associated with this parameter. Complex value type for a parameter are returned as a list of parameter values. For example, the address parameter may have a value as `[{parameter: [{name: city, value: abc}]}]`
 
   ## Attributes
 

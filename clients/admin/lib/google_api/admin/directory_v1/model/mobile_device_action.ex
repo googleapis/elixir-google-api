@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MobileDeviceAction do
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - Action to be taken on the Mobile Device
+  *   `action` (*type:* `String.t`, *default:* `nil`) - The action to be performed on the device.
   """
 
   use GoogleApi.Gax.ModelBase

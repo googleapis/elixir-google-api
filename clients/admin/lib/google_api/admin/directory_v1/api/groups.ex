@@ -26,12 +26,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Delete Group
+  Deletes a group.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
+  *   `group_key` (*type:* `String.t`) - Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -83,12 +83,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   end
 
   @doc """
-  Retrieve Group
+  Retrieves a group's properties.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
+  *   `group_key` (*type:* `String.t`) - Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -142,7 +142,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   end
 
   @doc """
-  Create Group
+  Creates a group.
 
   ## Parameters
 
@@ -217,8 +217,8 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customer` (*type:* `String.t`) - Immutable ID of the G Suite account. In case of multi-domain, to fetch all groups for a customer, fill this field instead of domain.
-      *   `:domain` (*type:* `String.t`) - Name of the domain. Fill this field to get groups from only this domain. To return all groups in a multi-domain fill customer field instead.
+      *   `:customer` (*type:* `String.t`) - The unique ID for the customer's G Suite account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users)
+      *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return. Max allowed value is 200.
       *   `:orderBy` (*type:* `String.t`) - Column to use for sorting results
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
@@ -272,12 +272,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   end
 
   @doc """
-  Patch Groups via Apiary Patch Orchestration
+  Updates a group's properties. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group. If ID, it should match with id of group object
+  *   `group_key` (*type:* `String.t`) - Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -333,12 +333,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   end
 
   @doc """
-  Update Group
+  Updates a group's properties.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group. If ID, it should match with id of group object
+  *   `group_key` (*type:* `String.t`) - Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -394,12 +394,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   end
 
   @doc """
-  Remove a alias for the group
+  Removes an alias.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
+  *   `group_key` (*type:* `String.t`) - Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.
   *   `alias` (*type:* `String.t`) - The alias to be removed
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -464,12 +464,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   end
 
   @doc """
-  Add a alias for the group
+  Adds an alias for the group.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
+  *   `group_key` (*type:* `String.t`) - Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -525,12 +525,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   end
 
   @doc """
-  List all aliases for a group
+  Lists all aliases for a group.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `group_key` (*type:* `String.t`) - Email or immutable ID of the group
+  *   `group_key` (*type:* `String.t`) - Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

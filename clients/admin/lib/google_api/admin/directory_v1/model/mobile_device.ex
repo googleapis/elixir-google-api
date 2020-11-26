@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.MobileDevice do
   @moduledoc """
-
+  G Suite Mobile Management includes Android, [Google Sync](http://support.google.com/a/bin/answer.py?answer=135937), and iOS devices. For more information about common group mobile device API tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-mobile-devices.html).
 
   ## Attributes
 
@@ -25,41 +25,41 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MobileDevice do
   *   `hardware` (*type:* `String.t`, *default:* `nil`) - Mobile Device Hardware (Read-only)
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `securityPatchLevel` (*type:* `String.t`, *default:* `nil`) - Mobile Device Security patch level (Read-only)
-  *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The default locale used on the Mobile Device (Read-only)
+  *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The default locale used on the device.
   *   `devicePasswordStatus` (*type:* `String.t`, *default:* `nil`) - DevicePasswordStatus (Read-only)
-  *   `userAgent` (*type:* `String.t`, *default:* `nil`) - Mobile Device user agent
-  *   `deviceCompromisedStatus` (*type:* `String.t`, *default:* `nil`) - Mobile Device compromised status (Read-only)
+  *   `userAgent` (*type:* `String.t`, *default:* `nil`) - Gives information about the device such as `os` version. This property can be [updated](/admin-sdk/directory/v1/reference/mobiledevices/update.html). For more information, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-mobile-devices#update_mobile_device).
+  *   `deviceCompromisedStatus` (*type:* `String.t`, *default:* `nil`) - The compromised device status.
   *   `supportsWorkProfile` (*type:* `boolean()`, *default:* `nil`) - Work profile supported on device (Read-only)
   *   `privilege` (*type:* `String.t`, *default:* `nil`) - DMAgentPermission (Read-only)
-  *   `managedAccountIsOnOwnerProfile` (*type:* `boolean()`, *default:* `nil`) - Boolean indicating if this account is on owner/primary profile or not (Read-only)
-  *   `email` (*type:* `list(String.t)`, *default:* `nil`) - List of owner user's email addresses (Read-only)
-  *   `os` (*type:* `String.t`, *default:* `nil`) - Name of the mobile operating system
+  *   `managedAccountIsOnOwnerProfile` (*type:* `boolean()`, *default:* `nil`) - Boolean indicating if this account is on owner/primary profile or not.
+  *   `email` (*type:* `list(String.t)`, *default:* `nil`) - List of owner's email addresses. If your application needs the current list of user emails, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For additional information, see the [retrieve a user](/admin-sdk/directory/v1/guides/manage-users#get_user) method.
+  *   `os` (*type:* `String.t`, *default:* `nil`) - The mobile device's operating system, for example IOS 4.3 or Android 2.3.5. This property can be [updated](/admin-sdk/directory/v1/reference/mobiledevices/update.html). For more information, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-mobile-devices#update_mobile_device).
   *   `releaseVersion` (*type:* `String.t`, *default:* `nil`) - Mobile Device release version version (Read-only)
   *   `encryptionStatus` (*type:* `String.t`, *default:* `nil`) - Mobile Device Encryption Status (Read-only)
   *   `networkOperator` (*type:* `String.t`, *default:* `nil`) - Mobile Device mobile or network operator (if available) (Read-only)
   *   `bootloaderVersion` (*type:* `String.t`, *default:* `nil`) - Mobile Device Bootloader version (Read-only)
-  *   `imei` (*type:* `String.t`, *default:* `nil`) - Mobile Device IMEI number (Read-only)
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#mobiledevice`) - Kind of resource this is.
+  *   `imei` (*type:* `String.t`, *default:* `nil`) - The device's IMEI number.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#mobiledevice`) - The type of the API resource. For Mobiledevices resources, the value is `admin#directory#mobiledevice`.
   *   `lastSync` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last synchronized with the policy settings in the G Suite administrator control panel (Read-only)
   *   `unknownSourcesStatus` (*type:* `boolean()`, *default:* `nil`) - Unknown sources enabled or disabled on device (Read-only)
-  *   `resourceId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of Mobile Device (Read-only)
-  *   `name` (*type:* `list(String.t)`, *default:* `nil`) - List of owner user's names (Read-only)
-  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Mobile Device serial number (Read-only)
-  *   `buildNumber` (*type:* `String.t`, *default:* `nil`) - Mobile Device Build number (Read-only)
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the device (Read-only)
+  *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The unique ID the API service uses to identify the mobile device.
+  *   `name` (*type:* `list(String.t)`, *default:* `nil`) - List of the owner's user names. If your application needs the current list of device owner names, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For more information about retrieving mobile device user information, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-users#get_user).
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The serial number for a Google Sync mobile device. For Android and iOS devices, this is a software generated unique identifier.
+  *   `buildNumber` (*type:* `String.t`, *default:* `nil`) - The device's operating system build number.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The device's status.
   *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - Mobile Device manufacturer (Read-only)
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Name of the model of the device
-  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - Mobile Device SSN or Serial Number (Read-only)
-  *   `meid` (*type:* `String.t`, *default:* `nil`) - Mobile Device MEID number (Read-only)
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The mobile device's model name, for example Nexus S. This property can be [updated](/admin-sdk/directory/v1/reference/mobiledevices/update.html). For more information, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-mobile=devices#update_mobile_device).
+  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The device's serial number.
+  *   `meid` (*type:* `String.t`, *default:* `nil`) - The device's MEID number.
   *   `developerOptionsStatus` (*type:* `boolean()`, *default:* `nil`) - Developer options enabled or disabled on device (Read-only)
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Mobile Device Brand (Read-only)
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of device (Read-only)
-  *   `kernelVersion` (*type:* `String.t`, *default:* `nil`) - Mobile Device Kernel version (Read-only)
-  *   `basebandVersion` (*type:* `String.t`, *default:* `nil`) - Mobile Device Baseband version (Read-only)
-  *   `hardwareId` (*type:* `String.t`, *default:* `nil`) - Mobile Device Hardware Id (Read-only)
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of mobile device.
+  *   `kernelVersion` (*type:* `String.t`, *default:* `nil`) - The device's kernel version.
+  *   `basebandVersion` (*type:* `String.t`, *default:* `nil`) - The device's baseband version.
+  *   `hardwareId` (*type:* `String.t`, *default:* `nil`) - The IMEI/MEID unique identifier for Android hardware. It is not applicable to Google Sync devices. When adding an Android mobile device, this is an optional property. When updating one of these devices, this is a read-only property.
   *   `adbStatus` (*type:* `boolean()`, *default:* `nil`) - Adb (USB debugging) enabled or disabled on device (Read-only)
-  *   `wifiMacAddress` (*type:* `String.t`, *default:* `nil`) - Mobile Device WiFi MAC address (Read-only)
-  *   `applications` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.MobileDeviceApplications.t)`, *default:* `nil`) - List of applications installed on Mobile Device
+  *   `wifiMacAddress` (*type:* `String.t`, *default:* `nil`) - The device's MAC address on Wi-Fi networks.
+  *   `applications` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.MobileDeviceApplications.t)`, *default:* `nil`) - The list of applications installed on an Android mobile device. It is not applicable to Google Sync and iOS devices. The list includes any Android applications that access G Suite data. When updating an applications list, it is important to note that updates replace the existing list. If the Android device has two existing applications and the API updates the list with five applications, the is now the updated list of five applications.
   *   `otherAccountsInfo` (*type:* `list(String.t)`, *default:* `nil`) - List of accounts added on device (Read-only)
   """
 

@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.CalendarResources do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `items` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.CalendarResource.t)`, *default:* `nil`) - The CalendarResources in this page of results.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#resources#calendars#calendarResourcesList`) - Identifies this as a collection of CalendarResources. This is always admin#directory#resources#calendars#calendarResourcesList.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#resources#calendars#calendarResourcesList`) - Identifies this as a collection of CalendarResources. This is always `admin#directory#resources#calendars#calendarResourcesList`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
   """
 
