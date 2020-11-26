@@ -21,12 +21,12 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Token do
 
   ## Attributes
 
-  *   `anonymous` (*type:* `boolean()`, *default:* `nil`) - Whether the application is registered with Google. The value is true if the application has an anonymous Client ID.
+  *   `anonymous` (*type:* `boolean()`, *default:* `nil`) - Whether the application is registered with Google. The value is `true` if the application has an anonymous Client ID.
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - The Client ID of the application the token is issued to.
   *   `displayText` (*type:* `String.t`, *default:* `nil`) - The displayable name of the application the token is issued to.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#token`) - The type of the API resource. This is always admin#directory#token.
-  *   `nativeApp` (*type:* `boolean()`, *default:* `nil`) - Whether the token is issued to an installed application. The value is true if the application is installed to a desktop or mobile device.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#token`) - The type of the API resource. This is always `admin#directory#token`.
+  *   `nativeApp` (*type:* `boolean()`, *default:* `nil`) - Whether the token is issued to an installed application. The value is `true` if the application is installed to a desktop or mobile device.
   *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - A list of authorization scopes the application is granted.
   *   `userKey` (*type:* `String.t`, *default:* `nil`) - The unique ID of the user that issued the token.
   """

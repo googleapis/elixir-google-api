@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.VerificationCode do
   @moduledoc """
-  JSON template for verification codes in Directory API.
+  The Directory API allows you to view, generate, and invalidate backup verification codes for a user.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#verificationCode`) - The type of the resource. This is always admin#directory#verificationCode.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#verificationCode`) - The type of the resource. This is always `admin#directory#verificationCode`.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - The obfuscated unique ID of the user.
   *   `verificationCode` (*type:* `String.t`, *default:* `nil`) - A current verification code for the user. Invalidated or used verification codes are not returned as part of the result.
   """

@@ -22,7 +22,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RoleRolePrivileges do
   ## Attributes
 
   *   `privilegeName` (*type:* `String.t`, *default:* `nil`) - The name of the privilege.
-  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - The obfuscated ID of the service this privilege is for. This value is returned with Privileges.list().
+  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - The obfuscated ID of the service this privilege is for. This value is returned with [`Privileges.list()`](/admin-sdk/directory/v1/reference/privileges/list).
   """
 
   use GoogleApi.Gax.ModelBase

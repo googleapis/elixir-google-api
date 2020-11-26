@@ -17,45 +17,45 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   @moduledoc """
-
+  Google Chrome devices run on the [Chrome OS](http://support.google.com/chromeos). For more information about common API tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-chrome-devices).
 
   ## Attributes
 
   *   `systemRamTotal` (*type:* `String.t`, *default:* `nil`) - Total RAM on the device [in bytes] (Read-only)
-  *   `macAddress` (*type:* `String.t`, *default:* `nil`) - Chromebook Mac Address on wifi network interface (Read-only)
-  *   `annotatedLocation` (*type:* `String.t`, *default:* `nil`) - Address or location of the device as noted by the administrator
+  *   `macAddress` (*type:* `String.t`, *default:* `nil`) - The device's wireless MAC address. If the device does not have this information, it is not included in the response.
+  *   `annotatedLocation` (*type:* `String.t`, *default:* `nil`) - The address or location of the device as noted by the administrator. Maximum length is `200` characters. Empty values are allowed.
   *   `deviceFiles` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDeviceFiles.t)`, *default:* `nil`) - List of device files to download (Read-only)
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `platformVersion` (*type:* `String.t`, *default:* `nil`) - Chromebook platform version (Read-only)
-  *   `osVersion` (*type:* `String.t`, *default:* `nil`) - Chromebook Os Version (Read-only)
-  *   `orgUnitPath` (*type:* `String.t`, *default:* `nil`) - OrgUnit of the device
-  *   `firmwareVersion` (*type:* `String.t`, *default:* `nil`) - Chromebook firmware version (Read-only)
-  *   `annotatedUser` (*type:* `String.t`, *default:* `nil`) - User of the device
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#chromeosdevice`) - Kind of resource this is.
-  *   `recentUsers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t)`, *default:* `nil`) - List of recent device users, in descending order by last login time (Read-only)
+  *   `platformVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's platform version.
+  *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's operating system version.
+  *   `orgUnitPath` (*type:* `String.t`, *default:* `nil`) - The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#update_chrome_device) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](http://support.google.com/a/bin/answer.py?answer=182433).
+  *   `firmwareVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's firmware version.
+  *   `annotatedUser` (*type:* `String.t`, *default:* `nil`) - The user of the device as noted by the administrator. Maximum length is 100 characters. Empty values are allowed.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#chromeosdevice`) - The type of resource. For the Chromeosdevices resource, the value is `admin#directory#chromeosdevice`.
+  *   `recentUsers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.RecentUsers.t)`, *default:* `nil`) - List of recent device users, in descending order, by last login time.
   *   `supportEndDate` (*type:* `DateTime.t`, *default:* `nil`) - Final date the device will be supported (Read-only)
   *   `lastSync` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last synchronized with the policy settings in the G Suite administrator control panel (Read-only)
-  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of Chrome OS Device (Read-only)
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the Chrome device.
   *   `manufactureDate` (*type:* `String.t`, *default:* `nil`) - (Read-only) The date the device was manufactured in yyyy-mm-dd format.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - status of the device (Read-only)
-  *   `orderNumber` (*type:* `String.t`, *default:* `nil`) - Chromebook order number (Read-only)
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Chromebook Model (Read-only)
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the device.
+  *   `orderNumber` (*type:* `String.t`, *default:* `nil`) - The device's order number. Only devices directly purchased from Google have an order number.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The device's model information. If the device does not have this information, this property is not included in the response.
   *   `ethernetMacAddress0` (*type:* `String.t`, *default:* `nil`) - (Read-only) MAC address used by the Chromebook’s internal ethernet port, and for onboard network (ethernet) interface. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for some devices.
-  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - Chromebook serial number (Read-only)
-  *   `meid` (*type:* `String.t`, *default:* `nil`) - Contains either the Mobile Equipment identifier (MEID) or the International Mobile Equipment Identity (IMEI) for the 3G mobile card in the Chromebook (Read-only)
+  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The Chrome device serial number entered when the device was enabled. This value is the same as the Admin console's *Serial Number* in the *Chrome OS Devices* tab.
+  *   `meid` (*type:* `String.t`, *default:* `nil`) - The Mobile Equipment Identifier (MEID) or the International Mobile Equipment Identity (IMEI) for the 3G mobile card in a mobile device. A MEID/IMEI is typically used when adding a device to a wireless carrier's post-pay service plan. If the device does not have this information, this property is not included in the response. For more information on how to export a MEID/IMEI list, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-chrome-devices.html#export_meid).
   *   `tpmVersionInfo` (*type:* `GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo.t`, *default:* `nil`) - Trusted Platform Module (TPM) (Read-only)
-  *   `activeTimeRanges` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges.t)`, *default:* `nil`) - List of active time ranges (Read-only)
-  *   `bootMode` (*type:* `String.t`, *default:* `nil`) - Chromebook boot mode (Read-only)
-  *   `ethernetMacAddress` (*type:* `String.t`, *default:* `nil`) - Chromebook Mac Address on ethernet network interface (Read-only)
+  *   `activeTimeRanges` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges.t)`, *default:* `nil`) - List of active time ranges (Read-only).
+  *   `bootMode` (*type:* `String.t`, *default:* `nil`) - The boot mode for the device. The possible values are: * `Verified`: The device is running a valid version of the Chrome OS. * `Dev`: The devices's developer hardware switch is enabled. When booted, the device has a command line shell. For an example of a developer switch, see the [Chromebook developer information](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/samsung-series-5-chromebook#TOC-Developer-switch).
+  *   `ethernetMacAddress` (*type:* `String.t`, *default:* `nil`) - The device's MAC address on the ethernet network interface.
   *   `lastEnrollmentTime` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last enrolled (Read-only)
   *   `diskVolumeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReports.t)`, *default:* `nil`) - Reports of disk space and other info about mounted/connected volumes.
   *   `systemRamFreeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports.t)`, *default:* `nil`) - Reports of amounts of available RAM memory (Read-only)
-  *   `annotatedAssetId` (*type:* `String.t`, *default:* `nil`) - AssetId specified during enrollment or through later annotation
+  *   `annotatedAssetId` (*type:* `String.t`, *default:* `nil`) - The asset identifier as noted by an administrator or specified during enrollment.
   *   `cpuStatusReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports.t)`, *default:* `nil`) - Reports of CPU utilization and temperature (Read-only)
   *   `dockMacAddress` (*type:* `String.t`, *default:* `nil`) - (Read-only) Built-in MAC address for the docking station that the device connected to. Factory sets Media access control address (MAC address) assigned for use by a dock. It is reserved specifically for MAC pass through device policy. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for some devices.
   *   `autoUpdateExpiration` (*type:* `String.t`, *default:* `nil`) - (Read-only) The timestamp after which the device will stop receiving Chrome updates or support
-  *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes added by the administrator
-  *   `willAutoRenew` (*type:* `boolean()`, *default:* `nil`) - Will Chromebook auto renew after support end date (Read-only)
+  *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes about this device added by the administrator. This property can be [searched](http://support.google.com/chromeos/a/bin/answer.py?answer=1698333) with the [list](/admin-sdk/directory/v1/reference/chromeosdevices/list) method's `query` parameter. Maximum length is 500 characters. Empty values are allowed.
+  *   `willAutoRenew` (*type:* `boolean()`, *default:* `nil`) - Determines if the device will auto renew its support after the support end date. This is a read-only property.
   *   `lastKnownNetwork` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t)`, *default:* `nil`) - Contains last known network (Read-only)
   """
 
@@ -73,7 +73,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :firmwareVersion => String.t(),
           :annotatedUser => String.t(),
           :kind => String.t(),
-          :recentUsers => list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t()),
+          :recentUsers => list(GoogleApi.Admin.Directory_v1.Model.RecentUsers.t()),
           :supportEndDate => DateTime.t(),
           :lastSync => DateTime.t(),
           :deviceId => String.t(),
@@ -121,12 +121,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   field(:firmwareVersion)
   field(:annotatedUser)
   field(:kind)
-
-  field(:recentUsers,
-    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers,
-    type: :list
-  )
-
+  field(:recentUsers, as: GoogleApi.Admin.Directory_v1.Model.RecentUsers, type: :list)
   field(:supportEndDate, as: DateTime)
   field(:lastSync, as: DateTime)
   field(:deviceId)

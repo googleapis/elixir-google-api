@@ -24,9 +24,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Privilege do
   *   `childPrivileges` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Privilege.t)`, *default:* `nil`) - A list of child privileges. Privileges for a service form a tree. Each privilege can have a list of child privileges; this list is empty for a leaf privilege.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `isOuScopable` (*type:* `boolean()`, *default:* `nil`) - If the privilege can be restricted to an organization unit.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#privilege`) - The type of the API resource. This is always admin#directory#privilege.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#privilege`) - The type of the API resource. This is always `admin#directory#privilege`.
   *   `privilegeName` (*type:* `String.t`, *default:* `nil`) - The name of the privilege.
-  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - The obfuscated ID of the service this privilege is for. This value is returned with Privileges.list().
+  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - The obfuscated ID of the service this privilege is for. This value is returned with [`Privileges.list()`](/admin-sdk/directory/v1/reference/privileges/list).
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the service this privilege is for.
   """
 

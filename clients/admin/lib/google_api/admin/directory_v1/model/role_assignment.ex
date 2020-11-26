@@ -23,11 +23,11 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignment do
 
   *   `assignedTo` (*type:* `String.t`, *default:* `nil`) - The unique ID of the user this role is assigned to.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#roleAssignment`) - The type of the API resource. This is always admin#directory#roleAssignment.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#roleAssignment`) - The type of the API resource. This is always `admin#directory#roleAssignment`.
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - If the role is restricted to an organization unit, this contains the ID for the organization unit the exercise of this role is restricted to.
   *   `roleAssignmentId` (*type:* `String.t`, *default:* `nil`) - ID of this roleAssignment.
   *   `roleId` (*type:* `String.t`, *default:* `nil`) - The ID of the role that is assigned.
-  *   `scopeType` (*type:* `String.t`, *default:* `nil`) - The scope in which this role is assigned. Possible values are: - CUSTOMER - ORG_UNIT 
+  *   `scopeType` (*type:* `String.t`, *default:* `nil`) - The scope in which this role is assigned.
   """
 
   use GoogleApi.Gax.ModelBase

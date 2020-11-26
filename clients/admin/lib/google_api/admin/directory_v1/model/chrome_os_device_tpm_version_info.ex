@@ -21,10 +21,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo do
 
   ## Attributes
 
-  *   `family` (*type:* `String.t`, *default:* `nil`) - TPM family.
+  *   `family` (*type:* `String.t`, *default:* `nil`) - TPM family. We use the TPM 2.0 style encoding, e.g.: TPM 1.2: "1.2" -> 312e3200 TPM 2.0: "2.0" -> 322e3000
   *   `firmwareVersion` (*type:* `String.t`, *default:* `nil`) - TPM firmware version.
   *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - TPM manufacturer code.
-  *   `specLevel` (*type:* `String.t`, *default:* `nil`) - TPM specification level.
+  *   `specLevel` (*type:* `String.t`, *default:* `nil`) - TPM specification level. See Library Specification for TPM 2.0 and Main Specification for TPM 1.2.
   *   `tpmModel` (*type:* `String.t`, *default:* `nil`) - TPM model number.
   *   `vendorSpecific` (*type:* `String.t`, *default:* `nil`) - Vendor-specific information such as Vendor ID.
   """

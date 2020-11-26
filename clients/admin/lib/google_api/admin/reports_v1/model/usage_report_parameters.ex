@@ -25,7 +25,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportParameters do
   *   `datetimeValue` (*type:* `DateTime.t`, *default:* `nil`) - The RFC 3339 formatted value of the parameter, for example 2010-10-28T10:26:35.000Z.
   *   `intValue` (*type:* `String.t`, *default:* `nil`) - Output only. Integer value of the parameter.
   *   `msgValue` (*type:* `list(map())`, *default:* `nil`) - Output only. Nested message value of the parameter.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the parameter.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the parameter. For the User Usage Report parameter names, see the User Usage parameters reference.
   *   `stringValue` (*type:* `String.t`, *default:* `nil`) - Output only. String value of the parameter.
   """
 

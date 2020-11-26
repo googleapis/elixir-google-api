@@ -18,7 +18,7 @@
 defmodule GoogleApi.Admin.Mixfile do
   use Mix.Project
 
-  @version "0.25.2"
+  @version "0.26.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Admin.Mixfile do
 
   defp description() do
     """
-    Admin SDK client library. Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.
+    Admin SDK API client library. Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.
     """
   end
 

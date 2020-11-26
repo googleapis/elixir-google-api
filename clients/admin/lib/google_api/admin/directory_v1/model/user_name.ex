@@ -21,9 +21,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserName do
 
   ## Attributes
 
-  *   `familyName` (*type:* `String.t`, *default:* `nil`) - Last Name
-  *   `fullName` (*type:* `String.t`, *default:* `nil`) - Full Name
-  *   `givenName` (*type:* `String.t`, *default:* `nil`) - First Name
+  *   `familyName` (*type:* `String.t`, *default:* `nil`) - The user's last name. Required when creating a user account.
+  *   `fullName` (*type:* `String.t`, *default:* `nil`) - The user's full name formed by concatenating the first and last name values.
+  *   `givenName` (*type:* `String.t`, *default:* `nil`) - The user's first name. Required when creating a user account.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,20 +17,20 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpec do
   @moduledoc """
-  JSON template for FieldSpec resource for Schemas in Directory API.
+  You can use schemas to add custom fields to user profiles. You can use these fields to store information such as the projects your users work on, their physical locations, their hire dates, or whatever else fits your business needs. For more information, see [Custom User Fields](/admin-sdk/directory/v1/guides/manage-schemas).
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display Name of the field.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `fieldId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of Field (Read-only)
-  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - Name of the field.
-  *   `fieldType` (*type:* `String.t`, *default:* `nil`) - Type of the field.
-  *   `indexed` (*type:* `boolean()`, *default:* `true`) - Boolean specifying whether the field is indexed or not.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#schema#fieldspec`) - Kind of resource this is.
-  *   `multiValued` (*type:* `boolean()`, *default:* `nil`) - Boolean specifying whether this is a multi-valued field or not.
-  *   `numericIndexingSpec` (*type:* `GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpecNumericIndexingSpec.t`, *default:* `nil`) - Indexing spec for a numeric field. By default, only exact match queries will be supported for numeric fields. Setting the numericIndexingSpec allows range queries to be supported.
-  *   `readAccessType` (*type:* `String.t`, *default:* `ALL_DOMAIN_USERS`) - Read ACLs on the field specifying who can view values of this field. Valid values are "ALL_DOMAIN_USERS" and "ADMINS_AND_SELF".
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - The ETag of the field.
+  *   `fieldId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the field (Read-only)
+  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The name of the field.
+  *   `fieldType` (*type:* `String.t`, *default:* `nil`) - The type of the field.
+  *   `indexed` (*type:* `boolean()`, *default:* `true`) - Boolean specifying whether the field is indexed or not. Default: `true`.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#schema#fieldspec`) - The kind of resource this is. For schema fields this is always `admin#directory#schema#fieldspec`.
+  *   `multiValued` (*type:* `boolean()`, *default:* `nil`) - A boolean specifying whether this is a multi-valued field or not. Default: `false`.
+  *   `numericIndexingSpec` (*type:* `GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpecNumericIndexingSpec.t`, *default:* `nil`) - Indexing spec for a numeric field. By default, only exact match queries will be supported for numeric fields. Setting the `numericIndexingSpec` allows range queries to be supported.
+  *   `readAccessType` (*type:* `String.t`, *default:* `ALL_DOMAIN_USERS`) - Specifies who can view values of this field. See [Retrieve users as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin) for more information. Note: It may take up to 24 hours for changes to this field to be reflected.
   """
 
   use GoogleApi.Gax.ModelBase

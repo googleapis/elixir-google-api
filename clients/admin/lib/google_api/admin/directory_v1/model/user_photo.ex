@@ -22,13 +22,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserPhoto do
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `height` (*type:* `integer()`, *default:* `nil`) - Height in pixels of the photo
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier of User (Read-only)
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#user#photo`) - Kind of resource this is.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Mime Type of the photo
-  *   `photoData` (*type:* `String.t`, *default:* `nil`) - Base64 encoded photo data
-  *   `primaryEmail` (*type:* `String.t`, *default:* `nil`) - Primary email of User (Read-only)
-  *   `width` (*type:* `integer()`, *default:* `nil`) - Width in pixels of the photo
+  *   `height` (*type:* `integer()`, *default:* `nil`) - Height of the photo in pixels.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID the API uses to uniquely identify the user.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#user#photo`) - The type of the API resource. For Photo resources, this is `admin#directory#user#photo`.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the photo. Allowed values are `JPEG`, `PNG`, `GIF`, `BMP`, `TIFF`, and web-safe base64 encoding.
+  *   `photoData` (*type:* `String.t`, *default:* `nil`) - The user photo's upload data in [web-safe Base64](https://code.google.com/p/stringencoders/wiki/WebSafeBase64) format in bytes. This means: * The slash (/) character is replaced with the underscore (_) character. * The plus sign (+) character is replaced with the hyphen (-) character. * The equals sign (=) character is replaced with the asterisk (*). * For padding, the period (.) character is used instead of the RFC-4648 baseURL definition which uses the equals sign (=) for padding. This is done to simplify URL-parsing. * Whatever the size of the photo being uploaded, the API downsizes it to 96x96 pixels.
+  *   `primaryEmail` (*type:* `String.t`, *default:* `nil`) - The user's primary email address.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - Width of the photo in pixels.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Privileges do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `items` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.Privilege.t)`, *default:* `nil`) - A list of Privilege resources.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#privileges`) - The type of the API resource. This is always admin#directory#privileges.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#privileges`) - The type of the API resource. This is always `admin#directory#privileges`.
   """
 
   use GoogleApi.Gax.ModelBase

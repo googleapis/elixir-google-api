@@ -21,11 +21,11 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MobileDeviceApplications do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of application
-  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name of application
-  *   `permission` (*type:* `list(String.t)`, *default:* `nil`) - List of Permissions for application
-  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - Version code of application
-  *   `versionName` (*type:* `String.t`, *default:* `nil`) - Version name of application
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The application's display name. An example is `Browser`.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - The application's package name. An example is `com.android.browser`.
+  *   `permission` (*type:* `list(String.t)`, *default:* `nil`) - The list of permissions of this application. These can be either a standard Android permission or one defined by the application, and are found in an application's [Android manifest](http://developer.android.com/guide/topics/manifest/uses-permission-element.html). Examples of a Calendar application's permissions are `READ_CALENDAR`, or `MANAGE_ACCOUNTS`.
+  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The application's version code. An example is `13`.
+  *   `versionName` (*type:* `String.t`, *default:* `nil`) - The application's version name. An example is `3.2-140714`.
   """
 
   use GoogleApi.Gax.ModelBase

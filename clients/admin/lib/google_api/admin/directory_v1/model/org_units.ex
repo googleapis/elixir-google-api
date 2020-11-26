@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.OrgUnits do
   @moduledoc """
-  JSON response template for List Organization Units operation in Directory API.
+
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#orgUnits`) - Kind of resource this is.
-  *   `organizationUnits` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.OrgUnit.t)`, *default:* `nil`) - List of user objects.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#orgUnits`) - The type of the API resource. For Org Unit resources, the type is `admin#directory#orgUnits`.
+  *   `organizationUnits` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.OrgUnit.t)`, *default:* `nil`) - List of organizational unit objects.
   """
 
   use GoogleApi.Gax.ModelBase

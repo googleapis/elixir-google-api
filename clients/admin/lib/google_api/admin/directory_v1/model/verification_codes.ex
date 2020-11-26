@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.VerificationCodes do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `items` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.VerificationCode.t)`, *default:* `nil`) - A list of verification code resources.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#verificationCodesList`) - The type of the resource. This is always admin#directory#verificationCodesList.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#verificationCodesList`) - The type of the resource. This is always `admin#directory#verificationCodesList`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,14 +21,14 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Customer do
 
   ## Attributes
 
-  *   `alternateEmail` (*type:* `String.t`, *default:* `nil`) - The customer's secondary contact email address. This email address cannot be on the same domain as the customerDomain
+  *   `alternateEmail` (*type:* `String.t`, *default:* `nil`) - The customer's secondary contact email address. This email address cannot be on the same domain as the `customerDomain`
   *   `customerCreationTime` (*type:* `DateTime.t`, *default:* `nil`) - The customer's creation time (Readonly)
-  *   `customerDomain` (*type:* `String.t`, *default:* `nil`) - The customer's primary domain name string. Do not include the www prefix when creating a new customer.
+  *   `customerDomain` (*type:* `String.t`, *default:* `nil`) - The customer's primary domain name string. Do not include the `www` prefix when creating a new customer.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for the customer's G Suite account. (Readonly)
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#customer`) - Identifies the resource as a customer. Value: admin#directory#customer
-  *   `language` (*type:* `String.t`, *default:* `nil`) - The customer's ISO 639-2 language code. The default value is en-US
-  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The customer's contact phone number in E.164 format.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#customer`) - Identifies the resource as a customer. Value: `admin#directory#customer`
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The customer's ISO 639-2 language code. See the [Language Codes](/admin-sdk/directory/v1/languages) page for the list of supported codes. Valid language codes outside the supported set will be accepted by the API but may lead to unexpected behavior. The default value is `en`.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The customer's contact phone number in [E.164](http://en.wikipedia.org/wiki/E.164) format.
   *   `postalAddress` (*type:* `GoogleApi.Admin.Directory_v1.Model.CustomerPostalAddress.t`, *default:* `nil`) - The customer's postal address information.
   """
 
