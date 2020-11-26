@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `personalUsagePolicies` (*type:* `GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies.t`, *default:* `nil`) - Policies managing personal usage on a company-owned device.
   *   `skipFirstUseHintsEnabled` (*type:* `boolean()`, *default:* `nil`) - Flag to skip hints on the first use. Enterprise admin can enable the system recommendation for apps to skip their user tutorial and other introductory hints on first start-up.
   *   `stayOnPluggedModes` (*type:* `list(String.t)`, *default:* `nil`) - The battery plugged in modes for which the device stays on. When using this setting, it is recommended to clear maximum_time_to_lock so that the device doesn't lock itself while it stays on.
-  *   `autoTimeRequired` (*type:* `boolean()`, *default:* `nil`) - Whether auto time is required, which prevents the user from manually setting the date and time.
+  *   `autoTimeRequired` (*type:* `boolean()`, *default:* `nil`) - Whether auto time is required, which prevents the user from manually setting the date and time. If autoDateAndTimeZone is set, this field is ignored.
   *   `playStoreMode` (*type:* `String.t`, *default:* `nil`) - This mode controls which apps are available to the user in the Play Store and the behavior on the device when apps are removed from the policy.
   *   `removeUserDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether removing other users is disabled.
   *   `shortSupportMessage` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - A message displayed to the user in the settings screen wherever functionality has been disabled by the admin. If the message is longer than 200 characters it may be truncated.
@@ -42,7 +42,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `outgoingCallsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether outgoing calls are disabled.
   *   `persistentPreferredActivities` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity.t)`, *default:* `nil`) - Default intent handler activities.
   *   `mountPhysicalMediaDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the user mounting physical external media is disabled.
-  *   `locationMode` (*type:* `String.t`, *default:* `nil`) - The degree of location detection enabled. The user may change the value unless the user is otherwise blocked from accessing device settings.
+  *   `locationMode` (*type:* `String.t`, *default:* `nil`) - The degree of location detection enabled.
   *   `choosePrivateKeyRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ChoosePrivateKeyRule.t)`, *default:* `nil`) - Rules for automatically choosing a private key and certificate to authenticate the device to a server. The rules are ordered by increasing precedence, so if an outgoing request matches more than one rule, the last rule defines which private key to use.
   *   `complianceRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ComplianceRule.t)`, *default:* `nil`) - Rules declaring which mitigating actions to take when a device is not compliant with its policy. When the conditions for multiple rules are satisfied, all of the mitigating actions for the rules are taken. There is a maximum limit of 100 rules. Use policy enforcement rules instead.
   *   `screenCaptureDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether screen capture is disabled.
@@ -65,6 +65,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `deviceOwnerLockScreenInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - The device owner information to be shown on the lock screen.
   *   `setWallpaperDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the wallpaper is disabled.
   *   `keyguardDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the keyguard is disabled.
+  *   `autoDateAndTimeZone` (*type:* `String.t`, *default:* `nil`) - Whether auto date, time, and time zone are enabled on a company-owned device. If this is set, then autoTimeRequired is ignored.
   *   `adjustVolumeDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adjusting the master volume is disabled.
   *   `usbFileTransferDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether transferring files over USB is disabled.
   *   `bluetoothContactSharingDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth contact sharing is disabled.
@@ -156,6 +157,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
             GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
           :setWallpaperDisabled => boolean(),
           :keyguardDisabled => boolean(),
+          :autoDateAndTimeZone => String.t(),
           :adjustVolumeDisabled => boolean(),
           :usbFileTransferDisabled => boolean(),
           :bluetoothContactSharingDisabled => boolean(),
@@ -255,6 +257,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:deviceOwnerLockScreenInfo, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
   field(:setWallpaperDisabled)
   field(:keyguardDisabled)
+  field(:autoDateAndTimeZone)
   field(:adjustVolumeDisabled)
   field(:usbFileTransferDisabled)
   field(:bluetoothContactSharingDisabled)
