@@ -420,7 +420,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   end
 
   @doc """
-  Updates the device policy
+  Updates the device policy. To ensure the policy is properly enforced, you need to prevent unmanaged accounts from accessing Google Play by setting the allowed_accounts in the managed configuration for the Google Play package. See restrict accounts in Google Play.
 
   ## Parameters
 
