@@ -28,6 +28,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `setDataValidation` (*type:* `GoogleApi.Sheets.V4.Model.SetDataValidationRequest.t`, *default:* `nil`) - Sets data validation for one or more cells.
   *   `updateDimensionProperties` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest.t`, *default:* `nil`) - Updates dimensions' properties.
   *   `refreshDataSource` (*type:* `GoogleApi.Sheets.V4.Model.RefreshDataSourceRequest.t`, *default:* `nil`) - Refreshs one or multiple data sources and associated dbobjects.
+  *   `updateEmbeddedObjectBorder` (*type:* `GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectBorderRequest.t`, *default:* `nil`) - Updates an embedded object's border.
   *   `updateDimensionGroup` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest.t`, *default:* `nil`) - Updates the state of the specified group.
   *   `appendDimension` (*type:* `GoogleApi.Sheets.V4.Model.AppendDimensionRequest.t`, *default:* `nil`) - Appends dimensions to the end of a sheet.
   *   `duplicateFilterView` (*type:* `GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest.t`, *default:* `nil`) - Duplicates a filter view.
@@ -99,6 +100,8 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
           :updateDimensionProperties =>
             GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest.t(),
           :refreshDataSource => GoogleApi.Sheets.V4.Model.RefreshDataSourceRequest.t(),
+          :updateEmbeddedObjectBorder =>
+            GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectBorderRequest.t(),
           :updateDimensionGroup => GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest.t(),
           :appendDimension => GoogleApi.Sheets.V4.Model.AppendDimensionRequest.t(),
           :duplicateFilterView => GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest.t(),
@@ -174,6 +177,11 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   field(:updateDimensionProperties, as: GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest)
 
   field(:refreshDataSource, as: GoogleApi.Sheets.V4.Model.RefreshDataSourceRequest)
+
+  field(:updateEmbeddedObjectBorder,
+    as: GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectBorderRequest
+  )
+
   field(:updateDimensionGroup, as: GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest)
   field(:appendDimension, as: GoogleApi.Sheets.V4.Model.AppendDimensionRequest)
   field(:duplicateFilterView, as: GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest)

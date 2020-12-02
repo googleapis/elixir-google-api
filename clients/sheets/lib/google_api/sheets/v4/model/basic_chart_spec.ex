@@ -32,6 +32,7 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSpec do
   *   `series` (*type:* `list(GoogleApi.Sheets.V4.Model.BasicChartSeries.t)`, *default:* `nil`) - The data this chart is visualizing.
   *   `stackedType` (*type:* `String.t`, *default:* `nil`) - The stacked type for charts that support vertical stacking. Applies to Area, Bar, Column, Combo, and Stepped Area charts.
   *   `threeDimensional` (*type:* `boolean()`, *default:* `nil`) - True to make the chart 3D. Applies to Bar and Column charts.
+  *   `totalDataLabel` (*type:* `GoogleApi.Sheets.V4.Model.DataLabel.t`, *default:* `nil`) - Controls whether to display additional data labels on stacked charts which sum the total value of all stacked values at each value along the domain axis. These data labels can only be set when chart_type is one of AREA, BAR, COLUMN, COMBO or STEPPED_AREA and stacked_type is either STACKED or PERCENT_STACKED. In addition, for COMBO, this will only be supported if there is only one type of stackable series type or one type has more series than the others and each of the other types have no more than one series. For example, if a chart has two stacked bar series and one area series, the total data labels will be supported. If it has three bar series and two area series, total data labels are not allowed. Neither CUSTOM nor placement can be set on the total_data_label.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -47,7 +48,8 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSpec do
           :lineSmoothing => boolean(),
           :series => list(GoogleApi.Sheets.V4.Model.BasicChartSeries.t()),
           :stackedType => String.t(),
-          :threeDimensional => boolean()
+          :threeDimensional => boolean(),
+          :totalDataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t()
         }
 
   field(:axis, as: GoogleApi.Sheets.V4.Model.BasicChartAxis, type: :list)
@@ -61,6 +63,7 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSpec do
   field(:series, as: GoogleApi.Sheets.V4.Model.BasicChartSeries, type: :list)
   field(:stackedType)
   field(:threeDimensional)
+  field(:totalDataLabel, as: GoogleApi.Sheets.V4.Model.DataLabel)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BasicChartSpec do

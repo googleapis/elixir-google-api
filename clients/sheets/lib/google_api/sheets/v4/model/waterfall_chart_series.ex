@@ -23,6 +23,7 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSeries do
 
   *   `customSubtotals` (*type:* `list(GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal.t)`, *default:* `nil`) - Custom subtotal columns appearing in this series. The order in which subtotals are defined is not significant. Only one subtotal may be defined for each data point.
   *   `data` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data being visualized in this series.
+  *   `dataLabel` (*type:* `GoogleApi.Sheets.V4.Model.DataLabel.t`, *default:* `nil`) - Information about the data labels for this series.
   *   `hideTrailingSubtotal` (*type:* `boolean()`, *default:* `nil`) - True to hide the subtotal column from the end of the series. By default, a subtotal column will appear at the end of each series. Setting this field to true will hide that subtotal column for this series.
   *   `negativeColumnsStyle` (*type:* `GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t`, *default:* `nil`) - Styles for all columns in this series with negative values.
   *   `positiveColumnsStyle` (*type:* `GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t`, *default:* `nil`) - Styles for all columns in this series with positive values.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSeries do
   @type t :: %__MODULE__{
           :customSubtotals => list(GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal.t()),
           :data => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :dataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t(),
           :hideTrailingSubtotal => boolean(),
           :negativeColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t(),
           :positiveColumnsStyle => GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle.t(),
@@ -42,6 +44,7 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSeries do
 
   field(:customSubtotals, as: GoogleApi.Sheets.V4.Model.WaterfallChartCustomSubtotal, type: :list)
   field(:data, as: GoogleApi.Sheets.V4.Model.ChartData)
+  field(:dataLabel, as: GoogleApi.Sheets.V4.Model.DataLabel)
   field(:hideTrailingSubtotal)
   field(:negativeColumnsStyle, as: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle)
   field(:positiveColumnsStyle, as: GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle)

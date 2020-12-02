@@ -27,6 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSpec do
   *   `hideConnectorLines` (*type:* `boolean()`, *default:* `nil`) - True to hide connector lines between columns.
   *   `series` (*type:* `list(GoogleApi.Sheets.V4.Model.WaterfallChartSeries.t)`, *default:* `nil`) - The data this waterfall chart is visualizing.
   *   `stackedType` (*type:* `String.t`, *default:* `nil`) - The stacked type.
+  *   `totalDataLabel` (*type:* `GoogleApi.Sheets.V4.Model.DataLabel.t`, *default:* `nil`) - Controls whether to display additional data labels on stacked charts which sum the total value of all stacked values at each value along the domain axis. stacked_type must be STACKED and neither CUSTOM nor placement can be set on the total_data_label.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSpec do
           :firstValueIsTotal => boolean(),
           :hideConnectorLines => boolean(),
           :series => list(GoogleApi.Sheets.V4.Model.WaterfallChartSeries.t()),
-          :stackedType => String.t()
+          :stackedType => String.t(),
+          :totalDataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t()
         }
 
   field(:connectorLineStyle, as: GoogleApi.Sheets.V4.Model.LineStyle)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSpec do
   field(:hideConnectorLines)
   field(:series, as: GoogleApi.Sheets.V4.Model.WaterfallChartSeries, type: :list)
   field(:stackedType)
+  field(:totalDataLabel, as: GoogleApi.Sheets.V4.Model.DataLabel)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.WaterfallChartSpec do
