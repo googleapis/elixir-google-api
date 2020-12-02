@@ -1,8 +1,8 @@
 # GoogleApi.Reseller
 
-Enterprise Apps Reseller API client library.
+Google Workspace Reseller API client library.
 
-Perform common functions that are available on the Google Apps Reseller Console at scale like placing orders and viewing customer information
+Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_reseller, "~> 0.13"}]
+  [{:google_api_reseller, "~> 0.14"}]
 end
 ```
 
