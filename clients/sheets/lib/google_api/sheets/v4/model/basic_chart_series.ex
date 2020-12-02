@@ -23,8 +23,11 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
 
   *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used.
   *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used. If color is also set, this field takes precedence.
+  *   `dataLabel` (*type:* `GoogleApi.Sheets.V4.Model.DataLabel.t`, *default:* `nil`) - Information about the data labels for this series.
   *   `lineStyle` (*type:* `GoogleApi.Sheets.V4.Model.LineStyle.t`, *default:* `nil`) - The line style of this series. Valid only if the chartType is AREA, LINE, or SCATTER. COMBO charts are also supported if the series chart type is AREA or LINE.
+  *   `pointStyle` (*type:* `GoogleApi.Sheets.V4.Model.PointStyle.t`, *default:* `nil`) - The style for points associated with this series. Valid only if the chartType is AREA, LINE, or SCATTER. COMBO charts are also supported if the series chart type is AREA, LINE, or SCATTER. If empty, a default point style is used.
   *   `series` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data being visualized in this chart series.
+  *   `styleOverrides` (*type:* `list(GoogleApi.Sheets.V4.Model.BasicSeriesDataPointStyleOverride.t)`, *default:* `nil`) - Style override settings for series data points.
   *   `targetAxis` (*type:* `String.t`, *default:* `nil`) - The minor axis that will specify the range of values for this series. For example, if charting stocks over time, the "Volume" series may want to be pinned to the right with the prices pinned to the left, because the scale of trading volume is different than the scale of prices. It is an error to specify an axis that isn't a valid minor axis for the chart's type.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this series. Valid only if the chartType is COMBO. Different types will change the way the series is visualized. Only LINE, AREA, and COLUMN are supported.
   """
@@ -34,16 +37,28 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
   @type t :: %__MODULE__{
           :color => GoogleApi.Sheets.V4.Model.Color.t(),
           :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
+          :dataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t(),
           :lineStyle => GoogleApi.Sheets.V4.Model.LineStyle.t(),
+          :pointStyle => GoogleApi.Sheets.V4.Model.PointStyle.t(),
           :series => GoogleApi.Sheets.V4.Model.ChartData.t(),
+          :styleOverrides =>
+            list(GoogleApi.Sheets.V4.Model.BasicSeriesDataPointStyleOverride.t()),
           :targetAxis => String.t(),
           :type => String.t()
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.Color)
   field(:colorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
+  field(:dataLabel, as: GoogleApi.Sheets.V4.Model.DataLabel)
   field(:lineStyle, as: GoogleApi.Sheets.V4.Model.LineStyle)
+  field(:pointStyle, as: GoogleApi.Sheets.V4.Model.PointStyle)
   field(:series, as: GoogleApi.Sheets.V4.Model.ChartData)
+
+  field(:styleOverrides,
+    as: GoogleApi.Sheets.V4.Model.BasicSeriesDataPointStyleOverride,
+    type: :list
+  )
+
   field(:targetAxis)
   field(:type)
 end
