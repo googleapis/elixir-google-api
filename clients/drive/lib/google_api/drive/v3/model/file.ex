@@ -67,7 +67,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `shared` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been shared. Not populated for items in shared drives.
   *   `trashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been trashed, either explicitly or from a trashed parent folder. Only the owner may trash a file. The trashed item is excluded from all files.list responses returned for any user who does not own the file. However, all users with access to the file can see the trashed item metadata in an API response. All users with access can copy, download, export, and share the file.
   *   `appProperties` (*type:* `map()`, *default:* `nil`) - A collection of arbitrary key-value pairs which are private to the requesting app.
-      Entries with null values are cleared in update and copy requests.
+      Entries with null values are cleared in update and copy requests. These properties can only be retrieved using an authenticated request. An authenticated request uses an access token obtained with a OAuth 2 client ID. You cannot use an API key to retrieve private properties.
   *   `isAppAuthorized` (*type:* `boolean()`, *default:* `nil`) - Whether the file was created or opened by the requesting app.
   *   `webViewLink` (*type:* `String.t`, *default:* `nil`) - A link for opening the file in a relevant Google editor or viewer in a browser.
   *   `copyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the options to copy, print, or download this file, should be disabled for readers and commenters.
