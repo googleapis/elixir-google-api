@@ -38,6 +38,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal do
   *   `proposalState` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the proposal.
   *   `seller` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t`, *default:* `nil`) - Reference to the seller on the proposal. Note: This field may be set only when creating the resource. Modifying this field while updating the resource will result in an error.
   *   `sellerContacts` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t)`, *default:* `nil`) - Output only. Contact information for the seller.
+  *   `termsAndConditions` (*type:* `String.t`, *default:* `nil`) - Output only. The terms and conditions set by the publisher for this proposal.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the proposal was last revised.
   """
 
@@ -61,6 +62,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal do
           :proposalState => String.t(),
           :seller => GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t(),
           :sellerContacts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t()),
+          :termsAndConditions => String.t(),
           :updateTime => DateTime.t()
         }
 
@@ -91,6 +93,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal do
     type: :list
   )
 
+  field(:termsAndConditions)
   field(:updateTime, as: DateTime)
 end
 

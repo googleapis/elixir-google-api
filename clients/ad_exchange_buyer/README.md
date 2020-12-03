@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_ad_exchange_buyer, "~> 0.36"}]
+  [{:google_api_ad_exchange_buyer, "~> 0.37"}]
 end
 ```
 
