@@ -24,6 +24,7 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
   *   `commitTimestamps` (*type:* `list(DateTime.t)`, *default:* `nil`) - Reports the commit timestamps of all statements that have succeeded so far, where `commit_timestamps[i]` is the commit timestamp for the statement `statements[i]`.
   *   `database` (*type:* `String.t`, *default:* `nil`) - The database being modified.
   *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - For an update this list contains all the statements. For an individual statement, this list contains only that statement.
+  *   `throttled` (*type:* `boolean()`, *default:* `nil`) - Output only. When true, indicates that the operation is throttled e.g due to resource constraints. When resources become available the operation will resume and this field will be false again.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
   @type t :: %__MODULE__{
           :commitTimestamps => list(DateTime.t()),
           :database => String.t(),
-          :statements => list(String.t())
+          :statements => list(String.t()),
+          :throttled => boolean()
         }
 
   field(:commitTimestamps, as: DateTime, type: :list)
   field(:database)
   field(:statements, type: :list)
+  field(:throttled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
