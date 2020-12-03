@@ -27,6 +27,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   *   `ipPrefixLength` (*type:* `integer()`, *default:* `nil`) - Required. The prefix length of the subnet's IP address range. Use CIDR range notation, such as `30` to provision a subnet with an `x.x.x.x/30` CIDR range. The IP address range is drawn from a pool of available ranges in the service consumer's allocated range.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Required. The name of a [region](/compute/docs/regions-zones) for the subnet, such `europe-west1`.
   *   `requestedAddress` (*type:* `String.t`, *default:* `nil`) - Optional. The starting address of a range. The address must be a valid IPv4 address in the x.x.x.x format. This value combined with the IP prefix range is the CIDR range for the subnet. The range must be within the allocated range that is assigned to the private connection. If the CIDR range isn't available, the call fails.
+  *   `requestedRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The name of one or more allocated IP address ranges associated with this private service access connection. If no range names are provided all ranges associated with this connection will be considered. If a CIDR range with the specified IP prefix length is not available within these ranges, the call fails.
   *   `secondaryIpRangeSpecs` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t)`, *default:* `nil`) - Optional. A list of secondary IP ranges to be created within the new subnetwork.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Required. A name for the new subnet. For information about the naming requirements, see [subnetwork](/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
   *   `subnetworkUsers` (*type:* `list(String.t)`, *default:* `nil`) - A list of members that are granted the `compute.networkUser` role on the subnet.
@@ -41,6 +42,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
           :ipPrefixLength => integer(),
           :region => String.t(),
           :requestedAddress => String.t(),
+          :requestedRanges => list(String.t()),
           :secondaryIpRangeSpecs =>
             list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t()),
           :subnetwork => String.t(),
@@ -53,6 +55,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   field(:ipPrefixLength)
   field(:region)
   field(:requestedAddress)
+  field(:requestedRanges, type: :list)
 
   field(:secondaryIpRangeSpecs,
     as: GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec,
