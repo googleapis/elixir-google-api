@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.AnalyticsData.V1alpha.Model.CohortsRange do
   @moduledoc """
-  Describes date range for a cohort report.
+  Configures the extended reporting date range for a cohort report. Specifies an offset duration to follow the cohorts over.
 
   ## Attributes
 
-  *   `endOffset` (*type:* `integer()`, *default:* `nil`) - For daily cohorts, this will be the end day offset. For weekly cohorts, this will be the week offset.
-  *   `granularity` (*type:* `String.t`, *default:* `nil`) - Reporting date range for each cohort is calculated based on these three fields.
-  *   `startOffset` (*type:* `integer()`, *default:* `nil`) - For daily cohorts, this will be the start day offset. For weekly cohorts, this will be the week offset.
+  *   `endOffset` (*type:* `integer()`, *default:* `nil`) - `endOffset` specifies the end date of the extended reporting date range for a cohort report. `endOffset` can be any positive integer but is commonly set to 5 to 10 so that reports contain data on the cohort for the next several granularity time periods. If `granularity` is `DAILY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset` days. If `granularity` is `WEEKLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 7` days. If `granularity` is `MONTHLY`, the `endDate` of the extended reporting date range is `endDate` of the cohort plus `endOffset * 30` days.
+  *   `granularity` (*type:* `String.t`, *default:* `nil`) - The granularity used to interpret the `startOffset` and `endOffset` for the extended reporting date range for a cohort report.
+  *   `startOffset` (*type:* `integer()`, *default:* `nil`) - `startOffset` specifies the start date of the extended reporting date range for a cohort report. `startOffset` is commonly set to 0 so that reports contain data from the acquisition of the cohort forward. If `granularity` is `DAILY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset` days. If `granularity` is `WEEKLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 7` days. If `granularity` is `MONTHLY`, the `startDate` of the extended reporting date range is `startDate` of the cohort plus `startOffset * 30` days.
   """
 
   use GoogleApi.Gax.ModelBase
