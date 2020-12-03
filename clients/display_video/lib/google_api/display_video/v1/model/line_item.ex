@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.LineItem do
   @moduledoc """
-  A single line item. Next id: 24
+  A single line item.
 
   ## Attributes
 

@@ -29,6 +29,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
   *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not the insertion order can spend its budget and bid on inventory. * For CreateInsertionOrder method, only `ENTITY_STATUS_DRAFT` is allowed. To activate an insertion order, use UpdateInsertionOrder method and update the status to `ENTITY_STATUS_ACTIVE` after creation. * An insertion order cannot be changed back to `ENTITY_STATUS_DRAFT` status from any other status. * An insertion order cannot be set to `ENTITY_STATUS_ACTIVE` if its parent campaign is not active.
   *   `frequencyCap` (*type:* `GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t`, *default:* `nil`) - Required. The frequency capping setting of the insertion order.
   *   `insertionOrderId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the insertion order. Assigned by the system.
+  *   `insertionOrderType` (*type:* `String.t`, *default:* `nil`) - The type of insertion order. If this field is unspecified in creation, the value defaults to `RTB`.
   *   `integrationDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t`, *default:* `nil`) - Additional integration details of the insertion order.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the insertion order.
   *   `pacing` (*type:* `GoogleApi.DisplayVideo.V1.Model.Pacing.t`, *default:* `nil`) - Required. The budget spending speed setting of the insertion order.
@@ -48,6 +49,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
           :entityStatus => String.t(),
           :frequencyCap => GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t(),
           :insertionOrderId => String.t(),
+          :insertionOrderType => String.t(),
           :integrationDetails => GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t(),
           :name => String.t(),
           :pacing => GoogleApi.DisplayVideo.V1.Model.Pacing.t(),
@@ -64,6 +66,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
   field(:entityStatus)
   field(:frequencyCap, as: GoogleApi.DisplayVideo.V1.Model.FrequencyCap)
   field(:insertionOrderId)
+  field(:insertionOrderType)
   field(:integrationDetails, as: GoogleApi.DisplayVideo.V1.Model.IntegrationDetails)
   field(:name)
   field(:pacing, as: GoogleApi.DisplayVideo.V1.Model.Pacing)
