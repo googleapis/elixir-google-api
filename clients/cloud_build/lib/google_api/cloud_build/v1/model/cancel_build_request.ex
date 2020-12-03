@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.CancelBuildRequest do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. ID of the build.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the `Build` to retrieve. Format: `projects/{project}/locations/{location}/builds/{build}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the `Build` to cancel. Format: `projects/{project}/locations/{location}/builds/{build}`
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the project.
   """
 

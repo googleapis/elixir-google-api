@@ -382,7 +382,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the `Build` to retrieve. Format: `projects/{project}/locations/{location}/builds/{build}`
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the `Build` to cancel. Format: `projects/{project}/locations/{location}/builds/{build}`
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `builds_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
