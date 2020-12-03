@@ -17,22 +17,24 @@
 
 defmodule GoogleApi.VectorTile.V1.Model.Area do
   @moduledoc """
-  Represents an area. Used to represent regions such as water, parks, etc.
+  Represents an area. Used to represent regions such as water, parks, etc. Next ID: 10
 
   ## Attributes
 
+  *   `basemapZOrder` (*type:* `GoogleApi.VectorTile.V1.Model.BasemapZOrder.t`, *default:* `nil`) - The z-order of this geometry when rendered on a flat basemap. Geometry with a lower z-order should be rendered beneath geometry with a higher z-order. This z-ordering does not imply anything about the altitude of the area relative to the ground, but it can be used to prevent z-fighting. Unlike Area.z_order this can be used to compare with Line.basemap_z_order, and in fact may yield more accurate rendering (where a line may be rendered beneath an area).
   *   `hasExternalEdges` (*type:* `boolean()`, *default:* `nil`) - True if the polygon is not entirely internal to the feature that it belongs to: that is, some of the edges are bordering another feature.
   *   `internalEdges` (*type:* `list(integer())`, *default:* `nil`) - When has_external_edges is true, the polygon has some edges that border another feature. This field indicates the internal edges that do not border another feature. Each value is an index into the vertices array, and denotes the start vertex of the internal edge (the next vertex in the boundary loop is the end of the edge). If the selected vertex is the last vertex in the boundary loop, then the edge between that vertex and the starting vertex of the loop is internal. This field may be used for styling. For example, building parapets could be placed only on the external edges of a building polygon, or water could be lighter colored near the external edges of a body of water. If has_external_edges is false, all edges are internal and this field will be empty.
   *   `loopBreaks` (*type:* `list(integer())`, *default:* `nil`) - Identifies the boundary loops of the polygon. Only set for INDEXED_TRIANGLE polygons. Each value is an index into the vertices array indicating the beginning of a loop. For instance, values of [2, 5] would indicate loop_data contained 3 loops with indices 0-1, 2-4, and 5-end. This may be used in conjunction with the internal_edges field for styling polygon boundaries. Note that an edge may be on a polygon boundary but still internal to the feature. For example, a feature split across multiple tiles will have an internal polygon boundary edge along the edge of the tile.
   *   `triangleIndices` (*type:* `list(integer())`, *default:* `nil`) - When the polygon encoding is of type INDEXED_TRIANGLES, this contains the indices of the triangle vertices in the vertex_offsets field. There are 3 vertex indices per triangle.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The polygon encoding type used for this area.
   *   `vertexOffsets` (*type:* `GoogleApi.VectorTile.V1.Model.Vertex2DList.t`, *default:* `nil`) - The vertices present in the polygon defining the area.
-  *   `zOrder` (*type:* `integer()`, *default:* `nil`) - The z-ordering of this area. Areas with a lower z-order should be rendered beneath areas with a higher z-order. This z-ordering does not imply anything about the altitude of the line relative to the ground, but it can be used to prevent z-fighting during rendering on the client. This z-ordering can only be used to compare areas, and cannot be compared with the z_order field in the Line message. The z-order may be negative or zero.
+  *   `zOrder` (*type:* `integer()`, *default:* `nil`) - The z-ordering of this area. Areas with a lower z-order should be rendered beneath areas with a higher z-order. This z-ordering does not imply anything about the altitude of the line relative to the ground, but it can be used to prevent z-fighting during rendering on the client. This z-ordering can only be used to compare areas, and cannot be compared with the z_order field in the Line message. The z-order may be negative or zero. Prefer Area.basemap_z_order.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :basemapZOrder => GoogleApi.VectorTile.V1.Model.BasemapZOrder.t(),
           :hasExternalEdges => boolean(),
           :internalEdges => list(integer()),
           :loopBreaks => list(integer()),
@@ -42,6 +44,7 @@ defmodule GoogleApi.VectorTile.V1.Model.Area do
           :zOrder => integer()
         }
 
+  field(:basemapZOrder, as: GoogleApi.VectorTile.V1.Model.BasemapZOrder)
   field(:hasExternalEdges)
   field(:internalEdges, type: :list)
   field(:loopBreaks, type: :list)
