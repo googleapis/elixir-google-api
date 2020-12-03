@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AnalyticsData.V1alpha.Model.CohortReportSettings do
   @moduledoc """
-  Settings of a cohort report.
+  Optional settings of a cohort report.
 
   ## Attributes
 
-  *   `accumulate` (*type:* `boolean()`, *default:* `nil`) - If true, accumulates the result from first visit day to the end day. Not supported in `RunReportRequest`.
+  *   `accumulate` (*type:* `boolean()`, *default:* `nil`) - If true, accumulates the result from first touch day to the end day. Not supported in `RunReportRequest`.
   """
 
   use GoogleApi.Gax.ModelBase
