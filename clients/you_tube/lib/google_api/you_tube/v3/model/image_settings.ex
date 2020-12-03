@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Model.ImageSettings do
   ## Attributes
 
   *   `backgroundImageUrl` (*type:* `GoogleApi.YouTube.V3.Model.LocalizedProperty.t`, *default:* `nil`) - The URL for the background image shown on the video watch page. The image should be 1200px by 615px, with a maximum file size of 128k.
-  *   `bannerExternalUrl` (*type:* `String.t`, *default:* `nil`) - This is used only in update requests; if it's set, we use this URL to generate all of the above banner URLs.
+  *   `bannerExternalUrl` (*type:* `String.t`, *default:* `nil`) - This is generated when a ChannelBanner.Insert request has succeeded for the given channel.
   *   `bannerImageUrl` (*type:* `String.t`, *default:* `nil`) - Banner image. Desktop size (1060x175).
   *   `bannerMobileExtraHdImageUrl` (*type:* `String.t`, *default:* `nil`) - Banner image. Mobile size high resolution (1440x395).
   *   `bannerMobileHdImageUrl` (*type:* `String.t`, *default:* `nil`) - Banner image. Mobile size high resolution (1280x360).
