@@ -21,22 +21,22 @@ defmodule GoogleApi.Games.V1.Model.SnapshotDataResource do
 
   ## Attributes
 
-  *   `contentHash` (*type:* `String.t`, *default:* `nil`) - Output only. Hash-like weak identifier of the uploaded blob, consistent per player per application. Within the context of a single player/application, it's guaranteed that two identical blobs coming from two different uploads will have the same content hash. It's extremely likely, though not guaranteed, that if two content hashes are equal, the blobs are identical.
+  *   `contentHash` (*type:* `list(GoogleApi.Games.V1.Model.ContentHash.t)`, *default:* `nil`) - Output only. Hash-like weak identifier of the uploaded blob, consistent per player per application per hash version. Within the context of a single player/application, it's guaranteed that two identical blobs coming from two different uploads will have the same content hash for the same hash algorithm version. It's extremely likely, though not guaranteed, that if two content hashes are equal, the blobs are identical. More than one content hash can be returned if more than one hash versions are supported.
   *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - Output only. A URL that the client can use to download the blob. May vary across requests, and only guaranteed to be valid for a short time after it is returned.
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The ID of the blob resource. It's guaranteed that if two IDs are equal then the contents are equal as well. It's not guaranteed that two identical blobs coming from separate uploads have the same resource ID. The resource ID can only be used within the application, user and resource type it was originally returned for. For example, it's not possible to use SnapshotDataResource's resource ID as the resource_id of a SnapshotCoverImageResource, even if the blob is a valid image file.
-  *   `size` (*type:* `String.t`, *default:* `nil`) - Size of the saved game blob in bytes.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - Output only. Size of the saved game blob in bytes.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentHash => String.t(),
+          :contentHash => list(GoogleApi.Games.V1.Model.ContentHash.t()),
           :downloadUrl => String.t(),
           :resourceId => String.t(),
           :size => String.t()
         }
 
-  field(:contentHash)
+  field(:contentHash, as: GoogleApi.Games.V1.Model.ContentHash, type: :list)
   field(:downloadUrl)
   field(:resourceId)
   field(:size)

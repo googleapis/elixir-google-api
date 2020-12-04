@@ -21,18 +21,18 @@ defmodule GoogleApi.Games.V1.Model.SnapshotCoverImageResource do
 
   ## Attributes
 
-  *   `contentHash` (*type:* `String.t`, *default:* `nil`) - Output only. Hash-like weak identifier of the uploaded image bytes, consistent per player per application. Within the context of a single player/application, it's guaranteed that two identical blobs coming from two different uploads will have the same content hash. It's extremely likely, though not guaranteed, that if two content hashes are equal, the images are identical.
+  *   `contentHash` (*type:* `list(GoogleApi.Games.V1.Model.ContentHash.t)`, *default:* `nil`) - Output only. Hash-like weak identifier of the uploaded image bytes, consistent per player per application per hash version. Within the context of a single player/application, it's guaranteed that two identical images coming from two different uploads will have the same content hash for the same hash algorithm version. It's extremely likely, though not guaranteed, that if two content hashes are equal, the images are identical. More than one content hash can be returned if more than one hash versions are supported.
   *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - Output only. A URL the client can use to download the image. May vary across requests, and only guaranteed to be valid for a short time after it is returned.
-  *   `height` (*type:* `integer()`, *default:* `nil`) - Output only. The height of the image in pixels.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Output only. The MIME type of the image.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the image in pixels.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the image.
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The ID of the image resource. It's guaranteed that if two IDs are equal then the contents are equal as well. It's not guaranteed that two identical blobs coming from separate uploads have the same ID. The resource ID can only be used within the application, user and resource type it was originally returned for. For example, it's not possible to use SnapshotDataResource's resource ID as the resource_id of a SnapshotCoverImageResource, even if the blob is a valid image file.
-  *   `width` (*type:* `integer()`, *default:* `nil`) - Output only. The width of the image in pixels.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the image in pixels.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentHash => String.t(),
+          :contentHash => list(GoogleApi.Games.V1.Model.ContentHash.t()),
           :downloadUrl => String.t(),
           :height => integer(),
           :mimeType => String.t(),
@@ -40,7 +40,7 @@ defmodule GoogleApi.Games.V1.Model.SnapshotCoverImageResource do
           :width => integer()
         }
 
-  field(:contentHash)
+  field(:contentHash, as: GoogleApi.Games.V1.Model.ContentHash, type: :list)
   field(:downloadUrl)
   field(:height)
   field(:mimeType)
