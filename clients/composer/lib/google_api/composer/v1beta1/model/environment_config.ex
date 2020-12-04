@@ -24,6 +24,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
   *   `airflowUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the Apache Airflow Web UI hosted within this environment (see [Airflow web interface](/composer/docs/how-to/accessing/airflow-web-interface)).
   *   `dagGcsPrefix` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud Storage objects reside in a flat namespace, a hierarchical file tree can be simulated using "/"-delimited object name prefixes. DAG objects for this environment reside in a simulated directory with the given prefix.
   *   `databaseConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.DatabaseConfig.t`, *default:* `nil`) - Optional. The configuration settings for Cloud SQL instance used internally by Apache Airflow software.
+  *   `encryptionConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. The encryption options for the Composer environment and its dependencies. Cannot be updated.
   *   `gkeCluster` (*type:* `String.t`, *default:* `nil`) - Output only. The Kubernetes Engine cluster used to run this environment.
   *   `nodeConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.NodeConfig.t`, *default:* `nil`) - The configuration used for the Kubernetes Engine cluster.
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be used to run this environment.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
           :airflowUri => String.t(),
           :dagGcsPrefix => String.t(),
           :databaseConfig => GoogleApi.Composer.V1beta1.Model.DatabaseConfig.t(),
+          :encryptionConfig => GoogleApi.Composer.V1beta1.Model.EncryptionConfig.t(),
           :gkeCluster => String.t(),
           :nodeConfig => GoogleApi.Composer.V1beta1.Model.NodeConfig.t(),
           :nodeCount => integer(),
@@ -53,6 +55,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
   field(:airflowUri)
   field(:dagGcsPrefix)
   field(:databaseConfig, as: GoogleApi.Composer.V1beta1.Model.DatabaseConfig)
+  field(:encryptionConfig, as: GoogleApi.Composer.V1beta1.Model.EncryptionConfig)
   field(:gkeCluster)
   field(:nodeConfig, as: GoogleApi.Composer.V1beta1.Model.NodeConfig)
   field(:nodeCount)

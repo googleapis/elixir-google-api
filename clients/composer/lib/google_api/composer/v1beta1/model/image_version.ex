@@ -21,22 +21,31 @@ defmodule GoogleApi.Composer.V1beta1.Model.ImageVersion do
 
   ## Attributes
 
+  *   `creationDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether it is impossible to create an environment with the image version.
   *   `imageVersionId` (*type:* `String.t`, *default:* `nil`) - The string identifier of the ImageVersion, in the form: "composer-x.y.z-airflow-a.b(.c)"
   *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Whether this is the default ImageVersion used by Composer during environment creation if no input ImageVersion is specified.
+  *   `releaseDate` (*type:* `GoogleApi.Composer.V1beta1.Model.Date.t`, *default:* `nil`) - The date of the version release.
   *   `supportedPythonVersions` (*type:* `list(String.t)`, *default:* `nil`) - supported python versions
+  *   `upgradeDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether it is impossible to upgrade an environment running with the image version.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :creationDisabled => boolean(),
           :imageVersionId => String.t(),
           :isDefault => boolean(),
-          :supportedPythonVersions => list(String.t())
+          :releaseDate => GoogleApi.Composer.V1beta1.Model.Date.t(),
+          :supportedPythonVersions => list(String.t()),
+          :upgradeDisabled => boolean()
         }
 
+  field(:creationDisabled)
   field(:imageVersionId)
   field(:isDefault)
+  field(:releaseDate, as: GoogleApi.Composer.V1beta1.Model.Date)
   field(:supportedPythonVersions, type: :list)
+  field(:upgradeDisabled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Composer.V1beta1.Model.ImageVersion do
