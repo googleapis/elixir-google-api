@@ -28,6 +28,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be used to run this environment.
   *   `privateEnvironmentConfig` (*type:* `GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig.t`, *default:* `nil`) - The configuration used for the Private IP Cloud Composer environment.
   *   `softwareConfig` (*type:* `GoogleApi.Composer.V1.Model.SoftwareConfig.t`, *default:* `nil`) - The configuration settings for software inside the environment.
+  *   `webServerNetworkAccessControl` (*type:* `GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl.t`, *default:* `nil`) - Optional. The network-level access control policy for the Airflow web server. If unspecified, no network-level access restrictions will be applied.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,9 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
           :nodeConfig => GoogleApi.Composer.V1.Model.NodeConfig.t(),
           :nodeCount => integer(),
           :privateEnvironmentConfig => GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig.t(),
-          :softwareConfig => GoogleApi.Composer.V1.Model.SoftwareConfig.t()
+          :softwareConfig => GoogleApi.Composer.V1.Model.SoftwareConfig.t(),
+          :webServerNetworkAccessControl =>
+            GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl.t()
         }
 
   field(:airflowUri)
@@ -49,6 +52,10 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   field(:nodeCount)
   field(:privateEnvironmentConfig, as: GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig)
   field(:softwareConfig, as: GoogleApi.Composer.V1.Model.SoftwareConfig)
+
+  field(:webServerNetworkAccessControl,
+    as: GoogleApi.Composer.V1.Model.WebServerNetworkAccessControl
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Composer.V1.Model.EnvironmentConfig do
