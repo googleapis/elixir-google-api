@@ -25,7 +25,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the message was created.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The message language. This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US".
   *   `messageAnnotation` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2MessageAnnotation.t`, *default:* `nil`) - Output only. The annotation for the message.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the message. Format: `projects//conversations//messages/`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the message. Format: `projects//locations//conversations//messages/`.
   *   `participant` (*type:* `String.t`, *default:* `nil`) - Output only. The participant that sends this message.
   *   `participantRole` (*type:* `String.t`, *default:* `nil`) - Output only. The role of the participant.
   """
