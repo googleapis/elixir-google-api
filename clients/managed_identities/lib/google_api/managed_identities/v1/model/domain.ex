@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.Domain do
   @moduledoc """
-  Represents a managed Microsoft Active Directory domain.
+  Represents a managed Microsoft Active Directory domain. If the domain is being changed, it will be placed into the UPDATING state, which indicates that the resource is being reconciled. At this point, Get will reflect an intermediate state.
 
   ## Attributes
 
