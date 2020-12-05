@@ -21,14 +21,28 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
 
   ## Attributes
 
+  *   `thumbnail` (*type:* `String.t`, *default:* `nil`) - The thumbnail of a person's face.
+  *   `tracks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_Track.t)`, *default:* `nil`) - The face tracks with attributes.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :thumbnail => String.t(),
+          :tracks =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_Track.t()
+            ),
           :version => String.t()
         }
+
+  field(:thumbnail)
+
+  field(:tracks,
+    as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_Track,
+    type: :list
+  )
 
   field(:version)
 end
