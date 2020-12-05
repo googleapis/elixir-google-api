@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
 
   *   `buildId` (*type:* `String.t`, *default:* `nil`) - The Cloud Build ID of the function created or updated by an API call. This field is only populated for Create and Update operations.
   *   `request` (*type:* `map()`, *default:* `nil`) - The original request that started the operation.
+  *   `sourceToken` (*type:* `String.t`, *default:* `nil`) - A field for Firebase function deployments
   *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example projects/project-1/locations/region-1/functions/function-1
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of operation.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of the operation.
@@ -34,6 +35,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
   @type t :: %__MODULE__{
           :buildId => String.t(),
           :request => map(),
+          :sourceToken => String.t(),
           :target => String.t(),
           :type => String.t(),
           :updateTime => DateTime.t(),
@@ -42,6 +44,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
 
   field(:buildId)
   field(:request, type: :map)
+  field(:sourceToken)
   field(:target)
   field(:type)
   field(:updateTime, as: DateTime)
