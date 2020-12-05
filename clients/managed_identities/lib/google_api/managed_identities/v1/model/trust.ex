@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.Trust do
   @moduledoc """
-  Represents a relationship between two domains. This allows a controller in one domain to authenticate a user in another domain.
+  Represents a relationship between two domains. This allows a controller in one domain to authenticate a user in another domain. If the trust is being changed, it will be placed into the UPDATING state, which indicates that the resource is being reconciled. At this point, Get will reflect an intermediate state.
 
   ## Attributes
 
