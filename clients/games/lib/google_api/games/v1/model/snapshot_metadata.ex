@@ -23,10 +23,9 @@ defmodule GoogleApi.Games.V1.Model.SnapshotMetadata do
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this snapshot.
   *   `deviceName` (*type:* `String.t`, *default:* `nil`) - The device that created the current revision.
-  *   `duration` (*type:* `String.t`, *default:* `nil`) - The duration associated with this snapshot. Values with sub-millisecond precision can be rounded or trimmed to the closest millisecond.
-  *   `lastModifyTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of the last modification to this snapshot. Values with sub-millisecond precision can be rounded or trimmed to the closest millisecond.
+  *   `gameplayDuration` (*type:* `String.t`, *default:* `nil`) - The duration associated with this snapshot. Values with sub-millisecond precision can be rounded or trimmed to the closest millisecond.
+  *   `lastModifyTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of the last modification to this snapshot as provided by the client. Values with sub-millisecond precision can be rounded or trimmed to the closest millisecond.
   *   `progressValue` (*type:* `String.t`, *default:* `nil`) - The progress value (64-bit integer set by developer) associated with this snapshot.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this snapshot.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,18 +33,16 @@ defmodule GoogleApi.Games.V1.Model.SnapshotMetadata do
   @type t :: %__MODULE__{
           :description => String.t(),
           :deviceName => String.t(),
-          :duration => String.t(),
+          :gameplayDuration => String.t(),
           :lastModifyTime => DateTime.t(),
-          :progressValue => String.t(),
-          :title => String.t()
+          :progressValue => String.t()
         }
 
   field(:description)
   field(:deviceName)
-  field(:duration)
+  field(:gameplayDuration)
   field(:lastModifyTime, as: DateTime)
   field(:progressValue)
-  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.SnapshotMetadata do

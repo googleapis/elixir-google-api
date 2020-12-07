@@ -21,7 +21,7 @@ defmodule GoogleApi.Games.V1.Model.SnapshotCoverImageResource do
 
   ## Attributes
 
-  *   `contentHash` (*type:* `list(GoogleApi.Games.V1.Model.ContentHash.t)`, *default:* `nil`) - Output only. Hash-like weak identifier of the uploaded image bytes, consistent per player per application per hash version. Within the context of a single player/application, it's guaranteed that two identical images coming from two different uploads will have the same content hash for the same hash algorithm version. It's extremely likely, though not guaranteed, that if two content hashes are equal, the images are identical. More than one content hash can be returned if more than one hash versions are supported.
+  *   `contentHash` (*type:* `String.t`, *default:* `nil`) - Output only. Hash-like weak identifier of the uploaded image bytes, consistent per player per application. The content hash for a given resource will not change if the binary data hasn't changed. Except in very rare circumstances, the content_hash for matching binary data will be the same within a given player and application.
   *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - Output only. A URL the client can use to download the image. May vary across requests, and only guaranteed to be valid for a short time after it is returned.
   *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the image in pixels.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the image.
@@ -32,7 +32,7 @@ defmodule GoogleApi.Games.V1.Model.SnapshotCoverImageResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentHash => list(GoogleApi.Games.V1.Model.ContentHash.t()),
+          :contentHash => String.t(),
           :downloadUrl => String.t(),
           :height => integer(),
           :mimeType => String.t(),
@@ -40,7 +40,7 @@ defmodule GoogleApi.Games.V1.Model.SnapshotCoverImageResource do
           :width => integer()
         }
 
-  field(:contentHash, as: GoogleApi.Games.V1.Model.ContentHash, type: :list)
+  field(:contentHash)
   field(:downloadUrl)
   field(:height)
   field(:mimeType)

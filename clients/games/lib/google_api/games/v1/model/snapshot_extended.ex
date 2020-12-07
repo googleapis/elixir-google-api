@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Games.V1.Model.SnapshotExtended do
   @moduledoc """
-  A snapshot represents a saved game state referred to using the developer-provided snapshot_id (think of it as a file's path). The set of attributes and binary data for a specific state is called a revision. Each revision is itself immutable, and referred to by a snapshot_revision_id. At any time, a snapshot has a "head" revision, and updates are made against that revision. If a snapshot update is received that isn't against the current head revision, then instead of changing the head revision it will result in a conflicting revision that must be specifically resolved.
+  A snapshot represents a saved game state referred to using the developer-provided snapshot_name. The set of attributes and binary data for a specific state is called a revision. Each revision is itself immutable, and referred to by a snapshot revision id. At any time, a snapshot has a "head" revision, and updates are made against that revision. If a snapshot update is received that isn't against the current head revision, then instead of changing the head revision it will result in a conflicting revision that must be specifically resolved.
 
   ## Attributes
 
   *   `conflictingRevisions` (*type:* `list(GoogleApi.Games.V1.Model.SnapshotRevision.t)`, *default:* `nil`) - A list of conflicting revisions. Only set if explicitly requested (e.g. using a field mask or a request flag), or if the RPC guarantees that this field is set. The conflicting revisions are sorted chronologically by their server creation time (oldest first). If there are too many conflicting revisions to return all of them in a single request this will only contain the first batch. In such case, the presented conflicting revisions must be resolved first in order to fetch the next batch.
   *   `hasConflictingRevisions` (*type:* `boolean()`, *default:* `nil`) - An indicator whether the snapshot has any conflicting revisions or not. Always set.
   *   `headRevision` (*type:* `GoogleApi.Games.V1.Model.SnapshotRevision.t`, *default:* `nil`) - The current head revision (the canonical revision as understood by the server).
-  *   `name` (*type:* `String.t`, *default:* `nil`) - An identifier of the snapshot,developer-specified.
+  *   `snapshotName` (*type:* `String.t`, *default:* `nil`) - An identifier of the snapshot, developer-specified. It must match the pattern [0-9a-zA-Z-._~]{1,100}.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +33,13 @@ defmodule GoogleApi.Games.V1.Model.SnapshotExtended do
           :conflictingRevisions => list(GoogleApi.Games.V1.Model.SnapshotRevision.t()),
           :hasConflictingRevisions => boolean(),
           :headRevision => GoogleApi.Games.V1.Model.SnapshotRevision.t(),
-          :name => String.t()
+          :snapshotName => String.t()
         }
 
   field(:conflictingRevisions, as: GoogleApi.Games.V1.Model.SnapshotRevision, type: :list)
   field(:hasConflictingRevisions)
   field(:headRevision, as: GoogleApi.Games.V1.Model.SnapshotRevision)
-  field(:name)
+  field(:snapshotName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Games.V1.Model.SnapshotExtended do
