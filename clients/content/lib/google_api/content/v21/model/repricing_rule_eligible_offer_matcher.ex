@@ -25,6 +25,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher do
   *   `itemGroupIdMatcher` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t`, *default:* `nil`) - Filter by the item group id.
   *   `matcherOption` (*type:* `String.t`, *default:* `nil`) - Determines whether to use the custom matchers or the product feed attribute "repricing_rule_id" to specify offer-rule mapping.
   *   `offerIdMatcher` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t`, *default:* `nil`) - Filter by the offer id.
+  *   `skipWhenOnPromotion` (*type:* `boolean()`, *default:* `nil`) - When true, the rule won't be applied to offers with active promotions.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +37,8 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher do
             GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t(),
           :matcherOption => String.t(),
           :offerIdMatcher =>
-            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t()
+            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t(),
+          :skipWhenOnPromotion => boolean()
         }
 
   field(:brandMatcher,
@@ -52,6 +54,8 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher do
   field(:offerIdMatcher,
     as: GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher
   )
+
+  field(:skipWhenOnPromotion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher do
