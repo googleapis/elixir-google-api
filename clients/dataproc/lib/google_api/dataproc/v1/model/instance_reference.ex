@@ -23,17 +23,20 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceReference do
 
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the Compute Engine instance.
   *   `instanceName` (*type:* `String.t`, *default:* `nil`) - The user-friendly name of the Compute Engine instance.
+  *   `publicKey` (*type:* `String.t`, *default:* `nil`) - The public key used for sharing data with this instance.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :instanceId => String.t(),
-          :instanceName => String.t()
+          :instanceName => String.t(),
+          :publicKey => String.t()
         }
 
   field(:instanceId)
   field(:instanceName)
+  field(:publicKey)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.InstanceReference do

@@ -24,6 +24,9 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
   *   `clusterName` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the target cluster.
   *   `clusterUuid` (*type:* `String.t`, *default:* `nil`) - Output only. The UUID of target cluster.
   *   `createCluster` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterOperation.t`, *default:* `nil`) - Output only. The create cluster operation metadata.
+  *   `dagEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. DAG end time, only set for workflows with dag_timeout when DAG ends.
+  *   `dagStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. DAG start time, only set for workflows with dag_timeout when DAG begins.
+  *   `dagTimeout` (*type:* `String.t`, *default:* `nil`) - Output only. The timeout duration for the DAG of jobs.
   *   `deleteCluster` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterOperation.t`, *default:* `nil`) - Output only. The delete cluster operation metadata.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Workflow end time.
   *   `graph` (*type:* `GoogleApi.Dataproc.V1.Model.WorkflowGraph.t`, *default:* `nil`) - Output only. The workflow graph.
@@ -40,6 +43,9 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
           :clusterName => String.t(),
           :clusterUuid => String.t(),
           :createCluster => GoogleApi.Dataproc.V1.Model.ClusterOperation.t(),
+          :dagEndTime => DateTime.t(),
+          :dagStartTime => DateTime.t(),
+          :dagTimeout => String.t(),
           :deleteCluster => GoogleApi.Dataproc.V1.Model.ClusterOperation.t(),
           :endTime => DateTime.t(),
           :graph => GoogleApi.Dataproc.V1.Model.WorkflowGraph.t(),
@@ -53,6 +59,9 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
   field(:clusterName)
   field(:clusterUuid)
   field(:createCluster, as: GoogleApi.Dataproc.V1.Model.ClusterOperation)
+  field(:dagEndTime, as: DateTime)
+  field(:dagStartTime, as: DateTime)
+  field(:dagTimeout)
   field(:deleteCluster, as: GoogleApi.Dataproc.V1.Model.ClusterOperation)
   field(:endTime, as: DateTime)
   field(:graph, as: GoogleApi.Dataproc.V1.Model.WorkflowGraph)

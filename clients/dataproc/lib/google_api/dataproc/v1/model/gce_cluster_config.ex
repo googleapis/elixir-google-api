@@ -29,6 +29,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
   *   `reservationAffinity` (*type:* `GoogleApi.Dataproc.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Optional. Reservation Affinity for consuming Zonal reservation.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The Dataproc service account (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_dataproc) (also see VM Data Plane identity (https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity)) used by Dataproc cluster VM instances to access Google Cloud Platform services.If not specified, the Compute Engine default service account (https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used.
   *   `serviceAccountScopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The URIs of service account scopes to be included in Compute Engine instances. The following base set of scopes is always included: https://www.googleapis.com/auth/cloud.useraccounts.readonly https://www.googleapis.com/auth/devstorage.read_write https://www.googleapis.com/auth/logging.writeIf no scopes are specified, the following defaults are also provided: https://www.googleapis.com/auth/bigquery https://www.googleapis.com/auth/bigtable.admin.table https://www.googleapis.com/auth/bigtable.data https://www.googleapis.com/auth/devstorage.full_control
+  *   `shieldedInstanceConfig` (*type:* `GoogleApi.Dataproc.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Optional. Shielded Instance Config for clusters using shielded VMs.
   *   `subnetworkUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine subnetwork to be used for machine communications. Cannot be specified with network_uri.A full URL, partial URI, or short name are valid. Examples: https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0 projects/[project_id]/regions/us-east1/subnetworks/sub0 sub0
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - The Compute Engine tags to add to all instances (see Tagging instances (https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
   *   `zoneUri` (*type:* `String.t`, *default:* `nil`) - Optional. The zone where the Compute Engine cluster will be located. On a create request, it is required in the "global" region. If omitted in a non-global Dataproc region, the service will pick a zone in the corresponding Compute Engine region. On a get request, zone will always be present.A full URL, partial URI, or short name are valid. Examples: https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone] projects/[project_id]/zones/[zone] us-central1-f
@@ -45,6 +46,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
           :reservationAffinity => GoogleApi.Dataproc.V1.Model.ReservationAffinity.t(),
           :serviceAccount => String.t(),
           :serviceAccountScopes => list(String.t()),
+          :shieldedInstanceConfig => GoogleApi.Dataproc.V1.Model.ShieldedInstanceConfig.t(),
           :subnetworkUri => String.t(),
           :tags => list(String.t()),
           :zoneUri => String.t()
@@ -58,6 +60,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
   field(:reservationAffinity, as: GoogleApi.Dataproc.V1.Model.ReservationAffinity)
   field(:serviceAccount)
   field(:serviceAccountScopes, type: :list)
+  field(:shieldedInstanceConfig, as: GoogleApi.Dataproc.V1.Model.ShieldedInstanceConfig)
   field(:subnetworkUri)
   field(:tags, type: :list)
   field(:zoneUri)
