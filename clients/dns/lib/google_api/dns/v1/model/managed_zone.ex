@@ -35,6 +35,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   *   `peeringConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig.t`, *default:* `nil`) - The presence of this field indicates that DNS Peering is enabled for this zone. The value of this field contains the network to peer with.
   *   `privateVisibilityConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig.t`, *default:* `nil`) - For privately visible zones, the set of Virtual Private Cloud resources that the zone is visible from.
   *   `reverseLookupConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZoneReverseLookupConfig.t`, *default:* `nil`) - The presence of this field indicates that this is a managed reverse lookup zone and Cloud DNS will resolve reverse lookup queries using automatically configured records for VPC resources. This only applies to networks listed under private_visibility_config.
+  *   `serviceDirectoryConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfig.t`, *default:* `nil`) - This field links to the associated service directory namespace. This field should not be set for public zones or forwarding zones.
   *   `visibility` (*type:* `String.t`, *default:* `nil`) - The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.
   """
 
@@ -56,6 +57,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
           :privateVisibilityConfig =>
             GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig.t(),
           :reverseLookupConfig => GoogleApi.DNS.V1.Model.ManagedZoneReverseLookupConfig.t(),
+          :serviceDirectoryConfig => GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfig.t(),
           :visibility => String.t()
         }
 
@@ -73,6 +75,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   field(:peeringConfig, as: GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig)
   field(:privateVisibilityConfig, as: GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig)
   field(:reverseLookupConfig, as: GoogleApi.DNS.V1.Model.ManagedZoneReverseLookupConfig)
+  field(:serviceDirectoryConfig, as: GoogleApi.DNS.V1.Model.ManagedZoneServiceDirectoryConfig)
   field(:visibility)
 end
 
