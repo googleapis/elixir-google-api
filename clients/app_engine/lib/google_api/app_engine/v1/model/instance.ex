@@ -34,6 +34,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Instance do
   *   `vmDebugEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this instance is in debug mode. Only applicable for instances in App Engine flexible environment.
   *   `vmId` (*type:* `String.t`, *default:* `nil`) - Output only. Virtual machine ID of this instance. Only applicable for instances in App Engine flexible environment.
   *   `vmIp` (*type:* `String.t`, *default:* `nil`) - Output only. The IP address of this instance. Only applicable for instances in App Engine flexible environment.
+  *   `vmLiveness` (*type:* `String.t`, *default:* `nil`) - Output only. The liveness health check of this instance. Only applicable for instances in App Engine flexible environment.
   *   `vmName` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.
   *   `vmStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.
   *   `vmZoneName` (*type:* `String.t`, *default:* `nil`) - Output only. Zone where the virtual machine is located. Only applicable for instances in App Engine flexible environment.
@@ -55,6 +56,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Instance do
           :vmDebugEnabled => boolean(),
           :vmId => String.t(),
           :vmIp => String.t(),
+          :vmLiveness => String.t(),
           :vmName => String.t(),
           :vmStatus => String.t(),
           :vmZoneName => String.t()
@@ -73,6 +75,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Instance do
   field(:vmDebugEnabled)
   field(:vmId)
   field(:vmIp)
+  field(:vmLiveness)
   field(:vmName)
   field(:vmStatus)
   field(:vmZoneName)
