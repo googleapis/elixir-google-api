@@ -591,7 +591,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. Capped to 100 if not specified. May not be larger than 1000.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1520,7 +1520,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts stores returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings Only filtering on labels is supported, for example `labels.key=value`.
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of Annotation stores to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of Annotation stores to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2134,7 +2134,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts Annotations returned to those matching a filter. Functions available for filtering are: - `matches("annotation_source.cloud_healthcare_source.name", substring)`. Filter on `cloud_healthcare_source.name`. For example: `matches("annotation_source.cloud_healthcare_source.name", "some source")`. - `matches("annotation", substring)`. Filter on all fields of annotation. For example: `matches("annotation", "some-content")`. - `type("text")`, `type("image")`, `type("resource")`. Filter on the type of annotation `data`.
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of Annotations to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of Annotations to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
       *   `:view` (*type:* `String.t`) - Controls which fields are populated in the response.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2835,7 +2835,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts the stores returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings. Only filtering on labels is supported. For example, `labels.key=value`.
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of Consent stores to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of Consent stores to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - Token to retrieve the next page of results or empty to get the first page.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3543,7 +3543,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts the attributes returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings. The only field available for filtering is `category`.
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of attribute definitions to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of attribute definitions to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - Token to retrieve the next page of results or empty to get the first page.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3994,7 +3994,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts the artifacts returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings The fields available for filtering are: - user_id - consent_content_version
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of consent artifacts to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of consent artifacts to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4525,8 +4525,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Restricts the consents returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings The fields available for filtering are: - user_id - consent_artifact - state - revision_create_time
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of consents to return in a single response. If zero the default page size of 100 is used.
+      *   `:filter` (*type:* `String.t`) - Restricts the consents returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings The fields available for filtering are: - user_id - consent_artifact - state - revision_create_time - metadata. For example, `Metadata("key")="value"` or `HasMetadata("key")`.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of consents to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4619,7 +4619,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts the revisions returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings. Fields/functions available for filtering are: - user_id - consent_artifact - state - revision_create_time
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of revisions to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of revisions to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - Token to retrieve the next page of results or empty if there are no more results in the list.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -5342,7 +5342,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts the user data mappings returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings The fields available for filtering are: - data_id - user_id - archived - archive_time
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of user data mappings to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of user data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - Token to retrieve the next page of results or empty to get the first page.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -6122,7 +6122,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts stores returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings Only filtering on labels is supported. For example, `labels.key=value`.
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of DICOM stores to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of DICOM stores to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -6789,7 +6789,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  DeleteStudyAsync deletes all instances within the given study using an operation. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Inserting instances into a study while a delete operation is running for that study could result in the new instances not appearing in search results until the deletion operation finishes.
+  DeleteStudyAsync deletes all instances within the given study using a long running operation. The method returns an Operation which will be marked successful when the deletion is complete. Warning: If you insert instances into a study while a delete operation is running for that study, the instances you insert might not appear in search results until after the deletion operation finishes.
 
   ## Parameters
 
@@ -7319,7 +7319,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  DeleteSeriesAsync deletes all instances within the given study and series using an operation. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Inserting instances into a series while a delete operation is running for that series could result in the new instances not appearing in search results until the deletion operation finishes.
+  DeleteSeriesAsync deletes all instances within the given study and series using a long running operation. The method returns an Operation which will be marked successful when the deletion is complete. Warning: If you insert instances into a series while a delete operation is running for that series, the instances you insert might not appear in search results until after the deletion operation finishes.
 
   ## Parameters
 
@@ -8888,7 +8888,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts stores returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings Only filtering on labels is supported, for example `labels.key=value`.
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of FHIR stores to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of FHIR stores to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -9513,7 +9513,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:_count` (*type:* `integer()`) - Maximum number of resources in a page. Defaults to 100.
+      *   `:_count` (*type:* `integer()`) - Maximum number of resources in a page. If not specified, 100 is used. May not be larger than 1000.
       *   `:_page_token` (*type:* `String.t`) - Used to retrieve the next or previous page of results when using pagination. Set `_page_token` to the value of _page_token set in next or previous page links' url. Next and previous page are returned in the response bundle's links field, where `link.relation` is "previous" or "next". Omit `_page_token` if no previous request has been made.
       *   `:_since` (*type:* `String.t`) - If provided, only resources updated after this time are returned. The time uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz. For example, `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`. The time must be specified to the second and include a time zone.
       *   `:_type` (*type:* `String.t`) - String of comma-delimited FHIR resource types. If provided, only resources of the specified resource type(s) are returned.
@@ -10327,7 +10327,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:_at` (*type:* `String.t`) - Only include resource versions that were current at some point during the time period specified in the date time value. The date parameter format is yyyy-mm-ddThh:mm:ss[Z|(+|-)hh:mm] Clients may specify any of the following: * An entire year: `_at=2019` * An entire month: `_at=2019-01` * A specific day: `_at=2019-01-20` * A specific second: `_at=2018-12-31T23:59:58Z`
-      *   `:_count` (*type:* `integer()`) - The maximum number of search results on a page. Default value is 100. Maximum value is 1,000.
+      *   `:_count` (*type:* `integer()`) - The maximum number of search results on a page. If not specified, 100 is used. May not be larger than 1000.
       *   `:_page_token` (*type:* `String.t`) - Used to retrieve the first, previous, next, or last page of resource versions when using pagination. Value should be set to the value of `_page_token` set in next or previous page links' URLs. Next and previous page are returned in the response bundle's links field, where `link.relation` is "previous" or "next". Omit `_page_token` if no previous request has been made.
       *   `:_since` (*type:* `String.t`) - Only include resource versions that were created at or after the given instant in time. The instant in time uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz (for example 2015-02-07T13:28:17.239+02:00 or 2017-01-01T00:00:00Z). The time must be specified to the second and include a time zone.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -11396,7 +11396,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts stores returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings Only filtering on labels is supported. For example, `labels.key=value`.
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of HL7v2 stores to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of HL7v2 stores to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -12100,7 +12100,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Restricts messages returned to those matching a filter. Syntax: https://cloud.google.com/appengine/docs/standard/python/search/query_strings The following fields and functions are available for filtering: * `message_type`, from the MSH-9.1 field. For example, `NOT message_type = "ADT"`. * `send_date` or `sendDate`, the YYYY-MM-DD date the message was sent in the dataset's time_zone, from the MSH-7 segment. For example, `send_date < "2017-01-02"`. * `send_time`, the timestamp when the message was sent, using the RFC3339 time format for comparisons, from the MSH-7 segment. For example, `send_time < "2017-01-02T00:00:00-05:00"`. * `send_facility`, the care center that the message came from, from the MSH-4 segment. For example, `send_facility = "ABC"`. * `PatientId(value, type)`, which matches if the message lists a patient having an ID of the given value and type in the PID-2, PID-3, or PID-4 segments. For example, `PatientId("123456", "MRN")`. * `labels.x`, a string value of the label with key `x` as set using the Message.labels map. For example, `labels."priority"="high"`. The operator `:*` can be used to assert the existence of a label. For example, `labels."priority":*`.
       *   `:orderBy` (*type:* `String.t`) - Orders messages returned by the specified order_by clause. Syntax: https://cloud.google.com/apis/design/design_patterns#sorting_order Fields available for ordering are: * `send_time`
-      *   `:pageSize` (*type:* `integer()`) - Limit on the number of messages to return in a single response. If zero the default page size of 100 is used.
+      *   `:pageSize` (*type:* `integer()`) - Limit on the number of messages to return in a single response. If not specified, 100 is used. May not be larger than 1000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
       *   `:view` (*type:* `String.t`) - Specifies the parts of the Message to return in the response. When unspecified, equivalent to BASIC. Setting this to anything other than BASIC with a `page_size` larger than the default can generate a large response, which impacts the performance of this method.
   *   `opts` (*type:* `keyword()`) - Call options

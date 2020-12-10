@@ -21,12 +21,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateUserConsentsRequest do
 
   ## Attributes
 
-  *   `consentList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ConsentList.t`, *default:* `nil`) - The resource names of the consents to evaluate against. Consents must be in the current `consent_store` and belong to the current `user_id`. Consents can be either active or draft. If this field is empty, the default behavior is to use all active consents that belong to `user_id`. A maximum of 100 consents can be provided here.
-  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Limit on the number of user data mappings to return in a single response. If zero the default page size of 100 is used.
+  *   `consentList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ConsentList.t`, *default:* `nil`) - The Consents to evaluate the access request against. They must have the same `user_id` as the data to check access for, exist in the current `consent_store`, and can have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 consents can be provided here. If unspecified, all `ACTIVE` unexpired consents in the current `consent_store` will be evaluated.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Limit on the number of user data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results to get the first page.
   *   `requestAttributes` (*type:* `map()`, *default:* `nil`) - The values of request attributes associated with this access request.
   *   `resourceAttributes` (*type:* `map()`, *default:* `nil`) - The values of resources attributes associated with the type of data being requested. If no values are specified, then all data types are queried.
-  *   `responseView` (*type:* `String.t`, *default:* `nil`) - The view for EvaluateUserConsentsResponse.
+  *   `responseView` (*type:* `String.t`, *default:* `nil`) - The view for EvaluateUserConsentsResponse. If unspecified, defaults to `BASIC` and returns `consented` as `TRUE` or `FALSE`.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Required. User ID to evaluate consents for.
   """
 

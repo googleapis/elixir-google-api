@@ -21,6 +21,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportResourcesRequest do
 
   ## Attributes
 
+  *   `_since` (*type:* `String.t`, *default:* `nil`) - If provided, only resources updated after this time are exported. The time uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz. For example, `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`. The time must be specified to the second and include a time zone.
+  *   `_type` (*type:* `String.t`, *default:* `nil`) - String of comma-delimited FHIR resource types. If provided, only resources of the specified resource type(s) are exported.
   *   `bigqueryDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBigQueryDestination.t`, *default:* `nil`) - The BigQuery output destination. The Cloud Healthcare Service Agent requires two IAM roles on the BigQuery location: `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one BigQuery table per resource type.
   *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination. The Cloud Healthcare Service Agent requires the `roles/storage.objectAdmin` Cloud IAM roles on the Cloud Storage location. The exported outputs are organized by FHIR resource types. The server creates one object per resource type. Each object contains newline delimited JSON, and each line is a FHIR resource.
   """
@@ -28,11 +30,16 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportResourcesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :_since => String.t(),
+          :_type => String.t(),
           :bigqueryDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBigQueryDestination.t(),
           :gcsDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsDestination.t()
         }
+
+  field(:_since)
+  field(:_type)
 
   field(:bigqueryDestination,
     as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBigQueryDestination
