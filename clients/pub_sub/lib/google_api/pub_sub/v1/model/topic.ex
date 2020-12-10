@@ -25,6 +25,7 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
   *   `labels` (*type:* `map()`, *default:* `nil`) - See [Creating and managing labels] (https://cloud.google.com/pubsub/docs/labels).
   *   `messageStoragePolicy` (*type:* `GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t`, *default:* `nil`) - Policy constraining the set of Google Cloud Platform regions where messages published to the topic may be stored. If not present, then no constraints are in effect.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the topic. It must have the format `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
           :kmsKeyName => String.t(),
           :labels => map(),
           :messageStoragePolicy => GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t(),
-          :name => String.t()
+          :name => String.t(),
+          :satisfiesPzs => boolean()
         }
 
   field(:kmsKeyName)
   field(:labels, type: :map)
   field(:messageStoragePolicy, as: GoogleApi.PubSub.V1.Model.MessageStoragePolicy)
   field(:name)
+  field(:satisfiesPzs)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.Topic do
