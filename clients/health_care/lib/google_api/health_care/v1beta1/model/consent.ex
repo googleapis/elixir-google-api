@@ -23,6 +23,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Consent do
 
   *   `consentArtifact` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the consent artifact that contains proof of the end user's consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp in UTC of when this consent is considered expired.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - User-supplied key-value pairs used to organize consent resources. Metadata keys must: - be between 1 and 63 characters long - have a UTF-8 encoding of maximum 128 bytes - begin with a letter - consist of up to 63 characters including lowercase letters, numeric characters, underscores, and dashes Metadata values must be: - be between 1 and 63 characters long - have a UTF-8 encoding of maximum 128 bytes - consist of up to 63 characters including lowercase letters, numeric characters, underscores, and dashes No more than 64 metadata entries can be associated with a given consent.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`.
   *   `policies` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1ConsentPolicy.t)`, *default:* `nil`) - Represents an end user's consent in terms of the resources that can be accessed and under what conditions.
   *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp that the revision was created.
@@ -37,6 +38,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Consent do
   @type t :: %__MODULE__{
           :consentArtifact => String.t(),
           :expireTime => DateTime.t(),
+          :metadata => map(),
           :name => String.t(),
           :policies =>
             list(GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1ConsentPolicy.t()),
@@ -49,6 +51,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Consent do
 
   field(:consentArtifact)
   field(:expireTime, as: DateTime)
+  field(:metadata, type: :map)
   field(:name)
 
   field(:policies,

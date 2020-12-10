@@ -21,10 +21,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.CheckDataAccessRequest do
 
   ## Attributes
 
-  *   `consentList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ConsentList.t`, *default:* `nil`) - The Consents to evaluate the access request against. They must have the same `user_id` as the data to check access for, exist in the current `consent_store`, and can have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 consents can be provided here.
+  *   `consentList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ConsentList.t`, *default:* `nil`) - The Consents to evaluate the access request against. They must have the same `user_id` as the data to check access for, exist in the current `consent_store`, and can have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 consents can be provided here. If unspecified, all `ACTIVE` unexpired consents in the current `consent_store` will be evaluated.
   *   `dataId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the data to check access for. It must exist in the given `consent_store`.
   *   `requestAttributes` (*type:* `map()`, *default:* `nil`) - The values of request attributes associated with this access request.
-  *   `responseView` (*type:* `String.t`, *default:* `nil`) - The view for CheckDataAccessResponse.
+  *   `responseView` (*type:* `String.t`, *default:* `nil`) - The view for CheckDataAccessResponse. If unspecified, defaults to `BASIC` and returns `consented` as `TRUE` or `FALSE`.
   """
 
   use GoogleApi.Gax.ModelBase
