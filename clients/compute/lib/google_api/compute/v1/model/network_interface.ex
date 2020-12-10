@@ -34,6 +34,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkInterface do
       - projects/project/global/networks/network 
       - global/networks/default
   *   `networkIP` (*type:* `String.t`, *default:* `nil`) - An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+  *   `nicType` (*type:* `String.t`, *default:* `nil`) - The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs:  
       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork 
       - regions/region/subnetworks/subnetwork
@@ -50,6 +51,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkInterface do
           :name => String.t(),
           :network => String.t(),
           :networkIP => String.t(),
+          :nicType => String.t(),
           :subnetwork => String.t()
         }
 
@@ -61,6 +63,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkInterface do
   field(:name)
   field(:network)
   field(:networkIP)
+  field(:nicType)
   field(:subnetwork)
 end
 

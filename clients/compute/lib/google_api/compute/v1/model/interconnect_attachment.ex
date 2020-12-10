@@ -51,6 +51,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `interconnect` (*type:* `String.t`, *default:* `nil`) - URL of the underlying Interconnect object that this attachment's traffic will traverse through.
   *   `kind` (*type:* `String.t`, *default:* `compute#interconnectAttachment`) - [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect attachments.
+  *   `mtu` (*type:* `integer()`, *default:* `nil`) - Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `operationalStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: 
       - OS_ACTIVE: The attachment has been turned up and is ready to use. 
@@ -92,6 +93,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
           :id => String.t(),
           :interconnect => String.t(),
           :kind => String.t(),
+          :mtu => integer(),
           :name => String.t(),
           :operationalStatus => String.t(),
           :pairingKey => String.t(),
@@ -121,6 +123,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
   field(:id)
   field(:interconnect)
   field(:kind)
+  field(:mtu)
   field(:name)
   field(:operationalStatus)
   field(:pairingKey)

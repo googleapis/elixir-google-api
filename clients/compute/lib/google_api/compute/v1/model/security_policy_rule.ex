@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyRule do
   *   `kind` (*type:* `String.t`, *default:* `compute#securityPolicyRule`) - [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules
   *   `match` (*type:* `GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcher.t`, *default:* `nil`) - A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
   *   `preview` (*type:* `boolean()`, *default:* `nil`) - If set to true, the specified action is not enforced.
-  *   `priority` (*type:* `integer()`, *default:* `nil`) - An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+  *   `priority` (*type:* `integer()`, *default:* `nil`) - An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
   """
 
   use GoogleApi.Gax.ModelBase

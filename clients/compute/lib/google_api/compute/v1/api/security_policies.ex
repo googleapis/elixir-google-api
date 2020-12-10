@@ -511,7 +511,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   end
 
   @doc """
-  Patches the specified policy with the data included in the request.
+  Patches the specified policy with the data included in the request. This cannot be used to be update the rules in the policy. Please use the per rule methods like addRule, patchRule, and removeRule instead.
 
   ## Parameters
 

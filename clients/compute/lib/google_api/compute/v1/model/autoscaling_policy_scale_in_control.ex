@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl do
   ## Attributes
 
   *   `maxScaledInReplicas` (*type:* `GoogleApi.Compute.V1.Model.FixedOrPercent.t`, *default:* `nil`) - Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
-  *   `timeWindowSec` (*type:* `integer()`, *default:* `nil`) - How long back autoscaling should look when computing recommendations to include directives regarding slower scale in, as described above.
+  *   `timeWindowSec` (*type:* `integer()`, *default:* `nil`) - How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,9 +23,11 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
 
   ## Attributes
 
+  *   `accelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - 
   *   `cpuOvercommitType` (*type:* `String.t`, *default:* `nil`) - CPU overcommit.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `disks` (*type:* `list(GoogleApi.Compute.V1.Model.LocalDisk.t)`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#nodeTemplate`) - [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -48,9 +50,11 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()),
           :cpuOvercommitType => String.t(),
           :creationTimestamp => String.t(),
           :description => String.t(),
+          :disks => list(GoogleApi.Compute.V1.Model.LocalDisk.t()),
           :id => String.t(),
           :kind => String.t(),
           :name => String.t(),
@@ -64,9 +68,11 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
           :statusMessage => String.t()
         }
 
+  field(:accelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)
   field(:cpuOvercommitType)
   field(:creationTimestamp)
   field(:description)
+  field(:disks, as: GoogleApi.Compute.V1.Model.LocalDisk, type: :list)
   field(:id)
   field(:kind)
   field(:name)

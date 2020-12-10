@@ -1086,7 +1086,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
   end
 
   @doc """
-  Insert or patch (for the ones that already exist) per-instance configs for the managed instance group. perInstanceConfig.instance serves as a key used to distinguish whether to perform insert or patch.
+  Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
 
   ## Parameters
 
@@ -1486,7 +1486,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
   end
 
   @doc """
-  Insert or update (for the ones that already exist) per-instance configs for the managed instance group. perInstanceConfig.instance serves as a key used to distinguish whether to perform insert or patch.
+  Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
 
   ## Parameters
 
