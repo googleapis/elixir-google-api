@@ -21,7 +21,9 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
 
   ## Attributes
 
+  *   `accelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Accelerators for this node.
   *   `cpuOvercommitType` (*type:* `String.t`, *default:* `nil`) - CPU overcommit.
+  *   `disks` (*type:* `list(GoogleApi.Compute.V1.Model.LocalDisk.t)`, *default:* `nil`) - Local disk configurations.
   *   `instances` (*type:* `list(String.t)`, *default:* `nil`) - Instances scheduled on this node.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the node.
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - The type of this node.
@@ -33,7 +35,9 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()),
           :cpuOvercommitType => String.t(),
+          :disks => list(GoogleApi.Compute.V1.Model.LocalDisk.t()),
           :instances => list(String.t()),
           :name => String.t(),
           :nodeType => String.t(),
@@ -42,7 +46,9 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
           :status => String.t()
         }
 
+  field(:accelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)
   field(:cpuOvercommitType)
+  field(:disks, as: GoogleApi.Compute.V1.Model.LocalDisk, type: :list)
   field(:instances, type: :list)
   field(:name)
   field(:nodeType)

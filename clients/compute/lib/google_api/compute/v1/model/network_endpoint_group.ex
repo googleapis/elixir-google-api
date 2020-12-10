@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   @moduledoc """
   Represents a collection of network endpoints.
 
-  A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up internet NEGs,  Setting up zonal NEGs, or  Setting up serverless NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
+  A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up external HTTP(S) Load Balancing with internet NEGs,  Setting up zonal NEGs, or  Setting up external HTTP(S) Load Balancing with serverless NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
 
   ## Attributes
 

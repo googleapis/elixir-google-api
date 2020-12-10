@@ -35,23 +35,32 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
 
       If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
 
-      * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in: * projects/project_id/regions/region/addresses/address-name * regions/region/addresses/address-name * global/addresses/address-name * address-name 
+      * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:  
+      - projects/project_id/regions/region/addresses/address-name 
+      - regions/region/addresses/address-name 
+      - global/addresses/address-name 
+      - address-name  
 
       The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
 
       Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
 
       For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-  *   `IPProtocol` (*type:* `String.t`, *default:* `nil`) - The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
+  *   `IPProtocol` (*type:* `String.t`, *default:* `nil`) - The IP protocol to which this rule applies.
 
-      For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+      For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+
+      The valid IP protocols are different for different load balancing products:  
+      - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid. 
+      - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.  
+      - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. 
+      - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid. 
+      - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
   *   `allPorts` (*type:* `boolean()`, *default:* `nil`) - This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. This field cannot be used with port or portRange fields.
 
       When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
   *   `allowGlobalAccess` (*type:* `boolean()`, *default:* `nil`) - This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
-  *   `backendService` (*type:* `String.t`, *default:* `nil`) - This field is only used for INTERNAL load balancing.
-
-      For internal load balancing, this field identifies the BackendService resource to receive the matched traffic.
+  *   `backendService` (*type:* `String.t`, *default:* `nil`) - Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ForwardingRule. Include the fingerprint in patch request to ensure that you do not overwrite changes that were applied from another concurrent request.
@@ -67,12 +76,12 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       - EXTERNAL is used for:  
       - Classic Cloud VPN gateways 
       - Protocol forwarding to VMs from an external IP address 
-      - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP    
+      - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing    
       - INTERNAL is used for:  
       - Protocol forwarding to VMs from an internal IP address 
-      - Internal TCP/UDP load balancers   
+      - Internal TCP/UDP Load Balancing   
       - INTERNAL_MANAGED is used for:  
-      - Internal HTTP(S) load balancers   
+      - Internal HTTP(S) Load Balancing   
       - INTERNAL_SELF_MANAGED is used for:  
       - Traffic Director    
 
@@ -84,7 +93,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `network` (*type:* `String.t`, *default:* `nil`) - This field is not used for external load balancing.
 
-      For internal load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+      For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
 
       For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
   *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.
@@ -92,24 +101,26 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
 
       If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
-  *   `portRange` (*type:* `String.t`, *default:* `nil`) - When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
+  *   `portRange` (*type:* `String.t`, *default:* `nil`) - This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
 
-      Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+      Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
 
       Some types of forwarding target have constraints on the acceptable ports:  
       - TargetHttpProxy: 80, 8080 
       - TargetHttpsProxy: 443 
-      - TargetGrpcProxy: Any ports 
+      - TargetGrpcProxy: no constraints 
       - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 
       - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 
       - TargetVpnGateway: 500, 4500
-  *   `ports` (*type:* `list(String.t)`, *default:* `nil`) - This field is used along with the backend_service field for internal load balancing.
+  *   `ports` (*type:* `list(String.t)`, *default:* `nil`) - The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
 
-      When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
+      You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
 
-      If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
+      You can specify a list of up to five ports, which can be non-contiguous.
 
-      * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+      For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+
+      For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `serviceLabel` (*type:* `String.t`, *default:* `nil`) - An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is the first label of the fully qualified service name.

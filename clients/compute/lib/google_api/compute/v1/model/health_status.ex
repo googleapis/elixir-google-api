@@ -26,6 +26,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
   *   `instance` (*type:* `String.t`, *default:* `nil`) - URL of the instance resource.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - A forwarding rule IP address assigned to this instance.
   *   `port` (*type:* `integer()`, *default:* `nil`) - The named port of the instance group, not necessarily the port that is health-checked.
+  *   `weight` (*type:* `String.t`, *default:* `nil`) - 
+  *   `weightError` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +37,9 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
           :healthState => String.t(),
           :instance => String.t(),
           :ipAddress => String.t(),
-          :port => integer()
+          :port => integer(),
+          :weight => String.t(),
+          :weightError => String.t()
         }
 
   field(:annotations, type: :map)
@@ -43,6 +47,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
   field(:instance)
   field(:ipAddress)
   field(:port)
+  field(:weight)
+  field(:weightError)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.HealthStatus do

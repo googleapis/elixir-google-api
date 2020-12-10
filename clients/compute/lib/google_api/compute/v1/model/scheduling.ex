@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
   *   `automaticRestart` (*type:* `boolean()`, *default:* `nil`) - Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
 
       By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+  *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
   *   `minNodeCpus` (*type:* `integer()`, *default:* `nil`) - The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
   *   `nodeAffinities` (*type:* `list(GoogleApi.Compute.V1.Model.SchedulingNodeAffinity.t)`, *default:* `nil`) - A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
   *   `onHostMaintenance` (*type:* `String.t`, *default:* `nil`) - Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
 
   @type t :: %__MODULE__{
           :automaticRestart => boolean(),
+          :locationHint => String.t(),
           :minNodeCpus => integer(),
           :nodeAffinities => list(GoogleApi.Compute.V1.Model.SchedulingNodeAffinity.t()),
           :onHostMaintenance => String.t(),
@@ -41,6 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
         }
 
   field(:automaticRestart)
+  field(:locationHint)
   field(:minNodeCpus)
   field(:nodeAffinities, as: GoogleApi.Compute.V1.Model.SchedulingNodeAffinity, type: :list)
   field(:onHostMaintenance)

@@ -21,14 +21,14 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
 
   ## Attributes
 
-  *   `coolDownPeriodSec` (*type:* `integer()`, *default:* `nil`) - The number of seconds that the autoscaler should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
+  *   `coolDownPeriodSec` (*type:* `integer()`, *default:* `nil`) - The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
 
       Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
   *   `cpuUtilization` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicyCpuUtilization.t`, *default:* `nil`) - Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
   *   `customMetricUtilizations` (*type:* `list(GoogleApi.Compute.V1.Model.AutoscalingPolicyCustomMetricUtilization.t)`, *default:* `nil`) - Configuration parameters of autoscaling based on a custom metric.
   *   `loadBalancingUtilization` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicyLoadBalancingUtilization.t`, *default:* `nil`) - Configuration parameters of autoscaling based on load balancer.
-  *   `maxNumReplicas` (*type:* `integer()`, *default:* `nil`) - The maximum number of instances that the autoscaler can scale up to. This is required when creating or updating an autoscaler. The maximum number of replicas should not be lower than minimal number of replicas.
-  *   `minNumReplicas` (*type:* `integer()`, *default:* `nil`) - The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.
+  *   `maxNumReplicas` (*type:* `integer()`, *default:* `nil`) - The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+  *   `minNumReplicas` (*type:* `integer()`, *default:* `nil`) - The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Defines operating mode for this policy.
   *   `scaleInControl` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl.t`, *default:* `nil`) - 
   """
