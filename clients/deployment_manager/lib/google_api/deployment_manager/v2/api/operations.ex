@@ -121,7 +121,6 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
       *   `:maxResults` (*type:* `integer()`) - The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
       *   `:orderBy` (*type:* `String.t`) - Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -149,8 +148,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
       :filter => :query,
       :maxResults => :query,
       :orderBy => :query,
-      :pageToken => :query,
-      :returnPartialSuccess => :query
+      :pageToken => :query
     }
 
     request =
