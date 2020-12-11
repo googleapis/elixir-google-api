@@ -2555,7 +2555,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   end
 
   @doc """
-  Inspect hybrid content and store findings to a job. To review the findings inspect the job. Inspection will occur asynchronously. Early access feature is in a pre-release state and might change or have limited support. For more information, see https://cloud.google.com/products#product-launch-stages.
+  Inspect hybrid content and store findings to a job. To review the findings, inspect the job. Inspection will occur asynchronously. Early access feature is in a pre-release state and might change or have limited support. For more information, see https://cloud.google.com/products#product-launch-stages.
 
   ## Parameters
 
