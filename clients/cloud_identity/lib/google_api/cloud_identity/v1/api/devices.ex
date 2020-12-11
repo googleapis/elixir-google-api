@@ -87,7 +87,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
   end
 
   @doc """
-  Creates a device. Only company-owned device may be created.
+  Creates a device. Only company-owned device may be created. **Note**: This method is available only to customers who have one of the following SKUs: Enterprise Standard, Enterprise Plus, Enterprise for Education, and Cloud Identity Premium
 
   ## Parameters
 
@@ -1156,7 +1156,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
   end
 
   @doc """
-  Updates the client state for the device user
+  Updates the client state for the device user **Note**: This method is available only to customers who have one of the following SKUs: Enterprise Standard, Enterprise Plus, Enterprise for Education, and Cloud Identity Premium
 
   ## Parameters
 
