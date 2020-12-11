@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails do
   ## Attributes
 
   *   `requestedOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedOptions.t`, *default:* `nil`) - The configuration used for this job.
-  *   `result` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Result.t`, *default:* `nil`) - A summary of the outcome of this inspect job.
+  *   `result` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Result.t`, *default:* `nil`) - A summary of the outcome of this inspection job.
   """
 
   use GoogleApi.Gax.ModelBase
