@@ -18,7 +18,7 @@
 defmodule GoogleApi.ServiceControl.Mixfile do
   use Mix.Project
 
-  @version "0.31.0"
+  @version "0.31.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.ServiceControl.Mixfile do
 
   defp description() do
     """
-    Service Control API client library. Provides control plane functionality to managed services, such as logging, monitoring, and status checks.
+    Service Control API client library. Provides admission control and telemetry reporting for services integrated with Service Infrastructure. 
     """
   end
 
