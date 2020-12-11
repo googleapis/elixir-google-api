@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.MeshIstio do
   @moduledoc """
-  Istio service scoped to an Istio mesh
+  Istio service scoped to an Istio mesh. Anthos clusters running ASM < 1.6.8 will have their services ingested as this type.
 
   ## Attributes
 
