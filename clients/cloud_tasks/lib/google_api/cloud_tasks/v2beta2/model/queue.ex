@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Queue do
   *   `rateLimits` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.RateLimits.t`, *default:* `nil`) - Rate limits for task dispatches. rate_limits and retry_config are related because they both control task attempts however they control how tasks are attempted in different ways: * rate_limits controls the total rate of dispatches from a queue (i.e. all traffic dispatched from the queue, regardless of whether the dispatch is from a first attempt or a retry). * retry_config controls what happens to particular a task after its first attempt fails. That is, retry_config controls task retries (the second attempt, third attempt, etc).
   *   `retryConfig` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.RetryConfig.t`, *default:* `nil`) - Settings that determine the retry behavior. * For tasks created using Cloud Tasks: the queue-level retry settings apply to all tasks in the queue that were created using Cloud Tasks. Retry settings cannot be set on individual tasks. * For tasks created using the App Engine SDK: the queue-level retry settings apply to all tasks in the queue which do not have retry settings explicitly set on the task and were created by the App Engine SDK. See [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the queue. `state` can only be changed by called PauseQueue, ResumeQueue, or uploading [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref). UpdateQueue cannot be used to change `state`.
+  *   `stats` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.QueueStats.t`, *default:* `nil`) - Output only. The realtime, informational statistics for a queue. In order to receive the statistics the caller should include this field in the FieldMask.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Queue do
           :purgeTime => DateTime.t(),
           :rateLimits => GoogleApi.CloudTasks.V2beta2.Model.RateLimits.t(),
           :retryConfig => GoogleApi.CloudTasks.V2beta2.Model.RetryConfig.t(),
-          :state => String.t()
+          :state => String.t(),
+          :stats => GoogleApi.CloudTasks.V2beta2.Model.QueueStats.t()
         }
 
   field(:appEngineHttpTarget, as: GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpTarget)
@@ -49,6 +51,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Queue do
   field(:rateLimits, as: GoogleApi.CloudTasks.V2beta2.Model.RateLimits)
   field(:retryConfig, as: GoogleApi.CloudTasks.V2beta2.Model.RetryConfig)
   field(:state)
+  field(:stats, as: GoogleApi.CloudTasks.V2beta2.Model.QueueStats)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.Queue do
