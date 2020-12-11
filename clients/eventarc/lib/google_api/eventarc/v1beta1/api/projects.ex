@@ -457,6 +457,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:triggerId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the trigger.
+      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not actually post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1beta1.Model.Trigger.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -493,6 +494,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :triggerId => :query,
+      :validateOnly => :query,
       :body => :body
     }
 
@@ -529,7 +531,9 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the trigger is not found, the request will succeed but no action will be taken on the server.
       *   `:etag` (*type:* `String.t`) - If provided, the trigger will only be deleted if the etag matches the current etag on the resource.
+      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not actually post it.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -564,7 +568,9 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :etag => :query
+      :allowMissing => :query,
+      :etag => :query,
+      :validateOnly => :query
     }
 
     request =
@@ -802,7 +808,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Eventarc.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the trigger. Must be unique within the location on the project. Format: projects/{project}/locations/{location}/triggers/{trigger}
+  *   `name` (*type:* `String.t`) - Required. The resource name of the trigger. Must be unique within the location on the project and must in `projects/{project}/locations/{location}/triggers/{trigger}` format.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -815,7 +821,9 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the trigger is not found, a new trigger will be created. In this situation, `update_mask` is ignored.
       *   `:updateMask` (*type:* `String.t`) - The fields to be updated; only fields explicitly provided will be updated. If no field mask is provided, all provided fields in the request will be updated. To update all fields, provide a field mask of "*".
+      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not actually post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1beta1.Model.Trigger.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -851,7 +859,9 @@ defmodule GoogleApi.Eventarc.V1beta1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :updateMask => :query,
+      :validateOnly => :query,
       :body => :body
     }
 

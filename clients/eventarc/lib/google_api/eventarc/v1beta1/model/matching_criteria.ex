@@ -21,8 +21,8 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.MatchingCriteria do
 
   ## Attributes
 
-  *   `attribute` (*type:* `String.t`, *default:* `nil`) - Required. The name of a CloudEvents atrribute. Currently, only a subset of attributes can be specified. All triggers MUST provide a matching criteria for attribute 'type'. Event types specify what event type has attributes are allowed based on
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Required. The value for the attribute
+  *   `attribute` (*type:* `String.t`, *default:* `nil`) - Required. The name of a CloudEvents attribute. Currently, only a subset of attributes can be specified. All triggers MUST provide a matching criteria for the 'type' attribute.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Required. The value for the attribute.
   """
 
   use GoogleApi.Gax.ModelBase

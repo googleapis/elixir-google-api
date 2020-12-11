@@ -21,7 +21,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.Destination do
 
   ## Attributes
 
-  *   `cloudRunService` (*type:* `GoogleApi.Eventarc.V1beta1.Model.CloudRunService.t`, *default:* `nil`) - Cloud Run fully-managed service that receives the events. The service should be running in the same project of the trigger.
+  *   `cloudRunService` (*type:* `GoogleApi.Eventarc.V1beta1.Model.CloudRunService.t`, *default:* `nil`) - Cloud Run fully-managed service that receives the events. The service should be running in the same project as the trigger.
   """
 
   use GoogleApi.Gax.ModelBase
