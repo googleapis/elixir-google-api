@@ -87,7 +87,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   end
 
   @doc """
-  Lookup for a single Account. Throws "Target not found" if no such account found, or if caller does not have permissions to access it.
+  Lookup for a single Account.
 
   ## Parameters
 

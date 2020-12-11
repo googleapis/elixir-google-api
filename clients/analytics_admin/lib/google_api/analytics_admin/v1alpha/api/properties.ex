@@ -148,7 +148,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Lookup for a single "GA4" Property. Throws "Target not found" if no such property found, if property is not of the type "GA4", or if caller does not have permissions to access it.
+  Lookup for a single "GA4" Property.
 
   ## Parameters
 
@@ -496,7 +496,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Lookup for a single AndroidAppDataStream Throws "Target not found" if no such android app data stream found, or if the caller does not have permissions to access it.
+  Lookup for a single AndroidAppDataStream
 
   ## Parameters
 
@@ -1495,7 +1495,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Lookup for a single IosAppDataStream Throws "Target not found" if no such iOS app data stream found, or if the caller does not have permissions to access it.
+  Lookup for a single IosAppDataStream
 
   ## Parameters
 
@@ -2638,7 +2638,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Lookup for a single WebDataStream Throws "Target not found" if no such web data stream found, or if the caller does not have permissions to access it.
+  Lookup for a single WebDataStream
 
   ## Parameters
 
