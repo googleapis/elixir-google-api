@@ -26,6 +26,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
   *   `databaseConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.DatabaseConfig.t`, *default:* `nil`) - Optional. The configuration settings for Cloud SQL instance used internally by Apache Airflow software.
   *   `encryptionConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. The encryption options for the Composer environment and its dependencies. Cannot be updated.
   *   `gkeCluster` (*type:* `String.t`, *default:* `nil`) - Output only. The Kubernetes Engine cluster used to run this environment.
+  *   `maintenanceWindow` (*type:* `GoogleApi.Composer.V1beta1.Model.MaintenanceWindow.t`, *default:* `nil`) - Optional. The maintenance window is the period when Cloud Composer components may undergo maintenance. It is defined so that maintenance is not executed during peak hours or critical time periods. The system will not be under maintenance for every occurrence of this window, but when maintenance is planned, it will be scheduled during the window. The maintenance window period must encompass at least 12 hours per week. This may be split into multiple chunks, each with a size of at least 4 hours. If this value is omitted, Cloud Composer components may be subject to maintenance at any time.
   *   `nodeConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.NodeConfig.t`, *default:* `nil`) - The configuration used for the Kubernetes Engine cluster.
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be used to run this environment.
   *   `privateEnvironmentConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig.t`, *default:* `nil`) - The configuration used for the Private IP Cloud Composer environment.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
           :databaseConfig => GoogleApi.Composer.V1beta1.Model.DatabaseConfig.t(),
           :encryptionConfig => GoogleApi.Composer.V1beta1.Model.EncryptionConfig.t(),
           :gkeCluster => String.t(),
+          :maintenanceWindow => GoogleApi.Composer.V1beta1.Model.MaintenanceWindow.t(),
           :nodeConfig => GoogleApi.Composer.V1beta1.Model.NodeConfig.t(),
           :nodeCount => integer(),
           :privateEnvironmentConfig =>
@@ -57,6 +59,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
   field(:databaseConfig, as: GoogleApi.Composer.V1beta1.Model.DatabaseConfig)
   field(:encryptionConfig, as: GoogleApi.Composer.V1beta1.Model.EncryptionConfig)
   field(:gkeCluster)
+  field(:maintenanceWindow, as: GoogleApi.Composer.V1beta1.Model.MaintenanceWindow)
   field(:nodeConfig, as: GoogleApi.Composer.V1beta1.Model.NodeConfig)
   field(:nodeCount)
   field(:privateEnvironmentConfig, as: GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig)

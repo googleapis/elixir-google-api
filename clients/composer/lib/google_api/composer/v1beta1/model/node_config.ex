@@ -25,6 +25,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.NodeConfig do
   *   `ipAllocationPolicy` (*type:* `GoogleApi.Composer.V1beta1.Model.IPAllocationPolicy.t`, *default:* `nil`) - Optional. The IPAllocationPolicy fields for the GKE cluster.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine [zone](/compute/docs/regions-zones) in which to deploy the VMs used to run the Apache Airflow software, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/zones/{zoneId}". This `location` must belong to the enclosing environment's project and location. If both this field and `nodeConfig.machineType` are specified, `nodeConfig.machineType` must belong to this `location`; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields. If only one field (`location` or `nodeConfig.machineType`) is specified, the location information from the specified field will be propagated to the unspecified field.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine [machine type](/compute/docs/machine-types) used for cluster instances, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}". The `machineType` must belong to the enclosing environment's project and location. If both this field and `nodeConfig.location` are specified, this `machineType` must belong to the `nodeConfig.location`; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields. If exactly one of this field and `nodeConfig.location` is specified, the location information from the specified field will be propagated to the unspecified field. The `machineTypeId` must not be a [shared-core machine type](/compute/docs/machine-types#sharedcore). If this field is unspecified, the `machineTypeId` defaults to "n1-standard-1".
+  *   `maxPodsPerNode` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of pods per node in the Cloud Composer GKE cluster. The value must be between 8 and 110 and it can be set only if the environment is VPC-native. The default value is 32. Values of this field will be propagated both to the `default-pool` node pool of the newly created GKE cluster, and to the default "Maximum Pods per Node" value which is used for newly created node pools if their value is not explicitly set during node pool creation. For more information, see [Optimizing IP address allocation] (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr). Cannot be updated.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine network to be used for machine communications, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/global/networks/{networkId}". If unspecified, the default network in the environment's project is used. If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets) is provided, `nodeConfig.subnetwork` must also be provided. For [Shared VPC](/vpc/docs/shared-vpc) subnetwork requirements, see `nodeConfig.subnetwork`.
   *   `oauthScopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The set of Google API scopes to be made available on all node VMs. If `oauth_scopes` is empty, defaults to ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The Google Cloud Platform Service Account to be used by the node VMs. If a service account is not specified, the "default" Compute Engine service account is used. Cannot be updated.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.NodeConfig do
           :ipAllocationPolicy => GoogleApi.Composer.V1beta1.Model.IPAllocationPolicy.t(),
           :location => String.t(),
           :machineType => String.t(),
+          :maxPodsPerNode => integer(),
           :network => String.t(),
           :oauthScopes => list(String.t()),
           :serviceAccount => String.t(),
@@ -50,6 +52,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.NodeConfig do
   field(:ipAllocationPolicy, as: GoogleApi.Composer.V1beta1.Model.IPAllocationPolicy)
   field(:location)
   field(:machineType)
+  field(:maxPodsPerNode)
   field(:network)
   field(:oauthScopes, type: :list)
   field(:serviceAccount)
