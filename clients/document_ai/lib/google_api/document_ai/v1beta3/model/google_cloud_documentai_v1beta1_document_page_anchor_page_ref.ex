@@ -24,7 +24,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   *   `boundingPoly` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1BoundingPoly.t`, *default:* `nil`) - Optional. Identifies the bounding polygon of a layout element on the page.
   *   `layoutId` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated. Use PageRef.bounding_poly instead.
   *   `layoutType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of the layout element that is being referenced if any.
-  *   `page` (*type:* `String.t`, *default:* `nil`) - Required. Index into the Document.pages element
+  *   `page` (*type:* `String.t`, *default:* `nil`) - Required. Index into the Document.pages element, for example using Document.pages to locate the related page element.
   """
 
   use GoogleApi.Gax.ModelBase

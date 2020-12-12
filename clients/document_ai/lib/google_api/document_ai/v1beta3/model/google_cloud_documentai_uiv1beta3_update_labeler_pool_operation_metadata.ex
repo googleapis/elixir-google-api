@@ -21,25 +21,19 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Updat
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the operation.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Used only when Operation.done is false.
-  *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - A message providing more details about the current state of processing. For example, the error message if the operation is failed.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update time of the operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :state => String.t(),
-          :stateMessage => String.t(),
-          :updateTime => DateTime.t()
+          :commonMetadata =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
         }
 
-  field(:createTime, as: DateTime)
-  field(:state)
-  field(:stateMessage)
-  field(:updateTime, as: DateTime)
+  field(:commonMetadata,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
+  )
 end
 
 defimpl Poison.Decoder,

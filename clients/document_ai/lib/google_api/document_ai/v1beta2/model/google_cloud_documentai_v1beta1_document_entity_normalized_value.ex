@@ -21,10 +21,10 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
 
   ## Attributes
 
-  *   `addressValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypePostalAddress.t`, *default:* `nil`) - Postal address. See also: https: //github.com/googleapis/googleapis/blob/ // master/google/type/postal_address.proto
-  *   `dateValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDate.t`, *default:* `nil`) - Date value. Includes year, month, day. See also: https: //github.com/googleapis/googleapis/blob/master/google/type/date.proto
-  *   `datetimeValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDateTime.t`, *default:* `nil`) - DateTime value. Includes date, time, and timezone. See also: https: //github.com/googleapis/googleapis/blob/ // master/google/type/datetime.proto
-  *   `moneyValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeMoney.t`, *default:* `nil`) - Money value. See also: https: //github.com/googleapis/googleapis/blob/ // master/google/type/money.proto
+  *   `addressValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypePostalAddress.t`, *default:* `nil`) - Postal address. See also: https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+  *   `dateValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDate.t`, *default:* `nil`) - Date value. Includes year, month, day. See also: https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
+  *   `datetimeValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDateTime.t`, *default:* `nil`) - DateTime value. Includes date, time, and timezone. See also: https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+  *   `moneyValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeMoney.t`, *default:* `nil`) - Money value. See also: https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
   *   `text` (*type:* `String.t`, *default:* `nil`) - Required. Normalized entity value stored as a string. This field is populated for supported document type (e.g. Invoice). For some entity types, one of respective 'structured_value' fields may also be populated. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format.
   """
 
