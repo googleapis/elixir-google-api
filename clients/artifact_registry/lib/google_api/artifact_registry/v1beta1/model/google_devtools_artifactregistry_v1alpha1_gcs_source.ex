@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.GoogleDevtoolsArtifactregistryV1alpha1GcsSource do
   @moduledoc """
-  Google Cloud Storage location for the input content.
+  Google Cloud Storage location where the artifacts currently reside.
 
   ## Attributes
 
