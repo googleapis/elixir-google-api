@@ -42,7 +42,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of this instance.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current status of this instance, if available.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - Required. The service tier of the instance.
-  *   `transitEncryptionMode` (*type:* `String.t`, *default:* `nil`) - Optional. The In-transit encryption mode of Redis instance. If not provided, in-transit encryption is disabled for instance.
+  *   `transitEncryptionMode` (*type:* `String.t`, *default:* `nil`) - Optional. The TLS mode of the Redis instance. If not provided, TLS is disabled for the instance.
   """
 
   use GoogleApi.Gax.ModelBase
