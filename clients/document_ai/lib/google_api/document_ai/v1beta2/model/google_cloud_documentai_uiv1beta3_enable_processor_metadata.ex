@@ -21,6 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Enabl
 
   ## Attributes
 
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the operation.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the current enable processor operation.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - A message providing more details about the current state of processing. For example, the error message if the operation is failed.
@@ -30,11 +31,17 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Enabl
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :commonMetadata =>
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t(),
           :createTime => DateTime.t(),
           :state => String.t(),
           :stateMessage => String.t(),
           :updateTime => DateTime.t()
         }
+
+  field(:commonMetadata,
+    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
+  )
 
   field(:createTime, as: DateTime)
   field(:state)
