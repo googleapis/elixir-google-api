@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayBackendConfig do
   @moduledoc """
-  Configuration for a backend.
+  Configuration for all backends.
 
   ## Attributes
 
