@@ -22,6 +22,7 @@ defmodule GoogleApi.Content.V21.Model.TestOrderDeliveryDetails do
   ## Attributes
 
   *   `address` (*type:* `GoogleApi.Content.V21.Model.TestOrderAddress.t`, *default:* `nil`) - The delivery address
+  *   `isScheduledDelivery` (*type:* `boolean()`, *default:* `nil`) - Whether the order is scheduled delivery order.
   *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The phone number of the person receiving the delivery.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Content.V21.Model.TestOrderDeliveryDetails do
 
   @type t :: %__MODULE__{
           :address => GoogleApi.Content.V21.Model.TestOrderAddress.t(),
+          :isScheduledDelivery => boolean(),
           :phoneNumber => String.t()
         }
 
   field(:address, as: GoogleApi.Content.V21.Model.TestOrderAddress)
+  field(:isScheduledDelivery)
   field(:phoneNumber)
 end
 

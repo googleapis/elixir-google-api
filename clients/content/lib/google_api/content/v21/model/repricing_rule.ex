@@ -21,6 +21,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRule do
 
   ## Attributes
 
+  *   `cogsBasedRule` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleCostOfGoodsSaleRule.t`, *default:* `nil`) - The rule definition for TYPE_COGS_BASED. Required when the rule type is TYPE_COGS_BASED.
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. CLDR country code (e.g. "US").
   *   `effectiveTimePeriod` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleEffectiveTime.t`, *default:* `nil`) - Required. Time period when the rule should take effect.
   *   `eligibleOfferMatcher` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher.t`, *default:* `nil`) - Required. Match criteria for the eligible offers.
@@ -29,6 +30,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRule do
   *   `paused` (*type:* `boolean()`, *default:* `nil`) - Represents whether a rule is paused. A paused rule will behave like a non-paused rule within CRUD operations, with the major difference that a paused rule will not be evaluated and will have no effect on offers.
   *   `restriction` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleRestriction.t`, *default:* `nil`) - Required. Restriction of the rule appliance.
   *   `ruleId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The ID to uniquely identify each repricing rule.
+  *   `statsBasedRule` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleStatsBasedRule.t`, *default:* `nil`) - The rule definition for TYPE_STATS_BASED. Required when the rule type is TYPE_STATS_BASED.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title for the rule.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The type of the rule.
   """
@@ -36,6 +38,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cogsBasedRule => GoogleApi.Content.V21.Model.RepricingRuleCostOfGoodsSaleRule.t(),
           :countryCode => String.t(),
           :effectiveTimePeriod => GoogleApi.Content.V21.Model.RepricingRuleEffectiveTime.t(),
           :eligibleOfferMatcher =>
@@ -45,10 +48,12 @@ defmodule GoogleApi.Content.V21.Model.RepricingRule do
           :paused => boolean(),
           :restriction => GoogleApi.Content.V21.Model.RepricingRuleRestriction.t(),
           :ruleId => String.t(),
+          :statsBasedRule => GoogleApi.Content.V21.Model.RepricingRuleStatsBasedRule.t(),
           :title => String.t(),
           :type => String.t()
         }
 
+  field(:cogsBasedRule, as: GoogleApi.Content.V21.Model.RepricingRuleCostOfGoodsSaleRule)
   field(:countryCode)
   field(:effectiveTimePeriod, as: GoogleApi.Content.V21.Model.RepricingRuleEffectiveTime)
   field(:eligibleOfferMatcher, as: GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher)
@@ -57,6 +62,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRule do
   field(:paused)
   field(:restriction, as: GoogleApi.Content.V21.Model.RepricingRuleRestriction)
   field(:ruleId)
+  field(:statsBasedRule, as: GoogleApi.Content.V21.Model.RepricingRuleStatsBasedRule)
   field(:title)
   field(:type)
 end

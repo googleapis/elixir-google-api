@@ -26,6 +26,7 @@ defmodule GoogleApi.Content.V21.Model.OrdersUpdateShipmentRequest do
   *   `lastPickupDate` (*type:* `String.t`, *default:* `nil`) - Date after which the pickup will expire, in ISO 8601 format. Required only when order is buy-online-pickup-in-store(BOPIS) and `status` is `ready for pickup`.
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
   *   `readyPickupDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been ready for pickup, in ISO 8601 format. Optional and can be provided only if `status` is `ready for pickup`.
+  *   `scheduledDeliveryDetails` (*type:* `GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryUpdateShipmentScheduledDeliveryDetails.t`, *default:* `nil`) - Delivery details of the shipment if scheduling is needed.
   *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - The ID of the shipment.
   *   `status` (*type:* `String.t`, *default:* `nil`) - New status for the shipment. Not updated if missing. Acceptable values are: - "`delivered`" - "`undeliverable`" - "`readyForPickup`" 
   *   `trackingId` (*type:* `String.t`, *default:* `nil`) - The tracking ID for the shipment. Not updated if missing.
@@ -40,6 +41,8 @@ defmodule GoogleApi.Content.V21.Model.OrdersUpdateShipmentRequest do
           :lastPickupDate => String.t(),
           :operationId => String.t(),
           :readyPickupDate => String.t(),
+          :scheduledDeliveryDetails =>
+            GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryUpdateShipmentScheduledDeliveryDetails.t(),
           :shipmentId => String.t(),
           :status => String.t(),
           :trackingId => String.t(),
@@ -51,6 +54,12 @@ defmodule GoogleApi.Content.V21.Model.OrdersUpdateShipmentRequest do
   field(:lastPickupDate)
   field(:operationId)
   field(:readyPickupDate)
+
+  field(:scheduledDeliveryDetails,
+    as:
+      GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryUpdateShipmentScheduledDeliveryDetails
+  )
+
   field(:shipmentId)
   field(:status)
   field(:trackingId)
