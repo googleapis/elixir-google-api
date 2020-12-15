@@ -23,7 +23,10 @@ defmodule GoogleApi.LocalServices.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [],
+    scopes: [
+      # Manage your AdWords campaigns
+      "https://www.googleapis.com/auth/adwords"
+    ],
     otp_app: :google_api_local_services,
     base_url: "https://localservices.googleapis.com/"
 end
