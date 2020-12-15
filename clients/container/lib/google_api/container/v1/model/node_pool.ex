@@ -33,7 +33,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   *   `podIpv4CidrSize` (*type:* `integer()`, *default:* `nil`) - [Output only] The pod CIDR block size per node in this node pool.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output only] The status of the nodes in this pool instance.
-  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Additional information about the current status of this node pool instance, if available.
+  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated. Use conditions instead. Additional information about the current status of this node pool instance, if available.
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the Kubernetes of this node.
   """

@@ -29,7 +29,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `nodeIpv4CidrSize` (*type:* `integer()`, *default:* `nil`) - [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the `container_ipv4_cidr` range. This field will only be set when cluster is in route-based network mode.
   *   `legacyAbac` (*type:* `GoogleApi.Container.V1.Model.LegacyAbac.t`, *default:* `nil`) - Configuration for the legacy ABAC authorization mode.
   *   `shieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Shielded Nodes configuration.
-  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Additional information about the current status of this cluster, if available.
+  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated. Use conditions instead. Additional information about the current status of this cluster, if available.
   *   `createTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster was created, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `currentNodeVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated, use [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools) instead. The current version of the node software components. If they are currently at multiple versions because they're in the process of being upgraded, this reflects the minimum version of all nodes.
   *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.

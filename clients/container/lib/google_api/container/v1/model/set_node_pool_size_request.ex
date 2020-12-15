@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.SetNodePoolSizeRequest do
   @moduledoc """
-  SetNodePoolSizeRequest sets the size a node pool.
+  SetNodePoolSizeRequest sets the size of a node pool.
 
   ## Attributes
 

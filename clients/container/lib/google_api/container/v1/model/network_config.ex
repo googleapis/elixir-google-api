@@ -24,6 +24,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   *   `defaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when default_snat_status is disabled. When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic.
   *   `enableIntraNodeVisibility` (*type:* `boolean()`, *default:* `nil`) - Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
+  *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services. By default, no private IPv6 access to or from Google Services (all access will be via IPv4)
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected. Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
           :defaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t(),
           :enableIntraNodeVisibility => boolean(),
           :network => String.t(),
+          :privateIpv6GoogleAccess => String.t(),
           :subnetwork => String.t()
         }
 
   field(:defaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
   field(:enableIntraNodeVisibility)
   field(:network)
+  field(:privateIpv6GoogleAccess)
   field(:subnetwork)
 end
 

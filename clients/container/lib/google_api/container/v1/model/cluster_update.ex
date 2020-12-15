@@ -37,6 +37,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredNodePoolId` (*type:* `String.t`, *default:* `nil`) - The node pool to be upgraded. This field is mandatory if "desired_node_version", "desired_image_family" or "desired_node_pool_autoscaling" is specified and there is more than one node pool on the cluster.
   *   `desiredNodeVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the nodes to (typically an upgrade). Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the Kubernetes master version
   *   `desiredPrivateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - The desired private cluster configuration.
+  *   `desiredPrivateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services.
   *   `desiredReleaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - The desired release channel configuration.
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
@@ -65,6 +66,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredNodePoolId => String.t(),
           :desiredNodeVersion => String.t(),
           :desiredPrivateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t(),
+          :desiredPrivateIpv6GoogleAccess => String.t(),
           :desiredReleaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t(),
           :desiredResourceUsageExportConfig =>
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t(),
@@ -99,6 +101,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredNodePoolId)
   field(:desiredNodeVersion)
   field(:desiredPrivateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)
+  field(:desiredPrivateIpv6GoogleAccess)
   field(:desiredReleaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
 
   field(:desiredResourceUsageExportConfig,
