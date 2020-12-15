@@ -1973,7 +1973,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Sets the size for a specific node pool.
+  Sets the size for a specific node pool. The new size will be used for all replicas, including future replicas created by modifying NodePool.locations.
 
   ## Parameters
 
@@ -4415,7 +4415,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   end
 
   @doc """
-  Sets the size for a specific node pool.
+  Sets the size for a specific node pool. The new size will be used for all replicas, including future replicas created by modifying NodePool.locations.
 
   ## Parameters
 
