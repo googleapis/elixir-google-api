@@ -33,7 +33,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Connection do
       # View Google Analytics user permissions
       "https://www.googleapis.com/auth/analytics.manage.users.readonly",
 
-      # View your Google Analytics data
+      # See and download your Google Analytics data
       "https://www.googleapis.com/auth/analytics.readonly"
     ],
     otp_app: :google_api_analytics_admin,

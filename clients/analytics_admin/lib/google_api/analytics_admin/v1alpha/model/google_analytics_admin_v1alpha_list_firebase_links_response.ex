@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaList
   ## Attributes
 
   *   `firebaseLinks` (*type:* `list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t)`, *default:* `nil`) - List of FirebaseLinks. This will have at most one value.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. Currently, Google Analytics supports only one FirebaseLink per property, so this will never be populated.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,13 +31,16 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaList
           :firebaseLinks =>
             list(
               GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t()
-            )
+            ),
+          :nextPageToken => String.t()
         }
 
   field(:firebaseLinks,
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink,
     type: :list
   )
+
+  field(:nextPageToken)
 end
 
 defimpl Poison.Decoder,
