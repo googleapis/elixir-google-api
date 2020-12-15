@@ -123,6 +123,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:skipVerification` (*type:* `boolean()`) - Whether to skip the verification step (VESS).
       *   `:syncMode` (*type:* `String.t`) - External sync mode.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -160,6 +161,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :skipVerification => :query,
       :syncMode => :query
     }
 

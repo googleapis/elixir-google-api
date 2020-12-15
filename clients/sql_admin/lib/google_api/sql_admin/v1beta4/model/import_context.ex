@@ -27,7 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
   *   `fileType` (*type:* `String.t`, *default:* `nil`) - The file type for the specified uri. *SQL*: The file contains SQL statements. *CSV*: The file contains CSV data.
   *   `importUser` (*type:* `String.t`, *default:* `nil`) - The PostgreSQL user for this import operation. PostgreSQL instances only.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#importContext*.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Path to the import file in Cloud Storage, in the form *gs: //bucketName/fileName*. Compressed gzip files (.gz) are supported // when *fileType* is *SQL*. The instance must have // write permissions to the bucket and read access to the file.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Path to the import file in Cloud Storage, in the form *gs://bucketName/fileName*. Compressed gzip files (.gz) are supported when *fileType* is *SQL*. The instance must have write permissions to the bucket and read access to the file.
   """
 
   use GoogleApi.Gax.ModelBase
