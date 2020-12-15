@@ -32,7 +32,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
   *   `sourceProvenanceHash` (*type:* `list(String.t)`, *default:* `nil`) - Requested hash for SourceProvenance.
   *   `substitutionOption` (*type:* `String.t`, *default:* `nil`) - Option to specify behavior when there is an error in the substitution checks. NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot be overridden in the build configuration file.
   *   `volumes` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Volume.t)`, *default:* `nil`) - Global list of volumes to mount for ALL build steps Each volume is created as an empty volume prior to starting the build process. Upon completion of the build, volumes and their contents are discarded. Global volume names and paths cannot conflict with the volumes defined a build step. Using a global volume in a build with only one step is not valid as it is indicative of a build request with an incorrect configuration.
-  *   `workerPool` (*type:* `String.t`, *default:* `nil`) - Option to specify a `WorkerPool` for the build. Format: projects/{project}/locations/{location}/workerPools/{workerPool} This field is experimental.
+  *   `workerPool` (*type:* `String.t`, *default:* `nil`) - Option to specify a `WorkerPool` for the build. Format: projects/{project}/locations/{location}/workerPools/{workerPool} This field is in beta and is available only to restricted users.
   """
 
   use GoogleApi.Gax.ModelBase

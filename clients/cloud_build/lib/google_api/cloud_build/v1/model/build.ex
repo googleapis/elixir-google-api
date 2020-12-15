@@ -35,7 +35,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
   *   `queueTtl` (*type:* `String.t`, *default:* `nil`) - TTL in queue for this build. If provided and the build is enqueued longer than this value, the build will expire and the build status will be `EXPIRED`. The TTL starts ticking from create_time.
   *   `results` (*type:* `GoogleApi.CloudBuild.V1.Model.Results.t`, *default:* `nil`) - Output only. Results of the build.
   *   `secrets` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Secret.t)`, *default:* `nil`) - Secrets to decrypt using Cloud Key Management Service.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - IAM service account whose credentials will be used at build runtime. Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. ACCOUNT can be email address or uniqueId of the service account. This field is in alpha and is not publicly available.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - IAM service account whose credentials will be used at build runtime. Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. ACCOUNT can be email address or uniqueId of the service account. This field is in beta.
   *   `source` (*type:* `GoogleApi.CloudBuild.V1.Model.Source.t`, *default:* `nil`) - The location of the source files to build.
   *   `sourceProvenance` (*type:* `GoogleApi.CloudBuild.V1.Model.SourceProvenance.t`, *default:* `nil`) - Output only. A permanent fixed identifier for source.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which execution of the build was started.
