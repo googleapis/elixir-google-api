@@ -21,22 +21,19 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Creat
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the operation.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the current disable processor operation.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update time of the operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+          :commonMetadata =>
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
         }
 
-  field(:createTime, as: DateTime)
-  field(:state)
-  field(:updateTime, as: DateTime)
+  field(:commonMetadata,
+    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
+  )
 end
 
 defimpl Poison.Decoder,
