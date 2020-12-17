@@ -165,7 +165,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Agent.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Agent.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -211,7 +211,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Exports the specified agent to a ZIP file. Operation 
+  Exports the specified agent to a ZIP file. Operation
 
   ## Parameters
 
@@ -229,7 +229,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ExportAgentRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ExportAgentRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -436,7 +436,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ImportAgentRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ImportAgentRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -499,7 +499,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2RestoreAgentRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2RestoreAgentRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -610,7 +610,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Trains the specified agent. Operation 
+  Trains the specified agent. Operation
 
   ## Parameters
 
@@ -628,7 +628,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TrainAgentRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TrainAgentRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -692,7 +692,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields get updated. If the mask is not present, all fields will be updated.
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Fulfillment.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -748,7 +748,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Deletes entity types in the specified agent. Operation 
+  Deletes entity types in the specified agent. Operation
 
   ## Parameters
 
@@ -766,7 +766,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteEntityTypesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteEntityTypesRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -821,7 +821,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates/Creates multiple entity types in the specified agent. Operation 
+  Updates/Creates multiple entity types in the specified agent. Operation
 
   ## Parameters
 
@@ -839,7 +839,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateEntityTypesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateEntityTypesRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -913,7 +913,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1209,7 +1209,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1266,7 +1266,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Creates multiple new entities in the specified entity type. Operation 
+  Creates multiple new entities in the specified entity type. Operation
 
   ## Parameters
 
@@ -1284,7 +1284,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchCreateEntitiesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchCreateEntitiesRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1339,7 +1339,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Deletes entities in the specified entity type. Operation 
+  Deletes entities in the specified entity type. Operation
 
   ## Parameters
 
@@ -1357,7 +1357,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteEntitiesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteEntitiesRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1412,7 +1412,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates or creates multiple entities in the specified entity type. This method does not affect entities in the entity type that aren't explicitly specified in the request. Operation 
+  Updates or creates multiple entities in the specified entity type. This method does not affect entities in the entity type that aren't explicitly specified in the request. Operation
 
   ## Parameters
 
@@ -1430,7 +1430,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateEntitiesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateEntitiesRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1648,7 +1648,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1689,7 +1689,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{+session}:detectIntent", %{
+      |> Request.url("/v2beta1/{+session}:detectIntent", %{
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1722,7 +1722,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2012,7 +2012,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2086,7 +2086,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2380,7 +2380,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2436,7 +2436,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Deletes intents in the specified agent. Operation 
+  Deletes intents in the specified agent. Operation
 
   ## Parameters
 
@@ -2454,7 +2454,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteIntentsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteIntentsRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2509,7 +2509,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   end
 
   @doc """
-  Updates/Creates multiple intents in the specified agent. Operation 
+  Updates/Creates multiple intents in the specified agent. Operation
 
   ## Parameters
 
@@ -2527,7 +2527,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateIntentsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateIntentsRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2602,7 +2602,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
       *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2899,7 +2899,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
       *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data. If not specified, the agent's default language is used. For more information, see [Multilingual intent and entity data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3039,7 +3039,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3113,7 +3113,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3403,7 +3403,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3477,7 +3477,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3771,7 +3771,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
-      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t`) - 
+      *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
