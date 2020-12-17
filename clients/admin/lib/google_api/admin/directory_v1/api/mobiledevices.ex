@@ -268,7 +268,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
       *   `:orderBy` (*type:* `String.t`) - Device property to use for sorting results.
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
-      *   `:query` (*type:* `String.t`) - Search string in the format given at http://support.google.com/a/bin/answer.py?answer=1408863#search
+      *   `:query` (*type:* `String.t`) - Search string in the format given at https://developers.google.com/admin-sdk/directory/v1/search-operators
       *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Must be used with the `orderBy` parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
