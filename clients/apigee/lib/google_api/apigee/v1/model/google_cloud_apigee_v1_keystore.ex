@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Keystore do
   @moduledoc """
-  A datastore for Certificates and Aliases
+  Datastore for Certificates and Aliases.
 
   ## Attributes
 
-  *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The aliases in this keystore.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource ID for this keystore. Values must match the regular expression `[\\w[:space:]-.]{1,255}`.
+  *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Aliases in this keystore.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource ID for this keystore. Values must match the regular expression `[\\w[:space:]-.]{1,255}`.
   """
 
   use GoogleApi.Gax.ModelBase

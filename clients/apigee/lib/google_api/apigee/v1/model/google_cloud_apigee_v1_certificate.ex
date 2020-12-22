@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Certificate do
 
   ## Attributes
 
-  *   `certInfo` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CertInfo.t)`, *default:* `nil`) - The chain of certificates under this name.
+  *   `certInfo` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CertInfo.t)`, *default:* `nil`) - Chain of certificates under this name.
   """
 
   use GoogleApi.Gax.ModelBase
