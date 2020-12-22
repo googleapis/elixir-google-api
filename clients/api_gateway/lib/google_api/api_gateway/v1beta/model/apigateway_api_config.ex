@@ -23,10 +23,11 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfig do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name.
-  *   `gatewayConfig` (*type:* `GoogleApi.APIGateway.V1beta.Model.ApigatewayGatewayConfig.t`, *default:* `nil`) - Immutable. Gateway specific configuration. If not specified, backend authentication will be set to use OIDC authentication using the default compute service account.
+  *   `gatewayConfig` (*type:* `GoogleApi.APIGateway.V1beta.Model.ApigatewayGatewayConfig.t`, *default:* `nil`) - Immutable. Gateway specific configuration.
+  *   `gatewayServiceAccount` (*type:* `String.t`, *default:* `nil`) - Immutable. The Google Cloud IAM Service Account that Gateways serving this config should use to authenticate to other services. This may either be the Service Account's email (`{ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com`) or its full resource name (`projects/{PROJECT}/accounts/{UNIQUE_ID}`). This is most often used when the service is a GCP resource such as a Cloud Run Service or an IAP-secured service.
   *   `grpcServices` (*type:* `list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigGrpcServiceDefinition.t)`, *default:* `nil`) - Optional. gRPC service definition files. If specified, openapi_documents must not be included.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
-  *   `managedServiceConfigs` (*type:* `list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t)`, *default:* `nil`) - Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https: //cloud.google.com/endpoints/docs/grpc/g // rpc-service-config#service_configuration_overview for the expected file contents. If multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using "last one wins" semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields.
+  *   `managedServiceConfigs` (*type:* `list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t)`, *default:* `nil`) - Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview for the expected file contents. If multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using "last one wins" semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the API Config. Format: projects/{project}/locations/global/apis/{api}/configs/{api_config}
   *   `openapiDocuments` (*type:* `list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigOpenApiDocument.t)`, *default:* `nil`) - Optional. OpenAPI specification documents. If specified, grpc_services and managed_service_configs must not be included.
   *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the associated Service Config ( https://cloud.google.com/service-infrastructure/docs/glossary#config).
@@ -40,6 +41,7 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfig do
           :createTime => DateTime.t(),
           :displayName => String.t(),
           :gatewayConfig => GoogleApi.APIGateway.V1beta.Model.ApigatewayGatewayConfig.t(),
+          :gatewayServiceAccount => String.t(),
           :grpcServices =>
             list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigGrpcServiceDefinition.t()),
           :labels => map(),
@@ -56,6 +58,7 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfig do
   field(:createTime, as: DateTime)
   field(:displayName)
   field(:gatewayConfig, as: GoogleApi.APIGateway.V1beta.Model.ApigatewayGatewayConfig)
+  field(:gatewayServiceAccount)
 
   field(:grpcServices,
     as: GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigGrpcServiceDefinition,
