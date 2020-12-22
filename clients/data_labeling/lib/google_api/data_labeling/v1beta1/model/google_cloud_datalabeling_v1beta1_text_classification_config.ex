@@ -23,7 +23,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Tex
 
   *   `allowMultiLabel` (*type:* `boolean()`, *default:* `nil`) - Optional. If allow_multi_label is true, contributors are able to choose multiple labels for one text segment.
   *   `annotationSpecSet` (*type:* `String.t`, *default:* `nil`) - Required. Annotation spec set resource name.
-  *   `sentimentConfig` (*type:* `GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1SentimentConfig.t`, *default:* `nil`) - Optional. Configs for sentiment selection.
+  *   `sentimentConfig` (*type:* `GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1SentimentConfig.t`, *default:* `nil`) - Optional. Configs for sentiment selection. We deprecate sentiment analysis in data labeling side as it is incompatible with uCAIP.
   """
 
   use GoogleApi.Gax.ModelBase
