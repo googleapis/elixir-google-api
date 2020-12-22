@@ -22,6 +22,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Action do
   ## Attributes
 
   *   `alwaysRun` (*type:* `boolean()`, *default:* `nil`) - By default, after an action fails, no further actions are run. This flag indicates that this action must be run even if the pipeline has already failed. This is useful for actions that copy output files off of the VM or for debugging. Note that no actions will be run if image prefetching fails.
+  *   `blockExternalNetwork` (*type:* `boolean()`, *default:* `nil`) - Prevents the container from accessing the external network.
   *   `commands` (*type:* `list(String.t)`, *default:* `nil`) - If specified, overrides the `CMD` specified in the container. If the container also has an `ENTRYPOINT` the values are used as entrypoint arguments. Otherwise, they are used as a command and arguments to run inside the container.
   *   `containerName` (*type:* `String.t`, *default:* `nil`) - An optional name for the container. The container hostname will be set to this name, making it useful for inter-container communication. The name must contain only upper and lowercase alphanumeric characters and hyphens and cannot start with a hyphen.
   *   `credentials` (*type:* `GoogleApi.LifeSciences.V2beta.Model.Secret.t`, *default:* `nil`) - If the specified image is hosted on a private registry other than Google Container Registry, the credentials required to pull the image must be specified here as an encrypted secret. The secret must decrypt to a JSON-encoded dictionary containing both `username` and `password` keys.
@@ -45,6 +46,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Action do
 
   @type t :: %__MODULE__{
           :alwaysRun => boolean(),
+          :blockExternalNetwork => boolean(),
           :commands => list(String.t()),
           :containerName => String.t(),
           :credentials => GoogleApi.LifeSciences.V2beta.Model.Secret.t(),
@@ -65,6 +67,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Action do
         }
 
   field(:alwaysRun)
+  field(:blockExternalNetwork)
   field(:commands, type: :list)
   field(:containerName)
   field(:credentials, as: GoogleApi.LifeSciences.V2beta.Model.Secret)

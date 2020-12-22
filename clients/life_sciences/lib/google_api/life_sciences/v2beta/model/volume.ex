@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.Volume do
   @moduledoc """
-  Carries information about storage that can be attached to a VM.
+  Carries information about storage that can be attached to a VM. Specify either `Volume` or `Disk`, but not both.
 
   ## Attributes
 
