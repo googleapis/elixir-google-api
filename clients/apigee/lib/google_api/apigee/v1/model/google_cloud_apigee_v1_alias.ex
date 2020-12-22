@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Alias do
   @moduledoc """
-  A reference to a certificate or key, certificate pair.
+  Reference to a certificate or key/certificate pair.
 
   ## Attributes
 
-  *   `alias` (*type:* `String.t`, *default:* `nil`) - The resource ID for this alias. Values must match regular expression `[^/]{1,255}`.
-  *   `certsInfo` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Certificate.t`, *default:* `nil`) - The chain of certificates under this alias.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of alias.
+  *   `alias` (*type:* `String.t`, *default:* `nil`) - Resource ID for this alias. Values must match the regular expression `[^/]{1,255}`.
+  *   `certsInfo` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Certificate.t`, *default:* `nil`) - Chain of certificates under this alias.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of alias.
   """
 
   use GoogleApi.Gax.ModelBase

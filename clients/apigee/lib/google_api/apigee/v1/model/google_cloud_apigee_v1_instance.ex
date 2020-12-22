@@ -23,7 +23,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
 
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time the instance was created in milliseconds since epoch.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the instance.
-  *   `diskEncryptionKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. Customer Managed Encryption Key (CMEK) used for disk & volume encryption.
+  *   `diskEncryptionKeyName` (*type:* `String.t`, *default:* `nil`) - Customer Managed Encryption Key (CMEK) used for disk and volume encryption. Required for Apigee paid subscriptions only. Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name for the instance.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Hostname or IP address of the exposed Apigee endpoint used by clients to connect to the service.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time the instance was last modified in milliseconds since epoch.
