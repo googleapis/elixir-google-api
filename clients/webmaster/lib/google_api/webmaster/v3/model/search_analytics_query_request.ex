@@ -26,6 +26,7 @@ defmodule GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryRequest do
       Note: If you group or filter by page, you cannot aggregate by property.
 
       If you specify any value other than AUTO, the aggregation type in the result will match the requested type, or if you request an invalid type, you will get an error. The API will never change your aggregation type if the requested type is invalid.
+  *   `dataState` (*type:* `String.t`, *default:* `nil`) - [Optional] If "all" (case-insensitive), data will include fresh data. If "final" (case-insensitive) or if this parameter is omitted, the returned data will include only finalized data.
   *   `dimensionFilterGroups` (*type:* `list(GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup.t)`, *default:* `nil`) - [Optional] Zero or more filters to apply to the dimension grouping values; for example, 'query contains "buy"' to see only data where the query string contains the substring "buy" (not case-sensitive). You can filter by a dimension without grouping by it.
   *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - [Optional] Zero or more dimensions to group results by. Dimensions are the group-by values in the Search Analytics page. Dimensions are combined to create a unique row key for each row. Results are grouped in the order that you supply these dimensions.
   *   `endDate` (*type:* `String.t`, *default:* `nil`) - [Required] End date of the requested date range, in YYYY-MM-DD format, in PST (UTC - 8:00). Must be greater than or equal to the start date. This value is included in the range.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryRequest do
 
   @type t :: %__MODULE__{
           :aggregationType => String.t(),
+          :dataState => String.t(),
           :dimensionFilterGroups =>
             list(GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup.t()),
           :dimensions => list(String.t()),
@@ -50,6 +52,7 @@ defmodule GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryRequest do
         }
 
   field(:aggregationType)
+  field(:dataState)
 
   field(:dimensionFilterGroups,
     as: GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup,
