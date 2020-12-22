@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.Disk do
   @moduledoc """
-  Carries information about a disk that can be attached to a VM. See https://cloud.google.com/compute/docs/disks/performance for more information about disk type, size, and performance considerations.
+  Carries information about a disk that can be attached to a VM. See https://cloud.google.com/compute/docs/disks/performance for more information about disk type, size, and performance considerations. Specify either `Volume` or `Disk`, but not both.
 
   ## Attributes
 
