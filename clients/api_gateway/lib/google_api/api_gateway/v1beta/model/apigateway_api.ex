@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayApi do
   @moduledoc """
-  A consumable API that can be used by multiple Gateways.
+  An API that can be served by one or more Gateways.
 
   ## Attributes
 
