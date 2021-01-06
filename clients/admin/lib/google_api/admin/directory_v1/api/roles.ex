@@ -31,7 +31,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `role_id` (*type:* `String.t`) - Immutable ID of the role.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -90,7 +90,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `role_id` (*type:* `String.t`) - Immutable ID of the role.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -151,7 +151,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -212,7 +212,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -275,7 +275,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `role_id` (*type:* `String.t`) - Immutable ID of the role.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -338,7 +338,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `role_id` (*type:* `String.t`) - Immutable ID of the role.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

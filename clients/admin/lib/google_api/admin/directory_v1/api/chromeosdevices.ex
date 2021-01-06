@@ -31,7 +31,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
   *   `resource_id` (*type:* `String.t`) - The unique ID of the device. The `resourceId`s are returned in the response from the [chromeosdevices.list](/admin-sdk/directory/v1/reference/chromeosdevices/list) method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -106,7 +106,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
   *   `device_id` (*type:* `String.t`) - The unique ID of the device. The `deviceId`s are returned in the response from the [chromeosdevices.list](/admin-sdk/directory/v1/reference/chromeosdevices/list) method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -181,7 +181,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -254,7 +254,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account
+  *   `customer_id` (*type:* `String.t`) - Immutable ID of the Google Workspace account
   *   `org_unit_path` (*type:* `String.t`) - Full path of the target organizational unit or its ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -329,7 +329,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
   *   `device_id` (*type:* `String.t`) - The unique ID of the device. The `deviceId`s are returned in the response from the [chromeosdevices.list](/admin-sdk/v1/reference/chromeosdevices/list) method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -406,7 +406,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's G Suite account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
+  *   `customer_id` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
   *   `device_id` (*type:* `String.t`) - The unique ID of the device. The `deviceId`s are returned in the response from the [chromeosdevices.list](/admin-sdk/v1/reference/chromeosdevices/list) method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
