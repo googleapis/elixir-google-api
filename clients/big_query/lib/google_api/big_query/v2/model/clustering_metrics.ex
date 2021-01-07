@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ClusteringMetrics do
 
   ## Attributes
 
-  *   `clusters` (*type:* `list(GoogleApi.BigQuery.V2.Model.Cluster.t)`, *default:* `nil`) - [Beta] Information for all clusters.
+  *   `clusters` (*type:* `list(GoogleApi.BigQuery.V2.Model.Cluster.t)`, *default:* `nil`) - Information for all clusters.
   *   `daviesBouldinIndex` (*type:* `float()`, *default:* `nil`) - Davies-Bouldin index.
   *   `meanSquaredDistance` (*type:* `float()`, *default:* `nil`) - Mean of squared distances between each sample to its cluster centroid.
   """

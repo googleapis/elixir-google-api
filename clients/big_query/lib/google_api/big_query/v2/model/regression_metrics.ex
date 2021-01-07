@@ -25,7 +25,7 @@ defmodule GoogleApi.BigQuery.V2.Model.RegressionMetrics do
   *   `meanSquaredError` (*type:* `float()`, *default:* `nil`) - Mean squared error.
   *   `meanSquaredLogError` (*type:* `float()`, *default:* `nil`) - Mean squared log error.
   *   `medianAbsoluteError` (*type:* `float()`, *default:* `nil`) - Median absolute error.
-  *   `rSquared` (*type:* `float()`, *default:* `nil`) - R^2 score.
+  *   `rSquared` (*type:* `float()`, *default:* `nil`) - R^2 score. This corresponds to r2_score in ML.EVALUATE.
   """
 
   use GoogleApi.Gax.ModelBase

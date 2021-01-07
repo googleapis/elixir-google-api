@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   @moduledoc """
-
+  Options used in model training.
 
   ## Attributes
 
   *   `subsample` (*type:* `float()`, *default:* `nil`) - Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models.
   *   `horizon` (*type:* `String.t`, *default:* `nil`) - The number of periods ahead that need to be forecasted.
-  *   `modelUri` (*type:* `String.t`, *default:* `nil`) - [Beta] Google Cloud Storage URI from which the model was imported. Only applicable for imported models.
+  *   `modelUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI from which the model was imported. Only applicable for imported models.
   *   `includeDrift` (*type:* `boolean()`, *default:* `nil`) - Include drift when fitting an ARIMA model.
   *   `autoArima` (*type:* `boolean()`, *default:* `nil`) - Whether to enable auto ARIMA or not.
   *   `learnRateStrategy` (*type:* `String.t`, *default:* `nil`) - The strategy to determine learn rate for the current iteration.
