@@ -32,7 +32,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.Alert do
   *   `securityInvestigationToolLink` (*type:* `String.t`, *default:* `nil`) - Output only. An optional [Security Investigation Tool](https://support.google.com/a/answer/7575955) query for this alert.
   *   `source` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the system that reported the alert. This is output only after alert is created. Supported sources are any of the following: * Google Operations * Mobile device management * Gmail phishing * Domain wide takeout * State sponsored attack * Google identity
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The time the event that caused this alert was started or detected.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the alert. This is output only after alert is created. For a list of available alert types see [G Suite Alert types](/admin-sdk/alertcenter/reference/alert-types).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the alert. This is output only after alert is created. For a list of available alert types see [Google Workspace Alert types](/admin-sdk/alertcenter/reference/alert-types).
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this alert was last updated.
   """
 

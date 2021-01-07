@@ -1,6 +1,6 @@
 # GoogleApi.AlertCenter
 
-G Suite Alert Center API client library.
+Google Workspace Alert Center API client library.
 
 Manages alerts on issues affecting your domain.
 

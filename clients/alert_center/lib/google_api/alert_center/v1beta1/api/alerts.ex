@@ -164,7 +164,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the G Suite organization account of the customer the alert is associated with. Inferred from the caller identity if not provided.
+      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the Google Workspace organization account of the customer the alert is associated with. Inferred from the caller identity if not provided.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -225,7 +225,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the G Suite organization account of the customer the alert is associated with. Inferred from the caller identity if not provided.
+      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the Google Workspace organization account of the customer the alert is associated with. Inferred from the caller identity if not provided.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -286,7 +286,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the G Suite organization account of the customer the alert metadata is associated with. Inferred from the caller identity if not provided.
+      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the Google Workspace organization account of the customer the alert metadata is associated with. Inferred from the caller identity if not provided.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -346,7 +346,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the G Suite organization account of the customer the alerts are associated with. Inferred from the caller identity if not provided.
+      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the Google Workspace organization account of the customer the alerts are associated with. Inferred from the caller identity if not provided.
       *   `:filter` (*type:* `String.t`) - Optional. A query string for filtering alert results. For more details, see [Query filters](/admin-sdk/alertcenter/guides/query-filters) and [Supported query filter fields](/admin-sdk/alertcenter/reference/filter-fields#alerts.list).
       *   `:orderBy` (*type:* `String.t`) - Optional. The sort order of the list results. If not specified results may be returned in arbitrary order. You can sort the results in descending order based on the creation timestamp using `order_by="create_time desc"`. Currently, supported sorting are `create_time asc`, `create_time desc`, `update_time desc`
       *   `:pageSize` (*type:* `integer()`) - Optional. The requested page size. Server may return fewer items than requested. If unspecified, server picks an appropriate default.
@@ -476,7 +476,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the G Suite organization account of the customer the alert is associated with. Inferred from the caller identity if not provided.
+      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the Google Workspace organization account of the customer the alert is associated with. Inferred from the caller identity if not provided.
       *   `:body` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -539,7 +539,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the G Suite organization account of the customer the alert feedback are associated with. Inferred from the caller identity if not provided.
+      *   `:customerId` (*type:* `String.t`) - Optional. The unique identifier of the Google Workspace organization account of the customer the alert feedback are associated with. Inferred from the caller identity if not provided.
       *   `:filter` (*type:* `String.t`) - Optional. A query string for filtering alert feedback results. For more details, see [Query filters](/admin-sdk/alertcenter/guides/query-filters) and [Supported query filter fields](/admin-sdk/alertcenter/reference/filter-fields#alerts.feedback.list).
   *   `opts` (*type:* `keyword()`) - Call options
 
