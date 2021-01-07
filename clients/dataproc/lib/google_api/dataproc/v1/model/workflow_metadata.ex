@@ -26,7 +26,7 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
   *   `createCluster` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterOperation.t`, *default:* `nil`) - Output only. The create cluster operation metadata.
   *   `dagEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. DAG end time, only set for workflows with dag_timeout when DAG ends.
   *   `dagStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. DAG start time, only set for workflows with dag_timeout when DAG begins.
-  *   `dagTimeout` (*type:* `String.t`, *default:* `nil`) - Output only. The timeout duration for the DAG of jobs.
+  *   `dagTimeout` (*type:* `String.t`, *default:* `nil`) - Output only. The timeout duration for the DAG of jobs, expressed in seconds (see JSON representation of duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).
   *   `deleteCluster` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterOperation.t`, *default:* `nil`) - Output only. The delete cluster operation metadata.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Workflow end time.
   *   `graph` (*type:* `GoogleApi.Dataproc.V1.Model.WorkflowGraph.t`, *default:* `nil`) - Output only. The workflow graph.
