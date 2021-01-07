@@ -95,7 +95,8 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
       - ALL_IN_DOMAIN_CAN_CONTACT 
       - ALL_MANAGERS_CAN_CONTACT 
       - ALL_MEMBERS_CAN_CONTACT 
-      - ANYONE_CAN_CONTACT
+      - ANYONE_CAN_CONTACT 
+      - ALL_OWNERS_CAN_CONTACT
   *   `whoCanModerateMembers` (*type:* `String.t`, *default:* `nil`) - Specifies who can manage members. Possible values are:  
       - ALL_MEMBERS 
       - OWNERS_AND_MANAGERS 

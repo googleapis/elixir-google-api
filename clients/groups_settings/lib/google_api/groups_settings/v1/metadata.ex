@@ -20,7 +20,7 @@ defmodule GoogleApi.GroupsSettings.V1 do
   API client metadata for GoogleApi.GroupsSettings.V1.
   """
 
-  @discovery_revision "20200723"
+  @discovery_revision "20201231"
 
   def discovery_revision(), do: @discovery_revision
 end
