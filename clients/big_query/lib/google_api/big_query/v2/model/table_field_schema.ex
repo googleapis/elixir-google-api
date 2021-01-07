@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
   *   `mode` (*type:* `String.t`, *default:* `nil`) - [Optional] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE.
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 128 characters.
   *   `policyTags` (*type:* `GoogleApi.BigQuery.V2.Model.TableFieldSchemaPolicyTags.t`, *default:* `nil`) - 
-  *   `type` (*type:* `String.t`, *default:* `nil`) - [Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - [Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), NUMERIC, BIGNUMERIC, BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD).
   """
 
   use GoogleApi.Gax.ModelBase
