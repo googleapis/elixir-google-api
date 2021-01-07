@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview](https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview).
+Product documentation is available at [https://cloud.google.com/security-command-center](https://cloud.google.com/security-command-center).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_security_center](https://hexdocs.pm/google_api_security_center).

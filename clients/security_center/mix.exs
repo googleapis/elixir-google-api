@@ -59,7 +59,7 @@ defmodule GoogleApi.SecurityCenter.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/security_center",
-        "Homepage" => "https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview"
+        "Homepage" => "https://cloud.google.com/security-command-center"
       }
     ]
   end
