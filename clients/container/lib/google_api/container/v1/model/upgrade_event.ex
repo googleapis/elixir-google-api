@@ -21,12 +21,12 @@ defmodule GoogleApi.Container.V1.Model.UpgradeEvent do
 
   ## Attributes
 
-  *   `currentVersion` (*type:* `String.t`, *default:* `nil`) - Required. The current version before the upgrade.
-  *   `operation` (*type:* `String.t`, *default:* `nil`) - Required. The operation associated with this upgrade.
-  *   `operationStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The time when the operation was started.
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - Optional. Optional relative path to the resource. For example in node pool upgrades, the relative path of the node pool.
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Required. The resource type that is upgrading.
-  *   `targetVersion` (*type:* `String.t`, *default:* `nil`) - Required. The target version for the upgrade.
+  *   `currentVersion` (*type:* `String.t`, *default:* `nil`) - The current version before the upgrade.
+  *   `operation` (*type:* `String.t`, *default:* `nil`) - The operation associated with this upgrade.
+  *   `operationStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the operation was started.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - Optional relative path to the resource. For example in node pool upgrades, the relative path of the node pool.
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The resource type that is upgrading.
+  *   `targetVersion` (*type:* `String.t`, *default:* `nil`) - The target version for the upgrade.
   """
 
   use GoogleApi.Gax.ModelBase
