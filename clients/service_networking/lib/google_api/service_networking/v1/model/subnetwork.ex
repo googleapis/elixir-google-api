@@ -25,6 +25,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Subnetwork do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Subnetwork name. See https://cloud.google.com/compute/docs/vpc/
   *   `network` (*type:* `String.t`, *default:* `nil`) - In the Shared VPC host project, the VPC network that's peered with the consumer network. For example: `projects/1234321/global/networks/host-network`
   *   `outsideAllocation` (*type:* `boolean()`, *default:* `nil`) - This is a discovered subnet that is not within the current consumer allocated ranges.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - GCP region where the subnetwork is located.
   *   `secondaryIpRanges` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRange.t)`, *default:* `nil`) - List of secondary IP ranges in this subnetwork.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Subnetwork do
           :name => String.t(),
           :network => String.t(),
           :outsideAllocation => boolean(),
+          :region => String.t(),
           :secondaryIpRanges => list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRange.t())
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Subnetwork do
   field(:name)
   field(:network)
   field(:outsideAllocation)
+  field(:region)
 
   field(:secondaryIpRanges, as: GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRange, type: :list)
 end

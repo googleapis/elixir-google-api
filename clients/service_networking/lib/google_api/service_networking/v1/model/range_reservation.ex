@@ -23,7 +23,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.RangeReservation do
 
   *   `ipPrefixLength` (*type:* `integer()`, *default:* `nil`) - Required. The size of the desired subnet. Use usual CIDR range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. The goal is to determine if one of the allocated ranges has enough free space for a subnet of the requested size.
   *   `requestedRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The name of one or more allocated IP address ranges associated with this private service access connection. If no range names are provided all ranges associated with this connection will be considered. If a CIDR range with the specified IP prefix length is not available within these ranges the validation fails.
-  *   `secondaryRangeIpPrefixLengths` (*type:* `list(integer())`, *default:* `nil`) - Optional. DO NOT USE - Under development. The size of the desired secondary ranges for the subnet. Use usual CIDR range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. The goal is to determine that the allocated ranges have enough free space for all the requested secondary ranges.
+  *   `secondaryRangeIpPrefixLengths` (*type:* `list(integer())`, *default:* `nil`) - Optional. The size of the desired secondary ranges for the subnet. Use usual CIDR range notation. For example, '30' to find unused x.x.x.x/30 CIDR range. The goal is to determine that the allocated ranges have enough free space for all the requested secondary ranges.
+  *   `subnetworkCandidates` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.Subnetwork.t)`, *default:* `nil`) - Optional. List of subnetwork candidates to validate. The required input fields are `name`, `network`, and `region`. Subnetworks from this list which exist will be returned in the response with the `ip_cidr_range`, `secondary_ip_cider_ranges`, and `outside_allocation` fields set.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.RangeReservation do
   @type t :: %__MODULE__{
           :ipPrefixLength => integer(),
           :requestedRanges => list(String.t()),
-          :secondaryRangeIpPrefixLengths => list(integer())
+          :secondaryRangeIpPrefixLengths => list(integer()),
+          :subnetworkCandidates => list(GoogleApi.ServiceNetworking.V1.Model.Subnetwork.t())
         }
 
   field(:ipPrefixLength)
   field(:requestedRanges, type: :list)
   field(:secondaryRangeIpPrefixLengths, type: :list)
+  field(:subnetworkCandidates, as: GoogleApi.ServiceNetworking.V1.Model.Subnetwork, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.RangeReservation do
