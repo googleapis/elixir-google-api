@@ -21,6 +21,7 @@ defmodule GoogleApi.DataFusion.V1.Model.OperationMetadata do
 
   ## Attributes
 
+  *   `additionalStatus` (*type:* `map()`, *default:* `nil`) - Map to hold any additonal status info for the operation If there is an accelerator being enabled/disabled/deleted, this will be populated with accelerator name as key and status as ENABLING, DISABLING or DELETING
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - API version used to start the operation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation finished running.
@@ -33,6 +34,7 @@ defmodule GoogleApi.DataFusion.V1.Model.OperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additionalStatus => map(),
           :apiVersion => String.t(),
           :createTime => DateTime.t(),
           :endTime => DateTime.t(),
@@ -42,6 +44,7 @@ defmodule GoogleApi.DataFusion.V1.Model.OperationMetadata do
           :verb => String.t()
         }
 
+  field(:additionalStatus, type: :map)
   field(:apiVersion)
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)
