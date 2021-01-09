@@ -21,16 +21,24 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ValidateConsumerConfigResponse do
 
   ## Attributes
 
-  *   `isValid` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `validationError` (*type:* `String.t`, *default:* `nil`) - 
+  *   `existingSubnetworkCandidates` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.Subnetwork.t)`, *default:* `nil`) - List of subnetwork candidates from the request which exist with the `ip_cidr_range`, `secondary_ip_cider_ranges`, and `outside_allocation` fields set.
+  *   `isValid` (*type:* `boolean()`, *default:* `nil`) - Indicates whether all the requested validations passed.
+  *   `validationError` (*type:* `String.t`, *default:* `nil`) - The first validation which failed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :existingSubnetworkCandidates =>
+            list(GoogleApi.ServiceNetworking.V1.Model.Subnetwork.t()),
           :isValid => boolean(),
           :validationError => String.t()
         }
+
+  field(:existingSubnetworkCandidates,
+    as: GoogleApi.ServiceNetworking.V1.Model.Subnetwork,
+    type: :list
+  )
 
   field(:isValid)
   field(:validationError)
