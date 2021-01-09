@@ -224,7 +224,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customFieldMask` (*type:* `String.t`) - A comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when `projection=custom`.
-      *   `:customer` (*type:* `String.t`) - The unique ID for the customer's G Suite account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users). Either the `customer` or the `domain` parameter must be provided.
+      *   `:customer` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users). Either the `customer` or the `domain` parameter must be provided.
       *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:orderBy` (*type:* `String.t`) - Property to use for sorting results.
@@ -599,7 +599,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customFieldMask` (*type:* `String.t`) - Comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when projection=custom.
-      *   `:customer` (*type:* `String.t`) - Immutable ID of the G Suite account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
+      *   `:customer` (*type:* `String.t`) - Immutable ID of the Google Workspace account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
       *   `:domain` (*type:* `String.t`) - Name of the domain. Fill this field to get users from only this domain. To return all users in a multi-domain fill customer field instead."
       *   `:event` (*type:* `String.t`) - Events to watch for.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.

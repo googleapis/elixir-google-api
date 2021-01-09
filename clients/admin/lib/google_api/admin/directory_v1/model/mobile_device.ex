@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.MobileDevice do
   @moduledoc """
-  G Suite Mobile Management includes Android, [Google Sync](http://support.google.com/a/bin/answer.py?answer=135937), and iOS devices. For more information about common group mobile device API tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-mobile-devices.html).
+  Google Workspace Mobile Management includes Android, [Google Sync](http://support.google.com/a/bin/answer.py?answer=135937), and iOS devices. For more information about common group mobile device API tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-mobile-devices.html).
 
   ## Attributes
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MobileDevice do
   *   `hardwareId` (*type:* `String.t`, *default:* `nil`) - The IMEI/MEID unique identifier for Android hardware. It is not applicable to Google Sync devices. When adding an Android mobile device, this is an optional property. When updating one of these devices, this is a read-only property.
   *   `adbStatus` (*type:* `boolean()`, *default:* `nil`) - Adb (USB debugging) enabled or disabled on device (Read-only)
   *   `wifiMacAddress` (*type:* `String.t`, *default:* `nil`) - The device's MAC address on Wi-Fi networks.
-  *   `applications` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.MobileDeviceApplications.t)`, *default:* `nil`) - The list of applications installed on an Android mobile device. It is not applicable to Google Sync and iOS devices. The list includes any Android applications that access G Suite data. When updating an applications list, it is important to note that updates replace the existing list. If the Android device has two existing applications and the API updates the list with five applications, the is now the updated list of five applications.
+  *   `applications` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.MobileDeviceApplications.t)`, *default:* `nil`) - The list of applications installed on an Android mobile device. It is not applicable to Google Sync and iOS devices. The list includes any Android applications that access Google Workspace data. When updating an applications list, it is important to note that updates replace the existing list. If the Android device has two existing applications and the API updates the list with five applications, the is now the updated list of five applications.
   *   `otherAccountsInfo` (*type:* `list(String.t)`, *default:* `nil`) - List of accounts added on device (Read-only)
   """
 

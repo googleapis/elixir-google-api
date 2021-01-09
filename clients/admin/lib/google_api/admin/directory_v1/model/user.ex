@@ -34,7 +34,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.User do
   *   `deletionTime` (*type:* `DateTime.t`, *default:* `nil`) - 
   *   `keywords` (*type:* `any()`, *default:* `nil`) - The user's keywords. The maximum allowed data size for this field is 1Kb.
   *   `isEnrolledIn2Sv` (*type:* `boolean()`, *default:* `nil`) - Output only. Is enrolled in 2-step verification (Read-only)
-  *   `includeInGlobalAddressList` (*type:* `boolean()`, *default:* `nil`) - Indicates if the user's profile is visible in the G Suite global address list when the contact sharing feature is enabled for the domain. For more information about excluding user profiles, see the [administration help center](http://support.google.com/a/bin/answer.py?answer=1285988).
+  *   `includeInGlobalAddressList` (*type:* `boolean()`, *default:* `nil`) - Indicates if the user's profile is visible in the Google Workspace global address list when the contact sharing feature is enabled for the domain. For more information about excluding user profiles, see the [administration help center](http://support.google.com/a/bin/answer.py?answer=1285988).
   *   `addresses` (*type:* `any()`, *default:* `nil`) - A list of the user's addresses. The maximum allowed data size for this field is 10Kb.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#user`) - Output only. The type of the API resource. For Users resources, the value is `admin#directory#user`.
   *   `sshPublicKeys` (*type:* `any()`, *default:* `nil`) - A list of SSH public keys.

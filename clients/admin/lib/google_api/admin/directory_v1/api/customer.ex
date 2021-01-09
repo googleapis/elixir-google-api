@@ -31,7 +31,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customer do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable. Immutable ID of the G Suite account.
+  *   `customer_id` (*type:* `String.t`) - Immutable. Immutable ID of the Google Workspace account.
   *   `device_id` (*type:* `String.t`) - Immutable. Immutable ID of Chrome OS Device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -116,7 +116,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customer do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable. Immutable ID of the G Suite account.
+  *   `customer_id` (*type:* `String.t`) - Immutable. Immutable ID of the Google Workspace account.
   *   `device_id` (*type:* `String.t`) - Immutable. Immutable ID of Chrome OS Device.
   *   `command_id` (*type:* `String.t`) - Immutable. Immutable ID of Chrome OS Device Command.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

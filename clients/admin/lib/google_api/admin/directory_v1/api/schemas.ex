@@ -31,7 +31,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer_id` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `schema_key` (*type:* `String.t`) - Name or immutable ID of the schema.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -96,7 +96,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer_id` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `schema_key` (*type:* `String.t`) - Name or immutable ID of the schema.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -163,7 +163,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer_id` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -224,7 +224,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer_id` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -283,7 +283,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer_id` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `schema_key` (*type:* `String.t`) - Name or immutable ID of the schema.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -352,7 +352,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer_id` (*type:* `String.t`) - Immutable ID of the G Suite account.
+  *   `customer_id` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
   *   `schema_key` (*type:* `String.t`) - Name or immutable ID of the schema.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
