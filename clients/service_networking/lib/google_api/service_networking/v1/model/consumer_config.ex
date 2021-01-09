@@ -31,6 +31,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
   *   `producerImportSubnetRoutesWithPublicIp` (*type:* `boolean()`, *default:* `nil`) - Import subnet routes with public ip flag value for peering from producer to consumer.
   *   `producerNetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The VPC host network that is used to host managed service instances. In the format, projects/{project}/global/networks/{network} where {project} is the project number e.g. '12345' and {network} is the network name.
   *   `reservedRanges` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.GoogleCloudServicenetworkingV1ConsumerConfigReservedRange.t)`, *default:* `nil`) - Output only. The reserved ranges associated with this private service access connection.
+  *   `vpcScReferenceArchitectureEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the VPC Service Controls reference architecture is configured for the producer VPC host network.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,7 +49,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
           :reservedRanges =>
             list(
               GoogleApi.ServiceNetworking.V1.Model.GoogleCloudServicenetworkingV1ConsumerConfigReservedRange.t()
-            )
+            ),
+          :vpcScReferenceArchitectureEnabled => boolean()
         }
 
   field(:consumerExportCustomRoutes)
@@ -66,6 +68,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
       GoogleApi.ServiceNetworking.V1.Model.GoogleCloudServicenetworkingV1ConsumerConfigReservedRange,
     type: :list
   )
+
+  field(:vpcScReferenceArchitectureEnabled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.ConsumerConfig do
