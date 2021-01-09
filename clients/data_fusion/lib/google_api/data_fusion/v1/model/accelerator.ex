@@ -22,15 +22,18 @@ defmodule GoogleApi.DataFusion.V1.Model.Accelerator do
   ## Attributes
 
   *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - The type of an accelator for a CDF instance.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the accelerator
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acceleratorType => String.t()
+          :acceleratorType => String.t(),
+          :state => String.t()
         }
 
   field(:acceleratorType)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DataFusion.V1.Model.Accelerator do
