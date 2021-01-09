@@ -102,7 +102,7 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Api.Applications do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customerId` (*type:* `String.t`) - Immutable ID of the Google Apps account.
+      *   `:customerId` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return. Default is 100.
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list.
   *   `opts` (*type:* `keyword()`) - Call options
