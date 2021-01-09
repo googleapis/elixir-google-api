@@ -85,7 +85,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
   end
 
   @doc """
-  Lists the AdMob publisher account accessible with the client credential. Currently, all credentials have access to at most one AdMob account.
+  List the AdMob publisher account accessible with the client credential. Currently, all credentials have access to at most one AdMob account.
 
   ## Parameters
 
