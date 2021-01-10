@@ -45,7 +45,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Instance type.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was last updated.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Current version of Data Fusion.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Name of the zone in which the Data Fusion instance will be created.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Name of the zone in which the Data Fusion instance will be created. Only DEVELOPER instances use this field.
   """
 
   use GoogleApi.Gax.ModelBase
