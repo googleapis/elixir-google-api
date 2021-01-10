@@ -21,12 +21,13 @@ defmodule GoogleApi.ServiceControl.V1.Model.Resource do
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created. This may be either the time creation was initiated or when it was completed.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was deleted. If the resource is not deleted, this must be empty.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Mutable. The display name set by clients. Must be <= 63 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. An opaque value that uniquely identifies a version or generation of a resource. It can be used to confirm that the client and server agree on the ordering of a resource being written.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels or tags on the resource, such as AWS resource tags and Kubernetes resource labels.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Immutable. The location of the resource. The location encoding is specific to the service provider, and new encoding may be introduced as the service evolves. For Google Cloud products, the encoding is what is used by Google Cloud APIs, such as `us-east1`, `aws-us-east-1`, and `azure-eastus2`. The semantics of `location` is identical to the `cloud.googleapis.com/location` label used by some Google Cloud APIs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The stable identifier (name) of a resource on the `service`. A resource can be logically identified as "//{resource.service}/{resource.name}". The differences between a resource name and a URI are: * Resource name is a logical identifier, independent of network protocol and API version. For example, `//pubsub.googleapis.com/projects/123/topics/news-feed`. * URI often includes protocol and version information, so it can be used directly by applications. For example, `https://pubsub.googleapis.com/v1/projects/123/topics/news-feed`. See https://cloud.google.com/apis/design/resource_names for details.
   *   `service` (*type:* `String.t`, *default:* `nil`) - The name of the service that this resource belongs to, such as `pubsub.googleapis.com`. The service may be different from the DNS hostname that actually serves the request.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the resource. The syntax is platform-specific because different platforms define their resources differently. For Google APIs, the type format must be "{service}/{kind}".
@@ -43,6 +44,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Resource do
           :displayName => String.t(),
           :etag => String.t(),
           :labels => map(),
+          :location => String.t(),
           :name => String.t(),
           :service => String.t(),
           :type => String.t(),
@@ -56,6 +58,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Resource do
   field(:displayName)
   field(:etag)
   field(:labels, type: :map)
+  field(:location)
   field(:name)
   field(:service)
   field(:type)

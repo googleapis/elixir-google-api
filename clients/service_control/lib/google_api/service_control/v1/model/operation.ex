@@ -34,7 +34,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
   *   `resources` (*type:* `list(GoogleApi.ServiceControl.V1.Model.ResourceInfo.t)`, *default:* `nil`) - The resources that are involved in the operation. The maximum supported number of entries in this field is 100.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. Start time of the operation.
   *   `traceSpans` (*type:* `list(GoogleApi.ServiceControl.V1.Model.TraceSpan.t)`, *default:* `nil`) - Unimplemented. A list of Cloud Trace spans. The span names shall contain the id of the destination project which can be either the produce or the consumer project.
-  *   `userLabels` (*type:* `map()`, *default:* `nil`) - User defined labels for the resource that this operation is associated with. Only a combination of 1000 user labels per consumer project are allowed.
+  *   `userLabels` (*type:* `map()`, *default:* `nil`) - Private Preview. This feature is only available for approved services. User defined labels for the resource that this operation is associated with. Only a combination of 1000 user labels per consumer project are allowed.
   """
 
   use GoogleApi.Gax.ModelBase
