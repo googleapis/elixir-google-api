@@ -22,7 +22,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   ## Attributes
 
   *   `acceleratorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t`, *default:* `nil`) - Optional. Accelerator config for using GPUs for online prediction (beta). Only specify this field if you have specified a Compute Engine (N1) machine type in the `machineType` field. Learn more about [using GPUs for online prediction](/ml-engine/docs/machine-types-online-prediction#gpus).
-  *   `autoScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutoScaling.t`, *default:* `nil`) - Automatically scale the number of nodes used to serve the model in response to increases and decreases in traffic. Care should be taken to ramp up traffic according to the model's ability to scale or you will start seeing increases in latency and 429 response codes. Note that you cannot use AutoScaling if your version uses [GPUs](#Version.FIELDS.accelerator_config). Instead, you must use specify `manual_scaling`.
+  *   `autoScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutoScaling.t`, *default:* `nil`) - Automatically scale the number of nodes used to serve the model in response to increases and decreases in traffic. Care should be taken to ramp up traffic according to the model's ability to scale or you will start seeing increases in latency and 429 response codes.
   *   `container` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ContainerSpec.t`, *default:* `nil`) - Optional. Specifies a custom container to use for serving predictions. If you specify this field, then `machineType` is required. If you specify this field, then `deploymentUri` is optional. If you specify this field, then you must not specify `runtimeVersion`, `packageUris`, `framework`, `pythonVersion`, or `predictionClass`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the version was created.
   *   `deploymentUri` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage URI of a directory containing trained model artifacts to be used to create the model version. See the [guide to deploying models](/ai-platform/prediction/docs/deploying-models) for more information. The total number of files under this directory must not exceed 1000. During projects.models.versions.create, AI Platform Prediction copies all files from the specified directory to a location managed by the service. From then on, AI Platform Prediction uses these copies of the model artifacts to serve predictions, not the original files in Cloud Storage, so this location is useful only as a historical record. If you specify container, then this field is optional. Otherwise, it is required. Learn [how to use this field with a custom container](/ai-platform/prediction/docs/custom-container-requirements#artifacts).
@@ -33,6 +33,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   *   `framework` (*type:* `String.t`, *default:* `nil`) - Optional. The machine learning framework AI Platform uses to train this version of the model. Valid values are `TENSORFLOW`, `SCIKIT_LEARN`, `XGBOOST`. If you do not specify a framework, AI Platform will analyze files in the deployment_uri to determine a framework. If you choose `SCIKIT_LEARN` or `XGBOOST`, you must also set the runtime version of the model to 1.4 or greater. Do **not** specify a framework if you're deploying a [custom prediction routine](/ai-platform/prediction/docs/custom-prediction-routines) or if you're using a [custom container](/ai-platform/prediction/docs/use-custom-container).
   *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, this version will be used to handle prediction requests that do not specify a version. You can change the default version by calling projects.methods.versions.setDefault.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. One or more labels that you can add, to organize your model versions. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on using labels.
+  *   `lastMigrationModelId` (*type:* `String.t`, *default:* `nil`) - Output only. The uCAIP model id for the last model migration.
+  *   `lastMigrationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time this version was successfully migrated to uCAIP.
   *   `lastUseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the version was last used for prediction.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of machine on which to serve the model. Currently only applies to online prediction service. If this field is not specified, it defaults to `mls1-c1-m2`. Online prediction supports the following machine types: * `mls1-c1-m2` * `mls1-c4-m2` * `n1-standard-2` * `n1-standard-4` * `n1-standard-8` * `n1-standard-16` * `n1-standard-32` * `n1-highmem-2` * `n1-highmem-4` * `n1-highmem-8` * `n1-highmem-16` * `n1-highmem-32` * `n1-highcpu-2` * `n1-highcpu-4` * `n1-highcpu-8` * `n1-highcpu-16` * `n1-highcpu-32` `mls1-c4-m2` is in beta. All other machine types are generally available. Learn more about the [differences between machine types](/ml-engine/docs/machine-types-online-prediction).
   *   `manualScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling.t`, *default:* `nil`) - Manually select the number of nodes to use for serving the model. You should generally use `auto_scaling` with an appropriate `min_nodes` instead, but this option is available if you want more predictable billing. Beware that latency and error rates will increase if the traffic exceeds that capability of the system to serve it based on the selected number of nodes.
@@ -64,6 +66,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
           :framework => String.t(),
           :isDefault => boolean(),
           :labels => map(),
+          :lastMigrationModelId => String.t(),
+          :lastMigrationTime => DateTime.t(),
           :lastUseTime => DateTime.t(),
           :machineType => String.t(),
           :manualScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling.t(),
@@ -98,6 +102,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   field(:framework)
   field(:isDefault)
   field(:labels, type: :map)
+  field(:lastMigrationModelId)
+  field(:lastMigrationTime, as: DateTime)
   field(:lastUseTime, as: DateTime)
   field(:machineType)
   field(:manualScaling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling)
