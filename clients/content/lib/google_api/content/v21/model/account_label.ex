@@ -24,6 +24,7 @@ defmodule GoogleApi.Content.V21.Model.AccountLabel do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Immutable. The ID of account this label belongs to.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this label.
   *   `labelId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the label.
+  *   `labelType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of this label.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The display name of this label.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Content.V21.Model.AccountLabel do
           :accountId => String.t(),
           :description => String.t(),
           :labelId => String.t(),
+          :labelType => String.t(),
           :name => String.t()
         }
 
   field(:accountId)
   field(:description)
   field(:labelId)
+  field(:labelType)
   field(:name)
 end
 
