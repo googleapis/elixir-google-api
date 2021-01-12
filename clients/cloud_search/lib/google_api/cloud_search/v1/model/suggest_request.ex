@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SuggestRequest do
 
   ## Attributes
 
-  *   `dataSourceRestrictions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t)`, *default:* `nil`) - The sources to use for suggestions. If not specified, the data sources are taken from the current search application. NOTE: Suggestions are supported only for third party data sources and people (i.e. PredefinedSource.PERSON).
+  *   `dataSourceRestrictions` (*type:* `list(GoogleApi.CloudSearch.V1.Model.DataSourceRestriction.t)`, *default:* `nil`) - The sources to use for suggestions. If not specified, the data sources are taken from the current search application. NOTE: Suggestions are only supported for the following sources: * Third-party data sources * PredefinedSource.PERSON * PredefinedSource.GOOGLE_DRIVE
   *   `query` (*type:* `String.t`, *default:* `nil`) - Partial query for which autocomplete suggestions will be shown. For example, if the query is "sea", then the server might return "season", "search", "seagull" and so on.
   *   `requestOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.RequestOptions.t`, *default:* `nil`) - Request options, such as the search application and user timezone.
   """
