@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   @moduledoc """
-  Attributes of the product. For more information, see https://support.google.com/manufacturers/answer/6124116. Next tag: 47
+  Attributes of the product. For more information, see https://support.google.com/manufacturers/answer/6124116. Next tag: 48
 
   ## Attributes
 
@@ -50,6 +50,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `imageLink` (*type:* `GoogleApi.Manufacturers.V1.Model.Image.t`, *default:* `nil`) - The image of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#image.
   *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - The target age group of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#agegroup.
   *   `capacity` (*type:* `GoogleApi.Manufacturers.V1.Model.Capacity.t`, *default:* `nil`) - The capacity of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#capacity.
+  *   `productHighlight` (*type:* `list(String.t)`, *default:* `nil`) - The product highlights. For more information, see https://support.google.com/manufacturers/answer/10066942
   *   `featureDescription` (*type:* `list(GoogleApi.Manufacturers.V1.Model.FeatureDescription.t)`, *default:* `nil`) - The rich format description of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#featuredesc.
   *   `richProductContent` (*type:* `list(String.t)`, *default:* `nil`) - Rich product content. For more information, see https://support.google.com/manufacturers/answer/9389865
   *   `format` (*type:* `String.t`, *default:* `nil`) - The format of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#format.
@@ -91,6 +92,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
           :imageLink => GoogleApi.Manufacturers.V1.Model.Image.t(),
           :ageGroup => String.t(),
           :capacity => GoogleApi.Manufacturers.V1.Model.Capacity.t(),
+          :productHighlight => list(String.t()),
           :featureDescription => list(GoogleApi.Manufacturers.V1.Model.FeatureDescription.t()),
           :richProductContent => list(String.t()),
           :format => String.t(),
@@ -129,6 +131,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   field(:imageLink, as: GoogleApi.Manufacturers.V1.Model.Image)
   field(:ageGroup)
   field(:capacity, as: GoogleApi.Manufacturers.V1.Model.Capacity)
+  field(:productHighlight, type: :list)
   field(:featureDescription, as: GoogleApi.Manufacturers.V1.Model.FeatureDescription, type: :list)
   field(:richProductContent, type: :list)
   field(:format)
