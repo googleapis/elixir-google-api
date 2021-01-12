@@ -28,7 +28,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Developer do
   *   `companies` (*type:* `list(String.t)`, *default:* `nil`) - List of companies associated with the developer.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time at which the developer was created in milliseconds since epoch.
   *   `developerId` (*type:* `String.t`, *default:* `nil`) - ID of the developer. **Note**: IDs are generated internally by Apigee and are not guaranteed to stay the same over time.
-  *   `email` (*type:* `String.t`, *default:* `nil`) - Required. Email address of the developer. This value is used to uniquely identify the developer in Apigee hybrid.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Required. Email address of the developer. This value is used to uniquely identify the developer in Apigee hybrid. Note that the email address has to be in lowercase only.
   *   `firstName` (*type:* `String.t`, *default:* `nil`) - Required. First name of the developer.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time at which the developer was last modified in milliseconds since epoch.
   *   `lastName` (*type:* `String.t`, *default:* `nil`) - Required. Last name of the developer.
