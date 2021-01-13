@@ -21,30 +21,30 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAcco
 
   ## Attributes
 
-  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country of business. Must be a non-deprecated code for a UN M.49 region. https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this account was originally created.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this Account is soft-deleted or not. Deleted accounts are excluded from List results unless specifically requested.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human-readable display name for this account.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this account. Format: accounts/{account} Example: "accounts/100"
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Country of business. Must be a Unicode CLDR region code.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when account payload fields were last updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countryCode => String.t(),
           :createTime => DateTime.t(),
           :deleted => boolean(),
           :displayName => String.t(),
           :name => String.t(),
+          :regionCode => String.t(),
           :updateTime => DateTime.t()
         }
 
-  field(:countryCode)
   field(:createTime, as: DateTime)
   field(:deleted)
   field(:displayName)
   field(:name)
+  field(:regionCode)
   field(:updateTime, as: DateTime)
 end
 

@@ -27,7 +27,6 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoog
   *   `customerId` (*type:* `String.t`, *default:* `nil`) - Immutable. Google Ads customer ID.
   *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - Output only. Email address of the user that created the link. An empty string will be returned if the email address can't be retrieved.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId} Note: googleAdsLinkId is not the Google Ads customer ID.
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Immutable. Format: properties/{propertyId}
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this link was last updated.
   """
 
@@ -40,7 +39,6 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoog
           :customerId => String.t(),
           :emailAddress => String.t(),
           :name => String.t(),
-          :parent => String.t(),
           :updateTime => DateTime.t()
         }
 
@@ -50,7 +48,6 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoog
   field(:customerId)
   field(:emailAddress)
   field(:name)
-  field(:parent)
   field(:updateTime, as: DateTime)
 end
 
