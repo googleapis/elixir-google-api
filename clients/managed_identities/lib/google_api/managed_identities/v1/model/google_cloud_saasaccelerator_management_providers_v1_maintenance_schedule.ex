@@ -24,6 +24,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagem
   *   `canReschedule` (*type:* `boolean()`, *default:* `nil`) - Can this scheduled update be rescheduled? By default, it's true and API needs to do explicitly check whether it's set, if it's set as false explicitly, it's false
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The scheduled end time for the maintenance.
   *   `rolloutManagementPolicy` (*type:* `String.t`, *default:* `nil`) - The rollout management policy this maintenance schedule is associated with. When doing reschedule update request, the reschedule should be against this given policy.
+  *   `scheduleDeadlineTime` (*type:* `DateTime.t`, *default:* `nil`) - schedule_deadline_time is the time deadline any schedule start time cannot go beyond, including reschedule. It's normally the initial schedule start time plus a week. If the reschedule type is next window, simply take this value as start time. If reschedule type is IMMEDIATELY or BY_TIME, current or selected time cannot go beyond this deadline.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The scheduled start time for the maintenance.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagem
           :canReschedule => boolean(),
           :endTime => DateTime.t(),
           :rolloutManagementPolicy => String.t(),
+          :scheduleDeadlineTime => DateTime.t(),
           :startTime => DateTime.t()
         }
 
   field(:canReschedule)
   field(:endTime, as: DateTime)
   field(:rolloutManagementPolicy)
+  field(:scheduleDeadlineTime, as: DateTime)
   field(:startTime, as: DateTime)
 end
 
