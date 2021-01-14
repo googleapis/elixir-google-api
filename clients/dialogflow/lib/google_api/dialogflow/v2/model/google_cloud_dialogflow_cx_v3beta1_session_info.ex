@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInf
   ## Attributes
 
   *   `parameters` (*type:* `map()`, *default:* `nil`) - Optional for WebhookRequest. Optional for WebhookResponse. All parameters collected from forms and intents during the session. Parameters can be created, updated, or removed by the webhook. To remove a parameter from the session, the webhook should explicitly set the parameter value to null in WebhookResponse. The map is keyed by parameters' display names.
-  *   `session` (*type:* `String.t`, *default:* `nil`) - Always present for WebhookRequest. Ignored for WebhookResponse. The unique identifier of the session. This field can be used by the webhook to identify a user. Format: `projects//locations//agents//sessions/`.
+  *   `session` (*type:* `String.t`, *default:* `nil`) - Always present for WebhookRequest. Ignored for WebhookResponse. The unique identifier of the session. This field can be used by the webhook to identify a session. Format: `projects//locations//agents//sessions/` or `projects//locations//agents//environments//sessions/` if environment is specified.
   """
 
   use GoogleApi.Gax.ModelBase
