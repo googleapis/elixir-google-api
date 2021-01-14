@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   @moduledoc """
-  Defines a job to be run by the Cloud Dataflow service.
+  Defines a job to be run by the Cloud Dataflow service. nextID: 26
 
   ## Attributes
 
@@ -38,6 +38,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   *   `replaceJobId` (*type:* `String.t`, *default:* `nil`) - If this job is an update of an existing job, this field is the job ID of the job it replaced. When sending a `CreateJobRequest`, you can update a job by specifying it here. The job named here is stopped, and its intermediate state is transferred to this job.
   *   `replacedByJobId` (*type:* `String.t`, *default:* `nil`) - If another job is an update of this job (and thus, this job is in `JOB_STATE_UPDATED`), this field contains the ID of that job.
   *   `requestedState` (*type:* `String.t`, *default:* `nil`) - The job's requested state. `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING` states, by setting requested_state. `UpdateJob` may also be used to directly set a job's requested state to `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the job if it has not already reached a terminal state.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
   *   `stageStates` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageState.t)`, *default:* `nil`) - This field may be mutated by the Cloud Dataflow service; callers cannot mutate it.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the job was started (transitioned to JOB_STATE_PENDING). Flexible resource scheduling jobs are started with some delay after job creation, so start_time is unset before start and is updated when the job is started by the Cloud Dataflow service. For other jobs, start_time always equals to create_time and is immutable and set by the Cloud Dataflow service.
   *   `steps` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Step.t)`, *default:* `nil`) - Exactly one of step or steps_location should be specified. The top-level steps that constitute the entire job. Only retrieved with JOB_VIEW_ALL.
@@ -67,6 +68,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
           :replaceJobId => String.t(),
           :replacedByJobId => String.t(),
           :requestedState => String.t(),
+          :satisfiesPzs => boolean(),
           :stageStates => list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageState.t()),
           :startTime => DateTime.t(),
           :steps => list(GoogleApi.Dataflow.V1b3.Model.Step.t()),
@@ -93,6 +95,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   field(:replaceJobId)
   field(:replacedByJobId)
   field(:requestedState)
+  field(:satisfiesPzs)
   field(:stageStates, as: GoogleApi.Dataflow.V1b3.Model.ExecutionStageState, type: :list)
   field(:startTime, as: DateTime)
   field(:steps, as: GoogleApi.Dataflow.V1b3.Model.Step, type: :list)
