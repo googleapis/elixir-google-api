@@ -1898,7 +1898,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
   *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me` can be used to indicate the authenticated user.
-  *   `id` (*type:* `String.t`) - The ID of the message to retrieve.
+  *   `id` (*type:* `String.t`) - The ID of the message to retrieve. This ID is usually retrieved using `messages.list`. The ID is also contained in the result when a message is inserted (`messages.insert`) or imported (`messages.import`).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
