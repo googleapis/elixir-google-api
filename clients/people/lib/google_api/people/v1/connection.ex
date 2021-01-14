@@ -39,7 +39,7 @@ defmodule GoogleApi.People.V1.Connection do
       # View your street addresses
       "https://www.googleapis.com/auth/user.addresses.read",
 
-      # View your complete date of birth
+      # See and download your exact date of birth
       "https://www.googleapis.com/auth/user.birthday.read",
 
       # View your email addresses
@@ -51,7 +51,7 @@ defmodule GoogleApi.People.V1.Connection do
       # See your education, work history and org info
       "https://www.googleapis.com/auth/user.organization.read",
 
-      # View your phone numbers
+      # See and download your personal phone numbers
       "https://www.googleapis.com/auth/user.phonenumbers.read",
 
       # View your email address
