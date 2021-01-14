@@ -593,7 +593,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
       *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
       *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
-      *   `:view` (*type:* `String.t`) - Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
+      *   `:view` (*type:* `String.t`) - Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -878,7 +878,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:location` (*type:* `String.t`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
       *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
       *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
-      *   `:view` (*type:* `String.t`) - Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
+      *   `:view` (*type:* `String.t`) - Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1954,7 +1954,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
       *   `:filter` (*type:* `String.t`) - The kind of filter to use.
       *   `:pageSize` (*type:* `integer()`) - If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.
       *   `:pageToken` (*type:* `String.t`) - Set this to the 'next_page_token' field of a previous response to request additional results in a long list.
-      *   `:view` (*type:* `String.t`) - Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
+      *   `:view` (*type:* `String.t`) - Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

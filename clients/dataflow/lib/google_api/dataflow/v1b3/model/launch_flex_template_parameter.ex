@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateParameter do
   *   `jobName` (*type:* `String.t`, *default:* `nil`) - Required. The job name to use for the created job. For update job request, job name should be same as the existing running job.
   *   `launchOptions` (*type:* `map()`, *default:* `nil`) - Launch options for this flex template job. This is a common set of options across languages and templates. This should not be used to pass job parameters.
   *   `parameters` (*type:* `map()`, *default:* `nil`) - The parameters for FlexTemplate. Ex. {"num_workers":"5"}
-  *   `transformNameMappings` (*type:* `map()`, *default:* `nil`) - Users need to set transform_name_mappings Ex:{"oldTransformName":"newTransformName",...}'
+  *   `transformNameMappings` (*type:* `map()`, *default:* `nil`) - Use this to pass transform_name_mappings for streaming update jobs. Ex:{"oldTransformName":"newTransformName",...}'
   *   `update` (*type:* `boolean()`, *default:* `nil`) - Set this to true if you are sending a request to update a running streaming job. When set, the job name should be the same as the running job.
   """
 

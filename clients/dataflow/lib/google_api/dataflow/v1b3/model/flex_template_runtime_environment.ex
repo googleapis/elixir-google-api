@@ -24,6 +24,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   *   `additionalExperiments` (*type:* `list(String.t)`, *default:* `nil`) - Additional experiment flags for the job.
   *   `additionalUserLabels` (*type:* `map()`, *default:* `nil`) - Additional user labels to be specified for the job. Keys and values must follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1kg", "count": "3" }.
   *   `enableStreamingEngine` (*type:* `boolean()`, *default:* `nil`) - Whether to enable Streaming Engine for the job.
+  *   `flexrsGoal` (*type:* `String.t`, *default:* `nil`) - Set FlexRS goal for the job. https://cloud.google.com/dataflow/docs/guides/flexrs
   *   `ipConfiguration` (*type:* `String.t`, *default:* `nil`) - Configuration for VM IPs.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for the job. Defaults to the value from the template if not specified.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
           :additionalExperiments => list(String.t()),
           :additionalUserLabels => map(),
           :enableStreamingEngine => boolean(),
+          :flexrsGoal => String.t(),
           :ipConfiguration => String.t(),
           :kmsKeyName => String.t(),
           :machineType => String.t(),
@@ -61,6 +63,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   field(:additionalExperiments, type: :list)
   field(:additionalUserLabels, type: :map)
   field(:enableStreamingEngine)
+  field(:flexrsGoal)
   field(:ipConfiguration)
   field(:kmsKeyName)
   field(:machineType)
