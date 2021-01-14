@@ -21,15 +21,18 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGlob
 
   ## Attributes
 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name for this GlobalSiteTag resource. Format: properties/{propertyId}/globalSiteTag
   *   `snippet` (*type:* `String.t`, *default:* `nil`) - Immutable. JavaScript code snippet to be pasted as the first item into the head tag of every webpage to measure.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :name => String.t(),
           :snippet => String.t()
         }
 
+  field(:name)
   field(:snippet)
 end
 
