@@ -23,17 +23,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning do
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - Code to uniquely identify the warning type.
   *   `message` (*type:* `String.t`, *default:* `nil`) - The warning message.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The region name for REGION_UNREACHABLE warning.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :code => String.t(),
-          :message => String.t()
+          :message => String.t(),
+          :region => String.t()
         }
 
   field(:code)
   field(:message)
+  field(:region)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning do
