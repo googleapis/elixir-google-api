@@ -22,24 +22,30 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the Secret was created.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Timestamp in UTC when the Secret is scheduled to expire. This is always provided on output, regardless of what was sent on input.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\\p{Ll}\\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\\p{Ll}\\p{Lo}\\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
   *   `replication` (*type:* `GoogleApi.SecretManager.V1.Model.Replication.t`, *default:* `nil`) - Required. Immutable. The replication policy of the secret data attached to the Secret. The replication policy cannot be changed after the Secret has been created.
+  *   `ttl` (*type:* `String.t`, *default:* `nil`) - Input only. The TTL for the Secret.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t(),
+          :expireTime => DateTime.t(),
           :labels => map(),
           :name => String.t(),
-          :replication => GoogleApi.SecretManager.V1.Model.Replication.t()
+          :replication => GoogleApi.SecretManager.V1.Model.Replication.t(),
+          :ttl => String.t()
         }
 
   field(:createTime, as: DateTime)
+  field(:expireTime, as: DateTime)
   field(:labels, type: :map)
   field(:name)
   field(:replication, as: GoogleApi.SecretManager.V1.Model.Replication)
+  field(:ttl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecretManager.V1.Model.Secret do
