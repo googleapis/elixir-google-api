@@ -22,9 +22,9 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1ExchangeTokenResponse do
   ## Attributes
 
   *   `access_token` (*type:* `String.t`, *default:* `nil`) - An OAuth 2.0 security token, issued by Google, in response to the token exchange request.
-  *   `expires_in` (*type:* `integer()`, *default:* `nil`) - The amount of time, in seconds, between the time when the `access_token` was issued and the time when the `access_token` will expire. This field is absent when the `subject_token` in the request is a Google-issued, short-lived access token. In this case, the `access_token` has the same expiration time as the `subject_token`.
+  *   `expires_in` (*type:* `integer()`, *default:* `nil`) - The amount of time, in seconds, between the time when the access token was issued and the time when the access token will expire. This field is absent when the `subject_token` in the request is a Google-issued, short-lived access token. In this case, the access token has the same expiration time as the `subject_token`.
   *   `issued_token_type` (*type:* `String.t`, *default:* `nil`) - The token type. Always matches the value of `requested_token_type` from the request.
-  *   `token_type` (*type:* `String.t`, *default:* `nil`) - The type of `access_token`. Always has the value `Bearer`.
+  *   `token_type` (*type:* `String.t`, *default:* `nil`) - The type of access token. Always has the value `Bearer`.
   """
 
   use GoogleApi.Gax.ModelBase

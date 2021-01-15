@@ -20,7 +20,7 @@ defmodule GoogleApi.STS.V1 do
   API client metadata for GoogleApi.STS.V1.
   """
 
-  @discovery_revision "20201004"
+  @discovery_revision "20210109"
 
   def discovery_revision(), do: @discovery_revision
 end

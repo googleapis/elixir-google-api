@@ -21,9 +21,11 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1ExchangeTokenRequest do
 
   ## Attributes
 
+  *   `audience` (*type:* `String.t`, *default:* `nil`) - The full resource name of the identity provider; for example: `//iam.googleapis.com/projects//workloadIdentityPools//providers/`. Required when exchanging an external credential for a Google access token.
   *   `grantType` (*type:* `String.t`, *default:* `nil`) - Required. The grant type. Must be `urn:ietf:params:oauth:grant-type:token-exchange`, which indicates a token exchange.
   *   `options` (*type:* `String.t`, *default:* `nil`) - A set of features that Security Token Service supports, in addition to the standard OAuth 2.0 token exchange, formatted as a serialized JSON object of Options.
   *   `requestedTokenType` (*type:* `String.t`, *default:* `nil`) - Required. An identifier for the type of requested security token. Must be `urn:ietf:params:oauth:token-type:access_token`.
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - The OAuth 2.0 scopes to include on the resulting access token, formatted as a list of space-delimited, case-sensitive strings. Required when exchanging an external credential for a Google access token.
   *   `subjectToken` (*type:* `String.t`, *default:* `nil`) - Required. The input token. You can use a Google-issued OAuth 2.0 access token with this field to obtain an access token with new security attributes applied, such as a Credential Access Boundary. If an access token already contains security attributes, you cannot apply additional security attributes.
   *   `subjectTokenType` (*type:* `String.t`, *default:* `nil`) - Required. An identifier that indicates the type of the security token in the `subject_token` parameter. Must be `urn:ietf:params:oauth:token-type:access_token`.
   """
@@ -31,16 +33,20 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1ExchangeTokenRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :audience => String.t(),
           :grantType => String.t(),
           :options => String.t(),
           :requestedTokenType => String.t(),
+          :scope => String.t(),
           :subjectToken => String.t(),
           :subjectTokenType => String.t()
         }
 
+  field(:audience)
   field(:grantType)
   field(:options)
   field(:requestedTokenType)
+  field(:scope)
   field(:subjectToken)
   field(:subjectTokenType)
 end
