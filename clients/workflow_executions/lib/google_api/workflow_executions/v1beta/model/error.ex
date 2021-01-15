@@ -21,19 +21,22 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.Error do
 
   ## Attributes
 
-  *   `context` (*type:* `String.t`, *default:* `nil`) - Human readable error context, helpful for debugging purposes.
-  *   `payload` (*type:* `String.t`, *default:* `nil`) - Error payload returned by the execution, represented as a JSON string.
+  *   `context` (*type:* `String.t`, *default:* `nil`) - Human readable stack trace string.
+  *   `payload` (*type:* `String.t`, *default:* `nil`) - Error message and data returned represented as a JSON string.
+  *   `stackTrace` (*type:* `GoogleApi.WorkflowExecutions.V1beta.Model.StackTrace.t`, *default:* `nil`) - Stack trace with detailed information of where error was generated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :context => String.t(),
-          :payload => String.t()
+          :payload => String.t(),
+          :stackTrace => GoogleApi.WorkflowExecutions.V1beta.Model.StackTrace.t()
         }
 
   field(:context)
   field(:payload)
+  field(:stackTrace, as: GoogleApi.WorkflowExecutions.V1beta.Model.StackTrace)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.WorkflowExecutions.V1beta.Model.Error do
