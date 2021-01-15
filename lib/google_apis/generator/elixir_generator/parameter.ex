@@ -101,21 +101,42 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
 
   @doc """
   Build a Parameter from the parameter name and JsonSchema
+
+  If a parameter is the last one in a path, the generated code will *not*
+  URI.encode() the path separator (`/`) character in the parameter.
+
+  However, the Storage API requires the `object` parameter to have path
+  separator characters encoded, even though it is the last parameter in a URL
+  path.
   """
   @spec from_json_schema(String.t(), JsonSchema.t(), ResourceContext.t()) :: t
-  def from_json_schema(name, schema, context, path \\ "") do
-    variable_name =
-      name
-      |> Macro.underscore()
-      |> String.replace("-", "_")
+  def from_json_schema(name, schema, context, path \\ "")
 
+  def from_json_schema("object" = name, schema, context, _path) do
     %__MODULE__{
       name: name,
-      variable_name: variable_name,
+      variable_name: build_variable_name(name),
+      description: schema.description,
+      type: Type.from_schema(schema, context),
+      location: schema.location,
+      is_path_trailer: false
+    }
+  end
+
+  def from_json_schema(name, schema, context, path) do
+    %__MODULE__{
+      name: name,
+      variable_name: build_variable_name(name),
       description: schema.description,
       type: Type.from_schema(schema, context),
       location: schema.location,
       is_path_trailer: schema.location == "path" && String.ends_with?(path, "{#{name}}")
     }
+  end
+
+  defp build_variable_name(name) do
+    name
+    |> Macro.underscore()
+    |> String.replace("-", "_")
   end
 end
