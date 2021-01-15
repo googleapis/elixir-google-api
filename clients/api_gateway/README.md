@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_api_gateway, "~> 0.6"}]
+  [{:google_api_api_gateway, "~> 0.7"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [ https://cloud.google.com/api-gateway/docs]( https://cloud.google.com/api-gateway/docs).
+Product documentation is available at [https://cloud.google.com/api-gateway/docs](https://cloud.google.com/api-gateway/docs).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_api_gateway](https://hexdocs.pm/google_api_api_gateway).

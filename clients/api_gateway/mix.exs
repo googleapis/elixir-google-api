@@ -18,7 +18,7 @@
 defmodule GoogleApi.APIGateway.Mixfile do
   use Mix.Project
 
-  @version "0.6.0"
+  @version "0.7.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.APIGateway.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/api_gateway",
-        "Homepage" => " https://cloud.google.com/api-gateway/docs"
+        "Homepage" => "https://cloud.google.com/api-gateway/docs"
       }
     ]
   end
