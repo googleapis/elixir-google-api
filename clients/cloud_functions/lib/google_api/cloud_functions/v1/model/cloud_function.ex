@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   *   `availableMemoryMb` (*type:* `integer()`, *default:* `nil`) - The amount of memory in MB available for a function. Defaults to 256MB.
   *   `buildEnvironmentVariables` (*type:* `map()`, *default:* `nil`) - Build environment variables that shall be available during build time.
   *   `buildId` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Build ID of the latest successful deployment of the function.
+  *   `buildWorkerPool` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Build Custom Worker Pool that should be used to build the function. The format of this field is `projects/{project}/locations/{region}/workerPools/{workerPool}` where {project} and {region} are the project id and region respectively where the worker pool is defined and {workerPool} is the short name of the worker pool. If the project id is not the same as the function, then the Cloud Functions Service Agent (service-@gcf-admin-robot.iam.gserviceaccount.com) must be granted the role Cloud Build Custom Workers Builder (roles/cloudbuild.customworkers.builder) in the project.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description of a function.
   *   `entryPoint` (*type:* `String.t`, *default:* `nil`) - The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix, if not specified. For backward compatibility, if function with given name is not found, then the system will try to use function named "function". For Node.js this is name of a function exported by the module specified in `source_location`.
   *   `environmentVariables` (*type:* `map()`, *default:* `nil`) - Environment variables that shall be available during function execution.
@@ -53,6 +54,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
           :availableMemoryMb => integer(),
           :buildEnvironmentVariables => map(),
           :buildId => String.t(),
+          :buildWorkerPool => String.t(),
           :description => String.t(),
           :entryPoint => String.t(),
           :environmentVariables => map(),
@@ -79,6 +81,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   field(:availableMemoryMb)
   field(:buildEnvironmentVariables, type: :map)
   field(:buildId)
+  field(:buildWorkerPool)
   field(:description)
   field(:entryPoint)
   field(:environmentVariables, type: :map)
