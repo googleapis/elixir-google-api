@@ -18,7 +18,7 @@
 defmodule GoogleApi.BigQueryDataTransfer.Mixfile do
   use Mix.Project
 
-  @version "0.21.2"
+  @version "0.22.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.BigQueryDataTransfer.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/big_query_data_transfer",
-        "Homepage" => "https://cloud.google.com/bigquery/"
+        "Homepage" => "https://cloud.google.com/bigquery-transfer/"
       }
     ]
   end

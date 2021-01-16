@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_big_query_data_transfer, "~> 0.21"}]
+  [{:google_api_big_query_data_transfer, "~> 0.22"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/bigquery/](https://cloud.google.com/bigquery/).
+Product documentation is available at [https://cloud.google.com/bigquery-transfer/](https://cloud.google.com/bigquery-transfer/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_big_query_data_transfer](https://hexdocs.pm/google_api_big_query_data_transfer).
