@@ -23,17 +23,20 @@ defmodule GoogleApi.Spanner.V1.Model.ListInstancesResponse do
 
   *   `instances` (*type:* `list(GoogleApi.Spanner.V1.Model.Instance.t)`, *default:* `nil`) - The list of requested instances.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent ListInstances call to fetch more of the matching instances.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - The list of unreachable instances. It includes the names of instances whose metadata could not be retrieved within instance_deadline.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :instances => list(GoogleApi.Spanner.V1.Model.Instance.t()),
-          :nextPageToken => String.t()
+          :nextPageToken => String.t(),
+          :unreachable => list(String.t())
         }
 
   field(:instances, as: GoogleApi.Spanner.V1.Model.Instance, type: :list)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.ListInstancesResponse do
