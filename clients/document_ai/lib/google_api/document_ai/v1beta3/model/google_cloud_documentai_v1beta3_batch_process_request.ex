@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
 
   *   `inputConfigs` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig.t)`, *default:* `nil`) - The input config for each single document in the batch process.
   *   `outputConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig.t`, *default:* `nil`) - The overall output config for batch process.
+  *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether Human Review feature should be skipped for this request. Default to false.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,7 +34,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig.t()
             ),
           :outputConfig =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig.t()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig.t(),
+          :skipHumanReview => boolean()
         }
 
   field(:inputConfigs,
@@ -46,6 +48,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
     as:
       GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig
   )
+
+  field(:skipHumanReview)
 end
 
 defimpl Poison.Decoder,
