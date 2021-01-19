@@ -605,14 +605,14 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   end
 
   @doc """
-  Adds data points to a dataset. The dataset need not be previously created. All points within the given dataset will be returned with subsquent calls to retrieve this dataset. Data points can belong to more than one dataset. This method does not use patch semantics.
+  Adds data points to a dataset. The dataset need not be previously created. All points within the given dataset will be returned with subsquent calls to retrieve this dataset. Data points can belong to more than one dataset. This method does not use patch semantics: the data points provided are merely inserted, with no existing data replaced.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Fitness.V1.Connection.t`) - Connection to server
   *   `user_id` (*type:* `String.t`) - Patch a dataset for the person identified. Use me to indicate the authenticated user. Only me is supported at this time.
   *   `data_source_id` (*type:* `String.t`) - The data stream ID of the data source that created the dataset.
-  *   `dataset_id` (*type:* `String.t`) - Dataset identifier that is a composite of the minimum data point start time and maximum data point end time represented as nanoseconds from the epoch. The ID is formatted like: "startTime-endTime" where startTime and endTime are 64 bit integers.
+  *   `dataset_id` (*type:* `String.t`) - This field is not used, and can be safely omitted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
