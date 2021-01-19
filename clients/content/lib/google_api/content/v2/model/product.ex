@@ -70,7 +70,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   *   `isBundle` (*type:* `boolean()`, *default:* `nil`) - Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.
   *   `googleProductCategory` (*type:* `String.t`, *default:* `nil`) - Google's category of the item (see [Google product taxonomy](https://support.google.com/merchants/answer/1705911)). When querying products, this field will contain the user provided value. There is currently no way to get back the auto assigned google product categories through the API.
   *   `material` (*type:* `String.t`, *default:* `nil`) - The material of which the item is made.
-  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item. Acceptable values are: - "`local`" - "`online`" 
+  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item. Acceptable values are: - "`new`" - "`refurbished`" - "`used`" 
   *   `expirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in `productstatuses` as `googleExpirationDate` and might be earlier if `expirationDate` is too far in the future.
   *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see products data specification ).
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
