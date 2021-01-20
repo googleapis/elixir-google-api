@@ -22,7 +22,8 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.ConfigSettings do
   ## Attributes
 
   *   `channel` (*type:* `String.t`, *default:* `nil`) - How Lighthouse was run, e.g. from the Chrome extension or from the npm module.
-  *   `emulatedFormFactor` (*type:* `String.t`, *default:* `nil`) - The form factor the emulation should use.
+  *   `emulatedFormFactor` (*type:* `String.t`, *default:* `nil`) - The form factor the emulation should use. This field is deprecated, form_factor should be used instead.
+  *   `formFactor` (*type:* `String.t`, *default:* `nil`) - How Lighthouse should interpret this run in regards to scoring performance metrics and skipping mobile-only tests in desktop.
   *   `locale` (*type:* `String.t`, *default:* `nil`) - The locale setting.
   *   `onlyCategories` (*type:* `any()`, *default:* `nil`) - List of categories of audits the run should conduct.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.ConfigSettings do
   @type t :: %__MODULE__{
           :channel => String.t(),
           :emulatedFormFactor => String.t(),
+          :formFactor => String.t(),
           :locale => String.t(),
           :onlyCategories => any()
         }
 
   field(:channel)
   field(:emulatedFormFactor)
+  field(:formFactor)
   field(:locale)
   field(:onlyCategories)
 end
