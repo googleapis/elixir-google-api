@@ -44,6 +44,7 @@ defmodule GoogleApi.VectorTile.V1.Api.Featuretiles do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:alwaysIncludeBuildingFootprints` (*type:* `boolean()`) - Flag indicating whether the returned tile will always contain 2.5D footprints for structures. If enabled_modeled_volumes is set, this will mean that structures will have both their 3D models and 2.5D footprints returned.
       *   `:"clientInfo.apiClient"` (*type:* `String.t`) - API client name and version. For example, the SDK calling the API. The exact format is up to the client.
       *   `:"clientInfo.applicationId"` (*type:* `String.t`) - Application ID, such as the package name on Android and the bundle identifier on iOS platforms.
       *   `:"clientInfo.applicationVersion"` (*type:* `String.t`) - Application version number, such as "1.2.3". The exact format is application-dependent.
@@ -84,6 +85,7 @@ defmodule GoogleApi.VectorTile.V1.Api.Featuretiles do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :alwaysIncludeBuildingFootprints => :query,
       :"clientInfo.apiClient" => :query,
       :"clientInfo.applicationId" => :query,
       :"clientInfo.applicationVersion" => :query,
