@@ -22,9 +22,9 @@ defmodule GoogleApi.VectorTile.V1.Model.Geometry do
   ## Attributes
 
   *   `areas` (*type:* `list(GoogleApi.VectorTile.V1.Model.Area.t)`, *default:* `nil`) - The areas present in this geometry.
-  *   `extrudedAreas` (*type:* `list(GoogleApi.VectorTile.V1.Model.ExtrudedArea.t)`, *default:* `nil`) - The extruded areas present in this geometry.
+  *   `extrudedAreas` (*type:* `list(GoogleApi.VectorTile.V1.Model.ExtrudedArea.t)`, *default:* `nil`) - The extruded areas present in this geometry. Not populated if modeled_volumes are included in this geometry unless always_include_building_footprints is set in GetFeatureTileRequest, in which case the client should decide which (extruded areas or modeled volumes) should be used (they should not be rendered together).
   *   `lines` (*type:* `list(GoogleApi.VectorTile.V1.Model.Line.t)`, *default:* `nil`) - The lines present in this geometry.
-  *   `modeledVolumes` (*type:* `list(GoogleApi.VectorTile.V1.Model.ModeledVolume.t)`, *default:* `nil`) - The modeled volumes present in this geometry.
+  *   `modeledVolumes` (*type:* `list(GoogleApi.VectorTile.V1.Model.ModeledVolume.t)`, *default:* `nil`) - The modeled volumes present in this geometry. Not populated unless enable_modeled_volumes has been set in GetFeatureTileRequest.
   """
 
   use GoogleApi.Gax.ModelBase
