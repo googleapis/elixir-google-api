@@ -27,6 +27,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Manifest do
   *   `imports` (*type:* `list(GoogleApi.DeploymentManager.V2.Model.ImportFile.t)`, *default:* `nil`) - Output only. The imported files for this manifest.
   *   `insertTime` (*type:* `String.t`, *default:* `nil`) - Output only. Creation timestamp in RFC3339 text format.
   *   `layout` (*type:* `String.t`, *default:* `nil`) - Output only. The YAML layout for this manifest.
+  *   `manifestSizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The computed size of the fully expanded manifest.
+  *   `manifestSizeLimitBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The size limit for expanded manifests in the project.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the manifest.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Self link for the manifest.
   """
@@ -40,6 +42,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Manifest do
           :imports => list(GoogleApi.DeploymentManager.V2.Model.ImportFile.t()),
           :insertTime => String.t(),
           :layout => String.t(),
+          :manifestSizeBytes => String.t(),
+          :manifestSizeLimitBytes => String.t(),
           :name => String.t(),
           :selfLink => String.t()
         }
@@ -50,6 +54,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Manifest do
   field(:imports, as: GoogleApi.DeploymentManager.V2.Model.ImportFile, type: :list)
   field(:insertTime)
   field(:layout)
+  field(:manifestSizeBytes)
+  field(:manifestSizeLimitBytes)
   field(:name)
   field(:selfLink)
 end
