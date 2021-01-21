@@ -22,7 +22,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.Device do
   ## Attributes
 
   *   `attributes` (*type:* `map()`, *default:* `nil`) - Attributes for the traits supported by the device.
-  *   `customData` (*type:* `map()`, *default:* `nil`) - Custom device attributes stored in Home Graph and provided to your smart home Action in each [QUERY](https://developers.google.com/assistant/smarthome/reference/intent/query) and [EXECUTE](https://developers.google.com/assistant/smarthome/reference/intent/execute) intent.
+  *   `customData` (*type:* `map()`, *default:* `nil`) - Custom device attributes stored in Home Graph and provided to your smart home Action in each [QUERY](https://developers.google.com/assistant/smarthome/reference/intent/query) and [EXECUTE](https://developers.google.com/assistant/smarthome/reference/intent/execute) intent. Data in this object has a few constraints: No sensitive information, including but not limited to Personally Identifiable Information.
   *   `deviceInfo` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceInfo.t`, *default:* `nil`) - Device manufacturer, model, hardware version, and software version.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Third-party device ID.
   *   `name` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceNames.t`, *default:* `nil`) - Names given to this device by your smart home Action.
