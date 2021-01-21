@@ -24,7 +24,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3IntentParameter
   *   `entityType` (*type:* `String.t`, *default:* `nil`) - Required. The entity type of the parameter. Format: `projects/-/locations/-/agents/-/entityTypes/` for system entity types (for example, `projects/-/locations/-/agents/-/entityTypes/sys.date`), or `projects//locations//agents//entityTypes/` for developer entity types.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the parameter. This field is used by training phrases to annotate their parts.
   *   `isList` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the parameter represents a list of values.
-  *   `redact` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the parameter content is logged in text and audio. If it is set to true, the parameter content will be replaced to parameter id in both request and response. The default value is false.
+  *   `redact` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the parameter content should be redacted in text and audio. If the flag is set to true, the parameter content will be replaced by parameter name in both request and response. Note: the parameter content is subject to redaction if either parameter level redaction or entity type level redaction is enabled.
   """
 
   use GoogleApi.Gax.ModelBase
