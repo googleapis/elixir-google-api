@@ -347,7 +347,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Creates an android app stream with the specified location and attributes.
+  Creates an Android app stream with the specified location and attributes. Note that an Android app stream must be linked to a Firebase app to receive traffic. To create a working app stream, make sure your property is linked to a Firebase project. Then, use the Firebase API to create a Firebase app, which will also create an appropriate data stream in Analytics (may take up to 24 hours).
 
   ## Parameters
 
@@ -1350,7 +1350,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Creates an iOS app data stream with the specified location and attributes.
+  Creates an iOS app stream with the specified location and attributes. Note that an iOS app stream must be linked to a Firebase app to receive traffic. To create a working app stream, make sure your property is linked to a Firebase project. Then, use the Firebase API to create a Firebase app, which will also create an appropriate data stream in Analytics (may take up to 24 hours).
 
   ## Parameters
 
