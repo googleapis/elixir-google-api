@@ -22,15 +22,21 @@ defmodule GoogleApi.People.V1.Model.UpdateContactGroupRequest do
   ## Attributes
 
   *   `contactGroup` (*type:* `GoogleApi.People.V1.Model.ContactGroup.t`, *default:* `nil`) - Required. The contact group to update.
+  *   `readGroupFields` (*type:* `String.t`, *default:* `nil`) - Optional. A field mask to restrict which fields on the group are returned. Defaults to `metadata`, `groupType`, and `name` if not set or set to empty. Valid fields are: * clientData * groupType * memberCount * metadata * name
+  *   `updateGroupFields` (*type:* `String.t`, *default:* `nil`) - Optional. A field mask to restrict which fields on the group are updated. Multiple fields can be specified by separating them with commas. Defaults to `name` if not set or set to empty. Updated fields are replaced. Valid values are: * clientData * name
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactGroup => GoogleApi.People.V1.Model.ContactGroup.t()
+          :contactGroup => GoogleApi.People.V1.Model.ContactGroup.t(),
+          :readGroupFields => String.t(),
+          :updateGroupFields => String.t()
         }
 
   field(:contactGroup, as: GoogleApi.People.V1.Model.ContactGroup)
+  field(:readGroupFields)
+  field(:updateGroupFields)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.UpdateContactGroupRequest do
