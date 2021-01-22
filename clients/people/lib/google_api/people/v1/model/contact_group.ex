@@ -21,6 +21,7 @@ defmodule GoogleApi.People.V1.Model.ContactGroup do
 
   ## Attributes
 
+  *   `clientData` (*type:* `list(GoogleApi.People.V1.Model.GroupClientData.t)`, *default:* `nil`) - The group's client data.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the resource. Used for web cache validation.
   *   `formattedName` (*type:* `String.t`, *default:* `nil`) - Output only. The name translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale for system groups names. Group names set by the owner are the same as name.
   *   `groupType` (*type:* `String.t`, *default:* `nil`) - Output only. The contact group type.
@@ -34,6 +35,7 @@ defmodule GoogleApi.People.V1.Model.ContactGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clientData => list(GoogleApi.People.V1.Model.GroupClientData.t()),
           :etag => String.t(),
           :formattedName => String.t(),
           :groupType => String.t(),
@@ -44,6 +46,7 @@ defmodule GoogleApi.People.V1.Model.ContactGroup do
           :resourceName => String.t()
         }
 
+  field(:clientData, as: GoogleApi.People.V1.Model.GroupClientData, type: :list)
   field(:etag)
   field(:formattedName)
   field(:groupType)

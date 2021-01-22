@@ -43,6 +43,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:groupFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on the group are returned. Defaults to `metadata`, `groupType`, `memberCount`, and `name` if not set or set to empty. Valid fields are: * clientData * groupType * memberCount * metadata * name
       *   `:maxMembers` (*type:* `integer()`) - Optional. Specifies the maximum number of members to return for each group. Defaults to 0 if not set, which will return zero members.
       *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the contact groups to get.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -69,6 +70,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :groupFields => :query,
       :maxMembers => :query,
       :resourceNames => :query
     }
@@ -229,6 +231,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:groupFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on the group are returned. Defaults to `metadata`, `groupType`, `memberCount`, and `name` if not set or set to empty. Valid fields are: * clientData * groupType * memberCount * metadata * name
       *   `:maxMembers` (*type:* `integer()`) - Optional. Specifies the maximum number of members to return. Defaults to 0 if not set, which will return zero members.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -254,6 +257,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :groupFields => :query,
       :maxMembers => :query
     }
 
@@ -290,6 +294,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:groupFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on the group are returned. Defaults to `metadata`, `groupType`, `memberCount`, and `name` if not set or set to empty. Valid fields are: * clientData * groupType * memberCount * metadata * name
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of resources to return. Valid values are between 1 and 1000, inclusive. Defaults to 30 if not set or set to 0.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous call to [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the next page of resources.
       *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, returned by a previous call to `contactgroups.list`. Only resources changed since the sync token was created will be returned.
@@ -317,6 +322,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :groupFields => :query,
       :pageSize => :query,
       :pageToken => :query,
       :syncToken => :query
