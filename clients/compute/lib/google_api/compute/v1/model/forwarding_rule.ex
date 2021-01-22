@@ -44,8 +44,6 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
 
       Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-
-      For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
   *   `IPProtocol` (*type:* `String.t`, *default:* `nil`) - The IP protocol to which this rule applies.
 
       For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
@@ -70,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `ipVersion` (*type:* `String.t`, *default:* `nil`) - The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
   *   `isMirroringCollector` (*type:* `boolean()`, *default:* `nil`) - Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if a PacketMirroring rule applies to them. This can only be set to true for load balancers that have their loadBalancingScheme set to INTERNAL.
   *   `kind` (*type:* `String.t`, *default:* `compute#forwardingRule`) - [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule resources.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
   *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Specifies the forwarding rule type.
 
        
@@ -94,8 +93,6 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `network` (*type:* `String.t`, *default:* `nil`) - This field is not used for external load balancing.
 
       For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
-
-      For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
   *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.
 
       For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
@@ -137,12 +134,6 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
 
       If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
   *   `target` (*type:* `String.t`, *default:* `nil`) - The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-
-      For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
-
-       
-      - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.  
-      - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -160,6 +151,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
           :ipVersion => String.t(),
           :isMirroringCollector => boolean(),
           :kind => String.t(),
+          :labels => map(),
           :loadBalancingScheme => String.t(),
           :metadataFilters => list(GoogleApi.Compute.V1.Model.MetadataFilter.t()),
           :name => String.t(),
@@ -187,6 +179,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   field(:ipVersion)
   field(:isMirroringCollector)
   field(:kind)
+  field(:labels, type: :map)
   field(:loadBalancingScheme)
   field(:metadataFilters, as: GoogleApi.Compute.V1.Model.MetadataFilter, type: :list)
   field(:name)

@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.CorsPolicy do
       Default is false.
   *   `allowHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the content for the Access-Control-Allow-Headers header.
   *   `allowMethods` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the content for the Access-Control-Allow-Methods header.
-  *   `allowOriginRegexes` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript 
+  *   `allowOriginRegexes` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax 
       An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
   *   `allowOrigins` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the list of origins that will be allowed to do CORS requests.
       An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
