@@ -33,6 +33,7 @@ defmodule GoogleApi.Compute.V1.Model.Zone do
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] Full URL reference to the region which hosts the zone.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] Status of the zone, either UP or DOWN.
+  *   `supportsPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -47,7 +48,8 @@ defmodule GoogleApi.Compute.V1.Model.Zone do
           :name => String.t(),
           :region => String.t(),
           :selfLink => String.t(),
-          :status => String.t()
+          :status => String.t(),
+          :supportsPzs => boolean()
         }
 
   field(:availableCpuPlatforms, type: :list)
@@ -60,6 +62,7 @@ defmodule GoogleApi.Compute.V1.Model.Zone do
   field(:region)
   field(:selfLink)
   field(:status)
+  field(:supportsPzs)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Zone do

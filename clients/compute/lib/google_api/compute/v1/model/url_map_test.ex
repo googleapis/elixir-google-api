@@ -22,6 +22,13 @@ defmodule GoogleApi.Compute.V1.Model.UrlMapTest do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of this test case.
+  *   `expectedOutputUrl` (*type:* `String.t`, *default:* `nil`) - The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+      For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+      For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+      expectedOutputUrl is optional when service is specified.
+  *   `expectedRedirectResponseCode` (*type:* `integer()`, *default:* `nil`) - For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
+      expectedRedirectResponseCode cannot be set when service is set.
+  *   `headers` (*type:* `list(GoogleApi.Compute.V1.Model.UrlMapTestHeader.t)`, *default:* `nil`) - HTTP headers for this request. If headers contains a host header, then host must also match the header value.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Host portion of the URL. If headers contains a host header, then host must also match the header value.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Path portion of the URL.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Expected BackendService or BackendBucket resource the given URL should be mapped to.
@@ -32,12 +39,18 @@ defmodule GoogleApi.Compute.V1.Model.UrlMapTest do
 
   @type t :: %__MODULE__{
           :description => String.t(),
+          :expectedOutputUrl => String.t(),
+          :expectedRedirectResponseCode => integer(),
+          :headers => list(GoogleApi.Compute.V1.Model.UrlMapTestHeader.t()),
           :host => String.t(),
           :path => String.t(),
           :service => String.t()
         }
 
   field(:description)
+  field(:expectedOutputUrl)
+  field(:expectedRedirectResponseCode)
+  field(:headers, as: GoogleApi.Compute.V1.Model.UrlMapTestHeader, type: :list)
   field(:host)
   field(:path)
   field(:service)

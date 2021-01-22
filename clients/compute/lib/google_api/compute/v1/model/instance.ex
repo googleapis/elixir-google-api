@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
 
   ## Attributes
 
+  *   `advancedMachineFeatures` (*type:* `GoogleApi.Compute.V1.Model.AdvancedMachineFeatures.t`, *default:* `nil`) - Controls for advanced machine-related behavior features.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
       zones/us-central1-f/machineTypes/n1-standard-1
 
@@ -41,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
 
       Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
   *   `guestAccelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of the type and count of accelerator cards attached to the instance.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `metadata` (*type:* `GoogleApi.Compute.V1.Model.Metadata.t`, *default:* `nil`) - The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.
   *   `confidentialInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t`, *default:* `nil`) - 
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
@@ -80,12 +82,14 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedMachineFeatures => GoogleApi.Compute.V1.Model.AdvancedMachineFeatures.t(),
           :machineType => String.t(),
           :tags => GoogleApi.Compute.V1.Model.Tags.t(),
           :lastSuspendedTimestamp => String.t(),
           :statusMessage => String.t(),
           :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t()),
           :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()),
+          :satisfiesPzs => boolean(),
           :metadata => GoogleApi.Compute.V1.Model.Metadata.t(),
           :confidentialInstanceConfig =>
             GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t(),
@@ -120,12 +124,14 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
           :scheduling => GoogleApi.Compute.V1.Model.Scheduling.t()
         }
 
+  field(:advancedMachineFeatures, as: GoogleApi.Compute.V1.Model.AdvancedMachineFeatures)
   field(:machineType)
   field(:tags, as: GoogleApi.Compute.V1.Model.Tags)
   field(:lastSuspendedTimestamp)
   field(:statusMessage)
   field(:serviceAccounts, as: GoogleApi.Compute.V1.Model.ServiceAccount, type: :list)
   field(:guestAccelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)
+  field(:satisfiesPzs)
   field(:metadata, as: GoogleApi.Compute.V1.Model.Metadata)
   field(:confidentialInstanceConfig, as: GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig)
   field(:zone)

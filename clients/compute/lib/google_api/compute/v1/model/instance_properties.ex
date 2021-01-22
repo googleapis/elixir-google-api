@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
 
   ## Attributes
 
+  *   `advancedMachineFeatures` (*type:* `GoogleApi.Compute.V1.Model.AdvancedMachineFeatures.t`, *default:* `nil`) - Controls for advanced machine-related behavior features.
   *   `canIpForward` (*type:* `boolean()`, *default:* `nil`) - Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
   *   `confidentialInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t`, *default:* `nil`) - Specifies the Confidential Instance options.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional text description for the instances that are created from these properties.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedMachineFeatures => GoogleApi.Compute.V1.Model.AdvancedMachineFeatures.t(),
           :canIpForward => boolean(),
           :confidentialInstanceConfig =>
             GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig.t(),
@@ -63,6 +65,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
           :tags => GoogleApi.Compute.V1.Model.Tags.t()
         }
 
+  field(:advancedMachineFeatures, as: GoogleApi.Compute.V1.Model.AdvancedMachineFeatures)
   field(:canIpForward)
   field(:confidentialInstanceConfig, as: GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig)
   field(:description)

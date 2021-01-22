@@ -32,6 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.Region do
   *   `quotas` (*type:* `list(GoogleApi.Compute.V1.Model.Quota.t)`, *default:* `nil`) - [Output Only] Quotas assigned to this region.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] Status of the region, either UP or DOWN.
+  *   `supportsPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] A list of zones available in this region, in the form of resource URLs.
   """
 
@@ -47,6 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.Region do
           :quotas => list(GoogleApi.Compute.V1.Model.Quota.t()),
           :selfLink => String.t(),
           :status => String.t(),
+          :supportsPzs => boolean(),
           :zones => list(String.t())
         }
 
@@ -59,6 +61,7 @@ defmodule GoogleApi.Compute.V1.Model.Region do
   field(:quotas, as: GoogleApi.Compute.V1.Model.Quota, type: :list)
   field(:selfLink)
   field(:status)
+  field(:supportsPzs)
   field(:zones, type: :list)
 end
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificateManagedSslCertificate do
   ## Attributes
 
   *   `domainStatus` (*type:* `map()`, *default:* `nil`) - [Output only] Detailed statuses of the domains specified for managed certificate resource.
-  *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - The domains for which a managed SSL certificate will be generated. Currently only single-domain certs are supported.
+  *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output only] Status of the managed certificate resource.
   """
 
