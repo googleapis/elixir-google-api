@@ -21,15 +21,18 @@ defmodule GoogleApi.CloudFunctions.V1.Model.HttpsTrigger do
 
   ## Attributes
 
+  *   `securityLevel` (*type:* `String.t`, *default:* `nil`) - The security level for the function.
   *   `url` (*type:* `String.t`, *default:* `nil`) - Output only. The deployed url for the function.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :securityLevel => String.t(),
           :url => String.t()
         }
 
+  field(:securityLevel)
   field(:url)
 end
 
