@@ -24,6 +24,7 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
   *   `arimaForecastingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics.t`, *default:* `nil`) - Populated for ARIMA models.
   *   `binaryClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics.t`, *default:* `nil`) - Populated for binary classification/classifier models.
   *   `clusteringMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t`, *default:* `nil`) - Populated for clustering models.
+  *   `dimensionalityReductionMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.DimensionalityReductionMetrics.t`, *default:* `nil`) - Evaluation metrics when the model is a dimensionality reduction model, which currently includes PCA.
   *   `multiClassClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t`, *default:* `nil`) - Populated for multi-class classification/classifier models.
   *   `rankingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RankingMetrics.t`, *default:* `nil`) - Populated for implicit feedback type matrix factorization models.
   *   `regressionMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RegressionMetrics.t`, *default:* `nil`) - Populated for regression models and explicit feedback type matrix factorization models.
@@ -36,6 +37,8 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
           :binaryClassificationMetrics =>
             GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics.t(),
           :clusteringMetrics => GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t(),
+          :dimensionalityReductionMetrics =>
+            GoogleApi.BigQuery.V2.Model.DimensionalityReductionMetrics.t(),
           :multiClassClassificationMetrics =>
             GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t(),
           :rankingMetrics => GoogleApi.BigQuery.V2.Model.RankingMetrics.t(),
@@ -45,6 +48,10 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
   field(:arimaForecastingMetrics, as: GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics)
   field(:binaryClassificationMetrics, as: GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics)
   field(:clusteringMetrics, as: GoogleApi.BigQuery.V2.Model.ClusteringMetrics)
+
+  field(:dimensionalityReductionMetrics,
+    as: GoogleApi.BigQuery.V2.Model.DimensionalityReductionMetrics
+  )
 
   field(:multiClassClassificationMetrics,
     as: GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics
