@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.ShieldedInstanceConfig do
   @moduledoc """
-  Shielded Instance Config for clusters using shielded VMs.
+  Shielded Instance Config for clusters using Compute Engine Shielded VMs (https://cloud.google.com/security/shielded-cloud/shielded-vm).
 
   ## Attributes
 
