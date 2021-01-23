@@ -27,6 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
   *   `evalLoss` (*type:* `float()`, *default:* `nil`) - Loss computed on the eval data at the end of iteration.
   *   `index` (*type:* `integer()`, *default:* `nil`) - Index of the iteration, 0 based.
   *   `learnRate` (*type:* `float()`, *default:* `nil`) - Learn rate used for this iteration.
+  *   `principalComponentInfos` (*type:* `list(GoogleApi.BigQuery.V2.Model.PrincipalComponentInfo.t)`, *default:* `nil`) - The information of the principal components.
   *   `trainingLoss` (*type:* `float()`, *default:* `nil`) - Loss computed on the training data at the end of iteration.
   """
 
@@ -39,6 +40,8 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
           :evalLoss => float(),
           :index => integer(),
           :learnRate => float(),
+          :principalComponentInfos =>
+            list(GoogleApi.BigQuery.V2.Model.PrincipalComponentInfo.t()),
           :trainingLoss => float()
         }
 
@@ -48,6 +51,12 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
   field(:evalLoss)
   field(:index)
   field(:learnRate)
+
+  field(:principalComponentInfos,
+    as: GoogleApi.BigQuery.V2.Model.PrincipalComponentInfo,
+    type: :list
+  )
+
   field(:trainingLoss)
 end
 
