@@ -21,9 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ProvisionOrganizationRequ
 
   ## Attributes
 
-  *   `analyticsRegion` (*type:* `String.t`, *default:* `nil`) - Primary Cloud Platform region for analytics data storage. For valid values, see [Create an organization](https://docs.apigee.com/hybrid/latest/precog-provision). Defaults to us-west1.
+  *   `analyticsRegion` (*type:* `String.t`, *default:* `nil`) - Primary Cloud Platform region for analytics data storage. For valid values, see [Create an organization](https://cloud.google.com/apigee/docs/hybrid/latest/precog-provision). Defaults to `us-west1`.
   *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Name of the customer project's VPC network. If provided, the network needs to be peered through Service Networking. If none is provided, the organization will have access only to the public internet.
-  *   `runtimeLocation` (*type:* `String.t`, *default:* `nil`) - Cloud Platform location for the runtime instance. Defaults to us-west1-a.
+  *   `runtimeLocation` (*type:* `String.t`, *default:* `nil`) - Cloud Platform location for the runtime instance. Defaults to `us-west1-a`.
   """
 
   use GoogleApi.Gax.ModelBase
