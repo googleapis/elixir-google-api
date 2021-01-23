@@ -36,6 +36,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LineItem do
   *   `inventorySourceIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the private inventory sources assigned to the line item.
   *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the line item. Assigned by the system.
   *   `lineItemType` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The type of the line item.
+  *   `mobileApp` (*type:* `GoogleApi.DisplayVideo.V1.Model.MobileApp.t`, *default:* `nil`) - The mobile app promoted by the line item. This is applicable only when line_item_type is either `LINE_ITEM_TYPE_DISPLAY_MOBILE_APP_INSTALL` or `LINE_ITEM_TYPE_VIDEO_MOBILE_APP_INSTALL`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the line item.
   *   `pacing` (*type:* `GoogleApi.DisplayVideo.V1.Model.Pacing.t`, *default:* `nil`) - Required. The budget spending speed setting of the line item.
   *   `partnerCosts` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t)`, *default:* `nil`) - The partner costs associated with the line item. If absent or empty in CreateLineItem method, the newly created line item will inherit partner costs from its parent insertion order.
@@ -63,6 +64,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LineItem do
           :inventorySourceIds => list(String.t()),
           :lineItemId => String.t(),
           :lineItemType => String.t(),
+          :mobileApp => GoogleApi.DisplayVideo.V1.Model.MobileApp.t(),
           :name => String.t(),
           :pacing => GoogleApi.DisplayVideo.V1.Model.Pacing.t(),
           :partnerCosts => list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t()),
@@ -87,6 +89,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LineItem do
   field(:inventorySourceIds, type: :list)
   field(:lineItemId)
   field(:lineItemType)
+  field(:mobileApp, as: GoogleApi.DisplayVideo.V1.Model.MobileApp)
   field(:name)
   field(:pacing, as: GoogleApi.DisplayVideo.V1.Model.Pacing)
   field(:partnerCosts, as: GoogleApi.DisplayVideo.V1.Model.PartnerCost, type: :list)
