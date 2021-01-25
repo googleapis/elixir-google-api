@@ -24,7 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View and manage your data across Google Cloud Platform services
+      # See, edit, configure, and delete your Google Cloud Platform data
       "https://www.googleapis.com/auth/cloud-platform",
 
       # Manage your Google SQL Service instances

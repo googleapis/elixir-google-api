@@ -21,15 +21,18 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertsCreateEphemeralRequest do
 
   ## Attributes
 
+  *   `access_token` (*type:* `String.t`, *default:* `nil`) - Access token to include in the signed certificate.
   *   `public_key` (*type:* `String.t`, *default:* `nil`) - PEM encoded public key to include in the signed certificate.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :access_token => String.t(),
           :public_key => String.t()
         }
 
+  field(:access_token)
   field(:public_key)
 end
 
