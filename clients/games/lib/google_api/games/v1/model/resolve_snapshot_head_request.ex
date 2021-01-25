@@ -21,15 +21,18 @@ defmodule GoogleApi.Games.V1.Model.ResolveSnapshotHeadRequest do
 
   ## Attributes
 
+  *   `maxConflictsPerSnapshot` (*type:* `integer()`, *default:* `nil`) - The maximum number of SnapshotRevision resources for `conflictingRevisions` to return per SnapshotExtended resource in the response. For any response, the actual number of resources returned may be less than specified by `maxConflictsPerSnapshot`. The value provided should be greater or equal to 0. If no value is provided, the server will use a sensible default.
   *   `resolutionPolicy` (*type:* `String.t`, *default:* `nil`) - Required. The automatic resolution policy. All conflicts are resolved in chronological order, starting from the/ least recent. If the comparison metric is equal for the tentative head and the conflict, the head wins.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :maxConflictsPerSnapshot => integer(),
           :resolutionPolicy => String.t()
         }
 
+  field(:maxConflictsPerSnapshot)
   field(:resolutionPolicy)
 end
 
