@@ -26,7 +26,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
   *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The language of the playlist's default title and description.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The playlist's description.
   *   `localized` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistLocalization.t`, *default:* `nil`) - Localized title and description, read-only.
-  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the playlist was created. The value is specified in ISO 8601 format.
+  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the playlist was created.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Keyword tags associated with the playlist.
   *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The playlist's title.
@@ -40,7 +40,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
           :defaultLanguage => String.t(),
           :description => String.t(),
           :localized => GoogleApi.YouTube.V3.Model.PlaylistLocalization.t(),
-          :publishedAt => String.t(),
+          :publishedAt => DateTime.t(),
           :tags => list(String.t()),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
           :title => String.t()
@@ -51,7 +51,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
   field(:defaultLanguage)
   field(:description)
   field(:localized, as: GoogleApi.YouTube.V3.Model.PlaylistLocalization)
-  field(:publishedAt)
+  field(:publishedAt, as: DateTime)
   field(:tags, type: :list)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)

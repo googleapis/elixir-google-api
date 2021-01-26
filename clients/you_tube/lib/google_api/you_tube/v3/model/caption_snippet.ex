@@ -29,7 +29,7 @@ defmodule GoogleApi.YouTube.V3.Model.CaptionSnippet do
   *   `isEasyReader` (*type:* `boolean()`, *default:* `nil`) - Indicates whether caption track is formatted for "easy reader," meaning it is at a third-grade level for language learners. The default value is false.
   *   `isLarge` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the caption track uses large text for the vision-impaired. The default value is false.
   *   `language` (*type:* `String.t`, *default:* `nil`) - The language of the caption track. The property value is a BCP-47 language tag.
-  *   `lastUpdated` (*type:* `String.t`, *default:* `nil`) - The date and time when the caption track was last updated. The value is specified in ISO 8601 format.
+  *   `lastUpdated` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the caption track was last updated.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the caption track. The name is intended to be visible to the user as an option during playback.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The caption track's status.
   *   `trackKind` (*type:* `String.t`, *default:* `nil`) - The caption track's type.
@@ -47,7 +47,7 @@ defmodule GoogleApi.YouTube.V3.Model.CaptionSnippet do
           :isEasyReader => boolean(),
           :isLarge => boolean(),
           :language => String.t(),
-          :lastUpdated => String.t(),
+          :lastUpdated => DateTime.t(),
           :name => String.t(),
           :status => String.t(),
           :trackKind => String.t(),
@@ -62,7 +62,7 @@ defmodule GoogleApi.YouTube.V3.Model.CaptionSnippet do
   field(:isEasyReader)
   field(:isLarge)
   field(:language)
-  field(:lastUpdated)
+  field(:lastUpdated, as: DateTime)
   field(:name)
   field(:status)
   field(:trackKind)

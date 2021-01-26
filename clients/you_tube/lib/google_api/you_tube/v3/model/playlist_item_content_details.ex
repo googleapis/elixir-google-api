@@ -25,7 +25,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
   *   `note` (*type:* `String.t`, *default:* `nil`) - A user-generated note for this item.
   *   `startAt` (*type:* `String.t`, *default:* `nil`) - The time, measured in seconds from the start of the video, when the video should start playing. (The playlist owner can specify the times when the video should start and stop playing when the video is played in the context of the playlist.) The default value is 0.
   *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify a video. To retrieve the video resource, set the id query parameter to this value in your API request.
-  *   `videoPublishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the video was published to YouTube. The value is specified in ISO 8601 format.
+  *   `videoPublishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the video was published to YouTube.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,14 +35,14 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do
           :note => String.t(),
           :startAt => String.t(),
           :videoId => String.t(),
-          :videoPublishedAt => String.t()
+          :videoPublishedAt => DateTime.t()
         }
 
   field(:endAt)
   field(:note)
   field(:startAt)
   field(:videoId)
-  field(:videoPublishedAt)
+  field(:videoPublishedAt, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails do

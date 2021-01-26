@@ -23,7 +23,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
 
   *   `location` (*type:* `GoogleApi.YouTube.V3.Model.GeoPoint.t`, *default:* `nil`) - The geolocation information associated with the video.
   *   `locationDescription` (*type:* `String.t`, *default:* `nil`) - The text description of the location where the video was recorded.
-  *   `recordingDate` (*type:* `String.t`, *default:* `nil`) - The date and time when the video was recorded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sssZ) format.
+  *   `recordingDate` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the video was recorded.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +31,12 @@ defmodule GoogleApi.YouTube.V3.Model.VideoRecordingDetails do
   @type t :: %__MODULE__{
           :location => GoogleApi.YouTube.V3.Model.GeoPoint.t(),
           :locationDescription => String.t(),
-          :recordingDate => String.t()
+          :recordingDate => DateTime.t()
         }
 
   field(:location, as: GoogleApi.YouTube.V3.Model.GeoPoint)
   field(:locationDescription)
-  field(:recordingDate)
+  field(:recordingDate, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoRecordingDetails do

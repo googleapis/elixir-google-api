@@ -29,7 +29,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSnippet do
   *   `description` (*type:* `String.t`, *default:* `nil`) - The video's description. @mutable youtube.videos.insert youtube.videos.update
   *   `liveBroadcastContent` (*type:* `String.t`, *default:* `nil`) - Indicates if the video is an upcoming/active live broadcast. Or it's "none" if the video is not an upcoming/active live broadcast.
   *   `localized` (*type:* `GoogleApi.YouTube.V3.Model.VideoLocalization.t`, *default:* `nil`) - Localized snippet selected with the hl parameter. If no such localization exists, this field is populated with the default snippet. (Read-only)
-  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the video was uploaded. The value is specified in ISO 8601 format.
+  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the video was uploaded.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - A list of keyword tags associated with the video. Tags may contain spaces.
   *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the video. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The video's title. @mutable youtube.videos.insert youtube.videos.update
@@ -46,7 +46,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSnippet do
           :description => String.t(),
           :liveBroadcastContent => String.t(),
           :localized => GoogleApi.YouTube.V3.Model.VideoLocalization.t(),
-          :publishedAt => String.t(),
+          :publishedAt => DateTime.t(),
           :tags => list(String.t()),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
           :title => String.t()
@@ -60,7 +60,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSnippet do
   field(:description)
   field(:liveBroadcastContent)
   field(:localized, as: GoogleApi.YouTube.V3.Model.VideoLocalization)
-  field(:publishedAt)
+  field(:publishedAt, as: DateTime)
   field(:tags, type: :list)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)
