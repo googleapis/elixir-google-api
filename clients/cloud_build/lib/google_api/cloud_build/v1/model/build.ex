@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
   ## Attributes
 
   *   `artifacts` (*type:* `GoogleApi.CloudBuild.V1.Model.Artifacts.t`, *default:* `nil`) - Artifacts produced by the build that should be uploaded upon successful completion of all build steps.
+  *   `availableSecrets` (*type:* `GoogleApi.CloudBuild.V1.Model.Secrets.t`, *default:* `nil`) - Secrets and secret environment variables.
   *   `buildTriggerId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the `BuildTrigger` that triggered this build, if it was triggered automatically.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the request to create the build was received.
   *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which execution of the build was finished. The difference between finish_time and start_time is the duration of the build's execution.
@@ -34,7 +35,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the project.
   *   `queueTtl` (*type:* `String.t`, *default:* `nil`) - TTL in queue for this build. If provided and the build is enqueued longer than this value, the build will expire and the build status will be `EXPIRED`. The TTL starts ticking from create_time.
   *   `results` (*type:* `GoogleApi.CloudBuild.V1.Model.Results.t`, *default:* `nil`) - Output only. Results of the build.
-  *   `secrets` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Secret.t)`, *default:* `nil`) - Secrets to decrypt using Cloud Key Management Service.
+  *   `secrets` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Secret.t)`, *default:* `nil`) - Secrets to decrypt using Cloud Key Management Service. Note: Secret Manager is the recommended technique for managing sensitive data with Cloud Build. Use `available_secrets` to configure builds to access secrets from Secret Manager. For instructions, see: https://cloud.google.com/cloud-build/docs/securing-builds/use-secrets
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - IAM service account whose credentials will be used at build runtime. Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. ACCOUNT can be email address or uniqueId of the service account. This field is in beta.
   *   `source` (*type:* `GoogleApi.CloudBuild.V1.Model.Source.t`, *default:* `nil`) - The location of the source files to build.
   *   `sourceProvenance` (*type:* `GoogleApi.CloudBuild.V1.Model.SourceProvenance.t`, *default:* `nil`) - Output only. A permanent fixed identifier for source.
@@ -52,6 +53,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
 
   @type t :: %__MODULE__{
           :artifacts => GoogleApi.CloudBuild.V1.Model.Artifacts.t(),
+          :availableSecrets => GoogleApi.CloudBuild.V1.Model.Secrets.t(),
           :buildTriggerId => String.t(),
           :createTime => DateTime.t(),
           :finishTime => DateTime.t(),
@@ -79,6 +81,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
         }
 
   field(:artifacts, as: GoogleApi.CloudBuild.V1.Model.Artifacts)
+  field(:availableSecrets, as: GoogleApi.CloudBuild.V1.Model.Secrets)
   field(:buildTriggerId)
   field(:createTime, as: DateTime)
   field(:finishTime, as: DateTime)
