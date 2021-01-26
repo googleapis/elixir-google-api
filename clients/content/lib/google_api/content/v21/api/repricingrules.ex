@@ -376,7 +376,7 @@ defmodule GoogleApi.Content.V21.Api.Repricingrules do
   end
 
   @doc """
-  Lists the metrics report for a given Repricing rule. Reports of the last 3 days may not be complete.
+  Lists the metrics report for a given Repricing rule.
 
   ## Parameters
 
@@ -395,10 +395,10 @@ defmodule GoogleApi.Content.V21.Api.Repricingrules do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:endDate` (*type:* `String.t`) - Gets Repricing reports on and before this date in the merchant's timezone. You can only retrieve data up to 3 days ago (default) or earlier. Format: YYYY-MM-DD.
+      *   `:endDate` (*type:* `String.t`) - Gets Repricing reports on and before this date in the merchant's timezone. You can only retrieve data up to 7 days ago (default) or earlier. Format: YYYY-MM-DD.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of daily reports to return. Each report includes data from a single 24-hour period. The page size defaults to 50 and values above 1000 are coerced to 1000. This service may return fewer days than this value, for example, if the time between your start and end date is less than page size.
       *   `:pageToken` (*type:* `String.t`) - Token (if provided) to retrieve the subsequent page. All other parameters must match the original call that provided the page token.
-      *   `:startDate` (*type:* `String.t`) - Gets Repricing reports on and after this date in the merchant's timezone, up to one year ago. Do not use a start date later than 3 days ago (default). Format: YYYY-MM-DD.
+      *   `:startDate` (*type:* `String.t`) - Gets Repricing reports on and after this date in the merchant's timezone, up to one year ago. Do not use a start date later than 7 days ago (default). Format: YYYY-MM-DD.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
