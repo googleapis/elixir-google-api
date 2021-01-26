@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.CommentSnippet do
   *   `likeCount` (*type:* `integer()`, *default:* `nil`) - The total number of likes this comment has received.
   *   `moderationStatus` (*type:* `String.t`, *default:* `nil`) - The comment's moderation status. Will not be set if the comments were requested through the id filter.
   *   `parentId` (*type:* `String.t`, *default:* `nil`) - The unique id of the parent comment, only set for replies.
-  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the comment was orignally published. The value is specified in ISO 8601 format.
+  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the comment was originally published.
   *   `textDisplay` (*type:* `String.t`, *default:* `nil`) - The comment's text. The format is either plain text or HTML dependent on what has been requested. Even the plain text representation may differ from the text originally posted in that it may replace video links with video titles etc.
   *   `textOriginal` (*type:* `String.t`, *default:* `nil`) - The comment's original raw text as initially posted or last updated. The original text will only be returned if it is accessible to the viewer, which is only guaranteed if the viewer is the comment's author.
-  *   `updatedAt` (*type:* `String.t`, *default:* `nil`) - The date and time when was last updated . The value is specified in ISO 8601 format.
+  *   `updatedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the comment was last updated.
   *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID of the video the comment refers to, if any.
   *   `viewerRating` (*type:* `String.t`, *default:* `nil`) - The rating the viewer has given to this comment. For the time being this will never return RATE_TYPE_DISLIKE and instead return RATE_TYPE_NONE. This may change in the future.
   """
@@ -50,10 +50,10 @@ defmodule GoogleApi.YouTube.V3.Model.CommentSnippet do
           :likeCount => integer(),
           :moderationStatus => String.t(),
           :parentId => String.t(),
-          :publishedAt => String.t(),
+          :publishedAt => DateTime.t(),
           :textDisplay => String.t(),
           :textOriginal => String.t(),
-          :updatedAt => String.t(),
+          :updatedAt => DateTime.t(),
           :videoId => String.t(),
           :viewerRating => String.t()
         }
@@ -67,10 +67,10 @@ defmodule GoogleApi.YouTube.V3.Model.CommentSnippet do
   field(:likeCount)
   field(:moderationStatus)
   field(:parentId)
-  field(:publishedAt)
+  field(:publishedAt, as: DateTime)
   field(:textDisplay)
   field(:textOriginal)
-  field(:updatedAt)
+  field(:updatedAt, as: DateTime)
   field(:videoId)
   field(:viewerRating)
 end

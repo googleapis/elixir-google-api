@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
   ## Attributes
 
   *   `boundStreamId` (*type:* `String.t`, *default:* `nil`) - This value uniquely identifies the live stream bound to the broadcast.
-  *   `boundStreamLastUpdateTimeMs` (*type:* `String.t`, *default:* `nil`) - The date and time that the live stream referenced by boundStreamId was last updated.
+  *   `boundStreamLastUpdateTimeMs` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the live stream referenced by boundStreamId was last updated.
   *   `closedCaptionsType` (*type:* `String.t`, *default:* `nil`) - 
   *   `enableAutoStart` (*type:* `boolean()`, *default:* `nil`) - This setting indicates whether auto start is enabled for this broadcast. The default value for this property is false. This setting can only be used by Events.
   *   `enableAutoStop` (*type:* `boolean()`, *default:* `nil`) - This setting indicates whether auto stop is enabled for this broadcast. The default value for this property is false. This setting can only be used by Events.
@@ -43,7 +43,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
 
   @type t :: %__MODULE__{
           :boundStreamId => String.t(),
-          :boundStreamLastUpdateTimeMs => String.t(),
+          :boundStreamLastUpdateTimeMs => DateTime.t(),
           :closedCaptionsType => String.t(),
           :enableAutoStart => boolean(),
           :enableAutoStop => boolean(),
@@ -61,7 +61,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
         }
 
   field(:boundStreamId)
-  field(:boundStreamLastUpdateTimeMs)
+  field(:boundStreamLastUpdateTimeMs, as: DateTime)
   field(:closedCaptionsType)
   field(:enableAutoStart)
   field(:enableAutoStop)

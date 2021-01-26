@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
   *   `madeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   *   `privacyStatus` (*type:* `String.t`, *default:* `nil`) - The video's privacy status.
   *   `publicStatsViewable` (*type:* `boolean()`, *default:* `nil`) - This value indicates if the extended video statistics on the watch page can be viewed by everyone. Note that the view count, likes, etc will still be visible if this is disabled. @mutable youtube.videos.insert youtube.videos.update
-  *   `publishAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the video is scheduled to publish. It can be set only if the privacy status of the video is private. The value is specified in ISO 8601 format.
+  *   `publishAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the video is scheduled to publish. It can be set only if the privacy status of the video is private..
   *   `rejectionReason` (*type:* `String.t`, *default:* `nil`) - This value explains why YouTube rejected an uploaded video. This property is only present if the uploadStatus property indicates that the upload was rejected.
   *   `selfDeclaredMadeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   *   `uploadStatus` (*type:* `String.t`, *default:* `nil`) - The status of the uploaded video.
@@ -42,7 +42,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
           :madeForKids => boolean(),
           :privacyStatus => String.t(),
           :publicStatsViewable => boolean(),
-          :publishAt => String.t(),
+          :publishAt => DateTime.t(),
           :rejectionReason => String.t(),
           :selfDeclaredMadeForKids => boolean(),
           :uploadStatus => String.t()
@@ -54,7 +54,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
   field(:madeForKids)
   field(:privacyStatus)
   field(:publicStatsViewable)
-  field(:publishAt)
+  field(:publishAt, as: DateTime)
   field(:rejectionReason)
   field(:selfDeclaredMadeForKids)
   field(:uploadStatus)

@@ -26,7 +26,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
   *   `description` (*type:* `String.t`, *default:* `nil`) - The item's description.
   *   `playlistId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify thGe playlist that the playlist item is in.
   *   `position` (*type:* `integer()`, *default:* `nil`) - The order in which the item appears in the playlist. The value uses a zero-based index, so the first item has a position of 0, the second item has a position of 1, and so forth.
-  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the item was added to the playlist. The value is specified in ISO 8601 format.
+  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the item was added to the playlist.
   *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The id object contains information that can be used to uniquely identify the resource that is included in the playlist as the playlist item.
   *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist item. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The item's title.
@@ -40,7 +40,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
           :description => String.t(),
           :playlistId => String.t(),
           :position => integer(),
-          :publishedAt => String.t(),
+          :publishedAt => DateTime.t(),
           :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t(),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
           :title => String.t()
@@ -51,7 +51,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
   field(:description)
   field(:playlistId)
   field(:position)
-  field(:publishedAt)
+  field(:publishedAt, as: DateTime)
   field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)

@@ -28,7 +28,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   *   `liveChatId` (*type:* `String.t`, *default:* `nil`) - 
   *   `messageDeletedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t`, *default:* `nil`) - 
   *   `messageRetractedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t`, *default:* `nil`) - 
-  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the message was orignally published. The value is specified in ISO 8601 format.
+  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the message was orignally published.
   *   `superChatDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t`, *default:* `nil`) - Details about the Super Chat event, this is only set if the type is 'superChatEvent'.
   *   `superStickerDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t`, *default:* `nil`) - Details about the Super Sticker event, this is only set if the type is 'superStickerEvent'.
   *   `textMessageDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t`, *default:* `nil`) - Details about the text message, this is only set if the type is 'textMessageEvent'.
@@ -48,7 +48,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
           :messageDeletedDetails => GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t(),
           :messageRetractedDetails =>
             GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t(),
-          :publishedAt => String.t(),
+          :publishedAt => DateTime.t(),
           :superChatDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t(),
           :superStickerDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t(),
           :textMessageDetails => GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t(),
@@ -63,7 +63,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   field(:liveChatId)
   field(:messageDeletedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails)
   field(:messageRetractedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails)
-  field(:publishedAt)
+  field(:publishedAt, as: DateTime)
   field(:superChatDetails, as: GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails)
   field(:superStickerDetails, as: GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails)
   field(:textMessageDetails, as: GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails)

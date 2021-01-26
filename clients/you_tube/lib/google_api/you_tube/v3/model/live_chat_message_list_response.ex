@@ -26,7 +26,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t)`, *default:* `nil`) - 
   *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatMessageListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#liveChatMessageListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
-  *   `offlineAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the underlying stream went offline. The value is specified in ISO 8601 format.
+  *   `offlineAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the underlying stream went offline.
   *   `pageInfo` (*type:* `GoogleApi.YouTube.V3.Model.PageInfo.t`, *default:* `nil`) - General pagination information.
   *   `pollingIntervalMillis` (*type:* `integer()`, *default:* `nil`) - The amount of time the client should wait before polling again.
   *   `tokenPagination` (*type:* `GoogleApi.YouTube.V3.Model.TokenPagination.t`, *default:* `nil`) - 
@@ -41,7 +41,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
           :items => list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t()),
           :kind => String.t(),
           :nextPageToken => String.t(),
-          :offlineAt => String.t(),
+          :offlineAt => DateTime.t(),
           :pageInfo => GoogleApi.YouTube.V3.Model.PageInfo.t(),
           :pollingIntervalMillis => integer(),
           :tokenPagination => GoogleApi.YouTube.V3.Model.TokenPagination.t(),
@@ -53,7 +53,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
   field(:items, as: GoogleApi.YouTube.V3.Model.LiveChatMessage, type: :list)
   field(:kind)
   field(:nextPageToken)
-  field(:offlineAt)
+  field(:offlineAt, as: DateTime)
   field(:pageInfo, as: GoogleApi.YouTube.V3.Model.PageInfo)
   field(:pollingIntervalMillis)
   field(:tokenPagination, as: GoogleApi.YouTube.V3.Model.TokenPagination)

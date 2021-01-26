@@ -24,7 +24,7 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
   *   `amountMicros` (*type:* `String.t`, *default:* `nil`) - The purchase amount, in micros of the purchase currency. e.g., 1 is represented as 1000000.
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - Channel id where the event occurred.
   *   `commentText` (*type:* `String.t`, *default:* `nil`) - The text contents of the comment left by the user.
-  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the event occurred. The value is specified in ISO 8601 format.
+  *   `createdAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the event occurred.
   *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency in which the purchase was made. ISO 4217.
   *   `displayString` (*type:* `String.t`, *default:* `nil`) - A rendered string that displays the purchase amount and currency (e.g., "$1.00"). The string is rendered for the given language.
   *   `isSuperStickerEvent` (*type:* `boolean()`, *default:* `nil`) - True if this event is a Super Sticker event.
@@ -39,7 +39,7 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
           :amountMicros => String.t(),
           :channelId => String.t(),
           :commentText => String.t(),
-          :createdAt => String.t(),
+          :createdAt => DateTime.t(),
           :currency => String.t(),
           :displayString => String.t(),
           :isSuperStickerEvent => boolean(),
@@ -51,7 +51,7 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
   field(:amountMicros)
   field(:channelId)
   field(:commentText)
-  field(:createdAt)
+  field(:createdAt, as: DateTime)
   field(:currency)
   field(:displayString)
   field(:isSuperStickerEvent)
