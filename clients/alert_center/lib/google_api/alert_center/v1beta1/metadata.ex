@@ -20,7 +20,7 @@ defmodule GoogleApi.AlertCenter.V1beta1 do
   API client metadata for GoogleApi.AlertCenter.V1beta1.
   """
 
-  @discovery_revision "20201231"
+  @discovery_revision "20210123"
 
   def discovery_revision(), do: @discovery_revision
 end
