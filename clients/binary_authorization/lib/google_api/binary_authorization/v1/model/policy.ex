@@ -26,6 +26,9 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Policy do
   *   `defaultAdmissionRule` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t`, *default:* `nil`) - Required. Default admission rule for a cluster without a per-cluster, per- kubernetes-service-account, or per-istio-service-identity admission rule.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive comment.
   *   `globalPolicyEvaluationMode` (*type:* `String.t`, *default:* `nil`) - Optional. Controls the evaluation of a Google-maintained global admission policy for common system-level images. Images not covered by the global policy will be subject to the project admission policy. This setting has no effect when specified inside a global admission policy.
+  *   `istioServiceIdentityAdmissionRules` (*type:* `%{optional(String.t) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t}`, *default:* `nil`) - Optional. Per-istio-service-identity admission rules. Istio service identity spec format: spiffe:///ns//sa/ or /ns//sa/ e.g. spiffe://example.com/ns/test-ns/sa/default
+  *   `kubernetesNamespaceAdmissionRules` (*type:* `%{optional(String.t) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t}`, *default:* `nil`) - Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format: [a-z.-]+, e.g. 'some-namespace'
+  *   `kubernetesServiceAccountAdmissionRules` (*type:* `%{optional(String.t) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t}`, *default:* `nil`) - Optional. Per-kubernetes-service-account admission rules. Service account spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name, in the format `projects/*/policy`. There is at most one policy per project.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the policy was last updated.
   """
@@ -41,6 +44,15 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Policy do
           :defaultAdmissionRule => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t(),
           :description => String.t(),
           :globalPolicyEvaluationMode => String.t(),
+          :istioServiceIdentityAdmissionRules => %{
+            optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()
+          },
+          :kubernetesNamespaceAdmissionRules => %{
+            optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()
+          },
+          :kubernetesServiceAccountAdmissionRules => %{
+            optional(String.t()) => GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule.t()
+          },
           :name => String.t(),
           :updateTime => DateTime.t()
         }
@@ -58,6 +70,22 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.Policy do
   field(:defaultAdmissionRule, as: GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule)
   field(:description)
   field(:globalPolicyEvaluationMode)
+
+  field(:istioServiceIdentityAdmissionRules,
+    as: GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule,
+    type: :map
+  )
+
+  field(:kubernetesNamespaceAdmissionRules,
+    as: GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule,
+    type: :map
+  )
+
+  field(:kubernetesServiceAccountAdmissionRules,
+    as: GoogleApi.BinaryAuthorization.V1.Model.AdmissionRule,
+    type: :map
+  )
+
   field(:name)
   field(:updateTime, as: DateTime)
 end
