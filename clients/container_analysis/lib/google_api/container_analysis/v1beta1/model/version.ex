@@ -22,6 +22,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Version do
   ## Attributes
 
   *   `epoch` (*type:* `integer()`, *default:* `nil`) - Used to correct mistakes in the version numbering scheme.
+  *   `inclusive` (*type:* `boolean()`, *default:* `nil`) - Whether this version is specifying part of an inclusive range. Grafeas does not have the capability to specify version ranges; instead we have fields that specify start version and end versions. At times this is insufficient - we also need to specify whether the version is included in the range or is excluded from the range. This boolean is expected to be set to true when the version is included in a range.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Required. Distinguishes between sentinel MIN/MAX versions and normal versions.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required only when version kind is NORMAL. The main part of the version name.
   *   `revision` (*type:* `String.t`, *default:* `nil`) - The iteration of the package build from the above version.
@@ -31,12 +32,14 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Version do
 
   @type t :: %__MODULE__{
           :epoch => integer(),
+          :inclusive => boolean(),
           :kind => String.t(),
           :name => String.t(),
           :revision => String.t()
         }
 
   field(:epoch)
+  field(:inclusive)
   field(:kind)
   field(:name)
   field(:revision)

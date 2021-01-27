@@ -22,6 +22,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Version do
   ## Attributes
 
   *   `epoch` (*type:* `integer()`, *default:* `nil`) - Used to correct mistakes in the version numbering scheme.
+  *   `inclusive` (*type:* `boolean()`, *default:* `nil`) - Whether this version is vulnerable, when defining the version bounds. For example, if the minimum version is 2.0, inclusive=true would say 2.0 is vulnerable, while inclusive=false would say it's not
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Distinguish between sentinel MIN/MAX versions and normal versions. If kind is not NORMAL, then the other fields are ignored.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The main part of the version name.
   *   `revision` (*type:* `String.t`, *default:* `nil`) - The iteration of the package build from the above version.
@@ -31,12 +32,14 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Version do
 
   @type t :: %__MODULE__{
           :epoch => integer(),
+          :inclusive => boolean(),
           :kind => String.t(),
           :name => String.t(),
           :revision => String.t()
         }
 
   field(:epoch)
+  field(:inclusive)
   field(:kind)
   field(:name)
   field(:revision)
