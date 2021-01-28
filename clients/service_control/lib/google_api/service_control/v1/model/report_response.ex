@@ -22,7 +22,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportResponse do
   ## Attributes
 
   *   `reportErrors` (*type:* `list(GoogleApi.ServiceControl.V1.Model.ReportError.t)`, *default:* `nil`) - Partial failures, one for each `Operation` in the request that failed processing. There are three possible combinations of the RPC status: 1. The combination of a successful RPC status and an empty `report_errors` list indicates a complete success where all `Operations` in the request are processed successfully. 2. The combination of a successful RPC status and a non-empty `report_errors` list indicates a partial success where some `Operations` in the request succeeded. Each `Operation` that failed processing has a corresponding item in this list. 3. A failed RPC status indicates a general non-deterministic failure. When this happens, it's impossible to know which of the 'Operations' in the request succeeded or failed.
-  *   `reportInfos` (*type:* `list(GoogleApi.ServiceControl.V1.Model.ReportInfo.t)`, *default:* `nil`) - Quota usage for each quota release `Operation` request. Fully or partially failed quota release request may or may not be present in `report_quota_info`. For example, a failed quota release request will have the current quota usage info when precise quota library returns the info. A deadline exceeded quota request will not have quota usage info. If there is no quota release request, report_quota_info will be empty. 
   *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - The actual config id used to process the request.
   *   `serviceRolloutId` (*type:* `String.t`, *default:* `nil`) - The current service rollout id used to process the request.
   """
@@ -31,13 +30,11 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportResponse do
 
   @type t :: %__MODULE__{
           :reportErrors => list(GoogleApi.ServiceControl.V1.Model.ReportError.t()),
-          :reportInfos => list(GoogleApi.ServiceControl.V1.Model.ReportInfo.t()),
           :serviceConfigId => String.t(),
           :serviceRolloutId => String.t()
         }
 
   field(:reportErrors, as: GoogleApi.ServiceControl.V1.Model.ReportError, type: :list)
-  field(:reportInfos, as: GoogleApi.ServiceControl.V1.Model.ReportInfo, type: :list)
   field(:serviceConfigId)
   field(:serviceRolloutId)
 end
