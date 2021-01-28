@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.Device do
   @moduledoc """
-  Third-party device definition.
+  Third-party device definition. Next ID = 14
 
   ## Attributes
 
@@ -26,6 +26,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.Device do
   *   `deviceInfo` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceInfo.t`, *default:* `nil`) - Device manufacturer, model, hardware version, and software version.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Third-party device ID.
   *   `name` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceNames.t`, *default:* `nil`) - Names given to this device by your smart home Action.
+  *   `nonLocalTraits` (*type:* `list(GoogleApi.HomeGraph.V1.Model.NonLocalTrait.t)`, *default:* `nil`) - See description for "traits". For Smart Home Entertainment Devices (SHED) devices, some traits can only be executed on 3P cloud, e.g. "non_local_traits": [ { "trait": "action.devices.traits.MediaInitiation" }, { "trait": "action.devices.traits.Channel" } ] go/shed-per-trait-routing.
   *   `notificationSupportedByAgent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether your smart home Action will report notifications to Google for this device via ReportStateAndNotification. If your smart home Action enables users to control device notifications, you should update this field and call RequestSyncDevices.
   *   `otherDeviceIds` (*type:* `list(GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId.t)`, *default:* `nil`) - Alternate IDs associated with this device. This is used to identify cloud synced devices enabled for [local fulfillment](https://developers.google.com/assistant/smarthome/concepts/local).
   *   `roomHint` (*type:* `String.t`, *default:* `nil`) - Suggested name for the room where this device is installed. Google attempts to use this value during user setup.
@@ -43,6 +44,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.Device do
           :deviceInfo => GoogleApi.HomeGraph.V1.Model.DeviceInfo.t(),
           :id => String.t(),
           :name => GoogleApi.HomeGraph.V1.Model.DeviceNames.t(),
+          :nonLocalTraits => list(GoogleApi.HomeGraph.V1.Model.NonLocalTrait.t()),
           :notificationSupportedByAgent => boolean(),
           :otherDeviceIds => list(GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId.t()),
           :roomHint => String.t(),
@@ -57,6 +59,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.Device do
   field(:deviceInfo, as: GoogleApi.HomeGraph.V1.Model.DeviceInfo)
   field(:id)
   field(:name, as: GoogleApi.HomeGraph.V1.Model.DeviceNames)
+  field(:nonLocalTraits, as: GoogleApi.HomeGraph.V1.Model.NonLocalTrait, type: :list)
   field(:notificationSupportedByAgent)
   field(:otherDeviceIds, as: GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId, type: :list)
   field(:roomHint)
