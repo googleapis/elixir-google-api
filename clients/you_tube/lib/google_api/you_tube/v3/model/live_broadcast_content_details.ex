@@ -37,6 +37,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
   *   `projection` (*type:* `String.t`, *default:* `nil`) - The projection format of this broadcast. This defaults to rectangular.
   *   `recordFromStart` (*type:* `boolean()`, *default:* `nil`) - Automatically start recording after the event goes live. The default value for this property is true. *Important:* You must also set the enableDvr property's value to true if you want the playback to be available immediately after the broadcast ends. If you set this property's value to true but do not also set the enableDvr property to true, there may be a delay of around one day before the archived video will be available for playback.
   *   `startWithSlate` (*type:* `boolean()`, *default:* `nil`) - This setting indicates whether the broadcast should automatically begin with an in-stream slate when you update the broadcast's status to live. After updating the status, you then need to send a liveCuepoints.insert request that sets the cuepoint's eventState to end to remove the in-stream slate and make your broadcast stream visible to viewers.
+  *   `stereoLayout` (*type:* `String.t`, *default:* `nil`) - The 3D stereo layout of this broadcast. This defaults to mono.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -57,7 +58,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
           :monitorStream => GoogleApi.YouTube.V3.Model.MonitorStreamInfo.t(),
           :projection => String.t(),
           :recordFromStart => boolean(),
-          :startWithSlate => boolean()
+          :startWithSlate => boolean(),
+          :stereoLayout => String.t()
         }
 
   field(:boundStreamId)
@@ -76,6 +78,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
   field(:projection)
   field(:recordFromStart)
   field(:startWithSlate)
+  field(:stereoLayout)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
