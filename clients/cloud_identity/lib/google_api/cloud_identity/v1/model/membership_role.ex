@@ -21,15 +21,18 @@ defmodule GoogleApi.CloudIdentity.V1.Model.MembershipRole do
 
   ## Attributes
 
+  *   `expiryDetail` (*type:* `GoogleApi.CloudIdentity.V1.Model.ExpiryDetail.t`, *default:* `nil`) - The expiry details of the `MembershipRole`. Expiry details are only supported for `MEMBER` `MembershipRoles`. May be set if `name` is `MEMBER`. Must not be set if `name` is any other value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the `MembershipRole`. Must be one of `OWNER`, `MANAGER`, `MEMBER`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :expiryDetail => GoogleApi.CloudIdentity.V1.Model.ExpiryDetail.t(),
           :name => String.t()
         }
 
+  field(:expiryDetail, as: GoogleApi.CloudIdentity.V1.Model.ExpiryDetail)
   field(:name)
 end
 
