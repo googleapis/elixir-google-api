@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.Group do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the `Group` was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An extended description to help users determine the purpose of a `Group`. Must not be longer than 4,096 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the `Group`.
+  *   `dynamicGroupMetadata` (*type:* `GoogleApi.CloudIdentity.V1.Model.DynamicGroupMetadata.t`, *default:* `nil`) - Optional. Dynamic group metadata like queries and status.
   *   `groupKey` (*type:* `GoogleApi.CloudIdentity.V1.Model.EntityKey.t`, *default:* `nil`) - Required. Immutable. The `EntityKey` of the `Group`.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Required. One or more label entries that apply to the Group. Currently supported labels contain a key with an empty value. Google Groups are the default type of group and have a label with a key of `cloudidentity.googleapis.com/groups.discussion_forum` and an empty value. Existing Google Groups can have an additional label with a key of `cloudidentity.googleapis.com/groups.security` and an empty value added to them. **This is an immutable change and the security label cannot be removed once added.** Dynamic groups have a label with a key of `cloudidentity.googleapis.com/groups.dynamic`. Identity-mapped groups for Cloud Search have a label with a key of `system/groups/external` and an empty value. Examples: {"cloudidentity.googleapis.com/groups.discussion_forum": ""} or {"system/groups/external": ""}.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Group`. Shall be of the form `groups/{group_id}`.
@@ -37,6 +38,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.Group do
           :createTime => DateTime.t(),
           :description => String.t(),
           :displayName => String.t(),
+          :dynamicGroupMetadata => GoogleApi.CloudIdentity.V1.Model.DynamicGroupMetadata.t(),
           :groupKey => GoogleApi.CloudIdentity.V1.Model.EntityKey.t(),
           :labels => map(),
           :name => String.t(),
@@ -47,6 +49,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.Group do
   field(:createTime, as: DateTime)
   field(:description)
   field(:displayName)
+  field(:dynamicGroupMetadata, as: GoogleApi.CloudIdentity.V1.Model.DynamicGroupMetadata)
   field(:groupKey, as: GoogleApi.CloudIdentity.V1.Model.EntityKey)
   field(:labels, type: :map)
   field(:name)
