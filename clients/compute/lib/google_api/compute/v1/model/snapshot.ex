@@ -37,6 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
   *   `licenseCodes` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] Integer license codes indicating which licenses are attached to this snapshot.
   *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
+  *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
@@ -71,6 +72,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
           :labels => map(),
           :licenseCodes => list(String.t()),
           :licenses => list(String.t()),
+          :locationHint => String.t(),
           :name => String.t(),
           :satisfiesPzs => boolean(),
           :selfLink => String.t(),
@@ -96,6 +98,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   field(:labels, type: :map)
   field(:licenseCodes, type: :list)
   field(:licenses, type: :list)
+  field(:locationHint)
   field(:name)
   field(:satisfiesPzs)
   field(:selfLink)

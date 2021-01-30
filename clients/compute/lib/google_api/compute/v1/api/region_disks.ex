@@ -403,7 +403,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
 
           The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-      *   `:sourceImage` (*type:* `String.t`) - Optional. Source image to restore onto a disk.
+      *   `:sourceImage` (*type:* `String.t`) - Source image to restore onto a disk. This field is optional.
       *   `:body` (*type:* `GoogleApi.Compute.V1.Model.Disk.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
