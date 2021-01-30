@@ -50,7 +50,6 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
       - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. 
       - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. 
       - If the quic-override flag is not specified, NONE is implied.
-      -
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional TargetHttpsProxy resides. This field is not applicable to global TargetHttpsProxies.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `serverTlsPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic.
