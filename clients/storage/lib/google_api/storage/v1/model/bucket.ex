@@ -41,6 +41,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   *   `owner` (*type:* `GoogleApi.Storage.V1.Model.BucketOwner.t`, *default:* `nil`) - The owner of the bucket. This is always the project team's owner group.
   *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - The project number of the project the bucket belongs to.
   *   `retentionPolicy` (*type:* `GoogleApi.Storage.V1.Model.BucketRetentionPolicy.t`, *default:* `nil`) - The bucket's retention policy. The retention policy enforces a minimum retention time for all objects contained in the bucket, based on their creation time. Any attempt to overwrite or delete objects younger than the retention period will result in a PERMISSION_DENIED error. An unlocked retention policy can be modified or removed from the bucket via a storage.buckets.update operation. A locked retention policy cannot be removed or shortened in duration for the lifetime of the bucket. Attempting to remove or decrease period of a locked retention policy will result in a PERMISSION_DENIED error.
+  *   `satisfiesPZS` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this bucket.
   *   `storageClass` (*type:* `String.t`, *default:* `nil`) - The bucket's default storage class, used whenever no storageClass is specified for a newly-created object. This defines how objects in the bucket are stored and determines the SLA and the cost of storage. Values include MULTI_REGIONAL, REGIONAL, STANDARD, NEARLINE, COLDLINE, ARCHIVE, and DURABLE_REDUCED_AVAILABILITY. If this value is not specified when the bucket is created, it will default to STANDARD. For more information, see storage classes.
   *   `timeCreated` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the bucket in RFC 3339 format.
@@ -73,6 +74,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :owner => GoogleApi.Storage.V1.Model.BucketOwner.t(),
           :projectNumber => String.t(),
           :retentionPolicy => GoogleApi.Storage.V1.Model.BucketRetentionPolicy.t(),
+          :satisfiesPZS => boolean(),
           :selfLink => String.t(),
           :storageClass => String.t(),
           :timeCreated => DateTime.t(),
@@ -102,6 +104,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   field(:owner, as: GoogleApi.Storage.V1.Model.BucketOwner)
   field(:projectNumber)
   field(:retentionPolicy, as: GoogleApi.Storage.V1.Model.BucketRetentionPolicy)
+  field(:satisfiesPZS)
   field(:selfLink)
   field(:storageClass)
   field(:timeCreated, as: DateTime)
