@@ -22,8 +22,9 @@ defmodule GoogleApi.Spanner.V1.Model.BackupInfo do
   ## Attributes
 
   *   `backup` (*type:* `String.t`, *default:* `nil`) - Name of the backup.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The backup contains an externally consistent copy of `source_database` at the timestamp specified by `create_time`.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the CreateBackup request was received.
   *   `sourceDatabase` (*type:* `String.t`, *default:* `nil`) - Name of the database the backup was created from.
+  *   `versionTime` (*type:* `DateTime.t`, *default:* `nil`) - The backup contains an externally consistent copy of `source_database` at the timestamp specified by `version_time`. If the CreateBackup request did not specify `version_time`, the `version_time` of the backup is equivalent to the `create_time`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Spanner.V1.Model.BackupInfo do
   @type t :: %__MODULE__{
           :backup => String.t(),
           :createTime => DateTime.t(),
-          :sourceDatabase => String.t()
+          :sourceDatabase => String.t(),
+          :versionTime => DateTime.t()
         }
 
   field(:backup)
   field(:createTime, as: DateTime)
   field(:sourceDatabase)
+  field(:versionTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.BackupInfo do

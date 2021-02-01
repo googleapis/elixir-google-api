@@ -21,15 +21,18 @@ defmodule GoogleApi.Spanner.V1.Model.CommitResponse do
 
   ## Attributes
 
+  *   `commitStats` (*type:* `GoogleApi.Spanner.V1.Model.CommitStats.t`, *default:* `nil`) - The statistics about this Commit. Not returned by default. For more information, see CommitRequest.return_commit_stats.
   *   `commitTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - The Cloud Spanner timestamp at which the transaction committed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :commitStats => GoogleApi.Spanner.V1.Model.CommitStats.t(),
           :commitTimestamp => DateTime.t()
         }
 
+  field(:commitStats, as: GoogleApi.Spanner.V1.Model.CommitStats)
   field(:commitTimestamp, as: DateTime)
 end
 
