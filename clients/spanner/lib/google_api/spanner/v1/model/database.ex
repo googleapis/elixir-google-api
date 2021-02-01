@@ -22,24 +22,30 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If exists, the time at which the database creation started.
+  *   `earliestVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Earliest timestamp at which older versions of the data can be read.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the database. Values are of the form `projects//instances//databases/`, where `` is as specified in the `CREATE DATABASE` statement. This name can be passed to other API methods to identify the database.
   *   `restoreInfo` (*type:* `GoogleApi.Spanner.V1.Model.RestoreInfo.t`, *default:* `nil`) - Output only. Applicable only for restored databases. Contains information about the restore source.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current database state.
+  *   `versionRetentionPeriod` (*type:* `String.t`, *default:* `nil`) - Output only. The period in which Cloud Spanner retains all versions of data for the database. This is same as the value of version_retention_period database option set using UpdateDatabaseDdl. Defaults to 1 hour, if not set.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t(),
+          :earliestVersionTime => DateTime.t(),
           :name => String.t(),
           :restoreInfo => GoogleApi.Spanner.V1.Model.RestoreInfo.t(),
-          :state => String.t()
+          :state => String.t(),
+          :versionRetentionPeriod => String.t()
         }
 
   field(:createTime, as: DateTime)
+  field(:earliestVersionTime, as: DateTime)
   field(:name)
   field(:restoreInfo, as: GoogleApi.Spanner.V1.Model.RestoreInfo)
   field(:state)
+  field(:versionRetentionPeriod)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Database do
