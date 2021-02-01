@@ -21,7 +21,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.Transport do
 
   ## Attributes
 
-  *   `pubsub` (*type:* `GoogleApi.Eventarc.V1beta1.Model.Pubsub.t`, *default:* `nil`) - The Pub/Sub topic and subscription that maybe created by Eventarc as delivery intermediary.
+  *   `pubsub` (*type:* `GoogleApi.Eventarc.V1beta1.Model.Pubsub.t`, *default:* `nil`) - The Pub/Sub topic and subscription used by Eventarc as delivery intermediary.
   """
 
   use GoogleApi.Gax.ModelBase
