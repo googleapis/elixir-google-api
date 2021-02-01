@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   @moduledoc """
-  Attributes of the product. For more information, see https://support.google.com/manufacturers/answer/6124116. Next tag: 48
+  Attributes of the product. For more information, see https://support.google.com/manufacturers/answer/6124116.
 
   ## Attributes
 
