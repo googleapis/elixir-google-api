@@ -80,6 +80,9 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Creation time of the event (as a RFC3339 timestamp). Read-only.
   *   `htmlLink` (*type:* `String.t`, *default:* `nil`) - An absolute link to this event in the Google Calendar Web UI. Read-only.
   *   `source` (*type:* `GoogleApi.Calendar.V3.Model.EventSource.t`, *default:* `nil`) - Source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS scheme. Can only be seen or modified by the creator of the event.
+  *   `eventType` (*type:* `String.t`, *default:* `default`) - Specific type of the event. Read-only. Possible values are:  
+      - "default" - A regular event or not further specified. 
+      - "outOfOffice" - An out-of-office event.
   *   `iCalUID` (*type:* `String.t`, *default:* `nil`) - Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method.
       Note that the icalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same icalUIDs.
   """
@@ -124,6 +127,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
           :created => DateTime.t(),
           :htmlLink => String.t(),
           :source => GoogleApi.Calendar.V3.Model.EventSource.t(),
+          :eventType => String.t(),
           :iCalUID => String.t()
         }
 
@@ -164,6 +168,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   field(:created, as: DateTime)
   field(:htmlLink)
   field(:source, as: GoogleApi.Calendar.V3.Model.EventSource)
+  field(:eventType)
   field(:iCalUID)
 end
 

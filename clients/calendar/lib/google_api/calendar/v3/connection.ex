@@ -33,7 +33,7 @@ defmodule GoogleApi.Calendar.V3.Connection do
       # View events on all your calendars
       "https://www.googleapis.com/auth/calendar.events.readonly",
 
-      # View your calendars
+      # See and download any calendar you can access using your Google Calendar
       "https://www.googleapis.com/auth/calendar.readonly",
 
       # View your Calendar settings
