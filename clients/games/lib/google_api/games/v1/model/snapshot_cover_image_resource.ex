@@ -24,7 +24,7 @@ defmodule GoogleApi.Games.V1.Model.SnapshotCoverImageResource do
   *   `contentHash` (*type:* `String.t`, *default:* `nil`) - Output only. Hash-like weak identifier of the uploaded image bytes, consistent per player per application. The content hash for a given resource will not change if the binary data hasn't changed. Except in very rare circumstances, the content_hash for matching binary data will be the same within a given player and application.
   *   `downloadUrl` (*type:* `String.t`, *default:* `nil`) - Output only. A URL the client can use to download the image. May vary across requests, and only guaranteed to be valid for a short time after it is returned.
   *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the image in pixels.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the image.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Output only. The MIME type of the image.
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The ID of the image resource. It's guaranteed that if two IDs are equal then the contents are equal as well. It's not guaranteed that two identical blobs coming from separate uploads have the same ID. The resource ID can only be used within the application, user and resource type it was originally returned for. For example, it's not possible to use SnapshotDataResource's resource ID as the resource_id of a SnapshotCoverImageResource, even if the blob is a valid image file.
   *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the image in pixels.
   """
