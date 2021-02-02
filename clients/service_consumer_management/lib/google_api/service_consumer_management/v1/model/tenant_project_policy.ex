@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy do
 
   ## Attributes
 
-  *   `policyBindings` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding.t)`, *default:* `nil`) - Policy bindings to be applied to the tenant project, in addition to the 'roles/owner' role granted to the Service Consumer Management service account. At least one binding must have the role `roles/owner`. Among the list of members for `roles/owner`, at least one of them must be either the `user` or `group` type.
+  *   `policyBindings` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding.t)`, *default:* `nil`) - Policy bindings to be applied to the tenant project, in addition to the 'roles/owner' role granted to the Service Consumer Management service account. At least one binding must have the role `roles/owner`.
   """
 
   use GoogleApi.Gax.ModelBase
