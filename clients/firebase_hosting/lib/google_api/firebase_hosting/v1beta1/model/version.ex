@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Version do
   @moduledoc """
-  A `Version` is the collection of configuration and [static files](sites.versions.files) that determine how a site is displayed.
+  A `Version` is a configuration and a collection of static files which determine how a site is displayed.
 
   ## Attributes
 
-  *   `config` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.ServingConfig.t`, *default:* `nil`) - The configuration for the behavior of the site. This configuration exists in the [`firebase.json`](/docs/cli/#the_firebasejson_file) file.
+  *   `config` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.ServingConfig.t`, *default:* `nil`) - The configuration for the behavior of the site. This configuration exists in the [`firebase.json`](https://firebase.google.com/docs/cli/#the_firebasejson_file) file.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the version was created.
   *   `createUser` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser.t`, *default:* `nil`) - Output only. Identifies the user who created the version.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the version was `DELETED`.
@@ -30,9 +30,9 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Version do
   *   `finalizeTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the version was `FINALIZED`.
   *   `finalizeUser` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser.t`, *default:* `nil`) - Output only. Identifies the user who `FINALIZED` the version.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels used for extra metadata and/or filtering.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier for a version, in the format: sites/site-name /versions/versionID This name is provided in the response body when you call the [`CreateVersion`](../sites.versions/create) endpoint.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier for a version, in the format: sites/SITE_NAME /versions/VERSION_ID This name is provided in the response body when you call [`CreateVersion`](sites.versions/create).
   *   `preview` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.PreviewConfig.t`, *default:* `nil`) - Deprecated in favor of site channels. Version preview configuration for the site version. This configuration specifies whether previewing is enabled for this site version. Version previews allow you to preview your site at a custom URL before releasing it as the live version.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The deploy status of a version. For a successful deploy, call the [`CreateVersion`](sites.versions/create) endpoint to make a new version (`CREATED` status), [upload all desired files](sites.versions/populateFiles) to the version, then [update](sites.versions/patch) the version to the `FINALIZED` status. Note that if you leave the version in the `CREATED` state for more than 12 hours, the system will automatically mark the version as `ABANDONED`. You can also change the status of a version to `DELETED` by calling the [`DeleteVersion`](sites.versions/delete) endpoint.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The deploy status of a version. For a successful deploy, call [`CreateVersion`](sites.versions/create) to make a new version (`CREATED` status), [upload all desired files](sites.versions/populateFiles) to the version, then [update](sites.versions/patch) the version to the `FINALIZED` status. Note that if you leave the version in the `CREATED` state for more than 12 hours, the system will automatically mark the version as `ABANDONED`. You can also change the status of a version to `DELETED` by calling [`DeleteVersion`](sites.versions/delete).
   *   `versionBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The total stored bytesize of the version. This value is calculated after a version is `FINALIZED`.
   """
 
