@@ -21,7 +21,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are additional releases remaining beyond the ones in this response, then supply this token in the next [`list`](../sites.versions.files/list) call to continue with the next set of releases.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token, if more results exist beyond the ones in this response. Include this token in your next call to `ListReleases`. Page tokens are short-lived and should not be stored.
   *   `releases` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Release.t)`, *default:* `nil`) - The list of hashes of files that still need to be uploaded, if any exist.
   """
 

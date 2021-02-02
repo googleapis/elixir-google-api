@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Release do
   @moduledoc """
-  A `Release` is a particular [collection of configurations and files](sites.versions) that is set to be public at a particular time.
+   A `Release` is a particular [collection of configurations and files](sites.versions) that is set to be public at a particular time.
 
   ## Attributes
 
   *   `message` (*type:* `String.t`, *default:* `nil`) - The deploy description when the release was created. The value can be up to 512 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the release, in the format: sites/ site-name/releases/releaseID This name is provided in the response body when you call the [`CreateRelease`](sites.releases/create) endpoint.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the release, in the format: sites/ SITE_NAME/releases/RELEASE_ID This name is provided in the response body when you call [`CreateRelease`](sites.releases/create).
   *   `releaseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the version is set to be public.
   *   `releaseUser` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser.t`, *default:* `nil`) - Output only. Identifies the user who created the release.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Explains the reason for the release. Specify a value for this field only when creating a `SITE_DISABLE` type release.

@@ -21,8 +21,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListVersionFilesResponse do
 
   ## Attributes
 
-  *   `files` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.VersionFile.t)`, *default:* `nil`) - The list path/hashes in the specified version.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token, if more results exist.
+  *   `files` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.VersionFile.t)`, *default:* `nil`) -  The list of paths to the hashes of the files in the specified version.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token, if more results exist beyond the ones in this response. Include this token in your next call to `ListVersionFiles`. Page tokens are short-lived and should not be stored.
   """
 
   use GoogleApi.Gax.ModelBase
