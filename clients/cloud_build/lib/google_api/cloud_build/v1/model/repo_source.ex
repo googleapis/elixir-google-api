@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
   *   `dir` (*type:* `String.t`, *default:* `nil`) - Directory, relative to the source root, in which to run the build. This must be a relative path. If a step's `dir` is specified and is an absolute path, this value is ignored for that step's execution.
   *   `invertRegex` (*type:* `boolean()`, *default:* `nil`) - Only trigger a build if the revision regex does NOT match the revision regex.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - ID of the project that owns the Cloud Source Repository. If omitted, the project ID requesting the build is assumed.
-  *   `repoName` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Cloud Source Repository.
+  *   `repoName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Source Repository.
   *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions to use in a triggered build. Should only be used with RunBuildTrigger
   *   `tagName` (*type:* `String.t`, *default:* `nil`) - Regex matching tags to build. The syntax of the regular expressions accepted is the syntax accepted by RE2 and described at https://github.com/google/re2/wiki/Syntax
   """
