@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   ## Attributes
 
   *   `accessibleTrackIds` (*type:* `list(String.t)`, *default:* `nil`) - List of the app’s track IDs that a device belonging to the enterprise can access. If the list contains multiple track IDs, devices receive the latest version among all accessible tracks. If the list contains no track IDs, devices only have access to the app’s production track. More details about each track are available in AppTrackInfo.
-  *   `autoUpdateMode` (*type:* `String.t`, *default:* `nil`) - This feature is not generally available.
+  *   `autoUpdateMode` (*type:* `String.t`, *default:* `nil`) - This feature is not generally available yet.
   *   `connectedWorkAndPersonalApp` (*type:* `String.t`, *default:* `nil`) - Controls whether the app can communicate with itself across a device’s work and personal profiles, subject to user consent.
   *   `defaultPermissionPolicy` (*type:* `String.t`, *default:* `nil`) - The default policy for all permissions requested by the app. If specified, this overrides the policy-level default_permission_policy which applies to all apps. It does not override the permission_grants which applies to all apps.
   *   `delegatedScopes` (*type:* `list(String.t)`, *default:* `nil`) - The scopes delegated to the app from Android Device Policy.

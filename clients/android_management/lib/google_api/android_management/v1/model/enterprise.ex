@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Enterprise do
   ## Attributes
 
   *   `appAutoApprovalEnabled` (*type:* `boolean()`, *default:* `nil`) - Deprecated and unused.
+  *   `contactInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.ContactInfo.t`, *default:* `nil`) - This feature is not generally available yet. The enterprise contact info of an EMM owned enterprise
   *   `enabledNotificationTypes` (*type:* `list(String.t)`, *default:* `nil`) - The types of Google Pub/Sub notifications enabled for the enterprise.
   *   `enterpriseDisplayName` (*type:* `String.t`, *default:* `nil`) - The name of the enterprise displayed to users.
   *   `logo` (*type:* `GoogleApi.AndroidManagement.V1.Model.ExternalData.t`, *default:* `nil`) - An image displayed as a logo during device provisioning. Supported types are: image/bmp, image/gif, image/x-ico, image/jpeg, image/png, image/webp, image/vnd.wap.wbmp, image/x-adobe-dng.
@@ -36,6 +37,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Enterprise do
 
   @type t :: %__MODULE__{
           :appAutoApprovalEnabled => boolean(),
+          :contactInfo => GoogleApi.AndroidManagement.V1.Model.ContactInfo.t(),
           :enabledNotificationTypes => list(String.t()),
           :enterpriseDisplayName => String.t(),
           :logo => GoogleApi.AndroidManagement.V1.Model.ExternalData.t(),
@@ -47,6 +49,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Enterprise do
         }
 
   field(:appAutoApprovalEnabled)
+  field(:contactInfo, as: GoogleApi.AndroidManagement.V1.Model.ContactInfo)
   field(:enabledNotificationTypes, type: :list)
   field(:enterpriseDisplayName)
   field(:logo, as: GoogleApi.AndroidManagement.V1.Model.ExternalData)
