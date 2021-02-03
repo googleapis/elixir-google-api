@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Schedule do
   @moduledoc """
-  Schedule for triggeredJobs.
+  Schedule for inspect job triggers.
 
   ## Attributes
 
