@@ -22,6 +22,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   ## Attributes
 
   *   `document` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - The document payload, the [content] and [mime_type] fields must be set.
+  *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - An inline document proto.
+  *   `rawDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3RawDocument.t`, *default:* `nil`) - A raw document content (bytes).
   *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether Human Review feature should be skipped for this request. Default to false.
   """
 
@@ -30,10 +32,23 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   @type t :: %__MODULE__{
           :document =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t(),
+          :inlineDocument =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t(),
+          :rawDocument =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3RawDocument.t(),
           :skipHumanReview => boolean()
         }
 
   field(:document, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document)
+
+  field(:inlineDocument,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document
+  )
+
+  field(:rawDocument,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3RawDocument
+  )
+
   field(:skipHumanReview)
 end
 

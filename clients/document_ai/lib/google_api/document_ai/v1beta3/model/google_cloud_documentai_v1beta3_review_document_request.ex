@@ -22,15 +22,23 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ReviewD
   ## Attributes
 
   *   `document` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - The document that needs human review.
+  *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - An inline document proto.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :document => GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t()
+          :document =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t(),
+          :inlineDocument =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t()
         }
 
   field(:document, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document)
+
+  field(:inlineDocument,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document
+  )
 end
 
 defimpl Poison.Decoder,

@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Proce
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the processor version was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the processor version.
+  *   `latestEvaluation` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3EvaluationReference.t`, *default:* `nil`) - The most recently invoked evaluation for the processor version.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor version. Format: projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}
   *   `schema` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Schema.t`, *default:* `nil`) - The schema of the processor version. Describes the output.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the processor version.
@@ -33,6 +34,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Proce
   @type t :: %__MODULE__{
           :createTime => DateTime.t(),
           :displayName => String.t(),
+          :latestEvaluation =>
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3EvaluationReference.t(),
           :name => String.t(),
           :schema => GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Schema.t(),
           :state => String.t()
@@ -40,6 +43,11 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Proce
 
   field(:createTime, as: DateTime)
   field(:displayName)
+
+  field(:latestEvaluation,
+    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3EvaluationReference
+  )
+
   field(:name)
   field(:schema, as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Schema)
   field(:state)
