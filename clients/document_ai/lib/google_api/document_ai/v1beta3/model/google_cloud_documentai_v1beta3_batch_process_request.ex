@@ -21,7 +21,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
 
   ## Attributes
 
+  *   `documentOutputConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentOutputConfig.t`, *default:* `nil`) - The overall output config for batch process.
   *   `inputConfigs` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig.t)`, *default:* `nil`) - The input config for each single document in the batch process.
+  *   `inputDocuments` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig.t`, *default:* `nil`) - The input documents for batch process.
   *   `outputConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig.t`, *default:* `nil`) - The overall output config for batch process.
   *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether Human Review feature should be skipped for this request. Default to false.
   """
@@ -29,19 +31,32 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :documentOutputConfig =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentOutputConfig.t(),
           :inputConfigs =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig.t()
             ),
+          :inputDocuments =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig.t(),
           :outputConfig =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig.t(),
           :skipHumanReview => boolean()
         }
 
+  field(:documentOutputConfig,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentOutputConfig
+  )
+
   field(:inputConfigs,
     as:
       GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig,
     type: :list
+  )
+
+  field(:inputDocuments,
+    as:
+      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig
   )
 
   field(:outputConfig,
