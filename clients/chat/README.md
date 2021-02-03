@@ -1,8 +1,8 @@
 # GoogleApi.Chat
 
-Hangouts Chat API client library.
+Google Chat API client library.
 
-Enables bots to fetch information and perform actions in Hangouts Chat.
+Enables bots to fetch information and perform actions in Google Chat.
 
 ## Installation
 

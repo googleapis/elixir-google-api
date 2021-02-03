@@ -18,7 +18,7 @@
 defmodule GoogleApi.Chat.Mixfile do
   use Mix.Project
 
-  @version "0.22.0"
+  @version "0.22.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Chat.Mixfile do
 
   defp description() do
     """
-    Hangouts Chat API client library. Enables bots to fetch information and perform actions in Hangouts Chat.
+    Google Chat API client library. Enables bots to fetch information and perform actions in Google Chat.
     """
   end
 
