@@ -21,8 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PerformanceGoal do
 
   ## Attributes
 
-  *   `performanceGoalAmountMicros` (*type:* `String.t`, *default:* `nil`) - The goal amount, in micros of the advertiser's currency. Applicable when performance_goal_type is one of: * `PERFORMANCE_GOAL_TYPE_CPM` * `PERFORMANCE_GOAL_TYPE_CPC` * `PERFORMANCE_GOAL_TYPE_CPA` * `PERFORMANCE_GOAL_TYPE_CPIAVC` * `PERFORMANCE_GOAL_TYPE_VCPM` For example 1500000 represents 1.5 standard units of the currency.
-  *   `performanceGoalPercentageMicros` (*type:* `String.t`, *default:* `nil`) - The decimal representation of the goal percentage in micros. Applicable when performance_goal_type is one of: * `PERFORMANCE_GOAL_TYPE_CTR` * `PERFORMANCE_GOAL_TYPE_VIEWABILITY` * `PERFORMANCE_GOAL_TYPE_CVR_CLICKS` * `PERFORMANCE_GOAL_TYPE_CVR_IMPRESSIONS` * `PERFORMANCE_GOAL_TYPE_VTR` * `PERFORMANCE_GOAL_TYPE_AUDIO_COMPLETION_RATE` * `PERFORMANCE_GOAL_TYPE_VIDEO_COMPLETION_RATE` For example, 70000 represents 7% (decimal 0.07).
+  *   `performanceGoalAmountMicros` (*type:* `String.t`, *default:* `nil`) - The goal amount, in micros of the advertiser's currency. Applicable when performance_goal_type is one of: * `PERFORMANCE_GOAL_TYPE_CPM` * `PERFORMANCE_GOAL_TYPE_CPC` * `PERFORMANCE_GOAL_TYPE_CPA` * `PERFORMANCE_GOAL_TYPE_CPIAVC` For example 1500000 represents 1.5 standard units of the currency.
+  *   `performanceGoalPercentageMicros` (*type:* `String.t`, *default:* `nil`) - The decimal representation of the goal percentage in micros. Applicable when performance_goal_type is one of: * `PERFORMANCE_GOAL_TYPE_CTR` * `PERFORMANCE_GOAL_TYPE_VIEWABILITY` For example, 70000 represents 7% (decimal 0.07).
   *   `performanceGoalString` (*type:* `String.t`, *default:* `nil`) - A key performance indicator (KPI) string, which can be empty. Must be UTF-8 encoded with a length of no more than 100 characters. Applicable when performance_goal_type is set to `PERFORMANCE_GOAL_TYPE_OTHER`.
   *   `performanceGoalType` (*type:* `String.t`, *default:* `nil`) - Required. The type of the performance goal.
   """
