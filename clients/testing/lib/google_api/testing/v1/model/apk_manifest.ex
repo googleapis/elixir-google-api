@@ -27,6 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   *   `minSdkVersion` (*type:* `integer()`, *default:* `nil`) - Minimum API level required for the application to run.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Full Java-style package name for this application, e.g. "com.example.foo".
   *   `targetSdkVersion` (*type:* `integer()`, *default:* `nil`) - Specifies the API Level on which the application is designed to run.
+  *   `usesPermission` (*type:* `list(String.t)`, *default:* `nil`) - Permissions declared to be used by the application
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
           :maxSdkVersion => integer(),
           :minSdkVersion => integer(),
           :packageName => String.t(),
-          :targetSdkVersion => integer()
+          :targetSdkVersion => integer(),
+          :usesPermission => list(String.t())
         }
 
   field(:applicationLabel)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   field(:minSdkVersion)
   field(:packageName)
   field(:targetSdkVersion)
+  field(:usesPermission, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Testing.V1.Model.ApkManifest do
