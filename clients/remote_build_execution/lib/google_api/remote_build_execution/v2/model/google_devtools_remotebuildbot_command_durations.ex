@@ -21,6 +21,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
 
   ## Attributes
 
+  *   `cmWaitForAssignment` (*type:* `String.t`, *default:* `nil`) - The time spent waiting for Container Manager to assign an asynchronous container for execution.
   *   `dockerPrep` (*type:* `String.t`, *default:* `nil`) - The time spent preparing the command to be run in a Docker container (includes pulling the Docker image, if necessary).
   *   `dockerPrepStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when docker preparation begins.
   *   `download` (*type:* `String.t`, *default:* `nil`) - The time spent downloading the input files and constructing the working directory.
@@ -37,6 +38,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cmWaitForAssignment => String.t(),
           :dockerPrep => String.t(),
           :dockerPrepStartTime => DateTime.t(),
           :download => String.t(),
@@ -50,6 +52,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
           :uploadStartTime => DateTime.t()
         }
 
+  field(:cmWaitForAssignment)
   field(:dockerPrep)
   field(:dockerPrepStartTime, as: DateTime)
   field(:download)

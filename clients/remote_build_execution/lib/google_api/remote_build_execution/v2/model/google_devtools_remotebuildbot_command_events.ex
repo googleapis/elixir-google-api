@@ -26,6 +26,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   *   `inputCacheMiss` (*type:* `number()`, *default:* `nil`) - The input cache miss ratio.
   *   `numErrors` (*type:* `String.t`, *default:* `nil`) - The number of errors reported.
   *   `numWarnings` (*type:* `String.t`, *default:* `nil`) - The number of warnings reported.
+  *   `usedAsyncContainer` (*type:* `boolean()`, *default:* `nil`) - Indicates whether an asynchronous container was used for execution.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
           :dockerImageName => String.t(),
           :inputCacheMiss => number(),
           :numErrors => String.t(),
-          :numWarnings => String.t()
+          :numWarnings => String.t(),
+          :usedAsyncContainer => boolean()
         }
 
   field(:dockerCacheHit)
@@ -43,6 +45,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   field(:inputCacheMiss)
   field(:numErrors)
   field(:numWarnings)
+  field(:usedAsyncContainer)
 end
 
 defimpl Poison.Decoder,
