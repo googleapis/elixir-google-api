@@ -64,6 +64,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `expireTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `currentNodeCount` (*type:* `integer()`, *default:* `nil`) - [Output only] The number of nodes currently in the cluster. Deprecated. Call Kubernetes API directly to retrieve node information.
   *   `defaultMaxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The default constraint on the maximum number of pods that can be run simultaneously on a node in the node pool of this cluster. Only honored if cluster created with IP Alias support.
+  *   `notificationConfig` (*type:* `GoogleApi.Container.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration of the cluster.
   *   `binaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - Configuration for Binary Authorization.
   *   `initialClusterVersion` (*type:* `String.t`, *default:* `nil`) - The initial Kubernetes version for this cluster. Valid versions are those found in validMasterVersions returned by getServerConfig. The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "","-": picks the default Kubernetes version
   *   `nodePools` (*type:* `list(GoogleApi.Container.V1.Model.NodePool.t)`, *default:* `nil`) - The node pools associated with this cluster. This field should not be set if "node_config" or "initial_node_count" are specified.
@@ -123,6 +124,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :expireTime => String.t(),
           :currentNodeCount => integer(),
           :defaultMaxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t(),
+          :notificationConfig => GoogleApi.Container.V1.Model.NotificationConfig.t(),
           :binaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t(),
           :initialClusterVersion => String.t(),
           :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()),
@@ -180,6 +182,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:expireTime)
   field(:currentNodeCount)
   field(:defaultMaxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
+  field(:notificationConfig, as: GoogleApi.Container.V1.Model.NotificationConfig)
   field(:binaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
   field(:initialClusterVersion)
   field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)
