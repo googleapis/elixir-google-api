@@ -223,8 +223,9 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have the following format: "DIRECT_CHILDREN" or format: "direct_children". The filter is case insensitive. If empty, then no deployments are filtered.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of deployments to return in the response.
-      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListDeployments method that indicates where this listing should continue from.
+      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListDeployments that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -249,6 +250,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -556,7 +558,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have one of the following formats: "sn=123454" or "display_name=MyDevice". sn corresponds to serial_number of the device. The filter is case insensitive.
+      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have one of the following formats: "sn=123454" or "display_name=MyDevice". sn corresponds to serial number of the device. The filter is case insensitive.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of devices to return in the response. If empty or zero, all devices will be listed. Must be in the range [0, 1000].
       *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListDevices that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -878,7 +880,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have one of the following formats: "sn=123454" or "display_name=MyDevice". sn corresponds to serial_number of the device. The filter is case insensitive.
+      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have one of the following formats: "sn=123454" or "display_name=MyDevice". sn corresponds to serial number of the device. The filter is case insensitive.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of devices to return in the response. If empty or zero, all devices will be listed. Must be in the range [0, 1000].
       *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListDevices that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1375,8 +1377,9 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have the following format: "DIRECT_CHILDREN" or format: "direct_children". The filter is case insensitive. If empty, then no nodes are filtered.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of nodes to return in the response.
-      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListNodes method that indicates where this listing should continue from.
+      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListNodes that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1401,6 +1404,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -1637,8 +1641,9 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have the following format: "DIRECT_CHILDREN" or format: "direct_children". The filter is case insensitive. If empty, then no deployments are filtered.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of deployments to return in the response.
-      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListDeployments method that indicates where this listing should continue from.
+      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListDeployments that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1673,6 +1678,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -1844,7 +1850,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have one of the following formats: "sn=123454" or "display_name=MyDevice". sn corresponds to serial_number of the device. The filter is case insensitive.
+      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have one of the following formats: "sn=123454" or "display_name=MyDevice". sn corresponds to serial number of the device. The filter is case insensitive.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of devices to return in the response. If empty or zero, all devices will be listed. Must be in the range [0, 1000].
       *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListDevices that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1972,8 +1978,9 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - The filter expression. The filter should have the following format: "DIRECT_CHILDREN" or format: "direct_children". The filter is case insensitive. If empty, then no nodes are filtered.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of nodes to return in the response.
-      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListNodes method that indicates where this listing should continue from.
+      *   `:pageToken` (*type:* `String.t`) - A pagination token returned from a previous call to ListNodes that indicates where this listing should continue from.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1998,6 +2005,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Nodes do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
       :pageSize => :query,
       :pageToken => :query
     }

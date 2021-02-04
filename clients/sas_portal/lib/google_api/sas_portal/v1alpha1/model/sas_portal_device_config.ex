@@ -25,11 +25,11 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig do
   *   `callSign` (*type:* `String.t`, *default:* `nil`) - The call sign of the device operator.
   *   `category` (*type:* `String.t`, *default:* `nil`) - FCC category of the device.
   *   `installationParams` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalInstallationParams.t`, *default:* `nil`) - Installation parameters for the device.
-  *   `isSigned` (*type:* `boolean()`, *default:* `nil`) - Output-only. Whether the configuration has been signed by a CPI.
+  *   `isSigned` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the configuration has been signed by a CPI.
   *   `measurementCapabilities` (*type:* `list(String.t)`, *default:* `nil`) - Measurement reporting capabilities of the device.
   *   `model` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceModel.t`, *default:* `nil`) - Information about this device model.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the configuration.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output-only. The last time the device configuration was edited.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time the device configuration was edited.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - The identifier of a device user.
   """
 

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalMoveNodeRequest do
   @moduledoc """
-  Request for MoveNode method.
+  Request for MoveNode.
 
   ## Attributes
 
-  *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. The name of the new parent resource node or Customer) to reparent the node under.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. The name of the new parent resource node or customer to reparent the node under.
   """
 
   use GoogleApi.Gax.ModelBase

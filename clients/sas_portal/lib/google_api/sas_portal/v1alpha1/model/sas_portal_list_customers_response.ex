@@ -22,7 +22,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalListCustomersResponse do
   ## Attributes
 
   *   `customers` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalCustomer.t)`, *default:* `nil`) - The list of customers that match the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to ListCustomers method that indicates from where listing should continue. If the field is missing or empty, it means there are no more customers.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to ListCustomers that indicates from where listing should continue. If the field is missing or empty, it means there are no more customers.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalValidateInstallerResponse do
   @moduledoc """
-  Response for ValidateInstaller method] [spectrum.sas.portal.v1alpha1.DeviceManager.ValidateInstaller].
+  Response for ValidateInstaller.
 
   ## Attributes
 
