@@ -21,6 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestI
 
   ## Attributes
 
+  *   `confidence` (*type:* `number()`, *default:* `nil`) - The confidence of the matched intent. Values range from 0.0 (completely uncertain) to 1.0 (completely certain).
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Always present. The display name of the last matched intent.
   *   `lastMatchedIntent` (*type:* `String.t`, *default:* `nil`) - Always present. The unique identifier of the last matched intent. Format: `projects//locations//agents//intents/`.
   *   `parameters` (*type:* `%{optional(String.t) => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestIntentInfoIntentParameterValue.t}`, *default:* `nil`) - Parameters identified as a result of intent matching. This is a map of the name of the identified parameter to the value of the parameter identified from the user's utterance. All parameters defined in the matched intent that are identified will be surfaced here.
   """
@@ -28,6 +30,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestI
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :confidence => number(),
+          :displayName => String.t(),
           :lastMatchedIntent => String.t(),
           :parameters => %{
             optional(String.t()) =>
@@ -35,6 +39,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookRequestI
           }
         }
 
+  field(:confidence)
+  field(:displayName)
   field(:lastMatchedIntent)
 
   field(:parameters,
