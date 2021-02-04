@@ -29,6 +29,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
   *   `initializationActions` (*type:* `list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t)`, *default:* `nil`) - Optional. Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node's role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget): ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if [[ "${ROLE}" == 'Master' ]]; then ... master specific actions ... else ... worker specific actions ... fi 
   *   `lifecycleConfig` (*type:* `GoogleApi.Dataproc.V1.Model.LifecycleConfig.t`, *default:* `nil`) - Optional. Lifecycle setting for the cluster.
   *   `masterConfig` (*type:* `GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t`, *default:* `nil`) - Optional. The Compute Engine config settings for the master instance in a cluster.
+  *   `metastoreConfig` (*type:* `GoogleApi.Dataproc.V1.Model.MetastoreConfig.t`, *default:* `nil`) - Optional. Metastore configuration.
   *   `secondaryWorkerConfig` (*type:* `GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t`, *default:* `nil`) - Optional. The Compute Engine config settings for additional worker instances in a cluster.
   *   `securityConfig` (*type:* `GoogleApi.Dataproc.V1.Model.SecurityConfig.t`, *default:* `nil`) - Optional. Security settings for the cluster.
   *   `softwareConfig` (*type:* `GoogleApi.Dataproc.V1.Model.SoftwareConfig.t`, *default:* `nil`) - Optional. The config settings for software inside the cluster.
@@ -48,6 +49,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
             list(GoogleApi.Dataproc.V1.Model.NodeInitializationAction.t()),
           :lifecycleConfig => GoogleApi.Dataproc.V1.Model.LifecycleConfig.t(),
           :masterConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
+          :metastoreConfig => GoogleApi.Dataproc.V1.Model.MetastoreConfig.t(),
           :secondaryWorkerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t(),
           :securityConfig => GoogleApi.Dataproc.V1.Model.SecurityConfig.t(),
           :softwareConfig => GoogleApi.Dataproc.V1.Model.SoftwareConfig.t(),
@@ -68,6 +70,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
 
   field(:lifecycleConfig, as: GoogleApi.Dataproc.V1.Model.LifecycleConfig)
   field(:masterConfig, as: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig)
+  field(:metastoreConfig, as: GoogleApi.Dataproc.V1.Model.MetastoreConfig)
   field(:secondaryWorkerConfig, as: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig)
   field(:securityConfig, as: GoogleApi.Dataproc.V1.Model.SecurityConfig)
   field(:softwareConfig, as: GoogleApi.Dataproc.V1.Model.SoftwareConfig)
