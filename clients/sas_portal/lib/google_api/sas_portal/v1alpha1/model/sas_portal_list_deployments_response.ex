@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalListDeploymentsResponse do
   @moduledoc """
-  Response for ListDeployments method.
+  Response for ListDeployments.
 
   ## Attributes
 
   *   `deployments` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment.t)`, *default:* `nil`) - The deployments that match the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to ListDeployments method that indicates from where listing should continue. If the field is missing or empty, it means there is no more deployments.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to ListDeployments that indicates from where listing should continue. If the field is missing or empty, it means there are no more deployments.
   """
 
   use GoogleApi.Gax.ModelBase

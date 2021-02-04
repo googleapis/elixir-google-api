@@ -28,12 +28,12 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalInstallationParams do
   *   `antennaModel` (*type:* `String.t`, *default:* `nil`) - If an external antenna is used, the antenna model is optionally provided in this field. The string has a maximum length of 128 octets.
   *   `cpeCbsdIndication` (*type:* `boolean()`, *default:* `nil`) - If present, this parameter specifies whether the CBSD is a CPE-CBSD or not.
   *   `eirpCapability` (*type:* `integer()`, *default:* `nil`) - This parameter is the maximum device EIRP in units of dBm/10MHz and is an integer with a value between -127 and +47 (dBm/10 MHz) inclusive. If not included, SAS interprets it as maximum allowable EIRP in units of dBm/10MHz for device category.
-  *   `height` (*type:* `float()`, *default:* `nil`) - Device antenna height in meters. When the heightType parameter value is "AGL", the antenna height should be given relative to ground level. When the heightType parameter value is "AMSL", it is given with respect to WGS84 datum.
+  *   `height` (*type:* `float()`, *default:* `nil`) - Device antenna height in meters. When the `heightType` parameter value is "AGL", the antenna height should be given relative to ground level. When the `heightType` parameter value is "AMSL", it is given with respect to WGS84 datum.
   *   `heightType` (*type:* `String.t`, *default:* `nil`) - Specifies how the height is measured.
   *   `horizontalAccuracy` (*type:* `float()`, *default:* `nil`) - A positive number in meters to indicate accuracy of the device antenna horizontal location. This optional parameter should only be present if its value is less than the FCC requirement of 50 meters.
-  *   `indoorDeployment` (*type:* `boolean()`, *default:* `nil`) - Whether the device antenna is indoor or not. True: indoor. False: outdoor.
+  *   `indoorDeployment` (*type:* `boolean()`, *default:* `nil`) - Whether the device antenna is indoor or not. `true`: indoor. `false`: outdoor.
   *   `latitude` (*type:* `float()`, *default:* `nil`) - Latitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -90.000000 to +90.000000. Positive values represent latitudes north of the equator; negative values south of the equator.
-  *   `longitude` (*type:* `float()`, *default:* `nil`) - Longitude of the device antenna location. in degrees relative to the WGS 84 datum. The allowed range is from -180.000000 to +180.000000. Positive values represent longitudes east of the prime meridian; negative values west of the prime meridian.
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - Longitude of the device antenna location in degrees relative to the WGS 84 datum. The allowed range is from -180.000000 to +180.000000. Positive values represent longitudes east of the prime meridian; negative values west of the prime meridian.
   *   `verticalAccuracy` (*type:* `float()`, *default:* `nil`) - A positive number in meters to indicate accuracy of the device antenna vertical location. This optional parameter should only be present if its value is less than the FCC requirement of 3 meters.
   """
 

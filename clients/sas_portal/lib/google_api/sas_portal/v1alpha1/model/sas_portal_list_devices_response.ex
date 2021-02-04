@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalListDevicesResponse do
   @moduledoc """
-  Response for ListDevices method.
+  Response for ListDevices.
 
   ## Attributes
 
   *   `devices` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice.t)`, *default:* `nil`) - The devices that match the request.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to ListDevices method that indicates from where listing should continue. If the field is missing or empty, it means there is no more devices.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to ListDevices that indicates from where listing should continue. If the field is missing or empty, it means there is no more devices.
   """
 
   use GoogleApi.Gax.ModelBase

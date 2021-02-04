@@ -21,8 +21,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceAirInterface do
 
   ## Attributes
 
-  *   `radioTechnology` (*type:* `String.t`, *default:* `nil`) - This field specifies the radio access technology that is used for the CBSD. Conditional
-  *   `supportedSpec` (*type:* `String.t`, *default:* `nil`) - This field is related to the radioTechnology field and provides the air interface specification that the CBSD is compliant with at the time of registration. Optional
+  *   `radioTechnology` (*type:* `String.t`, *default:* `nil`) - Conditional. This field specifies the radio access technology that is used for the CBSD.
+  *   `supportedSpec` (*type:* `String.t`, *default:* `nil`) - Optional. This field is related to the `radioTechnology` and provides the air interface specification that the CBSD is compliant with at the time of registration.
   """
 
   use GoogleApi.Gax.ModelBase

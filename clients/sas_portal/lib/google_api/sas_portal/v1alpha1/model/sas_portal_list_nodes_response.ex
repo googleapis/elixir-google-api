@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalListNodesResponse do
   @moduledoc """
-  Response for ListNodes method.
+  Response for ListNodes.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to ListNodes method that indicates from where listing should continue. If the field is missing or empty, it means there is no more nodes.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to ListNodes that indicates from where listing should continue. If the field is missing or empty, it means there is no more nodes.
   *   `nodes` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalNode.t)`, *default:* `nil`) - The nodes that match the request.
   """
 

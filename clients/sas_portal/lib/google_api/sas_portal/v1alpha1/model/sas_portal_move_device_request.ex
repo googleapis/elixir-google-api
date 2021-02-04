@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalMoveDeviceRequest do
   @moduledoc """
-  Request for MoveDevice method.
+  Request for MoveDevice.
 
   ## Attributes
 
-  *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. The name of the new parent resource (Node or Customer) to reparent the device under.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. The name of the new parent resource node or customer to reparent the device under.
   """
 
   use GoogleApi.Gax.ModelBase

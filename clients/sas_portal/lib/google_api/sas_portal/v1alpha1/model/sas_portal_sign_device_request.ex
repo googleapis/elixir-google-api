@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalSignDeviceRequest do
   @moduledoc """
-  Request for SignDevice method.
+  Request for SignDevice.
 
   ## Attributes
 

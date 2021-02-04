@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalGenerateSecretRequest do
   @moduledoc """
-  Request for GenerateSecret method] [spectrum.sas.portal.v1alpha1.DeviceManager.GenerateSecret].
+  Request for GenerateSecret.
 
   ## Attributes
 

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalCreateSignedDeviceRequest do
   @moduledoc """
-  Request for CreateSignedDevice method.
+  Request for CreateSignedDevice.
 
   ## Attributes
 
-  *   `encodedDevice` (*type:* `String.t`, *default:* `nil`) - Required. JSON Web Token signed using a CPI private key. Payload must be the JSON encoding of the [Device]. The user_id field must be set.
-  *   `installerId` (*type:* `String.t`, *default:* `nil`) - Required. Unique installer id (cpiId) from the Certified Professional Installers database.
+  *   `encodedDevice` (*type:* `String.t`, *default:* `nil`) - Required. JSON Web Token signed using a CPI private key. Payload must be the JSON encoding of the device. The user_id field must be set.
+  *   `installerId` (*type:* `String.t`, *default:* `nil`) - Required. Unique installer id (CPI ID) from the Certified Professional Installers database.
   """
 
   use GoogleApi.Gax.ModelBase

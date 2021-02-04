@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalValidateInstallerRequest do
   @moduledoc """
-  Request for ValidateInstaller method.
+  Request for ValidateInstaller.
 
   ## Attributes
 
   *   `encodedSecret` (*type:* `String.t`, *default:* `nil`) - Required. JSON Web Token signed using a CPI private key. Payload must include a "secret" claim whose value is the secret.
-  *   `installerId` (*type:* `String.t`, *default:* `nil`) - Required. Unique installer id (cpiId) from the Certified Professional Installers database.
-  *   `secret` (*type:* `String.t`, *default:* `nil`) - Required. Secret returned by the GenerateSecret method.
+  *   `installerId` (*type:* `String.t`, *default:* `nil`) - Required. Unique installer id (CPI ID) from the Certified Professional Installers database.
+  *   `secret` (*type:* `String.t`, *default:* `nil`) - Required. Secret returned by the GenerateSecret.
   """
 
   use GoogleApi.Gax.ModelBase

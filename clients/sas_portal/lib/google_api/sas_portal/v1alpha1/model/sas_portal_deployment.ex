@@ -25,7 +25,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment do
   *   `defaultBillingMode` (*type:* `String.t`, *default:* `nil`) - Default billing mode for the deployment and devices under it.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The deployment's display name.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name.
-  *   `sasUserIds` (*type:* `list(String.t)`, *default:* `nil`) - User id used by the devices belonging to this deployment. Each deployment should be associated with one unique user_id.
+  *   `sasUserIds` (*type:* `list(String.t)`, *default:* `nil`) - User ID used by the devices belonging to this deployment. Each deployment should be associated with one unique user ID.
   """
 
   use GoogleApi.Gax.ModelBase

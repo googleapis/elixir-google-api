@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalUpdateSignedDeviceRequest do
   @moduledoc """
-  Request for UpdateSignedDevice method.
+  Request for UpdateSignedDevice.
 
   ## Attributes
 

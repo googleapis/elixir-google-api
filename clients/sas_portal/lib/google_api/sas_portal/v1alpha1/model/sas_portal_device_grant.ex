@@ -25,7 +25,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant do
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - The expiration time of the grant.
   *   `frequencyRange` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t`, *default:* `nil`) - The transmission frequency range.
   *   `grantId` (*type:* `String.t`, *default:* `nil`) - Grant Id.
-  *   `maxEirp` (*type:* `float()`, *default:* `nil`) - Maximum Equivalent Isotropically Radiated Power (EIRP) permitted by the grant. The maximum EIRP is in units of dBm/MHz. The value of maxEirp represents the average (RMS) EIRP that would be measured by the procedure defined in FCC part 96.41(e)(3).
+  *   `maxEirp` (*type:* `float()`, *default:* `nil`) - Maximum Equivalent Isotropically Radiated Power (EIRP) permitted by the grant. The maximum EIRP is in units of dBm/MHz. The value of `maxEirp` represents the average (RMS) EIRP that would be measured by the procedure defined in FCC part 96.41(e)(3).
   *   `moveList` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDpaMoveList.t)`, *default:* `nil`) - The DPA move lists on which this grant appears.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the grant.
   *   `suspensionReason` (*type:* `list(String.t)`, *default:* `nil`) - If the grant is suspended, the reason(s) for suspension.

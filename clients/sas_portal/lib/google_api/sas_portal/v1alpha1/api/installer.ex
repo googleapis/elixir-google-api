@@ -26,7 +26,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Installer do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Generates a secret to be used with the ValidateInstaller method
+  Generates a secret to be used with the ValidateInstaller.
 
   ## Parameters
 
