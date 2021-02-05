@@ -22,6 +22,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.CheckRequest do
   ## Attributes
 
   *   `attributes` (*type:* `GoogleApi.ServiceControl.V2.Model.AttributeContext.t`, *default:* `nil`) - Describes attributes about the operation being executed by the service.
+  *   `flags` (*type:* `String.t`, *default:* `nil`) - Optional. Contains a comma-separated list of flags.
   *   `resources` (*type:* `list(GoogleApi.ServiceControl.V2.Model.ResourceInfo.t)`, *default:* `nil`) - Describes the resources and the policies applied to each resource.
   *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - Specifies the version of the service configuration that should be used to process the request. Must not be empty. Set this field to 'latest' to specify using the latest configuration.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.ServiceControl.V2.Model.CheckRequest do
 
   @type t :: %__MODULE__{
           :attributes => GoogleApi.ServiceControl.V2.Model.AttributeContext.t(),
+          :flags => String.t(),
           :resources => list(GoogleApi.ServiceControl.V2.Model.ResourceInfo.t()),
           :serviceConfigId => String.t()
         }
 
   field(:attributes, as: GoogleApi.ServiceControl.V2.Model.AttributeContext)
+  field(:flags)
   field(:resources, as: GoogleApi.ServiceControl.V2.Model.ResourceInfo, type: :list)
   field(:serviceConfigId)
 end
