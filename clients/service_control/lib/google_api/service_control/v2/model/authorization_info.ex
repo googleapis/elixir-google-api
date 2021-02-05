@@ -23,7 +23,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.AuthorizationInfo do
 
   *   `granted` (*type:* `boolean()`, *default:* `nil`) - Whether or not authorization for `resource` and `permission` was granted.
   *   `permission` (*type:* `String.t`, *default:* `nil`) - The required IAM permission.
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - The resource being accessed, as a REST-style string. For example: bigquery.googleapis.com/projects/PROJECTID/datasets/DATASETID
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - The resource being accessed, as a REST-style or cloud resource string. For example: bigquery.googleapis.com/projects/PROJECTID/datasets/DATASETID or projects/PROJECTID/datasets/DATASETID
   *   `resourceAttributes` (*type:* `GoogleApi.ServiceControl.V2.Model.Resource.t`, *default:* `nil`) - Resource attributes used in IAM condition evaluation. This field contains resource attributes like resource type and resource name. To get the whole view of the attributes used in IAM condition evaluation, the user must also look into `AuditLog.request_metadata.request_attributes`.
   """
 
