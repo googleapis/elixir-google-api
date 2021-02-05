@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.AzureCredentials do
   @moduledoc """
-  Azure credentials For information on our data retention policy for user credentials, see [User credentials](data-retention#user-credentials).
+  Azure credentials For information on our data retention policy for user credentials, see [User credentials](/storage-transfer/docs/data-retention#user-credentials).
 
   ## Attributes
 
