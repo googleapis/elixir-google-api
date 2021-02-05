@@ -26,7 +26,7 @@ defmodule GoogleApi.STS.V1.Api.V1 do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Exchanges a credential for a Google OAuth 2.0 access token.
+  Exchanges a credential for a Google OAuth 2.0 access token. The token asserts an external identity within a workload identity pool, or it applies a Credential Access Boundary to a Google access token.
 
   ## Parameters
 
