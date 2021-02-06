@@ -25,6 +25,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroup do
   *   `hostnames` (*type:* `list(String.t)`, *default:* `nil`) - Required. Host names for this environment group.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. The time at which the environment group was last updated as milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - ID of the environment group.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the environment group. Values other than ACTIVE means the resource is not ready to use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroup do
           :createdAt => String.t(),
           :hostnames => list(String.t()),
           :lastModifiedAt => String.t(),
-          :name => String.t()
+          :name => String.t(),
+          :state => String.t()
         }
 
   field(:createdAt)
   field(:hostnames, type: :list)
   field(:lastModifiedAt)
   field(:name)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroup do
