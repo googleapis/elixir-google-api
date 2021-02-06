@@ -24,6 +24,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   *   `analyticsRegion` (*type:* `String.t`, *default:* `nil`) - Required. Primary GCP region for analytics data storage. For valid values, see [Create an Apigee organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org).
   *   `attributes` (*type:* `list(String.t)`, *default:* `nil`) - Not used by Apigee.
   *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Compute Engine network used for Service Networking to be peered with Apigee runtime instances. See [Getting started with the Service Networking API](https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started). Valid only when [RuntimeType] is set to CLOUD. The value can be updated only when there are no runtime instances. For example: "default". **Note:** Not supported for Apigee hybrid.
+  *   `billingType` (*type:* `String.t`, *default:* `nil`) - Output only. Billing type of the Apigee organization. See [Apigee pricing](https://cloud.google.com/apigee/pricing).
   *   `caCertificate` (*type:* `String.t`, *default:* `nil`) - Output only. Base64-encoded public certificate for the root CA of the Apigee organization. Valid only when [RuntimeType] is CLOUD.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization was created in milliseconds since epoch.
   *   `customerName` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee.
@@ -36,7 +37,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t`, *default:* `nil`) - Properties defined in the Apigee organization profile.
   *   `runtimeDatabaseEncryptionKeyName` (*type:* `String.t`, *default:* `nil`) - Cloud KMS key name used for encrypting the data that is stored and replicated across runtime instances. Update is not allowed after the organization is created. If not specified, a Google-Managed encryption key will be used. Valid only when [RuntimeType] is CLOUD. For example: "projects/foo/locations/us/keyRings/bar/cryptoKeys/baz". **Note:** Not supported for Apigee hybrid.
   *   `runtimeType` (*type:* `String.t`, *default:* `nil`) - Required. Runtime type of the Apigee organization based on the Apigee subscription purchased.
-  *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Output only. Subscription type of the Apigee organization. Valid values include trial (free, limited, and for evaluation purposes only) or paid (full subscription has been purchased). See [Apigee pricing](https://cloud.google.com/apigee/pricing/).
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the organization. Values other than ACTIVE means the resource is not ready to use.
+  *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Output only. DEPRECATED: This will eventually be replaced by BillingType. Subscription type of the Apigee organization. Valid values include trial (free, limited, and for evaluation purposes only) or paid (full subscription has been purchased). See [Apigee pricing](https://cloud.google.com/apigee/pricing/).
   *   `type` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee.
   """
 
@@ -46,6 +48,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
           :analyticsRegion => String.t(),
           :attributes => list(String.t()),
           :authorizedNetwork => String.t(),
+          :billingType => String.t(),
           :caCertificate => String.t(),
           :createdAt => String.t(),
           :customerName => String.t(),
@@ -58,6 +61,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
           :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t(),
           :runtimeDatabaseEncryptionKeyName => String.t(),
           :runtimeType => String.t(),
+          :state => String.t(),
           :subscriptionType => String.t(),
           :type => String.t()
         }
@@ -65,6 +69,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   field(:analyticsRegion)
   field(:attributes, type: :list)
   field(:authorizedNetwork)
+  field(:billingType)
   field(:caCertificate)
   field(:createdAt)
   field(:customerName)
@@ -77,6 +82,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   field(:properties, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties)
   field(:runtimeDatabaseEncryptionKeyName)
   field(:runtimeType)
+  field(:state)
   field(:subscriptionType)
   field(:type)
 end

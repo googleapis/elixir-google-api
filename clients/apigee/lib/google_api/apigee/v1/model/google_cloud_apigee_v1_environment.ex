@@ -27,6 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Last modification time of this environment as milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the environment. Values must match the regular expression `^[.\\\\p{Alnum}-_]{1,255}$`
   *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t`, *default:* `nil`) - Optional. Key-value pairs that may be used for customizing the environment.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the environment. Values other than ACTIVE means the resource is not ready to use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
           :displayName => String.t(),
           :lastModifiedAt => String.t(),
           :name => String.t(),
-          :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t()
+          :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t(),
+          :state => String.t()
         }
 
   field(:createdAt)
@@ -46,6 +48,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
   field(:lastModifiedAt)
   field(:name)
   field(:properties, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
