@@ -50,12 +50,11 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedUpdates do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponse{}}` on success
+  *   `{:ok, %GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec safebrowsing_encoded_updates_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok,
-           GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponse.t()}
+          {:ok, GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def safebrowsing_encoded_updates_get(
@@ -92,11 +91,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedUpdates do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++
-        [
-          struct:
-            %GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponse{}
-        ]
+      opts ++ [struct: %GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesResponse{}]
     )
   end
 end
