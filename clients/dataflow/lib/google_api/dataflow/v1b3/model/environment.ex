@@ -29,6 +29,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   *   `sdkPipelineOptions` (*type:* `map()`, *default:* `nil`) - The Cloud Dataflow SDK pipeline options specified by the user. These options are passed through the service and are used to recreate the SDK pipeline options on the worker in a language agnostic and platform independent way.
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Identity to run virtual machines as. Defaults to the default account.
   *   `serviceKmsKeyName` (*type:* `String.t`, *default:* `nil`) - If set, contains the Cloud KMS key identifier used to encrypt data at rest, AKA a Customer Managed Encryption Key (CMEK). Format: projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
+  *   `shuffleMode` (*type:* `String.t`, *default:* `nil`) - Output only. The shuffle mode used for the job.
   *   `tempStoragePrefix` (*type:* `String.t`, *default:* `nil`) - The prefix of the resources the system should use for temporary storage. The system will append the suffix "/temp-{JOBNAME} to this resource prefix, where {JOBNAME} is the value of the job_name field. The resulting bucket and object prefix is used as the prefix of the resources used to store temporary data needed during the job execution. NOTE: This will override the value in taskrunner_settings. The supported resource type is: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}
   *   `userAgent` (*type:* `map()`, *default:* `nil`) - A description of the process that generated the request.
   *   `version` (*type:* `map()`, *default:* `nil`) - A structure describing which components and their versions of the service are required in order to run the job.
@@ -48,6 +49,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
           :sdkPipelineOptions => map(),
           :serviceAccountEmail => String.t(),
           :serviceKmsKeyName => String.t(),
+          :shuffleMode => String.t(),
           :tempStoragePrefix => String.t(),
           :userAgent => map(),
           :version => map(),
@@ -64,6 +66,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   field(:sdkPipelineOptions, type: :map)
   field(:serviceAccountEmail)
   field(:serviceKmsKeyName)
+  field(:shuffleMode)
   field(:tempStoragePrefix)
   field(:userAgent, type: :map)
   field(:version, type: :map)
