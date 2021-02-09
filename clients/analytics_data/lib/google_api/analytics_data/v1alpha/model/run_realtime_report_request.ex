@@ -23,7 +23,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunRealtimeReportRequest do
 
   *   `dimensionFilter` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t`, *default:* `nil`) - The filter clause of dimensions. Dimensions must be requested to be used in this filter. Metrics cannot be used in this filter.
   *   `dimensions` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.Dimension.t)`, *default:* `nil`) - The dimensions requested and displayed.
-  *   `limit` (*type:* `String.t`, *default:* `nil`) - The number of rows to return. If unspecified, 10 rows are returned. If -1, all rows are returned.
+  *   `limit` (*type:* `String.t`, *default:* `nil`) - The number of rows to return. If the `limit` parameter is unspecified, 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for.
   *   `metricAggregations` (*type:* `list(String.t)`, *default:* `nil`) - Aggregation of metrics. Aggregated metric values will be shown in rows where the dimension_values are set to "RESERVED_(MetricAggregation)".
   *   `metricFilter` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t`, *default:* `nil`) - The filter clause of metrics. Applied at post aggregation phase, similar to SQL having-clause. Metrics must be requested to be used in this filter. Dimensions cannot be used in this filter.
   *   `metrics` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.Metric.t)`, *default:* `nil`) - The metrics requested and displayed.
