@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Reseller.V1.Model.SubscriptionPlanCommitmentInterval do
   @moduledoc """
-  In this version of the API, annual commitment plan's interval is one year. *Note: *When billingMethod value is OFFLINE, the subscription property object plan.commitmentInterval is omitted in all API responses. 
+  In this version of the API, annual commitment plan's interval is one year. *Note: *When `billingMethod` value is `OFFLINE`, the subscription property object `plan.commitmentInterval` is omitted in all API responses. 
 
   ## Attributes
 
-  *   `endTime` (*type:* `String.t`, *default:* `nil`) - An annual commitment plan's interval's endTime in milliseconds using the UNIX Epoch format. See an example Epoch converter.
-  *   `startTime` (*type:* `String.t`, *default:* `nil`) - An annual commitment plan's interval's startTime in milliseconds using UNIX Epoch format. See an example Epoch converter.
+  *   `endTime` (*type:* `String.t`, *default:* `nil`) - An annual commitment plan's interval's `endTime` in milliseconds using the UNIX Epoch format. See an example Epoch converter.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - An annual commitment plan's interval's `startTime` in milliseconds using UNIX Epoch format. See an example Epoch converter.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,16 +21,16 @@ defmodule GoogleApi.Reseller.V1.Model.Address do
 
   ## Attributes
 
-  *   `addressLine1` (*type:* `String.t`, *default:* `nil`) - A customer's physical address. An address can be composed of one to three lines. The addressline2 and addressLine3 are optional.
+  *   `addressLine1` (*type:* `String.t`, *default:* `nil`) - A customer's physical address. An address can be composed of one to three lines. The `addressline2` and `addressLine3` are optional.
   *   `addressLine2` (*type:* `String.t`, *default:* `nil`) - Line 2 of the address.
   *   `addressLine3` (*type:* `String.t`, *default:* `nil`) - Line 3 of the address.
   *   `contactName` (*type:* `String.t`, *default:* `nil`) - The customer contact's name. This is required.
-  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - For countryCode information, see the ISO 3166 country code elements. Verify that country is approved for resale of Google products. This property is required when creating a new customer.
-  *   `kind` (*type:* `String.t`, *default:* `customers#address`) - Identifies the resource as a customer address. Value: customers#address
-  *   `locality` (*type:* `String.t`, *default:* `nil`) - An example of a locality value is the city of San Francisco.
+  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - For `countryCode` information, see the ISO 3166 country code elements. Verify that country is approved for resale of Google products. This property is required when creating a new customer.
+  *   `kind` (*type:* `String.t`, *default:* `customers#address`) - Identifies the resource as a customer address. Value: `customers#address`
+  *   `locality` (*type:* `String.t`, *default:* `nil`) - An example of a `locality` value is the city of `San Francisco`.
   *   `organizationName` (*type:* `String.t`, *default:* `nil`) - The company or company division name. This is required.
-  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - A postalCode example is a postal zip code such as 94043. This property is required when creating a new customer.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - An example of a region value is CA for the state of California.
+  *   `postalCode` (*type:* `String.t`, *default:* `nil`) - A `postalCode` example is a postal zip code such as `94043`. This property is required when creating a new customer.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - An example of a `region` value is `CA` for the state of California.
   """
 
   use GoogleApi.Gax.ModelBase
