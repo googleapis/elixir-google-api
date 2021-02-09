@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
   @moduledoc """
-  Basic details about a playlist, including title, description and thumbnails. Basic details of a YouTube Playlist item provided by the author. Next ID: 13
+  Basic details about a playlist, including title, description and thumbnails. Basic details of a YouTube Playlist item provided by the author. Next ID: 15
 
   ## Attributes
 
@@ -30,6 +30,8 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
   *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The id object contains information that can be used to uniquely identify the resource that is included in the playlist as the playlist item.
   *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist item. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The item's title.
+  *   `videoOwnerChannelId` (*type:* `String.t`, *default:* `nil`) - Channel id for the channel this video belongs to.
+  *   `videoOwnerChannelTitle` (*type:* `String.t`, *default:* `nil`) - Channel title for the channel this video belongs to.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +45,9 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
           :publishedAt => DateTime.t(),
           :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t(),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
-          :title => String.t()
+          :title => String.t(),
+          :videoOwnerChannelId => String.t(),
+          :videoOwnerChannelTitle => String.t()
         }
 
   field(:channelId)
@@ -55,6 +59,8 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
   field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)
+  field(:videoOwnerChannelId)
+  field(:videoOwnerChannelTitle)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
