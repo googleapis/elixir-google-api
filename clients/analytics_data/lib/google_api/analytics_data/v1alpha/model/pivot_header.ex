@@ -22,7 +22,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.PivotHeader do
   ## Attributes
 
   *   `pivotDimensionHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.PivotDimensionHeader.t)`, *default:* `nil`) - The size is the same as the cardinality of the corresponding dimension combinations.
-  *   `rowCount` (*type:* `integer()`, *default:* `nil`) - The cardinality of the pivot as if offset = 0 and limit = -1. The total number of rows for this pivot's fields regardless of how the parameters offset and limit are specified in the request.
+  *   `rowCount` (*type:* `integer()`, *default:* `nil`) - The cardinality of the pivot. The total number of rows for this pivot's fields regardless of how the parameters `offset` and `limit` are specified in the request.
   """
 
   use GoogleApi.Gax.ModelBase

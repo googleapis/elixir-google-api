@@ -22,7 +22,7 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.Pivot do
   ## Attributes
 
   *   `fieldNames` (*type:* `list(String.t)`, *default:* `nil`) - Dimension names for visible columns in the report response. Including "dateRange" produces a date range column; for each row in the response, dimension values in the date range column will indicate the corresponding date range from the request.
-  *   `limit` (*type:* `String.t`, *default:* `nil`) - The number of rows to return in this pivot. If unspecified, 10 rows are returned. If -1, all rows are returned.
+  *   `limit` (*type:* `String.t`, *default:* `nil`) - The number of rows to return in this pivot. If the `limit` parameter is unspecified, up to 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for.
   *   `metricAggregations` (*type:* `list(String.t)`, *default:* `nil`) - Aggregate the metrics by dimensions in this pivot using the specified metric_aggregations.
   *   `offset` (*type:* `String.t`, *default:* `nil`) - The row count of the start row. The first row is counted as row 0.
   *   `orderBys` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.OrderBy.t)`, *default:* `nil`) - Specifies how dimensions are ordered in the pivot. In the first Pivot, the OrderBys determine Row and PivotDimensionHeader ordering; in subsequent Pivots, the OrderBys determine only PivotDimensionHeader ordering. Dimensions specified in these OrderBys must be a subset of Pivot.field_names.
