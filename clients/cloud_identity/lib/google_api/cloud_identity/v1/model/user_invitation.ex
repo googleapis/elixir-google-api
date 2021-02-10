@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.UserInvitation do
   @moduledoc """
-  UserInvitation to join a Google Workspace organization.
+  The `UserInvitation` resource represents an email sent to an unmanaged user account (an email address that shares the domain of the Google Workspace customer but is not managed by it yet), inviting them to join the customer’s domain. If the user accepts the `UserInvitation`, the account will become a managed account.
 
   ## Attributes
 
   *   `mailsSentCount` (*type:* `String.t`, *default:* `nil`) - Number of invitation emails sent to the user.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Shall be of the form `customers/{customer}/userinvitations/{user_email_address}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Shall be of the form `customers/{customer}/userinvitations/{user_email_address}`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the `UserInvitation`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the `UserInvitation` was last updated.
   """
