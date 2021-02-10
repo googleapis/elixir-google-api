@@ -22,7 +22,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_DiskConfig do
   ## Attributes
 
   *   `bootDiskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size in GB of the boot disk (default is 100GB).
-  *   `bootDiskType` (*type:* `String.t`, *default:* `nil`) - Type of the boot disk (default is "pd-standard"). Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or "pd-standard" (Persistent Disk Hard Disk Drive).
+  *   `bootDiskType` (*type:* `String.t`, *default:* `nil`) - Type of the boot disk (default is "pd-ssd"). Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or "pd-standard" (Persistent Disk Hard Disk Drive).
   """
 
   use GoogleApi.Gax.ModelBase
