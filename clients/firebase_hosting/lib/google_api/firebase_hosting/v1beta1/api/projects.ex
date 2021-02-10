@@ -1534,7 +1534,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
   end
 
   @doc """
-   Updates the specified metadata for the specified version. This method will fail with `FAILED_PRECONDITION` in the event of an invalid state transition. The only valid transition for a version is currently from a `CREATED` status to a `FINALIZED` status. Use [`DeleteVersion`](delete) to set the status of a version to `DELETED`.
+  Updates the specified metadata for the specified version. This method will fail with `FAILED_PRECONDITION` in the event of an invalid state transition. The only valid transition for a version is currently from a `CREATED` status to a `FINALIZED` status. Use [`DeleteVersion`](delete) to set the status of a version to `DELETED`.
 
   ## Parameters
 

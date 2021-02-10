@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Release do
   @moduledoc """
-   A `Release` is a particular [collection of configurations and files](sites.versions) that is set to be public at a particular time.
+  A `Release` is a particular [collection of configurations and files](sites.versions) that is set to be public at a particular time.
 
   ## Attributes
 
