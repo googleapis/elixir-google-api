@@ -21,6 +21,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
 
   ## Attributes
 
+  *   `cmUsage` (*type:* `String.t`, *default:* `nil`) - Indicates if and how Container Manager is being used for task execution.
   *   `dockerCacheHit` (*type:* `boolean()`, *default:* `nil`) - Indicates whether we are using a cached Docker image (true) or had to pull the Docker image (false) for this command.
   *   `dockerImageName` (*type:* `String.t`, *default:* `nil`) - Docker Image name.
   *   `inputCacheMiss` (*type:* `number()`, *default:* `nil`) - The input cache miss ratio.
@@ -32,6 +33,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cmUsage => String.t(),
           :dockerCacheHit => boolean(),
           :dockerImageName => String.t(),
           :inputCacheMiss => number(),
@@ -40,6 +42,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
           :usedAsyncContainer => boolean()
         }
 
+  field(:cmUsage)
   field(:dockerCacheHit)
   field(:dockerImageName)
   field(:inputCacheMiss)
