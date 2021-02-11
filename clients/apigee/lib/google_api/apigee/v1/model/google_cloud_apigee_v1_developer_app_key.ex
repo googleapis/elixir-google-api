@@ -26,6 +26,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperAppKey do
   *   `consumerKey` (*type:* `String.t`, *default:* `nil`) - Consumer key.
   *   `consumerSecret` (*type:* `String.t`, *default:* `nil`) - Secret key.
   *   `expiresAt` (*type:* `String.t`, *default:* `nil`) - Time the developer app expires in milliseconds since epoch.
+  *   `expiresInSeconds` (*type:* `String.t`, *default:* `nil`) - Input only. Expiration time, in seconds, for the consumer key. If not set or left to the default value of `-1`, the API key never expires. The expiration time can't be updated after it is set.
   *   `issuedAt` (*type:* `String.t`, *default:* `nil`) - Time the developer app was created in milliseconds since epoch.
   *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Scopes to apply to the app. The specified scope names must already be defined for the API product that you associate with the app.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the credential. Valid values include `approved` or `revoked`.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperAppKey do
           :consumerKey => String.t(),
           :consumerSecret => String.t(),
           :expiresAt => String.t(),
+          :expiresInSeconds => String.t(),
           :issuedAt => String.t(),
           :scopes => list(String.t()),
           :status => String.t()
@@ -49,6 +51,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperAppKey do
   field(:consumerKey)
   field(:consumerSecret)
   field(:expiresAt)
+  field(:expiresInSeconds)
   field(:issuedAt)
   field(:scopes, type: :list)
   field(:status)
