@@ -32,7 +32,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Request do
   *   `reason` (*type:* `String.t`, *default:* `nil`) - A special parameter for request reason. It is used by security systems to associate auditing information with a request.
   *   `scheme` (*type:* `String.t`, *default:* `nil`) - The HTTP URL scheme, such as `http` and `https`.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The HTTP request size in bytes. If unknown, it must be -1.
-  *   `time` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the `destination` service receives the first byte of the request.
+  *   `time` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the `destination` service receives the last byte of the request.
   """
 
   use GoogleApi.Gax.ModelBase
