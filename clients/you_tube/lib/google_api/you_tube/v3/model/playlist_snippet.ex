@@ -28,6 +28,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
   *   `localized` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistLocalization.t`, *default:* `nil`) - Localized title and description, read-only.
   *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the playlist was created.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Keyword tags associated with the playlist.
+  *   `thumbnailVideoId` (*type:* `String.t`, *default:* `nil`) - Note: if the playlist has a custom thumbnail, this field will not be populated. The video id selected by the user that will be used as the thumbnail of this playlist. This field defaults to the first publicly viewable video in the playlist, if: 1. The user has never selected a video to be the thumbnail of the playlist. 2. The user selects a video to be the thumbnail, and then removes that video from the playlist. 3. The user selects a non-owned video to be the thumbnail, but that video becomes private, or gets deleted.
   *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The playlist's title.
   """
@@ -42,6 +43,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
           :localized => GoogleApi.YouTube.V3.Model.PlaylistLocalization.t(),
           :publishedAt => DateTime.t(),
           :tags => list(String.t()),
+          :thumbnailVideoId => String.t(),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
           :title => String.t()
         }
@@ -53,6 +55,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
   field(:localized, as: GoogleApi.YouTube.V3.Model.PlaylistLocalization)
   field(:publishedAt, as: DateTime)
   field(:tags, type: :list)
+  field(:thumbnailVideoId)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)
 end
