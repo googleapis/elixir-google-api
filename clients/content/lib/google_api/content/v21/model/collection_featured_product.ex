@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.CollectionFeaturedProduct do
   @moduledoc """
-  The message for FeaturedProduct. FeaturedProduct
+  The message for FeaturedProduct. [FeaturedProduct](https://support.google.com/merchants/answer/9703736)
 
   ## Attributes
 

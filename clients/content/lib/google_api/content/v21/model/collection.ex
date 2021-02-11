@@ -21,19 +21,19 @@ defmodule GoogleApi.Content.V21.Model.Collection do
 
   ## Attributes
 
-  *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Label that you assign to a collection to help organize bidding and reporting in Shopping campaigns. Custom label
+  *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Label that you assign to a collection to help organize bidding and reporting in Shopping campaigns. [Custom label](https://support.google.com/merchants/answer/9674217)
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Label that you assign to a collection to help organize bidding and reporting in Shopping campaigns.
   *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Label that you assign to a collection to help organize bidding and reporting in Shopping campaigns.
   *   `customLabel3` (*type:* `String.t`, *default:* `nil`) - Label that you assign to a collection to help organize bidding and reporting in Shopping campaigns.
   *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Label that you assign to a collection to help organize bidding and reporting in Shopping campaigns.
-  *   `featuredProduct` (*type:* `list(GoogleApi.Content.V21.Model.CollectionFeaturedProduct.t)`, *default:* `nil`) - This identifies one or more products associated with the collection. Used as a lookup to the corresponding product ID in your product feeds. Provide a maximum of 100 featuredProduct (for collections). Provide up to 10 featuredProduct (for Shoppable Images only) with ID and X and Y coordinates. featured_product attribute
-  *   `headline` (*type:* `list(String.t)`, *default:* `nil`) - Your collection's name. headline attribute
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The REST ID of the collection. Content API methods that operate on collections take this as their collectionId parameter. The REST ID for a collection is of the form collectionId. id attribute
-  *   `imageLink` (*type:* `list(String.t)`, *default:* `nil`) - The URL of a collection’s image. image_link attribute
-  *   `language` (*type:* `String.t`, *default:* `nil`) - The language of a collection and the language of any featured products linked to the collection. language attribute
-  *   `link` (*type:* `String.t`, *default:* `nil`) - A collection’s landing page. URL directly linking to your collection's page on your website. link attribute
-  *   `mobileLink` (*type:* `String.t`, *default:* `nil`) - A collection’s mobile-optimized landing page when you have a different URL for mobile and desktop traffic. mobile_link attribute
-  *   `productCountry` (*type:* `String.t`, *default:* `nil`) - product_country attribute
+  *   `featuredProduct` (*type:* `list(GoogleApi.Content.V21.Model.CollectionFeaturedProduct.t)`, *default:* `nil`) - This identifies one or more products associated with the collection. Used as a lookup to the corresponding product ID in your product feeds. Provide a maximum of 100 featuredProduct (for collections). Provide up to 10 featuredProduct (for Shoppable Images only) with ID and X and Y coordinates. [featured_product attribute](https://support.google.com/merchants/answer/9703736)
+  *   `headline` (*type:* `list(String.t)`, *default:* `nil`) - Your collection's name. [headline attribute](https://support.google.com/merchants/answer/9673580)
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The REST ID of the collection. Content API methods that operate on collections take this as their collectionId parameter. The REST ID for a collection is of the form collectionId. [id attribute](https://support.google.com/merchants/answer/9649290)
+  *   `imageLink` (*type:* `list(String.t)`, *default:* `nil`) - The URL of a collection’s image. [image_link attribute](https://support.google.com/merchants/answer/9703236)
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language of a collection and the language of any featured products linked to the collection. [language attribute](https://support.google.com/merchants/answer/9673781)
+  *   `link` (*type:* `String.t`, *default:* `nil`) - A collection’s landing page. URL directly linking to your collection's page on your website. [link attribute](https://support.google.com/merchants/answer/9673983)
+  *   `mobileLink` (*type:* `String.t`, *default:* `nil`) - A collection’s mobile-optimized landing page when you have a different URL for mobile and desktop traffic. [mobile_link attribute](https://support.google.com/merchants/answer/9646123)
+  *   `productCountry` (*type:* `String.t`, *default:* `nil`) - [product_country attribute](https://support.google.com/merchants/answer/9674155)
   """
 
   use GoogleApi.Gax.ModelBase
