@@ -29,6 +29,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time the instance was last modified in milliseconds since epoch.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Required. Compute Engine location where the instance resides.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource ID of the instance. Values must match the regular expression `^a-z{0,30}[a-z\\d]$`.
+  *   `peeringCidrRange` (*type:* `String.t`, *default:* `nil`) - Optional. The size of the CIDR block range that will be reserved by the instance. If not specified, default to SLASH_16.
   *   `port` (*type:* `String.t`, *default:* `nil`) - Output only. Port number of the exposed Apigee endpoint.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the instance. Values other than ACTIVE means the resource is not ready to use.
   """
@@ -44,6 +45,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
           :lastModifiedAt => String.t(),
           :location => String.t(),
           :name => String.t(),
+          :peeringCidrRange => String.t(),
           :port => String.t(),
           :state => String.t()
         }
@@ -56,6 +58,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   field(:lastModifiedAt)
   field(:location)
   field(:name)
+  field(:peeringCidrRange)
   field(:port)
   field(:state)
 end
