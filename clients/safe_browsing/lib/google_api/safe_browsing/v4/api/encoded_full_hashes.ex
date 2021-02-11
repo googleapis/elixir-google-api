@@ -50,12 +50,11 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedFullHashes do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindFullHashesResponse{}}` on success
+  *   `{:ok, %GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec safebrowsing_encoded_full_hashes_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok,
-           GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindFullHashesResponse.t()}
+          {:ok, GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def safebrowsing_encoded_full_hashes_get(
@@ -92,11 +91,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedFullHashes do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++
-        [
-          struct:
-            %GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindFullHashesResponse{}
-        ]
+      opts ++ [struct: %GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse{}]
     )
   end
 end
