@@ -21,8 +21,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportPathToConversionCriteriaReportP
 
   ## Attributes
 
-  *   `clicksLookbackWindow` (*type:* `integer()`, *default:* `nil`) - DFA checks to see if a click interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90.
-  *   `impressionsLookbackWindow` (*type:* `integer()`, *default:* `nil`) - DFA checks to see if an impression interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90.
+  *   `clicksLookbackWindow` (*type:* `integer()`, *default:* `nil`) - CM360 checks to see if a click interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90.
+  *   `impressionsLookbackWindow` (*type:* `integer()`, *default:* `nil`) - CM360 checks to see if an impression interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90.
   *   `includeAttributedIPConversions` (*type:* `boolean()`, *default:* `nil`) - Deprecated: has no effect.
   *   `includeUnattributedCookieConversions` (*type:* `boolean()`, *default:* `nil`) - Include conversions of users with a DoubleClick cookie but without an exposure. That means the user did not click or see an ad from the advertiser within the Floodlight group, or that the interaction happened outside the lookback window.
   *   `includeUnattributedIPConversions` (*type:* `boolean()`, *default:* `nil`) - Include conversions that have no associated cookies and no exposures. It’s therefore impossible to know how the user was exposed to your ads during the lookback window prior to a conversion.
