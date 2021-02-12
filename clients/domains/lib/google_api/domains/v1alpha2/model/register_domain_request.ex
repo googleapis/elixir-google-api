@@ -21,7 +21,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.RegisterDomainRequest do
 
   ## Attributes
 
-  *   `contactNotices` (*type:* `list(String.t)`, *default:* `nil`) - The list of contact notices that the caller acknowledges. The notices required here depend on the values specified in `registration.contact_settings`.
+  *   `contactNotices` (*type:* `list(String.t)`, *default:* `nil`) - The list of contact notices that the caller acknowledges. The notices needed here depend on the values specified in `registration.contact_settings`.
   *   `domainNotices` (*type:* `list(String.t)`, *default:* `nil`) - The list of domain notices that you acknowledge. Call `RetrieveRegisterParameters` to see the notices that need acknowledgement.
   *   `registration` (*type:* `GoogleApi.Domains.V1alpha2.Model.Registration.t`, *default:* `nil`) - Required. The complete `Registration` resource to be created.
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - When true, only validation will be performed, without actually registering the domain. Follows: https://cloud.google.com/apis/design/design_patterns#request_validation
