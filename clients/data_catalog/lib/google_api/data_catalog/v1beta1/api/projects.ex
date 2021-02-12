@@ -1132,7 +1132,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `entry.name`. The Data Catalog resource name of the entry in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `entry.name`. Output only. The Data Catalog resource name of the entry in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
