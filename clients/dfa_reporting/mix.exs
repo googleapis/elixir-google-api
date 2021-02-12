@@ -18,7 +18,7 @@
 defmodule GoogleApi.DFAReporting.Mixfile do
   use Mix.Project
 
-  @version "0.21.1"
+  @version "0.21.2"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.DFAReporting.Mixfile do
 
   defp description() do
     """
-    Campaign Manager 360 API client library. Manage your DoubleClick Campaign Manager ad campaigns and reports.
+    Campaign Manager 360 API client library. Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
     """
   end
 
