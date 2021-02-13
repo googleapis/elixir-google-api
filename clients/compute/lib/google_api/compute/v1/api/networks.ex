@@ -205,6 +205,73 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
+  Returns the effective firewalls on a given network.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID for this request.
+  *   `network` (*type:* `String.t`) - Name of the network for this request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Compute.V1.Model.NetworksGetEffectiveFirewallsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec compute_networks_get_effective_firewalls(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.NetworksGetEffectiveFirewallsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def compute_networks_get_effective_firewalls(
+        connection,
+        project,
+        network,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/projects/{project}/global/networks/{network}/getEffectiveFirewalls", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "network" => URI.encode(network, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.NetworksGetEffectiveFirewallsResponse{}]
+    )
+  end
+
+  @doc """
   Creates a network in the specified project using the data included in the request.
 
   ## Parameters
@@ -290,7 +357,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -365,7 +432,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
       *   `:peeringName` (*type:* `String.t`) - The response will show routes exchanged over the given peering connection.
       *   `:region` (*type:* `String.t`) - The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
-      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

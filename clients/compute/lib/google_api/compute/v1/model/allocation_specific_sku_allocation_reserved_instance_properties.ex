@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInst
 
   *   `guestAccelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Specifies accelerator type and count.
   *   `localSsds` (*type:* `list(GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.t)`, *default:* `nil`) - Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+  *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum cpu platform the reservation.
   """
@@ -35,6 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInst
             list(
               GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.t()
             ),
+          :locationHint => String.t(),
           :machineType => String.t(),
           :minCpuPlatform => String.t()
         }
@@ -47,6 +49,7 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInst
     type: :list
   )
 
+  field(:locationHint)
   field(:machineType)
   field(:minCpuPlatform)
 end

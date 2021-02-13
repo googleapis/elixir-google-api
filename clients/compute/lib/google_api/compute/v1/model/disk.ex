@@ -47,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
       - projects/project/global/snapshots/snapshot 
       - global/snapshots/snapshot
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `provisionedIops` (*type:* `String.t`, *default:* `nil`) - Indicates how many IOPS must be provisioned for the disk.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of disk creation.  
       - CREATING: Disk is provisioning. 
       - RESTORING: Source data is being copied into the disk. 
@@ -118,6 +119,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
           :kind => String.t(),
           :sourceSnapshot => String.t(),
           :name => String.t(),
+          :provisionedIops => String.t(),
           :status => String.t(),
           :region => String.t(),
           :resourcePolicies => list(String.t()),
@@ -155,6 +157,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   field(:kind)
   field(:sourceSnapshot)
   field(:name)
+  field(:provisionedIops)
   field(:status)
   field(:region)
   field(:resourcePolicies, type: :list)

@@ -36,6 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
       - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
   *   `onUpdateAction` (*type:* `String.t`, *default:* `nil`) - Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+  *   `provisionedIops` (*type:* `String.t`, *default:* `nil`) - Indicates how many IOPS must be provisioned for the disk.
   *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies applied to this disk for automatic snapshot creations. Specified using the full or partial URL. For instance template, specify only the resource policy name.
   *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
 
@@ -78,6 +79,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
           :diskType => String.t(),
           :labels => map(),
           :onUpdateAction => String.t(),
+          :provisionedIops => String.t(),
           :resourcePolicies => list(String.t()),
           :sourceImage => String.t(),
           :sourceImageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t(),
@@ -91,6 +93,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   field(:diskType)
   field(:labels, type: :map)
   field(:onUpdateAction)
+  field(:provisionedIops)
   field(:resourcePolicies, type: :list)
   field(:sourceImage)
   field(:sourceImageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
