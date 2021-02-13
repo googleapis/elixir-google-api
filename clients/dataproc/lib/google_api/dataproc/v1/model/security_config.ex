@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.SecurityConfig do
   @moduledoc """
-  Security related configuration, including Kerberos.
+  Security related configuration, including encryption, Kerberos, etc.
 
   ## Attributes
 
-  *   `kerberosConfig` (*type:* `GoogleApi.Dataproc.V1.Model.KerberosConfig.t`, *default:* `nil`) - Kerberos related configuration.
+  *   `kerberosConfig` (*type:* `GoogleApi.Dataproc.V1.Model.KerberosConfig.t`, *default:* `nil`) - Optional. Kerberos related configuration.
   """
 
   use GoogleApi.Gax.ModelBase
