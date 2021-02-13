@@ -22,17 +22,33 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Train
   ## Attributes
 
   *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `testDatasetValidation` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation.t`, *default:* `nil`) - The test dataset validation information.
+  *   `trainingDatasetValidation` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation.t`, *default:* `nil`) - The training dataset validation information.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :commonMetadata =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t(),
+          :testDatasetValidation =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation.t(),
+          :trainingDatasetValidation =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation.t()
         }
 
   field(:commonMetadata,
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
+  )
+
+  field(:testDatasetValidation,
+    as:
+      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation
+  )
+
+  field(:trainingDatasetValidation,
+    as:
+      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation
   )
 end
 
