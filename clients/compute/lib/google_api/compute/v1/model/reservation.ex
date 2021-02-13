@@ -27,6 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#reservation`) - [Output Only] Type of the resource. Always compute#reservations for reservations.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined fully-qualified URL for this resource.
   *   `specificReservation` (*type:* `GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation.t`, *default:* `nil`) - Reservation for instances with specific machine shapes.
   *   `specificReservationRequired` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
           :id => String.t(),
           :kind => String.t(),
           :name => String.t(),
+          :satisfiesPzs => boolean(),
           :selfLink => String.t(),
           :specificReservation => GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation.t(),
           :specificReservationRequired => boolean(),
@@ -56,6 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
   field(:id)
   field(:kind)
   field(:name)
+  field(:satisfiesPzs)
   field(:selfLink)
   field(:specificReservation, as: GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation)
   field(:specificReservationRequired)

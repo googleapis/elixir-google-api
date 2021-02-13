@@ -121,8 +121,12 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
 
       For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
+  *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The PSC connection id of the PSC Forwarding Rule.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
+  *   `serviceDirectoryRegistrations` (*type:* `list(GoogleApi.Compute.V1.Model.ForwardingRuleServiceDirectoryRegistration.t)`, *default:* `nil`) - Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
+
+      It is only supported for Internal TCP/UDP Load Balancing and Internal HTTP(S) Load Balancing.
   *   `serviceLabel` (*type:* `String.t`, *default:* `nil`) - An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is the first label of the fully qualified service name.
 
       The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -163,8 +167,11 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
           :networkTier => String.t(),
           :portRange => String.t(),
           :ports => list(String.t()),
+          :pscConnectionId => String.t(),
           :region => String.t(),
           :selfLink => String.t(),
+          :serviceDirectoryRegistrations =>
+            list(GoogleApi.Compute.V1.Model.ForwardingRuleServiceDirectoryRegistration.t()),
           :serviceLabel => String.t(),
           :serviceName => String.t(),
           :subnetwork => String.t(),
@@ -192,8 +199,15 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   field(:networkTier)
   field(:portRange)
   field(:ports, type: :list)
+  field(:pscConnectionId)
   field(:region)
   field(:selfLink)
+
+  field(:serviceDirectoryRegistrations,
+    as: GoogleApi.Compute.V1.Model.ForwardingRuleServiceDirectoryRegistration,
+    type: :list
+  )
+
   field(:serviceLabel)
   field(:serviceName)
   field(:subnetwork)

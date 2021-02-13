@@ -47,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.Image do
   *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - Any applicable license URI.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `rawDisk` (*type:* `GoogleApi.Compute.V1.Model.ImageRawDisk.t`, *default:* `nil`) - The parameters of the raw disk image.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `shieldedInstanceInitialState` (*type:* `GoogleApi.Compute.V1.Model.InitialStateConfig.t`, *default:* `nil`) - Set the secure boot keys of shielded instance.
   *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:  
@@ -98,6 +99,7 @@ defmodule GoogleApi.Compute.V1.Model.Image do
           :licenses => list(String.t()),
           :name => String.t(),
           :rawDisk => GoogleApi.Compute.V1.Model.ImageRawDisk.t(),
+          :satisfiesPzs => boolean(),
           :selfLink => String.t(),
           :shieldedInstanceInitialState => GoogleApi.Compute.V1.Model.InitialStateConfig.t(),
           :sourceDisk => String.t(),
@@ -130,6 +132,7 @@ defmodule GoogleApi.Compute.V1.Model.Image do
   field(:licenses, type: :list)
   field(:name)
   field(:rawDisk, as: GoogleApi.Compute.V1.Model.ImageRawDisk)
+  field(:satisfiesPzs)
   field(:selfLink)
   field(:shieldedInstanceInitialState, as: GoogleApi.Compute.V1.Model.InitialStateConfig)
   field(:sourceDisk)

@@ -37,7 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
 
       Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `backends` (*type:* `list(GoogleApi.Compute.V1.Model.Backend.t)`, *default:* `nil`) - The list of backends that serve this BackendService.
-  *   `cdnPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t`, *default:* `nil`) - Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+  *   `cdnPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t`, *default:* `nil`) - Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
   *   `circuitBreakers` (*type:* `GoogleApi.Compute.V1.Model.CircuitBreakers.t`, *default:* `nil`) - Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
 
       This field is applicable to either:  
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
 
-      This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+      Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
   *   `portName` (*type:* `String.t`, *default:* `nil`) - A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
 
 

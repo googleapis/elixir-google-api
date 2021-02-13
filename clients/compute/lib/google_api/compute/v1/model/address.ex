@@ -54,7 +54,7 @@ defmodule GoogleApi.Compute.V1.Model.Address do
       - `VPC_PEERING` for addresses that are reserved for VPC peer networks. 
       - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT. 
       - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.

@@ -55,7 +55,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2352,6 +2352,84 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
+  Returns effective firewalls applied to an interface of the instance.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID for this request.
+  *   `zone` (*type:* `String.t`) - The name of the zone for this request.
+  *   `instance` (*type:* `String.t`) - Name of the instance scoping this request.
+  *   `network_interface` (*type:* `String.t`) - The name of the network interface to get the effective firewalls.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec compute_instances_get_effective_firewalls(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def compute_instances_get_effective_firewalls(
+        connection,
+        project,
+        zone,
+        instance,
+        network_interface,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/projects/{project}/zones/{zone}/instances/{instance}/getEffectiveFirewalls",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "zone" => URI.encode(zone, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_param(:query, :networkInterface, network_interface)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponse{}]
+    )
+  end
+
+  @doc """
   Retrieves a list of resources that refer to the VM instance specified in the request. For example, if the VM instance is part of a managed or unmanaged instance group, the referrers list includes the instance group. For more information, read Viewing referrers to VM instances.
 
   ## Parameters
@@ -2382,7 +2460,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3006,7 +3084,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
 
           Currently, only sorting by `name` or `creationTimestamp desc` is supported.
       *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

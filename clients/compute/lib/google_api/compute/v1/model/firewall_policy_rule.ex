@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRule do
   ## Attributes
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description for this resource.
   *   `direction` (*type:* `String.t`, *default:* `nil`) - The direction in which this rule applies.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
   *   `enableLogging` (*type:* `boolean()`, *default:* `nil`) - Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
