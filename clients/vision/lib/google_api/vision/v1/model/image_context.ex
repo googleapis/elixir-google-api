@@ -25,6 +25,7 @@ defmodule GoogleApi.Vision.V1.Model.ImageContext do
   *   `languageHints` (*type:* `list(String.t)`, *default:* `nil`) - List of languages to use for TEXT_DETECTION. In most cases, an empty value yields the best results since it enables automatic language detection. For languages based on the Latin alphabet, setting `language_hints` is not needed. In rare cases, when the language of the text in the image is known, setting a hint will help get better results (although it will be a significant hindrance if the hint is wrong). Text detection returns an error if one or more of the specified languages is not one of the [supported languages](https://cloud.google.com/vision/docs/languages).
   *   `latLongRect` (*type:* `GoogleApi.Vision.V1.Model.LatLongRect.t`, *default:* `nil`) - Not used.
   *   `productSearchParams` (*type:* `GoogleApi.Vision.V1.Model.ProductSearchParams.t`, *default:* `nil`) - Parameters for product search.
+  *   `textDetectionParams` (*type:* `GoogleApi.Vision.V1.Model.TextDetectionParams.t`, *default:* `nil`) - Parameters for text detection and document text detection.
   *   `webDetectionParams` (*type:* `GoogleApi.Vision.V1.Model.WebDetectionParams.t`, *default:* `nil`) - Parameters for web detection.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Vision.V1.Model.ImageContext do
           :languageHints => list(String.t()),
           :latLongRect => GoogleApi.Vision.V1.Model.LatLongRect.t(),
           :productSearchParams => GoogleApi.Vision.V1.Model.ProductSearchParams.t(),
+          :textDetectionParams => GoogleApi.Vision.V1.Model.TextDetectionParams.t(),
           :webDetectionParams => GoogleApi.Vision.V1.Model.WebDetectionParams.t()
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Vision.V1.Model.ImageContext do
   field(:languageHints, type: :list)
   field(:latLongRect, as: GoogleApi.Vision.V1.Model.LatLongRect)
   field(:productSearchParams, as: GoogleApi.Vision.V1.Model.ProductSearchParams)
+  field(:textDetectionParams, as: GoogleApi.Vision.V1.Model.TextDetectionParams)
   field(:webDetectionParams, as: GoogleApi.Vision.V1.Model.WebDetectionParams)
 end
 
