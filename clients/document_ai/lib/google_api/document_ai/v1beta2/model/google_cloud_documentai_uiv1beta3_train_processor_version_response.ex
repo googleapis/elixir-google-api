@@ -21,19 +21,16 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Train
 
   ## Attributes
 
-  *   `processorVersion` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ProcessorVersion.t`, *default:* `nil`) - The processor version produced by training.
+  *   `processorVersion` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor version produced by training.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :processorVersion =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ProcessorVersion.t()
+          :processorVersion => String.t()
         }
 
-  field(:processorVersion,
-    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3ProcessorVersion
-  )
+  field(:processorVersion)
 end
 
 defimpl Poison.Decoder,

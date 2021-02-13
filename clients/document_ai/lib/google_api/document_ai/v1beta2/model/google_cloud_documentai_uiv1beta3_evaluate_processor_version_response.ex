@@ -21,19 +21,16 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Evalu
 
   ## Attributes
 
-  *   `evaluation` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Evaluation.t`, *default:* `nil`) - The evaluation result.
+  *   `evaluation` (*type:* `String.t`, *default:* `nil`) - The resource name of the created evaluation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :evaluation =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Evaluation.t()
+          :evaluation => String.t()
         }
 
-  field(:evaluation,
-    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Evaluation
-  )
+  field(:evaluation)
 end
 
 defimpl Poison.Decoder,
