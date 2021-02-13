@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetAccess do
 
   ## Attributes
 
+  *   `dataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetAccessEntry.t`, *default:* `nil`) - [Pick one] A grant authorizing all resources of a particular type in a particular dataset access to this dataset. Only views are supported for now. The role field is not required when this field is set. If that dataset is deleted and re-created, its access needs to be granted again via an update operation.
   *   `domain` (*type:* `String.t`, *default:* `nil`) - [Pick one] A domain to grant access to. Any users signed in with the domain specified will be granted the specified access. Example: "example.com". Maps to IAM policy member "domain:DOMAIN".
   *   `groupByEmail` (*type:* `String.t`, *default:* `nil`) - [Pick one] An email address of a Google Group to grant access to. Maps to IAM policy member "group:GROUP".
   *   `iamMember` (*type:* `String.t`, *default:* `nil`) - [Pick one] Some other type of member that appears in the IAM Policy but isn't a user, group, domain, or special group.
@@ -34,6 +35,7 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetAccess do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataset => GoogleApi.BigQuery.V2.Model.DatasetAccessEntry.t(),
           :domain => String.t(),
           :groupByEmail => String.t(),
           :iamMember => String.t(),
@@ -44,6 +46,7 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetAccess do
           :view => GoogleApi.BigQuery.V2.Model.TableReference.t()
         }
 
+  field(:dataset, as: GoogleApi.BigQuery.V2.Model.DatasetAccessEntry)
   field(:domain)
   field(:groupByEmail)
   field(:iamMember)
