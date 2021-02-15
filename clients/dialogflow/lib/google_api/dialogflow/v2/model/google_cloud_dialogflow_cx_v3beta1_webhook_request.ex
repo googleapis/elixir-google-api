@@ -27,6 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
   *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t)`, *default:* `nil`) - The list of rich message responses to present to the user. Webhook can choose to append or replace this list in WebhookResponse.fulfillment_response;
   *   `pageInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo.t`, *default:* `nil`) - Information about page status.
   *   `payload` (*type:* `map()`, *default:* `nil`) - Custom data set in QueryParameters.payload.
+  *   `sentimentAnalysisResult` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestSentimentAnalysisResult.t`, *default:* `nil`) - The sentiment analysis result of the current user request. The field is filled when sentiment analysis is configured to be enabled for the request.
   *   `sessionInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInfo.t`, *default:* `nil`) - Information about session status.
   """
 
@@ -42,6 +43,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t()),
           :pageInfo => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo.t(),
           :payload => map(),
+          :sentimentAnalysisResult =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestSentimentAnalysisResult.t(),
           :sessionInfo =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInfo.t()
         }
@@ -63,6 +66,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookReq
 
   field(:pageInfo, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo)
   field(:payload, type: :map)
+
+  field(:sentimentAnalysisResult,
+    as:
+      GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookRequestSentimentAnalysisResult
+  )
+
   field(:sessionInfo, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1SessionInfo)
 end
 
