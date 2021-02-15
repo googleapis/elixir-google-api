@@ -167,7 +167,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a namespace, and returns the new Namespace.
+  Creates a namespace, and returns the new namespace.
 
   ## Parameters
 
@@ -454,7 +454,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the project and location whose namespaces we'd like to list.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the project and location whose namespaces you'd like to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -467,8 +467,8 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to list result by. General filter string syntax: () can be "name", or "labels." for map field. can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS, and is roughly the same as "=". must be the same data type as field. can be "AND, OR, NOT". Examples of valid filters: * "labels.owner" returns Namespaces that have a label with the key "owner" this is the same as "labels:owner". * "labels.protocol=gRPC" returns Namespaces that have key/value "protocol=gRPC". * "name>projects/my-project/locations/us-east/namespaces/namespace-c" returns Namespaces that have name that is alphabetically later than the string, so "namespace-e" will be returned but "namespace-a" will not be. * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have "owner" in label key but value is not "sd" AND have key/value foo=bar. * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't have a field called "doesnotexist". Since the filter does not match any Namespaces, it returns no results.
-      *   `:orderBy` (*type:* `String.t`) - Optional. The order to list result by. General order by string syntax: () (,) allows values {"name"} ascending or descending order by . If this is left blank, "asc" is used. Note that an empty order_by string result in default order, which is order by name in ascending order.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to list results by. General `filter` string syntax: ` ()` * `` can be `name` or `labels.` for map field * `` can be `<`, `>`, `<=`, `>=`, `!=`, `=`, `:`. Of which `:` means `HAS`, and is roughly the same as `=` * `` must be the same data type as field * `` can be `AND`, `OR`, `NOT` Examples of valid filters: * `labels.owner` returns namespaces that have a label with the key `owner`, this is the same as `labels:owner` * `labels.owner=sd` returns namespaces that have key/value `owner=sd` * `name>projects/my-project/locations/us-east1/namespaces/namespace-c` returns namespaces that have name that is alphabetically later than the string, so "namespace-e" is returned but "namespace-a" is not * `labels.owner!=sd AND labels.foo=bar` returns namespaces that have `owner` in label key but value is not `sd` AND have key/value `foo=bar` * `doesnotexist.foo=bar` returns an empty list. Note that namespace doesn't have a field called "doesnotexist". Since the filter does not match any namespaces, it returns no results For more information about filtering, see [API Filtering](https://aip.dev/160).
+      *   `:orderBy` (*type:* `String.t`) - Optional. The order to list results by. General `order_by` string syntax: ` () (,)` * `` allows value: `name` * `` ascending or descending order by ``. If this is left blank, `asc` is used Note that an empty `order_by` string results in default order, which is order by `name` in ascending order.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -533,7 +533,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The resource name for the namespace in the format 'projects/*/locations/*/namespaces/*'.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name for the namespace in the format `projects/*/locations/*/namespaces/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -745,7 +745,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a service, and returns the new Service.
+  Creates a service, and returns the new service.
 
   ## Parameters
 
@@ -1032,7 +1032,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the namespace whose services we'd like to list.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the namespace whose services you'd like to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1045,8 +1045,8 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to list result by. General filter string syntax: () can be "name", or "metadata." for map field. can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS, and is roughly the same as "=". must be the same data type as field. can be "AND, OR, NOT". Examples of valid filters: * "metadata.owner" returns Services that have a label with the key "owner" this is the same as "metadata:owner". * "metadata.protocol=gRPC" returns Services that have key/value "protocol=gRPC". * "name>projects/my-project/locations/us-east/namespaces/my-namespace/services/service-c" returns Services that have name that is alphabetically later than the string, so "service-e" will be returned but "service-a" will not be. * "metadata.owner!=sd AND metadata.foo=bar" returns Services that have "owner" in label key but value is not "sd" AND have key/value foo=bar. * "doesnotexist.foo=bar" returns an empty list. Note that Service doesn't have a field called "doesnotexist". Since the filter does not match any Services, it returns no results.
-      *   `:orderBy` (*type:* `String.t`) - Optional. The order to list result by.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to list results by. General `filter` string syntax: ` ()` * `` can be `name` or `metadata.` for map field * `` can be `<`, `>`, `<=`, `>=`, `!=`, `=`, `:`. Of which `:` means `HAS`, and is roughly the same as `=` * `` must be the same data type as field * `` can be `AND`, `OR`, `NOT` Examples of valid filters: * `metadata.owner` returns services that have a metadata with the key `owner`, this is the same as `metadata:owner` * `metadata.protocol=gRPC` returns services that have key/value `protocol=gRPC` * `name>projects/my-project/locations/us-east1/namespaces/my-namespace/services/service-c` returns services that have name that is alphabetically later than the string, so "service-e" is returned but "service-a" is not * `metadata.owner!=sd AND metadata.foo=bar` returns services that have `owner` in metadata key but value is not `sd` AND have key/value `foo=bar` * `doesnotexist.foo=bar` returns an empty list. Note that service doesn't have a field called "doesnotexist". Since the filter does not match any services, it returns no results For more information about filtering, see [API Filtering](https://aip.dev/160).
+      *   `:orderBy` (*type:* `String.t`) - Optional. The order to list results by. General `order_by` string syntax: ` () (,)` * `` allows value: `name` * `` ascending or descending order by ``. If this is left blank, `asc` is used Note that an empty `order_by` string results in default order, which is order by `name` in ascending order.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1111,7 +1111,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The resource name for the service in the format 'projects/*/locations/*/namespaces/*/services/*'.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name for the service in the format `projects/*/locations/*/namespaces/*/services/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1396,7 +1396,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a endpoint, and returns the new Endpoint.
+  Creates an endpoint, and returns the new endpoint.
 
   ## Parameters
 
@@ -1469,7 +1469,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes a endpoint.
+  Deletes an endpoint.
 
   ## Parameters
 
@@ -1538,7 +1538,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets a endpoint.
+  Gets an endpoint.
 
   ## Parameters
 
@@ -1612,7 +1612,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the service whose endpoints we'd like to list.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the service whose endpoints you'd like to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1625,8 +1625,8 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter to list result by. General filter string syntax: () can be "name", "address", "port" or "metadata." for map field. can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS, and is roughly the same as "=". must be the same data type as field. can be "AND, OR, NOT". Examples of valid filters: * "metadata.owner" returns Endpoints that have a label with the key "owner" this is the same as "metadata:owner". * "metadata.protocol=gRPC" returns Endpoints that have key/value "protocol=gRPC". * "address=192.108.1.105" returns Endpoints that have this address. * "port>8080" returns Endpoints that have port number larger than 8080. * "name>projects/my-project/locations/us-east/namespaces/my-namespace/services/my-service/endpoints/endpoint-c" returns Endpoints that have name that is alphabetically later than the string, so "endpoint-e" will be returned but "endpoint-a" will not be. * "metadata.owner!=sd AND metadata.foo=bar" returns Endpoints that have "owner" in label key but value is not "sd" AND have key/value foo=bar. * "doesnotexist.foo=bar" returns an empty list. Note that Endpoint doesn't have a field called "doesnotexist". Since the filter does not match any Endpoints, it returns no results.
-      *   `:orderBy` (*type:* `String.t`) - Optional. The order to list result by.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter to list results by. General `filter` string syntax: ` ()` * `` can be `name`, `address`, `port`, or `metadata.` for map field * `` can be `<`, `>`, `<=`, `>=`, `!=`, `=`, `:`. Of which `:` means `HAS`, and is roughly the same as `=` * `` must be the same data type as field * `` can be `AND`, `OR`, `NOT` Examples of valid filters: * `metadata.owner` returns endpoints that have a metadata with the key `owner`, this is the same as `metadata:owner` * `metadata.protocol=gRPC` returns endpoints that have key/value `protocol=gRPC` * `address=192.108.1.105` returns endpoints that have this address * `port>8080` returns endpoints that have port number larger than 8080 * `name>projects/my-project/locations/us-east1/namespaces/my-namespace/services/my-service/endpoints/endpoint-c` returns endpoints that have name that is alphabetically later than the string, so "endpoint-e" is returned but "endpoint-a" is not * `metadata.owner!=sd AND metadata.foo=bar` returns endpoints that have `owner` in metadata key but value is not `sd` AND have key/value `foo=bar` * `doesnotexist.foo=bar` returns an empty list. Note that endpoint doesn't have a field called "doesnotexist". Since the filter does not match any endpoints, it returns no results For more information about filtering, see [API Filtering](https://aip.dev/160).
+      *   `:orderBy` (*type:* `String.t`) - Optional. The order to list results by. General `order_by` string syntax: ` () (,)` * `` allows values: `name`, `address`, `port` * `` ascending or descending order by ``. If this is left blank, `asc` is used Note that an empty `order_by` string results in default order, which is order by `name` in ascending order.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1686,12 +1686,12 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates a endpoint.
+  Updates an endpoint.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceDirectory.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The resource name for the endpoint in the format 'projects/*/locations/*/namespaces/*/services/*/endpoints/*'.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name for the endpoint in the format `projects/*/locations/*/namespaces/*/services/*/endpoints/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
