@@ -26,6 +26,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Metadata do
   *   `events` (*type:* `list(GoogleApi.LifeSciences.V2beta.Model.Event.t)`, *default:* `nil`) - The list of events that have happened so far during the execution of this operation.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The user-defined labels associated with this operation.
   *   `pipeline` (*type:* `GoogleApi.LifeSciences.V2beta.Model.Pipeline.t`, *default:* `nil`) - The pipeline this operation represents.
+  *   `pubSubTopic` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Pub/Sub topic where notifications of operation status changes are sent.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The first time at which resources were allocated to execute the pipeline.
   """
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Metadata do
           :events => list(GoogleApi.LifeSciences.V2beta.Model.Event.t()),
           :labels => map(),
           :pipeline => GoogleApi.LifeSciences.V2beta.Model.Pipeline.t(),
+          :pubSubTopic => String.t(),
           :startTime => DateTime.t()
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.Metadata do
   field(:events, as: GoogleApi.LifeSciences.V2beta.Model.Event, type: :list)
   field(:labels, type: :map)
   field(:pipeline, as: GoogleApi.LifeSciences.V2beta.Model.Pipeline)
+  field(:pubSubTopic)
   field(:startTime, as: DateTime)
 end
 

@@ -23,17 +23,20 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.RunPipelineRequest do
 
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels to associate with the returned operation. These labels are not propagated to any Google Cloud Platform resources used by the operation, and can be modified at any time. To associate labels with resources created while executing the operation, see the appropriate resource message (for example, `VirtualMachine`).
   *   `pipeline` (*type:* `GoogleApi.LifeSciences.V2beta.Model.Pipeline.t`, *default:* `nil`) - Required. The description of the pipeline to run.
+  *   `pubSubTopic` (*type:* `String.t`, *default:* `nil`) - The name of an existing Pub/Sub topic. The server will publish messages to this topic whenever the status of the operation changes. The Life Sciences Service Agent account must have publisher permissions to the specified topic or notifications will not be sent.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :labels => map(),
-          :pipeline => GoogleApi.LifeSciences.V2beta.Model.Pipeline.t()
+          :pipeline => GoogleApi.LifeSciences.V2beta.Model.Pipeline.t(),
+          :pubSubTopic => String.t()
         }
 
   field(:labels, type: :map)
   field(:pipeline, as: GoogleApi.LifeSciences.V2beta.Model.Pipeline)
+  field(:pubSubTopic)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.LifeSciences.V2beta.Model.RunPipelineRequest do
