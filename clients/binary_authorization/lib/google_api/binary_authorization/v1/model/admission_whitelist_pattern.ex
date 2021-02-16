@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BinaryAuthorization.V1.Model.AdmissionWhitelistPattern do
   @moduledoc """
-  An admission whitelist pattern exempts images from checks by admission rules.
+  An admission allowlist pattern exempts images from checks by admission rules.
 
   ## Attributes
 
