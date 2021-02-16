@@ -24,7 +24,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.NetworkInfo do
   *   `imei` (*type:* `String.t`, *default:* `nil`) - IMEI number of the GSM device. For example, A1000031212.
   *   `meid` (*type:* `String.t`, *default:* `nil`) - MEID number of the CDMA device. For example, A00000292788E1.
   *   `networkOperatorName` (*type:* `String.t`, *default:* `nil`) - Alphabetic name of current registered operator. For example, Vodafone.
-  *   `telephonyInfos` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.TelephonyInfo.t)`, *default:* `nil`) - Provides telephony information associated with each SIM card on the device. Only supported on fully managed devices starting from Android API level 23 and above.
+  *   `telephonyInfos` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.TelephonyInfo.t)`, *default:* `nil`) - Provides telephony information associated with each SIM card on the device. Only supported on fully managed devices starting from Android API level 23.
   *   `wifiMacAddress` (*type:* `String.t`, *default:* `nil`) - Wi-Fi MAC address of the device. For example, 7c:11:11:11:11:11.
   """
 

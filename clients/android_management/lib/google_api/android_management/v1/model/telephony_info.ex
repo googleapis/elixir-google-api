@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.TelephonyInfo do
   @moduledoc """
-  Telephony information associated with a given SIM card on the device. Only supported on fully managed devices starting from Android API level 23 and above.
+  Telephony information associated with a given SIM card on the device. Only supported on fully managed devices starting from Android API level 23.
 
   ## Attributes
 
