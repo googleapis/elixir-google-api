@@ -23,6 +23,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1DefaultIdentity do
 
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the default identity.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Default identity resource name. An example name would be: `services/serviceconsumermanagement.googleapis.com/projects/123/defaultIdentity`
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - The Default Identity tag. If specified when creating the account, the tag must be present in activation_grants. If not specified when creating the account, the tag is set to the tag specified in activation_grants.
   *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - The unique and stable id of the default identity.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1DefaultIdentity do
   @type t :: %__MODULE__{
           :email => String.t(),
           :name => String.t(),
+          :tag => String.t(),
           :uniqueId => String.t()
         }
 
   field(:email)
   field(:name)
+  field(:tag)
   field(:uniqueId)
 end
 
