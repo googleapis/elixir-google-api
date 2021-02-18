@@ -30,7 +30,7 @@ defmodule GoogleApi.Calendar.V3.Model.Channel do
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - An opaque ID that identifies the resource being watched on this channel. Stable across different API versions.
   *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - A version-specific identifier for the watched resource.
   *   `token` (*type:* `String.t`, *default:* `nil`) - An arbitrary string delivered to the target address with each notification delivered over this channel. Optional.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of delivery mechanism used for this channel.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of delivery mechanism used for this channel. Valid values are "web_hook" (or "webhook"). Both values refer to a channel where Http requests are used to deliver messages.
   """
 
   use GoogleApi.Gax.ModelBase
