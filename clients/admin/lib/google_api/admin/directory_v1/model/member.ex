@@ -26,7 +26,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Member do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of the group member. A member `id` can be used as a member request URI's `memberKey`.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#member`) - The type of the API resource. For Members resources, the value is `admin#directory#member`.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - The member's role in a group. The API returns an error for cycles in group memberships. For example, if `group1` is a member of `group2`, `group2` cannot be a member of `group1`. For more information about a member's role, see the [administration help center](http://support.google.com/a/bin/answer.py?answer=167094).
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The member's role in a group. The API returns an error for cycles in group memberships. For example, if `group1` is a member of `group2`, `group2` cannot be a member of `group1`. For more information about a member's role, see the [administration help center](https://support.google.com/a/answer/167094).
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of member (Immutable)
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of group member.
   """

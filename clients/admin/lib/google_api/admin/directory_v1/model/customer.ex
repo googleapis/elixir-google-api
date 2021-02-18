@@ -28,7 +28,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Customer do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for the customer's Google Workspace account. (Readonly)
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#customer`) - Identifies the resource as a customer. Value: `admin#directory#customer`
   *   `language` (*type:* `String.t`, *default:* `nil`) - The customer's ISO 639-2 language code. See the [Language Codes](/admin-sdk/directory/v1/languages) page for the list of supported codes. Valid language codes outside the supported set will be accepted by the API but may lead to unexpected behavior. The default value is `en`.
-  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The customer's contact phone number in [E.164](http://en.wikipedia.org/wiki/E.164) format.
+  *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The customer's contact phone number in [E.164](https://en.wikipedia.org/wiki/E.164) format.
   *   `postalAddress` (*type:* `GoogleApi.Admin.Directory_v1.Model.CustomerPostalAddress.t`, *default:* `nil`) - The customer's postal address information.
   """
 
