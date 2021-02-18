@@ -22,11 +22,11 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If exists, the time at which the database creation started.
-  *   `earliestVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Earliest timestamp at which older versions of the data can be read.
+  *   `earliestVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Earliest timestamp at which older versions of the data can be read. This value is continuously updated by Cloud Spanner and becomes stale the moment it is queried. If you are using this value to recover data, make sure to account for the time from the moment when the value is queried to the moment when you initiate the recovery.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the database. Values are of the form `projects//instances//databases/`, where `` is as specified in the `CREATE DATABASE` statement. This name can be passed to other API methods to identify the database.
   *   `restoreInfo` (*type:* `GoogleApi.Spanner.V1.Model.RestoreInfo.t`, *default:* `nil`) - Output only. Applicable only for restored databases. Contains information about the restore source.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current database state.
-  *   `versionRetentionPeriod` (*type:* `String.t`, *default:* `nil`) - Output only. The period in which Cloud Spanner retains all versions of data for the database. This is same as the value of version_retention_period database option set using UpdateDatabaseDdl. Defaults to 1 hour, if not set.
+  *   `versionRetentionPeriod` (*type:* `String.t`, *default:* `nil`) - Output only. The period in which Cloud Spanner retains all versions of data for the database. This is the same as the value of version_retention_period database option set using UpdateDatabaseDdl. Defaults to 1 hour, if not set.
   """
 
   use GoogleApi.Gax.ModelBase
