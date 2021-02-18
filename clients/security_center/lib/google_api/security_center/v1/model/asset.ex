@@ -27,7 +27,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Asset do
   *   `resourceProperties` (*type:* `map()`, *default:* `nil`) - Resource managed properties. These properties are managed and defined by the Google Cloud resource and cannot be modified by the user.
   *   `securityCenterProperties` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties.t`, *default:* `nil`) - Security Command Center managed properties. These properties are managed by Security Command Center and cannot be modified by the user.
   *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t`, *default:* `nil`) - User specified security marks. These marks are entirely managed by the user and come from the SecurityMarks resource that belongs to the asset.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the asset was last updated, added, or deleted in Security Command Center.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the asset was last updated or added in Cloud SCC.
   """
 
   use GoogleApi.Gax.ModelBase
