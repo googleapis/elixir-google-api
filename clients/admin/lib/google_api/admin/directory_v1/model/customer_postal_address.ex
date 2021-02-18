@@ -25,7 +25,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.CustomerPostalAddress do
   *   `addressLine2` (*type:* `String.t`, *default:* `nil`) - Address line 2 of the address.
   *   `addressLine3` (*type:* `String.t`, *default:* `nil`) - Address line 3 of the address.
   *   `contactName` (*type:* `String.t`, *default:* `nil`) - The customer contact's name.
-  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - This is a required property. For `countryCode` information see the [ISO 3166 country code elements](http://www.iso.org/iso/country_codes.htm).
+  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - This is a required property. For `countryCode` information see the [ISO 3166 country code elements](https://www.iso.org/iso/country_codes.htm).
   *   `locality` (*type:* `String.t`, *default:* `nil`) - Name of the locality. An example of a locality value is the city of `San Francisco`.
   *   `organizationName` (*type:* `String.t`, *default:* `nil`) - The company or company division name.
   *   `postalCode` (*type:* `String.t`, *default:* `nil`) - The postal code. A postalCode example is a postal zip code such as `10009`. This is in accordance with - http: //portablecontacts.net/draft-spec.html#address_element.

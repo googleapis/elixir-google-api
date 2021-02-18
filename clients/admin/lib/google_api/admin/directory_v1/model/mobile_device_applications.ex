@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MobileDeviceApplications do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The application's display name. An example is `Browser`.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - The application's package name. An example is `com.android.browser`.
-  *   `permission` (*type:* `list(String.t)`, *default:* `nil`) - The list of permissions of this application. These can be either a standard Android permission or one defined by the application, and are found in an application's [Android manifest](http://developer.android.com/guide/topics/manifest/uses-permission-element.html). Examples of a Calendar application's permissions are `READ_CALENDAR`, or `MANAGE_ACCOUNTS`.
+  *   `permission` (*type:* `list(String.t)`, *default:* `nil`) - The list of permissions of this application. These can be either a standard Android permission or one defined by the application, and are found in an application's [Android manifest](https://developer.android.com/guide/topics/manifest/uses-permission-element.html). Examples of a Calendar application's permissions are `READ_CALENDAR`, or `MANAGE_ACCOUNTS`.
   *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The application's version code. An example is `13`.
   *   `versionName` (*type:* `String.t`, *default:* `nil`) - The application's version name. An example is `3.2-140714`.
   """
