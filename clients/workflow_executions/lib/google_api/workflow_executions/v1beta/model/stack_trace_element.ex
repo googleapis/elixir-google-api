@@ -17,12 +17,11 @@
 
 defmodule GoogleApi.WorkflowExecutions.V1beta.Model.StackTraceElement do
   @moduledoc """
-  A single stack element (frame) where an error occurred.
+  A single stack element (frame) where an error occurred. This field currently only exists in v1Beta. We will need to roll this change out to V1 after the feature is thoroughly tested. TODO(b/178540475)
 
   ## Attributes
 
-  *   `column` (*type:* `String.t`, *default:* `nil`) - The source code column position (of the line) the current instruction was generated from.
-  *   `line` (*type:* `String.t`, *default:* `nil`) - The source code line number the current instruction was generated from.
+  *   `position` (*type:* `GoogleApi.WorkflowExecutions.V1beta.Model.Position.t`, *default:* `nil`) - The source position information of the stacktrace element.
   *   `routine` (*type:* `String.t`, *default:* `nil`) - The routine where the error occurred.
   *   `step` (*type:* `String.t`, *default:* `nil`) - The step the error occurred at.
   """
@@ -30,14 +29,12 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.StackTraceElement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => String.t(),
-          :line => String.t(),
+          :position => GoogleApi.WorkflowExecutions.V1beta.Model.Position.t(),
           :routine => String.t(),
           :step => String.t()
         }
 
-  field(:column)
-  field(:line)
+  field(:position, as: GoogleApi.WorkflowExecutions.V1beta.Model.Position)
   field(:routine)
   field(:step)
 end
