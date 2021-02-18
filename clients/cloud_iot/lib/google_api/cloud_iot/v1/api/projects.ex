@@ -1015,7 +1015,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. If the field mask is unset or empty, all fields are returned.
+      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. If the field mask is unset or empty, all fields are returned. Fields have to be provided in snake_case format, for example: `last_heartbeat_time`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1100,7 +1100,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:deviceIds` (*type:* `list(String.t)`) - A list of device string IDs. For example, `['device0', 'device12']`. If empty, this field is ignored. Maximum IDs: 10,000
       *   `:deviceNumIds` (*type:* `list(String.t)`) - A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
-      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The fields `id` and `num_id` are always returned, along with any other fields specified.
+      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The fields `id` and `num_id` are always returned, along with any other fields specified in snake_case format, for example: `last_heartbeat_time`.
       *   `:"gatewayListOptions.associationsDeviceId"` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (`num_id`) or the user-defined string (`id`). For example, if `456` is specified, returns only the gateways to which the device with `num_id` 456 is bound.
       *   `:"gatewayListOptions.associationsGatewayId"` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (`num_id`) or the user-defined string (`id`). For example, if `123` is specified, only devices bound to the gateway with `num_id` 123 are returned.
       *   `:"gatewayListOptions.gatewayType"` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY` is specified, only non-gateway devices are returned. If `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
@@ -1887,7 +1887,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:deviceIds` (*type:* `list(String.t)`) - A list of device string IDs. For example, `['device0', 'device12']`. If empty, this field is ignored. Maximum IDs: 10,000
       *   `:deviceNumIds` (*type:* `list(String.t)`) - A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
-      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The fields `id` and `num_id` are always returned, along with any other fields specified.
+      *   `:fieldMask` (*type:* `String.t`) - The fields of the `Device` resource to be returned in the response. The fields `id` and `num_id` are always returned, along with any other fields specified in snake_case format, for example: `last_heartbeat_time`.
       *   `:"gatewayListOptions.associationsDeviceId"` (*type:* `String.t`) - If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (`num_id`) or the user-defined string (`id`). For example, if `456` is specified, returns only the gateways to which the device with `num_id` 456 is bound.
       *   `:"gatewayListOptions.associationsGatewayId"` (*type:* `String.t`) - If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (`num_id`) or the user-defined string (`id`). For example, if `123` is specified, only devices bound to the gateway with `num_id` 123 are returned.
       *   `:"gatewayListOptions.gatewayType"` (*type:* `String.t`) - If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY` is specified, only non-gateway devices are returned. If `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
