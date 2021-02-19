@@ -41,6 +41,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
   *   `html5Video` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates the third-party VAST tag creative requires HTML5 Video support. Output only and only valid for third-party VAST tag creatives. Third-party VAST tag creatives are creatives with following hosting_source: * `HOSTING_SOURCE_THIRD_PARTY` combined with following creative_type: * `CREATIVE_TYPE_VIDEO`
   *   `jsTrackerUrl` (*type:* `String.t`, *default:* `nil`) - JavaScript measurement URL from supported third-party verification providers (ComScore, DoubleVerify, IAS, Moat). HTML script tags are not supported. This field is only supported in following creative_type: * `CREATIVE_TYPE_NATIVE` * `CREATIVE_TYPE_NATIVE_SITE_SQUARE` * `CREATIVE_TYPE_NATIVE_APP_INSTALL` * `CREATIVE_TYPE_NATIVE_APP_INSTALL_SQUARE` * `CREATIVE_TYPE_NATIVE_VIDEO`
   *   `thirdPartyUrls` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.ThirdPartyUrl.t)`, *default:* `nil`) - Tracking URLs from third parties to track interactions with a video creative. This field is only supported for the following creative_type: * `CREATIVE_TYPE_AUDIO` * `CREATIVE_TYPE_VIDEO` * `CREATIVE_TYPE_NATIVE_VIDEO`
+  *   `mp3Audio` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates the third-party audio creative supports MP3. Output only and only valid for third-party audio creatives. Third-party audio creatives are creatives with following hosting_source: * `HOSTING_SOURCE_THIRD_PARTY` combined with following creative_type: * `CREATIVE_TYPE_AUDIO`
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the creative.
   *   `counterEvents` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CounterEvent.t)`, *default:* `nil`) - Counter events for a rich media creative. Counters track the number of times that a user interacts with any part of a rich media creative in a specified way (mouse-overs, mouse-outs, clicks, taps, data loading, keyboard entries, etc.). Any event that can be captured in the creative can be recorded as a counter. Leave it empty or unset for creatives containing image assets only.
   *   `progressOffset` (*type:* `GoogleApi.DisplayVideo.V1.Model.AudioVideoOffset.t`, *default:* `nil`) - Amount of time to play the video before counting a view. This field is required when skippable is true. This field is only supported for the following creative_type: * `CREATIVE_TYPE_VIDEO`
@@ -55,6 +56,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
   *   `additionalDimensions` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Dimensions.t)`, *default:* `nil`) - Additional dimensions. Applicable when creative_type is one of: * `CREATIVE_TYPE_STANDARD` * `CREATIVE_TYPE_EXPANDABLE` * `CREATIVE_TYPE_NATIVE` * `CREATIVE_TYPE_TEMPLATED_APP_INSTALL` * `CREATIVE_TYPE_NATIVE_SITE_SQUARE` * `CREATIVE_TYPE_LIGHTBOX` * `CREATIVE_TYPE_NATIVE_APP_INSTALL` * `CREATIVE_TYPE_NATIVE_APP_INSTALL_SQUARE` * `CREATIVE_TYPE_PUBLISHER_HOSTED` If this field is specified, width_pixels and height_pixels are both required and must be greater than or equal to 0.
   *   `timerEvents` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.TimerEvent.t)`, *default:* `nil`) - Timer custom events for a rich media creative. Timers track the time during which a user views and interacts with a specified part of a rich media creative. A creative can have multiple timer events, each timed independently. Leave it empty or unset for creatives containing image assets only.
   *   `cmTrackingAd` (*type:* `GoogleApi.DisplayVideo.V1.Model.CmTrackingAd.t`, *default:* `nil`) - The Campaign Manager 360 tracking ad associated with the creative. Optional for the following creative_type when created by an advertiser that uses both Campaign Manager 360 and third-party ad serving: * `CREATIVE_TYPE_NATIVE` * `CREATIVE_TYPE_NATIVE_SITE_SQUARE` * `CREATIVE_TYPE_NATIVE_APP_INSTALL` * `CREATIVE_TYPE_NATIVE_APP_INSTALL_SQUARE` Output only for other cases.
+  *   `oggAudio` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates the third-party audio creative supports OGG. Output only and only valid for third-party audio creatives. Third-party audio creatives are creatives with following hosting_source: * `HOSTING_SOURCE_THIRD_PARTY` combined with following creative_type: * `CREATIVE_TYPE_AUDIO`
   *   `assets` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssetAssociation.t)`, *default:* `nil`) - Required. Assets associated to this creative. Assets can be associated to the creative in one of following roles: * `ASSET_ROLE_UNSPECIFIED` * `ASSET_ROLE_MAIN` * `ASSET_ROLE_BACKUP` * `ASSET_ROLE_POLITE_LOAD`
   *   `mediaDuration` (*type:* `String.t`, *default:* `nil`) - Output only. Media duration of the creative. Applicable when creative_type is one of: * `CREATIVE_TYPE_VIDEO` * `CREATIVE_TYPE_AUDIO` * `CREATIVE_TYPE_NATIVE_VIDEO` * `CREATIVE_TYPE_PUBLISHER_HOSTED`
   *   `thirdPartyTag` (*type:* `String.t`, *default:* `nil`) - Optional. The original third-party tag used for the creative. Required and only valid for third-party tag creatives. Third-party tag creatives are creatives with following hosting_source: * `HOSTING_SOURCE_THIRD_PARTY` combined with following creative_type: * `CREATIVE_TYPE_STANDARD` * `CREATIVE_TYPE_EXPANDABLE`
@@ -91,6 +93,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
           :html5Video => boolean(),
           :jsTrackerUrl => String.t(),
           :thirdPartyUrls => list(GoogleApi.DisplayVideo.V1.Model.ThirdPartyUrl.t()),
+          :mp3Audio => boolean(),
           :name => String.t(),
           :counterEvents => list(GoogleApi.DisplayVideo.V1.Model.CounterEvent.t()),
           :progressOffset => GoogleApi.DisplayVideo.V1.Model.AudioVideoOffset.t(),
@@ -105,6 +108,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
           :additionalDimensions => list(GoogleApi.DisplayVideo.V1.Model.Dimensions.t()),
           :timerEvents => list(GoogleApi.DisplayVideo.V1.Model.TimerEvent.t()),
           :cmTrackingAd => GoogleApi.DisplayVideo.V1.Model.CmTrackingAd.t(),
+          :oggAudio => boolean(),
           :assets => list(GoogleApi.DisplayVideo.V1.Model.AssetAssociation.t()),
           :mediaDuration => String.t(),
           :thirdPartyTag => String.t(),
@@ -138,6 +142,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
   field(:html5Video)
   field(:jsTrackerUrl)
   field(:thirdPartyUrls, as: GoogleApi.DisplayVideo.V1.Model.ThirdPartyUrl, type: :list)
+  field(:mp3Audio)
   field(:name)
   field(:counterEvents, as: GoogleApi.DisplayVideo.V1.Model.CounterEvent, type: :list)
   field(:progressOffset, as: GoogleApi.DisplayVideo.V1.Model.AudioVideoOffset)
@@ -152,6 +157,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
   field(:additionalDimensions, as: GoogleApi.DisplayVideo.V1.Model.Dimensions, type: :list)
   field(:timerEvents, as: GoogleApi.DisplayVideo.V1.Model.TimerEvent, type: :list)
   field(:cmTrackingAd, as: GoogleApi.DisplayVideo.V1.Model.CmTrackingAd)
+  field(:oggAudio)
   field(:assets, as: GoogleApi.DisplayVideo.V1.Model.AssetAssociation, type: :list)
   field(:mediaDuration)
   field(:thirdPartyTag)
