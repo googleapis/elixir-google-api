@@ -26,6 +26,7 @@ defmodule GoogleApi.TagManager.V2.Model.Client do
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Client as computed at storage time. This value is recomputed whenever the client is modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Client display name. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update
+  *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this tag in the container. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The client's parameters. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update
   *   `parentFolderId` (*type:* `String.t`, *default:* `nil`) - Parent folder id.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM client's API relative path.
@@ -43,6 +44,7 @@ defmodule GoogleApi.TagManager.V2.Model.Client do
           :containerId => String.t(),
           :fingerprint => String.t(),
           :name => String.t(),
+          :notes => String.t(),
           :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()),
           :parentFolderId => String.t(),
           :path => String.t(),
@@ -57,6 +59,7 @@ defmodule GoogleApi.TagManager.V2.Model.Client do
   field(:containerId)
   field(:fingerprint)
   field(:name)
+  field(:notes)
   field(:parameter, as: GoogleApi.TagManager.V2.Model.Parameter, type: :list)
   field(:parentFolderId)
   field(:path)
