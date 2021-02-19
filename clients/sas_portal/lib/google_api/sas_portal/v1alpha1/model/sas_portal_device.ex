@@ -25,6 +25,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice do
   *   `deviceMetadata` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata.t`, *default:* `nil`) - Device parameters that can be overridden by both SAS Portal and SAS registration requests.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Device display name.
   *   `fccId` (*type:* `String.t`, *default:* `nil`) - The FCC identifier of the device.
+  *   `grantRangeAllowlists` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t)`, *default:* `nil`) - Only ranges within the allowlists are available for new grants.
   *   `grants` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant.t)`, *default:* `nil`) - Output only. Grants held by the device.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource path name.
   *   `preloadedConfig` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig.t`, *default:* `nil`) - Configuration of the device, as specified via SAS Portal API.
@@ -39,6 +40,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice do
           :deviceMetadata => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata.t(),
           :displayName => String.t(),
           :fccId => String.t(),
+          :grantRangeAllowlists =>
+            list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t()),
           :grants => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant.t()),
           :name => String.t(),
           :preloadedConfig => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig.t(),
@@ -50,6 +53,12 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice do
   field(:deviceMetadata, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata)
   field(:displayName)
   field(:fccId)
+
+  field(:grantRangeAllowlists,
+    as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange,
+    type: :list
+  )
+
   field(:grants, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant, type: :list)
   field(:name)
   field(:preloadedConfig, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig)
