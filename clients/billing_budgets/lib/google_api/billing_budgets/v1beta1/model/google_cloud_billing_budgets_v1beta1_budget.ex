@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1Budget do
   @moduledoc """
-  A budget is a plan that describes what you expect to spend on Cloud projects, plus the rules to execute as spend is tracked against that plan, (for example, send an alert when 90% of the target spend is met). Currently all plans are monthly budgets so the usage period(s) tracked are implied (calendar months of usage back-to-back).
+  A budget is a plan that describes what you expect to spend on Cloud projects, plus the rules to execute as spend is tracked against that plan, (for example, send an alert when 90% of the target spend is met). The budget time period is configurable, with options such as month (default), quarter, year, or custom time period.
 
   ## Attributes
 
