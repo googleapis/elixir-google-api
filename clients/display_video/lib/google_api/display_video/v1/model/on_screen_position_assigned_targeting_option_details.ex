@@ -21,6 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.OnScreenPositionAssignedTargetingOptio
 
   ## Attributes
 
+  *   `adType` (*type:* `String.t`, *default:* `nil`) - Output only. The ad type to target. Only applicable to insertion order targeting and new line items supporting the specified ad type will inherit this targeting option by default. Possible values are: * `AD_TYPE_DISPLAY`, the setting will be inherited by new line item when line_item_type is `LINE_ITEM_TYPE_DISPLAY_DEFAULT`. * `AD_TYPE_VIDEO`, the setting will be inherited by new line item when line_item_type is `LINE_ITEM_TYPE_VIDEO_DEFAULT`.
   *   `onScreenPosition` (*type:* `String.t`, *default:* `nil`) - Output only. The on screen position.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_ON_SCREEN_POSITION`.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.DisplayVideo.V1.Model.OnScreenPositionAssignedTargetingOptio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :adType => String.t(),
           :onScreenPosition => String.t(),
           :targetingOptionId => String.t()
         }
 
+  field(:adType)
   field(:onScreenPosition)
   field(:targetingOptionId)
 end

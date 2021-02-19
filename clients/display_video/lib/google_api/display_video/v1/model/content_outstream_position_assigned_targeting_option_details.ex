@@ -21,6 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionAssignedTarget
 
   ## Attributes
 
+  *   `adType` (*type:* `String.t`, *default:* `nil`) - Output only. The ad type to target. Only applicable to insertion order targeting and new line items supporting the specified ad type will inherit this targeting option by default. Possible values are: * `AD_TYPE_DISPLAY`, the setting will be inherited by new line item when line_item_type is `LINE_ITEM_TYPE_DISPLAY_DEFAULT`. * `AD_TYPE_VIDEO`, the setting will be inherited by new line item when line_item_type is `LINE_ITEM_TYPE_VIDEO_DEFAULT`.
   *   `contentOutstreamPosition` (*type:* `String.t`, *default:* `nil`) - Output only. The content outstream position.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionAssignedTarget
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :adType => String.t(),
           :contentOutstreamPosition => String.t(),
           :targetingOptionId => String.t()
         }
 
+  field(:adType)
   field(:contentOutstreamPosition)
   field(:targetingOptionId)
 end
