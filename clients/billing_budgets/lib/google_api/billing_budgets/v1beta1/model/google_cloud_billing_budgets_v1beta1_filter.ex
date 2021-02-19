@@ -21,8 +21,10 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
 
   ## Attributes
 
+  *   `calendarPeriod` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies to track usage for recurring calendar period. E.g. Assume that CalendarPeriod.QUARTER is set. The budget will track usage from April 1 to June 30, when current calendar month is April, May, June. After that, it will track usage from July 1 to September 30 when current calendar month is July, August, September, and so on.
   *   `creditTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. If Filter.credit_types_treatment is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be subtracted from gross cost to determine the spend for threshold calculations. If Filter.credit_types_treatment is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list of acceptable credit type values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
   *   `creditTypesTreatment` (*type:* `String.t`, *default:* `nil`) - Optional. If not set, default behavior is `INCLUDE_ALL_CREDITS`.
+  *   `customPeriod` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1CustomPeriod.t`, *default:* `nil`) - Optional. Specifies to track usage from any start date (required) to any end date (optional).
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A single label and value pair specifying that usage from only this set of labeled resources should be included in the budget. Currently, multiple entries or multiple values per entry are not allowed. If omitted, the report will include all labeled and unlabeled usage.
   *   `projects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of projects of the form `projects/{project}`, specifying that usage from only this set of projects should be included in the budget. If omitted, the report will include all usage for the billing account, regardless of which project the usage occurred on. Only zero or one project can be specified currently.
   *   `services` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of services of the form `services/{service_id}`, specifying that usage from only this set of services should be included in the budget. If omitted, the report will include usage for all the services. The service names are available through the Catalog API: https://cloud.google.com/billing/v1/how-tos/catalog-api.
@@ -32,16 +34,25 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :calendarPeriod => String.t(),
           :creditTypes => list(String.t()),
           :creditTypesTreatment => String.t(),
+          :customPeriod =>
+            GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1CustomPeriod.t(),
           :labels => map(),
           :projects => list(String.t()),
           :services => list(String.t()),
           :subaccounts => list(String.t())
         }
 
+  field(:calendarPeriod)
   field(:creditTypes, type: :list)
   field(:creditTypesTreatment)
+
+  field(:customPeriod,
+    as: GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1CustomPeriod
+  )
+
   field(:labels, type: :map)
   field(:projects, type: :list)
   field(:services, type: :list)
