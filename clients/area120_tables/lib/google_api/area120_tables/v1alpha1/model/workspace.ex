@@ -21,22 +21,28 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.Workspace do
 
   ## Attributes
 
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the workspace was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable title of the workspace.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the workspace. Workspace names have the form `workspaces/{workspace}`.
   *   `tables` (*type:* `list(GoogleApi.Area120Tables.V1alpha1.Model.Table.t)`, *default:* `nil`) - The list of tables in the workspace.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the workspace was last updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t(),
           :displayName => String.t(),
           :name => String.t(),
-          :tables => list(GoogleApi.Area120Tables.V1alpha1.Model.Table.t())
+          :tables => list(GoogleApi.Area120Tables.V1alpha1.Model.Table.t()),
+          :updateTime => DateTime.t()
         }
 
+  field(:createTime, as: DateTime)
   field(:displayName)
   field(:name)
   field(:tables, as: GoogleApi.Area120Tables.V1alpha1.Model.Table, type: :list)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Area120Tables.V1alpha1.Model.Workspace do

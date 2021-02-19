@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_area120_tables, "~> 0.3"}]
+  [{:google_api_area120_tables, "~> 0.4"}]
 end
 ```
 

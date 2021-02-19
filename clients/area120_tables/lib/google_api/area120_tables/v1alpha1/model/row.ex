@@ -21,18 +21,24 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.Row do
 
   ## Attributes
 
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the row was created.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the row. Row names have the form `tables/{table}/rows/{row}`. The name is ignored when creating a row.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the row was last updated.
   *   `values` (*type:* `map()`, *default:* `nil`) - The values of the row. This is a map of column key to value. Key is user entered name(default) or the internal column id based on the view in the request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t(),
           :name => String.t(),
+          :updateTime => DateTime.t(),
           :values => map()
         }
 
+  field(:createTime, as: DateTime)
   field(:name)
+  field(:updateTime, as: DateTime)
   field(:values, type: :map)
 end
 
