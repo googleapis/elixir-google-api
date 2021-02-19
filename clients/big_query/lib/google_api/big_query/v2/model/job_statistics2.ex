@@ -25,6 +25,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   *   `cacheHit` (*type:* `boolean()`, *default:* `nil`) - [Output-only] Whether the query result was fetched from the query cache.
   *   `ddlAffectedRowAccessPolicyCount` (*type:* `String.t`, *default:* `nil`) - [Output-only] [Preview] The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries.
   *   `ddlOperationPerformed` (*type:* `String.t`, *default:* `nil`) - The DDL operation performed, possibly dependent on the pre-existence of the DDL target. Possible values (new values might be added in the future): "CREATE": The query created the DDL target. "SKIP": No-op. Example cases: the query is CREATE TABLE IF NOT EXISTS while the table already exists, or the query is DROP TABLE IF EXISTS while the table does not exist. "REPLACE": The query replaced the DDL target. Example case: the query is CREATE OR REPLACE TABLE, and the table already exists. "DROP": The query deleted the DDL target.
+  *   `ddlTargetDataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Output-only] The DDL target dataset. Present only for CREATE/ALTER/DROP SCHEMA queries.
   *   `ddlTargetRoutine` (*type:* `GoogleApi.BigQuery.V2.Model.RoutineReference.t`, *default:* `nil`) - The DDL target routine. Present only for CREATE/DROP FUNCTION/PROCEDURE queries.
   *   `ddlTargetRowAccessPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t`, *default:* `nil`) - [Output-only] [Preview] The DDL target row access policy. Present only for CREATE/DROP ROW ACCESS POLICY queries.
   *   `ddlTargetTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Output-only] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries.
@@ -55,6 +56,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
           :cacheHit => boolean(),
           :ddlAffectedRowAccessPolicyCount => String.t(),
           :ddlOperationPerformed => String.t(),
+          :ddlTargetDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t(),
           :ddlTargetRoutine => GoogleApi.BigQuery.V2.Model.RoutineReference.t(),
           :ddlTargetRowAccessPolicy => GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t(),
           :ddlTargetTable => GoogleApi.BigQuery.V2.Model.TableReference.t(),
@@ -83,6 +85,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2 do
   field(:cacheHit)
   field(:ddlAffectedRowAccessPolicyCount)
   field(:ddlOperationPerformed)
+  field(:ddlTargetDataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
   field(:ddlTargetRoutine, as: GoogleApi.BigQuery.V2.Model.RoutineReference)
   field(:ddlTargetRowAccessPolicy, as: GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference)
   field(:ddlTargetTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
