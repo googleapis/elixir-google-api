@@ -20,7 +20,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1 do
   API client metadata for GoogleApi.Area120Tables.V1alpha1.
   """
 
-  @discovery_revision "20210213"
+  @discovery_revision "20210217"
 
   def discovery_revision(), do: @discovery_revision
 end

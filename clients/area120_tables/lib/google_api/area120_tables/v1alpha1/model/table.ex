@@ -22,21 +22,27 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.Table do
   ## Attributes
 
   *   `columns` (*type:* `list(GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription.t)`, *default:* `nil`) - List of columns in this table. Order of columns matches the display order.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the table was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable title of the table.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the table. Table names have the form `tables/{table}`.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the table was last updated excluding updates to individual rows
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :columns => list(GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription.t()),
+          :createTime => DateTime.t(),
           :displayName => String.t(),
-          :name => String.t()
+          :name => String.t(),
+          :updateTime => DateTime.t()
         }
 
   field(:columns, as: GoogleApi.Area120Tables.V1alpha1.Model.ColumnDescription, type: :list)
+  field(:createTime, as: DateTime)
   field(:displayName)
   field(:name)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Area120Tables.V1alpha1.Model.Table do
