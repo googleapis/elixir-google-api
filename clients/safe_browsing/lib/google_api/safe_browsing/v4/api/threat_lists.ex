@@ -47,11 +47,12 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatLists do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.SafeBrowsing.V4.Model.ListThreatListsResponse{}}` on success
+  *   `{:ok, %GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ListThreatListsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec safebrowsing_threat_lists_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SafeBrowsing.V4.Model.ListThreatListsResponse.t()}
+          {:ok,
+           GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ListThreatListsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def safebrowsing_threat_lists_list(connection, optional_params \\ [], opts \\ []) do
@@ -79,7 +80,11 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatLists do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.SafeBrowsing.V4.Model.ListThreatListsResponse{}]
+      opts ++
+        [
+          struct:
+            %GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4ListThreatListsResponse{}
+        ]
     )
   end
 end
