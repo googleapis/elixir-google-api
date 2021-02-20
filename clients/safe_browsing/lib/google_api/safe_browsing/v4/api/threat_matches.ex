@@ -43,16 +43,17 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatMatches do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindThreatMatchesRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesResponse{}}` on success
+  *   `{:ok, %GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindThreatMatchesResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec safebrowsing_threat_matches_find(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesResponse.t()}
+          {:ok,
+           GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindThreatMatchesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def safebrowsing_threat_matches_find(connection, optional_params \\ [], opts \\ []) do
@@ -81,7 +82,11 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatMatches do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesResponse{}]
+      opts ++
+        [
+          struct:
+            %GoogleApi.SafeBrowsing.V4.Model.GoogleSecuritySafebrowsingV4FindThreatMatchesResponse{}
+        ]
     )
   end
 end
