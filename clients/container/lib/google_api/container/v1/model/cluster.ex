@@ -59,6 +59,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `ipAllocationPolicy` (*type:* `GoogleApi.Container.V1.Model.IPAllocationPolicy.t`, *default:* `nil`) - Configuration for cluster IP allocation.
   *   `addonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
   *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes should be located. This field provides a default value if [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations) are not specified during node pool creation. Warning: changing cluster locations will update the [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations) of all node pools and will result in nodes being added and/or removed.
+  *   `autopilot` (*type:* `GoogleApi.Container.V1.Model.Autopilot.t`, *default:* `nil`) - Autopilot configuration for the cluster. It has the same semantics as AutoGKE and overrides the setting in autogke.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The resource labels for the cluster to use to annotate any related Google Compute Engine resources.
   *   `labelFingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the set of labels for this cluster.
   *   `expireTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -119,6 +120,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :ipAllocationPolicy => GoogleApi.Container.V1.Model.IPAllocationPolicy.t(),
           :addonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t(),
           :locations => list(String.t()),
+          :autopilot => GoogleApi.Container.V1.Model.Autopilot.t(),
           :resourceLabels => map(),
           :labelFingerprint => String.t(),
           :expireTime => String.t(),
@@ -177,6 +179,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:ipAllocationPolicy, as: GoogleApi.Container.V1.Model.IPAllocationPolicy)
   field(:addonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
   field(:locations, type: :list)
+  field(:autopilot, as: GoogleApi.Container.V1.Model.Autopilot)
   field(:resourceLabels, type: :map)
   field(:labelFingerprint)
   field(:expireTime)

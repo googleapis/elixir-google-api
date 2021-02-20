@@ -23,6 +23,8 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
 
   *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - Required. The desired image type for the node pool.
+  *   `kubeletConfig` (*type:* `GoogleApi.Container.V1.Model.NodeKubeletConfig.t`, *default:* `nil`) - Node kubelet configs.
+  *   `linuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Linux nodes.
   *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the node pool's nodes should be located. Changing the locations for a node pool will result in nodes being either created or removed from the node pool, depending on whether locations are being added or removed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster, node pool) of the node pool to update. Specified in the format `projects/*/locations/*/clusters/*/nodePools/*`.
   *   `nodePoolId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the node pool to upgrade. This field has been deprecated and replaced by the name field.
@@ -38,6 +40,8 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   @type t :: %__MODULE__{
           :clusterId => String.t(),
           :imageType => String.t(),
+          :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t(),
+          :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t(),
           :locations => list(String.t()),
           :name => String.t(),
           :nodePoolId => String.t(),
@@ -50,6 +54,8 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
 
   field(:clusterId)
   field(:imageType)
+  field(:kubeletConfig, as: GoogleApi.Container.V1.Model.NodeKubeletConfig)
+  field(:linuxNodeConfig, as: GoogleApi.Container.V1.Model.LinuxNodeConfig)
   field(:locations, type: :list)
   field(:name)
   field(:nodePoolId)

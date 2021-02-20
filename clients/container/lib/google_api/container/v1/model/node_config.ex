@@ -26,7 +26,9 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') If unspecified, the default disk type is 'pd-standard'
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The image type to use for this node. Note that for a given image type, the latest version of it will be used.
+  *   `kubeletConfig` (*type:* `GoogleApi.Container.V1.Model.NodeKubeletConfig.t`, *default:* `nil`) - Node kubelet configs.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node. In case of conflict in label keys, the applied set may differ depending on the Kubernetes version -- it's best to assume the behavior is undefined and conflicts should be avoided. For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+  *   `linuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Linux nodes.
   *   `localSsdCount` (*type:* `integer()`, *default:* `nil`) - The number of local SSD disks to be attached to the node. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The name of a Google Compute Engine [machine type](https://cloud.google.com/compute/docs/machine-types) If unspecified, the default machine type is `e2-medium`.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - The metadata key/value pairs assigned to instances in the cluster. Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes in length. These are reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project or be one of the reserved keys: - "cluster-location" - "cluster-name" - "cluster-uid" - "configure-sh" - "containerd-configure-sh" - "enable-os-login" - "gci-ensure-gke-docker" - "gci-metrics-enabled" - "gci-update-strategy" - "instance-template" - "kube-env" - "startup-script" - "user-data" - "disable-address-manager" - "windows-startup-script-ps1" - "common-psm1" - "k8s-node-setup-psm1" - "install-ssh-psm1" - "user-profile-psm1" The following keys are reserved for Windows nodes: - "serial-port-logging-enable" Values are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on them is that each value's size must be less than or equal to 32 KB. The total size of all keys and values must be less than 512 KB.
@@ -51,7 +53,9 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :diskSizeGb => integer(),
           :diskType => String.t(),
           :imageType => String.t(),
+          :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t(),
           :labels => map(),
+          :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t(),
           :localSsdCount => integer(),
           :machineType => String.t(),
           :metadata => map(),
@@ -73,7 +77,9 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:diskSizeGb)
   field(:diskType)
   field(:imageType)
+  field(:kubeletConfig, as: GoogleApi.Container.V1.Model.NodeKubeletConfig)
   field(:labels, type: :map)
+  field(:linuxNodeConfig, as: GoogleApi.Container.V1.Model.LinuxNodeConfig)
   field(:localSsdCount)
   field(:machineType)
   field(:metadata, type: :map)
