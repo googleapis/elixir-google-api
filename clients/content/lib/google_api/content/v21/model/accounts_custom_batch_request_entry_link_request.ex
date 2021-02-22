@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest
   *   `action` (*type:* `String.t`, *default:* `nil`) - Action to perform for this link. The `"request"` action is only available to select merchants. Acceptable values are: - "`approve`" - "`remove`" - "`request`" 
   *   `linkType` (*type:* `String.t`, *default:* `nil`) - Type of the link between the two accounts. Acceptable values are: - "`channelPartner`" - "`eCommercePlatform`" 
   *   `linkedAccountId` (*type:* `String.t`, *default:* `nil`) - The ID of the linked account.
-  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - Provided services. Acceptable values are: - "`shoppingAdsProductManagement`" - "`shoppingAdsOther`" - "`shoppingActionsProductManagement`" - "`shoppingActionsOrderManagement`" - "`shoppingActionsOther`" 
+  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - Provided services. Acceptable values are: - "`shoppingAdsProductManagement`" - "`shoppingActionsProductManagement`" - "`shoppingActionsOrderManagement`" 
   """
 
   use GoogleApi.Gax.ModelBase

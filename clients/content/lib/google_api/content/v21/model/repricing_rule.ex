@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRule do
   ## Attributes
 
   *   `cogsBasedRule` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleCostOfGoodsSaleRule.t`, *default:* `nil`) - The rule definition for TYPE_COGS_BASED. Required when the rule type is TYPE_COGS_BASED.
-  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. CLDR country code (e.g. "US").
+  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. [CLDR country code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) (e.g. "US").
   *   `effectiveTimePeriod` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleEffectiveTime.t`, *default:* `nil`) - Required. Time period when the rule should take effect.
   *   `eligibleOfferMatcher` (*type:* `GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher.t`, *default:* `nil`) - Required. Match criteria for the eligible offers.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The two-letter ISO 639-1 language code associated with the repricing rule.
