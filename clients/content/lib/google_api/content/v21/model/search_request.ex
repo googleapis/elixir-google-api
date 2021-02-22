@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.SearchRequest do
 
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Number of ReportRows to retrieve in a single page. Defaults to the maximum of 1000. Values above 1000 are coerced to 1000.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Token of the page to retrieve. If not specified, the first page of results is returned. In order to request the next page of results, the value obtained from `next_page_token` in the previous response should be used.
-  *   `query` (*type:* `String.t`, *default:* `nil`) - Required. Search query that defines performance metrics to retrieve and dimensions according to which the metrics are to be segmented. 
+  *   `query` (*type:* `String.t`, *default:* `nil`) - Required. Query that defines performance metrics to retrieve and dimensions according to which the metrics are to be segmented. 
   """
 
   use GoogleApi.Gax.ModelBase
