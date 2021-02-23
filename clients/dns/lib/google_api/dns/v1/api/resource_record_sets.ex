@@ -26,7 +26,7 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Enumerate ResourceRecordSets that have been created but not yet deleted.
+  Enumerate ResourceRecordSets that you have created but not yet deleted.
 
   ## Parameters
 
@@ -45,7 +45,7 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
+      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
       *   `:name` (*type:* `String.t`) - Restricts the list to return only records with this fully qualified domain name.
       *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
       *   `:type` (*type:* `String.t`) - Restricts the list to return only records of this type. If present, the "name" parameter must also be present.

@@ -26,7 +26,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a new Policy
+  Creates a new Policy
 
   ## Parameters
 
@@ -87,7 +87,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Delete a previously created Policy. Will fail if the policy is still being referenced by a network.
+  Delete a previously created Policy. Fails if the policy is still being referenced by a network.
 
   ## Parameters
 
@@ -148,7 +148,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Fetch the representation of an existing Policy.
+  Fetches the representation of an existing Policy.
 
   ## Parameters
 
@@ -209,7 +209,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Enumerate all Policies associated with a project.
+  Enumerates all Policies associated with a project.
 
   ## Parameters
 
@@ -227,7 +227,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
+      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
       *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
