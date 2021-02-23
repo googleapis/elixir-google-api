@@ -45,6 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.Operation do
   *   `insertTime` (*type:* `String.t`, *default:* `nil`) - [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
   *   `kind` (*type:* `String.t`, *default:* `compute#operation`) - [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the operation.
+  *   `operationGroupId` (*type:* `String.t`, *default:* `nil`) - [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
   *   `progress` (*type:* `integer()`, *default:* `nil`) - [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
@@ -73,6 +74,7 @@ defmodule GoogleApi.Compute.V1.Model.Operation do
           :insertTime => String.t(),
           :kind => String.t(),
           :name => String.t(),
+          :operationGroupId => String.t(),
           :operationType => String.t(),
           :progress => integer(),
           :region => String.t(),
@@ -98,6 +100,7 @@ defmodule GoogleApi.Compute.V1.Model.Operation do
   field(:insertTime)
   field(:kind)
   field(:name)
+  field(:operationGroupId)
   field(:operationType)
   field(:progress)
   field(:region)
