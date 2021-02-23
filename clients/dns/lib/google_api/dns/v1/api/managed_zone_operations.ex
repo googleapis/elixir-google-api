@@ -26,14 +26,14 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Fetch the representation of an existing Operation.
+  Fetches the representation of an existing Operation.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
   *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request.
-  *   `operation` (*type:* `String.t`) - Identifies the operation addressed by this request.
+  *   `operation` (*type:* `String.t`) - Identifies the operation addressed by this request (ID of the operation).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -105,7 +105,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
   end
 
   @doc """
-  Enumerate Operations for the given ManagedZone.
+  Enumerates Operations for the given ManagedZone.
 
   ## Parameters
 
@@ -124,7 +124,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZoneOperations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
+      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
       *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
       *   `:sortBy` (*type:* `String.t`) - Sorting criterion. The only supported values are START_TIME and ID.
   *   `opts` (*type:* `keyword()`) - Call options

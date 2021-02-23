@@ -23,7 +23,7 @@ defmodule GoogleApi.DNS.V1.Model.DnsKeySpec do
 
   *   `algorithm` (*type:* `String.t`, *default:* `nil`) - String mnemonic specifying the DNSSEC algorithm of this key.
   *   `keyLength` (*type:* `integer()`, *default:* `nil`) - Length of the keys in bits.
-  *   `keyType` (*type:* `String.t`, *default:* `nil`) - Specifies whether this is a key signing key (KSK) or a zone signing key (ZSK). Key signing keys have the Secure Entry Point flag set and, when active, will only be used to sign resource record sets of type DNSKEY. Zone signing keys do not have the Secure Entry Point flag set and will be used to sign all other types of resource record sets.
+  *   `keyType` (*type:* `String.t`, *default:* `nil`) - Specifies whether this is a key signing key (KSK) or a zone signing key (ZSK). Key signing keys have the Secure Entry Point flag set and, when active, are only used to sign resource record sets of type DNSKEY. Zone signing keys do not have the Secure Entry Point flag set and are used to sign all other types of resource record sets.
   *   `kind` (*type:* `String.t`, *default:* `dns#dnsKeySpec`) - 
   """
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Atomically update the ResourceRecordSet collection.
+  Atomically updates the ResourceRecordSet collection.
 
   ## Parameters
 
@@ -89,7 +89,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   end
 
   @doc """
-  Fetch the representation of an existing Change.
+  Fetches the representation of an existing Change.
 
   ## Parameters
 
@@ -168,7 +168,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   end
 
   @doc """
-  Enumerate Changes to a ResourceRecordSet collection.
+  Enumerates Changes to a ResourceRecordSet collection.
 
   ## Parameters
 
@@ -187,7 +187,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
+      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
       *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
       *   `:sortBy` (*type:* `String.t`) - Sorting criterion. The only supported value is change sequence.
       *   `:sortOrder` (*type:* `String.t`) - Sorting order direction: 'ascending' or 'descending'.
