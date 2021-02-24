@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the trigger was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human-readable description of this trigger.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, the trigger will never automatically execute a build.
-  *   `filename` (*type:* `String.t`, *default:* `nil`) - Path, from the source root, to a file whose contents is used for the template.
+  *   `filename` (*type:* `String.t`, *default:* `nil`) - Path, from the source root, to the build configuration file (i.e. cloudbuild.yaml).
   *   `github` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig.t`, *default:* `nil`) - GitHubEventsConfig describes the configuration of a trigger that creates a build whenever a GitHub event is received. Mutually exclusive with `trigger_template`.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the trigger.
   *   `ignoredFiles` (*type:* `list(String.t)`, *default:* `nil`) - ignored_files and included_files are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with support for "**". If ignored_files and changed files are both empty, then they are not used to determine whether or not to trigger a build. If ignored_files is not empty, then we ignore any files that match any of the ignored_file globs. If the change has no files that are outside of the ignored_files globs, then we do not trigger a build.
