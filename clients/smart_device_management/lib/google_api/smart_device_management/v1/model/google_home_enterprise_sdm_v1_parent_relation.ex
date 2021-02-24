@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1ParentRelation do
   @moduledoc """
-  Represents device relationships, for instance, structure/room to which the device is assigned to. For now this is only filled in the enterprise flow.
+  Represents device relationships, for instance, structure/room to which the device is assigned to.
 
   ## Attributes
 
