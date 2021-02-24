@@ -42,7 +42,7 @@ defmodule GoogleApi.People.V1.Connection do
       # See and download your exact date of birth
       "https://www.googleapis.com/auth/user.birthday.read",
 
-      # View your email addresses
+      # See and download all of your Google Account email addresses
       "https://www.googleapis.com/auth/user.emails.read",
 
       # See your gender
