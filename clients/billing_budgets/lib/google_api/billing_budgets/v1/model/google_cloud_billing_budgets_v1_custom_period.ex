@@ -21,7 +21,7 @@ defmodule GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1CustomPer
 
   ## Attributes
 
-  *   `endDate` (*type:* `GoogleApi.BillingBudgets.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - Optional. The end date of the time period. If unset, specifies to track all usage incurred since the start_date.
+  *   `endDate` (*type:* `GoogleApi.BillingBudgets.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - Optional. The end date of the time period. Budgets with elapsed end date won't be processed. If unset, specifies to track all usage incurred since the start_date.
   *   `startDate` (*type:* `GoogleApi.BillingBudgets.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - Required. The start date must be after January 1, 2017.
   """
 
