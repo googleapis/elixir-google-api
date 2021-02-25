@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.DeleteContactPhotoResponse do
   @moduledoc """
-  The response for deleteing a contact's photo.
+  The response for deleting a contact's photo.
 
   ## Attributes
 
