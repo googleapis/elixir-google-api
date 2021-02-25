@@ -25,7 +25,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3QueryInput do
   *   `dtmf` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3DtmfInput.t`, *default:* `nil`) - The DTMF event to be handled.
   *   `event` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EventInput.t`, *default:* `nil`) - The event to be triggered.
   *   `intent` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3IntentInput.t`, *default:* `nil`) - The intent to be triggered.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Required. The language of the input. See [Language Support](https://cloud.google.com/dialogflow/docs/reference/language) for a list of the currently supported language codes. Note that queries in the same session do not necessarily need to specify the same language.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Required. The language of the input. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes. Note that queries in the same session do not necessarily need to specify the same language.
   *   `text` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3TextInput.t`, *default:* `nil`) - The natural language text to be processed.
   """
 
