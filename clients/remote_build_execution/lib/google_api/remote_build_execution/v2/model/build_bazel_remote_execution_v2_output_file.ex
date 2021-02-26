@@ -24,7 +24,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Out
   *   `contents` (*type:* `String.t`, *default:* `nil`) - The contents of the file if inlining was requested. The server SHOULD NOT inline file contents unless requested by the client in the GetActionResultRequest message. The server MAY omit inlining, even if requested, and MUST do so if inlining would cause the response to exceed message size limits.
   *   `digest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t`, *default:* `nil`) - The digest of the file's content.
   *   `isExecutable` (*type:* `boolean()`, *default:* `nil`) - True if file is executable, false otherwise.
-  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The supported node properties of the OutputFile, if requested by the Action.
+  *   `nodeProperties` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t`, *default:* `nil`) - 
   *   `path` (*type:* `String.t`, *default:* `nil`) - The full path of the file relative to the working directory, including the filename. The path separator is a forward slash `/`. Since this is a relative path, it MUST NOT begin with a leading forward slash.
   """
 
@@ -36,9 +36,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Out
             GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
           :isExecutable => boolean(),
           :nodeProperties =>
-            list(
-              GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t()
-            ),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t(),
           :path => String.t()
         }
 
@@ -47,8 +45,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Out
   field(:isExecutable)
 
   field(:nodeProperties,
-    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty,
-    type: :list
+    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties
   )
 
   field(:path)

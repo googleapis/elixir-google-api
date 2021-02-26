@@ -21,6 +21,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
 
   ## Attributes
 
+  *   `casRelease` (*type:* `String.t`, *default:* `nil`) - The time spent to release the CAS blobs used by the task.
   *   `cmWaitForAssignment` (*type:* `String.t`, *default:* `nil`) - The time spent waiting for Container Manager to assign an asynchronous container for execution.
   *   `dockerPrep` (*type:* `String.t`, *default:* `nil`) - The time spent preparing the command to be run in a Docker container (includes pulling the Docker image, if necessary).
   *   `dockerPrepStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when docker preparation begins.
@@ -38,6 +39,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :casRelease => String.t(),
           :cmWaitForAssignment => String.t(),
           :dockerPrep => String.t(),
           :dockerPrepStartTime => DateTime.t(),
@@ -52,6 +54,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
           :uploadStartTime => DateTime.t()
         }
 
+  field(:casRelease)
   field(:cmWaitForAssignment)
   field(:dockerPrep)
   field(:dockerPrepStartTime, as: DateTime)

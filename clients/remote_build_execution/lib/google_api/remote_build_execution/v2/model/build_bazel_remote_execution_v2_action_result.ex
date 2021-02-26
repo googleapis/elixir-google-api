@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ActionResult do
   @moduledoc """
-  An ActionResult represents the result of an Action being run.
+  An ActionResult represents the result of an Action being run. It is advised that at least one field (for example `ActionResult.execution_metadata.Worker`) have a non-default value, to ensure that the serialized value is non-empty, which can then be used as a basic data sanity check.
 
   ## Attributes
 

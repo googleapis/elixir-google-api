@@ -26,7 +26,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieve a cached execution result. Implementations SHOULD ensure that any blobs referenced from the ContentAddressableStorage are available at the time of returning the ActionResult and will be for some period of time afterwards. The TTLs of the referenced blobs SHOULD be increased if necessary and applicable. Errors: * `NOT_FOUND`: The requested `ActionResult` is not in the cache.
+  Retrieve a cached execution result. Implementations SHOULD ensure that any blobs referenced from the ContentAddressableStorage are available at the time of returning the ActionResult and will be for some period of time afterwards. The lifetimes of the referenced blobs SHOULD be increased if necessary and applicable. Errors: * `NOT_FOUND`: The requested `ActionResult` is not in the cache.
 
   ## Parameters
 
@@ -46,7 +46,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:inlineOutputFiles` (*type:* `list(String.t)`) - A hint to the server to inline the contents of the listed output files. Each path needs to exactly match one path in `output_files` in the Command message.
+      *   `:inlineOutputFiles` (*type:* `list(String.t)`) - A hint to the server to inline the contents of the listed output files. Each path needs to exactly match one file path in either `output_paths` or `output_files` (DEPRECATED since v2.1) in the Command message.
       *   `:inlineStderr` (*type:* `boolean()`) - A hint to the server to request inlining stderr in the ActionResult message.
       *   `:inlineStdout` (*type:* `boolean()`) - A hint to the server to request inlining stdout in the ActionResult message.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -116,7 +116,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
   end
 
   @doc """
-  Upload a new execution result. In order to allow the server to perform access control based on the type of action, and to assist with client debugging, the client MUST first upload the Action that produced the result, along with its Command, into the `ContentAddressableStorage`. Errors: * `INVALID_ARGUMENT`: One or more arguments are invalid. * `FAILED_PRECONDITION`: One or more errors occurred in updating the action result, such as a missing command or action. * `RESOURCE_EXHAUSTED`: There is insufficient storage space to add the entry to the cache.
+  Upload a new execution result. In order to allow the server to perform access control based on the type of action, and to assist with client debugging, the client MUST first upload the Action that produced the result, along with its Command, into the `ContentAddressableStorage`. Server implementations MAY modify the `UpdateActionResultRequest.action_result` and return an equivalent value. Errors: * `INVALID_ARGUMENT`: One or more arguments are invalid. * `FAILED_PRECONDITION`: One or more errors occurred in updating the action result, such as a missing command or action. * `RESOURCE_EXHAUSTED`: There is insufficient storage space to add the entry to the cache.
 
   ## Parameters
 

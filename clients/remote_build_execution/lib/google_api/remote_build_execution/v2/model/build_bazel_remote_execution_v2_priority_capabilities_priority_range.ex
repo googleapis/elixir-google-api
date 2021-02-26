@@ -21,8 +21,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Pri
 
   ## Attributes
 
-  *   `maxPriority` (*type:* `integer()`, *default:* `nil`) - 
-  *   `minPriority` (*type:* `integer()`, *default:* `nil`) - 
+  *   `maxPriority` (*type:* `integer()`, *default:* `nil`) - The maximum numeric value for this priority range, which represents the least urgent task or shortest retained item.
+  *   `minPriority` (*type:* `integer()`, *default:* `nil`) - The minimum numeric value for this priority range, which represents the most urgent task or longest retained item.
   """
 
   use GoogleApi.Gax.ModelBase
