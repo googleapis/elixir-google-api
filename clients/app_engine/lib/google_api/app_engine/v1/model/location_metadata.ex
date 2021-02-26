@@ -22,6 +22,7 @@ defmodule GoogleApi.AppEngine.V1.Model.LocationMetadata do
   ## Attributes
 
   *   `flexibleEnvironmentAvailable` (*type:* `boolean()`, *default:* `nil`) - App Engine flexible environment is available in the given location.@OutputOnly
+  *   `searchApiAvailable` (*type:* `boolean()`, *default:* `nil`) - Output only. Search API (https://cloud.google.com/appengine/docs/standard/python/search) is available in the given location.
   *   `standardEnvironmentAvailable` (*type:* `boolean()`, *default:* `nil`) - App Engine standard environment is available in the given location.@OutputOnly
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.AppEngine.V1.Model.LocationMetadata do
 
   @type t :: %__MODULE__{
           :flexibleEnvironmentAvailable => boolean(),
+          :searchApiAvailable => boolean(),
           :standardEnvironmentAvailable => boolean()
         }
 
   field(:flexibleEnvironmentAvailable)
+  field(:searchApiAvailable)
   field(:standardEnvironmentAvailable)
 end
 
