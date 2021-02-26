@@ -21,25 +21,22 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Out
 
   ## Attributes
 
-  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The supported node properties of the OutputSymlink, if requested by the Action.
+  *   `nodeProperties` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t`, *default:* `nil`) - 
   *   `path` (*type:* `String.t`, *default:* `nil`) - The full path of the symlink relative to the working directory, including the filename. The path separator is a forward slash `/`. Since this is a relative path, it MUST NOT begin with a leading forward slash.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - The target path of the symlink. The path separator is a forward slash `/`. The target path can be relative to the parent directory of the symlink or it can be an absolute path starting with `/`. Support for absolute paths can be checked using the Capabilities API. The canonical form forbids the substrings `/./` and `//` in the target path. `..` components are allowed anywhere in the target path.
+  *   `target` (*type:* `String.t`, *default:* `nil`) - The target path of the symlink. The path separator is a forward slash `/`. The target path can be relative to the parent directory of the symlink or it can be an absolute path starting with `/`. Support for absolute paths can be checked using the Capabilities API. `..` components are allowed anywhere in the target path.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nodeProperties =>
-            list(
-              GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t()
-            ),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t(),
           :path => String.t(),
           :target => String.t()
         }
 
   field(:nodeProperties,
-    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty,
-    type: :list
+    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties
   )
 
   field(:path)

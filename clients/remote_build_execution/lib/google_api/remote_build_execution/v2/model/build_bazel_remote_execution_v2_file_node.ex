@@ -24,7 +24,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Fil
   *   `digest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t`, *default:* `nil`) - The digest of the file's content.
   *   `isExecutable` (*type:* `boolean()`, *default:* `nil`) - True if file is executable, false otherwise.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the file.
-  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The node properties of the FileNode.
+  *   `nodeProperties` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,9 +35,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Fil
           :isExecutable => boolean(),
           :name => String.t(),
           :nodeProperties =>
-            list(
-              GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t()
-            )
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t()
         }
 
   field(:digest, as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest)
@@ -45,8 +43,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Fil
   field(:name)
 
   field(:nodeProperties,
-    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty,
-    type: :list
+    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties
   )
 end
 

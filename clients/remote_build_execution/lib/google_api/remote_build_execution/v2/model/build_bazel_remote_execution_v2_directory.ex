@@ -23,7 +23,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dir
 
   *   `directories` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2DirectoryNode.t)`, *default:* `nil`) - The subdirectories in the directory.
   *   `files` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FileNode.t)`, *default:* `nil`) - The files in the directory.
-  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The node properties of the Directory.
+  *   `nodeProperties` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t`, *default:* `nil`) - 
   *   `symlinks` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2SymlinkNode.t)`, *default:* `nil`) - The symlinks in the directory.
   """
 
@@ -37,9 +37,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dir
           :files =>
             list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FileNode.t()),
           :nodeProperties =>
-            list(
-              GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t()
-            ),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t(),
           :symlinks =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2SymlinkNode.t()
@@ -57,8 +55,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dir
   )
 
   field(:nodeProperties,
-    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty,
-    type: :list
+    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties
   )
 
   field(:symlinks,

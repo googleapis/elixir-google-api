@@ -21,6 +21,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
 
   ## Attributes
 
+  *   `auxiliaryMetadata` (*type:* `list(map())`, *default:* `nil`) - Details that are specific to the kind of worker used. For example, on POSIX-like systems this could contain a message with getrusage(2) statistics.
   *   `executionCompletedTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - When the worker completed executing the action command.
   *   `executionStartTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - When the worker started executing the action command.
   *   `inputFetchCompletedTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - When the worker finished fetching action inputs.
@@ -36,6 +37,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :auxiliaryMetadata => list(map()),
           :executionCompletedTimestamp => DateTime.t(),
           :executionStartTimestamp => DateTime.t(),
           :inputFetchCompletedTimestamp => DateTime.t(),
@@ -48,6 +50,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
           :workerStartTimestamp => DateTime.t()
         }
 
+  field(:auxiliaryMetadata, type: :list)
   field(:executionCompletedTimestamp, as: DateTime)
   field(:executionStartTimestamp, as: DateTime)
   field(:inputFetchCompletedTimestamp, as: DateTime)

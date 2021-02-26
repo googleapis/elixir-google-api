@@ -182,7 +182,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
   end
 
   @doc """
-  Determine if blobs are present in the CAS. Clients can use this API before uploading blobs to determine which ones are already present in the CAS and do not need to be uploaded again. Servers SHOULD increase the TTLs of the referenced blobs if necessary and applicable. There are no method-specific errors.
+  Determine if blobs are present in the CAS. Clients can use this API before uploading blobs to determine which ones are already present in the CAS and do not need to be uploaded again. Servers SHOULD increase the lifetimes of the referenced blobs if necessary and applicable. There are no method-specific errors.
 
   ## Parameters
 
