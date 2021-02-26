@@ -769,6 +769,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:backupId` (*type:* `String.t`) - Required. The id of the backup to be created. The `backup_id` appended to `parent` forms the full backup name of the form `projects//instances//backups/`.
+      *   `:"encryptionConfig.encryptionType"` (*type:* `String.t`) - Required. The encryption type of the backup.
+      *   `:"encryptionConfig.kmsKeyName"` (*type:* `String.t`) - Optional. The Cloud KMS key that will be used to protect the backup. This field should be set only when encryption_type is `CUSTOMER_MANAGED_ENCRYPTION`. Values are of the form `projects//locations//keyRings//cryptoKeys/`.
       *   `:body` (*type:* `GoogleApi.Spanner.V1.Model.Backup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -803,6 +805,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :backupId => :query,
+      :"encryptionConfig.encryptionType" => :query,
+      :"encryptionConfig.kmsKeyName" => :query,
       :body => :body
     }
 

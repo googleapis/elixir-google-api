@@ -23,17 +23,20 @@ defmodule GoogleApi.Spanner.V1.Model.RestoreDatabaseRequest do
 
   *   `backup` (*type:* `String.t`, *default:* `nil`) - Name of the backup from which to restore. Values are of the form `projects//instances//backups/`.
   *   `databaseId` (*type:* `String.t`, *default:* `nil`) - Required. The id of the database to create and restore to. This database must not already exist. The `database_id` appended to `parent` forms the full database name of the form `projects//instances//databases/`.
+  *   `encryptionConfig` (*type:* `GoogleApi.Spanner.V1.Model.RestoreDatabaseEncryptionConfig.t`, *default:* `nil`) - Optional. An encryption configuration describing the encryption type and key resources in Cloud KMS used to encrypt/decrypt the database to restore to. If this field is not specified, the restored database will use the same encryption configuration as the backup by default, namely encryption_type = `USE_CONFIG_DEFAULT_OR_DATABASE_ENCRYPTION`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :backup => String.t(),
-          :databaseId => String.t()
+          :databaseId => String.t(),
+          :encryptionConfig => GoogleApi.Spanner.V1.Model.RestoreDatabaseEncryptionConfig.t()
         }
 
   field(:backup)
   field(:databaseId)
+  field(:encryptionConfig, as: GoogleApi.Spanner.V1.Model.RestoreDatabaseEncryptionConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.RestoreDatabaseRequest do
