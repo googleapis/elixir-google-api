@@ -56,7 +56,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `distanceType` (*type:* `String.t`, *default:* `nil`) - Distance type for clustering models.
   *   `maxTreeDepth` (*type:* `String.t`, *default:* `nil`) - Maximum depth of a tree for boosted tree models.
   *   `inputLabelColumns` (*type:* `list(String.t)`, *default:* `nil`) - Name of input label columns in training data.
-  *   `timeSeriesIdColumn` (*type:* `String.t`, *default:* `nil`) - The id column that will be used to indicate different time series to forecast in parallel.
+  *   `timeSeriesIdColumn` (*type:* `String.t`, *default:* `nil`) - The time series id column that was used during ARIMA model training.
   *   `nonSeasonalOrder` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaOrder.t`, *default:* `nil`) - A specification of the non-seasonal part of the ARIMA model: the three components (p, d, q) are the AR order, the degree of differencing, and the MA order.
   *   `numClusters` (*type:* `String.t`, *default:* `nil`) - Number of clusters for clustering models.
   *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Batch size for dnn models.
