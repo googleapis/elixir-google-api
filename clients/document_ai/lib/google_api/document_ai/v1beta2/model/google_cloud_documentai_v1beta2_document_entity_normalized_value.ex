@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
   ## Attributes
 
   *   `addressValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypePostalAddress.t`, *default:* `nil`) - Postal address. See also: https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+  *   `booleanValue` (*type:* `boolean()`, *default:* `nil`) - Boolean value. Can be used for entities with binary values, or for checkboxes.
   *   `dateValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDate.t`, *default:* `nil`) - Date value. Includes year, month, day. See also: https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
   *   `datetimeValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDateTime.t`, *default:* `nil`) - DateTime value. Includes date, time, and timezone. See also: https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
   *   `moneyValue` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeMoney.t`, *default:* `nil`) - Money value. See also: https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
@@ -32,6 +33,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
 
   @type t :: %__MODULE__{
           :addressValue => GoogleApi.DocumentAI.V1beta2.Model.GoogleTypePostalAddress.t(),
+          :booleanValue => boolean(),
           :dateValue => GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDate.t(),
           :datetimeValue => GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDateTime.t(),
           :moneyValue => GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeMoney.t(),
@@ -39,6 +41,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
         }
 
   field(:addressValue, as: GoogleApi.DocumentAI.V1beta2.Model.GoogleTypePostalAddress)
+  field(:booleanValue)
   field(:dateValue, as: GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDate)
   field(:datetimeValue, as: GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDateTime)
   field(:moneyValue, as: GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeMoney)
