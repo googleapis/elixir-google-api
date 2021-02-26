@@ -25,7 +25,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaSingleModelForecastingMetrics do
   *   `hasDrift` (*type:* `boolean()`, *default:* `nil`) - Is arima model fitted with drift or not. It is always false when d is not 1.
   *   `nonSeasonalOrder` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaOrder.t`, *default:* `nil`) - Non-seasonal order.
   *   `seasonalPeriods` (*type:* `list(String.t)`, *default:* `nil`) - Seasonal periods. Repeated because multiple periods are supported for one time series.
-  *   `timeSeriesId` (*type:* `String.t`, *default:* `nil`) - The id to indicate different time series.
+  *   `timeSeriesId` (*type:* `String.t`, *default:* `nil`) - The time_series_id value for this time series. It will be one of the unique values from the time_series_id_column specified during ARIMA model training. Only present when time_series_id_column training option was used.
   """
 
   use GoogleApi.Gax.ModelBase

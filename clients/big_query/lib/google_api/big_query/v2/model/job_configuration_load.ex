@@ -37,6 +37,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   *   `jsonExtension` (*type:* `String.t`, *default:* `nil`) - [Optional] If sourceFormat is set to newline-delimited JSON, indicates whether it should be processed as a JSON variant such as GeoJSON. For a sourceFormat other than JSON, omit this field. If the sourceFormat is newline-delimited JSON: - for newline-delimited GeoJSON: set to GEOJSON.
   *   `maxBadRecords` (*type:* `integer()`, *default:* `nil`) - [Optional] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV and JSON. The default value is 0, which requires that all records are valid.
   *   `nullMarker` (*type:* `String.t`, *default:* `nil`) - [Optional] Specifies a string that represents a null value in a CSV file. For example, if you specify "\\N", BigQuery interprets "\\N" as a null value when loading a CSV file. The default value is the empty string. If you set this property to a custom value, BigQuery throws an error if an empty string is present for all data types except for STRING and BYTE. For STRING and BYTE columns, BigQuery interprets the empty string as an empty value.
+  *   `parquetOptions` (*type:* `GoogleApi.BigQuery.V2.Model.ParquetOptions.t`, *default:* `nil`) - [Optional] Options to configure parquet support.
   *   `projectionFields` (*type:* `list(String.t)`, *default:* `nil`) - If sourceFormat is set to "DATASTORE_BACKUP", indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result.
   *   `quote` (*type:* `String.t`, *default:* `"`) - [Optional] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true.
   *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - [TrustedTester] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified.
@@ -73,6 +74,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
           :jsonExtension => String.t(),
           :maxBadRecords => integer(),
           :nullMarker => String.t(),
+          :parquetOptions => GoogleApi.BigQuery.V2.Model.ParquetOptions.t(),
           :projectionFields => list(String.t()),
           :quote => String.t(),
           :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t(),
@@ -108,6 +110,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   field(:jsonExtension)
   field(:maxBadRecords)
   field(:nullMarker)
+  field(:parquetOptions, as: GoogleApi.BigQuery.V2.Model.ParquetOptions)
   field(:projectionFields, type: :list)
   field(:quote)
   field(:rangePartitioning, as: GoogleApi.BigQuery.V2.Model.RangePartitioning)
