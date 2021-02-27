@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment do
   @moduledoc """
-  A tuple representing a basepath and the deployment containing it.
+  Tuple representing a base path and the deployment containing it.
 
   ## Attributes
 
-  *   `apiProxy` (*type:* `String.t`, *default:* `nil`) - The name of the deployed proxy revision containing the basepath.
-  *   `basepath` (*type:* `String.t`, *default:* `nil`) - The basepath receiving traffic.
-  *   `environment` (*type:* `String.t`, *default:* `nil`) - The name of the environment in which the proxy is deployed.
-  *   `revision` (*type:* `String.t`, *default:* `nil`) - The name of the deployed proxy revision containing the basepath.
+  *   `apiProxy` (*type:* `String.t`, *default:* `nil`) - Name of the deployed API proxy revision containing the base path.
+  *   `basepath` (*type:* `String.t`, *default:* `nil`) - Base path receiving traffic.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - Name of the environment in which the proxy is deployed.
+  *   `revision` (*type:* `String.t`, *default:* `nil`) - Name of the deployed API proxy revision containing the base path.
   """
 
   use GoogleApi.Gax.ModelBase

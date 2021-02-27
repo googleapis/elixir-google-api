@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRoute do
   @moduledoc """
-  A route deployed in the ingress routing table.
+  Route deployed in the ingress routing table.
 
   ## Attributes
 
-  *   `basepath` (*type:* `String.t`, *default:* `nil`) - The basepath in the routing table.
-  *   `envgroup` (*type:* `String.t`, *default:* `nil`) - The envgroup where this route is installed.
-  *   `environment` (*type:* `String.t`, *default:* `nil`) - The destination environment. This will be empty if the route is not yet reported.
-  *   `percentage` (*type:* `integer()`, *default:* `nil`) - The percentage of ingress replicas reporting this route.
+  *   `basepath` (*type:* `String.t`, *default:* `nil`) - Base path in the routing table.
+  *   `envgroup` (*type:* `String.t`, *default:* `nil`) - Environment group where this route is installed.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - Destination environment. This will be empty if the route is not yet reported.
+  *   `percentage` (*type:* `integer()`, *default:* `nil`) - Percentage of ingress replicas reporting this route.
   """
 
   use GoogleApi.Gax.ModelBase

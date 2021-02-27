@@ -21,8 +21,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusD
 
   ## Attributes
 
-  *   `percentage` (*type:* `integer()`, *default:* `nil`) - The percentage of MP replicas reporting this revision
-  *   `revision` (*type:* `String.t`, *default:* `nil`) - The proxy revision reported as deployed.
+  *   `percentage` (*type:* `integer()`, *default:* `nil`) - Percentage of MP replicas reporting this revision.
+  *   `revision` (*type:* `String.t`, *default:* `nil`) - API proxy revision reported as deployed.
   """
 
   use GoogleApi.Gax.ModelBase
