@@ -24,7 +24,8 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.Trigger do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
   *   `destination` (*type:* `GoogleApi.Eventarc.V1beta1.Model.Destination.t`, *default:* `nil`) - Required. Destination specifies where the events should be sent to.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. This checksum is computed by the server based on the value of other fields, and may be sent only on create requests to ensure the client has an up-to-date value before proceeding.
-  *   `matchingCriteria` (*type:* `list(GoogleApi.Eventarc.V1beta1.Model.MatchingCriteria.t)`, *default:* `nil`) - Required. The criteria by which events are filtered. Only events that match with this criteria will be sent to the destination.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User labels attached to the triggers that can be used to group resources.
+  *   `matchingCriteria` (*type:* `list(GoogleApi.Eventarc.V1beta1.Model.MatchingCriteria.t)`, *default:* `nil`) - Required. null The criteria by which events are filtered. Only events that match with this criteria will be sent to the destination.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the trigger. Must be unique within the location on the project and must in `projects/{project}/locations/{location}/triggers/{trigger}` format.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The IAM service account email associated with the trigger. The service account represents the identity of the trigger. The principal who calls this API must have `iam.serviceAccounts.actAs` permission in the service account. See https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common for more information. For Cloud Run destinations, this service account is used to generate identity tokens when invoking the service. See https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account for information on how to invoke authenticated Cloud Run services. In order to create Audit Log triggers, the service account should also have 'eventarc.events.receiveAuditLogV1Written' permission.
   *   `transport` (*type:* `GoogleApi.Eventarc.V1beta1.Model.Transport.t`, *default:* `nil`) - Output only. In order to deliver messages, Eventarc may use other GCP products as transport intermediary. This field contains a reference to that transport intermediary. This information can be used for debugging purposes.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.Trigger do
           :createTime => DateTime.t(),
           :destination => GoogleApi.Eventarc.V1beta1.Model.Destination.t(),
           :etag => String.t(),
+          :labels => map(),
           :matchingCriteria => list(GoogleApi.Eventarc.V1beta1.Model.MatchingCriteria.t()),
           :name => String.t(),
           :serviceAccount => String.t(),
@@ -47,6 +49,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.Trigger do
   field(:createTime, as: DateTime)
   field(:destination, as: GoogleApi.Eventarc.V1beta1.Model.Destination)
   field(:etag)
+  field(:labels, type: :map)
   field(:matchingCriteria, as: GoogleApi.Eventarc.V1beta1.Model.MatchingCriteria, type: :list)
   field(:name)
   field(:serviceAccount)
