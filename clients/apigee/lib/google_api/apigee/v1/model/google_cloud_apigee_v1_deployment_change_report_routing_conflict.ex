@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingConflict do
   @moduledoc """
-  Describes a routing conflict that may cause a deployment not to receive traffic at some basepath.
+  Describes a routing conflict that may cause a deployment not to receive traffic at some base path.
 
   ## Attributes
 
-  *   `conflictingDeployment` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t`, *default:* `nil`) - The existing basepath/deployment causing the conflict.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A human-readable description of this conflict.
-  *   `environmentGroup` (*type:* `String.t`, *default:* `nil`) - The name of the environment group in which this conflict exists.
+  *   `conflictingDeployment` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t`, *default:* `nil`) - Existing base path/deployment causing the conflict.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Human-readable description of this conflict.
+  *   `environmentGroup` (*type:* `String.t`, *default:* `nil`) - Name of the environment group in which this conflict exists.
   """
 
   use GoogleApi.Gax.ModelBase

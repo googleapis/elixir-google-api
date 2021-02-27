@@ -22,7 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatus 
   ## Attributes
 
   *   `deployedRevisions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRevision.t)`, *default:* `nil`) - Revisions currently deployed in MPs.
-  *   `deployedRoutes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRoute.t)`, *default:* `nil`) - The current routes deployed in the ingress routing table. A route which is missing will appear in missing_routes.
+  *   `deployedRoutes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRoute.t)`, *default:* `nil`) - Current routes deployed in the ingress routing table. A route which is missing will appear in `missing_routes`.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - ID of the instance reporting the status.
   """
 

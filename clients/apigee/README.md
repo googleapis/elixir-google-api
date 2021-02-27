@@ -2,7 +2,7 @@
 
 Apigee API client library.
 
-Use the Apigee API to programmatically develop and manage APIs with a set of RESTful operations. Develop and secure API proxies, deploy and undeploy API proxy revisions, monitor APIs, configure environments, manage users, and more. Get started using the APIs. *Note:* This product is available as a free trial for a time period of 60 days.
+Use the Apigee API to programmatically develop and manage APIs with a set of RESTful operations. Develop and secure API proxies, deploy and undeploy API proxy revisions, monitor APIs, configure environments, manage users, and more. Note: This product is available as a free trial for a time period of 60 days.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_apigee, "~> 0.27"}]
+  [{:google_api_apigee, "~> 0.28"}]
 end
 ```
 

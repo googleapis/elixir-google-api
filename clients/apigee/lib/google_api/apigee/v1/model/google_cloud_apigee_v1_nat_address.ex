@@ -21,9 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1NatAddress do
 
   ## Attributes
 
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Required. The static IPV4 address.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Output only. The static IPV4 address.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource ID of the NAT address.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Required. State of the nat address.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the nat address.
   """
 
   use GoogleApi.Gax.ModelBase

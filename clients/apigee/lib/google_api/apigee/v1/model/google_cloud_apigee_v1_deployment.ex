@@ -26,9 +26,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Deployment do
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Environment.
   *   `errors` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Errors reported for this deployment. Populated only when state == ERROR. This field is not populated in List APIs.
   *   `instances` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatus.t)`, *default:* `nil`) - Status reported by each runtime instance. This field is not populated in List APIs.
-  *   `pods` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1PodStatus.t)`, *default:* `nil`) - Status reported by runtime pods. This field is not populated for List APIs.
+  *   `pods` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1PodStatus.t)`, *default:* `nil`) - Status reported by runtime pods. This field is not populated for List APIs. **Note**: **This field is deprecated**. Runtime versions 1.3 and above report instance level status rather than pod status.
   *   `revision` (*type:* `String.t`, *default:* `nil`) - API proxy revision.
-  *   `routeConflicts` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingConflict.t)`, *default:* `nil`) - Conflicts in the desired state routing configuration. The presence of conflicts does not cause the state to be ERROR, but it will mean that some of the deployments basepaths are not routed to its environment. If the conflicts change, the state will transition to PROGRESSING until the latest configuration is rolled out to all instances. This field is not populated in List APIs.
+  *   `routeConflicts` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingConflict.t)`, *default:* `nil`) - Conflicts in the desired state routing configuration. The presence of conflicts does not cause the state to be `ERROR`, but it will mean that some of the deployment's base paths are not routed to its environment. If the conflicts change, the state will transition to `PROGRESSING` until the latest configuration is rolled out to all instances. This field is not populated in List APIs.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Current state of the deployment. This field is not populated in List APIs.
   """
 

@@ -21,11 +21,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRou
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A human-readable description of this routing change.
-  *   `environmentGroup` (*type:* `String.t`, *default:* `nil`) - The name of the environment group affected by this routing change.
-  *   `fromDeployment` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t`, *default:* `nil`) - The basepath/deployment that may stop receiving some traffic.
-  *   `shouldSequenceRollout` (*type:* `boolean()`, *default:* `nil`) - True if using sequenced rollout would make this routing change safer. Note: this does not necessarily imply that automated sequenced rollout mode is supported for the operation.
-  *   `toDeployment` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t`, *default:* `nil`) - The basepath/deployment that may start receiving that traffic. May be null if no deployment is able to receive the traffic.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Human-readable description of this routing change.
+  *   `environmentGroup` (*type:* `String.t`, *default:* `nil`) - Name of the environment group affected by this routing change.
+  *   `fromDeployment` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t`, *default:* `nil`) - Base path/deployment that may stop receiving some traffic.
+  *   `shouldSequenceRollout` (*type:* `boolean()`, *default:* `nil`) - Set to `true` if using sequenced rollout would make this routing change safer. **Note**: This does not necessarily imply that automated sequenced rollout mode is supported for the operation.
+  *   `toDeployment` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t`, *default:* `nil`) - Base path/deployment that may start receiving that traffic. May be null if no deployment is able to receive the traffic.
   """
 
   use GoogleApi.Gax.ModelBase

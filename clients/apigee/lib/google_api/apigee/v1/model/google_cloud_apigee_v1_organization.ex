@@ -31,6 +31,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the Apigee organization.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - 
   *   `environments` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of environments in the Apigee organization.
+  *   `expiresAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization is scheduled for deletion.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization was last modified in milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Apigee organization.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID associated with the Apigee organization.
@@ -55,6 +56,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
           :description => String.t(),
           :displayName => String.t(),
           :environments => list(String.t()),
+          :expiresAt => String.t(),
           :lastModifiedAt => String.t(),
           :name => String.t(),
           :projectId => String.t(),
@@ -76,6 +78,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   field(:description)
   field(:displayName)
   field(:environments, type: :list)
+  field(:expiresAt)
   field(:lastModifiedAt)
   field(:name)
   field(:projectId)
