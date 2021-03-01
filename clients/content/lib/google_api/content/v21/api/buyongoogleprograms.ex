@@ -99,7 +99,7 @@ defmodule GoogleApi.Content.V21.Api.Buyongoogleprograms do
   end
 
   @doc """
-  Onboards BoG in your Merchant Center account. By using this method, you agree to the Terms of Service.
+  Onboards BoG in your Merchant Center account. By using this method, you agree to the [Terms of Service](https://merchants.google.com/mc/termsofservice/transactions/US/latest).
 
   ## Parameters
 
