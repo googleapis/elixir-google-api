@@ -21,9 +21,9 @@ defmodule GoogleApi.Slides.V1.Model.Autofit do
 
   ## Attributes
 
-  *   `autofitType` (*type:* `String.t`, *default:* `nil`) - The autofit type of the shape. If unspecified, the autofit type is inherited from a parent placeholder if it exists. The field will be automatically set to NONE if a request is made that may affect text fitting within its bounding text box. In this case the font_scale will be applied to the font_size and the line_spacing_reduction will be applied to the line_spacing. Both properties would also be reset to default values.
-  *   `fontScale` (*type:* `number()`, *default:* `nil`) - The font scale applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value will be the default value of 1. For TEXT_AUTOFIT, this value multiplied by the font_size will give the font size that is rendered in the editor. This property is read-only.
-  *   `lineSpacingReduction` (*type:* `number()`, *default:* `nil`) - The line spacing reduction applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value will be the default value of 0. For TEXT_AUTOFIT, this value subtracted from the line_spacing will give the line spacing that is rendered in the editor. This property is read-only.
+  *   `autofitType` (*type:* `String.t`, *default:* `nil`) - The autofit type of the shape. If the autofit type is AUTOFIT_TYPE_UNSPECIFIED, the autofit type is inherited from a parent placeholder if it exists. The field is automatically set to NONE if a request is made that might affect text fitting within its bounding text box. In this case the font_scale is applied to the font_size and the line_spacing_reduction is applied to the line_spacing. Both properties are also reset to default values.
+  *   `fontScale` (*type:* `number()`, *default:* `nil`) - The font scale applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 1. For TEXT_AUTOFIT, this value multiplied by the font_size gives the font size that is rendered in the editor. This property is read-only.
+  *   `lineSpacingReduction` (*type:* `number()`, *default:* `nil`) - The line spacing reduction applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 0. For TEXT_AUTOFIT, this value subtracted from the line_spacing gives the line spacing that is rendered in the editor. This property is read-only.
   """
 
   use GoogleApi.Gax.ModelBase
