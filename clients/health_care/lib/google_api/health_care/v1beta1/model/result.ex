@@ -22,8 +22,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Result do
   ## Attributes
 
   *   `consentDetails` (*type:* `%{optional(String.t) => GoogleApi.HealthCare.V1beta1.Model.ConsentEvaluation.t}`, *default:* `nil`) - The resource names of all evaluated Consents mapped to their evaluation.
-  *   `consented` (*type:* `boolean()`, *default:* `nil`) - Whether the requested data is consented for the given use.
-  *   `dataId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the data the consents were checked for.
+  *   `consented` (*type:* `boolean()`, *default:* `nil`) - Whether the resource is consented for the given use.
+  *   `dataId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the evaluated resource.
   """
 
   use GoogleApi.Gax.ModelBase

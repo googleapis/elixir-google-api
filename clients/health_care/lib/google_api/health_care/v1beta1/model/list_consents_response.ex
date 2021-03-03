@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ListConsentsResponse do
   @moduledoc """
-  Lists the Consents in the given Consent store.
+
 
   ## Attributes
 
-  *   `consents` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Consent.t)`, *default:* `nil`) - The returned consents. The maximum number of consents returned is determined by the value of page_size in the ListConsentsRequest.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
+  *   `consents` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Consent.t)`, *default:* `nil`) - The returned Consents. The maximum number of Consents returned is determined by the value of page_size in the ListConsentsRequest.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

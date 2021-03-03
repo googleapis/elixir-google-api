@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateUserConsentsResponse do
   @moduledoc """
-  Evaluate an end user's Consents for all matching User data mappings.
+
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list. This token is valid for 72 hours after it is created.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list. This token is valid for 72 hours after it is created.
   *   `results` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Result.t)`, *default:* `nil`) - The consent evaluation result for each `data_id`.
   """
 

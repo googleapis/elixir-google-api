@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateUserConsentsRequest do
   @moduledoc """
-  Evaluate an end user's Consents for all matching User data mappings.
+  Evaluate a user's Consents for all matching User data mappings. Note: User data mappings are indexed asynchronously, causing slight delays between the time mappings are created or updated and when they are included in EvaluateUserConsents results.
 
   ## Attributes
 
-  *   `consentList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ConsentList.t`, *default:* `nil`) - The Consents to evaluate the access request against. They must have the same `user_id` as the data to check access for, exist in the current `consent_store`, and can have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 consents can be provided here. If unspecified, all `ACTIVE` unexpired consents in the current `consent_store` will be evaluated.
-  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Limit on the number of user data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000.
-  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results to get the first page.
-  *   `requestAttributes` (*type:* `map()`, *default:* `nil`) - The values of request attributes associated with this access request.
-  *   `resourceAttributes` (*type:* `map()`, *default:* `nil`) - The values of resources attributes associated with the type of data being requested. If no values are specified, then all data types are queried.
-  *   `responseView` (*type:* `String.t`, *default:* `nil`) - The view for EvaluateUserConsentsResponse. If unspecified, defaults to `BASIC` and returns `consented` as `TRUE` or `FALSE`.
+  *   `consentList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ConsentList.t`, *default:* `nil`) - Optional. Specific Consents to evaluate the access request against. These Consents must have the same `user_id` as the User data mappings being evalauted, must exist in the current `consent_store`, and must have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 Consents can be provided here. If unspecified, all `ACTIVE` unexpired Consents in the current `consent_store` will be evaluated.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Optional. Limit on the number of User data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Token to retrieve the next page of results, or empty to get the first page.
+  *   `requestAttributes` (*type:* `map()`, *default:* `nil`) - Required. The values of request attributes associated with this access request.
+  *   `resourceAttributes` (*type:* `map()`, *default:* `nil`) - Optional. The values of resource attributes associated with the resources being requested. If no values are specified, then all resources are queried.
+  *   `responseView` (*type:* `String.t`, *default:* `nil`) - Optional. The view for EvaluateUserConsentsResponse. If unspecified, defaults to `BASIC` and returns `consented` as `TRUE` or `FALSE`.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Required. User ID to evaluate consents for.
   """
 

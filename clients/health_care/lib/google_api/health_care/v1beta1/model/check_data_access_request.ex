@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.CheckDataAccessRequest do
   @moduledoc """
-  Checks if a particular data_id of a User data mapping in the given Consent store is consented for a given use.
+  Checks if a particular data_id of a User data mapping in the given consent store is consented for a given use.
 
   ## Attributes
 
-  *   `consentList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ConsentList.t`, *default:* `nil`) - The Consents to evaluate the access request against. They must have the same `user_id` as the data to check access for, exist in the current `consent_store`, and can have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 consents can be provided here. If unspecified, all `ACTIVE` unexpired consents in the current `consent_store` will be evaluated.
-  *   `dataId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the data to check access for. It must exist in the given `consent_store`.
+  *   `consentList` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ConsentList.t`, *default:* `nil`) - Optional. Specific Consents to evaluate the access request against. These Consents must have the same `user_id` as the evaluated User data mapping, must exist in the current `consent_store`, and have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 Consents can be provided here. If no selection is specified, the access request is evaluated against all `ACTIVE` unexpired Consents with the same `user_id` as the evaluated User data mapping.
+  *   `dataId` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the resource to check access for. This identifier must correspond to a User data mapping in the given consent store.
   *   `requestAttributes` (*type:* `map()`, *default:* `nil`) - The values of request attributes associated with this access request.
-  *   `responseView` (*type:* `String.t`, *default:* `nil`) - The view for CheckDataAccessResponse. If unspecified, defaults to `BASIC` and returns `consented` as `TRUE` or `FALSE`.
+  *   `responseView` (*type:* `String.t`, *default:* `nil`) - Optional. The view for CheckDataAccessResponse. If unspecified, defaults to `BASIC` and returns `consented` as `TRUE` or `FALSE`.
   """
 
   use GoogleApi.Gax.ModelBase

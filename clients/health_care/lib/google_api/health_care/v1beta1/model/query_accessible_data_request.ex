@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.QueryAccessibleDataRequest do
   @moduledoc """
-  Queries all data_ids that are consented for a given use in the given Consent store and writes them to a specified destination. The returned Operation includes a progress counter for the number of User data mappings processed. Errors are logged to Cloud Logging (see [Viewing logs] (/healthcare/docs/how-tos/logging) and [QueryAccessibleData] for a sample log entry).
+  Queries all data_ids that are consented for a given use in the given consent store and writes them to a specified destination. The returned Operation includes a progress counter for the number of User data mappings processed. Errors are logged to Cloud Logging (see [Viewing logs] (/healthcare/docs/how-tos/logging) and [QueryAccessibleData] for a sample log entry).
 
   ## Attributes
 
   *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1ConsentGcsDestination.t`, *default:* `nil`) - The Cloud Storage destination. The Cloud Healthcare API service account must have the `roles/storage.objectAdmin` Cloud IAM role for this Cloud Storage location.
   *   `requestAttributes` (*type:* `map()`, *default:* `nil`) - The values of request attributes associated with this access request.
-  *   `resourceAttributes` (*type:* `map()`, *default:* `nil`) - The values of resources attributes associated with the type of data being requested. If no values are specified, then all data types are included in the output.
+  *   `resourceAttributes` (*type:* `map()`, *default:* `nil`) - Optional. The values of resource attributes associated with the type of resources being requested. If no values are specified, then all resource types are included in the output.
   """
 
   use GoogleApi.Gax.ModelBase

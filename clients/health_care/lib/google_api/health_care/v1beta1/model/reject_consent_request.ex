@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.RejectConsentRequest do
   @moduledoc """
-  Rejects the latest revision of the specified Consent by committing a new revision with `state` updated to `REJECTED`. If the latest revision of the given consent is in the `REJECTED` state, no new revision is committed.
+  Rejects the latest revision of the specified Consent by committing a new revision with `state` updated to `REJECTED`. If the latest revision of the given Consent is in the `REJECTED` state, no new revision is committed.
 
   ## Attributes
 
-  *   `consentArtifact` (*type:* `String.t`, *default:* `nil`) - The resource name of the consent artifact that contains proof of the end user's rejection of the draft consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`. If the draft consent had a consent artifact, this consent artifact overwrites it.
+  *   `consentArtifact` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the Consent artifact that contains documentation of the user's rejection of the draft Consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`. If the draft Consent had a Consent artifact, this Consent artifact overwrites it.
   """
 
   use GoogleApi.Gax.ModelBase

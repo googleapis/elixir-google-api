@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.RevokeConsentRequest do
   @moduledoc """
-  Revokes the latest revision of the specified Consent by committing a new revision with `state` updated to `REVOKED`. If the latest revision of the given consent is in the `REVOKED` state, no new revision is committed.
+  Revokes the latest revision of the specified Consent by committing a new revision with `state` updated to `REVOKED`. If the latest revision of the given Consent is in the `REVOKED` state, no new revision is committed.
 
   ## Attributes
 
-  *   `consentArtifact` (*type:* `String.t`, *default:* `nil`) - The resource name of the consent artifact that contains proof of the end user's revocation of the consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`.
+  *   `consentArtifact` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the Consent artifact that contains proof of the user's revocation of the Consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`.
   """
 
   use GoogleApi.Gax.ModelBase

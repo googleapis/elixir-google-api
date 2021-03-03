@@ -20,7 +20,7 @@ defmodule GoogleApi.HealthCare.V1 do
   API client metadata for GoogleApi.HealthCare.V1.
   """
 
-  @discovery_revision "20210205"
+  @discovery_revision "20210217"
 
   def discovery_revision(), do: @discovery_revision
 end

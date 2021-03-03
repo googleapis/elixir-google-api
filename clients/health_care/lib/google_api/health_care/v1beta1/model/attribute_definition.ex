@@ -23,10 +23,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AttributeDefinition do
 
   *   `allowedValues` (*type:* `list(String.t)`, *default:* `nil`) - Required. Possible values for the attribute. The number of allowed values must not exceed 100. An empty list is invalid. The list can only be expanded after creation.
   *   `category` (*type:* `String.t`, *default:* `nil`) - Required. The category of the attribute. The value of this field cannot be changed after creation.
-  *   `consentDefaultValues` (*type:* `list(String.t)`, *default:* `nil`) - Default values of the attribute in consents. If no default values are specified, it defaults to an empty value.
-  *   `dataMappingDefaultValue` (*type:* `String.t`, *default:* `nil`) - Default value of the attribute in user data mappings. If no default value is specified, it defaults to an empty value. This field is only applicable to attributes of the category `RESOURCE`.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the attribute.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the attribute definition, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/attributeDefinitions/{attribute_definition_id}`.
+  *   `consentDefaultValues` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Default values of the attribute in Consents. If no default values are specified, it defaults to an empty value.
+  *   `dataMappingDefaultValue` (*type:* `String.t`, *default:* `nil`) - Optional. Default value of the attribute in User data mappings. If no default value is specified, it defaults to an empty value. This field is only applicable to attributes of the category `RESOURCE`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the attribute.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Attribute definition, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/attributeDefinitions/{attribute_definition_id}`. Cannot be changed after creation.
   """
 
   use GoogleApi.Gax.ModelBase

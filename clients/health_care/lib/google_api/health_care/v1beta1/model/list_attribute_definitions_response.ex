@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ListAttributeDefinitionsResponse do
   @moduledoc """
-  Lists the Attribute definitions in the given Consent store.
+
 
   ## Attributes
 
-  *   `attributeDefinitions` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.AttributeDefinition.t)`, *default:* `nil`) - The returned attribute definitions. The maximum number of attributes returned is determined by the value of page_size in the ListAttributeDefinitionsRequest.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
+  *   `attributeDefinitions` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.AttributeDefinition.t)`, *default:* `nil`) - The returned Attribute definitions. The maximum number of attributes returned is determined by the value of page_size in the ListAttributeDefinitionsRequest.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ListConsentArtifactsResponse do
   @moduledoc """
-  Lists the Consent artifacts in the given Consent store.
+
 
   ## Attributes
 
-  *   `consentArtifacts` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.ConsentArtifact.t)`, *default:* `nil`) - The returned consent artifacts. The maximum number of artifacts returned is determined by the value of page_size in the ListConsentArtifactsRequest.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
+  *   `consentArtifacts` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.ConsentArtifact.t)`, *default:* `nil`) - The returned Consent artifacts. The maximum number of artifacts returned is determined by the value of page_size in the ListConsentArtifactsRequest.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

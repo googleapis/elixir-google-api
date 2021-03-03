@@ -22,7 +22,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AnalyzeEntitiesResponse do
   ## Attributes
 
   *   `entities` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Entity.t)`, *default:* `nil`) - The union of all the candidate entities that the entity_mentions in this response could link to. These are UMLS concepts or normalized mention content.
-  *   `entityMentions` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.EntityMention.t)`, *default:* `nil`) - entity_mentions contains all the annotated medical entities that were were mentioned in the provided document.
+  *   `entityMentions` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.EntityMention.t)`, *default:* `nil`) - entity_mentions contains all the annotated medical entities that were mentioned in the provided document.
   *   `relationships` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.EntityMentionRelationship.t)`, *default:* `nil`) - relationships contains all the binary relationships that were identified between entity mentions within the provided document.
   """
 
