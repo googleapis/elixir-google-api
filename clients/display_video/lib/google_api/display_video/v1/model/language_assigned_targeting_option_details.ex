@@ -22,7 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LanguageAssignedTargetingOptionDetails
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the language (e.g., "French").
-  *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted. All assigned language targeting options on the same line item must have the same value for this field.
+  *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted. All assigned language targeting options on the same resource must have the same value for this field.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_LANGUAGE`.
   """
 

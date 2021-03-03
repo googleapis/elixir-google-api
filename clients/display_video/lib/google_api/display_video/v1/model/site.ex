@@ -22,7 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Site do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the site.
-  *   `urlOrAppId` (*type:* `String.t`, *default:* `nil`) - Required. The URL or app ID of the site. Must be UTF-8 encoded with a maximum length of 240 bytes.
+  *   `urlOrAppId` (*type:* `String.t`, *default:* `nil`) - Required. The app ID or URL of the site. Must be UTF-8 encoded with a maximum length of 240 bytes.
   """
 
   use GoogleApi.Gax.ModelBase
