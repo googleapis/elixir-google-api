@@ -21,7 +21,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.PathFilter do
 
   ## Attributes
 
-  *   `regexes` (*type:* `list(String.t)`, *default:* `nil`) - An array of regexes to filter by.
+  *   `regexes` (*type:* `list(String.t)`, *default:* `nil`) - An array of RegEx values by which to filter.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListChannelsResponse do
   @moduledoc """
-  The response returned by ListChannels.
+
 
   ## Attributes
 
   *   `channels` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Channel.t)`, *default:* `nil`) - The list of channels.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are additional releases remaining beyond the ones in this response, then supply this token in the next [`list`](../sites.channels/list) call to continue with the next set of releases.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token, if more results exist beyond the ones in this response. Include this token in your next call to `ListChannels`. Page tokens are short-lived and should not be stored.
   """
 
   use GoogleApi.Gax.ModelBase
