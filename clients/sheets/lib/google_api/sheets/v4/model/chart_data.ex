@@ -21,9 +21,9 @@ defmodule GoogleApi.Sheets.V4.Model.ChartData do
 
   ## Attributes
 
-  *   `aggregateType` (*type:* `String.t`, *default:* `nil`) - The aggregation type for the series of a data source chart. Not supported for regular charts.
+  *   `aggregateType` (*type:* `String.t`, *default:* `nil`) - The aggregation type for the series of a data source chart. Only supported for data source charts.
   *   `columnReference` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t`, *default:* `nil`) - The reference to the data source column that the data reads from.
-  *   `groupRule` (*type:* `GoogleApi.Sheets.V4.Model.ChartGroupRule.t`, *default:* `nil`) - The rule to group the data by if the ChartData backs the domain of a data source chart. Not supported for regular charts.
+  *   `groupRule` (*type:* `GoogleApi.Sheets.V4.Model.ChartGroupRule.t`, *default:* `nil`) - The rule to group the data by if the ChartData backs the domain of a data source chart. Only supported for data source charts.
   *   `sourceRange` (*type:* `GoogleApi.Sheets.V4.Model.ChartSourceRange.t`, *default:* `nil`) - The source ranges of the data.
   """
 
