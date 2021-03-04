@@ -26,7 +26,7 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Enumerate ResourceRecordSets that you have created but not yet deleted.
+  Enumerates ResourceRecordSets that you have created but not yet deleted.
 
   ## Parameters
 

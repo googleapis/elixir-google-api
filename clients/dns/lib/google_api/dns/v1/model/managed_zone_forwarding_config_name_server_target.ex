@@ -21,7 +21,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfigNameServerTarget do
 
   ## Attributes
 
-  *   `forwardingPath` (*type:* `String.t`, *default:* `nil`) - Forwarding path for this NameServerTarget. If unset or set to DEFAULT, Cloud DNS makes forwarding decisions based on address ranges; that is, RFC1918 addresses go to the VPC, non-RFC1918 addresses go to the internet. When set to PRIVATE, Cloud DNS always sends queries through VPC for this target.
+  *   `forwardingPath` (*type:* `String.t`, *default:* `nil`) - Forwarding path for this NameServerTarget. If unset or set to DEFAULT, Cloud DNS makes forwarding decisions based on IP address ranges; that is, RFC1918 addresses go to the VPC network, non-RFC1918 addresses go to the internet. When set to PRIVATE, Cloud DNS always sends queries through the VPC network for this target.
   *   `ipv4Address` (*type:* `String.t`, *default:* `nil`) - IPv4 address of a target name server.
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneForwardingConfigNameServerTarget`) - 
   """

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
   @moduledoc """
-  A unit of data that will be returned by the DNS servers.
+  A unit of data that is returned by the DNS servers.
 
   ## Attributes
 

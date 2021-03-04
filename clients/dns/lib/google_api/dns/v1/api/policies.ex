@@ -26,7 +26,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new Policy
+  Creates a new Policy.
 
   ## Parameters
 
@@ -87,7 +87,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Delete a previously created Policy. Fails if the policy is still being referenced by a network.
+  Deletes a previously created Policy. Fails if the policy is still being referenced by a network.
 
   ## Parameters
 
