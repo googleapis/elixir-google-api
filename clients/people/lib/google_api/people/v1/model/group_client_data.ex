@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.GroupClientData do
   @moduledoc """
-  Arbitrary client data that is populated by clients. Duplicate keys and values are allowed. LINT.IfChange(GroupClientData)
+  Arbitrary client data that is populated by clients. Duplicate keys and values are allowed.
 
   ## Attributes
 
