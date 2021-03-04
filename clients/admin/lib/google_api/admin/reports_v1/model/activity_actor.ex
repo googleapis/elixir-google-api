@@ -24,7 +24,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityActor do
   *   `callerType` (*type:* `String.t`, *default:* `nil`) - The type of actor.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The primary email address of the actor. May be absent if there is no email address associated with the actor.
   *   `key` (*type:* `String.t`, *default:* `nil`) - Only present when `callerType` is `KEY`. Can be the `consumer_key` of the requestor for OAuth 2LO API requests or an identifier for robot accounts.
-  *   `profileId` (*type:* `String.t`, *default:* `nil`) - The unique G Suite profile ID of the actor. May be absent if the actor is not a G Suite user.
+  *   `profileId` (*type:* `String.t`, *default:* `nil`) - The unique Google Workspace profile ID of the actor. May be absent if the actor is not a Google Workspace user.
   """
 
   use GoogleApi.Gax.ModelBase

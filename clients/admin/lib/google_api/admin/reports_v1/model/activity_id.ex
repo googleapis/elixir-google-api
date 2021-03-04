@@ -22,7 +22,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityId do
   ## Attributes
 
   *   `applicationName` (*type:* `String.t`, *default:* `nil`) - Application name to which the event belongs. For possible values see the list of applications above in `applicationName`.
-  *   `customerId` (*type:* `String.t`, *default:* `nil`) - The unique identifier for a G suite account.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - The unique identifier for a Google Workspace account.
   *   `time` (*type:* `DateTime.t`, *default:* `nil`) - Time of occurrence of the activity. This is in UNIX epoch time in seconds.
   *   `uniqueQualifier` (*type:* `String.t`, *default:* `nil`) - Unique qualifier if multiple events have the same time.
   """

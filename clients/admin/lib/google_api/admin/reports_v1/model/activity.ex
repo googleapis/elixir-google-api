@@ -25,7 +25,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.Activity do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the entry.
   *   `events` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.ActivityEvents.t)`, *default:* `nil`) - Activity events in the report.
   *   `id` (*type:* `GoogleApi.Admin.Reports_v1.Model.ActivityId.t`, *default:* `nil`) - Unique identifier for each activity record.
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the user doing the action. This is the Internet Protocol (IP) address of the user when logging into G Suite which may or may not reflect the user's physical location. For example, the IP address can be the user's proxy server's address or a virtual private network (VPN) address. The API supports IPv4 and IPv6.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the user doing the action. This is the Internet Protocol (IP) address of the user when logging into Google Workspace, which may or may not reflect the user's physical location. For example, the IP address can be the user's proxy server's address or a virtual private network (VPN) address. The API supports IPv4 and IPv6.
   *   `kind` (*type:* `String.t`, *default:* `admin#reports#activity`) - The type of API resource. For an activity report, the value is `audit#activity`.
   *   `ownerDomain` (*type:* `String.t`, *default:* `nil`) - This is the domain that is affected by the report's event. For example domain of Admin console or the Drive application's document owner.
   """
