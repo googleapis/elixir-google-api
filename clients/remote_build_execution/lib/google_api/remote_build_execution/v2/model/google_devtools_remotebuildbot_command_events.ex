@@ -27,6 +27,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   *   `inputCacheMiss` (*type:* `number()`, *default:* `nil`) - The input cache miss ratio.
   *   `numErrors` (*type:* `String.t`, *default:* `nil`) - The number of errors reported.
   *   `numWarnings` (*type:* `String.t`, *default:* `nil`) - The number of warnings reported.
+  *   `outputLocation` (*type:* `String.t`, *default:* `nil`) - Indicates whether output files and/or output directories were found relative to the execution root or to the user provided work directory or both or none.
   *   `usedAsyncContainer` (*type:* `boolean()`, *default:* `nil`) - Indicates whether an asynchronous container was used for execution.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
           :inputCacheMiss => number(),
           :numErrors => String.t(),
           :numWarnings => String.t(),
+          :outputLocation => String.t(),
           :usedAsyncContainer => boolean()
         }
 
@@ -48,6 +50,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   field(:inputCacheMiss)
   field(:numErrors)
   field(:numWarnings)
+  field(:outputLocation)
   field(:usedAsyncContainer)
 end
 
