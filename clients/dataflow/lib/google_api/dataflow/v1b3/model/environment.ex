@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
 
   *   `clusterManagerApiService` (*type:* `String.t`, *default:* `nil`) - The type of cluster manager API to use. If unknown or unspecified, the service will attempt to choose a reasonable default. This should be in the form of the API service name, e.g. "compute.googleapis.com".
   *   `dataset` (*type:* `String.t`, *default:* `nil`) - The dataset for the current project where various workflow related tables are stored. The supported resource type is: Google BigQuery: bigquery.googleapis.com/{dataset}
+  *   `debugOptions` (*type:* `GoogleApi.Dataflow.V1b3.Model.DebugOptions.t`, *default:* `nil`) - Any debugging options to be supplied to the job.
   *   `experiments` (*type:* `list(String.t)`, *default:* `nil`) - The list of experiments to enable. This field should be used for SDK related experiments and not for service related experiments. The proper field for service related experiments is service_options. For more details see the rationale at go/user-specified-service-options.
   *   `flexResourceSchedulingGoal` (*type:* `String.t`, *default:* `nil`) - Which Flexible Resource Scheduling mode to run in.
   *   `internalExperiments` (*type:* `map()`, *default:* `nil`) - Experimental settings.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   @type t :: %__MODULE__{
           :clusterManagerApiService => String.t(),
           :dataset => String.t(),
+          :debugOptions => GoogleApi.Dataflow.V1b3.Model.DebugOptions.t(),
           :experiments => list(String.t()),
           :flexResourceSchedulingGoal => String.t(),
           :internalExperiments => map(),
@@ -62,6 +64,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
 
   field(:clusterManagerApiService)
   field(:dataset)
+  field(:debugOptions, as: GoogleApi.Dataflow.V1b3.Model.DebugOptions)
   field(:experiments, type: :list)
   field(:flexResourceSchedulingGoal)
   field(:internalExperiments, type: :map)
