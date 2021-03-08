@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Script.V1.Model.CreateProjectRequest do
   @moduledoc """
-  Request to create a script project.
+  Request to create a script project. Request to create a script project.
 
   ## Attributes
 

@@ -20,7 +20,7 @@ defmodule GoogleApi.Script.V1 do
   API client metadata for GoogleApi.Script.V1.
   """
 
-  @discovery_revision "20210106"
+  @discovery_revision "20210227"
 
   def discovery_revision(), do: @discovery_revision
 end
