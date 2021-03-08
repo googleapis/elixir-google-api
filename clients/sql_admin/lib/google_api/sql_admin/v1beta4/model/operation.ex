@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
   @moduledoc """
-  An Operation resource. For successful operations that return an Operation resource, only the fields relevant to the operation are populated in the resource. Next field: 18
+  An Operation resource. For successful operations that return an Operation resource, only the fields relevant to the operation are populated in the resource.
 
   ## Attributes
 

@@ -23,17 +23,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesVerifyExternalSyncSetting
 
   *   `errors` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError.t)`, *default:* `nil`) - List of migration violations.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always *sql#migrationSettingErrorList*.
+  *   `warnings` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError.t)`, *default:* `nil`) - List of migration warnings.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :errors => list(GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError.t()),
-          :kind => String.t()
+          :kind => String.t(),
+          :warnings => list(GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError.t())
         }
 
   field(:errors, as: GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError, type: :list)
   field(:kind)
+  field(:warnings, as: GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError, type: :list)
 end
 
 defimpl Poison.Decoder,

@@ -1311,7 +1311,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Truncate MySQL general and slow query log tables
+  Truncate MySQL general and slow query log tables MySQL only.
 
   ## Parameters
 
