@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :url => String.t()
+          :url => String.t() | nil
         }
 
   field(:url)

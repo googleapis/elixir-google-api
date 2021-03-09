@@ -30,9 +30,9 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse do
 
   @type t :: %__MODULE__{
           :errorGroupStats =>
-            list(GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroupStats.t()),
-          :nextPageToken => String.t(),
-          :timeRangeBegin => DateTime.t()
+            list(GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroupStats.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :timeRangeBegin => DateTime.t() | nil
         }
 
   field(:errorGroupStats,

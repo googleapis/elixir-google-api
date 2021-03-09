@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.HttpRequestContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :method => String.t(),
-          :referrer => String.t(),
-          :remoteIp => String.t(),
-          :responseStatusCode => integer(),
-          :url => String.t(),
-          :userAgent => String.t()
+          :method => String.t() | nil,
+          :referrer => String.t() | nil,
+          :remoteIp => String.t() | nil,
+          :responseStatusCode => integer() | nil,
+          :url => String.t() | nil,
+          :userAgent => String.t() | nil
         }
 
   field(:method)

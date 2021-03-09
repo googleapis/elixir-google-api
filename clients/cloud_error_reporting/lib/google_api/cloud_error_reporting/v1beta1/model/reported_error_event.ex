@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ReportedErrorEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorContext.t(),
-          :eventTime => DateTime.t(),
-          :message => String.t(),
-          :serviceContext => GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext.t()
+          :context => GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorContext.t() | nil,
+          :eventTime => DateTime.t() | nil,
+          :message => String.t() | nil,
+          :serviceContext => GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext.t() | nil
         }
 
   field(:context, as: GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorContext)

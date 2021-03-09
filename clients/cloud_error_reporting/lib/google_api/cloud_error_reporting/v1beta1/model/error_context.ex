@@ -30,11 +30,12 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :httpRequest => GoogleApi.CloudErrorReporting.V1beta1.Model.HttpRequestContext.t(),
-          :reportLocation => GoogleApi.CloudErrorReporting.V1beta1.Model.SourceLocation.t(),
+          :httpRequest =>
+            GoogleApi.CloudErrorReporting.V1beta1.Model.HttpRequestContext.t() | nil,
+          :reportLocation => GoogleApi.CloudErrorReporting.V1beta1.Model.SourceLocation.t() | nil,
           :sourceReferences =>
-            list(GoogleApi.CloudErrorReporting.V1beta1.Model.SourceReference.t()),
-          :user => String.t()
+            list(GoogleApi.CloudErrorReporting.V1beta1.Model.SourceReference.t()) | nil,
+          :user => String.t() | nil
         }
 
   field(:httpRequest, as: GoogleApi.CloudErrorReporting.V1beta1.Model.HttpRequestContext)

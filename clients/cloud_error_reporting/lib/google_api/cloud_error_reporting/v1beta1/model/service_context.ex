@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceType => String.t(),
-          :service => String.t(),
-          :version => String.t()
+          :resourceType => String.t() | nil,
+          :service => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:resourceType)
