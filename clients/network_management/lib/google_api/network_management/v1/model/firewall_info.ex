@@ -34,14 +34,14 @@ defmodule GoogleApi.NetworkManagement.V1.Model.FirewallInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :direction => String.t(),
-          :displayName => String.t(),
-          :networkUri => String.t(),
-          :priority => integer(),
-          :targetServiceAccounts => list(String.t()),
-          :targetTags => list(String.t()),
-          :uri => String.t()
+          :action => String.t() | nil,
+          :direction => String.t() | nil,
+          :displayName => String.t() | nil,
+          :networkUri => String.t() | nil,
+          :priority => integer() | nil,
+          :targetServiceAccounts => list(String.t()) | nil,
+          :targetTags => list(String.t()) | nil,
+          :uri => String.t() | nil
         }
 
   field(:action)

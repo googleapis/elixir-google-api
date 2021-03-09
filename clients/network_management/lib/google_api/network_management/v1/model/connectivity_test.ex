@@ -37,17 +37,18 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ConnectivityTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :destination => GoogleApi.NetworkManagement.V1.Model.Endpoint.t(),
-          :displayName => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :protocol => String.t(),
-          :reachabilityDetails => GoogleApi.NetworkManagement.V1.Model.ReachabilityDetails.t(),
-          :relatedProjects => list(String.t()),
-          :source => GoogleApi.NetworkManagement.V1.Model.Endpoint.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :destination => GoogleApi.NetworkManagement.V1.Model.Endpoint.t() | nil,
+          :displayName => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :protocol => String.t() | nil,
+          :reachabilityDetails =>
+            GoogleApi.NetworkManagement.V1.Model.ReachabilityDetails.t() | nil,
+          :relatedProjects => list(String.t()) | nil,
+          :source => GoogleApi.NetworkManagement.V1.Model.Endpoint.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

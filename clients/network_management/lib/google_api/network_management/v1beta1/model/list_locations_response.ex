@@ -28,8 +28,8 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ListLocationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.NetworkManagement.V1beta1.Model.Location.t()),
-          :nextPageToken => String.t()
+          :locations => list(GoogleApi.NetworkManagement.V1beta1.Model.Location.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locations, as: GoogleApi.NetworkManagement.V1beta1.Model.Location, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.DropInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cause => String.t(),
-          :resourceUri => String.t()
+          :cause => String.t() | nil,
+          :resourceUri => String.t() | nil
         }
 
   field(:cause)

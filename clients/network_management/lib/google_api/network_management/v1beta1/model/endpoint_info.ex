@@ -33,13 +33,13 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationIp => String.t(),
-          :destinationNetworkUri => String.t(),
-          :destinationPort => integer(),
-          :protocol => String.t(),
-          :sourceIp => String.t(),
-          :sourceNetworkUri => String.t(),
-          :sourcePort => integer()
+          :destinationIp => String.t() | nil,
+          :destinationNetworkUri => String.t() | nil,
+          :destinationPort => integer() | nil,
+          :protocol => String.t() | nil,
+          :sourceIp => String.t() | nil,
+          :sourceNetworkUri => String.t() | nil,
+          :sourcePort => integer() | nil
         }
 
   field(:destinationIp)

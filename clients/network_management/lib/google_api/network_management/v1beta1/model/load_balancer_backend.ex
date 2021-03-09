@@ -31,11 +31,11 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerBackend do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :healthCheckAllowingFirewallRules => list(String.t()),
-          :healthCheckBlockingFirewallRules => list(String.t()),
-          :healthCheckFirewallState => String.t(),
-          :uri => String.t()
+          :displayName => String.t() | nil,
+          :healthCheckAllowingFirewallRules => list(String.t()) | nil,
+          :healthCheckBlockingFirewallRules => list(String.t()) | nil,
+          :healthCheckFirewallState => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:displayName)

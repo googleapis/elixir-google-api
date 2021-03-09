@@ -29,9 +29,9 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :matchedIpRange => String.t(),
-          :uri => String.t()
+          :displayName => String.t() | nil,
+          :matchedIpRange => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:displayName)

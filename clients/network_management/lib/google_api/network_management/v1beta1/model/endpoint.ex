@@ -34,14 +34,14 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudSqlInstance => String.t(),
-          :gkeMasterCluster => String.t(),
-          :instance => String.t(),
-          :ipAddress => String.t(),
-          :network => String.t(),
-          :networkType => String.t(),
-          :port => integer(),
-          :projectId => String.t()
+          :cloudSqlInstance => String.t() | nil,
+          :gkeMasterCluster => String.t() | nil,
+          :instance => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :network => String.t() | nil,
+          :networkType => String.t() | nil,
+          :port => integer() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:cloudSqlInstance)

@@ -59,6 +59,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_get(
         connection,
@@ -131,6 +132,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_list(
         connection,
@@ -207,6 +209,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_connectivity_tests_create(
         connection,
@@ -278,6 +281,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_connectivity_tests_delete(
         connection,
@@ -347,6 +351,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.ConnectivityTest.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_connectivity_tests_get(
         connection,
@@ -417,6 +422,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_connectivity_tests_get_iam_policy(
         connection,
@@ -491,6 +497,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.ListConnectivityTestsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_connectivity_tests_list(
         connection,
@@ -568,6 +575,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_connectivity_tests_patch(
         connection,
@@ -640,6 +648,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_connectivity_tests_rerun(
         connection,
@@ -711,6 +720,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_connectivity_tests_set_iam_policy(
         connection,
@@ -782,6 +792,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_connectivity_tests_test_iam_permissions(
         connection,
@@ -855,6 +866,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_operations_cancel(
         connection,
@@ -925,6 +937,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_operations_delete(
         connection,
@@ -994,6 +1007,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_operations_get(
         connection,
@@ -1066,6 +1080,7 @@ defmodule GoogleApi.NetworkManagement.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.NetworkManagement.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def networkmanagement_projects_locations_global_operations_list(
         connection,

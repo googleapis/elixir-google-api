@@ -35,15 +35,15 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.VpnTunnelInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :networkUri => String.t(),
-          :region => String.t(),
-          :remoteGateway => String.t(),
-          :remoteGatewayIp => String.t(),
-          :routingType => String.t(),
-          :sourceGateway => String.t(),
-          :sourceGatewayIp => String.t(),
-          :uri => String.t()
+          :displayName => String.t() | nil,
+          :networkUri => String.t() | nil,
+          :region => String.t() | nil,
+          :remoteGateway => String.t() | nil,
+          :remoteGatewayIp => String.t() | nil,
+          :routingType => String.t() | nil,
+          :sourceGateway => String.t() | nil,
+          :sourceGatewayIp => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:displayName)

@@ -28,7 +28,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution do
 
   @type t :: %__MODULE__{
           :latencyPercentiles =>
-            list(GoogleApi.NetworkManagement.V1beta1.Model.LatencyPercentile.t())
+            list(GoogleApi.NetworkManagement.V1beta1.Model.LatencyPercentile.t()) | nil
         }
 
   field(:latencyPercentiles,

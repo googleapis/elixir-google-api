@@ -30,10 +30,10 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Binding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bindingId => String.t(),
-          :condition => GoogleApi.NetworkManagement.V1.Model.Expr.t(),
-          :members => list(String.t()),
-          :role => String.t()
+          :bindingId => String.t() | nil,
+          :condition => GoogleApi.NetworkManagement.V1.Model.Expr.t() | nil,
+          :members => list(String.t()) | nil,
+          :role => String.t() | nil
         }
 
   field(:bindingId)

@@ -32,12 +32,12 @@ defmodule GoogleApi.NetworkManagement.V1.Model.VpnGatewayInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :ipAddress => String.t(),
-          :networkUri => String.t(),
-          :region => String.t(),
-          :uri => String.t(),
-          :vpnTunnelUri => String.t()
+          :displayName => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :networkUri => String.t() | nil,
+          :region => String.t() | nil,
+          :uri => String.t() | nil,
+          :vpnTunnelUri => String.t() | nil
         }
 
   field(:displayName)

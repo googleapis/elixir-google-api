@@ -32,12 +32,12 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Endpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instance => String.t(),
-          :ipAddress => String.t(),
-          :network => String.t(),
-          :networkType => String.t(),
-          :port => integer(),
-          :projectId => String.t()
+          :instance => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :network => String.t() | nil,
+          :networkType => String.t() | nil,
+          :port => integer() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:instance)

@@ -35,15 +35,15 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destIpRange => String.t(),
-          :displayName => String.t(),
-          :instanceTags => list(String.t()),
-          :networkUri => String.t(),
-          :nextHop => String.t(),
-          :nextHopType => String.t(),
-          :priority => integer(),
-          :routeType => String.t(),
-          :uri => String.t()
+          :destIpRange => String.t() | nil,
+          :displayName => String.t() | nil,
+          :instanceTags => list(String.t()) | nil,
+          :networkUri => String.t() | nil,
+          :nextHop => String.t() | nil,
+          :nextHopType => String.t() | nil,
+          :priority => integer() | nil,
+          :routeType => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:destIpRange)

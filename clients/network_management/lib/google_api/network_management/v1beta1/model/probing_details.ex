@@ -34,14 +34,15 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ProbingDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :abortCause => String.t(),
-          :endpointInfo => GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t(),
-          :error => GoogleApi.NetworkManagement.V1beta1.Model.Status.t(),
-          :probingLatency => GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution.t(),
-          :result => String.t(),
-          :sentProbeCount => integer(),
-          :successfulProbeCount => integer(),
-          :verifyTime => DateTime.t()
+          :abortCause => String.t() | nil,
+          :endpointInfo => GoogleApi.NetworkManagement.V1beta1.Model.EndpointInfo.t() | nil,
+          :error => GoogleApi.NetworkManagement.V1beta1.Model.Status.t() | nil,
+          :probingLatency =>
+            GoogleApi.NetworkManagement.V1beta1.Model.LatencyDistribution.t() | nil,
+          :result => String.t() | nil,
+          :sentProbeCount => integer() | nil,
+          :successfulProbeCount => integer() | nil,
+          :verifyTime => DateTime.t() | nil
         }
 
   field(:abortCause)

@@ -33,13 +33,13 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ForwardingRuleInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :matchedPortRange => String.t(),
-          :matchedProtocol => String.t(),
-          :networkUri => String.t(),
-          :target => String.t(),
-          :uri => String.t(),
-          :vip => String.t()
+          :displayName => String.t() | nil,
+          :matchedPortRange => String.t() | nil,
+          :matchedProtocol => String.t() | nil,
+          :networkUri => String.t() | nil,
+          :target => String.t() | nil,
+          :uri => String.t() | nil,
+          :vip => String.t() | nil
         }
 
   field(:displayName)
