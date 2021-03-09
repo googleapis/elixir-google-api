@@ -30,10 +30,10 @@ defmodule GoogleApi.Storage.V1.Model.BucketCors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxAgeSeconds => integer(),
-          :method => list(String.t()),
-          :origin => list(String.t()),
-          :responseHeader => list(String.t())
+          :maxAgeSeconds => integer() | nil,
+          :method => list(String.t()) | nil,
+          :origin => list(String.t()) | nil,
+          :responseHeader => list(String.t()) | nil
         }
 
   field(:maxAgeSeconds)

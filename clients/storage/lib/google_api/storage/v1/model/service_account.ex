@@ -28,8 +28,8 @@ defmodule GoogleApi.Storage.V1.Model.ServiceAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email_address => String.t(),
-          :kind => String.t()
+          :email_address => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:email_address)

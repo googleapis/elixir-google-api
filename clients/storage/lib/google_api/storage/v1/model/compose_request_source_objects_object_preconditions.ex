@@ -27,7 +27,7 @@ defmodule GoogleApi.Storage.V1.Model.ComposeRequestSourceObjectsObjectPreconditi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ifGenerationMatch => String.t()
+          :ifGenerationMatch => String.t() | nil
         }
 
   field(:ifGenerationMatch)

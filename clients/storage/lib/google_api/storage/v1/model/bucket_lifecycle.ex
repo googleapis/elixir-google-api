@@ -27,7 +27,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rule => list(GoogleApi.Storage.V1.Model.BucketLifecycleRule.t())
+          :rule => list(GoogleApi.Storage.V1.Model.BucketLifecycleRule.t()) | nil
         }
 
   field(:rule, as: GoogleApi.Storage.V1.Model.BucketLifecycleRule, type: :list)

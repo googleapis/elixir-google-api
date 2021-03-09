@@ -31,11 +31,11 @@ defmodule GoogleApi.Storage.V1.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bindings => list(GoogleApi.Storage.V1.Model.PolicyBindings.t()),
-          :etag => String.t(),
-          :kind => String.t(),
-          :resourceId => String.t(),
-          :version => integer()
+          :bindings => list(GoogleApi.Storage.V1.Model.PolicyBindings.t()) | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:bindings, as: GoogleApi.Storage.V1.Model.PolicyBindings, type: :list)

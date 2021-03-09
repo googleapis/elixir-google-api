@@ -56,7 +56,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_compose(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_compose(
         connection,
         destination_bucket,
@@ -144,7 +147,11 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_copy(
         connection,
         source_bucket,
@@ -231,7 +238,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def storage_objects_delete(connection, bucket, object, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -255,7 +262,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.method(:delete)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "object" => URI.encode(object, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -297,7 +304,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_get(connection, bucket, object, optional_params \\ [], opts \\ []) do
     opts =
       if Keyword.get(optional_params, :alt) == "media",
@@ -327,7 +337,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "object" => URI.encode(object, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -369,7 +379,11 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_get_iam_policy(
         connection,
         bucket,
@@ -440,7 +454,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_insert(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -522,7 +539,11 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_insert_iodata(
         connection,
         bucket,
@@ -611,7 +632,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def storage_objects_insert_resumable(
         connection,
         bucket,
@@ -700,7 +721,11 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_insert_simple(
         connection,
         bucket,
@@ -782,7 +807,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Objects.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Objects.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_list(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -853,7 +881,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_patch(connection, bucket, object, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -880,7 +911,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.method(:patch)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "object" => URI.encode(object, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -943,6 +974,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.RewriteResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storage_objects_rewrite(
         connection,
@@ -1034,7 +1066,11 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_set_iam_policy(
         connection,
         bucket,
@@ -1108,6 +1144,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storage_objects_test_iam_permissions(
         connection,
@@ -1180,7 +1217,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_update(connection, bucket, object, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1207,7 +1247,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.method(:put)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "object" => URI.encode(object, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1252,7 +1292,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_watch_all(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Channel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_objects_watch_all(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

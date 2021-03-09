@@ -50,19 +50,19 @@ defmodule GoogleApi.Storage.V1.Model.ObjectAccessControl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucket => String.t(),
-          :domain => String.t(),
-          :email => String.t(),
-          :entity => String.t(),
-          :entityId => String.t(),
-          :etag => String.t(),
-          :generation => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :object => String.t(),
-          :projectTeam => GoogleApi.Storage.V1.Model.ObjectAccessControlProjectTeam.t(),
-          :role => String.t(),
-          :selfLink => String.t()
+          :bucket => String.t() | nil,
+          :domain => String.t() | nil,
+          :email => String.t() | nil,
+          :entity => String.t() | nil,
+          :entityId => String.t() | nil,
+          :etag => String.t() | nil,
+          :generation => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :object => String.t() | nil,
+          :projectTeam => GoogleApi.Storage.V1.Model.ObjectAccessControlProjectTeam.t() | nil,
+          :role => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:bucket)

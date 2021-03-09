@@ -28,8 +28,8 @@ defmodule GoogleApi.Storage.V1.Model.BucketAccessControlProjectTeam do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectNumber => String.t(),
-          :team => String.t()
+          :projectNumber => String.t() | nil,
+          :team => String.t() | nil
         }
 
   field(:projectNumber)

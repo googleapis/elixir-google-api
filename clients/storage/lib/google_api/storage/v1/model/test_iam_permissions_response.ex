@@ -42,8 +42,8 @@ defmodule GoogleApi.Storage.V1.Model.TestIamPermissionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :permissions => list(String.t())
+          :kind => String.t() | nil,
+          :permissions => list(String.t()) | nil
         }
 
   field(:kind)

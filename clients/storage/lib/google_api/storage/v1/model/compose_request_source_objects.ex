@@ -29,10 +29,10 @@ defmodule GoogleApi.Storage.V1.Model.ComposeRequestSourceObjects do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :generation => String.t(),
-          :name => String.t(),
+          :generation => String.t() | nil,
+          :name => String.t() | nil,
           :objectPreconditions =>
-            GoogleApi.Storage.V1.Model.ComposeRequestSourceObjectsObjectPreconditions.t()
+            GoogleApi.Storage.V1.Model.ComposeRequestSourceObjectsObjectPreconditions.t() | nil
         }
 
   field(:generation)

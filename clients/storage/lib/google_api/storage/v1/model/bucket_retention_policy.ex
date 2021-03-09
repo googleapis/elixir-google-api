@@ -29,9 +29,9 @@ defmodule GoogleApi.Storage.V1.Model.BucketRetentionPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :effectiveTime => DateTime.t(),
-          :isLocked => boolean(),
-          :retentionPeriod => String.t()
+          :effectiveTime => DateTime.t() | nil,
+          :isLocked => boolean() | nil,
+          :retentionPeriod => String.t() | nil
         }
 
   field(:effectiveTime, as: DateTime)

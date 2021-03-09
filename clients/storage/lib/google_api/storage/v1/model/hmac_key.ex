@@ -29,9 +29,9 @@ defmodule GoogleApi.Storage.V1.Model.HmacKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :metadata => GoogleApi.Storage.V1.Model.HmacKeyMetadata.t(),
-          :secret => String.t()
+          :kind => String.t() | nil,
+          :metadata => GoogleApi.Storage.V1.Model.HmacKeyMetadata.t() | nil,
+          :secret => String.t() | nil
         }
 
   field(:kind)

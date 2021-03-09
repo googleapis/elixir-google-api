@@ -28,8 +28,8 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRuleAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :storageClass => String.t(),
-          :type => String.t()
+          :storageClass => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:storageClass)

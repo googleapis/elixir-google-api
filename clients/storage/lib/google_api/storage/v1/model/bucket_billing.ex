@@ -27,7 +27,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketBilling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requesterPays => boolean()
+          :requesterPays => boolean() | nil
         }
 
   field(:requesterPays)

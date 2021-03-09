@@ -28,8 +28,8 @@ defmodule GoogleApi.Storage.V1.Model.Notifications do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Storage.V1.Model.Notification.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.Storage.V1.Model.Notification.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Storage.V1.Model.Notification, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Storage.V1.Model.BucketIamConfiguration do
 
   @type t :: %__MODULE__{
           :bucketPolicyOnly =>
-            GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly.t(),
-          :publicAccessPrevention => String.t(),
+            GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly.t() | nil,
+          :publicAccessPrevention => String.t() | nil,
           :uniformBucketLevelAccess =>
-            GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAccess.t()
+            GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAccess.t() | nil
         }
 
   field(:bucketPolicyOnly, as: GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Storage.V1.Model.BucketLogging do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :logBucket => String.t(),
-          :logObjectPrefix => String.t()
+          :logBucket => String.t() | nil,
+          :logObjectPrefix => String.t() | nil
         }
 
   field(:logBucket)

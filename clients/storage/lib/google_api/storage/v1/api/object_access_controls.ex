@@ -59,7 +59,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def storage_object_access_controls_delete(
         connection,
         bucket,
@@ -134,6 +134,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storage_object_access_controls_get(
         connection,
@@ -208,6 +209,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storage_object_access_controls_insert(
         connection,
@@ -280,6 +282,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControls.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storage_object_access_controls_list(
         connection,
@@ -354,6 +357,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storage_object_access_controls_patch(
         connection,
@@ -431,6 +435,7 @@ defmodule GoogleApi.Storage.V1.Api.ObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storage_object_access_controls_update(
         connection,

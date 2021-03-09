@@ -27,7 +27,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketVersioning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean()
+          :enabled => boolean() | nil
         }
 
   field(:enabled)

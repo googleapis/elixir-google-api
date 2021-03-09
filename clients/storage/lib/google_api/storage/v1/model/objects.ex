@@ -30,10 +30,10 @@ defmodule GoogleApi.Storage.V1.Model.Objects do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Storage.V1.Model.Object.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :prefixes => list(String.t())
+          :items => list(GoogleApi.Storage.V1.Model.Object.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :prefixes => list(String.t()) | nil
         }
 
   field(:items, as: GoogleApi.Storage.V1.Model.Object, type: :list)
