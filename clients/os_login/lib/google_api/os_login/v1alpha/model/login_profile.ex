@@ -29,11 +29,10 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.LoginProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :posixAccounts => list(GoogleApi.OSLogin.V1alpha.Model.PosixAccount.t()),
-          :sshPublicKeys => %{
-            optional(String.t()) => GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t()
-          }
+          :name => String.t() | nil,
+          :posixAccounts => list(GoogleApi.OSLogin.V1alpha.Model.PosixAccount.t()) | nil,
+          :sshPublicKeys =>
+            %{optional(String.t()) => GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t()} | nil
         }
 
   field(:name)
