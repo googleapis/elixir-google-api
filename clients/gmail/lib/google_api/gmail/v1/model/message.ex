@@ -35,15 +35,15 @@ defmodule GoogleApi.Gmail.V1.Model.Message do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :historyId => String.t(),
-          :id => String.t(),
-          :internalDate => String.t(),
-          :labelIds => list(String.t()),
-          :payload => GoogleApi.Gmail.V1.Model.MessagePart.t(),
-          :raw => String.t(),
-          :sizeEstimate => integer(),
-          :snippet => String.t(),
-          :threadId => String.t()
+          :historyId => String.t() | nil,
+          :id => String.t() | nil,
+          :internalDate => String.t() | nil,
+          :labelIds => list(String.t()) | nil,
+          :payload => GoogleApi.Gmail.V1.Model.MessagePart.t() | nil,
+          :raw => String.t() | nil,
+          :sizeEstimate => integer() | nil,
+          :snippet => String.t() | nil,
+          :threadId => String.t() | nil
         }
 
   field(:historyId)

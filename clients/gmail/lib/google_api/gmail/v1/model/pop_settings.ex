@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.PopSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessWindow => String.t(),
-          :disposition => String.t()
+          :accessWindow => String.t() | nil,
+          :disposition => String.t() | nil
         }
 
   field(:accessWindow)

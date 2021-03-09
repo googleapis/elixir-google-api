@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.FilterAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addLabelIds => list(String.t()),
-          :forward => String.t(),
-          :removeLabelIds => list(String.t())
+          :addLabelIds => list(String.t()) | nil,
+          :forward => String.t() | nil,
+          :removeLabelIds => list(String.t()) | nil
         }
 
   field(:addLabelIds, type: :list)

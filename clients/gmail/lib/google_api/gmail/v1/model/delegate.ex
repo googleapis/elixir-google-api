@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.Delegate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delegateEmail => String.t(),
-          :verificationStatus => String.t()
+          :delegateEmail => String.t() | nil,
+          :verificationStatus => String.t() | nil
         }
 
   field(:delegateEmail)

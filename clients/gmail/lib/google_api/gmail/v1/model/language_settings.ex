@@ -27,7 +27,7 @@ defmodule GoogleApi.Gmail.V1.Model.LanguageSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayLanguage => String.t()
+          :displayLanguage => String.t() | nil
         }
 
   field(:displayLanguage)

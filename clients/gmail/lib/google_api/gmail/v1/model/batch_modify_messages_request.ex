@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.BatchModifyMessagesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addLabelIds => list(String.t()),
-          :ids => list(String.t()),
-          :removeLabelIds => list(String.t())
+          :addLabelIds => list(String.t()) | nil,
+          :ids => list(String.t()) | nil,
+          :removeLabelIds => list(String.t()) | nil
         }
 
   field(:addLabelIds, type: :list)

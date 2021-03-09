@@ -34,14 +34,14 @@ defmodule GoogleApi.Gmail.V1.Model.VacationSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableAutoReply => boolean(),
-          :endTime => String.t(),
-          :responseBodyHtml => String.t(),
-          :responseBodyPlainText => String.t(),
-          :responseSubject => String.t(),
-          :restrictToContacts => boolean(),
-          :restrictToDomain => boolean(),
-          :startTime => String.t()
+          :enableAutoReply => boolean() | nil,
+          :endTime => String.t() | nil,
+          :responseBodyHtml => String.t() | nil,
+          :responseBodyPlainText => String.t() | nil,
+          :responseSubject => String.t() | nil,
+          :restrictToContacts => boolean() | nil,
+          :restrictToDomain => boolean() | nil,
+          :startTime => String.t() | nil
         }
 
   field(:enableAutoReply)

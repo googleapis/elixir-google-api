@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.ListHistoryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :history => list(GoogleApi.Gmail.V1.Model.History.t()),
-          :historyId => String.t(),
-          :nextPageToken => String.t()
+          :history => list(GoogleApi.Gmail.V1.Model.History.t()) | nil,
+          :historyId => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:history, as: GoogleApi.Gmail.V1.Model.History, type: :list)

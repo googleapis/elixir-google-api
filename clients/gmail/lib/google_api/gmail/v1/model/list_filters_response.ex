@@ -27,7 +27,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListFiltersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => list(GoogleApi.Gmail.V1.Model.Filter.t())
+          :filter => list(GoogleApi.Gmail.V1.Model.Filter.t()) | nil
         }
 
   field(:filter, as: GoogleApi.Gmail.V1.Model.Filter, type: :list)

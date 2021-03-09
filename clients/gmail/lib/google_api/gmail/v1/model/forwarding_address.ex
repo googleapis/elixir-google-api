@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.ForwardingAddress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :forwardingEmail => String.t(),
-          :verificationStatus => String.t()
+          :forwardingEmail => String.t() | nil,
+          :verificationStatus => String.t() | nil
         }
 
   field(:forwardingEmail)

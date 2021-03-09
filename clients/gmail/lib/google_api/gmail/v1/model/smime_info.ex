@@ -33,13 +33,13 @@ defmodule GoogleApi.Gmail.V1.Model.SmimeInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encryptedKeyPassword => String.t(),
-          :expiration => String.t(),
-          :id => String.t(),
-          :isDefault => boolean(),
-          :issuerCn => String.t(),
-          :pem => String.t(),
-          :pkcs12 => String.t()
+          :encryptedKeyPassword => String.t() | nil,
+          :expiration => String.t() | nil,
+          :id => String.t() | nil,
+          :isDefault => boolean() | nil,
+          :issuerCn => String.t() | nil,
+          :pem => String.t() | nil,
+          :pkcs12 => String.t() | nil
         }
 
   field(:encryptedKeyPassword)

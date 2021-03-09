@@ -27,7 +27,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListDelegatesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delegates => list(GoogleApi.Gmail.V1.Model.Delegate.t())
+          :delegates => list(GoogleApi.Gmail.V1.Model.Delegate.t()) | nil
         }
 
   field(:delegates, as: GoogleApi.Gmail.V1.Model.Delegate, type: :list)

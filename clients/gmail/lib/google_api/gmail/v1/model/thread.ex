@@ -30,10 +30,10 @@ defmodule GoogleApi.Gmail.V1.Model.Thread do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :historyId => String.t(),
-          :id => String.t(),
-          :messages => list(GoogleApi.Gmail.V1.Model.Message.t()),
-          :snippet => String.t()
+          :historyId => String.t() | nil,
+          :id => String.t() | nil,
+          :messages => list(GoogleApi.Gmail.V1.Model.Message.t()) | nil,
+          :snippet => String.t() | nil
         }
 
   field(:historyId)

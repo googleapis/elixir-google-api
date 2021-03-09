@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.Filter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => GoogleApi.Gmail.V1.Model.FilterAction.t(),
-          :criteria => GoogleApi.Gmail.V1.Model.FilterCriteria.t(),
-          :id => String.t()
+          :action => GoogleApi.Gmail.V1.Model.FilterAction.t() | nil,
+          :criteria => GoogleApi.Gmail.V1.Model.FilterCriteria.t() | nil,
+          :id => String.t() | nil
         }
 
   field(:action, as: GoogleApi.Gmail.V1.Model.FilterAction)

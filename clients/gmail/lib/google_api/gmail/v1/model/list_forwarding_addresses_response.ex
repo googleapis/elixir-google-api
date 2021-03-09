@@ -27,7 +27,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListForwardingAddressesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :forwardingAddresses => list(GoogleApi.Gmail.V1.Model.ForwardingAddress.t())
+          :forwardingAddresses => list(GoogleApi.Gmail.V1.Model.ForwardingAddress.t()) | nil
         }
 
   field(:forwardingAddresses, as: GoogleApi.Gmail.V1.Model.ForwardingAddress, type: :list)

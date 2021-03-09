@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.Draft do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :message => GoogleApi.Gmail.V1.Model.Message.t()
+          :id => String.t() | nil,
+          :message => GoogleApi.Gmail.V1.Model.Message.t() | nil
         }
 
   field(:id)

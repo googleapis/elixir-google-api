@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.AutoForwarding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disposition => String.t(),
-          :emailAddress => String.t(),
-          :enabled => boolean()
+          :disposition => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :enabled => boolean() | nil
         }
 
   field(:disposition)

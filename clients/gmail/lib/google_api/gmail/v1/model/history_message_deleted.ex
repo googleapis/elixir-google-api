@@ -27,7 +27,7 @@ defmodule GoogleApi.Gmail.V1.Model.HistoryMessageDeleted do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :message => GoogleApi.Gmail.V1.Model.Message.t()
+          :message => GoogleApi.Gmail.V1.Model.Message.t() | nil
         }
 
   field(:message, as: GoogleApi.Gmail.V1.Model.Message)

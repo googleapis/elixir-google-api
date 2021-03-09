@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.WatchResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expiration => String.t(),
-          :historyId => String.t()
+          :expiration => String.t() | nil,
+          :historyId => String.t() | nil
         }
 
   field(:expiration)

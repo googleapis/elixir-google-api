@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.ModifyMessageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addLabelIds => list(String.t()),
-          :removeLabelIds => list(String.t())
+          :addLabelIds => list(String.t()) | nil,
+          :removeLabelIds => list(String.t()) | nil
         }
 
   field(:addLabelIds, type: :list)

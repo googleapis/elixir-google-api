@@ -29,9 +29,9 @@ defmodule GoogleApi.Gmail.V1.Model.MessagePartBody do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attachmentId => String.t(),
-          :data => String.t(),
-          :size => integer()
+          :attachmentId => String.t() | nil,
+          :data => String.t() | nil,
+          :size => integer() | nil
         }
 
   field(:attachmentId)

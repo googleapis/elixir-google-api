@@ -30,10 +30,10 @@ defmodule GoogleApi.Gmail.V1.Model.ImapSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoExpunge => boolean(),
-          :enabled => boolean(),
-          :expungeBehavior => String.t(),
-          :maxFolderSize => integer()
+          :autoExpunge => boolean() | nil,
+          :enabled => boolean() | nil,
+          :expungeBehavior => String.t() | nil,
+          :maxFolderSize => integer() | nil
         }
 
   field(:autoExpunge)
