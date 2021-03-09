@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudProfiler.V2.Model.Profile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deployment => GoogleApi.CloudProfiler.V2.Model.Deployment.t(),
-          :duration => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :profileBytes => String.t(),
-          :profileType => String.t()
+          :deployment => GoogleApi.CloudProfiler.V2.Model.Deployment.t() | nil,
+          :duration => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :profileBytes => String.t() | nil,
+          :profileType => String.t() | nil
         }
 
   field(:deployment, as: GoogleApi.CloudProfiler.V2.Model.Deployment)

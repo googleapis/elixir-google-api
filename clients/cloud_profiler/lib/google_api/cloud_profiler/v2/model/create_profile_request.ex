@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudProfiler.V2.Model.CreateProfileRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deployment => GoogleApi.CloudProfiler.V2.Model.Deployment.t(),
-          :profileType => list(String.t())
+          :deployment => GoogleApi.CloudProfiler.V2.Model.Deployment.t() | nil,
+          :profileType => list(String.t()) | nil
         }
 
   field(:deployment, as: GoogleApi.CloudProfiler.V2.Model.Deployment)

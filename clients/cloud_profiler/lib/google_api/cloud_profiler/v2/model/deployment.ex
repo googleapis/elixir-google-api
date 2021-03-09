@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudProfiler.V2.Model.Deployment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :projectId => String.t(),
-          :target => String.t()
+          :labels => map() | nil,
+          :projectId => String.t() | nil,
+          :target => String.t() | nil
         }
 
   field(:labels, type: :map)
