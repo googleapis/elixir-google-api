@@ -28,8 +28,8 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchRollout do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disruptionBudget => GoogleApi.OSConfig.V1.Model.FixedOrPercent.t(),
-          :mode => String.t()
+          :disruptionBudget => GoogleApi.OSConfig.V1.Model.FixedOrPercent.t() | nil,
+          :mode => String.t() | nil
         }
 
   field(:disruptionBudget, as: GoogleApi.OSConfig.V1.Model.FixedOrPercent)

@@ -28,8 +28,8 @@ defmodule GoogleApi.OSConfig.V1.Model.TimeZone do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :version => String.t()
+          :id => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:id)

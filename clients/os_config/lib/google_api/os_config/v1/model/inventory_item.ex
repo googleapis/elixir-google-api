@@ -33,13 +33,13 @@ defmodule GoogleApi.OSConfig.V1.Model.InventoryItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availablePackage => GoogleApi.OSConfig.V1.Model.InventorySoftwarePackage.t(),
-          :createTime => DateTime.t(),
-          :id => String.t(),
-          :installedPackage => GoogleApi.OSConfig.V1.Model.InventorySoftwarePackage.t(),
-          :originType => String.t(),
-          :type => String.t(),
-          :updateTime => DateTime.t()
+          :availablePackage => GoogleApi.OSConfig.V1.Model.InventorySoftwarePackage.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :installedPackage => GoogleApi.OSConfig.V1.Model.InventorySoftwarePackage.t() | nil,
+          :originType => String.t() | nil,
+          :type => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:availablePackage, as: GoogleApi.OSConfig.V1.Model.InventorySoftwarePackage)

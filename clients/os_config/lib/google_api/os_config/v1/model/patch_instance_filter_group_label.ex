@@ -27,7 +27,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchInstanceFilterGroupLabel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map()
+          :labels => map() | nil
         }
 
   field(:labels, type: :map)

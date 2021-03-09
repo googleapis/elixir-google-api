@@ -35,15 +35,15 @@ defmodule GoogleApi.OSConfig.V1.Model.RecurringSchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :frequency => String.t(),
-          :lastExecuteTime => DateTime.t(),
-          :monthly => GoogleApi.OSConfig.V1.Model.MonthlySchedule.t(),
-          :nextExecuteTime => DateTime.t(),
-          :startTime => DateTime.t(),
-          :timeOfDay => GoogleApi.OSConfig.V1.Model.TimeOfDay.t(),
-          :timeZone => GoogleApi.OSConfig.V1.Model.TimeZone.t(),
-          :weekly => GoogleApi.OSConfig.V1.Model.WeeklySchedule.t()
+          :endTime => DateTime.t() | nil,
+          :frequency => String.t() | nil,
+          :lastExecuteTime => DateTime.t() | nil,
+          :monthly => GoogleApi.OSConfig.V1.Model.MonthlySchedule.t() | nil,
+          :nextExecuteTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :timeOfDay => GoogleApi.OSConfig.V1.Model.TimeOfDay.t() | nil,
+          :timeZone => GoogleApi.OSConfig.V1.Model.TimeZone.t() | nil,
+          :weekly => GoogleApi.OSConfig.V1.Model.WeeklySchedule.t() | nil
         }
 
   field(:endTime, as: DateTime)

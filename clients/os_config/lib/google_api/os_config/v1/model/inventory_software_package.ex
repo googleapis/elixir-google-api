@@ -34,15 +34,15 @@ defmodule GoogleApi.OSConfig.V1.Model.InventorySoftwarePackage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aptPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t(),
-          :cosPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t(),
-          :googetPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t(),
+          :aptPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t() | nil,
+          :cosPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t() | nil,
+          :googetPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t() | nil,
           :qfePackage =>
-            GoogleApi.OSConfig.V1.Model.InventoryWindowsQuickFixEngineeringPackage.t(),
-          :wuaPackage => GoogleApi.OSConfig.V1.Model.InventoryWindowsUpdatePackage.t(),
-          :yumPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t(),
-          :zypperPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t(),
-          :zypperPatch => GoogleApi.OSConfig.V1.Model.InventoryZypperPatch.t()
+            GoogleApi.OSConfig.V1.Model.InventoryWindowsQuickFixEngineeringPackage.t() | nil,
+          :wuaPackage => GoogleApi.OSConfig.V1.Model.InventoryWindowsUpdatePackage.t() | nil,
+          :yumPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t() | nil,
+          :zypperPackage => GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage.t() | nil,
+          :zypperPatch => GoogleApi.OSConfig.V1.Model.InventoryZypperPatch.t() | nil
         }
 
   field(:aptPackage, as: GoogleApi.OSConfig.V1.Model.InventoryVersionedPackage)

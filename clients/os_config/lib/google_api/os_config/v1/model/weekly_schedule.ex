@@ -27,7 +27,7 @@ defmodule GoogleApi.OSConfig.V1.Model.WeeklySchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dayOfWeek => String.t()
+          :dayOfWeek => String.t() | nil
         }
 
   field(:dayOfWeek)

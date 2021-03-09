@@ -28,8 +28,8 @@ defmodule GoogleApi.OSConfig.V1.Model.InventoryWindowsUpdatePackageWindowsUpdate
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t()
+          :id => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:id)

@@ -31,11 +31,11 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attemptCount => String.t(),
-          :failureReason => String.t(),
-          :instanceSystemId => String.t(),
-          :name => String.t(),
-          :state => String.t()
+          :attemptCount => String.t() | nil,
+          :failureReason => String.t() | nil,
+          :instanceSystemId => String.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:attemptCount)

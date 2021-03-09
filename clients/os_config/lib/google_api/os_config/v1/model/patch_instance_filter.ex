@@ -31,11 +31,12 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchInstanceFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :all => boolean(),
-          :groupLabels => list(GoogleApi.OSConfig.V1.Model.PatchInstanceFilterGroupLabel.t()),
-          :instanceNamePrefixes => list(String.t()),
-          :instances => list(String.t()),
-          :zones => list(String.t())
+          :all => boolean() | nil,
+          :groupLabels =>
+            list(GoogleApi.OSConfig.V1.Model.PatchInstanceFilterGroupLabel.t()) | nil,
+          :instanceNamePrefixes => list(String.t()) | nil,
+          :instances => list(String.t()) | nil,
+          :zones => list(String.t()) | nil
         }
 
   field(:all)

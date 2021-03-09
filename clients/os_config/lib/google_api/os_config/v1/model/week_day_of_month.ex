@@ -28,8 +28,8 @@ defmodule GoogleApi.OSConfig.V1.Model.WeekDayOfMonth do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dayOfWeek => String.t(),
-          :weekOrdinal => integer()
+          :dayOfWeek => String.t() | nil,
+          :weekOrdinal => integer() | nil
         }
 
   field(:dayOfWeek)

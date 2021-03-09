@@ -28,9 +28,9 @@ defmodule GoogleApi.OSConfig.V1.Model.ListPatchJobInstanceDetailsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :patchJobInstanceDetails =>
-            list(GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetails.t())
+            list(GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetails.t()) | nil
         }
 
   field(:nextPageToken)
