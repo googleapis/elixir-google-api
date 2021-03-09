@@ -28,8 +28,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ImportFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :name => String.t()
+          :content => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:content)

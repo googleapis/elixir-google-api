@@ -31,11 +31,11 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Type do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :insertTime => String.t(),
-          :name => String.t(),
-          :operation => GoogleApi.DeploymentManager.V2.Model.Operation.t(),
-          :selfLink => String.t()
+          :id => String.t() | nil,
+          :insertTime => String.t() | nil,
+          :name => String.t() | nil,
+          :operation => GoogleApi.DeploymentManager.V2.Model.Operation.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:id)

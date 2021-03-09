@@ -28,8 +28,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ManifestsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :manifests => list(GoogleApi.DeploymentManager.V2.Model.Manifest.t()),
-          :nextPageToken => String.t()
+          :manifests => list(GoogleApi.DeploymentManager.V2.Model.Manifest.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:manifests, as: GoogleApi.DeploymentManager.V2.Model.Manifest, type: :list)

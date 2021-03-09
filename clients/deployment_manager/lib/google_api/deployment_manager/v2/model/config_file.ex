@@ -27,7 +27,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ConfigFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t()
+          :content => String.t() | nil
         }
 
   field(:content)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DeploymentManager.V2.Model.GlobalSetPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bindings => list(GoogleApi.DeploymentManager.V2.Model.Binding.t()),
-          :etag => String.t(),
-          :policy => GoogleApi.DeploymentManager.V2.Model.Policy.t()
+          :bindings => list(GoogleApi.DeploymentManager.V2.Model.Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :policy => GoogleApi.DeploymentManager.V2.Model.Policy.t() | nil
         }
 
   field(:bindings, as: GoogleApi.DeploymentManager.V2.Model.Binding, type: :list)

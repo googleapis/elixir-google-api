@@ -29,9 +29,10 @@ defmodule GoogleApi.DeploymentManager.V2.Model.DeploymentUpdate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :labels => list(GoogleApi.DeploymentManager.V2.Model.DeploymentUpdateLabelEntry.t()),
-          :manifest => String.t()
+          :description => String.t() | nil,
+          :labels =>
+            list(GoogleApi.DeploymentManager.V2.Model.DeploymentUpdateLabelEntry.t()) | nil,
+          :manifest => String.t() | nil
         }
 
   field(:description)
