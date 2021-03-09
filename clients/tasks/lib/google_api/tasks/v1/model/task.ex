@@ -41,21 +41,21 @@ defmodule GoogleApi.Tasks.V1.Model.Task do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completed => String.t(),
-          :deleted => boolean(),
-          :due => String.t(),
-          :etag => String.t(),
-          :hidden => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :links => list(GoogleApi.Tasks.V1.Model.TaskLinks.t()),
-          :notes => String.t(),
-          :parent => String.t(),
-          :position => String.t(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :title => String.t(),
-          :updated => String.t()
+          :completed => String.t() | nil,
+          :deleted => boolean() | nil,
+          :due => String.t() | nil,
+          :etag => String.t() | nil,
+          :hidden => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :links => list(GoogleApi.Tasks.V1.Model.TaskLinks.t()) | nil,
+          :notes => String.t() | nil,
+          :parent => String.t() | nil,
+          :position => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :title => String.t() | nil,
+          :updated => String.t() | nil
         }
 
   field(:completed)

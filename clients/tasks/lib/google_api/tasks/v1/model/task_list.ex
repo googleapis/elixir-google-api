@@ -32,12 +32,12 @@ defmodule GoogleApi.Tasks.V1.Model.TaskList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :selfLink => String.t(),
-          :title => String.t(),
-          :updated => String.t()
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :title => String.t() | nil,
+          :updated => String.t() | nil
         }
 
   field(:etag)
