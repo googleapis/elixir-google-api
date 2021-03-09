@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBilling.V1.Model.ListBillingAccountsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billingAccounts => list(GoogleApi.CloudBilling.V1.Model.BillingAccount.t()),
-          :nextPageToken => String.t()
+          :billingAccounts => list(GoogleApi.CloudBilling.V1.Model.BillingAccount.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:billingAccounts, as: GoogleApi.CloudBilling.V1.Model.BillingAccount, type: :list)

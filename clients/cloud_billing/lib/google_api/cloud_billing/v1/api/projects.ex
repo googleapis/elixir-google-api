@@ -59,6 +59,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudbilling_projects_get_billing_info(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -124,6 +125,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudbilling_projects_update_billing_info(
         connection,

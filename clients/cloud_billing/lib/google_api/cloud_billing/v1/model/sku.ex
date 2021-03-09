@@ -34,14 +34,14 @@ defmodule GoogleApi.CloudBilling.V1.Model.Sku do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => GoogleApi.CloudBilling.V1.Model.Category.t(),
-          :description => String.t(),
-          :geoTaxonomy => GoogleApi.CloudBilling.V1.Model.GeoTaxonomy.t(),
-          :name => String.t(),
-          :pricingInfo => list(GoogleApi.CloudBilling.V1.Model.PricingInfo.t()),
-          :serviceProviderName => String.t(),
-          :serviceRegions => list(String.t()),
-          :skuId => String.t()
+          :category => GoogleApi.CloudBilling.V1.Model.Category.t() | nil,
+          :description => String.t() | nil,
+          :geoTaxonomy => GoogleApi.CloudBilling.V1.Model.GeoTaxonomy.t() | nil,
+          :name => String.t() | nil,
+          :pricingInfo => list(GoogleApi.CloudBilling.V1.Model.PricingInfo.t()) | nil,
+          :serviceProviderName => String.t() | nil,
+          :serviceRegions => list(String.t()) | nil,
+          :skuId => String.t() | nil
         }
 
   field(:category, as: GoogleApi.CloudBilling.V1.Model.Category)

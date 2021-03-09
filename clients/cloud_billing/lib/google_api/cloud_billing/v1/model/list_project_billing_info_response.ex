@@ -28,8 +28,9 @@ defmodule GoogleApi.CloudBilling.V1.Model.ListProjectBillingInfoResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :projectBillingInfo => list(GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t())
+          :nextPageToken => String.t() | nil,
+          :projectBillingInfo =>
+            list(GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()) | nil
         }
 
   field(:nextPageToken)
