@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.BatchWriteSpansRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :spans => list(GoogleApi.CloudTrace.V2.Model.Span.t())
+          :spans => list(GoogleApi.CloudTrace.V2.Model.Span.t()) | nil
         }
 
   field(:spans, as: GoogleApi.CloudTrace.V2.Model.Span, type: :list)

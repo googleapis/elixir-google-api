@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTrace.V1.Model.ListTracesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :traces => list(GoogleApi.CloudTrace.V1.Model.Trace.t())
+          :nextPageToken => String.t() | nil,
+          :traces => list(GoogleApi.CloudTrace.V1.Model.Trace.t()) | nil
         }
 
   field(:nextPageToken)

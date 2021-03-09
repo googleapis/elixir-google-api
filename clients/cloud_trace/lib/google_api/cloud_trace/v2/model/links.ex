@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTrace.V2.Model.Links do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :droppedLinksCount => integer(),
-          :link => list(GoogleApi.CloudTrace.V2.Model.Link.t())
+          :droppedLinksCount => integer() | nil,
+          :link => list(GoogleApi.CloudTrace.V2.Model.Link.t()) | nil
         }
 
   field(:droppedLinksCount)

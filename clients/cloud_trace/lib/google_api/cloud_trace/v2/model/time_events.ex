@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudTrace.V2.Model.TimeEvents do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :droppedAnnotationsCount => integer(),
-          :droppedMessageEventsCount => integer(),
-          :timeEvent => list(GoogleApi.CloudTrace.V2.Model.TimeEvent.t())
+          :droppedAnnotationsCount => integer() | nil,
+          :droppedMessageEventsCount => integer() | nil,
+          :timeEvent => list(GoogleApi.CloudTrace.V2.Model.TimeEvent.t()) | nil
         }
 
   field(:droppedAnnotationsCount)

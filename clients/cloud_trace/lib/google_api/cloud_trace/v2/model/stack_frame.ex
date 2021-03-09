@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudTrace.V2.Model.StackFrame do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnNumber => String.t(),
-          :fileName => GoogleApi.CloudTrace.V2.Model.TruncatableString.t(),
-          :functionName => GoogleApi.CloudTrace.V2.Model.TruncatableString.t(),
-          :lineNumber => String.t(),
-          :loadModule => GoogleApi.CloudTrace.V2.Model.Module.t(),
-          :originalFunctionName => GoogleApi.CloudTrace.V2.Model.TruncatableString.t(),
-          :sourceVersion => GoogleApi.CloudTrace.V2.Model.TruncatableString.t()
+          :columnNumber => String.t() | nil,
+          :fileName => GoogleApi.CloudTrace.V2.Model.TruncatableString.t() | nil,
+          :functionName => GoogleApi.CloudTrace.V2.Model.TruncatableString.t() | nil,
+          :lineNumber => String.t() | nil,
+          :loadModule => GoogleApi.CloudTrace.V2.Model.Module.t() | nil,
+          :originalFunctionName => GoogleApi.CloudTrace.V2.Model.TruncatableString.t() | nil,
+          :sourceVersion => GoogleApi.CloudTrace.V2.Model.TruncatableString.t() | nil
         }
 
   field(:columnNumber)

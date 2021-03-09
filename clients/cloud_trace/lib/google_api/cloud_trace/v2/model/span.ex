@@ -40,20 +40,20 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => GoogleApi.CloudTrace.V2.Model.Attributes.t(),
-          :childSpanCount => integer(),
-          :displayName => GoogleApi.CloudTrace.V2.Model.TruncatableString.t(),
-          :endTime => DateTime.t(),
-          :links => GoogleApi.CloudTrace.V2.Model.Links.t(),
-          :name => String.t(),
-          :parentSpanId => String.t(),
-          :sameProcessAsParentSpan => boolean(),
-          :spanId => String.t(),
-          :spanKind => String.t(),
-          :stackTrace => GoogleApi.CloudTrace.V2.Model.StackTrace.t(),
-          :startTime => DateTime.t(),
-          :status => GoogleApi.CloudTrace.V2.Model.Status.t(),
-          :timeEvents => GoogleApi.CloudTrace.V2.Model.TimeEvents.t()
+          :attributes => GoogleApi.CloudTrace.V2.Model.Attributes.t() | nil,
+          :childSpanCount => integer() | nil,
+          :displayName => GoogleApi.CloudTrace.V2.Model.TruncatableString.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :links => GoogleApi.CloudTrace.V2.Model.Links.t() | nil,
+          :name => String.t() | nil,
+          :parentSpanId => String.t() | nil,
+          :sameProcessAsParentSpan => boolean() | nil,
+          :spanId => String.t() | nil,
+          :spanKind => String.t() | nil,
+          :stackTrace => GoogleApi.CloudTrace.V2.Model.StackTrace.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :status => GoogleApi.CloudTrace.V2.Model.Status.t() | nil,
+          :timeEvents => GoogleApi.CloudTrace.V2.Model.TimeEvents.t() | nil
         }
 
   field(:attributes, as: GoogleApi.CloudTrace.V2.Model.Attributes)

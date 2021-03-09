@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudTrace.V2.Model.MessageEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compressedSizeBytes => String.t(),
-          :id => String.t(),
-          :type => String.t(),
-          :uncompressedSizeBytes => String.t()
+          :compressedSizeBytes => String.t() | nil,
+          :id => String.t() | nil,
+          :type => String.t() | nil,
+          :uncompressedSizeBytes => String.t() | nil
         }
 
   field(:compressedSizeBytes)

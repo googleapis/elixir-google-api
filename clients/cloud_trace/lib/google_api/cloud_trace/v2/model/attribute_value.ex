@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudTrace.V2.Model.AttributeValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :intValue => String.t(),
-          :stringValue => GoogleApi.CloudTrace.V2.Model.TruncatableString.t()
+          :boolValue => boolean() | nil,
+          :intValue => String.t() | nil,
+          :stringValue => GoogleApi.CloudTrace.V2.Model.TruncatableString.t() | nil
         }
 
   field(:boolValue)

@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudTrace.V2.Model.Link do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => GoogleApi.CloudTrace.V2.Model.Attributes.t(),
-          :spanId => String.t(),
-          :traceId => String.t(),
-          :type => String.t()
+          :attributes => GoogleApi.CloudTrace.V2.Model.Attributes.t() | nil,
+          :spanId => String.t() | nil,
+          :traceId => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:attributes, as: GoogleApi.CloudTrace.V2.Model.Attributes)

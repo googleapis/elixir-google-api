@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudTrace.V1.Model.Traces do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :traces => list(GoogleApi.CloudTrace.V1.Model.Trace.t())
+          :traces => list(GoogleApi.CloudTrace.V1.Model.Trace.t()) | nil
         }
 
   field(:traces, as: GoogleApi.CloudTrace.V1.Model.Trace, type: :list)
