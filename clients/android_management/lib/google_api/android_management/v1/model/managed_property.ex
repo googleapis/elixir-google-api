@@ -33,13 +33,14 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ManagedProperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultValue => any(),
-          :description => String.t(),
-          :entries => list(GoogleApi.AndroidManagement.V1.Model.ManagedPropertyEntry.t()),
-          :key => String.t(),
-          :nestedProperties => list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t()),
-          :title => String.t(),
-          :type => String.t()
+          :defaultValue => any() | nil,
+          :description => String.t() | nil,
+          :entries => list(GoogleApi.AndroidManagement.V1.Model.ManagedPropertyEntry.t()) | nil,
+          :key => String.t() | nil,
+          :nestedProperties =>
+            list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t()) | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:defaultValue)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.TermsAndConditions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
-          :header => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t()
+          :content => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
+          :header => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil
         }
 
   field(:content, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)

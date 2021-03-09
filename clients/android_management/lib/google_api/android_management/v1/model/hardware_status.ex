@@ -33,13 +33,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.HardwareStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batteryTemperatures => list(number()),
-          :cpuTemperatures => list(number()),
-          :cpuUsages => list(number()),
-          :createTime => DateTime.t(),
-          :fanSpeeds => list(number()),
-          :gpuTemperatures => list(number()),
-          :skinTemperatures => list(number())
+          :batteryTemperatures => list(number()) | nil,
+          :cpuTemperatures => list(number()) | nil,
+          :cpuUsages => list(number()) | nil,
+          :createTime => DateTime.t() | nil,
+          :fanSpeeds => list(number()) | nil,
+          :gpuTemperatures => list(number()) | nil,
+          :skinTemperatures => list(number()) | nil
         }
 
   field(:batteryTemperatures, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.FreezePeriod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => GoogleApi.AndroidManagement.V1.Model.Date.t(),
-          :startDate => GoogleApi.AndroidManagement.V1.Model.Date.t()
+          :endDate => GoogleApi.AndroidManagement.V1.Model.Date.t() | nil,
+          :startDate => GoogleApi.AndroidManagement.V1.Model.Date.t() | nil
         }
 
   field(:endDate, as: GoogleApi.AndroidManagement.V1.Model.Date)

@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PackageNameList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :packageNames => list(String.t())
+          :packageNames => list(String.t()) | nil
         }
 
   field(:packageNames, type: :list)

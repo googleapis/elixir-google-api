@@ -33,13 +33,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.DeviceSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adbEnabled => boolean(),
-          :developmentSettingsEnabled => boolean(),
-          :encryptionStatus => String.t(),
-          :isDeviceSecure => boolean(),
-          :isEncrypted => boolean(),
-          :unknownSourcesEnabled => boolean(),
-          :verifyAppsEnabled => boolean()
+          :adbEnabled => boolean() | nil,
+          :developmentSettingsEnabled => boolean() | nil,
+          :encryptionStatus => String.t() | nil,
+          :isDeviceSecure => boolean() | nil,
+          :isEncrypted => boolean() | nil,
+          :unknownSourcesEnabled => boolean() | nil,
+          :verifyAppsEnabled => boolean() | nil
         }
 
   field(:adbEnabled)

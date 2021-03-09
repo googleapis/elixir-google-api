@@ -33,13 +33,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ContactInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactEmail => String.t(),
-          :dataProtectionOfficerEmail => String.t(),
-          :dataProtectionOfficerName => String.t(),
-          :dataProtectionOfficerPhone => String.t(),
-          :euRepresentativeEmail => String.t(),
-          :euRepresentativeName => String.t(),
-          :euRepresentativePhone => String.t()
+          :contactEmail => String.t() | nil,
+          :dataProtectionOfficerEmail => String.t() | nil,
+          :dataProtectionOfficerName => String.t() | nil,
+          :dataProtectionOfficerPhone => String.t() | nil,
+          :euRepresentativeEmail => String.t() | nil,
+          :euRepresentativeName => String.t() | nil,
+          :euRepresentativePhone => String.t() | nil
         }
 
   field(:contactEmail)

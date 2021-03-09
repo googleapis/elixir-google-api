@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PermissionGrant do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permission => String.t(),
-          :policy => String.t()
+          :permission => String.t() | nil,
+          :policy => String.t() | nil
         }
 
   field(:permission)

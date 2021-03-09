@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SecurityPosture do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :devicePosture => String.t(),
-          :postureDetails => list(GoogleApi.AndroidManagement.V1.Model.PostureDetail.t())
+          :devicePosture => String.t() | nil,
+          :postureDetails => list(GoogleApi.AndroidManagement.V1.Model.PostureDetail.t()) | nil
         }
 
   field(:devicePosture)

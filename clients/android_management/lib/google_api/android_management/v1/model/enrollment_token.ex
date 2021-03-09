@@ -36,16 +36,16 @@ defmodule GoogleApi.AndroidManagement.V1.Model.EnrollmentToken do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalData => String.t(),
-          :allowPersonalUsage => String.t(),
-          :duration => String.t(),
-          :expirationTimestamp => DateTime.t(),
-          :name => String.t(),
-          :oneTimeOnly => boolean(),
-          :policyName => String.t(),
-          :qrCode => String.t(),
-          :user => GoogleApi.AndroidManagement.V1.Model.User.t(),
-          :value => String.t()
+          :additionalData => String.t() | nil,
+          :allowPersonalUsage => String.t() | nil,
+          :duration => String.t() | nil,
+          :expirationTimestamp => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :oneTimeOnly => boolean() | nil,
+          :policyName => String.t() | nil,
+          :qrCode => String.t() | nil,
+          :user => GoogleApi.AndroidManagement.V1.Model.User.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:additionalData)

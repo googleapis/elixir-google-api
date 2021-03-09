@@ -32,12 +32,12 @@ defmodule GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentValue => any(),
-          :fieldPath => String.t(),
-          :installationFailureReason => String.t(),
-          :nonComplianceReason => String.t(),
-          :packageName => String.t(),
-          :settingName => String.t()
+          :currentValue => any() | nil,
+          :fieldPath => String.t() | nil,
+          :installationFailureReason => String.t() | nil,
+          :nonComplianceReason => String.t() | nil,
+          :packageName => String.t() | nil,
+          :settingName => String.t() | nil
         }
 
   field(:currentValue)

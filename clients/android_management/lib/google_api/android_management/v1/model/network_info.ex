@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidManagement.V1.Model.NetworkInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imei => String.t(),
-          :meid => String.t(),
-          :networkOperatorName => String.t(),
-          :telephonyInfos => list(GoogleApi.AndroidManagement.V1.Model.TelephonyInfo.t()),
-          :wifiMacAddress => String.t()
+          :imei => String.t() | nil,
+          :meid => String.t() | nil,
+          :networkOperatorName => String.t() | nil,
+          :telephonyInfos => list(GoogleApi.AndroidManagement.V1.Model.TelephonyInfo.t()) | nil,
+          :wifiMacAddress => String.t() | nil
         }
 
   field(:imei)

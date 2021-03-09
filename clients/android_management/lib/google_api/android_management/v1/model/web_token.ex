@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidManagement.V1.Model.WebToken do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabledFeatures => list(String.t()),
-          :name => String.t(),
-          :parentFrameUrl => String.t(),
-          :permissions => list(String.t()),
-          :value => String.t()
+          :enabledFeatures => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :parentFrameUrl => String.t() | nil,
+          :permissions => list(String.t()) | nil,
+          :value => String.t() | nil
         }
 
   field(:enabledFeatures, type: :list)

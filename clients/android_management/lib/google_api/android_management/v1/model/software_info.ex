@@ -37,17 +37,17 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SoftwareInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidBuildNumber => String.t(),
-          :androidBuildTime => DateTime.t(),
-          :androidDevicePolicyVersionCode => integer(),
-          :androidDevicePolicyVersionName => String.t(),
-          :androidVersion => String.t(),
-          :bootloaderVersion => String.t(),
-          :deviceBuildSignature => String.t(),
-          :deviceKernelVersion => String.t(),
-          :primaryLanguageCode => String.t(),
-          :securityPatchLevel => String.t(),
-          :systemUpdateInfo => GoogleApi.AndroidManagement.V1.Model.SystemUpdateInfo.t()
+          :androidBuildNumber => String.t() | nil,
+          :androidBuildTime => DateTime.t() | nil,
+          :androidDevicePolicyVersionCode => integer() | nil,
+          :androidDevicePolicyVersionName => String.t() | nil,
+          :androidVersion => String.t() | nil,
+          :bootloaderVersion => String.t() | nil,
+          :deviceBuildSignature => String.t() | nil,
+          :deviceKernelVersion => String.t() | nil,
+          :primaryLanguageCode => String.t() | nil,
+          :securityPatchLevel => String.t() | nil,
+          :systemUpdateInfo => GoogleApi.AndroidManagement.V1.Model.SystemUpdateInfo.t() | nil
         }
 
   field(:androidBuildNumber)

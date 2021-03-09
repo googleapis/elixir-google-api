@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ListEnterprisesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enterprises => list(GoogleApi.AndroidManagement.V1.Model.Enterprise.t()),
-          :nextPageToken => String.t()
+          :enterprises => list(GoogleApi.AndroidManagement.V1.Model.Enterprise.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:enterprises, as: GoogleApi.AndroidManagement.V1.Model.Enterprise, type: :list)

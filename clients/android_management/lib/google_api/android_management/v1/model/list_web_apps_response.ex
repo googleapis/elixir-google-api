@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ListWebAppsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :webApps => list(GoogleApi.AndroidManagement.V1.Model.WebApp.t())
+          :nextPageToken => String.t() | nil,
+          :webApps => list(GoogleApi.AndroidManagement.V1.Model.WebApp.t()) | nil
         }
 
   field(:nextPageToken)

@@ -32,13 +32,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountTypesWithManagementDisabled => list(String.t()),
-          :cameraDisabled => boolean(),
-          :maxDaysWithWorkOff => integer(),
+          :accountTypesWithManagementDisabled => list(String.t()) | nil,
+          :cameraDisabled => boolean() | nil,
+          :maxDaysWithWorkOff => integer() | nil,
           :personalApplications =>
-            list(GoogleApi.AndroidManagement.V1.Model.PersonalApplicationPolicy.t()),
-          :personalPlayStoreMode => String.t(),
-          :screenCaptureDisabled => boolean()
+            list(GoogleApi.AndroidManagement.V1.Model.PersonalApplicationPolicy.t()) | nil,
+          :personalPlayStoreMode => String.t() | nil,
+          :screenCaptureDisabled => boolean() | nil
         }
 
   field(:accountTypesWithManagementDisabled, type: :list)

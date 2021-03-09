@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commonCriteriaMode => String.t(),
-          :untrustedAppsPolicy => String.t()
+          :commonCriteriaMode => String.t() | nil,
+          :untrustedAppsPolicy => String.t() | nil
         }
 
   field(:commonCriteriaMode)

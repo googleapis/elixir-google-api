@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blockAction => GoogleApi.AndroidManagement.V1.Model.BlockAction.t(),
-          :settingName => String.t(),
-          :wipeAction => GoogleApi.AndroidManagement.V1.Model.WipeAction.t()
+          :blockAction => GoogleApi.AndroidManagement.V1.Model.BlockAction.t() | nil,
+          :settingName => String.t() | nil,
+          :wipeAction => GoogleApi.AndroidManagement.V1.Model.WipeAction.t() | nil
         }
 
   field(:blockAction, as: GoogleApi.AndroidManagement.V1.Model.BlockAction)

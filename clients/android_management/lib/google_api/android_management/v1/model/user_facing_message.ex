@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.UserFacingMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultMessage => String.t(),
-          :localizedMessages => map()
+          :defaultMessage => String.t() | nil,
+          :localizedMessages => map() | nil
         }
 
   field(:defaultMessage)

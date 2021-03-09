@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actions => list(String.t()),
-          :categories => list(String.t()),
-          :receiverActivity => String.t()
+          :actions => list(String.t()) | nil,
+          :categories => list(String.t()) | nil,
+          :receiverActivity => String.t() | nil
         }
 
   field(:actions, type: :list)

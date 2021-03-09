@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SystemUpdateInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :updateReceivedTime => DateTime.t(),
-          :updateStatus => String.t()
+          :updateReceivedTime => DateTime.t() | nil,
+          :updateStatus => String.t() | nil
         }
 
   field(:updateReceivedTime, as: DateTime)

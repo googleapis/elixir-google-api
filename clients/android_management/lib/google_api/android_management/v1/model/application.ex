@@ -31,11 +31,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Application do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appTracks => list(GoogleApi.AndroidManagement.V1.Model.AppTrackInfo.t()),
-          :managedProperties => list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t()),
-          :name => String.t(),
-          :permissions => list(GoogleApi.AndroidManagement.V1.Model.ApplicationPermission.t()),
-          :title => String.t()
+          :appTracks => list(GoogleApi.AndroidManagement.V1.Model.AppTrackInfo.t()) | nil,
+          :managedProperties =>
+            list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t()) | nil,
+          :name => String.t() | nil,
+          :permissions =>
+            list(GoogleApi.AndroidManagement.V1.Model.ApplicationPermission.t()) | nil,
+          :title => String.t() | nil
         }
 
   field(:appTracks, as: GoogleApi.AndroidManagement.V1.Model.AppTrackInfo, type: :list)

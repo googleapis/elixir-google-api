@@ -39,19 +39,19 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maximumFailedPasswordsForWipe => integer(),
-          :passwordExpirationTimeout => String.t(),
-          :passwordHistoryLength => integer(),
-          :passwordMinimumLength => integer(),
-          :passwordMinimumLetters => integer(),
-          :passwordMinimumLowerCase => integer(),
-          :passwordMinimumNonLetter => integer(),
-          :passwordMinimumNumeric => integer(),
-          :passwordMinimumSymbols => integer(),
-          :passwordMinimumUpperCase => integer(),
-          :passwordQuality => String.t(),
-          :passwordScope => String.t(),
-          :requirePasswordUnlock => String.t()
+          :maximumFailedPasswordsForWipe => integer() | nil,
+          :passwordExpirationTimeout => String.t() | nil,
+          :passwordHistoryLength => integer() | nil,
+          :passwordMinimumLength => integer() | nil,
+          :passwordMinimumLetters => integer() | nil,
+          :passwordMinimumLowerCase => integer() | nil,
+          :passwordMinimumNonLetter => integer() | nil,
+          :passwordMinimumNumeric => integer() | nil,
+          :passwordMinimumSymbols => integer() | nil,
+          :passwordMinimumUpperCase => integer() | nil,
+          :passwordQuality => String.t() | nil,
+          :passwordScope => String.t() | nil,
+          :requirePasswordUnlock => String.t() | nil
         }
 
   field(:maximumFailedPasswordsForWipe)

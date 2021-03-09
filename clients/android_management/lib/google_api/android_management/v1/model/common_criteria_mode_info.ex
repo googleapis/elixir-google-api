@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commonCriteriaModeStatus => String.t()
+          :commonCriteriaModeStatus => String.t() | nil
         }
 
   field(:commonCriteriaModeStatus)

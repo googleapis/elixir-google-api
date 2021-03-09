@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SystemUpdate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endMinutes => integer(),
-          :freezePeriods => list(GoogleApi.AndroidManagement.V1.Model.FreezePeriod.t()),
-          :startMinutes => integer(),
-          :type => String.t()
+          :endMinutes => integer() | nil,
+          :freezePeriods => list(GoogleApi.AndroidManagement.V1.Model.FreezePeriod.t()) | nil,
+          :startMinutes => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:endMinutes)

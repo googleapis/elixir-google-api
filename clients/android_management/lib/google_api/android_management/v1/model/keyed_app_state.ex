@@ -32,12 +32,12 @@ defmodule GoogleApi.AndroidManagement.V1.Model.KeyedAppState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :data => String.t(),
-          :key => String.t(),
-          :lastUpdateTime => DateTime.t(),
-          :message => String.t(),
-          :severity => String.t()
+          :createTime => DateTime.t() | nil,
+          :data => String.t() | nil,
+          :key => String.t() | nil,
+          :lastUpdateTime => DateTime.t() | nil,
+          :message => String.t() | nil,
+          :severity => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PostureDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advice => list(GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t()),
-          :securityRisk => String.t()
+          :advice => list(GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t()) | nil,
+          :securityRisk => String.t() | nil
         }
 
   field(:advice, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage, type: :list)
