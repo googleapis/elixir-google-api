@@ -29,9 +29,9 @@ defmodule GoogleApi.Reseller.V1.Model.Subscriptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :subscriptions => list(GoogleApi.Reseller.V1.Model.Subscription.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :subscriptions => list(GoogleApi.Reseller.V1.Model.Subscription.t()) | nil
         }
 
   field(:kind)

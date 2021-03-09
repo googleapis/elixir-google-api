@@ -28,8 +28,8 @@ defmodule GoogleApi.Reseller.V1.Model.RenewalSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :renewalType => String.t()
+          :kind => String.t() | nil,
+          :renewalType => String.t() | nil
         }
 
   field(:kind)

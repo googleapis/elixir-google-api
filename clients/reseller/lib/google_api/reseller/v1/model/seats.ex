@@ -30,10 +30,10 @@ defmodule GoogleApi.Reseller.V1.Model.Seats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :licensedNumberOfSeats => integer(),
-          :maximumNumberOfSeats => integer(),
-          :numberOfSeats => integer()
+          :kind => String.t() | nil,
+          :licensedNumberOfSeats => integer() | nil,
+          :maximumNumberOfSeats => integer() | nil,
+          :numberOfSeats => integer() | nil
         }
 
   field(:kind)

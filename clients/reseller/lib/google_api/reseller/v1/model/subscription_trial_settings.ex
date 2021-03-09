@@ -28,8 +28,8 @@ defmodule GoogleApi.Reseller.V1.Model.SubscriptionTrialSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isInTrial => boolean(),
-          :trialEndTime => String.t()
+          :isInTrial => boolean() | nil,
+          :trialEndTime => String.t() | nil
         }
 
   field(:isInTrial)

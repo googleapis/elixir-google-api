@@ -28,8 +28,8 @@ defmodule GoogleApi.Reseller.V1.Model.SubscriptionPlanCommitmentInterval do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => String.t(),
-          :startTime => String.t()
+          :endTime => String.t() | nil,
+          :startTime => String.t() | nil
         }
 
   field(:endTime)

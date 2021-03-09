@@ -44,24 +44,24 @@ defmodule GoogleApi.Reseller.V1.Model.Subscription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billingMethod => String.t(),
-          :creationTime => String.t(),
-          :customerDomain => String.t(),
-          :customerId => String.t(),
-          :dealCode => String.t(),
-          :kind => String.t(),
-          :plan => GoogleApi.Reseller.V1.Model.SubscriptionPlan.t(),
-          :purchaseOrderId => String.t(),
-          :renewalSettings => GoogleApi.Reseller.V1.Model.RenewalSettings.t(),
-          :resourceUiUrl => String.t(),
-          :seats => GoogleApi.Reseller.V1.Model.Seats.t(),
-          :skuId => String.t(),
-          :skuName => String.t(),
-          :status => String.t(),
-          :subscriptionId => String.t(),
-          :suspensionReasons => list(String.t()),
-          :transferInfo => GoogleApi.Reseller.V1.Model.SubscriptionTransferInfo.t(),
-          :trialSettings => GoogleApi.Reseller.V1.Model.SubscriptionTrialSettings.t()
+          :billingMethod => String.t() | nil,
+          :creationTime => String.t() | nil,
+          :customerDomain => String.t() | nil,
+          :customerId => String.t() | nil,
+          :dealCode => String.t() | nil,
+          :kind => String.t() | nil,
+          :plan => GoogleApi.Reseller.V1.Model.SubscriptionPlan.t() | nil,
+          :purchaseOrderId => String.t() | nil,
+          :renewalSettings => GoogleApi.Reseller.V1.Model.RenewalSettings.t() | nil,
+          :resourceUiUrl => String.t() | nil,
+          :seats => GoogleApi.Reseller.V1.Model.Seats.t() | nil,
+          :skuId => String.t() | nil,
+          :skuName => String.t() | nil,
+          :status => String.t() | nil,
+          :subscriptionId => String.t() | nil,
+          :suspensionReasons => list(String.t()) | nil,
+          :transferInfo => GoogleApi.Reseller.V1.Model.SubscriptionTransferInfo.t() | nil,
+          :trialSettings => GoogleApi.Reseller.V1.Model.SubscriptionTrialSettings.t() | nil
         }
 
   field(:billingMethod)
