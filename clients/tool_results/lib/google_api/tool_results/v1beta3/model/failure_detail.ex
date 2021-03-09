@@ -33,13 +33,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.FailureDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :crashed => boolean(),
-          :deviceOutOfMemory => boolean(),
-          :failedRoboscript => boolean(),
-          :notInstalled => boolean(),
-          :otherNativeCrash => boolean(),
-          :timedOut => boolean(),
-          :unableToCrawl => boolean()
+          :crashed => boolean() | nil,
+          :deviceOutOfMemory => boolean() | nil,
+          :failedRoboscript => boolean() | nil,
+          :notInstalled => boolean() | nil,
+          :otherNativeCrash => boolean() | nil,
+          :timedOut => boolean() | nil,
+          :unableToCrawl => boolean() | nil
         }
 
   field(:crashed)

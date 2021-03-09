@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.IosAppInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t()
+          :name => String.t() | nil
         }
 
   field(:name)

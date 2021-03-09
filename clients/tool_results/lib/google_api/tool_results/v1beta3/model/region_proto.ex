@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.RegionProto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :heightPx => integer(),
-          :leftPx => integer(),
-          :topPx => integer(),
-          :widthPx => integer()
+          :heightPx => integer() | nil,
+          :leftPx => integer() | nil,
+          :topPx => integer() | nil,
+          :widthPx => integer() | nil
         }
 
   field(:heightPx)

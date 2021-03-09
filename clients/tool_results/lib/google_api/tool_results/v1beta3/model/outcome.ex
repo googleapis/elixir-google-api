@@ -31,11 +31,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Outcome do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failureDetail => GoogleApi.ToolResults.V1beta3.Model.FailureDetail.t(),
-          :inconclusiveDetail => GoogleApi.ToolResults.V1beta3.Model.InconclusiveDetail.t(),
-          :skippedDetail => GoogleApi.ToolResults.V1beta3.Model.SkippedDetail.t(),
-          :successDetail => GoogleApi.ToolResults.V1beta3.Model.SuccessDetail.t(),
-          :summary => String.t()
+          :failureDetail => GoogleApi.ToolResults.V1beta3.Model.FailureDetail.t() | nil,
+          :inconclusiveDetail => GoogleApi.ToolResults.V1beta3.Model.InconclusiveDetail.t() | nil,
+          :skippedDetail => GoogleApi.ToolResults.V1beta3.Model.SkippedDetail.t() | nil,
+          :successDetail => GoogleApi.ToolResults.V1beta3.Model.SuccessDetail.t() | nil,
+          :summary => String.t() | nil
         }
 
   field(:failureDetail, as: GoogleApi.ToolResults.V1beta3.Model.FailureDetail)

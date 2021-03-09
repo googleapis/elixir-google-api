@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.BlankScreen do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :screenId => String.t()
+          :screenId => String.t() | nil
         }
 
   field(:screenId)

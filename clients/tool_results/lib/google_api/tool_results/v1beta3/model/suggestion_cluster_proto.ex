@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.SuggestionClusterProto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :suggestions => list(GoogleApi.ToolResults.V1beta3.Model.SuggestionProto.t())
+          :category => String.t() | nil,
+          :suggestions => list(GoogleApi.ToolResults.V1beta3.Model.SuggestionProto.t()) | nil
         }
 
   field(:category)

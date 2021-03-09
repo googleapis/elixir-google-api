@@ -29,9 +29,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.MultiStep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :multistepNumber => integer(),
-          :primaryStep => GoogleApi.ToolResults.V1beta3.Model.PrimaryStep.t(),
-          :primaryStepId => String.t()
+          :multistepNumber => integer() | nil,
+          :primaryStep => GoogleApi.ToolResults.V1beta3.Model.PrimaryStep.t() | nil,
+          :primaryStepId => String.t() | nil
         }
 
   field(:multistepNumber)

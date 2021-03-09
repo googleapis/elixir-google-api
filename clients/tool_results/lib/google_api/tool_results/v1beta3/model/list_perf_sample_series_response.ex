@@ -27,7 +27,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListPerfSampleSeriesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :perfSampleSeries => list(GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries.t())
+          :perfSampleSeries =>
+            list(GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries.t()) | nil
         }
 
   field(:perfSampleSeries, as: GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries, type: :list)

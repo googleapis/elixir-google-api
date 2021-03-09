@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestTiming do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :testProcessDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t()
+          :testProcessDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil
         }
 
   field(:testProcessDuration, as: GoogleApi.ToolResults.V1beta3.Model.Duration)

@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListScreenshotClustersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusters => list(GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster.t())
+          :clusters => list(GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster.t()) | nil
         }
 
   field(:clusters, as: GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster, type: :list)

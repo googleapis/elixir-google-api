@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.MemoryInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :memoryCapInKibibyte => String.t(),
-          :memoryTotalInKibibyte => String.t()
+          :memoryCapInKibibyte => String.t() | nil,
+          :memoryTotalInKibibyte => String.t() | nil
         }
 
   field(:memoryCapInKibibyte)

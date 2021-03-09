@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ResultsStorage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resultsStoragePath => GoogleApi.ToolResults.V1beta3.Model.FileReference.t(),
-          :xunitXmlFile => GoogleApi.ToolResults.V1beta3.Model.FileReference.t()
+          :resultsStoragePath => GoogleApi.ToolResults.V1beta3.Model.FileReference.t() | nil,
+          :xunitXmlFile => GoogleApi.ToolResults.V1beta3.Model.FileReference.t() | nil
         }
 
   field(:resultsStoragePath, as: GoogleApi.ToolResults.V1beta3.Model.FileReference)

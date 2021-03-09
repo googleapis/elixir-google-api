@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ProjectSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultBucket => String.t(),
-          :name => String.t()
+          :defaultBucket => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:defaultBucket)

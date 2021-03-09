@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.NonSdkApiUsageViolation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiSignatures => list(String.t()),
-          :uniqueApis => integer()
+          :apiSignatures => list(String.t()) | nil,
+          :uniqueApis => integer() | nil
         }
 
   field(:apiSignatures, type: :list)

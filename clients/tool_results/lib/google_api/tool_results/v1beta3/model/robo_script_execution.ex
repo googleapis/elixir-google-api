@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.RoboScriptExecution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :successfulActions => integer(),
-          :totalActions => integer()
+          :successfulActions => integer() | nil,
+          :totalActions => integer() | nil
         }
 
   field(:successfulActions)

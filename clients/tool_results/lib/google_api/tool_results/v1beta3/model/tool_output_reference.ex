@@ -29,9 +29,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
-          :output => GoogleApi.ToolResults.V1beta3.Model.FileReference.t(),
-          :testCase => GoogleApi.ToolResults.V1beta3.Model.TestCaseReference.t()
+          :creationTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
+          :output => GoogleApi.ToolResults.V1beta3.Model.FileReference.t() | nil,
+          :testCase => GoogleApi.ToolResults.V1beta3.Model.TestCaseReference.t() | nil
         }
 
   field(:creationTime, as: GoogleApi.ToolResults.V1beta3.Model.Timestamp)

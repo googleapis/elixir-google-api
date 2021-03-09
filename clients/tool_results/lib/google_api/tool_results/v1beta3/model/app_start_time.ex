@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AppStartTime do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullyDrawnTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
-          :initialDisplayTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t()
+          :fullyDrawnTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil,
+          :initialDisplayTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil
         }
 
   field(:fullyDrawnTime, as: GoogleApi.ToolResults.V1beta3.Model.Duration)

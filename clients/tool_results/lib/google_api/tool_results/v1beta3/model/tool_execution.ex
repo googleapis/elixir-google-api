@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ToolExecution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commandLineArguments => list(String.t()),
-          :exitCode => GoogleApi.ToolResults.V1beta3.Model.ToolExitCode.t(),
-          :toolLogs => list(GoogleApi.ToolResults.V1beta3.Model.FileReference.t()),
-          :toolOutputs => list(GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t())
+          :commandLineArguments => list(String.t()) | nil,
+          :exitCode => GoogleApi.ToolResults.V1beta3.Model.ToolExitCode.t() | nil,
+          :toolLogs => list(GoogleApi.ToolResults.V1beta3.Model.FileReference.t()) | nil,
+          :toolOutputs => list(GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t()) | nil
         }
 
   field(:commandLineArguments, type: :list)

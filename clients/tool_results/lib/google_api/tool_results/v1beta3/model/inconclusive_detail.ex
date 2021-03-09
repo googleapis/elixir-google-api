@@ -29,9 +29,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.InconclusiveDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :abortedByUser => boolean(),
-          :hasErrorLogs => boolean(),
-          :infrastructureFailure => boolean()
+          :abortedByUser => boolean() | nil,
+          :hasErrorLogs => boolean() | nil,
+          :infrastructureFailure => boolean() | nil
         }
 
   field(:abortedByUser)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.OverlappingUIElements do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceName => list(String.t()),
-          :screenId => String.t()
+          :resourceName => list(String.t()) | nil,
+          :screenId => String.t() | nil
         }
 
   field(:resourceName, type: :list)

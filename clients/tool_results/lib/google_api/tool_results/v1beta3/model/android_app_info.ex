@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :packageName => String.t(),
-          :versionCode => String.t(),
-          :versionName => String.t()
+          :name => String.t() | nil,
+          :packageName => String.t() | nil,
+          :versionCode => String.t() | nil,
+          :versionName => String.t() | nil
         }
 
   field(:name)

@@ -29,9 +29,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.CPUInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpuProcessor => String.t(),
-          :cpuSpeedInGhz => number(),
-          :numberOfCores => integer()
+          :cpuProcessor => String.t() | nil,
+          :cpuSpeedInGhz => number() | nil,
+          :numberOfCores => integer() | nil
         }
 
   field(:cpuProcessor)

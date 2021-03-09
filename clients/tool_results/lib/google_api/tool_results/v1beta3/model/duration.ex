@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Duration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nanos => integer(),
-          :seconds => String.t()
+          :nanos => integer() | nil,
+          :seconds => String.t() | nil
         }
 
   field(:nanos)

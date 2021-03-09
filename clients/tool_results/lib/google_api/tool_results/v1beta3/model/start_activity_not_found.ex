@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.StartActivityNotFound do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :uri => String.t()
+          :action => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:action)

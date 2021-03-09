@@ -34,15 +34,15 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Execution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completionTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
-          :creationTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
+          :completionTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
+          :creationTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
           :dimensionDefinitions =>
-            list(GoogleApi.ToolResults.V1beta3.Model.MatrixDimensionDefinition.t()),
-          :executionId => String.t(),
-          :outcome => GoogleApi.ToolResults.V1beta3.Model.Outcome.t(),
-          :specification => GoogleApi.ToolResults.V1beta3.Model.Specification.t(),
-          :state => String.t(),
-          :testExecutionMatrixId => String.t()
+            list(GoogleApi.ToolResults.V1beta3.Model.MatrixDimensionDefinition.t()) | nil,
+          :executionId => String.t() | nil,
+          :outcome => GoogleApi.ToolResults.V1beta3.Model.Outcome.t() | nil,
+          :specification => GoogleApi.ToolResults.V1beta3.Model.Specification.t() | nil,
+          :state => String.t() | nil,
+          :testExecutionMatrixId => String.t() | nil
         }
 
   field(:completionTime, as: GoogleApi.ToolResults.V1beta3.Model.Timestamp)

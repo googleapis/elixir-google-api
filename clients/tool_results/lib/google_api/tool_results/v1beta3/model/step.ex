@@ -41,22 +41,22 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Step do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completionTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
-          :creationTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
-          :description => String.t(),
-          :deviceUsageDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
+          :completionTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
+          :creationTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
+          :description => String.t() | nil,
+          :deviceUsageDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil,
           :dimensionValue =>
-            list(GoogleApi.ToolResults.V1beta3.Model.StepDimensionValueEntry.t()),
-          :hasImages => boolean(),
-          :labels => list(GoogleApi.ToolResults.V1beta3.Model.StepLabelsEntry.t()),
-          :multiStep => GoogleApi.ToolResults.V1beta3.Model.MultiStep.t(),
-          :name => String.t(),
-          :outcome => GoogleApi.ToolResults.V1beta3.Model.Outcome.t(),
-          :runDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
-          :state => String.t(),
-          :stepId => String.t(),
-          :testExecutionStep => GoogleApi.ToolResults.V1beta3.Model.TestExecutionStep.t(),
-          :toolExecutionStep => GoogleApi.ToolResults.V1beta3.Model.ToolExecutionStep.t()
+            list(GoogleApi.ToolResults.V1beta3.Model.StepDimensionValueEntry.t()) | nil,
+          :hasImages => boolean() | nil,
+          :labels => list(GoogleApi.ToolResults.V1beta3.Model.StepLabelsEntry.t()) | nil,
+          :multiStep => GoogleApi.ToolResults.V1beta3.Model.MultiStep.t() | nil,
+          :name => String.t() | nil,
+          :outcome => GoogleApi.ToolResults.V1beta3.Model.Outcome.t() | nil,
+          :runDuration => GoogleApi.ToolResults.V1beta3.Model.Duration.t() | nil,
+          :state => String.t() | nil,
+          :stepId => String.t() | nil,
+          :testExecutionStep => GoogleApi.ToolResults.V1beta3.Model.TestExecutionStep.t() | nil,
+          :toolExecutionStep => GoogleApi.ToolResults.V1beta3.Model.ToolExecutionStep.t() | nil
         }
 
   field(:completionTime, as: GoogleApi.ToolResults.V1beta3.Model.Timestamp)

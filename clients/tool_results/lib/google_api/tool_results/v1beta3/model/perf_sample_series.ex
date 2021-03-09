@@ -32,12 +32,13 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basicPerfSampleSeries => GoogleApi.ToolResults.V1beta3.Model.BasicPerfSampleSeries.t(),
-          :executionId => String.t(),
-          :historyId => String.t(),
-          :projectId => String.t(),
-          :sampleSeriesId => String.t(),
-          :stepId => String.t()
+          :basicPerfSampleSeries =>
+            GoogleApi.ToolResults.V1beta3.Model.BasicPerfSampleSeries.t() | nil,
+          :executionId => String.t() | nil,
+          :historyId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :sampleSeriesId => String.t() | nil,
+          :stepId => String.t() | nil
         }
 
   field(:basicPerfSampleSeries, as: GoogleApi.ToolResults.V1beta3.Model.BasicPerfSampleSeries)

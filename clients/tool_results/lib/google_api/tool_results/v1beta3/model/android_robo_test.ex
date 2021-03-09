@@ -31,11 +31,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appInitialActivity => String.t(),
-          :bootstrapPackageId => String.t(),
-          :bootstrapRunnerClass => String.t(),
-          :maxDepth => integer(),
-          :maxSteps => integer()
+          :appInitialActivity => String.t() | nil,
+          :bootstrapPackageId => String.t() | nil,
+          :bootstrapRunnerClass => String.t() | nil,
+          :maxDepth => integer() | nil,
+          :maxSteps => integer() | nil
         }
 
   field(:appInitialActivity)

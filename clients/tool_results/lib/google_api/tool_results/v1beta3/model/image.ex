@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Image do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => GoogleApi.ToolResults.V1beta3.Model.Status.t(),
-          :sourceImage => GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t(),
-          :stepId => String.t(),
-          :thumbnail => GoogleApi.ToolResults.V1beta3.Model.Thumbnail.t()
+          :error => GoogleApi.ToolResults.V1beta3.Model.Status.t() | nil,
+          :sourceImage => GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t() | nil,
+          :stepId => String.t() | nil,
+          :thumbnail => GoogleApi.ToolResults.V1beta3.Model.Thumbnail.t() | nil
         }
 
   field(:error, as: GoogleApi.ToolResults.V1beta3.Model.Status)

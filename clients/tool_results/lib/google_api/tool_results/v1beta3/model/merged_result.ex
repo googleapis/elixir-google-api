@@ -29,9 +29,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.MergedResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outcome => GoogleApi.ToolResults.V1beta3.Model.Outcome.t(),
-          :state => String.t(),
-          :testSuiteOverviews => list(GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview.t())
+          :outcome => GoogleApi.ToolResults.V1beta3.Model.Outcome.t() | nil,
+          :state => String.t() | nil,
+          :testSuiteOverviews =>
+            list(GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview.t()) | nil
         }
 
   field(:outcome, as: GoogleApi.ToolResults.V1beta3.Model.Outcome)

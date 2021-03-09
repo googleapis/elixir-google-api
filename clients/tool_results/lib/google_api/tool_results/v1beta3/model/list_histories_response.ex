@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListHistoriesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :histories => list(GoogleApi.ToolResults.V1beta3.Model.History.t()),
-          :nextPageToken => String.t()
+          :histories => list(GoogleApi.ToolResults.V1beta3.Model.History.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:histories, as: GoogleApi.ToolResults.V1beta3.Model.History, type: :list)

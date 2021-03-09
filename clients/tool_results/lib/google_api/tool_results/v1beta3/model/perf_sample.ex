@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PerfSample do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sampleTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t(),
-          :value => float()
+          :sampleTime => GoogleApi.ToolResults.V1beta3.Model.Timestamp.t() | nil,
+          :value => float() | nil
         }
 
   field(:sampleTime, as: GoogleApi.ToolResults.V1beta3.Model.Timestamp)

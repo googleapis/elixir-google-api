@@ -30,10 +30,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.NonSdkApiUsageViolationReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exampleApis => list(GoogleApi.ToolResults.V1beta3.Model.NonSdkApi.t()),
-          :minSdkVersion => integer(),
-          :targetSdkVersion => integer(),
-          :uniqueApis => integer()
+          :exampleApis => list(GoogleApi.ToolResults.V1beta3.Model.NonSdkApi.t()) | nil,
+          :minSdkVersion => integer() | nil,
+          :targetSdkVersion => integer() | nil,
+          :uniqueApis => integer() | nil
         }
 
   field(:exampleApis, as: GoogleApi.ToolResults.V1beta3.Model.NonSdkApi, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ListExecutionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :executions => list(GoogleApi.ToolResults.V1beta3.Model.Execution.t()),
-          :nextPageToken => String.t()
+          :executions => list(GoogleApi.ToolResults.V1beta3.Model.Execution.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:executions, as: GoogleApi.ToolResults.V1beta3.Model.Execution, type: :list)

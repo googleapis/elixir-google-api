@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ShardSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :runs => list(GoogleApi.ToolResults.V1beta3.Model.StepSummary.t()),
-          :shardResult => GoogleApi.ToolResults.V1beta3.Model.MergedResult.t()
+          :runs => list(GoogleApi.ToolResults.V1beta3.Model.StepSummary.t()) | nil,
+          :shardResult => GoogleApi.ToolResults.V1beta3.Model.MergedResult.t() | nil
         }
 
   field(:runs, as: GoogleApi.ToolResults.V1beta3.Model.StepSummary, type: :list)

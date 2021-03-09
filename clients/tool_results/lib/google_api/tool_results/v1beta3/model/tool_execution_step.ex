@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ToolExecutionStep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :toolExecution => GoogleApi.ToolResults.V1beta3.Model.ToolExecution.t()
+          :toolExecution => GoogleApi.ToolResults.V1beta3.Model.ToolExecution.t() | nil
         }
 
   field(:toolExecution, as: GoogleApi.ToolResults.V1beta3.Model.ToolExecution)

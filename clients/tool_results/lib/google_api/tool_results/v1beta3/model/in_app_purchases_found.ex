@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.InAppPurchasesFound do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inAppPurchasesFlowsExplored => integer(),
-          :inAppPurchasesFlowsStarted => integer()
+          :inAppPurchasesFlowsExplored => integer() | nil,
+          :inAppPurchasesFlowsStarted => integer() | nil
         }
 
   field(:inAppPurchasesFlowsExplored)

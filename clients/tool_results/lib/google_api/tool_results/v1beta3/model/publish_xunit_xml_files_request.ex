@@ -27,7 +27,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PublishXunitXmlFilesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :xunitXmlFiles => list(GoogleApi.ToolResults.V1beta3.Model.FileReference.t())
+          :xunitXmlFiles => list(GoogleApi.ToolResults.V1beta3.Model.FileReference.t()) | nil
         }
 
   field(:xunitXmlFiles, as: GoogleApi.ToolResults.V1beta3.Model.FileReference, type: :list)

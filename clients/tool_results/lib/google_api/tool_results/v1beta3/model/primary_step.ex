@@ -28,8 +28,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PrimaryStep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :individualOutcome => list(GoogleApi.ToolResults.V1beta3.Model.IndividualOutcome.t()),
-          :rollUp => String.t()
+          :individualOutcome =>
+            list(GoogleApi.ToolResults.V1beta3.Model.IndividualOutcome.t()) | nil,
+          :rollUp => String.t() | nil
         }
 
   field(:individualOutcome, as: GoogleApi.ToolResults.V1beta3.Model.IndividualOutcome, type: :list)

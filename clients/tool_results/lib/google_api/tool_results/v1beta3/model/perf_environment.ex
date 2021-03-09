@@ -28,8 +28,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PerfEnvironment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpuInfo => GoogleApi.ToolResults.V1beta3.Model.CPUInfo.t(),
-          :memoryInfo => GoogleApi.ToolResults.V1beta3.Model.MemoryInfo.t()
+          :cpuInfo => GoogleApi.ToolResults.V1beta3.Model.CPUInfo.t() | nil,
+          :memoryInfo => GoogleApi.ToolResults.V1beta3.Model.MemoryInfo.t() | nil
         }
 
   field(:cpuInfo, as: GoogleApi.ToolResults.V1beta3.Model.CPUInfo)

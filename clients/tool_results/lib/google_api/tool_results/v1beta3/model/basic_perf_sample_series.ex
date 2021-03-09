@@ -29,9 +29,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.BasicPerfSampleSeries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :perfMetricType => String.t(),
-          :perfUnit => String.t(),
-          :sampleSeriesLabel => String.t()
+          :perfMetricType => String.t() | nil,
+          :perfUnit => String.t() | nil,
+          :sampleSeriesLabel => String.t() | nil
         }
 
   field(:perfMetricType)

@@ -31,11 +31,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.NonSdkApi do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiSignature => String.t(),
-          :exampleStackTraces => list(String.t()),
-          :insights => list(GoogleApi.ToolResults.V1beta3.Model.NonSdkApiInsight.t()),
-          :invocationCount => integer(),
-          :list => String.t()
+          :apiSignature => String.t() | nil,
+          :exampleStackTraces => list(String.t()) | nil,
+          :insights => list(GoogleApi.ToolResults.V1beta3.Model.NonSdkApiInsight.t()) | nil,
+          :invocationCount => integer() | nil,
+          :list => String.t() | nil
         }
 
   field(:apiSignature)

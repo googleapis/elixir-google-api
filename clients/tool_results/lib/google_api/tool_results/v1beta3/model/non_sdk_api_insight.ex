@@ -30,11 +30,11 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.NonSdkApiInsight do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exampleTraceMessages => list(String.t()),
-          :matcherId => String.t(),
+          :exampleTraceMessages => list(String.t()) | nil,
+          :matcherId => String.t() | nil,
           :pendingGoogleUpdateInsight =>
-            GoogleApi.ToolResults.V1beta3.Model.PendingGoogleUpdateInsight.t(),
-          :upgradeInsight => GoogleApi.ToolResults.V1beta3.Model.UpgradeInsight.t()
+            GoogleApi.ToolResults.V1beta3.Model.PendingGoogleUpdateInsight.t() | nil,
+          :upgradeInsight => GoogleApi.ToolResults.V1beta3.Model.UpgradeInsight.t() | nil
         }
 
   field(:exampleTraceMessages, type: :list)
