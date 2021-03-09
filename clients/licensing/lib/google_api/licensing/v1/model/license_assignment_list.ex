@@ -30,10 +30,10 @@ defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :items => list(GoogleApi.Licensing.V1.Model.LicenseAssignment.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.Licensing.V1.Model.LicenseAssignment.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:etag)

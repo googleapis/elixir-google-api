@@ -27,7 +27,7 @@ defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :userId => String.t()
+          :userId => String.t() | nil
         }
 
   field(:userId)
