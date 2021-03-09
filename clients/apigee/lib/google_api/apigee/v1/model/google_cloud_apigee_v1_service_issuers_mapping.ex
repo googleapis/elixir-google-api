@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ServiceIssuersMapping do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emailIds => list(String.t()),
-          :service => String.t()
+          :emailIds => list(String.t()) | nil,
+          :service => String.t() | nil
         }
 
   field(:emailIds, type: :list)

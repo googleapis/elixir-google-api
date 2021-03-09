@@ -37,17 +37,17 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CertInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basicConstraints => String.t(),
-          :expiryDate => String.t(),
-          :isValid => String.t(),
-          :issuer => String.t(),
-          :publicKey => String.t(),
-          :serialNumber => String.t(),
-          :sigAlgName => String.t(),
-          :subject => String.t(),
-          :subjectAlternativeNames => list(String.t()),
-          :validFrom => String.t(),
-          :version => integer()
+          :basicConstraints => String.t() | nil,
+          :expiryDate => String.t() | nil,
+          :isValid => String.t() | nil,
+          :issuer => String.t() | nil,
+          :publicKey => String.t() | nil,
+          :serialNumber => String.t() | nil,
+          :sigAlgName => String.t() | nil,
+          :subject => String.t() | nil,
+          :subjectAlternativeNames => list(String.t()) | nil,
+          :validFrom => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:basicConstraints)

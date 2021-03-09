@@ -31,13 +31,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRou
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :environmentGroup => String.t(),
+          :description => String.t() | nil,
+          :environmentGroup => String.t() | nil,
           :fromDeployment =>
-            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t(),
-          :shouldSequenceRollout => boolean(),
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t()
+            | nil,
+          :shouldSequenceRollout => boolean() | nil,
           :toDeployment =>
             GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t()
+            | nil
         }
 
   field(:description)

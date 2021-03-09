@@ -32,12 +32,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :host => String.t(),
-          :isEnabled => boolean(),
-          :name => String.t(),
-          :port => integer(),
-          :sSLInfo => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo.t()
+          :description => String.t() | nil,
+          :host => String.t() | nil,
+          :isEnabled => boolean() | nil,
+          :name => String.t() | nil,
+          :port => integer() | nil,
+          :sSLInfo => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo.t() | nil
         }
 
   field(:description)

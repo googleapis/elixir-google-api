@@ -48,28 +48,29 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProxyRevision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basepaths => list(String.t()),
-          :configurationVersion => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion.t(),
-          :contextInfo => String.t(),
-          :createdAt => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :entityMetaDataAsProperties => map(),
-          :lastModifiedAt => String.t(),
-          :name => String.t(),
-          :policies => list(String.t()),
-          :proxies => list(String.t()),
-          :proxyEndpoints => list(String.t()),
-          :resourceFiles => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceFiles.t(),
-          :resources => list(String.t()),
-          :revision => String.t(),
-          :sharedFlows => list(String.t()),
-          :spec => String.t(),
-          :targetEndpoints => list(String.t()),
-          :targetServers => list(String.t()),
-          :targets => list(String.t()),
-          :teams => list(String.t()),
-          :type => String.t()
+          :basepaths => list(String.t()) | nil,
+          :configurationVersion =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion.t() | nil,
+          :contextInfo => String.t() | nil,
+          :createdAt => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :entityMetaDataAsProperties => map() | nil,
+          :lastModifiedAt => String.t() | nil,
+          :name => String.t() | nil,
+          :policies => list(String.t()) | nil,
+          :proxies => list(String.t()) | nil,
+          :proxyEndpoints => list(String.t()) | nil,
+          :resourceFiles => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceFiles.t() | nil,
+          :resources => list(String.t()) | nil,
+          :revision => String.t() | nil,
+          :sharedFlows => list(String.t()) | nil,
+          :spec => String.t() | nil,
+          :targetEndpoints => list(String.t()) | nil,
+          :targetServers => list(String.t()) | nil,
+          :targets => list(String.t()) | nil,
+          :teams => list(String.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:basepaths, type: :list)

@@ -29,9 +29,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensions => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DimensionMetric.t()),
-          :metrics => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t()),
-          :name => String.t()
+          :dimensions =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DimensionMetric.t()) | nil,
+          :metrics => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:dimensions, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DimensionMetric, type: :list)

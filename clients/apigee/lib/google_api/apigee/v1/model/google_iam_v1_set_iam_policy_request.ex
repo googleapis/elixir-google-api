@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleIamV1SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.Apigee.V1.Model.GoogleIamV1Policy.t(),
-          :updateMask => String.t()
+          :policy => GoogleApi.Apigee.V1.Model.GoogleIamV1Policy.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:policy, as: GoogleApi.Apigee.V1.Model.GoogleIamV1Policy)

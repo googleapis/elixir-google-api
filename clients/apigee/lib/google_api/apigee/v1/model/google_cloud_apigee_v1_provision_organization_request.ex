@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ProvisionOrganizationRequ
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyticsRegion => String.t(),
-          :authorizedNetwork => String.t(),
-          :runtimeLocation => String.t()
+          :analyticsRegion => String.t() | nil,
+          :authorizedNetwork => String.t() | nil,
+          :runtimeLocation => String.t() | nil
         }
 
   field(:analyticsRegion)

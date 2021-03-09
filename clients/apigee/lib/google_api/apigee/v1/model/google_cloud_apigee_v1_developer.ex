@@ -40,20 +40,20 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Developer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessType => String.t(),
-          :appFamily => String.t(),
-          :apps => list(String.t()),
-          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()),
-          :companies => list(String.t()),
-          :createdAt => String.t(),
-          :developerId => String.t(),
-          :email => String.t(),
-          :firstName => String.t(),
-          :lastModifiedAt => String.t(),
-          :lastName => String.t(),
-          :organizationName => String.t(),
-          :status => String.t(),
-          :userName => String.t()
+          :accessType => String.t() | nil,
+          :appFamily => String.t() | nil,
+          :apps => list(String.t()) | nil,
+          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()) | nil,
+          :companies => list(String.t()) | nil,
+          :createdAt => String.t() | nil,
+          :developerId => String.t() | nil,
+          :email => String.t() | nil,
+          :firstName => String.t() | nil,
+          :lastModifiedAt => String.t() | nil,
+          :lastName => String.t() | nil,
+          :organizationName => String.t() | nil,
+          :status => String.t() | nil,
+          :userName => String.t() | nil
         }
 
   field(:accessType)

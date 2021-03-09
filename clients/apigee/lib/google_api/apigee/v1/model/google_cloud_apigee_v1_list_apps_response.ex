@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListAppsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :app => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1App.t())
+          :app => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1App.t()) | nil
         }
 
   field(:app, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1App, type: :list)

@@ -39,19 +39,20 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1App do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiProducts => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProductRef.t()),
-          :appId => String.t(),
-          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()),
-          :callbackUrl => String.t(),
-          :companyName => String.t(),
-          :createdAt => String.t(),
-          :credentials => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Credential.t()),
-          :developerId => String.t(),
-          :keyExpiresIn => String.t(),
-          :lastModifiedAt => String.t(),
-          :name => String.t(),
-          :scopes => list(String.t()),
-          :status => String.t()
+          :apiProducts =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProductRef.t()) | nil,
+          :appId => String.t() | nil,
+          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()) | nil,
+          :callbackUrl => String.t() | nil,
+          :companyName => String.t() | nil,
+          :createdAt => String.t() | nil,
+          :credentials => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Credential.t()) | nil,
+          :developerId => String.t() | nil,
+          :keyExpiresIn => String.t() | nil,
+          :lastModifiedAt => String.t() | nil,
+          :name => String.t() | nil,
+          :scopes => list(String.t()) | nil,
+          :status => String.t() | nil
         }
 
   field(:apiProducts, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProductRef, type: :list)

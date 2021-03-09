@@ -32,12 +32,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ExportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :csvDelimiter => String.t(),
-          :datastoreName => String.t(),
-          :dateRange => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DateRange.t(),
-          :description => String.t(),
-          :name => String.t(),
-          :outputFormat => String.t()
+          :csvDelimiter => String.t() | nil,
+          :datastoreName => String.t() | nil,
+          :dateRange => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DateRange.t() | nil,
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :outputFormat => String.t() | nil
         }
 
   field(:csvDelimiter)

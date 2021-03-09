@@ -32,12 +32,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensions => list(String.t()),
-          :endTimestamp => String.t(),
-          :metrics => list(String.t()),
-          :outputFormat => String.t(),
-          :startTimestamp => String.t(),
-          :timeUnit => String.t()
+          :dimensions => list(String.t()) | nil,
+          :endTimestamp => String.t() | nil,
+          :metrics => list(String.t()) | nil,
+          :outputFormat => String.t() | nil,
+          :startTimestamp => String.t() | nil,
+          :timeUnit => String.t() | nil
         }
 
   field(:dimensions, type: :list)

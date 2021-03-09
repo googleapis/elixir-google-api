@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyValueMap do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encrypted => boolean(),
-          :name => String.t()
+          :encrypted => boolean() | nil,
+          :name => String.t() | nil
         }
 
   field(:encrypted)

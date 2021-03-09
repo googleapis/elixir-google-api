@@ -29,6 +29,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListOrganizationsResponse
   @type t :: %__MODULE__{
           :organizations =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OrganizationProjectMapping.t())
+            | nil
         }
 
   field(:organizations,

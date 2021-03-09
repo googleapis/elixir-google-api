@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :TimeUnit => list(String.t()),
-          :metaData => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t(),
-          :resultTruncated => boolean(),
-          :stats => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsNode.t()
+          :TimeUnit => list(String.t()) | nil,
+          :metaData => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t() | nil,
+          :resultTruncated => boolean() | nil,
+          :stats => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsNode.t() | nil
         }
 
   field(:TimeUnit, type: :list)

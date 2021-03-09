@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReportProperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :property => String.t(),
-          :value => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t())
+          :property => String.t() | nil,
+          :value => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()) | nil
         }
 
   field(:property)

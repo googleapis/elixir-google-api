@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DimensionMetric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metrics => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t()),
-          :name => String.t()
+          :metrics => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:metrics, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric, type: :list)

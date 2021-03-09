@@ -32,12 +32,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugSession do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => integer(),
-          :filter => String.t(),
-          :name => String.t(),
-          :timeout => String.t(),
-          :tracesize => integer(),
-          :validity => integer()
+          :count => integer() | nil,
+          :filter => String.t() | nil,
+          :name => String.t() | nil,
+          :timeout => String.t() | nil,
+          :tracesize => integer() | nil,
+          :validity => integer() | nil
         }
 
   field(:count)

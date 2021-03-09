@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DateRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :end => String.t(),
-          :start => String.t()
+          :end => String.t() | nil,
+          :start => String.t() | nil
         }
 
   field(:end)

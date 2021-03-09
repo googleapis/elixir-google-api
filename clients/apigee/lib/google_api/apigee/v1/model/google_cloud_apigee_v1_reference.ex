@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Reference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :name => String.t(),
-          :refers => String.t(),
-          :resourceType => String.t()
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :refers => String.t() | nil,
+          :resourceType => String.t() | nil
         }
 
   field(:description)

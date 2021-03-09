@@ -35,15 +35,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1PodStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appVersion => String.t(),
-          :deploymentStatus => String.t(),
-          :deploymentStatusTime => String.t(),
-          :deploymentTime => String.t(),
-          :podName => String.t(),
-          :podStatus => String.t(),
-          :podStatusTime => String.t(),
-          :statusCode => String.t(),
-          :statusCodeDetails => String.t()
+          :appVersion => String.t() | nil,
+          :deploymentStatus => String.t() | nil,
+          :deploymentStatusTime => String.t() | nil,
+          :deploymentTime => String.t() | nil,
+          :podName => String.t() | nil,
+          :podStatus => String.t() | nil,
+          :podStatusTime => String.t() | nil,
+          :statusCode => String.t() | nil,
+          :statusCodeDetails => String.t() | nil
         }
 
   field(:appVersion)

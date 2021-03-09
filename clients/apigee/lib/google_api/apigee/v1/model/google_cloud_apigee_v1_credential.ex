@@ -34,14 +34,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Credential do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiProducts => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProductRef.t()),
-          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()),
-          :consumerKey => String.t(),
-          :consumerSecret => String.t(),
-          :expiresAt => String.t(),
-          :issuedAt => String.t(),
-          :scopes => list(String.t()),
-          :status => String.t()
+          :apiProducts =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProductRef.t()) | nil,
+          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()) | nil,
+          :consumerKey => String.t() | nil,
+          :consumerSecret => String.t() | nil,
+          :expiresAt => String.t() | nil,
+          :issuedAt => String.t() | nil,
+          :scopes => list(String.t()) | nil,
+          :status => String.t() | nil
         }
 
   field(:apiProducts, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProductRef, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :name => String.t(),
-          :port => integer(),
-          :tlsInfo => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig.t()
+          :host => String.t() | nil,
+          :name => String.t() | nil,
+          :port => integer() | nil,
+          :tlsInfo => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig.t() | nil
         }
 
   field(:host)

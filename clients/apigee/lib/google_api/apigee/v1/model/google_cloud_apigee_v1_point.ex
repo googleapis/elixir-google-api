@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Point do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :results => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Result.t())
+          :id => String.t() | nil,
+          :results => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Result.t()) | nil
         }
 
   field(:id)

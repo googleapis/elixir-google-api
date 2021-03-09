@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attributes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attribute => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t())
+          :attribute => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()) | nil
         }
 
   field(:attribute, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute, type: :list)

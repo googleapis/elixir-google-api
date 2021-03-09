@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :latestRevisionId => String.t(),
-          :metaData => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata.t(),
-          :name => String.t(),
-          :revision => list(String.t())
+          :latestRevisionId => String.t() | nil,
+          :metaData => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata.t() | nil,
+          :name => String.t() | nil,
+          :revision => list(String.t()) | nil
         }
 
   field(:latestRevisionId)

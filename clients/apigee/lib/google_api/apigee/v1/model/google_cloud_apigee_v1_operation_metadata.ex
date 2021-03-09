@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operationType => String.t(),
-          :state => String.t(),
-          :targetResourceName => String.t()
+          :operationType => String.t() | nil,
+          :state => String.t() | nil,
+          :targetResourceName => String.t() | nil
         }
 
   field(:operationType)

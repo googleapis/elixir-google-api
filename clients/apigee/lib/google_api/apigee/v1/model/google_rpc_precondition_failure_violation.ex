@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleRpcPreconditionFailureViolation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :subject => String.t(),
-          :type => String.t()
+          :description => String.t() | nil,
+          :subject => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:description)

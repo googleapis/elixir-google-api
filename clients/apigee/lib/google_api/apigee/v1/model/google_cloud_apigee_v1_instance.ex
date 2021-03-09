@@ -37,17 +37,17 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createdAt => String.t(),
-          :description => String.t(),
-          :diskEncryptionKeyName => String.t(),
-          :displayName => String.t(),
-          :host => String.t(),
-          :lastModifiedAt => String.t(),
-          :location => String.t(),
-          :name => String.t(),
-          :peeringCidrRange => String.t(),
-          :port => String.t(),
-          :state => String.t()
+          :createdAt => String.t() | nil,
+          :description => String.t() | nil,
+          :diskEncryptionKeyName => String.t() | nil,
+          :displayName => String.t() | nil,
+          :host => String.t() | nil,
+          :lastModifiedAt => String.t() | nil,
+          :location => String.t() | nil,
+          :name => String.t() | nil,
+          :peeringCidrRange => String.t() | nil,
+          :port => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:createdAt)

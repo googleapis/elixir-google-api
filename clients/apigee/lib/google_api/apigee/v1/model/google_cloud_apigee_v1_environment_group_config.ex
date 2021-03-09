@@ -31,11 +31,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hostnames => list(String.t()),
-          :name => String.t(),
-          :revisionId => String.t(),
-          :routingRules => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule.t()),
-          :uid => String.t()
+          :hostnames => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :revisionId => String.t() | nil,
+          :routingRules =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule.t()) | nil,
+          :uid => String.t() | nil
         }
 
   field(:hostnames, type: :list)

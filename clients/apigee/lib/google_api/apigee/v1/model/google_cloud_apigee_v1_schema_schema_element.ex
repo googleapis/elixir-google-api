@@ -28,8 +28,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaElement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaProperty.t()
+          :name => String.t() | nil,
+          :properties =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaProperty.t() | nil
         }
 
   field(:name)

@@ -43,25 +43,31 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
+          :createTime => DateTime.t() | nil,
           :dataCollectors =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t()),
-          :debugMask => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask.t(),
-          :deployments => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig.t()),
-          :featureFlags => map(),
-          :flowhooks => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig.t()),
-          :keystores => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig.t()),
-          :name => String.t(),
-          :provider => String.t(),
-          :pubsubTopic => String.t(),
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t()) | nil,
+          :debugMask => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask.t() | nil,
+          :deployments =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig.t()) | nil,
+          :featureFlags => map() | nil,
+          :flowhooks =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig.t()) | nil,
+          :keystores =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig.t()) | nil,
+          :name => String.t() | nil,
+          :provider => String.t() | nil,
+          :pubsubTopic => String.t() | nil,
           :resourceReferences =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReferenceConfig.t()),
-          :resources => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceConfig.t()),
-          :revisionId => String.t(),
-          :sequenceNumber => String.t(),
-          :targets => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig.t()),
-          :traceConfig => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfig.t(),
-          :uid => String.t()
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReferenceConfig.t()) | nil,
+          :resources =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceConfig.t()) | nil,
+          :revisionId => String.t() | nil,
+          :sequenceNumber => String.t() | nil,
+          :targets =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig.t()) | nil,
+          :traceConfig =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfig.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

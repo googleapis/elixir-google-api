@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :majorVersion => integer(),
-          :minorVersion => integer()
+          :majorVersion => integer() | nil,
+          :minorVersion => integer() | nil
         }
 
   field(:majorVersion)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DatastoreConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketName => String.t(),
-          :datasetName => String.t(),
-          :path => String.t(),
-          :projectId => String.t(),
-          :tablePrefix => String.t()
+          :bucketName => String.t() | nil,
+          :datasetName => String.t() | nil,
+          :path => String.t() | nil,
+          :projectId => String.t() | nil,
+          :tablePrefix => String.t() | nil
         }
 
   field(:bucketName)

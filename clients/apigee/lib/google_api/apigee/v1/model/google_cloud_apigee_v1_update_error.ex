@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1UpdateError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :message => String.t(),
-          :resource => String.t(),
-          :type => String.t()
+          :code => String.t() | nil,
+          :message => String.t() | nil,
+          :resource => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:code)

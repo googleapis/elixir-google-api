@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReferenceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :resourceName => String.t()
+          :name => String.t() | nil,
+          :resourceName => String.t() | nil
         }
 
   field(:name)

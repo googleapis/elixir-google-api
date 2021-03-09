@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :interval => String.t(),
-          :limit => String.t(),
-          :timeUnit => String.t()
+          :interval => String.t() | nil,
+          :limit => String.t() | nil,
+          :timeUnit => String.t() | nil
         }
 
   field(:interval)

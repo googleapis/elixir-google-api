@@ -35,15 +35,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :faultJSONPaths => list(String.t()),
-          :faultXPaths => list(String.t()),
-          :name => String.t(),
-          :namespaces => map(),
-          :requestJSONPaths => list(String.t()),
-          :requestXPaths => list(String.t()),
-          :responseJSONPaths => list(String.t()),
-          :responseXPaths => list(String.t()),
-          :variables => list(String.t())
+          :faultJSONPaths => list(String.t()) | nil,
+          :faultXPaths => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :namespaces => map() | nil,
+          :requestJSONPaths => list(String.t()) | nil,
+          :requestXPaths => list(String.t()) | nil,
+          :responseJSONPaths => list(String.t()) | nil,
+          :responseXPaths => list(String.t()) | nil,
+          :variables => list(String.t()) | nil
         }
 
   field(:faultJSONPaths, type: :list)

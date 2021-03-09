@@ -30,10 +30,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resource => String.t(),
-          :revisions => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RevisionStatus.t()),
-          :totalReplicas => integer(),
-          :uid => String.t()
+          :resource => String.t() | nil,
+          :revisions =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RevisionStatus.t()) | nil,
+          :totalReplicas => integer() | nil,
+          :uid => String.t() | nil
         }
 
   field(:resource)

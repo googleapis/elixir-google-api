@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :timestampMs => String.t()
+          :id => String.t() | nil,
+          :timestampMs => String.t() | nil
         }
 
   field(:id)

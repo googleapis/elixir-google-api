@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsNode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => list(any())
+          :data => list(any()) | nil
         }
 
   field(:data, type: :list)

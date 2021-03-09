@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Subscription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t()
+          :name => String.t() | nil
         }
 
   field(:name)

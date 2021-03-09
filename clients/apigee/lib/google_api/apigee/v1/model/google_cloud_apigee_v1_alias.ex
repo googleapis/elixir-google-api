@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Alias do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alias => String.t(),
-          :certsInfo => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Certificate.t(),
-          :type => String.t()
+          :alias => String.t() | nil,
+          :certsInfo => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Certificate.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:alias)

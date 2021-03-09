@@ -29,9 +29,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReportInstanceStatusReque
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceUid => String.t(),
-          :reportTime => DateTime.t(),
-          :resources => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceStatus.t())
+          :instanceUid => String.t() | nil,
+          :reportTime => DateTime.t() | nil,
+          :resources =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceStatus.t()) | nil
         }
 
   field(:instanceUid)

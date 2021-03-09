@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListSharedFlowsResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sharedFlows => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlow.t())
+          :sharedFlows => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlow.t()) | nil
         }
 
   field(:sharedFlows, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlow, type: :list)

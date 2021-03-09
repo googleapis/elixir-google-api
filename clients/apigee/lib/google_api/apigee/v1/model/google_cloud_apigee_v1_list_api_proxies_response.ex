@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListApiProxiesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :proxies => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProxy.t())
+          :proxies => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProxy.t()) | nil
         }
 
   field(:proxies, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProxy, type: :list)

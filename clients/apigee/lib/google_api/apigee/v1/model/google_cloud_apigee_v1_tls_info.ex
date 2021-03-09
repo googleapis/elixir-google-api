@@ -35,15 +35,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ciphers => list(String.t()),
-          :clientAuthEnabled => boolean(),
-          :commonName => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoCommonName.t(),
-          :enabled => boolean(),
-          :ignoreValidationErrors => boolean(),
-          :keyAlias => String.t(),
-          :keyStore => String.t(),
-          :protocols => list(String.t()),
-          :trustStore => String.t()
+          :ciphers => list(String.t()) | nil,
+          :clientAuthEnabled => boolean() | nil,
+          :commonName => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoCommonName.t() | nil,
+          :enabled => boolean() | nil,
+          :ignoreValidationErrors => boolean() | nil,
+          :keyAlias => String.t() | nil,
+          :keyStore => String.t() | nil,
+          :protocols => list(String.t()) | nil,
+          :trustStore => String.t() | nil
         }
 
   field(:ciphers, type: :list)

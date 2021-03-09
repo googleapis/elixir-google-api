@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t(),
-          :siteId => String.t(),
-          :updateTime => String.t()
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :siteId => String.t() | nil,
+          :updateTime => String.t() | nil
         }
 
   field(:id)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugSessionTransaction d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completed => boolean(),
-          :point => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Point.t())
+          :completed => boolean() | nil,
+          :point => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Point.t()) | nil
         }
 
   field(:completed)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProductRef do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiproduct => String.t(),
-          :status => String.t()
+          :apiproduct => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:apiproduct)

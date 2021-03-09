@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Certificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certInfo => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CertInfo.t())
+          :certInfo => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CertInfo.t()) | nil
         }
 
   field(:certInfo, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CertInfo, type: :list)

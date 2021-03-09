@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeleteCustomReportRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :message => String.t()
+          :message => String.t() | nil
         }
 
   field(:message)

@@ -28,9 +28,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :operationConfigType => String.t(),
+          :operationConfigType => String.t() | nil,
           :operationConfigs =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig.t())
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig.t()) | nil
         }
 
   field(:operationConfigType)

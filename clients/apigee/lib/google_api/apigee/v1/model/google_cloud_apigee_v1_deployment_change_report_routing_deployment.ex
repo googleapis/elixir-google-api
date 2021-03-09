@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRou
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiProxy => String.t(),
-          :basepath => String.t(),
-          :environment => String.t(),
-          :revision => String.t()
+          :apiProxy => String.t() | nil,
+          :basepath => String.t() | nil,
+          :environment => String.t() | nil,
+          :revision => String.t() | nil
         }
 
   field(:apiProxy)

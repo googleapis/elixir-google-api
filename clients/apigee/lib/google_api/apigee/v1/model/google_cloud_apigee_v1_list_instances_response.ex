@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListInstancesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instances => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance.t()),
-          :nextPageToken => String.t()
+          :instances => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:instances, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance, type: :list)
