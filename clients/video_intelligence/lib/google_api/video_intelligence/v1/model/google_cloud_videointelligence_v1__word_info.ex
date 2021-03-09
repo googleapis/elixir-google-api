@@ -31,11 +31,11 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Wo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => number(),
-          :endTime => String.t(),
-          :speakerTag => integer(),
-          :startTime => String.t(),
-          :word => String.t()
+          :confidence => number() | nil,
+          :endTime => String.t() | nil,
+          :speakerTag => integer() | nil,
+          :startTime => String.t() | nil,
+          :word => String.t() | nil
         }
 
   field(:confidence)

@@ -28,8 +28,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pornographyLikelihood => String.t(),
-          :timeOffset => String.t()
+          :pornographyLikelihood => String.t() | nil,
+          :timeOffset => String.t() | nil
         }
 
   field(:pornographyLikelihood)

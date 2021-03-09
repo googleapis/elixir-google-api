@@ -32,13 +32,14 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_An
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :features => list(String.t()),
-          :inputContent => String.t(),
-          :inputUri => String.t(),
-          :locationId => String.t(),
-          :outputUri => String.t(),
+          :features => list(String.t()) | nil,
+          :inputContent => String.t() | nil,
+          :inputUri => String.t() | nil,
+          :locationId => String.t() | nil,
+          :outputUri => String.t() | nil,
           :videoContext =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_VideoContext.t()
+            | nil
         }
 
   field(:features, type: :list)

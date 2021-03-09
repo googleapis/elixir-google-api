@@ -28,8 +28,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :x => number(),
-          :y => number()
+          :x => number() | nil,
+          :y => number() | nil
         }
 
   field(:x)

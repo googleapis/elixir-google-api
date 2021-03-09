@@ -31,6 +31,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_No
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_NormalizedVertex.t()
             )
+            | nil
         }
 
   field(:vertices,

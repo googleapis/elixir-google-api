@@ -31,6 +31,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationResults.t()
             )
+            | nil
         }
 
   field(:annotationResults,

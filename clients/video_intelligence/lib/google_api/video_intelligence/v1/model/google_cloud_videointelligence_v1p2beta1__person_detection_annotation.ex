@@ -31,8 +31,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
           :tracks =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_Track.t()
-            ),
-          :version => String.t()
+            )
+            | nil,
+          :version => String.t() | nil
         }
 
   field(:tracks,

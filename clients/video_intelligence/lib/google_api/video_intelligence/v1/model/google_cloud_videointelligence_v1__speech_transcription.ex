@@ -31,8 +31,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Sp
           :alternatives =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_SpeechRecognitionAlternative.t()
-            ),
-          :languageCode => String.t()
+            )
+            | nil,
+          :languageCode => String.t() | nil
         }
 
   field(:alternatives,

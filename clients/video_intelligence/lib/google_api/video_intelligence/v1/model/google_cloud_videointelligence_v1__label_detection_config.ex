@@ -31,11 +31,11 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_La
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :frameConfidenceThreshold => number(),
-          :labelDetectionMode => String.t(),
-          :model => String.t(),
-          :stationaryCamera => boolean(),
-          :videoConfidenceThreshold => number()
+          :frameConfidenceThreshold => number() | nil,
+          :labelDetectionMode => String.t() | nil,
+          :model => String.t() | nil,
+          :stationaryCamera => boolean() | nil,
+          :videoConfidenceThreshold => number() | nil
         }
 
   field(:frameConfidenceThreshold)

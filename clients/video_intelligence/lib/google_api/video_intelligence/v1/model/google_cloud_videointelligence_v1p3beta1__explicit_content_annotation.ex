@@ -31,8 +31,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
           :frames =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame.t()
-            ),
-          :version => String.t()
+            )
+            | nil,
+          :version => String.t() | nil
         }
 
   field(:frames,

@@ -43,64 +43,79 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t(),
+          :error => GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t() | nil,
           :explicitAnnotation =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_ExplicitContentAnnotation.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_ExplicitContentAnnotation.t()
+            | nil,
           :faceAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_FaceAnnotation.t()
-            ),
+            )
+            | nil,
           :faceDetectionAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_FaceDetectionAnnotation.t()
-            ),
+            )
+            | nil,
           :frameLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t()
-            ),
-          :inputUri => String.t(),
+            )
+            | nil,
+          :inputUri => String.t() | nil,
           :logoRecognitionAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LogoRecognitionAnnotation.t()
-            ),
+            )
+            | nil,
           :objectAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingAnnotation.t()
-            ),
+            )
+            | nil,
           :personDetectionAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_PersonDetectionAnnotation.t()
-            ),
+            )
+            | nil,
           :segment =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_VideoSegment.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_VideoSegment.t()
+            | nil,
           :segmentLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t()
-            ),
+            )
+            | nil,
           :segmentPresenceLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t()
-            ),
+            )
+            | nil,
           :shotAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_VideoSegment.t()
-            ),
+            )
+            | nil,
           :shotLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t()
-            ),
+            )
+            | nil,
           :shotPresenceLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t()
-            ),
+            )
+            | nil,
           :speechTranscriptions =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_SpeechTranscription.t()
-            ),
+            )
+            | nil,
           :textAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_TextAnnotation.t()
             )
+            | nil
         }
 
   field(:error, as: GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status)

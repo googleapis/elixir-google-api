@@ -29,9 +29,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Pe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeAttributes => boolean(),
-          :includeBoundingBoxes => boolean(),
-          :includePoseLandmarks => boolean()
+          :includeAttributes => boolean() | nil,
+          :includeBoundingBoxes => boolean() | nil,
+          :includePoseLandmarks => boolean() | nil
         }
 
   field(:includeAttributes)

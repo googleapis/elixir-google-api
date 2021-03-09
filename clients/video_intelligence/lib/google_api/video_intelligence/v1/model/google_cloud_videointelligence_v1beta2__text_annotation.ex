@@ -32,9 +32,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_TextSegment.t()
-            ),
-          :text => String.t(),
-          :version => String.t()
+            )
+            | nil,
+          :text => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:segments,

@@ -34,18 +34,22 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
           :categoryEntities =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_Entity.t()
-            ),
+            )
+            | nil,
           :entity =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_Entity.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_Entity.t()
+            | nil,
           :frames =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelFrame.t()
-            ),
+            )
+            | nil,
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelSegment.t()
-            ),
-          :version => String.t()
+            )
+            | nil,
+          :version => String.t() | nil
         }
 
   field(:categoryEntities,

@@ -33,14 +33,17 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
           :attributes =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_DetectedAttribute.t()
-            ),
-          :confidence => number(),
+            )
+            | nil,
+          :confidence => number() | nil,
           :segment =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_VideoSegment.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_VideoSegment.t()
+            | nil,
           :timestampedObjects =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_TimestampedObject.t()
             )
+            | nil
         }
 
   field(:attributes,

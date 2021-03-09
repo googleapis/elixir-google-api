@@ -32,17 +32,20 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => number(),
+          :confidence => number() | nil,
           :entity =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Entity.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Entity.t()
+            | nil,
           :frames =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingFrame.t()
-            ),
+            )
+            | nil,
           :segment =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment.t(),
-          :trackId => String.t(),
-          :version => String.t()
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment.t()
+            | nil,
+          :trackId => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:confidence)

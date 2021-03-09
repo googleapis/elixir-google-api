@@ -29,6 +29,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   @type t :: %__MODULE__{
           :segment =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoSegment.t()
+            | nil
         }
 
   field(:segment,

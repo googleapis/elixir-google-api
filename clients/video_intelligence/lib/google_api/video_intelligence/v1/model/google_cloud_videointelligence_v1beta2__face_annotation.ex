@@ -32,12 +32,14 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
           :frames =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_FaceFrame.t()
-            ),
+            )
+            | nil,
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_FaceSegment.t()
-            ),
-          :thumbnail => String.t()
+            )
+            | nil,
+          :thumbnail => String.t() | nil
         }
 
   field(:frames,

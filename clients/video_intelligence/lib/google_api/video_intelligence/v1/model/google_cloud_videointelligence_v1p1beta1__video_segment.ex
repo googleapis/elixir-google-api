@@ -28,8 +28,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTimeOffset => String.t(),
-          :startTimeOffset => String.t()
+          :endTimeOffset => String.t() | nil,
+          :startTimeOffset => String.t() | nil
         }
 
   field(:endTimeOffset)

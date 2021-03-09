@@ -29,8 +29,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Pe
 
   @type t :: %__MODULE__{
           :tracks =>
-            list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Track.t()),
-          :version => String.t()
+            list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Track.t())
+            | nil,
+          :version => String.t() | nil
         }
 
   field(:tracks,

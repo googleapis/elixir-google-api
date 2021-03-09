@@ -29,8 +29,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   @type t :: %__MODULE__{
           :celebrity =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Celebrity.t(),
-          :confidence => number()
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Celebrity.t()
+            | nil,
+          :confidence => number() | nil
         }
 
   field(:celebrity,

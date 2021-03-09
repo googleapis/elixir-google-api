@@ -30,15 +30,18 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
 
   @type t :: %__MODULE__{
           :entity =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_Entity.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_Entity.t()
+            | nil,
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_VideoSegment.t()
-            ),
+            )
+            | nil,
           :tracks =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_Track.t()
             )
+            | nil
         }
 
   field(:entity,

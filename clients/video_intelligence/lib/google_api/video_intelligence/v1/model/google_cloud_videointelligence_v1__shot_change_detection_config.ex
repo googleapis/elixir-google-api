@@ -27,7 +27,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Sh
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :model => String.t()
+          :model => String.t() | nil
         }
 
   field(:model)

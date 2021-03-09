@@ -30,10 +30,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bottom => number(),
-          :left => number(),
-          :right => number(),
-          :top => number()
+          :bottom => number() | nil,
+          :left => number() | nil,
+          :right => number() | nil,
+          :top => number() | nil
         }
 
   field(:bottom)

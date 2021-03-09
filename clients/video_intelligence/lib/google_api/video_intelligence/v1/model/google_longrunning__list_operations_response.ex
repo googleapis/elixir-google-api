@@ -28,9 +28,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunning_ListOperationsR
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :operations =>
-            list(GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunning_Operation.t())
+            list(GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunning_Operation.t()) | nil
         }
 
   field(:nextPageToken)

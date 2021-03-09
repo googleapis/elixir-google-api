@@ -32,13 +32,14 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Vi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :feature => String.t(),
-          :inputUri => String.t(),
-          :progressPercent => integer(),
+          :feature => String.t() | nil,
+          :inputUri => String.t() | nil,
+          :progressPercent => integer() | nil,
           :segment =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_VideoSegment.t(),
-          :startTime => DateTime.t(),
-          :updateTime => DateTime.t()
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_VideoSegment.t()
+            | nil,
+          :startTime => DateTime.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:feature)

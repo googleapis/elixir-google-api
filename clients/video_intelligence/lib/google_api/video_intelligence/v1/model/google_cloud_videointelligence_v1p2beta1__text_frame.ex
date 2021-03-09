@@ -29,8 +29,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
 
   @type t :: %__MODULE__{
           :rotatedBoundingBox =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingPoly.t(),
-          :timeOffset => String.t()
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingPoly.t()
+            | nil,
+          :timeOffset => String.t() | nil
         }
 
   field(:rotatedBoundingBox,
