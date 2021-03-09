@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.Csv do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataRows => list(GoogleApi.AlertCenter.V1beta1.Model.CsvRow.t()),
-          :headers => list(String.t())
+          :dataRows => list(GoogleApi.AlertCenter.V1beta1.Model.CsvRow.t()) | nil,
+          :headers => list(String.t()) | nil
         }
 
   field(:dataRows, as: GoogleApi.AlertCenter.V1beta1.Model.CsvRow, type: :list)

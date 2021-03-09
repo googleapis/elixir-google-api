@@ -32,12 +32,12 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alertId => String.t(),
-          :createTime => DateTime.t(),
-          :customerId => String.t(),
-          :email => String.t(),
-          :feedbackId => String.t(),
-          :type => String.t()
+          :alertId => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :customerId => String.t() | nil,
+          :email => String.t() | nil,
+          :feedbackId => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:alertId)

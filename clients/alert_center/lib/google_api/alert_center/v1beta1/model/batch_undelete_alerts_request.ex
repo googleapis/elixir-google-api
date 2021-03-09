@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.BatchUndeleteAlertsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alertId => list(String.t()),
-          :customerId => String.t()
+          :alertId => list(String.t()) | nil,
+          :customerId => String.t() | nil
         }
 
   field(:alertId, type: :list)

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo do
   @moduledoc """
-  Common alert information about violated rules that are configured by G Suite administrators.
+  Common alert information about violated rules that are configured by Google Workspace administrators.
 
   ## Attributes
 
@@ -28,6 +28,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo do
   *   `ruleInfo` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.RuleInfo.t`, *default:* `nil`) - Details of the violated rule.
   *   `suppressedActionTypes` (*type:* `list(String.t)`, *default:* `nil`) - Actions suppressed due to other actions with higher priority.
   *   `trigger` (*type:* `String.t`, *default:* `nil`) - Trigger of the rule.
+  *   `triggeredActionInfo` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.ActionInfo.t)`, *default:* `nil`) - Metadata related to the triggered actions.
   *   `triggeredActionTypes` (*type:* `list(String.t)`, *default:* `nil`) - Actions applied as a consequence of the rule being triggered.
   *   `triggeringUserEmail` (*type:* `String.t`, *default:* `nil`) - Email of the user who caused the violation. Value could be empty if not applicable, for example, a violation found by drive continuous scan.
   """
@@ -35,15 +36,16 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSource => String.t(),
-          :matchInfo => list(GoogleApi.AlertCenter.V1beta1.Model.MatchInfo.t()),
-          :recipients => list(String.t()),
-          :resourceInfo => GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo.t(),
-          :ruleInfo => GoogleApi.AlertCenter.V1beta1.Model.RuleInfo.t(),
-          :suppressedActionTypes => list(String.t()),
-          :trigger => String.t(),
-          :triggeredActionTypes => list(String.t()),
-          :triggeringUserEmail => String.t()
+          :dataSource => String.t() | nil,
+          :matchInfo => list(GoogleApi.AlertCenter.V1beta1.Model.MatchInfo.t()) | nil,
+          :recipients => list(String.t()) | nil,
+          :resourceInfo => GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo.t() | nil,
+          :ruleInfo => GoogleApi.AlertCenter.V1beta1.Model.RuleInfo.t() | nil,
+          :suppressedActionTypes => list(String.t()) | nil,
+          :trigger => String.t() | nil,
+          :triggeredActionInfo => list(GoogleApi.AlertCenter.V1beta1.Model.ActionInfo.t()) | nil,
+          :triggeredActionTypes => list(String.t()) | nil,
+          :triggeringUserEmail => String.t() | nil
         }
 
   field(:dataSource)
@@ -53,6 +55,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo do
   field(:ruleInfo, as: GoogleApi.AlertCenter.V1beta1.Model.RuleInfo)
   field(:suppressedActionTypes, type: :list)
   field(:trigger)
+  field(:triggeredActionInfo, as: GoogleApi.AlertCenter.V1beta1.Model.ActionInfo, type: :list)
   field(:triggeredActionTypes, type: :list)
   field(:triggeringUserEmail)
 end

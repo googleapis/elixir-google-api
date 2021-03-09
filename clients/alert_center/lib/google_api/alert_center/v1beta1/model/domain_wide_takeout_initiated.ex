@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DomainWideTakeoutInitiated do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :takeoutRequestId => String.t()
+          :email => String.t() | nil,
+          :takeoutRequestId => String.t() | nil
         }
 
   field(:email)

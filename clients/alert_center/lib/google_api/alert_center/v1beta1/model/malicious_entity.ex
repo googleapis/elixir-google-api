@@ -29,9 +29,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :entity => GoogleApi.AlertCenter.V1beta1.Model.User.t(),
-          :fromHeader => String.t()
+          :displayName => String.t() | nil,
+          :entity => GoogleApi.AlertCenter.V1beta1.Model.User.t() | nil,
+          :fromHeader => String.t() | nil
         }
 
   field(:displayName)

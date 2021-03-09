@@ -28,10 +28,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.BatchDeleteAlertsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failedAlertStatus => %{
-            optional(String.t()) => GoogleApi.AlertCenter.V1beta1.Model.Status.t()
-          },
-          :successAlertIds => list(String.t())
+          :failedAlertStatus =>
+            %{optional(String.t()) => GoogleApi.AlertCenter.V1beta1.Model.Status.t()} | nil,
+          :successAlertIds => list(String.t()) | nil
         }
 
   field(:failedAlertStatus, as: GoogleApi.AlertCenter.V1beta1.Model.Status, type: :map)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ListAlertsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alerts => list(GoogleApi.AlertCenter.V1beta1.Model.Alert.t()),
-          :nextPageToken => String.t()
+          :alerts => list(GoogleApi.AlertCenter.V1beta1.Model.Alert.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:alerts, as: GoogleApi.AlertCenter.V1beta1.Model.Alert, type: :list)

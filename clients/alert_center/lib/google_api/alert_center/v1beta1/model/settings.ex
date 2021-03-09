@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.Settings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notifications => list(GoogleApi.AlertCenter.V1beta1.Model.Notification.t())
+          :notifications => list(GoogleApi.AlertCenter.V1beta1.Model.Notification.t()) | nil
         }
 
   field(:notifications, as: GoogleApi.AlertCenter.V1beta1.Model.Notification, type: :list)

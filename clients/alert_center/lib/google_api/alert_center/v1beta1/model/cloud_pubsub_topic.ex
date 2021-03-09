@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.CloudPubsubTopic do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :payloadFormat => String.t(),
-          :topicName => String.t()
+          :payloadFormat => String.t() | nil,
+          :topicName => String.t() | nil
         }
 
   field(:payloadFormat)

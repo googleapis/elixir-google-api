@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.Notification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudPubsubTopic => GoogleApi.AlertCenter.V1beta1.Model.CloudPubsubTopic.t()
+          :cloudPubsubTopic => GoogleApi.AlertCenter.V1beta1.Model.CloudPubsubTopic.t() | nil
         }
 
   field(:cloudPubsubTopic, as: GoogleApi.AlertCenter.V1beta1.Model.CloudPubsubTopic)

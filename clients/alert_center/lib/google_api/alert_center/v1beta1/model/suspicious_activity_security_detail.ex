@@ -35,15 +35,15 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.SuspiciousActivitySecurityDetail d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :deviceModel => String.t(),
-          :deviceProperty => String.t(),
-          :deviceType => String.t(),
-          :iosVendorId => String.t(),
-          :newValue => String.t(),
-          :oldValue => String.t(),
-          :resourceId => String.t(),
-          :serialNumber => String.t()
+          :deviceId => String.t() | nil,
+          :deviceModel => String.t() | nil,
+          :deviceProperty => String.t() | nil,
+          :deviceType => String.t() | nil,
+          :iosVendorId => String.t() | nil,
+          :newValue => String.t() | nil,
+          :oldValue => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :serialNumber => String.t() | nil
         }
 
   field(:deviceId)

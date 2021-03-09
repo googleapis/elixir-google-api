@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ListAlertFeedbackResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :feedback => list(GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback.t())
+          :feedback => list(GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback.t()) | nil
         }
 
   field(:feedback, as: GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback, type: :list)

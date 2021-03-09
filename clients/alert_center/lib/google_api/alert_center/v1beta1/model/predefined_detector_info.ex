@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.PredefinedDetectorInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detectorName => String.t()
+          :detectorName => String.t() | nil
         }
 
   field(:detectorName)

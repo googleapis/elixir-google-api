@@ -34,14 +34,14 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attachmentsSha256Hash => list(String.t()),
-          :date => DateTime.t(),
-          :md5HashMessageBody => String.t(),
-          :md5HashSubject => String.t(),
-          :messageBodySnippet => String.t(),
-          :messageId => String.t(),
-          :recipient => String.t(),
-          :subjectText => String.t()
+          :attachmentsSha256Hash => list(String.t()) | nil,
+          :date => DateTime.t() | nil,
+          :md5HashMessageBody => String.t() | nil,
+          :md5HashSubject => String.t() | nil,
+          :messageBodySnippet => String.t() | nil,
+          :messageId => String.t() | nil,
+          :recipient => String.t() | nil,
+          :subjectText => String.t() | nil
         }
 
   field(:attachmentsSha256Hash, type: :list)

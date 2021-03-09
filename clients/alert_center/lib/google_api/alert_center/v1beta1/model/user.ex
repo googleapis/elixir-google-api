@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.User do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :emailAddress => String.t()
+          :displayName => String.t() | nil,
+          :emailAddress => String.t() | nil
         }
 
   field(:displayName)

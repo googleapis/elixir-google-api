@@ -28,9 +28,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.SuspiciousActivity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
+          :email => String.t() | nil,
           :events =>
-            list(GoogleApi.AlertCenter.V1beta1.Model.SuspiciousActivitySecurityDetail.t())
+            list(GoogleApi.AlertCenter.V1beta1.Model.SuspiciousActivitySecurityDetail.t()) | nil
         }
 
   field(:email)
