@@ -28,11 +28,11 @@ defmodule GoogleApi.AnalyticsData.V1alpha.Model.RunReportRequest do
   *   `dimensions` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.Dimension.t)`, *default:* `nil`) - The dimensions requested and displayed.
   *   `entity` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.Entity.t`, *default:* `nil`) - A property whose events are tracked. Within a batch request, this entity should either be unspecified or consistent with the batch-level entity.
   *   `keepEmptyRows` (*type:* `boolean()`, *default:* `nil`) - If false or unspecified, each row with all metrics equal to 0 will not be returned. If true, these rows will be returned if they are not separately removed by a filter.
-  *   `limit` (*type:* `String.t`, *default:* `nil`) - The number of rows to return. If the `limit` parameter is unspecified, 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for.
+  *   `limit` (*type:* `String.t`, *default:* `nil`) - The number of rows to return. If the `limit` parameter is unspecified, 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
   *   `metricAggregations` (*type:* `list(String.t)`, *default:* `nil`) - Aggregation of metrics. Aggregated metric values will be shown in rows where the dimension_values are set to "RESERVED_(MetricAggregation)".
   *   `metricFilter` (*type:* `GoogleApi.AnalyticsData.V1alpha.Model.FilterExpression.t`, *default:* `nil`) - The filter clause of metrics. Applied at post aggregation phase, similar to SQL having-clause. Metrics must be requested to be used in this filter. Dimensions cannot be used in this filter.
   *   `metrics` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.Metric.t)`, *default:* `nil`) - The metrics requested and displayed.
-  *   `offset` (*type:* `String.t`, *default:* `nil`) - The row count of the start row. The first row is counted as row 0.
+  *   `offset` (*type:* `String.t`, *default:* `nil`) - The row count of the start row. The first row is counted as row 0. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
   *   `orderBys` (*type:* `list(GoogleApi.AnalyticsData.V1alpha.Model.OrderBy.t)`, *default:* `nil`) - Specifies how rows are ordered in the response.
   *   `returnPropertyQuota` (*type:* `boolean()`, *default:* `nil`) - Toggles whether to return the current state of this Analytics Property's quota. Quota is returned in [PropertyQuota](#PropertyQuota).
   """
