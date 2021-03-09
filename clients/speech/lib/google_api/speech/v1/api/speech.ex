@@ -52,7 +52,10 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   *   `{:error, info}` on failure
   """
   @spec speech_speech_longrunningrecognize(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Speech.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Speech.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def speech_speech_longrunningrecognize(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -110,6 +113,7 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   @spec speech_speech_recognize(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Speech.V1.Model.RecognizeResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def speech_speech_recognize(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

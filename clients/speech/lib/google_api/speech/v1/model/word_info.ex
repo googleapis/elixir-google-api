@@ -30,10 +30,10 @@ defmodule GoogleApi.Speech.V1.Model.WordInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => String.t(),
-          :speakerTag => integer(),
-          :startTime => String.t(),
-          :word => String.t()
+          :endTime => String.t() | nil,
+          :speakerTag => integer() | nil,
+          :startTime => String.t() | nil,
+          :word => String.t() | nil
         }
 
   field(:endTime)

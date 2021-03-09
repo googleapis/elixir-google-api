@@ -30,10 +30,10 @@ defmodule GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableSpeakerDiarization => boolean(),
-          :maxSpeakerCount => integer(),
-          :minSpeakerCount => integer(),
-          :speakerTag => integer()
+          :enableSpeakerDiarization => boolean() | nil,
+          :maxSpeakerCount => integer() | nil,
+          :minSpeakerCount => integer() | nil,
+          :speakerTag => integer() | nil
         }
 
   field(:enableSpeakerDiarization)
