@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.BigQueryDestination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datasetId => String.t()
+          :datasetId => String.t() | nil
         }
 
   field(:datasetId)

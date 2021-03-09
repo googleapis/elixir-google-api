@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.DailyMaintenanceWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :startTime => String.t()
+          :duration => String.t() | nil,
+          :startTime => String.t() | nil
         }
 
   field(:duration)

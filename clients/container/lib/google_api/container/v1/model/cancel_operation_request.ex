@@ -30,10 +30,10 @@ defmodule GoogleApi.Container.V1.Model.CancelOperationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :operationId => String.t(),
-          :projectId => String.t(),
-          :zone => String.t()
+          :name => String.t() | nil,
+          :operationId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:name)

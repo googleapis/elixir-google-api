@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.MaintenancePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceVersion => String.t(),
-          :window => GoogleApi.Container.V1.Model.MaintenanceWindow.t()
+          :resourceVersion => String.t() | nil,
+          :window => GoogleApi.Container.V1.Model.MaintenanceWindow.t() | nil
         }
 
   field(:resourceVersion)

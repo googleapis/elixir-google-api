@@ -31,11 +31,11 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t(),
-          :enableIntraNodeVisibility => boolean(),
-          :network => String.t(),
-          :privateIpv6GoogleAccess => String.t(),
-          :subnetwork => String.t()
+          :defaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
+          :enableIntraNodeVisibility => boolean() | nil,
+          :network => String.t() | nil,
+          :privateIpv6GoogleAccess => String.t() | nil,
+          :subnetwork => String.t() | nil
         }
 
   field(:defaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)

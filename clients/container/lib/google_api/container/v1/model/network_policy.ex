@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.NetworkPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean(),
-          :provider => String.t()
+          :enabled => boolean() | nil,
+          :provider => String.t() | nil
         }
 
   field(:enabled)

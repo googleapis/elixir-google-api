@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.WorkloadIdentityConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :workloadPool => String.t()
+          :workloadPool => String.t() | nil
         }
 
   field(:workloadPool)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Container.V1.Model.UpdateClusterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => String.t(),
-          :name => String.t(),
-          :projectId => String.t(),
-          :update => GoogleApi.Container.V1.Model.ClusterUpdate.t(),
-          :zone => String.t()
+          :clusterId => String.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil,
+          :update => GoogleApi.Container.V1.Model.ClusterUpdate.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterId)

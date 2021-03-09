@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.CloudRunConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disabled => boolean(),
-          :loadBalancerType => String.t()
+          :disabled => boolean() | nil,
+          :loadBalancerType => String.t() | nil
         }
 
   field(:disabled)

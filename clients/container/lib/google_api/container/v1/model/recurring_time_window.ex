@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.RecurringTimeWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :recurrence => String.t(),
-          :window => GoogleApi.Container.V1.Model.TimeWindow.t()
+          :recurrence => String.t() | nil,
+          :window => GoogleApi.Container.V1.Model.TimeWindow.t() | nil
         }
 
   field(:recurrence)

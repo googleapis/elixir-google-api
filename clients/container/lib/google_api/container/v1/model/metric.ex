@@ -30,10 +30,10 @@ defmodule GoogleApi.Container.V1.Model.Metric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :doubleValue => float(),
-          :intValue => String.t(),
-          :name => String.t(),
-          :stringValue => String.t()
+          :doubleValue => float() | nil,
+          :intValue => String.t() | nil,
+          :name => String.t() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:doubleValue)

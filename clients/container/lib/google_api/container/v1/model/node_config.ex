@@ -48,28 +48,29 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accelerators => list(GoogleApi.Container.V1.Model.AcceleratorConfig.t()),
-          :bootDiskKmsKey => String.t(),
-          :diskSizeGb => integer(),
-          :diskType => String.t(),
-          :imageType => String.t(),
-          :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t(),
-          :labels => map(),
-          :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t(),
-          :localSsdCount => integer(),
-          :machineType => String.t(),
-          :metadata => map(),
-          :minCpuPlatform => String.t(),
-          :nodeGroup => String.t(),
-          :oauthScopes => list(String.t()),
-          :preemptible => boolean(),
-          :reservationAffinity => GoogleApi.Container.V1.Model.ReservationAffinity.t(),
-          :sandboxConfig => GoogleApi.Container.V1.Model.SandboxConfig.t(),
-          :serviceAccount => String.t(),
-          :shieldedInstanceConfig => GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t(),
-          :tags => list(String.t()),
-          :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t()),
-          :workloadMetadataConfig => GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t()
+          :accelerators => list(GoogleApi.Container.V1.Model.AcceleratorConfig.t()) | nil,
+          :bootDiskKmsKey => String.t() | nil,
+          :diskSizeGb => integer() | nil,
+          :diskType => String.t() | nil,
+          :imageType => String.t() | nil,
+          :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t() | nil,
+          :labels => map() | nil,
+          :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
+          :localSsdCount => integer() | nil,
+          :machineType => String.t() | nil,
+          :metadata => map() | nil,
+          :minCpuPlatform => String.t() | nil,
+          :nodeGroup => String.t() | nil,
+          :oauthScopes => list(String.t()) | nil,
+          :preemptible => boolean() | nil,
+          :reservationAffinity => GoogleApi.Container.V1.Model.ReservationAffinity.t() | nil,
+          :sandboxConfig => GoogleApi.Container.V1.Model.SandboxConfig.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :shieldedInstanceConfig =>
+            GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t() | nil,
+          :tags => list(String.t()) | nil,
+          :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t()) | nil,
+          :workloadMetadataConfig => GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t() | nil
         }
 
   field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)

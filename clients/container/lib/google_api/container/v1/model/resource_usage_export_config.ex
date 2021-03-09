@@ -29,10 +29,10 @@ defmodule GoogleApi.Container.V1.Model.ResourceUsageExportConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigqueryDestination => GoogleApi.Container.V1.Model.BigQueryDestination.t(),
+          :bigqueryDestination => GoogleApi.Container.V1.Model.BigQueryDestination.t() | nil,
           :consumptionMeteringConfig =>
-            GoogleApi.Container.V1.Model.ConsumptionMeteringConfig.t(),
-          :enableNetworkEgressMetering => boolean()
+            GoogleApi.Container.V1.Model.ConsumptionMeteringConfig.t() | nil,
+          :enableNetworkEgressMetering => boolean() | nil
         }
 
   field(:bigqueryDestination, as: GoogleApi.Container.V1.Model.BigQueryDestination)

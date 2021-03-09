@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.ListUsableSubnetworksResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :subnetworks => list(GoogleApi.Container.V1.Model.UsableSubnetwork.t())
+          :nextPageToken => String.t() | nil,
+          :subnetworks => list(GoogleApi.Container.V1.Model.UsableSubnetwork.t()) | nil
         }
 
   field(:nextPageToken)

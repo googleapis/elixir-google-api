@@ -40,20 +40,20 @@ defmodule GoogleApi.Container.V1.Model.Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterConditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()),
-          :detail => String.t(),
-          :endTime => String.t(),
-          :location => String.t(),
-          :name => String.t(),
-          :nodepoolConditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()),
-          :operationType => String.t(),
-          :progress => GoogleApi.Container.V1.Model.OperationProgress.t(),
-          :selfLink => String.t(),
-          :startTime => String.t(),
-          :status => String.t(),
-          :statusMessage => String.t(),
-          :targetLink => String.t(),
-          :zone => String.t()
+          :clusterConditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()) | nil,
+          :detail => String.t() | nil,
+          :endTime => String.t() | nil,
+          :location => String.t() | nil,
+          :name => String.t() | nil,
+          :nodepoolConditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()) | nil,
+          :operationType => String.t() | nil,
+          :progress => GoogleApi.Container.V1.Model.OperationProgress.t() | nil,
+          :selfLink => String.t() | nil,
+          :startTime => String.t() | nil,
+          :status => String.t() | nil,
+          :statusMessage => String.t() | nil,
+          :targetLink => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterConditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)

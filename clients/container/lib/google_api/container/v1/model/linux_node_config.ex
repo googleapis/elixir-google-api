@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.LinuxNodeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sysctls => map()
+          :sysctls => map() | nil
         }
 
   field(:sysctls, type: :map)

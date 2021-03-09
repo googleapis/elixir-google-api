@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.TimeWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t()
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)

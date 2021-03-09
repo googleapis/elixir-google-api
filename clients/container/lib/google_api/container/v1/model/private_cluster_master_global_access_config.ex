@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterMasterGlobalAccessConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean()
+          :enabled => boolean() | nil
         }
 
   field(:enabled)

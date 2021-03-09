@@ -32,12 +32,12 @@ defmodule GoogleApi.Container.V1.Model.SetMasterAuthRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :clusterId => String.t(),
-          :name => String.t(),
-          :projectId => String.t(),
-          :update => GoogleApi.Container.V1.Model.MasterAuth.t(),
-          :zone => String.t()
+          :action => String.t() | nil,
+          :clusterId => String.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil,
+          :update => GoogleApi.Container.V1.Model.MasterAuth.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:action)

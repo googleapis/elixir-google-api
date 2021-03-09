@@ -29,9 +29,9 @@ defmodule GoogleApi.Container.V1.Model.ResourceLimit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maximum => String.t(),
-          :minimum => String.t(),
-          :resourceType => String.t()
+          :maximum => String.t() | nil,
+          :minimum => String.t() | nil,
+          :resourceType => String.t() | nil
         }
 
   field(:maximum)

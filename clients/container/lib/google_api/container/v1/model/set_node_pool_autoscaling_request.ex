@@ -32,12 +32,12 @@ defmodule GoogleApi.Container.V1.Model.SetNodePoolAutoscalingRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscaling => GoogleApi.Container.V1.Model.NodePoolAutoscaling.t(),
-          :clusterId => String.t(),
-          :name => String.t(),
-          :nodePoolId => String.t(),
-          :projectId => String.t(),
-          :zone => String.t()
+          :autoscaling => GoogleApi.Container.V1.Model.NodePoolAutoscaling.t() | nil,
+          :clusterId => String.t() | nil,
+          :name => String.t() | nil,
+          :nodePoolId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:autoscaling, as: GoogleApi.Container.V1.Model.NodePoolAutoscaling)

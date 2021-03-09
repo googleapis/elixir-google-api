@@ -31,11 +31,11 @@ defmodule GoogleApi.Container.V1.Model.CreateNodePoolRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => String.t(),
-          :nodePool => GoogleApi.Container.V1.Model.NodePool.t(),
-          :parent => String.t(),
-          :projectId => String.t(),
-          :zone => String.t()
+          :clusterId => String.t() | nil,
+          :nodePool => GoogleApi.Container.V1.Model.NodePool.t() | nil,
+          :parent => String.t() | nil,
+          :projectId => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterId)

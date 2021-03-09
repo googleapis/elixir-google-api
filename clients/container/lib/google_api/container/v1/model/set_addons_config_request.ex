@@ -31,11 +31,11 @@ defmodule GoogleApi.Container.V1.Model.SetAddonsConfigRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t(),
-          :clusterId => String.t(),
-          :name => String.t(),
-          :projectId => String.t(),
-          :zone => String.t()
+          :addonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t() | nil,
+          :clusterId => String.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:addonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)

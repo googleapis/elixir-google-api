@@ -41,21 +41,21 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscaling => GoogleApi.Container.V1.Model.NodePoolAutoscaling.t(),
-          :conditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()),
-          :config => GoogleApi.Container.V1.Model.NodeConfig.t(),
-          :initialNodeCount => integer(),
-          :instanceGroupUrls => list(String.t()),
-          :locations => list(String.t()),
-          :management => GoogleApi.Container.V1.Model.NodeManagement.t(),
-          :maxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t(),
-          :name => String.t(),
-          :podIpv4CidrSize => integer(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :statusMessage => String.t(),
-          :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t(),
-          :version => String.t()
+          :autoscaling => GoogleApi.Container.V1.Model.NodePoolAutoscaling.t() | nil,
+          :conditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()) | nil,
+          :config => GoogleApi.Container.V1.Model.NodeConfig.t() | nil,
+          :initialNodeCount => integer() | nil,
+          :instanceGroupUrls => list(String.t()) | nil,
+          :locations => list(String.t()) | nil,
+          :management => GoogleApi.Container.V1.Model.NodeManagement.t() | nil,
+          :maxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t() | nil,
+          :name => String.t() | nil,
+          :podIpv4CidrSize => integer() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :statusMessage => String.t() | nil,
+          :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:autoscaling, as: GoogleApi.Container.V1.Model.NodePoolAutoscaling)

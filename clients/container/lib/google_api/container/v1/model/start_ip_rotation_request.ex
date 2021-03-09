@@ -31,11 +31,11 @@ defmodule GoogleApi.Container.V1.Model.StartIPRotationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => String.t(),
-          :name => String.t(),
-          :projectId => String.t(),
-          :rotateCredentials => boolean(),
-          :zone => String.t()
+          :clusterId => String.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil,
+          :rotateCredentials => boolean() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterId)

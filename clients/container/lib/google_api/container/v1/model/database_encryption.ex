@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.DatabaseEncryption do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyName => String.t(),
-          :state => String.t()
+          :keyName => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:keyName)

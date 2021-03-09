@@ -33,14 +33,14 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enablePrivateEndpoint => boolean(),
-          :enablePrivateNodes => boolean(),
+          :enablePrivateEndpoint => boolean() | nil,
+          :enablePrivateNodes => boolean() | nil,
           :masterGlobalAccessConfig =>
-            GoogleApi.Container.V1.Model.PrivateClusterMasterGlobalAccessConfig.t(),
-          :masterIpv4CidrBlock => String.t(),
-          :peeringName => String.t(),
-          :privateEndpoint => String.t(),
-          :publicEndpoint => String.t()
+            GoogleApi.Container.V1.Model.PrivateClusterMasterGlobalAccessConfig.t() | nil,
+          :masterIpv4CidrBlock => String.t() | nil,
+          :peeringName => String.t() | nil,
+          :privateEndpoint => String.t() | nil,
+          :publicEndpoint => String.t() | nil
         }
 
   field(:enablePrivateEndpoint)

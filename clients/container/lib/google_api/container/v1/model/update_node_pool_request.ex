@@ -38,18 +38,19 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => String.t(),
-          :imageType => String.t(),
-          :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t(),
-          :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t(),
-          :locations => list(String.t()),
-          :name => String.t(),
-          :nodePoolId => String.t(),
-          :nodeVersion => String.t(),
-          :projectId => String.t(),
-          :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t(),
-          :workloadMetadataConfig => GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t(),
-          :zone => String.t()
+          :clusterId => String.t() | nil,
+          :imageType => String.t() | nil,
+          :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t() | nil,
+          :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
+          :locations => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :nodePoolId => String.t() | nil,
+          :nodeVersion => String.t() | nil,
+          :projectId => String.t() | nil,
+          :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t() | nil,
+          :workloadMetadataConfig =>
+            GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterId)

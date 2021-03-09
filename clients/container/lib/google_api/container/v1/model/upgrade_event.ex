@@ -32,12 +32,12 @@ defmodule GoogleApi.Container.V1.Model.UpgradeEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentVersion => String.t(),
-          :operation => String.t(),
-          :operationStartTime => DateTime.t(),
-          :resource => String.t(),
-          :resourceType => String.t(),
-          :targetVersion => String.t()
+          :currentVersion => String.t() | nil,
+          :operation => String.t() | nil,
+          :operationStartTime => DateTime.t() | nil,
+          :resource => String.t() | nil,
+          :resourceType => String.t() | nil,
+          :targetVersion => String.t() | nil
         }
 
   field(:currentVersion)

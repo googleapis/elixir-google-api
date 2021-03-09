@@ -32,12 +32,12 @@ defmodule GoogleApi.Container.V1.Model.ServerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channels => list(GoogleApi.Container.V1.Model.ReleaseChannelConfig.t()),
-          :defaultClusterVersion => String.t(),
-          :defaultImageType => String.t(),
-          :validImageTypes => list(String.t()),
-          :validMasterVersions => list(String.t()),
-          :validNodeVersions => list(String.t())
+          :channels => list(GoogleApi.Container.V1.Model.ReleaseChannelConfig.t()) | nil,
+          :defaultClusterVersion => String.t() | nil,
+          :defaultImageType => String.t() | nil,
+          :validImageTypes => list(String.t()) | nil,
+          :validMasterVersions => list(String.t()) | nil,
+          :validNodeVersions => list(String.t()) | nil
         }
 
   field(:channels, as: GoogleApi.Container.V1.Model.ReleaseChannelConfig, type: :list)

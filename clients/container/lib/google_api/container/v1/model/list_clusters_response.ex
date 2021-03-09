@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.ListClustersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusters => list(GoogleApi.Container.V1.Model.Cluster.t()),
-          :missingZones => list(String.t())
+          :clusters => list(GoogleApi.Container.V1.Model.Cluster.t()) | nil,
+          :missingZones => list(String.t()) | nil
         }
 
   field(:clusters, as: GoogleApi.Container.V1.Model.Cluster, type: :list)

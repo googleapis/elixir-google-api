@@ -28,8 +28,8 @@ defmodule GoogleApi.Container.V1.Model.PubSub do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean(),
-          :topic => String.t()
+          :enabled => boolean() | nil,
+          :topic => String.t() | nil
         }
 
   field(:enabled)

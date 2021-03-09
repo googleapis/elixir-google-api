@@ -29,9 +29,9 @@ defmodule GoogleApi.Container.V1.Model.NodeTaint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :effect => String.t(),
-          :key => String.t(),
-          :value => String.t()
+          :effect => String.t() | nil,
+          :key => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:effect)

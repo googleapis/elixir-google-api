@@ -31,11 +31,11 @@ defmodule GoogleApi.Container.V1.Model.RollbackNodePoolUpgradeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterId => String.t(),
-          :name => String.t(),
-          :nodePoolId => String.t(),
-          :projectId => String.t(),
-          :zone => String.t()
+          :clusterId => String.t() | nil,
+          :name => String.t() | nil,
+          :nodePoolId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:clusterId)

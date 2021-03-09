@@ -30,10 +30,10 @@ defmodule GoogleApi.Container.V1.Model.CreateClusterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cluster => GoogleApi.Container.V1.Model.Cluster.t(),
-          :parent => String.t(),
-          :projectId => String.t(),
-          :zone => String.t()
+          :cluster => GoogleApi.Container.V1.Model.Cluster.t() | nil,
+          :parent => String.t() | nil,
+          :projectId => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:cluster, as: GoogleApi.Container.V1.Model.Cluster)
