@@ -28,9 +28,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1t
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exitCode => integer(),
+          :exitCode => integer() | nil,
           :outputs =>
             GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Digest.t()
+            | nil
         }
 
   field(:exitCode)

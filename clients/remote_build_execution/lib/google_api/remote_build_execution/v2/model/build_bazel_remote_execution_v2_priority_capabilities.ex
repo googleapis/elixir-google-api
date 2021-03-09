@@ -31,6 +31,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Pri
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilitiesPriorityRange.t()
             )
+            | nil
         }
 
   field(:priorities,

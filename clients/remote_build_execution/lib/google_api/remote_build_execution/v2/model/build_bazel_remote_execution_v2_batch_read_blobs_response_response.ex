@@ -29,10 +29,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Bat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t(),
+          :data => String.t() | nil,
           :digest =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
-          :status => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t() | nil,
+          :status => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t() | nil
         }
 
   field(:data)

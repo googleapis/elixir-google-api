@@ -31,11 +31,13 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1t
           :directories =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2DirectoryMetadata.t()
-            ),
+            )
+            | nil,
           :files =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2FileMetadata.t()
             )
+            | nil
         }
 
   field(:directories,

@@ -30,9 +30,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   @type t :: %__MODULE__{
           :instance =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance.t(),
-          :instanceId => String.t(),
-          :parent => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance.t()
+            | nil,
+          :instanceId => String.t() | nil,
+          :parent => String.t() | nil
         }
 
   field(:instance,

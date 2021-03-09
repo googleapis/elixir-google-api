@@ -28,8 +28,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Pri
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxPriority => integer(),
-          :minPriority => integer()
+          :maxPriority => integer() | nil,
+          :minPriority => integer() | nil
         }
 
   field(:maxPriority)

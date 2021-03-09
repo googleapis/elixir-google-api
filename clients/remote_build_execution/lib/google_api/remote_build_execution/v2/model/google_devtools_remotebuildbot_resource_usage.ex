@@ -29,11 +29,13 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpuUsedPercent => float(),
+          :cpuUsedPercent => float() | nil,
           :diskUsage =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageStat.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageStat.t()
+            | nil,
           :memoryUsage =>
             GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotResourceUsageStat.t()
+            | nil
         }
 
   field(:cpuUsedPercent)

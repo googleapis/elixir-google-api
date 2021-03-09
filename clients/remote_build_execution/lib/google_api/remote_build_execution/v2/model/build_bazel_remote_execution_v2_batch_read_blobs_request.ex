@@ -29,6 +29,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Bat
   @type t :: %__MODULE__{
           :digests =>
             list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t())
+            | nil
         }
 
   field(:digests,

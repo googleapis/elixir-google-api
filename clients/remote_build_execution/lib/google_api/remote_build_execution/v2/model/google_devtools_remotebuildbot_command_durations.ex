@@ -39,19 +39,19 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :casRelease => String.t(),
-          :cmWaitForAssignment => String.t(),
-          :dockerPrep => String.t(),
-          :dockerPrepStartTime => DateTime.t(),
-          :download => String.t(),
-          :downloadStartTime => DateTime.t(),
-          :execStartTime => DateTime.t(),
-          :execution => String.t(),
-          :isoPrepDone => DateTime.t(),
-          :overall => String.t(),
-          :stdout => String.t(),
-          :upload => String.t(),
-          :uploadStartTime => DateTime.t()
+          :casRelease => String.t() | nil,
+          :cmWaitForAssignment => String.t() | nil,
+          :dockerPrep => String.t() | nil,
+          :dockerPrepStartTime => DateTime.t() | nil,
+          :download => String.t() | nil,
+          :downloadStartTime => DateTime.t() | nil,
+          :execStartTime => DateTime.t() | nil,
+          :execution => String.t() | nil,
+          :isoPrepDone => DateTime.t() | nil,
+          :overall => String.t() | nil,
+          :stdout => String.t() | nil,
+          :upload => String.t() | nil,
+          :uploadStartTime => DateTime.t() | nil
         }
 
   field(:casRelease)

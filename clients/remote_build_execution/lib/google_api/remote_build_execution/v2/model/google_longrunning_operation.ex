@@ -31,11 +31,11 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleLongrunningOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :error => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t(),
-          :metadata => map(),
-          :name => String.t(),
-          :response => map()
+          :done => boolean() | nil,
+          :error => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :response => map() | nil
         }
 
   field(:done)

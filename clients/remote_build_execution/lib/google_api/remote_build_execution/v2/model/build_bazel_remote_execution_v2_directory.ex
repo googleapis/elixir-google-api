@@ -33,15 +33,19 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dir
           :directories =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2DirectoryNode.t()
-            ),
+            )
+            | nil,
           :files =>
-            list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FileNode.t()),
+            list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FileNode.t())
+            | nil,
           :nodeProperties =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t()
+            | nil,
           :symlinks =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2SymlinkNode.t()
             )
+            | nil
         }
 
   field(:directories,

@@ -27,7 +27,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Act
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :updateEnabled => boolean()
+          :updateEnabled => boolean() | nil
         }
 
   field(:updateEnabled)

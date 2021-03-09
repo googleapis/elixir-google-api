@@ -27,7 +27,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Res
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :priority => integer()
+          :priority => integer() | nil
         }
 
   field(:priority)

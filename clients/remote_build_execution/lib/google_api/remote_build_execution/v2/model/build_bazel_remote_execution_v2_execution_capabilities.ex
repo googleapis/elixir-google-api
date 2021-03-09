@@ -30,11 +30,12 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :digestFunction => String.t(),
-          :execEnabled => boolean(),
+          :digestFunction => String.t() | nil,
+          :execEnabled => boolean() | nil,
           :executionPriorityCapabilities =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities.t(),
-          :supportedNodeProperties => list(String.t())
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities.t()
+            | nil,
+          :supportedNodeProperties => list(String.t()) | nil
         }
 
   field(:digestFunction)

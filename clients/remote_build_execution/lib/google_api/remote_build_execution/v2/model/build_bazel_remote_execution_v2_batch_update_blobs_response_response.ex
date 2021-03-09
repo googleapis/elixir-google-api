@@ -29,8 +29,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Bat
 
   @type t :: %__MODULE__{
           :digest =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
-          :status => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t() | nil,
+          :status => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t() | nil
         }
 
   field(:digest, as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest)

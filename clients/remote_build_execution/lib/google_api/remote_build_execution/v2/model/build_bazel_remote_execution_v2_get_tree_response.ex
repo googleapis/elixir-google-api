@@ -29,8 +29,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Get
 
   @type t :: %__MODULE__{
           :directories =>
-            list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t())
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:directories,

@@ -29,12 +29,13 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Nod
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mtime => DateTime.t(),
+          :mtime => DateTime.t() | nil,
           :properties =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t()
-            ),
-          :unixMode => integer()
+            )
+            | nil,
+          :unixMode => integer() | nil
         }
 
   field(:mtime, as: DateTime)

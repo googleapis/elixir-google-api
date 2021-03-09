@@ -29,9 +29,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1t
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :execution => String.t(),
-          :idle => String.t(),
-          :shutdown => String.t()
+          :execution => String.t() | nil,
+          :idle => String.t() | nil,
+          :shutdown => String.t() | nil
         }
 
   field(:execution)

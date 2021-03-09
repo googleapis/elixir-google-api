@@ -31,20 +31,23 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1t
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arguments => list(String.t()),
+          :arguments => list(String.t()) | nil,
           :environmentVariables =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2CommandTaskInputsEnvironmentVariable.t()
-            ),
+            )
+            | nil,
           :files =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Digest.t()
-            ),
+            )
+            | nil,
           :inlineBlobs =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Blob.t()
-            ),
-          :workingDirectory => String.t()
+            )
+            | nil,
+          :workingDirectory => String.t() | nil
         }
 
   field(:arguments, type: :list)

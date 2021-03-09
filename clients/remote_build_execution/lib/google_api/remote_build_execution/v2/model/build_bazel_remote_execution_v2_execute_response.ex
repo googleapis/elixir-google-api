@@ -31,15 +31,18 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cachedResult => boolean(),
-          :message => String.t(),
+          :cachedResult => boolean() | nil,
+          :message => String.t() | nil,
           :result =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ActionResult.t(),
-          :serverLogs => %{
-            optional(String.t()) =>
-              GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2LogFile.t()
-          },
-          :status => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ActionResult.t()
+            | nil,
+          :serverLogs =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2LogFile.t()
+            }
+            | nil,
+          :status => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t() | nil
         }
 
   field(:cachedResult)

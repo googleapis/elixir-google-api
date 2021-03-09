@@ -28,8 +28,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedValues => list(String.t()),
-          :policy => String.t()
+          :allowedValues => list(String.t()) | nil,
+          :policy => String.t() | nil
         }
 
   field(:allowedValues, type: :list)

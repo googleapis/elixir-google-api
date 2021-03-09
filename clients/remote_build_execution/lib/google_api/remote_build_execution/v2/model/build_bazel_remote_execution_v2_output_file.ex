@@ -31,13 +31,14 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Out
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contents => String.t(),
+          :contents => String.t() | nil,
           :digest =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
-          :isExecutable => boolean(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t() | nil,
+          :isExecutable => boolean() | nil,
           :nodeProperties =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t(),
-          :path => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t()
+            | nil,
+          :path => String.t() | nil
         }
 
   field(:contents)
