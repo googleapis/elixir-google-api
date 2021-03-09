@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudScheduler.V1.Model.HttpTarget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => String.t(),
-          :headers => map(),
-          :httpMethod => String.t(),
-          :oauthToken => GoogleApi.CloudScheduler.V1.Model.OAuthToken.t(),
-          :oidcToken => GoogleApi.CloudScheduler.V1.Model.OidcToken.t(),
-          :uri => String.t()
+          :body => String.t() | nil,
+          :headers => map() | nil,
+          :httpMethod => String.t() | nil,
+          :oauthToken => GoogleApi.CloudScheduler.V1.Model.OAuthToken.t() | nil,
+          :oidcToken => GoogleApi.CloudScheduler.V1.Model.OidcToken.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:body)

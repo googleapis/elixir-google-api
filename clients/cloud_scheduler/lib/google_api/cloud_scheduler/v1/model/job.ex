@@ -40,20 +40,20 @@ defmodule GoogleApi.CloudScheduler.V1.Model.Job do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngineHttpTarget => GoogleApi.CloudScheduler.V1.Model.AppEngineHttpTarget.t(),
-          :attemptDeadline => String.t(),
-          :description => String.t(),
-          :httpTarget => GoogleApi.CloudScheduler.V1.Model.HttpTarget.t(),
-          :lastAttemptTime => DateTime.t(),
-          :name => String.t(),
-          :pubsubTarget => GoogleApi.CloudScheduler.V1.Model.PubsubTarget.t(),
-          :retryConfig => GoogleApi.CloudScheduler.V1.Model.RetryConfig.t(),
-          :schedule => String.t(),
-          :scheduleTime => DateTime.t(),
-          :state => String.t(),
-          :status => GoogleApi.CloudScheduler.V1.Model.Status.t(),
-          :timeZone => String.t(),
-          :userUpdateTime => DateTime.t()
+          :appEngineHttpTarget => GoogleApi.CloudScheduler.V1.Model.AppEngineHttpTarget.t() | nil,
+          :attemptDeadline => String.t() | nil,
+          :description => String.t() | nil,
+          :httpTarget => GoogleApi.CloudScheduler.V1.Model.HttpTarget.t() | nil,
+          :lastAttemptTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :pubsubTarget => GoogleApi.CloudScheduler.V1.Model.PubsubTarget.t() | nil,
+          :retryConfig => GoogleApi.CloudScheduler.V1.Model.RetryConfig.t() | nil,
+          :schedule => String.t() | nil,
+          :scheduleTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :status => GoogleApi.CloudScheduler.V1.Model.Status.t() | nil,
+          :timeZone => String.t() | nil,
+          :userUpdateTime => DateTime.t() | nil
         }
 
   field(:appEngineHttpTarget, as: GoogleApi.CloudScheduler.V1.Model.AppEngineHttpTarget)

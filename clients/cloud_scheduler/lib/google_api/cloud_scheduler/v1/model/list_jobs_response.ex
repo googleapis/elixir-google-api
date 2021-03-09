@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudScheduler.V1.Model.ListJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobs => list(GoogleApi.CloudScheduler.V1.Model.Job.t()),
-          :nextPageToken => String.t()
+          :jobs => list(GoogleApi.CloudScheduler.V1.Model.Job.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:jobs, as: GoogleApi.CloudScheduler.V1.Model.Job, type: :list)

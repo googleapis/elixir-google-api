@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudScheduler.V1.Model.OidcToken do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audience => String.t(),
-          :serviceAccountEmail => String.t()
+          :audience => String.t() | nil,
+          :serviceAccountEmail => String.t() | nil
         }
 
   field(:audience)

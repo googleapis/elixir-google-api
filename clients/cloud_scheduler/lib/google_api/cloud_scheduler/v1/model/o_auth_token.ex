@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudScheduler.V1.Model.OAuthToken do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :scope => String.t(),
-          :serviceAccountEmail => String.t()
+          :scope => String.t() | nil,
+          :serviceAccountEmail => String.t() | nil
         }
 
   field(:scope)
