@@ -29,9 +29,9 @@ defmodule GoogleApi.Workflows.V1beta.Model.ListWorkflowsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t()),
-          :workflows => list(GoogleApi.Workflows.V1beta.Model.Workflow.t())
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil,
+          :workflows => list(GoogleApi.Workflows.V1beta.Model.Workflow.t()) | nil
         }
 
   field(:nextPageToken)
