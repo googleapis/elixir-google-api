@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ListRoutinesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :routines => list(GoogleApi.BigQuery.V2.Model.Routine.t())
+          :nextPageToken => String.t() | nil,
+          :routines => list(GoogleApi.BigQuery.V2.Model.Routine.t()) | nil
         }
 
   field(:nextPageToken)

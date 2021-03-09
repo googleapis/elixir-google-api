@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.RowLevelSecurityStatistics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rowLevelSecurityApplied => boolean()
+          :rowLevelSecurityApplied => boolean() | nil
         }
 
   field(:rowLevelSecurityApplied)

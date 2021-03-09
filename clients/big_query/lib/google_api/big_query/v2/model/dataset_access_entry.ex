@@ -28,8 +28,9 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetAccessEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t(),
-          :target_types => list(GoogleApi.BigQuery.V2.Model.DatasetAccessEntryTargetTypes.t())
+          :dataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
+          :target_types =>
+            list(GoogleApi.BigQuery.V2.Model.DatasetAccessEntryTargetTypes.t()) | nil
         }
 
   field(:dataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)

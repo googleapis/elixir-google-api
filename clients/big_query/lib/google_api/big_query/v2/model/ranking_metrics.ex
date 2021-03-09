@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQuery.V2.Model.RankingMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :averageRank => float(),
-          :meanAveragePrecision => float(),
-          :meanSquaredError => float(),
-          :normalizedDiscountedCumulativeGain => float()
+          :averageRank => float() | nil,
+          :meanAveragePrecision => float() | nil,
+          :meanSquaredError => float() | nil,
+          :normalizedDiscountedCumulativeGain => float() | nil
         }
 
   field(:averageRank)

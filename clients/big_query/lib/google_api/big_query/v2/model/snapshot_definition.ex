@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.SnapshotDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :baseTableReference => GoogleApi.BigQuery.V2.Model.TableReference.t(),
-          :snapshotTime => DateTime.t()
+          :baseTableReference => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :snapshotTime => DateTime.t() | nil
         }
 
   field(:baseTableReference, as: GoogleApi.BigQuery.V2.Model.TableReference)

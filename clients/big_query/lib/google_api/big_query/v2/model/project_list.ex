@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQuery.V2.Model.ProjectList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :projects => list(GoogleApi.BigQuery.V2.Model.ProjectListProjects.t()),
-          :totalItems => integer()
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :projects => list(GoogleApi.BigQuery.V2.Model.ProjectListProjects.t()) | nil,
+          :totalItems => integer() | nil
         }
 
   field(:etag)

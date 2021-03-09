@@ -39,19 +39,20 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autodetect => boolean(),
-          :bigtableOptions => GoogleApi.BigQuery.V2.Model.BigtableOptions.t(),
-          :compression => String.t(),
-          :connectionId => String.t(),
-          :csvOptions => GoogleApi.BigQuery.V2.Model.CsvOptions.t(),
-          :googleSheetsOptions => GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions.t(),
-          :hivePartitioningOptions => GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t(),
-          :ignoreUnknownValues => boolean(),
-          :maxBadRecords => integer(),
-          :parquetOptions => GoogleApi.BigQuery.V2.Model.ParquetOptions.t(),
-          :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t(),
-          :sourceFormat => String.t(),
-          :sourceUris => list(String.t())
+          :autodetect => boolean() | nil,
+          :bigtableOptions => GoogleApi.BigQuery.V2.Model.BigtableOptions.t() | nil,
+          :compression => String.t() | nil,
+          :connectionId => String.t() | nil,
+          :csvOptions => GoogleApi.BigQuery.V2.Model.CsvOptions.t() | nil,
+          :googleSheetsOptions => GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions.t() | nil,
+          :hivePartitioningOptions =>
+            GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t() | nil,
+          :ignoreUnknownValues => boolean() | nil,
+          :maxBadRecords => integer() | nil,
+          :parquetOptions => GoogleApi.BigQuery.V2.Model.ParquetOptions.t() | nil,
+          :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
+          :sourceFormat => String.t() | nil,
+          :sourceUris => list(String.t()) | nil
         }
 
   field(:autodetect)

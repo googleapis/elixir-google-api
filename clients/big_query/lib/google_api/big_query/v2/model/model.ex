@@ -40,20 +40,21 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => String.t(),
-          :description => String.t(),
-          :encryptionConfiguration => GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t(),
-          :etag => String.t(),
-          :expirationTime => String.t(),
-          :featureColumns => list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t()),
-          :friendlyName => String.t(),
-          :labelColumns => list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t()),
-          :labels => map(),
-          :lastModifiedTime => String.t(),
-          :location => String.t(),
-          :modelReference => GoogleApi.BigQuery.V2.Model.ModelReference.t(),
-          :modelType => String.t(),
-          :trainingRuns => list(GoogleApi.BigQuery.V2.Model.TrainingRun.t())
+          :creationTime => String.t() | nil,
+          :description => String.t() | nil,
+          :encryptionConfiguration =>
+            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
+          :etag => String.t() | nil,
+          :expirationTime => String.t() | nil,
+          :featureColumns => list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t()) | nil,
+          :friendlyName => String.t() | nil,
+          :labelColumns => list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t()) | nil,
+          :labels => map() | nil,
+          :lastModifiedTime => String.t() | nil,
+          :location => String.t() | nil,
+          :modelReference => GoogleApi.BigQuery.V2.Model.ModelReference.t() | nil,
+          :modelType => String.t() | nil,
+          :trainingRuns => list(GoogleApi.BigQuery.V2.Model.TrainingRun.t()) | nil
         }
 
   field(:creationTime)

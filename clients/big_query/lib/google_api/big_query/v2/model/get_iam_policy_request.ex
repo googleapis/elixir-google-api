@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.GetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :options => GoogleApi.BigQuery.V2.Model.GetPolicyOptions.t()
+          :options => GoogleApi.BigQuery.V2.Model.GetPolicyOptions.t() | nil
         }
 
   field(:options, as: GoogleApi.BigQuery.V2.Model.GetPolicyOptions)

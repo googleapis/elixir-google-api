@@ -29,8 +29,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse do
 
   @type t :: %__MODULE__{
           :insertErrors =>
-            list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors.t()),
-          :kind => String.t()
+            list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:insertErrors,

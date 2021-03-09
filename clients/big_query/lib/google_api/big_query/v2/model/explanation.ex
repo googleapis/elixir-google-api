@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Explanation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attribution => float(),
-          :featureName => String.t()
+          :attribution => float() | nil,
+          :featureName => String.t() | nil
         }
 
   field(:attribution)

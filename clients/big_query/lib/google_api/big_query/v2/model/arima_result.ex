@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arimaModelInfo => list(GoogleApi.BigQuery.V2.Model.ArimaModelInfo.t()),
-          :seasonalPeriods => list(String.t())
+          :arimaModelInfo => list(GoogleApi.BigQuery.V2.Model.ArimaModelInfo.t()) | nil,
+          :seasonalPeriods => list(String.t()) | nil
         }
 
   field(:arimaModelInfo, as: GoogleApi.BigQuery.V2.Model.ArimaModelInfo, type: :list)

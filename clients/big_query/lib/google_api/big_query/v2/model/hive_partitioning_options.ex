@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.HivePartitioningOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mode => String.t(),
-          :requirePartitionFilter => boolean(),
-          :sourceUriPrefix => String.t()
+          :mode => String.t() | nil,
+          :requirePartitionFilter => boolean() | nil,
+          :sourceUriPrefix => String.t() | nil
         }
 
   field(:mode)

@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.GlobalExplanation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :classLabel => String.t(),
-          :explanations => list(GoogleApi.BigQuery.V2.Model.Explanation.t())
+          :classLabel => String.t() | nil,
+          :explanations => list(GoogleApi.BigQuery.V2.Model.Explanation.t()) | nil
         }
 
   field(:classLabel)

@@ -35,15 +35,15 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationExtract do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compression => String.t(),
-          :destinationFormat => String.t(),
-          :destinationUri => String.t(),
-          :destinationUris => list(String.t()),
-          :fieldDelimiter => String.t(),
-          :printHeader => boolean(),
-          :sourceModel => GoogleApi.BigQuery.V2.Model.ModelReference.t(),
-          :sourceTable => GoogleApi.BigQuery.V2.Model.TableReference.t(),
-          :useAvroLogicalTypes => boolean()
+          :compression => String.t() | nil,
+          :destinationFormat => String.t() | nil,
+          :destinationUri => String.t() | nil,
+          :destinationUris => list(String.t()) | nil,
+          :fieldDelimiter => String.t() | nil,
+          :printHeader => boolean() | nil,
+          :sourceModel => GoogleApi.BigQuery.V2.Model.ModelReference.t() | nil,
+          :sourceTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :useAvroLogicalTypes => boolean() | nil
         }
 
   field(:compression)

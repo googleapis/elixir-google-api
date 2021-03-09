@@ -42,22 +42,22 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connectionProperties => list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t()),
-          :defaultDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t(),
-          :dryRun => boolean(),
-          :kind => String.t(),
-          :labels => map(),
-          :location => String.t(),
-          :maxResults => integer(),
-          :maximumBytesBilled => String.t(),
-          :parameterMode => String.t(),
-          :preserveNulls => boolean(),
-          :query => String.t(),
-          :queryParameters => list(GoogleApi.BigQuery.V2.Model.QueryParameter.t()),
-          :requestId => String.t(),
-          :timeoutMs => integer(),
-          :useLegacySql => boolean(),
-          :useQueryCache => boolean()
+          :connectionProperties => list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t()) | nil,
+          :defaultDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
+          :dryRun => boolean() | nil,
+          :kind => String.t() | nil,
+          :labels => map() | nil,
+          :location => String.t() | nil,
+          :maxResults => integer() | nil,
+          :maximumBytesBilled => String.t() | nil,
+          :parameterMode => String.t() | nil,
+          :preserveNulls => boolean() | nil,
+          :query => String.t() | nil,
+          :queryParameters => list(GoogleApi.BigQuery.V2.Model.QueryParameter.t()) | nil,
+          :requestId => String.t() | nil,
+          :timeoutMs => integer() | nil,
+          :useLegacySql => boolean() | nil,
+          :useQueryCache => boolean() | nil
         }
 
   field(:connectionProperties, as: GoogleApi.BigQuery.V2.Model.ConnectionProperty, type: :list)

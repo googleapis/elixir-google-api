@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.CategoryCount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :count => String.t()
+          :category => String.t() | nil,
+          :count => String.t() | nil
         }
 
   field(:category)

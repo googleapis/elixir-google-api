@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :pageToken => String.t(),
-          :rows => list(GoogleApi.BigQuery.V2.Model.TableRow.t()),
-          :totalRows => String.t()
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :pageToken => String.t() | nil,
+          :rows => list(GoogleApi.BigQuery.V2.Model.TableRow.t()) | nil,
+          :totalRows => String.t() | nil
         }
 
   field(:etag)

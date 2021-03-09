@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.BigQueryModelTraining do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentIteration => integer(),
-          :expectedTotalIterations => String.t()
+          :currentIteration => integer() | nil,
+          :expectedTotalIterations => String.t() | nil
         }
 
   field(:currentIteration)

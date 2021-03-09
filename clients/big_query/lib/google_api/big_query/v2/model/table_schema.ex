@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableSchema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t())
+          :fields => list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t()) | nil
         }
 
   field(:fields, as: GoogleApi.BigQuery.V2.Model.TableFieldSchema, type: :list)

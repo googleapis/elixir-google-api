@@ -34,15 +34,15 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arimaResult => GoogleApi.BigQuery.V2.Model.ArimaResult.t(),
-          :clusterInfos => list(GoogleApi.BigQuery.V2.Model.ClusterInfo.t()),
-          :durationMs => String.t(),
-          :evalLoss => float(),
-          :index => integer(),
-          :learnRate => float(),
+          :arimaResult => GoogleApi.BigQuery.V2.Model.ArimaResult.t() | nil,
+          :clusterInfos => list(GoogleApi.BigQuery.V2.Model.ClusterInfo.t()) | nil,
+          :durationMs => String.t() | nil,
+          :evalLoss => float() | nil,
+          :index => integer() | nil,
+          :learnRate => float() | nil,
           :principalComponentInfos =>
-            list(GoogleApi.BigQuery.V2.Model.PrincipalComponentInfo.t()),
-          :trainingLoss => float()
+            list(GoogleApi.BigQuery.V2.Model.PrincipalComponentInfo.t()) | nil,
+          :trainingLoss => float() | nil
         }
 
   field(:arimaResult, as: GoogleApi.BigQuery.V2.Model.ArimaResult)

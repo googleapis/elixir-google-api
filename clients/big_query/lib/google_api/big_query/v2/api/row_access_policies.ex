@@ -54,7 +54,10 @@ defmodule GoogleApi.BigQuery.V2.Api.RowAccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def bigquery_row_access_policies_get_iam_policy(
         connection,
         resource,
@@ -122,6 +125,7 @@ defmodule GoogleApi.BigQuery.V2.Api.RowAccessPolicies do
         ) ::
           {:ok, GoogleApi.BigQuery.V2.Model.ListRowAccessPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquery_row_access_policies_list(
         connection,
@@ -193,7 +197,10 @@ defmodule GoogleApi.BigQuery.V2.Api.RowAccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def bigquery_row_access_policies_set_iam_policy(
         connection,
         resource,
@@ -256,6 +263,7 @@ defmodule GoogleApi.BigQuery.V2.Api.RowAccessPolicies do
         ) ::
           {:ok, GoogleApi.BigQuery.V2.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquery_row_access_policies_test_iam_permissions(
         connection,

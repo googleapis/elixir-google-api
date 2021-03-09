@@ -38,18 +38,18 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arguments => list(GoogleApi.BigQuery.V2.Model.Argument.t()),
-          :creationTime => String.t(),
-          :definitionBody => String.t(),
-          :description => String.t(),
-          :determinismLevel => String.t(),
-          :etag => String.t(),
-          :importedLibraries => list(String.t()),
-          :language => String.t(),
-          :lastModifiedTime => String.t(),
-          :returnType => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t(),
-          :routineReference => GoogleApi.BigQuery.V2.Model.RoutineReference.t(),
-          :routineType => String.t()
+          :arguments => list(GoogleApi.BigQuery.V2.Model.Argument.t()) | nil,
+          :creationTime => String.t() | nil,
+          :definitionBody => String.t() | nil,
+          :description => String.t() | nil,
+          :determinismLevel => String.t() | nil,
+          :etag => String.t() | nil,
+          :importedLibraries => list(String.t()) | nil,
+          :language => String.t() | nil,
+          :lastModifiedTime => String.t() | nil,
+          :returnType => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t() | nil,
+          :routineReference => GoogleApi.BigQuery.V2.Model.RoutineReference.t() | nil,
+          :routineType => String.t() | nil
         }
 
   field(:arguments, as: GoogleApi.BigQuery.V2.Model.Argument, type: :list)

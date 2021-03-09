@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQuery.V2.Model.TimePartitioning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expirationMs => String.t(),
-          :field => String.t(),
-          :requirePartitionFilter => boolean(),
-          :type => String.t()
+          :expirationMs => String.t() | nil,
+          :field => String.t() | nil,
+          :requirePartitionFilter => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:expirationMs)

@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datasets => list(GoogleApi.BigQuery.V2.Model.DatasetListDatasets.t()),
-          :etag => String.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :datasets => list(GoogleApi.BigQuery.V2.Model.DatasetListDatasets.t()) | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:datasets, as: GoogleApi.BigQuery.V2.Model.DatasetListDatasets, type: :list)

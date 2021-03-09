@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :range => String.t(),
-          :skipLeadingRows => String.t()
+          :range => String.t() | nil,
+          :skipLeadingRows => String.t() | nil
         }
 
   field(:range)

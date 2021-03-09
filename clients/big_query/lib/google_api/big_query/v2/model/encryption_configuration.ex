@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.EncryptionConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kmsKeyName => String.t()
+          :kmsKeyName => String.t() | nil
         }
 
   field(:kmsKeyName)

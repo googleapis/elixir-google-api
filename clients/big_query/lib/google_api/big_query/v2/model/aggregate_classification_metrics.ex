@@ -33,13 +33,13 @@ defmodule GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accuracy => float(),
-          :f1Score => float(),
-          :logLoss => float(),
-          :precision => float(),
-          :recall => float(),
-          :rocAuc => float(),
-          :threshold => float()
+          :accuracy => float() | nil,
+          :f1Score => float() | nil,
+          :logLoss => float() | nil,
+          :precision => float() | nil,
+          :recall => float() | nil,
+          :rocAuc => float() | nil,
+          :threshold => float() | nil
         }
 
   field(:accuracy)

@@ -35,15 +35,15 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accuracy => float(),
-          :f1Score => float(),
-          :falseNegatives => String.t(),
-          :falsePositives => String.t(),
-          :positiveClassThreshold => float(),
-          :precision => float(),
-          :recall => float(),
-          :trueNegatives => String.t(),
-          :truePositives => String.t()
+          :accuracy => float() | nil,
+          :f1Score => float() | nil,
+          :falseNegatives => String.t() | nil,
+          :falsePositives => String.t() | nil,
+          :positiveClassThreshold => float() | nil,
+          :precision => float() | nil,
+          :recall => float() | nil,
+          :trueNegatives => String.t() | nil,
+          :truePositives => String.t() | nil
         }
 
   field(:accuracy)

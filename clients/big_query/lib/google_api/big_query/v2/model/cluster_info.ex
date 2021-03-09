@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ClusterInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :centroidId => String.t(),
-          :clusterRadius => float(),
-          :clusterSize => String.t()
+          :centroidId => String.t() | nil,
+          :clusterRadius => float() | nil,
+          :clusterSize => String.t() | nil
         }
 
   field(:centroidId)

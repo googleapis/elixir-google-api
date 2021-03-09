@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQuery.V2.Model.BqmlIterationResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :durationMs => String.t(),
-          :evalLoss => float(),
-          :index => integer(),
-          :learnRate => float(),
-          :trainingLoss => float()
+          :durationMs => String.t() | nil,
+          :evalLoss => float() | nil,
+          :index => integer() | nil,
+          :learnRate => float() | nil,
+          :trainingLoss => float() | nil
         }
 
   field(:durationMs)

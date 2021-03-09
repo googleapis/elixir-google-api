@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ScriptStatistics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :evaluationKind => String.t(),
-          :stackFrames => list(GoogleApi.BigQuery.V2.Model.ScriptStackFrame.t())
+          :evaluationKind => String.t() | nil,
+          :stackFrames => list(GoogleApi.BigQuery.V2.Model.ScriptStackFrame.t()) | nil
         }
 
   field(:evaluationKind)

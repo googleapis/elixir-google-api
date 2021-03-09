@@ -43,25 +43,25 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :completionRatio => float(),
-          :creationTime => String.t(),
-          :endTime => String.t(),
-          :extract => GoogleApi.BigQuery.V2.Model.JobStatistics4.t(),
-          :load => GoogleApi.BigQuery.V2.Model.JobStatistics3.t(),
-          :numChildJobs => String.t(),
-          :parentJobId => String.t(),
-          :query => GoogleApi.BigQuery.V2.Model.JobStatistics2.t(),
-          :quotaDeferments => list(String.t()),
+          :completionRatio => float() | nil,
+          :creationTime => String.t() | nil,
+          :endTime => String.t() | nil,
+          :extract => GoogleApi.BigQuery.V2.Model.JobStatistics4.t() | nil,
+          :load => GoogleApi.BigQuery.V2.Model.JobStatistics3.t() | nil,
+          :numChildJobs => String.t() | nil,
+          :parentJobId => String.t() | nil,
+          :query => GoogleApi.BigQuery.V2.Model.JobStatistics2.t() | nil,
+          :quotaDeferments => list(String.t()) | nil,
           :reservationUsage =>
-            list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t()),
-          :reservation_id => String.t(),
+            list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t()) | nil,
+          :reservation_id => String.t() | nil,
           :rowLevelSecurityStatistics =>
-            GoogleApi.BigQuery.V2.Model.RowLevelSecurityStatistics.t(),
-          :scriptStatistics => GoogleApi.BigQuery.V2.Model.ScriptStatistics.t(),
-          :startTime => String.t(),
-          :totalBytesProcessed => String.t(),
-          :totalSlotMs => String.t(),
-          :transactionInfoTemplate => GoogleApi.BigQuery.V2.Model.TransactionInfo.t()
+            GoogleApi.BigQuery.V2.Model.RowLevelSecurityStatistics.t() | nil,
+          :scriptStatistics => GoogleApi.BigQuery.V2.Model.ScriptStatistics.t() | nil,
+          :startTime => String.t() | nil,
+          :totalBytesProcessed => String.t() | nil,
+          :totalSlotMs => String.t() | nil,
+          :transactionInfoTemplate => GoogleApi.BigQuery.V2.Model.TransactionInfo.t() | nil
         }
 
   field(:completionRatio)

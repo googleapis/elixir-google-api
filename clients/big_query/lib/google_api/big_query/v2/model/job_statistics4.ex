@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics4 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationUriFileCounts => list(String.t()),
-          :inputBytes => String.t()
+          :destinationUriFileCounts => list(String.t()) | nil,
+          :inputBytes => String.t() | nil
         }
 
   field(:destinationUriFileCounts, type: :list)

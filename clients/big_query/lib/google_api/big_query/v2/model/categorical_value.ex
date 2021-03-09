@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.CategoricalValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categoryCounts => list(GoogleApi.BigQuery.V2.Model.CategoryCount.t())
+          :categoryCounts => list(GoogleApi.BigQuery.V2.Model.CategoryCount.t()) | nil
         }
 
   field(:categoryCounts, as: GoogleApi.BigQuery.V2.Model.CategoryCount, type: :list)

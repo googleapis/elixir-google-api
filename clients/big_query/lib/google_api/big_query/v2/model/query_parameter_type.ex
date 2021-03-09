@@ -29,9 +29,10 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryParameterType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arrayType => GoogleApi.BigQuery.V2.Model.QueryParameterType.t(),
-          :structTypes => list(GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes.t()),
-          :type => String.t()
+          :arrayType => GoogleApi.BigQuery.V2.Model.QueryParameterType.t() | nil,
+          :structTypes =>
+            list(GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:arrayType, as: GoogleApi.BigQuery.V2.Model.QueryParameterType)

@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableCell do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :v => any()
+          :v => any() | nil
         }
 
   field(:v)

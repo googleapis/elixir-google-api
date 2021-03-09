@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics3 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :badRecords => String.t(),
-          :inputFileBytes => String.t(),
-          :inputFiles => String.t(),
-          :outputBytes => String.t(),
-          :outputRows => String.t()
+          :badRecords => String.t() | nil,
+          :inputFileBytes => String.t() | nil,
+          :inputFiles => String.t() | nil,
+          :outputBytes => String.t() | nil,
+          :outputRows => String.t() | nil
         }
 
   field(:badRecords)

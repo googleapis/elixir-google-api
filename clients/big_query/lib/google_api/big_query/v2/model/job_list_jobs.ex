@@ -35,15 +35,15 @@ defmodule GoogleApi.BigQuery.V2.Model.JobListJobs do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configuration => GoogleApi.BigQuery.V2.Model.JobConfiguration.t(),
-          :errorResult => GoogleApi.BigQuery.V2.Model.ErrorProto.t(),
-          :id => String.t(),
-          :jobReference => GoogleApi.BigQuery.V2.Model.JobReference.t(),
-          :kind => String.t(),
-          :state => String.t(),
-          :statistics => GoogleApi.BigQuery.V2.Model.JobStatistics.t(),
-          :status => GoogleApi.BigQuery.V2.Model.JobStatus.t(),
-          :user_email => String.t()
+          :configuration => GoogleApi.BigQuery.V2.Model.JobConfiguration.t() | nil,
+          :errorResult => GoogleApi.BigQuery.V2.Model.ErrorProto.t() | nil,
+          :id => String.t() | nil,
+          :jobReference => GoogleApi.BigQuery.V2.Model.JobReference.t() | nil,
+          :kind => String.t() | nil,
+          :state => String.t() | nil,
+          :statistics => GoogleApi.BigQuery.V2.Model.JobStatistics.t() | nil,
+          :status => GoogleApi.BigQuery.V2.Model.JobStatus.t() | nil,
+          :user_email => String.t() | nil
         }
 
   field(:configuration, as: GoogleApi.BigQuery.V2.Model.JobConfiguration)

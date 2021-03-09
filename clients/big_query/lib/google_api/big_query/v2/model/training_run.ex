@@ -32,12 +32,12 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSplitResult => GoogleApi.BigQuery.V2.Model.DataSplitResult.t(),
-          :evaluationMetrics => GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t(),
-          :globalExplanations => list(GoogleApi.BigQuery.V2.Model.GlobalExplanation.t()),
-          :results => list(GoogleApi.BigQuery.V2.Model.IterationResult.t()),
-          :startTime => DateTime.t(),
-          :trainingOptions => GoogleApi.BigQuery.V2.Model.TrainingOptions.t()
+          :dataSplitResult => GoogleApi.BigQuery.V2.Model.DataSplitResult.t() | nil,
+          :evaluationMetrics => GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t() | nil,
+          :globalExplanations => list(GoogleApi.BigQuery.V2.Model.GlobalExplanation.t()) | nil,
+          :results => list(GoogleApi.BigQuery.V2.Model.IterationResult.t()) | nil,
+          :startTime => DateTime.t() | nil,
+          :trainingOptions => GoogleApi.BigQuery.V2.Model.TrainingOptions.t() | nil
         }
 
   field(:dataSplitResult, as: GoogleApi.BigQuery.V2.Model.DataSplitResult)

@@ -29,10 +29,10 @@ defmodule GoogleApi.BigQuery.V2.Model.ViewDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :query => String.t(),
-          :useLegacySql => boolean(),
+          :query => String.t() | nil,
+          :useLegacySql => boolean() | nil,
           :userDefinedFunctionResources =>
-            list(GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource.t())
+            list(GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource.t()) | nil
         }
 
   field(:query)

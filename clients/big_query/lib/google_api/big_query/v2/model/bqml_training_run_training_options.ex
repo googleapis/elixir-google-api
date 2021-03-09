@@ -35,15 +35,15 @@ defmodule GoogleApi.BigQuery.V2.Model.BqmlTrainingRunTrainingOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :earlyStop => boolean(),
-          :l1Reg => float(),
-          :l2Reg => float(),
-          :learnRate => float(),
-          :learnRateStrategy => String.t(),
-          :lineSearchInitLearnRate => float(),
-          :maxIteration => String.t(),
-          :minRelProgress => float(),
-          :warmStart => boolean()
+          :earlyStop => boolean() | nil,
+          :l1Reg => float() | nil,
+          :l2Reg => float() | nil,
+          :learnRate => float() | nil,
+          :learnRateStrategy => String.t() | nil,
+          :lineSearchInitLearnRate => float() | nil,
+          :maxIteration => String.t() | nil,
+          :minRelProgress => float() | nil,
+          :warmStart => boolean() | nil
         }
 
   field(:earlyStop)

@@ -32,12 +32,12 @@ defmodule GoogleApi.BigQuery.V2.Model.BigtableColumn do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encoding => String.t(),
-          :fieldName => String.t(),
-          :onlyReadLatest => boolean(),
-          :qualifierEncoded => String.t(),
-          :qualifierString => String.t(),
-          :type => String.t()
+          :encoding => String.t() | nil,
+          :fieldName => String.t() | nil,
+          :onlyReadLatest => boolean() | nil,
+          :qualifierEncoded => String.t() | nil,
+          :qualifierString => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:encoding)

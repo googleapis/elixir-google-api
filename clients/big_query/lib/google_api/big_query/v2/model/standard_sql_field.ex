@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.StandardSqlField do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :type => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t()
+          :name => String.t() | nil,
+          :type => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t() | nil
         }
 
   field(:name)

@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ConfusionMatrix do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidenceThreshold => float(),
-          :rows => list(GoogleApi.BigQuery.V2.Model.Row.t())
+          :confidenceThreshold => float() | nil,
+          :rows => list(GoogleApi.BigQuery.V2.Model.Row.t()) | nil
         }
 
   field(:confidenceThreshold)

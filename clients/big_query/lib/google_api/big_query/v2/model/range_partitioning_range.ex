@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.RangePartitioningRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :end => String.t(),
-          :interval => String.t(),
-          :start => String.t()
+          :end => String.t() | nil,
+          :interval => String.t() | nil,
+          :start => String.t() | nil
         }
 
   field(:end)

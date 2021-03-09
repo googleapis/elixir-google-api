@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertId => String.t(),
-          :json => GoogleApi.BigQuery.V2.Model.JsonObject.t()
+          :insertId => String.t() | nil,
+          :json => GoogleApi.BigQuery.V2.Model.JsonObject.t() | nil
         }
 
   field(:insertId)

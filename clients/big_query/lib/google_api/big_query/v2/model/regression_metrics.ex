@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQuery.V2.Model.RegressionMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :meanAbsoluteError => float(),
-          :meanSquaredError => float(),
-          :meanSquaredLogError => float(),
-          :medianAbsoluteError => float(),
-          :rSquared => float()
+          :meanAbsoluteError => float() | nil,
+          :meanSquaredError => float() | nil,
+          :meanSquaredLogError => float() | nil,
+          :medianAbsoluteError => float() | nil,
+          :rSquared => float() | nil
         }
 
   field(:meanAbsoluteError)

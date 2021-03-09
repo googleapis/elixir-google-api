@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ParquetOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableListInference => boolean(),
-          :enumAsString => boolean()
+          :enableListInference => boolean() | nil,
+          :enumAsString => boolean() | nil
         }
 
   field(:enableListInference)

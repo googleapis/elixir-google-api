@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.BigtableOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnFamilies => list(GoogleApi.BigQuery.V2.Model.BigtableColumnFamily.t()),
-          :ignoreUnspecifiedColumnFamilies => boolean(),
-          :readRowkeyAsString => boolean()
+          :columnFamilies => list(GoogleApi.BigQuery.V2.Model.BigtableColumnFamily.t()) | nil,
+          :ignoreUnspecifiedColumnFamilies => boolean() | nil,
+          :readRowkeyAsString => boolean() | nil
         }
 
   field(:columnFamilies, as: GoogleApi.BigQuery.V2.Model.BigtableColumnFamily, type: :list)

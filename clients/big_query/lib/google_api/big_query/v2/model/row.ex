@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Row do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actualLabel => String.t(),
-          :entries => list(GoogleApi.BigQuery.V2.Model.Entry.t())
+          :actualLabel => String.t() | nil,
+          :entries => list(GoogleApi.BigQuery.V2.Model.Entry.t()) | nil
         }
 
   field(:actualLabel)

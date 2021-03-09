@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaOrder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :d => String.t(),
-          :p => String.t(),
-          :q => String.t()
+          :d => String.t() | nil,
+          :p => String.t() | nil,
+          :q => String.t() | nil
         }
 
   field(:d)

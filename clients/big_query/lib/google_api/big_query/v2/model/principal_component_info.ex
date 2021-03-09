@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQuery.V2.Model.PrincipalComponentInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cumulativeExplainedVarianceRatio => float(),
-          :explainedVariance => float(),
-          :explainedVarianceRatio => float(),
-          :principalComponentId => String.t()
+          :cumulativeExplainedVarianceRatio => float() | nil,
+          :explainedVariance => float() | nil,
+          :explainedVarianceRatio => float() | nil,
+          :principalComponentId => String.t() | nil
         }
 
   field(:cumulativeExplainedVarianceRatio)

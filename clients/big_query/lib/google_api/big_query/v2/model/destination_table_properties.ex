@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQuery.V2.Model.DestinationTableProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :friendlyName => String.t(),
-          :labels => map()
+          :description => String.t() | nil,
+          :friendlyName => String.t() | nil,
+          :labels => map() | nil
         }
 
   field(:description)
