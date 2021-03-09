@@ -28,8 +28,8 @@ defmodule GoogleApi.Domains.V1alpha2.Model.ListRegistrationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :registrations => list(GoogleApi.Domains.V1alpha2.Model.Registration.t())
+          :nextPageToken => String.t() | nil,
+          :registrations => list(GoogleApi.Domains.V1alpha2.Model.Registration.t()) | nil
         }
 
   field(:nextPageToken)

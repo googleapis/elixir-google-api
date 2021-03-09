@@ -27,7 +27,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.AuthorizationCode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t()
+          :code => String.t() | nil
         }
 
   field(:code)

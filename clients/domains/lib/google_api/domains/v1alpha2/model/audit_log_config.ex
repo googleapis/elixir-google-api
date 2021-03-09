@@ -28,8 +28,8 @@ defmodule GoogleApi.Domains.V1alpha2.Model.AuditLogConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exemptedMembers => list(String.t()),
-          :logType => String.t()
+          :exemptedMembers => list(String.t()) | nil,
+          :logType => String.t() | nil
         }
 
   field(:exemptedMembers, type: :list)

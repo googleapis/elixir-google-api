@@ -29,9 +29,9 @@ defmodule GoogleApi.Domains.V1alpha2.Model.DnsSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customDns => GoogleApi.Domains.V1alpha2.Model.CustomDns.t(),
-          :glueRecords => list(GoogleApi.Domains.V1alpha2.Model.GlueRecord.t()),
-          :googleDomainsDns => GoogleApi.Domains.V1alpha2.Model.GoogleDomainsDns.t()
+          :customDns => GoogleApi.Domains.V1alpha2.Model.CustomDns.t() | nil,
+          :glueRecords => list(GoogleApi.Domains.V1alpha2.Model.GlueRecord.t()) | nil,
+          :googleDomainsDns => GoogleApi.Domains.V1alpha2.Model.GoogleDomainsDns.t() | nil
         }
 
   field(:customDns, as: GoogleApi.Domains.V1alpha2.Model.CustomDns)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Domains.V1beta1.Model.ConfigureContactSettingsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactNotices => list(String.t()),
-          :contactSettings => GoogleApi.Domains.V1beta1.Model.ContactSettings.t(),
-          :updateMask => String.t(),
-          :validateOnly => boolean()
+          :contactNotices => list(String.t()) | nil,
+          :contactSettings => GoogleApi.Domains.V1beta1.Model.ContactSettings.t() | nil,
+          :updateMask => String.t() | nil,
+          :validateOnly => boolean() | nil
         }
 
   field(:contactNotices, type: :list)

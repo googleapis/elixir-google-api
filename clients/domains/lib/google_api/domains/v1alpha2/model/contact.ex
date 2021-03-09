@@ -30,10 +30,10 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Contact do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :faxNumber => String.t(),
-          :phoneNumber => String.t(),
-          :postalAddress => GoogleApi.Domains.V1alpha2.Model.PostalAddress.t()
+          :email => String.t() | nil,
+          :faxNumber => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :postalAddress => GoogleApi.Domains.V1alpha2.Model.PostalAddress.t() | nil
         }
 
   field(:email)

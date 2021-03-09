@@ -27,7 +27,8 @@ defmodule GoogleApi.Domains.V1alpha2.Model.SearchDomainsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :registerParameters => list(GoogleApi.Domains.V1alpha2.Model.RegisterParameters.t())
+          :registerParameters =>
+            list(GoogleApi.Domains.V1alpha2.Model.RegisterParameters.t()) | nil
         }
 
   field(:registerParameters, as: GoogleApi.Domains.V1alpha2.Model.RegisterParameters, type: :list)

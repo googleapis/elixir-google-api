@@ -27,7 +27,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.RetrieveRegisterParametersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :registerParameters => GoogleApi.Domains.V1alpha2.Model.RegisterParameters.t()
+          :registerParameters => GoogleApi.Domains.V1alpha2.Model.RegisterParameters.t() | nil
         }
 
   field(:registerParameters, as: GoogleApi.Domains.V1alpha2.Model.RegisterParameters)

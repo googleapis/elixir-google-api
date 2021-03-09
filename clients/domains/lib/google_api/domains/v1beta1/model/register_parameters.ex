@@ -31,11 +31,11 @@ defmodule GoogleApi.Domains.V1beta1.Model.RegisterParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availability => String.t(),
-          :domainName => String.t(),
-          :domainNotices => list(String.t()),
-          :supportedPrivacy => list(String.t()),
-          :yearlyPrice => GoogleApi.Domains.V1beta1.Model.Money.t()
+          :availability => String.t() | nil,
+          :domainName => String.t() | nil,
+          :domainNotices => list(String.t()) | nil,
+          :supportedPrivacy => list(String.t()) | nil,
+          :yearlyPrice => GoogleApi.Domains.V1beta1.Model.Money.t() | nil
         }
 
   field(:availability)

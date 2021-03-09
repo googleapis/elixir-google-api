@@ -30,10 +30,10 @@ defmodule GoogleApi.Domains.V1beta1.Model.DsRecord do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :digest => String.t(),
-          :digestType => String.t(),
-          :keyTag => integer()
+          :algorithm => String.t() | nil,
+          :digest => String.t() | nil,
+          :digestType => String.t() | nil,
+          :keyTag => integer() | nil
         }
 
   field(:algorithm)

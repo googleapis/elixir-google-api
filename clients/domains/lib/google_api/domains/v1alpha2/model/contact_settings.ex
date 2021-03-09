@@ -30,10 +30,10 @@ defmodule GoogleApi.Domains.V1alpha2.Model.ContactSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adminContact => GoogleApi.Domains.V1alpha2.Model.Contact.t(),
-          :privacy => String.t(),
-          :registrantContact => GoogleApi.Domains.V1alpha2.Model.Contact.t(),
-          :technicalContact => GoogleApi.Domains.V1alpha2.Model.Contact.t()
+          :adminContact => GoogleApi.Domains.V1alpha2.Model.Contact.t() | nil,
+          :privacy => String.t() | nil,
+          :registrantContact => GoogleApi.Domains.V1alpha2.Model.Contact.t() | nil,
+          :technicalContact => GoogleApi.Domains.V1alpha2.Model.Contact.t() | nil
         }
 
   field(:adminContact, as: GoogleApi.Domains.V1alpha2.Model.Contact)

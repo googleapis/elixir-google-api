@@ -54,6 +54,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
   @spec domains_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
   @spec domains_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -185,6 +187,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_operations_get(
         connection,
@@ -257,6 +260,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_operations_list(
         connection,
@@ -332,6 +336,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_configure_contact_settings(
         connection,
@@ -403,6 +408,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_configure_dns_settings(
         connection,
@@ -474,6 +480,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_configure_management_settings(
         connection,
@@ -544,6 +551,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_delete(
         connection,
@@ -614,6 +622,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_export(
         connection,
@@ -684,6 +693,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Registration.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_get(
         connection,
@@ -754,6 +764,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_get_iam_policy(
         connection,
@@ -827,6 +838,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.ListRegistrationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_list(
         connection,
@@ -903,6 +915,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_patch(
         connection,
@@ -975,6 +988,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_register(
         connection,
@@ -1046,6 +1060,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.AuthorizationCode.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_reset_authorization_code(
         connection,
@@ -1116,6 +1131,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.AuthorizationCode.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_retrieve_authorization_code(
         connection,
@@ -1186,6 +1202,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.RetrieveRegisterParametersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_retrieve_register_parameters(
         connection,
@@ -1259,6 +1276,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.SearchDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_search_domains(
         connection,
@@ -1332,6 +1350,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_set_iam_policy(
         connection,
@@ -1403,6 +1422,7 @@ defmodule GoogleApi.Domains.V1alpha2.Api.Projects do
         ) ::
           {:ok, GoogleApi.Domains.V1alpha2.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def domains_projects_locations_registrations_test_iam_permissions(
         connection,

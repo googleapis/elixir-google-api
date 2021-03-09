@@ -29,9 +29,9 @@ defmodule GoogleApi.Domains.V1alpha2.Model.ConfigureDnsSettingsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dnsSettings => GoogleApi.Domains.V1alpha2.Model.DnsSettings.t(),
-          :updateMask => String.t(),
-          :validateOnly => boolean()
+          :dnsSettings => GoogleApi.Domains.V1alpha2.Model.DnsSettings.t() | nil,
+          :updateMask => String.t() | nil,
+          :validateOnly => boolean() | nil
         }
 
   field(:dnsSettings, as: GoogleApi.Domains.V1alpha2.Model.DnsSettings)
