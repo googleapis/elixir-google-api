@@ -34,14 +34,14 @@ defmodule GoogleApi.Licensing.V1.Model.LicenseAssignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etags => String.t(),
-          :kind => String.t(),
-          :productId => String.t(),
-          :productName => String.t(),
-          :selfLink => String.t(),
-          :skuId => String.t(),
-          :skuName => String.t(),
-          :userId => String.t()
+          :etags => String.t() | nil,
+          :kind => String.t() | nil,
+          :productId => String.t() | nil,
+          :productName => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :skuId => String.t() | nil,
+          :skuName => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:etags)

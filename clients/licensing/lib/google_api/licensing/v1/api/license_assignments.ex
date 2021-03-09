@@ -61,7 +61,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Licensing.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Licensing.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def licensing_license_assignments_delete(
         connection,
         product_id,
@@ -138,6 +141,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         ) ::
           {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def licensing_license_assignments_get(
         connection,
@@ -214,6 +218,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         ) ::
           {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def licensing_license_assignments_insert(
         connection,
@@ -290,6 +295,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         ) ::
           {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignmentList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def licensing_license_assignments_list_for_product(
         connection,
@@ -369,6 +375,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         ) ::
           {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignmentList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def licensing_license_assignments_list_for_product_and_sku(
         connection,
@@ -449,6 +456,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         ) ::
           {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def licensing_license_assignments_patch(
         connection,
@@ -528,6 +536,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         ) ::
           {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def licensing_license_assignments_update(
         connection,
