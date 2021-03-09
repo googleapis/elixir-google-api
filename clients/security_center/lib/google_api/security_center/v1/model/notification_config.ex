@@ -31,11 +31,11 @@ defmodule GoogleApi.SecurityCenter.V1.Model.NotificationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :name => String.t(),
-          :pubsubTopic => String.t(),
-          :serviceAccount => String.t(),
-          :streamingConfig => GoogleApi.SecurityCenter.V1.Model.StreamingConfig.t()
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :pubsubTopic => String.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :streamingConfig => GoogleApi.SecurityCenter.V1.Model.StreamingConfig.t() | nil
         }
 
   field(:description)

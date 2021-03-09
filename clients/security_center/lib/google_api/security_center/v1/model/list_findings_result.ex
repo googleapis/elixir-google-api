@@ -29,9 +29,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ListFindingsResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :finding => GoogleApi.SecurityCenter.V1.Model.Finding.t(),
-          :resource => GoogleApi.SecurityCenter.V1.Model.Resource.t(),
-          :stateChange => String.t()
+          :finding => GoogleApi.SecurityCenter.V1.Model.Finding.t() | nil,
+          :resource => GoogleApi.SecurityCenter.V1.Model.Resource.t() | nil,
+          :stateChange => String.t() | nil
         }
 
   field(:finding, as: GoogleApi.SecurityCenter.V1.Model.Finding)

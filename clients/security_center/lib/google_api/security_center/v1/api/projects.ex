@@ -55,6 +55,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
   @spec securitycenter_projects_assets_group(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.GroupAssetsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_projects_assets_group(
         connection,
@@ -127,6 +128,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
   @spec securitycenter_projects_assets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.ListAssetsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_projects_assets_list(
         connection,
@@ -208,6 +210,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_projects_assets_update_security_marks(
         connection,
@@ -279,6 +282,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
   @spec securitycenter_projects_sources_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.ListSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_projects_sources_list(
         connection,
@@ -353,6 +357,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.GroupFindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_projects_sources_findings_group(
         connection,
@@ -436,6 +441,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.ListFindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_projects_sources_findings_list(
         connection,
@@ -522,6 +528,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Finding.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_projects_sources_findings_patch(
         connection,
@@ -602,6 +609,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Finding.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_projects_sources_findings_set_state(
         connection,
@@ -686,6 +694,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_projects_sources_findings_update_security_marks(
         connection,

@@ -28,8 +28,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ListSourcesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :sources => list(GoogleApi.SecurityCenter.V1.Model.Source.t())
+          :nextPageToken => String.t() | nil,
+          :sources => list(GoogleApi.SecurityCenter.V1.Model.Source.t()) | nil
         }
 
   field(:nextPageToken)

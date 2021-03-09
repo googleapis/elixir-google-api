@@ -27,7 +27,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.IamPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policyBlob => String.t()
+          :policyBlob => String.t() | nil
         }
 
   field(:policyBlob)

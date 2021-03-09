@@ -35,15 +35,15 @@ defmodule GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :folders => list(GoogleApi.SecurityCenter.V1.Model.Folder.t()),
-          :resourceDisplayName => String.t(),
-          :resourceName => String.t(),
-          :resourceOwners => list(String.t()),
-          :resourceParent => String.t(),
-          :resourceParentDisplayName => String.t(),
-          :resourceProject => String.t(),
-          :resourceProjectDisplayName => String.t(),
-          :resourceType => String.t()
+          :folders => list(GoogleApi.SecurityCenter.V1.Model.Folder.t()) | nil,
+          :resourceDisplayName => String.t() | nil,
+          :resourceName => String.t() | nil,
+          :resourceOwners => list(String.t()) | nil,
+          :resourceParent => String.t() | nil,
+          :resourceParentDisplayName => String.t() | nil,
+          :resourceProject => String.t() | nil,
+          :resourceProjectDisplayName => String.t() | nil,
+          :resourceType => String.t() | nil
         }
 
   field(:folders, as: GoogleApi.SecurityCenter.V1.Model.Folder, type: :list)

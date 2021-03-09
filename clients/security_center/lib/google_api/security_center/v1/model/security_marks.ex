@@ -28,8 +28,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.SecurityMarks do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :marks => map(),
-          :name => String.t()
+          :marks => map() | nil,
+          :name => String.t() | nil
         }
 
   field(:marks, type: :map)

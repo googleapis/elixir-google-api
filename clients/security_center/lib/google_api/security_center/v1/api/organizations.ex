@@ -59,6 +59,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.OrganizationSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_get_organization_settings(
         connection,
@@ -132,6 +133,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.OrganizationSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_update_organization_settings(
         connection,
@@ -206,6 +208,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.GroupAssetsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_assets_group(
         connection,
@@ -283,6 +286,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.ListAssetsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_assets_list(
         connection,
@@ -360,6 +364,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_assets_run_discovery(
         connection,
@@ -435,6 +440,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_assets_update_security_marks(
         connection,
@@ -511,6 +517,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.NotificationConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_notification_configs_create(
         connection,
@@ -584,6 +591,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_notification_configs_delete(
         connection,
@@ -661,6 +669,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.NotificationConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_notification_configs_get(
         connection,
@@ -738,6 +747,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.ListNotificationConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_notification_configs_list(
         connection,
@@ -815,6 +825,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.NotificationConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_notification_configs_patch(
         connection,
@@ -894,6 +905,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_operations_cancel(
         connection,
@@ -967,6 +979,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_operations_delete(
         connection,
@@ -1040,6 +1053,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_operations_get(
         connection,
@@ -1114,6 +1128,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_operations_list(
         connection,
@@ -1189,6 +1204,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Source.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_create(
         connection,
@@ -1261,6 +1277,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Source.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_get(
         connection,
@@ -1335,6 +1352,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_get_iam_policy(
         connection,
@@ -1409,6 +1427,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.ListSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_list(
         connection,
@@ -1484,6 +1503,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Source.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_patch(
         connection,
@@ -1560,6 +1580,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_set_iam_policy(
         connection,
@@ -1635,6 +1656,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_test_iam_permissions(
         connection,
@@ -1716,6 +1738,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Finding.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_findings_create(
         connection,
@@ -1792,6 +1815,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.GroupFindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_findings_group(
         connection,
@@ -1875,6 +1899,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.ListFindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_findings_list(
         connection,
@@ -1961,6 +1986,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Finding.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_findings_patch(
         connection,
@@ -2044,6 +2070,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.Finding.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_findings_set_state(
         connection,
@@ -2128,6 +2155,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def securitycenter_organizations_sources_findings_update_security_marks(
         connection,

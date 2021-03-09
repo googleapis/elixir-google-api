@@ -33,14 +33,14 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Asset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :iamPolicy => GoogleApi.SecurityCenter.V1.Model.IamPolicy.t(),
-          :name => String.t(),
-          :resourceProperties => map(),
+          :createTime => DateTime.t() | nil,
+          :iamPolicy => GoogleApi.SecurityCenter.V1.Model.IamPolicy.t() | nil,
+          :name => String.t() | nil,
+          :resourceProperties => map() | nil,
           :securityCenterProperties =>
-            GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties.t(),
-          :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t(),
-          :updateTime => DateTime.t()
+            GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties.t() | nil,
+          :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

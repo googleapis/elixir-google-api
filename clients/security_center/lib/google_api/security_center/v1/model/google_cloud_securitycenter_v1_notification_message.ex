@@ -29,9 +29,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Notificat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :finding => GoogleApi.SecurityCenter.V1.Model.Finding.t(),
-          :notificationConfigName => String.t(),
-          :resource => GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Resource.t()
+          :finding => GoogleApi.SecurityCenter.V1.Model.Finding.t() | nil,
+          :notificationConfigName => String.t() | nil,
+          :resource =>
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Resource.t() | nil
         }
 
   field(:finding, as: GoogleApi.SecurityCenter.V1.Model.Finding)

@@ -28,8 +28,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ListNotificationConfigsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :notificationConfigs => list(GoogleApi.SecurityCenter.V1.Model.NotificationConfig.t())
+          :nextPageToken => String.t() | nil,
+          :notificationConfigs =>
+            list(GoogleApi.SecurityCenter.V1.Model.NotificationConfig.t()) | nil
         }
 
   field(:nextPageToken)

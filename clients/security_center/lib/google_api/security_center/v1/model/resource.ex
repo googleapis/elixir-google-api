@@ -32,12 +32,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Resource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :folders => list(GoogleApi.SecurityCenter.V1.Model.Folder.t()),
-          :name => String.t(),
-          :parentDisplayName => String.t(),
-          :parentName => String.t(),
-          :projectDisplayName => String.t(),
-          :projectName => String.t()
+          :folders => list(GoogleApi.SecurityCenter.V1.Model.Folder.t()) | nil,
+          :name => String.t() | nil,
+          :parentDisplayName => String.t() | nil,
+          :parentName => String.t() | nil,
+          :projectDisplayName => String.t() | nil,
+          :projectName => String.t() | nil
         }
 
   field(:folders, as: GoogleApi.SecurityCenter.V1.Model.Folder, type: :list)

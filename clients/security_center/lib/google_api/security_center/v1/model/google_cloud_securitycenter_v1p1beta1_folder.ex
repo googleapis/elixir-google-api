@@ -28,8 +28,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Fo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceFolder => String.t(),
-          :resourceFolderDisplayName => String.t()
+          :resourceFolder => String.t() | nil,
+          :resourceFolderDisplayName => String.t() | nil
         }
 
   field(:resourceFolder)

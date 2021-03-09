@@ -29,9 +29,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.AssetDiscoveryConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :folderIds => list(String.t()),
-          :inclusionMode => String.t(),
-          :projectIds => list(String.t())
+          :folderIds => list(String.t()) | nil,
+          :inclusionMode => String.t() | nil,
+          :projectIds => list(String.t()) | nil
         }
 
   field(:folderIds, type: :list)

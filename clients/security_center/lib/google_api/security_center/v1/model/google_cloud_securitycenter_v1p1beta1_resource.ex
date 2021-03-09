@@ -33,12 +33,13 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Re
 
   @type t :: %__MODULE__{
           :folders =>
-            list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Folder.t()),
-          :name => String.t(),
-          :parent => String.t(),
-          :parentDisplayName => String.t(),
-          :project => String.t(),
-          :projectDisplayName => String.t()
+            list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Folder.t())
+            | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil,
+          :parentDisplayName => String.t() | nil,
+          :project => String.t() | nil,
+          :projectDisplayName => String.t() | nil
         }
 
   field(:folders,

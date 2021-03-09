@@ -30,10 +30,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1No
 
   @type t :: %__MODULE__{
           :finding =>
-            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Finding.t(),
-          :notificationConfigName => String.t(),
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Finding.t() | nil,
+          :notificationConfigName => String.t() | nil,
           :resource =>
-            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Resource.t()
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Resource.t() | nil
         }
 
   field(:finding, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Finding)

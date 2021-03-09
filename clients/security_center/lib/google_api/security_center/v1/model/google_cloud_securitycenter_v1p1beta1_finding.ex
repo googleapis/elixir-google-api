@@ -37,18 +37,19 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Fi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :createTime => DateTime.t(),
-          :eventTime => DateTime.t(),
-          :externalUri => String.t(),
-          :name => String.t(),
-          :parent => String.t(),
-          :resourceName => String.t(),
+          :category => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :eventTime => DateTime.t() | nil,
+          :externalUri => String.t() | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil,
+          :resourceName => String.t() | nil,
           :securityMarks =>
-            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1SecurityMarks.t(),
-          :severity => String.t(),
-          :sourceProperties => map(),
-          :state => String.t()
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1SecurityMarks.t()
+            | nil,
+          :severity => String.t() | nil,
+          :sourceProperties => map() | nil,
+          :state => String.t() | nil
         }
 
   field(:category)

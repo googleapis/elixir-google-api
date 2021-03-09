@@ -28,8 +28,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :properties => map()
+          :count => String.t() | nil,
+          :properties => map() | nil
         }
 
   field(:count)

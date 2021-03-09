@@ -28,8 +28,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1RunAssetD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :state => String.t()
+          :duration => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:duration)

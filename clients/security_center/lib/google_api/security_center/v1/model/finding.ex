@@ -37,17 +37,17 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :createTime => DateTime.t(),
-          :eventTime => DateTime.t(),
-          :externalUri => String.t(),
-          :name => String.t(),
-          :parent => String.t(),
-          :resourceName => String.t(),
-          :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t(),
-          :severity => String.t(),
-          :sourceProperties => map(),
-          :state => String.t()
+          :category => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :eventTime => DateTime.t() | nil,
+          :externalUri => String.t() | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil,
+          :resourceName => String.t() | nil,
+          :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t() | nil,
+          :severity => String.t() | nil,
+          :sourceProperties => map() | nil,
+          :state => String.t() | nil
         }
 
   field(:category)

@@ -32,12 +32,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupFindingsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :compareDuration => String.t(),
-          :filter => String.t(),
-          :groupBy => String.t(),
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :readTime => DateTime.t()
+          :compareDuration => String.t() | nil,
+          :filter => String.t() | nil,
+          :groupBy => String.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :readTime => DateTime.t() | nil
         }
 
   field(:compareDuration)
