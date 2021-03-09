@@ -31,8 +31,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Vid
           :annotationSpecSetConfigs =>
             list(
               GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationSpecSetConfig.t()
-            ),
-          :applyShotDetection => boolean()
+            )
+            | nil,
+          :applyShotDetection => boolean() | nil
         }
 
   field(:annotationSpecSetConfigs,

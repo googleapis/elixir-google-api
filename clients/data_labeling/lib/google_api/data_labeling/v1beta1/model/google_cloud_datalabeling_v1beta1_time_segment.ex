@@ -28,8 +28,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Tim
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTimeOffset => String.t(),
-          :startTimeOffset => String.t()
+          :endTimeOffset => String.t() | nil,
+          :startTimeOffset => String.t() | nil
         }
 
   field(:endTimeOffset)

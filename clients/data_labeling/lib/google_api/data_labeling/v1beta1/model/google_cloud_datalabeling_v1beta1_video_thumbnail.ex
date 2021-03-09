@@ -28,8 +28,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Vid
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :thumbnail => String.t(),
-          :timeOffset => String.t()
+          :thumbnail => String.t() | nil,
+          :timeOffset => String.t() | nil
         }
 
   field(:thumbnail)

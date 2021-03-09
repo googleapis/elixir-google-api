@@ -29,8 +29,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Fee
 
   @type t :: %__MODULE__{
           :feedbackThreadMetadata =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1FeedbackThreadMetadata.t(),
-          :name => String.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1FeedbackThreadMetadata.t()
+            | nil,
+          :name => String.t() | nil
         }
 
   field(:feedbackThreadMetadata,

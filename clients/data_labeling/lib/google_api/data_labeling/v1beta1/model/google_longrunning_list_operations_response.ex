@@ -28,8 +28,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningListOperationsRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :operations => list(GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t())
+          :nextPageToken => String.t() | nil,
+          :operations =>
+            list(GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()) | nil
         }
 
   field(:nextPageToken)

@@ -29,9 +29,11 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Eva
 
   @type t :: %__MODULE__{
           :classificationMetrics =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ClassificationMetrics.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ClassificationMetrics.t()
+            | nil,
           :objectDetectionMetrics =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ObjectDetectionMetrics.t()
+            | nil
         }
 
   field(:classificationMetrics,

@@ -29,12 +29,14 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Ima
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationColors => %{
-            optional(String.t()) =>
-              GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationSpec.t()
-          },
-          :imageBytes => String.t(),
-          :mimeType => String.t()
+          :annotationColors =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationSpec.t()
+            }
+            | nil,
+          :imageBytes => String.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:annotationColors,

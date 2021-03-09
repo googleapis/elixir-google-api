@@ -61,6 +61,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationSpecSet.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_annotation_spec_sets_create(
         connection,
@@ -139,6 +140,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_annotation_spec_sets_delete(
         connection,
@@ -219,6 +221,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationSpecSet.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_annotation_spec_sets_get(
         connection,
@@ -304,6 +307,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListAnnotationSpecSetsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_annotation_spec_sets_list(
         connection,
@@ -383,6 +387,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Dataset.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_create(
         connection,
@@ -458,6 +463,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_delete(
         connection,
@@ -534,6 +540,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_export_data(
         connection,
@@ -610,6 +617,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Dataset.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_get(
         connection,
@@ -687,6 +695,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_import_data(
         connection,
@@ -760,6 +769,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListDatasetsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_list(
         connection,
@@ -842,6 +852,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_delete(
         connection,
@@ -926,6 +937,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotatedDataset.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_get(
         connection,
@@ -1015,6 +1027,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListAnnotatedDatasetsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_list(
         connection,
@@ -1101,6 +1114,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1DataItem.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_data_items_get(
         connection,
@@ -1190,6 +1204,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListDataItemsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_data_items_list(
         connection,
@@ -1282,6 +1297,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Example.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_examples_get(
         connection,
@@ -1372,6 +1388,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListExamplesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_examples_list(
         connection,
@@ -1463,6 +1480,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_delete(
         connection,
@@ -1551,6 +1569,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1FeedbackThread.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_get(
         connection,
@@ -1643,6 +1662,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListFeedbackThreadsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_list(
         connection,
@@ -1734,6 +1754,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_create(
         connection,
@@ -1823,6 +1844,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_delete(
         connection,
@@ -1915,6 +1937,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1FeedbackMessage.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_get(
         connection,
@@ -2011,6 +2034,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListFeedbackMessagesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_list(
         connection,
@@ -2101,6 +2125,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1DataItem.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_data_items_get(
         connection,
@@ -2186,6 +2211,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListDataItemsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_data_items_list(
         connection,
@@ -2270,6 +2296,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Evaluation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_evaluations_get(
         connection,
@@ -2355,6 +2382,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1SearchExampleComparisonsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_evaluations_example_comparisons_search(
         connection,
@@ -2441,6 +2469,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_image_label(
         connection,
@@ -2518,6 +2547,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_text_label(
         connection,
@@ -2595,6 +2625,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_datasets_video_label(
         connection,
@@ -2671,6 +2702,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_create(
         connection,
@@ -2749,6 +2781,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_delete(
         connection,
@@ -2826,6 +2859,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_get(
         connection,
@@ -2908,6 +2942,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListEvaluationJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_list(
         connection,
@@ -2991,6 +3026,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_patch(
         connection,
@@ -3074,6 +3110,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_pause(
         connection,
@@ -3151,6 +3188,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_resume(
         connection,
@@ -3229,6 +3267,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1SearchEvaluationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_evaluations_search(
         connection,
@@ -3308,6 +3347,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_instructions_create(
         connection,
@@ -3382,6 +3422,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_instructions_delete(
         connection,
@@ -3458,6 +3499,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Instruction.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_instructions_get(
         connection,
@@ -3539,6 +3581,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ListInstructionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_instructions_list(
         connection,
@@ -3619,6 +3662,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_operations_cancel(
         connection,
@@ -3694,6 +3738,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_operations_delete(
         connection,
@@ -3769,6 +3814,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_operations_get(
         connection,
@@ -3845,6 +3891,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datalabeling_projects_operations_list(
         connection,

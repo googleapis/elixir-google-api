@@ -30,10 +30,10 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Ima
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageThumbnail => String.t(),
-          :imageUri => String.t(),
-          :mimeType => String.t(),
-          :signedUri => String.t()
+          :imageThumbnail => String.t() | nil,
+          :imageUri => String.t() | nil,
+          :mimeType => String.t() | nil,
+          :signedUri => String.t() | nil
         }
 
   field(:imageThumbnail)

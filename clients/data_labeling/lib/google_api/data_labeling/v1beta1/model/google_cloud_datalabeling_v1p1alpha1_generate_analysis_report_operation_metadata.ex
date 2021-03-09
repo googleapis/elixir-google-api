@@ -28,8 +28,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p1alpha1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :dataset => String.t()
+          :createTime => DateTime.t() | nil,
+          :dataset => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

@@ -34,17 +34,18 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Dat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blockingResources => list(String.t()),
-          :createTime => DateTime.t(),
-          :dataItemCount => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
+          :blockingResources => list(String.t()) | nil,
+          :createTime => DateTime.t() | nil,
+          :dataItemCount => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
           :inputConfigs =>
             list(
               GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1InputConfig.t()
-            ),
-          :lastMigrateTime => DateTime.t(),
-          :name => String.t()
+            )
+            | nil,
+          :lastMigrateTime => DateTime.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:blockingResources, type: :list)

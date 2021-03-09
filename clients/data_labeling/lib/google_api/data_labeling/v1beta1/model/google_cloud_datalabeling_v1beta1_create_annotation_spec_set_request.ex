@@ -29,6 +29,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Cre
   @type t :: %__MODULE__{
           :annotationSpecSet =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationSpecSet.t()
+            | nil
         }
 
   field(:annotationSpecSet,

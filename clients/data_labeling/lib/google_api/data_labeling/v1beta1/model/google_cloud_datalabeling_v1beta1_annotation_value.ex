@@ -36,23 +36,32 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Ann
 
   @type t :: %__MODULE__{
           :imageBoundingPolyAnnotation =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImageBoundingPolyAnnotation.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImageBoundingPolyAnnotation.t()
+            | nil,
           :imageClassificationAnnotation =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImageClassificationAnnotation.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImageClassificationAnnotation.t()
+            | nil,
           :imagePolylineAnnotation =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImagePolylineAnnotation.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImagePolylineAnnotation.t()
+            | nil,
           :imageSegmentationAnnotation =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImageSegmentationAnnotation.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImageSegmentationAnnotation.t()
+            | nil,
           :textClassificationAnnotation =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextClassificationAnnotation.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextClassificationAnnotation.t()
+            | nil,
           :textEntityExtractionAnnotation =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextEntityExtractionAnnotation.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextEntityExtractionAnnotation.t()
+            | nil,
           :videoClassificationAnnotation =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1VideoClassificationAnnotation.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1VideoClassificationAnnotation.t()
+            | nil,
           :videoEventAnnotation =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1VideoEventAnnotation.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1VideoEventAnnotation.t()
+            | nil,
           :videoObjectTrackingAnnotation =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1VideoObjectTrackingAnnotation.t()
+            | nil
         }
 
   field(:imageBoundingPolyAnnotation,

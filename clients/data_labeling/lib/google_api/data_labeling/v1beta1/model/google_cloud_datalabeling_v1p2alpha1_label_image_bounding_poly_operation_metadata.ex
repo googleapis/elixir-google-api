@@ -29,6 +29,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p2alpha1
   @type t :: %__MODULE__{
           :basicConfig =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p2alpha1HumanAnnotationConfig.t()
+            | nil
         }
 
   field(:basicConfig,

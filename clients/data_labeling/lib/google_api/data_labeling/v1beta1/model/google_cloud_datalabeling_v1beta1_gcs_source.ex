@@ -28,8 +28,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Gcs
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inputUri => String.t(),
-          :mimeType => String.t()
+          :inputUri => String.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:inputUri)

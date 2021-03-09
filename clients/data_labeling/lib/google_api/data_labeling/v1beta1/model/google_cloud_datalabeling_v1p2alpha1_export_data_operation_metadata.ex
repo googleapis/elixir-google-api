@@ -30,10 +30,10 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1p2alpha1
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotatedDataset => String.t(),
-          :createTime => DateTime.t(),
-          :dataset => String.t(),
-          :partialFailures => list(GoogleApi.DataLabeling.V1beta1.Model.GoogleRpcStatus.t())
+          :annotatedDataset => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :dataset => String.t() | nil,
+          :partialFailures => list(GoogleApi.DataLabeling.V1beta1.Model.GoogleRpcStatus.t()) | nil
         }
 
   field(:annotatedDataset)

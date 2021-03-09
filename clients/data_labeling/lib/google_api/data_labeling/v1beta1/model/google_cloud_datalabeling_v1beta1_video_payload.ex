@@ -31,14 +31,15 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Vid
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :frameRate => number(),
-          :mimeType => String.t(),
-          :signedUri => String.t(),
+          :frameRate => number() | nil,
+          :mimeType => String.t() | nil,
+          :signedUri => String.t() | nil,
           :videoThumbnails =>
             list(
               GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1VideoThumbnail.t()
-            ),
-          :videoUri => String.t()
+            )
+            | nil,
+          :videoUri => String.t() | nil
         }
 
   field(:frameRate)

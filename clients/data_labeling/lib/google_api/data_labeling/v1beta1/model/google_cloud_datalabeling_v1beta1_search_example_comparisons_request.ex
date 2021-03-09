@@ -28,8 +28,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Sea
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageSize => integer(),
-          :pageToken => String.t()
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil
         }
 
   field(:pageSize)

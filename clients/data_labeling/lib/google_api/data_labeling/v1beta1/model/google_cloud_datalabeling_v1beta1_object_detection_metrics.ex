@@ -28,7 +28,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Obj
 
   @type t :: %__MODULE__{
           :prCurve =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1PrCurve.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1PrCurve.t() | nil
         }
 
   field(:prCurve, as: GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1PrCurve)

@@ -34,11 +34,12 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Ann
           :annotationSpecs =>
             list(
               GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1AnnotationSpec.t()
-            ),
-          :blockingResources => list(String.t()),
-          :description => String.t(),
-          :displayName => String.t(),
-          :name => String.t()
+            )
+            | nil,
+          :blockingResources => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:annotationSpecs,

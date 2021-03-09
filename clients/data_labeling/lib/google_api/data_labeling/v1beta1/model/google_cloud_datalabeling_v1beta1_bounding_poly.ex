@@ -29,6 +29,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Bou
   @type t :: %__MODULE__{
           :vertices =>
             list(GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Vertex.t())
+            | nil
         }
 
   field(:vertices,

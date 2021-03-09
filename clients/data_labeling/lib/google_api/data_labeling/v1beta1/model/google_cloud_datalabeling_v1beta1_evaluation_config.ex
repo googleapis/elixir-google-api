@@ -29,6 +29,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Eva
   @type t :: %__MODULE__{
           :boundingBoxEvaluationOptions =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1BoundingBoxEvaluationOptions.t()
+            | nil
         }
 
   field(:boundingBoxEvaluationOptions,

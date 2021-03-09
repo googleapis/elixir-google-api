@@ -27,7 +27,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Sen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableLabelSentimentSelection => boolean()
+          :enableLabelSentimentSelection => boolean() | nil
         }
 
   field(:enableLabelSentimentSelection)

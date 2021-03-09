@@ -28,8 +28,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Eva
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :minAcceptableMeanAveragePrecision => float()
+          :email => String.t() | nil,
+          :minAcceptableMeanAveragePrecision => float() | nil
         }
 
   field(:email)

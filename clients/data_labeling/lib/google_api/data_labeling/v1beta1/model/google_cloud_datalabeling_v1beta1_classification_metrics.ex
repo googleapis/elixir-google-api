@@ -29,9 +29,10 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Cla
 
   @type t :: %__MODULE__{
           :confusionMatrix =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ConfusionMatrix.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ConfusionMatrix.t()
+            | nil,
           :prCurve =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1PrCurve.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1PrCurve.t() | nil
         }
 
   field(:confusionMatrix,

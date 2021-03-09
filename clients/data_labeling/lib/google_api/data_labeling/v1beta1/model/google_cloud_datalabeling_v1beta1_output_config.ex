@@ -29,9 +29,11 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Out
 
   @type t :: %__MODULE__{
           :gcsDestination =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1GcsDestination.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1GcsDestination.t()
+            | nil,
           :gcsFolderDestination =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1GcsFolderDestination.t()
+            | nil
         }
 
   field(:gcsDestination,

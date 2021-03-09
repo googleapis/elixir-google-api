@@ -36,23 +36,30 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Eva
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigqueryImportKeys => map(),
+          :bigqueryImportKeys => map() | nil,
           :boundingPolyConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1BoundingPolyConfig.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1BoundingPolyConfig.t()
+            | nil,
           :evaluationConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationConfig.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationConfig.t()
+            | nil,
           :evaluationJobAlertConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationJobAlertConfig.t(),
-          :exampleCount => integer(),
-          :exampleSamplePercentage => float(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1EvaluationJobAlertConfig.t()
+            | nil,
+          :exampleCount => integer() | nil,
+          :exampleSamplePercentage => float() | nil,
           :humanAnnotationConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1HumanAnnotationConfig.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1HumanAnnotationConfig.t()
+            | nil,
           :imageClassificationConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImageClassificationConfig.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ImageClassificationConfig.t()
+            | nil,
           :inputConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1InputConfig.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1InputConfig.t()
+            | nil,
           :textClassificationConfig =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextClassificationConfig.t()
+            | nil
         }
 
   field(:bigqueryImportKeys, type: :map)

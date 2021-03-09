@@ -31,6 +31,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Nor
             list(
               GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1NormalizedVertex.t()
             )
+            | nil
         }
 
   field(:normalizedVertices,

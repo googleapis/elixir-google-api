@@ -32,16 +32,19 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Inp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationType => String.t(),
+          :annotationType => String.t() | nil,
           :bigquerySource =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1BigQuerySource.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1BigQuerySource.t()
+            | nil,
           :classificationMetadata =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ClassificationMetadata.t(),
-          :dataType => String.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1ClassificationMetadata.t()
+            | nil,
+          :dataType => String.t() | nil,
           :gcsSource =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1GcsSource.t(),
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1GcsSource.t() | nil,
           :textMetadata =>
             GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1TextMetadata.t()
+            | nil
         }
 
   field(:annotationType)

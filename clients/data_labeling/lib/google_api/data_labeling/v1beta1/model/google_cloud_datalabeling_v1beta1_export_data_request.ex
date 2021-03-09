@@ -30,11 +30,12 @@ defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Exp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotatedDataset => String.t(),
-          :filter => String.t(),
+          :annotatedDataset => String.t() | nil,
+          :filter => String.t() | nil,
           :outputConfig =>
-            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1OutputConfig.t(),
-          :userEmailAddress => String.t()
+            GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1OutputConfig.t()
+            | nil,
+          :userEmailAddress => String.t() | nil
         }
 
   field(:annotatedDataset)
