@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SearchTargetingOptionsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :geoRegionSearchTerms => GoogleApi.DisplayVideo.V1.Model.GeoRegionSearchTerms.t(),
-          :pageSize => integer(),
-          :pageToken => String.t()
+          :advertiserId => String.t() | nil,
+          :geoRegionSearchTerms => GoogleApi.DisplayVideo.V1.Model.GeoRegionSearchTerms.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil
         }
 
   field(:advertiserId)

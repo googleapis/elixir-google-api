@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.UrlAssignedTargetingOptionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :negative => boolean(),
-          :url => String.t()
+          :negative => boolean() | nil,
+          :url => String.t() | nil
         }
 
   field(:negative)

@@ -31,11 +31,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PartnerCost do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :costType => String.t(),
-          :feeAmount => String.t(),
-          :feePercentageMillis => String.t(),
-          :feeType => String.t(),
-          :invoiceType => String.t()
+          :costType => String.t() | nil,
+          :feeAmount => String.t() | nil,
+          :feePercentageMillis => String.t() | nil,
+          :feeType => String.t() | nil,
+          :invoiceType => String.t() | nil
         }
 
   field(:costType)

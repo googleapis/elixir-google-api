@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FixedBidStrategy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bidAmountMicros => String.t()
+          :bidAmountMicros => String.t() | nil
         }
 
   field(:bidAmountMicros)

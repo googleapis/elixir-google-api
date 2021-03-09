@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DeleteAssignedTargetingOptionsRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignedTargetingOptionIds => list(String.t()),
-          :targetingType => String.t()
+          :assignedTargetingOptionIds => list(String.t()) | nil,
+          :targetingType => String.t() | nil
         }
 
   field(:assignedTargetingOptionIds, type: :list)

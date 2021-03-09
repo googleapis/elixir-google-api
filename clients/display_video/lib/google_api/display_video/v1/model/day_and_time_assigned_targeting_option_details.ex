@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DayAndTimeAssignedTargetingOptionDetai
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dayOfWeek => String.t(),
-          :endHour => integer(),
-          :startHour => integer(),
-          :timeZoneResolution => String.t()
+          :dayOfWeek => String.t() | nil,
+          :endHour => integer() | nil,
+          :startHour => integer() | nil,
+          :timeZoneResolution => String.t() | nil
         }
 
   field(:dayOfWeek)

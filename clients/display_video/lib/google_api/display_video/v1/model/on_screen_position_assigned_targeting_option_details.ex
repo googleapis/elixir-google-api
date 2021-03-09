@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.OnScreenPositionAssignedTargetingOptio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adType => String.t(),
-          :onScreenPosition => String.t(),
-          :targetingOptionId => String.t()
+          :adType => String.t() | nil,
+          :onScreenPosition => String.t() | nil,
+          :targetingOptionId => String.t() | nil
         }
 
   field(:adType)

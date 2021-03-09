@@ -38,18 +38,19 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Advertiser do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adServerConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserAdServerConfig.t(),
-          :advertiserId => String.t(),
-          :creativeConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserCreativeConfig.t(),
-          :dataAccessConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserDataAccessConfig.t(),
-          :displayName => String.t(),
-          :entityStatus => String.t(),
-          :generalConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserGeneralConfig.t(),
-          :integrationDetails => GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t(),
-          :name => String.t(),
-          :partnerId => String.t(),
-          :servingConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig.t(),
-          :updateTime => DateTime.t()
+          :adServerConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserAdServerConfig.t() | nil,
+          :advertiserId => String.t() | nil,
+          :creativeConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserCreativeConfig.t() | nil,
+          :dataAccessConfig =>
+            GoogleApi.DisplayVideo.V1.Model.AdvertiserDataAccessConfig.t() | nil,
+          :displayName => String.t() | nil,
+          :entityStatus => String.t() | nil,
+          :generalConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserGeneralConfig.t() | nil,
+          :integrationDetails => GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t() | nil,
+          :name => String.t() | nil,
+          :partnerId => String.t() | nil,
+          :servingConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:adServerConfig, as: GoogleApi.DisplayVideo.V1.Model.AdvertiserAdServerConfig)

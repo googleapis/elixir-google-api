@@ -29,8 +29,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CreateAssignedTargetingOptionsRequest 
 
   @type t :: %__MODULE__{
           :assignedTargetingOptions =>
-            list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t()),
-          :targetingType => String.t()
+            list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t()) | nil,
+          :targetingType => String.t() | nil
         }
 
   field(:assignedTargetingOptions,

@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ThirdPartyVerifierAssignedTargetingOpt
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adloox => GoogleApi.DisplayVideo.V1.Model.Adloox.t(),
-          :doubleVerify => GoogleApi.DisplayVideo.V1.Model.DoubleVerify.t(),
-          :integralAdScience => GoogleApi.DisplayVideo.V1.Model.IntegralAdScience.t()
+          :adloox => GoogleApi.DisplayVideo.V1.Model.Adloox.t() | nil,
+          :doubleVerify => GoogleApi.DisplayVideo.V1.Model.DoubleVerify.t() | nil,
+          :integralAdScience => GoogleApi.DisplayVideo.V1.Model.IntegralAdScience.t() | nil
         }
 
   field(:adloox, as: GoogleApi.DisplayVideo.V1.Model.Adloox)

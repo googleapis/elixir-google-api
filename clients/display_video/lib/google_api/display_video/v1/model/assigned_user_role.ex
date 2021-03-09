@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedUserRole do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :assignedUserRoleId => String.t(),
-          :partnerId => String.t(),
-          :userRole => String.t()
+          :advertiserId => String.t() | nil,
+          :assignedUserRoleId => String.t() | nil,
+          :partnerId => String.t() | nil,
+          :userRole => String.t() | nil
         }
 
   field(:advertiserId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ChannelAssignedTargetingOptionDetails 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelId => String.t(),
-          :negative => boolean()
+          :channelId => String.t() | nil,
+          :negative => boolean() | nil
         }
 
   field(:channelId)

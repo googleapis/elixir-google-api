@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Pacing do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dailyMaxImpressions => String.t(),
-          :dailyMaxMicros => String.t(),
-          :pacingPeriod => String.t(),
-          :pacingType => String.t()
+          :dailyMaxImpressions => String.t() | nil,
+          :dailyMaxMicros => String.t() | nil,
+          :pacingPeriod => String.t() | nil,
+          :pacingType => String.t() | nil
         }
 
   field(:dailyMaxImpressions)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ExchangeReviewStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exchange => String.t(),
-          :status => String.t()
+          :exchange => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:exchange)

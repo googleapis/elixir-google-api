@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PartnerDataAccessConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sdfConfig => GoogleApi.DisplayVideo.V1.Model.SdfConfig.t()
+          :sdfConfig => GoogleApi.DisplayVideo.V1.Model.SdfConfig.t() | nil
         }
 
   field(:sdfConfig, as: GoogleApi.DisplayVideo.V1.Model.SdfConfig)

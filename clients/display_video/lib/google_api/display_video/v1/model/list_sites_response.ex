@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListSitesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :sites => list(GoogleApi.DisplayVideo.V1.Model.Site.t())
+          :nextPageToken => String.t() | nil,
+          :sites => list(GoogleApi.DisplayVideo.V1.Model.Site.t()) | nil
         }
 
   field(:nextPageToken)

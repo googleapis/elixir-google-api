@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListCustomListsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customLists => list(GoogleApi.DisplayVideo.V1.Model.CustomList.t()),
-          :nextPageToken => String.t()
+          :customLists => list(GoogleApi.DisplayVideo.V1.Model.CustomList.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:customLists, as: GoogleApi.DisplayVideo.V1.Model.CustomList, type: :list)

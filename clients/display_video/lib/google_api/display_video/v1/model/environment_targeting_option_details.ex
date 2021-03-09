@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.EnvironmentTargetingOptionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environment => String.t()
+          :environment => String.t() | nil
         }
 
   field(:environment)

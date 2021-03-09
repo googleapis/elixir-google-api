@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GoogleAudienceTargetingSetting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googleAudienceId => String.t()
+          :googleAudienceId => String.t() | nil
         }
 
   field(:googleAudienceId)

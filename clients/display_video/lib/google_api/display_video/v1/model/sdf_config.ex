@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SdfConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adminEmail => String.t(),
-          :version => String.t()
+          :adminEmail => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:adminEmail)

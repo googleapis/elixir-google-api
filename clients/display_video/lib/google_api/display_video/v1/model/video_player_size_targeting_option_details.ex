@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.VideoPlayerSizeTargetingOptionDetails 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :videoPlayerSize => String.t()
+          :videoPlayerSize => String.t() | nil
         }
 
   field(:videoPlayerSize)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListTargetingOptionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :targetingOptions => list(GoogleApi.DisplayVideo.V1.Model.TargetingOption.t())
+          :nextPageToken => String.t() | nil,
+          :targetingOptions => list(GoogleApi.DisplayVideo.V1.Model.TargetingOption.t()) | nil
         }
 
   field(:nextPageToken)

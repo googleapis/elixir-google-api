@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GeoRegionSearchTerms do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :geoRegionQuery => String.t()
+          :geoRegionQuery => String.t() | nil
         }
 
   field(:geoRegionQuery)

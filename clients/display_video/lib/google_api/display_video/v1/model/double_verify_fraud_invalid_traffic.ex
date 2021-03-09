@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DoubleVerifyFraudInvalidTraffic do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :avoidInsufficientOption => boolean(),
-          :avoidedFraudOption => String.t()
+          :avoidInsufficientOption => boolean() | nil,
+          :avoidedFraudOption => String.t() | nil
         }
 
   field(:avoidInsufficientOption)

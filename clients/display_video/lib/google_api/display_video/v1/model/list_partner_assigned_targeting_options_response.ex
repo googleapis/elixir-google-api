@@ -29,8 +29,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListPartnerAssignedTargetingOptionsRes
 
   @type t :: %__MODULE__{
           :assignedTargetingOptions =>
-            list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:assignedTargetingOptions,

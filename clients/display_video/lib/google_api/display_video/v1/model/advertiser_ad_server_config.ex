@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AdvertiserAdServerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cmHybridConfig => GoogleApi.DisplayVideo.V1.Model.CmHybridConfig.t(),
-          :thirdPartyOnlyConfig => GoogleApi.DisplayVideo.V1.Model.ThirdPartyOnlyConfig.t()
+          :cmHybridConfig => GoogleApi.DisplayVideo.V1.Model.CmHybridConfig.t() | nil,
+          :thirdPartyOnlyConfig => GoogleApi.DisplayVideo.V1.Model.ThirdPartyOnlyConfig.t() | nil
         }
 
   field(:cmHybridConfig, as: GoogleApi.DisplayVideo.V1.Model.CmHybridConfig)

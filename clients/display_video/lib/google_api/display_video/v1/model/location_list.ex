@@ -31,11 +31,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LocationList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :displayName => String.t(),
-          :locationListId => String.t(),
-          :locationType => String.t(),
-          :name => String.t()
+          :advertiserId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :locationListId => String.t() | nil,
+          :locationType => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:advertiserId)

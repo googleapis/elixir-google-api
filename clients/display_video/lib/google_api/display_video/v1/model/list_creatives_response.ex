@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListCreativesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creatives => list(GoogleApi.DisplayVideo.V1.Model.Creative.t()),
-          :nextPageToken => String.t()
+          :creatives => list(GoogleApi.DisplayVideo.V1.Model.Creative.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:creatives, as: GoogleApi.DisplayVideo.V1.Model.Creative, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListChannelsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channels => list(GoogleApi.DisplayVideo.V1.Model.Channel.t()),
-          :nextPageToken => String.t()
+          :channels => list(GoogleApi.DisplayVideo.V1.Model.Channel.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:channels, as: GoogleApi.DisplayVideo.V1.Model.Channel, type: :list)

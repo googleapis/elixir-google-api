@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DoubleVerifyAppStarRating do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :avoidInsufficientStarRating => boolean(),
-          :avoidedStarRating => String.t()
+          :avoidInsufficientStarRating => boolean() | nil,
+          :avoidedStarRating => String.t() | nil
         }
 
   field(:avoidInsufficientStarRating)

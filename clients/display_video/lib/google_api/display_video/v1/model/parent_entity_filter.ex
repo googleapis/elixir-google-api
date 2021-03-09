@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ParentEntityFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileType => list(String.t()),
-          :filterIds => list(String.t()),
-          :filterType => String.t()
+          :fileType => list(String.t()) | nil,
+          :filterIds => list(String.t()) | nil,
+          :filterType => String.t() | nil
         }
 
   field(:fileType, type: :list)

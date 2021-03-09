@@ -34,14 +34,14 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AuditAdvertiserResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adGroupCriteriaCount => String.t(),
-          :campaignCriteriaCount => String.t(),
-          :channelsCount => String.t(),
-          :negativeKeywordListsCount => String.t(),
-          :negativelyTargetedChannelsCount => String.t(),
-          :usedCampaignsCount => String.t(),
-          :usedInsertionOrdersCount => String.t(),
-          :usedLineItemsCount => String.t()
+          :adGroupCriteriaCount => String.t() | nil,
+          :campaignCriteriaCount => String.t() | nil,
+          :channelsCount => String.t() | nil,
+          :negativeKeywordListsCount => String.t() | nil,
+          :negativelyTargetedChannelsCount => String.t() | nil,
+          :usedCampaignsCount => String.t() | nil,
+          :usedInsertionOrdersCount => String.t() | nil,
+          :usedLineItemsCount => String.t() | nil
         }
 
   field(:adGroupCriteriaCount)

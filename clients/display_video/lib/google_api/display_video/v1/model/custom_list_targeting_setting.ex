@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomListTargetingSetting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customListId => String.t()
+          :customListId => String.t() | nil
         }
 
   field(:customListId)

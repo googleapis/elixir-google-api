@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListManualTriggersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :manualTriggers => list(GoogleApi.DisplayVideo.V1.Model.ManualTrigger.t()),
-          :nextPageToken => String.t()
+          :manualTriggers => list(GoogleApi.DisplayVideo.V1.Model.ManualTrigger.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:manualTriggers, as: GoogleApi.DisplayVideo.V1.Model.ManualTrigger, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceTargetingSet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :firstAndThirdPartyAudienceId => String.t(),
-          :recency => String.t()
+          :firstAndThirdPartyAudienceId => String.t() | nil,
+          :recency => String.t() | nil
         }
 
   field(:firstAndThirdPartyAudienceId)

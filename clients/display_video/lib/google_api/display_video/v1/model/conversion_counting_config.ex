@@ -29,8 +29,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ConversionCountingConfig do
 
   @type t :: %__MODULE__{
           :floodlightActivityConfigs =>
-            list(GoogleApi.DisplayVideo.V1.Model.TrackingFloodlightActivityConfig.t()),
-          :postViewCountPercentageMillis => String.t()
+            list(GoogleApi.DisplayVideo.V1.Model.TrackingFloodlightActivityConfig.t()) | nil,
+          :postViewCountPercentageMillis => String.t() | nil
         }
 
   field(:floodlightActivityConfigs,

@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.NegativeKeywordListAssignedTargetingOp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :negativeKeywordListId => String.t()
+          :negativeKeywordListId => String.t() | nil
         }
 
   field(:negativeKeywordListId)

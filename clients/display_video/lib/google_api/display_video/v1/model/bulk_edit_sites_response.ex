@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditSitesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sites => list(GoogleApi.DisplayVideo.V1.Model.Site.t())
+          :sites => list(GoogleApi.DisplayVideo.V1.Model.Site.t()) | nil
         }
 
   field(:sites, as: GoogleApi.DisplayVideo.V1.Model.Site, type: :list)

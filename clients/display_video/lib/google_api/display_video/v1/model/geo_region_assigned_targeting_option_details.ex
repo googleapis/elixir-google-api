@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GeoRegionAssignedTargetingOptionDetail
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :geoRegionType => String.t(),
-          :negative => boolean(),
-          :targetingOptionId => String.t()
+          :displayName => String.t() | nil,
+          :geoRegionType => String.t() | nil,
+          :negative => boolean() | nil,
+          :targetingOptionId => String.t() | nil
         }
 
   field(:displayName)

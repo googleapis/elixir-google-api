@@ -33,13 +33,13 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ManualTrigger do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activationDurationMinutes => String.t(),
-          :advertiserId => String.t(),
-          :displayName => String.t(),
-          :latestActivationTime => DateTime.t(),
-          :name => String.t(),
-          :state => String.t(),
-          :triggerId => String.t()
+          :activationDurationMinutes => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :latestActivationTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :triggerId => String.t() | nil
         }
 
   field(:activationDurationMinutes)

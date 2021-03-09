@@ -27,7 +27,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedUserRolesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createdAssignedUserRoles => list(GoogleApi.DisplayVideo.V1.Model.AssignedUserRole.t())
+          :createdAssignedUserRoles =>
+            list(GoogleApi.DisplayVideo.V1.Model.AssignedUserRole.t()) | nil
         }
 
   field(:createdAssignedUserRoles,

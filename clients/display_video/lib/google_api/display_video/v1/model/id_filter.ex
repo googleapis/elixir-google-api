@@ -32,12 +32,12 @@ defmodule GoogleApi.DisplayVideo.V1.Model.IdFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adGroupAdIds => list(String.t()),
-          :adGroupIds => list(String.t()),
-          :campaignIds => list(String.t()),
-          :insertionOrderIds => list(String.t()),
-          :lineItemIds => list(String.t()),
-          :mediaProductIds => list(String.t())
+          :adGroupAdIds => list(String.t()) | nil,
+          :adGroupIds => list(String.t()) | nil,
+          :campaignIds => list(String.t()) | nil,
+          :insertionOrderIds => list(String.t()) | nil,
+          :lineItemIds => list(String.t()) | nil,
+          :mediaProductIds => list(String.t()) | nil
         }
 
   field(:adGroupAdIds, type: :list)

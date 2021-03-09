@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PublisherReviewStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publisherName => String.t(),
-          :status => String.t()
+          :publisherName => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:publisherName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GenderAssignedTargetingOptionDetails d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gender => String.t(),
-          :targetingOptionId => String.t()
+          :gender => String.t() | nil,
+          :targetingOptionId => String.t() | nil
         }
 
   field(:gender)

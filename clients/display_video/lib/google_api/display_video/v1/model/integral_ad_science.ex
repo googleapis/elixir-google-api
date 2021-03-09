@@ -40,20 +40,20 @@ defmodule GoogleApi.DisplayVideo.V1.Model.IntegralAdScience do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customSegmentId => list(String.t()),
-          :displayViewability => String.t(),
-          :excludeUnrateable => boolean(),
-          :excludedAdFraudRisk => String.t(),
-          :excludedAdultRisk => String.t(),
-          :excludedAlcoholRisk => String.t(),
-          :excludedDrugsRisk => String.t(),
-          :excludedGamblingRisk => String.t(),
-          :excludedHateSpeechRisk => String.t(),
-          :excludedIllegalDownloadsRisk => String.t(),
-          :excludedOffensiveLanguageRisk => String.t(),
-          :excludedViolenceRisk => String.t(),
-          :traqScoreOption => String.t(),
-          :videoViewability => String.t()
+          :customSegmentId => list(String.t()) | nil,
+          :displayViewability => String.t() | nil,
+          :excludeUnrateable => boolean() | nil,
+          :excludedAdFraudRisk => String.t() | nil,
+          :excludedAdultRisk => String.t() | nil,
+          :excludedAlcoholRisk => String.t() | nil,
+          :excludedDrugsRisk => String.t() | nil,
+          :excludedGamblingRisk => String.t() | nil,
+          :excludedHateSpeechRisk => String.t() | nil,
+          :excludedIllegalDownloadsRisk => String.t() | nil,
+          :excludedOffensiveLanguageRisk => String.t() | nil,
+          :excludedViolenceRisk => String.t() | nil,
+          :traqScoreOption => String.t() | nil,
+          :videoViewability => String.t() | nil
         }
 
   field(:customSegmentId, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingExpansionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludeFirstPartyAudience => boolean(),
-          :targetingExpansionLevel => String.t()
+          :excludeFirstPartyAudience => boolean() | nil,
+          :targetingExpansionLevel => String.t() | nil
         }
 
   field(:excludeFirstPartyAudience)

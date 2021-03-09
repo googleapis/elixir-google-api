@@ -33,16 +33,17 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DoubleVerify do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appStarRating => GoogleApi.DisplayVideo.V1.Model.DoubleVerifyAppStarRating.t(),
-          :avoidedAgeRatings => list(String.t()),
+          :appStarRating => GoogleApi.DisplayVideo.V1.Model.DoubleVerifyAppStarRating.t() | nil,
+          :avoidedAgeRatings => list(String.t()) | nil,
           :brandSafetyCategories =>
-            GoogleApi.DisplayVideo.V1.Model.DoubleVerifyBrandSafetyCategories.t(),
-          :customSegmentId => String.t(),
+            GoogleApi.DisplayVideo.V1.Model.DoubleVerifyBrandSafetyCategories.t() | nil,
+          :customSegmentId => String.t() | nil,
           :displayViewability =>
-            GoogleApi.DisplayVideo.V1.Model.DoubleVerifyDisplayViewability.t(),
+            GoogleApi.DisplayVideo.V1.Model.DoubleVerifyDisplayViewability.t() | nil,
           :fraudInvalidTraffic =>
-            GoogleApi.DisplayVideo.V1.Model.DoubleVerifyFraudInvalidTraffic.t(),
-          :videoViewability => GoogleApi.DisplayVideo.V1.Model.DoubleVerifyVideoViewability.t()
+            GoogleApi.DisplayVideo.V1.Model.DoubleVerifyFraudInvalidTraffic.t() | nil,
+          :videoViewability =>
+            GoogleApi.DisplayVideo.V1.Model.DoubleVerifyVideoViewability.t() | nil
         }
 
   field(:appStarRating, as: GoogleApi.DisplayVideo.V1.Model.DoubleVerifyAppStarRating)

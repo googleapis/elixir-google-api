@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inventorySourceIds => list(String.t())
+          :inventorySourceIds => list(String.t()) | nil
         }
 
   field(:inventorySourceIds, type: :list)

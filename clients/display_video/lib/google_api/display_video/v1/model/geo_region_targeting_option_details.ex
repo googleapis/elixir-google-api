@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GeoRegionTargetingOptionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :geoRegionType => String.t()
+          :displayName => String.t() | nil,
+          :geoRegionType => String.t() | nil
         }
 
   field(:displayName)

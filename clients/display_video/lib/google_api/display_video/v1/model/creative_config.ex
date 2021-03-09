@@ -29,11 +29,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CreativeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeType => String.t(),
+          :creativeType => String.t() | nil,
           :displayCreativeConfig =>
-            GoogleApi.DisplayVideo.V1.Model.InventorySourceDisplayCreativeConfig.t(),
+            GoogleApi.DisplayVideo.V1.Model.InventorySourceDisplayCreativeConfig.t() | nil,
           :videoCreativeConfig =>
-            GoogleApi.DisplayVideo.V1.Model.InventorySourceVideoCreativeConfig.t()
+            GoogleApi.DisplayVideo.V1.Model.InventorySourceVideoCreativeConfig.t() | nil
         }
 
   field(:creativeType)

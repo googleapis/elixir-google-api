@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AdvertiserCreativeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dynamicCreativeEnabled => boolean(),
-          :iasClientId => String.t(),
-          :obaComplianceDisabled => boolean(),
-          :videoCreativeDataSharingAuthorized => boolean()
+          :dynamicCreativeEnabled => boolean() | nil,
+          :iasClientId => String.t() | nil,
+          :obaComplianceDisabled => boolean() | nil,
+          :videoCreativeDataSharingAuthorized => boolean() | nil
         }
 
   field(:dynamicCreativeEnabled)

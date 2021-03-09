@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Adloox do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedAdlooxCategories => list(String.t())
+          :excludedAdlooxCategories => list(String.t()) | nil
         }
 
   field(:excludedAdlooxCategories, type: :list)

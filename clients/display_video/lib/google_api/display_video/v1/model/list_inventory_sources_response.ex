@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListInventorySourcesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inventorySources => list(GoogleApi.DisplayVideo.V1.Model.InventorySource.t()),
-          :nextPageToken => String.t()
+          :inventorySources => list(GoogleApi.DisplayVideo.V1.Model.InventorySource.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:inventorySources, as: GoogleApi.DisplayVideo.V1.Model.InventorySource, type: :list)

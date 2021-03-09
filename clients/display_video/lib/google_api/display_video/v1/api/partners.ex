@@ -61,6 +61,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
           {:ok,
            GoogleApi.DisplayVideo.V1.Model.BulkEditPartnerAssignedTargetingOptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_bulk_edit_partner_assigned_targeting_options(
         connection,
@@ -132,6 +133,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
   @spec displayvideo_partners_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Partner.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_get(connection, partner_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -194,6 +196,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
   @spec displayvideo_partners_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListPartnersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -262,6 +265,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Channel.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_channels_create(
         connection,
@@ -336,6 +340,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Channel.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_channels_get(
         connection,
@@ -408,6 +413,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
   @spec displayvideo_partners_channels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListChannelsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_channels_list(
         connection,
@@ -487,6 +493,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Channel.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_channels_patch(
         connection,
@@ -564,6 +571,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.BulkEditSitesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_channels_sites_bulk_edit(
         connection,
@@ -638,7 +646,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DisplayVideo.V1.Model.Site.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.DisplayVideo.V1.Model.Site.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def displayvideo_partners_channels_sites_create(
         connection,
         partner_id,
@@ -716,6 +727,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_channels_sites_delete(
         connection,
@@ -797,6 +809,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListSitesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_channels_sites_list(
         connection,
@@ -876,6 +889,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_targeting_types_assigned_targeting_options_create(
         connection,
@@ -957,6 +971,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_targeting_types_assigned_targeting_options_delete(
         connection,
@@ -1038,6 +1053,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_targeting_types_assigned_targeting_options_get(
         connection,
@@ -1123,6 +1139,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListPartnerAssignedTargetingOptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_partners_targeting_types_assigned_targeting_options_list(
         connection,

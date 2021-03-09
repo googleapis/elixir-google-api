@@ -54,6 +54,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Media do
   @spec displayvideo_media_download(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.GoogleBytestreamMedia.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def displayvideo_media_download(connection, resource_name, optional_params \\ [], opts \\ []) do
     opts =

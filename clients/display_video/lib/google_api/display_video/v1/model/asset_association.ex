@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssetAssociation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :asset => GoogleApi.DisplayVideo.V1.Model.Asset.t(),
-          :role => String.t()
+          :asset => GoogleApi.DisplayVideo.V1.Model.Asset.t() | nil,
+          :role => String.t() | nil
         }
 
   field(:asset, as: GoogleApi.DisplayVideo.V1.Model.Asset)

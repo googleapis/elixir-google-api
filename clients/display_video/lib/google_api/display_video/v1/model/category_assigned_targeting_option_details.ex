@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CategoryAssignedTargetingOptionDetails
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :negative => boolean(),
-          :targetingOptionId => String.t()
+          :displayName => String.t() | nil,
+          :negative => boolean() | nil,
+          :targetingOptionId => String.t() | nil
         }
 
   field(:displayName)

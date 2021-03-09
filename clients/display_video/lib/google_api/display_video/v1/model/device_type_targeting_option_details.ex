@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DeviceTypeTargetingOptionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceType => String.t()
+          :deviceType => String.t() | nil
         }
 
   field(:deviceType)

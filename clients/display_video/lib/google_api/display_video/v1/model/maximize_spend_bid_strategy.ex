@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.MaximizeSpendBidStrategy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customBiddingAlgorithmId => String.t(),
-          :maxAverageCpmBidAmountMicros => String.t(),
-          :performanceGoalType => String.t()
+          :customBiddingAlgorithmId => String.t() | nil,
+          :maxAverageCpmBidAmountMicros => String.t() | nil,
+          :performanceGoalType => String.t() | nil
         }
 
   field(:customBiddingAlgorithmId)

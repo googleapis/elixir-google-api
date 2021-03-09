@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionTargetingOptio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentOutstreamPosition => String.t()
+          :contentOutstreamPosition => String.t() | nil
         }
 
   field(:contentOutstreamPosition)

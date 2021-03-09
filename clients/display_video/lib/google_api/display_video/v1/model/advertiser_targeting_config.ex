@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exemptTvFromViewabilityTargeting => boolean()
+          :exemptTvFromViewabilityTargeting => boolean() | nil
         }
 
   field(:exemptTvFromViewabilityTargeting)

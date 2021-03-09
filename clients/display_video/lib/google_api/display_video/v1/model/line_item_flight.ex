@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LineItemFlight do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dateRange => GoogleApi.DisplayVideo.V1.Model.DateRange.t(),
-          :flightDateType => String.t(),
-          :triggerId => String.t()
+          :dateRange => GoogleApi.DisplayVideo.V1.Model.DateRange.t() | nil,
+          :flightDateType => String.t() | nil,
+          :triggerId => String.t() | nil
         }
 
   field(:dateRange, as: GoogleApi.DisplayVideo.V1.Model.DateRange)

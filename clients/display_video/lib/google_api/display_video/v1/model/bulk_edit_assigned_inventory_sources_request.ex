@@ -30,11 +30,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedInventorySourcesReques
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
+          :advertiserId => String.t() | nil,
           :createdAssignedInventorySources =>
-            list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t()),
-          :deletedAssignedInventorySources => list(String.t()),
-          :partnerId => String.t()
+            list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t()) | nil,
+          :deletedAssignedInventorySources => list(String.t()) | nil,
+          :partnerId => String.t() | nil
         }
 
   field(:advertiserId)

@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ContentInstreamPositionTargetingOption
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentInstreamPosition => String.t()
+          :contentInstreamPosition => String.t() | nil
         }
 
   field(:contentInstreamPosition)

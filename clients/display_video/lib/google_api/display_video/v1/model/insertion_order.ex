@@ -41,21 +41,21 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :bidStrategy => GoogleApi.DisplayVideo.V1.Model.BiddingStrategy.t(),
-          :budget => GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudget.t(),
-          :campaignId => String.t(),
-          :displayName => String.t(),
-          :entityStatus => String.t(),
-          :frequencyCap => GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t(),
-          :insertionOrderId => String.t(),
-          :insertionOrderType => String.t(),
-          :integrationDetails => GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t(),
-          :name => String.t(),
-          :pacing => GoogleApi.DisplayVideo.V1.Model.Pacing.t(),
-          :partnerCosts => list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t()),
-          :performanceGoal => GoogleApi.DisplayVideo.V1.Model.PerformanceGoal.t(),
-          :updateTime => DateTime.t()
+          :advertiserId => String.t() | nil,
+          :bidStrategy => GoogleApi.DisplayVideo.V1.Model.BiddingStrategy.t() | nil,
+          :budget => GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudget.t() | nil,
+          :campaignId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :entityStatus => String.t() | nil,
+          :frequencyCap => GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t() | nil,
+          :insertionOrderId => String.t() | nil,
+          :insertionOrderType => String.t() | nil,
+          :integrationDetails => GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t() | nil,
+          :name => String.t() | nil,
+          :pacing => GoogleApi.DisplayVideo.V1.Model.Pacing.t() | nil,
+          :partnerCosts => list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t()) | nil,
+          :performanceGoal => GoogleApi.DisplayVideo.V1.Model.PerformanceGoal.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:advertiserId)

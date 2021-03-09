@@ -35,15 +35,15 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Partner do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adServerConfig => GoogleApi.DisplayVideo.V1.Model.PartnerAdServerConfig.t(),
-          :dataAccessConfig => GoogleApi.DisplayVideo.V1.Model.PartnerDataAccessConfig.t(),
-          :displayName => String.t(),
-          :entityStatus => String.t(),
-          :exchangeConfig => GoogleApi.DisplayVideo.V1.Model.ExchangeConfig.t(),
-          :generalConfig => GoogleApi.DisplayVideo.V1.Model.PartnerGeneralConfig.t(),
-          :name => String.t(),
-          :partnerId => String.t(),
-          :updateTime => DateTime.t()
+          :adServerConfig => GoogleApi.DisplayVideo.V1.Model.PartnerAdServerConfig.t() | nil,
+          :dataAccessConfig => GoogleApi.DisplayVideo.V1.Model.PartnerDataAccessConfig.t() | nil,
+          :displayName => String.t() | nil,
+          :entityStatus => String.t() | nil,
+          :exchangeConfig => GoogleApi.DisplayVideo.V1.Model.ExchangeConfig.t() | nil,
+          :generalConfig => GoogleApi.DisplayVideo.V1.Model.PartnerGeneralConfig.t() | nil,
+          :name => String.t() | nil,
+          :partnerId => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:adServerConfig, as: GoogleApi.DisplayVideo.V1.Model.PartnerAdServerConfig)

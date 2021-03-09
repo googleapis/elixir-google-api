@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ViewabilityTargetingOptionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :viewability => String.t()
+          :viewability => String.t() | nil
         }
 
   field(:viewability)

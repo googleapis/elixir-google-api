@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CampaignFlight do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :plannedDates => GoogleApi.DisplayVideo.V1.Model.DateRange.t(),
-          :plannedSpendAmountMicros => String.t()
+          :plannedDates => GoogleApi.DisplayVideo.V1.Model.DateRange.t() | nil,
+          :plannedSpendAmountMicros => String.t() | nil
         }
 
   field(:plannedDates, as: GoogleApi.DisplayVideo.V1.Model.DateRange)

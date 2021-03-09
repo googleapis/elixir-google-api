@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusAssignedTargetin
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorizedSellerStatus => String.t(),
-          :targetingOptionId => String.t()
+          :authorizedSellerStatus => String.t() | nil,
+          :targetingOptionId => String.t() | nil
         }
 
   field(:authorizedSellerStatus)

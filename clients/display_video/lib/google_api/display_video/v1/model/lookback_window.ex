@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LookbackWindow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clickDays => integer(),
-          :impressionDays => integer()
+          :clickDays => integer() | nil,
+          :impressionDays => integer() | nil
         }
 
   field(:clickDays)

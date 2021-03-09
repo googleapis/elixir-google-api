@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelTargetingOptionDeta
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentRatingTier => String.t()
+          :contentRatingTier => String.t() | nil
         }
 
   field(:contentRatingTier)

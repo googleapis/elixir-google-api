@@ -32,12 +32,12 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CmHybridConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cmAccountId => String.t(),
-          :cmFloodlightConfigId => String.t(),
-          :cmFloodlightLinkingAuthorized => boolean(),
-          :cmSyncableSiteIds => list(String.t()),
-          :dv360ToCmCostReportingEnabled => boolean(),
-          :dv360ToCmDataSharingEnabled => boolean()
+          :cmAccountId => String.t() | nil,
+          :cmFloodlightConfigId => String.t() | nil,
+          :cmFloodlightLinkingAuthorized => boolean() | nil,
+          :cmSyncableSiteIds => list(String.t()) | nil,
+          :dv360ToCmCostReportingEnabled => boolean() | nil,
+          :dv360ToCmDataSharingEnabled => boolean() | nil
         }
 
   field(:cmAccountId)

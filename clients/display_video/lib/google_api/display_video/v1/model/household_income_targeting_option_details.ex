@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.HouseholdIncomeTargetingOptionDetails 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :householdIncome => String.t()
+          :householdIncome => String.t() | nil
         }
 
   field(:householdIncome)

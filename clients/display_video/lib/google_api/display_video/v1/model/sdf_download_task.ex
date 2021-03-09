@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SdfDownloadTask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceName => String.t()
+          :resourceName => String.t() | nil
         }
 
   field(:resourceName)

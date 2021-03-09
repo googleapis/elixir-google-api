@@ -31,11 +31,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Channel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :channelId => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :partnerId => String.t()
+          :advertiserId => String.t() | nil,
+          :channelId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :partnerId => String.t() | nil
         }
 
   field(:advertiserId)

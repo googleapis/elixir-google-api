@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CombinedAudience do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :combinedAudienceId => String.t(),
-          :displayName => String.t(),
-          :name => String.t()
+          :combinedAudienceId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:combinedAudienceId)

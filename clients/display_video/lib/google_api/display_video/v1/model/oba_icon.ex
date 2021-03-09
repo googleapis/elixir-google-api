@@ -34,14 +34,14 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ObaIcon do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clickTrackingUrl => String.t(),
-          :dimensions => GoogleApi.DisplayVideo.V1.Model.Dimensions.t(),
-          :landingPageUrl => String.t(),
-          :position => String.t(),
-          :program => String.t(),
-          :resourceMimeType => String.t(),
-          :resourceUrl => String.t(),
-          :viewTrackingUrl => String.t()
+          :clickTrackingUrl => String.t() | nil,
+          :dimensions => GoogleApi.DisplayVideo.V1.Model.Dimensions.t() | nil,
+          :landingPageUrl => String.t() | nil,
+          :position => String.t() | nil,
+          :program => String.t() | nil,
+          :resourceMimeType => String.t() | nil,
+          :resourceUrl => String.t() | nil,
+          :viewTrackingUrl => String.t() | nil
         }
 
   field(:clickTrackingUrl)

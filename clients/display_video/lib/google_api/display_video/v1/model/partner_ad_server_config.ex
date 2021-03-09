@@ -27,7 +27,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PartnerAdServerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :measurementConfig => GoogleApi.DisplayVideo.V1.Model.MeasurementConfig.t()
+          :measurementConfig => GoogleApi.DisplayVideo.V1.Model.MeasurementConfig.t() | nil
         }
 
   field(:measurementConfig, as: GoogleApi.DisplayVideo.V1.Model.MeasurementConfig)

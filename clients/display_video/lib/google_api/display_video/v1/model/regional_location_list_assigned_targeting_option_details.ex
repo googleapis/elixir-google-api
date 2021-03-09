@@ -28,8 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.RegionalLocationListAssignedTargetingO
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :negative => boolean(),
-          :regionalLocationListId => String.t()
+          :negative => boolean() | nil,
+          :regionalLocationListId => String.t() | nil
         }
 
   field(:negative)

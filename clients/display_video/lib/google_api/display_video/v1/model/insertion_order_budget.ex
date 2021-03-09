@@ -29,10 +29,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :automationType => String.t(),
+          :automationType => String.t() | nil,
           :budgetSegments =>
-            list(GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudgetSegment.t()),
-          :budgetUnit => String.t()
+            list(GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudgetSegment.t()) | nil,
+          :budgetUnit => String.t() | nil
         }
 
   field(:automationType)

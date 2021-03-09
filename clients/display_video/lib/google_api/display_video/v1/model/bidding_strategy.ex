@@ -29,10 +29,11 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BiddingStrategy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fixedBid => GoogleApi.DisplayVideo.V1.Model.FixedBidStrategy.t(),
-          :maximizeSpendAutoBid => GoogleApi.DisplayVideo.V1.Model.MaximizeSpendBidStrategy.t(),
+          :fixedBid => GoogleApi.DisplayVideo.V1.Model.FixedBidStrategy.t() | nil,
+          :maximizeSpendAutoBid =>
+            GoogleApi.DisplayVideo.V1.Model.MaximizeSpendBidStrategy.t() | nil,
           :performanceGoalAutoBid =>
-            GoogleApi.DisplayVideo.V1.Model.PerformanceGoalBidStrategy.t()
+            GoogleApi.DisplayVideo.V1.Model.PerformanceGoalBidStrategy.t() | nil
         }
 
   field(:fixedBid, as: GoogleApi.DisplayVideo.V1.Model.FixedBidStrategy)

@@ -29,8 +29,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListInventorySourceGroupsResponse do
 
   @type t :: %__MODULE__{
           :inventorySourceGroups =>
-            list(GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:inventorySourceGroups,

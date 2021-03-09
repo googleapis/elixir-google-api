@@ -30,10 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ExchangeConfigEnabledExchange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exchange => String.t(),
-          :googleAdManagerAgencyId => String.t(),
-          :googleAdManagerBuyerNetworkId => String.t(),
-          :seatId => String.t()
+          :exchange => String.t() | nil,
+          :googleAdManagerAgencyId => String.t() | nil,
+          :googleAdManagerBuyerNetworkId => String.t() | nil,
+          :seatId => String.t() | nil
         }
 
   field(:exchange)

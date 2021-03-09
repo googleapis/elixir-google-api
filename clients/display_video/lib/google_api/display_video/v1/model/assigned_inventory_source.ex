@@ -29,9 +29,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignedInventorySourceId => String.t(),
-          :inventorySourceId => String.t(),
-          :name => String.t()
+          :assignedInventorySourceId => String.t() | nil,
+          :inventorySourceId => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:assignedInventorySourceId)

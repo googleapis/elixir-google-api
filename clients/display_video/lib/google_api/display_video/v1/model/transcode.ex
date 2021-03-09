@@ -35,15 +35,15 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Transcode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioBitRateKbps => String.t(),
-          :audioSampleRateHz => String.t(),
-          :bitRateKbps => String.t(),
-          :dimensions => GoogleApi.DisplayVideo.V1.Model.Dimensions.t(),
-          :fileSizeBytes => String.t(),
-          :frameRate => number(),
-          :mimeType => String.t(),
-          :name => String.t(),
-          :transcoded => boolean()
+          :audioBitRateKbps => String.t() | nil,
+          :audioSampleRateHz => String.t() | nil,
+          :bitRateKbps => String.t() | nil,
+          :dimensions => GoogleApi.DisplayVideo.V1.Model.Dimensions.t() | nil,
+          :fileSizeBytes => String.t() | nil,
+          :frameRate => number() | nil,
+          :mimeType => String.t() | nil,
+          :name => String.t() | nil,
+          :transcoded => boolean() | nil
         }
 
   field(:audioBitRateKbps)

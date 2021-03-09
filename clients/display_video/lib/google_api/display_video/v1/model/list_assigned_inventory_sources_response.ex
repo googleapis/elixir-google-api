@@ -29,8 +29,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListAssignedInventorySourcesResponse d
 
   @type t :: %__MODULE__{
           :assignedInventorySources =>
-            list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:assignedInventorySources,
