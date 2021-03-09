@@ -28,8 +28,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DeviceCompromised do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :events => list(GoogleApi.AlertCenter.V1beta1.Model.DeviceCompromisedSecurityDetail.t())
+          :email => String.t() | nil,
+          :events =>
+            list(GoogleApi.AlertCenter.V1beta1.Model.DeviceCompromisedSecurityDetail.t()) | nil
         }
 
   field(:email)

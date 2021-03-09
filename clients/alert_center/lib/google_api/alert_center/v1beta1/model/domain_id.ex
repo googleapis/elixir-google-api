@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DomainId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerPrimaryDomain => String.t()
+          :customerPrimaryDomain => String.t() | nil
         }
 
   field(:customerPrimaryDomain)

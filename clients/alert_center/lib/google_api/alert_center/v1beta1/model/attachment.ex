@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.Attachment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :csv => GoogleApi.AlertCenter.V1beta1.Model.Csv.t()
+          :csv => GoogleApi.AlertCenter.V1beta1.Model.Csv.t() | nil
         }
 
   field(:csv, as: GoogleApi.AlertCenter.V1beta1.Model.Csv)

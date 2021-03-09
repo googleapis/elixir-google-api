@@ -17,25 +17,25 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.GoogleOperations do
   @moduledoc """
-  An incident reported by Google Operations for a G Suite application.
+  An incident reported by Google Operations for a Google Workspace application.
 
   ## Attributes
 
   *   `affectedUserEmails` (*type:* `list(String.t)`, *default:* `nil`) - The list of emails which correspond to the users directly affected by the incident.
-  *   `attachmentData` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.Attachment.t`, *default:* `nil`) - Optional. Application-specific data for an incident, provided when the G Suite application which reported the incident cannot be completely restored to a valid state.
+  *   `attachmentData` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.Attachment.t`, *default:* `nil`) - Optional. Application-specific data for an incident, provided when the Google Workspace application which reported the incident cannot be completely restored to a valid state.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A detailed, freeform incident description.
-  *   `header` (*type:* `String.t`, *default:* `nil`) - A header to display above the incident message. Typcially used to attach a localized notice on the timeline for followup comms translations.
+  *   `header` (*type:* `String.t`, *default:* `nil`) - A header to display above the incident message. Typically used to attach a localized notice on the timeline for followup comms translations.
   *   `title` (*type:* `String.t`, *default:* `nil`) - A one-line incident description.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :affectedUserEmails => list(String.t()),
-          :attachmentData => GoogleApi.AlertCenter.V1beta1.Model.Attachment.t(),
-          :description => String.t(),
-          :header => String.t(),
-          :title => String.t()
+          :affectedUserEmails => list(String.t()) | nil,
+          :attachmentData => GoogleApi.AlertCenter.V1beta1.Model.Attachment.t() | nil,
+          :description => String.t() | nil,
+          :header => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:affectedUserEmails, type: :list)

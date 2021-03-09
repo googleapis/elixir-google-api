@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AppMakerSqlSetupNotification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestInfo => list(GoogleApi.AlertCenter.V1beta1.Model.RequestInfo.t())
+          :requestInfo => list(GoogleApi.AlertCenter.V1beta1.Model.RequestInfo.t()) | nil
         }
 
   field(:requestInfo, as: GoogleApi.AlertCenter.V1beta1.Model.RequestInfo, type: :list)

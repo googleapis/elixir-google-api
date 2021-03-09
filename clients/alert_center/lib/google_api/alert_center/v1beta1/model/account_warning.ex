@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AccountWarning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :loginDetails => GoogleApi.AlertCenter.V1beta1.Model.LoginDetails.t()
+          :email => String.t() | nil,
+          :loginDetails => GoogleApi.AlertCenter.V1beta1.Model.LoginDetails.t() | nil
         }
 
   field(:email)

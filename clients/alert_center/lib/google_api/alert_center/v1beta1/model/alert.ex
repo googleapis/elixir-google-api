@@ -39,19 +39,19 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.Alert do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alertId => String.t(),
-          :createTime => DateTime.t(),
-          :customerId => String.t(),
-          :data => map(),
-          :deleted => boolean(),
-          :endTime => DateTime.t(),
-          :etag => String.t(),
-          :metadata => GoogleApi.AlertCenter.V1beta1.Model.AlertMetadata.t(),
-          :securityInvestigationToolLink => String.t(),
-          :source => String.t(),
-          :startTime => DateTime.t(),
-          :type => String.t(),
-          :updateTime => DateTime.t()
+          :alertId => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :customerId => String.t() | nil,
+          :data => map() | nil,
+          :deleted => boolean() | nil,
+          :endTime => DateTime.t() | nil,
+          :etag => String.t() | nil,
+          :metadata => GoogleApi.AlertCenter.V1beta1.Model.AlertMetadata.t() | nil,
+          :securityInvestigationToolLink => String.t() | nil,
+          :source => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :type => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:alertId)

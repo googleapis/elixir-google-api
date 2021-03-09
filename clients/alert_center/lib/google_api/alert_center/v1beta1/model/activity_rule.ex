@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.ActivityRule do
   @moduledoc """
-  Alerts from G Suite Security Center rules service configured by admin.
+  Alerts from Google Workspace Security Center rules service configured by an admin.
 
   ## Attributes
 
@@ -38,18 +38,18 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ActivityRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionNames => list(String.t()),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :query => String.t(),
-          :supersededAlerts => list(String.t()),
-          :supersedingAlert => String.t(),
-          :threshold => String.t(),
-          :triggerSource => String.t(),
-          :updateTime => DateTime.t(),
-          :windowSize => String.t()
+          :actionNames => list(String.t()) | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :query => String.t() | nil,
+          :supersededAlerts => list(String.t()) | nil,
+          :supersedingAlert => String.t() | nil,
+          :threshold => String.t() | nil,
+          :triggerSource => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :windowSize => String.t() | nil
         }
 
   field(:actionNames, type: :list)

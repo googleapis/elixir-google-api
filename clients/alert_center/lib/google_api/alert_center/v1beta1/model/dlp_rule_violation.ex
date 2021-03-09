@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DlpRuleViolation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ruleViolationInfo => GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo.t()
+          :ruleViolationInfo => GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo.t() | nil
         }
 
   field(:ruleViolationInfo, as: GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo)

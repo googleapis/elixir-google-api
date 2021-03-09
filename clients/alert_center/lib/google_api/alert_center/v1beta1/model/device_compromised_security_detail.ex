@@ -33,13 +33,13 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DeviceCompromisedSecurityDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceCompromisedState => String.t(),
-          :deviceId => String.t(),
-          :deviceModel => String.t(),
-          :deviceType => String.t(),
-          :iosVendorId => String.t(),
-          :resourceId => String.t(),
-          :serialNumber => String.t()
+          :deviceCompromisedState => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :deviceModel => String.t() | nil,
+          :deviceType => String.t() | nil,
+          :iosVendorId => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :serialNumber => String.t() | nil
         }
 
   field(:deviceCompromisedState)

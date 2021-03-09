@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documentId => String.t(),
-          :resourceTitle => String.t()
+          :documentId => String.t() | nil,
+          :resourceTitle => String.t() | nil
         }
 
   field(:documentId)

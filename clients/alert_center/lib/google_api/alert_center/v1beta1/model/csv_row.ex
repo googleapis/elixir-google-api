@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.CsvRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(String.t())
+          :entries => list(String.t()) | nil
         }
 
   field(:entries, type: :list)

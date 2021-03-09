@@ -27,7 +27,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.UndeleteAlertRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerId => String.t()
+          :customerId => String.t() | nil
         }
 
   field(:customerId)

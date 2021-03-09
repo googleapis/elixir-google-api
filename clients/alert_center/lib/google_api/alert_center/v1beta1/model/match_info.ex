@@ -28,8 +28,10 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.MatchInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :predefinedDetector => GoogleApi.AlertCenter.V1beta1.Model.PredefinedDetectorInfo.t(),
-          :userDefinedDetector => GoogleApi.AlertCenter.V1beta1.Model.UserDefinedDetectorInfo.t()
+          :predefinedDetector =>
+            GoogleApi.AlertCenter.V1beta1.Model.PredefinedDetectorInfo.t() | nil,
+          :userDefinedDetector =>
+            GoogleApi.AlertCenter.V1beta1.Model.UserDefinedDetectorInfo.t() | nil
         }
 
   field(:predefinedDetector, as: GoogleApi.AlertCenter.V1beta1.Model.PredefinedDetectorInfo)

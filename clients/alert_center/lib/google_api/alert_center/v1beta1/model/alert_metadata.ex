@@ -33,13 +33,13 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AlertMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alertId => String.t(),
-          :assignee => String.t(),
-          :customerId => String.t(),
-          :etag => String.t(),
-          :severity => String.t(),
-          :status => String.t(),
-          :updateTime => DateTime.t()
+          :alertId => String.t() | nil,
+          :assignee => String.t() | nil,
+          :customerId => String.t() | nil,
+          :etag => String.t() | nil,
+          :severity => String.t() | nil,
+          :status => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:alertId)

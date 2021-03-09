@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.LoginDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipAddress => String.t(),
-          :loginTime => DateTime.t()
+          :ipAddress => String.t() | nil,
+          :loginTime => DateTime.t() | nil
         }
 
   field(:ipAddress)

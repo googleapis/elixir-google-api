@@ -30,10 +30,10 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.BadWhitelist do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domainId => GoogleApi.AlertCenter.V1beta1.Model.DomainId.t(),
-          :maliciousEntity => GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity.t(),
-          :messages => list(GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo.t()),
-          :sourceIp => String.t()
+          :domainId => GoogleApi.AlertCenter.V1beta1.Model.DomainId.t() | nil,
+          :maliciousEntity => GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity.t() | nil,
+          :messages => list(GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo.t()) | nil,
+          :sourceIp => String.t() | nil
         }
 
   field(:domainId, as: GoogleApi.AlertCenter.V1beta1.Model.DomainId)

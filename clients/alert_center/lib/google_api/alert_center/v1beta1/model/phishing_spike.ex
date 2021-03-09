@@ -30,10 +30,10 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.PhishingSpike do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domainId => GoogleApi.AlertCenter.V1beta1.Model.DomainId.t(),
-          :isInternal => boolean(),
-          :maliciousEntity => GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity.t(),
-          :messages => list(GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo.t())
+          :domainId => GoogleApi.AlertCenter.V1beta1.Model.DomainId.t() | nil,
+          :isInternal => boolean() | nil,
+          :maliciousEntity => GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity.t() | nil,
+          :messages => list(GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo.t()) | nil
         }
 
   field(:domainId, as: GoogleApi.AlertCenter.V1beta1.Model.DomainId)

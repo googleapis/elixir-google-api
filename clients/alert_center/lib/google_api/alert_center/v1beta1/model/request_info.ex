@@ -29,9 +29,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.RequestInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appDeveloperEmail => list(String.t()),
-          :appKey => String.t(),
-          :numberOfRequests => String.t()
+          :appDeveloperEmail => list(String.t()) | nil,
+          :appKey => String.t() | nil,
+          :numberOfRequests => String.t() | nil
         }
 
   field(:appDeveloperEmail, type: :list)

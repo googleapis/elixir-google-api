@@ -28,8 +28,8 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.RuleInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :resourceName => String.t()
+          :displayName => String.t() | nil,
+          :resourceName => String.t() | nil
         }
 
   field(:displayName)
