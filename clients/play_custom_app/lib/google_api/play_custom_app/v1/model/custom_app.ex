@@ -29,9 +29,9 @@ defmodule GoogleApi.PlayCustomApp.V1.Model.CustomApp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t(),
-          :packageName => String.t(),
-          :title => String.t()
+          :languageCode => String.t() | nil,
+          :packageName => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:languageCode)
