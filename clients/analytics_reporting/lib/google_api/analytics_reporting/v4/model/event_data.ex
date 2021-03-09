@@ -31,11 +31,11 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.EventData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventAction => String.t(),
-          :eventCategory => String.t(),
-          :eventCount => String.t(),
-          :eventLabel => String.t(),
-          :eventValue => String.t()
+          :eventAction => String.t() | nil,
+          :eventCategory => String.t() | nil,
+          :eventCount => String.t() | nil,
+          :eventLabel => String.t() | nil,
+          :eventValue => String.t() | nil
         }
 
   field(:eventAction)

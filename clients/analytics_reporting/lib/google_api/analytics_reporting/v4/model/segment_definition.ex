@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :segmentFilters => list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter.t())
+          :segmentFilters => list(GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter.t()) | nil
         }
 
   field(:segmentFilters, as: GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter, type: :list)

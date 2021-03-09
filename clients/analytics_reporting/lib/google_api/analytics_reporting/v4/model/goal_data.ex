@@ -34,14 +34,14 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.GoalData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :goalCompletionLocation => String.t(),
-          :goalCompletions => String.t(),
-          :goalIndex => integer(),
-          :goalName => String.t(),
-          :goalPreviousStep1 => String.t(),
-          :goalPreviousStep2 => String.t(),
-          :goalPreviousStep3 => String.t(),
-          :goalValue => float()
+          :goalCompletionLocation => String.t() | nil,
+          :goalCompletions => String.t() | nil,
+          :goalIndex => integer() | nil,
+          :goalName => String.t() | nil,
+          :goalPreviousStep1 => String.t() | nil,
+          :goalPreviousStep2 => String.t() | nil,
+          :goalPreviousStep3 => String.t() | nil,
+          :goalValue => float() | nil
         }
 
   field(:goalCompletionLocation)

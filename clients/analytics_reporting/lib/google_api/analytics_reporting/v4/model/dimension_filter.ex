@@ -31,11 +31,11 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DimensionFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caseSensitive => boolean(),
-          :dimensionName => String.t(),
-          :expressions => list(String.t()),
-          :not => boolean(),
-          :operator => String.t()
+          :caseSensitive => boolean() | nil,
+          :dimensionName => String.t() | nil,
+          :expressions => list(String.t()) | nil,
+          :not => boolean() | nil,
+          :operator => String.t() | nil
         }
 
   field(:caseSensitive)

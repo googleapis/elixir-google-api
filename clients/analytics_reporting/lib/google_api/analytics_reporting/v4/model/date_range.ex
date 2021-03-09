@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DateRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => String.t(),
-          :startDate => String.t()
+          :endDate => String.t() | nil,
+          :startDate => String.t() | nil
         }
 
   field(:endDate)

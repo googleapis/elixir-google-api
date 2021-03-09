@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionNames => list(String.t()),
-          :dimensionValues => list(String.t()),
-          :metric => GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry.t()
+          :dimensionNames => list(String.t()) | nil,
+          :dimensionValues => list(String.t()) | nil,
+          :metric => GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry.t() | nil
         }
 
   field(:dimensionNames, type: :list)

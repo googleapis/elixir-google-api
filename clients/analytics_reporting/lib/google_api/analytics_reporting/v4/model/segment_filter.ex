@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :not => boolean(),
-          :sequenceSegment => GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment.t(),
-          :simpleSegment => GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment.t()
+          :not => boolean() | nil,
+          :sequenceSegment => GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment.t() | nil,
+          :simpleSegment => GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment.t() | nil
         }
 
   field(:not)

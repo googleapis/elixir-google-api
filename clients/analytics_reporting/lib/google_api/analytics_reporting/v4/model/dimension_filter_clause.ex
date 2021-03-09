@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filters => list(GoogleApi.AnalyticsReporting.V4.Model.DimensionFilter.t()),
-          :operator => String.t()
+          :filters => list(GoogleApi.AnalyticsReporting.V4.Model.DimensionFilter.t()) | nil,
+          :operator => String.t() | nil
         }
 
   field(:filters, as: GoogleApi.AnalyticsReporting.V4.Model.DimensionFilter, type: :list)

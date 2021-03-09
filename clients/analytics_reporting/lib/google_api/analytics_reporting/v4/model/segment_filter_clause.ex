@@ -29,9 +29,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentFilterClause do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionFilter => GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter.t(),
-          :metricFilter => GoogleApi.AnalyticsReporting.V4.Model.SegmentMetricFilter.t(),
-          :not => boolean()
+          :dimensionFilter =>
+            GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter.t() | nil,
+          :metricFilter => GoogleApi.AnalyticsReporting.V4.Model.SegmentMetricFilter.t() | nil,
+          :not => boolean() | nil
         }
 
   field(:dimensionFilter, as: GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter)

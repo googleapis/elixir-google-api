@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotValueRegion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(String.t())
+          :values => list(String.t()) | nil
         }
 
   field(:values, type: :list)

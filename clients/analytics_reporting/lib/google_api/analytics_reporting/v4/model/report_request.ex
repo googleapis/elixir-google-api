@@ -43,25 +43,25 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cohortGroup => GoogleApi.AnalyticsReporting.V4.Model.CohortGroup.t(),
-          :dateRanges => list(GoogleApi.AnalyticsReporting.V4.Model.DateRange.t()),
+          :cohortGroup => GoogleApi.AnalyticsReporting.V4.Model.CohortGroup.t() | nil,
+          :dateRanges => list(GoogleApi.AnalyticsReporting.V4.Model.DateRange.t()) | nil,
           :dimensionFilterClauses =>
-            list(GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause.t()),
-          :dimensions => list(GoogleApi.AnalyticsReporting.V4.Model.Dimension.t()),
-          :filtersExpression => String.t(),
-          :hideTotals => boolean(),
-          :hideValueRanges => boolean(),
-          :includeEmptyRows => boolean(),
+            list(GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause.t()) | nil,
+          :dimensions => list(GoogleApi.AnalyticsReporting.V4.Model.Dimension.t()) | nil,
+          :filtersExpression => String.t() | nil,
+          :hideTotals => boolean() | nil,
+          :hideValueRanges => boolean() | nil,
+          :includeEmptyRows => boolean() | nil,
           :metricFilterClauses =>
-            list(GoogleApi.AnalyticsReporting.V4.Model.MetricFilterClause.t()),
-          :metrics => list(GoogleApi.AnalyticsReporting.V4.Model.Metric.t()),
-          :orderBys => list(GoogleApi.AnalyticsReporting.V4.Model.OrderBy.t()),
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :pivots => list(GoogleApi.AnalyticsReporting.V4.Model.Pivot.t()),
-          :samplingLevel => String.t(),
-          :segments => list(GoogleApi.AnalyticsReporting.V4.Model.Segment.t()),
-          :viewId => String.t()
+            list(GoogleApi.AnalyticsReporting.V4.Model.MetricFilterClause.t()) | nil,
+          :metrics => list(GoogleApi.AnalyticsReporting.V4.Model.Metric.t()) | nil,
+          :orderBys => list(GoogleApi.AnalyticsReporting.V4.Model.OrderBy.t()) | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :pivots => list(GoogleApi.AnalyticsReporting.V4.Model.Pivot.t()) | nil,
+          :samplingLevel => String.t() | nil,
+          :segments => list(GoogleApi.AnalyticsReporting.V4.Model.Segment.t()) | nil,
+          :viewId => String.t() | nil
         }
 
   field(:cohortGroup, as: GoogleApi.AnalyticsReporting.V4.Model.CohortGroup)

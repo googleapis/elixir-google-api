@@ -32,12 +32,12 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentDimensionFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caseSensitive => boolean(),
-          :dimensionName => String.t(),
-          :expressions => list(String.t()),
-          :maxComparisonValue => String.t(),
-          :minComparisonValue => String.t(),
-          :operator => String.t()
+          :caseSensitive => boolean() | nil,
+          :dimensionName => String.t() | nil,
+          :expressions => list(String.t()) | nil,
+          :maxComparisonValue => String.t() | nil,
+          :minComparisonValue => String.t() | nil,
+          :operator => String.t() | nil
         }
 
   field(:caseSensitive)

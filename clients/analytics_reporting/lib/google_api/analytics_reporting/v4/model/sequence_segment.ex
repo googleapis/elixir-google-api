@@ -28,9 +28,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SequenceSegment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :firstStepShouldMatchFirstHit => boolean(),
+          :firstStepShouldMatchFirstHit => boolean() | nil,
           :segmentSequenceSteps =>
-            list(GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep.t())
+            list(GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep.t()) | nil
         }
 
   field(:firstStepShouldMatchFirstHit)

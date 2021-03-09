@@ -32,12 +32,12 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SearchUserActivityRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activityTypes => list(String.t()),
-          :dateRange => GoogleApi.AnalyticsReporting.V4.Model.DateRange.t(),
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :user => GoogleApi.AnalyticsReporting.V4.Model.User.t(),
-          :viewId => String.t()
+          :activityTypes => list(String.t()) | nil,
+          :dateRange => GoogleApi.AnalyticsReporting.V4.Model.DateRange.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :user => GoogleApi.AnalyticsReporting.V4.Model.User.t() | nil,
+          :viewId => String.t() | nil
         }
 
   field(:activityTypes, type: :list)

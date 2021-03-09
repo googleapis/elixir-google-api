@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Segment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dynamicSegment => GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment.t(),
-          :segmentId => String.t()
+          :dynamicSegment => GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment.t() | nil,
+          :segmentId => String.t() | nil
         }
 
   field(:dynamicSegment, as: GoogleApi.AnalyticsReporting.V4.Model.DynamicSegment)

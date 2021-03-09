@@ -28,9 +28,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SegmentSequenceStep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :matchType => String.t(),
+          :matchType => String.t() | nil,
           :orFiltersForSegment =>
-            list(GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment.t())
+            list(GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment.t()) | nil
         }
 
   field(:matchType)

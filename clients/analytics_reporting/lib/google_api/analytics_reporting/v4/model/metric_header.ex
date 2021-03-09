@@ -29,8 +29,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.MetricHeader do
 
   @type t :: %__MODULE__{
           :metricHeaderEntries =>
-            list(GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry.t()),
-          :pivotHeaders => list(GoogleApi.AnalyticsReporting.V4.Model.PivotHeader.t())
+            list(GoogleApi.AnalyticsReporting.V4.Model.MetricHeaderEntry.t()) | nil,
+          :pivotHeaders => list(GoogleApi.AnalyticsReporting.V4.Model.PivotHeader.t()) | nil
         }
 
   field(:metricHeaderEntries,

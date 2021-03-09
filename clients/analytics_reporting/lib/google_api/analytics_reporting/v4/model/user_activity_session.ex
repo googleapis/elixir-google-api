@@ -32,12 +32,12 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.UserActivitySession do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activities => list(GoogleApi.AnalyticsReporting.V4.Model.Activity.t()),
-          :dataSource => String.t(),
-          :deviceCategory => String.t(),
-          :platform => String.t(),
-          :sessionDate => String.t(),
-          :sessionId => String.t()
+          :activities => list(GoogleApi.AnalyticsReporting.V4.Model.Activity.t()) | nil,
+          :dataSource => String.t() | nil,
+          :deviceCategory => String.t() | nil,
+          :platform => String.t() | nil,
+          :sessionDate => String.t() | nil,
+          :sessionId => String.t() | nil
         }
 
   field(:activities, as: GoogleApi.AnalyticsReporting.V4.Model.Activity, type: :list)

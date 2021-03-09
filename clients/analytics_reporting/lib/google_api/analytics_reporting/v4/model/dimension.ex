@@ -28,8 +28,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Dimension do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :histogramBuckets => list(String.t()),
-          :name => String.t()
+          :histogramBuckets => list(String.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:histogramBuckets, type: :list)

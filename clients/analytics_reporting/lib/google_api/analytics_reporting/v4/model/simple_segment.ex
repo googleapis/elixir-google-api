@@ -28,7 +28,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.SimpleSegment do
 
   @type t :: %__MODULE__{
           :orFiltersForSegment =>
-            list(GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment.t())
+            list(GoogleApi.AnalyticsReporting.V4.Model.OrFiltersForSegment.t()) | nil
         }
 
   field(:orFiltersForSegment,

@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.TransactionData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :transactionId => String.t(),
-          :transactionRevenue => float(),
-          :transactionShipping => float(),
-          :transactionTax => float()
+          :transactionId => String.t() | nil,
+          :transactionRevenue => float() | nil,
+          :transactionShipping => float() | nil,
+          :transactionTax => float() | nil
         }
 
   field(:transactionId)
