@@ -30,10 +30,10 @@ defmodule GoogleApi.CustomSearch.V1.Model.SearchSearchInformation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formattedSearchTime => String.t(),
-          :formattedTotalResults => String.t(),
-          :searchTime => float(),
-          :totalResults => String.t()
+          :formattedSearchTime => String.t() | nil,
+          :formattedTotalResults => String.t() | nil,
+          :searchTime => float() | nil,
+          :totalResults => String.t() | nil
         }
 
   field(:formattedSearchTime)

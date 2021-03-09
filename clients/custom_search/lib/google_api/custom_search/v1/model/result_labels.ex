@@ -29,9 +29,9 @@ defmodule GoogleApi.CustomSearch.V1.Model.ResultLabels do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :label_with_op => String.t(),
-          :name => String.t()
+          :displayName => String.t() | nil,
+          :label_with_op => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:displayName)

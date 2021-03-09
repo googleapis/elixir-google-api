@@ -28,8 +28,8 @@ defmodule GoogleApi.CustomSearch.V1.Model.SearchSpelling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :correctedQuery => String.t(),
-          :htmlCorrectedQuery => String.t()
+          :correctedQuery => String.t() | nil,
+          :htmlCorrectedQuery => String.t() | nil
         }
 
   field(:correctedQuery)

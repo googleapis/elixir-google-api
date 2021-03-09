@@ -30,10 +30,10 @@ defmodule GoogleApi.CustomSearch.V1.Model.PromotionBodyLines do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :htmlTitle => String.t(),
-          :link => String.t(),
-          :title => String.t(),
-          :url => String.t()
+          :htmlTitle => String.t() | nil,
+          :link => String.t() | nil,
+          :title => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:htmlTitle)

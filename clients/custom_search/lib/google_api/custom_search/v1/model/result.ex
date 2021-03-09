@@ -41,21 +41,21 @@ defmodule GoogleApi.CustomSearch.V1.Model.Result do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cacheId => String.t(),
-          :displayLink => String.t(),
-          :fileFormat => String.t(),
-          :formattedUrl => String.t(),
-          :htmlFormattedUrl => String.t(),
-          :htmlSnippet => String.t(),
-          :htmlTitle => String.t(),
-          :image => GoogleApi.CustomSearch.V1.Model.ResultImage.t(),
-          :kind => String.t(),
-          :labels => list(GoogleApi.CustomSearch.V1.Model.ResultLabels.t()),
-          :link => String.t(),
-          :mime => String.t(),
-          :pagemap => map(),
-          :snippet => String.t(),
-          :title => String.t()
+          :cacheId => String.t() | nil,
+          :displayLink => String.t() | nil,
+          :fileFormat => String.t() | nil,
+          :formattedUrl => String.t() | nil,
+          :htmlFormattedUrl => String.t() | nil,
+          :htmlSnippet => String.t() | nil,
+          :htmlTitle => String.t() | nil,
+          :image => GoogleApi.CustomSearch.V1.Model.ResultImage.t() | nil,
+          :kind => String.t() | nil,
+          :labels => list(GoogleApi.CustomSearch.V1.Model.ResultLabels.t()) | nil,
+          :link => String.t() | nil,
+          :mime => String.t() | nil,
+          :pagemap => map() | nil,
+          :snippet => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:cacheId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CustomSearch.V1.Model.SearchUrl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :template => String.t(),
-          :type => String.t()
+          :template => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:template)
