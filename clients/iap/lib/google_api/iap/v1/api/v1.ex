@@ -53,7 +53,10 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   *   `{:error, info}` on failure
   """
   @spec iap_get_iam_policy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAP.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.IAP.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def iap_get_iam_policy(connection, v1_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -111,7 +114,10 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   *   `{:error, info}` on failure
   """
   @spec iap_get_iap_settings(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAP.V1.Model.IapSettings.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.IAP.V1.Model.IapSettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def iap_get_iap_settings(connection, v1_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -169,7 +175,10 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   *   `{:error, info}` on failure
   """
   @spec iap_set_iam_policy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAP.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.IAP.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def iap_set_iam_policy(connection, v1_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -230,6 +239,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   @spec iap_test_iam_permissions(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAP.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def iap_test_iam_permissions(connection, v1_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -290,7 +300,10 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   *   `{:error, info}` on failure
   """
   @spec iap_update_iap_settings(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAP.V1.Model.IapSettings.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.IAP.V1.Model.IapSettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def iap_update_iap_settings(connection, v1_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

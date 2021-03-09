@@ -29,9 +29,9 @@ defmodule GoogleApi.IAP.V1.Model.PolicyName do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :region => String.t(),
-          :type => String.t()
+          :id => String.t() | nil,
+          :region => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:id)

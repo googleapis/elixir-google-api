@@ -29,9 +29,9 @@ defmodule GoogleApi.IAP.V1.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bindings => list(GoogleApi.IAP.V1.Model.Binding.t()),
-          :etag => String.t(),
-          :version => integer()
+          :bindings => list(GoogleApi.IAP.V1.Model.Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:bindings, as: GoogleApi.IAP.V1.Model.Binding, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.IAP.V1.Model.Resource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :name => String.t(),
-          :service => String.t(),
-          :type => String.t()
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :service => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:labels, type: :map)

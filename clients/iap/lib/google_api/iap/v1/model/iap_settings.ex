@@ -29,9 +29,9 @@ defmodule GoogleApi.IAP.V1.Model.IapSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessSettings => GoogleApi.IAP.V1.Model.AccessSettings.t(),
-          :applicationSettings => GoogleApi.IAP.V1.Model.ApplicationSettings.t(),
-          :name => String.t()
+          :accessSettings => GoogleApi.IAP.V1.Model.AccessSettings.t() | nil,
+          :applicationSettings => GoogleApi.IAP.V1.Model.ApplicationSettings.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:accessSettings, as: GoogleApi.IAP.V1.Model.AccessSettings)

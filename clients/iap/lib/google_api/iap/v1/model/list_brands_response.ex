@@ -27,7 +27,7 @@ defmodule GoogleApi.IAP.V1.Model.ListBrandsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :brands => list(GoogleApi.IAP.V1.Model.Brand.t())
+          :brands => list(GoogleApi.IAP.V1.Model.Brand.t()) | nil
         }
 
   field(:brands, as: GoogleApi.IAP.V1.Model.Brand, type: :list)

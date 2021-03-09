@@ -29,9 +29,9 @@ defmodule GoogleApi.IAP.V1.Model.ApplicationSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessDeniedPageSettings => GoogleApi.IAP.V1.Model.AccessDeniedPageSettings.t(),
-          :cookieDomain => String.t(),
-          :csmSettings => GoogleApi.IAP.V1.Model.CsmSettings.t()
+          :accessDeniedPageSettings => GoogleApi.IAP.V1.Model.AccessDeniedPageSettings.t() | nil,
+          :cookieDomain => String.t() | nil,
+          :csmSettings => GoogleApi.IAP.V1.Model.CsmSettings.t() | nil
         }
 
   field(:accessDeniedPageSettings, as: GoogleApi.IAP.V1.Model.AccessDeniedPageSettings)
