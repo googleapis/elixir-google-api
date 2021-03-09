@@ -30,11 +30,12 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberFormatCo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currencyCode => String.t(),
-          :numDecimalPlaces => integer(),
-          :numberFormatType => String.t(),
+          :currencyCode => String.t() | nil,
+          :numDecimalPlaces => integer() | nil,
+          :numberFormatType => String.t() | nil,
           :suffix =>
             GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberAffixConfiguration.t()
+            | nil
         }
 
   field(:currencyCode)

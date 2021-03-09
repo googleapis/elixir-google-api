@@ -33,12 +33,13 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigur
 
   @type t :: %__MODULE__{
           :description =>
-            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t(),
-          :iconUrl => String.t(),
-          :kind => String.t(),
-          :name => GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t(),
-          :pointValue => integer(),
-          :sortRank => integer()
+            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t() | nil,
+          :iconUrl => String.t() | nil,
+          :kind => String.t() | nil,
+          :name =>
+            GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t() | nil,
+          :pointValue => integer() | nil,
+          :sortRank => integer() | nil
         }
 
   field(:description, as: GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle)
