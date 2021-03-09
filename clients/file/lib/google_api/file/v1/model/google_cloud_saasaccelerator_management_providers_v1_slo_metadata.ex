@@ -32,18 +32,22 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
 
   @type t :: %__MODULE__{
           :eligibility =>
-            GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility.t(),
+            GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility.t()
+            | nil,
           :exclusions =>
             list(
               GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion.t()
-            ),
+            )
+            | nil,
           :nodes =>
             list(
               GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata.t()
-            ),
+            )
+            | nil,
           :perSliEligibility =>
-            GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility.t(),
-          :tier => String.t()
+            GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility.t()
+            | nil,
+          :tier => String.t() | nil
         }
 
   field(:eligibility,

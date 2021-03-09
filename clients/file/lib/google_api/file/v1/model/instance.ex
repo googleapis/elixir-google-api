@@ -36,16 +36,16 @@ defmodule GoogleApi.File.V1.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :etag => String.t(),
-          :fileShares => list(GoogleApi.File.V1.Model.FileShareConfig.t()),
-          :labels => map(),
-          :name => String.t(),
-          :networks => list(GoogleApi.File.V1.Model.NetworkConfig.t()),
-          :state => String.t(),
-          :statusMessage => String.t(),
-          :tier => String.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :fileShares => list(GoogleApi.File.V1.Model.FileShareConfig.t()) | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :networks => list(GoogleApi.File.V1.Model.NetworkConfig.t()) | nil,
+          :state => String.t() | nil,
+          :statusMessage => String.t() | nil,
+          :tier => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

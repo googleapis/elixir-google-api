@@ -37,17 +37,17 @@ defmodule GoogleApi.File.V1.Model.Backup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :capacityGb => String.t(),
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :downloadBytes => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :sourceFileShare => String.t(),
-          :sourceInstance => String.t(),
-          :sourceInstanceTier => String.t(),
-          :state => String.t(),
-          :storageBytes => String.t()
+          :capacityGb => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :downloadBytes => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :sourceFileShare => String.t() | nil,
+          :sourceInstance => String.t() | nil,
+          :sourceInstanceTier => String.t() | nil,
+          :state => String.t() | nil,
+          :storageBytes => String.t() | nil
         }
 
   field(:capacityGb)

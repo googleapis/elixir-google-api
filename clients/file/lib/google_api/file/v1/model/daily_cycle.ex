@@ -28,8 +28,8 @@ defmodule GoogleApi.File.V1.Model.DailyCycle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :startTime => GoogleApi.File.V1.Model.TimeOfDay.t()
+          :duration => String.t() | nil,
+          :startTime => GoogleApi.File.V1.Model.TimeOfDay.t() | nil
         }
 
   field(:duration)

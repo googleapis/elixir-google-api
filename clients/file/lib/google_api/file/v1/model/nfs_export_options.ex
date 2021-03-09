@@ -31,11 +31,11 @@ defmodule GoogleApi.File.V1.Model.NfsExportOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessMode => String.t(),
-          :anonGid => String.t(),
-          :anonUid => String.t(),
-          :ipRanges => list(String.t()),
-          :squashMode => String.t()
+          :accessMode => String.t() | nil,
+          :anonGid => String.t() | nil,
+          :anonUid => String.t() | nil,
+          :ipRanges => list(String.t()) | nil,
+          :squashMode => String.t() | nil
         }
 
   field(:accessMode)
