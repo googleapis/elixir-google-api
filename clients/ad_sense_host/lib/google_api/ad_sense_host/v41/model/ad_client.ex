@@ -31,11 +31,11 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdClient do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arcOptIn => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :productCode => String.t(),
-          :supportsReporting => boolean()
+          :arcOptIn => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :productCode => String.t() | nil,
+          :supportsReporting => boolean() | nil
         }
 
   field(:arcOptIn)

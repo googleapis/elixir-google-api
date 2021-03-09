@@ -64,6 +64,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Reports do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.Report.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_reports_generate(
         connection,

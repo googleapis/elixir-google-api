@@ -28,8 +28,8 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdCode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adCode => String.t(),
-          :kind => String.t()
+          :adCode => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:adCode)

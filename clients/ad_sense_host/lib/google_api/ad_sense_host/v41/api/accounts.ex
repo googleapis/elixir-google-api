@@ -50,6 +50,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
   @spec adsensehost_accounts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.Account.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_get(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -101,6 +102,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
   @spec adsensehost_accounts_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.Accounts.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_list(
         connection,
@@ -163,6 +165,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdClient.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_adclients_get(
         connection,
@@ -223,6 +226,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
   @spec adsensehost_accounts_adclients_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdClients.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_adclients_list(
         connection,
@@ -290,6 +294,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdUnit.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_adunits_delete(
         connection,
@@ -359,6 +364,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdUnit.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_adunits_get(
         connection,
@@ -429,6 +435,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdCode.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_adunits_get_ad_code(
         connection,
@@ -498,6 +505,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdUnit.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_adunits_insert(
         connection,
@@ -567,6 +575,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdUnits.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_adunits_list(
         connection,
@@ -638,6 +647,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdUnit.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_adunits_patch(
         connection,
@@ -707,6 +717,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdUnit.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_adunits_update(
         connection,
@@ -782,6 +793,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.Report.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_accounts_reports_generate(
         connection,

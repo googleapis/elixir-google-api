@@ -50,6 +50,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Adclients do
   @spec adsensehost_adclients_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdClient.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_adclients_get(connection, ad_client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -102,6 +103,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Adclients do
   @spec adsensehost_adclients_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.AdClients.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adsensehost_adclients_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

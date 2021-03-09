@@ -35,15 +35,15 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AssociationSession do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :productCodes => list(String.t()),
-          :redirectUrl => String.t(),
-          :status => String.t(),
-          :userLocale => String.t(),
-          :websiteLocale => String.t(),
-          :websiteUrl => String.t()
+          :accountId => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :productCodes => list(String.t()) | nil,
+          :redirectUrl => String.t() | nil,
+          :status => String.t() | nil,
+          :userLocale => String.t() | nil,
+          :websiteLocale => String.t() | nil,
+          :websiteUrl => String.t() | nil
         }
 
   field(:accountId)

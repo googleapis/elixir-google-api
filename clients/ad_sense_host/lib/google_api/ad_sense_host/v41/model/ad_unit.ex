@@ -39,15 +39,16 @@ defmodule GoogleApi.AdSenseHost.V41.Model.AdUnit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :contentAdsSettings => GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettings.t(),
-          :customStyle => GoogleApi.AdSenseHost.V41.Model.AdStyle.t(),
-          :id => String.t(),
-          :kind => String.t(),
+          :code => String.t() | nil,
+          :contentAdsSettings =>
+            GoogleApi.AdSenseHost.V41.Model.AdUnitContentAdsSettings.t() | nil,
+          :customStyle => GoogleApi.AdSenseHost.V41.Model.AdStyle.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
           :mobileContentAdsSettings =>
-            GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings.t(),
-          :name => String.t(),
-          :status => String.t()
+            GoogleApi.AdSenseHost.V41.Model.AdUnitMobileContentAdsSettings.t() | nil,
+          :name => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:code)

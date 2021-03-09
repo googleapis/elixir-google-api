@@ -29,9 +29,9 @@ defmodule GoogleApi.AdSenseHost.V41.Model.UrlChannel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :urlPattern => String.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :urlPattern => String.t() | nil
         }
 
   field(:id)
