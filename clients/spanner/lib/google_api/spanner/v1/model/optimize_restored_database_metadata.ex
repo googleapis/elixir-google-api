@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.OptimizeRestoredDatabaseMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :progress => GoogleApi.Spanner.V1.Model.OperationProgress.t()
+          :name => String.t() | nil,
+          :progress => GoogleApi.Spanner.V1.Model.OperationProgress.t() | nil
         }
 
   field(:name)

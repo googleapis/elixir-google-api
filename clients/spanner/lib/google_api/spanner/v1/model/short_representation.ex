@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.ShortRepresentation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :subqueries => map()
+          :description => String.t() | nil,
+          :subqueries => map() | nil
         }
 
   field(:description)

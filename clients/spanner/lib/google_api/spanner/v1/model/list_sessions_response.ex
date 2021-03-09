@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.ListSessionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :sessions => list(GoogleApi.Spanner.V1.Model.Session.t())
+          :nextPageToken => String.t() | nil,
+          :sessions => list(GoogleApi.Spanner.V1.Model.Session.t()) | nil
         }
 
   field(:nextPageToken)

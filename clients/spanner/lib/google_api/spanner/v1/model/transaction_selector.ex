@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.TransactionSelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :begin => GoogleApi.Spanner.V1.Model.TransactionOptions.t(),
-          :id => String.t(),
-          :singleUse => GoogleApi.Spanner.V1.Model.TransactionOptions.t()
+          :begin => GoogleApi.Spanner.V1.Model.TransactionOptions.t() | nil,
+          :id => String.t() | nil,
+          :singleUse => GoogleApi.Spanner.V1.Model.TransactionOptions.t() | nil
         }
 
   field(:begin, as: GoogleApi.Spanner.V1.Model.TransactionOptions)

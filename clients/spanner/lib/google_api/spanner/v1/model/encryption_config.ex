@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.EncryptionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kmsKeyName => String.t()
+          :kmsKeyName => String.t() | nil
         }
 
   field(:kmsKeyName)

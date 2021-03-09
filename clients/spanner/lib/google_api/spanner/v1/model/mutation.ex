@@ -31,11 +31,11 @@ defmodule GoogleApi.Spanner.V1.Model.Mutation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delete => GoogleApi.Spanner.V1.Model.Delete.t(),
-          :insert => GoogleApi.Spanner.V1.Model.Write.t(),
-          :insertOrUpdate => GoogleApi.Spanner.V1.Model.Write.t(),
-          :replace => GoogleApi.Spanner.V1.Model.Write.t(),
-          :update => GoogleApi.Spanner.V1.Model.Write.t()
+          :delete => GoogleApi.Spanner.V1.Model.Delete.t() | nil,
+          :insert => GoogleApi.Spanner.V1.Model.Write.t() | nil,
+          :insertOrUpdate => GoogleApi.Spanner.V1.Model.Write.t() | nil,
+          :replace => GoogleApi.Spanner.V1.Model.Write.t() | nil,
+          :update => GoogleApi.Spanner.V1.Model.Write.t() | nil
         }
 
   field(:delete, as: GoogleApi.Spanner.V1.Model.Delete)

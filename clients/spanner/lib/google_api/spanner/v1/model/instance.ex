@@ -33,13 +33,13 @@ defmodule GoogleApi.Spanner.V1.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => String.t(),
-          :displayName => String.t(),
-          :endpointUris => list(String.t()),
-          :labels => map(),
-          :name => String.t(),
-          :nodeCount => integer(),
-          :state => String.t()
+          :config => String.t() | nil,
+          :displayName => String.t() | nil,
+          :endpointUris => list(String.t()) | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :nodeCount => integer() | nil,
+          :state => String.t() | nil
         }
 
   field(:config)

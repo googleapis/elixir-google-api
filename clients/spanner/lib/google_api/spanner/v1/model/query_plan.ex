@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.QueryPlan do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :planNodes => list(GoogleApi.Spanner.V1.Model.PlanNode.t())
+          :planNodes => list(GoogleApi.Spanner.V1.Model.PlanNode.t()) | nil
         }
 
   field(:planNodes, as: GoogleApi.Spanner.V1.Model.PlanNode, type: :list)

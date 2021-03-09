@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.Field do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :type => GoogleApi.Spanner.V1.Model.Type.t()
+          :name => String.t() | nil,
+          :type => GoogleApi.Spanner.V1.Model.Type.t() | nil
         }
 
   field(:name)

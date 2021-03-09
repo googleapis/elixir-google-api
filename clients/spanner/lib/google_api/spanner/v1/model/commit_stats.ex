@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.CommitStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mutationCount => String.t()
+          :mutationCount => String.t() | nil
         }
 
   field(:mutationCount)

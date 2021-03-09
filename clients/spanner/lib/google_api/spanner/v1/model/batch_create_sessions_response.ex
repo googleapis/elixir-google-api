@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.BatchCreateSessionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :session => list(GoogleApi.Spanner.V1.Model.Session.t())
+          :session => list(GoogleApi.Spanner.V1.Model.Session.t()) | nil
         }
 
   field(:session, as: GoogleApi.Spanner.V1.Model.Session, type: :list)

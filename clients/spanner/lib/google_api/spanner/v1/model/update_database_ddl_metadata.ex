@@ -30,10 +30,10 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commitTimestamps => list(DateTime.t()),
-          :database => String.t(),
-          :statements => list(String.t()),
-          :throttled => boolean()
+          :commitTimestamps => list(DateTime.t()) | nil,
+          :database => String.t() | nil,
+          :statements => list(String.t()) | nil,
+          :throttled => boolean() | nil
         }
 
   field(:commitTimestamps, as: DateTime, type: :list)

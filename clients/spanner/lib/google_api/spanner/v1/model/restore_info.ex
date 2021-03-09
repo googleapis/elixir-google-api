@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.RestoreInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupInfo => GoogleApi.Spanner.V1.Model.BackupInfo.t(),
-          :sourceType => String.t()
+          :backupInfo => GoogleApi.Spanner.V1.Model.BackupInfo.t() | nil,
+          :sourceType => String.t() | nil
         }
 
   field(:backupInfo, as: GoogleApi.Spanner.V1.Model.BackupInfo)

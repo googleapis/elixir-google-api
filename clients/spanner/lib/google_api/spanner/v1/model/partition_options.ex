@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.PartitionOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxPartitions => String.t(),
-          :partitionSizeBytes => String.t()
+          :maxPartitions => String.t() | nil,
+          :partitionSizeBytes => String.t() | nil
         }
 
   field(:maxPartitions)

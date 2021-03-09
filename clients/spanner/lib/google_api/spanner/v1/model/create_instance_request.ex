@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.CreateInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instance => GoogleApi.Spanner.V1.Model.Instance.t(),
-          :instanceId => String.t()
+          :instance => GoogleApi.Spanner.V1.Model.Instance.t() | nil,
+          :instanceId => String.t() | nil
         }
 
   field(:instance, as: GoogleApi.Spanner.V1.Model.Instance)

@@ -29,9 +29,10 @@ defmodule GoogleApi.Spanner.V1.Model.RestoreDatabaseRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backup => String.t(),
-          :databaseId => String.t(),
-          :encryptionConfig => GoogleApi.Spanner.V1.Model.RestoreDatabaseEncryptionConfig.t()
+          :backup => String.t() | nil,
+          :databaseId => String.t() | nil,
+          :encryptionConfig =>
+            GoogleApi.Spanner.V1.Model.RestoreDatabaseEncryptionConfig.t() | nil
         }
 
   field(:backup)

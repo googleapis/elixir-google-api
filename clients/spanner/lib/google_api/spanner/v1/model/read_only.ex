@@ -32,12 +32,12 @@ defmodule GoogleApi.Spanner.V1.Model.ReadOnly do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exactStaleness => String.t(),
-          :maxStaleness => String.t(),
-          :minReadTimestamp => DateTime.t(),
-          :readTimestamp => DateTime.t(),
-          :returnReadTimestamp => boolean(),
-          :strong => boolean()
+          :exactStaleness => String.t() | nil,
+          :maxStaleness => String.t() | nil,
+          :minReadTimestamp => DateTime.t() | nil,
+          :readTimestamp => DateTime.t() | nil,
+          :returnReadTimestamp => boolean() | nil,
+          :strong => boolean() | nil
         }
 
   field(:exactStaleness)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.Partition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partitionToken => String.t()
+          :partitionToken => String.t() | nil
         }
 
   field(:partitionToken)

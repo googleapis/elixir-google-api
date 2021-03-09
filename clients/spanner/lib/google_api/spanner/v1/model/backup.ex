@@ -35,15 +35,15 @@ defmodule GoogleApi.Spanner.V1.Model.Backup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :database => String.t(),
-          :encryptionInfo => GoogleApi.Spanner.V1.Model.EncryptionInfo.t(),
-          :expireTime => DateTime.t(),
-          :name => String.t(),
-          :referencingDatabases => list(String.t()),
-          :sizeBytes => String.t(),
-          :state => String.t(),
-          :versionTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :database => String.t() | nil,
+          :encryptionInfo => GoogleApi.Spanner.V1.Model.EncryptionInfo.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :referencingDatabases => list(String.t()) | nil,
+          :sizeBytes => String.t() | nil,
+          :state => String.t() | nil,
+          :versionTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

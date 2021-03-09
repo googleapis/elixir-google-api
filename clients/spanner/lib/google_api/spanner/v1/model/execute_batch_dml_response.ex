@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteBatchDmlResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resultSets => list(GoogleApi.Spanner.V1.Model.ResultSet.t()),
-          :status => GoogleApi.Spanner.V1.Model.Status.t()
+          :resultSets => list(GoogleApi.Spanner.V1.Model.ResultSet.t()) | nil,
+          :status => GoogleApi.Spanner.V1.Model.Status.t() | nil
         }
 
   field(:resultSets, as: GoogleApi.Spanner.V1.Model.ResultSet, type: :list)

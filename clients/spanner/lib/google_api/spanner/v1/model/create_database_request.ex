@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.CreateDatabaseRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createStatement => String.t(),
-          :encryptionConfig => GoogleApi.Spanner.V1.Model.EncryptionConfig.t(),
-          :extraStatements => list(String.t())
+          :createStatement => String.t() | nil,
+          :encryptionConfig => GoogleApi.Spanner.V1.Model.EncryptionConfig.t() | nil,
+          :extraStatements => list(String.t()) | nil
         }
 
   field(:createStatement)

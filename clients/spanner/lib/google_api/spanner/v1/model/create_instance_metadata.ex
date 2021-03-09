@@ -30,10 +30,10 @@ defmodule GoogleApi.Spanner.V1.Model.CreateInstanceMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cancelTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :instance => GoogleApi.Spanner.V1.Model.Instance.t(),
-          :startTime => DateTime.t()
+          :cancelTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :instance => GoogleApi.Spanner.V1.Model.Instance.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:cancelTime, as: DateTime)

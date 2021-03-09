@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.Type do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arrayElementType => GoogleApi.Spanner.V1.Model.Type.t(),
-          :code => String.t(),
-          :structType => GoogleApi.Spanner.V1.Model.StructType.t()
+          :arrayElementType => GoogleApi.Spanner.V1.Model.Type.t() | nil,
+          :code => String.t() | nil,
+          :structType => GoogleApi.Spanner.V1.Model.StructType.t() | nil
         }
 
   field(:arrayElementType, as: GoogleApi.Spanner.V1.Model.Type)

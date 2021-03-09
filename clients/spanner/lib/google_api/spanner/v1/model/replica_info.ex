@@ -29,9 +29,9 @@ defmodule GoogleApi.Spanner.V1.Model.ReplicaInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultLeaderLocation => boolean(),
-          :location => String.t(),
-          :type => String.t()
+          :defaultLeaderLocation => boolean() | nil,
+          :location => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:defaultLeaderLocation)

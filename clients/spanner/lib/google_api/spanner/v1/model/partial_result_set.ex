@@ -31,11 +31,11 @@ defmodule GoogleApi.Spanner.V1.Model.PartialResultSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chunkedValue => boolean(),
-          :metadata => GoogleApi.Spanner.V1.Model.ResultSetMetadata.t(),
-          :resumeToken => String.t(),
-          :stats => GoogleApi.Spanner.V1.Model.ResultSetStats.t(),
-          :values => list(any())
+          :chunkedValue => boolean() | nil,
+          :metadata => GoogleApi.Spanner.V1.Model.ResultSetMetadata.t() | nil,
+          :resumeToken => String.t() | nil,
+          :stats => GoogleApi.Spanner.V1.Model.ResultSetStats.t() | nil,
+          :values => list(any()) | nil
         }
 
   field(:chunkedValue)

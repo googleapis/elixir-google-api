@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.QueryOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :optimizerVersion => String.t()
+          :optimizerVersion => String.t() | nil
         }
 
   field(:optimizerVersion)

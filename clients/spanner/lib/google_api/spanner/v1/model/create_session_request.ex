@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.CreateSessionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :session => GoogleApi.Spanner.V1.Model.Session.t()
+          :session => GoogleApi.Spanner.V1.Model.Session.t() | nil
         }
 
   field(:session, as: GoogleApi.Spanner.V1.Model.Session)

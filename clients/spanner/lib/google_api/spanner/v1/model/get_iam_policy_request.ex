@@ -27,7 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.GetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :options => GoogleApi.Spanner.V1.Model.GetPolicyOptions.t()
+          :options => GoogleApi.Spanner.V1.Model.GetPolicyOptions.t() | nil
         }
 
   field(:options, as: GoogleApi.Spanner.V1.Model.GetPolicyOptions)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Spanner.V1.Model.PartitionResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partitions => list(GoogleApi.Spanner.V1.Model.Partition.t()),
-          :transaction => GoogleApi.Spanner.V1.Model.Transaction.t()
+          :partitions => list(GoogleApi.Spanner.V1.Model.Partition.t()) | nil,
+          :transaction => GoogleApi.Spanner.V1.Model.Transaction.t() | nil
         }
 
   field(:partitions, as: GoogleApi.Spanner.V1.Model.Partition, type: :list)
