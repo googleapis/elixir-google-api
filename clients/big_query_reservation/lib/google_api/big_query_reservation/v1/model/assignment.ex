@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Assignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignee => String.t(),
-          :jobType => String.t(),
-          :name => String.t(),
-          :state => String.t()
+          :assignee => String.t() | nil,
+          :jobType => String.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:assignee)

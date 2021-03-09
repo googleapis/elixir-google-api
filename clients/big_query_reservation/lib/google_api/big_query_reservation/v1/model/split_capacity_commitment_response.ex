@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.SplitCapacityCommitmentResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :first => GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t(),
-          :second => GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t()
+          :first => GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t() | nil,
+          :second => GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t() | nil
         }
 
   field(:first, as: GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment)

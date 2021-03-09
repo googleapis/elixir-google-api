@@ -31,11 +31,11 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Reservation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => DateTime.t(),
-          :ignoreIdleSlots => boolean(),
-          :name => String.t(),
-          :slotCapacity => String.t(),
-          :updateTime => DateTime.t()
+          :creationTime => DateTime.t() | nil,
+          :ignoreIdleSlots => boolean() | nil,
+          :name => String.t() | nil,
+          :slotCapacity => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:creationTime, as: DateTime)

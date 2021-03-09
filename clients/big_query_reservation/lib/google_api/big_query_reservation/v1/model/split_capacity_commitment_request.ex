@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.SplitCapacityCommitmentRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :slotCount => String.t()
+          :slotCount => String.t() | nil
         }
 
   field(:slotCount)

@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CreateSlotPoolMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :slotPool => String.t()
+          :slotPool => String.t() | nil
         }
 
   field(:slotPool)

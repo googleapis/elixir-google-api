@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.ListReservationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :reservations => list(GoogleApi.BigQueryReservation.V1.Model.Reservation.t())
+          :nextPageToken => String.t() | nil,
+          :reservations => list(GoogleApi.BigQueryReservation.V1.Model.Reservation.t()) | nil
         }
 
   field(:nextPageToken)

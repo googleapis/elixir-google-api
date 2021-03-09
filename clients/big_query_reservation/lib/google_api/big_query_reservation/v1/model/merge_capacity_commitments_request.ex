@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.MergeCapacityCommitmentsRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :capacityCommitmentIds => list(String.t())
+          :capacityCommitmentIds => list(String.t()) | nil
         }
 
   field(:capacityCommitmentIds, type: :list)

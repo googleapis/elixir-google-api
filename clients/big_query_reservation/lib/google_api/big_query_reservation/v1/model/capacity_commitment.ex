@@ -34,14 +34,14 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commitmentEndTime => DateTime.t(),
-          :commitmentStartTime => DateTime.t(),
-          :failureStatus => GoogleApi.BigQueryReservation.V1.Model.Status.t(),
-          :name => String.t(),
-          :plan => String.t(),
-          :renewalPlan => String.t(),
-          :slotCount => String.t(),
-          :state => String.t()
+          :commitmentEndTime => DateTime.t() | nil,
+          :commitmentStartTime => DateTime.t() | nil,
+          :failureStatus => GoogleApi.BigQueryReservation.V1.Model.Status.t() | nil,
+          :name => String.t() | nil,
+          :plan => String.t() | nil,
+          :renewalPlan => String.t() | nil,
+          :slotCount => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:commitmentEndTime, as: DateTime)
