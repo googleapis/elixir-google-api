@@ -27,7 +27,7 @@ defmodule GoogleApi.Run.V1.Model.ExecAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :command => list(String.t())
+          :command => list(String.t()) | nil
         }
 
   field(:command, type: :list)

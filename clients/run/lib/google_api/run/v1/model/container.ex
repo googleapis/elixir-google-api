@@ -42,22 +42,22 @@ defmodule GoogleApi.Run.V1.Model.Container do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :args => list(String.t()),
-          :command => list(String.t()),
-          :env => list(GoogleApi.Run.V1.Model.EnvVar.t()),
-          :envFrom => list(GoogleApi.Run.V1.Model.EnvFromSource.t()),
-          :image => String.t(),
-          :imagePullPolicy => String.t(),
-          :livenessProbe => GoogleApi.Run.V1.Model.Probe.t(),
-          :name => String.t(),
-          :ports => list(GoogleApi.Run.V1.Model.ContainerPort.t()),
-          :readinessProbe => GoogleApi.Run.V1.Model.Probe.t(),
-          :resources => GoogleApi.Run.V1.Model.ResourceRequirements.t(),
-          :securityContext => GoogleApi.Run.V1.Model.SecurityContext.t(),
-          :terminationMessagePath => String.t(),
-          :terminationMessagePolicy => String.t(),
-          :volumeMounts => list(GoogleApi.Run.V1.Model.VolumeMount.t()),
-          :workingDir => String.t()
+          :args => list(String.t()) | nil,
+          :command => list(String.t()) | nil,
+          :env => list(GoogleApi.Run.V1.Model.EnvVar.t()) | nil,
+          :envFrom => list(GoogleApi.Run.V1.Model.EnvFromSource.t()) | nil,
+          :image => String.t() | nil,
+          :imagePullPolicy => String.t() | nil,
+          :livenessProbe => GoogleApi.Run.V1.Model.Probe.t() | nil,
+          :name => String.t() | nil,
+          :ports => list(GoogleApi.Run.V1.Model.ContainerPort.t()) | nil,
+          :readinessProbe => GoogleApi.Run.V1.Model.Probe.t() | nil,
+          :resources => GoogleApi.Run.V1.Model.ResourceRequirements.t() | nil,
+          :securityContext => GoogleApi.Run.V1.Model.SecurityContext.t() | nil,
+          :terminationMessagePath => String.t() | nil,
+          :terminationMessagePolicy => String.t() | nil,
+          :volumeMounts => list(GoogleApi.Run.V1.Model.VolumeMount.t()) | nil,
+          :workingDir => String.t() | nil
         }
 
   field(:args, type: :list)

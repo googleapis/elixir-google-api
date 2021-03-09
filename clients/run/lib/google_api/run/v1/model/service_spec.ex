@@ -28,8 +28,8 @@ defmodule GoogleApi.Run.V1.Model.ServiceSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :template => GoogleApi.Run.V1.Model.RevisionTemplate.t(),
-          :traffic => list(GoogleApi.Run.V1.Model.TrafficTarget.t())
+          :template => GoogleApi.Run.V1.Model.RevisionTemplate.t() | nil,
+          :traffic => list(GoogleApi.Run.V1.Model.TrafficTarget.t()) | nil
         }
 
   field(:template, as: GoogleApi.Run.V1.Model.RevisionTemplate)

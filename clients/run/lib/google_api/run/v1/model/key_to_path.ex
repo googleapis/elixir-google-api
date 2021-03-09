@@ -29,9 +29,9 @@ defmodule GoogleApi.Run.V1.Model.KeyToPath do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :mode => integer(),
-          :path => String.t()
+          :key => String.t() | nil,
+          :mode => integer() | nil,
+          :path => String.t() | nil
         }
 
   field(:key)

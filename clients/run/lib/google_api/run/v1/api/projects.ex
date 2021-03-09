@@ -56,6 +56,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   @spec run_projects_authorizeddomains_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.ListAuthorizedDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_projects_authorizeddomains_list(
         connection,
@@ -125,6 +126,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   @spec run_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -196,6 +198,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Run.V1.Model.ListAuthorizedDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_projects_locations_authorizeddomains_list(
         connection,
@@ -271,7 +274,10 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Run.V1.Model.Configuration.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Run.V1.Model.Configuration.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_configurations_get(
         connection,
         projects_id,
@@ -357,6 +363,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Run.V1.Model.ListConfigurationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_projects_locations_configurations_list(
         connection,
@@ -436,7 +443,10 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Run.V1.Model.DomainMapping.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Run.V1.Model.DomainMapping.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_create(
         connection,
         projects_id,
@@ -512,7 +522,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Status.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Status.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_delete(
         connection,
         projects_id,
@@ -594,7 +608,10 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Run.V1.Model.DomainMapping.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Run.V1.Model.DomainMapping.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_get(
         connection,
         projects_id,
@@ -680,6 +697,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Run.V1.Model.ListDomainMappingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_projects_locations_domainmappings_list(
         connection,
@@ -762,7 +780,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Status.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Status.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_revisions_delete(
         connection,
         projects_id,
@@ -842,7 +864,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Revision.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Revision.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_revisions_get(
         connection,
         projects_id,
@@ -927,6 +953,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Run.V1.Model.ListRevisionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_projects_locations_revisions_list(
         connection,
@@ -1006,7 +1033,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Route.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Route.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_routes_get(
         connection,
         projects_id,
@@ -1088,6 +1119,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Run.V1.Model.ListRoutesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_projects_locations_routes_list(
         connection,
@@ -1166,7 +1198,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Service.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_services_create(
         connection,
         projects_id,
@@ -1242,7 +1278,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Status.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Status.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_services_delete(
         connection,
         projects_id,
@@ -1319,7 +1359,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Service.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_services_get(
         connection,
         projects_id,
@@ -1394,7 +1438,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_services_get_iam_policy(
         connection,
         projects_id,
@@ -1480,6 +1528,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Run.V1.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_projects_locations_services_list(
         connection,
@@ -1560,7 +1609,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Service.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_services_replace_service(
         connection,
         projects_id,
@@ -1636,7 +1689,11 @@ defmodule GoogleApi.Run.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_projects_locations_services_set_iam_policy(
         connection,
         projects_id,
@@ -1718,6 +1775,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Run.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_projects_locations_services_test_iam_permissions(
         connection,

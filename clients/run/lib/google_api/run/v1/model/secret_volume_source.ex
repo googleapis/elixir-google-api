@@ -30,10 +30,10 @@ defmodule GoogleApi.Run.V1.Model.SecretVolumeSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultMode => integer(),
-          :items => list(GoogleApi.Run.V1.Model.KeyToPath.t()),
-          :optional => boolean(),
-          :secretName => String.t()
+          :defaultMode => integer() | nil,
+          :items => list(GoogleApi.Run.V1.Model.KeyToPath.t()) | nil,
+          :optional => boolean() | nil,
+          :secretName => String.t() | nil
         }
 
   field(:defaultMode)

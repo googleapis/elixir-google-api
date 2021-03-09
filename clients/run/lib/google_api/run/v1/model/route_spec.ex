@@ -27,7 +27,7 @@ defmodule GoogleApi.Run.V1.Model.RouteSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :traffic => list(GoogleApi.Run.V1.Model.TrafficTarget.t())
+          :traffic => list(GoogleApi.Run.V1.Model.TrafficTarget.t()) | nil
         }
 
   field(:traffic, as: GoogleApi.Run.V1.Model.TrafficTarget, type: :list)

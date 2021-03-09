@@ -31,11 +31,11 @@ defmodule GoogleApi.Run.V1.Model.RouteStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.Run.V1.Model.Addressable.t(),
-          :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()),
-          :observedGeneration => integer(),
-          :traffic => list(GoogleApi.Run.V1.Model.TrafficTarget.t()),
-          :url => String.t()
+          :address => GoogleApi.Run.V1.Model.Addressable.t() | nil,
+          :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()) | nil,
+          :observedGeneration => integer() | nil,
+          :traffic => list(GoogleApi.Run.V1.Model.TrafficTarget.t()) | nil,
+          :url => String.t() | nil
         }
 
   field(:address, as: GoogleApi.Run.V1.Model.Addressable)

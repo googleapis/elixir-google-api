@@ -28,8 +28,8 @@ defmodule GoogleApi.Run.V1.Model.RevisionTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metadata => GoogleApi.Run.V1.Model.ObjectMeta.t(),
-          :spec => GoogleApi.Run.V1.Model.RevisionSpec.t()
+          :metadata => GoogleApi.Run.V1.Model.ObjectMeta.t() | nil,
+          :spec => GoogleApi.Run.V1.Model.RevisionSpec.t() | nil
         }
 
   field(:metadata, as: GoogleApi.Run.V1.Model.ObjectMeta)

@@ -61,6 +61,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.Run.V1.Model.ListAuthorizedDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_namespaces_authorizeddomains_list(
         connection,
@@ -135,7 +136,10 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Run.V1.Model.Configuration.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Run.V1.Model.Configuration.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_configurations_get(
         connection,
         namespaces_id,
@@ -212,6 +216,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   @spec run_namespaces_configurations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.ListConfigurationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_namespaces_configurations_list(
         connection,
@@ -282,7 +287,10 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:error, info}` on failure
   """
   @spec run_namespaces_domainmappings_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Run.V1.Model.DomainMapping.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Run.V1.Model.DomainMapping.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_domainmappings_create(
         connection,
         namespaces_id,
@@ -354,7 +362,11 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Status.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Status.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_domainmappings_delete(
         connection,
         namespaces_id,
@@ -432,7 +444,10 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Run.V1.Model.DomainMapping.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Run.V1.Model.DomainMapping.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_domainmappings_get(
         connection,
         namespaces_id,
@@ -509,6 +524,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   @spec run_namespaces_domainmappings_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.ListDomainMappingsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_namespaces_domainmappings_list(
         connection,
@@ -587,7 +603,11 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Status.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Status.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_revisions_delete(
         connection,
         namespaces_id,
@@ -663,7 +683,11 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Revision.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Revision.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_revisions_get(
         connection,
         namespaces_id,
@@ -739,6 +763,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   @spec run_namespaces_revisions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.ListRevisionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_namespaces_revisions_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -809,7 +834,11 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Route.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Route.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_routes_get(
         connection,
         namespaces_id,
@@ -885,6 +914,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   @spec run_namespaces_routes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.ListRoutesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_namespaces_routes_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -950,7 +980,10 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:error, info}` on failure
   """
   @spec run_namespaces_services_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Run.V1.Model.Service.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Run.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_services_create(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1017,7 +1050,11 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Status.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Status.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_services_delete(
         connection,
         namespaces_id,
@@ -1093,7 +1130,11 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Service.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_services_get(
         connection,
         namespaces_id,
@@ -1169,6 +1210,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   @spec run_namespaces_services_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def run_namespaces_services_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1240,7 +1282,11 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Service.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def run_namespaces_services_replace_service(
         connection,
         namespaces_id,

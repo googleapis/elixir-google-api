@@ -29,9 +29,9 @@ defmodule GoogleApi.Run.V1.Model.StatusCause do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :field => String.t(),
-          :message => String.t(),
-          :reason => String.t()
+          :field => String.t() | nil,
+          :message => String.t() | nil,
+          :reason => String.t() | nil
         }
 
   field(:field)

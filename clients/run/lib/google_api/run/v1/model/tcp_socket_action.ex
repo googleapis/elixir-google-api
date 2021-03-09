@@ -28,8 +28,8 @@ defmodule GoogleApi.Run.V1.Model.TCPSocketAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :host => String.t(),
-          :port => integer()
+          :host => String.t() | nil,
+          :port => integer() | nil
         }
 
   field(:host)

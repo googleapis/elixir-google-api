@@ -32,12 +32,12 @@ defmodule GoogleApi.Run.V1.Model.Status do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => integer(),
-          :details => GoogleApi.Run.V1.Model.StatusDetails.t(),
-          :message => String.t(),
-          :metadata => GoogleApi.Run.V1.Model.ListMeta.t(),
-          :reason => String.t(),
-          :status => String.t()
+          :code => integer() | nil,
+          :details => GoogleApi.Run.V1.Model.StatusDetails.t() | nil,
+          :message => String.t() | nil,
+          :metadata => GoogleApi.Run.V1.Model.ListMeta.t() | nil,
+          :reason => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:code)

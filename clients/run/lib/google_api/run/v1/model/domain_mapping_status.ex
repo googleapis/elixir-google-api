@@ -31,11 +31,11 @@ defmodule GoogleApi.Run.V1.Model.DomainMappingStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()),
-          :mappedRouteName => String.t(),
-          :observedGeneration => integer(),
-          :resourceRecords => list(GoogleApi.Run.V1.Model.ResourceRecord.t()),
-          :url => String.t()
+          :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()) | nil,
+          :mappedRouteName => String.t() | nil,
+          :observedGeneration => integer() | nil,
+          :resourceRecords => list(GoogleApi.Run.V1.Model.ResourceRecord.t()) | nil,
+          :url => String.t() | nil
         }
 
   field(:conditions, as: GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition, type: :list)

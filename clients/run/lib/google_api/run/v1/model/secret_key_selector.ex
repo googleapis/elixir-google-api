@@ -30,10 +30,10 @@ defmodule GoogleApi.Run.V1.Model.SecretKeySelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :localObjectReference => GoogleApi.Run.V1.Model.LocalObjectReference.t(),
-          :name => String.t(),
-          :optional => boolean()
+          :key => String.t() | nil,
+          :localObjectReference => GoogleApi.Run.V1.Model.LocalObjectReference.t() | nil,
+          :name => String.t() | nil,
+          :optional => boolean() | nil
         }
 
   field(:key)
