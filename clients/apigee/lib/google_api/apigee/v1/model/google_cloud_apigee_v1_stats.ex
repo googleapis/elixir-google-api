@@ -30,9 +30,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Stats do
 
   @type t :: %__MODULE__{
           :environments =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats.t()),
-          :hosts => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsHostStats.t()),
-          :metaData => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t()
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats.t()) | nil,
+          :hosts => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsHostStats.t()) | nil,
+          :metaData => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t() | nil
         }
 
   field(:environments,

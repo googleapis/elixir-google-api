@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaProperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => String.t(),
-          :custom => String.t(),
-          :type => String.t()
+          :createTime => String.t() | nil,
+          :custom => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:createTime)

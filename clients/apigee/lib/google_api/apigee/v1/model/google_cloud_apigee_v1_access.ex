@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Access do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :Get => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessGet.t(),
-          :Remove => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessRemove.t(),
-          :Set => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessSet.t()
+          :Get => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessGet.t() | nil,
+          :Remove => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessRemove.t() | nil,
+          :Set => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessSet.t() | nil
         }
 
   field(:Get, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessGet)

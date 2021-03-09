@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basepath => String.t(),
-          :envgroup => String.t(),
-          :environment => String.t(),
-          :percentage => integer()
+          :basepath => String.t() | nil,
+          :envgroup => String.t() | nil,
+          :environment => String.t() | nil,
+          :percentage => integer() | nil
         }
 
   field(:basepath)

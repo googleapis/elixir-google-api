@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListCustomReportsResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :qualifier => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReport.t())
+          :qualifier => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReport.t()) | nil
         }
 
   field(:qualifier, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReport, type: :list)

@@ -40,20 +40,21 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlowRevision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configurationVersion => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion.t(),
-          :contextInfo => String.t(),
-          :createdAt => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :entityMetaDataAsProperties => map(),
-          :lastModifiedAt => String.t(),
-          :name => String.t(),
-          :policies => list(String.t()),
-          :resourceFiles => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceFiles.t(),
-          :resources => list(String.t()),
-          :revision => String.t(),
-          :sharedFlows => list(String.t()),
-          :type => String.t()
+          :configurationVersion =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion.t() | nil,
+          :contextInfo => String.t() | nil,
+          :createdAt => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :entityMetaDataAsProperties => map() | nil,
+          :lastModifiedAt => String.t() | nil,
+          :name => String.t() | nil,
+          :policies => list(String.t()) | nil,
+          :resourceFiles => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceFiles.t() | nil,
+          :resources => list(String.t()) | nil,
+          :revision => String.t() | nil,
+          :sharedFlows => list(String.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:configurationVersion, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion)

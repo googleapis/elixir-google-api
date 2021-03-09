@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SyncAuthorization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :identities => list(String.t())
+          :etag => String.t() | nil,
+          :identities => list(String.t()) | nil
         }
 
   field(:etag)

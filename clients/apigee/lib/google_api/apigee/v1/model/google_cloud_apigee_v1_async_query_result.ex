@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQueryResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expires => String.t(),
-          :self => String.t()
+          :expires => String.t() | nil,
+          :self => String.t() | nil
         }
 
   field(:expires)

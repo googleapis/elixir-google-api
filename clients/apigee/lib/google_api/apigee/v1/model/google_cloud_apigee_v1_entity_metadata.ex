@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createdAt => String.t(),
-          :lastModifiedAt => String.t(),
-          :subType => String.t()
+          :createdAt => String.t() | nil,
+          :lastModifiedAt => String.t() | nil,
+          :subType => String.t() | nil
         }
 
   field(:createdAt)

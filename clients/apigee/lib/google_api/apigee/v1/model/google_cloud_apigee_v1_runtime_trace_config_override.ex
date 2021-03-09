@@ -32,13 +32,13 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfigOverrid
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiProxy => String.t(),
-          :name => String.t(),
-          :revisionCreateTime => DateTime.t(),
-          :revisionId => String.t(),
+          :apiProxy => String.t() | nil,
+          :name => String.t() | nil,
+          :revisionCreateTime => DateTime.t() | nil,
+          :revisionId => String.t() | nil,
           :samplingConfig =>
-            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceSamplingConfig.t(),
-          :uid => String.t()
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceSamplingConfig.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:apiProxy)

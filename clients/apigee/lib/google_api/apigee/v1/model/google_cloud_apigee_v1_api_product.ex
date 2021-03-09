@@ -41,21 +41,22 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiResources => list(String.t()),
-          :approvalType => String.t(),
-          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()),
-          :createdAt => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :environments => list(String.t()),
-          :lastModifiedAt => String.t(),
-          :name => String.t(),
-          :operationGroup => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup.t(),
-          :proxies => list(String.t()),
-          :quota => String.t(),
-          :quotaInterval => String.t(),
-          :quotaTimeUnit => String.t(),
-          :scopes => list(String.t())
+          :apiResources => list(String.t()) | nil,
+          :approvalType => String.t() | nil,
+          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()) | nil,
+          :createdAt => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :environments => list(String.t()) | nil,
+          :lastModifiedAt => String.t() | nil,
+          :name => String.t() | nil,
+          :operationGroup =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup.t() | nil,
+          :proxies => list(String.t()) | nil,
+          :quota => String.t() | nil,
+          :quotaInterval => String.t() | nil,
+          :quotaTimeUnit => String.t() | nil,
+          :scopes => list(String.t()) | nil
         }
 
   field(:apiResources, type: :list)

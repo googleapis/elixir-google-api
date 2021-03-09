@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :continueOnError => boolean(),
-          :name => String.t(),
-          :sharedFlowName => String.t()
+          :continueOnError => boolean() | nil,
+          :name => String.t() | nil,
+          :sharedFlowName => String.t() | nil
         }
 
   field(:continueOnError)

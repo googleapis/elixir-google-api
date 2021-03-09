@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CommonNameConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :matchWildCards => boolean(),
-          :name => String.t()
+          :matchWildCards => boolean() | nil,
+          :name => String.t() | nil
         }
 
   field(:matchWildCards)

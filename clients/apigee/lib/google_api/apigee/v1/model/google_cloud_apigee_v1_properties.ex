@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :property => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Property.t())
+          :property => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Property.t()) | nil
         }
 
   field(:property, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Property, type: :list)

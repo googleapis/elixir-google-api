@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(String.t()),
-          :notices => list(String.t())
+          :errors => list(String.t()) | nil,
+          :notices => list(String.t()) | nil
         }
 
   field(:errors, type: :list)

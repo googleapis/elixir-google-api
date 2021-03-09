@@ -27,7 +27,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :Response => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsResponse.t()
+          :Response =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsResponse.t() | nil
         }
 
   field(:Response, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OptimizedStatsResponse)

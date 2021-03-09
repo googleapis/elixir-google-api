@@ -46,26 +46,26 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyticsRegion => String.t(),
-          :attributes => list(String.t()),
-          :authorizedNetwork => String.t(),
-          :billingType => String.t(),
-          :caCertificate => String.t(),
-          :createdAt => String.t(),
-          :customerName => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :environments => list(String.t()),
-          :expiresAt => String.t(),
-          :lastModifiedAt => String.t(),
-          :name => String.t(),
-          :projectId => String.t(),
-          :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t(),
-          :runtimeDatabaseEncryptionKeyName => String.t(),
-          :runtimeType => String.t(),
-          :state => String.t(),
-          :subscriptionType => String.t(),
-          :type => String.t()
+          :analyticsRegion => String.t() | nil,
+          :attributes => list(String.t()) | nil,
+          :authorizedNetwork => String.t() | nil,
+          :billingType => String.t() | nil,
+          :caCertificate => String.t() | nil,
+          :createdAt => String.t() | nil,
+          :customerName => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :environments => list(String.t()) | nil,
+          :expiresAt => String.t() | nil,
+          :lastModifiedAt => String.t() | nil,
+          :name => String.t() | nil,
+          :projectId => String.t() | nil,
+          :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t() | nil,
+          :runtimeDatabaseEncryptionKeyName => String.t() | nil,
+          :runtimeType => String.t() | nil,
+          :state => String.t() | nil,
+          :subscriptionType => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:analyticsRegion)

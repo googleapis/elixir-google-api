@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHook do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :continueOnError => boolean(),
-          :description => String.t(),
-          :flowHookPoint => String.t(),
-          :sharedFlow => String.t()
+          :continueOnError => boolean() | nil,
+          :description => String.t() | nil,
+          :flowHookPoint => String.t() | nil,
+          :sharedFlow => String.t() | nil
         }
 
   field(:continueOnError)

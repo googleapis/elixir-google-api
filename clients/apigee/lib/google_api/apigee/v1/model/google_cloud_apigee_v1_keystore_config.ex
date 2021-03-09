@@ -28,8 +28,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeystoreConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aliases => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AliasRevisionConfig.t()),
-          :name => String.t()
+          :aliases =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AliasRevisionConfig.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:aliases,

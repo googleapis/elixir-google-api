@@ -28,8 +28,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListNatAddressesResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :natAddresses => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1NatAddress.t()),
-          :nextPageToken => String.t()
+          :natAddresses =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1NatAddress.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:natAddresses, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1NatAddress, type: :list)

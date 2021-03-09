@@ -29,8 +29,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListEnvironmentGroupsResp
 
   @type t :: %__MODULE__{
           :environmentGroups =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroup.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroup.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:environmentGroups,

@@ -30,9 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Schema do
 
   @type t :: %__MODULE__{
           :dimensions =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaElement.t()),
-          :meta => list(String.t()),
-          :metrics => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaElement.t())
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaElement.t()) | nil,
+          :meta => list(String.t()) | nil,
+          :metrics =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SchemaSchemaElement.t()) | nil
         }
 
   field(:dimensions,

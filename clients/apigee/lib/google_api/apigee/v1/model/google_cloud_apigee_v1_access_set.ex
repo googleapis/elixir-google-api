@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :success => boolean(),
-          :value => String.t()
+          :name => String.t() | nil,
+          :success => boolean() | nil,
+          :value => String.t() | nil
         }
 
   field(:name)

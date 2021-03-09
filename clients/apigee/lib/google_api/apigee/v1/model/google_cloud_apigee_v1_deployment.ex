@@ -35,19 +35,20 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Deployment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiProxy => String.t(),
-          :deployStartTime => String.t(),
-          :environment => String.t(),
-          :errors => list(GoogleApi.Apigee.V1.Model.GoogleRpcStatus.t()),
+          :apiProxy => String.t() | nil,
+          :deployStartTime => String.t() | nil,
+          :environment => String.t() | nil,
+          :errors => list(GoogleApi.Apigee.V1.Model.GoogleRpcStatus.t()) | nil,
           :instances =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatus.t()),
-          :pods => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1PodStatus.t()),
-          :revision => String.t(),
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatus.t()) | nil,
+          :pods => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1PodStatus.t()) | nil,
+          :revision => String.t() | nil,
           :routeConflicts =>
             list(
               GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingConflict.t()
-            ),
-          :state => String.t()
+            )
+            | nil,
+          :state => String.t() | nil
         }
 
   field(:apiProxy)

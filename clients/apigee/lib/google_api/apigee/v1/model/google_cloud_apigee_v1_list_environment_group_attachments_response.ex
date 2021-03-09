@@ -29,8 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListEnvironmentGroupAttac
 
   @type t :: %__MODULE__{
           :environmentGroupAttachments =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupAttachment.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupAttachment.t())
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:environmentGroupAttachments,

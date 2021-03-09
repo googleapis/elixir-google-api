@@ -36,16 +36,16 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Result do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ActionResult => String.t(),
-          :accessList => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Access.t()),
-          :content => String.t(),
-          :headers => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Property.t()),
-          :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t(),
-          :reasonPhrase => String.t(),
-          :statusCode => String.t(),
-          :timestamp => String.t(),
-          :uRI => String.t(),
-          :verb => String.t()
+          :ActionResult => String.t() | nil,
+          :accessList => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Access.t()) | nil,
+          :content => String.t() | nil,
+          :headers => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Property.t()) | nil,
+          :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t() | nil,
+          :reasonPhrase => String.t() | nil,
+          :statusCode => String.t() | nil,
+          :timestamp => String.t() | nil,
+          :uRI => String.t() | nil,
+          :verb => String.t() | nil
         }
 
   field(:ActionResult)

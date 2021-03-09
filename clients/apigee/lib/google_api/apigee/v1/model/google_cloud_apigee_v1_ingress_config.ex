@@ -32,11 +32,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IngressConfig do
 
   @type t :: %__MODULE__{
           :environmentGroups =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig.t()),
-          :name => String.t(),
-          :revisionCreateTime => DateTime.t(),
-          :revisionId => String.t(),
-          :uid => String.t()
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig.t()) | nil,
+          :name => String.t() | nil,
+          :revisionCreateTime => DateTime.t() | nil,
+          :revisionId => String.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:environmentGroups,

@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiSource => String.t(),
-          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()),
-          :operations => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation.t()),
-          :quota => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota.t()
+          :apiSource => String.t() | nil,
+          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()) | nil,
+          :operations => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Operation.t()) | nil,
+          :quota => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Quota.t() | nil
         }
 
   field(:apiSource)

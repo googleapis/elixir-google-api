@@ -35,15 +35,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperAppKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiProducts => list(any()),
-          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()),
-          :consumerKey => String.t(),
-          :consumerSecret => String.t(),
-          :expiresAt => String.t(),
-          :expiresInSeconds => String.t(),
-          :issuedAt => String.t(),
-          :scopes => list(String.t()),
-          :status => String.t()
+          :apiProducts => list(any()) | nil,
+          :attributes => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t()) | nil,
+          :consumerKey => String.t() | nil,
+          :consumerSecret => String.t() | nil,
+          :expiresAt => String.t() | nil,
+          :expiresInSeconds => String.t() | nil,
+          :issuedAt => String.t() | nil,
+          :scopes => list(String.t()) | nil,
+          :status => String.t() | nil
         }
 
   field(:apiProducts, type: :list)

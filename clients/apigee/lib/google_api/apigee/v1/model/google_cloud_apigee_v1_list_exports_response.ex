@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListExportsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exports => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Export.t())
+          :exports => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Export.t()) | nil
         }
 
   field(:exports, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Export, type: :list)

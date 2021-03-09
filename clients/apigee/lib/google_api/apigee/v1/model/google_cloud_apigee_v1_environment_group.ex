@@ -31,11 +31,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createdAt => String.t(),
-          :hostnames => list(String.t()),
-          :lastModifiedAt => String.t(),
-          :name => String.t(),
-          :state => String.t()
+          :createdAt => String.t() | nil,
+          :hostnames => list(String.t()) | nil,
+          :lastModifiedAt => String.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:createdAt)

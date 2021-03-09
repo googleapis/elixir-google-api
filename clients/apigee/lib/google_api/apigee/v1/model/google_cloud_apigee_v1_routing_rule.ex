@@ -31,11 +31,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basepath => String.t(),
-          :envGroupRevision => String.t(),
-          :environment => String.t(),
-          :receiver => String.t(),
-          :updateTime => DateTime.t()
+          :basepath => String.t() | nil,
+          :envGroupRevision => String.t() | nil,
+          :environment => String.t() | nil,
+          :receiver => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:basepath)

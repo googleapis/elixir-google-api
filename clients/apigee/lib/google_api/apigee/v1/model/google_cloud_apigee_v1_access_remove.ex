@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessRemove do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :success => boolean()
+          :name => String.t() | nil,
+          :success => boolean() | nil
         }
 
   field(:name)

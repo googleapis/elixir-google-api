@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceAttachment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createdAt => String.t(),
-          :environment => String.t(),
-          :name => String.t()
+          :createdAt => String.t() | nil,
+          :environment => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:createdAt)

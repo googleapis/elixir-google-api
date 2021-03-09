@@ -31,11 +31,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alias => String.t(),
-          :function => String.t(),
-          :name => String.t(),
-          :operator => String.t(),
-          :value => String.t()
+          :alias => String.t() | nil,
+          :function => String.t() | nil,
+          :name => String.t() | nil,
+          :operator => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:alias)

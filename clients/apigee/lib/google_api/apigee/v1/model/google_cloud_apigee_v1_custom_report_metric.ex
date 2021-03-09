@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReportMetric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :function => String.t(),
-          :name => String.t()
+          :function => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:function)

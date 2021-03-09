@@ -27,7 +27,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceFiles do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceFile => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceFile.t())
+          :resourceFile =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceFile.t()) | nil
         }
 
   field(:resourceFile, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceFile, type: :list)

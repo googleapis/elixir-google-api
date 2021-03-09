@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleLongrunningListOperationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :operations => list(GoogleApi.Apigee.V1.Model.GoogleLongrunningOperation.t())
+          :nextPageToken => String.t() | nil,
+          :operations => list(GoogleApi.Apigee.V1.Model.GoogleLongrunningOperation.t()) | nil
         }
 
   field(:nextPageToken)

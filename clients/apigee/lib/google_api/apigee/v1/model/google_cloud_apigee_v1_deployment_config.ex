@@ -32,12 +32,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => map(),
-          :basePath => String.t(),
-          :location => String.t(),
-          :name => String.t(),
-          :proxyUid => String.t(),
-          :uid => String.t()
+          :attributes => map() | nil,
+          :basePath => String.t() | nil,
+          :location => String.t() | nil,
+          :name => String.t() | nil,
+          :proxyUid => String.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:attributes, type: :map)

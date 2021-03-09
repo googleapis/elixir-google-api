@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleIamV1Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditConfigs => list(GoogleApi.Apigee.V1.Model.GoogleIamV1AuditConfig.t()),
-          :bindings => list(GoogleApi.Apigee.V1.Model.GoogleIamV1Binding.t()),
-          :etag => String.t(),
-          :version => integer()
+          :auditConfigs => list(GoogleApi.Apigee.V1.Model.GoogleIamV1AuditConfig.t()) | nil,
+          :bindings => list(GoogleApi.Apigee.V1.Model.GoogleIamV1Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:auditConfigs, as: GoogleApi.Apigee.V1.Model.GoogleIamV1AuditConfig, type: :list)

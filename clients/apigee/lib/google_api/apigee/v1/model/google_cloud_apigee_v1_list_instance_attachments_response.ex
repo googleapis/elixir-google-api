@@ -29,8 +29,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListInstanceAttachmentsRe
 
   @type t :: %__MODULE__{
           :attachments =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceAttachment.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceAttachment.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:attachments,

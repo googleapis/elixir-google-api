@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TestDatastoreResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :error => String.t(),
-          :state => String.t()
+          :error => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:error)

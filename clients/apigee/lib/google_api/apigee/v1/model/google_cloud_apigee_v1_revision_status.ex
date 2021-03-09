@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RevisionStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1UpdateError.t()),
-          :jsonSpec => String.t(),
-          :replicas => integer(),
-          :revisionId => String.t()
+          :errors => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1UpdateError.t()) | nil,
+          :jsonSpec => String.t() | nil,
+          :replicas => integer() | nil,
+          :revisionId => String.t() | nil
         }
 
   field(:errors, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1UpdateError, type: :list)

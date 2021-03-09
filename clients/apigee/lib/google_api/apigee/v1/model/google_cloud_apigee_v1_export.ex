@@ -35,15 +35,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Export do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :created => String.t(),
-          :datastoreName => String.t(),
-          :description => String.t(),
-          :error => String.t(),
-          :executionTime => String.t(),
-          :name => String.t(),
-          :self => String.t(),
-          :state => String.t(),
-          :updated => String.t()
+          :created => String.t() | nil,
+          :datastoreName => String.t() | nil,
+          :description => String.t() | nil,
+          :error => String.t() | nil,
+          :executionTime => String.t() | nil,
+          :name => String.t() | nil,
+          :self => String.t() | nil,
+          :state => String.t() | nil,
+          :updated => String.t() | nil
         }
 
   field(:created)

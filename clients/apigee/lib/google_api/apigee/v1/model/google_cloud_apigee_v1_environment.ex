@@ -33,13 +33,13 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createdAt => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :lastModifiedAt => String.t(),
-          :name => String.t(),
-          :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t(),
-          :state => String.t()
+          :createdAt => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedAt => String.t() | nil,
+          :name => String.t() | nil,
+          :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:createdAt)

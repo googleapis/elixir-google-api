@@ -37,17 +37,17 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Query do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :csvDelimiter => String.t(),
-          :dimensions => list(String.t()),
-          :envgroupHostname => String.t(),
-          :filter => String.t(),
-          :groupByTimeUnit => String.t(),
-          :limit => integer(),
-          :metrics => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetric.t()),
-          :name => String.t(),
-          :outputFormat => String.t(),
-          :reportDefinitionId => String.t(),
-          :timeRange => any()
+          :csvDelimiter => String.t() | nil,
+          :dimensions => list(String.t()) | nil,
+          :envgroupHostname => String.t() | nil,
+          :filter => String.t() | nil,
+          :groupByTimeUnit => String.t() | nil,
+          :limit => integer() | nil,
+          :metrics => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetric.t()) | nil,
+          :name => String.t() | nil,
+          :outputFormat => String.t() | nil,
+          :reportDefinitionId => String.t() | nil,
+          :timeRange => any() | nil
         }
 
   field(:csvDelimiter)

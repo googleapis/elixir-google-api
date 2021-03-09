@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OrganizationProjectMappin
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :organization => String.t(),
-          :projectIds => list(String.t())
+          :organization => String.t() | nil,
+          :projectIds => list(String.t()) | nil
         }
 
   field(:organization)

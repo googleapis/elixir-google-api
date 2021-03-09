@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleIamV1Binding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.Apigee.V1.Model.GoogleTypeExpr.t(),
-          :members => list(String.t()),
-          :role => String.t()
+          :condition => GoogleApi.Apigee.V1.Model.GoogleTypeExpr.t() | nil,
+          :members => list(String.t()) | nil,
+          :role => String.t() | nil
         }
 
   field(:condition, as: GoogleApi.Apigee.V1.Model.GoogleTypeExpr)

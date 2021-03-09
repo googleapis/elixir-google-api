@@ -33,13 +33,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Datastore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => String.t(),
-          :datastoreConfig => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DatastoreConfig.t(),
-          :displayName => String.t(),
-          :lastUpdateTime => String.t(),
-          :org => String.t(),
-          :self => String.t(),
-          :targetType => String.t()
+          :createTime => String.t() | nil,
+          :datastoreConfig =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DatastoreConfig.t() | nil,
+          :displayName => String.t() | nil,
+          :lastUpdateTime => String.t() | nil,
+          :org => String.t() | nil,
+          :self => String.t() | nil,
+          :targetType => String.t() | nil
         }
 
   field(:createTime)

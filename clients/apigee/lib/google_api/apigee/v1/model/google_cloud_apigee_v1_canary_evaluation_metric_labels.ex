@@ -29,9 +29,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CanaryEvaluationMetricLab
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :env => String.t(),
-          :instance_id => String.t(),
-          :location => String.t()
+          :env => String.t() | nil,
+          :instance_id => String.t() | nil,
+          :location => String.t() | nil
         }
 
   field(:env)

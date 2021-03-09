@@ -35,16 +35,16 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CanaryEvaluation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :control => String.t(),
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
+          :control => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
           :metricLabels =>
-            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CanaryEvaluationMetricLabels.t(),
-          :name => String.t(),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :treatment => String.t(),
-          :verdict => String.t()
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CanaryEvaluationMetricLabels.t() | nil,
+          :name => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :treatment => String.t() | nil,
+          :verdict => String.t() | nil
         }
 
   field(:control)

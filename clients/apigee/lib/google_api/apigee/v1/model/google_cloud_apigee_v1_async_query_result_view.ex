@@ -31,11 +31,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQueryResultView do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => integer(),
-          :error => String.t(),
-          :metadata => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetadata.t(),
-          :rows => list(any()),
-          :state => String.t()
+          :code => integer() | nil,
+          :error => String.t() | nil,
+          :metadata => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetadata.t() | nil,
+          :rows => list(any()) | nil,
+          :state => String.t() | nil
         }
 
   field(:code)

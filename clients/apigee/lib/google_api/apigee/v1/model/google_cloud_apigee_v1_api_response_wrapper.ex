@@ -30,10 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiResponseWrapper do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorCode => String.t(),
-          :message => String.t(),
-          :requestId => String.t(),
-          :status => String.t()
+          :errorCode => String.t() | nil,
+          :message => String.t() | nil,
+          :requestId => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:errorCode)

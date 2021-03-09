@@ -30,9 +30,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRou
 
   @type t :: %__MODULE__{
           :conflictingDeployment =>
-            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t(),
-          :description => String.t(),
-          :environmentGroup => String.t()
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment.t()
+            | nil,
+          :description => String.t() | nil,
+          :environmentGroup => String.t() | nil
         }
 
   field(:conflictingDeployment,

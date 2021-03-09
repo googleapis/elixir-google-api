@@ -32,12 +32,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatus 
           :deployedRevisions =>
             list(
               GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRevision.t()
-            ),
+            )
+            | nil,
           :deployedRoutes =>
             list(
               GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRoute.t()
-            ),
-          :instance => String.t()
+            )
+            | nil,
+          :instance => String.t() | nil
         }
 
   field(:deployedRevisions,

@@ -33,15 +33,16 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endpoint => String.t(),
-          :exporter => String.t(),
-          :name => String.t(),
+          :endpoint => String.t() | nil,
+          :exporter => String.t() | nil,
+          :name => String.t() | nil,
           :overrides =>
-            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfigOverride.t()),
-          :revisionCreateTime => DateTime.t(),
-          :revisionId => String.t(),
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceConfigOverride.t())
+            | nil,
+          :revisionCreateTime => DateTime.t() | nil,
+          :revisionId => String.t() | nil,
           :samplingConfig =>
-            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceSamplingConfig.t()
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeTraceSamplingConfig.t() | nil
         }
 
   field(:endpoint)

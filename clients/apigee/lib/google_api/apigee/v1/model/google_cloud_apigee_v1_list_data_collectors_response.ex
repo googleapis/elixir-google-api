@@ -28,8 +28,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListDataCollectorsRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataCollectors => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollector.t()),
-          :nextPageToken => String.t()
+          :dataCollectors =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollector.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:dataCollectors,

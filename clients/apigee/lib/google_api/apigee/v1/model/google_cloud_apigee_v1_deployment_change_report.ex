@@ -32,12 +32,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReport do
           :routingChanges =>
             list(
               GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingChange.t()
-            ),
+            )
+            | nil,
           :routingConflicts =>
             list(
               GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentChangeReportRoutingConflict.t()
-            ),
-          :validationErrors => GoogleApi.Apigee.V1.Model.GoogleRpcPreconditionFailure.t()
+            )
+            | nil,
+          :validationErrors => GoogleApi.Apigee.V1.Model.GoogleRpcPreconditionFailure.t() | nil
         }
 
   field(:routingChanges,

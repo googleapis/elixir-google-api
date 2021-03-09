@@ -27,7 +27,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleRpcPreconditionFailure do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :violations => list(GoogleApi.Apigee.V1.Model.GoogleRpcPreconditionFailureViolation.t())
+          :violations =>
+            list(GoogleApi.Apigee.V1.Model.GoogleRpcPreconditionFailureViolation.t()) | nil
         }
 
   field(:violations,

@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListDatastoresResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datastores => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Datastore.t())
+          :datastores => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Datastore.t()) | nil
         }
 
   field(:datastores, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Datastore, type: :list)

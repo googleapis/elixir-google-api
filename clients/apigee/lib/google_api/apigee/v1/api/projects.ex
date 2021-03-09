@@ -60,6 +60,7 @@ defmodule GoogleApi.Apigee.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Apigee.V1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def apigee_projects_provision_organization(
         connection,

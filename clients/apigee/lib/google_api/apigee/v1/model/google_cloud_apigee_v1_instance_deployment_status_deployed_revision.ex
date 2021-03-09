@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1InstanceDeploymentStatusD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :percentage => integer(),
-          :revision => String.t()
+          :percentage => integer() | nil,
+          :revision => String.t() | nil
         }
 
   field(:percentage)

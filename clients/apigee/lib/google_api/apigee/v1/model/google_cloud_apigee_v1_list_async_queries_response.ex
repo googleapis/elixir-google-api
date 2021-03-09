@@ -27,7 +27,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListAsyncQueriesResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :queries => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQuery.t())
+          :queries => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQuery.t()) | nil
         }
 
   field(:queries, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQuery, type: :list)

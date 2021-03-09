@@ -27,7 +27,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListHybridIssuersResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :issuers => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ServiceIssuersMapping.t())
+          :issuers =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ServiceIssuersMapping.t()) | nil
         }
 
   field(:issuers,

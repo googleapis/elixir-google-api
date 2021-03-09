@@ -28,8 +28,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyAliasReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aliasId => String.t(),
-          :reference => String.t()
+          :aliasId => String.t() | nil,
+          :reference => String.t() | nil
         }
 
   field(:aliasId)

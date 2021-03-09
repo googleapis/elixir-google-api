@@ -31,11 +31,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListApiCategoriesResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData.t()),
-          :errorCode => String.t(),
-          :message => String.t(),
-          :requestId => String.t(),
-          :status => String.t()
+          :data => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData.t()) | nil,
+          :errorCode => String.t() | nil,
+          :message => String.t() | nil,
+          :requestId => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:data, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData, type: :list)

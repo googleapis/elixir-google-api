@@ -48,28 +48,30 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chartType => String.t(),
-          :comments => list(String.t()),
-          :createdAt => String.t(),
-          :dimensions => list(String.t()),
-          :displayName => String.t(),
-          :environment => String.t(),
-          :filter => String.t(),
-          :fromTime => String.t(),
-          :lastModifiedAt => String.t(),
-          :lastViewedAt => String.t(),
-          :limit => String.t(),
-          :metrics => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReportMetric.t()),
-          :name => String.t(),
-          :offset => String.t(),
-          :organization => String.t(),
-          :properties => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReportProperty.t()),
-          :sortByCols => list(String.t()),
-          :sortOrder => String.t(),
-          :tags => list(String.t()),
-          :timeUnit => String.t(),
-          :toTime => String.t(),
-          :topk => String.t()
+          :chartType => String.t() | nil,
+          :comments => list(String.t()) | nil,
+          :createdAt => String.t() | nil,
+          :dimensions => list(String.t()) | nil,
+          :displayName => String.t() | nil,
+          :environment => String.t() | nil,
+          :filter => String.t() | nil,
+          :fromTime => String.t() | nil,
+          :lastModifiedAt => String.t() | nil,
+          :lastViewedAt => String.t() | nil,
+          :limit => String.t() | nil,
+          :metrics =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CustomReportMetric.t()) | nil,
+          :name => String.t() | nil,
+          :offset => String.t() | nil,
+          :organization => String.t() | nil,
+          :properties =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReportProperty.t()) | nil,
+          :sortByCols => list(String.t()) | nil,
+          :sortOrder => String.t() | nil,
+          :tags => list(String.t()) | nil,
+          :timeUnit => String.t() | nil,
+          :toTime => String.t() | nil,
+          :topk => String.t() | nil
         }
 
   field(:chartType)
