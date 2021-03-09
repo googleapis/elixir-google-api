@@ -27,7 +27,7 @@ defmodule GoogleApi.Logging.V2.Model.Explicit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bounds => list(float())
+          :bounds => list(float()) | nil
         }
 
   field(:bounds, type: :list)

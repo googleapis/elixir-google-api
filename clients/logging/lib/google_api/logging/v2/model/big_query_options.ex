@@ -28,8 +28,8 @@ defmodule GoogleApi.Logging.V2.Model.BigQueryOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :usePartitionedTables => boolean(),
-          :usesTimestampColumnPartitioning => boolean()
+          :usePartitionedTables => boolean() | nil,
+          :usesTimestampColumnPartitioning => boolean() | nil
         }
 
   field(:usePartitionedTables)

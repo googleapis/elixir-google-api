@@ -28,8 +28,8 @@ defmodule GoogleApi.Logging.V2.Model.TailLogEntriesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Logging.V2.Model.LogEntry.t()),
-          :suppressionInfo => list(GoogleApi.Logging.V2.Model.SuppressionInfo.t())
+          :entries => list(GoogleApi.Logging.V2.Model.LogEntry.t()) | nil,
+          :suppressionInfo => list(GoogleApi.Logging.V2.Model.SuppressionInfo.t()) | nil
         }
 
   field(:entries, as: GoogleApi.Logging.V2.Model.LogEntry, type: :list)

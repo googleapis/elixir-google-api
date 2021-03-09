@@ -29,9 +29,9 @@ defmodule GoogleApi.Logging.V2.Model.CmekSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kmsKeyName => String.t(),
-          :name => String.t(),
-          :serviceAccountId => String.t()
+          :kmsKeyName => String.t() | nil,
+          :name => String.t() | nil,
+          :serviceAccountId => String.t() | nil
         }
 
   field(:kmsKeyName)

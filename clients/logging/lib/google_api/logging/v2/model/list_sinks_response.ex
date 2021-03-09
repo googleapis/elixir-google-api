@@ -28,8 +28,8 @@ defmodule GoogleApi.Logging.V2.Model.ListSinksResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :sinks => list(GoogleApi.Logging.V2.Model.LogSink.t())
+          :nextPageToken => String.t() | nil,
+          :sinks => list(GoogleApi.Logging.V2.Model.LogSink.t()) | nil
         }
 
   field(:nextPageToken)

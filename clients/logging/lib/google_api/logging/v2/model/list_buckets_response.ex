@@ -28,8 +28,8 @@ defmodule GoogleApi.Logging.V2.Model.ListBucketsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buckets => list(GoogleApi.Logging.V2.Model.LogBucket.t()),
-          :nextPageToken => String.t()
+          :buckets => list(GoogleApi.Logging.V2.Model.LogBucket.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:buckets, as: GoogleApi.Logging.V2.Model.LogBucket, type: :list)

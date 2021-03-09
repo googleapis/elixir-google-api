@@ -33,13 +33,13 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :lifecycleState => String.t(),
-          :locked => boolean(),
-          :name => String.t(),
-          :retentionDays => integer(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :lifecycleState => String.t() | nil,
+          :locked => boolean() | nil,
+          :name => String.t() | nil,
+          :retentionDays => integer() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

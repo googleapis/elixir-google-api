@@ -32,12 +32,12 @@ defmodule GoogleApi.Logging.V2.Model.ListLogEntriesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => String.t(),
-          :orderBy => String.t(),
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :projectIds => list(String.t()),
-          :resourceNames => list(String.t())
+          :filter => String.t() | nil,
+          :orderBy => String.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :projectIds => list(String.t()) | nil,
+          :resourceNames => list(String.t()) | nil
         }
 
   field(:filter)

@@ -37,17 +37,17 @@ defmodule GoogleApi.Logging.V2.Model.MetricDescriptor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :displayName => String.t(),
-          :labels => list(GoogleApi.Logging.V2.Model.LabelDescriptor.t()),
-          :launchStage => String.t(),
-          :metadata => GoogleApi.Logging.V2.Model.MetricDescriptorMetadata.t(),
-          :metricKind => String.t(),
-          :monitoredResourceTypes => list(String.t()),
-          :name => String.t(),
-          :type => String.t(),
-          :unit => String.t(),
-          :valueType => String.t()
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :labels => list(GoogleApi.Logging.V2.Model.LabelDescriptor.t()) | nil,
+          :launchStage => String.t() | nil,
+          :metadata => GoogleApi.Logging.V2.Model.MetricDescriptorMetadata.t() | nil,
+          :metricKind => String.t() | nil,
+          :monitoredResourceTypes => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil,
+          :unit => String.t() | nil,
+          :valueType => String.t() | nil
         }
 
   field(:description)

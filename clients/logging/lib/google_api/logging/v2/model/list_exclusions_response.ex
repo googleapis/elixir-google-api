@@ -28,8 +28,8 @@ defmodule GoogleApi.Logging.V2.Model.ListExclusionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exclusions => list(GoogleApi.Logging.V2.Model.LogExclusion.t()),
-          :nextPageToken => String.t()
+          :exclusions => list(GoogleApi.Logging.V2.Model.LogExclusion.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:exclusions, as: GoogleApi.Logging.V2.Model.LogExclusion, type: :list)
