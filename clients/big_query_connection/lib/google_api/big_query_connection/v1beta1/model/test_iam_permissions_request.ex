@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.TestIamPermissionsRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permissions => list(String.t())
+          :permissions => list(String.t()) | nil
         }
 
   field(:permissions, type: :list)

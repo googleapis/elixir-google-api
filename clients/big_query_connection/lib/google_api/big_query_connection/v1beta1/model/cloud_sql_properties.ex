@@ -30,10 +30,10 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :credential => GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential.t(),
-          :database => String.t(),
-          :instanceId => String.t(),
-          :type => String.t()
+          :credential => GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential.t() | nil,
+          :database => String.t() | nil,
+          :instanceId => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:credential, as: GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential)

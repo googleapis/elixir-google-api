@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.ListConnectionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connections => list(GoogleApi.BigQueryConnection.V1beta1.Model.Connection.t()),
-          :nextPageToken => String.t()
+          :connections => list(GoogleApi.BigQueryConnection.V1beta1.Model.Connection.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:connections, as: GoogleApi.BigQueryConnection.V1beta1.Model.Connection, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Model.CloudSqlCredential do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :password => String.t(),
-          :username => String.t()
+          :password => String.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:password)
