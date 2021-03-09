@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.SignJwtRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :payload => String.t()
+          :payload => String.t() | nil
         }
 
   field(:payload)

@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.PermissionDelta do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addedPermissions => list(String.t()),
-          :removedPermissions => list(String.t())
+          :addedPermissions => list(String.t()) | nil,
+          :removedPermissions => list(String.t()) | nil
         }
 
   field(:addedPermissions, type: :list)

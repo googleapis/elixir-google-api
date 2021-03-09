@@ -35,15 +35,15 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :disabled => boolean(),
-          :displayName => String.t(),
-          :email => String.t(),
-          :etag => String.t(),
-          :name => String.t(),
-          :oauth2ClientId => String.t(),
-          :projectId => String.t(),
-          :uniqueId => String.t()
+          :description => String.t() | nil,
+          :disabled => boolean() | nil,
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :etag => String.t() | nil,
+          :name => String.t() | nil,
+          :oauth2ClientId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :uniqueId => String.t() | nil
         }
 
   field(:description)

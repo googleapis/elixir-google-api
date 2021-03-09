@@ -33,13 +33,13 @@ defmodule GoogleApi.IAM.V1.Model.Role do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleted => boolean(),
-          :description => String.t(),
-          :etag => String.t(),
-          :includedPermissions => list(String.t()),
-          :name => String.t(),
-          :stage => String.t(),
-          :title => String.t()
+          :deleted => boolean() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :includedPermissions => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :stage => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:deleted)

@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.AdminAuditData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permissionDelta => GoogleApi.IAM.V1.Model.PermissionDelta.t()
+          :permissionDelta => GoogleApi.IAM.V1.Model.PermissionDelta.t() | nil
         }
 
   field(:permissionDelta, as: GoogleApi.IAM.V1.Model.PermissionDelta)

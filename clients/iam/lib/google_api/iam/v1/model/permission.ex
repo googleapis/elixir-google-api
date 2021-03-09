@@ -34,14 +34,14 @@ defmodule GoogleApi.IAM.V1.Model.Permission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiDisabled => boolean(),
-          :customRolesSupportLevel => String.t(),
-          :description => String.t(),
-          :name => String.t(),
-          :onlyInPredefinedRoles => boolean(),
-          :primaryPermission => String.t(),
-          :stage => String.t(),
-          :title => String.t()
+          :apiDisabled => boolean() | nil,
+          :customRolesSupportLevel => String.t() | nil,
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :onlyInPredefinedRoles => boolean() | nil,
+          :primaryPermission => String.t() | nil,
+          :stage => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:apiDisabled)

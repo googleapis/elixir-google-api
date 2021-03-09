@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.UndeleteRoleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t()
+          :etag => String.t() | nil
         }
 
   field(:etag)

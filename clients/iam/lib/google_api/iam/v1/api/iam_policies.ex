@@ -54,6 +54,7 @@ defmodule GoogleApi.IAM.V1.Api.IamPolicies do
   @spec iam_iam_policies_lint_policy(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.LintPolicyResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def iam_iam_policies_lint_policy(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -112,6 +113,7 @@ defmodule GoogleApi.IAM.V1.Api.IamPolicies do
   @spec iam_iam_policies_query_auditable_services(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def iam_iam_policies_query_auditable_services(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

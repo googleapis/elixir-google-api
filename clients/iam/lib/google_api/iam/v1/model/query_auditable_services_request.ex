@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.QueryAuditableServicesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullResourceName => String.t()
+          :fullResourceName => String.t() | nil
         }
 
   field(:fullResourceName)

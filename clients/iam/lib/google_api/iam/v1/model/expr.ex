@@ -30,10 +30,10 @@ defmodule GoogleApi.IAM.V1.Model.Expr do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :expression => String.t(),
-          :location => String.t(),
-          :title => String.t()
+          :description => String.t() | nil,
+          :expression => String.t() | nil,
+          :location => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:description)

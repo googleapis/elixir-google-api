@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.CreateServiceAccountKeyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyAlgorithm => String.t(),
-          :privateKeyType => String.t()
+          :keyAlgorithm => String.t() | nil,
+          :privateKeyType => String.t() | nil
         }
 
   field(:keyAlgorithm)

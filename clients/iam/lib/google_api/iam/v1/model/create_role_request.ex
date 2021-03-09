@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.CreateRoleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :role => GoogleApi.IAM.V1.Model.Role.t(),
-          :roleId => String.t()
+          :role => GoogleApi.IAM.V1.Model.Role.t() | nil,
+          :roleId => String.t() | nil
         }
 
   field(:role, as: GoogleApi.IAM.V1.Model.Role)

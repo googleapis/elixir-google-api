@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.LintPolicyResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lintResults => list(GoogleApi.IAM.V1.Model.LintResult.t())
+          :lintResults => list(GoogleApi.IAM.V1.Model.LintResult.t()) | nil
         }
 
   field(:lintResults, as: GoogleApi.IAM.V1.Model.LintResult, type: :list)

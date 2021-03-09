@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.CreateServiceAccountRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :serviceAccount => GoogleApi.IAM.V1.Model.ServiceAccount.t()
+          :accountId => String.t() | nil,
+          :serviceAccount => GoogleApi.IAM.V1.Model.ServiceAccount.t() | nil
         }
 
   field(:accountId)

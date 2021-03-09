@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.ListWorkloadIdentityPoolsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :workloadIdentityPools => list(GoogleApi.IAM.V1.Model.WorkloadIdentityPool.t())
+          :nextPageToken => String.t() | nil,
+          :workloadIdentityPools => list(GoogleApi.IAM.V1.Model.WorkloadIdentityPool.t()) | nil
         }
 
   field(:nextPageToken)

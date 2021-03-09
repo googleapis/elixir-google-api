@@ -35,15 +35,15 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyAlgorithm => String.t(),
-          :keyOrigin => String.t(),
-          :keyType => String.t(),
-          :name => String.t(),
-          :privateKeyData => String.t(),
-          :privateKeyType => String.t(),
-          :publicKeyData => String.t(),
-          :validAfterTime => DateTime.t(),
-          :validBeforeTime => DateTime.t()
+          :keyAlgorithm => String.t() | nil,
+          :keyOrigin => String.t() | nil,
+          :keyType => String.t() | nil,
+          :name => String.t() | nil,
+          :privateKeyData => String.t() | nil,
+          :privateKeyType => String.t() | nil,
+          :publicKeyData => String.t() | nil,
+          :validAfterTime => DateTime.t() | nil,
+          :validBeforeTime => DateTime.t() | nil
         }
 
   field(:keyAlgorithm)

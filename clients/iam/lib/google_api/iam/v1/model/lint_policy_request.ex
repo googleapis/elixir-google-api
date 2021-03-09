@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.LintPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.IAM.V1.Model.Expr.t(),
-          :fullResourceName => String.t()
+          :condition => GoogleApi.IAM.V1.Model.Expr.t() | nil,
+          :fullResourceName => String.t() | nil
         }
 
   field(:condition, as: GoogleApi.IAM.V1.Model.Expr)

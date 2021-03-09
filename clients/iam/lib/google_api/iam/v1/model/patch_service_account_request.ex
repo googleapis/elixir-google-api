@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.PatchServiceAccountRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :serviceAccount => GoogleApi.IAM.V1.Model.ServiceAccount.t(),
-          :updateMask => String.t()
+          :serviceAccount => GoogleApi.IAM.V1.Model.ServiceAccount.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:serviceAccount, as: GoogleApi.IAM.V1.Model.ServiceAccount)

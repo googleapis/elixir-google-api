@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.AuditData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policyDelta => GoogleApi.IAM.V1.Model.PolicyDelta.t()
+          :policyDelta => GoogleApi.IAM.V1.Model.PolicyDelta.t() | nil
         }
 
   field(:policyDelta, as: GoogleApi.IAM.V1.Model.PolicyDelta)

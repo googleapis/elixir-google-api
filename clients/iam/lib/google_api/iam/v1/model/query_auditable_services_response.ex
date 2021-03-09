@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :services => list(GoogleApi.IAM.V1.Model.AuditableService.t())
+          :services => list(GoogleApi.IAM.V1.Model.AuditableService.t()) | nil
         }
 
   field(:services, as: GoogleApi.IAM.V1.Model.AuditableService, type: :list)

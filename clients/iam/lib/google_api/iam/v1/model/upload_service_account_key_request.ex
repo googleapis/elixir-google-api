@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.UploadServiceAccountKeyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publicKeyData => String.t()
+          :publicKeyData => String.t() | nil
         }
 
   field(:publicKeyData)

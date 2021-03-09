@@ -28,9 +28,9 @@ defmodule GoogleApi.IAM.V1.Model.ListWorkloadIdentityPoolProvidersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :workloadIdentityPoolProviders =>
-            list(GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider.t())
+            list(GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider.t()) | nil
         }
 
   field(:nextPageToken)
