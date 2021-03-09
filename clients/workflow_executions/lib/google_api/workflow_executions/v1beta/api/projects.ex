@@ -60,6 +60,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.WorkflowExecutions.V1beta.Model.Execution.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflowexecutions_projects_locations_workflows_executions_cancel(
         connection,
@@ -131,6 +132,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.WorkflowExecutions.V1beta.Model.Execution.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflowexecutions_projects_locations_workflows_executions_create(
         connection,
@@ -202,6 +204,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.WorkflowExecutions.V1beta.Model.Execution.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflowexecutions_projects_locations_workflows_executions_get(
         connection,
@@ -275,6 +278,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.WorkflowExecutions.V1beta.Model.ListExecutionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflowexecutions_projects_locations_workflows_executions_list(
         connection,

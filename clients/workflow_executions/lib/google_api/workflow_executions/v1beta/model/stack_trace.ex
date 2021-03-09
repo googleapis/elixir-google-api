@@ -27,7 +27,7 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.StackTrace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elements => list(GoogleApi.WorkflowExecutions.V1beta.Model.StackTraceElement.t())
+          :elements => list(GoogleApi.WorkflowExecutions.V1beta.Model.StackTraceElement.t()) | nil
         }
 
   field(:elements, as: GoogleApi.WorkflowExecutions.V1beta.Model.StackTraceElement, type: :list)

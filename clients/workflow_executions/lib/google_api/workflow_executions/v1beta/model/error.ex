@@ -29,9 +29,9 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.Error do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => String.t(),
-          :payload => String.t(),
-          :stackTrace => GoogleApi.WorkflowExecutions.V1beta.Model.StackTrace.t()
+          :context => String.t() | nil,
+          :payload => String.t() | nil,
+          :stackTrace => GoogleApi.WorkflowExecutions.V1beta.Model.StackTrace.t() | nil
         }
 
   field(:context)

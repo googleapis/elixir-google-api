@@ -29,9 +29,9 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.Position do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => String.t(),
-          :length => String.t(),
-          :line => String.t()
+          :column => String.t() | nil,
+          :length => String.t() | nil,
+          :line => String.t() | nil
         }
 
   field(:column)

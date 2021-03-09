@@ -29,9 +29,9 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.StackTraceElement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :position => GoogleApi.WorkflowExecutions.V1beta.Model.Position.t(),
-          :routine => String.t(),
-          :step => String.t()
+          :position => GoogleApi.WorkflowExecutions.V1beta.Model.Position.t() | nil,
+          :routine => String.t() | nil,
+          :step => String.t() | nil
         }
 
   field(:position, as: GoogleApi.WorkflowExecutions.V1beta.Model.Position)
