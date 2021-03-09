@@ -28,7 +28,7 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.ListFindingTypeStatsRespons
 
   @type t :: %__MODULE__{
           :findingTypeStats =>
-            list(GoogleApi.WebSecurityScanner.V1alpha.Model.FindingTypeStats.t())
+            list(GoogleApi.WebSecurityScanner.V1alpha.Model.FindingTypeStats.t()) | nil
         }
 
   field(:findingTypeStats,

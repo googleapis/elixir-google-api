@@ -41,22 +41,25 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.Finding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => String.t(),
-          :description => String.t(),
-          :finalUrl => String.t(),
-          :findingType => String.t(),
-          :frameUrl => String.t(),
-          :fuzzedUrl => String.t(),
-          :httpMethod => String.t(),
-          :name => String.t(),
-          :outdatedLibrary => GoogleApi.WebSecurityScanner.V1alpha.Model.OutdatedLibrary.t(),
-          :reproductionUrl => String.t(),
-          :trackingId => String.t(),
-          :violatingResource => GoogleApi.WebSecurityScanner.V1alpha.Model.ViolatingResource.t(),
-          :vulnerableHeaders => GoogleApi.WebSecurityScanner.V1alpha.Model.VulnerableHeaders.t(),
+          :body => String.t() | nil,
+          :description => String.t() | nil,
+          :finalUrl => String.t() | nil,
+          :findingType => String.t() | nil,
+          :frameUrl => String.t() | nil,
+          :fuzzedUrl => String.t() | nil,
+          :httpMethod => String.t() | nil,
+          :name => String.t() | nil,
+          :outdatedLibrary =>
+            GoogleApi.WebSecurityScanner.V1alpha.Model.OutdatedLibrary.t() | nil,
+          :reproductionUrl => String.t() | nil,
+          :trackingId => String.t() | nil,
+          :violatingResource =>
+            GoogleApi.WebSecurityScanner.V1alpha.Model.ViolatingResource.t() | nil,
+          :vulnerableHeaders =>
+            GoogleApi.WebSecurityScanner.V1alpha.Model.VulnerableHeaders.t() | nil,
           :vulnerableParameters =>
-            GoogleApi.WebSecurityScanner.V1alpha.Model.VulnerableParameters.t(),
-          :xss => GoogleApi.WebSecurityScanner.V1alpha.Model.Xss.t()
+            GoogleApi.WebSecurityScanner.V1alpha.Model.VulnerableParameters.t() | nil,
+          :xss => GoogleApi.WebSecurityScanner.V1alpha.Model.Xss.t() | nil
         }
 
   field(:body)

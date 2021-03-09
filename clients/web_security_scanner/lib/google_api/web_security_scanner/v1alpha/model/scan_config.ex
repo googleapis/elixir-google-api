@@ -36,16 +36,16 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.ScanConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authentication => GoogleApi.WebSecurityScanner.V1alpha.Model.Authentication.t(),
-          :blacklistPatterns => list(String.t()),
-          :displayName => String.t(),
-          :latestRun => GoogleApi.WebSecurityScanner.V1alpha.Model.ScanRun.t(),
-          :maxQps => integer(),
-          :name => String.t(),
-          :schedule => GoogleApi.WebSecurityScanner.V1alpha.Model.Schedule.t(),
-          :startingUrls => list(String.t()),
-          :targetPlatforms => list(String.t()),
-          :userAgent => String.t()
+          :authentication => GoogleApi.WebSecurityScanner.V1alpha.Model.Authentication.t() | nil,
+          :blacklistPatterns => list(String.t()) | nil,
+          :displayName => String.t() | nil,
+          :latestRun => GoogleApi.WebSecurityScanner.V1alpha.Model.ScanRun.t() | nil,
+          :maxQps => integer() | nil,
+          :name => String.t() | nil,
+          :schedule => GoogleApi.WebSecurityScanner.V1alpha.Model.Schedule.t() | nil,
+          :startingUrls => list(String.t()) | nil,
+          :targetPlatforms => list(String.t()) | nil,
+          :userAgent => String.t() | nil
         }
 
   field(:authentication, as: GoogleApi.WebSecurityScanner.V1alpha.Model.Authentication)

@@ -28,7 +28,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.IapCredential do
 
   @type t :: %__MODULE__{
           :iapTestServiceAccountInfo =>
-            GoogleApi.WebSecurityScanner.V1.Model.IapTestServiceAccountInfo.t()
+            GoogleApi.WebSecurityScanner.V1.Model.IapTestServiceAccountInfo.t() | nil
         }
 
   field(:iapTestServiceAccountInfo,

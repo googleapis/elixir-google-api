@@ -27,7 +27,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanRunWarningTrace do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t()
+          :code => String.t() | nil
         }
 
   field(:code)

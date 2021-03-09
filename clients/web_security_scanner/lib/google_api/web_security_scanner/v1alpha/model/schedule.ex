@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.Schedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :intervalDurationDays => integer(),
-          :scheduleTime => DateTime.t()
+          :intervalDurationDays => integer() | nil,
+          :scheduleTime => DateTime.t() | nil
         }
 
   field(:intervalDurationDays)

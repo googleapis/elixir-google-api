@@ -27,7 +27,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.IapTestServiceAccountInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetAudienceClientId => String.t()
+          :targetAudienceClientId => String.t() | nil
         }
 
   field(:targetAudienceClientId)

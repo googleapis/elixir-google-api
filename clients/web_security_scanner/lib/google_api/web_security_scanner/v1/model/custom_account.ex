@@ -29,9 +29,9 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.CustomAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :loginUrl => String.t(),
-          :password => String.t(),
-          :username => String.t()
+          :loginUrl => String.t() | nil,
+          :password => String.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:loginUrl)

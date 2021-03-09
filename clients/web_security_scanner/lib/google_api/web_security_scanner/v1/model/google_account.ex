@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.GoogleAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :password => String.t(),
-          :username => String.t()
+          :password => String.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:password)

@@ -27,7 +27,8 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ListFindingTypeStatsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :findingTypeStats => list(GoogleApi.WebSecurityScanner.V1.Model.FindingTypeStats.t())
+          :findingTypeStats =>
+            list(GoogleApi.WebSecurityScanner.V1.Model.FindingTypeStats.t()) | nil
         }
 
   field(:findingTypeStats, as: GoogleApi.WebSecurityScanner.V1.Model.FindingTypeStats, type: :list)

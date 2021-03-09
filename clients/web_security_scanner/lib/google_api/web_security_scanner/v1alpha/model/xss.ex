@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.Xss do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessage => String.t(),
-          :stackTraces => list(String.t())
+          :errorMessage => String.t() | nil,
+          :stackTraces => list(String.t()) | nil
         }
 
   field(:errorMessage)

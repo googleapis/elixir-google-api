@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ViolatingResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentType => String.t(),
-          :resourceUrl => String.t()
+          :contentType => String.t() | nil,
+          :resourceUrl => String.t() | nil
         }
 
   field(:contentType)

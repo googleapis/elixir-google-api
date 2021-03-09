@@ -28,8 +28,8 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ListScanRunsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :scanRuns => list(GoogleApi.WebSecurityScanner.V1.Model.ScanRun.t())
+          :nextPageToken => String.t() | nil,
+          :scanRuns => list(GoogleApi.WebSecurityScanner.V1.Model.ScanRun.t()) | nil
         }
 
   field(:nextPageToken)

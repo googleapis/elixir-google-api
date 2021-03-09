@@ -30,10 +30,10 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Xss do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attackVector => String.t(),
-          :errorMessage => String.t(),
-          :stackTraces => list(String.t()),
-          :storedXssSeedingUrl => String.t()
+          :attackVector => String.t() | nil,
+          :errorMessage => String.t() | nil,
+          :stackTraces => list(String.t()) | nil,
+          :storedXssSeedingUrl => String.t() | nil
         }
 
   field(:attackVector)
