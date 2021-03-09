@@ -43,23 +43,23 @@ defmodule GoogleApi.CloudIot.V1.Model.Device do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blocked => boolean(),
-          :config => GoogleApi.CloudIot.V1.Model.DeviceConfig.t(),
-          :credentials => list(GoogleApi.CloudIot.V1.Model.DeviceCredential.t()),
-          :gatewayConfig => GoogleApi.CloudIot.V1.Model.GatewayConfig.t(),
-          :id => String.t(),
-          :lastConfigAckTime => DateTime.t(),
-          :lastConfigSendTime => DateTime.t(),
-          :lastErrorStatus => GoogleApi.CloudIot.V1.Model.Status.t(),
-          :lastErrorTime => DateTime.t(),
-          :lastEventTime => DateTime.t(),
-          :lastHeartbeatTime => DateTime.t(),
-          :lastStateTime => DateTime.t(),
-          :logLevel => String.t(),
-          :metadata => map(),
-          :name => String.t(),
-          :numId => String.t(),
-          :state => GoogleApi.CloudIot.V1.Model.DeviceState.t()
+          :blocked => boolean() | nil,
+          :config => GoogleApi.CloudIot.V1.Model.DeviceConfig.t() | nil,
+          :credentials => list(GoogleApi.CloudIot.V1.Model.DeviceCredential.t()) | nil,
+          :gatewayConfig => GoogleApi.CloudIot.V1.Model.GatewayConfig.t() | nil,
+          :id => String.t() | nil,
+          :lastConfigAckTime => DateTime.t() | nil,
+          :lastConfigSendTime => DateTime.t() | nil,
+          :lastErrorStatus => GoogleApi.CloudIot.V1.Model.Status.t() | nil,
+          :lastErrorTime => DateTime.t() | nil,
+          :lastEventTime => DateTime.t() | nil,
+          :lastHeartbeatTime => DateTime.t() | nil,
+          :lastStateTime => DateTime.t() | nil,
+          :logLevel => String.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :numId => String.t() | nil,
+          :state => GoogleApi.CloudIot.V1.Model.DeviceState.t() | nil
         }
 
   field(:blocked)

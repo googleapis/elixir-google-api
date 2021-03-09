@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIot.V1.Model.ListDeviceConfigVersionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceConfigs => list(GoogleApi.CloudIot.V1.Model.DeviceConfig.t())
+          :deviceConfigs => list(GoogleApi.CloudIot.V1.Model.DeviceConfig.t()) | nil
         }
 
   field(:deviceConfigs, as: GoogleApi.CloudIot.V1.Model.DeviceConfig, type: :list)

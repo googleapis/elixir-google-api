@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIot.V1.Model.PublicKeyCredential do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :format => String.t(),
-          :key => String.t()
+          :format => String.t() | nil,
+          :key => String.t() | nil
         }
 
   field(:format)

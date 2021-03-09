@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIot.V1.Model.UnbindDeviceFromGatewayRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceId => String.t(),
-          :gatewayId => String.t()
+          :deviceId => String.t() | nil,
+          :gatewayId => String.t() | nil
         }
 
   field(:deviceId)

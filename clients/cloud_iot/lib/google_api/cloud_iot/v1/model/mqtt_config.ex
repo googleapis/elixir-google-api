@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIot.V1.Model.MqttConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mqttEnabledState => String.t()
+          :mqttEnabledState => String.t() | nil
         }
 
   field(:mqttEnabledState)

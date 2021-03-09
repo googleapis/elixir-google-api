@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudIot.V1.Model.X509CertificateDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expiryTime => DateTime.t(),
-          :issuer => String.t(),
-          :publicKeyType => String.t(),
-          :signatureAlgorithm => String.t(),
-          :startTime => DateTime.t(),
-          :subject => String.t()
+          :expiryTime => DateTime.t() | nil,
+          :issuer => String.t() | nil,
+          :publicKeyType => String.t() | nil,
+          :signatureAlgorithm => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :subject => String.t() | nil
         }
 
   field(:expiryTime, as: DateTime)
