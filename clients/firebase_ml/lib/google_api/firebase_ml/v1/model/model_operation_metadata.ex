@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseML.V1.Model.ModelOperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :basicOperationStatus => String.t(),
-          :name => String.t()
+          :basicOperationStatus => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:basicOperationStatus)
