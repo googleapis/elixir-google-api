@@ -28,8 +28,8 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contents => String.t(),
-          :path => String.t()
+          :contents => String.t() | nil,
+          :path => String.t() | nil
         }
 
   field(:contents)

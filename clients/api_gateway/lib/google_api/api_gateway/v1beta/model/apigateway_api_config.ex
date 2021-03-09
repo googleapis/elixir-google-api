@@ -38,21 +38,22 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :gatewayConfig => GoogleApi.APIGateway.V1beta.Model.ApigatewayGatewayConfig.t(),
-          :gatewayServiceAccount => String.t(),
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :gatewayConfig => GoogleApi.APIGateway.V1beta.Model.ApigatewayGatewayConfig.t() | nil,
+          :gatewayServiceAccount => String.t() | nil,
           :grpcServices =>
-            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigGrpcServiceDefinition.t()),
-          :labels => map(),
+            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigGrpcServiceDefinition.t())
+            | nil,
+          :labels => map() | nil,
           :managedServiceConfigs =>
-            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t()),
-          :name => String.t(),
+            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t()) | nil,
+          :name => String.t() | nil,
           :openapiDocuments =>
-            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigOpenApiDocument.t()),
-          :serviceConfigId => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigOpenApiDocument.t()) | nil,
+          :serviceConfigId => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

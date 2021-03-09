@@ -29,8 +29,8 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayAuditConfig do
 
   @type t :: %__MODULE__{
           :auditLogConfigs =>
-            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayAuditLogConfig.t()),
-          :service => String.t()
+            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayAuditLogConfig.t()) | nil,
+          :service => String.t() | nil
         }
 
   field(:auditLogConfigs,

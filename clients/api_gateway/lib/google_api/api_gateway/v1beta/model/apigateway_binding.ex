@@ -29,9 +29,9 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayBinding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.APIGateway.V1beta.Model.ApigatewayExpr.t(),
-          :members => list(String.t()),
-          :role => String.t()
+          :condition => GoogleApi.APIGateway.V1beta.Model.ApigatewayExpr.t() | nil,
+          :members => list(String.t()) | nil,
+          :role => String.t() | nil
         }
 
   field(:condition, as: GoogleApi.APIGateway.V1beta.Model.ApigatewayExpr)

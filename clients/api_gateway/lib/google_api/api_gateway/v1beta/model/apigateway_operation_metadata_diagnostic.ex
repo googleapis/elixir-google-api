@@ -28,8 +28,8 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayOperationMetadataDiagnosti
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => String.t(),
-          :message => String.t()
+          :location => String.t() | nil,
+          :message => String.t() | nil
         }
 
   field(:location)

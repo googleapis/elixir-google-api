@@ -31,11 +31,11 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :error => GoogleApi.APIGateway.V1beta.Model.ApigatewayStatus.t(),
-          :metadata => map(),
-          :name => String.t(),
-          :response => map()
+          :done => boolean() | nil,
+          :error => GoogleApi.APIGateway.V1beta.Model.ApigatewayStatus.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :response => map() | nil
         }
 
   field(:done)

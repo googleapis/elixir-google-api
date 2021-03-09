@@ -28,8 +28,8 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayListOperationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :operations => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t())
+          :nextPageToken => String.t() | nil,
+          :operations => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayOperation.t()) | nil
         }
 
   field(:nextPageToken)

@@ -27,7 +27,7 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayBackendConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googleServiceAccount => String.t()
+          :googleServiceAccount => String.t() | nil
         }
 
   field(:googleServiceAccount)

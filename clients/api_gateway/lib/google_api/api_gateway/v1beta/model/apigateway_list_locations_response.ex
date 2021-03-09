@@ -28,8 +28,8 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayListLocationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayLocation.t()),
-          :nextPageToken => String.t()
+          :locations => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayLocation.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locations, as: GoogleApi.APIGateway.V1beta.Model.ApigatewayLocation, type: :list)

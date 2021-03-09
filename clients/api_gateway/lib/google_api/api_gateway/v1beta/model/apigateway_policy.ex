@@ -30,10 +30,11 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditConfigs => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayAuditConfig.t()),
-          :bindings => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayBinding.t()),
-          :etag => String.t(),
-          :version => integer()
+          :auditConfigs =>
+            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayAuditConfig.t()) | nil,
+          :bindings => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayBinding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:auditConfigs, as: GoogleApi.APIGateway.V1beta.Model.ApigatewayAuditConfig, type: :list)

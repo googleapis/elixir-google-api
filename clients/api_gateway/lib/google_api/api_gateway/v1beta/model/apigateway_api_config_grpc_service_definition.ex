@@ -28,8 +28,9 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigGrpcServiceDefini
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileDescriptorSet => GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t(),
-          :source => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t())
+          :fileDescriptorSet =>
+            GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t() | nil,
+          :source => list(GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t()) | nil
         }
 
   field(:fileDescriptorSet, as: GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile)

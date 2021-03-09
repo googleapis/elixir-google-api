@@ -34,15 +34,16 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayOperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :createTime => DateTime.t(),
+          :apiVersion => String.t() | nil,
+          :createTime => DateTime.t() | nil,
           :diagnostics =>
-            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayOperationMetadataDiagnostic.t()),
-          :endTime => DateTime.t(),
-          :requestedCancellation => boolean(),
-          :statusMessage => String.t(),
-          :target => String.t(),
-          :verb => String.t()
+            list(GoogleApi.APIGateway.V1beta.Model.ApigatewayOperationMetadataDiagnostic.t())
+            | nil,
+          :endTime => DateTime.t() | nil,
+          :requestedCancellation => boolean() | nil,
+          :statusMessage => String.t() | nil,
+          :target => String.t() | nil,
+          :verb => String.t() | nil
         }
 
   field(:apiVersion)

@@ -27,7 +27,7 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigOpenApiDocument d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :document => GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t()
+          :document => GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile.t() | nil
         }
 
   field(:document, as: GoogleApi.APIGateway.V1beta.Model.ApigatewayApiConfigFile)

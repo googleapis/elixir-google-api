@@ -28,8 +28,8 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewaySetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy.t(),
-          :updateMask => String.t()
+          :policy => GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:policy, as: GoogleApi.APIGateway.V1beta.Model.ApigatewayPolicy)

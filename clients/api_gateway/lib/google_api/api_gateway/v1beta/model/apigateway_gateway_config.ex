@@ -27,7 +27,7 @@ defmodule GoogleApi.APIGateway.V1beta.Model.ApigatewayGatewayConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backendConfig => GoogleApi.APIGateway.V1beta.Model.ApigatewayBackendConfig.t()
+          :backendConfig => GoogleApi.APIGateway.V1beta.Model.ApigatewayBackendConfig.t() | nil
         }
 
   field(:backendConfig, as: GoogleApi.APIGateway.V1beta.Model.ApigatewayBackendConfig)
