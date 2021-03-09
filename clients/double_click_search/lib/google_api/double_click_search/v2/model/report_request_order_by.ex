@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t(),
-          :sortOrder => String.t()
+          :column => GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t() | nil,
+          :sortOrder => String.t() | nil
         }
 
   field(:column, as: GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec)

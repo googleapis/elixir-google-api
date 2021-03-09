@@ -33,13 +33,13 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adGroupId => String.t(),
-          :adId => String.t(),
-          :advertiserId => String.t(),
-          :agencyId => String.t(),
-          :campaignId => String.t(),
-          :engineAccountId => String.t(),
-          :keywordId => String.t()
+          :adGroupId => String.t() | nil,
+          :adId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :agencyId => String.t() | nil,
+          :campaignId => String.t() | nil,
+          :engineAccountId => String.t() | nil,
+          :keywordId => String.t() | nil
         }
 
   field(:adGroupId)

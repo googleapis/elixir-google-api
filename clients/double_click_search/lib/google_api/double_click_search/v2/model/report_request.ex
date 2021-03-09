@@ -40,20 +40,20 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => list(GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t()),
-          :downloadFormat => String.t(),
-          :filters => list(GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters.t()),
-          :includeDeletedEntities => boolean(),
-          :includeRemovedEntities => boolean(),
-          :maxRowsPerFile => integer(),
-          :orderBy => list(GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy.t()),
-          :reportScope => GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope.t(),
-          :reportType => String.t(),
-          :rowCount => integer(),
-          :startRow => integer(),
-          :statisticsCurrency => String.t(),
-          :timeRange => GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange.t(),
-          :verifySingleTimeZone => boolean()
+          :columns => list(GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t()) | nil,
+          :downloadFormat => String.t() | nil,
+          :filters => list(GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters.t()) | nil,
+          :includeDeletedEntities => boolean() | nil,
+          :includeRemovedEntities => boolean() | nil,
+          :maxRowsPerFile => integer() | nil,
+          :orderBy => list(GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy.t()) | nil,
+          :reportScope => GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope.t() | nil,
+          :reportType => String.t() | nil,
+          :rowCount => integer() | nil,
+          :startRow => integer() | nil,
+          :statisticsCurrency => String.t() | nil,
+          :timeRange => GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange.t() | nil,
+          :verifySingleTimeZone => boolean() | nil
         }
 
   field(:columns, as: GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec, type: :list)

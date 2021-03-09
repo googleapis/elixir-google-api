@@ -35,15 +35,15 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Report do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.DoubleClickSearch.V2.Model.ReportFiles.t()),
-          :id => String.t(),
-          :isReportReady => boolean(),
-          :kind => String.t(),
-          :request => GoogleApi.DoubleClickSearch.V2.Model.ReportRequest.t(),
-          :rowCount => integer(),
-          :rows => list(GoogleApi.DoubleClickSearch.V2.Model.ReportRow.t()),
-          :statisticsCurrencyCode => String.t(),
-          :statisticsTimeZone => String.t()
+          :files => list(GoogleApi.DoubleClickSearch.V2.Model.ReportFiles.t()) | nil,
+          :id => String.t() | nil,
+          :isReportReady => boolean() | nil,
+          :kind => String.t() | nil,
+          :request => GoogleApi.DoubleClickSearch.V2.Model.ReportRequest.t() | nil,
+          :rowCount => integer() | nil,
+          :rows => list(GoogleApi.DoubleClickSearch.V2.Model.ReportRow.t()) | nil,
+          :statisticsCurrencyCode => String.t() | nil,
+          :statisticsTimeZone => String.t() | nil
         }
 
   field(:files, as: GoogleApi.DoubleClickSearch.V2.Model.ReportFiles, type: :list)

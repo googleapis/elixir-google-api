@@ -75,6 +75,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
         ) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def doubleclicksearch_conversion_get(
         connection,
@@ -158,6 +159,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   @spec doubleclicksearch_conversion_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def doubleclicksearch_conversion_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -216,6 +218,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   @spec doubleclicksearch_conversion_update(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def doubleclicksearch_conversion_update(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -274,6 +277,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   @spec doubleclicksearch_conversion_update_availability(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabilityResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def doubleclicksearch_conversion_update_availability(
         connection,

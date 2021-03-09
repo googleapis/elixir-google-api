@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.SavedColumnList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.DoubleClickSearch.V2.Model.SavedColumn.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.DoubleClickSearch.V2.Model.SavedColumn.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.DoubleClickSearch.V2.Model.SavedColumn, type: :list)

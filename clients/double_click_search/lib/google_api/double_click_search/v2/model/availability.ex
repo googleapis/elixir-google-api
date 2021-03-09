@@ -32,12 +32,12 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Availability do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserId => String.t(),
-          :agencyId => String.t(),
-          :availabilityTimestamp => String.t(),
-          :segmentationId => String.t(),
-          :segmentationName => String.t(),
-          :segmentationType => String.t()
+          :advertiserId => String.t() | nil,
+          :agencyId => String.t() | nil,
+          :availabilityTimestamp => String.t() | nil,
+          :segmentationId => String.t() | nil,
+          :segmentationName => String.t() | nil,
+          :segmentationType => String.t() | nil
         }
 
   field(:advertiserId)

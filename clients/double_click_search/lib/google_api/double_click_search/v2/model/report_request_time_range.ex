@@ -30,10 +30,10 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changedAttributesSinceTimestamp => String.t(),
-          :changedMetricsSinceTimestamp => String.t(),
-          :endDate => String.t(),
-          :startDate => String.t()
+          :changedAttributesSinceTimestamp => String.t() | nil,
+          :changedMetricsSinceTimestamp => String.t() | nil,
+          :endDate => String.t() | nil,
+          :startDate => String.t() | nil
         }
 
   field(:changedAttributesSinceTimestamp)

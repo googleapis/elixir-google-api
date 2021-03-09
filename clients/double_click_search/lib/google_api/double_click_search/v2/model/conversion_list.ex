@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ConversionList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conversion => list(GoogleApi.DoubleClickSearch.V2.Model.Conversion.t()),
-          :kind => String.t()
+          :conversion => list(GoogleApi.DoubleClickSearch.V2.Model.Conversion.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:conversion, as: GoogleApi.DoubleClickSearch.V2.Model.Conversion, type: :list)
