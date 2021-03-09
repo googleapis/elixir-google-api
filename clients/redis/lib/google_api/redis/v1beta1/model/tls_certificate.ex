@@ -31,11 +31,11 @@ defmodule GoogleApi.Redis.V1beta1.Model.TlsCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cert => String.t(),
-          :createTime => DateTime.t(),
-          :expireTime => DateTime.t(),
-          :serialNumber => String.t(),
-          :sha1Fingerprint => String.t()
+          :cert => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :serialNumber => String.t() | nil,
+          :sha1Fingerprint => String.t() | nil
         }
 
   field(:cert)

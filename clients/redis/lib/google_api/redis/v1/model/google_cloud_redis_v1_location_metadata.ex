@@ -27,9 +27,9 @@ defmodule GoogleApi.Redis.V1.Model.GoogleCloudRedisV1LocationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableZones => %{
-            optional(String.t()) => GoogleApi.Redis.V1.Model.GoogleCloudRedisV1ZoneMetadata.t()
-          }
+          :availableZones =>
+            %{optional(String.t()) => GoogleApi.Redis.V1.Model.GoogleCloudRedisV1ZoneMetadata.t()}
+            | nil
         }
 
   field(:availableZones, as: GoogleApi.Redis.V1.Model.GoogleCloudRedisV1ZoneMetadata, type: :map)

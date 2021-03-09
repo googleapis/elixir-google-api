@@ -27,7 +27,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.InstanceAuthString do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authString => String.t()
+          :authString => String.t() | nil
         }
 
   field(:authString)

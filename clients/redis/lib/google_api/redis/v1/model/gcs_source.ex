@@ -27,7 +27,7 @@ defmodule GoogleApi.Redis.V1.Model.GcsSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uri => String.t()
+          :uri => String.t() | nil
         }
 
   field(:uri)

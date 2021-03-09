@@ -27,7 +27,7 @@ defmodule GoogleApi.Redis.V1.Model.OutputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsDestination => GoogleApi.Redis.V1.Model.GcsDestination.t()
+          :gcsDestination => GoogleApi.Redis.V1.Model.GcsDestination.t() | nil
         }
 
   field(:gcsDestination, as: GoogleApi.Redis.V1.Model.GcsDestination)

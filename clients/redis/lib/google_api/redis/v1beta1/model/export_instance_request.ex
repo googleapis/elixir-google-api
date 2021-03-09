@@ -27,7 +27,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.ExportInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputConfig => GoogleApi.Redis.V1beta1.Model.OutputConfig.t()
+          :outputConfig => GoogleApi.Redis.V1beta1.Model.OutputConfig.t() | nil
         }
 
   field(:outputConfig, as: GoogleApi.Redis.V1beta1.Model.OutputConfig)

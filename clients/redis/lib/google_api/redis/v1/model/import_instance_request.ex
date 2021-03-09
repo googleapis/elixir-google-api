@@ -27,7 +27,7 @@ defmodule GoogleApi.Redis.V1.Model.ImportInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inputConfig => GoogleApi.Redis.V1.Model.InputConfig.t()
+          :inputConfig => GoogleApi.Redis.V1.Model.InputConfig.t() | nil
         }
 
   field(:inputConfig, as: GoogleApi.Redis.V1.Model.InputConfig)

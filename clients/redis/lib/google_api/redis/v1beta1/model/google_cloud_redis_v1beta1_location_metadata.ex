@@ -27,10 +27,12 @@ defmodule GoogleApi.Redis.V1beta1.Model.GoogleCloudRedisV1beta1LocationMetadata 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableZones => %{
-            optional(String.t()) =>
-              GoogleApi.Redis.V1beta1.Model.GoogleCloudRedisV1beta1ZoneMetadata.t()
-          }
+          :availableZones =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Redis.V1beta1.Model.GoogleCloudRedisV1beta1ZoneMetadata.t()
+            }
+            | nil
         }
 
   field(:availableZones,

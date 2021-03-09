@@ -27,7 +27,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.FailoverInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataProtectionMode => String.t()
+          :dataProtectionMode => String.t() | nil
         }
 
   field(:dataProtectionMode)
