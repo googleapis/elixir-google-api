@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ValidationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disableProfileValidation => boolean(),
-          :enabledImplementationGuides => list(String.t())
+          :disableProfileValidation => boolean() | nil,
+          :enabledImplementationGuides => list(String.t()) | nil
         }
 
   field(:disableProfileValidation)

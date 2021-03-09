@@ -34,14 +34,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EntityMention do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certaintyAssessment => GoogleApi.HealthCare.V1beta1.Model.Feature.t(),
-          :confidence => float(),
-          :linkedEntities => list(GoogleApi.HealthCare.V1beta1.Model.LinkedEntity.t()),
-          :mentionId => String.t(),
-          :subject => GoogleApi.HealthCare.V1beta1.Model.Feature.t(),
-          :temporalAssessment => GoogleApi.HealthCare.V1beta1.Model.Feature.t(),
-          :text => GoogleApi.HealthCare.V1beta1.Model.TextSpan.t(),
-          :type => String.t()
+          :certaintyAssessment => GoogleApi.HealthCare.V1beta1.Model.Feature.t() | nil,
+          :confidence => float() | nil,
+          :linkedEntities => list(GoogleApi.HealthCare.V1beta1.Model.LinkedEntity.t()) | nil,
+          :mentionId => String.t() | nil,
+          :subject => GoogleApi.HealthCare.V1beta1.Model.Feature.t() | nil,
+          :temporalAssessment => GoogleApi.HealthCare.V1beta1.Model.Feature.t() | nil,
+          :text => GoogleApi.HealthCare.V1beta1.Model.TextSpan.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:certaintyAssessment, as: GoogleApi.HealthCare.V1beta1.Model.Feature)

@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1.Model.FhirFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resources => GoogleApi.HealthCare.V1.Model.Resources.t()
+          :resources => GoogleApi.HealthCare.V1.Model.Resources.t() | nil
         }
 
   field(:resources, as: GoogleApi.HealthCare.V1.Model.Resources)

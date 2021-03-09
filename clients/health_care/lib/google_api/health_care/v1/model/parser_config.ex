@@ -22,17 +22,20 @@ defmodule GoogleApi.HealthCare.V1.Model.ParserConfig do
   ## Attributes
 
   *   `allowNullHeader` (*type:* `boolean()`, *default:* `nil`) - Determines whether messages with no header are allowed.
+  *   `schema` (*type:* `GoogleApi.HealthCare.V1.Model.SchemaPackage.t`, *default:* `nil`) - Schemas used to parse messages in this store, if schematized parsing is desired.
   *   `segmentTerminator` (*type:* `String.t`, *default:* `nil`) - Byte(s) to use as the segment terminator. If this is unset, '\\r' is used as segment terminator, matching the HL7 version 2 specification.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowNullHeader => boolean(),
-          :segmentTerminator => String.t()
+          :allowNullHeader => boolean() | nil,
+          :schema => GoogleApi.HealthCare.V1.Model.SchemaPackage.t() | nil,
+          :segmentTerminator => String.t() | nil
         }
 
   field(:allowNullHeader)
+  field(:schema, as: GoogleApi.HealthCare.V1.Model.SchemaPackage)
   field(:segmentTerminator)
 end
 

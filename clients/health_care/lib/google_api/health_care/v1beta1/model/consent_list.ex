@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ConsentList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consents => list(String.t())
+          :consents => list(String.t()) | nil
         }
 
   field(:consents, type: :list)

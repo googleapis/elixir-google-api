@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1.Model.Resources do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resources => list(String.t())
+          :resources => list(String.t()) | nil
         }
 
   field(:resources, type: :list)

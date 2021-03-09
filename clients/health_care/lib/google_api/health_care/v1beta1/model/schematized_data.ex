@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SchematizedData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t(),
-          :error => String.t()
+          :data => String.t() | nil,
+          :error => String.t() | nil
         }
 
   field(:data)

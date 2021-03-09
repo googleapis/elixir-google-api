@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Entity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityId => String.t(),
-          :preferredTerm => String.t(),
-          :vocabularyCodes => list(String.t())
+          :entityId => String.t() | nil,
+          :preferredTerm => String.t() | nil,
+          :vocabularyCodes => list(String.t()) | nil
         }
 
   field(:entityId)

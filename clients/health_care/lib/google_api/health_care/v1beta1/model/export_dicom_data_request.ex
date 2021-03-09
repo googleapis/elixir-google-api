@@ -30,10 +30,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportDicomDataRequest do
 
   @type t :: %__MODULE__{
           :bigqueryDestination =>
-            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBigQueryDestination.t(),
-          :filterConfig => GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig.t(),
+            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBigQueryDestination.t()
+            | nil,
+          :filterConfig => GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig.t() | nil,
           :gcsDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsDestination.t()
+            | nil
         }
 
   field(:bigqueryDestination,

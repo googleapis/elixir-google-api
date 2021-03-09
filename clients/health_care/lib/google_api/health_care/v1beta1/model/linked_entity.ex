@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.LinkedEntity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entityId => String.t()
+          :entityId => String.t() | nil
         }
 
   field(:entityId)

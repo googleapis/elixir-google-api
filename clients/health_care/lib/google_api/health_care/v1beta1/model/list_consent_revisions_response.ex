@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ListConsentRevisionsResponse do
   @moduledoc """
-  Lists the revisions of the given Consent in reverse chronological order.
+
 
   ## Attributes
 
-  *   `consents` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Consent.t)`, *default:* `nil`) - The returned consent revisions. The maximum number of revisions returned is determined by the value of `page_size` in the ListConsentRevisionsRequest.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
+  *   `consents` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Consent.t)`, *default:* `nil`) - The returned Consent revisions. The maximum number of revisions returned is determined by the value of `page_size` in the ListConsentRevisionsRequest.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consents => list(GoogleApi.HealthCare.V1beta1.Model.Consent.t()),
-          :nextPageToken => String.t()
+          :consents => list(GoogleApi.HealthCare.V1beta1.Model.Consent.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:consents, as: GoogleApi.HealthCare.V1beta1.Model.Consent, type: :list)

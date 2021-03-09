@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ListConsentStoresResponse do
   @moduledoc """
-  Lists the Consent stores in the given dataset.
+
 
   ## Attributes
 
-  *   `consentStores` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.ConsentStore.t)`, *default:* `nil`) - The returned Consent stores. The maximum number of stores returned is determined by the value of page_size in the ListConsentStoresRequest.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
+  *   `consentStores` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.ConsentStore.t)`, *default:* `nil`) - The returned consent stores. The maximum number of stores returned is determined by the value of page_size in the ListConsentStoresRequest.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consentStores => list(GoogleApi.HealthCare.V1beta1.Model.ConsentStore.t()),
-          :nextPageToken => String.t()
+          :consentStores => list(GoogleApi.HealthCare.V1beta1.Model.ConsentStore.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:consentStores, as: GoogleApi.HealthCare.V1beta1.Model.ConsentStore, type: :list)

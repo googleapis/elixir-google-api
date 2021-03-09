@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1DicomGcsDestinati
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mimeType => String.t(),
-          :uriPrefix => String.t()
+          :mimeType => String.t() | nil,
+          :uriPrefix => String.t() | nil
         }
 
   field(:mimeType)

@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GroupOrSegment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :group => GoogleApi.HealthCare.V1beta1.Model.SchemaGroup.t(),
-          :segment => GoogleApi.HealthCare.V1beta1.Model.SchemaSegment.t()
+          :group => GoogleApi.HealthCare.V1beta1.Model.SchemaGroup.t() | nil,
+          :segment => GoogleApi.HealthCare.V1beta1.Model.SchemaSegment.t() | nil
         }
 
   field(:group, as: GoogleApi.HealthCare.V1beta1.Model.SchemaGroup)

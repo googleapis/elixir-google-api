@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EntityMentionRelationship do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => float(),
-          :objectId => String.t(),
-          :subjectId => String.t()
+          :confidence => float() | nil,
+          :objectId => String.t() | nil,
+          :subjectId => String.t() | nil
         }
 
   field(:confidence)

@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SchemaSegment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxOccurs => integer(),
-          :minOccurs => integer(),
-          :type => String.t()
+          :maxOccurs => integer() | nil,
+          :minOccurs => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:maxOccurs)

@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1.Model.PatientId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t(),
-          :value => String.t()
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:type)

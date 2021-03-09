@@ -36,16 +36,16 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultSearchHandlingStrict => boolean(),
-          :disableReferentialIntegrity => boolean(),
-          :disableResourceVersioning => boolean(),
-          :enableUpdateCreate => boolean(),
-          :labels => map(),
-          :name => String.t(),
-          :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t(),
-          :streamConfigs => list(GoogleApi.HealthCare.V1beta1.Model.StreamConfig.t()),
-          :validationConfig => GoogleApi.HealthCare.V1beta1.Model.ValidationConfig.t(),
-          :version => String.t()
+          :defaultSearchHandlingStrict => boolean() | nil,
+          :disableReferentialIntegrity => boolean() | nil,
+          :disableResourceVersioning => boolean() | nil,
+          :enableUpdateCreate => boolean() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t() | nil,
+          :streamConfigs => list(GoogleApi.HealthCare.V1beta1.Model.StreamConfig.t()) | nil,
+          :validationConfig => GoogleApi.HealthCare.V1beta1.Model.ValidationConfig.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:defaultSearchHandlingStrict)

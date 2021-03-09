@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AnalyzeEntitiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documentContent => String.t()
+          :documentContent => String.t() | nil
         }
 
   field(:documentContent)

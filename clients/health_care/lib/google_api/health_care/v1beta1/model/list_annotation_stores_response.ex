@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ListAnnotationStoresResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationStores => list(GoogleApi.HealthCare.V1beta1.Model.AnnotationStore.t()),
-          :nextPageToken => String.t()
+          :annotationStores => list(GoogleApi.HealthCare.V1beta1.Model.AnnotationStore.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:annotationStores, as: GoogleApi.HealthCare.V1beta1.Model.AnnotationStore, type: :list)

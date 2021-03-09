@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1.Model.SchemaConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :recursiveStructureDepth => String.t(),
-          :schemaType => String.t()
+          :recursiveStructureDepth => String.t() | nil,
+          :schemaType => String.t() | nil
         }
 
   field(:recursiveStructureDepth)

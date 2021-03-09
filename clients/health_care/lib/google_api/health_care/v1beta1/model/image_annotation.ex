@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImageAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundingPolys => list(GoogleApi.HealthCare.V1beta1.Model.BoundingPoly.t()),
-          :frameIndex => integer()
+          :boundingPolys => list(GoogleApi.HealthCare.V1beta1.Model.BoundingPoly.t()) | nil,
+          :frameIndex => integer() | nil
         }
 
   field(:boundingPolys, as: GoogleApi.HealthCare.V1beta1.Model.BoundingPoly, type: :list)

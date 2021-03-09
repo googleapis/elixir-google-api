@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldMetadataList => list(GoogleApi.HealthCare.V1beta1.Model.FieldMetadata.t())
+          :fieldMetadataList => list(GoogleApi.HealthCare.V1beta1.Model.FieldMetadata.t()) | nil
         }
 
   field(:fieldMetadataList, as: GoogleApi.HealthCare.V1beta1.Model.FieldMetadata, type: :list)

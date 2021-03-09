@@ -30,10 +30,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBig
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datasetUri => String.t(),
-          :force => boolean(),
-          :schemaConfig => GoogleApi.HealthCare.V1beta1.Model.SchemaConfig.t(),
-          :writeDisposition => String.t()
+          :datasetUri => String.t() | nil,
+          :force => boolean() | nil,
+          :schemaConfig => GoogleApi.HealthCare.V1beta1.Model.SchemaConfig.t() | nil,
+          :writeDisposition => String.t() | nil
         }
 
   field(:datasetUri)

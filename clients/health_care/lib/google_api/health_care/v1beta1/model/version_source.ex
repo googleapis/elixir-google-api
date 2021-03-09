@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.VersionSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mshField => String.t(),
-          :value => String.t()
+          :mshField => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:mshField)

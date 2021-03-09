@@ -32,12 +32,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Annotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationSource => GoogleApi.HealthCare.V1beta1.Model.AnnotationSource.t(),
-          :customData => map(),
-          :imageAnnotation => GoogleApi.HealthCare.V1beta1.Model.ImageAnnotation.t(),
-          :name => String.t(),
-          :resourceAnnotation => GoogleApi.HealthCare.V1beta1.Model.ResourceAnnotation.t(),
-          :textAnnotation => GoogleApi.HealthCare.V1beta1.Model.SensitiveTextAnnotation.t()
+          :annotationSource => GoogleApi.HealthCare.V1beta1.Model.AnnotationSource.t() | nil,
+          :customData => map() | nil,
+          :imageAnnotation => GoogleApi.HealthCare.V1beta1.Model.ImageAnnotation.t() | nil,
+          :name => String.t() | nil,
+          :resourceAnnotation => GoogleApi.HealthCare.V1beta1.Model.ResourceAnnotation.t() | nil,
+          :textAnnotation => GoogleApi.HealthCare.V1beta1.Model.SensitiveTextAnnotation.t() | nil
         }
 
   field(:annotationSource, as: GoogleApi.HealthCare.V1beta1.Model.AnnotationSource)

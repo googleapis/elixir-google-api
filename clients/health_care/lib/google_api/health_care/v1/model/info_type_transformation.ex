@@ -32,13 +32,13 @@ defmodule GoogleApi.HealthCare.V1.Model.InfoTypeTransformation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :characterMaskConfig => GoogleApi.HealthCare.V1.Model.CharacterMaskConfig.t(),
-          :cryptoHashConfig => GoogleApi.HealthCare.V1.Model.CryptoHashConfig.t(),
-          :dateShiftConfig => GoogleApi.HealthCare.V1.Model.DateShiftConfig.t(),
-          :infoTypes => list(String.t()),
-          :redactConfig => GoogleApi.HealthCare.V1.Model.RedactConfig.t(),
+          :characterMaskConfig => GoogleApi.HealthCare.V1.Model.CharacterMaskConfig.t() | nil,
+          :cryptoHashConfig => GoogleApi.HealthCare.V1.Model.CryptoHashConfig.t() | nil,
+          :dateShiftConfig => GoogleApi.HealthCare.V1.Model.DateShiftConfig.t() | nil,
+          :infoTypes => list(String.t()) | nil,
+          :redactConfig => GoogleApi.HealthCare.V1.Model.RedactConfig.t() | nil,
           :replaceWithInfoTypeConfig =>
-            GoogleApi.HealthCare.V1.Model.ReplaceWithInfoTypeConfig.t()
+            GoogleApi.HealthCare.V1.Model.ReplaceWithInfoTypeConfig.t() | nil
         }
 
   field(:characterMaskConfig, as: GoogleApi.HealthCare.V1.Model.CharacterMaskConfig)

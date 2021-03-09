@@ -30,10 +30,10 @@ defmodule GoogleApi.HealthCare.V1.Model.DicomConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filterProfile => String.t(),
-          :keepList => GoogleApi.HealthCare.V1.Model.TagFilterList.t(),
-          :removeList => GoogleApi.HealthCare.V1.Model.TagFilterList.t(),
-          :skipIdRedaction => boolean()
+          :filterProfile => String.t() | nil,
+          :keepList => GoogleApi.HealthCare.V1.Model.TagFilterList.t() | nil,
+          :removeList => GoogleApi.HealthCare.V1.Model.TagFilterList.t() | nil,
+          :skipIdRedaction => boolean() | nil
         }
 
   field(:filterProfile)

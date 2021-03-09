@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :force => boolean(),
-          :tableUri => String.t(),
-          :writeDisposition => String.t()
+          :force => boolean() | nil,
+          :tableUri => String.t() | nil,
+          :writeDisposition => String.t() | nil
         }
 
   field(:force)

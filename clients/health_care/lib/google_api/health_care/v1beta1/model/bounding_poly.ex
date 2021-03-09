@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.BoundingPoly do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :label => String.t(),
-          :vertices => list(GoogleApi.HealthCare.V1beta1.Model.Vertex.t())
+          :label => String.t() | nil,
+          :vertices => list(GoogleApi.HealthCare.V1beta1.Model.Vertex.t()) | nil
         }
 
   field(:label)

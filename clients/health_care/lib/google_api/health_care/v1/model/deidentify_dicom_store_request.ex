@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1.Model.DeidentifyDicomStoreRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.HealthCare.V1.Model.DeidentifyConfig.t(),
-          :destinationStore => String.t(),
-          :filterConfig => GoogleApi.HealthCare.V1.Model.DicomFilterConfig.t()
+          :config => GoogleApi.HealthCare.V1.Model.DeidentifyConfig.t() | nil,
+          :destinationStore => String.t() | nil,
+          :filterConfig => GoogleApi.HealthCare.V1.Model.DicomFilterConfig.t() | nil
         }
 
   field(:config, as: GoogleApi.HealthCare.V1.Model.DeidentifyConfig)

@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImportMessagesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsSource => GoogleApi.HealthCare.V1beta1.Model.GcsSource.t()
+          :gcsSource => GoogleApi.HealthCare.V1beta1.Model.GcsSource.t() | nil
         }
 
   field(:gcsSource, as: GoogleApi.HealthCare.V1beta1.Model.GcsSource)

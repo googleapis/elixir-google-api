@@ -29,9 +29,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportAnnotationsRequest do
 
   @type t :: %__MODULE__{
           :bigqueryDestination =>
-            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationBigQueryDestination.t(),
+            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationBigQueryDestination.t()
+            | nil,
           :gcsDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsDestination.t()
+            | nil
         }
 
   field(:bigqueryDestination,

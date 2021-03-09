@@ -27,7 +27,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SensitiveTextAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :details => %{optional(String.t()) => GoogleApi.HealthCare.V1beta1.Model.Detail.t()}
+          :details =>
+            %{optional(String.t()) => GoogleApi.HealthCare.V1beta1.Model.Detail.t()} | nil
         }
 
   field(:details, as: GoogleApi.HealthCare.V1beta1.Model.Detail, type: :map)

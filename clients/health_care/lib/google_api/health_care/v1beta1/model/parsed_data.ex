@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ParsedData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :segments => list(GoogleApi.HealthCare.V1beta1.Model.Segment.t())
+          :segments => list(GoogleApi.HealthCare.V1beta1.Model.Segment.t()) | nil
         }
 
   field(:segments, as: GoogleApi.HealthCare.V1beta1.Model.Segment, type: :list)

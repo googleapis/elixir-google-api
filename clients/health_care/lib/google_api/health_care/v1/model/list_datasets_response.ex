@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1.Model.ListDatasetsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datasets => list(GoogleApi.HealthCare.V1.Model.Dataset.t()),
-          :nextPageToken => String.t()
+          :datasets => list(GoogleApi.HealthCare.V1.Model.Dataset.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:datasets, as: GoogleApi.HealthCare.V1.Model.Dataset, type: :list)

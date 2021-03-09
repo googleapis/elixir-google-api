@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Image do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsUri => String.t(),
-          :rawBytes => String.t()
+          :gcsUri => String.t() | nil,
+          :rawBytes => String.t() | nil
         }
 
   field(:gcsUri)

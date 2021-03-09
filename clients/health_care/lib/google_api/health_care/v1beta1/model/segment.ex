@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Segment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => map(),
-          :segmentId => String.t(),
-          :setId => String.t()
+          :fields => map() | nil,
+          :segmentId => String.t() | nil,
+          :setId => String.t() | nil
         }
 
   field(:fields, type: :map)

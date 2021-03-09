@@ -21,19 +21,19 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Signature do
 
   ## Attributes
 
-  *   `image` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Image.t`, *default:* `nil`) - An image of the user's signature.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Metadata associated with the user's signature. For example, the user's name or the user's title.
-  *   `signatureTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the signature.
-  *   `userId` (*type:* `String.t`, *default:* `nil`) - User's UUID provided by the client.
+  *   `image` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Image.t`, *default:* `nil`) - Optional. An image of the user's signature.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. Metadata associated with the user's signature. For example, the user's name or the user's title.
+  *   `signatureTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Timestamp of the signature.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - Required. User's UUID provided by the client.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :image => GoogleApi.HealthCare.V1beta1.Model.Image.t(),
-          :metadata => map(),
-          :signatureTime => DateTime.t(),
-          :userId => String.t()
+          :image => GoogleApi.HealthCare.V1beta1.Model.Image.t() | nil,
+          :metadata => map() | nil,
+          :signatureTime => DateTime.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:image, as: GoogleApi.HealthCare.V1beta1.Model.Image)

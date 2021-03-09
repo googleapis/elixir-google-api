@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1.Model.DicomFilterConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourcePathsGcsUri => String.t()
+          :resourcePathsGcsUri => String.t() | nil
         }
 
   field(:resourcePathsGcsUri)

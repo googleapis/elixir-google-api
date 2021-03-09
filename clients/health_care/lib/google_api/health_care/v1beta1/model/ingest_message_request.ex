@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.IngestMessageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :message => GoogleApi.HealthCare.V1beta1.Model.Message.t()
+          :message => GoogleApi.HealthCare.V1beta1.Model.Message.t() | nil
         }
 
   field(:message, as: GoogleApi.HealthCare.V1beta1.Model.Message)

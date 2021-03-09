@@ -30,13 +30,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DicomStore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :name => String.t(),
-          :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t(),
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t() | nil,
           :streamConfigs =>
             list(
               GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomStreamConfig.t()
             )
+            | nil
         }
 
   field(:labels, type: :map)

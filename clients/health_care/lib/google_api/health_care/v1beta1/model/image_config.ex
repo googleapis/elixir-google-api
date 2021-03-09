@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImageConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :textRedactionMode => String.t()
+          :textRedactionMode => String.t() | nil
         }
 
   field(:textRedactionMode)

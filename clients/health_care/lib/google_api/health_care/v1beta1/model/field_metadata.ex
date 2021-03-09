@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FieldMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :paths => list(String.t())
+          :action => String.t() | nil,
+          :paths => list(String.t()) | nil
         }
 
   field(:action)

@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Vertex do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :x => number(),
-          :y => number()
+          :x => number() | nil,
+          :y => number() | nil
         }
 
   field(:x)

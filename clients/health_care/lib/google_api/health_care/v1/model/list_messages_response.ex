@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1.Model.ListMessagesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hl7V2Messages => list(GoogleApi.HealthCare.V1.Model.Message.t()),
-          :nextPageToken => String.t()
+          :hl7V2Messages => list(GoogleApi.HealthCare.V1.Model.Message.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:hl7V2Messages, as: GoogleApi.HealthCare.V1.Model.Message, type: :list)

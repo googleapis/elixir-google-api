@@ -17,21 +17,21 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ActivateConsentRequest do
   @moduledoc """
-  Activates the latest revision of the specified Consent by committing a new revision with `state` updated to `ACTIVE`. If the latest revision of the given consent is in the `ACTIVE` state, no new revision is committed.
+  Activates the latest revision of the specified Consent by committing a new revision with `state` updated to `ACTIVE`. If the latest revision of the given Consent is in the `ACTIVE` state, no new revision is committed. A FAILED_PRECONDITION error occurs if the latest revision of the given consent is in the `REJECTED` or `REVOKED` state.
 
   ## Attributes
 
-  *   `consentArtifact` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the consent artifact that contains proof of the end user's consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`. If the draft consent had a consent artifact, this consent artifact overwrites it.
-  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp in UTC of when this consent is considered expired.
-  *   `ttl` (*type:* `String.t`, *default:* `nil`) - The time to live for this consent from when it is marked as active.
+  *   `consentArtifact` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the Consent artifact that contains documentation of the user's consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`. If the draft Consent had a Consent artifact, this Consent artifact overwrites it.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp in UTC of when this Consent is considered expired.
+  *   `ttl` (*type:* `String.t`, *default:* `nil`) - The time to live for this Consent from when it is marked as active.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consentArtifact => String.t(),
-          :expireTime => DateTime.t(),
-          :ttl => String.t()
+          :consentArtifact => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :ttl => String.t() | nil
         }
 
   field(:consentArtifact)

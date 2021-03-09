@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => list(GoogleApi.HealthCare.V1beta1.Model.Type.t()),
-          :version => list(GoogleApi.HealthCare.V1beta1.Model.VersionSource.t())
+          :type => list(GoogleApi.HealthCare.V1beta1.Model.Type.t()) | nil,
+          :version => list(GoogleApi.HealthCare.V1beta1.Model.VersionSource.t()) | nil
         }
 
   field(:type, as: GoogleApi.HealthCare.V1beta1.Model.Type, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1.Model.ProgressCounter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :failure => String.t(),
-          :pending => String.t(),
-          :success => String.t()
+          :failure => String.t() | nil,
+          :pending => String.t() | nil,
+          :success => String.t() | nil
         }
 
   field(:failure)

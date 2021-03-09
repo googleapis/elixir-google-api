@@ -27,7 +27,8 @@ defmodule GoogleApi.HealthCare.V1.Model.ImportDicomDataRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsSource => GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1DicomGcsSource.t()
+          :gcsSource =>
+            GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1DicomGcsSource.t() | nil
         }
 
   field(:gcsSource, as: GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1DicomGcsSource)

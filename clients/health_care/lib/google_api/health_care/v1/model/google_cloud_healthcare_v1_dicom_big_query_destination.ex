@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1DicomBigQueryDest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :force => boolean(),
-          :tableUri => String.t()
+          :force => boolean() | nil,
+          :tableUri => String.t() | nil
         }
 
   field(:force)

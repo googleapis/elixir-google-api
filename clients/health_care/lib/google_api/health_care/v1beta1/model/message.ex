@@ -36,16 +36,16 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :data => String.t(),
-          :labels => map(),
-          :messageType => String.t(),
-          :name => String.t(),
-          :parsedData => GoogleApi.HealthCare.V1beta1.Model.ParsedData.t(),
-          :patientIds => list(GoogleApi.HealthCare.V1beta1.Model.PatientId.t()),
-          :schematizedData => GoogleApi.HealthCare.V1beta1.Model.SchematizedData.t(),
-          :sendFacility => String.t(),
-          :sendTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :data => String.t() | nil,
+          :labels => map() | nil,
+          :messageType => String.t() | nil,
+          :name => String.t() | nil,
+          :parsedData => GoogleApi.HealthCare.V1beta1.Model.ParsedData.t() | nil,
+          :patientIds => list(GoogleApi.HealthCare.V1beta1.Model.PatientId.t()) | nil,
+          :schematizedData => GoogleApi.HealthCare.V1beta1.Model.SchematizedData.t() | nil,
+          :sendFacility => String.t() | nil,
+          :sendTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
