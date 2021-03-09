@@ -30,10 +30,10 @@ defmodule GoogleApi.CivicInfo.V2.Model.Election do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :electionDay => String.t(),
-          :id => String.t(),
-          :name => String.t(),
-          :ocdDivisionId => String.t()
+          :electionDay => String.t() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :ocdDivisionId => String.t() | nil
         }
 
   field(:electionDay)

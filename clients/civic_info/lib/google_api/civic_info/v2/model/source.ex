@@ -28,8 +28,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.Source do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :official => boolean()
+          :name => String.t() | nil,
+          :official => boolean() | nil
         }
 
   field(:name)

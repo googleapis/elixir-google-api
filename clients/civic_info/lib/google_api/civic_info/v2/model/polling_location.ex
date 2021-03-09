@@ -36,16 +36,16 @@ defmodule GoogleApi.CivicInfo.V2.Model.PollingLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t(),
-          :endDate => String.t(),
-          :latitude => float(),
-          :longitude => float(),
-          :name => String.t(),
-          :notes => String.t(),
-          :pollingHours => String.t(),
-          :sources => list(GoogleApi.CivicInfo.V2.Model.Source.t()),
-          :startDate => String.t(),
-          :voterServices => String.t()
+          :address => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t() | nil,
+          :endDate => String.t() | nil,
+          :latitude => float() | nil,
+          :longitude => float() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
+          :pollingHours => String.t() | nil,
+          :sources => list(GoogleApi.CivicInfo.V2.Model.Source.t()) | nil,
+          :startDate => String.t() | nil,
+          :voterServices => String.t() | nil
         }
 
   field(:address, as: GoogleApi.CivicInfo.V2.Model.SimpleAddressType)

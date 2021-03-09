@@ -29,11 +29,10 @@ defmodule GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :divisions => %{
-            optional(String.t()) => GoogleApi.CivicInfo.V2.Model.GeographicDivision.t()
-          },
-          :offices => list(GoogleApi.CivicInfo.V2.Model.Office.t()),
-          :officials => list(GoogleApi.CivicInfo.V2.Model.Official.t())
+          :divisions =>
+            %{optional(String.t()) => GoogleApi.CivicInfo.V2.Model.GeographicDivision.t()} | nil,
+          :offices => list(GoogleApi.CivicInfo.V2.Model.Office.t()) | nil,
+          :officials => list(GoogleApi.CivicInfo.V2.Model.Official.t()) | nil
         }
 
   field(:divisions, as: GoogleApi.CivicInfo.V2.Model.GeographicDivision, type: :map)

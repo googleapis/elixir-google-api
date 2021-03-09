@@ -29,9 +29,9 @@ defmodule GoogleApi.CivicInfo.V2.Model.ElectoralDistrict do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t(),
-          :scope => String.t()
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :scope => String.t() | nil
         }
 
   field(:id)

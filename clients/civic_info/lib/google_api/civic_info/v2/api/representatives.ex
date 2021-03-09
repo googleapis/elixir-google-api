@@ -61,6 +61,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
         ) ::
           {:ok, GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def civicinfo_representatives_representative_info_by_address(
         connection,
@@ -136,6 +137,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
         ) ::
           {:ok, GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def civicinfo_representatives_representative_info_by_division(
         connection,

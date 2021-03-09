@@ -37,17 +37,17 @@ defmodule GoogleApi.CivicInfo.V2.Model.VoterInfoResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contests => list(GoogleApi.CivicInfo.V2.Model.Contest.t()),
-          :dropOffLocations => list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t()),
-          :earlyVoteSites => list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t()),
-          :election => GoogleApi.CivicInfo.V2.Model.Election.t(),
-          :kind => String.t(),
-          :mailOnly => boolean(),
-          :normalizedInput => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t(),
-          :otherElections => list(GoogleApi.CivicInfo.V2.Model.Election.t()),
-          :pollingLocations => list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t()),
-          :precinctId => String.t(),
-          :state => list(GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t())
+          :contests => list(GoogleApi.CivicInfo.V2.Model.Contest.t()) | nil,
+          :dropOffLocations => list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t()) | nil,
+          :earlyVoteSites => list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t()) | nil,
+          :election => GoogleApi.CivicInfo.V2.Model.Election.t() | nil,
+          :kind => String.t() | nil,
+          :mailOnly => boolean() | nil,
+          :normalizedInput => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t() | nil,
+          :otherElections => list(GoogleApi.CivicInfo.V2.Model.Election.t()) | nil,
+          :pollingLocations => list(GoogleApi.CivicInfo.V2.Model.PollingLocation.t()) | nil,
+          :precinctId => String.t() | nil,
+          :state => list(GoogleApi.CivicInfo.V2.Model.AdministrationRegion.t()) | nil
         }
 
   field(:contests, as: GoogleApi.CivicInfo.V2.Model.Contest, type: :list)

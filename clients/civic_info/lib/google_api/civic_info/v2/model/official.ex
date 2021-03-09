@@ -34,14 +34,14 @@ defmodule GoogleApi.CivicInfo.V2.Model.Official do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => list(GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t()),
-          :channels => list(GoogleApi.CivicInfo.V2.Model.Channel.t()),
-          :emails => list(String.t()),
-          :name => String.t(),
-          :party => String.t(),
-          :phones => list(String.t()),
-          :photoUrl => String.t(),
-          :urls => list(String.t())
+          :address => list(GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t()) | nil,
+          :channels => list(GoogleApi.CivicInfo.V2.Model.Channel.t()) | nil,
+          :emails => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :party => String.t() | nil,
+          :phones => list(String.t()) | nil,
+          :photoUrl => String.t() | nil,
+          :urls => list(String.t()) | nil
         }
 
   field(:address, as: GoogleApi.CivicInfo.V2.Model.SimpleAddressType, type: :list)

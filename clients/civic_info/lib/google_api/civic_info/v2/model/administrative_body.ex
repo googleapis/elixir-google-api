@@ -41,21 +41,21 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :absenteeVotingInfoUrl => String.t(),
-          :ballotInfoUrl => String.t(),
-          :correspondenceAddress => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t(),
-          :electionInfoUrl => String.t(),
-          :electionNoticeText => String.t(),
-          :electionNoticeUrl => String.t(),
-          :electionOfficials => list(GoogleApi.CivicInfo.V2.Model.ElectionOfficial.t()),
-          :electionRegistrationConfirmationUrl => String.t(),
-          :electionRegistrationUrl => String.t(),
-          :electionRulesUrl => String.t(),
-          :hoursOfOperation => String.t(),
-          :name => String.t(),
-          :physicalAddress => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t(),
-          :voter_services => list(String.t()),
-          :votingLocationFinderUrl => String.t()
+          :absenteeVotingInfoUrl => String.t() | nil,
+          :ballotInfoUrl => String.t() | nil,
+          :correspondenceAddress => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t() | nil,
+          :electionInfoUrl => String.t() | nil,
+          :electionNoticeText => String.t() | nil,
+          :electionNoticeUrl => String.t() | nil,
+          :electionOfficials => list(GoogleApi.CivicInfo.V2.Model.ElectionOfficial.t()) | nil,
+          :electionRegistrationConfirmationUrl => String.t() | nil,
+          :electionRegistrationUrl => String.t() | nil,
+          :electionRulesUrl => String.t() | nil,
+          :hoursOfOperation => String.t() | nil,
+          :name => String.t() | nil,
+          :physicalAddress => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t() | nil,
+          :voter_services => list(String.t()) | nil,
+          :votingLocationFinderUrl => String.t() | nil
         }
 
   field(:absenteeVotingInfoUrl)

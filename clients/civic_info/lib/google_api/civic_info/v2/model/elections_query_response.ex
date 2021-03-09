@@ -28,8 +28,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elections => list(GoogleApi.CivicInfo.V2.Model.Election.t()),
-          :kind => String.t()
+          :elections => list(GoogleApi.CivicInfo.V2.Model.Election.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:elections, as: GoogleApi.CivicInfo.V2.Model.Election, type: :list)

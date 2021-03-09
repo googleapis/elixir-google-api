@@ -31,11 +31,11 @@ defmodule GoogleApi.CivicInfo.V2.Model.ElectionOfficial do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emailAddress => String.t(),
-          :faxNumber => String.t(),
-          :name => String.t(),
-          :officePhoneNumber => String.t(),
-          :title => String.t()
+          :emailAddress => String.t() | nil,
+          :faxNumber => String.t() | nil,
+          :name => String.t() | nil,
+          :officePhoneNumber => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:emailAddress)

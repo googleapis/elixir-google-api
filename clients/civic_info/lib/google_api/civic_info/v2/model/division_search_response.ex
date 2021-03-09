@@ -28,8 +28,8 @@ defmodule GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :results => list(GoogleApi.CivicInfo.V2.Model.DivisionSearchResult.t())
+          :kind => String.t() | nil,
+          :results => list(GoogleApi.CivicInfo.V2.Model.DivisionSearchResult.t()) | nil
         }
 
   field(:kind)
