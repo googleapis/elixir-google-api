@@ -30,10 +30,10 @@ defmodule GoogleApi.OSLogin.V1.Model.SshPublicKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expirationTimeUsec => String.t(),
-          :fingerprint => String.t(),
-          :key => String.t(),
-          :name => String.t()
+          :expirationTimeUsec => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :key => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:expirationTimeUsec)

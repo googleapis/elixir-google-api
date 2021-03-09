@@ -28,8 +28,8 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.ImportSshPublicKeyResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :details => String.t(),
-          :loginProfile => GoogleApi.OSLogin.V1alpha.Model.LoginProfile.t()
+          :details => String.t() | nil,
+          :loginProfile => GoogleApi.OSLogin.V1alpha.Model.LoginProfile.t() | nil
         }
 
   field(:details)
