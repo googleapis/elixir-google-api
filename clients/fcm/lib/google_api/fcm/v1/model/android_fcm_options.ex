@@ -27,7 +27,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidFcmOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyticsLabel => String.t()
+          :analyticsLabel => String.t() | nil
         }
 
   field(:analyticsLabel)

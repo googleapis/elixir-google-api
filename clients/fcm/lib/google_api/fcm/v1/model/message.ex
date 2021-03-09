@@ -36,16 +36,16 @@ defmodule GoogleApi.FCM.V1.Model.Message do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :android => GoogleApi.FCM.V1.Model.AndroidConfig.t(),
-          :apns => GoogleApi.FCM.V1.Model.ApnsConfig.t(),
-          :condition => String.t(),
-          :data => map(),
-          :fcmOptions => GoogleApi.FCM.V1.Model.FcmOptions.t(),
-          :name => String.t(),
-          :notification => GoogleApi.FCM.V1.Model.Notification.t(),
-          :token => String.t(),
-          :topic => String.t(),
-          :webpush => GoogleApi.FCM.V1.Model.WebpushConfig.t()
+          :android => GoogleApi.FCM.V1.Model.AndroidConfig.t() | nil,
+          :apns => GoogleApi.FCM.V1.Model.ApnsConfig.t() | nil,
+          :condition => String.t() | nil,
+          :data => map() | nil,
+          :fcmOptions => GoogleApi.FCM.V1.Model.FcmOptions.t() | nil,
+          :name => String.t() | nil,
+          :notification => GoogleApi.FCM.V1.Model.Notification.t() | nil,
+          :token => String.t() | nil,
+          :topic => String.t() | nil,
+          :webpush => GoogleApi.FCM.V1.Model.WebpushConfig.t() | nil
         }
 
   field(:android, as: GoogleApi.FCM.V1.Model.AndroidConfig)

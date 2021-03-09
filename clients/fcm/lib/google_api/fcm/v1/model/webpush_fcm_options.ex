@@ -28,8 +28,8 @@ defmodule GoogleApi.FCM.V1.Model.WebpushFcmOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyticsLabel => String.t(),
-          :link => String.t()
+          :analyticsLabel => String.t() | nil,
+          :link => String.t() | nil
         }
 
   field(:analyticsLabel)

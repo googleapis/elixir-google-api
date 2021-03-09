@@ -30,10 +30,10 @@ defmodule GoogleApi.FCM.V1.Model.WebpushConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => map(),
-          :fcmOptions => GoogleApi.FCM.V1.Model.WebpushFcmOptions.t(),
-          :headers => map(),
-          :notification => map()
+          :data => map() | nil,
+          :fcmOptions => GoogleApi.FCM.V1.Model.WebpushFcmOptions.t() | nil,
+          :headers => map() | nil,
+          :notification => map() | nil
         }
 
   field(:data, type: :map)

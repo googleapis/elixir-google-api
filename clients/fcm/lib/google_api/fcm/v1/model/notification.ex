@@ -29,9 +29,9 @@ defmodule GoogleApi.FCM.V1.Model.Notification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => String.t(),
-          :image => String.t(),
-          :title => String.t()
+          :body => String.t() | nil,
+          :image => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:body)

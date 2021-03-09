@@ -34,14 +34,14 @@ defmodule GoogleApi.FCM.V1.Model.AndroidConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :collapseKey => String.t(),
-          :data => map(),
-          :directBootOk => boolean(),
-          :fcmOptions => GoogleApi.FCM.V1.Model.AndroidFcmOptions.t(),
-          :notification => GoogleApi.FCM.V1.Model.AndroidNotification.t(),
-          :priority => String.t(),
-          :restrictedPackageName => String.t(),
-          :ttl => String.t()
+          :collapseKey => String.t() | nil,
+          :data => map() | nil,
+          :directBootOk => boolean() | nil,
+          :fcmOptions => GoogleApi.FCM.V1.Model.AndroidFcmOptions.t() | nil,
+          :notification => GoogleApi.FCM.V1.Model.AndroidNotification.t() | nil,
+          :priority => String.t() | nil,
+          :restrictedPackageName => String.t() | nil,
+          :ttl => String.t() | nil
         }
 
   field(:collapseKey)
