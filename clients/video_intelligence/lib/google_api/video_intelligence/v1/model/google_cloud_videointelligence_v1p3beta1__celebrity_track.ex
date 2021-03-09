@@ -31,9 +31,11 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
           :celebrities =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_RecognizedCelebrity.t()
-            ),
+            )
+            | nil,
           :faceTrack =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Track.t()
+            | nil
         }
 
   field(:celebrities,

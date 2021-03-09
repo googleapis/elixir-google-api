@@ -28,8 +28,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Te
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageHints => list(String.t()),
-          :model => String.t()
+          :languageHints => list(String.t()) | nil,
+          :model => String.t() | nil
         }
 
   field(:languageHints, type: :list)

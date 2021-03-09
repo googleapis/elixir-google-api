@@ -33,14 +33,17 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Ti
           :attributes =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_DetectedAttribute.t()
-            ),
+            )
+            | nil,
           :landmarks =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_DetectedLandmark.t()
-            ),
+            )
+            | nil,
           :normalizedBoundingBox =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_NormalizedBoundingBox.t(),
-          :timeOffset => String.t()
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_NormalizedBoundingBox.t()
+            | nil,
+          :timeOffset => String.t() | nil
         }
 
   field(:attributes,

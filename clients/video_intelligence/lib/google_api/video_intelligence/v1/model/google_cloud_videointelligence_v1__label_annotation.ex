@@ -32,18 +32,21 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_La
 
   @type t :: %__MODULE__{
           :categoryEntities =>
-            list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Entity.t()),
+            list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Entity.t())
+            | nil,
           :entity =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Entity.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Entity.t() | nil,
           :frames =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelFrame.t()
-            ),
+            )
+            | nil,
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelSegment.t()
-            ),
-          :version => String.t()
+            )
+            | nil,
+          :version => String.t() | nil
         }
 
   field(:categoryEntities,

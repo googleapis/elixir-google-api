@@ -36,25 +36,34 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Vi
 
   @type t :: %__MODULE__{
           :explicitContentDetectionConfig =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ExplicitContentDetectionConfig.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ExplicitContentDetectionConfig.t()
+            | nil,
           :faceDetectionConfig =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_FaceDetectionConfig.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_FaceDetectionConfig.t()
+            | nil,
           :labelDetectionConfig =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelDetectionConfig.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelDetectionConfig.t()
+            | nil,
           :objectTrackingConfig =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ObjectTrackingConfig.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ObjectTrackingConfig.t()
+            | nil,
           :personDetectionConfig =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_PersonDetectionConfig.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_PersonDetectionConfig.t()
+            | nil,
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_VideoSegment.t()
-            ),
+            )
+            | nil,
           :shotChangeDetectionConfig =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ShotChangeDetectionConfig.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ShotChangeDetectionConfig.t()
+            | nil,
           :speechTranscriptionConfig =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_SpeechTranscriptionConfig.t(),
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_SpeechTranscriptionConfig.t()
+            | nil,
           :textDetectionConfig =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_TextDetectionConfig.t()
+            | nil
         }
 
   field(:explicitContentDetectionConfig,

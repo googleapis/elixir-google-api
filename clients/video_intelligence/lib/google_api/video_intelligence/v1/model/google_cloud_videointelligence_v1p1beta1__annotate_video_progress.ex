@@ -31,6 +31,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress.t()
             )
+            | nil
         }
 
   field(:annotationProgress,

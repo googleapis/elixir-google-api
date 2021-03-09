@@ -35,18 +35,19 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Sp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioTracks => list(integer()),
-          :diarizationSpeakerCount => integer(),
-          :enableAutomaticPunctuation => boolean(),
-          :enableSpeakerDiarization => boolean(),
-          :enableWordConfidence => boolean(),
-          :filterProfanity => boolean(),
-          :languageCode => String.t(),
-          :maxAlternatives => integer(),
+          :audioTracks => list(integer()) | nil,
+          :diarizationSpeakerCount => integer() | nil,
+          :enableAutomaticPunctuation => boolean() | nil,
+          :enableSpeakerDiarization => boolean() | nil,
+          :enableWordConfidence => boolean() | nil,
+          :filterProfanity => boolean() | nil,
+          :languageCode => String.t() | nil,
+          :maxAlternatives => integer() | nil,
           :speechContexts =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_SpeechContext.t()
             )
+            | nil
         }
 
   field(:audioTracks, type: :list)

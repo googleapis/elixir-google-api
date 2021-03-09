@@ -29,10 +29,11 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => number(),
-          :name => String.t(),
+          :confidence => number() | nil,
+          :name => String.t() | nil,
           :point =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_NormalizedVertex.t()
+            | nil
         }
 
   field(:confidence)

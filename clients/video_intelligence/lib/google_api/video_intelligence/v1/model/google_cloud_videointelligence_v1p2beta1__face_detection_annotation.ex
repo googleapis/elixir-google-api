@@ -29,12 +29,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :thumbnail => String.t(),
+          :thumbnail => String.t() | nil,
           :tracks =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_Track.t()
-            ),
-          :version => String.t()
+            )
+            | nil,
+          :version => String.t() | nil
         }
 
   field(:thumbnail)

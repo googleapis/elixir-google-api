@@ -30,9 +30,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   @type t :: %__MODULE__{
           :annotationResults =>
-            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults.t(),
-          :annotationResultsUri => String.t(),
-          :error => GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t()
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults.t()
+            | nil,
+          :annotationResultsUri => String.t() | nil,
+          :error => GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t() | nil
         }
 
   field(:annotationResults,
