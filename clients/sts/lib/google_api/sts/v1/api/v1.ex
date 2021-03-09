@@ -54,6 +54,7 @@ defmodule GoogleApi.STS.V1.Api.V1 do
   @spec sts_token(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.STS.V1.Model.GoogleIdentityStsV1ExchangeTokenResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sts_token(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
