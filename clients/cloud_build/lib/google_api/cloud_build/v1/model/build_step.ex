@@ -39,19 +39,19 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildStep do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :args => list(String.t()),
-          :dir => String.t(),
-          :entrypoint => String.t(),
-          :env => list(String.t()),
-          :id => String.t(),
-          :name => String.t(),
-          :pullTiming => GoogleApi.CloudBuild.V1.Model.TimeSpan.t(),
-          :secretEnv => list(String.t()),
-          :status => String.t(),
-          :timeout => String.t(),
-          :timing => GoogleApi.CloudBuild.V1.Model.TimeSpan.t(),
-          :volumes => list(GoogleApi.CloudBuild.V1.Model.Volume.t()),
-          :waitFor => list(String.t())
+          :args => list(String.t()) | nil,
+          :dir => String.t() | nil,
+          :entrypoint => String.t() | nil,
+          :env => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :pullTiming => GoogleApi.CloudBuild.V1.Model.TimeSpan.t() | nil,
+          :secretEnv => list(String.t()) | nil,
+          :status => String.t() | nil,
+          :timeout => String.t() | nil,
+          :timing => GoogleApi.CloudBuild.V1.Model.TimeSpan.t() | nil,
+          :volumes => list(GoogleApi.CloudBuild.V1.Model.Volume.t()) | nil,
+          :waitFor => list(String.t()) | nil
         }
 
   field(:args, type: :list)

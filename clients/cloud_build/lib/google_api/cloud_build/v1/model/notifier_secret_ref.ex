@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.NotifierSecretRef do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :secretRef => String.t()
+          :secretRef => String.t() | nil
         }
 
   field(:secretRef)

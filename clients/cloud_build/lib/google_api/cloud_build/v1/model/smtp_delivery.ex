@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudBuild.V1.Model.SMTPDelivery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fromAddress => String.t(),
-          :password => GoogleApi.CloudBuild.V1.Model.NotifierSecretRef.t(),
-          :port => String.t(),
-          :recipientAddresses => list(String.t()),
-          :senderAddress => String.t(),
-          :server => String.t()
+          :fromAddress => String.t() | nil,
+          :password => GoogleApi.CloudBuild.V1.Model.NotifierSecretRef.t() | nil,
+          :port => String.t() | nil,
+          :recipientAddresses => list(String.t()) | nil,
+          :senderAddress => String.t() | nil,
+          :server => String.t() | nil
         }
 
   field(:fromAddress)

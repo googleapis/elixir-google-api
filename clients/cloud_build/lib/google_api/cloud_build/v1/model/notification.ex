@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudBuild.V1.Model.Notification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => String.t(),
-          :httpDelivery => GoogleApi.CloudBuild.V1.Model.HTTPDelivery.t(),
-          :slackDelivery => GoogleApi.CloudBuild.V1.Model.SlackDelivery.t(),
-          :smtpDelivery => GoogleApi.CloudBuild.V1.Model.SMTPDelivery.t(),
-          :structDelivery => map()
+          :filter => String.t() | nil,
+          :httpDelivery => GoogleApi.CloudBuild.V1.Model.HTTPDelivery.t() | nil,
+          :slackDelivery => GoogleApi.CloudBuild.V1.Model.SlackDelivery.t() | nil,
+          :smtpDelivery => GoogleApi.CloudBuild.V1.Model.SMTPDelivery.t() | nil,
+          :structDelivery => map() | nil
         }
 
   field(:filter)

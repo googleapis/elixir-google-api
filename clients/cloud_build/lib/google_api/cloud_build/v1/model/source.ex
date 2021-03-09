@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Source do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :repoSource => GoogleApi.CloudBuild.V1.Model.RepoSource.t(),
-          :storageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t()
+          :repoSource => GoogleApi.CloudBuild.V1.Model.RepoSource.t() | nil,
+          :storageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t() | nil
         }
 
   field(:repoSource, as: GoogleApi.CloudBuild.V1.Model.RepoSource)

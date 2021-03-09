@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.HTTPDelivery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uri => String.t()
+          :uri => String.t() | nil
         }
 
   field(:uri)

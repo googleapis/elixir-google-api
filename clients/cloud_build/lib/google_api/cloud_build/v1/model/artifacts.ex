@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Artifacts do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :images => list(String.t()),
-          :objects => GoogleApi.CloudBuild.V1.Model.ArtifactObjects.t()
+          :images => list(String.t()) | nil,
+          :objects => GoogleApi.CloudBuild.V1.Model.ArtifactObjects.t() | nil
         }
 
   field(:images, type: :list)

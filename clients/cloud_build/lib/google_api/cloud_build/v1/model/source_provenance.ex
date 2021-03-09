@@ -29,9 +29,10 @@ defmodule GoogleApi.CloudBuild.V1.Model.SourceProvenance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileHashes => %{optional(String.t()) => GoogleApi.CloudBuild.V1.Model.FileHashes.t()},
-          :resolvedRepoSource => GoogleApi.CloudBuild.V1.Model.RepoSource.t(),
-          :resolvedStorageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t()
+          :fileHashes =>
+            %{optional(String.t()) => GoogleApi.CloudBuild.V1.Model.FileHashes.t()} | nil,
+          :resolvedRepoSource => GoogleApi.CloudBuild.V1.Model.RepoSource.t() | nil,
+          :resolvedStorageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t() | nil
         }
 
   field(:fileHashes, as: GoogleApi.CloudBuild.V1.Model.FileHashes, type: :map)

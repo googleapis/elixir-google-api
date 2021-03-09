@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.PullRequestFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :branch => String.t(),
-          :commentControl => String.t(),
-          :invertRegex => boolean()
+          :branch => String.t() | nil,
+          :commentControl => String.t() | nil,
+          :invertRegex => boolean() | nil
         }
 
   field(:branch)

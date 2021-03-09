@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.StorageSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucket => String.t(),
-          :generation => String.t(),
-          :object => String.t()
+          :bucket => String.t() | nil,
+          :generation => String.t() | nil,
+          :object => String.t() | nil
         }
 
   field(:bucket)

@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :artifactManifest => String.t(),
-          :artifactTiming => GoogleApi.CloudBuild.V1.Model.TimeSpan.t(),
-          :buildStepImages => list(String.t()),
-          :buildStepOutputs => list(String.t()),
-          :images => list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t()),
-          :numArtifacts => String.t()
+          :artifactManifest => String.t() | nil,
+          :artifactTiming => GoogleApi.CloudBuild.V1.Model.TimeSpan.t() | nil,
+          :buildStepImages => list(String.t()) | nil,
+          :buildStepOutputs => list(String.t()) | nil,
+          :images => list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t()) | nil,
+          :numArtifacts => String.t() | nil
         }
 
   field(:artifactManifest)

@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.PushFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :branch => String.t(),
-          :invertRegex => boolean(),
-          :tag => String.t()
+          :branch => String.t() | nil,
+          :invertRegex => boolean() | nil,
+          :tag => String.t() | nil
         }
 
   field(:branch)

@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudBuild.V1.Model.Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :error => GoogleApi.CloudBuild.V1.Model.Status.t(),
-          :metadata => map(),
-          :name => String.t(),
-          :response => map()
+          :done => boolean() | nil,
+          :error => GoogleApi.CloudBuild.V1.Model.Status.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :response => map() | nil
         }
 
   field(:done)

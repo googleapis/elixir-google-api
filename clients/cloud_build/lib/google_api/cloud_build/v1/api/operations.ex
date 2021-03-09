@@ -53,7 +53,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec cloudbuild_operations_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudBuild.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.CloudBuild.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def cloudbuild_operations_cancel(connection, operations_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -113,6 +116,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Operations do
   @spec cloudbuild_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudbuild_operations_get(connection, operations_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

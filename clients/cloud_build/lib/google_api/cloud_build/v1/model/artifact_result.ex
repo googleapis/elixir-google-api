@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.ArtifactResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileHash => list(GoogleApi.CloudBuild.V1.Model.FileHashes.t()),
-          :location => String.t()
+          :fileHash => list(GoogleApi.CloudBuild.V1.Model.FileHashes.t()) | nil,
+          :location => String.t() | nil
         }
 
   field(:fileHash, as: GoogleApi.CloudBuild.V1.Model.FileHashes, type: :list)

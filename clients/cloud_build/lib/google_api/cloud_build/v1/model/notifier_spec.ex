@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.NotifierSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notification => GoogleApi.CloudBuild.V1.Model.Notification.t(),
-          :secrets => list(GoogleApi.CloudBuild.V1.Model.NotifierSecret.t())
+          :notification => GoogleApi.CloudBuild.V1.Model.Notification.t() | nil,
+          :secrets => list(GoogleApi.CloudBuild.V1.Model.NotifierSecret.t()) | nil
         }
 
   field(:notification, as: GoogleApi.CloudBuild.V1.Model.Notification)

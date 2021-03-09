@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.ArtifactObjects do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => String.t(),
-          :paths => list(String.t()),
-          :timing => GoogleApi.CloudBuild.V1.Model.TimeSpan.t()
+          :location => String.t() | nil,
+          :paths => list(String.t()) | nil,
+          :timing => GoogleApi.CloudBuild.V1.Model.TimeSpan.t() | nil
         }
 
   field(:location)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Secret do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kmsKeyName => String.t(),
-          :secretEnv => map()
+          :kmsKeyName => String.t() | nil,
+          :secretEnv => map() | nil
         }
 
   field(:kmsKeyName)

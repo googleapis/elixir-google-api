@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuiltImage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :digest => String.t(),
-          :name => String.t(),
-          :pushTiming => GoogleApi.CloudBuild.V1.Model.TimeSpan.t()
+          :digest => String.t() | nil,
+          :name => String.t() | nil,
+          :pushTiming => GoogleApi.CloudBuild.V1.Model.TimeSpan.t() | nil
         }
 
   field(:digest)

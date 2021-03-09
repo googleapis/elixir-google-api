@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudBuild.V1.Model.NotifierConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t(),
-          :kind => String.t(),
-          :metadata => GoogleApi.CloudBuild.V1.Model.NotifierMetadata.t(),
-          :spec => GoogleApi.CloudBuild.V1.Model.NotifierSpec.t()
+          :apiVersion => String.t() | nil,
+          :kind => String.t() | nil,
+          :metadata => GoogleApi.CloudBuild.V1.Model.NotifierMetadata.t() | nil,
+          :spec => GoogleApi.CloudBuild.V1.Model.NotifierSpec.t() | nil
         }
 
   field(:apiVersion)
