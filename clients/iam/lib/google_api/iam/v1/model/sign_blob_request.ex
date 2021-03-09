@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.SignBlobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bytesToSign => String.t()
+          :bytesToSign => String.t() | nil
         }
 
   field(:bytesToSign)

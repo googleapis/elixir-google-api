@@ -32,12 +32,12 @@ defmodule GoogleApi.IAM.V1.Model.LintResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugMessage => String.t(),
-          :fieldName => String.t(),
-          :level => String.t(),
-          :locationOffset => integer(),
-          :severity => String.t(),
-          :validationUnitName => String.t()
+          :debugMessage => String.t() | nil,
+          :fieldName => String.t() | nil,
+          :level => String.t() | nil,
+          :locationOffset => integer() | nil,
+          :severity => String.t() | nil,
+          :validationUnitName => String.t() | nil
         }
 
   field(:debugMessage)

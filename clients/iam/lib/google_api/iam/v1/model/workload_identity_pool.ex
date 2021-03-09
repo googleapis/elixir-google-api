@@ -31,11 +31,11 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPool do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :disabled => boolean(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :state => String.t()
+          :description => String.t() | nil,
+          :disabled => boolean() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:description)

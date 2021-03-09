@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.QueryGrantableRolesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :roles => list(GoogleApi.IAM.V1.Model.Role.t())
+          :nextPageToken => String.t() | nil,
+          :roles => list(GoogleApi.IAM.V1.Model.Role.t()) | nil
         }
 
   field(:nextPageToken)

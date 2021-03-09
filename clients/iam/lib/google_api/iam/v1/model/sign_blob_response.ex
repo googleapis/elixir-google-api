@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.SignBlobResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyId => String.t(),
-          :signature => String.t()
+          :keyId => String.t() | nil,
+          :signature => String.t() | nil
         }
 
   field(:keyId)

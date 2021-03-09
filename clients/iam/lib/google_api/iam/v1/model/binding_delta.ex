@@ -30,10 +30,10 @@ defmodule GoogleApi.IAM.V1.Model.BindingDelta do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :condition => GoogleApi.IAM.V1.Model.Expr.t(),
-          :member => String.t(),
-          :role => String.t()
+          :action => String.t() | nil,
+          :condition => GoogleApi.IAM.V1.Model.Expr.t() | nil,
+          :member => String.t() | nil,
+          :role => String.t() | nil
         }
 
   field(:action)

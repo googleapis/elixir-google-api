@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.UndeleteServiceAccountResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :restoredAccount => GoogleApi.IAM.V1.Model.ServiceAccount.t()
+          :restoredAccount => GoogleApi.IAM.V1.Model.ServiceAccount.t() | nil
         }
 
   field(:restoredAccount, as: GoogleApi.IAM.V1.Model.ServiceAccount)

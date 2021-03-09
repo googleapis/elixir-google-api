@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :permissions => list(GoogleApi.IAM.V1.Model.Permission.t())
+          :nextPageToken => String.t() | nil,
+          :permissions => list(GoogleApi.IAM.V1.Model.Permission.t()) | nil
         }
 
   field(:nextPageToken)

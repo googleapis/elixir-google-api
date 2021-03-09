@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.ListServiceAccountKeysResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keys => list(GoogleApi.IAM.V1.Model.ServiceAccountKey.t())
+          :keys => list(GoogleApi.IAM.V1.Model.ServiceAccountKey.t()) | nil
         }
 
   field(:keys, as: GoogleApi.IAM.V1.Model.ServiceAccountKey, type: :list)

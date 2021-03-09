@@ -29,9 +29,9 @@ defmodule GoogleApi.IAM.V1.Model.QueryTestablePermissionsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullResourceName => String.t(),
-          :pageSize => integer(),
-          :pageToken => String.t()
+          :fullResourceName => String.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil
         }
 
   field(:fullResourceName)

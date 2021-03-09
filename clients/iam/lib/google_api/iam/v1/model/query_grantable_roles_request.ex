@@ -30,10 +30,10 @@ defmodule GoogleApi.IAM.V1.Model.QueryGrantableRolesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullResourceName => String.t(),
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :view => String.t()
+          :fullResourceName => String.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :view => String.t() | nil
         }
 
   field(:fullResourceName)

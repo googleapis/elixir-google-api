@@ -35,15 +35,15 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributeCondition => String.t(),
-          :attributeMapping => map(),
-          :aws => GoogleApi.IAM.V1.Model.Aws.t(),
-          :description => String.t(),
-          :disabled => boolean(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :oidc => GoogleApi.IAM.V1.Model.Oidc.t(),
-          :state => String.t()
+          :attributeCondition => String.t() | nil,
+          :attributeMapping => map() | nil,
+          :aws => GoogleApi.IAM.V1.Model.Aws.t() | nil,
+          :description => String.t() | nil,
+          :disabled => boolean() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :oidc => GoogleApi.IAM.V1.Model.Oidc.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:attributeCondition)

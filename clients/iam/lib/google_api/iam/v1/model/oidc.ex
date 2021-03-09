@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.Oidc do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedAudiences => list(String.t()),
-          :issuerUri => String.t()
+          :allowedAudiences => list(String.t()) | nil,
+          :issuerUri => String.t() | nil
         }
 
   field(:allowedAudiences, type: :list)

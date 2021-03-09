@@ -53,7 +53,10 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
   *   `{:error, info}` on failure
   """
   @spec iam_organizations_roles_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.IAM.V1.Model.Role.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def iam_organizations_roles_create(
         connection,
         organizations_id,
@@ -123,7 +126,11 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Role.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def iam_organizations_roles_delete(
         connection,
         organizations_id,
@@ -194,7 +201,11 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Role.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def iam_organizations_roles_get(
         connection,
         organizations_id,
@@ -264,6 +275,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
   @spec iam_organizations_roles_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.ListRolesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def iam_organizations_roles_list(
         connection,
@@ -338,7 +350,11 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Role.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def iam_organizations_roles_patch(
         connection,
         organizations_id,
@@ -411,7 +427,11 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Role.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def iam_organizations_roles_undelete(
         connection,
         organizations_id,

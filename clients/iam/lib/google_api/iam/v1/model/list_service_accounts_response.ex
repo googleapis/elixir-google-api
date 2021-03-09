@@ -28,8 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.ListServiceAccountsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accounts => list(GoogleApi.IAM.V1.Model.ServiceAccount.t()),
-          :nextPageToken => String.t()
+          :accounts => list(GoogleApi.IAM.V1.Model.ServiceAccount.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:accounts, as: GoogleApi.IAM.V1.Model.ServiceAccount, type: :list)

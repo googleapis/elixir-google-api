@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.PolicyDelta do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bindingDeltas => list(GoogleApi.IAM.V1.Model.BindingDelta.t())
+          :bindingDeltas => list(GoogleApi.IAM.V1.Model.BindingDelta.t()) | nil
         }
 
   field(:bindingDeltas, as: GoogleApi.IAM.V1.Model.BindingDelta, type: :list)
