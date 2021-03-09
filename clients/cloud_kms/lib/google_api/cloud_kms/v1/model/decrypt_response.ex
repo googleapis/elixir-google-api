@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudKMS.V1.Model.DecryptResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :plaintext => String.t(),
-          :plaintextCrc32c => String.t(),
-          :protectionLevel => String.t(),
-          :usedPrimary => boolean()
+          :plaintext => String.t() | nil,
+          :plaintextCrc32c => String.t() | nil,
+          :protectionLevel => String.t() | nil,
+          :usedPrimary => boolean() | nil
         }
 
   field(:plaintext)

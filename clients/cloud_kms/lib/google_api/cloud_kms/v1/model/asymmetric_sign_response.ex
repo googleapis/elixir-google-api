@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudKMS.V1.Model.AsymmetricSignResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :protectionLevel => String.t(),
-          :signature => String.t(),
-          :signatureCrc32c => String.t(),
-          :verifiedDigestCrc32c => boolean()
+          :name => String.t() | nil,
+          :protectionLevel => String.t() | nil,
+          :signature => String.t() | nil,
+          :signatureCrc32c => String.t() | nil,
+          :verifiedDigestCrc32c => boolean() | nil
         }
 
   field(:name)

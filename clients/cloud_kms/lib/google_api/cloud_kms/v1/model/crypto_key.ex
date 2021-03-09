@@ -34,14 +34,14 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :labels => map(),
-          :name => String.t(),
-          :nextRotationTime => DateTime.t(),
-          :primary => GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t(),
-          :purpose => String.t(),
-          :rotationPeriod => String.t(),
-          :versionTemplate => GoogleApi.CloudKMS.V1.Model.CryptoKeyVersionTemplate.t()
+          :createTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :nextRotationTime => DateTime.t() | nil,
+          :primary => GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t() | nil,
+          :purpose => String.t() | nil,
+          :rotationPeriod => String.t() | nil,
+          :versionTemplate => GoogleApi.CloudKMS.V1.Model.CryptoKeyVersionTemplate.t() | nil
         }
 
   field(:createTime, as: DateTime)

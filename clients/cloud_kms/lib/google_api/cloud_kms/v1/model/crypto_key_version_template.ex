@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersionTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :protectionLevel => String.t()
+          :algorithm => String.t() | nil,
+          :protectionLevel => String.t() | nil
         }
 
   field(:algorithm)

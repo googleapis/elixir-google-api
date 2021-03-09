@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudKMS.V1.Model.EncryptResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ciphertext => String.t(),
-          :ciphertextCrc32c => String.t(),
-          :name => String.t(),
-          :protectionLevel => String.t(),
-          :verifiedAdditionalAuthenticatedDataCrc32c => boolean(),
-          :verifiedPlaintextCrc32c => boolean()
+          :ciphertext => String.t() | nil,
+          :ciphertextCrc32c => String.t() | nil,
+          :name => String.t() | nil,
+          :protectionLevel => String.t() | nil,
+          :verifiedAdditionalAuthenticatedDataCrc32c => boolean() | nil,
+          :verifiedPlaintextCrc32c => boolean() | nil
         }
 
   field(:ciphertext)

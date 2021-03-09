@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.ListLocationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.CloudKMS.V1.Model.Location.t()),
-          :nextPageToken => String.t()
+          :locations => list(GoogleApi.CloudKMS.V1.Model.Location.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locations, as: GoogleApi.CloudKMS.V1.Model.Location, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.ListImportJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :importJobs => list(GoogleApi.CloudKMS.V1.Model.ImportJob.t()),
-          :nextPageToken => String.t(),
-          :totalSize => integer()
+          :importJobs => list(GoogleApi.CloudKMS.V1.Model.ImportJob.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:importJobs, as: GoogleApi.CloudKMS.V1.Model.ImportJob, type: :list)

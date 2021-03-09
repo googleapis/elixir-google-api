@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.Digest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sha256 => String.t(),
-          :sha384 => String.t(),
-          :sha512 => String.t()
+          :sha256 => String.t() | nil,
+          :sha384 => String.t() | nil,
+          :sha512 => String.t() | nil
         }
 
   field(:sha256)

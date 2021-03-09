@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.ListCryptoKeysResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cryptoKeys => list(GoogleApi.CloudKMS.V1.Model.CryptoKey.t()),
-          :nextPageToken => String.t(),
-          :totalSize => integer()
+          :cryptoKeys => list(GoogleApi.CloudKMS.V1.Model.CryptoKey.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:cryptoKeys, as: GoogleApi.CloudKMS.V1.Model.CryptoKey, type: :list)

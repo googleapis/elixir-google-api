@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.ImportCryptoKeyVersionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :importJob => String.t(),
-          :rsaAesWrappedKey => String.t()
+          :algorithm => String.t() | nil,
+          :importJob => String.t() | nil,
+          :rsaAesWrappedKey => String.t() | nil
         }
 
   field(:algorithm)

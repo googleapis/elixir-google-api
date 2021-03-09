@@ -36,16 +36,16 @@ defmodule GoogleApi.CloudKMS.V1.Model.ImportJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attestation => GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation.t(),
-          :createTime => DateTime.t(),
-          :expireEventTime => DateTime.t(),
-          :expireTime => DateTime.t(),
-          :generateTime => DateTime.t(),
-          :importMethod => String.t(),
-          :name => String.t(),
-          :protectionLevel => String.t(),
-          :publicKey => GoogleApi.CloudKMS.V1.Model.WrappingPublicKey.t(),
-          :state => String.t()
+          :attestation => GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :expireEventTime => DateTime.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :generateTime => DateTime.t() | nil,
+          :importMethod => String.t() | nil,
+          :name => String.t() | nil,
+          :protectionLevel => String.t() | nil,
+          :publicKey => GoogleApi.CloudKMS.V1.Model.WrappingPublicKey.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:attestation, as: GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation)

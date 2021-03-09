@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.WrappingPublicKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pem => String.t()
+          :pem => String.t() | nil
         }
 
   field(:pem)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :externalKeyUri => String.t()
+          :externalKeyUri => String.t() | nil
         }
 
   field(:externalKeyUri)

@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.CertificateChains do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caviumCerts => list(String.t()),
-          :googleCardCerts => list(String.t()),
-          :googlePartitionCerts => list(String.t())
+          :caviumCerts => list(String.t()) | nil,
+          :googleCardCerts => list(String.t()) | nil,
+          :googlePartitionCerts => list(String.t()) | nil
         }
 
   field(:caviumCerts, type: :list)

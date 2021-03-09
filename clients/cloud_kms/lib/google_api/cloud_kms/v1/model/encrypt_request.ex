@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudKMS.V1.Model.EncryptRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalAuthenticatedData => String.t(),
-          :additionalAuthenticatedDataCrc32c => String.t(),
-          :plaintext => String.t(),
-          :plaintextCrc32c => String.t()
+          :additionalAuthenticatedData => String.t() | nil,
+          :additionalAuthenticatedDataCrc32c => String.t() | nil,
+          :plaintext => String.t() | nil,
+          :plaintextCrc32c => String.t() | nil
         }
 
   field(:additionalAuthenticatedData)
