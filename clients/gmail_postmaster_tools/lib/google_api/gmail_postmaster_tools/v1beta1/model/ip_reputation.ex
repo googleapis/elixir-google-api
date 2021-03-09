@@ -30,10 +30,10 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Model.IpReputation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipCount => String.t(),
-          :numIps => String.t(),
-          :reputation => String.t(),
-          :sampleIps => list(String.t())
+          :ipCount => String.t() | nil,
+          :numIps => String.t() | nil,
+          :reputation => String.t() | nil,
+          :sampleIps => list(String.t()) | nil
         }
 
   field(:ipCount)

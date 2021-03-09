@@ -28,8 +28,8 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Model.FeedbackLoop do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :spamRatio => float()
+          :id => String.t() | nil,
+          :spamRatio => float() | nil
         }
 
   field(:id)

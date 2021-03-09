@@ -29,9 +29,9 @@ defmodule GoogleApi.GmailPostmasterTools.V1beta1.Model.Domain do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :name => String.t(),
-          :permission => String.t()
+          :createTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :permission => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
