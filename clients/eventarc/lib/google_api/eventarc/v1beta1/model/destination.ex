@@ -27,7 +27,7 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.Destination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudRunService => GoogleApi.Eventarc.V1beta1.Model.CloudRunService.t()
+          :cloudRunService => GoogleApi.Eventarc.V1beta1.Model.CloudRunService.t() | nil
         }
 
   field(:cloudRunService, as: GoogleApi.Eventarc.V1beta1.Model.CloudRunService)

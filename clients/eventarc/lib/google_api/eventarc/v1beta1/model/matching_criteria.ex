@@ -28,8 +28,8 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.MatchingCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attribute => String.t(),
-          :value => String.t()
+          :attribute => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:attribute)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Eventarc.V1beta1.Model.CloudRunService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :path => String.t(),
-          :region => String.t(),
-          :service => String.t()
+          :path => String.t() | nil,
+          :region => String.t() | nil,
+          :service => String.t() | nil
         }
 
   field(:path)
