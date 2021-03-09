@@ -28,8 +28,8 @@ defmodule GoogleApi.VerifiedAccess.V1.Model.SignedData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t(),
-          :signature => String.t()
+          :data => String.t() | nil,
+          :signature => String.t() | nil
         }
 
   field(:data)

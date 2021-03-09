@@ -30,10 +30,10 @@ defmodule GoogleApi.VerifiedAccess.V1.Model.VerifyChallengeResponseResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceEnrollmentId => String.t(),
-          :devicePermanentId => String.t(),
-          :signedPublicKeyAndChallenge => String.t(),
-          :verificationOutput => String.t()
+          :deviceEnrollmentId => String.t() | nil,
+          :devicePermanentId => String.t() | nil,
+          :signedPublicKeyAndChallenge => String.t() | nil,
+          :verificationOutput => String.t() | nil
         }
 
   field(:deviceEnrollmentId)

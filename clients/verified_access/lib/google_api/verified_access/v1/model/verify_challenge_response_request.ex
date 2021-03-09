@@ -28,8 +28,8 @@ defmodule GoogleApi.VerifiedAccess.V1.Model.VerifyChallengeResponseRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :challengeResponse => GoogleApi.VerifiedAccess.V1.Model.SignedData.t(),
-          :expectedIdentity => String.t()
+          :challengeResponse => GoogleApi.VerifiedAccess.V1.Model.SignedData.t() | nil,
+          :expectedIdentity => String.t() | nil
         }
 
   field(:challengeResponse, as: GoogleApi.VerifiedAccess.V1.Model.SignedData)
