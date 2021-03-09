@@ -28,8 +28,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.UpdateParametersRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameters => GoogleApi.Memcache.V1beta2.Model.MemcacheParameters.t(),
-          :updateMask => String.t()
+          :parameters => GoogleApi.Memcache.V1beta2.Model.MemcacheParameters.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:parameters, as: GoogleApi.Memcache.V1beta2.Model.MemcacheParameters)

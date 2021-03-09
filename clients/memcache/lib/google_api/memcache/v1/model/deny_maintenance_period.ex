@@ -29,9 +29,9 @@ defmodule GoogleApi.Memcache.V1.Model.DenyMaintenancePeriod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => GoogleApi.Memcache.V1.Model.Date.t(),
-          :startDate => GoogleApi.Memcache.V1.Model.Date.t(),
-          :time => GoogleApi.Memcache.V1.Model.TimeOfDay.t()
+          :endDate => GoogleApi.Memcache.V1.Model.Date.t() | nil,
+          :startDate => GoogleApi.Memcache.V1.Model.Date.t() | nil,
+          :time => GoogleApi.Memcache.V1.Model.TimeOfDay.t() | nil
         }
 
   field(:endDate, as: GoogleApi.Memcache.V1.Model.Date)

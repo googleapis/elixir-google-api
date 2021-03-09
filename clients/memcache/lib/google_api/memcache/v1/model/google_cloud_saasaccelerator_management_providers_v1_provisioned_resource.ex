@@ -28,8 +28,8 @@ defmodule GoogleApi.Memcache.V1.Model.GoogleCloudSaasacceleratorManagementProvid
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceType => String.t(),
-          :resourceUrl => String.t()
+          :resourceType => String.t() | nil,
+          :resourceUrl => String.t() | nil
         }
 
   field(:resourceType)

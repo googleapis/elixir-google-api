@@ -29,11 +29,11 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exclude => boolean(),
-          :isRollback => boolean(),
-          :maintenancePolicies => %{
-            optional(String.t()) => GoogleApi.Memcache.V1beta2.Model.MaintenancePolicy.t()
-          }
+          :exclude => boolean() | nil,
+          :isRollback => boolean() | nil,
+          :maintenancePolicies =>
+            %{optional(String.t()) => GoogleApi.Memcache.V1beta2.Model.MaintenancePolicy.t()}
+            | nil
         }
 
   field(:exclude)

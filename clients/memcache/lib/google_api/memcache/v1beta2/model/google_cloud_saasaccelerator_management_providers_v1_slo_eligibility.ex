@@ -28,8 +28,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eligible => boolean(),
-          :reason => String.t()
+          :eligible => boolean() | nil,
+          :reason => String.t() | nil
         }
 
   field(:eligible)

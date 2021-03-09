@@ -31,16 +31,19 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
 
   @type t :: %__MODULE__{
           :eligibility =>
-            GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility.t(),
+            GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility.t()
+            | nil,
           :exclusions =>
             list(
               GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion.t()
-            ),
+            )
+            | nil,
           :nodes =>
             list(
               GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata.t()
-            ),
-          :tier => String.t()
+            )
+            | nil,
+          :tier => String.t() | nil
         }
 
   field(:eligibility,

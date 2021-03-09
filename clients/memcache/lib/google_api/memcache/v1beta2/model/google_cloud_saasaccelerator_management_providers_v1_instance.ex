@@ -41,29 +41,34 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerDefinedName => String.t(),
-          :createTime => DateTime.t(),
-          :labels => map(),
-          :maintenancePolicyNames => map(),
-          :maintenanceSchedules => %{
-            optional(String.t()) =>
-              GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule.t()
-          },
+          :consumerDefinedName => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :maintenancePolicyNames => map() | nil,
+          :maintenanceSchedules =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule.t()
+            }
+            | nil,
           :maintenanceSettings =>
-            GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings.t(),
-          :name => String.t(),
-          :producerMetadata => map(),
+            GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings.t()
+            | nil,
+          :name => String.t() | nil,
+          :producerMetadata => map() | nil,
           :provisionedResources =>
             list(
               GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource.t()
-            ),
-          :slmInstanceTemplate => String.t(),
+            )
+            | nil,
+          :slmInstanceTemplate => String.t() | nil,
           :sloMetadata =>
-            GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata.t(),
-          :softwareVersions => map(),
-          :state => String.t(),
-          :tenantProjectId => String.t(),
-          :updateTime => DateTime.t()
+            GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata.t()
+            | nil,
+          :softwareVersions => map() | nil,
+          :state => String.t() | nil,
+          :tenantProjectId => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:consumerDefinedName)

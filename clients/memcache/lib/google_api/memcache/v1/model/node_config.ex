@@ -28,8 +28,8 @@ defmodule GoogleApi.Memcache.V1.Model.NodeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpuCount => integer(),
-          :memorySizeMb => integer()
+          :cpuCount => integer() | nil,
+          :memorySizeMb => integer() | nil
         }
 
   field(:cpuCount)

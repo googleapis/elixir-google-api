@@ -27,7 +27,7 @@ defmodule GoogleApi.Memcache.V1.Model.WeeklyCycle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :schedule => list(GoogleApi.Memcache.V1.Model.Schedule.t())
+          :schedule => list(GoogleApi.Memcache.V1.Model.Schedule.t()) | nil
         }
 
   field(:schedule, as: GoogleApi.Memcache.V1.Model.Schedule, type: :list)

@@ -42,22 +42,22 @@ defmodule GoogleApi.Memcache.V1.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorizedNetwork => String.t(),
-          :createTime => DateTime.t(),
-          :discoveryEndpoint => String.t(),
-          :displayName => String.t(),
-          :instanceMessages => list(GoogleApi.Memcache.V1.Model.InstanceMessage.t()),
-          :labels => map(),
-          :memcacheFullVersion => String.t(),
-          :memcacheNodes => list(GoogleApi.Memcache.V1.Model.Node.t()),
-          :memcacheVersion => String.t(),
-          :name => String.t(),
-          :nodeConfig => GoogleApi.Memcache.V1.Model.NodeConfig.t(),
-          :nodeCount => integer(),
-          :parameters => GoogleApi.Memcache.V1.Model.MemcacheParameters.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t(),
-          :zones => list(String.t())
+          :authorizedNetwork => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :discoveryEndpoint => String.t() | nil,
+          :displayName => String.t() | nil,
+          :instanceMessages => list(GoogleApi.Memcache.V1.Model.InstanceMessage.t()) | nil,
+          :labels => map() | nil,
+          :memcacheFullVersion => String.t() | nil,
+          :memcacheNodes => list(GoogleApi.Memcache.V1.Model.Node.t()) | nil,
+          :memcacheVersion => String.t() | nil,
+          :name => String.t() | nil,
+          :nodeConfig => GoogleApi.Memcache.V1.Model.NodeConfig.t() | nil,
+          :nodeCount => integer() | nil,
+          :parameters => GoogleApi.Memcache.V1.Model.MemcacheParameters.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :zones => list(String.t()) | nil
         }
 
   field(:authorizedNetwork)

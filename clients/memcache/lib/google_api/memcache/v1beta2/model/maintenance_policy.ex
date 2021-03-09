@@ -33,13 +33,13 @@ defmodule GoogleApi.Memcache.V1beta2.Model.MaintenancePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :state => String.t(),
-          :updatePolicy => GoogleApi.Memcache.V1beta2.Model.UpdatePolicy.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :updatePolicy => GoogleApi.Memcache.V1beta2.Model.UpdatePolicy.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
