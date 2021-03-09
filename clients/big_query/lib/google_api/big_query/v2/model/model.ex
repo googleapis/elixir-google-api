@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
 
   ## Attributes
 
+  *   `bestTrialId` (*type:* `String.t`, *default:* `nil`) - The best trial_id across all training runs.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this model was created, in millisecs since the epoch.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A user-friendly description of this model.
   *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys). This shows the encryption configuration of the model data while stored in BigQuery storage. This field can be used with PatchModel to update encryption key for an already encrypted model.
@@ -40,6 +41,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bestTrialId => String.t() | nil,
           :creationTime => String.t() | nil,
           :description => String.t() | nil,
           :encryptionConfiguration =>
@@ -57,6 +59,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
           :trainingRuns => list(GoogleApi.BigQuery.V2.Model.TrainingRun.t()) | nil
         }
 
+  field(:bestTrialId)
   field(:creationTime)
   field(:description)
   field(:encryptionConfiguration, as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration)

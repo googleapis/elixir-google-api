@@ -22,6 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   ## Attributes
 
   *   `connectionProperties` (*type:* `list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t)`, *default:* `nil`) - Connection properties.
+  *   `createSession` (*type:* `boolean()`, *default:* `nil`) - If true, creates a new session, where session id will be a server generated random id. If false, runs query with an existing session_id passed in ConnectionProperty, otherwise runs query in non-session mode.
   *   `defaultDataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Optional] Specifies the default datasetId and projectId to assume for any unqualified table names in the query. If not set, all table names in the query string must be qualified in the format 'datasetId.tableId'.
   *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - [Optional] If set to true, BigQuery doesn't run the job. Instead, if the query is valid, BigQuery returns statistics about the job such as how many bytes would be processed. If the query is invalid, an error returns. The default value is false.
   *   `kind` (*type:* `String.t`, *default:* `bigquery#queryRequest`) - The resource type of the request.
@@ -43,6 +44,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
 
   @type t :: %__MODULE__{
           :connectionProperties => list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t()) | nil,
+          :createSession => boolean() | nil,
           :defaultDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
           :dryRun => boolean() | nil,
           :kind => String.t() | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
         }
 
   field(:connectionProperties, as: GoogleApi.BigQuery.V2.Model.ConnectionProperty, type: :list)
+  field(:createSession)
   field(:defaultDataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
   field(:dryRun)
   field(:kind)

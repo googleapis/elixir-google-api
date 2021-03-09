@@ -25,6 +25,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
   *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - [Beta] Clustering specification for the destination table. Must be specified with time-based partitioning, data in the table will be first partitioned and subsequently clustered.
   *   `connectionProperties` (*type:* `list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t)`, *default:* `nil`) - Connection properties.
   *   `createDisposition` (*type:* `String.t`, *default:* `nil`) - [Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion.
+  *   `createSession` (*type:* `boolean()`, *default:* `nil`) - If true, creates a new session, where session id will be a server generated random id. If false, runs query with an existing session_id passed in ConnectionProperty, otherwise runs query in non-session mode.
   *   `defaultDataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Optional] Specifies the default dataset to use for unqualified table names in the query. Note that this does not alter behavior of unqualified dataset names.
   *   `destinationEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
   *   `destinationTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Optional] Describes the table where the query results should be stored. If not present, a new table will be created to store the results. This property must be set for large results that exceed the maximum response size.
@@ -53,6 +54,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
           :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t() | nil,
           :connectionProperties => list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t()) | nil,
           :createDisposition => String.t() | nil,
+          :createSession => boolean() | nil,
           :defaultDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
           :destinationEncryptionConfiguration =>
             GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
@@ -82,6 +84,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
   field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)
   field(:connectionProperties, as: GoogleApi.BigQuery.V2.Model.ConnectionProperty, type: :list)
   field(:createDisposition)
+  field(:createSession)
   field(:defaultDataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
 
   field(:destinationEncryptionConfiguration,
