@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minApiLevel => integer()
+          :minApiLevel => integer() | nil
         }
 
   field(:minApiLevel)

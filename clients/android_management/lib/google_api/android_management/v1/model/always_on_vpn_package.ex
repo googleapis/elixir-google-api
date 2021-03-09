@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lockdownEnabled => boolean(),
-          :packageName => String.t()
+          :lockdownEnabled => boolean() | nil,
+          :packageName => String.t() | nil
         }
 
   field(:lockdownEnabled)

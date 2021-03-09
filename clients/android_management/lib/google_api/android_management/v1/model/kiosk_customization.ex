@@ -31,11 +31,11 @@ defmodule GoogleApi.AndroidManagement.V1.Model.KioskCustomization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceSettings => String.t(),
-          :powerButtonActions => String.t(),
-          :statusBar => String.t(),
-          :systemErrorWarnings => String.t(),
-          :systemNavigation => String.t()
+          :deviceSettings => String.t() | nil,
+          :powerButtonActions => String.t() | nil,
+          :statusBar => String.t() | nil,
+          :systemErrorWarnings => String.t() | nil,
+          :systemNavigation => String.t() | nil
         }
 
   field(:deviceSettings)

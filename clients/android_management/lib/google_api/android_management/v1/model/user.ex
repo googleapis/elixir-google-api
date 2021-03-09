@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.User do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountIdentifier => String.t()
+          :accountIdentifier => String.t() | nil
         }
 
   field(:accountIdentifier)

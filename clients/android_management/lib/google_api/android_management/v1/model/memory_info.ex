@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.MemoryInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :totalInternalStorage => String.t(),
-          :totalRam => String.t()
+          :totalInternalStorage => String.t() | nil,
+          :totalRam => String.t() | nil
         }
 
   field(:totalInternalStorage)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nonComplianceReason => String.t(),
-          :packageName => String.t(),
-          :settingName => String.t()
+          :nonComplianceReason => String.t() | nil,
+          :packageName => String.t() | nil,
+          :settingName => String.t() | nil
         }
 
   field(:nonComplianceReason)

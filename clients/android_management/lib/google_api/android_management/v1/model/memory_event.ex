@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.MemoryEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :byteCount => String.t(),
-          :createTime => DateTime.t(),
-          :eventType => String.t()
+          :byteCount => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :eventType => String.t() | nil
         }
 
   field(:byteCount)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SetupAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t(),
-          :launchApp => GoogleApi.AndroidManagement.V1.Model.LaunchAppAction.t(),
-          :title => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t()
+          :description => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
+          :launchApp => GoogleApi.AndroidManagement.V1.Model.LaunchAppAction.t() | nil,
+          :title => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil
         }
 
   field(:description, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)

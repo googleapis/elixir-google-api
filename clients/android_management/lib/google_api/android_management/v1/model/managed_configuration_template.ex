@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configurationVariables => map(),
-          :templateId => String.t()
+          :configurationVariables => map() | nil,
+          :templateId => String.t() | nil
         }
 
   field(:configurationVariables, type: :map)

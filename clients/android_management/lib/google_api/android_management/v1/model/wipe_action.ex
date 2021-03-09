@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.WipeAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :preserveFrp => boolean(),
-          :wipeAfterDays => integer()
+          :preserveFrp => boolean() | nil,
+          :wipeAfterDays => integer() | nil
         }
 
   field(:preserveFrp)

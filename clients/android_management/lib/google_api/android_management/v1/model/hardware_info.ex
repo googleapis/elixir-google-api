@@ -40,20 +40,20 @@ defmodule GoogleApi.AndroidManagement.V1.Model.HardwareInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batteryShutdownTemperatures => list(number()),
-          :batteryThrottlingTemperatures => list(number()),
-          :brand => String.t(),
-          :cpuShutdownTemperatures => list(number()),
-          :cpuThrottlingTemperatures => list(number()),
-          :deviceBasebandVersion => String.t(),
-          :gpuShutdownTemperatures => list(number()),
-          :gpuThrottlingTemperatures => list(number()),
-          :hardware => String.t(),
-          :manufacturer => String.t(),
-          :model => String.t(),
-          :serialNumber => String.t(),
-          :skinShutdownTemperatures => list(number()),
-          :skinThrottlingTemperatures => list(number())
+          :batteryShutdownTemperatures => list(number()) | nil,
+          :batteryThrottlingTemperatures => list(number()) | nil,
+          :brand => String.t() | nil,
+          :cpuShutdownTemperatures => list(number()) | nil,
+          :cpuThrottlingTemperatures => list(number()) | nil,
+          :deviceBasebandVersion => String.t() | nil,
+          :gpuShutdownTemperatures => list(number()) | nil,
+          :gpuThrottlingTemperatures => list(number()) | nil,
+          :hardware => String.t() | nil,
+          :manufacturer => String.t() | nil,
+          :model => String.t() | nil,
+          :serialNumber => String.t() | nil,
+          :skinShutdownTemperatures => list(number()) | nil,
+          :skinThrottlingTemperatures => list(number()) | nil
         }
 
   field(:batteryShutdownTemperatures, type: :list)

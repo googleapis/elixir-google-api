@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.LaunchAppAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :packageName => String.t()
+          :packageName => String.t() | nil
         }
 
   field(:packageName)

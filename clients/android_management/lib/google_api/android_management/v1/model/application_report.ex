@@ -37,17 +37,17 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applicationSource => String.t(),
-          :displayName => String.t(),
-          :events => list(GoogleApi.AndroidManagement.V1.Model.ApplicationEvent.t()),
-          :installerPackageName => String.t(),
-          :keyedAppStates => list(GoogleApi.AndroidManagement.V1.Model.KeyedAppState.t()),
-          :packageName => String.t(),
-          :packageSha256Hash => String.t(),
-          :signingKeyCertFingerprints => list(String.t()),
-          :state => String.t(),
-          :versionCode => integer(),
-          :versionName => String.t()
+          :applicationSource => String.t() | nil,
+          :displayName => String.t() | nil,
+          :events => list(GoogleApi.AndroidManagement.V1.Model.ApplicationEvent.t()) | nil,
+          :installerPackageName => String.t() | nil,
+          :keyedAppStates => list(GoogleApi.AndroidManagement.V1.Model.KeyedAppState.t()) | nil,
+          :packageName => String.t() | nil,
+          :packageSha256Hash => String.t() | nil,
+          :signingKeyCertFingerprints => list(String.t()) | nil,
+          :state => String.t() | nil,
+          :versionCode => integer() | nil,
+          :versionName => String.t() | nil
         }
 
   field(:applicationSource)

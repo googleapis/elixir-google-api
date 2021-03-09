@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersonalApplicationPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :installType => String.t(),
-          :packageName => String.t()
+          :installType => String.t() | nil,
+          :packageName => String.t() | nil
         }
 
   field(:installType)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ChoosePrivateKeyRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :packageNames => list(String.t()),
-          :privateKeyAlias => String.t(),
-          :urlPattern => String.t()
+          :packageNames => list(String.t()) | nil,
+          :privateKeyAlias => String.t() | nil,
+          :urlPattern => String.t() | nil
         }
 
   field(:packageNames, type: :list)

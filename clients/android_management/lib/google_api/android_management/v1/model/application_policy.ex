@@ -39,20 +39,21 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessibleTrackIds => list(String.t()),
-          :autoUpdateMode => String.t(),
-          :connectedWorkAndPersonalApp => String.t(),
-          :defaultPermissionPolicy => String.t(),
-          :delegatedScopes => list(String.t()),
-          :disabled => boolean(),
-          :installType => String.t(),
-          :lockTaskAllowed => boolean(),
-          :managedConfiguration => map(),
+          :accessibleTrackIds => list(String.t()) | nil,
+          :autoUpdateMode => String.t() | nil,
+          :connectedWorkAndPersonalApp => String.t() | nil,
+          :defaultPermissionPolicy => String.t() | nil,
+          :delegatedScopes => list(String.t()) | nil,
+          :disabled => boolean() | nil,
+          :installType => String.t() | nil,
+          :lockTaskAllowed => boolean() | nil,
+          :managedConfiguration => map() | nil,
           :managedConfigurationTemplate =>
-            GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate.t(),
-          :minimumVersionCode => integer(),
-          :packageName => String.t(),
-          :permissionGrants => list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t())
+            GoogleApi.AndroidManagement.V1.Model.ManagedConfigurationTemplate.t() | nil,
+          :minimumVersionCode => integer() | nil,
+          :packageName => String.t() | nil,
+          :permissionGrants =>
+            list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t()) | nil
         }
 
   field(:accessibleTrackIds, type: :list)

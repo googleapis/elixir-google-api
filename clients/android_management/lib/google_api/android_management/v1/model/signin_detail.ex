@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SigninDetail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowPersonalUsage => String.t(),
-          :qrCode => String.t(),
-          :signinEnrollmentToken => String.t(),
-          :signinUrl => String.t()
+          :allowPersonalUsage => String.t() | nil,
+          :qrCode => String.t() | nil,
+          :signinEnrollmentToken => String.t() | nil,
+          :signinUrl => String.t() | nil
         }
 
   field(:allowPersonalUsage)

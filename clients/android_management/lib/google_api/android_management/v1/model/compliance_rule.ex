@@ -30,11 +30,11 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ComplianceRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiLevelCondition => GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition.t(),
-          :disableApps => boolean(),
+          :apiLevelCondition => GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition.t() | nil,
+          :disableApps => boolean() | nil,
           :nonComplianceDetailCondition =>
-            GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition.t(),
-          :packageNamesToDisable => list(String.t())
+            GoogleApi.AndroidManagement.V1.Model.NonComplianceDetailCondition.t() | nil,
+          :packageNamesToDisable => list(String.t()) | nil
         }
 
   field(:apiLevelCondition, as: GoogleApi.AndroidManagement.V1.Model.ApiLevelCondition)

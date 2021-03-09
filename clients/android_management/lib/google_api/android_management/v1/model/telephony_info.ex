@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.TelephonyInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrierName => String.t(),
-          :phoneNumber => String.t()
+          :carrierName => String.t() | nil,
+          :phoneNumber => String.t() | nil
         }
 
   field(:carrierName)

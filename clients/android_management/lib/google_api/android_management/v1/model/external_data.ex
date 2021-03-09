@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ExternalData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sha256Hash => String.t(),
-          :url => String.t()
+          :sha256Hash => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:sha256Hash)

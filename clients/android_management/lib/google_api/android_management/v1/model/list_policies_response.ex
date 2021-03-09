@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ListPoliciesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :policies => list(GoogleApi.AndroidManagement.V1.Model.Policy.t())
+          :nextPageToken => String.t() | nil,
+          :policies => list(GoogleApi.AndroidManagement.V1.Model.Policy.t()) | nil
         }
 
   field(:nextPageToken)

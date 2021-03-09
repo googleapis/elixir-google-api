@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SignupUrl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :url => String.t()
+          :name => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:name)

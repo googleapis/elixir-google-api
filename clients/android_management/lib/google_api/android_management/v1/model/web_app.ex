@@ -32,12 +32,12 @@ defmodule GoogleApi.AndroidManagement.V1.Model.WebApp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayMode => String.t(),
-          :icons => list(GoogleApi.AndroidManagement.V1.Model.WebAppIcon.t()),
-          :name => String.t(),
-          :startUrl => String.t(),
-          :title => String.t(),
-          :versionCode => String.t()
+          :displayMode => String.t() | nil,
+          :icons => list(GoogleApi.AndroidManagement.V1.Model.WebAppIcon.t()) | nil,
+          :name => String.t() | nil,
+          :startUrl => String.t() | nil,
+          :title => String.t() | nil,
+          :versionCode => String.t() | nil
         }
 
   field(:displayMode)

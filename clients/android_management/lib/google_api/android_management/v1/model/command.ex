@@ -33,13 +33,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Command do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :duration => String.t(),
-          :errorCode => String.t(),
-          :newPassword => String.t(),
-          :resetPasswordFlags => list(String.t()),
-          :type => String.t(),
-          :userName => String.t()
+          :createTime => DateTime.t() | nil,
+          :duration => String.t() | nil,
+          :errorCode => String.t() | nil,
+          :newPassword => String.t() | nil,
+          :resetPasswordFlags => list(String.t()) | nil,
+          :type => String.t() | nil,
+          :userName => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

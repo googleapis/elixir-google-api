@@ -33,13 +33,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Display do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :density => integer(),
-          :displayId => integer(),
-          :height => integer(),
-          :name => String.t(),
-          :refreshRate => integer(),
-          :state => String.t(),
-          :width => integer()
+          :density => integer() | nil,
+          :displayId => integer() | nil,
+          :height => integer() | nil,
+          :name => String.t() | nil,
+          :refreshRate => integer() | nil,
+          :state => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:density)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :eventType => String.t()
+          :createTime => DateTime.t() | nil,
+          :eventType => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

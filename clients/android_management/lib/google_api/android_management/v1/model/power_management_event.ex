@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batteryLevel => number(),
-          :createTime => DateTime.t(),
-          :eventType => String.t()
+          :batteryLevel => number() | nil,
+          :createTime => DateTime.t() | nil,
+          :eventType => String.t() | nil
         }
 
   field(:batteryLevel)

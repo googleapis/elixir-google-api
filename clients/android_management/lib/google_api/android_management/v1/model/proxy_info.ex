@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ProxyInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedHosts => list(String.t()),
-          :host => String.t(),
-          :pacUri => String.t(),
-          :port => integer()
+          :excludedHosts => list(String.t()) | nil,
+          :host => String.t() | nil,
+          :pacUri => String.t() | nil,
+          :port => integer() | nil
         }
 
   field(:excludedHosts, type: :list)

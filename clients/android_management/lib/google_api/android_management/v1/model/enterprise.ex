@@ -36,16 +36,17 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Enterprise do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appAutoApprovalEnabled => boolean(),
-          :contactInfo => GoogleApi.AndroidManagement.V1.Model.ContactInfo.t(),
-          :enabledNotificationTypes => list(String.t()),
-          :enterpriseDisplayName => String.t(),
-          :logo => GoogleApi.AndroidManagement.V1.Model.ExternalData.t(),
-          :name => String.t(),
-          :primaryColor => integer(),
-          :pubsubTopic => String.t(),
-          :signinDetails => list(GoogleApi.AndroidManagement.V1.Model.SigninDetail.t()),
-          :termsAndConditions => list(GoogleApi.AndroidManagement.V1.Model.TermsAndConditions.t())
+          :appAutoApprovalEnabled => boolean() | nil,
+          :contactInfo => GoogleApi.AndroidManagement.V1.Model.ContactInfo.t() | nil,
+          :enabledNotificationTypes => list(String.t()) | nil,
+          :enterpriseDisplayName => String.t() | nil,
+          :logo => GoogleApi.AndroidManagement.V1.Model.ExternalData.t() | nil,
+          :name => String.t() | nil,
+          :primaryColor => integer() | nil,
+          :pubsubTopic => String.t() | nil,
+          :signinDetails => list(GoogleApi.AndroidManagement.V1.Model.SigninDetail.t()) | nil,
+          :termsAndConditions =>
+            list(GoogleApi.AndroidManagement.V1.Model.TermsAndConditions.t()) | nil
         }
 
   field(:appAutoApprovalEnabled)

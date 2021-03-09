@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.BlockAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blockAfterDays => integer(),
-          :blockScope => String.t()
+          :blockAfterDays => integer() | nil,
+          :blockScope => String.t() | nil
         }
 
   field(:blockAfterDays)

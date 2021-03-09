@@ -38,17 +38,17 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
 
   @type t :: %__MODULE__{
           :applicationReportingSettings =>
-            GoogleApi.AndroidManagement.V1.Model.ApplicationReportingSettings.t(),
-          :applicationReportsEnabled => boolean(),
-          :commonCriteriaModeEnabled => boolean(),
-          :deviceSettingsEnabled => boolean(),
-          :displayInfoEnabled => boolean(),
-          :hardwareStatusEnabled => boolean(),
-          :memoryInfoEnabled => boolean(),
-          :networkInfoEnabled => boolean(),
-          :powerManagementEventsEnabled => boolean(),
-          :softwareInfoEnabled => boolean(),
-          :systemPropertiesEnabled => boolean()
+            GoogleApi.AndroidManagement.V1.Model.ApplicationReportingSettings.t() | nil,
+          :applicationReportsEnabled => boolean() | nil,
+          :commonCriteriaModeEnabled => boolean() | nil,
+          :deviceSettingsEnabled => boolean() | nil,
+          :displayInfoEnabled => boolean() | nil,
+          :hardwareStatusEnabled => boolean() | nil,
+          :memoryInfoEnabled => boolean() | nil,
+          :networkInfoEnabled => boolean() | nil,
+          :powerManagementEventsEnabled => boolean() | nil,
+          :softwareInfoEnabled => boolean() | nil,
+          :systemPropertiesEnabled => boolean() | nil
         }
 
   field(:applicationReportingSettings,

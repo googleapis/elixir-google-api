@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReportingSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeRemovedApps => boolean()
+          :includeRemovedApps => boolean() | nil
         }
 
   field(:includeRemovedApps)
