@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.GroupItemResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:id)

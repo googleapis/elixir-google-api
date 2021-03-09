@@ -32,12 +32,12 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.GroupItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t(),
-          :etag => String.t(),
-          :groupId => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :resource => GoogleApi.YouTubeAnalytics.V2.Model.GroupItemResource.t()
+          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t() | nil,
+          :etag => String.t() | nil,
+          :groupId => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :resource => GoogleApi.YouTubeAnalytics.V2.Model.GroupItemResource.t() | nil
         }
 
   field(:errors, as: GoogleApi.YouTubeAnalytics.V2.Model.Errors)

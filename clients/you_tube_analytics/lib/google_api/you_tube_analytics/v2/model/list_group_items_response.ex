@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.ListGroupItemsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t(),
-          :etag => String.t(),
-          :items => list(GoogleApi.YouTubeAnalytics.V2.Model.GroupItem.t()),
-          :kind => String.t()
+          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t() | nil,
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.YouTubeAnalytics.V2.Model.GroupItem.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:errors, as: GoogleApi.YouTubeAnalytics.V2.Model.Errors)

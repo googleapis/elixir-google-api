@@ -55,6 +55,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.Groups do
   @spec youtube_analytics_groups_delete(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeAnalytics.V2.Model.EmptyResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_analytics_groups_delete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -115,6 +116,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.Groups do
   @spec youtube_analytics_groups_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeAnalytics.V2.Model.Group.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_analytics_groups_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -177,6 +179,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.Groups do
   @spec youtube_analytics_groups_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeAnalytics.V2.Model.ListGroupsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_analytics_groups_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -241,6 +244,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.Groups do
   @spec youtube_analytics_groups_update(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeAnalytics.V2.Model.Group.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_analytics_groups_update(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

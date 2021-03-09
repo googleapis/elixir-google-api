@@ -32,12 +32,12 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.Group do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentDetails => GoogleApi.YouTubeAnalytics.V2.Model.GroupContentDetails.t(),
-          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTubeAnalytics.V2.Model.GroupSnippet.t()
+          :contentDetails => GoogleApi.YouTubeAnalytics.V2.Model.GroupContentDetails.t() | nil,
+          :errors => GoogleApi.YouTubeAnalytics.V2.Model.Errors.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTubeAnalytics.V2.Model.GroupSnippet.t() | nil
         }
 
   field(:contentDetails, as: GoogleApi.YouTubeAnalytics.V2.Model.GroupContentDetails)

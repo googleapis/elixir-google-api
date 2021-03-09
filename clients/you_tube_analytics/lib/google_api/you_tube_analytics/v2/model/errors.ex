@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.Errors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :error => list(GoogleApi.YouTubeAnalytics.V2.Model.ErrorProto.t()),
-          :requestId => String.t()
+          :code => String.t() | nil,
+          :error => list(GoogleApi.YouTubeAnalytics.V2.Model.ErrorProto.t()) | nil,
+          :requestId => String.t() | nil
         }
 
   field(:code)

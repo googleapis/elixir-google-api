@@ -33,13 +33,13 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.ErrorProto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :argument => list(String.t()),
-          :code => String.t(),
-          :debugInfo => String.t(),
-          :domain => String.t(),
-          :externalErrorMessage => String.t(),
-          :location => String.t(),
-          :locationType => String.t()
+          :argument => list(String.t()) | nil,
+          :code => String.t() | nil,
+          :debugInfo => String.t() | nil,
+          :domain => String.t() | nil,
+          :externalErrorMessage => String.t() | nil,
+          :location => String.t() | nil,
+          :locationType => String.t() | nil
         }
 
   field(:argument, type: :list)
