@@ -28,7 +28,7 @@ defmodule GoogleApi.AbusiveExperienceReport.V1.Model.ViolatingSitesResponse do
 
   @type t :: %__MODULE__{
           :violatingSites =>
-            list(GoogleApi.AbusiveExperienceReport.V1.Model.SiteSummaryResponse.t())
+            list(GoogleApi.AbusiveExperienceReport.V1.Model.SiteSummaryResponse.t()) | nil
         }
 
   field(:violatingSites,

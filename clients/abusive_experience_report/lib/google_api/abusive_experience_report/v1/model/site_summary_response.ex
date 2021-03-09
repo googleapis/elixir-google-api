@@ -33,13 +33,13 @@ defmodule GoogleApi.AbusiveExperienceReport.V1.Model.SiteSummaryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :abusiveStatus => String.t(),
-          :enforcementTime => DateTime.t(),
-          :filterStatus => String.t(),
-          :lastChangeTime => DateTime.t(),
-          :reportUrl => String.t(),
-          :reviewedSite => String.t(),
-          :underReview => boolean()
+          :abusiveStatus => String.t() | nil,
+          :enforcementTime => DateTime.t() | nil,
+          :filterStatus => String.t() | nil,
+          :lastChangeTime => DateTime.t() | nil,
+          :reportUrl => String.t() | nil,
+          :reviewedSite => String.t() | nil,
+          :underReview => boolean() | nil
         }
 
   field(:abusiveStatus)
