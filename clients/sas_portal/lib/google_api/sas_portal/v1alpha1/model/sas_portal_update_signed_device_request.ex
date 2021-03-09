@@ -28,8 +28,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalUpdateSignedDeviceRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encodedDevice => String.t(),
-          :installerId => String.t()
+          :encodedDevice => String.t() | nil,
+          :installerId => String.t() | nil
         }
 
   field(:encodedDevice)

@@ -28,8 +28,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDpaMoveList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dpaId => String.t(),
-          :frequencyRange => GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t()
+          :dpaId => String.t() | nil,
+          :frequencyRange => GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t() | nil
         }
 
   field(:dpaId)

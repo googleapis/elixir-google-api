@@ -31,11 +31,11 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedBillingModes => list(String.t()),
-          :defaultBillingMode => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
-          :sasUserIds => list(String.t())
+          :allowedBillingModes => list(String.t()) | nil,
+          :defaultBillingMode => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :sasUserIds => list(String.t()) | nil
         }
 
   field(:allowedBillingModes, type: :list)

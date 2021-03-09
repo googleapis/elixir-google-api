@@ -36,17 +36,18 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :airInterface => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceAirInterface.t(),
-          :callSign => String.t(),
-          :category => String.t(),
+          :airInterface =>
+            GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceAirInterface.t() | nil,
+          :callSign => String.t() | nil,
+          :category => String.t() | nil,
           :installationParams =>
-            GoogleApi.SASPortal.V1alpha1.Model.SasPortalInstallationParams.t(),
-          :isSigned => boolean(),
-          :measurementCapabilities => list(String.t()),
-          :model => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceModel.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t(),
-          :userId => String.t()
+            GoogleApi.SASPortal.V1alpha1.Model.SasPortalInstallationParams.t() | nil,
+          :isSigned => boolean() | nil,
+          :measurementCapabilities => list(String.t()) | nil,
+          :model => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceModel.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:airInterface, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceAirInterface)

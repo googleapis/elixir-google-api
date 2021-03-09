@@ -28,8 +28,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceAirInterface do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :radioTechnology => String.t(),
-          :supportedSpec => String.t()
+          :radioTechnology => String.t() | nil,
+          :supportedSpec => String.t() | nil
         }
 
   field(:radioTechnology)

@@ -27,7 +27,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalTestPermissionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permissions => list(String.t())
+          :permissions => list(String.t()) | nil
         }
 
   field(:permissions, type: :list)

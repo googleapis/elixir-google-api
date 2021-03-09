@@ -31,11 +31,11 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceModel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :firmwareVersion => String.t(),
-          :hardwareVersion => String.t(),
-          :name => String.t(),
-          :softwareVersion => String.t(),
-          :vendor => String.t()
+          :firmwareVersion => String.t() | nil,
+          :hardwareVersion => String.t() | nil,
+          :name => String.t() | nil,
+          :softwareVersion => String.t() | nil,
+          :vendor => String.t() | nil
         }
 
   field(:firmwareVersion)

@@ -27,7 +27,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalMoveDeviceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destination => String.t()
+          :destination => String.t() | nil
         }
 
   field(:destination)

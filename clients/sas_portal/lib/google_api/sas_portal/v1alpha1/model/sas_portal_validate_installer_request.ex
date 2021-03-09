@@ -29,9 +29,9 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalValidateInstallerRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encodedSecret => String.t(),
-          :installerId => String.t(),
-          :secret => String.t()
+          :encodedSecret => String.t() | nil,
+          :installerId => String.t() | nil,
+          :secret => String.t() | nil
         }
 
   field(:encodedSecret)

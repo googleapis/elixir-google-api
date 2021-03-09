@@ -29,9 +29,9 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalCustomer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :name => String.t(),
-          :sasUserIds => list(String.t())
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :sasUserIds => list(String.t()) | nil
         }
 
   field(:displayName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignments => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalAssignment.t()),
-          :etag => String.t()
+          :assignments => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalAssignment.t()) | nil,
+          :etag => String.t() | nil
         }
 
   field(:assignments, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalAssignment, type: :list)

@@ -54,6 +54,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Installer do
   @spec sasportal_installer_generate_secret(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalGenerateSecretResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_installer_generate_secret(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -114,6 +115,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Api.Installer do
   @spec sasportal_installer_validate(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SASPortal.V1alpha1.Model.SasPortalValidateInstallerResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sasportal_installer_validate(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -40,20 +40,20 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalInstallationParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :antennaAzimuth => integer(),
-          :antennaBeamwidth => integer(),
-          :antennaDowntilt => integer(),
-          :antennaGain => integer(),
-          :antennaModel => String.t(),
-          :cpeCbsdIndication => boolean(),
-          :eirpCapability => integer(),
-          :height => float(),
-          :heightType => String.t(),
-          :horizontalAccuracy => float(),
-          :indoorDeployment => boolean(),
-          :latitude => float(),
-          :longitude => float(),
-          :verticalAccuracy => float()
+          :antennaAzimuth => integer() | nil,
+          :antennaBeamwidth => integer() | nil,
+          :antennaDowntilt => integer() | nil,
+          :antennaGain => integer() | nil,
+          :antennaModel => String.t() | nil,
+          :cpeCbsdIndication => boolean() | nil,
+          :eirpCapability => integer() | nil,
+          :height => float() | nil,
+          :heightType => String.t() | nil,
+          :horizontalAccuracy => float() | nil,
+          :indoorDeployment => boolean() | nil,
+          :latitude => float() | nil,
+          :longitude => float() | nil,
+          :verticalAccuracy => float() | nil
         }
 
   field(:antennaAzimuth)

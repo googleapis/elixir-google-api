@@ -36,17 +36,17 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeConfig => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig.t(),
-          :deviceMetadata => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata.t(),
-          :displayName => String.t(),
-          :fccId => String.t(),
+          :activeConfig => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig.t() | nil,
+          :deviceMetadata => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata.t() | nil,
+          :displayName => String.t() | nil,
+          :fccId => String.t() | nil,
           :grantRangeAllowlists =>
-            list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t()),
-          :grants => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant.t()),
-          :name => String.t(),
-          :preloadedConfig => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig.t(),
-          :serialNumber => String.t(),
-          :state => String.t()
+            list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t()) | nil,
+          :grants => list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant.t()) | nil,
+          :name => String.t() | nil,
+          :preloadedConfig => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig.t() | nil,
+          :serialNumber => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:activeConfig, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig)

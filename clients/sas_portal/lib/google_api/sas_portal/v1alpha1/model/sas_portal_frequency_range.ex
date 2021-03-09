@@ -28,8 +28,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :highFrequencyMhz => float(),
-          :lowFrequencyMhz => float()
+          :highFrequencyMhz => float() | nil,
+          :lowFrequencyMhz => float() | nil
         }
 
   field(:highFrequencyMhz)

@@ -27,7 +27,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalSignDeviceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :device => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice.t()
+          :device => GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice.t() | nil
         }
 
   field(:device, as: GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice)
