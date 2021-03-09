@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Monitoring do
 
   @type t :: %__MODULE__{
           :consumerDestinations =>
-            list(GoogleApi.ServiceConsumerManagement.V1.Model.MonitoringDestination.t()),
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.MonitoringDestination.t()) | nil,
           :producerDestinations =>
-            list(GoogleApi.ServiceConsumerManagement.V1.Model.MonitoringDestination.t())
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.MonitoringDestination.t()) | nil
         }
 
   field(:consumerDestinations,

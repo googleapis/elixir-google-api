@@ -30,10 +30,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AuthenticationRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowWithoutCredential => boolean(),
-          :oauth => GoogleApi.ServiceConsumerManagement.V1.Model.OAuthRequirements.t(),
-          :requirements => list(GoogleApi.ServiceConsumerManagement.V1.Model.AuthRequirement.t()),
-          :selector => String.t()
+          :allowWithoutCredential => boolean() | nil,
+          :oauth => GoogleApi.ServiceConsumerManagement.V1.Model.OAuthRequirements.t() | nil,
+          :requirements =>
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.AuthRequirement.t()) | nil,
+          :selector => String.t() | nil
         }
 
   field(:allowWithoutCredential)

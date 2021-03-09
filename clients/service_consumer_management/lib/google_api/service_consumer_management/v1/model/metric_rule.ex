@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.MetricRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricCosts => map(),
-          :selector => String.t()
+          :metricCosts => map() | nil,
+          :selector => String.t() | nil
         }
 
   field(:metricCosts, type: :map)

@@ -28,7 +28,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1ImportProducerOver
 
   @type t :: %__MODULE__{
           :overrides =>
-            list(GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride.t())
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride.t()) | nil
         }
 
   field(:overrides,

@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.UndeleteTenantProjectRequ
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tag => String.t()
+          :tag => String.t() | nil
         }
 
   field(:tag)

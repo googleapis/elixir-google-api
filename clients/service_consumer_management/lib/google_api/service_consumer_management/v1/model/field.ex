@@ -36,16 +36,16 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Field do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cardinality => String.t(),
-          :defaultValue => String.t(),
-          :jsonName => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :number => integer(),
-          :oneofIndex => integer(),
-          :options => list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t()),
-          :packed => boolean(),
-          :typeUrl => String.t()
+          :cardinality => String.t() | nil,
+          :defaultValue => String.t() | nil,
+          :jsonName => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :number => integer() | nil,
+          :oneofIndex => integer() | nil,
+          :options => list(GoogleApi.ServiceConsumerManagement.V1.Model.Option.t()) | nil,
+          :packed => boolean() | nil,
+          :typeUrl => String.t() | nil
         }
 
   field(:cardinality)

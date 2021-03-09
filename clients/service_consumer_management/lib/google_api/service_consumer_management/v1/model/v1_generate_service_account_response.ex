@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1GenerateServiceAccountR
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :account => GoogleApi.ServiceConsumerManagement.V1.Model.V1ServiceAccount.t()
+          :account => GoogleApi.ServiceConsumerManagement.V1.Model.V1ServiceAccount.t() | nil
         }
 
   field(:account, as: GoogleApi.ServiceConsumerManagement.V1.Model.V1ServiceAccount)

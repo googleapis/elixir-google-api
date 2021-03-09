@@ -28,8 +28,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameterRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameters => list(GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameter.t()),
-          :selector => String.t()
+          :parameters =>
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameter.t()) | nil,
+          :selector => String.t() | nil
         }
 
   field(:parameters, as: GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameter, type: :list)

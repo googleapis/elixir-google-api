@@ -29,6 +29,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1ImportProducerQuot
   @type t :: %__MODULE__{
           :policies =>
             list(GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1ProducerQuotaPolicy.t())
+            | nil
         }
 
   field(:policies,

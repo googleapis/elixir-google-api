@@ -27,7 +27,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1GenerateServiceIde
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :identity => GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1ServiceIdentity.t()
+          :identity =>
+            GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1ServiceIdentity.t() | nil
         }
 
   field(:identity, as: GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1ServiceIdentity)

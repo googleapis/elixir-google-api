@@ -32,12 +32,12 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adminOverrideAncestor => String.t(),
-          :dimensions => map(),
-          :metric => String.t(),
-          :name => String.t(),
-          :overrideValue => String.t(),
-          :unit => String.t()
+          :adminOverrideAncestor => String.t() | nil,
+          :dimensions => map() | nil,
+          :metric => String.t() | nil,
+          :name => String.t() | nil,
+          :overrideValue => String.t() | nil,
+          :unit => String.t() | nil
         }
 
   field(:adminOverrideAncestor)

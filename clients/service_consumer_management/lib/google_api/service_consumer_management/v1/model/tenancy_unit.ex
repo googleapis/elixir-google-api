@@ -31,12 +31,12 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumer => String.t(),
-          :createTime => DateTime.t(),
-          :name => String.t(),
-          :service => String.t(),
+          :consumer => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :service => String.t() | nil,
           :tenantResources =>
-            list(GoogleApi.ServiceConsumerManagement.V1.Model.TenantResource.t())
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.TenantResource.t()) | nil
         }
 
   field(:consumer)

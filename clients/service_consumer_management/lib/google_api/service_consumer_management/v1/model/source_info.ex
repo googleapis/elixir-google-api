@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.SourceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sourceFiles => list(map())
+          :sourceFiles => list(map()) | nil
         }
 
   field(:sourceFiles, type: :list)

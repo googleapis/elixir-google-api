@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AttachTenantProjectReques
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :externalResource => String.t(),
-          :reservedResource => String.t(),
-          :tag => String.t()
+          :externalResource => String.t() | nil,
+          :reservedResource => String.t() | nil,
+          :tag => String.t() | nil
         }
 
   field(:externalResource)

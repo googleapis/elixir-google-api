@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resource => String.t(),
-          :status => String.t(),
-          :tag => String.t()
+          :resource => String.t() | nil,
+          :status => String.t() | nil,
+          :tag => String.t() | nil
         }
 
   field(:resource)

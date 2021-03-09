@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AuthRequirement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audiences => String.t(),
-          :providerId => String.t()
+          :audiences => String.t() | nil,
+          :providerId => String.t() | nil
         }
 
   field(:audiences)

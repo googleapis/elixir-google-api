@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :members => list(String.t()),
-          :role => String.t()
+          :members => list(String.t()) | nil,
+          :role => String.t() | nil
         }
 
   field(:members, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.DocumentationRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deprecationDescription => String.t(),
-          :description => String.t(),
-          :selector => String.t()
+          :deprecationDescription => String.t() | nil,
+          :description => String.t() | nil,
+          :selector => String.t() | nil
         }
 
   field(:deprecationDescription)
