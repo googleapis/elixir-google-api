@@ -32,12 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappings d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :drainNatIpPortRanges => list(String.t()),
-          :natIpPortRanges => list(String.t()),
-          :numTotalDrainNatPorts => integer(),
-          :numTotalNatPorts => integer(),
-          :sourceAliasIpRange => String.t(),
-          :sourceVirtualIp => String.t()
+          :drainNatIpPortRanges => list(String.t()) | nil,
+          :natIpPortRanges => list(String.t()) | nil,
+          :numTotalDrainNatPorts => integer() | nil,
+          :numTotalNatPorts => integer() | nil,
+          :sourceAliasIpRange => String.t() | nil,
+          :sourceVirtualIp => String.t() | nil
         }
 
   field(:drainNatIpPortRanges, type: :list)

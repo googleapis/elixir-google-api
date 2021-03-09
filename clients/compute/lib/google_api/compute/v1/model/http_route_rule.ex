@@ -44,13 +44,13 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t(),
-          :matchRules => list(GoogleApi.Compute.V1.Model.HttpRouteRuleMatch.t()),
-          :priority => integer(),
-          :routeAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t(),
-          :service => String.t(),
-          :urlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t()
+          :description => String.t() | nil,
+          :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t() | nil,
+          :matchRules => list(GoogleApi.Compute.V1.Model.HttpRouteRuleMatch.t()) | nil,
+          :priority => integer() | nil,
+          :routeAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t() | nil,
+          :service => String.t() | nil,
+          :urlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t() | nil
         }
 
   field(:description)

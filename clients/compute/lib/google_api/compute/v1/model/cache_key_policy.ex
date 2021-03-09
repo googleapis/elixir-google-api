@@ -31,11 +31,11 @@ defmodule GoogleApi.Compute.V1.Model.CacheKeyPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeHost => boolean(),
-          :includeProtocol => boolean(),
-          :includeQueryString => boolean(),
-          :queryStringBlacklist => list(String.t()),
-          :queryStringWhitelist => list(String.t())
+          :includeHost => boolean() | nil,
+          :includeProtocol => boolean() | nil,
+          :includeQueryString => boolean() | nil,
+          :queryStringBlacklist => list(String.t()) | nil,
+          :queryStringWhitelist => list(String.t()) | nil
         }
 
   field(:includeHost)

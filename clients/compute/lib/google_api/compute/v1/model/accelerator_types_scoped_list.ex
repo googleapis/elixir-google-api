@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.AcceleratorTypesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acceleratorTypes => list(GoogleApi.Compute.V1.Model.AcceleratorType.t()),
-          :warning => GoogleApi.Compute.V1.Model.AcceleratorTypesScopedListWarning.t()
+          :acceleratorTypes => list(GoogleApi.Compute.V1.Model.AcceleratorType.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.AcceleratorTypesScopedListWarning.t() | nil
         }
 
   field(:acceleratorTypes, as: GoogleApi.Compute.V1.Model.AcceleratorType, type: :list)

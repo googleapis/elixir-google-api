@@ -55,19 +55,19 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()),
-          :network => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :size => integer(),
-          :subnetwork => String.t(),
-          :zone => String.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()) | nil,
+          :network => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :size => integer() | nil,
+          :subnetwork => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:creationTimestamp)

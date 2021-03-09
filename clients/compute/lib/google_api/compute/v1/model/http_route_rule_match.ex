@@ -47,13 +47,14 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteRuleMatch do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullPathMatch => String.t(),
-          :headerMatches => list(GoogleApi.Compute.V1.Model.HttpHeaderMatch.t()),
-          :ignoreCase => boolean(),
-          :metadataFilters => list(GoogleApi.Compute.V1.Model.MetadataFilter.t()),
-          :prefixMatch => String.t(),
-          :queryParameterMatches => list(GoogleApi.Compute.V1.Model.HttpQueryParameterMatch.t()),
-          :regexMatch => String.t()
+          :fullPathMatch => String.t() | nil,
+          :headerMatches => list(GoogleApi.Compute.V1.Model.HttpHeaderMatch.t()) | nil,
+          :ignoreCase => boolean() | nil,
+          :metadataFilters => list(GoogleApi.Compute.V1.Model.MetadataFilter.t()) | nil,
+          :prefixMatch => String.t() | nil,
+          :queryParameterMatches =>
+            list(GoogleApi.Compute.V1.Model.HttpQueryParameterMatch.t()) | nil,
+          :regexMatch => String.t() | nil
         }
 
   field(:fullPathMatch)

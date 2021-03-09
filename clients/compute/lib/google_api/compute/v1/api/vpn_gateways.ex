@@ -66,6 +66,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
   @spec compute_vpn_gateways_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.VpnGatewayAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_vpn_gateways_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -135,7 +136,10 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_vpn_gateways_delete(
         connection,
         project,
@@ -205,6 +209,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.VpnGateway.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_vpn_gateways_get(
         connection,
@@ -274,6 +279,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.VpnGatewaysGetStatusResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_vpn_gateways_get_status(
         connection,
@@ -347,7 +353,10 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_vpn_gateways_insert(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -423,6 +432,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.VpnGatewayList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_vpn_gateways_list(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -493,7 +503,10 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_vpn_gateways_set_labels(
         connection,
         project,
@@ -565,6 +578,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_vpn_gateways_test_iam_permissions(
         connection,

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :range => String.t()
+          :description => String.t() | nil,
+          :range => String.t() | nil
         }
 
   field(:description)

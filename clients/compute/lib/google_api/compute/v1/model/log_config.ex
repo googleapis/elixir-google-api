@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.LogConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudAudit => GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions.t(),
-          :counter => GoogleApi.Compute.V1.Model.LogConfigCounterOptions.t(),
-          :dataAccess => GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions.t()
+          :cloudAudit => GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions.t() | nil,
+          :counter => GoogleApi.Compute.V1.Model.LogConfigCounterOptions.t() | nil,
+          :dataAccess => GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions.t() | nil
         }
 
   field(:cloudAudit, as: GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions)

@@ -36,16 +36,16 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :coolDownPeriodSec => integer(),
-          :cpuUtilization => GoogleApi.Compute.V1.Model.AutoscalingPolicyCpuUtilization.t(),
+          :coolDownPeriodSec => integer() | nil,
+          :cpuUtilization => GoogleApi.Compute.V1.Model.AutoscalingPolicyCpuUtilization.t() | nil,
           :customMetricUtilizations =>
-            list(GoogleApi.Compute.V1.Model.AutoscalingPolicyCustomMetricUtilization.t()),
+            list(GoogleApi.Compute.V1.Model.AutoscalingPolicyCustomMetricUtilization.t()) | nil,
           :loadBalancingUtilization =>
-            GoogleApi.Compute.V1.Model.AutoscalingPolicyLoadBalancingUtilization.t(),
-          :maxNumReplicas => integer(),
-          :minNumReplicas => integer(),
-          :mode => String.t(),
-          :scaleInControl => GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl.t()
+            GoogleApi.Compute.V1.Model.AutoscalingPolicyLoadBalancingUtilization.t() | nil,
+          :maxNumReplicas => integer() | nil,
+          :minNumReplicas => integer() | nil,
+          :mode => String.t() | nil,
+          :scaleInControl => GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl.t() | nil
         }
 
   field(:coolDownPeriodSec)

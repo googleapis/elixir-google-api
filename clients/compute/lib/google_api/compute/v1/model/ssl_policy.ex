@@ -43,18 +43,18 @@ defmodule GoogleApi.Compute.V1.Model.SslPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :customFeatures => list(String.t()),
-          :description => String.t(),
-          :enabledFeatures => list(String.t()),
-          :fingerprint => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :minTlsVersion => String.t(),
-          :name => String.t(),
-          :profile => String.t(),
-          :selfLink => String.t(),
-          :warnings => list(GoogleApi.Compute.V1.Model.SslPolicyWarnings.t())
+          :creationTimestamp => String.t() | nil,
+          :customFeatures => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :enabledFeatures => list(String.t()) | nil,
+          :fingerprint => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :minTlsVersion => String.t() | nil,
+          :name => String.t() | nil,
+          :profile => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :warnings => list(GoogleApi.Compute.V1.Model.SslPolicyWarnings.t()) | nil
         }
 
   field(:creationTimestamp)

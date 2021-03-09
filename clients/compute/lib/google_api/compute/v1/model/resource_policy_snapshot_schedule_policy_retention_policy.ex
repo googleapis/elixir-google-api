@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicyRetenti
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxRetentionDays => integer(),
-          :onSourceDiskDelete => String.t()
+          :maxRetentionDays => integer() | nil,
+          :onSourceDiskDelete => String.t() | nil
         }
 
   field(:maxRetentionDays)

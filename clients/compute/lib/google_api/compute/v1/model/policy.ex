@@ -62,12 +62,12 @@ defmodule GoogleApi.Compute.V1.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditConfigs => list(GoogleApi.Compute.V1.Model.AuditConfig.t()),
-          :bindings => list(GoogleApi.Compute.V1.Model.Binding.t()),
-          :etag => String.t(),
-          :iamOwned => boolean(),
-          :rules => list(GoogleApi.Compute.V1.Model.Rule.t()),
-          :version => integer()
+          :auditConfigs => list(GoogleApi.Compute.V1.Model.AuditConfig.t()) | nil,
+          :bindings => list(GoogleApi.Compute.V1.Model.Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :iamOwned => boolean() | nil,
+          :rules => list(GoogleApi.Compute.V1.Model.Rule.t()) | nil,
+          :version => integer() | nil
         }
 
   field(:auditConfigs, as: GoogleApi.Compute.V1.Model.AuditConfig, type: :list)

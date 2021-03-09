@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.RoutersScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :routers => list(GoogleApi.Compute.V1.Model.Router.t()),
-          :warning => GoogleApi.Compute.V1.Model.RoutersScopedListWarning.t()
+          :routers => list(GoogleApi.Compute.V1.Model.Router.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.RoutersScopedListWarning.t() | nil
         }
 
   field(:routers, as: GoogleApi.Compute.V1.Model.Router, type: :list)

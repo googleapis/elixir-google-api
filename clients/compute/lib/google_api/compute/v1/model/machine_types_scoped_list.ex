@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.MachineTypesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :machineTypes => list(GoogleApi.Compute.V1.Model.MachineType.t()),
-          :warning => GoogleApi.Compute.V1.Model.MachineTypesScopedListWarning.t()
+          :machineTypes => list(GoogleApi.Compute.V1.Model.MachineType.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.MachineTypesScopedListWarning.t() | nil
         }
 
   field(:machineTypes, as: GoogleApi.Compute.V1.Model.MachineType, type: :list)

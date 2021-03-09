@@ -31,11 +31,11 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :items => list(GoogleApi.Compute.V1.Model.FirewallPolicy.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :warning => GoogleApi.Compute.V1.Model.FirewallPolicyListWarning.t()
+          :id => String.t() | nil,
+          :items => list(GoogleApi.Compute.V1.Model.FirewallPolicy.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :warning => GoogleApi.Compute.V1.Model.FirewallPolicyListWarning.t() | nil
         }
 
   field(:id)

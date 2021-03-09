@@ -39,13 +39,13 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cacheKeyPolicy => GoogleApi.Compute.V1.Model.CacheKeyPolicy.t(),
-          :cacheMode => String.t(),
-          :clientTtl => integer(),
-          :defaultTtl => integer(),
-          :maxTtl => integer(),
-          :signedUrlCacheMaxAgeSec => String.t(),
-          :signedUrlKeyNames => list(String.t())
+          :cacheKeyPolicy => GoogleApi.Compute.V1.Model.CacheKeyPolicy.t() | nil,
+          :cacheMode => String.t() | nil,
+          :clientTtl => integer() | nil,
+          :defaultTtl => integer() | nil,
+          :maxTtl => integer() | nil,
+          :signedUrlCacheMaxAgeSec => String.t() | nil,
+          :signedUrlKeyNames => list(String.t()) | nil
         }
 
   field(:cacheKeyPolicy, as: GoogleApi.Compute.V1.Model.CacheKeyPolicy)

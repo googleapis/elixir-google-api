@@ -31,9 +31,9 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkLACPStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googleSystemId => String.t(),
-          :neighborSystemId => String.t(),
-          :state => String.t()
+          :googleSystemId => String.t() | nil,
+          :neighborSystemId => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:googleSystemId)

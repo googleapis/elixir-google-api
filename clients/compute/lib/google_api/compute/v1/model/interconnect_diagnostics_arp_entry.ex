@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipAddress => String.t(),
-          :macAddress => String.t()
+          :ipAddress => String.t() | nil,
+          :macAddress => String.t() | nil
         }
 
   field(:ipAddress)

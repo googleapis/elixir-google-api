@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachmentPrivateInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tag8021q => integer()
+          :tag8021q => integer() | nil
         }
 
   field(:tag8021q)

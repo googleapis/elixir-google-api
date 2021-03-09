@@ -37,13 +37,13 @@ defmodule GoogleApi.Compute.V1.Model.AccessConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :name => String.t(),
-          :natIP => String.t(),
-          :networkTier => String.t(),
-          :publicPtrDomainName => String.t(),
-          :setPublicPtr => boolean(),
-          :type => String.t()
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :natIP => String.t() | nil,
+          :networkTier => String.t() | nil,
+          :publicPtrDomainName => String.t() | nil,
+          :setPublicPtr => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:kind)

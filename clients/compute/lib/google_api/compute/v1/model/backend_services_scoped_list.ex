@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.BackendServicesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backendServices => list(GoogleApi.Compute.V1.Model.BackendService.t()),
-          :warning => GoogleApi.Compute.V1.Model.BackendServicesScopedListWarning.t()
+          :backendServices => list(GoogleApi.Compute.V1.Model.BackendService.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.BackendServicesScopedListWarning.t() | nil
         }
 
   field(:backendServices, as: GoogleApi.Compute.V1.Model.BackendService, type: :list)

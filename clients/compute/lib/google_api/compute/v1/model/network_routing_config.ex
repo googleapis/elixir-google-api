@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkRoutingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :routingMode => String.t()
+          :routingMode => String.t() | nil
         }
 
   field(:routingMode)

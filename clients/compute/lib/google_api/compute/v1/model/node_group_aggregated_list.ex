@@ -33,13 +33,14 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupAggregatedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :items => %{optional(String.t()) => GoogleApi.Compute.V1.Model.NodeGroupsScopedList.t()},
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :selfLink => String.t(),
-          :unreachables => list(String.t()),
-          :warning => GoogleApi.Compute.V1.Model.NodeGroupAggregatedListWarning.t()
+          :id => String.t() | nil,
+          :items =>
+            %{optional(String.t()) => GoogleApi.Compute.V1.Model.NodeGroupsScopedList.t()} | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :unreachables => list(String.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.NodeGroupAggregatedListWarning.t() | nil
         }
 
   field(:id)

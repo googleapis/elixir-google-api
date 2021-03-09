@@ -29,10 +29,11 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :inUseCount => String.t(),
+          :count => String.t() | nil,
+          :inUseCount => String.t() | nil,
           :instanceProperties =>
             GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInstanceProperties.t()
+            | nil
         }
 
   field(:count)

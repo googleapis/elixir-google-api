@@ -50,22 +50,23 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()),
-          :cpuOvercommitType => String.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :disks => list(GoogleApi.Compute.V1.Model.LocalDisk.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :nodeAffinityLabels => map(),
-          :nodeType => String.t(),
-          :nodeTypeFlexibility => GoogleApi.Compute.V1.Model.NodeTemplateNodeTypeFlexibility.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :serverBinding => GoogleApi.Compute.V1.Model.ServerBinding.t(),
-          :status => String.t(),
-          :statusMessage => String.t()
+          :accelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()) | nil,
+          :cpuOvercommitType => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :disks => list(GoogleApi.Compute.V1.Model.LocalDisk.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :nodeAffinityLabels => map() | nil,
+          :nodeType => String.t() | nil,
+          :nodeTypeFlexibility =>
+            GoogleApi.Compute.V1.Model.NodeTemplateNodeTypeFlexibility.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :serverBinding => GoogleApi.Compute.V1.Model.ServerBinding.t() | nil,
+          :status => String.t() | nil,
+          :statusMessage => String.t() | nil
         }
 
   field(:accelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)

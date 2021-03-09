@@ -32,12 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.GuestAttributes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :queryPath => String.t(),
-          :queryValue => GoogleApi.Compute.V1.Model.GuestAttributesValue.t(),
-          :selfLink => String.t(),
-          :variableKey => String.t(),
-          :variableValue => String.t()
+          :kind => String.t() | nil,
+          :queryPath => String.t() | nil,
+          :queryValue => GoogleApi.Compute.V1.Model.GuestAttributesValue.t() | nil,
+          :selfLink => String.t() | nil,
+          :variableKey => String.t() | nil,
+          :variableValue => String.t() | nil
         }
 
   field(:kind)

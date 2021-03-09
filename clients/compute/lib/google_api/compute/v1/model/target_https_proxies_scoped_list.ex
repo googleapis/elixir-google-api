@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxiesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetHttpsProxies => list(GoogleApi.Compute.V1.Model.TargetHttpsProxy.t()),
-          :warning => GoogleApi.Compute.V1.Model.TargetHttpsProxiesScopedListWarning.t()
+          :targetHttpsProxies => list(GoogleApi.Compute.V1.Model.TargetHttpsProxy.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.TargetHttpsProxiesScopedListWarning.t() | nil
         }
 
   field(:targetHttpsProxies, as: GoogleApi.Compute.V1.Model.TargetHttpsProxy, type: :list)

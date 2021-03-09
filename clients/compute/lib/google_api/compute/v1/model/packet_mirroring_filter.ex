@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.PacketMirroringFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :IPProtocols => list(String.t()),
-          :cidrRanges => list(String.t()),
-          :direction => String.t()
+          :IPProtocols => list(String.t()) | nil,
+          :cidrRanges => list(String.t()) | nil,
+          :direction => String.t() | nil
         }
 
   field(:IPProtocols, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxiesSetQuicOverrideRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :quicOverride => String.t()
+          :quicOverride => String.t() | nil
         }
 
   field(:quicOverride)

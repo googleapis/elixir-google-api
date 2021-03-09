@@ -28,9 +28,10 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStateful do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hasStatefulConfig => boolean(),
+          :hasStatefulConfig => boolean() | nil,
           :perInstanceConfigs =>
             GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStatefulPerInstanceConfigs.t()
+            | nil
         }
 
   field(:hasStatefulConfig)

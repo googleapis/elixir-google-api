@@ -37,15 +37,15 @@ defmodule GoogleApi.Compute.V1.Model.AcceleratorType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :maximumCardsPerInstance => integer(),
-          :name => String.t(),
-          :selfLink => String.t(),
-          :zone => String.t()
+          :creationTimestamp => String.t() | nil,
+          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :maximumCardsPerInstance => integer() | nil,
+          :name => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:creationTimestamp)

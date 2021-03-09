@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.SourceInstanceParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :diskConfigs => list(GoogleApi.Compute.V1.Model.DiskInstantiationConfig.t())
+          :diskConfigs => list(GoogleApi.Compute.V1.Model.DiskInstantiationConfig.t()) | nil
         }
 
   field(:diskConfigs, as: GoogleApi.Compute.V1.Model.DiskInstantiationConfig, type: :list)

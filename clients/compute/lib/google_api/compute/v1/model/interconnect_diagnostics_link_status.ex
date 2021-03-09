@@ -32,14 +32,16 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arpCaches => list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry.t()),
-          :circuitId => String.t(),
-          :googleDemarc => String.t(),
-          :lacpStatus => GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkLACPStatus.t(),
+          :arpCaches =>
+            list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry.t()) | nil,
+          :circuitId => String.t() | nil,
+          :googleDemarc => String.t() | nil,
+          :lacpStatus =>
+            GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkLACPStatus.t() | nil,
           :receivingOpticalPower =>
-            GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.t(),
+            GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.t() | nil,
           :transmittingOpticalPower =>
-            GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.t()
+            GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.t() | nil
         }
 
   field(:arpCaches, as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyHourlyCycle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :hoursInCycle => integer(),
-          :startTime => String.t()
+          :duration => String.t() | nil,
+          :hoursInCycle => integer() | nil,
+          :startTime => String.t() | nil
         }
 
   field(:duration)

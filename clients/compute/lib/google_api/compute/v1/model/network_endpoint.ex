@@ -33,11 +33,11 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotations => map(),
-          :fqdn => String.t(),
-          :instance => String.t(),
-          :ipAddress => String.t(),
-          :port => integer()
+          :annotations => map() | nil,
+          :fqdn => String.t() | nil,
+          :instance => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :port => integer() | nil
         }
 
   field(:annotations, type: :map)

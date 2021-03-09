@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.TargetInstancesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetInstances => list(GoogleApi.Compute.V1.Model.TargetInstance.t()),
-          :warning => GoogleApi.Compute.V1.Model.TargetInstancesScopedListWarning.t()
+          :targetInstances => list(GoogleApi.Compute.V1.Model.TargetInstance.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.TargetInstancesScopedListWarning.t() | nil
         }
 
   field(:targetInstances, as: GoogleApi.Compute.V1.Model.TargetInstance, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationAllocatedIns
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :diskSizeGb => String.t(),
-          :interface => String.t()
+          :diskSizeGb => String.t() | nil,
+          :interface => String.t() | nil
         }
 
   field(:diskSizeGb)

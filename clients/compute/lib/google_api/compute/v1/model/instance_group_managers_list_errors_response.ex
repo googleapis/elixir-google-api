@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagersListErrorsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Compute.V1.Model.InstanceManagedByIgmError.t()),
-          :nextPageToken => String.t()
+          :items => list(GoogleApi.Compute.V1.Model.InstanceManagedByIgmError.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:items, as: GoogleApi.Compute.V1.Model.InstanceManagedByIgmError, type: :list)

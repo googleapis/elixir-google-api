@@ -30,10 +30,11 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupAggregatedListWarning d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
+          :code => String.t() | nil,
           :data =>
-            list(GoogleApi.Compute.V1.Model.NetworkEndpointGroupAggregatedListWarningData.t()),
-          :message => String.t()
+            list(GoogleApi.Compute.V1.Model.NetworkEndpointGroupAggregatedListWarningData.t())
+            | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

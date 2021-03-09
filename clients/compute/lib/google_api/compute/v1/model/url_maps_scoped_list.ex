@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.UrlMapsScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :urlMaps => list(GoogleApi.Compute.V1.Model.UrlMap.t()),
-          :warning => GoogleApi.Compute.V1.Model.UrlMapsScopedListWarning.t()
+          :urlMaps => list(GoogleApi.Compute.V1.Model.UrlMap.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.UrlMapsScopedListWarning.t() | nil
         }
 
   field(:urlMaps, as: GoogleApi.Compute.V1.Model.UrlMap, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.RegionInstanceGroupManagersListInstancesRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :managedInstances => list(GoogleApi.Compute.V1.Model.ManagedInstance.t()),
-          :nextPageToken => String.t()
+          :managedInstances => list(GoogleApi.Compute.V1.Model.ManagedInstance.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:managedInstances, as: GoogleApi.Compute.V1.Model.ManagedInstance, type: :list)

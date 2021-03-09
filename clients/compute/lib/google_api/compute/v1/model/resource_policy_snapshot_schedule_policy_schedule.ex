@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySchedul
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dailySchedule => GoogleApi.Compute.V1.Model.ResourcePolicyDailyCycle.t(),
-          :hourlySchedule => GoogleApi.Compute.V1.Model.ResourcePolicyHourlyCycle.t(),
-          :weeklySchedule => GoogleApi.Compute.V1.Model.ResourcePolicyWeeklyCycle.t()
+          :dailySchedule => GoogleApi.Compute.V1.Model.ResourcePolicyDailyCycle.t() | nil,
+          :hourlySchedule => GoogleApi.Compute.V1.Model.ResourcePolicyHourlyCycle.t() | nil,
+          :weeklySchedule => GoogleApi.Compute.V1.Model.ResourcePolicyWeeklyCycle.t() | nil
         }
 
   field(:dailySchedule, as: GoogleApi.Compute.V1.Model.ResourcePolicyDailyCycle)

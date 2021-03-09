@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ProjectsListXpnHostsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :organization => String.t()
+          :organization => String.t() | nil
         }
 
   field(:organization)

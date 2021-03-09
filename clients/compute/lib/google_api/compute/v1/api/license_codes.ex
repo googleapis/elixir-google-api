@@ -57,6 +57,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.LicenseCode.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_license_codes_get(
         connection,
@@ -123,6 +124,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_license_codes_test_iam_permissions(
         connection,

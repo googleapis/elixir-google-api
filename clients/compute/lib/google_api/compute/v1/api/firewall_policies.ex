@@ -60,7 +60,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_add_association(
         connection,
         firewall_policy,
@@ -123,7 +126,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_firewall_policies_add_rule(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_add_rule(
         connection,
         firewall_policy,
@@ -190,7 +196,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_clone_rules(
         connection,
         firewall_policy,
@@ -251,7 +260,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_firewall_policies_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_delete(
         connection,
         firewall_policy,
@@ -308,6 +320,7 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   @spec compute_firewall_policies_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.FirewallPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_firewall_policies_get(
         connection,
@@ -370,6 +383,7 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.FirewallPolicyAssociation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_firewall_policies_get_association(
         connection,
@@ -430,7 +444,11 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_get_iam_policy(
         connection,
         resource,
@@ -488,6 +506,7 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   @spec compute_firewall_policies_get_rule(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.FirewallPolicyRule.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_firewall_policies_get_rule(
         connection,
@@ -549,7 +568,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_firewall_policies_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -616,6 +638,7 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   @spec compute_firewall_policies_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.FirewallPolicyList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_firewall_policies_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -671,6 +694,7 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   @spec compute_firewall_policies_list_associations(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.FirewallPoliciesListAssociationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_firewall_policies_list_associations(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -727,7 +751,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_firewall_policies_move(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_move(
         connection,
         firewall_policy,
@@ -789,7 +816,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_firewall_policies_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_patch(
         connection,
         firewall_policy,
@@ -852,7 +882,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_firewall_policies_patch_rule(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_patch_rule(
         connection,
         firewall_policy,
@@ -920,7 +953,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_remove_association(
         connection,
         firewall_policy,
@@ -987,7 +1023,10 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_remove_rule(
         connection,
         firewall_policy,
@@ -1048,7 +1087,11 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_firewall_policies_set_iam_policy(
         connection,
         resource,
@@ -1111,6 +1154,7 @@ defmodule GoogleApi.Compute.V1.Api.FirewallPolicies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_firewall_policies_test_iam_permissions(
         connection,

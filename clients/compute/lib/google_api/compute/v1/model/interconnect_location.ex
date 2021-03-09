@@ -50,21 +50,22 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :availabilityZone => String.t(),
-          :city => String.t(),
-          :continent => String.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :facilityProvider => String.t(),
-          :facilityProviderFacilityId => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :peeringdbFacilityId => String.t(),
-          :regionInfos => list(GoogleApi.Compute.V1.Model.InterconnectLocationRegionInfo.t()),
-          :selfLink => String.t(),
-          :status => String.t()
+          :address => String.t() | nil,
+          :availabilityZone => String.t() | nil,
+          :city => String.t() | nil,
+          :continent => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :facilityProvider => String.t() | nil,
+          :facilityProviderFacilityId => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :peeringdbFacilityId => String.t() | nil,
+          :regionInfos =>
+            list(GoogleApi.Compute.V1.Model.InterconnectLocationRegionInfo.t()) | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:address)

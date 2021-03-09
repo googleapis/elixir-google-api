@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.RegionUrlMapsValidateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resource => GoogleApi.Compute.V1.Model.UrlMap.t()
+          :resource => GoogleApi.Compute.V1.Model.UrlMap.t() | nil
         }
 
   field(:resource, as: GoogleApi.Compute.V1.Model.UrlMap)

@@ -35,10 +35,10 @@ defmodule GoogleApi.Compute.V1.Model.PathRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :paths => list(String.t()),
-          :routeAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t(),
-          :service => String.t(),
-          :urlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t()
+          :paths => list(String.t()) | nil,
+          :routeAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t() | nil,
+          :service => String.t() | nil,
+          :urlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t() | nil
         }
 
   field(:paths, type: :list)

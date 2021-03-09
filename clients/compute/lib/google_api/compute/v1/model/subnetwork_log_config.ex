@@ -32,12 +32,12 @@ defmodule GoogleApi.Compute.V1.Model.SubnetworkLogConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregationInterval => String.t(),
-          :enable => boolean(),
-          :filterExpr => String.t(),
-          :flowSampling => number(),
-          :metadata => String.t(),
-          :metadataFields => list(String.t())
+          :aggregationInterval => String.t() | nil,
+          :enable => boolean() | nil,
+          :filterExpr => String.t() | nil,
+          :flowSampling => number() | nil,
+          :metadata => String.t() | nil,
+          :metadataFields => list(String.t()) | nil
         }
 
   field(:aggregationInterval)

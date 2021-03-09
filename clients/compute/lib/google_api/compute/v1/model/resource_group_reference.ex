@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourceGroupReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :group => String.t()
+          :group => String.t() | nil
         }
 
   field(:group)

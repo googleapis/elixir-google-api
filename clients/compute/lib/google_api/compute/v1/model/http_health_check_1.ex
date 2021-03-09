@@ -41,19 +41,19 @@ defmodule GoogleApi.Compute.V1.Model.HttpHealthCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checkIntervalSec => integer(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :healthyThreshold => integer(),
-          :host => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :port => integer(),
-          :requestPath => String.t(),
-          :selfLink => String.t(),
-          :timeoutSec => integer(),
-          :unhealthyThreshold => integer()
+          :checkIntervalSec => integer() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :healthyThreshold => integer() | nil,
+          :host => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :port => integer() | nil,
+          :requestPath => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :timeoutSec => integer() | nil,
+          :unhealthyThreshold => integer() | nil
         }
 
   field(:checkIntervalSec)

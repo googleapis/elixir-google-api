@@ -62,7 +62,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionNetworkEndpointGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_network_endpoint_groups_delete(
         connection,
         project,
@@ -136,6 +139,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNetworkEndpointGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_network_endpoint_groups_get(
         connection,
@@ -211,7 +215,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionNetworkEndpointGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_network_endpoint_groups_insert(
         connection,
         project,
@@ -293,6 +300,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionNetworkEndpointGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroupList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_network_endpoint_groups_list(
         connection,

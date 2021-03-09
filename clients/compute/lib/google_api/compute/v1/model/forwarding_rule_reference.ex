@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRuleReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :forwardingRule => String.t()
+          :forwardingRule => String.t() | nil
         }
 
   field(:forwardingRule)

@@ -57,21 +57,22 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoDelete => boolean(),
-          :boot => boolean(),
-          :deviceName => String.t(),
-          :diskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t(),
-          :diskSizeGb => String.t(),
-          :guestOsFeatures => list(GoogleApi.Compute.V1.Model.GuestOsFeature.t()),
-          :index => integer(),
-          :initializeParams => GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams.t(),
-          :interface => String.t(),
-          :kind => String.t(),
-          :licenses => list(String.t()),
-          :mode => String.t(),
-          :shieldedInstanceInitialState => GoogleApi.Compute.V1.Model.InitialStateConfig.t(),
-          :source => String.t(),
-          :type => String.t()
+          :autoDelete => boolean() | nil,
+          :boot => boolean() | nil,
+          :deviceName => String.t() | nil,
+          :diskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
+          :diskSizeGb => String.t() | nil,
+          :guestOsFeatures => list(GoogleApi.Compute.V1.Model.GuestOsFeature.t()) | nil,
+          :index => integer() | nil,
+          :initializeParams => GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams.t() | nil,
+          :interface => String.t() | nil,
+          :kind => String.t() | nil,
+          :licenses => list(String.t()) | nil,
+          :mode => String.t() | nil,
+          :shieldedInstanceInitialState =>
+            GoogleApi.Compute.V1.Model.InitialStateConfig.t() | nil,
+          :source => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:autoDelete)

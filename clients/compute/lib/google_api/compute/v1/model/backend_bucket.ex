@@ -38,16 +38,16 @@ defmodule GoogleApi.Compute.V1.Model.BackendBucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketName => String.t(),
-          :cdnPolicy => GoogleApi.Compute.V1.Model.BackendBucketCdnPolicy.t(),
-          :creationTimestamp => String.t(),
-          :customResponseHeaders => list(String.t()),
-          :description => String.t(),
-          :enableCdn => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :selfLink => String.t()
+          :bucketName => String.t() | nil,
+          :cdnPolicy => GoogleApi.Compute.V1.Model.BackendBucketCdnPolicy.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :customResponseHeaders => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :enableCdn => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:bucketName)

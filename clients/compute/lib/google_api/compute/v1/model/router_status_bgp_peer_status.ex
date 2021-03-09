@@ -36,16 +36,16 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertisedRoutes => list(GoogleApi.Compute.V1.Model.Route.t()),
-          :ipAddress => String.t(),
-          :linkedVpnTunnel => String.t(),
-          :name => String.t(),
-          :numLearnedRoutes => integer(),
-          :peerIpAddress => String.t(),
-          :state => String.t(),
-          :status => String.t(),
-          :uptime => String.t(),
-          :uptimeSeconds => String.t()
+          :advertisedRoutes => list(GoogleApi.Compute.V1.Model.Route.t()) | nil,
+          :ipAddress => String.t() | nil,
+          :linkedVpnTunnel => String.t() | nil,
+          :name => String.t() | nil,
+          :numLearnedRoutes => integer() | nil,
+          :peerIpAddress => String.t() | nil,
+          :state => String.t() | nil,
+          :status => String.t() | nil,
+          :uptime => String.t() | nil,
+          :uptimeSeconds => String.t() | nil
         }
 
   field(:advertisedRoutes, as: GoogleApi.Compute.V1.Model.Route, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.NetworksGetEffectiveFirewallsResponseEffect
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :name => String.t(),
-          :rules => list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t()),
-          :type => String.t()
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
+          :rules => list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:displayName)

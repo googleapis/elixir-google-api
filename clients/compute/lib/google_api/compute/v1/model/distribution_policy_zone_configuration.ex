@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.DistributionPolicyZoneConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :zone => String.t()
+          :zone => String.t() | nil
         }
 
   field(:zone)

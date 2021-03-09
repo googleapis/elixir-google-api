@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.SslPolicyReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sslPolicy => String.t()
+          :sslPolicy => String.t() | nil
         }
 
   field(:sslPolicy)

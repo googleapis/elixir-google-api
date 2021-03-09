@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.RegionInstanceGroupsListInstancesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceState => String.t(),
-          :portName => String.t()
+          :instanceState => String.t() | nil,
+          :portName => String.t() | nil
         }
 
   field(:instanceState)

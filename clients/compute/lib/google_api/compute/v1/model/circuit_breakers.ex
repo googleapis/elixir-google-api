@@ -31,11 +31,11 @@ defmodule GoogleApi.Compute.V1.Model.CircuitBreakers do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxConnections => integer(),
-          :maxPendingRequests => integer(),
-          :maxRequests => integer(),
-          :maxRequestsPerConnection => integer(),
-          :maxRetries => integer()
+          :maxConnections => integer() | nil,
+          :maxPendingRequests => integer() | nil,
+          :maxRequests => integer() | nil,
+          :maxRequestsPerConnection => integer() | nil,
+          :maxRetries => integer() | nil
         }
 
   field(:maxConnections)

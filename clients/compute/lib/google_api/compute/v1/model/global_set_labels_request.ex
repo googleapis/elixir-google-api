@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.GlobalSetLabelsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labelFingerprint => String.t(),
-          :labels => map()
+          :labelFingerprint => String.t() | nil,
+          :labels => map() | nil
         }
 
   field(:labelFingerprint)

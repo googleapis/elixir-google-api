@@ -61,7 +61,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_backend_services_add_signed_url_key(
         connection,
         project,
@@ -145,6 +148,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendServiceAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_backend_services_aggregated_list(
         connection,
@@ -219,7 +223,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_backend_services_delete(
         connection,
         project,
@@ -290,7 +297,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_backend_services_delete_signed_url_key(
         connection,
         project,
@@ -361,6 +371,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendService.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_backend_services_get(
         connection,
@@ -431,6 +442,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendServiceGroupHealth.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_backend_services_get_health(
         connection,
@@ -494,7 +506,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   *   `{:error, info}` on failure
   """
   @spec compute_backend_services_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_backend_services_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -562,6 +577,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   @spec compute_backend_services_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendServiceList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_backend_services_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -629,7 +645,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_backend_services_patch(
         connection,
         project,
@@ -665,7 +684,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Sets the security policy for the specified backend service.
+  Sets the Google Cloud Armor security policy for the specified backend service. For more information, see Google Cloud Armor Overview
 
   ## Parameters
 
@@ -700,7 +719,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_backend_services_set_security_policy(
         connection,
         project,
@@ -774,7 +796,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_backend_services_update(
         connection,
         project,

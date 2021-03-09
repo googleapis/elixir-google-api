@@ -30,7 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheckReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :healthCheck => String.t()
+          :healthCheck => String.t() | nil
         }
 
   field(:healthCheck)

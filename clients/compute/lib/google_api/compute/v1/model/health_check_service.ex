@@ -42,18 +42,18 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheckService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :healthChecks => list(String.t()),
-          :healthStatusAggregationPolicy => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :networkEndpointGroups => list(String.t()),
-          :notificationEndpoints => list(String.t()),
-          :region => String.t(),
-          :selfLink => String.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :healthChecks => list(String.t()) | nil,
+          :healthStatusAggregationPolicy => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :networkEndpointGroups => list(String.t()) | nil,
+          :notificationEndpoints => list(String.t()) | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:creationTimestamp)

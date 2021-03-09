@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayStatusHighAvailabilityRequirement
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :state => String.t(),
-          :unsatisfiedReason => String.t()
+          :state => String.t() | nil,
+          :unsatisfiedReason => String.t() | nil
         }
 
   field(:state)

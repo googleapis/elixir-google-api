@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceIAP do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean(),
-          :oauth2ClientId => String.t(),
-          :oauth2ClientSecret => String.t(),
-          :oauth2ClientSecretSha256 => String.t()
+          :enabled => boolean() | nil,
+          :oauth2ClientId => String.t() | nil,
+          :oauth2ClientSecret => String.t() | nil,
+          :oauth2ClientSecretSha256 => String.t() | nil
         }
 
   field(:enabled)

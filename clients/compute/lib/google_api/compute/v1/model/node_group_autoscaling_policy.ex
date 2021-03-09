@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupAutoscalingPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxNodes => integer(),
-          :minNodes => integer(),
-          :mode => String.t()
+          :maxNodes => integer() | nil,
+          :minNodes => integer() | nil,
+          :mode => String.t() | nil
         }
 
   field(:maxNodes)

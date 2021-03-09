@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePoliciesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourcePolicies => list(GoogleApi.Compute.V1.Model.ResourcePolicy.t()),
-          :warning => GoogleApi.Compute.V1.Model.ResourcePoliciesScopedListWarning.t()
+          :resourcePolicies => list(GoogleApi.Compute.V1.Model.ResourcePolicy.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.ResourcePoliciesScopedListWarning.t() | nil
         }
 
   field(:resourcePolicies, as: GoogleApi.Compute.V1.Model.ResourcePolicy, type: :list)

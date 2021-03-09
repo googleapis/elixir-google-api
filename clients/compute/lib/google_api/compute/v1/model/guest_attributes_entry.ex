@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.GuestAttributesEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :namespace => String.t(),
-          :value => String.t()
+          :key => String.t() | nil,
+          :namespace => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:key)

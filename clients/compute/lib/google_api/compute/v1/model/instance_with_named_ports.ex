@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.InstanceWithNamedPorts do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instance => String.t(),
-          :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()),
-          :status => String.t()
+          :instance => String.t() | nil,
+          :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()) | nil,
+          :status => String.t() | nil
         }
 
   field(:instance)

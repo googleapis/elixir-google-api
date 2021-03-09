@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.Screenshot do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contents => String.t(),
-          :kind => String.t()
+          :contents => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:contents)

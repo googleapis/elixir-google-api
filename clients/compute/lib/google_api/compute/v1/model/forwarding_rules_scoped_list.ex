@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRulesScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :forwardingRules => list(GoogleApi.Compute.V1.Model.ForwardingRule.t()),
-          :warning => GoogleApi.Compute.V1.Model.ForwardingRulesScopedListWarning.t()
+          :forwardingRules => list(GoogleApi.Compute.V1.Model.ForwardingRule.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.ForwardingRulesScopedListWarning.t() | nil
         }
 
   field(:forwardingRules, as: GoogleApi.Compute.V1.Model.ForwardingRule, type: :list)

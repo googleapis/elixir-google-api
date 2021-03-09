@@ -62,7 +62,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_target_https_proxies_delete(
         connection,
         project,
@@ -136,6 +139,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetHttpsProxy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_target_https_proxies_get(
         connection,
@@ -211,7 +215,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_target_https_proxies_insert(
         connection,
         project,
@@ -293,6 +300,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetHttpsProxyList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_target_https_proxies_list(
         connection,
@@ -369,7 +377,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_target_https_proxies_set_ssl_certificates(
         connection,
         project,
@@ -447,7 +458,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_target_https_proxies_set_url_map(
         connection,
         project,

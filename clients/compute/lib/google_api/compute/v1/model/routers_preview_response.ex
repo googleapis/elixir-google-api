@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.RoutersPreviewResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resource => GoogleApi.Compute.V1.Model.Router.t()
+          :resource => GoogleApi.Compute.V1.Model.Router.t() | nil
         }
 
   field(:resource, as: GoogleApi.Compute.V1.Model.Router)

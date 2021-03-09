@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettingsHttpCooki
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :path => String.t(),
-          :ttl => GoogleApi.Compute.V1.Model.Duration.t()
+          :name => String.t() | nil,
+          :path => String.t() | nil,
+          :ttl => GoogleApi.Compute.V1.Model.Duration.t() | nil
         }
 
   field(:name)

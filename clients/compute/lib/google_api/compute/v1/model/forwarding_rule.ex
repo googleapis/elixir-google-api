@@ -44,6 +44,8 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
 
       Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+
+      For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
   *   `IPProtocol` (*type:* `String.t`, *default:* `nil`) - The IP protocol to which this rule applies.
 
       For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
@@ -96,6 +98,8 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `network` (*type:* `String.t`, *default:* `nil`) - This field is not used for external load balancing.
 
       For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+
+      For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
   *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.
 
       For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
@@ -140,42 +144,42 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       For internal load balancing, this field identifies the subnetwork that the load balanced IP should belong to for this Forwarding Rule.
 
       If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+  *   `target` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :IPAddress => String.t(),
-          :IPProtocol => String.t(),
-          :allPorts => boolean(),
-          :allowGlobalAccess => boolean(),
-          :backendService => String.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :id => String.t(),
-          :ipVersion => String.t(),
-          :isMirroringCollector => boolean(),
-          :kind => String.t(),
-          :labelFingerprint => String.t(),
-          :labels => map(),
-          :loadBalancingScheme => String.t(),
-          :metadataFilters => list(GoogleApi.Compute.V1.Model.MetadataFilter.t()),
-          :name => String.t(),
-          :network => String.t(),
-          :networkTier => String.t(),
-          :portRange => String.t(),
-          :ports => list(String.t()),
-          :pscConnectionId => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
+          :IPAddress => String.t() | nil,
+          :IPProtocol => String.t() | nil,
+          :allPorts => boolean() | nil,
+          :allowGlobalAccess => boolean() | nil,
+          :backendService => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :id => String.t() | nil,
+          :ipVersion => String.t() | nil,
+          :isMirroringCollector => boolean() | nil,
+          :kind => String.t() | nil,
+          :labelFingerprint => String.t() | nil,
+          :labels => map() | nil,
+          :loadBalancingScheme => String.t() | nil,
+          :metadataFilters => list(GoogleApi.Compute.V1.Model.MetadataFilter.t()) | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :networkTier => String.t() | nil,
+          :portRange => String.t() | nil,
+          :ports => list(String.t()) | nil,
+          :pscConnectionId => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
           :serviceDirectoryRegistrations =>
-            list(GoogleApi.Compute.V1.Model.ForwardingRuleServiceDirectoryRegistration.t()),
-          :serviceLabel => String.t(),
-          :serviceName => String.t(),
-          :subnetwork => String.t(),
-          :target => String.t()
+            list(GoogleApi.Compute.V1.Model.ForwardingRuleServiceDirectoryRegistration.t()) | nil,
+          :serviceLabel => String.t() | nil,
+          :serviceName => String.t() | nil,
+          :subnetwork => String.t() | nil,
+          :target => String.t() | nil
         }
 
   field(:IPAddress)

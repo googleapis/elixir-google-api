@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.LicenseResourceRequirements do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minGuestCpuCount => integer(),
-          :minMemoryMb => integer()
+          :minGuestCpuCount => integer() | nil,
+          :minMemoryMb => integer() | nil
         }
 
   field(:minGuestCpuCount)

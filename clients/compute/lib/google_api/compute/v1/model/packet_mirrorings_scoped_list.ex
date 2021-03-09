@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.PacketMirroringsScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :packetMirrorings => list(GoogleApi.Compute.V1.Model.PacketMirroring.t()),
-          :warning => GoogleApi.Compute.V1.Model.PacketMirroringsScopedListWarning.t()
+          :packetMirrorings => list(GoogleApi.Compute.V1.Model.PacketMirroring.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.PacketMirroringsScopedListWarning.t() | nil
         }
 
   field(:packetMirrorings, as: GoogleApi.Compute.V1.Model.PacketMirroring, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointWithHealthStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :healths => list(GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint.t()),
-          :networkEndpoint => GoogleApi.Compute.V1.Model.NetworkEndpoint.t()
+          :healths => list(GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint.t()) | nil,
+          :networkEndpoint => GoogleApi.Compute.V1.Model.NetworkEndpoint.t() | nil
         }
 
   field(:healths, as: GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint, type: :list)

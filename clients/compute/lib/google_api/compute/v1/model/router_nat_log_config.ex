@@ -31,8 +31,8 @@ defmodule GoogleApi.Compute.V1.Model.RouterNatLogConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enable => boolean(),
-          :filter => String.t()
+          :enable => boolean() | nil,
+          :filter => String.t() | nil
         }
 
   field(:enable)

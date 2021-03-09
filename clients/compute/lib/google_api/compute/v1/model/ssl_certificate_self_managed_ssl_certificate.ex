@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificateSelfManagedSslCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificate => String.t(),
-          :privateKey => String.t()
+          :certificate => String.t() | nil,
+          :privateKey => String.t() | nil
         }
 
   field(:certificate)

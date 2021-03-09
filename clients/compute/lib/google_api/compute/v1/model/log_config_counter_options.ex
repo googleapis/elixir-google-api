@@ -38,9 +38,9 @@ defmodule GoogleApi.Compute.V1.Model.LogConfigCounterOptions do
 
   @type t :: %__MODULE__{
           :customFields =>
-            list(GoogleApi.Compute.V1.Model.LogConfigCounterOptionsCustomField.t()),
-          :field => String.t(),
-          :metric => String.t()
+            list(GoogleApi.Compute.V1.Model.LogConfigCounterOptionsCustomField.t()) | nil,
+          :field => String.t() | nil,
+          :metric => String.t() | nil
         }
 
   field(:customFields,

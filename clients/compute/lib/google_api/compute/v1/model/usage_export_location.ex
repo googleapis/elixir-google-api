@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.UsageExportLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketName => String.t(),
-          :reportNamePrefix => String.t()
+          :bucketName => String.t() | nil,
+          :reportNamePrefix => String.t() | nil
         }
 
   field(:bucketName)

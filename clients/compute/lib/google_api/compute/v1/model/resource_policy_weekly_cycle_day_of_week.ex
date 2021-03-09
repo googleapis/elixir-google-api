@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyWeeklyCycleDayOfWeek do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :day => String.t(),
-          :duration => String.t(),
-          :startTime => String.t()
+          :day => String.t() | nil,
+          :duration => String.t() | nil,
+          :startTime => String.t() | nil
         }
 
   field(:day)

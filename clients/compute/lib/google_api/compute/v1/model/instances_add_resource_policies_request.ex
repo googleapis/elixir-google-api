@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesAddResourcePoliciesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourcePolicies => list(String.t())
+          :resourcePolicies => list(String.t()) | nil
         }
 
   field(:resourcePolicies, type: :list)

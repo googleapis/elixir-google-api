@@ -31,11 +31,11 @@ defmodule GoogleApi.Compute.V1.Model.NotificationEndpointGrpcSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authority => String.t(),
-          :endpoint => String.t(),
-          :payloadName => String.t(),
-          :resendInterval => GoogleApi.Compute.V1.Model.Duration.t(),
-          :retryDurationSec => integer()
+          :authority => String.t() | nil,
+          :endpoint => String.t() | nil,
+          :payloadName => String.t() | nil,
+          :resendInterval => GoogleApi.Compute.V1.Model.Duration.t() | nil,
+          :retryDurationSec => integer() | nil
         }
 
   field(:authority)

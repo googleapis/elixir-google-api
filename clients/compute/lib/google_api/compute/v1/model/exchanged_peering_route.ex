@@ -31,11 +31,11 @@ defmodule GoogleApi.Compute.V1.Model.ExchangedPeeringRoute do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destRange => String.t(),
-          :imported => boolean(),
-          :nextHopRegion => String.t(),
-          :priority => integer(),
-          :type => String.t()
+          :destRange => String.t() | nil,
+          :imported => boolean() | nil,
+          :nextHopRegion => String.t() | nil,
+          :priority => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:destRange)

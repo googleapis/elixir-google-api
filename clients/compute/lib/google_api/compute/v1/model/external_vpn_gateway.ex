@@ -44,16 +44,16 @@ defmodule GoogleApi.Compute.V1.Model.ExternalVpnGateway do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :interfaces => list(GoogleApi.Compute.V1.Model.ExternalVpnGatewayInterface.t()),
-          :kind => String.t(),
-          :labelFingerprint => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :redundancyType => String.t(),
-          :selfLink => String.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :interfaces => list(GoogleApi.Compute.V1.Model.ExternalVpnGatewayInterface.t()) | nil,
+          :kind => String.t() | nil,
+          :labelFingerprint => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :redundancyType => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:creationTimestamp)

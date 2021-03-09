@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupsSetNodeTemplateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nodeTemplate => String.t()
+          :nodeTemplate => String.t() | nil
         }
 
   field(:nodeTemplate)

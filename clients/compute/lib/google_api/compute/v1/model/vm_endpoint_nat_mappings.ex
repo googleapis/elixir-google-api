@@ -28,9 +28,9 @@ defmodule GoogleApi.Compute.V1.Model.VmEndpointNatMappings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceName => String.t(),
+          :instanceName => String.t() | nil,
           :interfaceNatMappings =>
-            list(GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappings.t())
+            list(GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappings.t()) | nil
         }
 
   field(:instanceName)

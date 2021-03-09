@@ -34,14 +34,14 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusNatStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoAllocatedNatIps => list(String.t()),
-          :drainAutoAllocatedNatIps => list(String.t()),
-          :drainUserAllocatedNatIps => list(String.t()),
-          :minExtraNatIpsNeeded => integer(),
-          :name => String.t(),
-          :numVmEndpointsWithNatMappings => integer(),
-          :userAllocatedNatIpResources => list(String.t()),
-          :userAllocatedNatIps => list(String.t())
+          :autoAllocatedNatIps => list(String.t()) | nil,
+          :drainAutoAllocatedNatIps => list(String.t()) | nil,
+          :drainUserAllocatedNatIps => list(String.t()) | nil,
+          :minExtraNatIpsNeeded => integer() | nil,
+          :name => String.t() | nil,
+          :numVmEndpointsWithNatMappings => integer() | nil,
+          :userAllocatedNatIpResources => list(String.t()) | nil,
+          :userAllocatedNatIps => list(String.t()) | nil
         }
 
   field(:autoAllocatedNatIps, type: :list)

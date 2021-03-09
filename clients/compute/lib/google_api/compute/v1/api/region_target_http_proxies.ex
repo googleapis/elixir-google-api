@@ -62,7 +62,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_target_http_proxies_delete(
         connection,
         project,
@@ -136,6 +139,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_target_http_proxies_get(
         connection,
@@ -211,7 +215,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_target_http_proxies_insert(
         connection,
         project,
@@ -293,6 +300,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxyList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_target_http_proxies_list(
         connection,
@@ -369,7 +377,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_target_http_proxies_set_url_map(
         connection,
         project,

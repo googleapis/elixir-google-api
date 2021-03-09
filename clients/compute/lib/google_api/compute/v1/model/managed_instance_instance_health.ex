@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detailedHealthState => String.t(),
-          :healthCheck => String.t()
+          :detailedHealthState => String.t() | nil,
+          :healthCheck => String.t() | nil
         }
 
   field(:detailedHealthState)

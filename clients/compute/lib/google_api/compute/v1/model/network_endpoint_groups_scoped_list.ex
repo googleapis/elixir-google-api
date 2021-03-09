@@ -28,8 +28,9 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupsScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :networkEndpointGroups => list(GoogleApi.Compute.V1.Model.NetworkEndpointGroup.t()),
-          :warning => GoogleApi.Compute.V1.Model.NetworkEndpointGroupsScopedListWarning.t()
+          :networkEndpointGroups =>
+            list(GoogleApi.Compute.V1.Model.NetworkEndpointGroup.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.NetworkEndpointGroupsScopedListWarning.t() | nil
         }
 
   field(:networkEndpointGroups, as: GoogleApi.Compute.V1.Model.NetworkEndpointGroup, type: :list)

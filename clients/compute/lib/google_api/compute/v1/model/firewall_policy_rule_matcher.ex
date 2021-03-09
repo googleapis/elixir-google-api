@@ -30,11 +30,11 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destIpRanges => list(String.t()),
+          :destIpRanges => list(String.t()) | nil,
           :layer4Configs =>
-            list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config.t()),
-          :srcIpRanges => list(String.t()),
-          :srcSecureLabels => list(String.t())
+            list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config.t()) | nil,
+          :srcIpRanges => list(String.t()) | nil,
+          :srcSecureLabels => list(String.t()) | nil
         }
 
   field(:destIpRanges, type: :list)

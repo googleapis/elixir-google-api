@@ -62,7 +62,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_backend_services_delete(
         connection,
         project,
@@ -132,6 +135,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendService.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_backend_services_get(
         connection,
@@ -202,6 +206,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendServiceGroupHealth.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_backend_services_get_health(
         connection,
@@ -277,7 +282,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_backend_services_insert(
         connection,
         project,
@@ -359,6 +367,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendServiceList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_region_backend_services_list(
         connection,
@@ -435,7 +444,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_backend_services_patch(
         connection,
         project,
@@ -510,7 +522,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_region_backend_services_update(
         connection,
         project,

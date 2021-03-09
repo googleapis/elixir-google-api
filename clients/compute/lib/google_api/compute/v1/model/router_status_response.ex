@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatusResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :result => GoogleApi.Compute.V1.Model.RouterStatus.t()
+          :kind => String.t() | nil,
+          :result => GoogleApi.Compute.V1.Model.RouterStatus.t() | nil
         }
 
   field(:kind)

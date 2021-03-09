@@ -31,11 +31,11 @@ defmodule GoogleApi.Compute.V1.Model.DeprecationStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleted => String.t(),
-          :deprecated => String.t(),
-          :obsolete => String.t(),
-          :replacement => String.t(),
-          :state => String.t()
+          :deleted => String.t() | nil,
+          :deprecated => String.t() | nil,
+          :obsolete => String.t() | nil,
+          :replacement => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:deleted)

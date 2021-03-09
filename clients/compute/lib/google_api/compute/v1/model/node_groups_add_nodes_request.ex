@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupsAddNodesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalNodeCount => integer()
+          :additionalNodeCount => integer() | nil
         }
 
   field(:additionalNodeCount)

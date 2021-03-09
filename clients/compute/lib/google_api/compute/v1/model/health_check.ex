@@ -61,25 +61,25 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :checkIntervalSec => integer(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :grpcHealthCheck => GoogleApi.Compute.V1.Model.GRPCHealthCheck.t(),
-          :healthyThreshold => integer(),
-          :http2HealthCheck => GoogleApi.Compute.V1.Model.HTTP2HealthCheck.t(),
-          :httpHealthCheck => GoogleApi.Compute.V1.Model.HTTPHealthCheck.t(),
-          :httpsHealthCheck => GoogleApi.Compute.V1.Model.HTTPSHealthCheck.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :logConfig => GoogleApi.Compute.V1.Model.HealthCheckLogConfig.t(),
-          :name => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :sslHealthCheck => GoogleApi.Compute.V1.Model.SSLHealthCheck.t(),
-          :tcpHealthCheck => GoogleApi.Compute.V1.Model.TCPHealthCheck.t(),
-          :timeoutSec => integer(),
-          :type => String.t(),
-          :unhealthyThreshold => integer()
+          :checkIntervalSec => integer() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :grpcHealthCheck => GoogleApi.Compute.V1.Model.GRPCHealthCheck.t() | nil,
+          :healthyThreshold => integer() | nil,
+          :http2HealthCheck => GoogleApi.Compute.V1.Model.HTTP2HealthCheck.t() | nil,
+          :httpHealthCheck => GoogleApi.Compute.V1.Model.HTTPHealthCheck.t() | nil,
+          :httpsHealthCheck => GoogleApi.Compute.V1.Model.HTTPSHealthCheck.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :logConfig => GoogleApi.Compute.V1.Model.HealthCheckLogConfig.t() | nil,
+          :name => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :sslHealthCheck => GoogleApi.Compute.V1.Model.SSLHealthCheck.t() | nil,
+          :tcpHealthCheck => GoogleApi.Compute.V1.Model.TCPHealthCheck.t() | nil,
+          :timeoutSec => integer() | nil,
+          :type => String.t() | nil,
+          :unhealthyThreshold => integer() | nil
         }
 
   field(:checkIntervalSec)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.StatefulPolicyPreservedStateDiskDevice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoDelete => String.t()
+          :autoDelete => String.t() | nil
         }
 
   field(:autoDelete)

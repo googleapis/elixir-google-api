@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.Int64RangeMatch do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rangeEnd => String.t(),
-          :rangeStart => String.t()
+          :rangeEnd => String.t() | nil,
+          :rangeStart => String.t() | nil
         }
 
   field(:rangeEnd)

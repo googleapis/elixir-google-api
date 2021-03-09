@@ -35,15 +35,15 @@ defmodule GoogleApi.Compute.V1.Model.TestFailure do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actualOutputUrl => String.t(),
-          :actualRedirectResponseCode => integer(),
-          :actualService => String.t(),
-          :expectedOutputUrl => String.t(),
-          :expectedRedirectResponseCode => integer(),
-          :expectedService => String.t(),
-          :headers => list(GoogleApi.Compute.V1.Model.UrlMapTestHeader.t()),
-          :host => String.t(),
-          :path => String.t()
+          :actualOutputUrl => String.t() | nil,
+          :actualRedirectResponseCode => integer() | nil,
+          :actualService => String.t() | nil,
+          :expectedOutputUrl => String.t() | nil,
+          :expectedRedirectResponseCode => integer() | nil,
+          :expectedService => String.t() | nil,
+          :headers => list(GoogleApi.Compute.V1.Model.UrlMapTestHeader.t()) | nil,
+          :host => String.t() | nil,
+          :path => String.t() | nil
         }
 
   field(:actualOutputUrl)

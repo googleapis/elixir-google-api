@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.TargetPoolInstanceHealth do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :healthStatus => list(GoogleApi.Compute.V1.Model.HealthStatus.t()),
-          :kind => String.t()
+          :healthStatus => list(GoogleApi.Compute.V1.Model.HealthStatus.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:healthStatus, as: GoogleApi.Compute.V1.Model.HealthStatus, type: :list)

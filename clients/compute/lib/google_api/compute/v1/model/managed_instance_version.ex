@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstanceVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceTemplate => String.t(),
-          :name => String.t()
+          :instanceTemplate => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:instanceTemplate)

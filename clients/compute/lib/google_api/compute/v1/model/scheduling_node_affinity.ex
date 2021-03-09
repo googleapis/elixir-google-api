@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.SchedulingNodeAffinity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :operator => String.t(),
-          :values => list(String.t())
+          :key => String.t() | nil,
+          :operator => String.t() | nil,
+          :values => list(String.t()) | nil
         }
 
   field(:key)

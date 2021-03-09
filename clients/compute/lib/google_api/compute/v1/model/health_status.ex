@@ -33,13 +33,13 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotations => map(),
-          :healthState => String.t(),
-          :instance => String.t(),
-          :ipAddress => String.t(),
-          :port => integer(),
-          :weight => String.t(),
-          :weightError => String.t()
+          :annotations => map() | nil,
+          :healthState => String.t() | nil,
+          :instance => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :port => integer() | nil,
+          :weight => String.t() | nil,
+          :weightError => String.t() | nil
         }
 
   field(:annotations, type: :map)

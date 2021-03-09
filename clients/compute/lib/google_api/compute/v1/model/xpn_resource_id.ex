@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.XpnResourceId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :type => String.t()
+          :id => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:id)

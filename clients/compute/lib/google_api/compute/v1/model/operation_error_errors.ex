@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.OperationErrorErrors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :location => String.t(),
-          :message => String.t()
+          :code => String.t() | nil,
+          :location => String.t() | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

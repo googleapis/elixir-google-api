@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.CustomerEncryptionKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kmsKeyName => String.t(),
-          :kmsKeyServiceAccount => String.t(),
-          :rawKey => String.t(),
-          :sha256 => String.t()
+          :kmsKeyName => String.t() | nil,
+          :kmsKeyServiceAccount => String.t() | nil,
+          :rawKey => String.t() | nil,
+          :sha256 => String.t() | nil
         }
 
   field(:kmsKeyName)

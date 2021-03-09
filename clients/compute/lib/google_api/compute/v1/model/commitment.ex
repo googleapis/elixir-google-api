@@ -44,22 +44,22 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :endTimestamp => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :licenseResource => GoogleApi.Compute.V1.Model.LicenseResourceCommitment.t(),
-          :name => String.t(),
-          :plan => String.t(),
-          :region => String.t(),
-          :reservations => list(GoogleApi.Compute.V1.Model.Reservation.t()),
-          :resources => list(GoogleApi.Compute.V1.Model.ResourceCommitment.t()),
-          :selfLink => String.t(),
-          :startTimestamp => String.t(),
-          :status => String.t(),
-          :statusMessage => String.t()
+          :category => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :endTimestamp => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :licenseResource => GoogleApi.Compute.V1.Model.LicenseResourceCommitment.t() | nil,
+          :name => String.t() | nil,
+          :plan => String.t() | nil,
+          :region => String.t() | nil,
+          :reservations => list(GoogleApi.Compute.V1.Model.Reservation.t()) | nil,
+          :resources => list(GoogleApi.Compute.V1.Model.ResourceCommitment.t()) | nil,
+          :selfLink => String.t() | nil,
+          :startTimestamp => String.t() | nil,
+          :status => String.t() | nil,
+          :statusMessage => String.t() | nil
         }
 
   field(:category)

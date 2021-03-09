@@ -29,8 +29,8 @@ defmodule GoogleApi.Compute.V1.Model.HttpFaultDelay do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fixedDelay => GoogleApi.Compute.V1.Model.Duration.t(),
-          :percentage => float()
+          :fixedDelay => GoogleApi.Compute.V1.Model.Duration.t() | nil,
+          :percentage => float() | nil
         }
 
   field(:fixedDelay, as: GoogleApi.Compute.V1.Model.Duration)

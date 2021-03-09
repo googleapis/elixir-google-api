@@ -34,8 +34,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceMoveRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationZone => String.t(),
-          :targetInstance => String.t()
+          :destinationZone => String.t() | nil,
+          :targetInstance => String.t() | nil
         }
 
   field(:destinationZone)

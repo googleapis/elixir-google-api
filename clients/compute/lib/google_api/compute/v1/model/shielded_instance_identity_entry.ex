@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ekCert => String.t(),
-          :ekPub => String.t()
+          :ekCert => String.t() | nil,
+          :ekPub => String.t() | nil
         }
 
   field(:ekCert)

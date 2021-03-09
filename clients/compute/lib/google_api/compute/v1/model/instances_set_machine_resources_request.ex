@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesSetMachineResourcesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t())
+          :guestAccelerators => list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t()) | nil
         }
 
   field(:guestAccelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)

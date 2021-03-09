@@ -33,11 +33,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterInterface do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipRange => String.t(),
-          :linkedInterconnectAttachment => String.t(),
-          :linkedVpnTunnel => String.t(),
-          :managementType => String.t(),
-          :name => String.t()
+          :ipRange => String.t() | nil,
+          :linkedInterconnectAttachment => String.t() | nil,
+          :linkedVpnTunnel => String.t() | nil,
+          :managementType => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:ipRange)

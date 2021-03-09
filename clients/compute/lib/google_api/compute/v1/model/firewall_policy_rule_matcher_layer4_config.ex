@@ -30,8 +30,8 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipProtocol => String.t(),
-          :ports => list(String.t())
+          :ipProtocol => String.t() | nil,
+          :ports => list(String.t()) | nil
         }
 
   field(:ipProtocol)

@@ -33,8 +33,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :state => String.t(),
-          :value => number()
+          :state => String.t() | nil,
+          :value => number() | nil
         }
 
   field(:state)

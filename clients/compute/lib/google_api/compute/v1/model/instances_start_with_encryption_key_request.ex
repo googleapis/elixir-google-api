@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesStartWithEncryptionKeyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disks => list(GoogleApi.Compute.V1.Model.CustomerEncryptionKeyProtectedDisk.t())
+          :disks => list(GoogleApi.Compute.V1.Model.CustomerEncryptionKeyProtectedDisk.t()) | nil
         }
 
   field(:disks, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKeyProtectedDisk, type: :list)

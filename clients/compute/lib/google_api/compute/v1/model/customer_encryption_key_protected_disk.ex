@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.CustomerEncryptionKeyProtectedDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :diskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t(),
-          :source => String.t()
+          :diskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
+          :source => String.t() | nil
         }
 
   field(:diskEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.UrlMapsValidateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :result => GoogleApi.Compute.V1.Model.UrlMapValidationResult.t()
+          :result => GoogleApi.Compute.V1.Model.UrlMapValidationResult.t() | nil
         }
 
   field(:result, as: GoogleApi.Compute.V1.Model.UrlMapValidationResult)

@@ -34,8 +34,8 @@ defmodule GoogleApi.Compute.V1.Model.DiskMoveRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationZone => String.t(),
-          :targetDisk => String.t()
+          :destinationZone => String.t() | nil,
+          :targetDisk => String.t() | nil
         }
 
   field(:destinationZone)

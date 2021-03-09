@@ -38,12 +38,12 @@ defmodule GoogleApi.Compute.V1.Model.TCPHealthCheck do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :port => integer(),
-          :portName => String.t(),
-          :portSpecification => String.t(),
-          :proxyHeader => String.t(),
-          :request => String.t(),
-          :response => String.t()
+          :port => integer() | nil,
+          :portName => String.t() | nil,
+          :portSpecification => String.t() | nil,
+          :proxyHeader => String.t() | nil,
+          :request => String.t() | nil,
+          :response => String.t() | nil
         }
 
   field(:port)

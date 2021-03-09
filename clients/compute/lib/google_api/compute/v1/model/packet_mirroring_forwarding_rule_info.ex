@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.PacketMirroringForwardingRuleInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canonicalUrl => String.t(),
-          :url => String.t()
+          :canonicalUrl => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:canonicalUrl)

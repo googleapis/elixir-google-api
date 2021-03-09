@@ -35,10 +35,10 @@ defmodule GoogleApi.Compute.V1.Model.DiskInstantiationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoDelete => boolean(),
-          :customImage => String.t(),
-          :deviceName => String.t(),
-          :instantiateFrom => String.t()
+          :autoDelete => boolean() | nil,
+          :customImage => String.t() | nil,
+          :deviceName => String.t() | nil,
+          :instantiateFrom => String.t() | nil
         }
 
   field(:autoDelete)

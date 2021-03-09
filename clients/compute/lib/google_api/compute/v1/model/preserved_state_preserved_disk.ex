@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.PreservedStatePreservedDisk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoDelete => String.t(),
-          :mode => String.t(),
-          :source => String.t()
+          :autoDelete => String.t() | nil,
+          :mode => String.t() | nil,
+          :source => String.t() | nil
         }
 
   field(:autoDelete)

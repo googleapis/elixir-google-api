@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.AliasIpRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipCidrRange => String.t(),
-          :subnetworkRangeName => String.t()
+          :ipCidrRange => String.t() | nil,
+          :subnetworkRangeName => String.t() | nil
         }
 
   field(:ipCidrRange)

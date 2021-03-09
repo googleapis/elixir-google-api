@@ -41,9 +41,9 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupAppEngine do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :service => String.t(),
-          :urlMask => String.t(),
-          :version => String.t()
+          :service => String.t() | nil,
+          :urlMask => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:service)

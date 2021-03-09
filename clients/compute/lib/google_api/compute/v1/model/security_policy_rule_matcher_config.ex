@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcherConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :srcIpRanges => list(String.t())
+          :srcIpRanges => list(String.t()) | nil
         }
 
   field(:srcIpRanges, type: :list)

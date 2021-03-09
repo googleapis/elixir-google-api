@@ -60,28 +60,29 @@ defmodule GoogleApi.Compute.V1.Model.Interconnect do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adminEnabled => boolean(),
-          :circuitInfos => list(GoogleApi.Compute.V1.Model.InterconnectCircuitInfo.t()),
-          :creationTimestamp => String.t(),
-          :customerName => String.t(),
-          :description => String.t(),
-          :expectedOutages => list(GoogleApi.Compute.V1.Model.InterconnectOutageNotification.t()),
-          :googleIpAddress => String.t(),
-          :googleReferenceId => String.t(),
-          :id => String.t(),
-          :interconnectAttachments => list(String.t()),
-          :interconnectType => String.t(),
-          :kind => String.t(),
-          :linkType => String.t(),
-          :location => String.t(),
-          :name => String.t(),
-          :nocContactEmail => String.t(),
-          :operationalStatus => String.t(),
-          :peerIpAddress => String.t(),
-          :provisionedLinkCount => integer(),
-          :requestedLinkCount => integer(),
-          :selfLink => String.t(),
-          :state => String.t()
+          :adminEnabled => boolean() | nil,
+          :circuitInfos => list(GoogleApi.Compute.V1.Model.InterconnectCircuitInfo.t()) | nil,
+          :creationTimestamp => String.t() | nil,
+          :customerName => String.t() | nil,
+          :description => String.t() | nil,
+          :expectedOutages =>
+            list(GoogleApi.Compute.V1.Model.InterconnectOutageNotification.t()) | nil,
+          :googleIpAddress => String.t() | nil,
+          :googleReferenceId => String.t() | nil,
+          :id => String.t() | nil,
+          :interconnectAttachments => list(String.t()) | nil,
+          :interconnectType => String.t() | nil,
+          :kind => String.t() | nil,
+          :linkType => String.t() | nil,
+          :location => String.t() | nil,
+          :name => String.t() | nil,
+          :nocContactEmail => String.t() | nil,
+          :operationalStatus => String.t() | nil,
+          :peerIpAddress => String.t() | nil,
+          :provisionedLinkCount => integer() | nil,
+          :requestedLinkCount => integer() | nil,
+          :selfLink => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:adminEnabled)

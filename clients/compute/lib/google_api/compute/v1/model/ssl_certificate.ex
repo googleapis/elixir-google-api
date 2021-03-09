@@ -54,20 +54,21 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificate => String.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :expireTime => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :managed => GoogleApi.Compute.V1.Model.SslCertificateManagedSslCertificate.t(),
-          :name => String.t(),
-          :privateKey => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :selfManaged => GoogleApi.Compute.V1.Model.SslCertificateSelfManagedSslCertificate.t(),
-          :subjectAlternativeNames => list(String.t()),
-          :type => String.t()
+          :certificate => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :expireTime => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :managed => GoogleApi.Compute.V1.Model.SslCertificateManagedSslCertificate.t() | nil,
+          :name => String.t() | nil,
+          :privateKey => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :selfManaged =>
+            GoogleApi.Compute.V1.Model.SslCertificateSelfManagedSslCertificate.t() | nil,
+          :subjectAlternativeNames => list(String.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:certificate)

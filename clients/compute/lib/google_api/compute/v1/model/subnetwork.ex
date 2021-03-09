@@ -52,26 +52,27 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :enableFlowLogs => boolean(),
-          :fingerprint => String.t(),
-          :gatewayAddress => String.t(),
-          :id => String.t(),
-          :ipCidrRange => String.t(),
-          :ipv6CidrRange => String.t(),
-          :kind => String.t(),
-          :logConfig => GoogleApi.Compute.V1.Model.SubnetworkLogConfig.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :privateIpGoogleAccess => boolean(),
-          :privateIpv6GoogleAccess => String.t(),
-          :purpose => String.t(),
-          :region => String.t(),
-          :role => String.t(),
-          :secondaryIpRanges => list(GoogleApi.Compute.V1.Model.SubnetworkSecondaryRange.t()),
-          :selfLink => String.t(),
-          :state => String.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :enableFlowLogs => boolean() | nil,
+          :fingerprint => String.t() | nil,
+          :gatewayAddress => String.t() | nil,
+          :id => String.t() | nil,
+          :ipCidrRange => String.t() | nil,
+          :ipv6CidrRange => String.t() | nil,
+          :kind => String.t() | nil,
+          :logConfig => GoogleApi.Compute.V1.Model.SubnetworkLogConfig.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :privateIpGoogleAccess => boolean() | nil,
+          :privateIpv6GoogleAccess => String.t() | nil,
+          :purpose => String.t() | nil,
+          :region => String.t() | nil,
+          :role => String.t() | nil,
+          :secondaryIpRanges =>
+            list(GoogleApi.Compute.V1.Model.SubnetworkSecondaryRange.t()) | nil,
+          :selfLink => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:creationTimestamp)

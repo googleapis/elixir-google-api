@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyDailyCycle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :daysInCycle => integer(),
-          :duration => String.t(),
-          :startTime => String.t()
+          :daysInCycle => integer() | nil,
+          :duration => String.t() | nil,
+          :startTime => String.t() | nil
         }
 
   field(:daysInCycle)

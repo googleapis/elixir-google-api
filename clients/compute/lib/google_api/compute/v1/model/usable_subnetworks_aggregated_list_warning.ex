@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.UsableSubnetworksAggregatedListWarning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
+          :code => String.t() | nil,
           :data =>
-            list(GoogleApi.Compute.V1.Model.UsableSubnetworksAggregatedListWarningData.t()),
-          :message => String.t()
+            list(GoogleApi.Compute.V1.Model.UsableSubnetworksAggregatedListWarningData.t()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

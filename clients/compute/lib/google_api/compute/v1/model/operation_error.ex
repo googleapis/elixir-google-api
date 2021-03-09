@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.OperationError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(GoogleApi.Compute.V1.Model.OperationErrorErrors.t())
+          :errors => list(GoogleApi.Compute.V1.Model.OperationErrorErrors.t()) | nil
         }
 
   field(:errors, as: GoogleApi.Compute.V1.Model.OperationErrorErrors, type: :list)

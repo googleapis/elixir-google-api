@@ -31,9 +31,9 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceTemplate => String.t(),
-          :name => String.t(),
-          :targetSize => GoogleApi.Compute.V1.Model.FixedOrPercent.t()
+          :instanceTemplate => String.t() | nil,
+          :name => String.t() | nil,
+          :targetSize => GoogleApi.Compute.V1.Model.FixedOrPercent.t() | nil
         }
 
   field(:instanceTemplate)

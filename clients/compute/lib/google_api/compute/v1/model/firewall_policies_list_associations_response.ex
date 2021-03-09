@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPoliciesListAssociationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :associations => list(GoogleApi.Compute.V1.Model.FirewallPolicyAssociation.t()),
-          :kind => String.t()
+          :associations => list(GoogleApi.Compute.V1.Model.FirewallPolicyAssociation.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:associations, as: GoogleApi.Compute.V1.Model.FirewallPolicyAssociation, type: :list)

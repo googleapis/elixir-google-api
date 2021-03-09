@@ -34,8 +34,8 @@ defmodule GoogleApi.Compute.V1.Model.MetadataFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filterLabels => list(GoogleApi.Compute.V1.Model.MetadataFilterLabelMatch.t()),
-          :filterMatchCriteria => String.t()
+          :filterLabels => list(GoogleApi.Compute.V1.Model.MetadataFilterLabelMatch.t()) | nil,
+          :filterMatchCriteria => String.t() | nil
         }
 
   field(:filterLabels, as: GoogleApi.Compute.V1.Model.MetadataFilterLabelMatch, type: :list)

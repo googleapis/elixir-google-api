@@ -71,6 +71,7 @@ defmodule GoogleApi.Compute.V1.Api.MachineTypes do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.MachineTypeAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_machine_types_aggregated_list(
         connection,
@@ -142,6 +143,7 @@ defmodule GoogleApi.Compute.V1.Api.MachineTypes do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.MachineType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_machine_types_get(
         connection,
@@ -224,6 +226,7 @@ defmodule GoogleApi.Compute.V1.Api.MachineTypes do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.MachineTypeList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_machine_types_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

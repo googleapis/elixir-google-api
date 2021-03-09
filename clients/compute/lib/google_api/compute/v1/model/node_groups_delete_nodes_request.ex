@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupsDeleteNodesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nodes => list(String.t())
+          :nodes => list(String.t()) | nil
         }
 
   field(:nodes, type: :list)

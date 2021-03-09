@@ -33,9 +33,9 @@ defmodule GoogleApi.Compute.V1.Model.FixedOrPercent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calculated => integer(),
-          :fixed => integer(),
-          :percent => integer()
+          :calculated => integer() | nil,
+          :fixed => integer() | nil,
+          :percent => integer() | nil
         }
 
   field(:calculated)

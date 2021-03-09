@@ -34,16 +34,16 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :items => %{
-            optional(String.t()) => GoogleApi.Compute.V1.Model.ResourcePoliciesScopedList.t()
-          },
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :selfLink => String.t(),
-          :unreachables => list(String.t()),
-          :warning => GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedListWarning.t()
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :items =>
+            %{optional(String.t()) => GoogleApi.Compute.V1.Model.ResourcePoliciesScopedList.t()}
+            | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :unreachables => list(String.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedListWarning.t() | nil
         }
 
   field(:etag)

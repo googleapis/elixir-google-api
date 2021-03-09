@@ -42,12 +42,12 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instanceRedistributionType => String.t(),
-          :maxSurge => GoogleApi.Compute.V1.Model.FixedOrPercent.t(),
-          :maxUnavailable => GoogleApi.Compute.V1.Model.FixedOrPercent.t(),
-          :minimalAction => String.t(),
-          :replacementMethod => String.t(),
-          :type => String.t()
+          :instanceRedistributionType => String.t() | nil,
+          :maxSurge => GoogleApi.Compute.V1.Model.FixedOrPercent.t() | nil,
+          :maxUnavailable => GoogleApi.Compute.V1.Model.FixedOrPercent.t() | nil,
+          :minimalAction => String.t() | nil,
+          :replacementMethod => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:instanceRedistributionType)

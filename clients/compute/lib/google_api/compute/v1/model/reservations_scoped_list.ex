@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.ReservationsScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reservations => list(GoogleApi.Compute.V1.Model.Reservation.t()),
-          :warning => GoogleApi.Compute.V1.Model.ReservationsScopedListWarning.t()
+          :reservations => list(GoogleApi.Compute.V1.Model.Reservation.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.ReservationsScopedListWarning.t() | nil
         }
 
   field(:reservations, as: GoogleApi.Compute.V1.Model.Reservation, type: :list)

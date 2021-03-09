@@ -31,11 +31,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bestRoutes => list(GoogleApi.Compute.V1.Model.Route.t()),
-          :bestRoutesForRouter => list(GoogleApi.Compute.V1.Model.Route.t()),
-          :bgpPeerStatus => list(GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus.t()),
-          :natStatus => list(GoogleApi.Compute.V1.Model.RouterStatusNatStatus.t()),
-          :network => String.t()
+          :bestRoutes => list(GoogleApi.Compute.V1.Model.Route.t()) | nil,
+          :bestRoutesForRouter => list(GoogleApi.Compute.V1.Model.Route.t()) | nil,
+          :bgpPeerStatus => list(GoogleApi.Compute.V1.Model.RouterStatusBgpPeerStatus.t()) | nil,
+          :natStatus => list(GoogleApi.Compute.V1.Model.RouterStatusNatStatus.t()) | nil,
+          :network => String.t() | nil
         }
 
   field(:bestRoutes, as: GoogleApi.Compute.V1.Model.Route, type: :list)

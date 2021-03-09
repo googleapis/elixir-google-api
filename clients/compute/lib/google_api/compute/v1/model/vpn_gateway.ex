@@ -41,17 +41,18 @@ defmodule GoogleApi.Compute.V1.Model.VpnGateway do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :labelFingerprint => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :network => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :vpnInterfaces => list(GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface.t())
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :labelFingerprint => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :vpnInterfaces =>
+            list(GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface.t()) | nil
         }
 
   field(:creationTimestamp)

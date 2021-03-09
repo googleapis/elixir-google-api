@@ -38,16 +38,17 @@ defmodule GoogleApi.Compute.V1.Model.License do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chargesUseFee => boolean(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :licenseCode => String.t(),
-          :name => String.t(),
-          :resourceRequirements => GoogleApi.Compute.V1.Model.LicenseResourceRequirements.t(),
-          :selfLink => String.t(),
-          :transferable => boolean()
+          :chargesUseFee => boolean() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :licenseCode => String.t() | nil,
+          :name => String.t() | nil,
+          :resourceRequirements =>
+            GoogleApi.Compute.V1.Model.LicenseResourceRequirements.t() | nil,
+          :selfLink => String.t() | nil,
+          :transferable => boolean() | nil
         }
 
   field(:chargesUseFee)

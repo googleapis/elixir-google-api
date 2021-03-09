@@ -30,11 +30,11 @@ defmodule GoogleApi.Compute.V1.Model.UsableSubnetwork do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipCidrRange => String.t(),
-          :network => String.t(),
+          :ipCidrRange => String.t() | nil,
+          :network => String.t() | nil,
           :secondaryIpRanges =>
-            list(GoogleApi.Compute.V1.Model.UsableSubnetworkSecondaryRange.t()),
-          :subnetwork => String.t()
+            list(GoogleApi.Compute.V1.Model.UsableSubnetworkSecondaryRange.t()) | nil,
+          :subnetwork => String.t() | nil
         }
 
   field(:ipCidrRange)

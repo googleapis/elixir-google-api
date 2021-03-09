@@ -37,15 +37,15 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :abandoning => integer(),
-          :creating => integer(),
-          :creatingWithoutRetries => integer(),
-          :deleting => integer(),
-          :none => integer(),
-          :recreating => integer(),
-          :refreshing => integer(),
-          :restarting => integer(),
-          :verifying => integer()
+          :abandoning => integer() | nil,
+          :creating => integer() | nil,
+          :creatingWithoutRetries => integer() | nil,
+          :deleting => integer() | nil,
+          :none => integer() | nil,
+          :recreating => integer() | nil,
+          :refreshing => integer() | nil,
+          :restarting => integer() | nil,
+          :verifying => integer() | nil
         }
 
   field(:abandoning)

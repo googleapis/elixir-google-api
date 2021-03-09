@@ -38,14 +38,14 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :rules => list(GoogleApi.Compute.V1.Model.SecurityPolicyRule.t()),
-          :selfLink => String.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :rules => list(GoogleApi.Compute.V1.Model.SecurityPolicyRule.t()) | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:creationTimestamp)

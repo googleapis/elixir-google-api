@@ -31,13 +31,13 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expirationTime => String.t(),
-          :startTime => String.t(),
-          :timeZone => String.t(),
+          :expirationTime => String.t() | nil,
+          :startTime => String.t() | nil,
+          :timeZone => String.t() | nil,
           :vmStartSchedule =>
-            GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicySchedule.t(),
+            GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicySchedule.t() | nil,
           :vmStopSchedule =>
-            GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicySchedule.t()
+            GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicySchedule.t() | nil
         }
 
   field(:expirationTime)

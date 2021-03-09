@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :securityPolicy => String.t()
+          :securityPolicy => String.t() | nil
         }
 
   field(:securityPolicy)

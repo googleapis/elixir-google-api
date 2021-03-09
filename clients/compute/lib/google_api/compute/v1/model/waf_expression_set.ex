@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.WafExpressionSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aliases => list(String.t()),
-          :expressions => list(GoogleApi.Compute.V1.Model.WafExpressionSetExpression.t()),
-          :id => String.t()
+          :aliases => list(String.t()) | nil,
+          :expressions => list(GoogleApi.Compute.V1.Model.WafExpressionSetExpression.t()) | nil,
+          :id => String.t() | nil
         }
 
   field(:aliases, type: :list)

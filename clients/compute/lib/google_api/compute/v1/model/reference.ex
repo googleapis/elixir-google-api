@@ -31,10 +31,10 @@ defmodule GoogleApi.Compute.V1.Model.Reference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :referenceType => String.t(),
-          :referrer => String.t(),
-          :target => String.t()
+          :kind => String.t() | nil,
+          :referenceType => String.t() | nil,
+          :referrer => String.t() | nil,
+          :target => String.t() | nil
         }
 
   field(:kind)

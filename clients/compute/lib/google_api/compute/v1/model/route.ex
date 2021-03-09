@@ -50,24 +50,24 @@ defmodule GoogleApi.Compute.V1.Model.Route do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :destRange => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :nextHopGateway => String.t(),
-          :nextHopIlb => String.t(),
-          :nextHopInstance => String.t(),
-          :nextHopIp => String.t(),
-          :nextHopNetwork => String.t(),
-          :nextHopPeering => String.t(),
-          :nextHopVpnTunnel => String.t(),
-          :priority => integer(),
-          :selfLink => String.t(),
-          :tags => list(String.t()),
-          :warnings => list(GoogleApi.Compute.V1.Model.RouteWarnings.t())
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :destRange => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :nextHopGateway => String.t() | nil,
+          :nextHopIlb => String.t() | nil,
+          :nextHopInstance => String.t() | nil,
+          :nextHopIp => String.t() | nil,
+          :nextHopNetwork => String.t() | nil,
+          :nextHopPeering => String.t() | nil,
+          :nextHopVpnTunnel => String.t() | nil,
+          :priority => integer() | nil,
+          :selfLink => String.t() | nil,
+          :tags => list(String.t()) | nil,
+          :warnings => list(GoogleApi.Compute.V1.Model.RouteWarnings.t()) | nil
         }
 
   field(:creationTimestamp)

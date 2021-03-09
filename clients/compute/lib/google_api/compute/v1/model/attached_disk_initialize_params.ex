@@ -73,18 +73,19 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :diskName => String.t(),
-          :diskSizeGb => String.t(),
-          :diskType => String.t(),
-          :labels => map(),
-          :onUpdateAction => String.t(),
-          :provisionedIops => String.t(),
-          :resourcePolicies => list(String.t()),
-          :sourceImage => String.t(),
-          :sourceImageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t(),
-          :sourceSnapshot => String.t(),
-          :sourceSnapshotEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t()
+          :description => String.t() | nil,
+          :diskName => String.t() | nil,
+          :diskSizeGb => String.t() | nil,
+          :diskType => String.t() | nil,
+          :labels => map() | nil,
+          :onUpdateAction => String.t() | nil,
+          :provisionedIops => String.t() | nil,
+          :resourcePolicies => list(String.t()) | nil,
+          :sourceImage => String.t() | nil,
+          :sourceImageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
+          :sourceSnapshot => String.t() | nil,
+          :sourceSnapshotEncryptionKey =>
+            GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil
         }
 
   field(:description)

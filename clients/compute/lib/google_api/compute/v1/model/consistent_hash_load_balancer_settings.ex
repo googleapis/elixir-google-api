@@ -30,9 +30,9 @@ defmodule GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings do
 
   @type t :: %__MODULE__{
           :httpCookie =>
-            GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettingsHttpCookie.t(),
-          :httpHeaderName => String.t(),
-          :minimumRingSize => String.t()
+            GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettingsHttpCookie.t() | nil,
+          :httpHeaderName => String.t() | nil,
+          :minimumRingSize => String.t() | nil
         }
 
   field(:httpCookie, as: GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettingsHttpCookie)

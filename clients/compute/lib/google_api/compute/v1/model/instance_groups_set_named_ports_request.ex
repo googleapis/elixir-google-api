@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupsSetNamedPortsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fingerprint => String.t(),
-          :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t())
+          :fingerprint => String.t() | nil,
+          :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()) | nil
         }
 
   field(:fingerprint)

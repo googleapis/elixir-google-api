@@ -41,19 +41,19 @@ defmodule GoogleApi.Compute.V1.Model.Project do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commonInstanceMetadata => GoogleApi.Compute.V1.Model.Metadata.t(),
-          :creationTimestamp => String.t(),
-          :defaultNetworkTier => String.t(),
-          :defaultServiceAccount => String.t(),
-          :description => String.t(),
-          :enabledFeatures => list(String.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :quotas => list(GoogleApi.Compute.V1.Model.Quota.t()),
-          :selfLink => String.t(),
-          :usageExportLocation => GoogleApi.Compute.V1.Model.UsageExportLocation.t(),
-          :xpnProjectStatus => String.t()
+          :commonInstanceMetadata => GoogleApi.Compute.V1.Model.Metadata.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :defaultNetworkTier => String.t() | nil,
+          :defaultServiceAccount => String.t() | nil,
+          :description => String.t() | nil,
+          :enabledFeatures => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :quotas => list(GoogleApi.Compute.V1.Model.Quota.t()) | nil,
+          :selfLink => String.t() | nil,
+          :usageExportLocation => GoogleApi.Compute.V1.Model.UsageExportLocation.t() | nil,
+          :xpnProjectStatus => String.t() | nil
         }
 
   field(:commonInstanceMetadata, as: GoogleApi.Compute.V1.Model.Metadata)

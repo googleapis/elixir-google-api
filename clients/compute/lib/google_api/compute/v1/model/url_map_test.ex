@@ -38,13 +38,13 @@ defmodule GoogleApi.Compute.V1.Model.UrlMapTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :expectedOutputUrl => String.t(),
-          :expectedRedirectResponseCode => integer(),
-          :headers => list(GoogleApi.Compute.V1.Model.UrlMapTestHeader.t()),
-          :host => String.t(),
-          :path => String.t(),
-          :service => String.t()
+          :description => String.t() | nil,
+          :expectedOutputUrl => String.t() | nil,
+          :expectedRedirectResponseCode => integer() | nil,
+          :headers => list(GoogleApi.Compute.V1.Model.UrlMapTestHeader.t()) | nil,
+          :host => String.t() | nil,
+          :path => String.t() | nil,
+          :service => String.t() | nil
         }
 
   field(:description)

@@ -50,11 +50,11 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicyCustomMetricUtilization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => String.t(),
-          :metric => String.t(),
-          :singleInstanceAssignment => float(),
-          :utilizationTarget => float(),
-          :utilizationTargetType => String.t()
+          :filter => String.t() | nil,
+          :metric => String.t() | nil,
+          :singleInstanceAssignment => float() | nil,
+          :utilizationTarget => float() | nil,
+          :utilizationTargetType => String.t() | nil
         }
 
   field(:filter)

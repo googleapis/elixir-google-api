@@ -38,16 +38,16 @@ defmodule GoogleApi.Compute.V1.Model.TargetGrpcProxy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :selfLink => String.t(),
-          :selfLinkWithId => String.t(),
-          :urlMap => String.t(),
-          :validateForProxyless => boolean()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :selfLinkWithId => String.t() | nil,
+          :urlMap => String.t() | nil,
+          :validateForProxyless => boolean() | nil
         }
 
   field(:creationTimestamp)

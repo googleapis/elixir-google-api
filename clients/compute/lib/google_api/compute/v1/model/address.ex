@@ -47,13 +47,13 @@ defmodule GoogleApi.Compute.V1.Model.Address do
   *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
 
       If this field is not specified, it is assumed to be PREMIUM.
-  *   `prefixLength` (*type:* `integer()`, *default:* `nil`) - The prefix length if the resource reprensents an IP range.
+  *   `prefixLength` (*type:* `integer()`, *default:* `nil`) - The prefix length if the resource represents an IP range.
   *   `purpose` (*type:* `String.t`, *default:* `nil`) - The purpose of this resource, which can be one of the following values:  
       - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources. 
       - `DNS_RESOLVER` for a DNS resolver address in a subnetwork 
       - `VPC_PEERING` for addresses that are reserved for VPC peer networks. 
       - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT. 
-      - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+      - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
@@ -64,23 +64,23 @@ defmodule GoogleApi.Compute.V1.Model.Address do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :addressType => String.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :ipVersion => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :network => String.t(),
-          :networkTier => String.t(),
-          :prefixLength => integer(),
-          :purpose => String.t(),
-          :region => String.t(),
-          :selfLink => String.t(),
-          :status => String.t(),
-          :subnetwork => String.t(),
-          :users => list(String.t())
+          :address => String.t() | nil,
+          :addressType => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :ipVersion => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :network => String.t() | nil,
+          :networkTier => String.t() | nil,
+          :prefixLength => integer() | nil,
+          :purpose => String.t() | nil,
+          :region => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :status => String.t() | nil,
+          :subnetwork => String.t() | nil,
+          :users => list(String.t()) | nil
         }
 
   field(:address)

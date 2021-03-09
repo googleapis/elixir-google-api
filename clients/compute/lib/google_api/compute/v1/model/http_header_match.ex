@@ -52,14 +52,14 @@ defmodule GoogleApi.Compute.V1.Model.HttpHeaderMatch do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exactMatch => String.t(),
-          :headerName => String.t(),
-          :invertMatch => boolean(),
-          :prefixMatch => String.t(),
-          :presentMatch => boolean(),
-          :rangeMatch => GoogleApi.Compute.V1.Model.Int64RangeMatch.t(),
-          :regexMatch => String.t(),
-          :suffixMatch => String.t()
+          :exactMatch => String.t() | nil,
+          :headerName => String.t() | nil,
+          :invertMatch => boolean() | nil,
+          :prefixMatch => String.t() | nil,
+          :presentMatch => boolean() | nil,
+          :rangeMatch => GoogleApi.Compute.V1.Model.Int64RangeMatch.t() | nil,
+          :regexMatch => String.t() | nil,
+          :suffixMatch => String.t() | nil
         }
 
   field(:exactMatch)

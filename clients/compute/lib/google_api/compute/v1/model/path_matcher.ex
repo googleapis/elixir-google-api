@@ -51,14 +51,14 @@ defmodule GoogleApi.Compute.V1.Model.PathMatcher do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultRouteAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t(),
-          :defaultService => String.t(),
-          :defaultUrlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t(),
-          :description => String.t(),
-          :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t(),
-          :name => String.t(),
-          :pathRules => list(GoogleApi.Compute.V1.Model.PathRule.t()),
-          :routeRules => list(GoogleApi.Compute.V1.Model.HttpRouteRule.t())
+          :defaultRouteAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t() | nil,
+          :defaultService => String.t() | nil,
+          :defaultUrlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t() | nil,
+          :description => String.t() | nil,
+          :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t() | nil,
+          :name => String.t() | nil,
+          :pathRules => list(GoogleApi.Compute.V1.Model.PathRule.t()) | nil,
+          :routeRules => list(GoogleApi.Compute.V1.Model.HttpRouteRule.t()) | nil
         }
 
   field(:defaultRouteAction, as: GoogleApi.Compute.V1.Model.HttpRouteAction)

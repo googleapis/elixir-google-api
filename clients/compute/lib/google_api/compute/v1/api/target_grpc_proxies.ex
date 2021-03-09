@@ -60,7 +60,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_target_grpc_proxies_delete(
         connection,
         project,
@@ -127,6 +130,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetGrpcProxy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_target_grpc_proxies_get(
         connection,
@@ -190,7 +194,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
   *   `{:error, info}` on failure
   """
   @spec compute_target_grpc_proxies_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_target_grpc_proxies_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -258,6 +265,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
   @spec compute_target_grpc_proxies_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetGrpcProxyList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_target_grpc_proxies_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -325,7 +333,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetGrpcProxies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_target_grpc_proxies_patch(
         connection,
         project,

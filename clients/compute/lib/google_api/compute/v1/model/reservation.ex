@@ -38,18 +38,19 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commitment => String.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :satisfiesPzs => boolean(),
-          :selfLink => String.t(),
-          :specificReservation => GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation.t(),
-          :specificReservationRequired => boolean(),
-          :status => String.t(),
-          :zone => String.t()
+          :commitment => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
+          :selfLink => String.t() | nil,
+          :specificReservation =>
+            GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation.t() | nil,
+          :specificReservationRequired => boolean() | nil,
+          :status => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:commitment)

@@ -38,10 +38,10 @@ defmodule GoogleApi.Compute.V1.Model.RegionInstanceGroupManagersApplyUpdatesRequ
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allInstances => boolean(),
-          :instances => list(String.t()),
-          :minimalAction => String.t(),
-          :mostDisruptiveAllowedAction => String.t()
+          :allInstances => boolean() | nil,
+          :instances => list(String.t()) | nil,
+          :minimalAction => String.t() | nil,
+          :mostDisruptiveAllowedAction => String.t() | nil
         }
 
   field(:allInstances)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.RegionInstanceGroupManagersSetTargetPoolsRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fingerprint => String.t(),
-          :targetPools => list(String.t())
+          :fingerprint => String.t() | nil,
+          :targetPools => list(String.t()) | nil
         }
 
   field(:fingerprint)

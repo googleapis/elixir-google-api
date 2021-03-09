@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxScaledInReplicas => GoogleApi.Compute.V1.Model.FixedOrPercent.t(),
-          :timeWindowSec => integer()
+          :maxScaledInReplicas => GoogleApi.Compute.V1.Model.FixedOrPercent.t() | nil,
+          :timeWindowSec => integer() | nil
         }
 
   field(:maxScaledInReplicas, as: GoogleApi.Compute.V1.Model.FixedOrPercent)

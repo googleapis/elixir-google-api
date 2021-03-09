@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.StatefulPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :preservedState => GoogleApi.Compute.V1.Model.StatefulPolicyPreservedState.t()
+          :preservedState => GoogleApi.Compute.V1.Model.StatefulPolicyPreservedState.t() | nil
         }
 
   field(:preservedState, as: GoogleApi.Compute.V1.Model.StatefulPolicyPreservedState)

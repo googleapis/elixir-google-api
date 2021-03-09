@@ -29,10 +29,11 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagersListPerInstanceConfigs
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Compute.V1.Model.PerInstanceConfig.t()),
-          :nextPageToken => String.t(),
+          :items => list(GoogleApi.Compute.V1.Model.PerInstanceConfig.t()) | nil,
+          :nextPageToken => String.t() | nil,
           :warning =>
             GoogleApi.Compute.V1.Model.InstanceGroupManagersListPerInstanceConfigsRespWarning.t()
+            | nil
         }
 
   field(:items, as: GoogleApi.Compute.V1.Model.PerInstanceConfig, type: :list)

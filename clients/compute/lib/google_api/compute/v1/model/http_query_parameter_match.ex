@@ -34,10 +34,10 @@ defmodule GoogleApi.Compute.V1.Model.HttpQueryParameterMatch do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exactMatch => String.t(),
-          :name => String.t(),
-          :presentMatch => boolean(),
-          :regexMatch => String.t()
+          :exactMatch => String.t() | nil,
+          :name => String.t() | nil,
+          :presentMatch => boolean() | nil,
+          :regexMatch => String.t() | nil
         }
 
   field(:exactMatch)

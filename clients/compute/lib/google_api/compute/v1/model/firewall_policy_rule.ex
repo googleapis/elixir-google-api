@@ -38,18 +38,18 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :description => String.t(),
-          :direction => String.t(),
-          :disabled => boolean(),
-          :enableLogging => boolean(),
-          :kind => String.t(),
-          :match => GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher.t(),
-          :priority => integer(),
-          :ruleTupleCount => integer(),
-          :targetResources => list(String.t()),
-          :targetSecureLabels => list(String.t()),
-          :targetServiceAccounts => list(String.t())
+          :action => String.t() | nil,
+          :description => String.t() | nil,
+          :direction => String.t() | nil,
+          :disabled => boolean() | nil,
+          :enableLogging => boolean() | nil,
+          :kind => String.t() | nil,
+          :match => GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher.t() | nil,
+          :priority => integer() | nil,
+          :ruleTupleCount => integer() | nil,
+          :targetResources => list(String.t()) | nil,
+          :targetSecureLabels => list(String.t()) | nil,
+          :targetServiceAccounts => list(String.t()) | nil
         }
 
   field(:action)

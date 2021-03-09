@@ -43,21 +43,21 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoscalingPolicy => GoogleApi.Compute.V1.Model.NodeGroupAutoscalingPolicy.t(),
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :locationHint => String.t(),
-          :maintenancePolicy => String.t(),
-          :maintenanceWindow => GoogleApi.Compute.V1.Model.NodeGroupMaintenanceWindow.t(),
-          :name => String.t(),
-          :nodeTemplate => String.t(),
-          :selfLink => String.t(),
-          :size => integer(),
-          :status => String.t(),
-          :zone => String.t()
+          :autoscalingPolicy => GoogleApi.Compute.V1.Model.NodeGroupAutoscalingPolicy.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :locationHint => String.t() | nil,
+          :maintenancePolicy => String.t() | nil,
+          :maintenanceWindow => GoogleApi.Compute.V1.Model.NodeGroupMaintenanceWindow.t() | nil,
+          :name => String.t() | nil,
+          :nodeTemplate => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :size => integer() | nil,
+          :status => String.t() | nil,
+          :zone => String.t() | nil
         }
 
   field(:autoscalingPolicy, as: GoogleApi.Compute.V1.Model.NodeGroupAutoscalingPolicy)

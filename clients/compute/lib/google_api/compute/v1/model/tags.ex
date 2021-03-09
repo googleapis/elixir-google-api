@@ -30,8 +30,8 @@ defmodule GoogleApi.Compute.V1.Model.Tags do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fingerprint => String.t(),
-          :items => list(String.t())
+          :fingerprint => String.t() | nil,
+          :items => list(String.t()) | nil
         }
 
   field(:fingerprint)

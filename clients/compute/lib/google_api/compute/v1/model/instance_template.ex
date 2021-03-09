@@ -39,15 +39,15 @@ defmodule GoogleApi.Compute.V1.Model.InstanceTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :properties => GoogleApi.Compute.V1.Model.InstanceProperties.t(),
-          :selfLink => String.t(),
-          :sourceInstance => String.t(),
-          :sourceInstanceParams => GoogleApi.Compute.V1.Model.SourceInstanceParams.t()
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :properties => GoogleApi.Compute.V1.Model.InstanceProperties.t() | nil,
+          :selfLink => String.t() | nil,
+          :sourceInstance => String.t() | nil,
+          :sourceInstanceParams => GoogleApi.Compute.V1.Model.SourceInstanceParams.t() | nil
         }
 
   field(:creationTimestamp)

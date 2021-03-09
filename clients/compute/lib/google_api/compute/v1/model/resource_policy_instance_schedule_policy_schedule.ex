@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicySchedul
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :schedule => String.t()
+          :schedule => String.t() | nil
         }
 
   field(:schedule)

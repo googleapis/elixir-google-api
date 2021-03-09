@@ -44,19 +44,19 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :drainNatIps => list(String.t()),
-          :enableEndpointIndependentMapping => boolean(),
-          :icmpIdleTimeoutSec => integer(),
-          :logConfig => GoogleApi.Compute.V1.Model.RouterNatLogConfig.t(),
-          :minPortsPerVm => integer(),
-          :name => String.t(),
-          :natIpAllocateOption => String.t(),
-          :natIps => list(String.t()),
-          :sourceSubnetworkIpRangesToNat => String.t(),
-          :subnetworks => list(GoogleApi.Compute.V1.Model.RouterNatSubnetworkToNat.t()),
-          :tcpEstablishedIdleTimeoutSec => integer(),
-          :tcpTransitoryIdleTimeoutSec => integer(),
-          :udpIdleTimeoutSec => integer()
+          :drainNatIps => list(String.t()) | nil,
+          :enableEndpointIndependentMapping => boolean() | nil,
+          :icmpIdleTimeoutSec => integer() | nil,
+          :logConfig => GoogleApi.Compute.V1.Model.RouterNatLogConfig.t() | nil,
+          :minPortsPerVm => integer() | nil,
+          :name => String.t() | nil,
+          :natIpAllocateOption => String.t() | nil,
+          :natIps => list(String.t()) | nil,
+          :sourceSubnetworkIpRangesToNat => String.t() | nil,
+          :subnetworks => list(GoogleApi.Compute.V1.Model.RouterNatSubnetworkToNat.t()) | nil,
+          :tcpEstablishedIdleTimeoutSec => integer() | nil,
+          :tcpTransitoryIdleTimeoutSec => integer() | nil,
+          :udpIdleTimeoutSec => integer() | nil
         }
 
   field(:drainNatIps, type: :list)

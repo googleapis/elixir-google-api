@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.AdvancedMachineFeatures do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enableNestedVirtualization => boolean()
+          :enableNestedVirtualization => boolean() | nil
         }
 
   field(:enableNestedVirtualization)

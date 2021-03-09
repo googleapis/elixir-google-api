@@ -30,9 +30,9 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocationListWarning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :data => list(GoogleApi.Compute.V1.Model.InterconnectLocationListWarningData.t()),
-          :message => String.t()
+          :code => String.t() | nil,
+          :data => list(GoogleApi.Compute.V1.Model.InterconnectLocationListWarningData.t()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

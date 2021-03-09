@@ -30,10 +30,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiseMode => String.t(),
-          :advertisedGroups => list(String.t()),
-          :advertisedIpRanges => list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t()),
-          :asn => integer()
+          :advertiseMode => String.t() | nil,
+          :advertisedGroups => list(String.t()) | nil,
+          :advertisedIpRanges =>
+            list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t()) | nil,
+          :asn => integer() | nil
         }
 
   field(:advertiseMode)

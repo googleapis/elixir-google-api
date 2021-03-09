@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupsListEndpointsRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :healthStatus => String.t()
+          :healthStatus => String.t() | nil
         }
 
   field(:healthStatus)

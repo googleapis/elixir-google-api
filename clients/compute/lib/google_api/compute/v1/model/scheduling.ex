@@ -34,12 +34,12 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :automaticRestart => boolean(),
-          :locationHint => String.t(),
-          :minNodeCpus => integer(),
-          :nodeAffinities => list(GoogleApi.Compute.V1.Model.SchedulingNodeAffinity.t()),
-          :onHostMaintenance => String.t(),
-          :preemptible => boolean()
+          :automaticRestart => boolean() | nil,
+          :locationHint => String.t() | nil,
+          :minNodeCpus => integer() | nil,
+          :nodeAffinities => list(GoogleApi.Compute.V1.Model.SchedulingNodeAffinity.t()) | nil,
+          :onHostMaintenance => String.t() | nil,
+          :preemptible => boolean() | nil
         }
 
   field(:automaticRestart)

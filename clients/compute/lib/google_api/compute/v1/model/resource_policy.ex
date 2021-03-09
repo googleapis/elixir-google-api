@@ -40,21 +40,21 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTimestamp => String.t(),
-          :description => String.t(),
+          :creationTimestamp => String.t() | nil,
+          :description => String.t() | nil,
           :groupPlacementPolicy =>
-            GoogleApi.Compute.V1.Model.ResourcePolicyGroupPlacementPolicy.t(),
-          :id => String.t(),
+            GoogleApi.Compute.V1.Model.ResourcePolicyGroupPlacementPolicy.t() | nil,
+          :id => String.t() | nil,
           :instanceSchedulePolicy =>
-            GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicy.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :region => String.t(),
-          :resourceStatus => GoogleApi.Compute.V1.Model.ResourcePolicyResourceStatus.t(),
-          :selfLink => String.t(),
+            GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicy.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :region => String.t() | nil,
+          :resourceStatus => GoogleApi.Compute.V1.Model.ResourcePolicyResourceStatus.t() | nil,
+          :selfLink => String.t() | nil,
           :snapshotSchedulePolicy =>
-            GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicy.t(),
-          :status => String.t()
+            GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicy.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:creationTimestamp)

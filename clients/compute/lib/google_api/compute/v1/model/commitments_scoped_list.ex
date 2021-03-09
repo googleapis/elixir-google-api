@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.CommitmentsScopedList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commitments => list(GoogleApi.Compute.V1.Model.Commitment.t()),
-          :warning => GoogleApi.Compute.V1.Model.CommitmentsScopedListWarning.t()
+          :commitments => list(GoogleApi.Compute.V1.Model.Commitment.t()) | nil,
+          :warning => GoogleApi.Compute.V1.Model.CommitmentsScopedListWarning.t() | nil
         }
 
   field(:commitments, as: GoogleApi.Compute.V1.Model.Commitment, type: :list)

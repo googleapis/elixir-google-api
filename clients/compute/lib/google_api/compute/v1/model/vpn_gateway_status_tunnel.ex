@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayStatusTunnel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :localGatewayInterface => integer(),
-          :peerGatewayInterface => integer(),
-          :tunnelUrl => String.t()
+          :localGatewayInterface => integer() | nil,
+          :peerGatewayInterface => integer() | nil,
+          :tunnelUrl => String.t() | nil
         }
 
   field(:localGatewayInterface)

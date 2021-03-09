@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworksRemovePeeringRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t()
+          :name => String.t() | nil
         }
 
   field(:name)

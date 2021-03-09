@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.LocationPolicyLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :preference => String.t()
+          :preference => String.t() | nil
         }
 
   field(:preference)

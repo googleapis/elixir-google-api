@@ -37,17 +37,17 @@ defmodule GoogleApi.Compute.V1.Model.OutlierDetection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :baseEjectionTime => GoogleApi.Compute.V1.Model.Duration.t(),
-          :consecutiveErrors => integer(),
-          :consecutiveGatewayFailure => integer(),
-          :enforcingConsecutiveErrors => integer(),
-          :enforcingConsecutiveGatewayFailure => integer(),
-          :enforcingSuccessRate => integer(),
-          :interval => GoogleApi.Compute.V1.Model.Duration.t(),
-          :maxEjectionPercent => integer(),
-          :successRateMinimumHosts => integer(),
-          :successRateRequestVolume => integer(),
-          :successRateStdevFactor => integer()
+          :baseEjectionTime => GoogleApi.Compute.V1.Model.Duration.t() | nil,
+          :consecutiveErrors => integer() | nil,
+          :consecutiveGatewayFailure => integer() | nil,
+          :enforcingConsecutiveErrors => integer() | nil,
+          :enforcingConsecutiveGatewayFailure => integer() | nil,
+          :enforcingSuccessRate => integer() | nil,
+          :interval => GoogleApi.Compute.V1.Model.Duration.t() | nil,
+          :maxEjectionPercent => integer() | nil,
+          :successRateMinimumHosts => integer() | nil,
+          :successRateRequestVolume => integer() | nil,
+          :successRateStdevFactor => integer() | nil
         }
 
   field(:baseEjectionTime, as: GoogleApi.Compute.V1.Model.Duration)

@@ -27,7 +27,8 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPoliciesListPreconfiguredExpression
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :preconfiguredExpressionSets => GoogleApi.Compute.V1.Model.SecurityPoliciesWafConfig.t()
+          :preconfiguredExpressionSets =>
+            GoogleApi.Compute.V1.Model.SecurityPoliciesWafConfig.t() | nil
         }
 
   field(:preconfiguredExpressionSets, as: GoogleApi.Compute.V1.Model.SecurityPoliciesWafConfig)

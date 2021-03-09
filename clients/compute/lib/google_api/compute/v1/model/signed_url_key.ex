@@ -28,8 +28,8 @@ defmodule GoogleApi.Compute.V1.Model.SignedUrlKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyName => String.t(),
-          :keyValue => String.t()
+          :keyName => String.t() | nil,
+          :keyValue => String.t() | nil
         }
 
   field(:keyName)

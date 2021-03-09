@@ -29,9 +29,9 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachmentPartnerMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :interconnectName => String.t(),
-          :partnerName => String.t(),
-          :portalUrl => String.t()
+          :interconnectName => String.t() | nil,
+          :partnerName => String.t() | nil,
+          :portalUrl => String.t() | nil
         }
 
   field(:interconnectName)

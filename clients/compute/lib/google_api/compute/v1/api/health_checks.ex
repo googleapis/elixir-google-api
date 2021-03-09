@@ -71,6 +71,7 @@ defmodule GoogleApi.Compute.V1.Api.HealthChecks do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.HealthChecksAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_health_checks_aggregated_list(
         connection,
@@ -143,7 +144,10 @@ defmodule GoogleApi.Compute.V1.Api.HealthChecks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_health_checks_delete(
         connection,
         project,
@@ -209,6 +213,7 @@ defmodule GoogleApi.Compute.V1.Api.HealthChecks do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.HealthCheck.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_health_checks_get(
         connection,
@@ -271,7 +276,10 @@ defmodule GoogleApi.Compute.V1.Api.HealthChecks do
   *   `{:error, info}` on failure
   """
   @spec compute_health_checks_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_health_checks_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -339,6 +347,7 @@ defmodule GoogleApi.Compute.V1.Api.HealthChecks do
   @spec compute_health_checks_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.HealthCheckList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_health_checks_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -406,7 +415,10 @@ defmodule GoogleApi.Compute.V1.Api.HealthChecks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_health_checks_patch(
         connection,
         project,
@@ -477,7 +489,10 @@ defmodule GoogleApi.Compute.V1.Api.HealthChecks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def compute_health_checks_update(
         connection,
         project,

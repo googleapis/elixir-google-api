@@ -71,6 +71,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.AcceleratorTypeAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_accelerator_types_aggregated_list(
         connection,
@@ -144,6 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.AcceleratorType.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_accelerator_types_get(
         connection,
@@ -226,6 +228,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.AcceleratorTypeList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def compute_accelerator_types_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

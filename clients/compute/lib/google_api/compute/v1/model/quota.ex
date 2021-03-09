@@ -30,10 +30,10 @@ defmodule GoogleApi.Compute.V1.Model.Quota do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :limit => float(),
-          :metric => String.t(),
-          :owner => String.t(),
-          :usage => float()
+          :limit => float() | nil,
+          :metric => String.t() | nil,
+          :owner => String.t() | nil,
+          :usage => float() | nil
         }
 
   field(:limit)

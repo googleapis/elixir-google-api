@@ -44,15 +44,16 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentAction => String.t(),
-          :id => String.t(),
-          :instance => String.t(),
-          :instanceHealth => list(GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth.t()),
-          :instanceStatus => String.t(),
-          :lastAttempt => GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t(),
-          :preservedStateFromConfig => GoogleApi.Compute.V1.Model.PreservedState.t(),
-          :preservedStateFromPolicy => GoogleApi.Compute.V1.Model.PreservedState.t(),
-          :version => GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t()
+          :currentAction => String.t() | nil,
+          :id => String.t() | nil,
+          :instance => String.t() | nil,
+          :instanceHealth =>
+            list(GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth.t()) | nil,
+          :instanceStatus => String.t() | nil,
+          :lastAttempt => GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t() | nil,
+          :preservedStateFromConfig => GoogleApi.Compute.V1.Model.PreservedState.t() | nil,
+          :preservedStateFromPolicy => GoogleApi.Compute.V1.Model.PreservedState.t() | nil,
+          :version => GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t() | nil
         }
 
   field(:currentAction)
