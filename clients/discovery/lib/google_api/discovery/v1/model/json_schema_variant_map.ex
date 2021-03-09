@@ -28,8 +28,8 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchemaVariantMap do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :"$ref" => String.t(),
-          :type_value => String.t()
+          :"$ref" => String.t() | nil,
+          :type_value => String.t() | nil
         }
 
   field(:"$ref")

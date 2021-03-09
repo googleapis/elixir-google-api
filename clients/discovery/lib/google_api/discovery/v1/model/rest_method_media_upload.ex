@@ -29,9 +29,9 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethodMediaUpload do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accept => list(String.t()),
-          :maxSize => String.t(),
-          :protocols => GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocols.t()
+          :accept => list(String.t()) | nil,
+          :maxSize => String.t() | nil,
+          :protocols => GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocols.t() | nil
         }
 
   field(:accept, type: :list)

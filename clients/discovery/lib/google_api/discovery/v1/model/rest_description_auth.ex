@@ -27,7 +27,7 @@ defmodule GoogleApi.Discovery.V1.Model.RestDescriptionAuth do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :oauth2 => GoogleApi.Discovery.V1.Model.RestDescriptionAuthOauth2.t()
+          :oauth2 => GoogleApi.Discovery.V1.Model.RestDescriptionAuthOauth2.t() | nil
         }
 
   field(:oauth2, as: GoogleApi.Discovery.V1.Model.RestDescriptionAuthOauth2)

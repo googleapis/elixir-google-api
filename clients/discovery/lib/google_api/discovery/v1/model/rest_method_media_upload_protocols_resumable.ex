@@ -28,8 +28,8 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsResumable d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :multipart => boolean(),
-          :path => String.t()
+          :multipart => boolean() | nil,
+          :path => String.t() | nil
         }
 
   field(:multipart)

@@ -28,8 +28,10 @@ defmodule GoogleApi.Discovery.V1.Model.RestResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :methods => %{optional(String.t()) => GoogleApi.Discovery.V1.Model.RestMethod.t()},
-          :resources => %{optional(String.t()) => GoogleApi.Discovery.V1.Model.RestResource.t()}
+          :methods =>
+            %{optional(String.t()) => GoogleApi.Discovery.V1.Model.RestMethod.t()} | nil,
+          :resources =>
+            %{optional(String.t()) => GoogleApi.Discovery.V1.Model.RestResource.t()} | nil
         }
 
   field(:methods, as: GoogleApi.Discovery.V1.Model.RestMethod, type: :map)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Discovery.V1.Model.RestDescriptionIcons do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :x16 => String.t(),
-          :x32 => String.t()
+          :x16 => String.t() | nil,
+          :x32 => String.t() | nil
         }
 
   field(:x16)

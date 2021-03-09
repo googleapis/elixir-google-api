@@ -27,7 +27,7 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchemaAnnotations do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :required => list(String.t())
+          :required => list(String.t()) | nil
         }
 
   field(:required, type: :list)

@@ -28,8 +28,9 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocols do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resumable => GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsResumable.t(),
-          :simple => GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsSimple.t()
+          :resumable =>
+            GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsResumable.t() | nil,
+          :simple => GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsSimple.t() | nil
         }
 
   field(:resumable, as: GoogleApi.Discovery.V1.Model.RestMethodMediaUploadProtocolsResumable)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchemaVariant do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :discriminant => String.t(),
-          :map => list(GoogleApi.Discovery.V1.Model.JsonSchemaVariantMap.t())
+          :discriminant => String.t() | nil,
+          :map => list(GoogleApi.Discovery.V1.Model.JsonSchemaVariantMap.t()) | nil
         }
 
   field(:discriminant)
