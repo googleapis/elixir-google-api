@@ -28,8 +28,8 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lookupStrategy => String.t(),
-          :urls => list(String.t())
+          :lookupStrategy => String.t() | nil,
+          :urls => list(String.t()) | nil
         }
 
   field(:lookupStrategy)

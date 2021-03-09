@@ -29,9 +29,9 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Model.AmpUrl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ampUrl => String.t(),
-          :cdnAmpUrl => String.t(),
-          :originalUrl => String.t()
+          :ampUrl => String.t() | nil,
+          :cdnAmpUrl => String.t() | nil,
+          :originalUrl => String.t() | nil
         }
 
   field(:ampUrl)
