@@ -33,16 +33,18 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshoote
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access => String.t(),
-          :condition => GoogleApi.PolicyTroubleshooter.V1.Model.GoogleTypeExpr.t(),
-          :memberships => %{
-            optional(String.t()) =>
-              GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1BindingExplanationAnnotatedMembership.t()
-          },
-          :relevance => String.t(),
-          :role => String.t(),
-          :rolePermission => String.t(),
-          :rolePermissionRelevance => String.t()
+          :access => String.t() | nil,
+          :condition => GoogleApi.PolicyTroubleshooter.V1.Model.GoogleTypeExpr.t() | nil,
+          :memberships =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1BindingExplanationAnnotatedMembership.t()
+            }
+            | nil,
+          :relevance => String.t() | nil,
+          :role => String.t() | nil,
+          :rolePermission => String.t() | nil,
+          :rolePermissionRelevance => String.t() | nil
         }
 
   field(:access)

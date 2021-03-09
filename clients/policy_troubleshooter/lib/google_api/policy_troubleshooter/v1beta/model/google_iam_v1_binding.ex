@@ -29,9 +29,9 @@ defmodule GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleIamV1Binding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleTypeExpr.t(),
-          :members => list(String.t()),
-          :role => String.t()
+          :condition => GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleTypeExpr.t() | nil,
+          :members => list(String.t()) | nil,
+          :role => String.t() | nil
         }
 
   field(:condition, as: GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleTypeExpr)

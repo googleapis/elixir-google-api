@@ -29,6 +29,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshoote
   @type t :: %__MODULE__{
           :accessTuple =>
             GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1AccessTuple.t()
+            | nil
         }
 
   field(:accessTuple,

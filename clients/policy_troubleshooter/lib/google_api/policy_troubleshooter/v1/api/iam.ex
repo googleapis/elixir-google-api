@@ -55,6 +55,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1.Api.Iam do
           {:ok,
            GoogleApi.PolicyTroubleshooter.V1.Model.GoogleCloudPolicytroubleshooterV1TroubleshootIamPolicyResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def policytroubleshooter_iam_troubleshoot(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

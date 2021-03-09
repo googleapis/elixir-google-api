@@ -28,11 +28,12 @@ defmodule GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroublesh
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access => String.t(),
+          :access => String.t() | nil,
           :explainedPolicies =>
             list(
               GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroubleshooterV1betaExplainedPolicy.t()
             )
+            | nil
         }
 
   field(:access)
