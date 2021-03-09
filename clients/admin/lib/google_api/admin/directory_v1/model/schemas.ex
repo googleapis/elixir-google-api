@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Schemas do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :schemas => list(GoogleApi.Admin.Directory_v1.Model.Schema.t())
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :schemas => list(GoogleApi.Admin.Directory_v1.Model.Schema.t()) | nil
         }
 
   field(:etag)

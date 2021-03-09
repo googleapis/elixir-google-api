@@ -54,6 +54,7 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Api.Transfers do
   @spec datatransfer_transfers_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Datatransfer_v1.Model.DataTransfer.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datatransfer_transfers_get(connection, data_transfer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -113,6 +114,7 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Api.Transfers do
   @spec datatransfer_transfers_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Datatransfer_v1.Model.DataTransfer.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datatransfer_transfers_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -176,6 +178,7 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Api.Transfers do
   @spec datatransfer_transfers_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Datatransfer_v1.Model.DataTransfersListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datatransfer_transfers_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

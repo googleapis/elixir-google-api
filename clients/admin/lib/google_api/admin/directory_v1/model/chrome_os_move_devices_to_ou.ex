@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsMoveDevicesToOu do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceIds => list(String.t())
+          :deviceIds => list(String.t()) | nil
         }
 
   field(:deviceIds, type: :list)

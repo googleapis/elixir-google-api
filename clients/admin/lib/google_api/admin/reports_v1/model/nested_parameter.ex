@@ -33,13 +33,13 @@ defmodule GoogleApi.Admin.Reports_v1.Model.NestedParameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :intValue => String.t(),
-          :multiBoolValue => list(boolean()),
-          :multiIntValue => list(String.t()),
-          :multiValue => list(String.t()),
-          :name => String.t(),
-          :value => String.t()
+          :boolValue => boolean() | nil,
+          :intValue => String.t() | nil,
+          :multiBoolValue => list(boolean()) | nil,
+          :multiIntValue => list(String.t()) | nil,
+          :multiValue => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:boolValue)

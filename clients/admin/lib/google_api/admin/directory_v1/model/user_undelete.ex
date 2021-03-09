@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserUndelete do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :orgUnitPath => String.t()
+          :orgUnitPath => String.t() | nil
         }
 
   field(:orgUnitPath)

@@ -33,13 +33,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assignedTo => String.t(),
-          :etag => String.t(),
-          :kind => String.t(),
-          :orgUnitId => String.t(),
-          :roleAssignmentId => String.t(),
-          :roleId => String.t(),
-          :scopeType => String.t()
+          :assignedTo => String.t() | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :orgUnitId => String.t() | nil,
+          :roleAssignmentId => String.t() | nil,
+          :roleId => String.t() | nil,
+          :scopeType => String.t() | nil
         }
 
   field(:assignedTo)

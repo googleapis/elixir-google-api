@@ -32,12 +32,12 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :family => String.t(),
-          :firmwareVersion => String.t(),
-          :manufacturer => String.t(),
-          :specLevel => String.t(),
-          :tpmModel => String.t(),
-          :vendorSpecific => String.t()
+          :family => String.t() | nil,
+          :firmwareVersion => String.t() | nil,
+          :manufacturer => String.t() | nil,
+          :specLevel => String.t() | nil,
+          :tpmModel => String.t() | nil,
+          :vendorSpecific => String.t() | nil
         }
 
   field(:family)

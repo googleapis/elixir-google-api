@@ -34,14 +34,14 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Building do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.Admin.Directory_v1.Model.BuildingAddress.t(),
-          :buildingId => String.t(),
-          :buildingName => String.t(),
-          :coordinates => GoogleApi.Admin.Directory_v1.Model.BuildingCoordinates.t(),
-          :description => String.t(),
-          :etags => String.t(),
-          :floorNames => list(String.t()),
-          :kind => String.t()
+          :address => GoogleApi.Admin.Directory_v1.Model.BuildingAddress.t() | nil,
+          :buildingId => String.t() | nil,
+          :buildingName => String.t() | nil,
+          :coordinates => GoogleApi.Admin.Directory_v1.Model.BuildingCoordinates.t() | nil,
+          :description => String.t() | nil,
+          :etags => String.t() | nil,
+          :floorNames => list(String.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:address, as: GoogleApi.Admin.Directory_v1.Model.BuildingAddress)

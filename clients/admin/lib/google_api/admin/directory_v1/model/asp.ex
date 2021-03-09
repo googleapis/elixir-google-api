@@ -33,13 +33,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Asp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :codeId => integer(),
-          :creationTime => String.t(),
-          :etag => String.t(),
-          :kind => String.t(),
-          :lastTimeUsed => String.t(),
-          :name => String.t(),
-          :userKey => String.t()
+          :codeId => integer() | nil,
+          :creationTime => String.t() | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :lastTimeUsed => String.t() | nil,
+          :name => String.t() | nil,
+          :userKey => String.t() | nil
         }
 
   field(:codeId)

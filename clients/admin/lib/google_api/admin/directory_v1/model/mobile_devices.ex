@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MobileDevices do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :mobiledevices => list(GoogleApi.Admin.Directory_v1.Model.MobileDevice.t()),
-          :nextPageToken => String.t()
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :mobiledevices => list(GoogleApi.Admin.Directory_v1.Model.MobileDevice.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:etag)

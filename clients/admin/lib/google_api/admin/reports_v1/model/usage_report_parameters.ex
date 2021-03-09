@@ -32,12 +32,12 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :datetimeValue => DateTime.t(),
-          :intValue => String.t(),
-          :msgValue => list(map()),
-          :name => String.t(),
-          :stringValue => String.t()
+          :boolValue => boolean() | nil,
+          :datetimeValue => DateTime.t() | nil,
+          :intValue => String.t() | nil,
+          :msgValue => list(map()) | nil,
+          :name => String.t() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:boolValue)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MembersHasMember do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isMember => boolean()
+          :isMember => boolean() | nil
         }
 
   field(:isMember)

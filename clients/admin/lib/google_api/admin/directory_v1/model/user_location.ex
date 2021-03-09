@@ -33,13 +33,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :area => String.t(),
-          :buildingId => String.t(),
-          :customType => String.t(),
-          :deskCode => String.t(),
-          :floorName => String.t(),
-          :floorSection => String.t(),
-          :type => String.t()
+          :area => String.t() | nil,
+          :buildingId => String.t() | nil,
+          :customType => String.t() | nil,
+          :deskCode => String.t() | nil,
+          :floorName => String.t() | nil,
+          :floorSection => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:area)

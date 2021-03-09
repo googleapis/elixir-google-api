@@ -58,7 +58,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def directory_role_assignments_delete(
         connection,
         customer,
@@ -135,6 +135,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.RoleAssignment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_role_assignments_get(
         connection,
@@ -206,6 +207,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
   @spec directory_role_assignments_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.RoleAssignment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_role_assignments_insert(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -270,6 +272,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
   @spec directory_role_assignments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.RoleAssignments.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_role_assignments_list(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

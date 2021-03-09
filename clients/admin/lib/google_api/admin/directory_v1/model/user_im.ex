@@ -32,12 +32,12 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserIm do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customProtocol => String.t(),
-          :customType => String.t(),
-          :im => String.t(),
-          :primary => boolean(),
-          :protocol => String.t(),
-          :type => String.t()
+          :customProtocol => String.t() | nil,
+          :customType => String.t() | nil,
+          :im => String.t() | nil,
+          :primary => boolean() | nil,
+          :protocol => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:customProtocol)

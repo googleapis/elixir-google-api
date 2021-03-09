@@ -41,21 +41,21 @@ defmodule GoogleApi.Admin.Directory_v1.Model.CalendarResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buildingId => String.t(),
-          :capacity => integer(),
-          :etags => String.t(),
-          :featureInstances => any(),
-          :floorName => String.t(),
-          :floorSection => String.t(),
-          :generatedResourceName => String.t(),
-          :kind => String.t(),
-          :resourceCategory => String.t(),
-          :resourceDescription => String.t(),
-          :resourceEmail => String.t(),
-          :resourceId => String.t(),
-          :resourceName => String.t(),
-          :resourceType => String.t(),
-          :userVisibleDescription => String.t()
+          :buildingId => String.t() | nil,
+          :capacity => integer() | nil,
+          :etags => String.t() | nil,
+          :featureInstances => any() | nil,
+          :floorName => String.t() | nil,
+          :floorSection => String.t() | nil,
+          :generatedResourceName => String.t() | nil,
+          :kind => String.t() | nil,
+          :resourceCategory => String.t() | nil,
+          :resourceDescription => String.t() | nil,
+          :resourceEmail => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :resourceName => String.t() | nil,
+          :resourceType => String.t() | nil,
+          :userVisibleDescription => String.t() | nil
         }
 
   field(:buildingId)

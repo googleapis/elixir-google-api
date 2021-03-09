@@ -39,19 +39,19 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserAddress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :countryCode => String.t(),
-          :customType => String.t(),
-          :extendedAddress => String.t(),
-          :formatted => String.t(),
-          :locality => String.t(),
-          :poBox => String.t(),
-          :postalCode => String.t(),
-          :primary => boolean(),
-          :region => String.t(),
-          :sourceIsStructured => boolean(),
-          :streetAddress => String.t(),
-          :type => String.t()
+          :country => String.t() | nil,
+          :countryCode => String.t() | nil,
+          :customType => String.t() | nil,
+          :extendedAddress => String.t() | nil,
+          :formatted => String.t() | nil,
+          :locality => String.t() | nil,
+          :poBox => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :primary => boolean() | nil,
+          :region => String.t() | nil,
+          :sourceIsStructured => boolean() | nil,
+          :streetAddress => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:country)

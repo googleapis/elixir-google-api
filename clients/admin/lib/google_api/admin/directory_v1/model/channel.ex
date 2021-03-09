@@ -36,16 +36,16 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Channel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :expiration => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :params => map(),
-          :payload => boolean(),
-          :resourceId => String.t(),
-          :resourceUri => String.t(),
-          :token => String.t(),
-          :type => String.t()
+          :address => String.t() | nil,
+          :expiration => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :params => map() | nil,
+          :payload => boolean() | nil,
+          :resourceId => String.t() | nil,
+          :resourceUri => String.t() | nil,
+          :token => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:address)

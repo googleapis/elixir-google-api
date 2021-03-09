@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevices do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chromeosdevices => list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice.t()),
-          :etag => String.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :chromeosdevices => list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice.t()) | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:chromeosdevices, as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice, type: :list)

@@ -56,7 +56,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.TwoStepVerification do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def directory_two_step_verification_turn_off(
         connection,
         user_key,

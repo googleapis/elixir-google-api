@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MobileDeviceAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t()
+          :action => String.t() | nil
         }
 
   field(:action)

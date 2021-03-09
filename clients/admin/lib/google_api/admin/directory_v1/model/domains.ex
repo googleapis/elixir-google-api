@@ -33,13 +33,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Domains do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => String.t(),
-          :domainAliases => list(GoogleApi.Admin.Directory_v1.Model.DomainAlias.t()),
-          :domainName => String.t(),
-          :etag => String.t(),
-          :isPrimary => boolean(),
-          :kind => String.t(),
-          :verified => boolean()
+          :creationTime => String.t() | nil,
+          :domainAliases => list(GoogleApi.Admin.Directory_v1.Model.DomainAlias.t()) | nil,
+          :domainName => String.t() | nil,
+          :etag => String.t() | nil,
+          :isPrimary => boolean() | nil,
+          :kind => String.t() | nil,
+          :verified => boolean() | nil
         }
 
   field(:creationTime)

@@ -52,7 +52,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec directory_groups_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def directory_groups_delete(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -111,6 +111,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   @spec directory_groups_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Group.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_groups_get(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -170,6 +171,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   @spec directory_groups_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Group.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_groups_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -235,6 +237,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   @spec directory_groups_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Groups.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_groups_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -301,6 +304,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   @spec directory_groups_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Group.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_groups_patch(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -362,6 +366,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   @spec directory_groups_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Group.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_groups_update(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -426,7 +431,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def directory_groups_aliases_delete(
         connection,
         group_key,
@@ -493,6 +498,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   @spec directory_groups_aliases_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Alias.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_groups_aliases_insert(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -553,6 +559,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
   @spec directory_groups_aliases_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Aliases.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_groups_aliases_list(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

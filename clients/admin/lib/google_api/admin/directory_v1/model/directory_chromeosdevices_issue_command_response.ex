@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesIssueComman
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commandId => String.t()
+          :commandId => String.t() | nil
         }
 
   field(:commandId)

@@ -54,6 +54,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customers do
   @spec directory_customers_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Customer.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_customers_get(connection, customer_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -114,6 +115,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customers do
   @spec directory_customers_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Customer.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_customers_patch(connection, customer_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -175,6 +177,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customers do
   @spec directory_customers_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Customer.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_customers_update(connection, customer_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

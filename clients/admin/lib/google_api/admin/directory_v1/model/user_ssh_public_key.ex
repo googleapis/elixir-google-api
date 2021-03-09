@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserSshPublicKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expirationTimeUsec => String.t(),
-          :fingerprint => String.t(),
-          :key => String.t()
+          :expirationTimeUsec => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :key => String.t() | nil
         }
 
   field(:expirationTimeUsec)

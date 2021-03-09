@@ -33,14 +33,14 @@ defmodule GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesCommand do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commandExpireTime => DateTime.t(),
-          :commandId => String.t(),
+          :commandExpireTime => DateTime.t() | nil,
+          :commandId => String.t() | nil,
           :commandResult =>
-            GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesCommandResult.t(),
-          :issueTime => DateTime.t(),
-          :payload => String.t(),
-          :state => String.t(),
-          :type => String.t()
+            GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesCommandResult.t() | nil,
+          :issueTime => DateTime.t() | nil,
+          :payload => String.t() | nil,
+          :state => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:commandExpireTime, as: DateTime)

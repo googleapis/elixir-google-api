@@ -36,17 +36,17 @@ defmodule GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :etag => String.t(),
-          :fieldId => String.t(),
-          :fieldName => String.t(),
-          :fieldType => String.t(),
-          :indexed => boolean(),
-          :kind => String.t(),
-          :multiValued => boolean(),
+          :displayName => String.t() | nil,
+          :etag => String.t() | nil,
+          :fieldId => String.t() | nil,
+          :fieldName => String.t() | nil,
+          :fieldType => String.t() | nil,
+          :indexed => boolean() | nil,
+          :kind => String.t() | nil,
+          :multiValued => boolean() | nil,
           :numericIndexingSpec =>
-            GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpecNumericIndexingSpec.t(),
-          :readAccessType => String.t()
+            GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpecNumericIndexingSpec.t() | nil,
+          :readAccessType => String.t() | nil
         }
 
   field(:displayName)

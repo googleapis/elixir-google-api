@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReportsCpuTe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :label => String.t(),
-          :temperature => integer()
+          :label => String.t() | nil,
+          :temperature => integer() | nil
         }
 
   field(:label)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Roles do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :items => list(GoogleApi.Admin.Directory_v1.Model.Role.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.Admin.Directory_v1.Model.Role.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:etag)

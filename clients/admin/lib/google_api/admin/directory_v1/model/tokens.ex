@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Tokens do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :items => list(GoogleApi.Admin.Directory_v1.Model.Token.t()),
-          :kind => String.t()
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.Admin.Directory_v1.Model.Token.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:etag)

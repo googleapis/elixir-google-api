@@ -31,11 +31,11 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReports do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :usageReports => list(GoogleApi.Admin.Reports_v1.Model.UsageReport.t()),
-          :warnings => list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings.t())
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :usageReports => list(GoogleApi.Admin.Reports_v1.Model.UsageReport.t()) | nil,
+          :warnings => list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings.t()) | nil
         }
 
   field(:etag)

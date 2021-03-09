@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserMakeAdmin do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :status => boolean()
+          :status => boolean() | nil
         }
 
   field(:status)

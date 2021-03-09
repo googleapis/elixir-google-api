@@ -31,12 +31,12 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Model.Application do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
           :transferParams =>
-            list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationTransferParam.t())
+            list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationTransferParam.t()) | nil
         }
 
   field(:etag)

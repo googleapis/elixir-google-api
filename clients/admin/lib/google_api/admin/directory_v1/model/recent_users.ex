@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RecentUsers do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :type => String.t()
+          :email => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:email)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Aliases do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aliases => list(any()),
-          :etag => String.t(),
-          :kind => String.t()
+          :aliases => list(any()) | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:aliases, type: :list)

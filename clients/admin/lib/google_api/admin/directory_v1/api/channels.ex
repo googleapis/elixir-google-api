@@ -52,7 +52,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Channels do
   *   `{:error, info}` on failure
   """
   @spec admin_channels_stop(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def admin_channels_stop(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

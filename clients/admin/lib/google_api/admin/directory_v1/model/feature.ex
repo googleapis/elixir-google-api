@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Feature do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etags => String.t(),
-          :kind => String.t(),
-          :name => String.t()
+          :etags => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:etags)

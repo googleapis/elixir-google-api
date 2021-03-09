@@ -32,12 +32,12 @@ defmodule GoogleApi.Admin.Directory_v1.Model.DomainAlias do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationTime => String.t(),
-          :domainAliasName => String.t(),
-          :etag => String.t(),
-          :kind => String.t(),
-          :parentDomainName => String.t(),
-          :verified => boolean()
+          :creationTime => String.t() | nil,
+          :domainAliasName => String.t() | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :parentDomainName => String.t() | nil,
+          :verified => boolean() | nil
         }
 
   field(:creationTime)

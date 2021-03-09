@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceAction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :deprovisionReason => String.t()
+          :action => String.t() | nil,
+          :deprovisionReason => String.t() | nil
         }
 
   field(:action)

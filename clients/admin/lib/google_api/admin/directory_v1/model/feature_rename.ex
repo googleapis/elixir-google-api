@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.FeatureRename do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newName => String.t()
+          :newName => String.t() | nil
         }
 
   field(:newName)

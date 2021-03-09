@@ -31,11 +31,11 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Users do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :trigger_event => String.t(),
-          :users => list(GoogleApi.Admin.Directory_v1.Model.User.t())
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :trigger_event => String.t() | nil,
+          :users => list(GoogleApi.Admin.Directory_v1.Model.User.t()) | nil
         }
 
   field(:etag)
