@@ -32,12 +32,12 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bestRating => integer(),
-          :imageUrl => String.t(),
-          :ratingExplanation => String.t(),
-          :ratingValue => integer(),
-          :textualRating => String.t(),
-          :worstRating => integer()
+          :bestRating => integer() | nil,
+          :imageUrl => String.t() | nil,
+          :ratingExplanation => String.t() | nil,
+          :ratingValue => integer() | nil,
+          :textualRating => String.t() | nil,
+          :worstRating => integer() | nil
         }
 
   field(:bestRating)

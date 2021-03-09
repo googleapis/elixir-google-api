@@ -34,16 +34,18 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :claimAppearances => list(String.t()),
+          :claimAppearances => list(String.t()) | nil,
           :claimAuthor =>
-            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor.t(),
-          :claimDate => String.t(),
-          :claimFirstAppearance => String.t(),
-          :claimLocation => String.t(),
-          :claimReviewed => String.t(),
+            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor.t()
+            | nil,
+          :claimDate => String.t() | nil,
+          :claimFirstAppearance => String.t() | nil,
+          :claimLocation => String.t() | nil,
+          :claimReviewed => String.t() | nil,
           :rating =>
-            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating.t(),
-          :url => String.t()
+            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating.t()
+            | nil,
+          :url => String.t() | nil
         }
 
   field(:claimAppearances, type: :list)

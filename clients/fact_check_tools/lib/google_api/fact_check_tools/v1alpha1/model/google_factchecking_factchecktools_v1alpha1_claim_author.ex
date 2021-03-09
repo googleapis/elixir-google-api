@@ -30,10 +30,10 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageUrl => String.t(),
-          :jobTitle => String.t(),
-          :name => String.t(),
-          :sameAs => String.t()
+          :imageUrl => String.t() | nil,
+          :jobTitle => String.t() | nil,
+          :name => String.t() | nil,
+          :sameAs => String.t() | nil
         }
 
   field(:imageUrl)
