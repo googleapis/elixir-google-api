@@ -59,6 +59,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommender_projects_locations_insight_types_insights_get(
         connection,
@@ -133,6 +134,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ListInsightsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommender_projects_locations_insight_types_insights_list(
         connection,
@@ -209,6 +211,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommender_projects_locations_insight_types_insights_mark_accepted(
         connection,
@@ -281,6 +284,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Recommendation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommender_projects_locations_recommenders_recommendations_get(
         connection,
@@ -356,6 +360,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
           {:ok,
            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ListRecommendationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommender_projects_locations_recommenders_recommendations_list(
         connection,
@@ -435,6 +440,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Recommendation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommender_projects_locations_recommenders_recommendations_mark_claimed(
         connection,
@@ -508,6 +514,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Recommendation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommender_projects_locations_recommenders_recommendations_mark_failed(
         connection,
@@ -581,6 +588,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Recommendation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommender_projects_locations_recommenders_recommendations_mark_succeeded(
         connection,

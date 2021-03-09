@@ -28,8 +28,8 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Insig
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :state => String.t(),
-          :stateMetadata => map()
+          :state => String.t() | nil,
+          :stateMetadata => map() | nil
         }
 
   field(:state)

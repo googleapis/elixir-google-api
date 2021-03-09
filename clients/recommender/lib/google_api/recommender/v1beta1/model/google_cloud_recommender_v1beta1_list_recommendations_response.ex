@@ -28,11 +28,12 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ListR
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :recommendations =>
             list(
               GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recommendation.t()
             )
+            | nil
         }
 
   field(:nextPageToken)

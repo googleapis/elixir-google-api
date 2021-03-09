@@ -28,8 +28,9 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ListInsightsRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insights => list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight.t()),
-          :nextPageToken => String.t()
+          :insights =>
+            list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:insights, as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight, type: :list)

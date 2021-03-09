@@ -37,21 +37,24 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Recommendation 
 
   @type t :: %__MODULE__{
           :additionalImpact =>
-            list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact.t()),
+            list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact.t()) | nil,
           :associatedInsights =>
             list(
               GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1RecommendationInsightReference.t()
-            ),
+            )
+            | nil,
           :content =>
-            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1RecommendationContent.t(),
-          :description => String.t(),
-          :etag => String.t(),
-          :lastRefreshTime => DateTime.t(),
-          :name => String.t(),
-          :primaryImpact => GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact.t(),
-          :recommenderSubtype => String.t(),
+            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1RecommendationContent.t() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :lastRefreshTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :primaryImpact =>
+            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact.t() | nil,
+          :recommenderSubtype => String.t() | nil,
           :stateInfo =>
             GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1RecommendationStateInfo.t()
+            | nil
         }
 
   field(:additionalImpact,

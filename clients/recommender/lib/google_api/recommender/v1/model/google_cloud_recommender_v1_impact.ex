@@ -28,9 +28,9 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
+          :category => String.t() | nil,
           :costProjection =>
-            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection.t()
+            GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection.t() | nil
         }
 
   field(:category)

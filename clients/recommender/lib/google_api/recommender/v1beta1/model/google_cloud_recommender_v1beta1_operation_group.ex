@@ -29,6 +29,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Opera
   @type t :: %__MODULE__{
           :operations =>
             list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Operation.t())
+            | nil
         }
 
   field(:operations,

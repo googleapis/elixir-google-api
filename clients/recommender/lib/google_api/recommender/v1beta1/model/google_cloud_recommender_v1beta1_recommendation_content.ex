@@ -31,6 +31,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
             list(
               GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1OperationGroup.t()
             )
+            | nil
         }
 
   field(:operationGroups,

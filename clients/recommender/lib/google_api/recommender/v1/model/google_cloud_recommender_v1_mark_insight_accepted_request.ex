@@ -28,8 +28,8 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1MarkInsightAcce
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :stateMetadata => map()
+          :etag => String.t() | nil,
+          :stateMetadata => map() | nil
         }
 
   field(:etag)

@@ -24,7 +24,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Opera
   *   `action` (*type:* `String.t`, *default:* `nil`) - Type of this operation. Contains one of 'and', 'remove', 'replace', 'move', 'copy', 'test' and 'custom' operations. This field is case-insensitive and always populated.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Path to the target field being operated on. If the operation is at the resource level, then path should be "/". This field is always populated.
   *   `pathFilters` (*type:* `map()`, *default:* `nil`) - Set of filters to apply if `path` refers to array elements or nested array elements in order to narrow down to a single unique element that is being tested/modified. This is intended to be an exact match per filter. To perform advanced matching, use path_value_matchers. * Example: { "/versions/*/name" : "it-123" "/versions/*/targetSize/percent": 20 } * Example: { "/bindings/*/role": "roles/owner" "/bindings/*/condition" : null } * Example: { "/bindings/*/role": "roles/owner" "/bindings/*/members/*" : ["x@example.com", "y@example.com"] } When both path_filters and path_value_matchers are set, an implicit AND must be performed.
-  *   `pathValueMatchers` (*type:* `%{optional(String.t) => GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ValueMatcher.t}`, *default:* `nil`) - Similar to path_filters, this contains set of filters to apply if `path` field referes to array elements. This is meant to support value matching beyond exact match. To perform exact match, use path_filters. When both path_filters and path_value_matchers are set, an implicit AND must be performed.
+  *   `pathValueMatchers` (*type:* `%{optional(String.t) => GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ValueMatcher.t}`, *default:* `nil`) - Similar to path_filters, this contains set of filters to apply if `path` field refers to array elements. This is meant to support value matching beyond exact match. To perform exact match, use path_filters. When both path_filters and path_value_matchers are set, an implicit AND must be performed.
   *   `resource` (*type:* `String.t`, *default:* `nil`) - Contains the fully qualified resource name. This field is always populated. ex: //cloudresourcemanager.googleapis.com/projects/foo.
   *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Type of GCP resource being modified/tested. This field is always populated. Example: cloudresourcemanager.googleapis.com/Project, compute.googleapis.com/Instance
   *   `sourcePath` (*type:* `String.t`, *default:* `nil`) - Can be set with action 'copy' or 'move' to indicate the source field within resource or source_resource, ignored if provided for other operation types.
@@ -36,20 +36,23 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Opera
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :path => String.t(),
-          :pathFilters => map(),
-          :pathValueMatchers => %{
-            optional(String.t()) =>
-              GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ValueMatcher.t()
-          },
-          :resource => String.t(),
-          :resourceType => String.t(),
-          :sourcePath => String.t(),
-          :sourceResource => String.t(),
-          :value => any(),
+          :action => String.t() | nil,
+          :path => String.t() | nil,
+          :pathFilters => map() | nil,
+          :pathValueMatchers =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ValueMatcher.t()
+            }
+            | nil,
+          :resource => String.t() | nil,
+          :resourceType => String.t() | nil,
+          :sourcePath => String.t() | nil,
+          :sourceResource => String.t() | nil,
+          :value => any() | nil,
           :valueMatcher =>
             GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1ValueMatcher.t()
+            | nil
         }
 
   field(:action)
