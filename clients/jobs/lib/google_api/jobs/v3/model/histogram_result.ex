@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.HistogramResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :searchType => String.t(),
-          :values => map()
+          :searchType => String.t() | nil,
+          :values => map() | nil
         }
 
   field(:searchType)

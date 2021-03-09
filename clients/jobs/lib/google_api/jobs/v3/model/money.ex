@@ -29,9 +29,9 @@ defmodule GoogleApi.Jobs.V3.Model.Money do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currencyCode => String.t(),
-          :nanos => integer(),
-          :units => String.t()
+          :currencyCode => String.t() | nil,
+          :nanos => integer() | nil,
+          :units => String.t() | nil
         }
 
   field(:currencyCode)

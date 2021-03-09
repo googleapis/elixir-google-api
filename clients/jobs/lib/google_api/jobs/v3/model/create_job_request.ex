@@ -27,7 +27,7 @@ defmodule GoogleApi.Jobs.V3.Model.CreateJobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :job => GoogleApi.Jobs.V3.Model.Job.t()
+          :job => GoogleApi.Jobs.V3.Model.Job.t() | nil
         }
 
   field(:job, as: GoogleApi.Jobs.V3.Model.Job)

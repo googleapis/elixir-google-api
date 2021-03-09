@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.SpellingCorrection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :corrected => boolean(),
-          :correctedText => String.t()
+          :corrected => boolean() | nil,
+          :correctedText => String.t() | nil
         }
 
   field(:corrected)

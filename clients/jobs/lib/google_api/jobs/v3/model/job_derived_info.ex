@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.JobDerivedInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobCategories => list(String.t()),
-          :locations => list(GoogleApi.Jobs.V3.Model.Location.t())
+          :jobCategories => list(String.t()) | nil,
+          :locations => list(GoogleApi.Jobs.V3.Model.Location.t()) | nil
         }
 
   field(:jobCategories, type: :list)

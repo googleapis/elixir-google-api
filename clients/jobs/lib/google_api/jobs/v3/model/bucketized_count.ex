@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.BucketizedCount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => integer(),
-          :range => GoogleApi.Jobs.V3.Model.BucketRange.t()
+          :count => integer() | nil,
+          :range => GoogleApi.Jobs.V3.Model.BucketRange.t() | nil
         }
 
   field(:count)

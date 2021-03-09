@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.CommuteInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobLocation => GoogleApi.Jobs.V3.Model.Location.t(),
-          :travelDuration => String.t()
+          :jobLocation => GoogleApi.Jobs.V3.Model.Location.t() | nil,
+          :travelDuration => String.t() | nil
         }
 
   field(:jobLocation, as: GoogleApi.Jobs.V3.Model.Location)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.CompensationHistogramResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :result => GoogleApi.Jobs.V3.Model.NumericBucketingResult.t(),
-          :type => String.t()
+          :result => GoogleApi.Jobs.V3.Model.NumericBucketingResult.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:result, as: GoogleApi.Jobs.V3.Model.NumericBucketingResult)

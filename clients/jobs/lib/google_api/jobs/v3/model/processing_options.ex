@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.ProcessingOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disableStreetAddressResolution => boolean(),
-          :htmlSanitization => String.t()
+          :disableStreetAddressResolution => boolean() | nil,
+          :htmlSanitization => String.t() | nil
         }
 
   field(:disableStreetAddressResolution)

@@ -40,20 +40,20 @@ defmodule GoogleApi.Jobs.V3.Model.NamespacedDebugInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :absolutelyForcedExpNames => list(String.t()),
-          :absolutelyForcedExpTags => list(String.t()),
-          :absolutelyForcedExps => list(integer()),
-          :conditionallyForcedExpNames => list(String.t()),
-          :conditionallyForcedExpTags => list(String.t()),
-          :conditionallyForcedExps => list(integer()),
-          :disableAutomaticEnrollmentSelection => boolean(),
-          :disableExpNames => list(String.t()),
-          :disableExpTags => list(String.t()),
-          :disableExps => list(integer()),
-          :disableManualEnrollmentSelection => boolean(),
-          :disableOrganicSelection => boolean(),
-          :forcedFlags => map(),
-          :forcedRollouts => map()
+          :absolutelyForcedExpNames => list(String.t()) | nil,
+          :absolutelyForcedExpTags => list(String.t()) | nil,
+          :absolutelyForcedExps => list(integer()) | nil,
+          :conditionallyForcedExpNames => list(String.t()) | nil,
+          :conditionallyForcedExpTags => list(String.t()) | nil,
+          :conditionallyForcedExps => list(integer()) | nil,
+          :disableAutomaticEnrollmentSelection => boolean() | nil,
+          :disableExpNames => list(String.t()) | nil,
+          :disableExpTags => list(String.t()) | nil,
+          :disableExps => list(integer()) | nil,
+          :disableManualEnrollmentSelection => boolean() | nil,
+          :disableOrganicSelection => boolean() | nil,
+          :forcedFlags => map() | nil,
+          :forcedRollouts => map() | nil
         }
 
   field(:absolutelyForcedExpNames, type: :list)

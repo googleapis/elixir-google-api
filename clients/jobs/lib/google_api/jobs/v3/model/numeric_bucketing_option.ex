@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.NumericBucketingOption do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketBounds => list(float()),
-          :requiresMinMax => boolean()
+          :bucketBounds => list(float()) | nil,
+          :requiresMinMax => boolean() | nil
         }
 
   field(:bucketBounds, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Jobs.V3.Model.BatchDeleteJobsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => String.t()
+          :filter => String.t() | nil
         }
 
   field(:filter)

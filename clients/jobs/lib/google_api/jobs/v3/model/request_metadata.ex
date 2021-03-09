@@ -30,10 +30,10 @@ defmodule GoogleApi.Jobs.V3.Model.RequestMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceInfo => GoogleApi.Jobs.V3.Model.DeviceInfo.t(),
-          :domain => String.t(),
-          :sessionId => String.t(),
-          :userId => String.t()
+          :deviceInfo => GoogleApi.Jobs.V3.Model.DeviceInfo.t() | nil,
+          :domain => String.t() | nil,
+          :sessionId => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:deviceInfo, as: GoogleApi.Jobs.V3.Model.DeviceInfo)

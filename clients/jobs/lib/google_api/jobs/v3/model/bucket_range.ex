@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.BucketRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :from => float(),
-          :to => float()
+          :from => float() | nil,
+          :to => float() | nil
         }
 
   field(:from)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Jobs.V3.Model.LocationFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :distanceInMiles => float(),
-          :latLng => GoogleApi.Jobs.V3.Model.LatLng.t(),
-          :regionCode => String.t(),
-          :telecommutePreference => String.t()
+          :address => String.t() | nil,
+          :distanceInMiles => float() | nil,
+          :latLng => GoogleApi.Jobs.V3.Model.LatLng.t() | nil,
+          :regionCode => String.t() | nil,
+          :telecommutePreference => String.t() | nil
         }
 
   field(:address)

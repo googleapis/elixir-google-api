@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.JobEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobs => list(String.t()),
-          :type => String.t()
+          :jobs => list(String.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:jobs, type: :list)

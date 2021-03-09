@@ -28,8 +28,8 @@ defmodule GoogleApi.Jobs.V3.Model.UpdateJobRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :job => GoogleApi.Jobs.V3.Model.Job.t(),
-          :updateMask => String.t()
+          :job => GoogleApi.Jobs.V3.Model.Job.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:job, as: GoogleApi.Jobs.V3.Model.Job)

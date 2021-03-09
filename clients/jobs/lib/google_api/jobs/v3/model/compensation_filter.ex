@@ -30,10 +30,10 @@ defmodule GoogleApi.Jobs.V3.Model.CompensationFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeJobsWithUnspecifiedCompensationRange => boolean(),
-          :range => GoogleApi.Jobs.V3.Model.CompensationRange.t(),
-          :type => String.t(),
-          :units => list(String.t())
+          :includeJobsWithUnspecifiedCompensationRange => boolean() | nil,
+          :range => GoogleApi.Jobs.V3.Model.CompensationRange.t() | nil,
+          :type => String.t() | nil,
+          :units => list(String.t()) | nil
         }
 
   field(:includeJobsWithUnspecifiedCompensationRange)

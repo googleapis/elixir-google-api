@@ -29,9 +29,10 @@ defmodule GoogleApi.Jobs.V3.Model.CompensationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annualizedBaseCompensationRange => GoogleApi.Jobs.V3.Model.CompensationRange.t(),
-          :annualizedTotalCompensationRange => GoogleApi.Jobs.V3.Model.CompensationRange.t(),
-          :entries => list(GoogleApi.Jobs.V3.Model.CompensationEntry.t())
+          :annualizedBaseCompensationRange => GoogleApi.Jobs.V3.Model.CompensationRange.t() | nil,
+          :annualizedTotalCompensationRange =>
+            GoogleApi.Jobs.V3.Model.CompensationRange.t() | nil,
+          :entries => list(GoogleApi.Jobs.V3.Model.CompensationEntry.t()) | nil
         }
 
   field(:annualizedBaseCompensationRange, as: GoogleApi.Jobs.V3.Model.CompensationRange)

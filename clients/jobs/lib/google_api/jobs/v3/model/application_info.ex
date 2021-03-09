@@ -29,9 +29,9 @@ defmodule GoogleApi.Jobs.V3.Model.ApplicationInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :emails => list(String.t()),
-          :instruction => String.t(),
-          :uris => list(String.t())
+          :emails => list(String.t()) | nil,
+          :instruction => String.t() | nil,
+          :uris => list(String.t()) | nil
         }
 
   field(:emails, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Jobs.V3.Model.ResponseMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestId => String.t()
+          :requestId => String.t() | nil
         }
 
   field(:requestId)

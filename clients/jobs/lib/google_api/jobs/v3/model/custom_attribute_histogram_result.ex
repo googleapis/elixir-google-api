@@ -29,9 +29,9 @@ defmodule GoogleApi.Jobs.V3.Model.CustomAttributeHistogramResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :longValueHistogramResult => GoogleApi.Jobs.V3.Model.NumericBucketingResult.t(),
-          :stringValueHistogramResult => map()
+          :key => String.t() | nil,
+          :longValueHistogramResult => GoogleApi.Jobs.V3.Model.NumericBucketingResult.t() | nil,
+          :stringValueHistogramResult => map() | nil
         }
 
   field(:key)
