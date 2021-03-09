@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngineRouting => GoogleApi.CloudTasks.V2beta2.Model.AppEngineRouting.t(),
-          :headers => map(),
-          :httpMethod => String.t(),
-          :payload => String.t(),
-          :relativeUrl => String.t()
+          :appEngineRouting => GoogleApi.CloudTasks.V2beta2.Model.AppEngineRouting.t() | nil,
+          :headers => map() | nil,
+          :httpMethod => String.t() | nil,
+          :payload => String.t() | nil,
+          :relativeUrl => String.t() | nil
         }
 
   field(:appEngineRouting, as: GoogleApi.CloudTasks.V2beta2.Model.AppEngineRouting)

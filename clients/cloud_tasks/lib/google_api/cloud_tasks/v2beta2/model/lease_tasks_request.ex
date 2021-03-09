@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.LeaseTasksRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => String.t(),
-          :leaseDuration => String.t(),
-          :maxTasks => integer(),
-          :responseView => String.t()
+          :filter => String.t() | nil,
+          :leaseDuration => String.t() | nil,
+          :maxTasks => integer() | nil,
+          :responseView => String.t() | nil
         }
 
   field(:filter)

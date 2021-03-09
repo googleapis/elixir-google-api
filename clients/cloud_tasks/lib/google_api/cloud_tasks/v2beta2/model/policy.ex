@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bindings => list(GoogleApi.CloudTasks.V2beta2.Model.Binding.t()),
-          :etag => String.t(),
-          :version => integer()
+          :bindings => list(GoogleApi.CloudTasks.V2beta2.Model.Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:bindings, as: GoogleApi.CloudTasks.V2beta2.Model.Binding, type: :list)

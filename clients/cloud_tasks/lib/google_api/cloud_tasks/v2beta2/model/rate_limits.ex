@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.RateLimits do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxBurstSize => integer(),
-          :maxConcurrentTasks => integer(),
-          :maxTasksDispatchedPerSecond => float()
+          :maxBurstSize => integer() | nil,
+          :maxConcurrentTasks => integer() | nil,
+          :maxTasksDispatchedPerSecond => float() | nil
         }
 
   field(:maxBurstSize)

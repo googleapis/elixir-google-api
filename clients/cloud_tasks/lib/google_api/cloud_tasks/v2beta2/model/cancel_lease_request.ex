@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.CancelLeaseRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responseView => String.t(),
-          :scheduleTime => DateTime.t()
+          :responseView => String.t() | nil,
+          :scheduleTime => DateTime.t() | nil
         }
 
   field(:responseView)

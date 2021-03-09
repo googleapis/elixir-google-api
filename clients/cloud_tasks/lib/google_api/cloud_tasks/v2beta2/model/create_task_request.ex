@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.CreateTaskRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responseView => String.t(),
-          :task => GoogleApi.CloudTasks.V2beta2.Model.Task.t()
+          :responseView => String.t() | nil,
+          :task => GoogleApi.CloudTasks.V2beta2.Model.Task.t() | nil
         }
 
   field(:responseView)

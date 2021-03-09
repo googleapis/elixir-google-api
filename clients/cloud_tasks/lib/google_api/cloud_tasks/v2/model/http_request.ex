@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudTasks.V2.Model.HttpRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :body => String.t(),
-          :headers => map(),
-          :httpMethod => String.t(),
-          :oauthToken => GoogleApi.CloudTasks.V2.Model.OAuthToken.t(),
-          :oidcToken => GoogleApi.CloudTasks.V2.Model.OidcToken.t(),
-          :url => String.t()
+          :body => String.t() | nil,
+          :headers => map() | nil,
+          :httpMethod => String.t() | nil,
+          :oauthToken => GoogleApi.CloudTasks.V2.Model.OAuthToken.t() | nil,
+          :oidcToken => GoogleApi.CloudTasks.V2.Model.OidcToken.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:body)

@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.QueueStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :concurrentDispatchesCount => String.t(),
-          :effectiveExecutionRate => float(),
-          :executedLastMinuteCount => String.t(),
-          :oldestEstimatedArrivalTime => DateTime.t(),
-          :tasksCount => String.t()
+          :concurrentDispatchesCount => String.t() | nil,
+          :effectiveExecutionRate => float() | nil,
+          :executedLastMinuteCount => String.t() | nil,
+          :oldestEstimatedArrivalTime => DateTime.t() | nil,
+          :tasksCount => String.t() | nil
         }
 
   field(:concurrentDispatchesCount)

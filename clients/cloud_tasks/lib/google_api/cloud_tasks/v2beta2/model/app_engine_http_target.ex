@@ -27,7 +27,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpTarget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngineRoutingOverride => GoogleApi.CloudTasks.V2beta2.Model.AppEngineRouting.t()
+          :appEngineRoutingOverride =>
+            GoogleApi.CloudTasks.V2beta2.Model.AppEngineRouting.t() | nil
         }
 
   field(:appEngineRoutingOverride, as: GoogleApi.CloudTasks.V2beta2.Model.AppEngineRouting)

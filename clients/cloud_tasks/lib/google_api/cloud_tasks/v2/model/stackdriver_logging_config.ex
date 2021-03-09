@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudTasks.V2.Model.StackdriverLoggingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :samplingRatio => float()
+          :samplingRatio => float() | nil
         }
 
   field(:samplingRatio)

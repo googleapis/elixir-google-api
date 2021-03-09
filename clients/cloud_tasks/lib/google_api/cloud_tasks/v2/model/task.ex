@@ -37,17 +37,17 @@ defmodule GoogleApi.CloudTasks.V2.Model.Task do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngineHttpRequest => GoogleApi.CloudTasks.V2.Model.AppEngineHttpRequest.t(),
-          :createTime => DateTime.t(),
-          :dispatchCount => integer(),
-          :dispatchDeadline => String.t(),
-          :firstAttempt => GoogleApi.CloudTasks.V2.Model.Attempt.t(),
-          :httpRequest => GoogleApi.CloudTasks.V2.Model.HttpRequest.t(),
-          :lastAttempt => GoogleApi.CloudTasks.V2.Model.Attempt.t(),
-          :name => String.t(),
-          :responseCount => integer(),
-          :scheduleTime => DateTime.t(),
-          :view => String.t()
+          :appEngineHttpRequest => GoogleApi.CloudTasks.V2.Model.AppEngineHttpRequest.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :dispatchCount => integer() | nil,
+          :dispatchDeadline => String.t() | nil,
+          :firstAttempt => GoogleApi.CloudTasks.V2.Model.Attempt.t() | nil,
+          :httpRequest => GoogleApi.CloudTasks.V2.Model.HttpRequest.t() | nil,
+          :lastAttempt => GoogleApi.CloudTasks.V2.Model.Attempt.t() | nil,
+          :name => String.t() | nil,
+          :responseCount => integer() | nil,
+          :scheduleTime => DateTime.t() | nil,
+          :view => String.t() | nil
         }
 
   field(:appEngineHttpRequest, as: GoogleApi.CloudTasks.V2.Model.AppEngineHttpRequest)

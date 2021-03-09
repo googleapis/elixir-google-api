@@ -36,16 +36,17 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Queue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngineHttpTarget => GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpTarget.t(),
-          :name => String.t(),
-          :pullTarget => GoogleApi.CloudTasks.V2beta2.Model.PullTarget.t(),
-          :purgeTime => DateTime.t(),
-          :rateLimits => GoogleApi.CloudTasks.V2beta2.Model.RateLimits.t(),
-          :retryConfig => GoogleApi.CloudTasks.V2beta2.Model.RetryConfig.t(),
-          :state => String.t(),
-          :stats => GoogleApi.CloudTasks.V2beta2.Model.QueueStats.t(),
-          :taskTtl => String.t(),
-          :tombstoneTtl => String.t()
+          :appEngineHttpTarget =>
+            GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpTarget.t() | nil,
+          :name => String.t() | nil,
+          :pullTarget => GoogleApi.CloudTasks.V2beta2.Model.PullTarget.t() | nil,
+          :purgeTime => DateTime.t() | nil,
+          :rateLimits => GoogleApi.CloudTasks.V2beta2.Model.RateLimits.t() | nil,
+          :retryConfig => GoogleApi.CloudTasks.V2beta2.Model.RetryConfig.t() | nil,
+          :state => String.t() | nil,
+          :stats => GoogleApi.CloudTasks.V2beta2.Model.QueueStats.t() | nil,
+          :taskTtl => String.t() | nil,
+          :tombstoneTtl => String.t() | nil
         }
 
   field(:appEngineHttpTarget, as: GoogleApi.CloudTasks.V2beta2.Model.AppEngineHttpTarget)

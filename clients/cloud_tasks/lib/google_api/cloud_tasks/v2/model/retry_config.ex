@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudTasks.V2.Model.RetryConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxAttempts => integer(),
-          :maxBackoff => String.t(),
-          :maxDoublings => integer(),
-          :maxRetryDuration => String.t(),
-          :minBackoff => String.t()
+          :maxAttempts => integer() | nil,
+          :maxBackoff => String.t() | nil,
+          :maxDoublings => integer() | nil,
+          :maxRetryDuration => String.t() | nil,
+          :minBackoff => String.t() | nil
         }
 
   field(:maxAttempts)

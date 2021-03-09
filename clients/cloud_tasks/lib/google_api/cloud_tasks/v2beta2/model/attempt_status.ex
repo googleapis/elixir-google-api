@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.AttemptStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dispatchTime => DateTime.t(),
-          :responseStatus => GoogleApi.CloudTasks.V2beta2.Model.Status.t(),
-          :responseTime => DateTime.t(),
-          :scheduleTime => DateTime.t()
+          :dispatchTime => DateTime.t() | nil,
+          :responseStatus => GoogleApi.CloudTasks.V2beta2.Model.Status.t() | nil,
+          :responseTime => DateTime.t() | nil,
+          :scheduleTime => DateTime.t() | nil
         }
 
   field(:dispatchTime, as: DateTime)

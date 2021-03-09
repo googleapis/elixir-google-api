@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudTasks.V2.Model.ListQueuesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :queues => list(GoogleApi.CloudTasks.V2.Model.Queue.t())
+          :nextPageToken => String.t() | nil,
+          :queues => list(GoogleApi.CloudTasks.V2.Model.Queue.t()) | nil
         }
 
   field(:nextPageToken)
