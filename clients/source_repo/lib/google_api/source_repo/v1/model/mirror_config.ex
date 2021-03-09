@@ -29,9 +29,9 @@ defmodule GoogleApi.SourceRepo.V1.Model.MirrorConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deployKeyId => String.t(),
-          :url => String.t(),
-          :webhookId => String.t()
+          :deployKeyId => String.t() | nil,
+          :url => String.t() | nil,
+          :webhookId => String.t() | nil
         }
 
   field(:deployKeyId)

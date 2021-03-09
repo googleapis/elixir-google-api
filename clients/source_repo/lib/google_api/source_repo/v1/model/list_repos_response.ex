@@ -28,8 +28,8 @@ defmodule GoogleApi.SourceRepo.V1.Model.ListReposResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :repos => list(GoogleApi.SourceRepo.V1.Model.Repo.t())
+          :nextPageToken => String.t() | nil,
+          :repos => list(GoogleApi.SourceRepo.V1.Model.Repo.t()) | nil
         }
 
   field(:nextPageToken)

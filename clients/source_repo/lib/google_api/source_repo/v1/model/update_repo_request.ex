@@ -28,8 +28,8 @@ defmodule GoogleApi.SourceRepo.V1.Model.UpdateRepoRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :repo => GoogleApi.SourceRepo.V1.Model.Repo.t(),
-          :updateMask => String.t()
+          :repo => GoogleApi.SourceRepo.V1.Model.Repo.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:repo, as: GoogleApi.SourceRepo.V1.Model.Repo)

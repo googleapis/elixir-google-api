@@ -28,8 +28,8 @@ defmodule GoogleApi.SourceRepo.V1.Model.UpdateProjectConfigRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectConfig => GoogleApi.SourceRepo.V1.Model.ProjectConfig.t(),
-          :updateMask => String.t()
+          :projectConfig => GoogleApi.SourceRepo.V1.Model.ProjectConfig.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:projectConfig, as: GoogleApi.SourceRepo.V1.Model.ProjectConfig)
