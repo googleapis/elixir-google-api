@@ -28,8 +28,8 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.ListTagsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :tags => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Tag.t())
+          :nextPageToken => String.t() | nil,
+          :tags => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Tag.t()) | nil
         }
 
   field(:nextPageToken)

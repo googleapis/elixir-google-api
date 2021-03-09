@@ -32,12 +32,12 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.File do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :hashes => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Hash.t()),
-          :name => String.t(),
-          :owner => String.t(),
-          :sizeBytes => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :hashes => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Hash.t()) | nil,
+          :name => String.t() | nil,
+          :owner => String.t() | nil,
+          :sizeBytes => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

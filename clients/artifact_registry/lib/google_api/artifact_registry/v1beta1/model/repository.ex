@@ -33,13 +33,13 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.Repository do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :format => String.t(),
-          :kmsKeyName => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :format => String.t() | nil,
+          :kmsKeyName => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

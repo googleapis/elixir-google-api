@@ -61,6 +61,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_get(
         connection,
@@ -135,6 +136,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_list(
         connection,
@@ -213,6 +215,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_operations_get(
         connection,
@@ -294,6 +297,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_operations_list(
         connection,
@@ -374,6 +378,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_create(
         connection,
@@ -451,6 +456,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_delete(
         connection,
@@ -531,6 +537,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Repository.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_get(
         connection,
@@ -612,6 +619,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_get_iam_policy(
         connection,
@@ -693,6 +701,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.ListRepositoriesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_list(
         connection,
@@ -774,6 +783,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Repository.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_patch(
         connection,
@@ -857,6 +867,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_set_iam_policy(
         connection,
@@ -939,6 +950,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_test_iam_permissions(
         connection,
@@ -1024,6 +1036,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.File.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_files_get(
         connection,
@@ -1109,6 +1122,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.ListFilesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_files_list(
         connection,
@@ -1196,6 +1210,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_delete(
         connection,
@@ -1280,6 +1295,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Package.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_get(
         connection,
@@ -1364,6 +1380,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.ListPackagesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_list(
         connection,
@@ -1452,6 +1469,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Tag.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_tags_create(
         connection,
@@ -1540,6 +1558,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_tags_delete(
         connection,
@@ -1628,6 +1647,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Tag.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_tags_get(
         connection,
@@ -1717,6 +1737,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.ListTagsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_tags_list(
         connection,
@@ -1810,6 +1831,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Tag.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_tags_patch(
         connection,
@@ -1901,6 +1923,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_versions_delete(
         connection,
@@ -1991,6 +2014,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.Version.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_versions_get(
         connection,
@@ -2082,6 +2106,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ArtifactRegistry.V1beta1.Model.ListVersionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def artifactregistry_projects_locations_repositories_packages_versions_list(
         connection,

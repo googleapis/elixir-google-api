@@ -28,8 +28,8 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Model.ListVersionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :versions => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Version.t())
+          :nextPageToken => String.t() | nil,
+          :versions => list(GoogleApi.ArtifactRegistry.V1beta1.Model.Version.t()) | nil
         }
 
   field(:nextPageToken)
