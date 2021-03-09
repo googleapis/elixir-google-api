@@ -28,8 +28,8 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.ListWorkspacesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :workspaces => list(GoogleApi.Area120Tables.V1alpha1.Model.Workspace.t())
+          :nextPageToken => String.t() | nil,
+          :workspaces => list(GoogleApi.Area120Tables.V1alpha1.Model.Workspace.t()) | nil
         }
 
   field(:nextPageToken)

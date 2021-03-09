@@ -29,9 +29,9 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.UpdateRowRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :row => GoogleApi.Area120Tables.V1alpha1.Model.Row.t(),
-          :updateMask => String.t(),
-          :view => String.t()
+          :row => GoogleApi.Area120Tables.V1alpha1.Model.Row.t() | nil,
+          :updateMask => String.t() | nil,
+          :view => String.t() | nil
         }
 
   field(:row, as: GoogleApi.Area120Tables.V1alpha1.Model.Row)

@@ -54,6 +54,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
   @spec area120tables_tables_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.Table.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -114,6 +115,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
   @spec area120tables_tables_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.ListTablesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -181,6 +183,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
         ) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.BatchCreateRowsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_rows_batch_create(
         connection,
@@ -254,6 +257,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
         ) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_rows_batch_delete(
         connection,
@@ -325,6 +329,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
         ) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.BatchUpdateRowsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_rows_batch_update(
         connection,
@@ -394,6 +399,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
   @spec area120tables_tables_rows_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.Row.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_rows_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -455,6 +461,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
   @spec area120tables_tables_rows_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_rows_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -515,6 +522,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
   @spec area120tables_tables_rows_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.Row.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_rows_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -579,6 +587,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
   @spec area120tables_tables_rows_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.ListRowsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_rows_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -647,6 +656,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Tables do
   @spec area120tables_tables_rows_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.Row.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_tables_rows_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

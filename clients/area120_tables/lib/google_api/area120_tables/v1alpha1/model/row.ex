@@ -30,10 +30,10 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.Row do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t(),
-          :values => map()
+          :createTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :values => map() | nil
         }
 
   field(:createTime, as: DateTime)

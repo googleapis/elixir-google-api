@@ -28,8 +28,8 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.LookupDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :relationshipColumn => String.t(),
-          :relationshipColumnId => String.t()
+          :relationshipColumn => String.t() | nil,
+          :relationshipColumnId => String.t() | nil
         }
 
   field(:relationshipColumn)

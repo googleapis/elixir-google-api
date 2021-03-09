@@ -27,7 +27,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.BatchCreateRowsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requests => list(GoogleApi.Area120Tables.V1alpha1.Model.CreateRowRequest.t())
+          :requests => list(GoogleApi.Area120Tables.V1alpha1.Model.CreateRowRequest.t()) | nil
         }
 
   field(:requests, as: GoogleApi.Area120Tables.V1alpha1.Model.CreateRowRequest, type: :list)

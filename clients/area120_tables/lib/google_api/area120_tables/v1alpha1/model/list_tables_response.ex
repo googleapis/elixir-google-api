@@ -28,8 +28,8 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.ListTablesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :tables => list(GoogleApi.Area120Tables.V1alpha1.Model.Table.t())
+          :nextPageToken => String.t() | nil,
+          :tables => list(GoogleApi.Area120Tables.V1alpha1.Model.Table.t()) | nil
         }
 
   field(:nextPageToken)

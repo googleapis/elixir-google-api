@@ -28,8 +28,8 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Model.LabeledItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t()
+          :id => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:id)

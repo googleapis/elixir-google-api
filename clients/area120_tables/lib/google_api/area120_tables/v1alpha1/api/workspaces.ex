@@ -54,6 +54,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Workspaces do
   @spec area120tables_workspaces_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.Workspace.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_workspaces_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -114,6 +115,7 @@ defmodule GoogleApi.Area120Tables.V1alpha1.Api.Workspaces do
   @spec area120tables_workspaces_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Area120Tables.V1alpha1.Model.ListWorkspacesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def area120tables_workspaces_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
