@@ -31,11 +31,11 @@ defmodule GoogleApi.Testing.V1.Model.IosVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :majorVersion => integer(),
-          :minorVersion => integer(),
-          :supportedXcodeVersionIds => list(String.t()),
-          :tags => list(String.t())
+          :id => String.t() | nil,
+          :majorVersion => integer() | nil,
+          :minorVersion => integer() | nil,
+          :supportedXcodeVersionIds => list(String.t()) | nil,
+          :tags => list(String.t()) | nil
         }
 
   field(:id)

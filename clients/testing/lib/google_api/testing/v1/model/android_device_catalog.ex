@@ -29,9 +29,10 @@ defmodule GoogleApi.Testing.V1.Model.AndroidDeviceCatalog do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :models => list(GoogleApi.Testing.V1.Model.AndroidModel.t()),
-          :runtimeConfiguration => GoogleApi.Testing.V1.Model.AndroidRuntimeConfiguration.t(),
-          :versions => list(GoogleApi.Testing.V1.Model.AndroidVersion.t())
+          :models => list(GoogleApi.Testing.V1.Model.AndroidModel.t()) | nil,
+          :runtimeConfiguration =>
+            GoogleApi.Testing.V1.Model.AndroidRuntimeConfiguration.t() | nil,
+          :versions => list(GoogleApi.Testing.V1.Model.AndroidVersion.t()) | nil
         }
 
   field(:models, as: GoogleApi.Testing.V1.Model.AndroidModel, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.SystraceSetup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :durationSeconds => integer()
+          :durationSeconds => integer() | nil
         }
 
   field(:durationSeconds)

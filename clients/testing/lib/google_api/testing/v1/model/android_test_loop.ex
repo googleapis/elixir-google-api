@@ -31,11 +31,11 @@ defmodule GoogleApi.Testing.V1.Model.AndroidTestLoop do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appApk => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t(),
-          :appPackageId => String.t(),
-          :scenarioLabels => list(String.t()),
-          :scenarios => list(integer())
+          :appApk => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t() | nil,
+          :appPackageId => String.t() | nil,
+          :scenarioLabels => list(String.t()) | nil,
+          :scenarios => list(integer()) | nil
         }
 
   field(:appApk, as: GoogleApi.Testing.V1.Model.FileReference)

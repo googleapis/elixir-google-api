@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.RoboDirective do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionType => String.t(),
-          :inputText => String.t(),
-          :resourceName => String.t()
+          :actionType => String.t() | nil,
+          :inputText => String.t() | nil,
+          :resourceName => String.t() | nil
         }
 
   field(:actionType)

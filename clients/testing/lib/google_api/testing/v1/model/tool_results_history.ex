@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.ToolResultsHistory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :historyId => String.t(),
-          :projectId => String.t()
+          :historyId => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:historyId)

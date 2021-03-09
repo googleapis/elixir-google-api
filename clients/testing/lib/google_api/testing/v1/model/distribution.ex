@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.Distribution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :marketShare => float(),
-          :measurementTime => DateTime.t()
+          :marketShare => float() | nil,
+          :measurementTime => DateTime.t() | nil
         }
 
   field(:marketShare)

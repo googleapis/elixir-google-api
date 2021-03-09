@@ -30,10 +30,10 @@ defmodule GoogleApi.Testing.V1.Model.ResultStorage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googleCloudStorage => GoogleApi.Testing.V1.Model.GoogleCloudStorage.t(),
-          :resultsUrl => String.t(),
-          :toolResultsExecution => GoogleApi.Testing.V1.Model.ToolResultsExecution.t(),
-          :toolResultsHistory => GoogleApi.Testing.V1.Model.ToolResultsHistory.t()
+          :googleCloudStorage => GoogleApi.Testing.V1.Model.GoogleCloudStorage.t() | nil,
+          :resultsUrl => String.t() | nil,
+          :toolResultsExecution => GoogleApi.Testing.V1.Model.ToolResultsExecution.t() | nil,
+          :toolResultsHistory => GoogleApi.Testing.V1.Model.ToolResultsHistory.t() | nil
         }
 
   field(:googleCloudStorage, as: GoogleApi.Testing.V1.Model.GoogleCloudStorage)

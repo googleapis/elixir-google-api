@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.EnvironmentMatrix do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidDeviceList => GoogleApi.Testing.V1.Model.AndroidDeviceList.t(),
-          :androidMatrix => GoogleApi.Testing.V1.Model.AndroidMatrix.t(),
-          :iosDeviceList => GoogleApi.Testing.V1.Model.IosDeviceList.t()
+          :androidDeviceList => GoogleApi.Testing.V1.Model.AndroidDeviceList.t() | nil,
+          :androidMatrix => GoogleApi.Testing.V1.Model.AndroidMatrix.t() | nil,
+          :iosDeviceList => GoogleApi.Testing.V1.Model.IosDeviceList.t() | nil
         }
 
   field(:androidDeviceList, as: GoogleApi.Testing.V1.Model.AndroidDeviceList)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.ShardingOption do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :manualSharding => GoogleApi.Testing.V1.Model.ManualSharding.t(),
-          :uniformSharding => GoogleApi.Testing.V1.Model.UniformSharding.t()
+          :manualSharding => GoogleApi.Testing.V1.Model.ManualSharding.t() | nil,
+          :uniformSharding => GoogleApi.Testing.V1.Model.UniformSharding.t() | nil
         }
 
   field(:manualSharding, as: GoogleApi.Testing.V1.Model.ManualSharding)

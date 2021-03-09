@@ -30,10 +30,10 @@ defmodule GoogleApi.Testing.V1.Model.IosTestSetup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalIpas => list(GoogleApi.Testing.V1.Model.FileReference.t()),
-          :networkProfile => String.t(),
-          :pullDirectories => list(GoogleApi.Testing.V1.Model.IosDeviceFile.t()),
-          :pushFiles => list(GoogleApi.Testing.V1.Model.IosDeviceFile.t())
+          :additionalIpas => list(GoogleApi.Testing.V1.Model.FileReference.t()) | nil,
+          :networkProfile => String.t() | nil,
+          :pullDirectories => list(GoogleApi.Testing.V1.Model.IosDeviceFile.t()) | nil,
+          :pushFiles => list(GoogleApi.Testing.V1.Model.IosDeviceFile.t()) | nil
         }
 
   field(:additionalIpas, as: GoogleApi.Testing.V1.Model.FileReference, type: :list)

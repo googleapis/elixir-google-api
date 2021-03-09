@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.ClientInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientInfoDetails => list(GoogleApi.Testing.V1.Model.ClientInfoDetail.t()),
-          :name => String.t()
+          :clientInfoDetails => list(GoogleApi.Testing.V1.Model.ClientInfoDetail.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:clientInfoDetails, as: GoogleApi.Testing.V1.Model.ClientInfoDetail, type: :list)

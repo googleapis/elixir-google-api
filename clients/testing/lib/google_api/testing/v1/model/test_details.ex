@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.TestDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessage => String.t(),
-          :progressMessages => list(String.t())
+          :errorMessage => String.t() | nil,
+          :progressMessages => list(String.t()) | nil
         }
 
   field(:errorMessage)

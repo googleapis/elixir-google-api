@@ -58,6 +58,7 @@ defmodule GoogleApi.Testing.V1.Api.ApplicationDetailService do
         ) ::
           {:ok, GoogleApi.Testing.V1.Model.GetApkDetailsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def testing_application_detail_service_get_apk_details(
         connection,

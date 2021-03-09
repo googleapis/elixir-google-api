@@ -28,8 +28,8 @@ defmodule GoogleApi.Testing.V1.Model.Apk do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :packageName => String.t()
+          :location => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :packageName => String.t() | nil
         }
 
   field(:location, as: GoogleApi.Testing.V1.Model.FileReference)

@@ -36,16 +36,16 @@ defmodule GoogleApi.Testing.V1.Model.TestExecution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environment => GoogleApi.Testing.V1.Model.Environment.t(),
-          :id => String.t(),
-          :matrixId => String.t(),
-          :projectId => String.t(),
-          :shard => GoogleApi.Testing.V1.Model.Shard.t(),
-          :state => String.t(),
-          :testDetails => GoogleApi.Testing.V1.Model.TestDetails.t(),
-          :testSpecification => GoogleApi.Testing.V1.Model.TestSpecification.t(),
-          :timestamp => DateTime.t(),
-          :toolResultsStep => GoogleApi.Testing.V1.Model.ToolResultsStep.t()
+          :environment => GoogleApi.Testing.V1.Model.Environment.t() | nil,
+          :id => String.t() | nil,
+          :matrixId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :shard => GoogleApi.Testing.V1.Model.Shard.t() | nil,
+          :state => String.t() | nil,
+          :testDetails => GoogleApi.Testing.V1.Model.TestDetails.t() | nil,
+          :testSpecification => GoogleApi.Testing.V1.Model.TestSpecification.t() | nil,
+          :timestamp => DateTime.t() | nil,
+          :toolResultsStep => GoogleApi.Testing.V1.Model.ToolResultsStep.t() | nil
         }
 
   field(:environment, as: GoogleApi.Testing.V1.Model.Environment)

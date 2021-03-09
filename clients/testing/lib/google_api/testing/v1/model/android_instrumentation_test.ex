@@ -35,15 +35,15 @@ defmodule GoogleApi.Testing.V1.Model.AndroidInstrumentationTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appApk => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t(),
-          :appPackageId => String.t(),
-          :orchestratorOption => String.t(),
-          :shardingOption => GoogleApi.Testing.V1.Model.ShardingOption.t(),
-          :testApk => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :testPackageId => String.t(),
-          :testRunnerClass => String.t(),
-          :testTargets => list(String.t())
+          :appApk => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t() | nil,
+          :appPackageId => String.t() | nil,
+          :orchestratorOption => String.t() | nil,
+          :shardingOption => GoogleApi.Testing.V1.Model.ShardingOption.t() | nil,
+          :testApk => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :testPackageId => String.t() | nil,
+          :testRunnerClass => String.t() | nil,
+          :testTargets => list(String.t()) | nil
         }
 
   field(:appApk, as: GoogleApi.Testing.V1.Model.FileReference)

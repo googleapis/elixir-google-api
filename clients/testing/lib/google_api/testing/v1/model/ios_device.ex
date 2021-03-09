@@ -30,10 +30,10 @@ defmodule GoogleApi.Testing.V1.Model.IosDevice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iosModelId => String.t(),
-          :iosVersionId => String.t(),
-          :locale => String.t(),
-          :orientation => String.t()
+          :iosModelId => String.t() | nil,
+          :iosVersionId => String.t() | nil,
+          :locale => String.t() | nil,
+          :orientation => String.t() | nil
         }
 
   field(:iosModelId)

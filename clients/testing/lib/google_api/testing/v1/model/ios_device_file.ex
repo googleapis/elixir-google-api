@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.IosDeviceFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bundleId => String.t(),
-          :content => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :devicePath => String.t()
+          :bundleId => String.t() | nil,
+          :content => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :devicePath => String.t() | nil
         }
 
   field(:bundleId)

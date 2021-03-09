@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.ToolResultsExecution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :executionId => String.t(),
-          :historyId => String.t(),
-          :projectId => String.t()
+          :executionId => String.t() | nil,
+          :historyId => String.t() | nil,
+          :projectId => String.t() | nil
         }
 
   field(:executionId)

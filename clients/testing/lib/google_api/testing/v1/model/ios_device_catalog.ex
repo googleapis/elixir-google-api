@@ -30,10 +30,10 @@ defmodule GoogleApi.Testing.V1.Model.IosDeviceCatalog do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :models => list(GoogleApi.Testing.V1.Model.IosModel.t()),
-          :runtimeConfiguration => GoogleApi.Testing.V1.Model.IosRuntimeConfiguration.t(),
-          :versions => list(GoogleApi.Testing.V1.Model.IosVersion.t()),
-          :xcodeVersions => list(GoogleApi.Testing.V1.Model.XcodeVersion.t())
+          :models => list(GoogleApi.Testing.V1.Model.IosModel.t()) | nil,
+          :runtimeConfiguration => GoogleApi.Testing.V1.Model.IosRuntimeConfiguration.t() | nil,
+          :versions => list(GoogleApi.Testing.V1.Model.IosVersion.t()) | nil,
+          :xcodeVersions => list(GoogleApi.Testing.V1.Model.XcodeVersion.t()) | nil
         }
 
   field(:models, as: GoogleApi.Testing.V1.Model.IosModel, type: :list)

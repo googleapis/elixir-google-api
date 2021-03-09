@@ -35,15 +35,15 @@ defmodule GoogleApi.Testing.V1.Model.AndroidRoboTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appApk => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t(),
-          :appInitialActivity => String.t(),
-          :appPackageId => String.t(),
-          :maxDepth => integer(),
-          :maxSteps => integer(),
-          :roboDirectives => list(GoogleApi.Testing.V1.Model.RoboDirective.t()),
-          :roboScript => GoogleApi.Testing.V1.Model.FileReference.t(),
-          :startingIntents => list(GoogleApi.Testing.V1.Model.RoboStartingIntent.t())
+          :appApk => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t() | nil,
+          :appInitialActivity => String.t() | nil,
+          :appPackageId => String.t() | nil,
+          :maxDepth => integer() | nil,
+          :maxSteps => integer() | nil,
+          :roboDirectives => list(GoogleApi.Testing.V1.Model.RoboDirective.t()) | nil,
+          :roboScript => GoogleApi.Testing.V1.Model.FileReference.t() | nil,
+          :startingIntents => list(GoogleApi.Testing.V1.Model.RoboStartingIntent.t()) | nil
         }
 
   field(:appApk, as: GoogleApi.Testing.V1.Model.FileReference)

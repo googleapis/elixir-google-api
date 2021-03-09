@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.CancelTestMatrixResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :testState => String.t()
+          :testState => String.t() | nil
         }
 
   field(:testState)

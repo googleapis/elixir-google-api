@@ -29,9 +29,9 @@ defmodule GoogleApi.Testing.V1.Model.DeviceIpBlock do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addedDate => GoogleApi.Testing.V1.Model.Date.t(),
-          :block => String.t(),
-          :form => String.t()
+          :addedDate => GoogleApi.Testing.V1.Model.Date.t() | nil,
+          :block => String.t() | nil,
+          :form => String.t() | nil
         }
 
   field(:addedDate, as: GoogleApi.Testing.V1.Model.Date)

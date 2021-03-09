@@ -27,7 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.UniformSharding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :numShards => integer()
+          :numShards => integer() | nil
         }
 
   field(:numShards)

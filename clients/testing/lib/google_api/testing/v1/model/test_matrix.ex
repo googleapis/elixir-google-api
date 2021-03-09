@@ -39,19 +39,19 @@ defmodule GoogleApi.Testing.V1.Model.TestMatrix do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientInfo => GoogleApi.Testing.V1.Model.ClientInfo.t(),
-          :environmentMatrix => GoogleApi.Testing.V1.Model.EnvironmentMatrix.t(),
-          :failFast => boolean(),
-          :flakyTestAttempts => integer(),
-          :invalidMatrixDetails => String.t(),
-          :outcomeSummary => String.t(),
-          :projectId => String.t(),
-          :resultStorage => GoogleApi.Testing.V1.Model.ResultStorage.t(),
-          :state => String.t(),
-          :testExecutions => list(GoogleApi.Testing.V1.Model.TestExecution.t()),
-          :testMatrixId => String.t(),
-          :testSpecification => GoogleApi.Testing.V1.Model.TestSpecification.t(),
-          :timestamp => DateTime.t()
+          :clientInfo => GoogleApi.Testing.V1.Model.ClientInfo.t() | nil,
+          :environmentMatrix => GoogleApi.Testing.V1.Model.EnvironmentMatrix.t() | nil,
+          :failFast => boolean() | nil,
+          :flakyTestAttempts => integer() | nil,
+          :invalidMatrixDetails => String.t() | nil,
+          :outcomeSummary => String.t() | nil,
+          :projectId => String.t() | nil,
+          :resultStorage => GoogleApi.Testing.V1.Model.ResultStorage.t() | nil,
+          :state => String.t() | nil,
+          :testExecutions => list(GoogleApi.Testing.V1.Model.TestExecution.t()) | nil,
+          :testMatrixId => String.t() | nil,
+          :testSpecification => GoogleApi.Testing.V1.Model.TestSpecification.t() | nil,
+          :timestamp => DateTime.t() | nil
         }
 
   field(:clientInfo, as: GoogleApi.Testing.V1.Model.ClientInfo)
