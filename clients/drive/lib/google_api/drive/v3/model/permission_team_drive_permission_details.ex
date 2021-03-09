@@ -30,10 +30,10 @@ defmodule GoogleApi.Drive.V3.Model.PermissionTeamDrivePermissionDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inherited => boolean(),
-          :inheritedFrom => String.t(),
-          :role => String.t(),
-          :teamDrivePermissionType => String.t()
+          :inherited => boolean() | nil,
+          :inheritedFrom => String.t() | nil,
+          :role => String.t() | nil,
+          :teamDrivePermissionType => String.t() | nil
         }
 
   field(:inherited)

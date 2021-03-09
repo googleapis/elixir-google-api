@@ -31,11 +31,11 @@ defmodule GoogleApi.Drive.V3.Model.ContentRestriction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :readOnly => boolean(),
-          :reason => String.t(),
-          :restrictingUser => GoogleApi.Drive.V3.Model.User.t(),
-          :restrictionTime => DateTime.t(),
-          :type => String.t()
+          :readOnly => boolean() | nil,
+          :reason => String.t() | nil,
+          :restrictingUser => GoogleApi.Drive.V3.Model.User.t() | nil,
+          :restrictionTime => DateTime.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:readOnly)

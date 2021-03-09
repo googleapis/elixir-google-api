@@ -29,9 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.AboutDriveThemes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundImageLink => String.t(),
-          :colorRgb => String.t(),
-          :id => String.t()
+          :backgroundImageLink => String.t() | nil,
+          :colorRgb => String.t() | nil,
+          :id => String.t() | nil
         }
 
   field(:backgroundImageLink)

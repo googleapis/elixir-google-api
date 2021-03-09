@@ -30,10 +30,10 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveRestrictions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adminManagedRestrictions => boolean(),
-          :copyRequiresWriterPermission => boolean(),
-          :domainUsersOnly => boolean(),
-          :teamMembersOnly => boolean()
+          :adminManagedRestrictions => boolean() | nil,
+          :copyRequiresWriterPermission => boolean() | nil,
+          :domainUsersOnly => boolean() | nil,
+          :teamMembersOnly => boolean() | nil
         }
 
   field(:adminManagedRestrictions)

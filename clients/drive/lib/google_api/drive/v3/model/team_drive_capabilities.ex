@@ -45,25 +45,25 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveCapabilities do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canAddChildren => boolean(),
-          :canChangeCopyRequiresWriterPermissionRestriction => boolean(),
-          :canChangeDomainUsersOnlyRestriction => boolean(),
-          :canChangeTeamDriveBackground => boolean(),
-          :canChangeTeamMembersOnlyRestriction => boolean(),
-          :canComment => boolean(),
-          :canCopy => boolean(),
-          :canDeleteChildren => boolean(),
-          :canDeleteTeamDrive => boolean(),
-          :canDownload => boolean(),
-          :canEdit => boolean(),
-          :canListChildren => boolean(),
-          :canManageMembers => boolean(),
-          :canReadRevisions => boolean(),
-          :canRemoveChildren => boolean(),
-          :canRename => boolean(),
-          :canRenameTeamDrive => boolean(),
-          :canShare => boolean(),
-          :canTrashChildren => boolean()
+          :canAddChildren => boolean() | nil,
+          :canChangeCopyRequiresWriterPermissionRestriction => boolean() | nil,
+          :canChangeDomainUsersOnlyRestriction => boolean() | nil,
+          :canChangeTeamDriveBackground => boolean() | nil,
+          :canChangeTeamMembersOnlyRestriction => boolean() | nil,
+          :canComment => boolean() | nil,
+          :canCopy => boolean() | nil,
+          :canDeleteChildren => boolean() | nil,
+          :canDeleteTeamDrive => boolean() | nil,
+          :canDownload => boolean() | nil,
+          :canEdit => boolean() | nil,
+          :canListChildren => boolean() | nil,
+          :canManageMembers => boolean() | nil,
+          :canReadRevisions => boolean() | nil,
+          :canRemoveChildren => boolean() | nil,
+          :canRename => boolean() | nil,
+          :canRenameTeamDrive => boolean() | nil,
+          :canShare => boolean() | nil,
+          :canTrashChildren => boolean() | nil
         }
 
   field(:canAddChildren)

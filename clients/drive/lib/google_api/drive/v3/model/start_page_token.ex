@@ -28,8 +28,8 @@ defmodule GoogleApi.Drive.V3.Model.StartPageToken do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :startPageToken => String.t()
+          :kind => String.t() | nil,
+          :startPageToken => String.t() | nil
         }
 
   field(:kind)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Drive.V3.Model.FileContentHints do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indexableText => String.t(),
-          :thumbnail => GoogleApi.Drive.V3.Model.FileContentHintsThumbnail.t()
+          :indexableText => String.t() | nil,
+          :thumbnail => GoogleApi.Drive.V3.Model.FileContentHintsThumbnail.t() | nil
         }
 
   field(:indexableText)

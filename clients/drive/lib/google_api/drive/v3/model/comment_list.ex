@@ -29,9 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.CommentList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :comments => list(GoogleApi.Drive.V3.Model.Comment.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :comments => list(GoogleApi.Drive.V3.Model.Comment.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:comments, as: GoogleApi.Drive.V3.Model.Comment, type: :list)

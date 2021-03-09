@@ -37,15 +37,15 @@ defmodule GoogleApi.Drive.V3.Model.Reply do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :author => GoogleApi.Drive.V3.Model.User.t(),
-          :content => String.t(),
-          :createdTime => DateTime.t(),
-          :deleted => boolean(),
-          :htmlContent => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :modifiedTime => DateTime.t()
+          :action => String.t() | nil,
+          :author => GoogleApi.Drive.V3.Model.User.t() | nil,
+          :content => String.t() | nil,
+          :createdTime => DateTime.t() | nil,
+          :deleted => boolean() | nil,
+          :htmlContent => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :modifiedTime => DateTime.t() | nil
         }
 
   field(:action)

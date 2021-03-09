@@ -28,8 +28,8 @@ defmodule GoogleApi.Drive.V3.Model.FileContentHintsThumbnail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :image => String.t(),
-          :mimeType => String.t()
+          :image => String.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:image)

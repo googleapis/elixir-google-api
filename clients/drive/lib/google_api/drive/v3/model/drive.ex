@@ -37,17 +37,17 @@ defmodule GoogleApi.Drive.V3.Model.Drive do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundImageFile => GoogleApi.Drive.V3.Model.DriveBackgroundImageFile.t(),
-          :backgroundImageLink => String.t(),
-          :capabilities => GoogleApi.Drive.V3.Model.DriveCapabilities.t(),
-          :colorRgb => String.t(),
-          :createdTime => DateTime.t(),
-          :hidden => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :restrictions => GoogleApi.Drive.V3.Model.DriveRestrictions.t(),
-          :themeId => String.t()
+          :backgroundImageFile => GoogleApi.Drive.V3.Model.DriveBackgroundImageFile.t() | nil,
+          :backgroundImageLink => String.t() | nil,
+          :capabilities => GoogleApi.Drive.V3.Model.DriveCapabilities.t() | nil,
+          :colorRgb => String.t() | nil,
+          :createdTime => DateTime.t() | nil,
+          :hidden => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :restrictions => GoogleApi.Drive.V3.Model.DriveRestrictions.t() | nil,
+          :themeId => String.t() | nil
         }
 
   field(:backgroundImageFile, as: GoogleApi.Drive.V3.Model.DriveBackgroundImageFile)

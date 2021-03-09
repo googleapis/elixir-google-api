@@ -29,9 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.GeneratedIds do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ids => list(String.t()),
-          :kind => String.t(),
-          :space => String.t()
+          :ids => list(String.t()) | nil,
+          :kind => String.t() | nil,
+          :space => String.t() | nil
         }
 
   field(:ids, type: :list)

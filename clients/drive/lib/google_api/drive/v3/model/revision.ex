@@ -41,20 +41,20 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exportLinks => map(),
-          :id => String.t(),
-          :keepForever => boolean(),
-          :kind => String.t(),
-          :lastModifyingUser => GoogleApi.Drive.V3.Model.User.t(),
-          :md5Checksum => String.t(),
-          :mimeType => String.t(),
-          :modifiedTime => DateTime.t(),
-          :originalFilename => String.t(),
-          :publishAuto => boolean(),
-          :published => boolean(),
-          :publishedLink => String.t(),
-          :publishedOutsideDomain => boolean(),
-          :size => String.t()
+          :exportLinks => map() | nil,
+          :id => String.t() | nil,
+          :keepForever => boolean() | nil,
+          :kind => String.t() | nil,
+          :lastModifyingUser => GoogleApi.Drive.V3.Model.User.t() | nil,
+          :md5Checksum => String.t() | nil,
+          :mimeType => String.t() | nil,
+          :modifiedTime => DateTime.t() | nil,
+          :originalFilename => String.t() | nil,
+          :publishAuto => boolean() | nil,
+          :published => boolean() | nil,
+          :publishedLink => String.t() | nil,
+          :publishedOutsideDomain => boolean() | nil,
+          :size => String.t() | nil
         }
 
   field(:exportLinks, type: :map)

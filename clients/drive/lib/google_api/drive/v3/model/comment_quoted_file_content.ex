@@ -28,8 +28,8 @@ defmodule GoogleApi.Drive.V3.Model.CommentQuotedFileContent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mimeType => String.t(),
-          :value => String.t()
+          :mimeType => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:mimeType)

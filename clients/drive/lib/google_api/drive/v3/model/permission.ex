@@ -57,21 +57,22 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowFileDiscovery => boolean(),
-          :deleted => boolean(),
-          :displayName => String.t(),
-          :domain => String.t(),
-          :emailAddress => String.t(),
-          :expirationTime => DateTime.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :permissionDetails => list(GoogleApi.Drive.V3.Model.PermissionPermissionDetails.t()),
-          :photoLink => String.t(),
-          :role => String.t(),
+          :allowFileDiscovery => boolean() | nil,
+          :deleted => boolean() | nil,
+          :displayName => String.t() | nil,
+          :domain => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :expirationTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :permissionDetails =>
+            list(GoogleApi.Drive.V3.Model.PermissionPermissionDetails.t()) | nil,
+          :photoLink => String.t() | nil,
+          :role => String.t() | nil,
           :teamDrivePermissionDetails =>
-            list(GoogleApi.Drive.V3.Model.PermissionTeamDrivePermissionDetails.t()),
-          :type => String.t(),
-          :view => String.t()
+            list(GoogleApi.Drive.V3.Model.PermissionTeamDrivePermissionDetails.t()) | nil,
+          :type => String.t() | nil,
+          :view => String.t() | nil
         }
 
   field(:allowFileDiscovery)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.FileVideoMediaMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :durationMillis => String.t(),
-          :height => integer(),
-          :width => integer()
+          :durationMillis => String.t() | nil,
+          :height => integer() | nil,
+          :width => integer() | nil
         }
 
   field(:durationMillis)
