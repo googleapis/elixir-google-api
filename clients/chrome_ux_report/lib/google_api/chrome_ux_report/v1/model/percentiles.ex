@@ -27,7 +27,7 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Percentiles do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :p75 => any()
+          :p75 => any() | nil
         }
 
   field(:p75)

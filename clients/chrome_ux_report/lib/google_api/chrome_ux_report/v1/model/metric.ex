@@ -28,8 +28,8 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Metric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :histogram => list(GoogleApi.ChromeUXReport.V1.Model.Bin.t()),
-          :percentiles => GoogleApi.ChromeUXReport.V1.Model.Percentiles.t()
+          :histogram => list(GoogleApi.ChromeUXReport.V1.Model.Bin.t()) | nil,
+          :percentiles => GoogleApi.ChromeUXReport.V1.Model.Percentiles.t() | nil
         }
 
   field(:histogram, as: GoogleApi.ChromeUXReport.V1.Model.Bin, type: :list)

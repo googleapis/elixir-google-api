@@ -29,9 +29,9 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Bin do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :density => float(),
-          :end => any(),
-          :start => any()
+          :density => float() | nil,
+          :end => any() | nil,
+          :start => any() | nil
         }
 
   field(:density)

@@ -28,8 +28,8 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.UrlNormalization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :normalizedUrl => String.t(),
-          :originalUrl => String.t()
+          :normalizedUrl => String.t() | nil,
+          :originalUrl => String.t() | nil
         }
 
   field(:normalizedUrl)

@@ -30,10 +30,10 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Key do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :effectiveConnectionType => String.t(),
-          :formFactor => String.t(),
-          :origin => String.t(),
-          :url => String.t()
+          :effectiveConnectionType => String.t() | nil,
+          :formFactor => String.t() | nil,
+          :origin => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:effectiveConnectionType)
