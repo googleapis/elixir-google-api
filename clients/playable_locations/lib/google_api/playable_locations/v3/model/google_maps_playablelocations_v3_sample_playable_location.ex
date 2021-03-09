@@ -32,12 +32,12 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Samp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :centerPoint => GoogleApi.PlayableLocations.V3.Model.GoogleTypeLatLng.t(),
-          :name => String.t(),
-          :placeId => String.t(),
-          :plusCode => String.t(),
-          :snappedPoint => GoogleApi.PlayableLocations.V3.Model.GoogleTypeLatLng.t(),
-          :types => list(String.t())
+          :centerPoint => GoogleApi.PlayableLocations.V3.Model.GoogleTypeLatLng.t() | nil,
+          :name => String.t() | nil,
+          :placeId => String.t() | nil,
+          :plusCode => String.t() | nil,
+          :snappedPoint => GoogleApi.PlayableLocations.V3.Model.GoogleTypeLatLng.t() | nil,
+          :types => list(String.t()) | nil
         }
 
   field(:centerPoint, as: GoogleApi.PlayableLocations.V3.Model.GoogleTypeLatLng)

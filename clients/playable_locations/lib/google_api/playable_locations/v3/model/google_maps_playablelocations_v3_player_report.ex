@@ -30,10 +30,10 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Play
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t(),
-          :locationName => String.t(),
-          :reasonDetails => String.t(),
-          :reasons => list(String.t())
+          :languageCode => String.t() | nil,
+          :locationName => String.t() | nil,
+          :reasonDetails => String.t() | nil,
+          :reasons => list(String.t()) | nil
         }
 
   field(:languageCode)

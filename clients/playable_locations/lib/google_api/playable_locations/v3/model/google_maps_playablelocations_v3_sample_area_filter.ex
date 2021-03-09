@@ -27,7 +27,7 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Samp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :s2CellId => String.t()
+          :s2CellId => String.t() | nil
         }
 
   field(:s2CellId)

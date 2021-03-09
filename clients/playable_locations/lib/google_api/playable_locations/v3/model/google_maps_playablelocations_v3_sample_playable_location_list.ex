@@ -31,6 +31,7 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Samp
             list(
               GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3SamplePlayableLocation.t()
             )
+            | nil
         }
 
   field(:locations,

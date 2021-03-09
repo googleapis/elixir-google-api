@@ -28,8 +28,8 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsPlayablelocationsV3Samp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minSpacingMeters => float(),
-          :pointType => String.t()
+          :minSpacingMeters => float() | nil,
+          :pointType => String.t() | nil
         }
 
   field(:minSpacingMeters)

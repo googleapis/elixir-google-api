@@ -34,14 +34,14 @@ defmodule GoogleApi.PlayableLocations.V3.Model.GoogleMapsUnityClientInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiClient => String.t(),
-          :applicationId => String.t(),
-          :applicationVersion => String.t(),
-          :deviceModel => String.t(),
-          :languageCode => String.t(),
-          :operatingSystem => String.t(),
-          :operatingSystemBuild => String.t(),
-          :platform => String.t()
+          :apiClient => String.t() | nil,
+          :applicationId => String.t() | nil,
+          :applicationVersion => String.t() | nil,
+          :deviceModel => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :operatingSystem => String.t() | nil,
+          :operatingSystemBuild => String.t() | nil,
+          :platform => String.t() | nil
         }
 
   field(:apiClient)
