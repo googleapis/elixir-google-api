@@ -63,6 +63,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Resources do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Resource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_resources_get(
         connection,
@@ -145,6 +146,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Resources do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.ResourcesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_resources_list(
         connection,

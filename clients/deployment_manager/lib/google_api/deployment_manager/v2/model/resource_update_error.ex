@@ -27,7 +27,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ResourceUpdateError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(GoogleApi.DeploymentManager.V2.Model.ResourceUpdateErrorErrors.t())
+          :errors =>
+            list(GoogleApi.DeploymentManager.V2.Model.ResourceUpdateErrorErrors.t()) | nil
         }
 
   field(:errors, as: GoogleApi.DeploymentManager.V2.Model.ResourceUpdateErrorErrors, type: :list)

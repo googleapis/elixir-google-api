@@ -27,7 +27,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.OperationError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(GoogleApi.DeploymentManager.V2.Model.OperationErrorErrors.t())
+          :errors => list(GoogleApi.DeploymentManager.V2.Model.OperationErrorErrors.t()) | nil
         }
 
   field(:errors, as: GoogleApi.DeploymentManager.V2.Model.OperationErrorErrors, type: :list)

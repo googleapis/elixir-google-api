@@ -27,7 +27,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.DeploymentsCancelPreviewRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fingerprint => String.t()
+          :fingerprint => String.t() | nil
         }
 
   field(:fingerprint)

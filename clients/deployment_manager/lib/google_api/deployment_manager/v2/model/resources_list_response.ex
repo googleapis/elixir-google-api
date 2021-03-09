@@ -28,8 +28,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ResourcesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.DeploymentManager.V2.Model.Resource.t())
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.DeploymentManager.V2.Model.Resource.t()) | nil
         }
 
   field(:nextPageToken)

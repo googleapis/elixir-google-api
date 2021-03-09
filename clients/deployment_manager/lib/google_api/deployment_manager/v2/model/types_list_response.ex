@@ -28,8 +28,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.TypesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :types => list(GoogleApi.DeploymentManager.V2.Model.Type.t())
+          :nextPageToken => String.t() | nil,
+          :types => list(GoogleApi.DeploymentManager.V2.Model.Type.t()) | nil
         }
 
   field(:nextPageToken)

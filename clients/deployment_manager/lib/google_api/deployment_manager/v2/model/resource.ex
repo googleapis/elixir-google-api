@@ -38,18 +38,18 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Resource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessControl => GoogleApi.DeploymentManager.V2.Model.ResourceAccessControl.t(),
-          :finalProperties => String.t(),
-          :id => String.t(),
-          :insertTime => String.t(),
-          :manifest => String.t(),
-          :name => String.t(),
-          :properties => String.t(),
-          :type => String.t(),
-          :update => GoogleApi.DeploymentManager.V2.Model.ResourceUpdate.t(),
-          :updateTime => String.t(),
-          :url => String.t(),
-          :warnings => list(GoogleApi.DeploymentManager.V2.Model.ResourceWarnings.t())
+          :accessControl => GoogleApi.DeploymentManager.V2.Model.ResourceAccessControl.t() | nil,
+          :finalProperties => String.t() | nil,
+          :id => String.t() | nil,
+          :insertTime => String.t() | nil,
+          :manifest => String.t() | nil,
+          :name => String.t() | nil,
+          :properties => String.t() | nil,
+          :type => String.t() | nil,
+          :update => GoogleApi.DeploymentManager.V2.Model.ResourceUpdate.t() | nil,
+          :updateTime => String.t() | nil,
+          :url => String.t() | nil,
+          :warnings => list(GoogleApi.DeploymentManager.V2.Model.ResourceWarnings.t()) | nil
         }
 
   field(:accessControl, as: GoogleApi.DeploymentManager.V2.Model.ResourceAccessControl)

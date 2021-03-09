@@ -27,7 +27,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ResourceAccessControl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcpIamPolicy => String.t()
+          :gcpIamPolicy => String.t() | nil
         }
 
   field(:gcpIamPolicy)

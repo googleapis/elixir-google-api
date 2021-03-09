@@ -34,14 +34,14 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ResourceUpdate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessControl => GoogleApi.DeploymentManager.V2.Model.ResourceAccessControl.t(),
-          :error => GoogleApi.DeploymentManager.V2.Model.ResourceUpdateError.t(),
-          :finalProperties => String.t(),
-          :intent => String.t(),
-          :manifest => String.t(),
-          :properties => String.t(),
-          :state => String.t(),
-          :warnings => list(GoogleApi.DeploymentManager.V2.Model.ResourceUpdateWarnings.t())
+          :accessControl => GoogleApi.DeploymentManager.V2.Model.ResourceAccessControl.t() | nil,
+          :error => GoogleApi.DeploymentManager.V2.Model.ResourceUpdateError.t() | nil,
+          :finalProperties => String.t() | nil,
+          :intent => String.t() | nil,
+          :manifest => String.t() | nil,
+          :properties => String.t() | nil,
+          :state => String.t() | nil,
+          :warnings => list(GoogleApi.DeploymentManager.V2.Model.ResourceUpdateWarnings.t()) | nil
         }
 
   field(:accessControl, as: GoogleApi.DeploymentManager.V2.Model.ResourceAccessControl)

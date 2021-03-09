@@ -62,6 +62,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_cancel_preview(
         connection,
@@ -140,6 +141,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_delete(
         connection,
@@ -217,6 +219,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Deployment.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_get(
         connection,
@@ -294,6 +297,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_get_iam_policy(
         connection,
@@ -367,6 +371,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
   @spec deploymentmanager_deployments_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -433,6 +438,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
   @spec deploymentmanager_deployments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.DeploymentsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -509,6 +515,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_patch(
         connection,
@@ -590,6 +597,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_set_iam_policy(
         connection,
@@ -668,6 +676,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_stop(
         connection,
@@ -746,6 +755,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_test_iam_permissions(
         connection,
@@ -829,6 +839,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def deploymentmanager_deployments_update(
         connection,

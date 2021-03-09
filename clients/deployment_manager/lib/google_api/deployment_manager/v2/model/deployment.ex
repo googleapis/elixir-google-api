@@ -38,18 +38,18 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Deployment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :id => String.t(),
-          :insertTime => String.t(),
-          :labels => list(GoogleApi.DeploymentManager.V2.Model.DeploymentLabelEntry.t()),
-          :manifest => String.t(),
-          :name => String.t(),
-          :operation => GoogleApi.DeploymentManager.V2.Model.Operation.t(),
-          :selfLink => String.t(),
-          :target => GoogleApi.DeploymentManager.V2.Model.TargetConfiguration.t(),
-          :update => GoogleApi.DeploymentManager.V2.Model.DeploymentUpdate.t(),
-          :updateTime => String.t()
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :id => String.t() | nil,
+          :insertTime => String.t() | nil,
+          :labels => list(GoogleApi.DeploymentManager.V2.Model.DeploymentLabelEntry.t()) | nil,
+          :manifest => String.t() | nil,
+          :name => String.t() | nil,
+          :operation => GoogleApi.DeploymentManager.V2.Model.Operation.t() | nil,
+          :selfLink => String.t() | nil,
+          :target => GoogleApi.DeploymentManager.V2.Model.TargetConfiguration.t() | nil,
+          :update => GoogleApi.DeploymentManager.V2.Model.DeploymentUpdate.t() | nil,
+          :updateTime => String.t() | nil
         }
 
   field(:description)

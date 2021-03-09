@@ -27,7 +27,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.TestPermissionsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :permissions => list(String.t())
+          :permissions => list(String.t()) | nil
         }
 
   field(:permissions, type: :list)

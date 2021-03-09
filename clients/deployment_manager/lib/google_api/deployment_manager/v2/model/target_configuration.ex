@@ -28,8 +28,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.TargetConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.DeploymentManager.V2.Model.ConfigFile.t(),
-          :imports => list(GoogleApi.DeploymentManager.V2.Model.ImportFile.t())
+          :config => GoogleApi.DeploymentManager.V2.Model.ConfigFile.t() | nil,
+          :imports => list(GoogleApi.DeploymentManager.V2.Model.ImportFile.t()) | nil
         }
 
   field(:config, as: GoogleApi.DeploymentManager.V2.Model.ConfigFile)

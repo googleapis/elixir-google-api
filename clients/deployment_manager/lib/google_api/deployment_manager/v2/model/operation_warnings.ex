@@ -29,9 +29,9 @@ defmodule GoogleApi.DeploymentManager.V2.Model.OperationWarnings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :data => list(GoogleApi.DeploymentManager.V2.Model.OperationWarningsData.t()),
-          :message => String.t()
+          :code => String.t() | nil,
+          :data => list(GoogleApi.DeploymentManager.V2.Model.OperationWarningsData.t()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

@@ -36,16 +36,16 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Manifest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.DeploymentManager.V2.Model.ConfigFile.t(),
-          :expandedConfig => String.t(),
-          :id => String.t(),
-          :imports => list(GoogleApi.DeploymentManager.V2.Model.ImportFile.t()),
-          :insertTime => String.t(),
-          :layout => String.t(),
-          :manifestSizeBytes => String.t(),
-          :manifestSizeLimitBytes => String.t(),
-          :name => String.t(),
-          :selfLink => String.t()
+          :config => GoogleApi.DeploymentManager.V2.Model.ConfigFile.t() | nil,
+          :expandedConfig => String.t() | nil,
+          :id => String.t() | nil,
+          :imports => list(GoogleApi.DeploymentManager.V2.Model.ImportFile.t()) | nil,
+          :insertTime => String.t() | nil,
+          :layout => String.t() | nil,
+          :manifestSizeBytes => String.t() | nil,
+          :manifestSizeLimitBytes => String.t() | nil,
+          :name => String.t() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:config, as: GoogleApi.DeploymentManager.V2.Model.ConfigFile)
