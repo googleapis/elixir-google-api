@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ListCollectionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.Content.V21.Model.Collection.t())
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.Content.V21.Model.Collection.t()) | nil
         }
 
   field(:nextPageToken)

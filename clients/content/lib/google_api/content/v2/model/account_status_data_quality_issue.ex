@@ -37,17 +37,17 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :destination => String.t(),
-          :detail => String.t(),
-          :displayedValue => String.t(),
-          :exampleItems => list(GoogleApi.Content.V2.Model.AccountStatusExampleItem.t()),
-          :id => String.t(),
-          :lastChecked => String.t(),
-          :location => String.t(),
-          :numItems => integer(),
-          :severity => String.t(),
-          :submittedValue => String.t()
+          :country => String.t() | nil,
+          :destination => String.t() | nil,
+          :detail => String.t() | nil,
+          :displayedValue => String.t() | nil,
+          :exampleItems => list(GoogleApi.Content.V2.Model.AccountStatusExampleItem.t()) | nil,
+          :id => String.t() | nil,
+          :lastChecked => String.t() | nil,
+          :location => String.t() | nil,
+          :numItems => integer() | nil,
+          :severity => String.t() | nil,
+          :submittedValue => String.t() | nil
         }
 
   field(:country)

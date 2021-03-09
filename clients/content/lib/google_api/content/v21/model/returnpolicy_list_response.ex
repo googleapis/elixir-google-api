@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ReturnpolicyListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :resources => list(GoogleApi.Content.V21.Model.ReturnPolicy.t())
+          :kind => String.t() | nil,
+          :resources => list(GoogleApi.Content.V21.Model.ReturnPolicy.t()) | nil
         }
 
   field(:kind)

@@ -54,6 +54,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeeds do
   @spec content_datafeeds_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.DatafeedsCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_datafeeds_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -113,7 +114,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeeds do
   *   `{:error, info}` on failure
   """
   @spec content_datafeeds_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def content_datafeeds_delete(
         connection,
         merchant_id,
@@ -186,6 +187,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeeds do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.DatafeedsFetchNowResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_datafeeds_fetchnow(
         connection,
@@ -251,7 +253,10 @@ defmodule GoogleApi.Content.V21.Api.Datafeeds do
   *   `{:error, info}` on failure
   """
   @spec content_datafeeds_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Datafeed.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V21.Model.Datafeed.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_datafeeds_get(
         connection,
         merchant_id,
@@ -316,7 +321,10 @@ defmodule GoogleApi.Content.V21.Api.Datafeeds do
   *   `{:error, info}` on failure
   """
   @spec content_datafeeds_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Datafeed.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V21.Model.Datafeed.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_datafeeds_insert(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -378,6 +386,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeeds do
   @spec content_datafeeds_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.DatafeedsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_datafeeds_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -439,7 +448,10 @@ defmodule GoogleApi.Content.V21.Api.Datafeeds do
   *   `{:error, info}` on failure
   """
   @spec content_datafeeds_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Datafeed.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V21.Model.Datafeed.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_datafeeds_update(
         connection,
         merchant_id,

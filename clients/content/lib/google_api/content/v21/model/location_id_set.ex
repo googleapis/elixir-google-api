@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.LocationIdSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locationIds => list(String.t())
+          :locationIds => list(String.t()) | nil
         }
 
   field(:locationIds, type: :list)

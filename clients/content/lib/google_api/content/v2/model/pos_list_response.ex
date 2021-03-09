@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.PosListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :resources => list(GoogleApi.Content.V2.Model.PosStore.t())
+          :kind => String.t() | nil,
+          :resources => list(GoogleApi.Content.V2.Model.PosStore.t()) | nil
         }
 
   field(:kind)

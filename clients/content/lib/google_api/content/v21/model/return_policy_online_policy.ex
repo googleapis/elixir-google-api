@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicyOnlinePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :days => String.t(),
-          :type => String.t()
+          :days => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:days)

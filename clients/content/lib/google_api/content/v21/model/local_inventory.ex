@@ -36,16 +36,16 @@ defmodule GoogleApi.Content.V21.Model.LocalInventory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availability => String.t(),
-          :instoreProductLocation => String.t(),
-          :kind => String.t(),
-          :pickupMethod => String.t(),
-          :pickupSla => String.t(),
-          :price => GoogleApi.Content.V21.Model.Price.t(),
-          :quantity => integer(),
-          :salePrice => GoogleApi.Content.V21.Model.Price.t(),
-          :salePriceEffectiveDate => String.t(),
-          :storeCode => String.t()
+          :availability => String.t() | nil,
+          :instoreProductLocation => String.t() | nil,
+          :kind => String.t() | nil,
+          :pickupMethod => String.t() | nil,
+          :pickupSla => String.t() | nil,
+          :price => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :quantity => integer() | nil,
+          :salePrice => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :salePriceEffectiveDate => String.t() | nil,
+          :storeCode => String.t() | nil
         }
 
   field(:availability)

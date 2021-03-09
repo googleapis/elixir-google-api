@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V21.Model.PosCustomBatchResponseEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :errors => GoogleApi.Content.V21.Model.Errors.t(),
-          :inventory => GoogleApi.Content.V21.Model.PosInventory.t(),
-          :kind => String.t(),
-          :sale => GoogleApi.Content.V21.Model.PosSale.t(),
-          :store => GoogleApi.Content.V21.Model.PosStore.t()
+          :batchId => integer() | nil,
+          :errors => GoogleApi.Content.V21.Model.Errors.t() | nil,
+          :inventory => GoogleApi.Content.V21.Model.PosInventory.t() | nil,
+          :kind => String.t() | nil,
+          :sale => GoogleApi.Content.V21.Model.PosSale.t() | nil,
+          :store => GoogleApi.Content.V21.Model.PosStore.t() | nil
         }
 
   field(:batchId)

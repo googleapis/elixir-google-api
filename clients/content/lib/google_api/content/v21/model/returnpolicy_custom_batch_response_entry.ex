@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchResponseEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :errors => GoogleApi.Content.V21.Model.Errors.t(),
-          :kind => String.t(),
-          :returnPolicy => GoogleApi.Content.V21.Model.ReturnPolicy.t()
+          :batchId => integer() | nil,
+          :errors => GoogleApi.Content.V21.Model.Errors.t() | nil,
+          :kind => String.t() | nil,
+          :returnPolicy => GoogleApi.Content.V21.Model.ReturnPolicy.t() | nil
         }
 
   field(:batchId)

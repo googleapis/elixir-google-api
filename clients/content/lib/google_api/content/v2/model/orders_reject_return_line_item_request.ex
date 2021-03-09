@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V2.Model.OrdersRejectReturnLineItemRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItemId => String.t(),
-          :operationId => String.t(),
-          :productId => String.t(),
-          :quantity => integer(),
-          :reason => String.t(),
-          :reasonText => String.t()
+          :lineItemId => String.t() | nil,
+          :operationId => String.t() | nil,
+          :productId => String.t() | nil,
+          :quantity => integer() | nil,
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil
         }
 
   field(:lineItemId)

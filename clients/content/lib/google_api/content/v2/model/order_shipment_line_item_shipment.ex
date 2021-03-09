@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItemId => String.t(),
-          :productId => String.t(),
-          :quantity => integer()
+          :lineItemId => String.t() | nil,
+          :productId => String.t() | nil,
+          :quantity => integer() | nil
         }
 
   field(:lineItemId)

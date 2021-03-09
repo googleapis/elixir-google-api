@@ -38,19 +38,21 @@ defmodule GoogleApi.Content.V21.Model.RepricingRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cogsBasedRule => GoogleApi.Content.V21.Model.RepricingRuleCostOfGoodsSaleRule.t(),
-          :countryCode => String.t(),
-          :effectiveTimePeriod => GoogleApi.Content.V21.Model.RepricingRuleEffectiveTime.t(),
+          :cogsBasedRule =>
+            GoogleApi.Content.V21.Model.RepricingRuleCostOfGoodsSaleRule.t() | nil,
+          :countryCode => String.t() | nil,
+          :effectiveTimePeriod =>
+            GoogleApi.Content.V21.Model.RepricingRuleEffectiveTime.t() | nil,
           :eligibleOfferMatcher =>
-            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher.t(),
-          :languageCode => String.t(),
-          :merchantId => String.t(),
-          :paused => boolean(),
-          :restriction => GoogleApi.Content.V21.Model.RepricingRuleRestriction.t(),
-          :ruleId => String.t(),
-          :statsBasedRule => GoogleApi.Content.V21.Model.RepricingRuleStatsBasedRule.t(),
-          :title => String.t(),
-          :type => String.t()
+            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher.t() | nil,
+          :languageCode => String.t() | nil,
+          :merchantId => String.t() | nil,
+          :paused => boolean() | nil,
+          :restriction => GoogleApi.Content.V21.Model.RepricingRuleRestriction.t() | nil,
+          :ruleId => String.t() | nil,
+          :statsBasedRule => GoogleApi.Content.V21.Model.RepricingRuleStatsBasedRule.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:cogsBasedRule, as: GoogleApi.Content.V21.Model.RepricingRuleCostOfGoodsSaleRule)

@@ -27,7 +27,8 @@ defmodule GoogleApi.Content.V21.Model.ListAccountReturnCarrierResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountReturnCarriers => list(GoogleApi.Content.V21.Model.AccountReturnCarrier.t())
+          :accountReturnCarriers =>
+            list(GoogleApi.Content.V21.Model.AccountReturnCarrier.t()) | nil
         }
 
   field(:accountReturnCarriers, as: GoogleApi.Content.V21.Model.AccountReturnCarrier, type: :list)

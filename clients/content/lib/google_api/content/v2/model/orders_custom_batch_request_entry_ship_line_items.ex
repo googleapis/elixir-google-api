@@ -32,15 +32,16 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItems 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrier => String.t(),
-          :lineItems => list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t()),
-          :shipmentGroupId => String.t(),
-          :shipmentId => String.t(),
+          :carrier => String.t() | nil,
+          :lineItems => list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t()) | nil,
+          :shipmentGroupId => String.t() | nil,
+          :shipmentId => String.t() | nil,
           :shipmentInfos =>
             list(
               GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo.t()
-            ),
-          :trackingId => String.t()
+            )
+            | nil,
+          :trackingId => String.t() | nil
         }
 
   field(:carrier)

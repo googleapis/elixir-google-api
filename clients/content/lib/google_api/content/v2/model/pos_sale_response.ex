@@ -36,16 +36,16 @@ defmodule GoogleApi.Content.V2.Model.PosSaleResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentLanguage => String.t(),
-          :gtin => String.t(),
-          :itemId => String.t(),
-          :kind => String.t(),
-          :price => GoogleApi.Content.V2.Model.Price.t(),
-          :quantity => String.t(),
-          :saleId => String.t(),
-          :storeCode => String.t(),
-          :targetCountry => String.t(),
-          :timestamp => String.t()
+          :contentLanguage => String.t() | nil,
+          :gtin => String.t() | nil,
+          :itemId => String.t() | nil,
+          :kind => String.t() | nil,
+          :price => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :quantity => String.t() | nil,
+          :saleId => String.t() | nil,
+          :storeCode => String.t() | nil,
+          :targetCountry => String.t() | nil,
+          :timestamp => String.t() | nil
         }
 
   field(:contentLanguage)

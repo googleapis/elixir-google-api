@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V21.Model.ReturnAddress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.Content.V21.Model.ReturnAddressAddress.t(),
-          :country => String.t(),
-          :kind => String.t(),
-          :label => String.t(),
-          :phoneNumber => String.t(),
-          :returnAddressId => String.t()
+          :address => GoogleApi.Content.V21.Model.ReturnAddressAddress.t() | nil,
+          :country => String.t() | nil,
+          :kind => String.t() | nil,
+          :label => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :returnAddressId => String.t() | nil
         }
 
   field(:address, as: GoogleApi.Content.V21.Model.ReturnAddressAddress)

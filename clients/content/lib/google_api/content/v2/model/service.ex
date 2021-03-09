@@ -37,17 +37,17 @@ defmodule GoogleApi.Content.V2.Model.Service do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :active => boolean(),
-          :currency => String.t(),
-          :deliveryCountry => String.t(),
-          :deliveryTime => GoogleApi.Content.V2.Model.DeliveryTime.t(),
-          :eligibility => String.t(),
-          :minimumOrderValue => GoogleApi.Content.V2.Model.Price.t(),
-          :minimumOrderValueTable => GoogleApi.Content.V2.Model.MinimumOrderValueTable.t(),
-          :name => String.t(),
-          :pickupService => GoogleApi.Content.V2.Model.PickupCarrierService.t(),
-          :rateGroups => list(GoogleApi.Content.V2.Model.RateGroup.t()),
-          :shipmentType => String.t()
+          :active => boolean() | nil,
+          :currency => String.t() | nil,
+          :deliveryCountry => String.t() | nil,
+          :deliveryTime => GoogleApi.Content.V2.Model.DeliveryTime.t() | nil,
+          :eligibility => String.t() | nil,
+          :minimumOrderValue => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :minimumOrderValueTable => GoogleApi.Content.V2.Model.MinimumOrderValueTable.t() | nil,
+          :name => String.t() | nil,
+          :pickupService => GoogleApi.Content.V2.Model.PickupCarrierService.t() | nil,
+          :rateGroups => list(GoogleApi.Content.V2.Model.RateGroup.t()) | nil,
+          :shipmentType => String.t() | nil
         }
 
   field(:active)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.AccountTaxTaxRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :locationId => String.t(),
-          :ratePercent => String.t(),
-          :shippingTaxed => boolean(),
-          :useGlobalRate => boolean()
+          :country => String.t() | nil,
+          :locationId => String.t() | nil,
+          :ratePercent => String.t() | nil,
+          :shippingTaxed => boolean() | nil,
+          :useGlobalRate => boolean() | nil
         }
 
   field(:country)

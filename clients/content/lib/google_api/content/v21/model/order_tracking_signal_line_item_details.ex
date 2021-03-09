@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.OrderTrackingSignalLineItemDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gtin => String.t(),
-          :lineItemId => String.t(),
-          :mpn => String.t(),
-          :productId => String.t(),
-          :quantity => String.t()
+          :gtin => String.t() | nil,
+          :lineItemId => String.t() | nil,
+          :mpn => String.t() | nil,
+          :productId => String.t() | nil,
+          :quantity => String.t() | nil
         }
 
   field(:gtin)

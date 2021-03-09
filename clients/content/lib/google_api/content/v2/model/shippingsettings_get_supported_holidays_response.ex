@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedHolidaysRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :holidays => list(GoogleApi.Content.V2.Model.HolidaysHoliday.t()),
-          :kind => String.t()
+          :holidays => list(GoogleApi.Content.V2.Model.HolidaysHoliday.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:holidays, as: GoogleApi.Content.V2.Model.HolidaysHoliday, type: :list)

@@ -27,7 +27,8 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsCustomBatchRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Content.V2.Model.LiasettingsCustomBatchRequestEntry.t())
+          :entries =>
+            list(GoogleApi.Content.V2.Model.LiasettingsCustomBatchRequestEntry.t()) | nil
         }
 
   field(:entries, as: GoogleApi.Content.V2.Model.LiasettingsCustomBatchRequestEntry, type: :list)

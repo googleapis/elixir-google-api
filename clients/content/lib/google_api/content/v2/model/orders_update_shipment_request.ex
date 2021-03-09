@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V2.Model.OrdersUpdateShipmentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrier => String.t(),
-          :deliveryDate => String.t(),
-          :operationId => String.t(),
-          :shipmentId => String.t(),
-          :status => String.t(),
-          :trackingId => String.t()
+          :carrier => String.t() | nil,
+          :deliveryDate => String.t() | nil,
+          :operationId => String.t() | nil,
+          :shipmentId => String.t() | nil,
+          :status => String.t() | nil,
+          :trackingId => String.t() | nil
         }
 
   field(:carrier)

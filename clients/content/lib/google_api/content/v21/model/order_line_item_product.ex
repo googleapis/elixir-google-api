@@ -41,22 +41,22 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemProduct do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :brand => String.t(),
-          :condition => String.t(),
-          :contentLanguage => String.t(),
-          :fees => list(GoogleApi.Content.V21.Model.OrderLineItemProductFee.t()),
-          :gtin => String.t(),
-          :id => String.t(),
-          :imageLink => String.t(),
-          :itemGroupId => String.t(),
-          :mpn => String.t(),
-          :offerId => String.t(),
-          :price => GoogleApi.Content.V21.Model.Price.t(),
-          :shownImage => String.t(),
-          :targetCountry => String.t(),
-          :title => String.t(),
+          :brand => String.t() | nil,
+          :condition => String.t() | nil,
+          :contentLanguage => String.t() | nil,
+          :fees => list(GoogleApi.Content.V21.Model.OrderLineItemProductFee.t()) | nil,
+          :gtin => String.t() | nil,
+          :id => String.t() | nil,
+          :imageLink => String.t() | nil,
+          :itemGroupId => String.t() | nil,
+          :mpn => String.t() | nil,
+          :offerId => String.t() | nil,
+          :price => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :shownImage => String.t() | nil,
+          :targetCountry => String.t() | nil,
+          :title => String.t() | nil,
           :variantAttributes =>
-            list(GoogleApi.Content.V21.Model.OrderLineItemProductVariantAttribute.t())
+            list(GoogleApi.Content.V21.Model.OrderLineItemProductVariantAttribute.t()) | nil
         }
 
   field(:brand)

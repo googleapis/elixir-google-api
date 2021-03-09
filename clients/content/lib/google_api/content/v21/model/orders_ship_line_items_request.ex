@@ -30,13 +30,14 @@ defmodule GoogleApi.Content.V21.Model.OrdersShipLineItemsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItems => list(GoogleApi.Content.V21.Model.OrderShipmentLineItemShipment.t()),
-          :operationId => String.t(),
-          :shipmentGroupId => String.t(),
+          :lineItems => list(GoogleApi.Content.V21.Model.OrderShipmentLineItemShipment.t()) | nil,
+          :operationId => String.t() | nil,
+          :shipmentGroupId => String.t() | nil,
           :shipmentInfos =>
             list(
               GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo.t()
             )
+            | nil
         }
 
   field(:lineItems, as: GoogleApi.Content.V21.Model.OrderShipmentLineItemShipment, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.InventoryPickup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pickupMethod => String.t(),
-          :pickupSla => String.t()
+          :pickupMethod => String.t() | nil,
+          :pickupSla => String.t() | nil
         }
 
   field(:pickupMethod)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.CarriersCarrier do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :name => String.t(),
-          :services => list(String.t())
+          :country => String.t() | nil,
+          :name => String.t() | nil,
+          :services => list(String.t()) | nil
         }
 
   field(:country)

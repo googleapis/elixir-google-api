@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.ReturnPricingInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chargeReturnShippingFee => boolean(),
-          :maxReturnShippingFee => GoogleApi.Content.V21.Model.MonetaryAmount.t(),
-          :refundableItemsTotalAmount => GoogleApi.Content.V21.Model.MonetaryAmount.t(),
-          :refundableShippingAmount => GoogleApi.Content.V21.Model.MonetaryAmount.t(),
-          :totalRefundedAmount => GoogleApi.Content.V21.Model.MonetaryAmount.t()
+          :chargeReturnShippingFee => boolean() | nil,
+          :maxReturnShippingFee => GoogleApi.Content.V21.Model.MonetaryAmount.t() | nil,
+          :refundableItemsTotalAmount => GoogleApi.Content.V21.Model.MonetaryAmount.t() | nil,
+          :refundableShippingAmount => GoogleApi.Content.V21.Model.MonetaryAmount.t() | nil,
+          :totalRefundedAmount => GoogleApi.Content.V21.Model.MonetaryAmount.t() | nil
         }
 
   field(:chargeReturnShippingFee)

@@ -35,15 +35,15 @@ defmodule GoogleApi.Content.V21.Model.ProductStatusItemLevelIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applicableCountries => list(String.t()),
-          :attributeName => String.t(),
-          :code => String.t(),
-          :description => String.t(),
-          :destination => String.t(),
-          :detail => String.t(),
-          :documentation => String.t(),
-          :resolution => String.t(),
-          :servability => String.t()
+          :applicableCountries => list(String.t()) | nil,
+          :attributeName => String.t() | nil,
+          :code => String.t() | nil,
+          :description => String.t() | nil,
+          :destination => String.t() | nil,
+          :detail => String.t() | nil,
+          :documentation => String.t() | nil,
+          :resolution => String.t() | nil,
+          :servability => String.t() | nil
         }
 
   field(:applicableCountries, type: :list)

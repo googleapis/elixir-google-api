@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemReturnInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :daysToReturn => integer(),
-          :isReturnable => boolean(),
-          :policyUrl => String.t()
+          :daysToReturn => integer() | nil,
+          :isReturnable => boolean() | nil,
+          :policyUrl => String.t() | nil
         }
 
   field(:daysToReturn)

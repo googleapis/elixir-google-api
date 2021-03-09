@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.PickupServicesPickupService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrierName => String.t(),
-          :country => String.t(),
-          :serviceName => String.t()
+          :carrierName => String.t() | nil,
+          :country => String.t() | nil,
+          :serviceName => String.t() | nil
         }
 
   field(:carrierName)

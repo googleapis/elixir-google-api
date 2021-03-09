@@ -29,10 +29,10 @@ defmodule GoogleApi.Content.V21.Model.ShipmentInvoice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :invoiceSummary => GoogleApi.Content.V21.Model.InvoiceSummary.t(),
+          :invoiceSummary => GoogleApi.Content.V21.Model.InvoiceSummary.t() | nil,
           :lineItemInvoices =>
-            list(GoogleApi.Content.V21.Model.ShipmentInvoiceLineItemInvoice.t()),
-          :shipmentGroupId => String.t()
+            list(GoogleApi.Content.V21.Model.ShipmentInvoiceLineItemInvoice.t()) | nil,
+          :shipmentGroupId => String.t() | nil
         }
 
   field(:invoiceSummary, as: GoogleApi.Content.V21.Model.InvoiceSummary)

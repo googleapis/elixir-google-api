@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.AccountBusinessInformation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.Content.V2.Model.AccountAddress.t(),
-          :customerService => GoogleApi.Content.V2.Model.AccountCustomerService.t(),
-          :phoneNumber => String.t()
+          :address => GoogleApi.Content.V2.Model.AccountAddress.t() | nil,
+          :customerService => GoogleApi.Content.V2.Model.AccountCustomerService.t() | nil,
+          :phoneNumber => String.t() | nil
         }
 
   field(:address, as: GoogleApi.Content.V2.Model.AccountAddress)

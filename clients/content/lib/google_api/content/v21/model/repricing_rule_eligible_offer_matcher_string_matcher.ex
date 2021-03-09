@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :strAttributes => list(String.t())
+          :strAttributes => list(String.t()) | nil
         }
 
   field(:strAttributes, type: :list)

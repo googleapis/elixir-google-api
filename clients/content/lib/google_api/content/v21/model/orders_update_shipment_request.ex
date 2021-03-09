@@ -36,17 +36,18 @@ defmodule GoogleApi.Content.V21.Model.OrdersUpdateShipmentRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrier => String.t(),
-          :deliveryDate => String.t(),
-          :lastPickupDate => String.t(),
-          :operationId => String.t(),
-          :readyPickupDate => String.t(),
+          :carrier => String.t() | nil,
+          :deliveryDate => String.t() | nil,
+          :lastPickupDate => String.t() | nil,
+          :operationId => String.t() | nil,
+          :readyPickupDate => String.t() | nil,
           :scheduledDeliveryDetails =>
-            GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryUpdateShipmentScheduledDeliveryDetails.t(),
-          :shipmentId => String.t(),
-          :status => String.t(),
-          :trackingId => String.t(),
-          :undeliveredDate => String.t()
+            GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryUpdateShipmentScheduledDeliveryDetails.t()
+            | nil,
+          :shipmentId => String.t() | nil,
+          :status => String.t() | nil,
+          :trackingId => String.t() | nil,
+          :undeliveredDate => String.t() | nil
         }
 
   field(:carrier)

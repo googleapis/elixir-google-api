@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V21.Model.CollectionStatus do
 
   @type t :: %__MODULE__{
           :collectionLevelIssuses =>
-            list(GoogleApi.Content.V21.Model.CollectionStatusItemLevelIssue.t()),
-          :creationDate => String.t(),
+            list(GoogleApi.Content.V21.Model.CollectionStatusItemLevelIssue.t()) | nil,
+          :creationDate => String.t() | nil,
           :destinationStatuses =>
-            list(GoogleApi.Content.V21.Model.CollectionStatusDestinationStatus.t()),
-          :id => String.t(),
-          :lastUpdateDate => String.t()
+            list(GoogleApi.Content.V21.Model.CollectionStatusDestinationStatus.t()) | nil,
+          :id => String.t() | nil,
+          :lastUpdateDate => String.t() | nil
         }
 
   field(:collectionLevelIssuses,

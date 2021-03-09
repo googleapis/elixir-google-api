@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransactionIdentifiers do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adjustmentId => String.t(),
-          :merchantOrderId => String.t(),
-          :orderItemId => String.t(),
-          :settlementEntryId => String.t(),
-          :shipmentIds => list(String.t()),
-          :transactionId => String.t()
+          :adjustmentId => String.t() | nil,
+          :merchantOrderId => String.t() | nil,
+          :orderItemId => String.t() | nil,
+          :settlementEntryId => String.t() | nil,
+          :shipmentIds => list(String.t()) | nil,
+          :transactionId => String.t() | nil
         }
 
   field(:adjustmentId)

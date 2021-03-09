@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.UnitInvoiceAdditionalCharge do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalChargeAmount => GoogleApi.Content.V21.Model.Amount.t(),
-          :type => String.t()
+          :additionalChargeAmount => GoogleApi.Content.V21.Model.Amount.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:additionalChargeAmount, as: GoogleApi.Content.V21.Model.Amount)

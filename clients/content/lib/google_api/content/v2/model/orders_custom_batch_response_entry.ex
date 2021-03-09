@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchResponseEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :errors => GoogleApi.Content.V2.Model.Errors.t(),
-          :executionStatus => String.t(),
-          :kind => String.t(),
-          :order => GoogleApi.Content.V2.Model.Order.t()
+          :batchId => integer() | nil,
+          :errors => GoogleApi.Content.V2.Model.Errors.t() | nil,
+          :executionStatus => String.t() | nil,
+          :kind => String.t() | nil,
+          :order => GoogleApi.Content.V2.Model.Order.t() | nil
         }
 
   field(:batchId)

@@ -36,17 +36,17 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicyOnline do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :countries => list(String.t()),
-          :itemConditions => list(String.t()),
-          :label => String.t(),
-          :name => String.t(),
-          :policy => GoogleApi.Content.V21.Model.ReturnPolicyOnlinePolicy.t(),
-          :restockingFee => GoogleApi.Content.V21.Model.ReturnPolicyOnlineRestockingFee.t(),
-          :returnMethods => list(String.t()),
-          :returnPolicyId => String.t(),
-          :returnPolicyUri => String.t(),
+          :countries => list(String.t()) | nil,
+          :itemConditions => list(String.t()) | nil,
+          :label => String.t() | nil,
+          :name => String.t() | nil,
+          :policy => GoogleApi.Content.V21.Model.ReturnPolicyOnlinePolicy.t() | nil,
+          :restockingFee => GoogleApi.Content.V21.Model.ReturnPolicyOnlineRestockingFee.t() | nil,
+          :returnMethods => list(String.t()) | nil,
+          :returnPolicyId => String.t() | nil,
+          :returnPolicyUri => String.t() | nil,
           :returnReasonCategoryInfo =>
-            list(GoogleApi.Content.V21.Model.ReturnPolicyOnlineReturnReasonCategoryInfo.t())
+            list(GoogleApi.Content.V21.Model.ReturnPolicyOnlineReturnReasonCategoryInfo.t()) | nil
         }
 
   field(:countries, type: :list)

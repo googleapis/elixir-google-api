@@ -30,10 +30,11 @@ defmodule GoogleApi.Content.V21.Model.OrderCustomer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullName => String.t(),
-          :invoiceReceivingEmail => String.t(),
-          :loyaltyInfo => GoogleApi.Content.V21.Model.OrderCustomerLoyaltyInfo.t(),
-          :marketingRightsInfo => GoogleApi.Content.V21.Model.OrderCustomerMarketingRightsInfo.t()
+          :fullName => String.t() | nil,
+          :invoiceReceivingEmail => String.t() | nil,
+          :loyaltyInfo => GoogleApi.Content.V21.Model.OrderCustomerLoyaltyInfo.t() | nil,
+          :marketingRightsInfo =>
+            GoogleApi.Content.V21.Model.OrderCustomerMarketingRightsInfo.t() | nil
         }
 
   field(:fullName)

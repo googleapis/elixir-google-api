@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.AccountsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.Content.V21.Model.Account.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.Content.V21.Model.Account.t()) | nil
         }
 
   field(:kind)

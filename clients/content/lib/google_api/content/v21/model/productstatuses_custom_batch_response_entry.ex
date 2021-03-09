@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.ProductstatusesCustomBatchResponseEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :errors => GoogleApi.Content.V21.Model.Errors.t(),
-          :kind => String.t(),
-          :productStatus => GoogleApi.Content.V21.Model.ProductStatus.t()
+          :batchId => integer() | nil,
+          :errors => GoogleApi.Content.V21.Model.Errors.t() | nil,
+          :kind => String.t() | nil,
+          :productStatus => GoogleApi.Content.V21.Model.ProductStatus.t() | nil
         }
 
   field(:batchId)

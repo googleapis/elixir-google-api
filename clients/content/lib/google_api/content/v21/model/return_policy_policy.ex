@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicyPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lastReturnDate => String.t(),
-          :numberOfDays => String.t(),
-          :type => String.t()
+          :lastReturnDate => String.t() | nil,
+          :numberOfDays => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:lastReturnDate)

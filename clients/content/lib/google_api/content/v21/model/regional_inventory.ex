@@ -33,13 +33,13 @@ defmodule GoogleApi.Content.V21.Model.RegionalInventory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availability => String.t(),
-          :customAttributes => list(GoogleApi.Content.V21.Model.CustomAttribute.t()),
-          :kind => String.t(),
-          :price => GoogleApi.Content.V21.Model.Price.t(),
-          :regionId => String.t(),
-          :salePrice => GoogleApi.Content.V21.Model.Price.t(),
-          :salePriceEffectiveDate => String.t()
+          :availability => String.t() | nil,
+          :customAttributes => list(GoogleApi.Content.V21.Model.CustomAttribute.t()) | nil,
+          :kind => String.t() | nil,
+          :price => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :regionId => String.t() | nil,
+          :salePrice => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :salePriceEffectiveDate => String.t() | nil
         }
 
   field(:availability)

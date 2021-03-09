@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V2.Model.CustomAttribute do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :type => String.t(),
-          :unit => String.t(),
-          :value => String.t()
+          :name => String.t() | nil,
+          :type => String.t() | nil,
+          :unit => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:name)

@@ -39,19 +39,19 @@ defmodule GoogleApi.Content.V21.Model.TestOrder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deliveryDetails => GoogleApi.Content.V21.Model.TestOrderDeliveryDetails.t(),
-          :enableOrderinvoices => boolean(),
-          :kind => String.t(),
-          :lineItems => list(GoogleApi.Content.V21.Model.TestOrderLineItem.t()),
-          :notificationMode => String.t(),
-          :pickupDetails => GoogleApi.Content.V21.Model.TestOrderPickupDetails.t(),
-          :predefinedBillingAddress => String.t(),
-          :predefinedDeliveryAddress => String.t(),
-          :predefinedEmail => String.t(),
-          :predefinedPickupDetails => String.t(),
-          :promotions => list(GoogleApi.Content.V21.Model.OrderPromotion.t()),
-          :shippingCost => GoogleApi.Content.V21.Model.Price.t(),
-          :shippingOption => String.t()
+          :deliveryDetails => GoogleApi.Content.V21.Model.TestOrderDeliveryDetails.t() | nil,
+          :enableOrderinvoices => boolean() | nil,
+          :kind => String.t() | nil,
+          :lineItems => list(GoogleApi.Content.V21.Model.TestOrderLineItem.t()) | nil,
+          :notificationMode => String.t() | nil,
+          :pickupDetails => GoogleApi.Content.V21.Model.TestOrderPickupDetails.t() | nil,
+          :predefinedBillingAddress => String.t() | nil,
+          :predefinedDeliveryAddress => String.t() | nil,
+          :predefinedEmail => String.t() | nil,
+          :predefinedPickupDetails => String.t() | nil,
+          :promotions => list(GoogleApi.Content.V21.Model.OrderPromotion.t()) | nil,
+          :shippingCost => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :shippingOption => String.t() | nil
         }
 
   field(:deliveryDetails, as: GoogleApi.Content.V21.Model.TestOrderDeliveryDetails)

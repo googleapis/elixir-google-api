@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsReturnItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :refund => GoogleApi.Content.V21.Model.OrderreturnsRefundOperation.t(),
-          :reject => GoogleApi.Content.V21.Model.OrderreturnsRejectOperation.t(),
-          :returnItemId => String.t()
+          :refund => GoogleApi.Content.V21.Model.OrderreturnsRefundOperation.t() | nil,
+          :reject => GoogleApi.Content.V21.Model.OrderreturnsRejectOperation.t() | nil,
+          :returnItemId => String.t() | nil
         }
 
   field(:refund, as: GoogleApi.Content.V21.Model.OrderreturnsRefundOperation)

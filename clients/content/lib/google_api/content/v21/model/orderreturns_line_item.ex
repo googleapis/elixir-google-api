@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsLineItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItemId => String.t(),
-          :quantity => integer()
+          :lineItemId => String.t() | nil,
+          :quantity => integer() | nil
         }
 
   field(:lineItemId)

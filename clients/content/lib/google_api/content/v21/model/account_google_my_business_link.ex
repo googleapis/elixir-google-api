@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gmbAccountId => String.t(),
-          :gmbEmail => String.t(),
-          :status => String.t()
+          :gmbAccountId => String.t() | nil,
+          :gmbEmail => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:gmbAccountId)

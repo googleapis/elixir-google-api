@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V2.Model.ProductTax do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :locationId => String.t(),
-          :postalCode => String.t(),
-          :rate => float(),
-          :region => String.t(),
-          :taxShip => boolean()
+          :country => String.t() | nil,
+          :locationId => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :rate => float() | nil,
+          :region => String.t() | nil,
+          :taxShip => boolean() | nil
         }
 
   field(:country)

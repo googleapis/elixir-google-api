@@ -35,15 +35,15 @@ defmodule GoogleApi.Content.V2.Model.ProductStatusDataQualityIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destination => String.t(),
-          :detail => String.t(),
-          :fetchStatus => String.t(),
-          :id => String.t(),
-          :location => String.t(),
-          :severity => String.t(),
-          :timestamp => String.t(),
-          :valueOnLandingPage => String.t(),
-          :valueProvided => String.t()
+          :destination => String.t() | nil,
+          :detail => String.t() | nil,
+          :fetchStatus => String.t() | nil,
+          :id => String.t() | nil,
+          :location => String.t() | nil,
+          :severity => String.t() | nil,
+          :timestamp => String.t() | nil,
+          :valueOnLandingPage => String.t() | nil,
+          :valueProvided => String.t() | nil
         }
 
   field(:destination)

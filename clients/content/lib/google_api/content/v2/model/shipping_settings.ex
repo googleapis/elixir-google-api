@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.ShippingSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :postalCodeGroups => list(GoogleApi.Content.V2.Model.PostalCodeGroup.t()),
-          :services => list(GoogleApi.Content.V2.Model.Service.t())
+          :accountId => String.t() | nil,
+          :postalCodeGroups => list(GoogleApi.Content.V2.Model.PostalCodeGroup.t()) | nil,
+          :services => list(GoogleApi.Content.V2.Model.Service.t()) | nil
         }
 
   field(:accountId)

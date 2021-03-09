@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.DatafeedsCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :datafeed => GoogleApi.Content.V2.Model.Datafeed.t(),
-          :datafeedId => String.t(),
-          :merchantId => String.t(),
-          :method => String.t()
+          :batchId => integer() | nil,
+          :datafeed => GoogleApi.Content.V2.Model.Datafeed.t() | nil,
+          :datafeedId => String.t() | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil
         }
 
   field(:batchId)

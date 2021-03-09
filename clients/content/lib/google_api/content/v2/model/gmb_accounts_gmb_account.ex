@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V2.Model.GmbAccountsGmbAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :listingCount => String.t(),
-          :name => String.t(),
-          :type => String.t()
+          :email => String.t() | nil,
+          :listingCount => String.t() | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:email)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.AccountReturnCarrier do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrierAccountId => String.t(),
-          :carrierAccountName => String.t(),
-          :carrierAccountNumber => String.t(),
-          :carrierCode => String.t()
+          :carrierAccountId => String.t() | nil,
+          :carrierAccountName => String.t() | nil,
+          :carrierAccountNumber => String.t() | nil,
+          :carrierCode => String.t() | nil
         }
 
   field(:carrierAccountId)

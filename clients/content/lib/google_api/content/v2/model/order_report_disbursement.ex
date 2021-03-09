@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.OrderReportDisbursement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disbursementAmount => GoogleApi.Content.V2.Model.Price.t(),
-          :disbursementCreationDate => String.t(),
-          :disbursementDate => String.t(),
-          :disbursementId => String.t(),
-          :merchantId => String.t()
+          :disbursementAmount => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :disbursementCreationDate => String.t() | nil,
+          :disbursementDate => String.t() | nil,
+          :disbursementId => String.t() | nil,
+          :merchantId => String.t() | nil
         }
 
   field(:disbursementAmount, as: GoogleApi.Content.V2.Model.Price)

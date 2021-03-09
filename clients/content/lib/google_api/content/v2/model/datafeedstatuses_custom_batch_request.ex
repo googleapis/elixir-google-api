@@ -27,7 +27,8 @@ defmodule GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequestEntry.t())
+          :entries =>
+            list(GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequestEntry.t()) | nil
         }
 
   field(:entries,

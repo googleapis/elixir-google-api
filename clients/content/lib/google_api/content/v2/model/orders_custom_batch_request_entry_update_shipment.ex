@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrier => String.t(),
-          :deliveryDate => String.t(),
-          :shipmentId => String.t(),
-          :status => String.t(),
-          :trackingId => String.t()
+          :carrier => String.t() | nil,
+          :deliveryDate => String.t() | nil,
+          :shipmentId => String.t() | nil,
+          :status => String.t() | nil,
+          :trackingId => String.t() | nil
         }
 
   field(:carrier)

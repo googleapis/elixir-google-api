@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.OrderPickupDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.Content.V2.Model.OrderAddress.t(),
-          :collectors => list(GoogleApi.Content.V2.Model.OrderPickupDetailsCollector.t()),
-          :locationId => String.t()
+          :address => GoogleApi.Content.V2.Model.OrderAddress.t() | nil,
+          :collectors => list(GoogleApi.Content.V2.Model.OrderPickupDetailsCollector.t()) | nil,
+          :locationId => String.t() | nil
         }
 
   field(:address, as: GoogleApi.Content.V2.Model.OrderAddress)

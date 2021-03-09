@@ -36,17 +36,19 @@ defmodule GoogleApi.Content.V21.Model.OrderTrackingSignal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerShippingFee => GoogleApi.Content.V21.Model.PriceAmount.t(),
-          :deliveryPostalCode => String.t(),
-          :deliveryRegionCode => String.t(),
-          :lineItems => list(GoogleApi.Content.V21.Model.OrderTrackingSignalLineItemDetails.t()),
-          :merchantId => String.t(),
-          :orderCreatedTime => GoogleApi.Content.V21.Model.DateTime.t(),
-          :orderId => String.t(),
-          :orderTrackingSignalId => String.t(),
+          :customerShippingFee => GoogleApi.Content.V21.Model.PriceAmount.t() | nil,
+          :deliveryPostalCode => String.t() | nil,
+          :deliveryRegionCode => String.t() | nil,
+          :lineItems =>
+            list(GoogleApi.Content.V21.Model.OrderTrackingSignalLineItemDetails.t()) | nil,
+          :merchantId => String.t() | nil,
+          :orderCreatedTime => GoogleApi.Content.V21.Model.DateTime.t() | nil,
+          :orderId => String.t() | nil,
+          :orderTrackingSignalId => String.t() | nil,
           :shipmentLineItemMapping =>
-            list(GoogleApi.Content.V21.Model.OrderTrackingSignalShipmentLineItemMapping.t()),
-          :shippingInfo => list(GoogleApi.Content.V21.Model.OrderTrackingSignalShippingInfo.t())
+            list(GoogleApi.Content.V21.Model.OrderTrackingSignalShipmentLineItemMapping.t()) | nil,
+          :shippingInfo =>
+            list(GoogleApi.Content.V21.Model.OrderTrackingSignalShippingInfo.t()) | nil
         }
 
   field(:customerShippingFee, as: GoogleApi.Content.V21.Model.PriceAmount)

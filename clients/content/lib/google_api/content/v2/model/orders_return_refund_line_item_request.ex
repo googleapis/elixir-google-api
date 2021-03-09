@@ -34,14 +34,14 @@ defmodule GoogleApi.Content.V2.Model.OrdersReturnRefundLineItemRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amountPretax => GoogleApi.Content.V2.Model.Price.t(),
-          :amountTax => GoogleApi.Content.V2.Model.Price.t(),
-          :lineItemId => String.t(),
-          :operationId => String.t(),
-          :productId => String.t(),
-          :quantity => integer(),
-          :reason => String.t(),
-          :reasonText => String.t()
+          :amountPretax => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :amountTax => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :lineItemId => String.t() | nil,
+          :operationId => String.t() | nil,
+          :productId => String.t() | nil,
+          :quantity => integer() | nil,
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil
         }
 
   field(:amountPretax, as: GoogleApi.Content.V2.Model.Price)

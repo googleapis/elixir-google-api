@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.SettlementtransactionsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.Content.V21.Model.SettlementTransaction.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.Content.V21.Model.SettlementTransaction.t()) | nil
         }
 
   field(:kind)

@@ -28,9 +28,9 @@ defmodule GoogleApi.Content.V2.Model.PosDataProviders do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
+          :country => String.t() | nil,
           :posDataProviders =>
-            list(GoogleApi.Content.V2.Model.PosDataProvidersPosDataProvider.t())
+            list(GoogleApi.Content.V2.Model.PosDataProvidersPosDataProvider.t()) | nil
         }
 
   field(:country)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :merchantId => String.t(),
-          :method => String.t(),
-          :returnPolicy => GoogleApi.Content.V21.Model.ReturnPolicy.t(),
-          :returnPolicyId => String.t()
+          :batchId => integer() | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil,
+          :returnPolicy => GoogleApi.Content.V21.Model.ReturnPolicy.t() | nil,
+          :returnPolicyId => String.t() | nil
         }
 
   field(:batchId)

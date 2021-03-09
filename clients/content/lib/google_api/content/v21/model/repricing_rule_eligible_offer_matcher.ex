@@ -32,13 +32,13 @@ defmodule GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcher do
 
   @type t :: %__MODULE__{
           :brandMatcher =>
-            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t(),
+            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t() | nil,
           :itemGroupIdMatcher =>
-            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t(),
-          :matcherOption => String.t(),
+            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t() | nil,
+          :matcherOption => String.t() | nil,
           :offerIdMatcher =>
-            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t(),
-          :skipWhenOnPromotion => boolean()
+            GoogleApi.Content.V21.Model.RepricingRuleEligibleOfferMatcherStringMatcher.t() | nil,
+          :skipWhenOnPromotion => boolean() | nil
         }
 
   field(:brandMatcher,

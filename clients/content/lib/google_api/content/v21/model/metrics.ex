@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.Metrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clicks => String.t(),
-          :ctr => float(),
-          :impressions => String.t()
+          :clicks => String.t() | nil,
+          :ctr => float() | nil,
+          :impressions => String.t() | nil
         }
 
   field(:clicks)

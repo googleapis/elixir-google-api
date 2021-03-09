@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.TestOrderLineItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :product => GoogleApi.Content.V21.Model.TestOrderLineItemProduct.t(),
-          :quantityOrdered => integer(),
-          :returnInfo => GoogleApi.Content.V21.Model.OrderLineItemReturnInfo.t(),
-          :shippingDetails => GoogleApi.Content.V21.Model.OrderLineItemShippingDetails.t()
+          :product => GoogleApi.Content.V21.Model.TestOrderLineItemProduct.t() | nil,
+          :quantityOrdered => integer() | nil,
+          :returnInfo => GoogleApi.Content.V21.Model.OrderLineItemReturnInfo.t() | nil,
+          :shippingDetails => GoogleApi.Content.V21.Model.OrderLineItemShippingDetails.t() | nil
         }
 
   field(:product, as: GoogleApi.Content.V21.Model.TestOrderLineItemProduct)

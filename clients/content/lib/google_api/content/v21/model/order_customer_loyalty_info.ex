@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.OrderCustomerLoyaltyInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :loyaltyNumber => String.t(),
-          :name => String.t()
+          :loyaltyNumber => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:loyaltyNumber)

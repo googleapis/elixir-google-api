@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.SearchRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :query => String.t()
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :query => String.t() | nil
         }
 
   field(:pageSize)

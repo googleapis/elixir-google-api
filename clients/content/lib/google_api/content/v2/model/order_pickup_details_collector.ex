@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.OrderPickupDetailsCollector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :phoneNumber => String.t()
+          :name => String.t() | nil,
+          :phoneNumber => String.t() | nil
         }
 
   field(:name)

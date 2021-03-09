@@ -31,13 +31,15 @@ defmodule GoogleApi.Content.V2.Model.OrderinvoicesCreateRefundInvoiceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :invoiceId => String.t(),
-          :operationId => String.t(),
+          :invoiceId => String.t() | nil,
+          :operationId => String.t() | nil,
           :refundOnlyOption =>
-            GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption.t(),
+            GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption.t()
+            | nil,
           :returnOption =>
-            GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption.t(),
-          :shipmentInvoices => list(GoogleApi.Content.V2.Model.ShipmentInvoice.t())
+            GoogleApi.Content.V2.Model.OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption.t()
+            | nil,
+          :shipmentInvoices => list(GoogleApi.Content.V2.Model.ShipmentInvoice.t()) | nil
         }
 
   field(:invoiceId)

@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V21.Model.Css do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cssDomainId => String.t(),
-          :cssGroupId => String.t(),
-          :displayName => String.t(),
-          :fullName => String.t(),
-          :homepageUri => String.t(),
-          :labelIds => list(String.t())
+          :cssDomainId => String.t() | nil,
+          :cssGroupId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :fullName => String.t() | nil,
+          :homepageUri => String.t() | nil,
+          :labelIds => list(String.t()) | nil
         }
 
   field(:cssDomainId)

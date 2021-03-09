@@ -37,17 +37,18 @@ defmodule GoogleApi.Content.V21.Model.MerchantOrderReturnItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerReturnReason => GoogleApi.Content.V21.Model.CustomerReturnReason.t(),
-          :itemId => String.t(),
-          :merchantRejectionReason => GoogleApi.Content.V21.Model.MerchantRejectionReason.t(),
-          :merchantReturnReason => GoogleApi.Content.V21.Model.RefundReason.t(),
-          :product => GoogleApi.Content.V21.Model.OrderLineItemProduct.t(),
-          :refundableAmount => GoogleApi.Content.V21.Model.MonetaryAmount.t(),
-          :returnItemId => String.t(),
-          :returnShipmentIds => list(String.t()),
-          :shipmentGroupId => String.t(),
-          :shipmentUnitId => String.t(),
-          :state => String.t()
+          :customerReturnReason => GoogleApi.Content.V21.Model.CustomerReturnReason.t() | nil,
+          :itemId => String.t() | nil,
+          :merchantRejectionReason =>
+            GoogleApi.Content.V21.Model.MerchantRejectionReason.t() | nil,
+          :merchantReturnReason => GoogleApi.Content.V21.Model.RefundReason.t() | nil,
+          :product => GoogleApi.Content.V21.Model.OrderLineItemProduct.t() | nil,
+          :refundableAmount => GoogleApi.Content.V21.Model.MonetaryAmount.t() | nil,
+          :returnItemId => String.t() | nil,
+          :returnShipmentIds => list(String.t()) | nil,
+          :shipmentGroupId => String.t() | nil,
+          :shipmentUnitId => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:customerReturnReason, as: GoogleApi.Content.V21.Model.CustomerReturnReason)

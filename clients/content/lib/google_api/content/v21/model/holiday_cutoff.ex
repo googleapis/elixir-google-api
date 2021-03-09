@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.HolidayCutoff do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deadlineDate => String.t(),
-          :deadlineHour => integer(),
-          :deadlineTimezone => String.t(),
-          :holidayId => String.t(),
-          :visibleFromDate => String.t()
+          :deadlineDate => String.t() | nil,
+          :deadlineHour => integer() | nil,
+          :deadlineTimezone => String.t() | nil,
+          :holidayId => String.t() | nil,
+          :visibleFromDate => String.t() | nil
         }
 
   field(:deadlineDate)

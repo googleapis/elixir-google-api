@@ -33,13 +33,13 @@ defmodule GoogleApi.Content.V21.Model.AccountStatusAccountLevelIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :country => String.t(),
-          :destination => String.t(),
-          :detail => String.t(),
-          :documentation => String.t(),
-          :id => String.t(),
-          :severity => String.t(),
-          :title => String.t()
+          :country => String.t() | nil,
+          :destination => String.t() | nil,
+          :detail => String.t() | nil,
+          :documentation => String.t() | nil,
+          :id => String.t() | nil,
+          :severity => String.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:country)

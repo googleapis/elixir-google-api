@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedCarriersRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carriers => list(GoogleApi.Content.V2.Model.CarriersCarrier.t()),
-          :kind => String.t()
+          :carriers => list(GoogleApi.Content.V2.Model.CarriersCarrier.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:carriers, as: GoogleApi.Content.V2.Model.CarriersCarrier, type: :list)

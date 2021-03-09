@@ -29,9 +29,10 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntrySetLineItemMet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotations => list(GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation.t()),
-          :lineItemId => String.t(),
-          :productId => String.t()
+          :annotations =>
+            list(GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation.t()) | nil,
+          :lineItemId => String.t() | nil,
+          :productId => String.t() | nil
         }
 
   field(:annotations, as: GoogleApi.Content.V2.Model.OrderMerchantProvidedAnnotation, type: :list)

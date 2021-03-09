@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ListRepricingRulesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :repricingRules => list(GoogleApi.Content.V21.Model.RepricingRule.t())
+          :nextPageToken => String.t() | nil,
+          :repricingRules => list(GoogleApi.Content.V21.Model.RepricingRule.t()) | nil
         }
 
   field(:nextPageToken)

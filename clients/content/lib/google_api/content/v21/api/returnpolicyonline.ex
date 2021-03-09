@@ -55,6 +55,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
   @spec content_returnpolicyonline_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnPolicyOnline.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_returnpolicyonline_create(
         connection,
@@ -124,7 +125,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def content_returnpolicyonline_delete(
         connection,
         merchant_id,
@@ -197,6 +198,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnPolicyOnline.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_returnpolicyonline_get(
         connection,
@@ -263,6 +265,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
   @spec content_returnpolicyonline_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ListReturnPolicyOnlineResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_returnpolicyonline_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -332,6 +335,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicyonline do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnPolicyOnline.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_returnpolicyonline_patch(
         connection,

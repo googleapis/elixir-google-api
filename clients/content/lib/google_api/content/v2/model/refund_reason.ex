@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.RefundReason do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :reasonCode => String.t()
+          :description => String.t() | nil,
+          :reasonCode => String.t() | nil
         }
 
   field(:description)

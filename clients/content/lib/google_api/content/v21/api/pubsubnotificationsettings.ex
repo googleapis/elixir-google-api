@@ -59,6 +59,7 @@ defmodule GoogleApi.Content.V21.Api.Pubsubnotificationsettings do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.PubsubNotificationSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_pubsubnotificationsettings_get(
         connection,
@@ -131,6 +132,7 @@ defmodule GoogleApi.Content.V21.Api.Pubsubnotificationsettings do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.PubsubNotificationSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_pubsubnotificationsettings_update(
         connection,

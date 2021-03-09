@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersGetTestOrderTemplateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :template => GoogleApi.Content.V2.Model.TestOrder.t()
+          :kind => String.t() | nil,
+          :template => GoogleApi.Content.V2.Model.TestOrder.t() | nil
         }
 
   field(:kind)

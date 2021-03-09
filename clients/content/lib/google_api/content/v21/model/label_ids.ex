@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.LabelIds do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labelIds => list(String.t())
+          :labelIds => list(String.t()) | nil
         }
 
   field(:labelIds, type: :list)

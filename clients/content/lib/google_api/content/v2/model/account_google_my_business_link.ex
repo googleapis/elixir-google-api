@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.AccountGoogleMyBusinessLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gmbEmail => String.t(),
-          :status => String.t()
+          :gmbEmail => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:gmbEmail)

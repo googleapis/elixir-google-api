@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.TestOrderPaymentMethod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expirationMonth => integer(),
-          :expirationYear => integer(),
-          :lastFourDigits => String.t(),
-          :predefinedBillingAddress => String.t(),
-          :type => String.t()
+          :expirationMonth => integer() | nil,
+          :expirationYear => integer() | nil,
+          :lastFourDigits => String.t() | nil,
+          :predefinedBillingAddress => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:expirationMonth)

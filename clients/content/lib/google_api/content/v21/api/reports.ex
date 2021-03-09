@@ -55,6 +55,7 @@ defmodule GoogleApi.Content.V21.Api.Reports do
   @spec content_reports_search(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.SearchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_reports_search(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

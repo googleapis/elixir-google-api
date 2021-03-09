@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.Value do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrierRateName => String.t(),
-          :flatRate => GoogleApi.Content.V21.Model.Price.t(),
-          :noShipping => boolean(),
-          :pricePercentage => String.t(),
-          :subtableName => String.t()
+          :carrierRateName => String.t() | nil,
+          :flatRate => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :noShipping => boolean() | nil,
+          :pricePercentage => String.t() | nil,
+          :subtableName => String.t() | nil
         }
 
   field(:carrierRateName)

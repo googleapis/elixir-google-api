@@ -30,11 +30,11 @@ defmodule GoogleApi.Content.V21.Model.TestOrderPickupDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locationCode => String.t(),
-          :pickupLocationAddress => GoogleApi.Content.V21.Model.TestOrderAddress.t(),
-          :pickupLocationType => String.t(),
+          :locationCode => String.t() | nil,
+          :pickupLocationAddress => GoogleApi.Content.V21.Model.TestOrderAddress.t() | nil,
+          :pickupLocationType => String.t() | nil,
           :pickupPersons =>
-            list(GoogleApi.Content.V21.Model.TestOrderPickupDetailsPickupPerson.t())
+            list(GoogleApi.Content.V21.Model.TestOrderPickupDetailsPickupPerson.t()) | nil
         }
 
   field(:locationCode)

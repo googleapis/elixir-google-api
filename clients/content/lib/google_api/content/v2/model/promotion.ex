@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.Promotion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :promotionAmount => GoogleApi.Content.V2.Model.Amount.t(),
-          :promotionId => String.t()
+          :promotionAmount => GoogleApi.Content.V2.Model.Amount.t() | nil,
+          :promotionId => String.t() | nil
         }
 
   field(:promotionAmount, as: GoogleApi.Content.V2.Model.Amount)

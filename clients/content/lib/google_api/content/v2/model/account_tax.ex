@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.AccountTax do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :kind => String.t(),
-          :rules => list(GoogleApi.Content.V2.Model.AccountTaxTaxRule.t())
+          :accountId => String.t() | nil,
+          :kind => String.t() | nil,
+          :rules => list(GoogleApi.Content.V2.Model.AccountTaxTaxRule.t()) | nil
         }
 
   field(:accountId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersCreateTestReturnResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :returnId => String.t()
+          :kind => String.t() | nil,
+          :returnId => String.t() | nil
         }
 
   field(:kind)

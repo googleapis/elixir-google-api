@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.PubsubNotificationSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudTopicName => String.t(),
-          :kind => String.t(),
-          :registeredEvents => list(String.t())
+          :cloudTopicName => String.t() | nil,
+          :kind => String.t() | nil,
+          :registeredEvents => list(String.t()) | nil
         }
 
   field(:cloudTopicName)

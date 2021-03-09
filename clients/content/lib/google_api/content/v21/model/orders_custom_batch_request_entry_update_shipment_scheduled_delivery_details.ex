@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryUpdateShipmen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrierPhoneNumber => String.t(),
-          :scheduledDate => String.t()
+          :carrierPhoneNumber => String.t() | nil,
+          :scheduledDate => String.t() | nil
         }
 
   field(:carrierPhoneNumber)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.AccountsCustomBatchRequestEntryLinkRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :linkType => String.t(),
-          :linkedAccountId => String.t()
+          :action => String.t() | nil,
+          :linkType => String.t() | nil,
+          :linkedAccountId => String.t() | nil
         }
 
   field(:action)

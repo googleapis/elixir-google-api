@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.PosStore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :storeAddress => String.t(),
-          :storeCode => String.t()
+          :kind => String.t() | nil,
+          :storeAddress => String.t() | nil,
+          :storeCode => String.t() | nil
         }
 
   field(:kind)

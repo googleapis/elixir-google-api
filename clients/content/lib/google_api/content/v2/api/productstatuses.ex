@@ -55,6 +55,7 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
   @spec content_productstatuses_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ProductstatusesCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_productstatuses_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -125,6 +126,7 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.ProductStatus.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_productstatuses_get(
         connection,
@@ -198,6 +200,7 @@ defmodule GoogleApi.Content.V2.Api.Productstatuses do
   @spec content_productstatuses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.ProductstatusesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_productstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

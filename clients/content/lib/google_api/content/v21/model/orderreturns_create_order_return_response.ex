@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsCreateOrderReturnResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :executionStatus => String.t(),
-          :kind => String.t(),
-          :orderReturn => GoogleApi.Content.V21.Model.MerchantOrderReturn.t()
+          :executionStatus => String.t() | nil,
+          :kind => String.t() | nil,
+          :orderReturn => GoogleApi.Content.V21.Model.MerchantOrderReturn.t() | nil
         }
 
   field(:executionStatus)

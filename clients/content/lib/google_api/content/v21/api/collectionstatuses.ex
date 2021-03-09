@@ -61,6 +61,7 @@ defmodule GoogleApi.Content.V21.Api.Collectionstatuses do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.CollectionStatus.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_collectionstatuses_get(
         connection,
@@ -129,6 +130,7 @@ defmodule GoogleApi.Content.V21.Api.Collectionstatuses do
   @spec content_collectionstatuses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ListCollectionStatusesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_collectionstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

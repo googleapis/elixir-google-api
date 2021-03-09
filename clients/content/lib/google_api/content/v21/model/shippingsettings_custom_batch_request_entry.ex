@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.ShippingsettingsCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :batchId => integer(),
-          :merchantId => String.t(),
-          :method => String.t(),
-          :shippingSettings => GoogleApi.Content.V21.Model.ShippingSettings.t()
+          :accountId => String.t() | nil,
+          :batchId => integer() | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil,
+          :shippingSettings => GoogleApi.Content.V21.Model.ShippingSettings.t() | nil
         }
 
   field(:accountId)

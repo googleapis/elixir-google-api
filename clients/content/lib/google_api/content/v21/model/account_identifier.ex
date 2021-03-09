@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.AccountIdentifier do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregatorId => String.t(),
-          :merchantId => String.t()
+          :aggregatorId => String.t() | nil,
+          :merchantId => String.t() | nil
         }
 
   field(:aggregatorId)

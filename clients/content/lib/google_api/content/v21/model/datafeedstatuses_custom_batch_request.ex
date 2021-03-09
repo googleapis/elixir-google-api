@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V21.Model.DatafeedstatusesCustomBatchRequest do
 
   @type t :: %__MODULE__{
           :entries =>
-            list(GoogleApi.Content.V21.Model.DatafeedstatusesCustomBatchRequestEntry.t())
+            list(GoogleApi.Content.V21.Model.DatafeedstatusesCustomBatchRequestEntry.t()) | nil
         }
 
   field(:entries,

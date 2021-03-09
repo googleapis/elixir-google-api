@@ -35,15 +35,15 @@ defmodule GoogleApi.Content.V21.Model.OrderReportTransaction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disbursementAmount => GoogleApi.Content.V21.Model.Price.t(),
-          :disbursementCreationDate => String.t(),
-          :disbursementDate => String.t(),
-          :disbursementId => String.t(),
-          :merchantId => String.t(),
-          :merchantOrderId => String.t(),
-          :orderId => String.t(),
-          :productAmount => GoogleApi.Content.V21.Model.ProductAmount.t(),
-          :transactionDate => String.t()
+          :disbursementAmount => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :disbursementCreationDate => String.t() | nil,
+          :disbursementDate => String.t() | nil,
+          :disbursementId => String.t() | nil,
+          :merchantId => String.t() | nil,
+          :merchantOrderId => String.t() | nil,
+          :orderId => String.t() | nil,
+          :productAmount => GoogleApi.Content.V21.Model.ProductAmount.t() | nil,
+          :transactionDate => String.t() | nil
         }
 
   field(:disbursementAmount, as: GoogleApi.Content.V21.Model.Price)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.MinimumOrderValueTableStoreCodeSetWithMov d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :storeCodes => list(String.t()),
-          :value => GoogleApi.Content.V2.Model.Price.t()
+          :storeCodes => list(String.t()) | nil,
+          :value => GoogleApi.Content.V2.Model.Price.t() | nil
         }
 
   field(:storeCodes, type: :list)

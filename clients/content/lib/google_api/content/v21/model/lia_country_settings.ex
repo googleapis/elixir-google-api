@@ -33,13 +33,13 @@ defmodule GoogleApi.Content.V21.Model.LiaCountrySettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :about => GoogleApi.Content.V21.Model.LiaAboutPageSettings.t(),
-          :country => String.t(),
-          :hostedLocalStorefrontActive => boolean(),
-          :inventory => GoogleApi.Content.V21.Model.LiaInventorySettings.t(),
-          :onDisplayToOrder => GoogleApi.Content.V21.Model.LiaOnDisplayToOrderSettings.t(),
-          :posDataProvider => GoogleApi.Content.V21.Model.LiaPosDataProvider.t(),
-          :storePickupActive => boolean()
+          :about => GoogleApi.Content.V21.Model.LiaAboutPageSettings.t() | nil,
+          :country => String.t() | nil,
+          :hostedLocalStorefrontActive => boolean() | nil,
+          :inventory => GoogleApi.Content.V21.Model.LiaInventorySettings.t() | nil,
+          :onDisplayToOrder => GoogleApi.Content.V21.Model.LiaOnDisplayToOrderSettings.t() | nil,
+          :posDataProvider => GoogleApi.Content.V21.Model.LiaPosDataProvider.t() | nil,
+          :storePickupActive => boolean() | nil
         }
 
   field(:about, as: GoogleApi.Content.V21.Model.LiaAboutPageSettings)

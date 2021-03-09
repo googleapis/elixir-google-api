@@ -54,6 +54,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicy do
   @spec content_returnpolicy_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_returnpolicy_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -118,7 +119,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicy do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def content_returnpolicy_delete(
         connection,
         merchant_id,
@@ -185,6 +186,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicy do
   @spec content_returnpolicy_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_returnpolicy_get(
         connection,
@@ -252,6 +254,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicy do
   @spec content_returnpolicy_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_returnpolicy_insert(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -312,6 +315,7 @@ defmodule GoogleApi.Content.V21.Api.Returnpolicy do
   @spec content_returnpolicy_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnpolicyListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_returnpolicy_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

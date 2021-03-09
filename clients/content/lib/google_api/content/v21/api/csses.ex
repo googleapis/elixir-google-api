@@ -53,7 +53,10 @@ defmodule GoogleApi.Content.V21.Api.Csses do
   *   `{:error, info}` on failure
   """
   @spec content_csses_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Css.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V21.Model.Css.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_csses_get(
         connection,
         css_group_id,
@@ -121,6 +124,7 @@ defmodule GoogleApi.Content.V21.Api.Csses do
   @spec content_csses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ListCssesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_csses_list(connection, css_group_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -187,7 +191,11 @@ defmodule GoogleApi.Content.V21.Api.Csses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Content.V21.Model.Css.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Content.V21.Model.Css.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_csses_updatelabels(
         connection,
         css_group_id,

@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.DatafeedsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :resources => list(GoogleApi.Content.V21.Model.Datafeed.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :resources => list(GoogleApi.Content.V21.Model.Datafeed.t()) | nil
         }
 
   field(:kind)

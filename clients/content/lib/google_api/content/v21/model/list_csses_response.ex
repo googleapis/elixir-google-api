@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ListCssesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :csses => list(GoogleApi.Content.V21.Model.Css.t()),
-          :nextPageToken => String.t()
+          :csses => list(GoogleApi.Content.V21.Model.Css.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:csses, as: GoogleApi.Content.V21.Model.Css, type: :list)

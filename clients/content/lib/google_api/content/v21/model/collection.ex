@@ -39,19 +39,20 @@ defmodule GoogleApi.Content.V21.Model.Collection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customLabel0 => String.t(),
-          :customLabel1 => String.t(),
-          :customLabel2 => String.t(),
-          :customLabel3 => String.t(),
-          :customLabel4 => String.t(),
-          :featuredProduct => list(GoogleApi.Content.V21.Model.CollectionFeaturedProduct.t()),
-          :headline => list(String.t()),
-          :id => String.t(),
-          :imageLink => list(String.t()),
-          :language => String.t(),
-          :link => String.t(),
-          :mobileLink => String.t(),
-          :productCountry => String.t()
+          :customLabel0 => String.t() | nil,
+          :customLabel1 => String.t() | nil,
+          :customLabel2 => String.t() | nil,
+          :customLabel3 => String.t() | nil,
+          :customLabel4 => String.t() | nil,
+          :featuredProduct =>
+            list(GoogleApi.Content.V21.Model.CollectionFeaturedProduct.t()) | nil,
+          :headline => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :imageLink => list(String.t()) | nil,
+          :language => String.t() | nil,
+          :link => String.t() | nil,
+          :mobileLink => String.t() | nil,
+          :productCountry => String.t() | nil
         }
 
   field(:customLabel0)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.OrderTrackingSignalShipmentLineItemMapping
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItemId => String.t(),
-          :quantity => String.t(),
-          :shipmentId => String.t()
+          :lineItemId => String.t() | nil,
+          :quantity => String.t() | nil,
+          :shipmentId => String.t() | nil
         }
 
   field(:lineItemId)

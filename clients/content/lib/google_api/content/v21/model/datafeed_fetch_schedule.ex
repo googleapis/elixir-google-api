@@ -35,15 +35,15 @@ defmodule GoogleApi.Content.V21.Model.DatafeedFetchSchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dayOfMonth => integer(),
-          :fetchUrl => String.t(),
-          :hour => integer(),
-          :minuteOfHour => integer(),
-          :password => String.t(),
-          :paused => boolean(),
-          :timeZone => String.t(),
-          :username => String.t(),
-          :weekday => String.t()
+          :dayOfMonth => integer() | nil,
+          :fetchUrl => String.t() | nil,
+          :hour => integer() | nil,
+          :minuteOfHour => integer() | nil,
+          :password => String.t() | nil,
+          :paused => boolean() | nil,
+          :timeZone => String.t() | nil,
+          :username => String.t() | nil,
+          :weekday => String.t() | nil
         }
 
   field(:dayOfMonth)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryShipLineItemsS
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrier => String.t(),
-          :shipmentId => String.t(),
-          :trackingId => String.t()
+          :carrier => String.t() | nil,
+          :shipmentId => String.t() | nil,
+          :trackingId => String.t() | nil
         }
 
   field(:carrier)

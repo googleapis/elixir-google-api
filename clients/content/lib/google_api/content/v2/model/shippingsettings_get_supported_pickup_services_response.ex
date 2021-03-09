@@ -28,8 +28,9 @@ defmodule GoogleApi.Content.V2.Model.ShippingsettingsGetSupportedPickupServicesR
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :pickupServices => list(GoogleApi.Content.V2.Model.PickupServicesPickupService.t())
+          :kind => String.t() | nil,
+          :pickupServices =>
+            list(GoogleApi.Content.V2.Model.PickupServicesPickupService.t()) | nil
         }
 
   field(:kind)

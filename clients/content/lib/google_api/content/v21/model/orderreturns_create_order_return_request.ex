@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsCreateOrderReturnRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineItems => list(GoogleApi.Content.V21.Model.OrderreturnsLineItem.t()),
-          :operationId => String.t(),
-          :orderId => String.t(),
-          :returnMethodType => String.t()
+          :lineItems => list(GoogleApi.Content.V21.Model.OrderreturnsLineItem.t()) | nil,
+          :operationId => String.t() | nil,
+          :orderId => String.t() | nil,
+          :returnMethodType => String.t() | nil
         }
 
   field(:lineItems, as: GoogleApi.Content.V21.Model.OrderreturnsLineItem, type: :list)

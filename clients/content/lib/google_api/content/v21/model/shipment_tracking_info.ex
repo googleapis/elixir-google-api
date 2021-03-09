@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ShipmentTrackingInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrier => String.t(),
-          :trackingNumber => String.t()
+          :carrier => String.t() | nil,
+          :trackingNumber => String.t() | nil
         }
 
   field(:carrier)

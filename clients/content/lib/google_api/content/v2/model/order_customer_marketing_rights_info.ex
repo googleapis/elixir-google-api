@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V2.Model.OrderCustomerMarketingRightsInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :explicitMarketingPreference => String.t(),
-          :lastUpdatedTimestamp => String.t(),
-          :marketingEmailAddress => String.t()
+          :explicitMarketingPreference => String.t() | nil,
+          :lastUpdatedTimestamp => String.t() | nil,
+          :marketingEmailAddress => String.t() | nil
         }
 
   field(:explicitMarketingPreference)

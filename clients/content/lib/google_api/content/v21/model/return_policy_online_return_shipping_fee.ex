@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicyOnlineReturnShippingFee do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fixedFee => GoogleApi.Content.V21.Model.PriceAmount.t(),
-          :type => String.t()
+          :fixedFee => GoogleApi.Content.V21.Model.PriceAmount.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:fixedFee, as: GoogleApi.Content.V21.Model.PriceAmount)

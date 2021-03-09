@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.Row do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cells => list(GoogleApi.Content.V21.Model.Value.t())
+          :cells => list(GoogleApi.Content.V21.Model.Value.t()) | nil
         }
 
   field(:cells, as: GoogleApi.Content.V21.Model.Value, type: :list)

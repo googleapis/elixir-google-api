@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsRefundOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullRefund => boolean(),
-          :partialRefund => GoogleApi.Content.V21.Model.OrderreturnsPartialRefund.t(),
-          :paymentType => String.t(),
-          :reasonText => String.t(),
-          :returnRefundReason => String.t()
+          :fullRefund => boolean() | nil,
+          :partialRefund => GoogleApi.Content.V21.Model.OrderreturnsPartialRefund.t() | nil,
+          :paymentType => String.t() | nil,
+          :reasonText => String.t() | nil,
+          :returnRefundReason => String.t() | nil
         }
 
   field(:fullRefund)

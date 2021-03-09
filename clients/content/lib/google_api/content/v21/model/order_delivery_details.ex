@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.OrderDeliveryDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.Content.V21.Model.OrderAddress.t(),
-          :phoneNumber => String.t()
+          :address => GoogleApi.Content.V21.Model.OrderAddress.t() | nil,
+          :phoneNumber => String.t() | nil
         }
 
   field(:address, as: GoogleApi.Content.V21.Model.OrderAddress)

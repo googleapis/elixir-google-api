@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.ListRegionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :regions => list(GoogleApi.Content.V21.Model.Region.t())
+          :nextPageToken => String.t() | nil,
+          :regions => list(GoogleApi.Content.V21.Model.Region.t()) | nil
         }
 
   field(:nextPageToken)

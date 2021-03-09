@@ -27,7 +27,8 @@ defmodule GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchRequestEntry.t())
+          :entries =>
+            list(GoogleApi.Content.V2.Model.ShippingsettingsCustomBatchRequestEntry.t()) | nil
         }
 
   field(:entries,

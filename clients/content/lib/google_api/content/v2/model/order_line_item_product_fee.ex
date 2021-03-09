@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProductFee do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.Content.V2.Model.Price.t(),
-          :name => String.t()
+          :amount => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:amount, as: GoogleApi.Content.V2.Model.Price)

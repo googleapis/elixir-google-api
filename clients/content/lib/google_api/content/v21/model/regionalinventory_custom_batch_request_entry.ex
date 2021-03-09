@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchRequestEntry d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :merchantId => String.t(),
-          :method => String.t(),
-          :productId => String.t(),
-          :regionalInventory => GoogleApi.Content.V21.Model.RegionalInventory.t()
+          :batchId => integer() | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil,
+          :productId => String.t() | nil,
+          :regionalInventory => GoogleApi.Content.V21.Model.RegionalInventory.t() | nil
         }
 
   field(:batchId)

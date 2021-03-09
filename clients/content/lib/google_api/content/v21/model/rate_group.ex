@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V21.Model.RateGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applicableShippingLabels => list(String.t()),
-          :carrierRates => list(GoogleApi.Content.V21.Model.CarrierRate.t()),
-          :mainTable => GoogleApi.Content.V21.Model.Table.t(),
-          :name => String.t(),
-          :singleValue => GoogleApi.Content.V21.Model.Value.t(),
-          :subtables => list(GoogleApi.Content.V21.Model.Table.t())
+          :applicableShippingLabels => list(String.t()) | nil,
+          :carrierRates => list(GoogleApi.Content.V21.Model.CarrierRate.t()) | nil,
+          :mainTable => GoogleApi.Content.V21.Model.Table.t() | nil,
+          :name => String.t() | nil,
+          :singleValue => GoogleApi.Content.V21.Model.Value.t() | nil,
+          :subtables => list(GoogleApi.Content.V21.Model.Table.t()) | nil
         }
 
   field(:applicableShippingLabels, type: :list)

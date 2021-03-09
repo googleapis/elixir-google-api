@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.AccountStatusStatistics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :active => String.t(),
-          :disapproved => String.t(),
-          :expiring => String.t(),
-          :pending => String.t()
+          :active => String.t() | nil,
+          :disapproved => String.t() | nil,
+          :expiring => String.t() | nil,
+          :pending => String.t() | nil
         }
 
   field(:active)

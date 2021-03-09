@@ -54,6 +54,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   @spec content_liasettings_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -115,6 +116,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   @spec content_liasettings_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.LiaSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_get(
         connection,
@@ -188,6 +190,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsGetAccessibleGmbAccountsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_getaccessiblegmbaccounts(
         connection,
@@ -261,6 +264,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   @spec content_liasettings_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -321,6 +325,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   @spec content_liasettings_listposdataproviders(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsListPosDataProvidersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_listposdataproviders(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -389,6 +394,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsRequestGmbAccessResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_requestgmbaccess(
         connection,
@@ -468,6 +474,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsRequestInventoryVerificationResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_requestinventoryverification(
         connection,
@@ -558,6 +565,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
           {:ok,
            GoogleApi.Content.V21.Model.LiasettingsSetInventoryVerificationContactResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_setinventoryverificationcontact(
         connection,
@@ -652,6 +660,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsSetPosDataProviderResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_setposdataprovider(
         connection,
@@ -732,6 +741,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LiaSettings.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_liasettings_update(
         connection,

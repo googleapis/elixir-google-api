@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V2.Model.DatafeedStatusError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :count => String.t(),
-          :examples => list(GoogleApi.Content.V2.Model.DatafeedStatusExample.t()),
-          :message => String.t()
+          :code => String.t() | nil,
+          :count => String.t() | nil,
+          :examples => list(GoogleApi.Content.V2.Model.DatafeedStatusExample.t()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

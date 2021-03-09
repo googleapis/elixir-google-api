@@ -28,8 +28,9 @@ defmodule GoogleApi.Content.V2.Model.InventoryCustomBatchResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entries => list(GoogleApi.Content.V2.Model.InventoryCustomBatchResponseEntry.t()),
-          :kind => String.t()
+          :entries =>
+            list(GoogleApi.Content.V2.Model.InventoryCustomBatchResponseEntry.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:entries, as: GoogleApi.Content.V2.Model.InventoryCustomBatchResponseEntry, type: :list)

@@ -36,17 +36,18 @@ defmodule GoogleApi.Content.V21.Model.RepricingProductReport do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :applicationCount => String.t(),
+          :applicationCount => String.t() | nil,
           :buyboxWinningProductStats =>
-            GoogleApi.Content.V21.Model.RepricingProductReportBuyboxWinningProductStats.t(),
-          :date => GoogleApi.Content.V21.Model.Date.t(),
-          :highWatermark => GoogleApi.Content.V21.Model.PriceAmount.t(),
-          :inapplicabilityDetails => list(GoogleApi.Content.V21.Model.InapplicabilityDetails.t()),
-          :lowWatermark => GoogleApi.Content.V21.Model.PriceAmount.t(),
-          :orderItemCount => integer(),
-          :ruleIds => list(String.t()),
-          :totalGmv => GoogleApi.Content.V21.Model.PriceAmount.t(),
-          :type => String.t()
+            GoogleApi.Content.V21.Model.RepricingProductReportBuyboxWinningProductStats.t() | nil,
+          :date => GoogleApi.Content.V21.Model.Date.t() | nil,
+          :highWatermark => GoogleApi.Content.V21.Model.PriceAmount.t() | nil,
+          :inapplicabilityDetails =>
+            list(GoogleApi.Content.V21.Model.InapplicabilityDetails.t()) | nil,
+          :lowWatermark => GoogleApi.Content.V21.Model.PriceAmount.t() | nil,
+          :orderItemCount => integer() | nil,
+          :ruleIds => list(String.t()) | nil,
+          :totalGmv => GoogleApi.Content.V21.Model.PriceAmount.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:applicationCount)

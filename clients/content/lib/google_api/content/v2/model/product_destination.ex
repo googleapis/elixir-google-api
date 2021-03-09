@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V2.Model.ProductDestination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationName => String.t(),
-          :intention => String.t()
+          :destinationName => String.t() | nil,
+          :intention => String.t() | nil
         }
 
   field(:destinationName)

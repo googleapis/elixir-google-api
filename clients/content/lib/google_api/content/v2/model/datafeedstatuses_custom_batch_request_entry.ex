@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequestEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchId => integer(),
-          :country => String.t(),
-          :datafeedId => String.t(),
-          :language => String.t(),
-          :merchantId => String.t(),
-          :method => String.t()
+          :batchId => integer() | nil,
+          :country => String.t() | nil,
+          :datafeedId => String.t() | nil,
+          :language => String.t() | nil,
+          :merchantId => String.t() | nil,
+          :method => String.t() | nil
         }
 
   field(:batchId)

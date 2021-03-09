@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V2.Model.OrderPaymentMethod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billingAddress => GoogleApi.Content.V2.Model.OrderAddress.t(),
-          :expirationMonth => integer(),
-          :expirationYear => integer(),
-          :lastFourDigits => String.t(),
-          :phoneNumber => String.t(),
-          :type => String.t()
+          :billingAddress => GoogleApi.Content.V2.Model.OrderAddress.t() | nil,
+          :expirationMonth => integer() | nil,
+          :expirationYear => integer() | nil,
+          :lastFourDigits => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:billingAddress, as: GoogleApi.Content.V2.Model.OrderAddress)

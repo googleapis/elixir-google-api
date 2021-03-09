@@ -33,13 +33,13 @@ defmodule GoogleApi.Content.V21.Model.Region do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :geotargetArea => GoogleApi.Content.V21.Model.RegionGeoTargetArea.t(),
-          :merchantId => String.t(),
-          :postalCodeArea => GoogleApi.Content.V21.Model.RegionPostalCodeArea.t(),
-          :regionId => String.t(),
-          :regionalInventoryEligible => boolean(),
-          :shippingEligible => boolean()
+          :displayName => String.t() | nil,
+          :geotargetArea => GoogleApi.Content.V21.Model.RegionGeoTargetArea.t() | nil,
+          :merchantId => String.t() | nil,
+          :postalCodeArea => GoogleApi.Content.V21.Model.RegionPostalCodeArea.t() | nil,
+          :regionId => String.t() | nil,
+          :regionalInventoryEligible => boolean() | nil,
+          :shippingEligible => boolean() | nil
         }
 
   field(:displayName)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransaction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.Content.V21.Model.SettlementTransactionAmount.t(),
-          :identifiers => GoogleApi.Content.V21.Model.SettlementTransactionIdentifiers.t(),
-          :kind => String.t(),
-          :transaction => GoogleApi.Content.V21.Model.SettlementTransactionTransaction.t()
+          :amount => GoogleApi.Content.V21.Model.SettlementTransactionAmount.t() | nil,
+          :identifiers => GoogleApi.Content.V21.Model.SettlementTransactionIdentifiers.t() | nil,
+          :kind => String.t() | nil,
+          :transaction => GoogleApi.Content.V21.Model.SettlementTransactionTransaction.t() | nil
         }
 
   field(:amount, as: GoogleApi.Content.V21.Model.SettlementTransactionAmount)

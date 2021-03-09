@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V2.Model.OrderRefund do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actor => String.t(),
-          :amount => GoogleApi.Content.V2.Model.Price.t(),
-          :creationDate => String.t(),
-          :reason => String.t(),
-          :reasonText => String.t()
+          :actor => String.t() | nil,
+          :amount => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :creationDate => String.t() | nil,
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil
         }
 
   field(:actor)

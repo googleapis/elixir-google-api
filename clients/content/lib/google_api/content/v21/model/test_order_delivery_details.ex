@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.TestOrderDeliveryDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => GoogleApi.Content.V21.Model.TestOrderAddress.t(),
-          :isScheduledDelivery => boolean(),
-          :phoneNumber => String.t()
+          :address => GoogleApi.Content.V21.Model.TestOrderAddress.t() | nil,
+          :isScheduledDelivery => boolean() | nil,
+          :phoneNumber => String.t() | nil
         }
 
   field(:address, as: GoogleApi.Content.V21.Model.TestOrderAddress)

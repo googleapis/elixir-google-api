@@ -34,15 +34,15 @@ defmodule GoogleApi.Content.V2.Model.OrderShipment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrier => String.t(),
-          :creationDate => String.t(),
-          :deliveryDate => String.t(),
-          :id => String.t(),
-          :lineItems => list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t()),
+          :carrier => String.t() | nil,
+          :creationDate => String.t() | nil,
+          :deliveryDate => String.t() | nil,
+          :id => String.t() | nil,
+          :lineItems => list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t()) | nil,
           :scheduledDeliveryDetails =>
-            GoogleApi.Content.V2.Model.OrderShipmentScheduledDeliveryDetails.t(),
-          :status => String.t(),
-          :trackingId => String.t()
+            GoogleApi.Content.V2.Model.OrderShipmentScheduledDeliveryDetails.t() | nil,
+          :status => String.t() | nil,
+          :trackingId => String.t() | nil
         }
 
   field(:carrier)

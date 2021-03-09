@@ -54,7 +54,10 @@ defmodule GoogleApi.Content.V21.Api.Regions do
   *   `{:error, info}` on failure
   """
   @spec content_regions_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Region.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V21.Model.Region.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_regions_create(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,7 +117,7 @@ defmodule GoogleApi.Content.V21.Api.Regions do
   *   `{:error, info}` on failure
   """
   @spec content_regions_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def content_regions_delete(
         connection,
         merchant_id,
@@ -179,7 +182,10 @@ defmodule GoogleApi.Content.V21.Api.Regions do
   *   `{:error, info}` on failure
   """
   @spec content_regions_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Region.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V21.Model.Region.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_regions_get(connection, merchant_id, region_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -241,6 +247,7 @@ defmodule GoogleApi.Content.V21.Api.Regions do
   @spec content_regions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ListRegionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def content_regions_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -303,7 +310,10 @@ defmodule GoogleApi.Content.V21.Api.Regions do
   *   `{:error, info}` on failure
   """
   @spec content_regions_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Region.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Content.V21.Model.Region.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def content_regions_patch(connection, merchant_id, region_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

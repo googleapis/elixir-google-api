@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V2.Model.BusinessDayConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :businessDays => list(String.t())
+          :businessDays => list(String.t()) | nil
         }
 
   field(:businessDays, type: :list)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Content.V21.Model.OrdersCustomBatchRequestEntryRefundItemIte
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.Content.V21.Model.MonetaryAmount.t(),
-          :fullRefund => boolean(),
-          :lineItemId => String.t(),
-          :productId => String.t(),
-          :quantity => integer()
+          :amount => GoogleApi.Content.V21.Model.MonetaryAmount.t() | nil,
+          :fullRefund => boolean() | nil,
+          :lineItemId => String.t() | nil,
+          :productId => String.t() | nil,
+          :quantity => integer() | nil
         }
 
   field(:amount, as: GoogleApi.Content.V21.Model.MonetaryAmount)

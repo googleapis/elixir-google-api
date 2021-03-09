@@ -29,10 +29,10 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicyOnlineReturnReasonCategoryInfo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :returnLabelSource => String.t(),
-          :returnReasonCategory => String.t(),
+          :returnLabelSource => String.t() | nil,
+          :returnReasonCategory => String.t() | nil,
           :returnShippingFee =>
-            GoogleApi.Content.V21.Model.ReturnPolicyOnlineReturnShippingFee.t()
+            GoogleApi.Content.V21.Model.ReturnPolicyOnlineReturnShippingFee.t() | nil
         }
 
   field(:returnLabelSource)

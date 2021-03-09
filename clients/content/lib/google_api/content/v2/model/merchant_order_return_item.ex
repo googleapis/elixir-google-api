@@ -32,12 +32,12 @@ defmodule GoogleApi.Content.V2.Model.MerchantOrderReturnItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerReturnReason => GoogleApi.Content.V2.Model.CustomerReturnReason.t(),
-          :itemId => String.t(),
-          :merchantReturnReason => GoogleApi.Content.V2.Model.RefundReason.t(),
-          :product => GoogleApi.Content.V2.Model.OrderLineItemProduct.t(),
-          :returnShipmentIds => list(String.t()),
-          :state => String.t()
+          :customerReturnReason => GoogleApi.Content.V2.Model.CustomerReturnReason.t() | nil,
+          :itemId => String.t() | nil,
+          :merchantReturnReason => GoogleApi.Content.V2.Model.RefundReason.t() | nil,
+          :product => GoogleApi.Content.V2.Model.OrderLineItemProduct.t() | nil,
+          :returnShipmentIds => list(String.t()) | nil,
+          :state => String.t() | nil
         }
 
   field(:customerReturnReason, as: GoogleApi.Content.V2.Model.CustomerReturnReason)

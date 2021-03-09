@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.OrderreturnsRejectOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reason => String.t(),
-          :reasonText => String.t()
+          :reason => String.t() | nil,
+          :reasonText => String.t() | nil
         }
 
   field(:reason)

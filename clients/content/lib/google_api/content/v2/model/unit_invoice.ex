@@ -30,10 +30,11 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoice do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalCharges => list(GoogleApi.Content.V2.Model.UnitInvoiceAdditionalCharge.t()),
-          :promotions => list(GoogleApi.Content.V2.Model.Promotion.t()),
-          :unitPricePretax => GoogleApi.Content.V2.Model.Price.t(),
-          :unitPriceTaxes => list(GoogleApi.Content.V2.Model.UnitInvoiceTaxLine.t())
+          :additionalCharges =>
+            list(GoogleApi.Content.V2.Model.UnitInvoiceAdditionalCharge.t()) | nil,
+          :promotions => list(GoogleApi.Content.V2.Model.Promotion.t()) | nil,
+          :unitPricePretax => GoogleApi.Content.V2.Model.Price.t() | nil,
+          :unitPriceTaxes => list(GoogleApi.Content.V2.Model.UnitInvoiceTaxLine.t()) | nil
         }
 
   field(:additionalCharges,

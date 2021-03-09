@@ -28,8 +28,8 @@ defmodule GoogleApi.Content.V21.Model.LinkService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :service => String.t(),
-          :status => String.t()
+          :service => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:service)

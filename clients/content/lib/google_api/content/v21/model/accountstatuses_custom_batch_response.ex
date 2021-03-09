@@ -29,8 +29,8 @@ defmodule GoogleApi.Content.V21.Model.AccountstatusesCustomBatchResponse do
 
   @type t :: %__MODULE__{
           :entries =>
-            list(GoogleApi.Content.V21.Model.AccountstatusesCustomBatchResponseEntry.t()),
-          :kind => String.t()
+            list(GoogleApi.Content.V21.Model.AccountstatusesCustomBatchResponseEntry.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:entries,

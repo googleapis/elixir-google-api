@@ -30,10 +30,10 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :carrier => String.t(),
-          :maxDaysInTransit => integer(),
-          :methodName => String.t(),
-          :minDaysInTransit => integer()
+          :carrier => String.t() | nil,
+          :maxDaysInTransit => integer() | nil,
+          :methodName => String.t() | nil,
+          :minDaysInTransit => integer() | nil
         }
 
   field(:carrier)
