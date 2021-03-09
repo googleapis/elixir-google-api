@@ -31,8 +31,9 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1S
           :detailedLeadReports =>
             list(
               GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1DetailedLeadReport.t()
-            ),
-          :nextPageToken => String.t()
+            )
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:detailedLeadReports,

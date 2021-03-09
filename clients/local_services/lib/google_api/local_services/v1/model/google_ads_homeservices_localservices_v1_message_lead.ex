@@ -30,10 +30,10 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1M
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumerPhoneNumber => String.t(),
-          :customerName => String.t(),
-          :jobType => String.t(),
-          :postalCode => String.t()
+          :consumerPhoneNumber => String.t() | nil,
+          :customerName => String.t() | nil,
+          :jobType => String.t() | nil,
+          :postalCode => String.t() | nil
         }
 
   field(:consumerPhoneNumber)

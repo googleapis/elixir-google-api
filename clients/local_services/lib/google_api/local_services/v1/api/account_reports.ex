@@ -63,6 +63,7 @@ defmodule GoogleApi.LocalServices.V1.Api.AccountReports do
           {:ok,
            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1SearchAccountReportsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def localservices_account_reports_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

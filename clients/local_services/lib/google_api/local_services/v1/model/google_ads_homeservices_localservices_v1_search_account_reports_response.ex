@@ -31,8 +31,9 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1S
           :accountReports =>
             list(
               GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AccountReport.t()
-            ),
-          :nextPageToken => String.t()
+            )
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:accountReports,

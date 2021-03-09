@@ -63,6 +63,7 @@ defmodule GoogleApi.LocalServices.V1.Api.DetailedLeadReports do
           {:ok,
            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def localservices_detailed_lead_reports_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

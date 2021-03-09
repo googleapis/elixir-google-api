@@ -29,9 +29,9 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1P
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chargedCallTimestamp => DateTime.t(),
-          :chargedConnectedCallDurationSeconds => String.t(),
-          :consumerPhoneNumber => String.t()
+          :chargedCallTimestamp => DateTime.t() | nil,
+          :chargedConnectedCallDurationSeconds => String.t() | nil,
+          :consumerPhoneNumber => String.t() | nil
         }
 
   field(:chargedCallTimestamp, as: DateTime)

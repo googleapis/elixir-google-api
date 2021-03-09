@@ -41,24 +41,27 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1D
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
+          :accountId => String.t() | nil,
           :aggregatorInfo =>
-            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo.t(),
-          :businessName => String.t(),
-          :chargeStatus => String.t(),
-          :currencyCode => String.t(),
-          :disputeStatus => String.t(),
-          :geo => String.t(),
-          :leadCategory => String.t(),
-          :leadCreationTimestamp => DateTime.t(),
-          :leadId => String.t(),
-          :leadPrice => float(),
-          :leadType => String.t(),
+            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1AggregatorInfo.t()
+            | nil,
+          :businessName => String.t() | nil,
+          :chargeStatus => String.t() | nil,
+          :currencyCode => String.t() | nil,
+          :disputeStatus => String.t() | nil,
+          :geo => String.t() | nil,
+          :leadCategory => String.t() | nil,
+          :leadCreationTimestamp => DateTime.t() | nil,
+          :leadId => String.t() | nil,
+          :leadPrice => float() | nil,
+          :leadType => String.t() | nil,
           :messageLead =>
-            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1MessageLead.t(),
+            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1MessageLead.t()
+            | nil,
           :phoneLead =>
-            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1PhoneLead.t(),
-          :timezone => GoogleApi.LocalServices.V1.Model.GoogleTypeTimeZone.t()
+            GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1PhoneLead.t()
+            | nil,
+          :timezone => GoogleApi.LocalServices.V1.Model.GoogleTypeTimeZone.t() | nil
         }
 
   field(:accountId)
