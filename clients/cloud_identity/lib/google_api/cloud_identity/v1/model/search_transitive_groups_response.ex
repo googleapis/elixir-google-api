@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.SearchTransitiveGroupsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :memberships => list(GoogleApi.CloudIdentity.V1.Model.GroupRelation.t()),
-          :nextPageToken => String.t()
+          :memberships => list(GoogleApi.CloudIdentity.V1.Model.GroupRelation.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:memberships, as: GoogleApi.CloudIdentity.V1.Model.GroupRelation, type: :list)

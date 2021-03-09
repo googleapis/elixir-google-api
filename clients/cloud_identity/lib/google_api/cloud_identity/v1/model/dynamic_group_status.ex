@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.DynamicGroupStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :status => String.t(),
-          :statusTime => DateTime.t()
+          :status => String.t() | nil,
+          :statusTime => DateTime.t() | nil
         }
 
   field(:status)

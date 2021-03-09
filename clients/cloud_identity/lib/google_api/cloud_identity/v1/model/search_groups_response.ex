@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.SearchGroupsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groups => list(GoogleApi.CloudIdentity.V1.Model.Group.t()),
-          :nextPageToken => String.t()
+          :groups => list(GoogleApi.CloudIdentity.V1.Model.Group.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:groups, as: GoogleApi.CloudIdentity.V1.Model.Group, type: :list)

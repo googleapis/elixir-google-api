@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.TransitiveMembershipRole do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :role => String.t()
+          :role => String.t() | nil
         }
 
   field(:role)

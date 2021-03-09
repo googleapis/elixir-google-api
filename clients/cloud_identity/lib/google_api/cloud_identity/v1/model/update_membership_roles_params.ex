@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.UpdateMembershipRolesParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fieldMask => String.t(),
-          :membershipRole => GoogleApi.CloudIdentity.V1.Model.MembershipRole.t()
+          :fieldMask => String.t() | nil,
+          :membershipRole => GoogleApi.CloudIdentity.V1.Model.MembershipRole.t() | nil
         }
 
   field(:fieldMask)

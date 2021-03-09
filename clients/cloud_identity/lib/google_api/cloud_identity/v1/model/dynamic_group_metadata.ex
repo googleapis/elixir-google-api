@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudIdentity.V1.Model.DynamicGroupMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :queries => list(GoogleApi.CloudIdentity.V1.Model.DynamicGroupQuery.t()),
-          :status => GoogleApi.CloudIdentity.V1.Model.DynamicGroupStatus.t()
+          :queries => list(GoogleApi.CloudIdentity.V1.Model.DynamicGroupQuery.t()) | nil,
+          :status => GoogleApi.CloudIdentity.V1.Model.DynamicGroupStatus.t() | nil
         }
 
   field(:queries, as: GoogleApi.CloudIdentity.V1.Model.DynamicGroupQuery, type: :list)

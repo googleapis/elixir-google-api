@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Looku
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customer => String.t(),
-          :names => list(String.t()),
-          :nextPageToken => String.t()
+          :customer => String.t() | nil,
+          :names => list(String.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:customer)

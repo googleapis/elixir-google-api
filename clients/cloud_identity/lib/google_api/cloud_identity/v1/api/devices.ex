@@ -55,6 +55,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
   @spec cloudidentity_devices_cancel_wipe(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_cancel_wipe(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
   @spec cloudidentity_devices_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -176,6 +178,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
   @spec cloudidentity_devices_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -237,6 +240,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
   @spec cloudidentity_devices_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Device.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -305,6 +309,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
           {:ok,
            GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1ListDevicesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -375,6 +380,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
   @spec cloudidentity_devices_wipe(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_wipe(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -441,6 +447,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_approve(
         connection,
@@ -512,6 +519,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_block(
         connection,
@@ -583,6 +591,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_cancel_wipe(
         connection,
@@ -654,6 +663,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_delete(
         connection,
@@ -725,6 +735,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1DeviceUser.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -799,6 +810,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
           {:ok,
            GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1ListDeviceUsersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_list(
         connection,
@@ -885,6 +897,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
           {:ok,
            GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1LookupSelfDeviceUsersResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_lookup(
         connection,
@@ -966,6 +979,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_wipe(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1032,6 +1046,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1ClientState.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_client_states_get(
         connection,
@@ -1110,6 +1125,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
           {:ok,
            GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1ListClientStatesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_client_states_list(
         connection,
@@ -1192,6 +1208,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Devices do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudidentity_devices_device_users_client_states_patch(
         connection,

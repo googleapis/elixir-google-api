@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Custo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :numberValue => float(),
-          :stringValue => String.t()
+          :boolValue => boolean() | nil,
+          :numberValue => float() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:boolValue)

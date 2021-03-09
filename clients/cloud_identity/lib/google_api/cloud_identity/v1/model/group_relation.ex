@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GroupRelation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :group => String.t(),
-          :groupKey => GoogleApi.CloudIdentity.V1.Model.EntityKey.t(),
-          :labels => map(),
-          :relationType => String.t(),
-          :roles => list(GoogleApi.CloudIdentity.V1.Model.TransitiveMembershipRole.t())
+          :displayName => String.t() | nil,
+          :group => String.t() | nil,
+          :groupKey => GoogleApi.CloudIdentity.V1.Model.EntityKey.t() | nil,
+          :labels => map() | nil,
+          :relationType => String.t() | nil,
+          :roles => list(GoogleApi.CloudIdentity.V1.Model.TransitiveMembershipRole.t()) | nil
         }
 
   field(:displayName)
