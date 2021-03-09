@@ -29,9 +29,9 @@ defmodule GoogleApi.Tasks.V1.Model.TaskLinks do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :link => String.t(),
-          :type => String.t()
+          :description => String.t() | nil,
+          :link => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:description)
