@@ -28,8 +28,8 @@ defmodule GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestScreenshot => boolean(),
-          :url => String.t()
+          :requestScreenshot => boolean() | nil,
+          :url => String.t() | nil
         }
 
   field(:requestScreenshot)

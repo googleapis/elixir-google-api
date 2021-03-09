@@ -28,8 +28,8 @@ defmodule GoogleApi.SearchConsole.V1.Model.TestStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :details => String.t(),
-          :status => String.t()
+          :details => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:details)

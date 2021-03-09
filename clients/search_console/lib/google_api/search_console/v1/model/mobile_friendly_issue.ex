@@ -27,7 +27,7 @@ defmodule GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rule => String.t()
+          :rule => String.t() | nil
         }
 
   field(:rule)

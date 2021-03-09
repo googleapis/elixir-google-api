@@ -55,6 +55,7 @@ defmodule GoogleApi.SearchConsole.V1.Api.Searchanalytics do
   @spec webmasters_searchanalytics_query(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SearchConsole.V1.Model.SearchAnalyticsQueryResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def webmasters_searchanalytics_query(connection, site_url, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

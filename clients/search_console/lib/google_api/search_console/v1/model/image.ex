@@ -28,8 +28,8 @@ defmodule GoogleApi.SearchConsole.V1.Model.Image do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t(),
-          :mimeType => String.t()
+          :data => String.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:data)
