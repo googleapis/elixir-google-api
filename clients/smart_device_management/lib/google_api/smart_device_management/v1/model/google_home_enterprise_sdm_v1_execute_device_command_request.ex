@@ -28,8 +28,8 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Exec
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :command => String.t(),
-          :params => map()
+          :command => String.t() | nil,
+          :params => map() | nil
         }
 
   field(:command)

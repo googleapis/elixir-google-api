@@ -28,9 +28,9 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1List
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :rooms =>
-            list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Room.t())
+            list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Room.t()) | nil
         }
 
   field(:nextPageToken)

@@ -27,7 +27,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Exec
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :results => map()
+          :results => map() | nil
         }
 
   field(:results, type: :map)
