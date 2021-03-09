@@ -29,9 +29,10 @@ defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResourc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :owners => list(String.t()),
-          :site => GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResourceSite.t()
+          :id => String.t() | nil,
+          :owners => list(String.t()) | nil,
+          :site =>
+            GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceResourceSite.t() | nil
         }
 
   field(:id)
