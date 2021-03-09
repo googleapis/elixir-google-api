@@ -63,6 +63,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customer do
           {:ok,
            GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesIssueCommandResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def admin_customer_devices_chromeos_issue_command(
         connection,
@@ -148,6 +149,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Customer do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesCommand.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def admin_customer_devices_chromeos_commands_get(
         connection,

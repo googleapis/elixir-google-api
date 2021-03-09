@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMultiMessageV
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameter => list(GoogleApi.Admin.Reports_v1.Model.NestedParameter.t())
+          :parameter => list(GoogleApi.Admin.Reports_v1.Model.NestedParameter.t()) | nil
         }
 
   field(:parameter, as: GoogleApi.Admin.Reports_v1.Model.NestedParameter, type: :list)

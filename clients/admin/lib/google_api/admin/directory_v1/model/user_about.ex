@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserAbout do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentType => String.t(),
-          :value => String.t()
+          :contentType => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:contentType)

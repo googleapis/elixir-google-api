@@ -59,7 +59,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def directory_chromeosdevices_action(
         connection,
         customer_id,
@@ -137,6 +137,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_chromeosdevices_get(
         connection,
@@ -211,6 +212,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
   @spec directory_chromeosdevices_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.ChromeOsDevices.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_chromeosdevices_list(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -282,7 +284,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def directory_chromeosdevices_move_devices_to_ou(
         connection,
         customer_id,
@@ -361,6 +363,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_chromeosdevices_patch(
         connection,
@@ -438,6 +441,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_chromeosdevices_update(
         connection,

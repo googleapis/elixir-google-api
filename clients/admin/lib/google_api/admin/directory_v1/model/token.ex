@@ -34,14 +34,14 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Token do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :anonymous => boolean(),
-          :clientId => String.t(),
-          :displayText => String.t(),
-          :etag => String.t(),
-          :kind => String.t(),
-          :nativeApp => boolean(),
-          :scopes => list(String.t()),
-          :userKey => String.t()
+          :anonymous => boolean() | nil,
+          :clientId => String.t() | nil,
+          :displayText => String.t() | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :nativeApp => boolean() | nil,
+          :scopes => list(String.t()) | nil,
+          :userKey => String.t() | nil
         }
 
   field(:anonymous)

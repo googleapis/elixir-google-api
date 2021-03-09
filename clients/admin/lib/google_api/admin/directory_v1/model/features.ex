@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Features do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :features => list(GoogleApi.Admin.Directory_v1.Model.Feature.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :etag => String.t() | nil,
+          :features => list(GoogleApi.Admin.Directory_v1.Model.Feature.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:etag)

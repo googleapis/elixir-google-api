@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserGender do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addressMeAs => String.t(),
-          :customGender => String.t(),
-          :type => String.t()
+          :addressMeAs => String.t() | nil,
+          :customGender => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:addressMeAs)

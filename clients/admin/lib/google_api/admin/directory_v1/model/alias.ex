@@ -31,11 +31,11 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Alias do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alias => String.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :primaryEmail => String.t()
+          :alias => String.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :primaryEmail => String.t() | nil
         }
 
   field(:alias)

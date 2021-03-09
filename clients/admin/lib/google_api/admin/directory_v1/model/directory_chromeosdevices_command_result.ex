@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesCommandResu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessage => String.t(),
-          :executeTime => DateTime.t(),
-          :result => String.t()
+          :errorMessage => String.t() | nil,
+          :executeTime => DateTime.t() | nil,
+          :result => String.t() | nil
         }
 
   field(:errorMessage)

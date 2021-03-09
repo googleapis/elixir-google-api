@@ -35,15 +35,15 @@ defmodule GoogleApi.Admin.Directory_v1.Model.OrgUnit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blockInheritance => boolean(),
-          :description => String.t(),
-          :etag => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :orgUnitId => String.t(),
-          :orgUnitPath => String.t(),
-          :parentOrgUnitId => String.t(),
-          :parentOrgUnitPath => String.t()
+          :blockInheritance => boolean() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :orgUnitId => String.t() | nil,
+          :orgUnitPath => String.t() | nil,
+          :parentOrgUnitId => String.t() | nil,
+          :parentOrgUnitPath => String.t() | nil
         }
 
   field(:blockInheritance)

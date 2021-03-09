@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ipAddress => String.t(),
-          :wanIpAddress => String.t()
+          :ipAddress => String.t() | nil,
+          :wanIpAddress => String.t() | nil
         }
 
   field(:ipAddress)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Admin.Directory_v1.Model.MobileDeviceApplications do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :packageName => String.t(),
-          :permission => list(String.t()),
-          :versionCode => integer(),
-          :versionName => String.t()
+          :displayName => String.t() | nil,
+          :packageName => String.t() | nil,
+          :permission => list(String.t()) | nil,
+          :versionCode => integer() | nil,
+          :versionName => String.t() | nil
         }
 
   field(:displayName)

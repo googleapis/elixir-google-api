@@ -32,12 +32,12 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Schema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :etag => String.t(),
-          :fields => list(GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpec.t()),
-          :kind => String.t(),
-          :schemaId => String.t(),
-          :schemaName => String.t()
+          :displayName => String.t() | nil,
+          :etag => String.t() | nil,
+          :fields => list(GoogleApi.Admin.Directory_v1.Model.SchemaFieldSpec.t()) | nil,
+          :kind => String.t() | nil,
+          :schemaId => String.t() | nil,
+          :schemaName => String.t() | nil
         }
 
   field(:displayName)

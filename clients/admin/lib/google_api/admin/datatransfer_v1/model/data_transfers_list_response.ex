@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Model.DataTransfersListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataTransfers => list(GoogleApi.Admin.Datatransfer_v1.Model.DataTransfer.t()),
-          :etag => String.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :dataTransfers => list(GoogleApi.Admin.Datatransfer_v1.Model.DataTransfer.t()) | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:dataTransfers, as: GoogleApi.Admin.Datatransfer_v1.Model.DataTransfer, type: :list)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserWebsite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customType => String.t(),
-          :primary => boolean(),
-          :type => String.t(),
-          :value => String.t()
+          :customType => String.t() | nil,
+          :primary => boolean() | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:customType)

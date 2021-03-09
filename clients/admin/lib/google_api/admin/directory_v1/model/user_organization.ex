@@ -38,18 +38,18 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserOrganization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :costCenter => String.t(),
-          :customType => String.t(),
-          :department => String.t(),
-          :description => String.t(),
-          :domain => String.t(),
-          :fullTimeEquivalent => integer(),
-          :location => String.t(),
-          :name => String.t(),
-          :primary => boolean(),
-          :symbol => String.t(),
-          :title => String.t(),
-          :type => String.t()
+          :costCenter => String.t() | nil,
+          :customType => String.t() | nil,
+          :department => String.t() | nil,
+          :description => String.t() | nil,
+          :domain => String.t() | nil,
+          :fullTimeEquivalent => integer() | nil,
+          :location => String.t() | nil,
+          :name => String.t() | nil,
+          :primary => boolean() | nil,
+          :symbol => String.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:costCenter)

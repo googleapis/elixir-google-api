@@ -33,13 +33,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.BuildingAddress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addressLines => list(String.t()),
-          :administrativeArea => String.t(),
-          :languageCode => String.t(),
-          :locality => String.t(),
-          :postalCode => String.t(),
-          :regionCode => String.t(),
-          :sublocality => String.t()
+          :addressLines => list(String.t()) | nil,
+          :administrativeArea => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :locality => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :regionCode => String.t() | nil,
+          :sublocality => String.t() | nil
         }
 
   field(:addressLines, type: :list)

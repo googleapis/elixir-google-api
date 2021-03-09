@@ -35,14 +35,14 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Model.DataTransfer do
 
   @type t :: %__MODULE__{
           :applicationDataTransfers =>
-            list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationDataTransfer.t()),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :newOwnerUserId => String.t(),
-          :oldOwnerUserId => String.t(),
-          :overallTransferStatusCode => String.t(),
-          :requestTime => DateTime.t()
+            list(GoogleApi.Admin.Datatransfer_v1.Model.ApplicationDataTransfer.t()) | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :newOwnerUserId => String.t() | nil,
+          :oldOwnerUserId => String.t() | nil,
+          :overallTransferStatusCode => String.t() | nil,
+          :requestTime => DateTime.t() | nil
         }
 
   field(:applicationDataTransfers,

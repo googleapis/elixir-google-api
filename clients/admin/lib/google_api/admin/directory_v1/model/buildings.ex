@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Buildings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buildings => list(GoogleApi.Admin.Directory_v1.Model.Building.t()),
-          :etag => String.t(),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :buildings => list(GoogleApi.Admin.Directory_v1.Model.Building.t()) | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:buildings, as: GoogleApi.Admin.Directory_v1.Model.Building, type: :list)

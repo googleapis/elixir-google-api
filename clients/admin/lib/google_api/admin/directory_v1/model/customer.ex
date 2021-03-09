@@ -35,15 +35,15 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Customer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternateEmail => String.t(),
-          :customerCreationTime => DateTime.t(),
-          :customerDomain => String.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :language => String.t(),
-          :phoneNumber => String.t(),
-          :postalAddress => GoogleApi.Admin.Directory_v1.Model.CustomerPostalAddress.t()
+          :alternateEmail => String.t() | nil,
+          :customerCreationTime => DateTime.t() | nil,
+          :customerDomain => String.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :language => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :postalAddress => GoogleApi.Admin.Directory_v1.Model.CustomerPostalAddress.t() | nil
         }
 
   field(:alternateEmail)

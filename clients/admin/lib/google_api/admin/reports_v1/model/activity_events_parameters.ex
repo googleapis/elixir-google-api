@@ -34,16 +34,17 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEventsParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boolValue => boolean(),
-          :intValue => String.t(),
+          :boolValue => boolean() | nil,
+          :intValue => String.t() | nil,
           :messageValue =>
-            GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue.t(),
-          :multiIntValue => list(String.t()),
+            GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue.t() | nil,
+          :multiIntValue => list(String.t()) | nil,
           :multiMessageValue =>
-            list(GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMultiMessageValue.t()),
-          :multiValue => list(String.t()),
-          :name => String.t(),
-          :value => String.t()
+            list(GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMultiMessageValue.t())
+            | nil,
+          :multiValue => list(String.t()) | nil,
+          :name => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:boolValue)

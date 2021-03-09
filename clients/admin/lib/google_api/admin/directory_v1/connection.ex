@@ -90,7 +90,7 @@ defmodule GoogleApi.Admin.Directory_v1.Connection do
       # View user aliases on your domain
       "https://www.googleapis.com/auth/admin.directory.user.alias.readonly",
 
-      # View users on your domain
+      # See info about users on your domain
       "https://www.googleapis.com/auth/admin.directory.user.readonly",
 
       # Manage data access permissions for users on your domain

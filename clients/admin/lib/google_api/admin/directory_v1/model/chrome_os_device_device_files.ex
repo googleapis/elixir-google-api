@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDeviceFiles do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :downloadUrl => String.t(),
-          :name => String.t(),
-          :type => String.t()
+          :createTime => DateTime.t() | nil,
+          :downloadUrl => String.t() | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

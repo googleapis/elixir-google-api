@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reportTime => DateTime.t(),
-          :systemRamFreeInfo => list(String.t())
+          :reportTime => DateTime.t() | nil,
+          :systemRamFreeInfo => list(String.t()) | nil
         }
 
   field(:reportTime, as: DateTime)

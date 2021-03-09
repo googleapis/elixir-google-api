@@ -32,9 +32,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports do
           :cpuTemperatureInfo =>
             list(
               GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReportsCpuTemperatureInfo.t()
-            ),
-          :cpuUtilizationPercentageInfo => list(integer()),
-          :reportTime => DateTime.t()
+            )
+            | nil,
+          :cpuUtilizationPercentageInfo => list(integer()) | nil,
+          :reportTime => DateTime.t() | nil
         }
 
   field(:cpuTemperatureInfo,

@@ -29,6 +29,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReports do
   @type t :: %__MODULE__{
           :volumeInfo =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReportsVolumeInfo.t())
+            | nil
         }
 
   field(:volumeInfo,

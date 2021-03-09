@@ -59,7 +59,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def directory_mobiledevices_action(
         connection,
         customer_id,
@@ -133,7 +133,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def directory_mobiledevices_delete(
         connection,
         customer_id,
@@ -207,6 +207,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.MobileDevice.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_mobiledevices_get(
         connection,
@@ -280,6 +281,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
   @spec directory_mobiledevices_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.MobileDevices.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_mobiledevices_list(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

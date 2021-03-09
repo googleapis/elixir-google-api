@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.DomainAliases do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domainAliases => list(GoogleApi.Admin.Directory_v1.Model.DomainAlias.t()),
-          :etag => String.t(),
-          :kind => String.t()
+          :domainAliases => list(GoogleApi.Admin.Directory_v1.Model.DomainAlias.t()) | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:domainAliases, as: GoogleApi.Admin.Directory_v1.Model.DomainAlias, type: :list)

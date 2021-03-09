@@ -36,16 +36,16 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Group do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adminCreated => boolean(),
-          :aliases => list(String.t()),
-          :description => String.t(),
-          :directMembersCount => String.t(),
-          :email => String.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :nonEditableAliases => list(String.t())
+          :adminCreated => boolean() | nil,
+          :aliases => list(String.t()) | nil,
+          :description => String.t() | nil,
+          :directMembersCount => String.t() | nil,
+          :email => String.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :nonEditableAliases => list(String.t()) | nil
         }
 
   field(:adminCreated)

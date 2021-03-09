@@ -34,14 +34,14 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Role do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :isSuperAdminRole => boolean(),
-          :isSystemRole => boolean(),
-          :kind => String.t(),
-          :roleDescription => String.t(),
-          :roleId => String.t(),
-          :roleName => String.t(),
-          :rolePrivileges => list(GoogleApi.Admin.Directory_v1.Model.RoleRolePrivileges.t())
+          :etag => String.t() | nil,
+          :isSuperAdminRole => boolean() | nil,
+          :isSystemRole => boolean() | nil,
+          :kind => String.t() | nil,
+          :roleDescription => String.t() | nil,
+          :roleId => String.t() | nil,
+          :roleName => String.t() | nil,
+          :rolePrivileges => list(GoogleApi.Admin.Directory_v1.Model.RoleRolePrivileges.t()) | nil
         }
 
   field(:etag)

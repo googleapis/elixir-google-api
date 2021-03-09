@@ -59,7 +59,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def directory_orgunits_delete(
         connection,
         customer_id,
@@ -128,6 +128,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   @spec directory_orgunits_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.OrgUnit.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_orgunits_get(
         connection,
@@ -196,6 +197,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   @spec directory_orgunits_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.OrgUnit.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_orgunits_insert(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -258,6 +260,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   @spec directory_orgunits_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.OrgUnits.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_orgunits_list(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -322,6 +325,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
   @spec directory_orgunits_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.OrgUnit.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_orgunits_patch(
         connection,
@@ -399,6 +403,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.OrgUnit.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def directory_orgunits_update(
         connection,

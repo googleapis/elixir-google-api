@@ -27,7 +27,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.FeatureInstance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :feature => GoogleApi.Admin.Directory_v1.Model.Feature.t()
+          :feature => GoogleApi.Admin.Directory_v1.Model.Feature.t() | nil
         }
 
   field(:feature, as: GoogleApi.Admin.Directory_v1.Model.Feature)

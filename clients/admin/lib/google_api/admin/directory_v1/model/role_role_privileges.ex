@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RoleRolePrivileges do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :privilegeName => String.t(),
-          :serviceId => String.t()
+          :privilegeName => String.t() | nil,
+          :serviceId => String.t() | nil
         }
 
   field(:privilegeName)

@@ -33,13 +33,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Privilege do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childPrivileges => list(GoogleApi.Admin.Directory_v1.Model.Privilege.t()),
-          :etag => String.t(),
-          :isOuScopable => boolean(),
-          :kind => String.t(),
-          :privilegeName => String.t(),
-          :serviceId => String.t(),
-          :serviceName => String.t()
+          :childPrivileges => list(GoogleApi.Admin.Directory_v1.Model.Privilege.t()) | nil,
+          :etag => String.t() | nil,
+          :isOuScopable => boolean() | nil,
+          :kind => String.t() | nil,
+          :privilegeName => String.t() | nil,
+          :serviceId => String.t() | nil,
+          :serviceName => String.t() | nil
         }
 
   field(:childPrivileges, as: GoogleApi.Admin.Directory_v1.Model.Privilege, type: :list)

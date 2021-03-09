@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.VerificationCode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :userId => String.t(),
-          :verificationCode => String.t()
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :userId => String.t() | nil,
+          :verificationCode => String.t() | nil
         }
 
   field(:etag)

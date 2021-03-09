@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeTime => integer(),
-          :date => Date.t()
+          :activeTime => integer() | nil,
+          :date => Date.t() | nil
         }
 
   field(:activeTime)

@@ -34,14 +34,14 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Member do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :delivery_settings => String.t(),
-          :email => String.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :role => String.t(),
-          :status => String.t(),
-          :type => String.t()
+          :delivery_settings => String.t() | nil,
+          :email => String.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :role => String.t() | nil,
+          :status => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:delivery_settings)

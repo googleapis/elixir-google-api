@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Datatransfer_v1.Model.ApplicationTransferParam do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :value => list(String.t())
+          :key => String.t() | nil,
+          :value => list(String.t()) | nil
         }
 
   field(:key)

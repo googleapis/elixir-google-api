@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Reports_v1.Model.Activities do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :items => list(GoogleApi.Admin.Reports_v1.Model.Activity.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :etag => String.t() | nil,
+          :items => list(GoogleApi.Admin.Reports_v1.Model.Activity.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:etag)

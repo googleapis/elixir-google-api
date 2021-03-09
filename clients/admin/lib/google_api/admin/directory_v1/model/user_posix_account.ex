@@ -36,16 +36,16 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserPosixAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :gecos => String.t(),
-          :gid => String.t(),
-          :homeDirectory => String.t(),
-          :operatingSystemType => String.t(),
-          :primary => boolean(),
-          :shell => String.t(),
-          :systemId => String.t(),
-          :uid => String.t(),
-          :username => String.t()
+          :accountId => String.t() | nil,
+          :gecos => String.t() | nil,
+          :gid => String.t() | nil,
+          :homeDirectory => String.t() | nil,
+          :operatingSystemType => String.t() | nil,
+          :primary => boolean() | nil,
+          :shell => String.t() | nil,
+          :systemId => String.t() | nil,
+          :uid => String.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:accountId)

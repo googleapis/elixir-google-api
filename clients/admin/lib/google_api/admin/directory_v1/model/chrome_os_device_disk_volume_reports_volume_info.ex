@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReportsVolu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :storageFree => String.t(),
-          :storageTotal => String.t(),
-          :volumeId => String.t()
+          :storageFree => String.t() | nil,
+          :storageTotal => String.t() | nil,
+          :volumeId => String.t() | nil
         }
 
   field(:storageFree)

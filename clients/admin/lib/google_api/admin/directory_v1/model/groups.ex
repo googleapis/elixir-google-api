@@ -30,10 +30,10 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Groups do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :groups => list(GoogleApi.Admin.Directory_v1.Model.Group.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :etag => String.t() | nil,
+          :groups => list(GoogleApi.Admin.Directory_v1.Model.Group.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:etag)

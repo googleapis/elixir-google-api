@@ -34,14 +34,14 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserPhoto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :height => integer(),
-          :id => String.t(),
-          :kind => String.t(),
-          :mimeType => String.t(),
-          :photoData => String.t(),
-          :primaryEmail => String.t(),
-          :width => integer()
+          :etag => String.t() | nil,
+          :height => integer() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :mimeType => String.t() | nil,
+          :photoData => String.t() | nil,
+          :primaryEmail => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:etag)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.OrgUnits do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :organizationUnits => list(GoogleApi.Admin.Directory_v1.Model.OrgUnit.t())
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :organizationUnits => list(GoogleApi.Admin.Directory_v1.Model.OrgUnit.t()) | nil
         }
 
   field(:etag)

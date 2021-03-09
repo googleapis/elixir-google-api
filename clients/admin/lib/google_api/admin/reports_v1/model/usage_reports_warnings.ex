@@ -29,9 +29,9 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :data => list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarningsData.t()),
-          :message => String.t()
+          :code => String.t() | nil,
+          :data => list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarningsData.t()) | nil,
+          :message => String.t() | nil
         }
 
   field(:code)

@@ -23,7 +23,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportEntity do
 
   *   `customerId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the customer's account.
   *   `entityId` (*type:* `String.t`, *default:* `nil`) - Output only. Object key. Only relevant if entity.type = "OBJECT" Note: external-facing name of report is "Entities" rather than "Objects".
-  *   `profileId` (*type:* `String.t`, *default:* `nil`) - Output only. The user's immutable G Suite profile identifier.
+  *   `profileId` (*type:* `String.t`, *default:* `nil`) - Output only. The user's immutable Google Workspace profile identifier.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of item. The value is `user`.
   *   `userEmail` (*type:* `String.t`, *default:* `nil`) - Output only. The user's email address. Only relevant if entity.type = "USER"
   """
@@ -31,11 +31,11 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportEntity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customerId => String.t(),
-          :entityId => String.t(),
-          :profileId => String.t(),
-          :type => String.t(),
-          :userEmail => String.t()
+          :customerId => String.t() | nil,
+          :entityId => String.t() | nil,
+          :profileId => String.t() | nil,
+          :type => String.t() | nil,
+          :userEmail => String.t() | nil
         }
 
   field(:customerId)

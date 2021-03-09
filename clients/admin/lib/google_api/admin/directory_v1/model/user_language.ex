@@ -28,8 +28,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserLanguage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customLanguage => String.t(),
-          :languageCode => String.t()
+          :customLanguage => String.t() | nil,
+          :languageCode => String.t() | nil
         }
 
   field(:customLanguage)
