@@ -29,9 +29,9 @@ defmodule GoogleApi.Domains.V1beta1.Model.GlueRecord do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hostName => String.t(),
-          :ipv4Addresses => list(String.t()),
-          :ipv6Addresses => list(String.t())
+          :hostName => String.t() | nil,
+          :ipv4Addresses => list(String.t()) | nil,
+          :ipv6Addresses => list(String.t()) | nil
         }
 
   field(:hostName)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Domains.V1beta1.Model.ManagementSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :renewalMethod => String.t(),
-          :transferLockState => String.t()
+          :renewalMethod => String.t() | nil,
+          :transferLockState => String.t() | nil
         }
 
   field(:renewalMethod)

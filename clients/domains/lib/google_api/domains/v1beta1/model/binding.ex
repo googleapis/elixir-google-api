@@ -29,9 +29,9 @@ defmodule GoogleApi.Domains.V1beta1.Model.Binding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.Domains.V1beta1.Model.Expr.t(),
-          :members => list(String.t()),
-          :role => String.t()
+          :condition => GoogleApi.Domains.V1beta1.Model.Expr.t() | nil,
+          :members => list(String.t()) | nil,
+          :role => String.t() | nil
         }
 
   field(:condition, as: GoogleApi.Domains.V1beta1.Model.Expr)

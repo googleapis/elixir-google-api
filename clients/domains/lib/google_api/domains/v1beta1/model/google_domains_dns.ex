@@ -29,9 +29,9 @@ defmodule GoogleApi.Domains.V1beta1.Model.GoogleDomainsDns do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dsRecords => list(GoogleApi.Domains.V1beta1.Model.DsRecord.t()),
-          :dsState => String.t(),
-          :nameServers => list(String.t())
+          :dsRecords => list(GoogleApi.Domains.V1beta1.Model.DsRecord.t()) | nil,
+          :dsState => String.t() | nil,
+          :nameServers => list(String.t()) | nil
         }
 
   field(:dsRecords, as: GoogleApi.Domains.V1beta1.Model.DsRecord, type: :list)

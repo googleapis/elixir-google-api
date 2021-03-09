@@ -30,10 +30,10 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditConfigs => list(GoogleApi.Domains.V1alpha2.Model.AuditConfig.t()),
-          :bindings => list(GoogleApi.Domains.V1alpha2.Model.Binding.t()),
-          :etag => String.t(),
-          :version => integer()
+          :auditConfigs => list(GoogleApi.Domains.V1alpha2.Model.AuditConfig.t()) | nil,
+          :bindings => list(GoogleApi.Domains.V1alpha2.Model.Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:auditConfigs, as: GoogleApi.Domains.V1alpha2.Model.AuditConfig, type: :list)

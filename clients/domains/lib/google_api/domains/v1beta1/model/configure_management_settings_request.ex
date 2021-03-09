@@ -28,8 +28,8 @@ defmodule GoogleApi.Domains.V1beta1.Model.ConfigureManagementSettingsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :managementSettings => GoogleApi.Domains.V1beta1.Model.ManagementSettings.t(),
-          :updateMask => String.t()
+          :managementSettings => GoogleApi.Domains.V1beta1.Model.ManagementSettings.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:managementSettings, as: GoogleApi.Domains.V1beta1.Model.ManagementSettings)

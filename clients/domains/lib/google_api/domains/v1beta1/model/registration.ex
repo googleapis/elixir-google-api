@@ -38,18 +38,18 @@ defmodule GoogleApi.Domains.V1beta1.Model.Registration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactSettings => GoogleApi.Domains.V1beta1.Model.ContactSettings.t(),
-          :createTime => DateTime.t(),
-          :dnsSettings => GoogleApi.Domains.V1beta1.Model.DnsSettings.t(),
-          :domainName => String.t(),
-          :expireTime => DateTime.t(),
-          :issues => list(String.t()),
-          :labels => map(),
-          :managementSettings => GoogleApi.Domains.V1beta1.Model.ManagementSettings.t(),
-          :name => String.t(),
-          :pendingContactSettings => GoogleApi.Domains.V1beta1.Model.ContactSettings.t(),
-          :state => String.t(),
-          :supportedPrivacy => list(String.t())
+          :contactSettings => GoogleApi.Domains.V1beta1.Model.ContactSettings.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :dnsSettings => GoogleApi.Domains.V1beta1.Model.DnsSettings.t() | nil,
+          :domainName => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :issues => list(String.t()) | nil,
+          :labels => map() | nil,
+          :managementSettings => GoogleApi.Domains.V1beta1.Model.ManagementSettings.t() | nil,
+          :name => String.t() | nil,
+          :pendingContactSettings => GoogleApi.Domains.V1beta1.Model.ContactSettings.t() | nil,
+          :state => String.t() | nil,
+          :supportedPrivacy => list(String.t()) | nil
         }
 
   field(:contactSettings, as: GoogleApi.Domains.V1beta1.Model.ContactSettings)

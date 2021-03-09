@@ -28,8 +28,8 @@ defmodule GoogleApi.Domains.V1alpha2.Model.CustomDns do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dsRecords => list(GoogleApi.Domains.V1alpha2.Model.DsRecord.t()),
-          :nameServers => list(String.t())
+          :dsRecords => list(GoogleApi.Domains.V1alpha2.Model.DsRecord.t()) | nil,
+          :nameServers => list(String.t()) | nil
         }
 
   field(:dsRecords, as: GoogleApi.Domains.V1alpha2.Model.DsRecord, type: :list)
