@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.ListEndpointsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endpoints => list(GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t()),
-          :nextPageToken => String.t()
+          :endpoints => list(GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:endpoints, as: GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint, type: :list)

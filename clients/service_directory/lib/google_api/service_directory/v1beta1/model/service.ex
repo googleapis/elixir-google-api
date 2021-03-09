@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Service do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endpoints => list(GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t()),
-          :metadata => map(),
-          :name => String.t()
+          :endpoints => list(GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t()) | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil
         }
 
   field(:endpoints, as: GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint, type: :list)

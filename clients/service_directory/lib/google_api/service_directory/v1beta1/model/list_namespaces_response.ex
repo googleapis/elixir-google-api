@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.ListNamespacesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :namespaces => list(GoogleApi.ServiceDirectory.V1beta1.Model.Namespace.t()),
-          :nextPageToken => String.t()
+          :namespaces => list(GoogleApi.ServiceDirectory.V1beta1.Model.Namespace.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:namespaces, as: GoogleApi.ServiceDirectory.V1beta1.Model.Namespace, type: :list)

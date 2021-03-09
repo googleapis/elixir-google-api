@@ -30,10 +30,10 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :address => String.t(),
-          :metadata => map(),
-          :name => String.t(),
-          :port => integer()
+          :address => String.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :port => integer() | nil
         }
 
   field(:address)

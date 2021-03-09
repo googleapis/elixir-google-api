@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.ResolveServiceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endpointFilter => String.t(),
-          :maxEndpoints => integer()
+          :endpointFilter => String.t() | nil,
+          :maxEndpoints => integer() | nil
         }
 
   field(:endpointFilter)

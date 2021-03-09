@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.GetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :options => GoogleApi.ServiceDirectory.V1beta1.Model.GetPolicyOptions.t()
+          :options => GoogleApi.ServiceDirectory.V1beta1.Model.GetPolicyOptions.t() | nil
         }
 
   field(:options, as: GoogleApi.ServiceDirectory.V1beta1.Model.GetPolicyOptions)
