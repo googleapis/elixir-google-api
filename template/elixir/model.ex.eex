@@ -28,7 +28,7 @@ defmodule <%= namespace %>.Model.<%= model.name %> do
 
   @type t :: %__MODULE__{
     <%= for property <- model.properties do %>
-      :"<%= property.name %>" => <%= property.type.typespec %>,
+      :"<%= property.name %>" => <%= property.type.typespec %> | nil,
     <% end %>
   }
   <%= for property <- model.properties do %>
