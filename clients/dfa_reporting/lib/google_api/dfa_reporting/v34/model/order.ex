@@ -46,26 +46,26 @@ defmodule GoogleApi.DFAReporting.V34.Model.Order do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :approverUserProfileIds => list(String.t()),
-          :buyerInvoiceId => String.t(),
-          :buyerOrganizationName => String.t(),
-          :comments => String.t(),
-          :contacts => list(GoogleApi.DFAReporting.V34.Model.OrderContact.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :lastModifiedInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t(),
-          :name => String.t(),
-          :notes => String.t(),
-          :planningTermId => String.t(),
-          :projectId => String.t(),
-          :sellerOrderId => String.t(),
-          :sellerOrganizationName => String.t(),
-          :siteId => list(String.t()),
-          :siteNames => list(String.t()),
-          :subaccountId => String.t(),
-          :termsAndConditions => String.t()
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :approverUserProfileIds => list(String.t()) | nil,
+          :buyerInvoiceId => String.t() | nil,
+          :buyerOrganizationName => String.t() | nil,
+          :comments => String.t() | nil,
+          :contacts => list(GoogleApi.DFAReporting.V34.Model.OrderContact.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :lastModifiedInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
+          :planningTermId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :sellerOrderId => String.t() | nil,
+          :sellerOrganizationName => String.t() | nil,
+          :siteId => list(String.t()) | nil,
+          :siteNames => list(String.t()) | nil,
+          :subaccountId => String.t() | nil,
+          :termsAndConditions => String.t() | nil
         }
 
   field(:accountId)

@@ -30,9 +30,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightActivityGroupsListResponse 
 
   @type t :: %__MODULE__{
           :floodlightActivityGroups =>
-            list(GoogleApi.DFAReporting.V34.Model.FloodlightActivityGroup.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+            list(GoogleApi.DFAReporting.V34.Model.FloodlightActivityGroup.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:floodlightActivityGroups,

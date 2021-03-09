@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.OperatingSystem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dartId => String.t(),
-          :desktop => boolean(),
-          :kind => String.t(),
-          :mobile => boolean(),
-          :name => String.t()
+          :dartId => String.t() | nil,
+          :desktop => boolean() | nil,
+          :kind => String.t() | nil,
+          :mobile => boolean() | nil,
+          :name => String.t() | nil
         }
 
   field(:dartId)

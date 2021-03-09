@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.Language do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :languageCode => String.t(),
-          :name => String.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:id)

@@ -46,29 +46,30 @@ defmodule GoogleApi.DFAReporting.V34.Model.Report do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :criteria => GoogleApi.DFAReporting.V34.Model.ReportCriteria.t(),
+          :accountId => String.t() | nil,
+          :criteria => GoogleApi.DFAReporting.V34.Model.ReportCriteria.t() | nil,
           :crossDimensionReachCriteria =>
-            GoogleApi.DFAReporting.V34.Model.ReportCrossDimensionReachCriteria.t(),
-          :delivery => GoogleApi.DFAReporting.V34.Model.ReportDelivery.t(),
-          :etag => String.t(),
-          :fileName => String.t(),
-          :floodlightCriteria => GoogleApi.DFAReporting.V34.Model.ReportFloodlightCriteria.t(),
-          :format => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :lastModifiedTime => String.t(),
-          :name => String.t(),
-          :ownerProfileId => String.t(),
+            GoogleApi.DFAReporting.V34.Model.ReportCrossDimensionReachCriteria.t() | nil,
+          :delivery => GoogleApi.DFAReporting.V34.Model.ReportDelivery.t() | nil,
+          :etag => String.t() | nil,
+          :fileName => String.t() | nil,
+          :floodlightCriteria =>
+            GoogleApi.DFAReporting.V34.Model.ReportFloodlightCriteria.t() | nil,
+          :format => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :lastModifiedTime => String.t() | nil,
+          :name => String.t() | nil,
+          :ownerProfileId => String.t() | nil,
           :pathAttributionCriteria =>
-            GoogleApi.DFAReporting.V34.Model.ReportPathAttributionCriteria.t(),
-          :pathCriteria => GoogleApi.DFAReporting.V34.Model.ReportPathCriteria.t(),
+            GoogleApi.DFAReporting.V34.Model.ReportPathAttributionCriteria.t() | nil,
+          :pathCriteria => GoogleApi.DFAReporting.V34.Model.ReportPathCriteria.t() | nil,
           :pathToConversionCriteria =>
-            GoogleApi.DFAReporting.V34.Model.ReportPathToConversionCriteria.t(),
-          :reachCriteria => GoogleApi.DFAReporting.V34.Model.ReportReachCriteria.t(),
-          :schedule => GoogleApi.DFAReporting.V34.Model.ReportSchedule.t(),
-          :subAccountId => String.t(),
-          :type => String.t()
+            GoogleApi.DFAReporting.V34.Model.ReportPathToConversionCriteria.t() | nil,
+          :reachCriteria => GoogleApi.DFAReporting.V34.Model.ReportReachCriteria.t() | nil,
+          :schedule => GoogleApi.DFAReporting.V34.Model.ReportSchedule.t() | nil,
+          :subAccountId => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:accountId)

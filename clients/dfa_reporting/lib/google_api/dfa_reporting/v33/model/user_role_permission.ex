@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.UserRolePermission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availability => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :permissionGroupId => String.t()
+          :availability => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :permissionGroupId => String.t() | nil
         }
 
   field(:availability)

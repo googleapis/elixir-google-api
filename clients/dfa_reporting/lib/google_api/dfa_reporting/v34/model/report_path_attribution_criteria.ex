@@ -33,13 +33,13 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReportPathAttributionCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activityFilters => list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()),
-          :customChannelGrouping => GoogleApi.DFAReporting.V34.Model.ChannelGrouping.t(),
-          :dateRange => GoogleApi.DFAReporting.V34.Model.DateRange.t(),
-          :dimensions => list(GoogleApi.DFAReporting.V34.Model.SortedDimension.t()),
-          :floodlightConfigId => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :metricNames => list(String.t()),
-          :pathFilters => list(GoogleApi.DFAReporting.V34.Model.PathFilter.t())
+          :activityFilters => list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()) | nil,
+          :customChannelGrouping => GoogleApi.DFAReporting.V34.Model.ChannelGrouping.t() | nil,
+          :dateRange => GoogleApi.DFAReporting.V34.Model.DateRange.t() | nil,
+          :dimensions => list(GoogleApi.DFAReporting.V34.Model.SortedDimension.t()) | nil,
+          :floodlightConfigId => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :metricNames => list(String.t()) | nil,
+          :pathFilters => list(GoogleApi.DFAReporting.V34.Model.PathFilter.t()) | nil
         }
 
   field(:activityFilters, as: GoogleApi.DFAReporting.V34.Model.DimensionValue, type: :list)

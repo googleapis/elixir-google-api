@@ -34,14 +34,15 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReportReachCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activities => GoogleApi.DFAReporting.V34.Model.Activities.t(),
-          :customRichMediaEvents => GoogleApi.DFAReporting.V34.Model.CustomRichMediaEvents.t(),
-          :dateRange => GoogleApi.DFAReporting.V34.Model.DateRange.t(),
-          :dimensionFilters => list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()),
-          :dimensions => list(GoogleApi.DFAReporting.V34.Model.SortedDimension.t()),
-          :enableAllDimensionCombinations => boolean(),
-          :metricNames => list(String.t()),
-          :reachByFrequencyMetricNames => list(String.t())
+          :activities => GoogleApi.DFAReporting.V34.Model.Activities.t() | nil,
+          :customRichMediaEvents =>
+            GoogleApi.DFAReporting.V34.Model.CustomRichMediaEvents.t() | nil,
+          :dateRange => GoogleApi.DFAReporting.V34.Model.DateRange.t() | nil,
+          :dimensionFilters => list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()) | nil,
+          :dimensions => list(GoogleApi.DFAReporting.V34.Model.SortedDimension.t()) | nil,
+          :enableAllDimensionCombinations => boolean() | nil,
+          :metricNames => list(String.t()) | nil,
+          :reachByFrequencyMetricNames => list(String.t()) | nil
         }
 
   field(:activities, as: GoogleApi.DFAReporting.V34.Model.Activities)

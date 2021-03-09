@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.RichMediaExitOverride do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clickThroughUrl => GoogleApi.DFAReporting.V34.Model.ClickThroughUrl.t(),
-          :enabled => boolean(),
-          :exitId => String.t()
+          :clickThroughUrl => GoogleApi.DFAReporting.V34.Model.ClickThroughUrl.t() | nil,
+          :enabled => boolean() | nil,
+          :exitId => String.t() | nil
         }
 
   field(:clickThroughUrl, as: GoogleApi.DFAReporting.V34.Model.ClickThroughUrl)

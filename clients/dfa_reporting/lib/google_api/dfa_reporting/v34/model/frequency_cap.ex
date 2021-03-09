@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.FrequencyCap do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :impressions => String.t()
+          :duration => String.t() | nil,
+          :impressions => String.t() | nil
         }
 
   field(:duration)

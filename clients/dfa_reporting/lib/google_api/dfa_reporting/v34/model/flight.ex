@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.Flight do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => Date.t(),
-          :rateOrCost => String.t(),
-          :startDate => Date.t(),
-          :units => String.t()
+          :endDate => Date.t() | nil,
+          :rateOrCost => String.t() | nil,
+          :startDate => Date.t() | nil,
+          :units => String.t() | nil
         }
 
   field(:endDate, as: Date)

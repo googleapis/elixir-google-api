@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomViewabilityMetricConfiguration 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audible => boolean(),
-          :timeMillis => integer(),
-          :timePercent => integer(),
-          :viewabilityPercent => integer()
+          :audible => boolean() | nil,
+          :timeMillis => integer() | nil,
+          :timePercent => integer() | nil,
+          :viewabilityPercent => integer() | nil
         }
 
   field(:audible)

@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.PostalCode do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :code => String.t(),
-          :countryCode => String.t(),
-          :countryDartId => String.t(),
-          :id => String.t(),
-          :kind => String.t()
+          :code => String.t() | nil,
+          :countryCode => String.t() | nil,
+          :countryDartId => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:code)

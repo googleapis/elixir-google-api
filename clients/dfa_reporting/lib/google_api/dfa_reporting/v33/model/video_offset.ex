@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.VideoOffset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :offsetPercentage => integer(),
-          :offsetSeconds => integer()
+          :offsetPercentage => integer() | nil,
+          :offsetSeconds => integer() | nil
         }
 
   field(:offsetPercentage)

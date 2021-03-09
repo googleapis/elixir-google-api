@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Countries do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.Country.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_countries_get(
         connection,
@@ -127,6 +128,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Countries do
   @spec dfareporting_countries_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CountriesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_countries_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

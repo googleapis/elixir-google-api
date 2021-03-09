@@ -31,11 +31,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.PathToConversionReportCompatibleField
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conversionDimensions => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()),
-          :customFloodlightVariables => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()),
-          :kind => String.t(),
-          :metrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()),
-          :perInteractionDimensions => list(GoogleApi.DFAReporting.V34.Model.Dimension.t())
+          :conversionDimensions => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil,
+          :customFloodlightVariables =>
+            list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil,
+          :kind => String.t() | nil,
+          :metrics => list(GoogleApi.DFAReporting.V34.Model.Metric.t()) | nil,
+          :perInteractionDimensions => list(GoogleApi.DFAReporting.V34.Model.Dimension.t()) | nil
         }
 
   field(:conversionDimensions, as: GoogleApi.DFAReporting.V34.Model.Dimension, type: :list)

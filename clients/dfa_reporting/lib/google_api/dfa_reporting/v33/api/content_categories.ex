@@ -58,7 +58,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.ContentCategories do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def dfareporting_content_categories_delete(
         connection,
         profile_id,
@@ -131,6 +131,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.ContentCategories do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.ContentCategory.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_content_categories_get(
         connection,
@@ -203,6 +204,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.ContentCategories do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.ContentCategory.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_content_categories_insert(
         connection,
@@ -274,6 +276,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.ContentCategories do
   @spec dfareporting_content_categories_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.ContentCategoriesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_content_categories_list(
         connection,
@@ -354,6 +357,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.ContentCategories do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.ContentCategory.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_content_categories_patch(
         connection,
@@ -427,6 +431,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.ContentCategories do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.ContentCategory.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_content_categories_update(
         connection,

@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.OperatingSystemVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :kind => String.t(),
-          :majorVersion => String.t(),
-          :minorVersion => String.t(),
-          :name => String.t(),
-          :operatingSystem => GoogleApi.DFAReporting.V34.Model.OperatingSystem.t()
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :majorVersion => String.t() | nil,
+          :minorVersion => String.t() | nil,
+          :name => String.t() | nil,
+          :operatingSystem => GoogleApi.DFAReporting.V34.Model.OperatingSystem.t() | nil
         }
 
   field(:id)

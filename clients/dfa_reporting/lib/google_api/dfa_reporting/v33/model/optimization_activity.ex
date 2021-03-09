@@ -29,10 +29,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.OptimizationActivity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :floodlightActivityId => String.t(),
+          :floodlightActivityId => String.t() | nil,
           :floodlightActivityIdDimensionValue =>
-            GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :weight => integer()
+            GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :weight => integer() | nil
         }
 
   field(:floodlightActivityId)

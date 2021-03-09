@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportFloodlightCriteriaReportPropert
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeAttributedIPConversions => boolean(),
-          :includeUnattributedCookieConversions => boolean(),
-          :includeUnattributedIPConversions => boolean()
+          :includeAttributedIPConversions => boolean() | nil,
+          :includeUnattributedCookieConversions => boolean() | nil,
+          :includeUnattributedIPConversions => boolean() | nil
         }
 
   field(:includeAttributedIPConversions)

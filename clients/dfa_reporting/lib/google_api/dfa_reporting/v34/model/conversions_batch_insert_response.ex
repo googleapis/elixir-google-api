@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.ConversionsBatchInsertResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hasFailures => boolean(),
-          :kind => String.t(),
-          :status => list(GoogleApi.DFAReporting.V34.Model.ConversionStatus.t())
+          :hasFailures => boolean() | nil,
+          :kind => String.t() | nil,
+          :status => list(GoogleApi.DFAReporting.V34.Model.ConversionStatus.t()) | nil
         }
 
   field(:hasFailures)

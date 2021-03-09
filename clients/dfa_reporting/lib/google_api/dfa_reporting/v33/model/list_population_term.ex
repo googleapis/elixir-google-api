@@ -34,14 +34,14 @@ defmodule GoogleApi.DFAReporting.V33.Model.ListPopulationTerm do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contains => boolean(),
-          :negation => boolean(),
-          :operator => String.t(),
-          :remarketingListId => String.t(),
-          :type => String.t(),
-          :value => String.t(),
-          :variableFriendlyName => String.t(),
-          :variableName => String.t()
+          :contains => boolean() | nil,
+          :negation => boolean() | nil,
+          :operator => String.t() | nil,
+          :remarketingListId => String.t() | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil,
+          :variableFriendlyName => String.t() | nil,
+          :variableName => String.t() | nil
         }
 
   field(:contains)

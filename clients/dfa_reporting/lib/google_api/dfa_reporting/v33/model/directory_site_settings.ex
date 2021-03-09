@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.DirectorySiteSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeViewOptOut => boolean(),
-          :dfpSettings => GoogleApi.DFAReporting.V33.Model.DfpSettings.t(),
-          :instreamVideoPlacementAccepted => boolean(),
-          :interstitialPlacementAccepted => boolean()
+          :activeViewOptOut => boolean() | nil,
+          :dfpSettings => GoogleApi.DFAReporting.V33.Model.DfpSettings.t() | nil,
+          :instreamVideoPlacementAccepted => boolean() | nil,
+          :interstitialPlacementAccepted => boolean() | nil
         }
 
   field(:activeViewOptOut)

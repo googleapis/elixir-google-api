@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightActivityPublisherDynamicTag
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clickThrough => boolean(),
-          :directorySiteId => String.t(),
-          :dynamicTag => GoogleApi.DFAReporting.V33.Model.FloodlightActivityDynamicTag.t(),
-          :siteId => String.t(),
-          :siteIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :viewThrough => boolean()
+          :clickThrough => boolean() | nil,
+          :directorySiteId => String.t() | nil,
+          :dynamicTag => GoogleApi.DFAReporting.V33.Model.FloodlightActivityDynamicTag.t() | nil,
+          :siteId => String.t() | nil,
+          :siteIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :viewThrough => boolean() | nil
         }
 
   field(:clickThrough)

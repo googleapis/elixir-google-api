@@ -60,6 +60,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CustomEvents do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CustomEventsBatchInsertResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_custom_events_batchinsert(
         connection,

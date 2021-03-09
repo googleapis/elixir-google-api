@@ -30,10 +30,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeRotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeAssignments => list(GoogleApi.DFAReporting.V33.Model.CreativeAssignment.t()),
-          :creativeOptimizationConfigurationId => String.t(),
-          :type => String.t(),
-          :weightCalculationStrategy => String.t()
+          :creativeAssignments =>
+            list(GoogleApi.DFAReporting.V33.Model.CreativeAssignment.t()) | nil,
+          :creativeOptimizationConfigurationId => String.t() | nil,
+          :type => String.t() | nil,
+          :weightCalculationStrategy => String.t() | nil
         }
 
   field(:creativeAssignments, as: GoogleApi.DFAReporting.V33.Model.CreativeAssignment, type: :list)

@@ -32,13 +32,13 @@ defmodule GoogleApi.DFAReporting.V34.Model.TechnologyTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :browsers => list(GoogleApi.DFAReporting.V34.Model.Browser.t()),
-          :connectionTypes => list(GoogleApi.DFAReporting.V34.Model.ConnectionType.t()),
-          :mobileCarriers => list(GoogleApi.DFAReporting.V34.Model.MobileCarrier.t()),
+          :browsers => list(GoogleApi.DFAReporting.V34.Model.Browser.t()) | nil,
+          :connectionTypes => list(GoogleApi.DFAReporting.V34.Model.ConnectionType.t()) | nil,
+          :mobileCarriers => list(GoogleApi.DFAReporting.V34.Model.MobileCarrier.t()) | nil,
           :operatingSystemVersions =>
-            list(GoogleApi.DFAReporting.V34.Model.OperatingSystemVersion.t()),
-          :operatingSystems => list(GoogleApi.DFAReporting.V34.Model.OperatingSystem.t()),
-          :platformTypes => list(GoogleApi.DFAReporting.V34.Model.PlatformType.t())
+            list(GoogleApi.DFAReporting.V34.Model.OperatingSystemVersion.t()) | nil,
+          :operatingSystems => list(GoogleApi.DFAReporting.V34.Model.OperatingSystem.t()) | nil,
+          :platformTypes => list(GoogleApi.DFAReporting.V34.Model.PlatformType.t()) | nil
         }
 
   field(:browsers, as: GoogleApi.DFAReporting.V34.Model.Browser, type: :list)

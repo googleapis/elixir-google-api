@@ -33,13 +33,13 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportSchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :active => boolean(),
-          :every => integer(),
-          :expirationDate => Date.t(),
-          :repeats => String.t(),
-          :repeatsOnWeekDays => list(String.t()),
-          :runsOnDayOfMonth => String.t(),
-          :startDate => Date.t()
+          :active => boolean() | nil,
+          :every => integer() | nil,
+          :expirationDate => Date.t() | nil,
+          :repeats => String.t() | nil,
+          :repeatsOnWeekDays => list(String.t()) | nil,
+          :runsOnDayOfMonth => String.t() | nil,
+          :startDate => Date.t() | nil
         }
 
   field(:active)

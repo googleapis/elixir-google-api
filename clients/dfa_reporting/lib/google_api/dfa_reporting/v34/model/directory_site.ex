@@ -34,14 +34,14 @@ defmodule GoogleApi.DFAReporting.V34.Model.DirectorySite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :inpageTagFormats => list(String.t()),
-          :interstitialTagFormats => list(String.t()),
-          :kind => String.t(),
-          :name => String.t(),
-          :settings => GoogleApi.DFAReporting.V34.Model.DirectorySiteSettings.t(),
-          :url => String.t()
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :inpageTagFormats => list(String.t()) | nil,
+          :interstitialTagFormats => list(String.t()) | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :settings => GoogleApi.DFAReporting.V34.Model.DirectorySiteSettings.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:id)

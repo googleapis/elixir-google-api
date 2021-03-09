@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.UserRolesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :userRoles => list(GoogleApi.DFAReporting.V34.Model.UserRole.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :userRoles => list(GoogleApi.DFAReporting.V34.Model.UserRole.t()) | nil
         }
 
   field(:kind)

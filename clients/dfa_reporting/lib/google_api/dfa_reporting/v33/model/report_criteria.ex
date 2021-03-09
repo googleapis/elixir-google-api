@@ -32,12 +32,13 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activities => GoogleApi.DFAReporting.V33.Model.Activities.t(),
-          :customRichMediaEvents => GoogleApi.DFAReporting.V33.Model.CustomRichMediaEvents.t(),
-          :dateRange => GoogleApi.DFAReporting.V33.Model.DateRange.t(),
-          :dimensionFilters => list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()),
-          :dimensions => list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()),
-          :metricNames => list(String.t())
+          :activities => GoogleApi.DFAReporting.V33.Model.Activities.t() | nil,
+          :customRichMediaEvents =>
+            GoogleApi.DFAReporting.V33.Model.CustomRichMediaEvents.t() | nil,
+          :dateRange => GoogleApi.DFAReporting.V33.Model.DateRange.t() | nil,
+          :dimensionFilters => list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()) | nil,
+          :dimensions => list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()) | nil,
+          :metricNames => list(String.t()) | nil
         }
 
   field(:activities, as: GoogleApi.DFAReporting.V33.Model.Activities)

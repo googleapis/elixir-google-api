@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.OrderContact do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactInfo => String.t(),
-          :contactName => String.t(),
-          :contactTitle => String.t(),
-          :contactType => String.t(),
-          :signatureUserProfileId => String.t()
+          :contactInfo => String.t() | nil,
+          :contactName => String.t() | nil,
+          :contactTitle => String.t() | nil,
+          :contactType => String.t() | nil,
+          :signatureUserProfileId => String.t() | nil
         }
 
   field(:contactInfo)

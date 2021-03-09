@@ -33,13 +33,13 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeAssetMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assetIdentifier => GoogleApi.DFAReporting.V33.Model.CreativeAssetId.t(),
-          :clickTags => list(GoogleApi.DFAReporting.V33.Model.ClickTag.t()),
-          :detectedFeatures => list(String.t()),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :kind => String.t(),
-          :warnedValidationRules => list(String.t())
+          :assetIdentifier => GoogleApi.DFAReporting.V33.Model.CreativeAssetId.t() | nil,
+          :clickTags => list(GoogleApi.DFAReporting.V33.Model.ClickTag.t()) | nil,
+          :detectedFeatures => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :kind => String.t() | nil,
+          :warnedValidationRules => list(String.t()) | nil
         }
 
   field(:assetIdentifier, as: GoogleApi.DFAReporting.V33.Model.CreativeAssetId)

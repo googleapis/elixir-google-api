@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.DeepLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appUrl => String.t(),
-          :fallbackUrl => String.t(),
-          :kind => String.t(),
-          :mobileApp => GoogleApi.DFAReporting.V34.Model.MobileApp.t(),
-          :remarketingListIds => list(String.t())
+          :appUrl => String.t() | nil,
+          :fallbackUrl => String.t() | nil,
+          :kind => String.t() | nil,
+          :mobileApp => GoogleApi.DFAReporting.V34.Model.MobileApp.t() | nil,
+          :remarketingListIds => list(String.t()) | nil
         }
 
   field(:appUrl)

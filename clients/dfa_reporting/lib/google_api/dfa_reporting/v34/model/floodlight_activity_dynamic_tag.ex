@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightActivityDynamicTag do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t(),
-          :tag => String.t()
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :tag => String.t() | nil
         }
 
   field(:id)

@@ -36,16 +36,18 @@ defmodule GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserCustomEventId => String.t(),
-          :advertiserCustomEventName => String.t(),
-          :advertiserCustomEventType => String.t(),
-          :artworkLabel => String.t(),
-          :artworkType => String.t(),
-          :exitClickThroughUrl => GoogleApi.DFAReporting.V34.Model.CreativeClickThroughUrl.t(),
-          :id => String.t(),
-          :popupWindowProperties => GoogleApi.DFAReporting.V34.Model.PopupWindowProperties.t(),
-          :targetType => String.t(),
-          :videoReportingId => String.t()
+          :advertiserCustomEventId => String.t() | nil,
+          :advertiserCustomEventName => String.t() | nil,
+          :advertiserCustomEventType => String.t() | nil,
+          :artworkLabel => String.t() | nil,
+          :artworkType => String.t() | nil,
+          :exitClickThroughUrl =>
+            GoogleApi.DFAReporting.V34.Model.CreativeClickThroughUrl.t() | nil,
+          :id => String.t() | nil,
+          :popupWindowProperties =>
+            GoogleApi.DFAReporting.V34.Model.PopupWindowProperties.t() | nil,
+          :targetType => String.t() | nil,
+          :videoReportingId => String.t() | nil
         }
 
   field(:advertiserCustomEventId)

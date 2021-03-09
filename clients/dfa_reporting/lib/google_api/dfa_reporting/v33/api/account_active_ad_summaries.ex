@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountActiveAdSummaries do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountActiveAdSummary.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_account_active_ad_summaries_get(
         connection,

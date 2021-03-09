@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.OperatingSystemVersions do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.OperatingSystemVersion.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_operating_system_versions_get(
         connection,
@@ -137,6 +138,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.OperatingSystemVersions do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.OperatingSystemVersionsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_operating_system_versions_list(
         connection,

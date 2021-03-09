@@ -35,15 +35,15 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportPathToConversionCriteriaReportP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clicksLookbackWindow => integer(),
-          :impressionsLookbackWindow => integer(),
-          :includeAttributedIPConversions => boolean(),
-          :includeUnattributedCookieConversions => boolean(),
-          :includeUnattributedIPConversions => boolean(),
-          :maximumClickInteractions => integer(),
-          :maximumImpressionInteractions => integer(),
-          :maximumInteractionGap => integer(),
-          :pivotOnInteractionPath => boolean()
+          :clicksLookbackWindow => integer() | nil,
+          :impressionsLookbackWindow => integer() | nil,
+          :includeAttributedIPConversions => boolean() | nil,
+          :includeUnattributedCookieConversions => boolean() | nil,
+          :includeUnattributedIPConversions => boolean() | nil,
+          :maximumClickInteractions => integer() | nil,
+          :maximumImpressionInteractions => integer() | nil,
+          :maximumInteractionGap => integer() | nil,
+          :pivotOnInteractionPath => boolean() | nil
         }
 
   field(:clicksLookbackWindow)

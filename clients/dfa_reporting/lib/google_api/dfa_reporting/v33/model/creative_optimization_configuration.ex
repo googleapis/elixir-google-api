@@ -30,11 +30,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeOptimizationConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :name => String.t(),
+          :id => String.t() | nil,
+          :name => String.t() | nil,
           :optimizationActivitys =>
-            list(GoogleApi.DFAReporting.V33.Model.OptimizationActivity.t()),
-          :optimizationModel => String.t()
+            list(GoogleApi.DFAReporting.V33.Model.OptimizationActivity.t()) | nil,
+          :optimizationModel => String.t() | nil
         }
 
   field(:id)

@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.RemarketingLists do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.RemarketingList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_remarketing_lists_get(
         connection,
@@ -133,6 +134,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.RemarketingLists do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.RemarketingList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_remarketing_lists_insert(
         connection,
@@ -212,6 +214,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.RemarketingLists do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.RemarketingListsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_remarketing_lists_list(
         connection,
@@ -295,6 +298,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.RemarketingLists do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.RemarketingList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_remarketing_lists_patch(
         connection,
@@ -368,6 +372,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.RemarketingLists do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.RemarketingList.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_remarketing_lists_update(
         connection,

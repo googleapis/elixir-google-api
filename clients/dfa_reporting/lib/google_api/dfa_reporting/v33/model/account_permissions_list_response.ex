@@ -28,8 +28,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.AccountPermissionsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountPermissions => list(GoogleApi.DFAReporting.V33.Model.AccountPermission.t()),
-          :kind => String.t()
+          :accountPermissions =>
+            list(GoogleApi.DFAReporting.V33.Model.AccountPermission.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:accountPermissions, as: GoogleApi.DFAReporting.V33.Model.AccountPermission, type: :list)

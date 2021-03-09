@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeAssetSelection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultAssetId => String.t(),
-          :rules => list(GoogleApi.DFAReporting.V33.Model.Rule.t())
+          :defaultAssetId => String.t() | nil,
+          :rules => list(GoogleApi.DFAReporting.V33.Model.Rule.t()) | nil
         }
 
   field(:defaultAssetId)

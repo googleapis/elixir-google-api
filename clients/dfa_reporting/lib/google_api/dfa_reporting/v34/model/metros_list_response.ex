@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.MetrosListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :metros => list(GoogleApi.DFAReporting.V34.Model.Metro.t())
+          :kind => String.t() | nil,
+          :metros => list(GoogleApi.DFAReporting.V34.Model.Metro.t()) | nil
         }
 
   field(:kind)

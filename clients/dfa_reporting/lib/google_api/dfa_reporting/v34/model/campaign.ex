@@ -54,40 +54,41 @@ defmodule GoogleApi.DFAReporting.V34.Model.Campaign do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
+          :accountId => String.t() | nil,
           :adBlockingConfiguration =>
-            GoogleApi.DFAReporting.V34.Model.AdBlockingConfiguration.t(),
+            GoogleApi.DFAReporting.V34.Model.AdBlockingConfiguration.t() | nil,
           :additionalCreativeOptimizationConfigurations =>
-            list(GoogleApi.DFAReporting.V34.Model.CreativeOptimizationConfiguration.t()),
-          :advertiserGroupId => String.t(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :archived => boolean(),
+            list(GoogleApi.DFAReporting.V34.Model.CreativeOptimizationConfiguration.t()) | nil,
+          :advertiserGroupId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :archived => boolean() | nil,
           :audienceSegmentGroups =>
-            list(GoogleApi.DFAReporting.V34.Model.AudienceSegmentGroup.t()),
-          :billingInvoiceCode => String.t(),
+            list(GoogleApi.DFAReporting.V34.Model.AudienceSegmentGroup.t()) | nil,
+          :billingInvoiceCode => String.t() | nil,
           :clickThroughUrlSuffixProperties =>
-            GoogleApi.DFAReporting.V34.Model.ClickThroughUrlSuffixProperties.t(),
-          :comment => String.t(),
-          :createInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t(),
-          :creativeGroupIds => list(String.t()),
+            GoogleApi.DFAReporting.V34.Model.ClickThroughUrlSuffixProperties.t() | nil,
+          :comment => String.t() | nil,
+          :createInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t() | nil,
+          :creativeGroupIds => list(String.t()) | nil,
           :creativeOptimizationConfiguration =>
-            GoogleApi.DFAReporting.V34.Model.CreativeOptimizationConfiguration.t(),
+            GoogleApi.DFAReporting.V34.Model.CreativeOptimizationConfiguration.t() | nil,
           :defaultClickThroughEventTagProperties =>
-            GoogleApi.DFAReporting.V34.Model.DefaultClickThroughEventTagProperties.t(),
-          :defaultLandingPageId => String.t(),
-          :endDate => Date.t(),
-          :eventTagOverrides => list(GoogleApi.DFAReporting.V34.Model.EventTagOverride.t()),
-          :externalId => String.t(),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :kind => String.t(),
-          :lastModifiedInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t(),
-          :name => String.t(),
-          :nielsenOcrEnabled => boolean(),
-          :startDate => Date.t(),
-          :subaccountId => String.t(),
-          :traffickerEmails => list(String.t())
+            GoogleApi.DFAReporting.V34.Model.DefaultClickThroughEventTagProperties.t() | nil,
+          :defaultLandingPageId => String.t() | nil,
+          :endDate => Date.t() | nil,
+          :eventTagOverrides => list(GoogleApi.DFAReporting.V34.Model.EventTagOverride.t()) | nil,
+          :externalId => String.t() | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :kind => String.t() | nil,
+          :lastModifiedInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t() | nil,
+          :name => String.t() | nil,
+          :nielsenOcrEnabled => boolean() | nil,
+          :startDate => Date.t() | nil,
+          :subaccountId => String.t() | nil,
+          :traffickerEmails => list(String.t()) | nil
         }
 
   field(:accountId)

@@ -33,15 +33,16 @@ defmodule GoogleApi.DFAReporting.V33.Model.CompatibleFields do
 
   @type t :: %__MODULE__{
           :crossDimensionReachReportCompatibleFields =>
-            GoogleApi.DFAReporting.V33.Model.CrossDimensionReachReportCompatibleFields.t(),
+            GoogleApi.DFAReporting.V33.Model.CrossDimensionReachReportCompatibleFields.t() | nil,
           :floodlightReportCompatibleFields =>
-            GoogleApi.DFAReporting.V33.Model.FloodlightReportCompatibleFields.t(),
-          :kind => String.t(),
+            GoogleApi.DFAReporting.V33.Model.FloodlightReportCompatibleFields.t() | nil,
+          :kind => String.t() | nil,
           :pathToConversionReportCompatibleFields =>
-            GoogleApi.DFAReporting.V33.Model.PathToConversionReportCompatibleFields.t(),
+            GoogleApi.DFAReporting.V33.Model.PathToConversionReportCompatibleFields.t() | nil,
           :reachReportCompatibleFields =>
-            GoogleApi.DFAReporting.V33.Model.ReachReportCompatibleFields.t(),
-          :reportCompatibleFields => GoogleApi.DFAReporting.V33.Model.ReportCompatibleFields.t()
+            GoogleApi.DFAReporting.V33.Model.ReachReportCompatibleFields.t() | nil,
+          :reportCompatibleFields =>
+            GoogleApi.DFAReporting.V33.Model.ReportCompatibleFields.t() | nil
         }
 
   field(:crossDimensionReachReportCompatibleFields,

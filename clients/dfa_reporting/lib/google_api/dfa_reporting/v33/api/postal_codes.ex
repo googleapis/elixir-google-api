@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PostalCodes do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PostalCode.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_postal_codes_get(
         connection,
@@ -127,6 +128,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PostalCodes do
   @spec dfareporting_postal_codes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PostalCodesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_postal_codes_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

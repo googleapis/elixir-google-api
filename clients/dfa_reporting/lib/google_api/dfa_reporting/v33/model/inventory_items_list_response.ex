@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.InventoryItemsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inventoryItems => list(GoogleApi.DFAReporting.V33.Model.InventoryItem.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :inventoryItems => list(GoogleApi.DFAReporting.V33.Model.InventoryItem.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:inventoryItems, as: GoogleApi.DFAReporting.V33.Model.InventoryItem, type: :list)

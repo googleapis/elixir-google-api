@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.MobileAppsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :mobileApps => list(GoogleApi.DFAReporting.V33.Model.MobileApp.t()),
-          :nextPageToken => String.t()
+          :kind => String.t() | nil,
+          :mobileApps => list(GoogleApi.DFAReporting.V33.Model.MobileApp.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:kind)

@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.SiteVideoSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :companionSettings => GoogleApi.DFAReporting.V33.Model.SiteCompanionSetting.t(),
-          :kind => String.t(),
-          :orientation => String.t(),
-          :skippableSettings => GoogleApi.DFAReporting.V33.Model.SiteSkippableSetting.t(),
-          :transcodeSettings => GoogleApi.DFAReporting.V33.Model.SiteTranscodeSetting.t()
+          :companionSettings => GoogleApi.DFAReporting.V33.Model.SiteCompanionSetting.t() | nil,
+          :kind => String.t() | nil,
+          :orientation => String.t() | nil,
+          :skippableSettings => GoogleApi.DFAReporting.V33.Model.SiteSkippableSetting.t() | nil,
+          :transcodeSettings => GoogleApi.DFAReporting.V33.Model.SiteTranscodeSetting.t() | nil
         }
 
   field(:companionSettings, as: GoogleApi.DFAReporting.V33.Model.SiteCompanionSetting)

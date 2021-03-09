@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.Rule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assetId => String.t(),
-          :name => String.t(),
-          :targetingTemplateId => String.t()
+          :assetId => String.t() | nil,
+          :name => String.t() | nil,
+          :targetingTemplateId => String.t() | nil
         }
 
   field(:assetId)

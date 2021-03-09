@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.UniversalAdId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :registry => String.t(),
-          :value => String.t()
+          :registry => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:registry)

@@ -39,19 +39,20 @@ defmodule GoogleApi.DFAReporting.V33.Model.Site do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :approved => boolean(),
-          :directorySiteId => String.t(),
-          :directorySiteIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :keyName => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :siteContacts => list(GoogleApi.DFAReporting.V33.Model.SiteContact.t()),
-          :siteSettings => GoogleApi.DFAReporting.V33.Model.SiteSettings.t(),
-          :subaccountId => String.t(),
-          :videoSettings => GoogleApi.DFAReporting.V33.Model.SiteVideoSettings.t()
+          :accountId => String.t() | nil,
+          :approved => boolean() | nil,
+          :directorySiteId => String.t() | nil,
+          :directorySiteIdDimensionValue =>
+            GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :keyName => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :siteContacts => list(GoogleApi.DFAReporting.V33.Model.SiteContact.t()) | nil,
+          :siteSettings => GoogleApi.DFAReporting.V33.Model.SiteSettings.t() | nil,
+          :subaccountId => String.t() | nil,
+          :videoSettings => GoogleApi.DFAReporting.V33.Model.SiteVideoSettings.t() | nil
         }
 
   field(:accountId)

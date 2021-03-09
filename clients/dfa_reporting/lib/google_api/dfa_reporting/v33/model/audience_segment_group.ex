@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.AudienceSegmentGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audienceSegments => list(GoogleApi.DFAReporting.V33.Model.AudienceSegment.t()),
-          :id => String.t(),
-          :name => String.t()
+          :audienceSegments => list(GoogleApi.DFAReporting.V33.Model.AudienceSegment.t()) | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:audienceSegments, as: GoogleApi.DFAReporting.V33.Model.AudienceSegment, type: :list)

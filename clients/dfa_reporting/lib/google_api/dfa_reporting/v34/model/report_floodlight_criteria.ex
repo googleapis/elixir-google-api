@@ -33,14 +33,15 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReportFloodlightCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customRichMediaEvents => list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()),
-          :dateRange => GoogleApi.DFAReporting.V34.Model.DateRange.t(),
-          :dimensionFilters => list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()),
-          :dimensions => list(GoogleApi.DFAReporting.V34.Model.SortedDimension.t()),
-          :floodlightConfigId => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :metricNames => list(String.t()),
+          :customRichMediaEvents =>
+            list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()) | nil,
+          :dateRange => GoogleApi.DFAReporting.V34.Model.DateRange.t() | nil,
+          :dimensionFilters => list(GoogleApi.DFAReporting.V34.Model.DimensionValue.t()) | nil,
+          :dimensions => list(GoogleApi.DFAReporting.V34.Model.SortedDimension.t()) | nil,
+          :floodlightConfigId => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :metricNames => list(String.t()) | nil,
           :reportProperties =>
-            GoogleApi.DFAReporting.V34.Model.ReportFloodlightCriteriaReportProperties.t()
+            GoogleApi.DFAReporting.V34.Model.ReportFloodlightCriteriaReportProperties.t() | nil
         }
 
   field(:customRichMediaEvents, as: GoogleApi.DFAReporting.V34.Model.DimensionValue, type: :list)

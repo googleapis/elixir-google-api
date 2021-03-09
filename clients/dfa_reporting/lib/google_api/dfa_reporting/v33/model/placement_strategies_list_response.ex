@@ -29,9 +29,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.PlacementStrategiesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :placementStrategies => list(GoogleApi.DFAReporting.V33.Model.PlacementStrategy.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :placementStrategies =>
+            list(GoogleApi.DFAReporting.V33.Model.PlacementStrategy.t()) | nil
         }
 
   field(:kind)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.LookbackConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clickDuration => integer(),
-          :postImpressionActivitiesDuration => integer()
+          :clickDuration => integer() | nil,
+          :postImpressionActivitiesDuration => integer() | nil
         }
 
   field(:clickDuration)

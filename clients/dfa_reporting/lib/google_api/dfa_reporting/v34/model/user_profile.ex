@@ -34,14 +34,14 @@ defmodule GoogleApi.DFAReporting.V34.Model.UserProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :accountName => String.t(),
-          :etag => String.t(),
-          :kind => String.t(),
-          :profileId => String.t(),
-          :subAccountId => String.t(),
-          :subAccountName => String.t(),
-          :userName => String.t()
+          :accountId => String.t() | nil,
+          :accountName => String.t() | nil,
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :profileId => String.t() | nil,
+          :subAccountId => String.t() | nil,
+          :subAccountName => String.t() | nil,
+          :userName => String.t() | nil
         }
 
   field(:accountId)

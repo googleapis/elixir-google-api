@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.Size do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => integer(),
-          :iab => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :width => integer()
+          :height => integer() | nil,
+          :iab => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:height)

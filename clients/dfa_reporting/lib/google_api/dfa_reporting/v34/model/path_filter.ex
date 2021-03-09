@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.PathFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventFilters => list(GoogleApi.DFAReporting.V34.Model.EventFilter.t()),
-          :kind => String.t(),
-          :pathMatchPosition => String.t()
+          :eventFilters => list(GoogleApi.DFAReporting.V34.Model.EventFilter.t()) | nil,
+          :kind => String.t() | nil,
+          :pathMatchPosition => String.t() | nil
         }
 
   field(:eventFilters, as: GoogleApi.DFAReporting.V34.Model.EventFilter, type: :list)

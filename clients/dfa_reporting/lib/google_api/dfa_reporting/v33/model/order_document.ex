@@ -43,23 +43,23 @@ defmodule GoogleApi.DFAReporting.V33.Model.OrderDocument do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :amendedOrderDocumentId => String.t(),
-          :approvedByUserProfileIds => list(String.t()),
-          :cancelled => boolean(),
-          :createdInfo => GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t(),
-          :effectiveDate => Date.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :lastSentRecipients => list(String.t()),
-          :lastSentTime => DateTime.t(),
-          :orderId => String.t(),
-          :projectId => String.t(),
-          :signed => boolean(),
-          :subaccountId => String.t(),
-          :title => String.t(),
-          :type => String.t()
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :amendedOrderDocumentId => String.t() | nil,
+          :approvedByUserProfileIds => list(String.t()) | nil,
+          :cancelled => boolean() | nil,
+          :createdInfo => GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t() | nil,
+          :effectiveDate => Date.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :lastSentRecipients => list(String.t()) | nil,
+          :lastSentTime => DateTime.t() | nil,
+          :orderId => String.t() | nil,
+          :projectId => String.t() | nil,
+          :signed => boolean() | nil,
+          :subaccountId => String.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:accountId)

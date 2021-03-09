@@ -58,7 +58,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def dfareporting_advertiser_groups_delete(
         connection,
         profile_id,
@@ -131,6 +131,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_groups_get(
         connection,
@@ -203,6 +204,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_groups_insert(
         connection,
@@ -274,6 +276,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
   @spec dfareporting_advertiser_groups_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroupsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_groups_list(
         connection,
@@ -354,6 +357,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_groups_patch(
         connection,
@@ -427,6 +431,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_advertiser_groups_update(
         connection,

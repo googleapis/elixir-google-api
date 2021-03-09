@@ -58,7 +58,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.UserRoles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def dfareporting_user_roles_delete(
         connection,
         profile_id,
@@ -131,6 +131,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.UserRoles do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.UserRole.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_user_roles_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -192,6 +193,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.UserRoles do
   @spec dfareporting_user_roles_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.UserRole.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_user_roles_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -260,6 +262,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.UserRoles do
   @spec dfareporting_user_roles_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.UserRolesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_user_roles_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -337,6 +340,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.UserRoles do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.UserRole.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_user_roles_patch(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -399,6 +403,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.UserRoles do
   @spec dfareporting_user_roles_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.UserRole.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_user_roles_update(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

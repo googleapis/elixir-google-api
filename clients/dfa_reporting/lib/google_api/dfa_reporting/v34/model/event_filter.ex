@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.EventFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionFilter => GoogleApi.DFAReporting.V34.Model.PathReportDimensionValue.t(),
-          :kind => String.t()
+          :dimensionFilter => GoogleApi.DFAReporting.V34.Model.PathReportDimensionValue.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:dimensionFilter, as: GoogleApi.DFAReporting.V34.Model.PathReportDimensionValue)

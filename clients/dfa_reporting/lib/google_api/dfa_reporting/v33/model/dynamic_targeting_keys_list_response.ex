@@ -28,8 +28,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.DynamicTargetingKeysListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dynamicTargetingKeys => list(GoogleApi.DFAReporting.V33.Model.DynamicTargetingKey.t()),
-          :kind => String.t()
+          :dynamicTargetingKeys =>
+            list(GoogleApi.DFAReporting.V33.Model.DynamicTargetingKey.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:dynamicTargetingKeys,

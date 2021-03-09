@@ -30,9 +30,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.CustomViewabilityMetric do
 
   @type t :: %__MODULE__{
           :configuration =>
-            GoogleApi.DFAReporting.V33.Model.CustomViewabilityMetricConfiguration.t(),
-          :id => String.t(),
-          :name => String.t()
+            GoogleApi.DFAReporting.V33.Model.CustomViewabilityMetricConfiguration.t() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:configuration, as: GoogleApi.DFAReporting.V33.Model.CustomViewabilityMetricConfiguration)

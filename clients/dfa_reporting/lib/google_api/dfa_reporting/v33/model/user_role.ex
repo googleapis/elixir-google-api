@@ -34,14 +34,14 @@ defmodule GoogleApi.DFAReporting.V33.Model.UserRole do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :defaultUserRole => boolean(),
-          :id => String.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :parentUserRoleId => String.t(),
-          :permissions => list(GoogleApi.DFAReporting.V33.Model.UserRolePermission.t()),
-          :subaccountId => String.t()
+          :accountId => String.t() | nil,
+          :defaultUserRole => boolean() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :parentUserRoleId => String.t() | nil,
+          :permissions => list(GoogleApi.DFAReporting.V33.Model.UserRolePermission.t()) | nil,
+          :subaccountId => String.t() | nil
         }
 
   field(:accountId)

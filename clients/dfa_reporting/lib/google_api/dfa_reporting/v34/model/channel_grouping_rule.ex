@@ -30,9 +30,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.ChannelGroupingRule do
 
   @type t :: %__MODULE__{
           :disjunctiveMatchStatements =>
-            list(GoogleApi.DFAReporting.V34.Model.DisjunctiveMatchStatement.t()),
-          :kind => String.t(),
-          :name => String.t()
+            list(GoogleApi.DFAReporting.V34.Model.DisjunctiveMatchStatement.t()) | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:disjunctiveMatchStatements,

@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventInsert do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cmDimensions => GoogleApi.DFAReporting.V34.Model.CampaignManagerIds.t(),
-          :dv3Dimensions => GoogleApi.DFAReporting.V34.Model.DV3Ids.t(),
-          :insertEventType => String.t(),
-          :kind => String.t(),
-          :matchId => String.t(),
-          :mobileDeviceId => String.t()
+          :cmDimensions => GoogleApi.DFAReporting.V34.Model.CampaignManagerIds.t() | nil,
+          :dv3Dimensions => GoogleApi.DFAReporting.V34.Model.DV3Ids.t() | nil,
+          :insertEventType => String.t() | nil,
+          :kind => String.t() | nil,
+          :matchId => String.t() | nil,
+          :mobileDeviceId => String.t() | nil
         }
 
   field(:cmDimensions, as: GoogleApi.DFAReporting.V34.Model.CampaignManagerIds)

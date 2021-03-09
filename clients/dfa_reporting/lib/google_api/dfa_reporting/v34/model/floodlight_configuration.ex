@@ -44,27 +44,29 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserId => String.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :analyticsDataSharingEnabled => boolean(),
+          :accountId => String.t() | nil,
+          :advertiserId => String.t() | nil,
+          :advertiserIdDimensionValue =>
+            GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :analyticsDataSharingEnabled => boolean() | nil,
           :customViewabilityMetric =>
-            GoogleApi.DFAReporting.V34.Model.CustomViewabilityMetric.t(),
-          :exposureToConversionEnabled => boolean(),
-          :firstDayOfWeek => String.t(),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
-          :inAppAttributionTrackingEnabled => boolean(),
-          :kind => String.t(),
-          :lookbackConfiguration => GoogleApi.DFAReporting.V34.Model.LookbackConfiguration.t(),
-          :naturalSearchConversionAttributionOption => String.t(),
-          :omnitureSettings => GoogleApi.DFAReporting.V34.Model.OmnitureSettings.t(),
-          :subaccountId => String.t(),
-          :tagSettings => GoogleApi.DFAReporting.V34.Model.TagSettings.t(),
+            GoogleApi.DFAReporting.V34.Model.CustomViewabilityMetric.t() | nil,
+          :exposureToConversionEnabled => boolean() | nil,
+          :firstDayOfWeek => String.t() | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t() | nil,
+          :inAppAttributionTrackingEnabled => boolean() | nil,
+          :kind => String.t() | nil,
+          :lookbackConfiguration =>
+            GoogleApi.DFAReporting.V34.Model.LookbackConfiguration.t() | nil,
+          :naturalSearchConversionAttributionOption => String.t() | nil,
+          :omnitureSettings => GoogleApi.DFAReporting.V34.Model.OmnitureSettings.t() | nil,
+          :subaccountId => String.t() | nil,
+          :tagSettings => GoogleApi.DFAReporting.V34.Model.TagSettings.t() | nil,
           :thirdPartyAuthenticationTokens =>
-            list(GoogleApi.DFAReporting.V34.Model.ThirdPartyAuthenticationToken.t()),
+            list(GoogleApi.DFAReporting.V34.Model.ThirdPartyAuthenticationToken.t()) | nil,
           :userDefinedVariableConfigurations =>
-            list(GoogleApi.DFAReporting.V34.Model.UserDefinedVariableConfiguration.t())
+            list(GoogleApi.DFAReporting.V34.Model.UserDefinedVariableConfiguration.t()) | nil
         }
 
   field(:accountId)

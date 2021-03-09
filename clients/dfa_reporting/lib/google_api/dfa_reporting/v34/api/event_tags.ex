@@ -58,7 +58,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.EventTags do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def dfareporting_event_tags_delete(
         connection,
         profile_id,
@@ -131,6 +131,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.EventTags do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.EventTag.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_event_tags_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -192,6 +193,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.EventTags do
   @spec dfareporting_event_tags_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.EventTag.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_event_tags_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -262,6 +264,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.EventTags do
   @spec dfareporting_event_tags_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.EventTagsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_event_tags_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -341,6 +344,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.EventTags do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.EventTag.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_event_tags_patch(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -403,6 +407,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.EventTags do
   @spec dfareporting_event_tags_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.EventTag.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_event_tags_update(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

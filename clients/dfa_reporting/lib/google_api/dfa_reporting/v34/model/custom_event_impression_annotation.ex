@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventImpressionAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :pathImpressionId => String.t()
+          :kind => String.t() | nil,
+          :pathImpressionId => String.t() | nil
         }
 
   field(:kind)

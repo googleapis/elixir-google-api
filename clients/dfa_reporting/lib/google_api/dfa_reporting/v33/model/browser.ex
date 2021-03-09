@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V33.Model.Browser do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :browserVersionId => String.t(),
-          :dartId => String.t(),
-          :kind => String.t(),
-          :majorVersion => String.t(),
-          :minorVersion => String.t(),
-          :name => String.t()
+          :browserVersionId => String.t() | nil,
+          :dartId => String.t() | nil,
+          :kind => String.t() | nil,
+          :majorVersion => String.t() | nil,
+          :minorVersion => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:browserVersionId)

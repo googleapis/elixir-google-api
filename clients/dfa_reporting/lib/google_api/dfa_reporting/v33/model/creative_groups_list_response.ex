@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeGroupsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeGroups => list(GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :creativeGroups => list(GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:creativeGroups, as: GoogleApi.DFAReporting.V33.Model.CreativeGroup, type: :list)

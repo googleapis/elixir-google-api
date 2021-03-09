@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.AdBlockingConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clickThroughUrl => String.t(),
-          :creativeBundleId => String.t(),
-          :enabled => boolean(),
-          :overrideClickThroughUrl => boolean()
+          :clickThroughUrl => String.t() | nil,
+          :creativeBundleId => String.t() | nil,
+          :enabled => boolean() | nil,
+          :overrideClickThroughUrl => boolean() | nil
         }
 
   field(:clickThroughUrl)

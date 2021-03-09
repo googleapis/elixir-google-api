@@ -45,25 +45,26 @@ defmodule GoogleApi.DFAReporting.V33.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountPermissionIds => list(String.t()),
-          :accountProfile => String.t(),
-          :active => boolean(),
-          :activeAdsLimitTier => String.t(),
-          :activeViewOptOut => boolean(),
-          :availablePermissionIds => list(String.t()),
-          :countryId => String.t(),
-          :currencyId => String.t(),
-          :defaultCreativeSizeId => String.t(),
-          :description => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :locale => String.t(),
-          :maximumImageSize => String.t(),
-          :name => String.t(),
-          :nielsenOcrEnabled => boolean(),
-          :reportsConfiguration => GoogleApi.DFAReporting.V33.Model.ReportsConfiguration.t(),
-          :shareReportsWithTwitter => boolean(),
-          :teaserSizeLimit => String.t()
+          :accountPermissionIds => list(String.t()) | nil,
+          :accountProfile => String.t() | nil,
+          :active => boolean() | nil,
+          :activeAdsLimitTier => String.t() | nil,
+          :activeViewOptOut => boolean() | nil,
+          :availablePermissionIds => list(String.t()) | nil,
+          :countryId => String.t() | nil,
+          :currencyId => String.t() | nil,
+          :defaultCreativeSizeId => String.t() | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :locale => String.t() | nil,
+          :maximumImageSize => String.t() | nil,
+          :name => String.t() | nil,
+          :nielsenOcrEnabled => boolean() | nil,
+          :reportsConfiguration =>
+            GoogleApi.DFAReporting.V33.Model.ReportsConfiguration.t() | nil,
+          :shareReportsWithTwitter => boolean() | nil,
+          :teaserSizeLimit => String.t() | nil
         }
 
   field(:accountPermissionIds, type: :list)

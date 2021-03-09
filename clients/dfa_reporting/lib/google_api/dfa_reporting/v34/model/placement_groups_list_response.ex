@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.PlacementGroupsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :placementGroups => list(GoogleApi.DFAReporting.V34.Model.PlacementGroup.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :placementGroups => list(GoogleApi.DFAReporting.V34.Model.PlacementGroup.t()) | nil
         }
 
   field(:kind)

@@ -35,17 +35,21 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportPathToConversionCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activityFilters => list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()),
-          :conversionDimensions => list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()),
+          :activityFilters => list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()) | nil,
+          :conversionDimensions =>
+            list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()) | nil,
           :customFloodlightVariables =>
-            list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()),
-          :customRichMediaEvents => list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()),
-          :dateRange => GoogleApi.DFAReporting.V33.Model.DateRange.t(),
-          :floodlightConfigId => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :metricNames => list(String.t()),
-          :perInteractionDimensions => list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()),
+            list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()) | nil,
+          :customRichMediaEvents =>
+            list(GoogleApi.DFAReporting.V33.Model.DimensionValue.t()) | nil,
+          :dateRange => GoogleApi.DFAReporting.V33.Model.DateRange.t() | nil,
+          :floodlightConfigId => GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :metricNames => list(String.t()) | nil,
+          :perInteractionDimensions =>
+            list(GoogleApi.DFAReporting.V33.Model.SortedDimension.t()) | nil,
           :reportProperties =>
             GoogleApi.DFAReporting.V33.Model.ReportPathToConversionCriteriaReportProperties.t()
+            | nil
         }
 
   field(:activityFilters, as: GoogleApi.DFAReporting.V33.Model.DimensionValue, type: :list)

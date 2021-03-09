@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.EventTagsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventTags => list(GoogleApi.DFAReporting.V34.Model.EventTag.t()),
-          :kind => String.t()
+          :eventTags => list(GoogleApi.DFAReporting.V34.Model.EventTag.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:eventTags, as: GoogleApi.DFAReporting.V34.Model.EventTag, type: :list)

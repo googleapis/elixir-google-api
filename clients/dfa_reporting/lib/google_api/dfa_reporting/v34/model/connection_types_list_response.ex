@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.ConnectionTypesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connectionTypes => list(GoogleApi.DFAReporting.V34.Model.ConnectionType.t()),
-          :kind => String.t()
+          :connectionTypes => list(GoogleApi.DFAReporting.V34.Model.ConnectionType.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:connectionTypes, as: GoogleApi.DFAReporting.V34.Model.ConnectionType, type: :list)

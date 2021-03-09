@@ -35,16 +35,16 @@ defmodule GoogleApi.DFAReporting.V33.Model.PricingSchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :capCostOption => String.t(),
-          :disregardOverdelivery => boolean(),
-          :endDate => Date.t(),
-          :flighted => boolean(),
-          :floodlightActivityId => String.t(),
+          :capCostOption => String.t() | nil,
+          :disregardOverdelivery => boolean() | nil,
+          :endDate => Date.t() | nil,
+          :flighted => boolean() | nil,
+          :floodlightActivityId => String.t() | nil,
           :pricingPeriods =>
-            list(GoogleApi.DFAReporting.V33.Model.PricingSchedulePricingPeriod.t()),
-          :pricingType => String.t(),
-          :startDate => Date.t(),
-          :testingStartDate => Date.t()
+            list(GoogleApi.DFAReporting.V33.Model.PricingSchedulePricingPeriod.t()) | nil,
+          :pricingType => String.t() | nil,
+          :startDate => Date.t() | nil,
+          :testingStartDate => Date.t() | nil
         }
 
   field(:capCostOption)

@@ -41,22 +41,22 @@ defmodule GoogleApi.DFAReporting.V33.Model.Advertiser do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :advertiserGroupId => String.t(),
-          :clickThroughUrlSuffix => String.t(),
-          :defaultClickThroughEventTagId => String.t(),
-          :defaultEmail => String.t(),
-          :floodlightConfigurationId => String.t(),
+          :accountId => String.t() | nil,
+          :advertiserGroupId => String.t() | nil,
+          :clickThroughUrlSuffix => String.t() | nil,
+          :defaultClickThroughEventTagId => String.t() | nil,
+          :defaultEmail => String.t() | nil,
+          :floodlightConfigurationId => String.t() | nil,
           :floodlightConfigurationIdDimensionValue =>
-            GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :id => String.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :kind => String.t(),
-          :name => String.t(),
-          :originalFloodlightConfigurationId => String.t(),
-          :status => String.t(),
-          :subaccountId => String.t(),
-          :suspended => boolean()
+            GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :id => String.t() | nil,
+          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :originalFloodlightConfigurationId => String.t() | nil,
+          :status => String.t() | nil,
+          :subaccountId => String.t() | nil,
+          :suspended => boolean() | nil
         }
 
   field(:accountId)

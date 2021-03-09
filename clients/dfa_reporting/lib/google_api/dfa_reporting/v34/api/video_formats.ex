@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.VideoFormats do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.VideoFormat.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_video_formats_get(
         connection,
@@ -127,6 +128,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.VideoFormats do
   @spec dfareporting_video_formats_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.VideoFormatsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_video_formats_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

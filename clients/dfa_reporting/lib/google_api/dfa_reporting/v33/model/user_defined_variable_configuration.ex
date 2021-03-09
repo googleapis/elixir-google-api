@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.UserDefinedVariableConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataType => String.t(),
-          :reportName => String.t(),
-          :variableType => String.t()
+          :dataType => String.t() | nil,
+          :reportName => String.t() | nil,
+          :variableType => String.t() | nil
         }
 
   field(:dataType)

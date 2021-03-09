@@ -27,7 +27,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ListPopulationClause do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :terms => list(GoogleApi.DFAReporting.V33.Model.ListPopulationTerm.t())
+          :terms => list(GoogleApi.DFAReporting.V33.Model.ListPopulationTerm.t()) | nil
         }
 
   field(:terms, as: GoogleApi.DFAReporting.V33.Model.ListPopulationTerm, type: :list)

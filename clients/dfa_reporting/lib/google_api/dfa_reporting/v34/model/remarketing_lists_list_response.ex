@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.RemarketingListsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :remarketingLists => list(GoogleApi.DFAReporting.V34.Model.RemarketingList.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :remarketingLists => list(GoogleApi.DFAReporting.V34.Model.RemarketingList.t()) | nil
         }
 
   field(:kind)

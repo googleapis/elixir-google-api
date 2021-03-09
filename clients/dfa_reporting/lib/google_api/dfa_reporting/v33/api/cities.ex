@@ -58,6 +58,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Cities do
   @spec dfareporting_cities_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CitiesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_cities_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

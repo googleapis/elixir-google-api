@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightActivitiesGenerateTagRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :floodlightActivityTag => String.t(),
-          :globalSiteTagGlobalSnippet => String.t(),
-          :kind => String.t()
+          :floodlightActivityTag => String.t() | nil,
+          :globalSiteTagGlobalSnippet => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:floodlightActivityTag)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.ContentCategoriesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentCategories => list(GoogleApi.DFAReporting.V34.Model.ContentCategory.t()),
-          :kind => String.t(),
-          :nextPageToken => String.t()
+          :contentCategories => list(GoogleApi.DFAReporting.V34.Model.ContentCategory.t()) | nil,
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:contentCategories, as: GoogleApi.DFAReporting.V34.Model.ContentCategory, type: :list)

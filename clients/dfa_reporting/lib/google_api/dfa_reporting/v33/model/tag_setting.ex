@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.TagSetting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :additionalKeyValues => String.t(),
-          :includeClickThroughUrls => boolean(),
-          :includeClickTracking => boolean(),
-          :keywordOption => String.t()
+          :additionalKeyValues => String.t() | nil,
+          :includeClickThroughUrls => boolean() | nil,
+          :includeClickTracking => boolean() | nil,
+          :keywordOption => String.t() | nil
         }
 
   field(:additionalKeyValues)

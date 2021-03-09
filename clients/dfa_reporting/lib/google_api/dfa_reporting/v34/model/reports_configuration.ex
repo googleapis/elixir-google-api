@@ -29,9 +29,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.ReportsConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exposureToConversionEnabled => boolean(),
-          :lookbackConfiguration => GoogleApi.DFAReporting.V34.Model.LookbackConfiguration.t(),
-          :reportGenerationTimeZoneId => String.t()
+          :exposureToConversionEnabled => boolean() | nil,
+          :lookbackConfiguration =>
+            GoogleApi.DFAReporting.V34.Model.LookbackConfiguration.t() | nil,
+          :reportGenerationTimeZoneId => String.t() | nil
         }
 
   field(:exposureToConversionEnabled)

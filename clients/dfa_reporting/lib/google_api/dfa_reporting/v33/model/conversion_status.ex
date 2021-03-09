@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.ConversionStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conversion => GoogleApi.DFAReporting.V33.Model.Conversion.t(),
-          :errors => list(GoogleApi.DFAReporting.V33.Model.ConversionError.t()),
-          :kind => String.t()
+          :conversion => GoogleApi.DFAReporting.V33.Model.Conversion.t() | nil,
+          :errors => list(GoogleApi.DFAReporting.V33.Model.ConversionError.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:conversion, as: GoogleApi.DFAReporting.V33.Model.Conversion)

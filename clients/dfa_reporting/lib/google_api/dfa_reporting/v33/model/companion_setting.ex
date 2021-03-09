@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.CompanionSetting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :companionsDisabled => boolean(),
-          :enabledSizes => list(GoogleApi.DFAReporting.V33.Model.Size.t()),
-          :imageOnly => boolean(),
-          :kind => String.t()
+          :companionsDisabled => boolean() | nil,
+          :enabledSizes => list(GoogleApi.DFAReporting.V33.Model.Size.t()) | nil,
+          :imageOnly => boolean() | nil,
+          :kind => String.t() | nil
         }
 
   field(:companionsDisabled)

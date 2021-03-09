@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventClickAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gclid => String.t(),
-          :kind => String.t()
+          :gclid => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:gclid)

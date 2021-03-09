@@ -35,19 +35,20 @@ defmodule GoogleApi.DFAReporting.V34.Model.CompatibleFields do
 
   @type t :: %__MODULE__{
           :crossDimensionReachReportCompatibleFields =>
-            GoogleApi.DFAReporting.V34.Model.CrossDimensionReachReportCompatibleFields.t(),
+            GoogleApi.DFAReporting.V34.Model.CrossDimensionReachReportCompatibleFields.t() | nil,
           :floodlightReportCompatibleFields =>
-            GoogleApi.DFAReporting.V34.Model.FloodlightReportCompatibleFields.t(),
-          :kind => String.t(),
+            GoogleApi.DFAReporting.V34.Model.FloodlightReportCompatibleFields.t() | nil,
+          :kind => String.t() | nil,
           :pathAttributionReportCompatibleFields =>
-            GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields.t(),
+            GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields.t() | nil,
           :pathReportCompatibleFields =>
-            GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields.t(),
+            GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields.t() | nil,
           :pathToConversionReportCompatibleFields =>
-            GoogleApi.DFAReporting.V34.Model.PathToConversionReportCompatibleFields.t(),
+            GoogleApi.DFAReporting.V34.Model.PathToConversionReportCompatibleFields.t() | nil,
           :reachReportCompatibleFields =>
-            GoogleApi.DFAReporting.V34.Model.ReachReportCompatibleFields.t(),
-          :reportCompatibleFields => GoogleApi.DFAReporting.V34.Model.ReportCompatibleFields.t()
+            GoogleApi.DFAReporting.V34.Model.ReachReportCompatibleFields.t() | nil,
+          :reportCompatibleFields =>
+            GoogleApi.DFAReporting.V34.Model.ReportCompatibleFields.t() | nil
         }
 
   field(:crossDimensionReachReportCompatibleFields,

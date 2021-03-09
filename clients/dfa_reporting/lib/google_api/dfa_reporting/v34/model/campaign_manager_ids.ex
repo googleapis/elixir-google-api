@@ -32,12 +32,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.CampaignManagerIds do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adId => String.t(),
-          :campaignId => String.t(),
-          :creativeId => String.t(),
-          :kind => String.t(),
-          :placementId => String.t(),
-          :siteId => String.t()
+          :adId => String.t() | nil,
+          :campaignId => String.t() | nil,
+          :creativeId => String.t() | nil,
+          :kind => String.t() | nil,
+          :placementId => String.t() | nil,
+          :siteId => String.t() | nil
         }
 
   field(:adId)

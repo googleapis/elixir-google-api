@@ -30,10 +30,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.DynamicTargetingKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :name => String.t(),
-          :objectId => String.t(),
-          :objectType => String.t()
+          :kind => String.t() | nil,
+          :name => String.t() | nil,
+          :objectId => String.t() | nil,
+          :objectType => String.t() | nil
         }
 
   field(:kind)

@@ -60,7 +60,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFieldValues do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def dfareporting_creative_field_values_delete(
         connection,
         profile_id,
@@ -140,6 +140,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFieldValues do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeFieldValue.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_field_values_get(
         connection,
@@ -219,6 +220,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFieldValues do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeFieldValue.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_field_values_insert(
         connection,
@@ -302,6 +304,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFieldValues do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeFieldValuesListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_field_values_list(
         connection,
@@ -389,6 +392,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFieldValues do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeFieldValue.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_field_values_patch(
         connection,
@@ -469,6 +473,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFieldValues do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeFieldValue.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_field_values_update(
         connection,

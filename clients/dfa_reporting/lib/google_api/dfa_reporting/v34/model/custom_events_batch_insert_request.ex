@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEventsBatchInsertRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customEvents => list(GoogleApi.DFAReporting.V34.Model.CustomEvent.t()),
-          :kind => String.t()
+          :customEvents => list(GoogleApi.DFAReporting.V34.Model.CustomEvent.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:customEvents, as: GoogleApi.DFAReporting.V34.Model.CustomEvent, type: :list)

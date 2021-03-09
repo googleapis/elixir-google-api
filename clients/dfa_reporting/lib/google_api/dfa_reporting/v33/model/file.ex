@@ -36,16 +36,16 @@ defmodule GoogleApi.DFAReporting.V33.Model.File do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dateRange => GoogleApi.DFAReporting.V33.Model.DateRange.t(),
-          :etag => String.t(),
-          :fileName => String.t(),
-          :format => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :lastModifiedTime => String.t(),
-          :reportId => String.t(),
-          :status => String.t(),
-          :urls => GoogleApi.DFAReporting.V33.Model.FileUrls.t()
+          :dateRange => GoogleApi.DFAReporting.V33.Model.DateRange.t() | nil,
+          :etag => String.t() | nil,
+          :fileName => String.t() | nil,
+          :format => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :lastModifiedTime => String.t() | nil,
+          :reportId => String.t() | nil,
+          :status => String.t() | nil,
+          :urls => GoogleApi.DFAReporting.V33.Model.FileUrls.t() | nil
         }
 
   field(:dateRange, as: GoogleApi.DFAReporting.V33.Model.DateRange)

@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.AccountActiveAdSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :activeAds => String.t(),
-          :activeAdsLimitTier => String.t(),
-          :availableAds => String.t(),
-          :kind => String.t()
+          :accountId => String.t() | nil,
+          :activeAds => String.t() | nil,
+          :activeAdsLimitTier => String.t() | nil,
+          :availableAds => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:accountId)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.CustomFloodlightVariable do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :type => String.t(),
-          :value => String.t()
+          :kind => String.t() | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:kind)

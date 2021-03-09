@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V34.Model.OrderDocumentsListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :nextPageToken => String.t(),
-          :orderDocuments => list(GoogleApi.DFAReporting.V34.Model.OrderDocument.t())
+          :kind => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :orderDocuments => list(GoogleApi.DFAReporting.V34.Model.OrderDocument.t()) | nil
         }
 
   field(:kind)

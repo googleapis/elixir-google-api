@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.BrowsersListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :browsers => list(GoogleApi.DFAReporting.V34.Model.Browser.t()),
-          :kind => String.t()
+          :browsers => list(GoogleApi.DFAReporting.V34.Model.Browser.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:browsers, as: GoogleApi.DFAReporting.V34.Model.Browser, type: :list)

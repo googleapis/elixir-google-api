@@ -29,10 +29,10 @@ defmodule GoogleApi.DFAReporting.V33.Model.ListPopulationRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :floodlightActivityId => String.t(),
-          :floodlightActivityName => String.t(),
+          :floodlightActivityId => String.t() | nil,
+          :floodlightActivityName => String.t() | nil,
           :listPopulationClauses =>
-            list(GoogleApi.DFAReporting.V33.Model.ListPopulationClause.t())
+            list(GoogleApi.DFAReporting.V33.Model.ListPopulationClause.t()) | nil
         }
 
   field(:floodlightActivityId)

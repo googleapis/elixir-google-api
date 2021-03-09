@@ -31,11 +31,11 @@ defmodule GoogleApi.DFAReporting.V34.Model.PathReportDimensionValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionName => String.t(),
-          :ids => list(String.t()),
-          :kind => String.t(),
-          :matchType => String.t(),
-          :values => list(String.t())
+          :dimensionName => String.t() | nil,
+          :ids => list(String.t()) | nil,
+          :kind => String.t() | nil,
+          :matchType => String.t() | nil,
+          :values => list(String.t()) | nil
         }
 
   field(:dimensionName)

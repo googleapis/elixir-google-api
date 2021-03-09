@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.MobileCarriersListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :mobileCarriers => list(GoogleApi.DFAReporting.V33.Model.MobileCarrier.t())
+          :kind => String.t() | nil,
+          :mobileCarriers => list(GoogleApi.DFAReporting.V33.Model.MobileCarrier.t()) | nil
         }
 
   field(:kind)

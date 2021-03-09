@@ -29,9 +29,9 @@ defmodule GoogleApi.DFAReporting.V33.Model.ConversionsBatchInsertRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :conversions => list(GoogleApi.DFAReporting.V33.Model.Conversion.t()),
-          :encryptionInfo => GoogleApi.DFAReporting.V33.Model.EncryptionInfo.t(),
-          :kind => String.t()
+          :conversions => list(GoogleApi.DFAReporting.V33.Model.Conversion.t()) | nil,
+          :encryptionInfo => GoogleApi.DFAReporting.V33.Model.EncryptionInfo.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:conversions, as: GoogleApi.DFAReporting.V33.Model.Conversion, type: :list)

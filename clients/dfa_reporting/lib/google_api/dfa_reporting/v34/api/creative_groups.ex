@@ -61,6 +61,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_groups_get(
         connection,
@@ -128,6 +129,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeGroups do
   @spec dfareporting_creative_groups_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_groups_insert(
         connection,
@@ -201,6 +203,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeGroups do
   @spec dfareporting_creative_groups_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeGroupsListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_groups_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -278,6 +281,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_groups_patch(
         connection,
@@ -346,6 +350,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeGroups do
   @spec dfareporting_creative_groups_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeGroup.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def dfareporting_creative_groups_update(
         connection,

@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.Metric do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :name => String.t()
+          :kind => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:kind)

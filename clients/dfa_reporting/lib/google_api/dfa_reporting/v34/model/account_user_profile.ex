@@ -42,22 +42,22 @@ defmodule GoogleApi.DFAReporting.V34.Model.AccountUserProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :active => boolean(),
-          :advertiserFilter => GoogleApi.DFAReporting.V34.Model.ObjectFilter.t(),
-          :campaignFilter => GoogleApi.DFAReporting.V34.Model.ObjectFilter.t(),
-          :comments => String.t(),
-          :email => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :locale => String.t(),
-          :name => String.t(),
-          :siteFilter => GoogleApi.DFAReporting.V34.Model.ObjectFilter.t(),
-          :subaccountId => String.t(),
-          :traffickerType => String.t(),
-          :userAccessType => String.t(),
-          :userRoleFilter => GoogleApi.DFAReporting.V34.Model.ObjectFilter.t(),
-          :userRoleId => String.t()
+          :accountId => String.t() | nil,
+          :active => boolean() | nil,
+          :advertiserFilter => GoogleApi.DFAReporting.V34.Model.ObjectFilter.t() | nil,
+          :campaignFilter => GoogleApi.DFAReporting.V34.Model.ObjectFilter.t() | nil,
+          :comments => String.t() | nil,
+          :email => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :locale => String.t() | nil,
+          :name => String.t() | nil,
+          :siteFilter => GoogleApi.DFAReporting.V34.Model.ObjectFilter.t() | nil,
+          :subaccountId => String.t() | nil,
+          :traffickerType => String.t() | nil,
+          :userAccessType => String.t() | nil,
+          :userRoleFilter => GoogleApi.DFAReporting.V34.Model.ObjectFilter.t() | nil,
+          :userRoleId => String.t() | nil
         }
 
   field(:accountId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.LanguagesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :languages => list(GoogleApi.DFAReporting.V34.Model.Language.t())
+          :kind => String.t() | nil,
+          :languages => list(GoogleApi.DFAReporting.V34.Model.Language.t()) | nil
         }
 
   field(:kind)

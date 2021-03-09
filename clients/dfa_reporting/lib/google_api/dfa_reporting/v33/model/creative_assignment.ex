@@ -39,22 +39,22 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeAssignment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :active => boolean(),
-          :applyEventTags => boolean(),
-          :clickThroughUrl => GoogleApi.DFAReporting.V33.Model.ClickThroughUrl.t(),
+          :active => boolean() | nil,
+          :applyEventTags => boolean() | nil,
+          :clickThroughUrl => GoogleApi.DFAReporting.V33.Model.ClickThroughUrl.t() | nil,
           :companionCreativeOverrides =>
-            list(GoogleApi.DFAReporting.V33.Model.CompanionClickThroughOverride.t()),
+            list(GoogleApi.DFAReporting.V33.Model.CompanionClickThroughOverride.t()) | nil,
           :creativeGroupAssignments =>
-            list(GoogleApi.DFAReporting.V33.Model.CreativeGroupAssignment.t()),
-          :creativeId => String.t(),
-          :creativeIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :endTime => DateTime.t(),
+            list(GoogleApi.DFAReporting.V33.Model.CreativeGroupAssignment.t()) | nil,
+          :creativeId => String.t() | nil,
+          :creativeIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t() | nil,
+          :endTime => DateTime.t() | nil,
           :richMediaExitOverrides =>
-            list(GoogleApi.DFAReporting.V33.Model.RichMediaExitOverride.t()),
-          :sequence => integer(),
-          :sslCompliant => boolean(),
-          :startTime => DateTime.t(),
-          :weight => integer()
+            list(GoogleApi.DFAReporting.V33.Model.RichMediaExitOverride.t()) | nil,
+          :sequence => integer() | nil,
+          :sslCompliant => boolean() | nil,
+          :startTime => DateTime.t() | nil,
+          :weight => integer() | nil
         }
 
   field(:active)
