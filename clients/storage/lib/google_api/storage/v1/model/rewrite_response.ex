@@ -32,12 +32,12 @@ defmodule GoogleApi.Storage.V1.Model.RewriteResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :kind => String.t(),
-          :objectSize => String.t(),
-          :resource => GoogleApi.Storage.V1.Model.Object.t(),
-          :rewriteToken => String.t(),
-          :totalBytesRewritten => String.t()
+          :done => boolean() | nil,
+          :kind => String.t() | nil,
+          :objectSize => String.t() | nil,
+          :resource => GoogleApi.Storage.V1.Model.Object.t() | nil,
+          :rewriteToken => String.t() | nil,
+          :totalBytesRewritten => String.t() | nil
         }
 
   field(:done)

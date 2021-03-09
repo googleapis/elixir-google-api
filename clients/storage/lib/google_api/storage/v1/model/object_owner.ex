@@ -28,8 +28,8 @@ defmodule GoogleApi.Storage.V1.Model.ObjectOwner do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entity => String.t(),
-          :entityId => String.t()
+          :entity => String.t() | nil,
+          :entityId => String.t() | nil
         }
 
   field(:entity)

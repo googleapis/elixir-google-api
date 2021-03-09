@@ -27,7 +27,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketEncryption do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultKmsKeyName => String.t()
+          :defaultKmsKeyName => String.t() | nil
         }
 
   field(:defaultKmsKeyName)

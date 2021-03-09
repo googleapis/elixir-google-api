@@ -28,8 +28,8 @@ defmodule GoogleApi.Storage.V1.Model.ObjectCustomerEncryption do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :encryptionAlgorithm => String.t(),
-          :keySha256 => String.t()
+          :encryptionAlgorithm => String.t() | nil,
+          :keySha256 => String.t() | nil
         }
 
   field(:encryptionAlgorithm)

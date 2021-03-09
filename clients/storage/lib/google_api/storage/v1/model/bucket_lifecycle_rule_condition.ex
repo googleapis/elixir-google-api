@@ -36,16 +36,16 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRuleCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :age => integer(),
-          :createdBefore => Date.t(),
-          :customTimeBefore => Date.t(),
-          :daysSinceCustomTime => integer(),
-          :daysSinceNoncurrentTime => integer(),
-          :isLive => boolean(),
-          :matchesPattern => String.t(),
-          :matchesStorageClass => list(String.t()),
-          :noncurrentTimeBefore => Date.t(),
-          :numNewerVersions => integer()
+          :age => integer() | nil,
+          :createdBefore => Date.t() | nil,
+          :customTimeBefore => Date.t() | nil,
+          :daysSinceCustomTime => integer() | nil,
+          :daysSinceNoncurrentTime => integer() | nil,
+          :isLive => boolean() | nil,
+          :matchesPattern => String.t() | nil,
+          :matchesStorageClass => list(String.t()) | nil,
+          :noncurrentTimeBefore => Date.t() | nil,
+          :numNewerVersions => integer() | nil
         }
 
   field(:age)

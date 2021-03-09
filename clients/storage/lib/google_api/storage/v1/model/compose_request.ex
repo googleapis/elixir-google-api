@@ -29,9 +29,9 @@ defmodule GoogleApi.Storage.V1.Model.ComposeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destination => GoogleApi.Storage.V1.Model.Object.t(),
-          :kind => String.t(),
-          :sourceObjects => list(GoogleApi.Storage.V1.Model.ComposeRequestSourceObjects.t())
+          :destination => GoogleApi.Storage.V1.Model.Object.t() | nil,
+          :kind => String.t() | nil,
+          :sourceObjects => list(GoogleApi.Storage.V1.Model.ComposeRequestSourceObjects.t()) | nil
         }
 
   field(:destination, as: GoogleApi.Storage.V1.Model.Object)

@@ -36,16 +36,16 @@ defmodule GoogleApi.Storage.V1.Model.HmacKeyMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessId => String.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :projectId => String.t(),
-          :selfLink => String.t(),
-          :serviceAccountEmail => String.t(),
-          :state => String.t(),
-          :timeCreated => DateTime.t(),
-          :updated => DateTime.t()
+          :accessId => String.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :projectId => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :serviceAccountEmail => String.t() | nil,
+          :state => String.t() | nil,
+          :timeCreated => DateTime.t() | nil,
+          :updated => DateTime.t() | nil
         }
 
   field(:accessId)

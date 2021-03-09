@@ -35,15 +35,15 @@ defmodule GoogleApi.Storage.V1.Model.Notification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :custom_attributes => map(),
-          :etag => String.t(),
-          :event_types => list(String.t()),
-          :id => String.t(),
-          :kind => String.t(),
-          :object_name_prefix => String.t(),
-          :payload_format => String.t(),
-          :selfLink => String.t(),
-          :topic => String.t()
+          :custom_attributes => map() | nil,
+          :etag => String.t() | nil,
+          :event_types => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :object_name_prefix => String.t() | nil,
+          :payload_format => String.t() | nil,
+          :selfLink => String.t() | nil,
+          :topic => String.t() | nil
         }
 
   field(:custom_attributes, type: :map)

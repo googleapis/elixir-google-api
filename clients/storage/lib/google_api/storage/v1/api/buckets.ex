@@ -52,7 +52,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   *   `{:error, info}` on failure
   """
   @spec storage_buckets_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def storage_buckets_delete(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -110,7 +110,10 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   *   `{:error, info}` on failure
   """
   @spec storage_buckets_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_buckets_get(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -167,7 +170,10 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   *   `{:error, info}` on failure
   """
   @spec storage_buckets_get_iam_policy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_buckets_get_iam_policy(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -225,7 +231,10 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   *   `{:error, info}` on failure
   """
   @spec storage_buckets_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_buckets_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -285,7 +294,10 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   *   `{:error, info}` on failure
   """
   @spec storage_buckets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Buckets.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Buckets.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_buckets_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -347,7 +359,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Bucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_buckets_lock_retention_policy(
         connection,
         bucket,
@@ -413,7 +429,10 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   *   `{:error, info}` on failure
   """
   @spec storage_buckets_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_buckets_patch(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -473,7 +492,10 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   *   `{:error, info}` on failure
   """
   @spec storage_buckets_set_iam_policy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_buckets_set_iam_policy(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -536,6 +558,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def storage_buckets_test_iam_permissions(
         connection,
@@ -602,7 +625,10 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   *   `{:error, info}` on failure
   """
   @spec storage_buckets_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_buckets_update(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

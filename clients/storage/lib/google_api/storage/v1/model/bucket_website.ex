@@ -28,8 +28,8 @@ defmodule GoogleApi.Storage.V1.Model.BucketWebsite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mainPageSuffix => String.t(),
-          :notFoundPage => String.t()
+          :mainPageSuffix => String.t() | nil,
+          :notFoundPage => String.t() | nil
         }
 
   field(:mainPageSuffix)

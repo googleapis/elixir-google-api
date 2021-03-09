@@ -28,8 +28,8 @@ defmodule GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enabled => boolean(),
-          :lockedTime => DateTime.t()
+          :enabled => boolean() | nil,
+          :lockedTime => DateTime.t() | nil
         }
 
   field(:enabled)
