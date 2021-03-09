@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.SourceLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filePath => String.t(),
-          :functionName => String.t(),
-          :lineNumber => integer()
+          :filePath => String.t() | nil,
+          :functionName => String.t() | nil,
+          :lineNumber => integer() | nil
         }
 
   field(:filePath)

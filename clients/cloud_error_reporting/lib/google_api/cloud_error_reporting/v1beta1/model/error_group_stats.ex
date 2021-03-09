@@ -36,15 +36,15 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroupStats do
 
   @type t :: %__MODULE__{
           :affectedServices =>
-            list(GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext.t()),
-          :affectedUsersCount => String.t(),
-          :count => String.t(),
-          :firstSeenTime => DateTime.t(),
-          :group => GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t(),
-          :lastSeenTime => DateTime.t(),
-          :numAffectedServices => integer(),
-          :representative => GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorEvent.t(),
-          :timedCounts => list(GoogleApi.CloudErrorReporting.V1beta1.Model.TimedCount.t())
+            list(GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext.t()) | nil,
+          :affectedUsersCount => String.t() | nil,
+          :count => String.t() | nil,
+          :firstSeenTime => DateTime.t() | nil,
+          :group => GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t() | nil,
+          :lastSeenTime => DateTime.t() | nil,
+          :numAffectedServices => integer() | nil,
+          :representative => GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorEvent.t() | nil,
+          :timedCounts => list(GoogleApi.CloudErrorReporting.V1beta1.Model.TimedCount.t()) | nil
         }
 
   field(:affectedServices,

@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.TimedCount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t()
+          :count => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:count)

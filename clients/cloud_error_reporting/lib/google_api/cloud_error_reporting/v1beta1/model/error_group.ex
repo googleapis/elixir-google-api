@@ -30,10 +30,11 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupId => String.t(),
-          :name => String.t(),
-          :resolutionStatus => String.t(),
-          :trackingIssues => list(GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue.t())
+          :groupId => String.t() | nil,
+          :name => String.t() | nil,
+          :resolutionStatus => String.t() | nil,
+          :trackingIssues =>
+            list(GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue.t()) | nil
         }
 
   field(:groupId)

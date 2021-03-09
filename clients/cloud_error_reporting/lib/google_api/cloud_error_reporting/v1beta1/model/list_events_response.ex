@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorEvents => list(GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorEvent.t()),
-          :nextPageToken => String.t(),
-          :timeRangeBegin => DateTime.t()
+          :errorEvents => list(GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorEvent.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :timeRangeBegin => DateTime.t() | nil
         }
 
   field(:errorEvents, as: GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorEvent, type: :list)
