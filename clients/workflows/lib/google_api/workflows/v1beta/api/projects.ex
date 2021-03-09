@@ -54,6 +54,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
   @spec workflows_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,6 +117,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
   @spec workflows_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -185,6 +187,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_operations_delete(
         connection,
@@ -254,6 +257,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_operations_get(
         connection,
@@ -326,6 +330,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_operations_list(
         connection,
@@ -402,6 +407,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_workflows_create(
         connection,
@@ -473,6 +479,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_workflows_delete(
         connection,
@@ -542,6 +549,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.Workflow.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_workflows_get(
         connection,
@@ -615,6 +623,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.ListWorkflowsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_workflows_list(
         connection,
@@ -692,6 +701,7 @@ defmodule GoogleApi.Workflows.V1beta.Api.Projects do
         ) ::
           {:ok, GoogleApi.Workflows.V1beta.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def workflows_projects_locations_workflows_patch(
         connection,

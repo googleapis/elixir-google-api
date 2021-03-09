@@ -28,7 +28,7 @@ defmodule GoogleApi.Workflows.V1beta.Model.Workflow do
   *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp that the latest revision of the workflow was created.
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Output only. The revision of the workflow. A new revision of a workflow is created as a result of updating the following properties of a workflow: - Service account - Workflow code to be executed The format is "000001-a4d", where the first 6 characters define the zero-padded revision ordinal number. They are followed by a hyphen and 3 hexadecimal random characters.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Name of the service account associated with the latest workflow version. This service account represents the identity of the workflow and determines what permissions the workflow has. Format: projects/{project}/serviceAccounts/{account} Using `-` as a wildcard for the `{project}` will infer the project from the account. The `{account}` value can be the `email` address or the `unique_id` of the service account. If not provided, workflow will use the project's default service account. Modifying this field for an existing workflow results in a new workflow revision.
-  *   `sourceContents` (*type:* `String.t`, *default:* `nil`) - Workflow code to be executed. The size limit is 32KB.
+  *   `sourceContents` (*type:* `String.t`, *default:* `nil`) - Workflow code to be executed. The size limit is 128KB.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the workflow deployment.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the workflow.
   """
@@ -36,16 +36,16 @@ defmodule GoogleApi.Workflows.V1beta.Model.Workflow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :description => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :revisionCreateTime => DateTime.t(),
-          :revisionId => String.t(),
-          :serviceAccount => String.t(),
-          :sourceContents => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :revisionCreateTime => DateTime.t() | nil,
+          :revisionId => String.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :sourceContents => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
