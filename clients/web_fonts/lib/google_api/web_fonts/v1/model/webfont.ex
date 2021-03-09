@@ -34,14 +34,14 @@ defmodule GoogleApi.WebFonts.V1.Model.Webfont do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :family => String.t(),
-          :files => map(),
-          :kind => String.t(),
-          :lastModified => String.t(),
-          :subsets => list(String.t()),
-          :variants => list(String.t()),
-          :version => String.t()
+          :category => String.t() | nil,
+          :family => String.t() | nil,
+          :files => map() | nil,
+          :kind => String.t() | nil,
+          :lastModified => String.t() | nil,
+          :subsets => list(String.t()) | nil,
+          :variants => list(String.t()) | nil,
+          :version => String.t() | nil
         }
 
   field(:category)
