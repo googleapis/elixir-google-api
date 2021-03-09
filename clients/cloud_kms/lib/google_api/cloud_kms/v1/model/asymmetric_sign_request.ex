@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.AsymmetricSignRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :digest => GoogleApi.CloudKMS.V1.Model.Digest.t(),
-          :digestCrc32c => String.t()
+          :digest => GoogleApi.CloudKMS.V1.Model.Digest.t() | nil,
+          :digestCrc32c => String.t() | nil
         }
 
   field(:digest, as: GoogleApi.CloudKMS.V1.Model.Digest)

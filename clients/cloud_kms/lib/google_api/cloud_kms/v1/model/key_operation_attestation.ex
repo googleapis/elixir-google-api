@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certChains => GoogleApi.CloudKMS.V1.Model.CertificateChains.t(),
-          :content => String.t(),
-          :format => String.t()
+          :certChains => GoogleApi.CloudKMS.V1.Model.CertificateChains.t() | nil,
+          :content => String.t() | nil,
+          :format => String.t() | nil
         }
 
   field(:certChains, as: GoogleApi.CloudKMS.V1.Model.CertificateChains)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.KeyRing do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :name => String.t()
+          :createTime => DateTime.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

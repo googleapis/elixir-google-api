@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudKMS.V1.Model.PublicKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :name => String.t(),
-          :pem => String.t(),
-          :pemCrc32c => String.t(),
-          :protectionLevel => String.t()
+          :algorithm => String.t() | nil,
+          :name => String.t() | nil,
+          :pem => String.t() | nil,
+          :pemCrc32c => String.t() | nil,
+          :protectionLevel => String.t() | nil
         }
 
   field(:algorithm)

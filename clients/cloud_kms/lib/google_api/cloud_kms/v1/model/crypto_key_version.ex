@@ -39,20 +39,20 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :attestation => GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation.t(),
-          :createTime => DateTime.t(),
-          :destroyEventTime => DateTime.t(),
-          :destroyTime => DateTime.t(),
+          :algorithm => String.t() | nil,
+          :attestation => GoogleApi.CloudKMS.V1.Model.KeyOperationAttestation.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :destroyEventTime => DateTime.t() | nil,
+          :destroyTime => DateTime.t() | nil,
           :externalProtectionLevelOptions =>
-            GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t(),
-          :generateTime => DateTime.t(),
-          :importFailureReason => String.t(),
-          :importJob => String.t(),
-          :importTime => DateTime.t(),
-          :name => String.t(),
-          :protectionLevel => String.t(),
-          :state => String.t()
+            GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t() | nil,
+          :generateTime => DateTime.t() | nil,
+          :importFailureReason => String.t() | nil,
+          :importJob => String.t() | nil,
+          :importTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :protectionLevel => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:algorithm)

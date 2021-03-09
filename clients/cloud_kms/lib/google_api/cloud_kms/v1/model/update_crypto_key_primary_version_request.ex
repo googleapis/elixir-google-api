@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.UpdateCryptoKeyPrimaryVersionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cryptoKeyVersionId => String.t()
+          :cryptoKeyVersionId => String.t() | nil
         }
 
   field(:cryptoKeyVersionId)

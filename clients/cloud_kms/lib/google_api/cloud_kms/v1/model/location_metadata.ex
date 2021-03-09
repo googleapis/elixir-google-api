@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.LocationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ekmAvailable => boolean(),
-          :hsmAvailable => boolean()
+          :ekmAvailable => boolean() | nil,
+          :hsmAvailable => boolean() | nil
         }
 
   field(:ekmAvailable)

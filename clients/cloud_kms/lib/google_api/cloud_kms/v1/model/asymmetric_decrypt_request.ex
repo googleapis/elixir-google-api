@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ciphertext => String.t(),
-          :ciphertextCrc32c => String.t()
+          :ciphertext => String.t() | nil,
+          :ciphertextCrc32c => String.t() | nil
         }
 
   field(:ciphertext)
