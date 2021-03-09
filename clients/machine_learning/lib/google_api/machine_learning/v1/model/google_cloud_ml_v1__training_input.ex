@@ -51,35 +51,37 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :args => list(String.t()),
+          :args => list(String.t()) | nil,
           :encryptionConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t() | nil,
           :evaluatorConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
-          :evaluatorCount => String.t(),
-          :evaluatorType => String.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t() | nil,
+          :evaluatorCount => String.t() | nil,
+          :evaluatorType => String.t() | nil,
           :hyperparameters =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec.t(),
-          :jobDir => String.t(),
-          :masterConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
-          :masterType => String.t(),
-          :network => String.t(),
-          :packageUris => list(String.t()),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec.t() | nil,
+          :jobDir => String.t() | nil,
+          :masterConfig =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t() | nil,
+          :masterType => String.t() | nil,
+          :network => String.t() | nil,
+          :packageUris => list(String.t()) | nil,
           :parameterServerConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
-          :parameterServerCount => String.t(),
-          :parameterServerType => String.t(),
-          :pythonModule => String.t(),
-          :pythonVersion => String.t(),
-          :region => String.t(),
-          :runtimeVersion => String.t(),
-          :scaleTier => String.t(),
-          :scheduling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling.t(),
-          :serviceAccount => String.t(),
-          :useChiefInTfConfig => boolean(),
-          :workerConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
-          :workerCount => String.t(),
-          :workerType => String.t()
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t() | nil,
+          :parameterServerCount => String.t() | nil,
+          :parameterServerType => String.t() | nil,
+          :pythonModule => String.t() | nil,
+          :pythonVersion => String.t() | nil,
+          :region => String.t() | nil,
+          :runtimeVersion => String.t() | nil,
+          :scaleTier => String.t() | nil,
+          :scheduling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :useChiefInTfConfig => boolean() | nil,
+          :workerConfig =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t() | nil,
+          :workerCount => String.t() | nil,
+          :workerType => String.t() | nil
         }
 
   field(:args, type: :list)

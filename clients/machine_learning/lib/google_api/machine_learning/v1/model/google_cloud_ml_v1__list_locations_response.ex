@@ -28,8 +28,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListLocationsRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location.t()),
-          :nextPageToken => String.t()
+          :locations =>
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:locations, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location, type: :list)

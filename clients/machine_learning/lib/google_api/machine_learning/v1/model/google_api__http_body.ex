@@ -29,9 +29,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentType => String.t(),
-          :data => String.t(),
-          :extensions => list(map())
+          :contentType => String.t() | nil,
+          :data => String.t() | nil,
+          :extensions => list(map()) | nil
         }
 
   field(:contentType)

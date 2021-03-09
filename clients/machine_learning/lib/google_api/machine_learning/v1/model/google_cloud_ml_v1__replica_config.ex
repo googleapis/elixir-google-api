@@ -33,12 +33,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig do
 
   @type t :: %__MODULE__{
           :acceleratorConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t(),
-          :containerArgs => list(String.t()),
-          :containerCommand => list(String.t()),
-          :diskConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_DiskConfig.t(),
-          :imageUri => String.t(),
-          :tpuTfVersion => String.t()
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t() | nil,
+          :containerArgs => list(String.t()) | nil,
+          :containerCommand => list(String.t()) | nil,
+          :diskConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_DiskConfig.t() | nil,
+          :imageUri => String.t() | nil,
+          :tpuTfVersion => String.t() | nil
         }
 
   field(:acceleratorConfig,

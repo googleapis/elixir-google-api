@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement_Metric 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metric => String.t(),
-          :value => float()
+          :metric => String.t() | nil,
+          :value => float() | nil
         }
 
   field(:metric)

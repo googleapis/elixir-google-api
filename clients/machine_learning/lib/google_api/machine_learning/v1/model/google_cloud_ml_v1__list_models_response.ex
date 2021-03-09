@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListModelsResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :models => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t()),
-          :nextPageToken => String.t()
+          :models => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:models, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model, type: :list)

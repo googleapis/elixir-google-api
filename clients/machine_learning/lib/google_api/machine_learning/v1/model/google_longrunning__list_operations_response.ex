@@ -28,8 +28,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_ListOperationsRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :operations => list(GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t())
+          :nextPageToken => String.t() | nil,
+          :operations =>
+            list(GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()) | nil
         }
 
   field(:nextPageToken)

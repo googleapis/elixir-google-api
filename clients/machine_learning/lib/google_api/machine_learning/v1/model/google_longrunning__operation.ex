@@ -31,11 +31,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :done => boolean(),
-          :error => GoogleApi.MachineLearning.V1.Model.GoogleRpc_Status.t(),
-          :metadata => map(),
-          :name => String.t(),
-          :response => map()
+          :done => boolean() | nil,
+          :error => GoogleApi.MachineLearning.V1.Model.GoogleRpc_Status.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :response => map() | nil
         }
 
   field(:done)

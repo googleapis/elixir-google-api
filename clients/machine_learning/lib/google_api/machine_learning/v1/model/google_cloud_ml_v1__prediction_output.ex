@@ -30,10 +30,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionOutput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorCount => String.t(),
-          :nodeHours => float(),
-          :outputPath => String.t(),
-          :predictionCount => String.t()
+          :errorCount => String.t() | nil,
+          :nodeHours => float() | nil,
+          :outputPath => String.t() | nil,
+          :predictionCount => String.t() | nil
         }
 
   field(:errorCount)

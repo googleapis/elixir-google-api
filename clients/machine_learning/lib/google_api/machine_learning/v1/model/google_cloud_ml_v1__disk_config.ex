@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_DiskConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bootDiskSizeGb => integer(),
-          :bootDiskType => String.t()
+          :bootDiskSizeGb => integer() | nil,
+          :bootDiskType => String.t() | nil
         }
 
   field(:bootDiskSizeGb)

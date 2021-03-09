@@ -31,11 +31,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :inactiveReason => String.t(),
-          :name => String.t(),
-          :state => String.t(),
-          :studyConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig.t()
+          :createTime => DateTime.t() | nil,
+          :inactiveReason => String.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :studyConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig.t() | nil
         }
 
   field(:createTime, as: DateTime)

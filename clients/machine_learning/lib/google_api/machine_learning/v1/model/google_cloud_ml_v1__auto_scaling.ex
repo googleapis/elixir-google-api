@@ -29,9 +29,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutoScaling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxNodes => integer(),
-          :metrics => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_MetricSpec.t()),
-          :minNodes => integer()
+          :maxNodes => integer() | nil,
+          :metrics =>
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_MetricSpec.t()) | nil,
+          :minNodes => integer() | nil
         }
 
   field(:maxNodes)

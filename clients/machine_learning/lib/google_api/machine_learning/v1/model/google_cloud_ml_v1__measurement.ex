@@ -29,10 +29,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elapsedTime => String.t(),
+          :elapsedTime => String.t() | nil,
           :metrics =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement_Metric.t()),
-          :stepCount => String.t()
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement_Metric.t()) | nil,
+          :stepCount => String.t() | nil
         }
 
   field(:elapsedTime)

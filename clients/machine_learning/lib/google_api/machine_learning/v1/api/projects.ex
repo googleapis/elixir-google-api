@@ -55,6 +55,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_explain(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_explain(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -115,6 +116,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_get_config(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_GetConfigResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_get_config(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -177,6 +179,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_predict(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_predict(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -239,6 +242,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_jobs_cancel(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_jobs_cancel(connection, projects_id, jobs_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -303,6 +307,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_jobs_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_jobs_create(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -366,6 +371,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_jobs_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_jobs_get(connection, projects_id, jobs_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -436,6 +442,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_jobs_get_iam_policy(
         connection,
@@ -506,6 +513,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_jobs_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -573,6 +581,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_jobs_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_jobs_patch(connection, projects_id, jobs_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -645,6 +654,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_jobs_set_iam_policy(
         connection,
@@ -720,6 +730,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_jobs_test_iam_permissions(
         connection,
@@ -797,6 +808,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_get(
         connection,
@@ -867,6 +879,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -940,6 +953,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_operations_cancel(
         connection,
@@ -1022,6 +1036,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_operations_get(
         connection,
@@ -1104,6 +1119,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_create(
         connection,
@@ -1183,6 +1199,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_delete(
         connection,
@@ -1262,6 +1279,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_get(
         connection,
@@ -1339,6 +1357,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListStudiesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_list(
         connection,
@@ -1419,6 +1438,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_add_measurement(
         connection,
@@ -1507,6 +1527,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_check_early_stopping_state(
         connection,
@@ -1595,6 +1616,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_complete(
         connection,
@@ -1681,6 +1703,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_create(
         connection,
@@ -1766,6 +1789,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_delete(
         connection,
@@ -1852,6 +1876,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_get(
         connection,
@@ -1936,6 +1961,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListTrialsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_list(
         connection,
@@ -2019,6 +2045,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListOptimalTrialsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_list_optimal_trials(
         connection,
@@ -2106,6 +2133,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_stop(
         connection,
@@ -2192,6 +2220,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_locations_studies_trials_suggest(
         connection,
@@ -2267,6 +2296,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_models_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_create(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2336,6 +2366,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_delete(
         connection,
@@ -2405,6 +2436,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_models_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_get(
         connection,
@@ -2481,6 +2513,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_get_iam_policy(
         connection,
@@ -2551,6 +2584,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_models_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListModelsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -2618,6 +2652,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_models_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_patch(
         connection,
@@ -2696,6 +2731,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_set_iam_policy(
         connection,
@@ -2771,6 +2807,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_test_iam_permissions(
         connection,
@@ -2849,6 +2886,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_versions_create(
         connection,
@@ -2927,6 +2965,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_versions_delete(
         connection,
@@ -3006,6 +3045,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_versions_get(
         connection,
@@ -3086,6 +3126,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListVersionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_versions_list(
         connection,
@@ -3168,6 +3209,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_versions_patch(
         connection,
@@ -3250,6 +3292,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_models_versions_set_default(
         connection,
@@ -3331,6 +3374,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_operations_cancel(
         connection,
@@ -3406,6 +3450,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_operations_get(
         connection,
@@ -3477,6 +3522,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @spec ml_projects_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def ml_projects_operations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

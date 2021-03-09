@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nodes => integer()
+          :nodes => integer() | nil
         }
 
   field(:nodes)

@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kmsKeyName => String.t()
+          :kmsKeyName => String.t() | nil
         }
 
   field(:kmsKeyName)

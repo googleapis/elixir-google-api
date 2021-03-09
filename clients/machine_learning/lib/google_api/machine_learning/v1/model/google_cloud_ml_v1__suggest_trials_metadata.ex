@@ -30,10 +30,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SuggestTrialsMetada
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientId => String.t(),
-          :createTime => DateTime.t(),
-          :study => String.t(),
-          :suggestionCount => integer()
+          :clientId => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :study => String.t() | nil,
+          :suggestionCount => integer() | nil
         }
 
   field(:clientId)

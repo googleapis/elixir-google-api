@@ -30,10 +30,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SuggestTrialsRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t(),
-          :studyState => String.t(),
-          :trials => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t())
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :studyState => String.t() | nil,
+          :trials => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()) | nil
         }
 
   field(:endTime, as: DateTime)

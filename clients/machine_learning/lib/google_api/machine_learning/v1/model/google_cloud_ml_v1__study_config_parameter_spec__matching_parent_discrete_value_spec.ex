@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParamete
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(float())
+          :values => list(float()) | nil
         }
 
   field(:values, type: :list)

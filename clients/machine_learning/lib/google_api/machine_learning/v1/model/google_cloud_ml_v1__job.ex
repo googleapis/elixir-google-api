@@ -38,20 +38,22 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :errorMessage => String.t(),
-          :etag => String.t(),
-          :jobId => String.t(),
-          :labels => map(),
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :errorMessage => String.t() | nil,
+          :etag => String.t() | nil,
+          :jobId => String.t() | nil,
+          :labels => map() | nil,
           :predictionInput =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput.t() | nil,
           :predictionOutput =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionOutput.t(),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :trainingInput => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput.t(),
-          :trainingOutput => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput.t()
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionOutput.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :trainingInput =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput.t() | nil,
+          :trainingOutput =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput.t() | nil
         }
 
   field(:createTime, as: DateTime)

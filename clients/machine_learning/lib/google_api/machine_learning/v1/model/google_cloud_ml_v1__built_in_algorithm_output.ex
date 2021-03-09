@@ -30,10 +30,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOut
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :framework => String.t(),
-          :modelPath => String.t(),
-          :pythonVersion => String.t(),
-          :runtimeVersion => String.t()
+          :framework => String.t() | nil,
+          :modelPath => String.t() | nil,
+          :pythonVersion => String.t() | nil,
+          :runtimeVersion => String.t() | nil
         }
 
   field(:framework)

@@ -35,15 +35,16 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
-          :enableTrialEarlyStopping => boolean(),
-          :goal => String.t(),
-          :hyperparameterMetricTag => String.t(),
-          :maxFailedTrials => integer(),
-          :maxParallelTrials => integer(),
-          :maxTrials => integer(),
-          :params => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ParameterSpec.t()),
-          :resumePreviousJobId => String.t()
+          :algorithm => String.t() | nil,
+          :enableTrialEarlyStopping => boolean() | nil,
+          :goal => String.t() | nil,
+          :hyperparameterMetricTag => String.t() | nil,
+          :maxFailedTrials => integer() | nil,
+          :maxParallelTrials => integer() | nil,
+          :maxTrials => integer() | nil,
+          :params =>
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ParameterSpec.t()) | nil,
+          :resumePreviousJobId => String.t() | nil
         }
 
   field(:algorithm)

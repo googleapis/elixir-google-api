@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SuggestTrialsReques
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientId => String.t(),
-          :suggestionCount => integer()
+          :clientId => String.t() | nil,
+          :suggestionCount => integer() | nil
         }
 
   field(:clientId)

@@ -29,9 +29,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingCo
 
   @type t :: %__MODULE__{
           :decayCurveStoppingConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingConfig_DecayCurveAutomatedStoppingConfig.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingConfig_DecayCurveAutomatedStoppingConfig.t()
+            | nil,
           :medianAutomatedStoppingConfig =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingConfig_MedianAutomatedStoppingConfig.t()
+            | nil
         }
 
   field(:decayCurveStoppingConfig,

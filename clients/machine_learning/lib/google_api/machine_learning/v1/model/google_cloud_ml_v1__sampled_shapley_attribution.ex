@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttri
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :numPaths => integer()
+          :numPaths => integer() | nil
         }
 
   field(:numPaths)

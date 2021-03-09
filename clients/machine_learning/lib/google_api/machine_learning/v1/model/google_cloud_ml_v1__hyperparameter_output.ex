@@ -38,17 +38,19 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutpu
           :allMetrics =>
             list(
               GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t()
-            ),
+            )
+            | nil,
           :builtInAlgorithmOutput =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t(),
-          :endTime => DateTime.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t() | nil,
+          :endTime => DateTime.t() | nil,
           :finalMetric =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t(),
-          :hyperparameters => map(),
-          :isTrialStoppedEarly => boolean(),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :trialId => String.t()
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t()
+            | nil,
+          :hyperparameters => map() | nil,
+          :isTrialStoppedEarly => boolean() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :trialId => String.t() | nil
         }
 
   field(:allMetrics,

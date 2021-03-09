@@ -30,10 +30,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial_Parameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :floatValue => float(),
-          :intValue => String.t(),
-          :parameter => String.t(),
-          :stringValue => String.t()
+          :floatValue => float() | nil,
+          :intValue => String.t() | nil,
+          :parameter => String.t() | nil,
+          :stringValue => String.t() | nil
         }
 
   field(:floatValue)

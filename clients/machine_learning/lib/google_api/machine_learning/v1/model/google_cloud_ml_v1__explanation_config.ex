@@ -30,11 +30,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig d
 
   @type t :: %__MODULE__{
           :integratedGradientsAttribution =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution.t()
+            | nil,
           :sampledShapleyAttribution =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttribution.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttribution.t() | nil,
           :xraiAttribution =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_XraiAttribution.t()
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_XraiAttribution.t() | nil
         }
 
   field(:integratedGradientsAttribution,

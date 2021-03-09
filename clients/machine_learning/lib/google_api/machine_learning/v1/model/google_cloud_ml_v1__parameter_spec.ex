@@ -33,13 +33,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ParameterSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categoricalValues => list(String.t()),
-          :discreteValues => list(float()),
-          :maxValue => float(),
-          :minValue => float(),
-          :parameterName => String.t(),
-          :scaleType => String.t(),
-          :type => String.t()
+          :categoricalValues => list(String.t()) | nil,
+          :discreteValues => list(float()) | nil,
+          :maxValue => float() | nil,
+          :minValue => float() | nil,
+          :parameterName => String.t() | nil,
+          :scaleType => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:categoricalValues, type: :list)

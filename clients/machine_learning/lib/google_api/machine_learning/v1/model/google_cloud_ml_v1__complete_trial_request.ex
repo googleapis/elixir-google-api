@@ -29,9 +29,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CompleteTrialReques
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :finalMeasurement => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t(),
-          :infeasibleReason => String.t(),
-          :trialInfeasible => boolean()
+          :finalMeasurement =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t() | nil,
+          :infeasibleReason => String.t() | nil,
+          :trialInfeasible => boolean() | nil
         }
 
   field(:finalMeasurement, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement)

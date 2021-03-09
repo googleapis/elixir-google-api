@@ -29,8 +29,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location do
 
   @type t :: %__MODULE__{
           :capabilities =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Capability.t()),
-          :name => String.t()
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Capability.t()) | nil,
+          :name => String.t() | nil
         }
 
   field(:capabilities,

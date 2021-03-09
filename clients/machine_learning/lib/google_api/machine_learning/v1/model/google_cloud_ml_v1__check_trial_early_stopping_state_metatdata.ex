@@ -29,9 +29,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CheckTrialEarlyStop
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :study => String.t(),
-          :trial => String.t()
+          :createTime => DateTime.t() | nil,
+          :study => String.t() | nil,
+          :trial => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
