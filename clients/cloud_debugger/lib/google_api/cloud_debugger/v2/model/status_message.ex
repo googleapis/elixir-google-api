@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudDebugger.V2.Model.StatusMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => GoogleApi.CloudDebugger.V2.Model.FormatMessage.t(),
-          :isError => boolean(),
-          :refersTo => String.t()
+          :description => GoogleApi.CloudDebugger.V2.Model.FormatMessage.t() | nil,
+          :isError => boolean() | nil,
+          :refersTo => String.t() | nil
         }
 
   field(:description, as: GoogleApi.CloudDebugger.V2.Model.FormatMessage)

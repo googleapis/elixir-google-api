@@ -44,24 +44,24 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Breakpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :canaryExpireTime => DateTime.t(),
-          :condition => String.t(),
-          :createTime => DateTime.t(),
-          :evaluatedExpressions => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()),
-          :expressions => list(String.t()),
-          :finalTime => DateTime.t(),
-          :id => String.t(),
-          :isFinalState => boolean(),
-          :labels => map(),
-          :location => GoogleApi.CloudDebugger.V2.Model.SourceLocation.t(),
-          :logLevel => String.t(),
-          :logMessageFormat => String.t(),
-          :stackFrames => list(GoogleApi.CloudDebugger.V2.Model.StackFrame.t()),
-          :state => String.t(),
-          :status => GoogleApi.CloudDebugger.V2.Model.StatusMessage.t(),
-          :userEmail => String.t(),
-          :variableTable => list(GoogleApi.CloudDebugger.V2.Model.Variable.t())
+          :action => String.t() | nil,
+          :canaryExpireTime => DateTime.t() | nil,
+          :condition => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :evaluatedExpressions => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()) | nil,
+          :expressions => list(String.t()) | nil,
+          :finalTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :isFinalState => boolean() | nil,
+          :labels => map() | nil,
+          :location => GoogleApi.CloudDebugger.V2.Model.SourceLocation.t() | nil,
+          :logLevel => String.t() | nil,
+          :logMessageFormat => String.t() | nil,
+          :stackFrames => list(GoogleApi.CloudDebugger.V2.Model.StackFrame.t()) | nil,
+          :state => String.t() | nil,
+          :status => GoogleApi.CloudDebugger.V2.Model.StatusMessage.t() | nil,
+          :userEmail => String.t() | nil,
+          :variableTable => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()) | nil
         }
 
   field(:action)

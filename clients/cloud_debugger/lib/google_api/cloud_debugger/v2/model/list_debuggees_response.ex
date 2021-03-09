@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.ListDebuggeesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debuggees => list(GoogleApi.CloudDebugger.V2.Model.Debuggee.t())
+          :debuggees => list(GoogleApi.CloudDebugger.V2.Model.Debuggee.t()) | nil
         }
 
   field(:debuggees, as: GoogleApi.CloudDebugger.V2.Model.Debuggee, type: :list)

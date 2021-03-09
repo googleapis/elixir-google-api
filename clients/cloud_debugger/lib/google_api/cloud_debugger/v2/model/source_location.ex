@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudDebugger.V2.Model.SourceLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :column => integer(),
-          :line => integer(),
-          :path => String.t()
+          :column => integer() | nil,
+          :line => integer() | nil,
+          :path => String.t() | nil
         }
 
   field(:column)

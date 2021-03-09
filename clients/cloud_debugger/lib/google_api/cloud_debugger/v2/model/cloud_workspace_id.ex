@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :repoId => GoogleApi.CloudDebugger.V2.Model.RepoId.t()
+          :name => String.t() | nil,
+          :repoId => GoogleApi.CloudDebugger.V2.Model.RepoId.t() | nil
         }
 
   field(:name)

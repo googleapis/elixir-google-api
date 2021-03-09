@@ -56,6 +56,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   @spec clouddebugger_debugger_debuggees_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.ListDebuggeesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def clouddebugger_debugger_debuggees_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -126,6 +127,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def clouddebugger_debugger_debuggees_breakpoints_delete(
         connection,
@@ -201,6 +203,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.GetBreakpointResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def clouddebugger_debugger_debuggees_breakpoints_get(
         connection,
@@ -281,6 +284,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.ListBreakpointsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def clouddebugger_debugger_debuggees_breakpoints_list(
         connection,
@@ -361,6 +365,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.SetBreakpointResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def clouddebugger_debugger_debuggees_breakpoints_set(
         connection,

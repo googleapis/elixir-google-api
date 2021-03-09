@@ -30,10 +30,11 @@ defmodule GoogleApi.CloudDebugger.V2.Model.SourceContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudRepo => GoogleApi.CloudDebugger.V2.Model.CloudRepoSourceContext.t(),
-          :cloudWorkspace => GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceSourceContext.t(),
-          :gerrit => GoogleApi.CloudDebugger.V2.Model.GerritSourceContext.t(),
-          :git => GoogleApi.CloudDebugger.V2.Model.GitSourceContext.t()
+          :cloudRepo => GoogleApi.CloudDebugger.V2.Model.CloudRepoSourceContext.t() | nil,
+          :cloudWorkspace =>
+            GoogleApi.CloudDebugger.V2.Model.CloudWorkspaceSourceContext.t() | nil,
+          :gerrit => GoogleApi.CloudDebugger.V2.Model.GerritSourceContext.t() | nil,
+          :git => GoogleApi.CloudDebugger.V2.Model.GitSourceContext.t() | nil
         }
 
   field(:cloudRepo, as: GoogleApi.CloudDebugger.V2.Model.CloudRepoSourceContext)

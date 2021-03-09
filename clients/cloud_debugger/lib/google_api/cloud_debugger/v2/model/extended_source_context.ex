@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudDebugger.V2.Model.ExtendedSourceContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => GoogleApi.CloudDebugger.V2.Model.SourceContext.t(),
-          :labels => map()
+          :context => GoogleApi.CloudDebugger.V2.Model.SourceContext.t() | nil,
+          :labels => map() | nil
         }
 
   field(:context, as: GoogleApi.CloudDebugger.V2.Model.SourceContext)
