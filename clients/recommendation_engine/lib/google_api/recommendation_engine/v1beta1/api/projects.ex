@@ -62,6 +62,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ListCatalogsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_list(
         connection,
@@ -142,6 +143,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1Catalog.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_patch(
         connection,
@@ -221,6 +223,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogItem.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_catalog_items_create(
         connection,
@@ -297,6 +300,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.RecommendationEngine.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_catalog_items_delete(
         connection,
@@ -369,6 +373,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogItem.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_catalog_items_get(
         connection,
@@ -445,6 +450,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_catalog_items_import(
         connection,
@@ -521,6 +527,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ListCatalogItemsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_catalog_items_list(
         connection,
@@ -602,6 +609,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogItem.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_catalog_items_patch(
         connection,
@@ -679,6 +687,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_operations_get(
         connection,
@@ -754,6 +763,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_operations_list(
         connection,
@@ -834,6 +844,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1PredictResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_placements_predict(
         connection,
@@ -912,6 +923,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1PredictionApiKeyRegistration.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_prediction_api_key_registrations_create(
         connection,
@@ -988,6 +1000,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.RecommendationEngine.V1beta1.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_prediction_api_key_registrations_delete(
         connection,
@@ -1062,6 +1075,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ListPredictionApiKeyRegistrationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_prediction_api_key_registrations_list(
         connection,
@@ -1142,6 +1156,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.RecommendationEngine.V1beta1.Model.GoogleApiHttpBody.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_user_events_collect(
         connection,
@@ -1217,6 +1232,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_user_events_import(
         connection,
@@ -1293,6 +1309,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ListUserEventsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_user_events_list(
         connection,
@@ -1372,6 +1389,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_user_events_purge(
         connection,
@@ -1445,6 +1463,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_user_events_rejoin(
         connection,
@@ -1519,6 +1538,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1UserEvent.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_event_stores_user_events_write(
         connection,
@@ -1595,6 +1615,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_operations_get(
         connection,
@@ -1670,6 +1691,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Api.Projects do
           {:ok,
            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def recommendationengine_projects_locations_catalogs_operations_list(
         connection,

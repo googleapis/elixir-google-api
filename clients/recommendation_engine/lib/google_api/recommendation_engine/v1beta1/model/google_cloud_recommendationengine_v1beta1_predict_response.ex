@@ -32,15 +32,16 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dryRun => boolean(),
-          :itemsMissingInCatalog => list(String.t()),
-          :metadata => map(),
-          :nextPageToken => String.t(),
-          :recommendationToken => String.t(),
+          :dryRun => boolean() | nil,
+          :itemsMissingInCatalog => list(String.t()) | nil,
+          :metadata => map() | nil,
+          :nextPageToken => String.t() | nil,
+          :recommendationToken => String.t() | nil,
           :results =>
             list(
               GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1PredictResponsePredictionResult.t()
             )
+            | nil
         }
 
   field(:dryRun)

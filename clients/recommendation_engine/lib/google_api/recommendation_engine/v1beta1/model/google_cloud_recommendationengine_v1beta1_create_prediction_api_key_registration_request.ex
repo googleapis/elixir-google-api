@@ -29,6 +29,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   @type t :: %__MODULE__{
           :predictionApiKeyRegistration =>
             GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1PredictionApiKeyRegistration.t()
+            | nil
         }
 
   field(:predictionApiKeyRegistration,

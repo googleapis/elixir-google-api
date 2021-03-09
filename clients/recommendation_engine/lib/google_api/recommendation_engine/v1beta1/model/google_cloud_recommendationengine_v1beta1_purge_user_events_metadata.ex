@@ -28,8 +28,8 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :operationName => String.t()
+          :createTime => DateTime.t() | nil,
+          :operationName => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

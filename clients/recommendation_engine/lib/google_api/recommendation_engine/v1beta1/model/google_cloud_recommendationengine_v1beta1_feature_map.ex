@@ -28,14 +28,18 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categoricalFeatures => %{
-            optional(String.t()) =>
-              GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1FeatureMapStringList.t()
-          },
-          :numericalFeatures => %{
-            optional(String.t()) =>
-              GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1FeatureMapFloatList.t()
-          }
+          :categoricalFeatures =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1FeatureMapStringList.t()
+            }
+            | nil,
+          :numericalFeatures =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1FeatureMapFloatList.t()
+            }
+            | nil
         }
 
   field(:categoricalFeatures,

@@ -28,8 +28,8 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventItemLevel => String.t(),
-          :predictItemLevel => String.t()
+          :eventItemLevel => String.t() | nil,
+          :predictItemLevel => String.t() | nil
         }
 
   field(:eventItemLevel)

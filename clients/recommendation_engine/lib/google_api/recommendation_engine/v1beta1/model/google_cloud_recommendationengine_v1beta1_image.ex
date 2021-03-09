@@ -29,9 +29,9 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => integer(),
-          :uri => String.t(),
-          :width => integer()
+          :height => integer() | nil,
+          :uri => String.t() | nil,
+          :width => integer() | nil
         }
 
   field(:height)

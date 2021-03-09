@@ -27,7 +27,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiKey => String.t()
+          :apiKey => String.t() | nil
         }
 
   field(:apiKey)

@@ -32,19 +32,22 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cartId => String.t(),
-          :listId => String.t(),
+          :cartId => String.t() | nil,
+          :listId => String.t() | nil,
           :pageCategories =>
             list(
               GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogItemCategoryHierarchy.t()
-            ),
+            )
+            | nil,
           :productDetails =>
             list(
               GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ProductDetail.t()
-            ),
+            )
+            | nil,
           :purchaseTransaction =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1PurchaseTransaction.t(),
-          :searchQuery => String.t()
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1PurchaseTransaction.t()
+            | nil,
+          :searchQuery => String.t() | nil
         }
 
   field(:cartId)

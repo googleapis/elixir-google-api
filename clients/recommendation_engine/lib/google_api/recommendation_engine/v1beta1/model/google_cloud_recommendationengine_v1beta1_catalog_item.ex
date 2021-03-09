@@ -38,17 +38,20 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
           :categoryHierarchies =>
             list(
               GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogItemCategoryHierarchy.t()
-            ),
-          :description => String.t(),
-          :id => String.t(),
+            )
+            | nil,
+          :description => String.t() | nil,
+          :id => String.t() | nil,
           :itemAttributes =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1FeatureMap.t(),
-          :itemGroupId => String.t(),
-          :languageCode => String.t(),
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1FeatureMap.t()
+            | nil,
+          :itemGroupId => String.t() | nil,
+          :languageCode => String.t() | nil,
           :productMetadata =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ProductCatalogItem.t(),
-          :tags => list(String.t()),
-          :title => String.t()
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ProductCatalogItem.t()
+            | nil,
+          :tags => list(String.t()) | nil,
+          :title => String.t() | nil
         }
 
   field(:categoryHierarchies,

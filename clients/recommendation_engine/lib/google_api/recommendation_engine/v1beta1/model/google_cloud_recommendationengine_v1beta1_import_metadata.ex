@@ -32,12 +32,12 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :failureCount => String.t(),
-          :operationName => String.t(),
-          :requestId => String.t(),
-          :successCount => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :failureCount => String.t() | nil,
+          :operationName => String.t() | nil,
+          :requestId => String.t() | nil,
+          :successCount => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

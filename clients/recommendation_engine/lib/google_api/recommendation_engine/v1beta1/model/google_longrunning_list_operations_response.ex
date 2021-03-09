@@ -28,9 +28,10 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningListOper
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
+          :nextPageToken => String.t() | nil,
           :operations =>
             list(GoogleApi.RecommendationEngine.V1beta1.Model.GoogleLongrunningOperation.t())
+            | nil
         }
 
   field(:nextPageToken)

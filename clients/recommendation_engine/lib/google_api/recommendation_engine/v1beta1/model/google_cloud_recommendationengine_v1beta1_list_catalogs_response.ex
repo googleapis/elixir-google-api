@@ -31,8 +31,9 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
           :catalogs =>
             list(
               GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1Catalog.t()
-            ),
-          :nextPageToken => String.t()
+            )
+            | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:catalogs,

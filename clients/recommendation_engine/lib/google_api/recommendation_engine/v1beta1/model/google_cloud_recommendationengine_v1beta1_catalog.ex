@@ -31,10 +31,11 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
 
   @type t :: %__MODULE__{
           :catalogItemLevelConfig =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfig.t(),
-          :defaultEventStoreId => String.t(),
-          :displayName => String.t(),
-          :name => String.t()
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfig.t()
+            | nil,
+          :defaultEventStoreId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:catalogItemLevelConfig,

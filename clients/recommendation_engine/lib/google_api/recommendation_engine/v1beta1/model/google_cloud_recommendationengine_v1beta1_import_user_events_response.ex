@@ -29,11 +29,14 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorSamples => list(GoogleApi.RecommendationEngine.V1beta1.Model.GoogleRpcStatus.t()),
+          :errorSamples =>
+            list(GoogleApi.RecommendationEngine.V1beta1.Model.GoogleRpcStatus.t()) | nil,
           :errorsConfig =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ImportErrorsConfig.t(),
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ImportErrorsConfig.t()
+            | nil,
           :importSummary =>
             GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1UserEventImportSummary.t()
+            | nil
         }
 
   field(:errorSamples,

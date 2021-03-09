@@ -31,11 +31,11 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :costs => map(),
-          :currencyCode => String.t(),
-          :id => String.t(),
-          :revenue => number(),
-          :taxes => map()
+          :costs => map() | nil,
+          :currencyCode => String.t() | nil,
+          :id => String.t() | nil,
+          :revenue => number() | nil,
+          :taxes => map() | nil
         }
 
   field(:costs, type: :map)

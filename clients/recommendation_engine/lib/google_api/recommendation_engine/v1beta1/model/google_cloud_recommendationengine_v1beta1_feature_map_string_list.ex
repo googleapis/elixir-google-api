@@ -27,7 +27,7 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :value => list(String.t())
+          :value => list(String.t()) | nil
         }
 
   field(:value, type: :list)

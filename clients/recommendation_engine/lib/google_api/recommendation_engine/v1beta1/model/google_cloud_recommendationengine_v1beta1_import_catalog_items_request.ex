@@ -31,11 +31,13 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
 
   @type t :: %__MODULE__{
           :errorsConfig =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ImportErrorsConfig.t(),
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1ImportErrorsConfig.t()
+            | nil,
           :inputConfig =>
-            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1InputConfig.t(),
-          :requestId => String.t(),
-          :updateMask => String.t()
+            GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1InputConfig.t()
+            | nil,
+          :requestId => String.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:errorsConfig,

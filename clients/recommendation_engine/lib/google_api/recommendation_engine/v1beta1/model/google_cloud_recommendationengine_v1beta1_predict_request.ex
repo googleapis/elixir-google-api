@@ -33,14 +33,15 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dryRun => boolean(),
-          :filter => String.t(),
-          :labels => map(),
-          :pageSize => integer(),
-          :pageToken => String.t(),
-          :params => map(),
+          :dryRun => boolean() | nil,
+          :filter => String.t() | nil,
+          :labels => map() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
+          :params => map() | nil,
           :userEvent =>
             GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendationengineV1beta1UserEvent.t()
+            | nil
         }
 
   field(:dryRun)

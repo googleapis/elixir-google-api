@@ -28,8 +28,8 @@ defmodule GoogleApi.RecommendationEngine.V1beta1.Model.GoogleCloudRecommendation
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :joinedEventsCount => String.t(),
-          :unjoinedEventsCount => String.t()
+          :joinedEventsCount => String.t() | nil,
+          :unjoinedEventsCount => String.t() | nil
         }
 
   field(:joinedEventsCount)
