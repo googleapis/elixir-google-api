@@ -27,7 +27,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApproveApprovalRequestMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expireTime => DateTime.t()
+          :expireTime => DateTime.t() | nil
         }
 
   field(:expireTime, as: DateTime)

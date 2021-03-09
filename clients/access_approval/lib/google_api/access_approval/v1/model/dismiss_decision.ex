@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.DismissDecision do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dismissTime => DateTime.t(),
-          :implicit => boolean()
+          :dismissTime => DateTime.t() | nil,
+          :implicit => boolean() | nil
         }
 
   field(:dismissTime, as: DateTime)

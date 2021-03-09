@@ -35,15 +35,16 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApprovalRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approve => GoogleApi.AccessApproval.V1.Model.ApproveDecision.t(),
-          :dismiss => GoogleApi.AccessApproval.V1.Model.DismissDecision.t(),
-          :name => String.t(),
-          :requestTime => DateTime.t(),
-          :requestedExpiration => DateTime.t(),
-          :requestedLocations => GoogleApi.AccessApproval.V1.Model.AccessLocations.t(),
-          :requestedReason => GoogleApi.AccessApproval.V1.Model.AccessReason.t(),
-          :requestedResourceName => String.t(),
-          :requestedResourceProperties => GoogleApi.AccessApproval.V1.Model.ResourceProperties.t()
+          :approve => GoogleApi.AccessApproval.V1.Model.ApproveDecision.t() | nil,
+          :dismiss => GoogleApi.AccessApproval.V1.Model.DismissDecision.t() | nil,
+          :name => String.t() | nil,
+          :requestTime => DateTime.t() | nil,
+          :requestedExpiration => DateTime.t() | nil,
+          :requestedLocations => GoogleApi.AccessApproval.V1.Model.AccessLocations.t() | nil,
+          :requestedReason => GoogleApi.AccessApproval.V1.Model.AccessReason.t() | nil,
+          :requestedResourceName => String.t() | nil,
+          :requestedResourceProperties =>
+            GoogleApi.AccessApproval.V1.Model.ResourceProperties.t() | nil
         }
 
   field(:approve, as: GoogleApi.AccessApproval.V1.Model.ApproveDecision)

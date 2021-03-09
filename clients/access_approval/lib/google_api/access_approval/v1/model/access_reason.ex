@@ -28,8 +28,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessReason do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detail => String.t(),
-          :type => String.t()
+          :detail => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:detail)
