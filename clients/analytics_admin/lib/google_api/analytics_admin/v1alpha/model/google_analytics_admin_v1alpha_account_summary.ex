@@ -30,13 +30,14 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAcco
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :account => String.t(),
-          :displayName => String.t(),
-          :name => String.t(),
+          :account => String.t() | nil,
+          :displayName => String.t() | nil,
+          :name => String.t() | nil,
           :propertySummaries =>
             list(
               GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaPropertySummary.t()
             )
+            | nil
         }
 
   field(:account)

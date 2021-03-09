@@ -32,12 +32,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaIosA
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bundleId => String.t(),
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :firebaseAppId => String.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :bundleId => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :firebaseAppId => String.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:bundleId)

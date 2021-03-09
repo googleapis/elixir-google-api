@@ -28,11 +28,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatc
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :notifyNewUsers => boolean(),
+          :notifyNewUsers => boolean() | nil,
           :requests =>
             list(
               GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCreateUserLinkRequest.t()
             )
+            | nil
         }
 
   field(:notifyNewUsers)

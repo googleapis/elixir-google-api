@@ -30,10 +30,10 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :directRoles => list(String.t()),
-          :effectiveRoles => list(String.t()),
-          :emailAddress => String.t(),
-          :name => String.t()
+          :directRoles => list(String.t()) | nil,
+          :effectiveRoles => list(String.t()) | nil,
+          :emailAddress => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:directRoles, type: :list)

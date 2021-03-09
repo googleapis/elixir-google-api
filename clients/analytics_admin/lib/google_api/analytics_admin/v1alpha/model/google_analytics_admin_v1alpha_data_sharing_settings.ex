@@ -32,12 +32,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaData
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :sharingWithGoogleAnySalesEnabled => boolean(),
-          :sharingWithGoogleAssignedSalesEnabled => boolean(),
-          :sharingWithGoogleProductsEnabled => boolean(),
-          :sharingWithGoogleSupportEnabled => boolean(),
-          :sharingWithOthersEnabled => boolean()
+          :name => String.t() | nil,
+          :sharingWithGoogleAnySalesEnabled => boolean() | nil,
+          :sharingWithGoogleAssignedSalesEnabled => boolean() | nil,
+          :sharingWithGoogleProductsEnabled => boolean() | nil,
+          :sharingWithGoogleSupportEnabled => boolean() | nil,
+          :sharingWithOthersEnabled => boolean() | nil
         }
 
   field(:name)

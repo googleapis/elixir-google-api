@@ -33,13 +33,13 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoog
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adsPersonalizationEnabled => boolean(),
-          :canManageClients => boolean(),
-          :createTime => DateTime.t(),
-          :customerId => String.t(),
-          :emailAddress => String.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :adsPersonalizationEnabled => boolean() | nil,
+          :canManageClients => boolean() | nil,
+          :createTime => DateTime.t() | nil,
+          :customerId => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:adsPersonalizationEnabled)

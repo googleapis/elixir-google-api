@@ -29,9 +29,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUser
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :directRoles => list(String.t()),
-          :emailAddress => String.t(),
-          :name => String.t()
+          :directRoles => list(String.t()) | nil,
+          :emailAddress => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:directRoles, type: :list)

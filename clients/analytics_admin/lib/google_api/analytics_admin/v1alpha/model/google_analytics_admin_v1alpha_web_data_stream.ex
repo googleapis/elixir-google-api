@@ -33,13 +33,13 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaWebD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :defaultUri => String.t(),
-          :displayName => String.t(),
-          :firebaseAppId => String.t(),
-          :measurementId => String.t(),
-          :name => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :defaultUri => String.t() | nil,
+          :displayName => String.t() | nil,
+          :firebaseAppId => String.t() | nil,
+          :measurementId => String.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

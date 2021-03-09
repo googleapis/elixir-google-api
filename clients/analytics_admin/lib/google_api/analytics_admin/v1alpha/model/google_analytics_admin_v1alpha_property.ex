@@ -35,15 +35,15 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :currencyCode => String.t(),
-          :deleted => boolean(),
-          :displayName => String.t(),
-          :industryCategory => String.t(),
-          :name => String.t(),
-          :parent => String.t(),
-          :timeZone => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :currencyCode => String.t() | nil,
+          :deleted => boolean() | nil,
+          :displayName => String.t() | nil,
+          :industryCategory => String.t() | nil,
+          :name => String.t() | nil,
+          :parent => String.t() | nil,
+          :timeZone => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
