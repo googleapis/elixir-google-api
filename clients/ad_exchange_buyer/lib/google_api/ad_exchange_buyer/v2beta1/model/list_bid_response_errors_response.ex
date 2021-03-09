@@ -29,8 +29,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponseErrorsResponse 
 
   @type t :: %__MODULE__{
           :calloutStatusRows =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:calloutStatusRows,

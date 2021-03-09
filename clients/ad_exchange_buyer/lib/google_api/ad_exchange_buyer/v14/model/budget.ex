@@ -32,12 +32,12 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Budget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :billingId => String.t(),
-          :budgetAmount => String.t(),
-          :currencyCode => String.t(),
-          :id => String.t(),
-          :kind => String.t()
+          :accountId => String.t() | nil,
+          :billingId => String.t() | nil,
+          :budgetAmount => String.t() | nil,
+          :currencyCode => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil
         }
 
   field(:accountId)

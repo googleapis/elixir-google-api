@@ -29,10 +29,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeRestrictions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeFormat => String.t(),
+          :creativeFormat => String.t() | nil,
           :creativeSpecifications =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSpecification.t()),
-          :skippableAdType => String.t()
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSpecification.t()) | nil,
+          :skippableAdType => String.t() | nil
         }
 
   field(:creativeFormat)

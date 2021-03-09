@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :subAccountId => String.t()
+          :accountId => String.t() | nil,
+          :subAccountId => String.t() | nil
         }
 
   field(:accountId)

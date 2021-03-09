@@ -28,9 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Dimension do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionType => String.t(),
+          :dimensionType => String.t() | nil,
           :dimensionValues =>
-            list(GoogleApi.AdExchangeBuyer.V14.Model.DimensionDimensionValue.t())
+            list(GoogleApi.AdExchangeBuyer.V14.Model.DimensionDimensionValue.t()) | nil
         }
 
   field(:dimensionType)

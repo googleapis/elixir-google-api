@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FirstPartyMobileApplicationTar
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedAppIds => list(String.t()),
-          :targetedAppIds => list(String.t())
+          :excludedAppIds => list(String.t()) | nil,
+          :targetedAppIds => list(String.t()) | nil
         }
 
   field(:excludedAppIds, type: :list)

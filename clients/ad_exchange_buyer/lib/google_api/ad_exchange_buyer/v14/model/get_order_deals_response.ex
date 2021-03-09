@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.GetOrderDealsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deals => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t())
+          :deals => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t()) | nil
         }
 
   field(:deals, as: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.BillingInfoList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo.t()),
-          :kind => String.t()
+          :items => list(GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:items, as: GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo, type: :list)

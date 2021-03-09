@@ -30,10 +30,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.BillingInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => integer(),
-          :accountName => String.t(),
-          :billingId => list(String.t()),
-          :kind => String.t()
+          :accountId => integer() | nil,
+          :accountName => String.t() | nil,
+          :billingId => list(String.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:accountId)

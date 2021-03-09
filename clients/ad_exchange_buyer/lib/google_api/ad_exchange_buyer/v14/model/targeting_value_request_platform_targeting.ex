@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueRequestPlatformTarge
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestPlatforms => list(String.t())
+          :requestPlatforms => list(String.t()) | nil
         }
 
   field(:requestPlatforms, type: :list)

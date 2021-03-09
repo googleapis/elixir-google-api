@@ -31,11 +31,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Note do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :creatorRole => String.t(),
-          :note => String.t(),
-          :noteId => String.t(),
-          :proposalRevision => String.t()
+          :createTime => DateTime.t() | nil,
+          :creatorRole => String.t() | nil,
+          :note => String.t() | nil,
+          :noteId => String.t() | nil,
+          :proposalRevision => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

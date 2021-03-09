@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.RealtimeTimeRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :startTimestamp => DateTime.t()
+          :startTimestamp => DateTime.t() | nil
         }
 
   field(:startTimestamp, as: DateTime)

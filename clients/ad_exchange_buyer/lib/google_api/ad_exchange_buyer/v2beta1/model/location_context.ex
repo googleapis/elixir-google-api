@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.LocationContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :geoCriteriaIds => list(integer())
+          :geoCriteriaIds => list(integer()) | nil
         }
 
   field(:geoCriteriaIds, type: :list)

@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DealServingMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dealPauseStatus => GoogleApi.AdExchangeBuyer.V2beta1.Model.DealPauseStatus.t()
+          :dealPauseStatus => GoogleApi.AdExchangeBuyer.V2beta1.Model.DealPauseStatus.t() | nil
         }
 
   field(:dealPauseStatus, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.DealPauseStatus)

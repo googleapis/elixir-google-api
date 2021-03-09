@@ -28,8 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListPublisherProfilesResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :publisherProfiles => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile.t())
+          :nextPageToken => String.t() | nil,
+          :publisherProfiles =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile.t()) | nil
         }
 
   field(:nextPageToken)

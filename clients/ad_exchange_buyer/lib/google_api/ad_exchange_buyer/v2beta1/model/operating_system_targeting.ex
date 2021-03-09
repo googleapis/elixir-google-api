@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.OperatingSystemTargeting do
 
   @type t :: %__MODULE__{
           :operatingSystemCriteria =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t(),
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t() | nil,
           :operatingSystemVersionCriteria =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t()
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t() | nil
         }
 
   field(:operatingSystemCriteria, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting)

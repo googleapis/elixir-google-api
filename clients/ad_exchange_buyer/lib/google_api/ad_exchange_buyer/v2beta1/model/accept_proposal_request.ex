@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AcceptProposalRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :proposalRevision => String.t()
+          :proposalRevision => String.t() | nil
         }
 
   field(:proposalRevision)

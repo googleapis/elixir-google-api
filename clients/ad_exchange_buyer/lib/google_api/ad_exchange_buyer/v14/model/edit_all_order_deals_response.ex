@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deals => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t()),
-          :orderRevisionNumber => String.t()
+          :deals => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal.t()) | nil,
+          :orderRevisionNumber => String.t() | nil
         }
 
   field(:deals, as: GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDeal, type: :list)

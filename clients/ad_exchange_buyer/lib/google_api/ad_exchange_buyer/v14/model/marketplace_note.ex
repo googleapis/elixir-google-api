@@ -34,14 +34,14 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceNote do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creatorRole => String.t(),
-          :dealId => String.t(),
-          :kind => String.t(),
-          :note => String.t(),
-          :noteId => String.t(),
-          :proposalId => String.t(),
-          :proposalRevisionNumber => String.t(),
-          :timestampMs => String.t()
+          :creatorRole => String.t() | nil,
+          :dealId => String.t() | nil,
+          :kind => String.t() | nil,
+          :note => String.t() | nil,
+          :noteId => String.t() | nil,
+          :proposalId => String.t() | nil,
+          :proposalRevisionNumber => String.t() | nil,
+          :timestampMs => String.t() | nil
         }
 
   field(:creatorRole)

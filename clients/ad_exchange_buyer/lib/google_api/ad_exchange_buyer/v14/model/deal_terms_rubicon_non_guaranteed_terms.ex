@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsRubiconNonGuaranteedTerms
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :priorityPrice => GoogleApi.AdExchangeBuyer.V14.Model.Price.t(),
-          :standardPrice => GoogleApi.AdExchangeBuyer.V14.Model.Price.t()
+          :priorityPrice => GoogleApi.AdExchangeBuyer.V14.Model.Price.t() | nil,
+          :standardPrice => GoogleApi.AdExchangeBuyer.V14.Model.Price.t() | nil
         }
 
   field(:priorityPrice, as: GoogleApi.AdExchangeBuyer.V14.Model.Price)

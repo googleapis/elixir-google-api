@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfileMobileApplicat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appStore => String.t(),
-          :externalAppId => String.t(),
-          :name => String.t()
+          :appStore => String.t() | nil,
+          :externalAppId => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:appStore)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FrequencyCap do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxImpressions => integer(),
-          :numTimeUnits => integer(),
-          :timeUnitType => String.t()
+          :maxImpressions => integer() | nil,
+          :numTimeUnits => integer() | nil,
+          :timeUnitType => String.t() | nil
         }
 
   field(:maxImpressions)

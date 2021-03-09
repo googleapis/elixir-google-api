@@ -51,29 +51,31 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Proposal do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billedBuyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t(),
-          :buyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t(),
-          :buyerContacts => list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t()),
-          :buyerPrivateData => GoogleApi.AdExchangeBuyer.V14.Model.PrivateData.t(),
-          :dbmAdvertiserIds => list(String.t()),
-          :hasBuyerSignedOff => boolean(),
-          :hasSellerSignedOff => boolean(),
-          :inventorySource => String.t(),
-          :isRenegotiating => boolean(),
-          :isSetupComplete => boolean(),
-          :kind => String.t(),
-          :labels => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel.t()),
-          :lastUpdaterOrCommentorRole => String.t(),
-          :name => String.t(),
-          :negotiationId => String.t(),
-          :originatorRole => String.t(),
-          :privateAuctionId => String.t(),
-          :proposalId => String.t(),
-          :proposalState => String.t(),
-          :revisionNumber => String.t(),
-          :revisionTimeMs => String.t(),
-          :seller => GoogleApi.AdExchangeBuyer.V14.Model.Seller.t(),
-          :sellerContacts => list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t())
+          :billedBuyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t() | nil,
+          :buyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t() | nil,
+          :buyerContacts =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t()) | nil,
+          :buyerPrivateData => GoogleApi.AdExchangeBuyer.V14.Model.PrivateData.t() | nil,
+          :dbmAdvertiserIds => list(String.t()) | nil,
+          :hasBuyerSignedOff => boolean() | nil,
+          :hasSellerSignedOff => boolean() | nil,
+          :inventorySource => String.t() | nil,
+          :isRenegotiating => boolean() | nil,
+          :isSetupComplete => boolean() | nil,
+          :kind => String.t() | nil,
+          :labels => list(GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceLabel.t()) | nil,
+          :lastUpdaterOrCommentorRole => String.t() | nil,
+          :name => String.t() | nil,
+          :negotiationId => String.t() | nil,
+          :originatorRole => String.t() | nil,
+          :privateAuctionId => String.t() | nil,
+          :proposalId => String.t() | nil,
+          :proposalState => String.t() | nil,
+          :revisionNumber => String.t() | nil,
+          :revisionTimeMs => String.t() | nil,
+          :seller => GoogleApi.AdExchangeBuyer.V14.Model.Seller.t() | nil,
+          :sellerContacts =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation.t()) | nil
         }
 
   field(:billedBuyer, as: GoogleApi.AdExchangeBuyer.V14.Model.Buyer)

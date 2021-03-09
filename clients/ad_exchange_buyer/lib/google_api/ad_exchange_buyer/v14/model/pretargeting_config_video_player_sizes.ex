@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigVideoPlayerSizes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aspectRatio => String.t(),
-          :minHeight => String.t(),
-          :minWidth => String.t()
+          :aspectRatio => String.t() | nil,
+          :minHeight => String.t() | nil,
+          :minWidth => String.t() | nil
         }
 
   field(:aspectRatio)

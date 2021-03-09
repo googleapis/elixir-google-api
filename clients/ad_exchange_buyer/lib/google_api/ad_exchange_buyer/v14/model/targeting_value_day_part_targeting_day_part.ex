@@ -31,11 +31,11 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayP
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dayOfWeek => String.t(),
-          :endHour => integer(),
-          :endMinute => integer(),
-          :startHour => integer(),
-          :startMinute => integer()
+          :dayOfWeek => String.t() | nil,
+          :endHour => integer() | nil,
+          :endMinute => integer() | nil,
+          :startHour => integer() | nil,
+          :startMinute => integer() | nil
         }
 
   field(:dayOfWeek)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigExcludedPlacemen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :token => String.t(),
-          :type => String.t()
+          :token => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:token)

@@ -30,12 +30,14 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictions do
 
   @type t :: %__MODULE__{
           :contexts =>
-            list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsContexts.t()),
+            list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsContexts.t())
+            | nil,
           :disapprovalReasons =>
             list(
               GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsDisapprovalReasons.t()
-            ),
-          :reason => String.t()
+            )
+            | nil,
+          :reason => String.t() | nil
         }
 
   field(:contexts,

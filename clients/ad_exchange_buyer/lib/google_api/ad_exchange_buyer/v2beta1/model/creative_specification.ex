@@ -28,8 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSpecification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creativeCompanionSizes => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t()),
-          :creativeSize => GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t()
+          :creativeCompanionSizes =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t()) | nil,
+          :creativeSize => GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t() | nil
         }
 
   field(:creativeCompanionSizes, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize, type: :list)

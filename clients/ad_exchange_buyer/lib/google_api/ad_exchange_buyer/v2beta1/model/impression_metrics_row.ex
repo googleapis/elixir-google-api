@@ -32,12 +32,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ImpressionMetricsRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :bidRequests => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :inventoryMatches => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :responsesWithBids => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t(),
-          :successfulResponses => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t()
+          :availableImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :bidRequests => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :inventoryMatches => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :responsesWithBids => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t() | nil,
+          :successfulResponses => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil
         }
 
   field(:availableImpressions, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)

@@ -42,10 +42,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bidProtocol => String.t(),
-          :maximumQps => integer(),
-          :region => String.t(),
-          :url => String.t()
+          :bidProtocol => String.t() | nil,
+          :maximumQps => integer() | nil,
+          :region => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:bidProtocol)

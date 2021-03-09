@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.DayPart do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dayOfWeek => String.t(),
-          :endTime => GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeOfDay.t(),
-          :startTime => GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeOfDay.t()
+          :dayOfWeek => String.t() | nil,
+          :endTime => GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeOfDay.t() | nil,
+          :startTime => GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeOfDay.t() | nil
         }
 
   field(:dayOfWeek)

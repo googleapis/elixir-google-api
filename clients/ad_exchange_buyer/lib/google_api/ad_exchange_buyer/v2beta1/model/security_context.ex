@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.SecurityContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :securities => list(String.t())
+          :securities => list(String.t()) | nil
         }
 
   field(:securities, type: :list)

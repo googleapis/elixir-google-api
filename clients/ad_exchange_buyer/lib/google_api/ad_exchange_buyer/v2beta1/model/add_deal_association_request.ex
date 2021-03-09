@@ -27,7 +27,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AddDealAssociationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :association => GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t()
+          :association =>
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation.t() | nil
         }
 
   field(:association, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation)

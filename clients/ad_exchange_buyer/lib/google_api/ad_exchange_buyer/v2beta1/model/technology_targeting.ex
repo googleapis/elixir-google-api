@@ -30,11 +30,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.TechnologyTargeting do
 
   @type t :: %__MODULE__{
           :deviceCapabilityTargeting =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t(),
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t() | nil,
           :deviceCategoryTargeting =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t(),
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t() | nil,
           :operatingSystemTargeting =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.OperatingSystemTargeting.t()
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.OperatingSystemTargeting.t() | nil
         }
 
   field(:deviceCapabilityTargeting, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting)

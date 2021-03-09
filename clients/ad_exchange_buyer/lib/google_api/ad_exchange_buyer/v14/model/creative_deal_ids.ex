@@ -29,8 +29,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds do
 
   @type t :: %__MODULE__{
           :dealStatuses =>
-            list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses.t()),
-          :kind => String.t()
+            list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIdsDealStatuses.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:dealStatuses,

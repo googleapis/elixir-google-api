@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CalloutStatusRow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calloutStatusId => integer(),
-          :impressionCount => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
-          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t()
+          :calloutStatusId => integer() | nil,
+          :impressionCount => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t() | nil,
+          :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t() | nil
         }
 
   field(:calloutStatusId)

@@ -32,12 +32,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :all => String.t(),
-          :appType => GoogleApi.AdExchangeBuyer.V2beta1.Model.AppContext.t(),
-          :auctionType => GoogleApi.AdExchangeBuyer.V2beta1.Model.AuctionContext.t(),
-          :location => GoogleApi.AdExchangeBuyer.V2beta1.Model.LocationContext.t(),
-          :platform => GoogleApi.AdExchangeBuyer.V2beta1.Model.PlatformContext.t(),
-          :securityType => GoogleApi.AdExchangeBuyer.V2beta1.Model.SecurityContext.t()
+          :all => String.t() | nil,
+          :appType => GoogleApi.AdExchangeBuyer.V2beta1.Model.AppContext.t() | nil,
+          :auctionType => GoogleApi.AdExchangeBuyer.V2beta1.Model.AuctionContext.t() | nil,
+          :location => GoogleApi.AdExchangeBuyer.V2beta1.Model.LocationContext.t() | nil,
+          :platform => GoogleApi.AdExchangeBuyer.V2beta1.Model.PlatformContext.t() | nil,
+          :securityType => GoogleApi.AdExchangeBuyer.V2beta1.Model.SecurityContext.t() | nil
         }
 
   field(:all)

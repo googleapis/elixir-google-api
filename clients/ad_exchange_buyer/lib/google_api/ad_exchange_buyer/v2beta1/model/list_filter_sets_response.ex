@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filterSets => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()),
-          :nextPageToken => String.t()
+          :filterSets => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:filterSets, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet, type: :list)

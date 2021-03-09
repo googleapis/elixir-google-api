@@ -28,8 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :performanceReport => list(GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReport.t())
+          :kind => String.t() | nil,
+          :performanceReport =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReport.t()) | nil
         }
 
   field(:kind)

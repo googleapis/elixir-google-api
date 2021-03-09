@@ -30,10 +30,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingRestriction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contexts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext.t()),
-          :disapproval => GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t(),
-          :disapprovalReasons => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t()),
-          :status => String.t()
+          :contexts => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext.t()) | nil,
+          :disapproval => GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t() | nil,
+          :disapprovalReasons =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Disapproval.t()) | nil,
+          :status => String.t() | nil
         }
 
   field(:contexts, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.ServingContext, type: :list)

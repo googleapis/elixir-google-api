@@ -31,12 +31,14 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.MarketplaceTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :geoTargeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t(),
+          :geoTargeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting.t() | nil,
           :inventorySizeTargeting =>
-            GoogleApi.AdExchangeBuyer.V2beta1.Model.InventorySizeTargeting.t(),
-          :placementTargeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.PlacementTargeting.t(),
-          :technologyTargeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.TechnologyTargeting.t(),
-          :videoTargeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoTargeting.t()
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.InventorySizeTargeting.t() | nil,
+          :placementTargeting =>
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.PlacementTargeting.t() | nil,
+          :technologyTargeting =>
+            GoogleApi.AdExchangeBuyer.V2beta1.Model.TechnologyTargeting.t() | nil,
+          :videoTargeting => GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoTargeting.t() | nil
         }
 
   field(:geoTargeting, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting)

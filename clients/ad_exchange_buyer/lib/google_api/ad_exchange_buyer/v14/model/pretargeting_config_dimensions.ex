@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigDimensions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => String.t(),
-          :width => String.t()
+          :height => String.t() | nil,
+          :width => String.t() | nil
         }
 
   field(:height)

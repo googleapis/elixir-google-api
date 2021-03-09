@@ -28,8 +28,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.InventorySizeTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedInventorySizes => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t()),
-          :targetedInventorySizes => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t())
+          :excludedInventorySizes =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t()) | nil,
+          :targetedInventorySizes =>
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize.t()) | nil
         }
 
   field(:excludedInventorySizes, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.AdSize, type: :list)

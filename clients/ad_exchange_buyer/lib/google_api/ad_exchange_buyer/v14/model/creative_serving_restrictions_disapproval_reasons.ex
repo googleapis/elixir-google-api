@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsDisappr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :details => list(String.t()),
-          :reason => String.t()
+          :details => list(String.t()) | nil,
+          :reason => String.t() | nil
         }
 
   field(:details, type: :list)

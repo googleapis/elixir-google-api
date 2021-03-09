@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.ContactInformation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :name => String.t()
+          :email => String.t() | nil,
+          :name => String.t() | nil
         }
 
   field(:email)

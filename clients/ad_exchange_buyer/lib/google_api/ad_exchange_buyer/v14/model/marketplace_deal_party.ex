@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.MarketplaceDealParty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t(),
-          :seller => GoogleApi.AdExchangeBuyer.V14.Model.Seller.t()
+          :buyer => GoogleApi.AdExchangeBuyer.V14.Model.Buyer.t() | nil,
+          :seller => GoogleApi.AdExchangeBuyer.V14.Model.Seller.t() | nil
         }
 
   field(:buyer, as: GoogleApi.AdExchangeBuyer.V14.Model.Buyer)

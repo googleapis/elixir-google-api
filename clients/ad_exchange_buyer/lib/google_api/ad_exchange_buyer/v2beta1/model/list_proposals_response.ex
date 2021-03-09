@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :proposals => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t())
+          :nextPageToken => String.t() | nil,
+          :proposals => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()) | nil
         }
 
   field(:nextPageToken)

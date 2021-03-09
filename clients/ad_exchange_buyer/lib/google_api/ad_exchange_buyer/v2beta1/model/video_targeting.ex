@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.VideoTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedPositionTypes => list(String.t()),
-          :targetedPositionTypes => list(String.t())
+          :excludedPositionTypes => list(String.t()) | nil,
+          :targetedPositionTypes => list(String.t()) | nil
         }
 
   field(:excludedPositionTypes, type: :list)

@@ -28,8 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTermsNonGuaranteedAuctionTerms
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoOptimizePrivateAuction => boolean(),
-          :reservePricePerBuyers => list(GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer.t())
+          :autoOptimizePrivateAuction => boolean() | nil,
+          :reservePricePerBuyers =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.PricePerBuyer.t()) | nil
         }
 
   field(:autoOptimizePrivateAuction)

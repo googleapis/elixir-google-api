@@ -27,7 +27,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.AppContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appTypes => list(String.t())
+          :appTypes => list(String.t()) | nil
         }
 
   field(:appTypes, type: :list)

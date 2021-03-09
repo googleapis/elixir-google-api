@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filteringCount => String.t(),
-          :filteringStatus => integer()
+          :filteringCount => String.t() | nil,
+          :filteringStatus => integer() | nil
         }
 
   field(:filteringCount)

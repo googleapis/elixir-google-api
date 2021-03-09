@@ -28,9 +28,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasons do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :date => String.t(),
+          :date => String.t() | nil,
           :reasons =>
-            list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons.t())
+            list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons.t()) | nil
         }
 
   field(:date)

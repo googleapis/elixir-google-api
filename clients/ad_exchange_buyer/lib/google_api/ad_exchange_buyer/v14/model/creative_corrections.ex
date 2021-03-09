@@ -29,9 +29,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrections do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contexts => list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrectionsContexts.t()),
-          :details => list(String.t()),
-          :reason => String.t()
+          :contexts =>
+            list(GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrectionsContexts.t()) | nil,
+          :details => list(String.t()) | nil,
+          :reason => String.t() | nil
         }
 
   field(:contexts,

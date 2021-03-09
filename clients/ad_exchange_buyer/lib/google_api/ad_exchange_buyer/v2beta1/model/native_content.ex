@@ -39,19 +39,19 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.NativeContent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertiserName => String.t(),
-          :appIcon => GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t(),
-          :body => String.t(),
-          :callToAction => String.t(),
-          :clickLinkUrl => String.t(),
-          :clickTrackingUrl => String.t(),
-          :headline => String.t(),
-          :image => GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t(),
-          :logo => GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t(),
-          :priceDisplayText => String.t(),
-          :starRating => float(),
-          :storeUrl => String.t(),
-          :videoUrl => String.t()
+          :advertiserName => String.t() | nil,
+          :appIcon => GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t() | nil,
+          :body => String.t() | nil,
+          :callToAction => String.t() | nil,
+          :clickLinkUrl => String.t() | nil,
+          :clickTrackingUrl => String.t() | nil,
+          :headline => String.t() | nil,
+          :image => GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t() | nil,
+          :logo => GoogleApi.AdExchangeBuyer.V2beta1.Model.Image.t() | nil,
+          :priceDisplayText => String.t() | nil,
+          :starRating => float() | nil,
+          :storeUrl => String.t() | nil,
+          :videoUrl => String.t() | nil
         }
 
   field(:advertiserName)

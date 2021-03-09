@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.SharedTargeting do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exclusions => list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue.t()),
-          :inclusions => list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue.t()),
-          :key => String.t()
+          :exclusions => list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue.t()) | nil,
+          :inclusions => list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue.t()) | nil,
+          :key => String.t() | nil
         }
 
   field(:exclusions, as: GoogleApi.AdExchangeBuyer.V14.Model.TargetingValue, type: :list)

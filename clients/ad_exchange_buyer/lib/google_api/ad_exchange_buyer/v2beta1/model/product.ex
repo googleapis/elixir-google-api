@@ -41,23 +41,23 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Product do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availableEndTime => DateTime.t(),
-          :availableStartTime => DateTime.t(),
-          :createTime => DateTime.t(),
+          :availableEndTime => DateTime.t() | nil,
+          :availableStartTime => DateTime.t() | nil,
+          :createTime => DateTime.t() | nil,
           :creatorContacts =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t()),
-          :displayName => String.t(),
-          :hasCreatorSignedOff => boolean(),
-          :productId => String.t(),
-          :productRevision => String.t(),
-          :publisherProfileId => String.t(),
-          :seller => GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t(),
-          :syndicationProduct => String.t(),
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.ContactInformation.t()) | nil,
+          :displayName => String.t() | nil,
+          :hasCreatorSignedOff => boolean() | nil,
+          :productId => String.t() | nil,
+          :productRevision => String.t() | nil,
+          :publisherProfileId => String.t() | nil,
+          :seller => GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t() | nil,
+          :syndicationProduct => String.t() | nil,
           :targetingCriterion =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria.t()),
-          :terms => GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms.t(),
-          :updateTime => DateTime.t(),
-          :webPropertyCode => String.t()
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.TargetingCriteria.t()) | nil,
+          :terms => GoogleApi.AdExchangeBuyer.V2beta1.Model.DealTerms.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :webPropertyCode => String.t() | nil
         }
 
   field(:availableEndTime, as: DateTime)

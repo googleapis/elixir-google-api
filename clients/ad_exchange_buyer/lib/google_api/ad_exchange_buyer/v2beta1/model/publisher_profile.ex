@@ -43,24 +43,25 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audienceDescription => String.t(),
-          :buyerPitchStatement => String.t(),
-          :directDealsContact => String.t(),
-          :displayName => String.t(),
-          :domains => list(String.t()),
-          :googlePlusUrl => String.t(),
-          :isParent => boolean(),
-          :logoUrl => String.t(),
-          :mediaKitUrl => String.t(),
+          :audienceDescription => String.t() | nil,
+          :buyerPitchStatement => String.t() | nil,
+          :directDealsContact => String.t() | nil,
+          :displayName => String.t() | nil,
+          :domains => list(String.t()) | nil,
+          :googlePlusUrl => String.t() | nil,
+          :isParent => boolean() | nil,
+          :logoUrl => String.t() | nil,
+          :mediaKitUrl => String.t() | nil,
           :mobileApps =>
-            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfileMobileApplication.t()),
-          :overview => String.t(),
-          :programmaticDealsContact => String.t(),
-          :publisherProfileId => String.t(),
-          :rateCardInfoUrl => String.t(),
-          :samplePageUrl => String.t(),
-          :seller => GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t(),
-          :topHeadlines => list(String.t())
+            list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfileMobileApplication.t())
+            | nil,
+          :overview => String.t() | nil,
+          :programmaticDealsContact => String.t() | nil,
+          :publisherProfileId => String.t() | nil,
+          :rateCardInfoUrl => String.t() | nil,
+          :samplePageUrl => String.t() | nil,
+          :seller => GoogleApi.AdExchangeBuyer.V2beta1.Model.Seller.t() | nil,
+          :topHeadlines => list(String.t()) | nil
         }
 
   field(:audienceDescription)

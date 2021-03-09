@@ -29,8 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargeting do
 
   @type t :: %__MODULE__{
           :dayParts =>
-            list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayPart.t()),
-          :timeZoneType => String.t()
+            list(GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueDayPartTargetingDayPart.t())
+            | nil,
+          :timeZoneType => String.t() | nil
         }
 
   field(:dayParts,

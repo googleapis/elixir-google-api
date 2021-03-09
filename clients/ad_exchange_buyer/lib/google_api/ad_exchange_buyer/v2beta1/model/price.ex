@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Price do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amount => GoogleApi.AdExchangeBuyer.V2beta1.Model.Money.t(),
-          :pricingType => String.t()
+          :amount => GoogleApi.AdExchangeBuyer.V2beta1.Model.Money.t() | nil,
+          :pricingType => String.t() | nil
         }
 
   field(:amount, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.Money)

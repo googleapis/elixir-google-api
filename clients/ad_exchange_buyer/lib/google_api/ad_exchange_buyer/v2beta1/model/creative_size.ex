@@ -32,12 +32,12 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeSize do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedFormats => list(String.t()),
-          :companionSizes => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Size.t()),
-          :creativeSizeType => String.t(),
-          :nativeTemplate => String.t(),
-          :size => GoogleApi.AdExchangeBuyer.V2beta1.Model.Size.t(),
-          :skippableAdType => String.t()
+          :allowedFormats => list(String.t()) | nil,
+          :companionSizes => list(GoogleApi.AdExchangeBuyer.V2beta1.Model.Size.t()) | nil,
+          :creativeSizeType => String.t() | nil,
+          :nativeTemplate => String.t() | nil,
+          :size => GoogleApi.AdExchangeBuyer.V2beta1.Model.Size.t() | nil,
+          :skippableAdType => String.t() | nil
         }
 
   field(:allowedFormats, type: :list)

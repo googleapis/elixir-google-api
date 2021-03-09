@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.TargetingValueSize do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => integer(),
-          :width => integer()
+          :height => integer() | nil,
+          :width => integer() | nil
         }
 
   field(:height)

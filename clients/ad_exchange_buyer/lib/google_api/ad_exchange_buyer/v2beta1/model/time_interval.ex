@@ -28,8 +28,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.TimeInterval do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t()
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)

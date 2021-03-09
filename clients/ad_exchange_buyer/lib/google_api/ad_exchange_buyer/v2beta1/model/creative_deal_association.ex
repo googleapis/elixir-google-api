@@ -29,9 +29,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.CreativeDealAssociation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :creativeId => String.t(),
-          :dealsId => String.t()
+          :accountId => String.t() | nil,
+          :creativeId => String.t() | nil,
+          :dealsId => String.t() | nil
         }
 
   field(:accountId)

@@ -57,6 +57,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adexchangebuyer_budget_get(
         connection,
@@ -123,6 +124,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adexchangebuyer_budget_patch(
         connection,
@@ -190,6 +192,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def adexchangebuyer_budget_update(
         connection,
