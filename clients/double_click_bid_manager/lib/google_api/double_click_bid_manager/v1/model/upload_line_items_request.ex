@@ -29,9 +29,9 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.UploadLineItemsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dryRun => boolean(),
-          :format => String.t(),
-          :lineItems => String.t()
+          :dryRun => boolean() | nil,
+          :format => String.t() | nil,
+          :lineItems => String.t() | nil
         }
 
   field(:dryRun)

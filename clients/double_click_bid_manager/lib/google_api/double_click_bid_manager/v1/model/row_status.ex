@@ -32,12 +32,12 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.RowStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changed => boolean(),
-          :entityId => String.t(),
-          :entityName => String.t(),
-          :errors => list(String.t()),
-          :persisted => boolean(),
-          :rowNumber => integer()
+          :changed => boolean() | nil,
+          :entityId => String.t() | nil,
+          :entityName => String.t() | nil,
+          :errors => list(String.t()) | nil,
+          :persisted => boolean() | nil,
+          :rowNumber => integer() | nil
         }
 
   field(:changed)

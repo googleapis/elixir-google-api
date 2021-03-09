@@ -29,9 +29,9 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.PathQueryOptionsFilter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => String.t(),
-          :match => String.t(),
-          :values => list(String.t())
+          :filter => String.t() | nil,
+          :match => String.t() | nil,
+          :values => list(String.t()) | nil
         }
 
   field(:filter)

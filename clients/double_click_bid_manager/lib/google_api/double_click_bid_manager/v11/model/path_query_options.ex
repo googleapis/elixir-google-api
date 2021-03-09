@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.PathQueryOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelGrouping => GoogleApi.DoubleClickBidManager.V11.Model.ChannelGrouping.t(),
-          :pathFilters => list(GoogleApi.DoubleClickBidManager.V11.Model.PathFilter.t())
+          :channelGrouping => GoogleApi.DoubleClickBidManager.V11.Model.ChannelGrouping.t() | nil,
+          :pathFilters => list(GoogleApi.DoubleClickBidManager.V11.Model.PathFilter.t()) | nil
         }
 
   field(:channelGrouping, as: GoogleApi.DoubleClickBidManager.V11.Model.ChannelGrouping)

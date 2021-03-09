@@ -30,10 +30,10 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.DownloadLineItemsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileSpec => String.t(),
-          :filterIds => list(String.t()),
-          :filterType => String.t(),
-          :format => String.t()
+          :fileSpec => String.t() | nil,
+          :filterIds => list(String.t()) | nil,
+          :filterType => String.t() | nil,
+          :format => String.t() | nil
         }
 
   field(:fileSpec)

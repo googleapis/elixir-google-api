@@ -55,6 +55,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
   @spec doubleclickbidmanager_queries_createquery(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickBidManager.V11.Model.Query.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def doubleclickbidmanager_queries_createquery(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -116,7 +117,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def doubleclickbidmanager_queries_deletequery(
         connection,
         query_id,
@@ -185,6 +186,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
         ) ::
           {:ok, GoogleApi.DoubleClickBidManager.V11.Model.Query.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def doubleclickbidmanager_queries_getquery(
         connection,
@@ -250,6 +252,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
   @spec doubleclickbidmanager_queries_listqueries(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickBidManager.V11.Model.ListQueriesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def doubleclickbidmanager_queries_listqueries(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -315,7 +318,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def doubleclickbidmanager_queries_runquery(
         connection,
         query_id,

@@ -37,17 +37,17 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.QueryMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataRange => String.t(),
-          :format => String.t(),
-          :googleCloudStoragePathForLatestReport => String.t(),
-          :googleDrivePathForLatestReport => String.t(),
-          :latestReportRunTimeMs => String.t(),
-          :locale => String.t(),
-          :reportCount => integer(),
-          :running => boolean(),
-          :sendNotification => boolean(),
-          :shareEmailAddress => list(String.t()),
-          :title => String.t()
+          :dataRange => String.t() | nil,
+          :format => String.t() | nil,
+          :googleCloudStoragePathForLatestReport => String.t() | nil,
+          :googleDrivePathForLatestReport => String.t() | nil,
+          :latestReportRunTimeMs => String.t() | nil,
+          :locale => String.t() | nil,
+          :reportCount => integer() | nil,
+          :running => boolean() | nil,
+          :sendNotification => boolean() | nil,
+          :shareEmailAddress => list(String.t()) | nil,
+          :title => String.t() | nil
         }
 
   field(:dataRange)

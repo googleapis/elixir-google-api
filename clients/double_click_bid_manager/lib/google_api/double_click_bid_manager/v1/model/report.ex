@@ -29,9 +29,9 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.Report do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => GoogleApi.DoubleClickBidManager.V1.Model.ReportKey.t(),
-          :metadata => GoogleApi.DoubleClickBidManager.V1.Model.ReportMetadata.t(),
-          :params => GoogleApi.DoubleClickBidManager.V1.Model.Parameters.t()
+          :key => GoogleApi.DoubleClickBidManager.V1.Model.ReportKey.t() | nil,
+          :metadata => GoogleApi.DoubleClickBidManager.V1.Model.ReportMetadata.t() | nil,
+          :params => GoogleApi.DoubleClickBidManager.V1.Model.Parameters.t() | nil
         }
 
   field(:key, as: GoogleApi.DoubleClickBidManager.V1.Model.ReportKey)

@@ -27,7 +27,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.ReportFailure do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorCode => String.t()
+          :errorCode => String.t() | nil
         }
 
   field(:errorCode)

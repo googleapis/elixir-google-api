@@ -31,11 +31,11 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.QuerySchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTimeMs => String.t(),
-          :frequency => String.t(),
-          :nextRunMinuteOfDay => integer(),
-          :nextRunTimezoneCode => String.t(),
-          :startTimeMs => String.t()
+          :endTimeMs => String.t() | nil,
+          :frequency => String.t() | nil,
+          :nextRunMinuteOfDay => integer() | nil,
+          :nextRunTimezoneCode => String.t() | nil,
+          :startTimeMs => String.t() | nil
         }
 
   field(:endTimeMs)

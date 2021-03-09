@@ -27,7 +27,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.UploadLineItemsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uploadStatus => GoogleApi.DoubleClickBidManager.V11.Model.UploadStatus.t()
+          :uploadStatus => GoogleApi.DoubleClickBidManager.V11.Model.UploadStatus.t() | nil
         }
 
   field(:uploadStatus, as: GoogleApi.DoubleClickBidManager.V11.Model.UploadStatus)

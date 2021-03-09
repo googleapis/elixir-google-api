@@ -32,12 +32,12 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.DownloadResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adGroups => String.t(),
-          :ads => String.t(),
-          :campaigns => String.t(),
-          :insertionOrders => String.t(),
-          :inventorySources => String.t(),
-          :lineItems => String.t()
+          :adGroups => String.t() | nil,
+          :ads => String.t() | nil,
+          :campaigns => String.t() | nil,
+          :insertionOrders => String.t() | nil,
+          :inventorySources => String.t() | nil,
+          :lineItems => String.t() | nil
         }
 
   field(:adGroups)

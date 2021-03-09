@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.ListReportsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :reports => list(GoogleApi.DoubleClickBidManager.V1.Model.Report.t())
+          :kind => String.t() | nil,
+          :reports => list(GoogleApi.DoubleClickBidManager.V1.Model.Report.t()) | nil
         }
 
   field(:kind)

@@ -28,8 +28,8 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Model.UploadStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errors => list(String.t()),
-          :rowStatus => list(GoogleApi.DoubleClickBidManager.V1.Model.RowStatus.t())
+          :errors => list(String.t()) | nil,
+          :rowStatus => list(GoogleApi.DoubleClickBidManager.V1.Model.RowStatus.t()) | nil
         }
 
   field(:errors, type: :list)
