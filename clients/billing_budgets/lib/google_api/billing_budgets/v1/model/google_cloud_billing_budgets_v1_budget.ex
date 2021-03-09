@@ -34,16 +34,18 @@ defmodule GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Budget do
 
   @type t :: %__MODULE__{
           :amount =>
-            GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1BudgetAmount.t(),
+            GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1BudgetAmount.t() | nil,
           :budgetFilter =>
-            GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Filter.t(),
-          :displayName => String.t(),
-          :etag => String.t(),
-          :name => String.t(),
+            GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Filter.t() | nil,
+          :displayName => String.t() | nil,
+          :etag => String.t() | nil,
+          :name => String.t() | nil,
           :notificationsRule =>
-            GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1NotificationsRule.t(),
+            GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1NotificationsRule.t()
+            | nil,
           :thresholdRules =>
             list(GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1ThresholdRule.t())
+            | nil
         }
 
   field(:amount, as: GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1BudgetAmount)

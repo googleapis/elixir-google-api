@@ -29,8 +29,9 @@ defmodule GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1BudgetAmo
 
   @type t :: %__MODULE__{
           :lastPeriodAmount =>
-            GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1LastPeriodAmount.t(),
-          :specifiedAmount => GoogleApi.BillingBudgets.V1.Model.GoogleTypeMoney.t()
+            GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1LastPeriodAmount.t()
+            | nil,
+          :specifiedAmount => GoogleApi.BillingBudgets.V1.Model.GoogleTypeMoney.t() | nil
         }
 
   field(:lastPeriodAmount,

@@ -30,10 +30,10 @@ defmodule GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Notificat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disableDefaultIamRecipients => boolean(),
-          :monitoringNotificationChannels => list(String.t()),
-          :pubsubTopic => String.t(),
-          :schemaVersion => String.t()
+          :disableDefaultIamRecipients => boolean() | nil,
+          :monitoringNotificationChannels => list(String.t()) | nil,
+          :pubsubTopic => String.t() | nil,
+          :schemaVersion => String.t() | nil
         }
 
   field(:disableDefaultIamRecipients)

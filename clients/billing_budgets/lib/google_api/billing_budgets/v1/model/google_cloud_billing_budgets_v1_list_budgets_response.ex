@@ -29,8 +29,8 @@ defmodule GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1ListBudge
 
   @type t :: %__MODULE__{
           :budgets =>
-            list(GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Budget.t()),
-          :nextPageToken => String.t()
+            list(GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1Budget.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:budgets,

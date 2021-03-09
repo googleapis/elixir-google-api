@@ -28,8 +28,8 @@ defmodule GoogleApi.BillingBudgets.V1.Model.GoogleCloudBillingBudgetsV1CustomPer
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endDate => GoogleApi.BillingBudgets.V1.Model.GoogleTypeDate.t(),
-          :startDate => GoogleApi.BillingBudgets.V1.Model.GoogleTypeDate.t()
+          :endDate => GoogleApi.BillingBudgets.V1.Model.GoogleTypeDate.t() | nil,
+          :startDate => GoogleApi.BillingBudgets.V1.Model.GoogleTypeDate.t() | nil
         }
 
   field(:endDate, as: GoogleApi.BillingBudgets.V1.Model.GoogleTypeDate)
