@@ -30,10 +30,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ParserConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowNullHeader => boolean(),
-          :schema => GoogleApi.HealthCare.V1beta1.Model.SchemaPackage.t(),
-          :segmentTerminator => String.t(),
-          :version => String.t()
+          :allowNullHeader => boolean() | nil,
+          :schema => GoogleApi.HealthCare.V1beta1.Model.SchemaPackage.t() | nil,
+          :segmentTerminator => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:allowNullHeader)

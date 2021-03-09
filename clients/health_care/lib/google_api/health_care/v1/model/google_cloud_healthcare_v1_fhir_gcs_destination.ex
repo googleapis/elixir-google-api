@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirGcsDestinatio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uriPrefix => String.t()
+          :uriPrefix => String.t() | nil
         }
 
   field(:uriPrefix)

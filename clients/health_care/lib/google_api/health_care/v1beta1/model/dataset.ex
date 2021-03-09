@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Dataset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :timeZone => String.t()
+          :name => String.t() | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:name)

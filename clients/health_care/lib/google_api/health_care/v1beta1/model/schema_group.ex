@@ -31,11 +31,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SchemaGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :choice => boolean(),
-          :maxOccurs => integer(),
-          :members => list(GoogleApi.HealthCare.V1beta1.Model.GroupOrSegment.t()),
-          :minOccurs => integer(),
-          :name => String.t()
+          :choice => boolean() | nil,
+          :maxOccurs => integer() | nil,
+          :members => list(GoogleApi.HealthCare.V1beta1.Model.GroupOrSegment.t()) | nil,
+          :minOccurs => integer() | nil,
+          :name => String.t() | nil
         }
 
   field(:choice)

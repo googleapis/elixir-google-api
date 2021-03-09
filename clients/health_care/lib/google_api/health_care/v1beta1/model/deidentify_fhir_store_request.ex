@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyFhirStoreRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig.t(),
-          :destinationStore => String.t(),
-          :resourceFilter => GoogleApi.HealthCare.V1beta1.Model.FhirFilter.t()
+          :config => GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig.t() | nil,
+          :destinationStore => String.t() | nil,
+          :resourceFilter => GoogleApi.HealthCare.V1beta1.Model.FhirFilter.t() | nil
         }
 
   field(:config, as: GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig)

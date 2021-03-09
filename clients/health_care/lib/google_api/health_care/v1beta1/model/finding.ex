@@ -30,10 +30,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Finding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :end => String.t(),
-          :infoType => String.t(),
-          :quote => String.t(),
-          :start => String.t()
+          :end => String.t() | nil,
+          :infoType => String.t() | nil,
+          :quote => String.t() | nil,
+          :start => String.t() | nil
         }
 
   field(:end)

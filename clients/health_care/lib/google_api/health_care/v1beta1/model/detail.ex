@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Detail do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :findings => list(GoogleApi.HealthCare.V1beta1.Model.Finding.t())
+          :findings => list(GoogleApi.HealthCare.V1beta1.Model.Finding.t()) | nil
         }
 
   field(:findings, as: GoogleApi.HealthCare.V1beta1.Model.Finding, type: :list)

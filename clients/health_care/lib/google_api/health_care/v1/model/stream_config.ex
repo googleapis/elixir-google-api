@@ -29,8 +29,8 @@ defmodule GoogleApi.HealthCare.V1.Model.StreamConfig do
 
   @type t :: %__MODULE__{
           :bigqueryDestination =>
-            GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirBigQueryDestination.t(),
-          :resourceTypes => list(String.t())
+            GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirBigQueryDestination.t() | nil,
+          :resourceTypes => list(String.t()) | nil
         }
 
   field(:bigqueryDestination,

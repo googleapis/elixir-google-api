@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1.Model.ExportResourcesRequest do
 
   @type t :: %__MODULE__{
           :bigqueryDestination =>
-            GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirBigQueryDestination.t(),
+            GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirBigQueryDestination.t() | nil,
           :gcsDestination =>
-            GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirGcsDestination.t()
+            GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1FhirGcsDestination.t() | nil
         }
 
   field(:bigqueryDestination,

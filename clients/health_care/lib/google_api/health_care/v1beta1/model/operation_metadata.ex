@@ -32,12 +32,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.OperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiMethodName => String.t(),
-          :cancelRequested => boolean(),
-          :counter => GoogleApi.HealthCare.V1beta1.Model.ProgressCounter.t(),
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :logsUrl => String.t()
+          :apiMethodName => String.t() | nil,
+          :cancelRequested => boolean() | nil,
+          :counter => GoogleApi.HealthCare.V1beta1.Model.ProgressCounter.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :logsUrl => String.t() | nil
         }
 
   field(:apiMethodName)

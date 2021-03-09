@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AnnotationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :annotationStoreName => String.t(),
-          :storeQuote => boolean()
+          :annotationStoreName => String.t() | nil,
+          :storeQuote => boolean() | nil
         }
 
   field(:annotationStoreName)

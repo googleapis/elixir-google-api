@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Type do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(GoogleApi.HealthCare.V1beta1.Model.Field.t()),
-          :name => String.t(),
-          :primitive => String.t()
+          :fields => list(GoogleApi.HealthCare.V1beta1.Model.Field.t()) | nil,
+          :name => String.t() | nil,
+          :primitive => String.t() | nil
         }
 
   field(:fields, as: GoogleApi.HealthCare.V1beta1.Model.Field, type: :list)

@@ -31,11 +31,12 @@ defmodule GoogleApi.HealthCare.V1.Model.Hl7V2Store do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map(),
-          :name => String.t(),
-          :notificationConfigs => list(GoogleApi.HealthCare.V1.Model.Hl7V2NotificationConfig.t()),
-          :parserConfig => GoogleApi.HealthCare.V1.Model.ParserConfig.t(),
-          :rejectDuplicateMessage => boolean()
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :notificationConfigs =>
+            list(GoogleApi.HealthCare.V1.Model.Hl7V2NotificationConfig.t()) | nil,
+          :parserConfig => GoogleApi.HealthCare.V1.Model.ParserConfig.t() | nil,
+          :rejectDuplicateMessage => boolean() | nil
         }
 
   field(:labels, type: :map)

@@ -28,9 +28,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImportResourcesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentStructure => String.t(),
+          :contentStructure => String.t() | nil,
           :gcsSource =>
-            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsSource.t()
+            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsSource.t() | nil
         }
 
   field(:contentStructure)

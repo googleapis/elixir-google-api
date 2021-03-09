@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :evaluateList => GoogleApi.HealthCare.V1beta1.Model.FilterList.t(),
-          :ignoreList => GoogleApi.HealthCare.V1beta1.Model.FilterList.t(),
-          :strictMatching => boolean()
+          :evaluateList => GoogleApi.HealthCare.V1beta1.Model.FilterList.t() | nil,
+          :ignoreList => GoogleApi.HealthCare.V1beta1.Model.FilterList.t() | nil,
+          :strictMatching => boolean() | nil
         }
 
   field(:evaluateList, as: GoogleApi.HealthCare.V1beta1.Model.FilterList)

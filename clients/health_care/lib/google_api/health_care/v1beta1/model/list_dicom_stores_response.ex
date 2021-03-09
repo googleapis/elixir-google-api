@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ListDicomStoresResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dicomStores => list(GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()),
-          :nextPageToken => String.t()
+          :dicomStores => list(GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:dicomStores, as: GoogleApi.HealthCare.V1beta1.Model.DicomStore, type: :list)

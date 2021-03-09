@@ -31,11 +31,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Field do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxOccurs => integer(),
-          :minOccurs => integer(),
-          :name => String.t(),
-          :table => String.t(),
-          :type => String.t()
+          :maxOccurs => integer() | nil,
+          :minOccurs => integer() | nil,
+          :name => String.t() | nil,
+          :table => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:maxOccurs)

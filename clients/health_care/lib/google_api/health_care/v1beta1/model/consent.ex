@@ -17,36 +17,37 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.Consent do
   @moduledoc """
-  Represents an end user's consent.
+  Represents a user's consent.
 
   ## Attributes
 
-  *   `consentArtifact` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the consent artifact that contains proof of the end user's consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`.
-  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp in UTC of when this consent is considered expired.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - User-supplied key-value pairs used to organize consent resources. Metadata keys must: - be between 1 and 63 characters long - have a UTF-8 encoding of maximum 128 bytes - begin with a letter - consist of up to 63 characters including lowercase letters, numeric characters, underscores, and dashes Metadata values must be: - be between 1 and 63 characters long - have a UTF-8 encoding of maximum 128 bytes - consist of up to 63 characters including lowercase letters, numeric characters, underscores, and dashes No more than 64 metadata entries can be associated with a given consent.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`.
-  *   `policies` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1ConsentPolicy.t)`, *default:* `nil`) - Represents an end user's consent in terms of the resources that can be accessed and under what conditions.
+  *   `consentArtifact` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the Consent artifact that contains proof of the end user's consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp in UTC of when this Consent is considered expired.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. User-supplied key-value pairs used to organize Consent resources. Metadata keys must: - be between 1 and 63 characters long - have a UTF-8 encoding of maximum 128 bytes - begin with a letter - consist of up to 63 characters including lowercase letters, numeric characters, underscores, and dashes Metadata values must be: - be between 1 and 63 characters long - have a UTF-8 encoding of maximum 128 bytes - consist of up to 63 characters including lowercase letters, numeric characters, underscores, and dashes No more than 64 metadata entries can be associated with a given consent.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. Cannot be changed after creation.
+  *   `policies` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1ConsentPolicy.t)`, *default:* `nil`) - Optional. Represents a user's consent in terms of the resources that can be accessed and under what conditions.
   *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp that the revision was created.
-  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Output only. The revision ID of the consent. The format is an 8-character hexadecimal string. Refer to a specific revision of a Consent by appending `@{revision_id}` to the Consent's resource name.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Indicates the current state of this consent.
-  *   `ttl` (*type:* `String.t`, *default:* `nil`) - Input only. The time to live for this consent from when it is created.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Output only. The revision ID of the Consent. The format is an 8-character hexadecimal string. Refer to a specific revision of a Consent by appending `@{revision_id}` to the Consent's resource name.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Required. Indicates the current state of this Consent.
+  *   `ttl` (*type:* `String.t`, *default:* `nil`) - Input only. The time to live for this Consent from when it is created.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Required. User's UUID provided by the client.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consentArtifact => String.t(),
-          :expireTime => DateTime.t(),
-          :metadata => map(),
-          :name => String.t(),
+          :consentArtifact => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
           :policies =>
-            list(GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1ConsentPolicy.t()),
-          :revisionCreateTime => DateTime.t(),
-          :revisionId => String.t(),
-          :state => String.t(),
-          :ttl => String.t(),
-          :userId => String.t()
+            list(GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1ConsentPolicy.t())
+            | nil,
+          :revisionCreateTime => DateTime.t() | nil,
+          :revisionId => String.t() | nil,
+          :state => String.t() | nil,
+          :ttl => String.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:consentArtifact)

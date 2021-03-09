@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ConsentEvaluation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :evaluationResult => String.t()
+          :evaluationResult => String.t() | nil
         }
 
   field(:evaluationResult)

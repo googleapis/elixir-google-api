@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GcsDestination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentStructure => String.t(),
-          :messageView => String.t(),
-          :uriPrefix => String.t()
+          :contentStructure => String.t() | nil,
+          :messageView => String.t() | nil,
+          :uriPrefix => String.t() | nil
         }
 
   field(:contentStructure)

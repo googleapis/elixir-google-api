@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Feature do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => float(),
-          :value => String.t()
+          :confidence => float() | nil,
+          :value => String.t() | nil
         }
 
   field(:confidence)

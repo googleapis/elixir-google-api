@@ -29,6 +29,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImportAnnotationsRequest do
   @type t :: %__MODULE__{
           :gcsSource =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationGcsSource.t()
+            | nil
         }
 
   field(:gcsSource,

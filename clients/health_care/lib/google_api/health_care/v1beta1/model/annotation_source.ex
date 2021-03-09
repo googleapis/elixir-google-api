@@ -27,7 +27,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AnnotationSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudHealthcareSource => GoogleApi.HealthCare.V1beta1.Model.CloudHealthcareSource.t()
+          :cloudHealthcareSource =>
+            GoogleApi.HealthCare.V1beta1.Model.CloudHealthcareSource.t() | nil
         }
 
   field(:cloudHealthcareSource, as: GoogleApi.HealthCare.V1beta1.Model.CloudHealthcareSource)

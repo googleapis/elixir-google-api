@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.CryptoHashConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cryptoKey => String.t()
+          :cryptoKey => String.t() | nil
         }
 
   field(:cryptoKey)

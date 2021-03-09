@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.BatchGetMessagesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messages => list(GoogleApi.HealthCare.V1beta1.Model.Message.t())
+          :messages => list(GoogleApi.HealthCare.V1beta1.Model.Message.t()) | nil
         }
 
   field(:messages, as: GoogleApi.HealthCare.V1beta1.Model.Message, type: :list)

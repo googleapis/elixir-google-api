@@ -28,10 +28,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7SchemaConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messageSchemaConfigs => %{
-            optional(String.t()) => GoogleApi.HealthCare.V1beta1.Model.SchemaGroup.t()
-          },
-          :version => list(GoogleApi.HealthCare.V1beta1.Model.VersionSource.t())
+          :messageSchemaConfigs =>
+            %{optional(String.t()) => GoogleApi.HealthCare.V1beta1.Model.SchemaGroup.t()} | nil,
+          :version => list(GoogleApi.HealthCare.V1beta1.Model.VersionSource.t()) | nil
         }
 
   field(:messageSchemaConfigs, as: GoogleApi.HealthCare.V1beta1.Model.SchemaGroup, type: :map)

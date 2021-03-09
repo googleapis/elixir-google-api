@@ -27,7 +27,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.TextConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :transformations => list(GoogleApi.HealthCare.V1beta1.Model.InfoTypeTransformation.t())
+          :transformations =>
+            list(GoogleApi.HealthCare.V1beta1.Model.InfoTypeTransformation.t()) | nil
         }
 
   field(:transformations,

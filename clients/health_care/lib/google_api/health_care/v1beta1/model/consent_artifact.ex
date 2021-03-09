@@ -17,31 +17,31 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ConsentArtifact do
   @moduledoc """
-  Proof of an end user's consent.
+  Documentation of a user's consent.
 
   ## Attributes
 
-  *   `consentContentScreenshots` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Image.t)`, *default:* `nil`) - Screenshots of the consent content.
-  *   `consentContentVersion` (*type:* `String.t`, *default:* `nil`) - An string indicating the version of the consent content.
-  *   `guardianSignature` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Signature.t`, *default:* `nil`) - A signature from guardian.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Metadata associated with the consent artifact. For example, the consent locale or user agent version.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Consent artifact, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`.
+  *   `consentContentScreenshots` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Image.t)`, *default:* `nil`) - Optional. Screenshots, PDFs, or other binary information documenting the user's consent.
+  *   `consentContentVersion` (*type:* `String.t`, *default:* `nil`) - Optional. An string indicating the version of the consent information shown to the user.
+  *   `guardianSignature` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Signature.t`, *default:* `nil`) - Optional. A signature from a guardian.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. Metadata associated with the Consent artifact. For example, the consent locale or user agent version.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Consent artifact, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`. Cannot be changed after creation.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Required. User's UUID provided by the client.
-  *   `userSignature` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Signature.t`, *default:* `nil`) - User's signature.
-  *   `witnessSignature` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Signature.t`, *default:* `nil`) - A signature from a witness.
+  *   `userSignature` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Signature.t`, *default:* `nil`) - Optional. User's signature.
+  *   `witnessSignature` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Signature.t`, *default:* `nil`) - Optional. A signature from a witness.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consentContentScreenshots => list(GoogleApi.HealthCare.V1beta1.Model.Image.t()),
-          :consentContentVersion => String.t(),
-          :guardianSignature => GoogleApi.HealthCare.V1beta1.Model.Signature.t(),
-          :metadata => map(),
-          :name => String.t(),
-          :userId => String.t(),
-          :userSignature => GoogleApi.HealthCare.V1beta1.Model.Signature.t(),
-          :witnessSignature => GoogleApi.HealthCare.V1beta1.Model.Signature.t()
+          :consentContentScreenshots => list(GoogleApi.HealthCare.V1beta1.Model.Image.t()) | nil,
+          :consentContentVersion => String.t() | nil,
+          :guardianSignature => GoogleApi.HealthCare.V1beta1.Model.Signature.t() | nil,
+          :metadata => map() | nil,
+          :name => String.t() | nil,
+          :userId => String.t() | nil,
+          :userSignature => GoogleApi.HealthCare.V1beta1.Model.Signature.t() | nil,
+          :witnessSignature => GoogleApi.HealthCare.V1beta1.Model.Signature.t() | nil
         }
 
   field(:consentContentScreenshots, as: GoogleApi.HealthCare.V1beta1.Model.Image, type: :list)

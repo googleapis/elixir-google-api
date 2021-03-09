@@ -28,8 +28,8 @@ defmodule GoogleApi.HealthCare.V1.Model.DeidentifyDatasetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.HealthCare.V1.Model.DeidentifyConfig.t(),
-          :destinationDataset => String.t()
+          :config => GoogleApi.HealthCare.V1.Model.DeidentifyConfig.t() | nil,
+          :destinationDataset => String.t() | nil
         }
 
   field(:config, as: GoogleApi.HealthCare.V1.Model.DeidentifyConfig)

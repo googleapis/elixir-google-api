@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1.Model.CharacterMaskConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maskingCharacter => String.t()
+          :maskingCharacter => String.t() | nil
         }
 
   field(:maskingCharacter)

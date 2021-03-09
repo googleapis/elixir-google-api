@@ -30,12 +30,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportResourcesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :_since => String.t(),
-          :_type => String.t(),
+          :_since => String.t() | nil,
+          :_type => String.t() | nil,
           :bigqueryDestination =>
-            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBigQueryDestination.t(),
+            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirBigQueryDestination.t()
+            | nil,
           :gcsDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirGcsDestination.t()
+            | nil
         }
 
   field(:_since)

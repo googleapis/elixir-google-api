@@ -31,11 +31,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SchemaPackage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ignoreMinOccurs => boolean(),
-          :schemas => list(GoogleApi.HealthCare.V1beta1.Model.Hl7SchemaConfig.t()),
-          :schematizedParsingType => String.t(),
-          :types => list(GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig.t()),
-          :unexpectedSegmentHandling => String.t()
+          :ignoreMinOccurs => boolean() | nil,
+          :schemas => list(GoogleApi.HealthCare.V1beta1.Model.Hl7SchemaConfig.t()) | nil,
+          :schematizedParsingType => String.t() | nil,
+          :types => list(GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig.t()) | nil,
+          :unexpectedSegmentHandling => String.t() | nil
         }
 
   field(:ignoreMinOccurs)

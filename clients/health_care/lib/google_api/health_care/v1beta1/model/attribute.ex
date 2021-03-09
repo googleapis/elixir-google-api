@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.Attribute do
   @moduledoc """
-  An attribute value for a consent or data mapping. Each Attribute must have a corresponding AttributeDefinition in the consent store that defines the default and allowed values.
+  An attribute value for a Consent or User data mapping. Each Attribute must have a corresponding AttributeDefinition in the consent store that defines the default and allowed values.
 
   ## Attributes
 
-  *   `attributeDefinitionId` (*type:* `String.t`, *default:* `nil`) - Indicates the name of an attribute defined at the consent store.
+  *   `attributeDefinitionId` (*type:* `String.t`, *default:* `nil`) - Indicates the name of an attribute defined in the consent store.
   *   `values` (*type:* `list(String.t)`, *default:* `nil`) - The value of the attribute. Must be an acceptable value as defined in the consent store. For example, if the consent store defines "data type" with acceptable values "questionnaire" and "step-count", when the attribute name is data type, this field must contain one of those values.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributeDefinitionId => String.t(),
-          :values => list(String.t())
+          :attributeDefinitionId => String.t() | nil,
+          :values => list(String.t()) | nil
         }
 
   field(:attributeDefinitionId)

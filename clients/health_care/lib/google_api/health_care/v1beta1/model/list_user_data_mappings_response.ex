@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ListUserDataMappingsResponse do
   @moduledoc """
-  Lists the User data mappings in the given Consent store.
+
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
-  *   `userDataMappings` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.UserDataMapping.t)`, *default:* `nil`) - The returned user data mappings. The maximum number of user data mappings returned is determined by the value of page_size in the ListUserDataMappingsRequest.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
+  *   `userDataMappings` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.UserDataMapping.t)`, *default:* `nil`) - The returned User data mappings. The maximum number of User data mappings returned is determined by the value of page_size in the ListUserDataMappingsRequest.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :userDataMappings => list(GoogleApi.HealthCare.V1beta1.Model.UserDataMapping.t())
+          :nextPageToken => String.t() | nil,
+          :userDataMappings => list(GoogleApi.HealthCare.V1beta1.Model.UserDataMapping.t()) | nil
         }
 
   field(:nextPageToken)

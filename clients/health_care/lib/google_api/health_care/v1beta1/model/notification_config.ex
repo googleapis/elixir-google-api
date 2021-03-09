@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.NotificationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pubsubTopic => String.t()
+          :pubsubTopic => String.t() | nil
         }
 
   field(:pubsubTopic)

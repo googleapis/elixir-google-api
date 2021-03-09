@@ -30,10 +30,10 @@ defmodule GoogleApi.HealthCare.V1.Model.DeidentifyConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dicom => GoogleApi.HealthCare.V1.Model.DicomConfig.t(),
-          :fhir => GoogleApi.HealthCare.V1.Model.FhirConfig.t(),
-          :image => GoogleApi.HealthCare.V1.Model.ImageConfig.t(),
-          :text => GoogleApi.HealthCare.V1.Model.TextConfig.t()
+          :dicom => GoogleApi.HealthCare.V1.Model.DicomConfig.t() | nil,
+          :fhir => GoogleApi.HealthCare.V1.Model.FhirConfig.t() | nil,
+          :image => GoogleApi.HealthCare.V1.Model.ImageConfig.t() | nil,
+          :text => GoogleApi.HealthCare.V1.Model.TextConfig.t() | nil
         }
 
   field(:dicom, as: GoogleApi.HealthCare.V1.Model.DicomConfig)

@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FilterList do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :infoTypes => list(String.t())
+          :infoTypes => list(String.t()) | nil
         }
 
   field(:infoTypes, type: :list)

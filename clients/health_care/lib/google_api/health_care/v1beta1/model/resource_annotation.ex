@@ -27,7 +27,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ResourceAnnotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :label => String.t()
+          :label => String.t() | nil
         }
 
   field(:label)

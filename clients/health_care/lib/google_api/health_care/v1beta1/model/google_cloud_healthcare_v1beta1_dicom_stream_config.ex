@@ -29,6 +29,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomSt
   @type t :: %__MODULE__{
           :bigqueryDestination =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBigQueryDestination.t()
+            | nil
         }
 
   field(:bigqueryDestination,

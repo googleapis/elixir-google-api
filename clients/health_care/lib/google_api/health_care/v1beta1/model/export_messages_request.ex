@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportMessagesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endTime => DateTime.t(),
-          :gcsDestination => GoogleApi.HealthCare.V1beta1.Model.GcsDestination.t(),
-          :startTime => DateTime.t()
+          :endTime => DateTime.t() | nil,
+          :gcsDestination => GoogleApi.HealthCare.V1beta1.Model.GcsDestination.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)

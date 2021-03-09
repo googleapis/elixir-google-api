@@ -32,11 +32,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EvaluateAnnotationStoreRequest do
 
   @type t :: %__MODULE__{
           :bigqueryDestination =>
-            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationBigQueryDestination.t(),
-          :evalInfoTypeMapping => map(),
-          :goldenInfoTypeMapping => map(),
-          :goldenStore => String.t(),
-          :infoTypeConfig => GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig.t()
+            GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1AnnotationBigQueryDestination.t()
+            | nil,
+          :evalInfoTypeMapping => map() | nil,
+          :goldenInfoTypeMapping => map() | nil,
+          :goldenStore => String.t() | nil,
+          :infoTypeConfig => GoogleApi.HealthCare.V1beta1.Model.InfoTypeConfig.t() | nil
         }
 
   field(:bigqueryDestination,

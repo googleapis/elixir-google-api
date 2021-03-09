@@ -17,21 +17,21 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.CheckDataAccessResponse do
   @moduledoc """
-  Checks if a particular data_id of a User data mapping in the given Consent store is consented for a given use.
+  Checks if a particular data_id of a User data mapping in the given consent store is consented for a given use.
 
   ## Attributes
 
   *   `consentDetails` (*type:* `%{optional(String.t) => GoogleApi.HealthCare.V1beta1.Model.ConsentEvaluation.t}`, *default:* `nil`) - The resource names of all evaluated Consents mapped to their evaluation.
-  *   `consented` (*type:* `boolean()`, *default:* `nil`) - Whether the requested data is consented for the given use.
+  *   `consented` (*type:* `boolean()`, *default:* `nil`) - Whether the requested resource is consented for the given use.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consentDetails => %{
-            optional(String.t()) => GoogleApi.HealthCare.V1beta1.Model.ConsentEvaluation.t()
-          },
-          :consented => boolean()
+          :consentDetails =>
+            %{optional(String.t()) => GoogleApi.HealthCare.V1beta1.Model.ConsentEvaluation.t()}
+            | nil,
+          :consented => boolean() | nil
         }
 
   field(:consentDetails, as: GoogleApi.HealthCare.V1beta1.Model.ConsentEvaluation, type: :map)
