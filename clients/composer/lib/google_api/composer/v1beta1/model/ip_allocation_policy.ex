@@ -31,11 +31,11 @@ defmodule GoogleApi.Composer.V1beta1.Model.IPAllocationPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterIpv4CidrBlock => String.t(),
-          :clusterSecondaryRangeName => String.t(),
-          :servicesIpv4CidrBlock => String.t(),
-          :servicesSecondaryRangeName => String.t(),
-          :useIpAliases => boolean()
+          :clusterIpv4CidrBlock => String.t() | nil,
+          :clusterSecondaryRangeName => String.t() | nil,
+          :servicesIpv4CidrBlock => String.t() | nil,
+          :servicesSecondaryRangeName => String.t() | nil,
+          :useIpAliases => boolean() | nil
         }
 
   field(:clusterIpv4CidrBlock)

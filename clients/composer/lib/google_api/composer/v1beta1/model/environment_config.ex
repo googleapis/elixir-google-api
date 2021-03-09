@@ -38,20 +38,20 @@ defmodule GoogleApi.Composer.V1beta1.Model.EnvironmentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :airflowUri => String.t(),
-          :dagGcsPrefix => String.t(),
-          :databaseConfig => GoogleApi.Composer.V1beta1.Model.DatabaseConfig.t(),
-          :encryptionConfig => GoogleApi.Composer.V1beta1.Model.EncryptionConfig.t(),
-          :gkeCluster => String.t(),
-          :maintenanceWindow => GoogleApi.Composer.V1beta1.Model.MaintenanceWindow.t(),
-          :nodeConfig => GoogleApi.Composer.V1beta1.Model.NodeConfig.t(),
-          :nodeCount => integer(),
+          :airflowUri => String.t() | nil,
+          :dagGcsPrefix => String.t() | nil,
+          :databaseConfig => GoogleApi.Composer.V1beta1.Model.DatabaseConfig.t() | nil,
+          :encryptionConfig => GoogleApi.Composer.V1beta1.Model.EncryptionConfig.t() | nil,
+          :gkeCluster => String.t() | nil,
+          :maintenanceWindow => GoogleApi.Composer.V1beta1.Model.MaintenanceWindow.t() | nil,
+          :nodeConfig => GoogleApi.Composer.V1beta1.Model.NodeConfig.t() | nil,
+          :nodeCount => integer() | nil,
           :privateEnvironmentConfig =>
-            GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig.t(),
-          :softwareConfig => GoogleApi.Composer.V1beta1.Model.SoftwareConfig.t(),
-          :webServerConfig => GoogleApi.Composer.V1beta1.Model.WebServerConfig.t(),
+            GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig.t() | nil,
+          :softwareConfig => GoogleApi.Composer.V1beta1.Model.SoftwareConfig.t() | nil,
+          :webServerConfig => GoogleApi.Composer.V1beta1.Model.WebServerConfig.t() | nil,
           :webServerNetworkAccessControl =>
-            GoogleApi.Composer.V1beta1.Model.WebServerNetworkAccessControl.t()
+            GoogleApi.Composer.V1beta1.Model.WebServerNetworkAccessControl.t() | nil
         }
 
   field(:airflowUri)

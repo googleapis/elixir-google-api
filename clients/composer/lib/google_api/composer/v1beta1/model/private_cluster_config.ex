@@ -29,9 +29,9 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enablePrivateEndpoint => boolean(),
-          :masterIpv4CidrBlock => String.t(),
-          :masterIpv4ReservedRange => String.t()
+          :enablePrivateEndpoint => boolean() | nil,
+          :masterIpv4CidrBlock => String.t() | nil,
+          :masterIpv4ReservedRange => String.t() | nil
         }
 
   field(:enablePrivateEndpoint)

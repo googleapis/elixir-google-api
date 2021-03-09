@@ -28,8 +28,8 @@ defmodule GoogleApi.Composer.V1beta1.Model.ListImageVersionsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageVersions => list(GoogleApi.Composer.V1beta1.Model.ImageVersion.t()),
-          :nextPageToken => String.t()
+          :imageVersions => list(GoogleApi.Composer.V1beta1.Model.ImageVersion.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:imageVersions, as: GoogleApi.Composer.V1beta1.Model.ImageVersion, type: :list)

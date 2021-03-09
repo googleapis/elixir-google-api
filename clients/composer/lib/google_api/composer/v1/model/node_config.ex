@@ -35,15 +35,15 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :diskSizeGb => integer(),
-          :ipAllocationPolicy => GoogleApi.Composer.V1.Model.IPAllocationPolicy.t(),
-          :location => String.t(),
-          :machineType => String.t(),
-          :network => String.t(),
-          :oauthScopes => list(String.t()),
-          :serviceAccount => String.t(),
-          :subnetwork => String.t(),
-          :tags => list(String.t())
+          :diskSizeGb => integer() | nil,
+          :ipAllocationPolicy => GoogleApi.Composer.V1.Model.IPAllocationPolicy.t() | nil,
+          :location => String.t() | nil,
+          :machineType => String.t() | nil,
+          :network => String.t() | nil,
+          :oauthScopes => list(String.t()) | nil,
+          :serviceAccount => String.t() | nil,
+          :subnetwork => String.t() | nil,
+          :tags => list(String.t()) | nil
         }
 
   field(:diskSizeGb)

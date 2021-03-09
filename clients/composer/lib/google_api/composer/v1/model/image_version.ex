@@ -32,12 +32,12 @@ defmodule GoogleApi.Composer.V1.Model.ImageVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :creationDisabled => boolean(),
-          :imageVersionId => String.t(),
-          :isDefault => boolean(),
-          :releaseDate => GoogleApi.Composer.V1.Model.Date.t(),
-          :supportedPythonVersions => list(String.t()),
-          :upgradeDisabled => boolean()
+          :creationDisabled => boolean() | nil,
+          :imageVersionId => String.t() | nil,
+          :isDefault => boolean() | nil,
+          :releaseDate => GoogleApi.Composer.V1.Model.Date.t() | nil,
+          :supportedPythonVersions => list(String.t()) | nil,
+          :upgradeDisabled => boolean() | nil
         }
 
   field(:creationDisabled)

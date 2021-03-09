@@ -31,11 +31,12 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudSqlIpv4CidrBlock => String.t(),
-          :enablePrivateEnvironment => boolean(),
-          :privateClusterConfig => GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig.t(),
-          :webServerIpv4CidrBlock => String.t(),
-          :webServerIpv4ReservedRange => String.t()
+          :cloudSqlIpv4CidrBlock => String.t() | nil,
+          :enablePrivateEnvironment => boolean() | nil,
+          :privateClusterConfig =>
+            GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig.t() | nil,
+          :webServerIpv4CidrBlock => String.t() | nil,
+          :webServerIpv4ReservedRange => String.t() | nil
         }
 
   field(:cloudSqlIpv4CidrBlock)

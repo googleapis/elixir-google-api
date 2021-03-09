@@ -31,11 +31,11 @@ defmodule GoogleApi.Composer.V1.Model.SoftwareConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :airflowConfigOverrides => map(),
-          :envVariables => map(),
-          :imageVersion => String.t(),
-          :pypiPackages => map(),
-          :pythonVersion => String.t()
+          :airflowConfigOverrides => map() | nil,
+          :envVariables => map() | nil,
+          :imageVersion => String.t() | nil,
+          :pypiPackages => map() | nil,
+          :pythonVersion => String.t() | nil
         }
 
   field(:airflowConfigOverrides, type: :map)

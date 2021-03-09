@@ -28,8 +28,8 @@ defmodule GoogleApi.Composer.V1beta1.Model.ListEnvironmentsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environments => list(GoogleApi.Composer.V1beta1.Model.Environment.t()),
-          :nextPageToken => String.t()
+          :environments => list(GoogleApi.Composer.V1beta1.Model.Environment.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:environments, as: GoogleApi.Composer.V1beta1.Model.Environment, type: :list)
