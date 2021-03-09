@@ -32,11 +32,11 @@ defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisResult do
 
   @type t :: %__MODULE__{
           :accessControlLists =>
-            list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AccessControlList.t()),
-          :attachedResourceFullName => String.t(),
-          :fullyExplored => boolean(),
-          :iamBinding => GoogleApi.CloudAsset.V1.Model.Binding.t(),
-          :identityList => GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1IdentityList.t()
+            list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AccessControlList.t()) | nil,
+          :attachedResourceFullName => String.t() | nil,
+          :fullyExplored => boolean() | nil,
+          :iamBinding => GoogleApi.CloudAsset.V1.Model.Binding.t() | nil,
+          :identityList => GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1IdentityList.t() | nil
         }
 
   field(:accessControlLists,

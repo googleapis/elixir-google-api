@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudAsset.V1.Model.BigQueryDestination do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataset => String.t(),
-          :force => boolean(),
-          :partitionSpec => GoogleApi.CloudAsset.V1.Model.PartitionSpec.t(),
-          :separateTablesPerAssetType => boolean(),
-          :table => String.t()
+          :dataset => String.t() | nil,
+          :force => boolean() | nil,
+          :partitionSpec => GoogleApi.CloudAsset.V1.Model.PartitionSpec.t() | nil,
+          :separateTablesPerAssetType => boolean() | nil,
+          :table => String.t() | nil
         }
 
   field(:dataset)

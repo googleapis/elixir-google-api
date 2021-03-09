@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.PartitionSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partitionKey => String.t()
+          :partitionKey => String.t() | nil
         }
 
   field(:partitionKey)

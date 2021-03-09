@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Resource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analysisState => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisState.t(),
-          :fullResourceName => String.t()
+          :analysisState => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisState.t() | nil,
+          :fullResourceName => String.t() | nil
         }
 
   field(:analysisState, as: GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisState)

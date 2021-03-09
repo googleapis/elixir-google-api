@@ -35,15 +35,15 @@ defmodule GoogleApi.CloudAsset.V1.Model.WindowsUpdatePackage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categories => list(GoogleApi.CloudAsset.V1.Model.WindowsUpdateCategory.t()),
-          :description => String.t(),
-          :kbArticleIds => list(String.t()),
-          :lastDeploymentChangeTime => DateTime.t(),
-          :moreInfoUrls => list(String.t()),
-          :revisionNumber => integer(),
-          :supportUrl => String.t(),
-          :title => String.t(),
-          :updateId => String.t()
+          :categories => list(GoogleApi.CloudAsset.V1.Model.WindowsUpdateCategory.t()) | nil,
+          :description => String.t() | nil,
+          :kbArticleIds => list(String.t()) | nil,
+          :lastDeploymentChangeTime => DateTime.t() | nil,
+          :moreInfoUrls => list(String.t()) | nil,
+          :revisionNumber => integer() | nil,
+          :supportUrl => String.t() | nil,
+          :title => String.t() | nil,
+          :updateId => String.t() | nil
         }
 
   field(:categories, as: GoogleApi.CloudAsset.V1.Model.WindowsUpdateCategory, type: :list)

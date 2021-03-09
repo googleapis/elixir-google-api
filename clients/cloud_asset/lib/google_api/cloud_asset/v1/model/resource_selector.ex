@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSelector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fullResourceName => String.t()
+          :fullResourceName => String.t() | nil
         }
 
   field(:fullResourceName)

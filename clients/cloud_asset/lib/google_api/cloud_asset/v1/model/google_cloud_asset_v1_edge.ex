@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Edge do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sourceNode => String.t(),
-          :targetNode => String.t()
+          :sourceNode => String.t() | nil,
+          :targetNode => String.t() | nil
         }
 
   field(:sourceNode)

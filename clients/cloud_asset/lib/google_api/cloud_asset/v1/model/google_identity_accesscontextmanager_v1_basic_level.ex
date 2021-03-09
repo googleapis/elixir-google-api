@@ -28,9 +28,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Basi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :combiningFunction => String.t(),
+          :combiningFunction => String.t() | nil,
           :conditions =>
             list(GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Condition.t())
+            | nil
         }
 
   field(:combiningFunction)

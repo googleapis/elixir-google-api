@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudAsset.V1.Model.Item do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :availablePackage => GoogleApi.CloudAsset.V1.Model.SoftwarePackage.t(),
-          :createTime => DateTime.t(),
-          :id => String.t(),
-          :installedPackage => GoogleApi.CloudAsset.V1.Model.SoftwarePackage.t(),
-          :originType => String.t(),
-          :type => String.t(),
-          :updateTime => DateTime.t()
+          :availablePackage => GoogleApi.CloudAsset.V1.Model.SoftwarePackage.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :installedPackage => GoogleApi.CloudAsset.V1.Model.SoftwarePackage.t() | nil,
+          :originType => String.t() | nil,
+          :type => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:availablePackage, as: GoogleApi.CloudAsset.V1.Model.SoftwarePackage)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.OutputConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigqueryDestination => GoogleApi.CloudAsset.V1.Model.BigQueryDestination.t(),
-          :gcsDestination => GoogleApi.CloudAsset.V1.Model.GcsDestination.t()
+          :bigqueryDestination => GoogleApi.CloudAsset.V1.Model.BigQueryDestination.t() | nil,
+          :gcsDestination => GoogleApi.CloudAsset.V1.Model.GcsDestination.t() | nil
         }
 
   field(:bigqueryDestination, as: GoogleApi.CloudAsset.V1.Model.BigQueryDestination)

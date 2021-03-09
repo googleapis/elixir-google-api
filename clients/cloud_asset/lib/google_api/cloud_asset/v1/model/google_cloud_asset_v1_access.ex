@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Access do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analysisState => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisState.t(),
-          :permission => String.t(),
-          :role => String.t()
+          :analysisState => GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisState.t() | nil,
+          :permission => String.t() | nil,
+          :role => String.t() | nil
         }
 
   field(:analysisState, as: GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisState)

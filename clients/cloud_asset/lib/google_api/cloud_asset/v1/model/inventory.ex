@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Inventory do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => %{optional(String.t()) => GoogleApi.CloudAsset.V1.Model.Item.t()},
-          :osInfo => GoogleApi.CloudAsset.V1.Model.OsInfo.t()
+          :items => %{optional(String.t()) => GoogleApi.CloudAsset.V1.Model.Item.t()} | nil,
+          :osInfo => GoogleApi.CloudAsset.V1.Model.OsInfo.t() | nil
         }
 
   field(:items, as: GoogleApi.CloudAsset.V1.Model.Item, type: :map)

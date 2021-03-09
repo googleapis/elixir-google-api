@@ -29,9 +29,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Ingr
 
   @type t :: %__MODULE__{
           :ingressFrom =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressFrom.t(),
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressFrom.t()
+            | nil,
           :ingressTo =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressTo.t()
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressTo.t() | nil
         }
 
   field(:ingressFrom,

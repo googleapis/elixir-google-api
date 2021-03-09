@@ -32,15 +32,16 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Devi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedDeviceManagementLevels => list(String.t()),
-          :allowedEncryptionStatuses => list(String.t()),
+          :allowedDeviceManagementLevels => list(String.t()) | nil,
+          :allowedEncryptionStatuses => list(String.t()) | nil,
           :osConstraints =>
             list(
               GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1OsConstraint.t()
-            ),
-          :requireAdminApproval => boolean(),
-          :requireCorpOwned => boolean(),
-          :requireScreenlock => boolean()
+            )
+            | nil,
+          :requireAdminApproval => boolean() | nil,
+          :requireCorpOwned => boolean() | nil,
+          :requireScreenlock => boolean() | nil
         }
 
   field(:allowedDeviceManagementLevels, type: :list)

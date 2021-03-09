@@ -30,10 +30,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.ExportAssetsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :assetTypes => list(String.t()),
-          :contentType => String.t(),
-          :outputConfig => GoogleApi.CloudAsset.V1.Model.OutputConfig.t(),
-          :readTime => DateTime.t()
+          :assetTypes => list(String.t()) | nil,
+          :contentType => String.t() | nil,
+          :outputConfig => GoogleApi.CloudAsset.V1.Model.OutputConfig.t() | nil,
+          :readTime => DateTime.t() | nil
         }
 
   field(:assetTypes, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.SearchAllIamPoliciesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :results => list(GoogleApi.CloudAsset.V1.Model.IamPolicySearchResult.t())
+          :nextPageToken => String.t() | nil,
+          :results => list(GoogleApi.CloudAsset.V1.Model.IamPolicySearchResult.t()) | nil
         }
 
   field(:nextPageToken)

@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ListFeedsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :feeds => list(GoogleApi.CloudAsset.V1.Model.Feed.t())
+          :feeds => list(GoogleApi.CloudAsset.V1.Model.Feed.t()) | nil
         }
 
   field(:feeds, as: GoogleApi.CloudAsset.V1.Model.Feed, type: :list)

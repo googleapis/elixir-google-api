@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Egre
 
   @type t :: %__MODULE__{
           :egressFrom =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressFrom.t(),
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressFrom.t() | nil,
           :egressTo =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressTo.t()
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressTo.t() | nil
         }
 
   field(:egressFrom,

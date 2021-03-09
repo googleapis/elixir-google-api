@@ -32,19 +32,22 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accessLevels => list(String.t()),
+          :accessLevels => list(String.t()) | nil,
           :egressPolicies =>
             list(
               GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressPolicy.t()
-            ),
+            )
+            | nil,
           :ingressPolicies =>
             list(
               GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressPolicy.t()
-            ),
-          :resources => list(String.t()),
-          :restrictedServices => list(String.t()),
+            )
+            | nil,
+          :resources => list(String.t()) | nil,
+          :restrictedServices => list(String.t()) | nil,
           :vpcAccessibleServices =>
             GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1VpcAccessibleServices.t()
+            | nil
         }
 
   field(:accessLevels, type: :list)

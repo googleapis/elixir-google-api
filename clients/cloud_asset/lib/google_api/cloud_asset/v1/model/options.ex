@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudAsset.V1.Model.Options do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analyzeServiceAccountImpersonation => boolean(),
-          :expandGroups => boolean(),
-          :expandResources => boolean(),
-          :expandRoles => boolean(),
-          :outputGroupEdges => boolean(),
-          :outputResourceEdges => boolean()
+          :analyzeServiceAccountImpersonation => boolean() | nil,
+          :expandGroups => boolean() | nil,
+          :expandResources => boolean() | nil,
+          :expandRoles => boolean() | nil,
+          :outputGroupEdges => boolean() | nil,
+          :outputResourceEdges => boolean() | nil
         }
 
   field(:analyzeServiceAccountImpersonation)

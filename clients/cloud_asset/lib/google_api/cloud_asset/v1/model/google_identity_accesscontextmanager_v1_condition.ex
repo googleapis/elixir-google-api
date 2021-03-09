@@ -33,12 +33,13 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Cond
 
   @type t :: %__MODULE__{
           :devicePolicy =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1DevicePolicy.t(),
-          :ipSubnetworks => list(String.t()),
-          :members => list(String.t()),
-          :negate => boolean(),
-          :regions => list(String.t()),
-          :requiredAccessLevels => list(String.t())
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1DevicePolicy.t()
+            | nil,
+          :ipSubnetworks => list(String.t()) | nil,
+          :members => list(String.t()) | nil,
+          :negate => boolean() | nil,
+          :regions => list(String.t()) | nil,
+          :requiredAccessLevels => list(String.t()) | nil
         }
 
   field(:devicePolicy,
