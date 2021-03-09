@@ -28,8 +28,8 @@ defmodule GoogleApi.GamesManagement.V1management.Model.ProfileSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :profileVisible => boolean()
+          :kind => String.t() | nil,
+          :profileVisible => boolean() | nil
         }
 
   field(:kind)

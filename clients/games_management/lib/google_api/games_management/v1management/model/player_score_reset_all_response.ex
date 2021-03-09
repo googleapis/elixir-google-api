@@ -28,9 +28,9 @@ defmodule GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetAllRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
+          :kind => String.t() | nil,
           :results =>
-            list(GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse.t())
+            list(GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse.t()) | nil
         }
 
   field(:kind)

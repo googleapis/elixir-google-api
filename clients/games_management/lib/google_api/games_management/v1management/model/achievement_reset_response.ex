@@ -30,10 +30,10 @@ defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentState => String.t(),
-          :definitionId => String.t(),
-          :kind => String.t(),
-          :updateOccurred => boolean()
+          :currentState => String.t() | nil,
+          :definitionId => String.t() | nil,
+          :kind => String.t() | nil,
+          :updateOccurred => boolean() | nil
         }
 
   field(:currentState)

@@ -28,8 +28,8 @@ defmodule GoogleApi.GamesManagement.V1management.Model.ScoresResetMultipleForAll
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
-          :leaderboard_ids => list(String.t())
+          :kind => String.t() | nil,
+          :leaderboard_ids => list(String.t()) | nil
         }
 
   field(:kind)

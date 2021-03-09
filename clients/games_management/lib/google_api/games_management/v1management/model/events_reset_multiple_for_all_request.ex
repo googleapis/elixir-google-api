@@ -28,8 +28,8 @@ defmodule GoogleApi.GamesManagement.V1management.Model.EventsResetMultipleForAll
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :event_ids => list(String.t()),
-          :kind => String.t()
+          :event_ids => list(String.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:event_ids, type: :list)

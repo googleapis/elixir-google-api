@@ -28,8 +28,8 @@ defmodule GoogleApi.GamesManagement.V1management.Model.PlayerName do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :familyName => String.t(),
-          :givenName => String.t()
+          :familyName => String.t() | nil,
+          :givenName => String.t() | nil
         }
 
   field(:familyName)

@@ -37,18 +37,20 @@ defmodule GoogleApi.GamesManagement.V1management.Model.Player do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :avatarImageUrl => String.t(),
-          :bannerUrlLandscape => String.t(),
-          :bannerUrlPortrait => String.t(),
-          :displayName => String.t(),
+          :avatarImageUrl => String.t() | nil,
+          :bannerUrlLandscape => String.t() | nil,
+          :bannerUrlPortrait => String.t() | nil,
+          :displayName => String.t() | nil,
           :experienceInfo =>
-            GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource.t(),
-          :kind => String.t(),
-          :name => GoogleApi.GamesManagement.V1management.Model.PlayerName.t(),
-          :originalPlayerId => String.t(),
-          :playerId => String.t(),
-          :profileSettings => GoogleApi.GamesManagement.V1management.Model.ProfileSettings.t(),
-          :title => String.t()
+            GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource.t()
+            | nil,
+          :kind => String.t() | nil,
+          :name => GoogleApi.GamesManagement.V1management.Model.PlayerName.t() | nil,
+          :originalPlayerId => String.t() | nil,
+          :playerId => String.t() | nil,
+          :profileSettings =>
+            GoogleApi.GamesManagement.V1management.Model.ProfileSettings.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:avatarImageUrl)

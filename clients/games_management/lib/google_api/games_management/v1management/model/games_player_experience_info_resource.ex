@@ -30,11 +30,12 @@ defmodule GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currentExperiencePoints => String.t(),
+          :currentExperiencePoints => String.t() | nil,
           :currentLevel =>
-            GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource.t(),
-          :lastLevelUpTimestampMillis => String.t(),
-          :nextLevel => GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource.t()
+            GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource.t() | nil,
+          :lastLevelUpTimestampMillis => String.t() | nil,
+          :nextLevel =>
+            GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource.t() | nil
         }
 
   field(:currentExperiencePoints)

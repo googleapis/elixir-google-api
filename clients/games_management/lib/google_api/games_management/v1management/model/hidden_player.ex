@@ -29,9 +29,9 @@ defmodule GoogleApi.GamesManagement.V1management.Model.HiddenPlayer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hiddenTimeMillis => String.t(),
-          :kind => String.t(),
-          :player => GoogleApi.GamesManagement.V1management.Model.Player.t()
+          :hiddenTimeMillis => String.t() | nil,
+          :kind => String.t() | nil,
+          :player => GoogleApi.GamesManagement.V1management.Model.Player.t() | nil
         }
 
   field(:hiddenTimeMillis)
