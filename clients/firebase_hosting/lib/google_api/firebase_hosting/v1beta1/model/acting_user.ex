@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :imageUrl => String.t()
+          :email => String.t() | nil,
+          :imageUrl => String.t() | nil
         }
 
   field(:email)

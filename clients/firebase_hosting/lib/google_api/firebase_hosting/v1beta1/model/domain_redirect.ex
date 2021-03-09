@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.DomainRedirect do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domainName => String.t(),
-          :type => String.t()
+          :domainName => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:domainName)

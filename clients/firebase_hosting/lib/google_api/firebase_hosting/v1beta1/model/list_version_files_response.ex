@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListVersionFilesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => list(GoogleApi.FirebaseHosting.V1beta1.Model.VersionFile.t()),
-          :nextPageToken => String.t()
+          :files => list(GoogleApi.FirebaseHosting.V1beta1.Model.VersionFile.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:files, as: GoogleApi.FirebaseHosting.V1beta1.Model.VersionFile, type: :list)

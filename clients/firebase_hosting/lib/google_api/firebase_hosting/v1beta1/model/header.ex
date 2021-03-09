@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Header do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :glob => String.t(),
-          :headers => map(),
-          :regex => String.t()
+          :glob => String.t() | nil,
+          :headers => map() | nil,
+          :regex => String.t() | nil
         }
 
   field(:glob)

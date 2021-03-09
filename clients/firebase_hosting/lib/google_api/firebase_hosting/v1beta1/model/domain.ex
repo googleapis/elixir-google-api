@@ -32,12 +32,12 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Domain do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domainName => String.t(),
-          :domainRedirect => GoogleApi.FirebaseHosting.V1beta1.Model.DomainRedirect.t(),
-          :provisioning => GoogleApi.FirebaseHosting.V1beta1.Model.DomainProvisioning.t(),
-          :site => String.t(),
-          :status => String.t(),
-          :updateTime => DateTime.t()
+          :domainName => String.t() | nil,
+          :domainRedirect => GoogleApi.FirebaseHosting.V1beta1.Model.DomainRedirect.t() | nil,
+          :provisioning => GoogleApi.FirebaseHosting.V1beta1.Model.DomainProvisioning.t() | nil,
+          :site => String.t() | nil,
+          :status => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:domainName)

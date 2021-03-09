@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Release do
   @moduledoc """
-  A `Release` is a particular [collection of configurations and files](sites.versions) that is set to be public at a particular time.
+   A `Release` is a particular [collection of configurations and files](sites.versions) that is set to be public at a particular time.
 
   ## Attributes
 
   *   `message` (*type:* `String.t`, *default:* `nil`) - The deploy description when the release was created. The value can be up to 512 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the release, in the format: sites/ SITE_NAME/releases/RELEASE_ID This name is provided in the response body when you call [`CreateRelease`](sites.releases/create).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the release, in either of the following formats: - sites/SITE_NAME/releases/RELEASE_ID - sites/SITE_NAME/channels/CHANNEL_ID/releases/RELEASE_ID This name is provided in the response body when you call [`releases.create`](sites.releases/create) or [`channels.releases.create`](sites.channels.releases/create).
   *   `releaseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the version is set to be public.
   *   `releaseUser` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser.t`, *default:* `nil`) - Output only. Identifies the user who created the release.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Explains the reason for the release. Specify a value for this field only when creating a `SITE_DISABLE` type release.
@@ -32,12 +32,12 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Release do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :message => String.t(),
-          :name => String.t(),
-          :releaseTime => DateTime.t(),
-          :releaseUser => GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser.t(),
-          :type => String.t(),
-          :version => GoogleApi.FirebaseHosting.V1beta1.Model.Version.t()
+          :message => String.t() | nil,
+          :name => String.t() | nil,
+          :releaseTime => DateTime.t() | nil,
+          :releaseUser => GoogleApi.FirebaseHosting.V1beta1.Model.ActingUser.t() | nil,
+          :type => String.t() | nil,
+          :version => GoogleApi.FirebaseHosting.V1beta1.Model.Version.t() | nil
         }
 
   field(:message)

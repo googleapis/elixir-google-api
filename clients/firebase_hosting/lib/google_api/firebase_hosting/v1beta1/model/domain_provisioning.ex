@@ -34,14 +34,15 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.DomainProvisioning do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certChallengeDiscoveredTxt => list(String.t()),
-          :certChallengeDns => GoogleApi.FirebaseHosting.V1beta1.Model.CertDnsChallenge.t(),
-          :certChallengeHttp => GoogleApi.FirebaseHosting.V1beta1.Model.CertHttpChallenge.t(),
-          :certStatus => String.t(),
-          :discoveredIps => list(String.t()),
-          :dnsFetchTime => DateTime.t(),
-          :dnsStatus => String.t(),
-          :expectedIps => list(String.t())
+          :certChallengeDiscoveredTxt => list(String.t()) | nil,
+          :certChallengeDns => GoogleApi.FirebaseHosting.V1beta1.Model.CertDnsChallenge.t() | nil,
+          :certChallengeHttp =>
+            GoogleApi.FirebaseHosting.V1beta1.Model.CertHttpChallenge.t() | nil,
+          :certStatus => String.t() | nil,
+          :discoveredIps => list(String.t()) | nil,
+          :dnsFetchTime => DateTime.t() | nil,
+          :dnsStatus => String.t() | nil,
+          :expectedIps => list(String.t()) | nil
         }
 
   field(:certChallengeDiscoveredTxt, type: :list)

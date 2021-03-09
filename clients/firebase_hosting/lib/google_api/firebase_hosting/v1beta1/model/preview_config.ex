@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.PreviewConfig do
   @moduledoc """
-  Version preview configuration. If active and unexpired, this version will be accessible via a custom URL even if it is not the currently released version. Deprecated in favor of site channels.
+  Deprecated in favor of [site channels](sites.channels).
 
   ## Attributes
 
@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.PreviewConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :active => boolean(),
-          :expireTime => DateTime.t()
+          :active => boolean() | nil,
+          :expireTime => DateTime.t() | nil
         }
 
   field(:active)

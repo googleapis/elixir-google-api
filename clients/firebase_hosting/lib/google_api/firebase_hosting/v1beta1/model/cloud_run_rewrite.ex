@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.CloudRunRewrite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :region => String.t(),
-          :serviceId => String.t()
+          :region => String.t() | nil,
+          :serviceId => String.t() | nil
         }
 
   field(:region)

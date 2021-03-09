@@ -33,13 +33,13 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ServingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appAssociation => String.t(),
-          :cleanUrls => boolean(),
-          :headers => list(GoogleApi.FirebaseHosting.V1beta1.Model.Header.t()),
-          :i18n => GoogleApi.FirebaseHosting.V1beta1.Model.I18nConfig.t(),
-          :redirects => list(GoogleApi.FirebaseHosting.V1beta1.Model.Redirect.t()),
-          :rewrites => list(GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite.t()),
-          :trailingSlashBehavior => String.t()
+          :appAssociation => String.t() | nil,
+          :cleanUrls => boolean() | nil,
+          :headers => list(GoogleApi.FirebaseHosting.V1beta1.Model.Header.t()) | nil,
+          :i18n => GoogleApi.FirebaseHosting.V1beta1.Model.I18nConfig.t() | nil,
+          :redirects => list(GoogleApi.FirebaseHosting.V1beta1.Model.Redirect.t()) | nil,
+          :rewrites => list(GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite.t()) | nil,
+          :trailingSlashBehavior => String.t() | nil
         }
 
   field(:appAssociation)

@@ -27,7 +27,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.PopulateVersionFilesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :files => map()
+          :files => map() | nil
         }
 
   field(:files, type: :map)

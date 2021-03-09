@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :releases => list(GoogleApi.FirebaseHosting.V1beta1.Model.Release.t())
+          :nextPageToken => String.t() | nil,
+          :releases => list(GoogleApi.FirebaseHosting.V1beta1.Model.Release.t()) | nil
         }
 
   field(:nextPageToken)

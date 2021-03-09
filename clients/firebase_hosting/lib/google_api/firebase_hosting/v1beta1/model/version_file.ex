@@ -29,9 +29,9 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.VersionFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hash => String.t(),
-          :path => String.t(),
-          :status => String.t()
+          :hash => String.t() | nil,
+          :path => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:hash)

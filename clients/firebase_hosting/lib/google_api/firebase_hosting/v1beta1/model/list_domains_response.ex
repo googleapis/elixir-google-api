@@ -28,8 +28,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListDomainsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domains => list(GoogleApi.FirebaseHosting.V1beta1.Model.Domain.t()),
-          :nextPageToken => String.t()
+          :domains => list(GoogleApi.FirebaseHosting.V1beta1.Model.Domain.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:domains, as: GoogleApi.FirebaseHosting.V1beta1.Model.Domain, type: :list)
