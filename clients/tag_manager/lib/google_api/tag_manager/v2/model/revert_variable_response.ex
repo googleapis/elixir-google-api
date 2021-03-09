@@ -27,7 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.RevertVariableResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :variable => GoogleApi.TagManager.V2.Model.Variable.t()
+          :variable => GoogleApi.TagManager.V2.Model.Variable.t() | nil
         }
 
   field(:variable, as: GoogleApi.TagManager.V2.Model.Variable)

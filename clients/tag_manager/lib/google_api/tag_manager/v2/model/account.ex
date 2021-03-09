@@ -32,12 +32,12 @@ defmodule GoogleApi.TagManager.V2.Model.Account do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :fingerprint => String.t(),
-          :name => String.t(),
-          :path => String.t(),
-          :shareData => boolean(),
-          :tagManagerUrl => String.t()
+          :accountId => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :name => String.t() | nil,
+          :path => String.t() | nil,
+          :shareData => boolean() | nil,
+          :tagManagerUrl => String.t() | nil
         }
 
   field(:accountId)

@@ -41,21 +41,21 @@ defmodule GoogleApi.TagManager.V2.Model.Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :authorizationCode => String.t(),
-          :authorizationTimestamp => DateTime.t(),
-          :containerId => String.t(),
-          :containerVersionId => String.t(),
-          :description => String.t(),
-          :enableDebug => boolean(),
-          :environmentId => String.t(),
-          :fingerprint => String.t(),
-          :name => String.t(),
-          :path => String.t(),
-          :tagManagerUrl => String.t(),
-          :type => String.t(),
-          :url => String.t(),
-          :workspaceId => String.t()
+          :accountId => String.t() | nil,
+          :authorizationCode => String.t() | nil,
+          :authorizationTimestamp => DateTime.t() | nil,
+          :containerId => String.t() | nil,
+          :containerVersionId => String.t() | nil,
+          :description => String.t() | nil,
+          :enableDebug => boolean() | nil,
+          :environmentId => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :name => String.t() | nil,
+          :path => String.t() | nil,
+          :tagManagerUrl => String.t() | nil,
+          :type => String.t() | nil,
+          :url => String.t() | nil,
+          :workspaceId => String.t() | nil
         }
 
   field(:accountId)

@@ -44,24 +44,24 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :builtInVariable => list(GoogleApi.TagManager.V2.Model.BuiltInVariable.t()),
-          :client => list(GoogleApi.TagManager.V2.Model.Client.t()),
-          :container => GoogleApi.TagManager.V2.Model.Container.t(),
-          :containerId => String.t(),
-          :containerVersionId => String.t(),
-          :customTemplate => list(GoogleApi.TagManager.V2.Model.CustomTemplate.t()),
-          :deleted => boolean(),
-          :description => String.t(),
-          :fingerprint => String.t(),
-          :folder => list(GoogleApi.TagManager.V2.Model.Folder.t()),
-          :name => String.t(),
-          :path => String.t(),
-          :tag => list(GoogleApi.TagManager.V2.Model.Tag.t()),
-          :tagManagerUrl => String.t(),
-          :trigger => list(GoogleApi.TagManager.V2.Model.Trigger.t()),
-          :variable => list(GoogleApi.TagManager.V2.Model.Variable.t()),
-          :zone => list(GoogleApi.TagManager.V2.Model.Zone.t())
+          :accountId => String.t() | nil,
+          :builtInVariable => list(GoogleApi.TagManager.V2.Model.BuiltInVariable.t()) | nil,
+          :client => list(GoogleApi.TagManager.V2.Model.Client.t()) | nil,
+          :container => GoogleApi.TagManager.V2.Model.Container.t() | nil,
+          :containerId => String.t() | nil,
+          :containerVersionId => String.t() | nil,
+          :customTemplate => list(GoogleApi.TagManager.V2.Model.CustomTemplate.t()) | nil,
+          :deleted => boolean() | nil,
+          :description => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :folder => list(GoogleApi.TagManager.V2.Model.Folder.t()) | nil,
+          :name => String.t() | nil,
+          :path => String.t() | nil,
+          :tag => list(GoogleApi.TagManager.V2.Model.Tag.t()) | nil,
+          :tagManagerUrl => String.t() | nil,
+          :trigger => list(GoogleApi.TagManager.V2.Model.Trigger.t()) | nil,
+          :variable => list(GoogleApi.TagManager.V2.Model.Variable.t()) | nil,
+          :zone => list(GoogleApi.TagManager.V2.Model.Zone.t()) | nil
         }
 
   field(:accountId)

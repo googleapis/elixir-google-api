@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.SetupTag do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :stopOnSetupFailure => boolean(),
-          :tagName => String.t()
+          :stopOnSetupFailure => boolean() | nil,
+          :tagName => String.t() | nil
         }
 
   field(:stopOnSetupFailure)

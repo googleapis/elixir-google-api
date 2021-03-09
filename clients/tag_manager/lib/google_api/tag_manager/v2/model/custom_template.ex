@@ -36,16 +36,16 @@ defmodule GoogleApi.TagManager.V2.Model.CustomTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :containerId => String.t(),
-          :fingerprint => String.t(),
-          :galleryReference => GoogleApi.TagManager.V2.Model.GalleryReference.t(),
-          :name => String.t(),
-          :path => String.t(),
-          :tagManagerUrl => String.t(),
-          :templateData => String.t(),
-          :templateId => String.t(),
-          :workspaceId => String.t()
+          :accountId => String.t() | nil,
+          :containerId => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :galleryReference => GoogleApi.TagManager.V2.Model.GalleryReference.t() | nil,
+          :name => String.t() | nil,
+          :path => String.t() | nil,
+          :tagManagerUrl => String.t() | nil,
+          :templateData => String.t() | nil,
+          :templateId => String.t() | nil,
+          :workspaceId => String.t() | nil
         }
 
   field(:accountId)

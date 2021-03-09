@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.CreateContainerVersionRequestVersionOpti
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :notes => String.t()
+          :name => String.t() | nil,
+          :notes => String.t() | nil
         }
 
   field(:name)

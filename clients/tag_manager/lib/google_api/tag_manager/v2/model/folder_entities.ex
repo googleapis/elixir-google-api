@@ -30,10 +30,10 @@ defmodule GoogleApi.TagManager.V2.Model.FolderEntities do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :tag => list(GoogleApi.TagManager.V2.Model.Tag.t()),
-          :trigger => list(GoogleApi.TagManager.V2.Model.Trigger.t()),
-          :variable => list(GoogleApi.TagManager.V2.Model.Variable.t())
+          :nextPageToken => String.t() | nil,
+          :tag => list(GoogleApi.TagManager.V2.Model.Tag.t()) | nil,
+          :trigger => list(GoogleApi.TagManager.V2.Model.Trigger.t()) | nil,
+          :variable => list(GoogleApi.TagManager.V2.Model.Variable.t()) | nil
         }
 
   field(:nextPageToken)

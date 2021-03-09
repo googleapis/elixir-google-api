@@ -31,11 +31,11 @@ defmodule GoogleApi.TagManager.V2.Model.Parameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :list => list(GoogleApi.TagManager.V2.Model.Parameter.t()),
-          :map => list(GoogleApi.TagManager.V2.Model.Parameter.t()),
-          :type => String.t(),
-          :value => String.t()
+          :key => String.t() | nil,
+          :list => list(GoogleApi.TagManager.V2.Model.Parameter.t()) | nil,
+          :map => list(GoogleApi.TagManager.V2.Model.Parameter.t()) | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:key)

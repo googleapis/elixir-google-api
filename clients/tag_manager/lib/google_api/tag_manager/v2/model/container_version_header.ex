@@ -40,20 +40,20 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :containerId => String.t(),
-          :containerVersionId => String.t(),
-          :deleted => boolean(),
-          :name => String.t(),
-          :numClients => String.t(),
-          :numCustomTemplates => String.t(),
-          :numMacros => String.t(),
-          :numRules => String.t(),
-          :numTags => String.t(),
-          :numTriggers => String.t(),
-          :numVariables => String.t(),
-          :numZones => String.t(),
-          :path => String.t()
+          :accountId => String.t() | nil,
+          :containerId => String.t() | nil,
+          :containerVersionId => String.t() | nil,
+          :deleted => boolean() | nil,
+          :name => String.t() | nil,
+          :numClients => String.t() | nil,
+          :numCustomTemplates => String.t() | nil,
+          :numMacros => String.t() | nil,
+          :numRules => String.t() | nil,
+          :numTags => String.t() | nil,
+          :numTriggers => String.t() | nil,
+          :numVariables => String.t() | nil,
+          :numZones => String.t() | nil,
+          :path => String.t() | nil
         }
 
   field(:accountId)

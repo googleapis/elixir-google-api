@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListZonesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :zone => list(GoogleApi.TagManager.V2.Model.Zone.t())
+          :nextPageToken => String.t() | nil,
+          :zone => list(GoogleApi.TagManager.V2.Model.Zone.t()) | nil
         }
 
   field(:nextPageToken)

@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ZoneTypeRestriction do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enable => boolean(),
-          :whitelistedTypeId => list(String.t())
+          :enable => boolean() | nil,
+          :whitelistedTypeId => list(String.t()) | nil
         }
 
   field(:enable)

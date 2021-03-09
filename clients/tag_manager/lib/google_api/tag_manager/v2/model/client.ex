@@ -39,19 +39,19 @@ defmodule GoogleApi.TagManager.V2.Model.Client do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :clientId => String.t(),
-          :containerId => String.t(),
-          :fingerprint => String.t(),
-          :name => String.t(),
-          :notes => String.t(),
-          :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()),
-          :parentFolderId => String.t(),
-          :path => String.t(),
-          :priority => integer(),
-          :tagManagerUrl => String.t(),
-          :type => String.t(),
-          :workspaceId => String.t()
+          :accountId => String.t() | nil,
+          :clientId => String.t() | nil,
+          :containerId => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
+          :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()) | nil,
+          :parentFolderId => String.t() | nil,
+          :path => String.t() | nil,
+          :priority => integer() | nil,
+          :tagManagerUrl => String.t() | nil,
+          :type => String.t() | nil,
+          :workspaceId => String.t() | nil
         }
 
   field(:accountId)

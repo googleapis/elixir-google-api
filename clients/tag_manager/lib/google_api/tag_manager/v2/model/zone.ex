@@ -38,18 +38,18 @@ defmodule GoogleApi.TagManager.V2.Model.Zone do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :boundary => GoogleApi.TagManager.V2.Model.ZoneBoundary.t(),
-          :childContainer => list(GoogleApi.TagManager.V2.Model.ZoneChildContainer.t()),
-          :containerId => String.t(),
-          :fingerprint => String.t(),
-          :name => String.t(),
-          :notes => String.t(),
-          :path => String.t(),
-          :tagManagerUrl => String.t(),
-          :typeRestriction => GoogleApi.TagManager.V2.Model.ZoneTypeRestriction.t(),
-          :workspaceId => String.t(),
-          :zoneId => String.t()
+          :accountId => String.t() | nil,
+          :boundary => GoogleApi.TagManager.V2.Model.ZoneBoundary.t() | nil,
+          :childContainer => list(GoogleApi.TagManager.V2.Model.ZoneChildContainer.t()) | nil,
+          :containerId => String.t() | nil,
+          :fingerprint => String.t() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
+          :path => String.t() | nil,
+          :tagManagerUrl => String.t() | nil,
+          :typeRestriction => GoogleApi.TagManager.V2.Model.ZoneTypeRestriction.t() | nil,
+          :workspaceId => String.t() | nil,
+          :zoneId => String.t() | nil
         }
 
   field(:accountId)

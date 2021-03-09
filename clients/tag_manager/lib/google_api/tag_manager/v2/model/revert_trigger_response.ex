@@ -27,7 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.RevertTriggerResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :trigger => GoogleApi.TagManager.V2.Model.Trigger.t()
+          :trigger => GoogleApi.TagManager.V2.Model.Trigger.t() | nil
         }
 
   field(:trigger, as: GoogleApi.TagManager.V2.Model.Trigger)

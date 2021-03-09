@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListEnvironmentsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environment => list(GoogleApi.TagManager.V2.Model.Environment.t()),
-          :nextPageToken => String.t()
+          :environment => list(GoogleApi.TagManager.V2.Model.Environment.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:environment, as: GoogleApi.TagManager.V2.Model.Environment, type: :list)

@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListWorkspacesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :workspace => list(GoogleApi.TagManager.V2.Model.Workspace.t())
+          :nextPageToken => String.t() | nil,
+          :workspace => list(GoogleApi.TagManager.V2.Model.Workspace.t()) | nil
         }
 
   field(:nextPageToken)

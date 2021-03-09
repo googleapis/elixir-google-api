@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.ListVariablesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :variable => list(GoogleApi.TagManager.V2.Model.Variable.t())
+          :nextPageToken => String.t() | nil,
+          :variable => list(GoogleApi.TagManager.V2.Model.Variable.t()) | nil
         }
 
   field(:nextPageToken)

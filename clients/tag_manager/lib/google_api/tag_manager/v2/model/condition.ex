@@ -28,8 +28,8 @@ defmodule GoogleApi.TagManager.V2.Model.Condition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()),
-          :type => String.t()
+          :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:parameter, as: GoogleApi.TagManager.V2.Model.Parameter, type: :list)

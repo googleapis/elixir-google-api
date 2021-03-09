@@ -27,7 +27,7 @@ defmodule GoogleApi.TagManager.V2.Model.RevertZoneResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :zone => GoogleApi.TagManager.V2.Model.Zone.t()
+          :zone => GoogleApi.TagManager.V2.Model.Zone.t() | nil
         }
 
   field(:zone, as: GoogleApi.TagManager.V2.Model.Zone)

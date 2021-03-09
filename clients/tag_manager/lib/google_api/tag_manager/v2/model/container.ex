@@ -36,16 +36,16 @@ defmodule GoogleApi.TagManager.V2.Model.Container do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :containerId => String.t(),
-          :domainName => list(String.t()),
-          :fingerprint => String.t(),
-          :name => String.t(),
-          :notes => String.t(),
-          :path => String.t(),
-          :publicId => String.t(),
-          :tagManagerUrl => String.t(),
-          :usageContext => list(String.t())
+          :accountId => String.t() | nil,
+          :containerId => String.t() | nil,
+          :domainName => list(String.t()) | nil,
+          :fingerprint => String.t() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
+          :path => String.t() | nil,
+          :publicId => String.t() | nil,
+          :tagManagerUrl => String.t() | nil,
+          :usageContext => list(String.t()) | nil
         }
 
   field(:accountId)

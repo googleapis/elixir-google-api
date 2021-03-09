@@ -31,11 +31,11 @@ defmodule GoogleApi.TagManager.V2.Model.UserPermission do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountAccess => GoogleApi.TagManager.V2.Model.AccountAccess.t(),
-          :accountId => String.t(),
-          :containerAccess => list(GoogleApi.TagManager.V2.Model.ContainerAccess.t()),
-          :emailAddress => String.t(),
-          :path => String.t()
+          :accountAccess => GoogleApi.TagManager.V2.Model.AccountAccess.t() | nil,
+          :accountId => String.t() | nil,
+          :containerAccess => list(GoogleApi.TagManager.V2.Model.ContainerAccess.t()) | nil,
+          :emailAddress => String.t() | nil,
+          :path => String.t() | nil
         }
 
   field(:accountAccess, as: GoogleApi.TagManager.V2.Model.AccountAccess)
