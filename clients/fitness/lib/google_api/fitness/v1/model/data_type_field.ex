@@ -29,9 +29,9 @@ defmodule GoogleApi.Fitness.V1.Model.DataTypeField do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :format => String.t(),
-          :name => String.t(),
-          :optional => boolean()
+          :format => String.t() | nil,
+          :name => String.t() | nil,
+          :optional => boolean() | nil
         }
 
   field(:format)

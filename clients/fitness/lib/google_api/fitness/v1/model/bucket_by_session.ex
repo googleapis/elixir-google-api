@@ -27,7 +27,7 @@ defmodule GoogleApi.Fitness.V1.Model.BucketBySession do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minDurationMillis => String.t()
+          :minDurationMillis => String.t() | nil
         }
 
   field(:minDurationMillis)

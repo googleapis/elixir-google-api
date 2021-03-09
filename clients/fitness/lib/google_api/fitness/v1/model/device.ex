@@ -31,11 +31,11 @@ defmodule GoogleApi.Fitness.V1.Model.Device do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :manufacturer => String.t(),
-          :model => String.t(),
-          :type => String.t(),
-          :uid => String.t(),
-          :version => String.t()
+          :manufacturer => String.t() | nil,
+          :model => String.t() | nil,
+          :type => String.t() | nil,
+          :uid => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:manufacturer)

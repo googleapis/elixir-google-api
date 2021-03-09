@@ -34,14 +34,14 @@ defmodule GoogleApi.Fitness.V1.Model.AggregateRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregateBy => list(GoogleApi.Fitness.V1.Model.AggregateBy.t()),
-          :bucketByActivitySegment => GoogleApi.Fitness.V1.Model.BucketByActivity.t(),
-          :bucketByActivityType => GoogleApi.Fitness.V1.Model.BucketByActivity.t(),
-          :bucketBySession => GoogleApi.Fitness.V1.Model.BucketBySession.t(),
-          :bucketByTime => GoogleApi.Fitness.V1.Model.BucketByTime.t(),
-          :endTimeMillis => String.t(),
-          :filteredDataQualityStandard => list(String.t()),
-          :startTimeMillis => String.t()
+          :aggregateBy => list(GoogleApi.Fitness.V1.Model.AggregateBy.t()) | nil,
+          :bucketByActivitySegment => GoogleApi.Fitness.V1.Model.BucketByActivity.t() | nil,
+          :bucketByActivityType => GoogleApi.Fitness.V1.Model.BucketByActivity.t() | nil,
+          :bucketBySession => GoogleApi.Fitness.V1.Model.BucketBySession.t() | nil,
+          :bucketByTime => GoogleApi.Fitness.V1.Model.BucketByTime.t() | nil,
+          :endTimeMillis => String.t() | nil,
+          :filteredDataQualityStandard => list(String.t()) | nil,
+          :startTimeMillis => String.t() | nil
         }
 
   field(:aggregateBy, as: GoogleApi.Fitness.V1.Model.AggregateBy, type: :list)

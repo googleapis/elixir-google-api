@@ -34,14 +34,14 @@ defmodule GoogleApi.Fitness.V1.Model.DataSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :application => GoogleApi.Fitness.V1.Model.Application.t(),
-          :dataQualityStandard => list(String.t()),
-          :dataStreamId => String.t(),
-          :dataStreamName => String.t(),
-          :dataType => GoogleApi.Fitness.V1.Model.DataType.t(),
-          :device => GoogleApi.Fitness.V1.Model.Device.t(),
-          :name => String.t(),
-          :type => String.t()
+          :application => GoogleApi.Fitness.V1.Model.Application.t() | nil,
+          :dataQualityStandard => list(String.t()) | nil,
+          :dataStreamId => String.t() | nil,
+          :dataStreamName => String.t() | nil,
+          :dataType => GoogleApi.Fitness.V1.Model.DataType.t() | nil,
+          :device => GoogleApi.Fitness.V1.Model.Device.t() | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:application, as: GoogleApi.Fitness.V1.Model.Application)

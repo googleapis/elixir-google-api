@@ -31,11 +31,11 @@ defmodule GoogleApi.Fitness.V1.Model.Dataset do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceId => String.t(),
-          :maxEndTimeNs => String.t(),
-          :minStartTimeNs => String.t(),
-          :nextPageToken => String.t(),
-          :point => list(GoogleApi.Fitness.V1.Model.DataPoint.t())
+          :dataSourceId => String.t() | nil,
+          :maxEndTimeNs => String.t() | nil,
+          :minStartTimeNs => String.t() | nil,
+          :nextPageToken => String.t() | nil,
+          :point => list(GoogleApi.Fitness.V1.Model.DataPoint.t()) | nil
         }
 
   field(:dataSourceId)

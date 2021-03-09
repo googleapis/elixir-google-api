@@ -27,7 +27,7 @@ defmodule GoogleApi.Fitness.V1.Model.MapValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fpVal => float()
+          :fpVal => float() | nil
         }
 
   field(:fpVal)

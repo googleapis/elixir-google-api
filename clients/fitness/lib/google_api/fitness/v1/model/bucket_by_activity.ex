@@ -28,8 +28,8 @@ defmodule GoogleApi.Fitness.V1.Model.BucketByActivity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activityDataSourceId => String.t(),
-          :minDurationMillis => String.t()
+          :activityDataSourceId => String.t() | nil,
+          :minDurationMillis => String.t() | nil
         }
 
   field(:activityDataSourceId)

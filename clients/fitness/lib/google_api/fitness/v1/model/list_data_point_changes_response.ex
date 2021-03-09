@@ -30,10 +30,10 @@ defmodule GoogleApi.Fitness.V1.Model.ListDataPointChangesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceId => String.t(),
-          :deletedDataPoint => list(GoogleApi.Fitness.V1.Model.DataPoint.t()),
-          :insertedDataPoint => list(GoogleApi.Fitness.V1.Model.DataPoint.t()),
-          :nextPageToken => String.t()
+          :dataSourceId => String.t() | nil,
+          :deletedDataPoint => list(GoogleApi.Fitness.V1.Model.DataPoint.t()) | nil,
+          :insertedDataPoint => list(GoogleApi.Fitness.V1.Model.DataPoint.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:dataSourceId)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Fitness.V1.Model.ListDataSourcesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSource => list(GoogleApi.Fitness.V1.Model.DataSource.t())
+          :dataSource => list(GoogleApi.Fitness.V1.Model.DataSource.t()) | nil
         }
 
   field(:dataSource, as: GoogleApi.Fitness.V1.Model.DataSource, type: :list)
