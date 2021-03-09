@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RouteMap do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :health => String.t(),
-          :predict => String.t()
+          :health => String.t() | nil,
+          :predict => String.t() | nil
         }
 
   field(:health)

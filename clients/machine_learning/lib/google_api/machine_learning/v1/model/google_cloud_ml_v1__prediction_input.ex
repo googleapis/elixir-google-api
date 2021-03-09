@@ -38,18 +38,18 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchSize => String.t(),
-          :dataFormat => String.t(),
-          :inputPaths => list(String.t()),
-          :maxWorkerCount => String.t(),
-          :modelName => String.t(),
-          :outputDataFormat => String.t(),
-          :outputPath => String.t(),
-          :region => String.t(),
-          :runtimeVersion => String.t(),
-          :signatureName => String.t(),
-          :uri => String.t(),
-          :versionName => String.t()
+          :batchSize => String.t() | nil,
+          :dataFormat => String.t() | nil,
+          :inputPaths => list(String.t()) | nil,
+          :maxWorkerCount => String.t() | nil,
+          :modelName => String.t() | nil,
+          :outputDataFormat => String.t() | nil,
+          :outputPath => String.t() | nil,
+          :region => String.t() | nil,
+          :runtimeVersion => String.t() | nil,
+          :signatureName => String.t() | nil,
+          :uri => String.t() | nil,
+          :versionName => String.t() | nil
         }
 
   field(:batchSize)

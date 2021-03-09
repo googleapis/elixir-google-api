@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingCo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :useElapsedTime => boolean()
+          :useElapsedTime => boolean() | nil
         }
 
   field(:useElapsedTime)

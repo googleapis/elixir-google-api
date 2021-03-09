@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutpu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectiveValue => float(),
-          :trainingStep => String.t()
+          :objectiveValue => float() | nil,
+          :trainingStep => String.t() | nil
         }
 
   field(:objectiveValue)

@@ -30,10 +30,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditConfigs => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig.t()),
-          :bindings => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding.t()),
-          :etag => String.t(),
-          :version => integer()
+          :auditConfigs =>
+            list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig.t()) | nil,
+          :bindings => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding.t()) | nil,
+          :etag => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:auditConfigs, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig, type: :list)

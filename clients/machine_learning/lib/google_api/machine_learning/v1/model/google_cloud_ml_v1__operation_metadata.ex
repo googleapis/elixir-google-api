@@ -35,15 +35,15 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_OperationMetadata d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :isCancellationRequested => boolean(),
-          :labels => map(),
-          :modelName => String.t(),
-          :operationType => String.t(),
-          :projectNumber => String.t(),
-          :startTime => DateTime.t(),
-          :version => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t()
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :isCancellationRequested => boolean() | nil,
+          :labels => map() | nil,
+          :modelName => String.t() | nil,
+          :operationType => String.t() | nil,
+          :projectNumber => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :version => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t() | nil
         }
 
   field(:createTime, as: DateTime)

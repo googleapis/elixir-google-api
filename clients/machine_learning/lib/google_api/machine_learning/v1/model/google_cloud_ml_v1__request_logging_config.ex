@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RequestLoggingConfi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bigqueryTableName => String.t(),
-          :samplingPercentage => float()
+          :bigqueryTableName => String.t() | nil,
+          :samplingPercentage => float() | nil
         }
 
   field(:bigqueryTableName)

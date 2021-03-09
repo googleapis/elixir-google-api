@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :httpBody => GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t()
+          :httpBody => GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t() | nil
         }
 
   field(:httpBody, as: GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody)

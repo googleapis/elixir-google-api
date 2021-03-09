@@ -34,14 +34,14 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultVersion => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t(),
-          :description => String.t(),
-          :etag => String.t(),
-          :labels => map(),
-          :name => String.t(),
-          :onlinePredictionConsoleLogging => boolean(),
-          :onlinePredictionLogging => boolean(),
-          :regions => list(String.t())
+          :defaultVersion => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t() | nil,
+          :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :onlinePredictionConsoleLogging => boolean() | nil,
+          :onlinePredictionLogging => boolean() | nil,
+          :regions => list(String.t()) | nil
         }
 
   field(:defaultVersion, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version)

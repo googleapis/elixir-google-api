@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :count => String.t(),
-          :type => String.t()
+          :count => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:count)

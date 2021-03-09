@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParamete
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxValue => String.t(),
-          :minValue => String.t()
+          :maxValue => String.t() | nil,
+          :minValue => String.t() | nil
         }
 
   field(:maxValue)

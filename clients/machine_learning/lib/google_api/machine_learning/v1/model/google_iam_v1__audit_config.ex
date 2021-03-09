@@ -29,8 +29,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig do
 
   @type t :: %__MODULE__{
           :auditLogConfigs =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditLogConfig.t()),
-          :service => String.t()
+            list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditLogConfig.t()) | nil,
+          :service => String.t() | nil
         }
 
   field(:auditLogConfigs,

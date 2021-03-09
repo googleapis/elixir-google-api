@@ -53,34 +53,37 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
   @type t :: %__MODULE__{
           :acceleratorConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t(),
-          :autoScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutoScaling.t(),
-          :container => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ContainerSpec.t(),
-          :createTime => DateTime.t(),
-          :deploymentUri => String.t(),
-          :description => String.t(),
-          :errorMessage => String.t(),
-          :etag => String.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t() | nil,
+          :autoScaling =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutoScaling.t() | nil,
+          :container =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ContainerSpec.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :deploymentUri => String.t() | nil,
+          :description => String.t() | nil,
+          :errorMessage => String.t() | nil,
+          :etag => String.t() | nil,
           :explanationConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig.t(),
-          :framework => String.t(),
-          :isDefault => boolean(),
-          :labels => map(),
-          :lastMigrationModelId => String.t(),
-          :lastMigrationTime => DateTime.t(),
-          :lastUseTime => DateTime.t(),
-          :machineType => String.t(),
-          :manualScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling.t(),
-          :name => String.t(),
-          :packageUris => list(String.t()),
-          :predictionClass => String.t(),
-          :pythonVersion => String.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig.t() | nil,
+          :framework => String.t() | nil,
+          :isDefault => boolean() | nil,
+          :labels => map() | nil,
+          :lastMigrationModelId => String.t() | nil,
+          :lastMigrationTime => DateTime.t() | nil,
+          :lastUseTime => DateTime.t() | nil,
+          :machineType => String.t() | nil,
+          :manualScaling =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling.t() | nil,
+          :name => String.t() | nil,
+          :packageUris => list(String.t()) | nil,
+          :predictionClass => String.t() | nil,
+          :pythonVersion => String.t() | nil,
           :requestLoggingConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RequestLoggingConfig.t(),
-          :routes => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RouteMap.t(),
-          :runtimeVersion => String.t(),
-          :serviceAccount => String.t(),
-          :state => String.t()
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RequestLoggingConfig.t() | nil,
+          :routes => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RouteMap.t() | nil,
+          :runtimeVersion => String.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:acceleratorConfig,

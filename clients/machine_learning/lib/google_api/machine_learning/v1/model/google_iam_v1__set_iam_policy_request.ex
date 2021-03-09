@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_SetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t(),
-          :updateMask => String.t()
+          :policy => GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:policy, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy)

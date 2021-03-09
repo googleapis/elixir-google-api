@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AddTrialMeasurement
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :measurement => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t()
+          :measurement => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t() | nil
         }
 
   field(:measurement, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement)

@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobs => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t()),
-          :nextPageToken => String.t()
+          :jobs => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:jobs, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job, type: :list)

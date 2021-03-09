@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Config do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tpuServiceAccount => String.t()
+          :tpuServiceAccount => String.t() | nil
         }
 
   field(:tpuServiceAccount)

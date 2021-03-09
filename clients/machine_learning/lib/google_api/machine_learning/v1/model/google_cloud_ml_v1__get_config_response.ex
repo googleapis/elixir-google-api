@@ -29,9 +29,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_GetConfigResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Config.t(),
-          :serviceAccount => String.t(),
-          :serviceAccountProject => String.t()
+          :config => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Config.t() | nil,
+          :serviceAccount => String.t() | nil,
+          :serviceAccountProject => String.t() | nil
         }
 
   field(:config, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Config)

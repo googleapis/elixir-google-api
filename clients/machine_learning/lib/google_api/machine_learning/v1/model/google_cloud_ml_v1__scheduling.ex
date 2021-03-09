@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxRunningTime => String.t(),
-          :maxWaitTime => String.t()
+          :maxRunningTime => String.t() | nil,
+          :maxWaitTime => String.t() | nil
         }
 
   field(:maxRunningTime)

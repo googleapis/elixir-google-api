@@ -31,11 +31,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ContainerSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :args => list(String.t()),
-          :command => list(String.t()),
-          :env => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EnvVar.t()),
-          :image => String.t(),
-          :ports => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ContainerPort.t())
+          :args => list(String.t()) | nil,
+          :command => list(String.t()) | nil,
+          :env => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EnvVar.t()) | nil,
+          :image => String.t() | nil,
+          :ports =>
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ContainerPort.t()) | nil
         }
 
   field(:args, type: :list)

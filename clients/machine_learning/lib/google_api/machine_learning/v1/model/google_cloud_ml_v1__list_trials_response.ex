@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListTrialsResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :trials => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t())
+          :trials => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()) | nil
         }
 
   field(:trials, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial, type: :list)

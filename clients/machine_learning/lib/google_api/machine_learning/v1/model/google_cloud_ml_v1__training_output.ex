@@ -34,14 +34,15 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
 
   @type t :: %__MODULE__{
           :builtInAlgorithmOutput =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t(),
-          :completedTrialCount => String.t(),
-          :consumedMLUnits => float(),
-          :hyperparameterMetricTag => String.t(),
-          :isBuiltInAlgorithmJob => boolean(),
-          :isHyperparameterTuningJob => boolean(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t() | nil,
+          :completedTrialCount => String.t() | nil,
+          :consumedMLUnits => float() | nil,
+          :hyperparameterMetricTag => String.t() | nil,
+          :isBuiltInAlgorithmJob => boolean() | nil,
+          :isHyperparameterTuningJob => boolean() | nil,
           :trials =>
             list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput.t())
+            | nil
         }
 
   field(:builtInAlgorithmOutput,

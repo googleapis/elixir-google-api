@@ -38,24 +38,32 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_Paramet
 
   @type t :: %__MODULE__{
           :categoricalValueSpec =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_CategoricalValueSpec.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_CategoricalValueSpec.t()
+            | nil,
           :childParameterSpecs =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_ParameterSpec.t()),
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_ParameterSpec.t())
+            | nil,
           :discreteValueSpec =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_DiscreteValueSpec.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_DiscreteValueSpec.t()
+            | nil,
           :doubleValueSpec =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_DoubleValueSpec.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_DoubleValueSpec.t()
+            | nil,
           :integerValueSpec =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_IntegerValueSpec.t(),
-          :parameter => String.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_IntegerValueSpec.t()
+            | nil,
+          :parameter => String.t() | nil,
           :parentCategoricalValues =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_MatchingParentCategoricalValueSpec.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_MatchingParentCategoricalValueSpec.t()
+            | nil,
           :parentDiscreteValues =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_MatchingParentDiscreteValueSpec.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_MatchingParentDiscreteValueSpec.t()
+            | nil,
           :parentIntValues =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_MatchingParentIntValueSpec.t(),
-          :scaleType => String.t(),
-          :type => String.t()
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfigParameterSpec_MatchingParentIntValueSpec.t()
+            | nil,
+          :scaleType => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:categoricalValueSpec,

@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradients
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :numIntegralSteps => integer()
+          :numIntegralSteps => integer() | nil
         }
 
   field(:numIntegralSteps)

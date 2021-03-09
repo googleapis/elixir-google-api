@@ -28,8 +28,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListVersionsRespons
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :versions => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t())
+          :nextPageToken => String.t() | nil,
+          :versions => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t()) | nil
         }
 
   field(:nextPageToken)

@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ContainerPort do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containerPort => integer()
+          :containerPort => integer() | nil
         }
 
   field(:containerPort)

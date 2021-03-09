@@ -30,13 +30,15 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :algorithm => String.t(),
+          :algorithm => String.t() | nil,
           :automatedStoppingConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingConfig.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingConfig.t() | nil,
           :metrics =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_MetricSpec.t()),
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_MetricSpec.t())
+            | nil,
           :parameters =>
             list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_ParameterSpec.t())
+            | nil
         }
 
   field(:algorithm)

@@ -27,7 +27,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListStudiesResponse
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :studies => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t())
+          :studies => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t()) | nil
         }
 
   field(:studies, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study, type: :list)

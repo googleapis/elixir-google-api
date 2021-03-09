@@ -36,18 +36,19 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientId => String.t(),
-          :endTime => DateTime.t(),
-          :finalMeasurement => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t(),
-          :infeasibleReason => String.t(),
+          :clientId => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :finalMeasurement =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t() | nil,
+          :infeasibleReason => String.t() | nil,
           :measurements =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t()),
-          :name => String.t(),
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t()) | nil,
+          :name => String.t() | nil,
           :parameters =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial_Parameter.t()),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :trialInfeasible => boolean()
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial_Parameter.t()) | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :trialInfeasible => boolean() | nil
         }
 
   field(:clientId)
