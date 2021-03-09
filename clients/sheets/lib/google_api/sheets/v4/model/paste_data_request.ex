@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.PasteDataRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :coordinate => GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
-          :data => String.t(),
-          :delimiter => String.t(),
-          :html => boolean(),
-          :type => String.t()
+          :coordinate => GoogleApi.Sheets.V4.Model.GridCoordinate.t() | nil,
+          :data => String.t() | nil,
+          :delimiter => String.t() | nil,
+          :html => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:coordinate, as: GoogleApi.Sheets.V4.Model.GridCoordinate)

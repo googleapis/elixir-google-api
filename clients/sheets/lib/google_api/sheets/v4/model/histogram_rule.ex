@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.HistogramRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :end => float(),
-          :interval => float(),
-          :start => float()
+          :end => float() | nil,
+          :interval => float() | nil,
+          :start => float() | nil
         }
 
   field(:end)

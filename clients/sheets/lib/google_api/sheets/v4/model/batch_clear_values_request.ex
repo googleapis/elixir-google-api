@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.BatchClearValuesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ranges => list(String.t())
+          :ranges => list(String.t()) | nil
         }
 
   field(:ranges, type: :list)

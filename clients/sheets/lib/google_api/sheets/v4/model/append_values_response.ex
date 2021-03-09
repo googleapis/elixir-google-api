@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.AppendValuesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :spreadsheetId => String.t(),
-          :tableRange => String.t(),
-          :updates => GoogleApi.Sheets.V4.Model.UpdateValuesResponse.t()
+          :spreadsheetId => String.t() | nil,
+          :tableRange => String.t() | nil,
+          :updates => GoogleApi.Sheets.V4.Model.UpdateValuesResponse.t() | nil
         }
 
   field(:spreadsheetId)

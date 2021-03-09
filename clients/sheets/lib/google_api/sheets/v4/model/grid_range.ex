@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.GridRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endColumnIndex => integer(),
-          :endRowIndex => integer(),
-          :sheetId => integer(),
-          :startColumnIndex => integer(),
-          :startRowIndex => integer()
+          :endColumnIndex => integer() | nil,
+          :endRowIndex => integer() | nil,
+          :sheetId => integer() | nil,
+          :startColumnIndex => integer() | nil,
+          :startRowIndex => integer() | nil
         }
 
   field(:endColumnIndex)

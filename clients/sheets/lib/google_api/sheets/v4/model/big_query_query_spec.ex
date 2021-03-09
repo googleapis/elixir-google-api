@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.BigQueryQuerySpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rawQuery => String.t()
+          :rawQuery => String.t() | nil
         }
 
   field(:rawQuery)

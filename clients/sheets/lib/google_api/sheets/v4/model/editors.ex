@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.Editors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domainUsersCanEdit => boolean(),
-          :groups => list(String.t()),
-          :users => list(String.t())
+          :domainUsersCanEdit => boolean() | nil,
+          :groups => list(String.t()) | nil,
+          :users => list(String.t()) | nil
         }
 
   field(:domainUsersCanEdit)

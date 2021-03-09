@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deletedDeveloperMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t())
+          :deletedDeveloperMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()) | nil
         }
 
   field(:deletedDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.DeveloperMetadata, type: :list)

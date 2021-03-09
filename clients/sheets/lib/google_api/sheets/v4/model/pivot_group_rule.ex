@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroupRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dateTimeRule => GoogleApi.Sheets.V4.Model.DateTimeRule.t(),
-          :histogramRule => GoogleApi.Sheets.V4.Model.HistogramRule.t(),
-          :manualRule => GoogleApi.Sheets.V4.Model.ManualRule.t()
+          :dateTimeRule => GoogleApi.Sheets.V4.Model.DateTimeRule.t() | nil,
+          :histogramRule => GoogleApi.Sheets.V4.Model.HistogramRule.t() | nil,
+          :manualRule => GoogleApi.Sheets.V4.Model.ManualRule.t() | nil
         }
 
   field(:dateTimeRule, as: GoogleApi.Sheets.V4.Model.DateTimeRule)

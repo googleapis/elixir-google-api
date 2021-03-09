@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.HistogramChartSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketSize => float(),
-          :legendPosition => String.t(),
-          :outlierPercentile => float(),
-          :series => list(GoogleApi.Sheets.V4.Model.HistogramSeries.t()),
-          :showItemDividers => boolean()
+          :bucketSize => float() | nil,
+          :legendPosition => String.t() | nil,
+          :outlierPercentile => float() | nil,
+          :series => list(GoogleApi.Sheets.V4.Model.HistogramSeries.t()) | nil,
+          :showItemDividers => boolean() | nil
         }
 
   field(:bucketSize)

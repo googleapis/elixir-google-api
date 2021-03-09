@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteSheetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sheetId => integer()
+          :sheetId => integer() | nil
         }
 
   field(:sheetId)

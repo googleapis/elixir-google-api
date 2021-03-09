@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.GetSpreadsheetByDataFilterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          :includeGridData => boolean()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()) | nil,
+          :includeGridData => boolean() | nil
         }
 
   field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)

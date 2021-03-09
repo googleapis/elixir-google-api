@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.TrimWhitespaceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cellsChangedCount => integer()
+          :cellsChangedCount => integer() | nil
         }
 
   field(:cellsChangedCount)

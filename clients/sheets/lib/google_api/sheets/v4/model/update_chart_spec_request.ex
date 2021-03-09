@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateChartSpecRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chartId => integer(),
-          :spec => GoogleApi.Sheets.V4.Model.ChartSpec.t()
+          :chartId => integer() | nil,
+          :spec => GoogleApi.Sheets.V4.Model.ChartSpec.t() | nil
         }
 
   field(:chartId)

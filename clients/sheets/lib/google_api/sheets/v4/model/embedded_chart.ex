@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.EmbeddedChart do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :border => GoogleApi.Sheets.V4.Model.EmbeddedObjectBorder.t(),
-          :chartId => integer(),
-          :position => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t(),
-          :spec => GoogleApi.Sheets.V4.Model.ChartSpec.t()
+          :border => GoogleApi.Sheets.V4.Model.EmbeddedObjectBorder.t() | nil,
+          :chartId => integer() | nil,
+          :position => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t() | nil,
+          :spec => GoogleApi.Sheets.V4.Model.ChartSpec.t() | nil
         }
 
   field(:border, as: GoogleApi.Sheets.V4.Model.EmbeddedObjectBorder)

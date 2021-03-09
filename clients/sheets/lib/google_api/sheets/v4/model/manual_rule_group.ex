@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.ManualRuleGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupName => GoogleApi.Sheets.V4.Model.ExtendedValue.t(),
-          :items => list(GoogleApi.Sheets.V4.Model.ExtendedValue.t())
+          :groupName => GoogleApi.Sheets.V4.Model.ExtendedValue.t() | nil,
+          :items => list(GoogleApi.Sheets.V4.Model.ExtendedValue.t()) | nil
         }
 
   field(:groupName, as: GoogleApi.Sheets.V4.Model.ExtendedValue)

@@ -32,12 +32,12 @@ defmodule GoogleApi.Sheets.V4.Model.FilterCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
-          :hiddenValues => list(String.t()),
-          :visibleBackgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :visibleBackgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :visibleForegroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :visibleForegroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t()
+          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t() | nil,
+          :hiddenValues => list(String.t()) | nil,
+          :visibleBackgroundColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :visibleBackgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :visibleForegroundColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :visibleForegroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil
         }
 
   field(:condition, as: GoogleApi.Sheets.V4.Model.BooleanCondition)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetTheme do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :primaryFontFamily => String.t(),
-          :themeColors => list(GoogleApi.Sheets.V4.Model.ThemeColorPair.t())
+          :primaryFontFamily => String.t() | nil,
+          :themeColors => list(GoogleApi.Sheets.V4.Model.ThemeColorPair.t()) | nil
         }
 
   field(:primaryFontFamily)

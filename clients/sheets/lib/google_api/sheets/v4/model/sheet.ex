@@ -39,19 +39,19 @@ defmodule GoogleApi.Sheets.V4.Model.Sheet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bandedRanges => list(GoogleApi.Sheets.V4.Model.BandedRange.t()),
-          :basicFilter => GoogleApi.Sheets.V4.Model.BasicFilter.t(),
-          :charts => list(GoogleApi.Sheets.V4.Model.EmbeddedChart.t()),
-          :columnGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t()),
-          :conditionalFormats => list(GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()),
-          :data => list(GoogleApi.Sheets.V4.Model.GridData.t()),
-          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()),
-          :filterViews => list(GoogleApi.Sheets.V4.Model.FilterView.t()),
-          :merges => list(GoogleApi.Sheets.V4.Model.GridRange.t()),
-          :properties => GoogleApi.Sheets.V4.Model.SheetProperties.t(),
-          :protectedRanges => list(GoogleApi.Sheets.V4.Model.ProtectedRange.t()),
-          :rowGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t()),
-          :slicers => list(GoogleApi.Sheets.V4.Model.Slicer.t())
+          :bandedRanges => list(GoogleApi.Sheets.V4.Model.BandedRange.t()) | nil,
+          :basicFilter => GoogleApi.Sheets.V4.Model.BasicFilter.t() | nil,
+          :charts => list(GoogleApi.Sheets.V4.Model.EmbeddedChart.t()) | nil,
+          :columnGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t()) | nil,
+          :conditionalFormats => list(GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()) | nil,
+          :data => list(GoogleApi.Sheets.V4.Model.GridData.t()) | nil,
+          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()) | nil,
+          :filterViews => list(GoogleApi.Sheets.V4.Model.FilterView.t()) | nil,
+          :merges => list(GoogleApi.Sheets.V4.Model.GridRange.t()) | nil,
+          :properties => GoogleApi.Sheets.V4.Model.SheetProperties.t() | nil,
+          :protectedRanges => list(GoogleApi.Sheets.V4.Model.ProtectedRange.t()) | nil,
+          :rowGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t()) | nil,
+          :slicers => list(GoogleApi.Sheets.V4.Model.Slicer.t()) | nil
         }
 
   field(:bandedRanges, as: GoogleApi.Sheets.V4.Model.BandedRange, type: :list)

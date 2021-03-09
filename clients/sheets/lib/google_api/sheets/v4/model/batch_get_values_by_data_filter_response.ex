@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :spreadsheetId => String.t(),
-          :valueRanges => list(GoogleApi.Sheets.V4.Model.MatchedValueRange.t())
+          :spreadsheetId => String.t() | nil,
+          :valueRanges => list(GoogleApi.Sheets.V4.Model.MatchedValueRange.t()) | nil
         }
 
   field(:spreadsheetId)

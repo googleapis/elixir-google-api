@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.PivotFilterCriteria do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
-          :visibleByDefault => boolean(),
-          :visibleValues => list(String.t())
+          :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t() | nil,
+          :visibleByDefault => boolean() | nil,
+          :visibleValues => list(String.t()) | nil
         }
 
   field(:condition, as: GoogleApi.Sheets.V4.Model.BooleanCondition)

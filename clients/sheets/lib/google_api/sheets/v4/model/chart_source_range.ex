@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSourceRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sources => list(GoogleApi.Sheets.V4.Model.GridRange.t())
+          :sources => list(GoogleApi.Sheets.V4.Model.GridRange.t()) | nil
         }
 
   field(:sources, as: GoogleApi.Sheets.V4.Model.GridRange, type: :list)

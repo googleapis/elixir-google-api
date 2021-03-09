@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.ConditionalFormatRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :booleanRule => GoogleApi.Sheets.V4.Model.BooleanRule.t(),
-          :gradientRule => GoogleApi.Sheets.V4.Model.GradientRule.t(),
-          :ranges => list(GoogleApi.Sheets.V4.Model.GridRange.t())
+          :booleanRule => GoogleApi.Sheets.V4.Model.BooleanRule.t() | nil,
+          :gradientRule => GoogleApi.Sheets.V4.Model.GradientRule.t() | nil,
+          :ranges => list(GoogleApi.Sheets.V4.Model.GridRange.t()) | nil
         }
 
   field(:booleanRule, as: GoogleApi.Sheets.V4.Model.BooleanRule)

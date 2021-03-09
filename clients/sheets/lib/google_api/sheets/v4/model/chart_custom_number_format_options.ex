@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.ChartCustomNumberFormatOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :prefix => String.t(),
-          :suffix => String.t()
+          :prefix => String.t() | nil,
+          :suffix => String.t() | nil
         }
 
   field(:prefix)

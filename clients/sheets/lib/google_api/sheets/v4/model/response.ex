@@ -49,35 +49,36 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addBanding => GoogleApi.Sheets.V4.Model.AddBandingResponse.t(),
-          :addChart => GoogleApi.Sheets.V4.Model.AddChartResponse.t(),
-          :addDataSource => GoogleApi.Sheets.V4.Model.AddDataSourceResponse.t(),
-          :addDimensionGroup => GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse.t(),
-          :addFilterView => GoogleApi.Sheets.V4.Model.AddFilterViewResponse.t(),
-          :addNamedRange => GoogleApi.Sheets.V4.Model.AddNamedRangeResponse.t(),
-          :addProtectedRange => GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse.t(),
-          :addSheet => GoogleApi.Sheets.V4.Model.AddSheetResponse.t(),
-          :addSlicer => GoogleApi.Sheets.V4.Model.AddSlicerResponse.t(),
+          :addBanding => GoogleApi.Sheets.V4.Model.AddBandingResponse.t() | nil,
+          :addChart => GoogleApi.Sheets.V4.Model.AddChartResponse.t() | nil,
+          :addDataSource => GoogleApi.Sheets.V4.Model.AddDataSourceResponse.t() | nil,
+          :addDimensionGroup => GoogleApi.Sheets.V4.Model.AddDimensionGroupResponse.t() | nil,
+          :addFilterView => GoogleApi.Sheets.V4.Model.AddFilterViewResponse.t() | nil,
+          :addNamedRange => GoogleApi.Sheets.V4.Model.AddNamedRangeResponse.t() | nil,
+          :addProtectedRange => GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse.t() | nil,
+          :addSheet => GoogleApi.Sheets.V4.Model.AddSheetResponse.t() | nil,
+          :addSlicer => GoogleApi.Sheets.V4.Model.AddSlicerResponse.t() | nil,
           :createDeveloperMetadata =>
-            GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse.t(),
+            GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse.t() | nil,
           :deleteConditionalFormatRule =>
-            GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse.t(),
+            GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse.t() | nil,
           :deleteDeveloperMetadata =>
-            GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse.t(),
-          :deleteDimensionGroup => GoogleApi.Sheets.V4.Model.DeleteDimensionGroupResponse.t(),
-          :deleteDuplicates => GoogleApi.Sheets.V4.Model.DeleteDuplicatesResponse.t(),
-          :duplicateFilterView => GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse.t(),
-          :duplicateSheet => GoogleApi.Sheets.V4.Model.DuplicateSheetResponse.t(),
-          :findReplace => GoogleApi.Sheets.V4.Model.FindReplaceResponse.t(),
-          :refreshDataSource => GoogleApi.Sheets.V4.Model.RefreshDataSourceResponse.t(),
-          :trimWhitespace => GoogleApi.Sheets.V4.Model.TrimWhitespaceResponse.t(),
+            GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse.t() | nil,
+          :deleteDimensionGroup =>
+            GoogleApi.Sheets.V4.Model.DeleteDimensionGroupResponse.t() | nil,
+          :deleteDuplicates => GoogleApi.Sheets.V4.Model.DeleteDuplicatesResponse.t() | nil,
+          :duplicateFilterView => GoogleApi.Sheets.V4.Model.DuplicateFilterViewResponse.t() | nil,
+          :duplicateSheet => GoogleApi.Sheets.V4.Model.DuplicateSheetResponse.t() | nil,
+          :findReplace => GoogleApi.Sheets.V4.Model.FindReplaceResponse.t() | nil,
+          :refreshDataSource => GoogleApi.Sheets.V4.Model.RefreshDataSourceResponse.t() | nil,
+          :trimWhitespace => GoogleApi.Sheets.V4.Model.TrimWhitespaceResponse.t() | nil,
           :updateConditionalFormatRule =>
-            GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse.t(),
-          :updateDataSource => GoogleApi.Sheets.V4.Model.UpdateDataSourceResponse.t(),
+            GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse.t() | nil,
+          :updateDataSource => GoogleApi.Sheets.V4.Model.UpdateDataSourceResponse.t() | nil,
           :updateDeveloperMetadata =>
-            GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse.t(),
+            GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse.t() | nil,
           :updateEmbeddedObjectPosition =>
-            GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse.t()
+            GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse.t() | nil
         }
 
   field(:addBanding, as: GoogleApi.Sheets.V4.Model.AddBandingResponse)

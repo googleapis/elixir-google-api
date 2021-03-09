@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateDeveloperMetadataResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t())
+          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()) | nil
         }
 
   field(:developerMetadata, as: GoogleApi.Sheets.V4.Model.DeveloperMetadata, type: :list)

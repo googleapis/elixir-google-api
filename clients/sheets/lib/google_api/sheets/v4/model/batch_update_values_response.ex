@@ -32,12 +32,12 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :responses => list(GoogleApi.Sheets.V4.Model.UpdateValuesResponse.t()),
-          :spreadsheetId => String.t(),
-          :totalUpdatedCells => integer(),
-          :totalUpdatedColumns => integer(),
-          :totalUpdatedRows => integer(),
-          :totalUpdatedSheets => integer()
+          :responses => list(GoogleApi.Sheets.V4.Model.UpdateValuesResponse.t()) | nil,
+          :spreadsheetId => String.t() | nil,
+          :totalUpdatedCells => integer() | nil,
+          :totalUpdatedColumns => integer() | nil,
+          :totalUpdatedRows => integer() | nil,
+          :totalUpdatedSheets => integer() | nil
         }
 
   field(:responses, as: GoogleApi.Sheets.V4.Model.UpdateValuesResponse, type: :list)

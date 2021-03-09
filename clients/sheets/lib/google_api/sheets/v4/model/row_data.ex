@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.RowData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :values => list(GoogleApi.Sheets.V4.Model.CellData.t())
+          :values => list(GoogleApi.Sheets.V4.Model.CellData.t()) | nil
         }
 
   field(:values, as: GoogleApi.Sheets.V4.Model.CellData, type: :list)

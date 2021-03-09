@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.ValueRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :majorDimension => String.t(),
-          :range => String.t(),
-          :values => list(list(any()))
+          :majorDimension => String.t() | nil,
+          :range => String.t() | nil,
+          :values => list(list(any())) | nil
         }
 
   field(:majorDimension)

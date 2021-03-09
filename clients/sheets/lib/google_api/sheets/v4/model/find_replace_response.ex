@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.FindReplaceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :formulasChanged => integer(),
-          :occurrencesChanged => integer(),
-          :rowsChanged => integer(),
-          :sheetsChanged => integer(),
-          :valuesChanged => integer()
+          :formulasChanged => integer() | nil,
+          :occurrencesChanged => integer() | nil,
+          :rowsChanged => integer() | nil,
+          :sheetsChanged => integer() | nil,
+          :valuesChanged => integer() | nil
         }
 
   field(:formulasChanged)

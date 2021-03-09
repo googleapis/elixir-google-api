@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.NamedRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :namedRangeId => String.t(),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t()
+          :name => String.t() | nil,
+          :namedRangeId => String.t() | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil
         }
 
   field(:name)

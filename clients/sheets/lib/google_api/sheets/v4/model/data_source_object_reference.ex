@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceObjectReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chartId => integer(),
-          :dataSourceFormulaCell => GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
-          :dataSourcePivotTableAnchorCell => GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
-          :dataSourceTableAnchorCell => GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
-          :sheetId => String.t()
+          :chartId => integer() | nil,
+          :dataSourceFormulaCell => GoogleApi.Sheets.V4.Model.GridCoordinate.t() | nil,
+          :dataSourcePivotTableAnchorCell => GoogleApi.Sheets.V4.Model.GridCoordinate.t() | nil,
+          :dataSourceTableAnchorCell => GoogleApi.Sheets.V4.Model.GridCoordinate.t() | nil,
+          :sheetId => String.t() | nil
         }
 
   field(:chartId)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddSlicerResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :slicer => GoogleApi.Sheets.V4.Model.Slicer.t()
+          :slicer => GoogleApi.Sheets.V4.Model.Slicer.t() | nil
         }
 
   field(:slicer, as: GoogleApi.Sheets.V4.Model.Slicer)

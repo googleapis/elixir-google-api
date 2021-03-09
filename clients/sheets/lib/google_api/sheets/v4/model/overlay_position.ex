@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.OverlayPosition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :anchorCell => GoogleApi.Sheets.V4.Model.GridCoordinate.t(),
-          :heightPixels => integer(),
-          :offsetXPixels => integer(),
-          :offsetYPixels => integer(),
-          :widthPixels => integer()
+          :anchorCell => GoogleApi.Sheets.V4.Model.GridCoordinate.t() | nil,
+          :heightPixels => integer() | nil,
+          :offsetXPixels => integer() | nil,
+          :offsetYPixels => integer() | nil,
+          :widthPixels => integer() | nil
         }
 
   field(:anchorCell, as: GoogleApi.Sheets.V4.Model.GridCoordinate)

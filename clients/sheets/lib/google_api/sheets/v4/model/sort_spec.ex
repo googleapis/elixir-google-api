@@ -33,13 +33,14 @@ defmodule GoogleApi.Sheets.V4.Model.SortSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :backgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :dataSourceColumnReference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t(),
-          :dimensionIndex => integer(),
-          :foregroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :foregroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :sortOrder => String.t()
+          :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :backgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :dataSourceColumnReference =>
+            GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t() | nil,
+          :dimensionIndex => integer() | nil,
+          :foregroundColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :foregroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :sortOrder => String.t() | nil
         }
 
   field(:backgroundColor, as: GoogleApi.Sheets.V4.Model.Color)

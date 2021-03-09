@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.DataSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :calculatedColumns => list(GoogleApi.Sheets.V4.Model.DataSourceColumn.t()),
-          :dataSourceId => String.t(),
-          :sheetId => integer(),
-          :spec => GoogleApi.Sheets.V4.Model.DataSourceSpec.t()
+          :calculatedColumns => list(GoogleApi.Sheets.V4.Model.DataSourceColumn.t()) | nil,
+          :dataSourceId => String.t() | nil,
+          :sheetId => integer() | nil,
+          :spec => GoogleApi.Sheets.V4.Model.DataSourceSpec.t() | nil
         }
 
   field(:calculatedColumns, as: GoogleApi.Sheets.V4.Model.DataSourceColumn, type: :list)

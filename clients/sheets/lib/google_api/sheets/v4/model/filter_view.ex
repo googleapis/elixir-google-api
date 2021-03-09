@@ -33,13 +33,14 @@ defmodule GoogleApi.Sheets.V4.Model.FilterView do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :criteria => %{optional(String.t()) => GoogleApi.Sheets.V4.Model.FilterCriteria.t()},
-          :filterSpecs => list(GoogleApi.Sheets.V4.Model.FilterSpec.t()),
-          :filterViewId => integer(),
-          :namedRangeId => String.t(),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t()),
-          :title => String.t()
+          :criteria =>
+            %{optional(String.t()) => GoogleApi.Sheets.V4.Model.FilterCriteria.t()} | nil,
+          :filterSpecs => list(GoogleApi.Sheets.V4.Model.FilterSpec.t()) | nil,
+          :filterViewId => integer() | nil,
+          :namedRangeId => String.t() | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :sortSpecs => list(GoogleApi.Sheets.V4.Model.SortSpec.t()) | nil,
+          :title => String.t() | nil
         }
 
   field(:criteria, as: GoogleApi.Sheets.V4.Model.FilterCriteria, type: :map)

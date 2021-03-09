@@ -34,14 +34,14 @@ defmodule GoogleApi.Sheets.V4.Model.ProtectedRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :editors => GoogleApi.Sheets.V4.Model.Editors.t(),
-          :namedRangeId => String.t(),
-          :protectedRangeId => integer(),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :requestingUserCanEdit => boolean(),
-          :unprotectedRanges => list(GoogleApi.Sheets.V4.Model.GridRange.t()),
-          :warningOnly => boolean()
+          :description => String.t() | nil,
+          :editors => GoogleApi.Sheets.V4.Model.Editors.t() | nil,
+          :namedRangeId => String.t() | nil,
+          :protectedRangeId => integer() | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :requestingUserCanEdit => boolean() | nil,
+          :unprotectedRanges => list(GoogleApi.Sheets.V4.Model.GridRange.t()) | nil,
+          :warningOnly => boolean() | nil
         }
 
   field(:description)

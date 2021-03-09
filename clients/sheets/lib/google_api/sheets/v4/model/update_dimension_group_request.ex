@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionGroup => GoogleApi.Sheets.V4.Model.DimensionGroup.t(),
-          :fields => String.t()
+          :dimensionGroup => GoogleApi.Sheets.V4.Model.DimensionGroup.t() | nil,
+          :fields => String.t() | nil
         }
 
   field(:dimensionGroup, as: GoogleApi.Sheets.V4.Model.DimensionGroup)

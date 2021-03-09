@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newSheet => boolean(),
-          :overlayPosition => GoogleApi.Sheets.V4.Model.OverlayPosition.t(),
-          :sheetId => integer()
+          :newSheet => boolean() | nil,
+          :overlayPosition => GoogleApi.Sheets.V4.Model.OverlayPosition.t() | nil,
+          :sheetId => integer() | nil
         }
 
   field(:newSheet)

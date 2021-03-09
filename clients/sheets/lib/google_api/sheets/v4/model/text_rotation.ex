@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.TextRotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :angle => integer(),
-          :vertical => boolean()
+          :angle => integer() | nil,
+          :vertical => boolean() | nil
         }
 
   field(:angle)

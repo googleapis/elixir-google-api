@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.MatchedDeveloperMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()),
-          :developerMetadata => GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()
+          :dataFilters => list(GoogleApi.Sheets.V4.Model.DataFilter.t()) | nil,
+          :developerMetadata => GoogleApi.Sheets.V4.Model.DeveloperMetadata.t() | nil
         }
 
   field(:dataFilters, as: GoogleApi.Sheets.V4.Model.DataFilter, type: :list)

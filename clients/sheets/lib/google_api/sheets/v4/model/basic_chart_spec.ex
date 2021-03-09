@@ -38,18 +38,18 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :axis => list(GoogleApi.Sheets.V4.Model.BasicChartAxis.t()),
-          :chartType => String.t(),
-          :compareMode => String.t(),
-          :domains => list(GoogleApi.Sheets.V4.Model.BasicChartDomain.t()),
-          :headerCount => integer(),
-          :interpolateNulls => boolean(),
-          :legendPosition => String.t(),
-          :lineSmoothing => boolean(),
-          :series => list(GoogleApi.Sheets.V4.Model.BasicChartSeries.t()),
-          :stackedType => String.t(),
-          :threeDimensional => boolean(),
-          :totalDataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t()
+          :axis => list(GoogleApi.Sheets.V4.Model.BasicChartAxis.t()) | nil,
+          :chartType => String.t() | nil,
+          :compareMode => String.t() | nil,
+          :domains => list(GoogleApi.Sheets.V4.Model.BasicChartDomain.t()) | nil,
+          :headerCount => integer() | nil,
+          :interpolateNulls => boolean() | nil,
+          :legendPosition => String.t() | nil,
+          :lineSmoothing => boolean() | nil,
+          :series => list(GoogleApi.Sheets.V4.Model.BasicChartSeries.t()) | nil,
+          :stackedType => String.t() | nil,
+          :threeDimensional => boolean() | nil,
+          :totalDataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t() | nil
         }
 
   field(:axis, as: GoogleApi.Sheets.V4.Model.BasicChartAxis, type: :list)

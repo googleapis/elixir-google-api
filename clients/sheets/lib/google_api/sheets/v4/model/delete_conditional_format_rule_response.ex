@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()
+          :rule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t() | nil
         }
 
   field(:rule, as: GoogleApi.Sheets.V4.Model.ConditionalFormatRule)

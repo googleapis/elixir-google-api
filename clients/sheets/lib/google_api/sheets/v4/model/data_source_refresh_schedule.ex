@@ -32,12 +32,13 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshSchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dailySchedule => GoogleApi.Sheets.V4.Model.DataSourceRefreshDailySchedule.t(),
-          :enabled => boolean(),
-          :monthlySchedule => GoogleApi.Sheets.V4.Model.DataSourceRefreshMonthlySchedule.t(),
-          :nextRun => GoogleApi.Sheets.V4.Model.Interval.t(),
-          :refreshScope => String.t(),
-          :weeklySchedule => GoogleApi.Sheets.V4.Model.DataSourceRefreshWeeklySchedule.t()
+          :dailySchedule => GoogleApi.Sheets.V4.Model.DataSourceRefreshDailySchedule.t() | nil,
+          :enabled => boolean() | nil,
+          :monthlySchedule =>
+            GoogleApi.Sheets.V4.Model.DataSourceRefreshMonthlySchedule.t() | nil,
+          :nextRun => GoogleApi.Sheets.V4.Model.Interval.t() | nil,
+          :refreshScope => String.t() | nil,
+          :weeklySchedule => GoogleApi.Sheets.V4.Model.DataSourceRefreshWeeklySchedule.t() | nil
         }
 
   field(:dailySchedule, as: GoogleApi.Sheets.V4.Model.DataSourceRefreshDailySchedule)

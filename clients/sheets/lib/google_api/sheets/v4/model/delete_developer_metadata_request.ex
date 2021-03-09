@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataFilter => GoogleApi.Sheets.V4.Model.DataFilter.t()
+          :dataFilter => GoogleApi.Sheets.V4.Model.DataFilter.t() | nil
         }
 
   field(:dataFilter, as: GoogleApi.Sheets.V4.Model.DataFilter)

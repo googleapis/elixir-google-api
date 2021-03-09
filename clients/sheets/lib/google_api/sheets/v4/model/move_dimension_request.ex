@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.MoveDimensionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationIndex => integer(),
-          :source => GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :destinationIndex => integer() | nil,
+          :source => GoogleApi.Sheets.V4.Model.DimensionRange.t() | nil
         }
 
   field(:destinationIndex)

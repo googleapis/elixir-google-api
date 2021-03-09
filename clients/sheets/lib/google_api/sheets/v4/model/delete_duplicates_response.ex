@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteDuplicatesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duplicatesRemovedCount => integer()
+          :duplicatesRemovedCount => integer() | nil
         }
 
   field(:duplicatesRemovedCount)

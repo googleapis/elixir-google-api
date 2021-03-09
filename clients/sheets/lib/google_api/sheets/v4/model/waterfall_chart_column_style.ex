@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Sheets.V4.Model.Color.t(),
-          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :label => String.t()
+          :color => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :label => String.t() | nil
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.Color)

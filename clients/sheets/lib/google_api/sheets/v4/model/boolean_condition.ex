@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.BooleanCondition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :type => String.t(),
-          :values => list(GoogleApi.Sheets.V4.Model.ConditionValue.t())
+          :type => String.t() | nil,
+          :values => list(GoogleApi.Sheets.V4.Model.ConditionValue.t()) | nil
         }
 
   field(:type)

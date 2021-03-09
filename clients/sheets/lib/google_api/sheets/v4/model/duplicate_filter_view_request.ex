@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filterId => integer()
+          :filterId => integer() | nil
         }
 
   field(:filterId)

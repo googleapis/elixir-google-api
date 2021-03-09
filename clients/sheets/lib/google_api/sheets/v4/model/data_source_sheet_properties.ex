@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceSheetProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => list(GoogleApi.Sheets.V4.Model.DataSourceColumn.t()),
-          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t(),
-          :dataSourceId => String.t()
+          :columns => list(GoogleApi.Sheets.V4.Model.DataSourceColumn.t()) | nil,
+          :dataExecutionStatus => GoogleApi.Sheets.V4.Model.DataExecutionStatus.t() | nil,
+          :dataSourceId => String.t() | nil
         }
 
   field(:columns, as: GoogleApi.Sheets.V4.Model.DataSourceColumn, type: :list)

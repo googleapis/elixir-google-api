@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateSlicerSpecRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :slicerId => integer(),
-          :spec => GoogleApi.Sheets.V4.Model.SlicerSpec.t()
+          :fields => String.t() | nil,
+          :slicerId => integer() | nil,
+          :spec => GoogleApi.Sheets.V4.Model.SlicerSpec.t() | nil
         }
 
   field(:fields)

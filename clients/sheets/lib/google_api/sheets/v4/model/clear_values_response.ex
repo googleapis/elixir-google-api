@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.ClearValuesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clearedRange => String.t(),
-          :spreadsheetId => String.t()
+          :clearedRange => String.t() | nil,
+          :spreadsheetId => String.t() | nil
         }
 
   field(:clearedRange)

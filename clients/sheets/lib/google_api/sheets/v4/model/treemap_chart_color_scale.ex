@@ -34,14 +34,14 @@ defmodule GoogleApi.Sheets.V4.Model.TreemapChartColorScale do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxValueColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :maxValueColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :midValueColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :midValueColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :minValueColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :minValueColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :noDataColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :noDataColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t()
+          :maxValueColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :maxValueColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :midValueColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :midValueColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :minValueColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :minValueColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :noDataColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :noDataColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil
         }
 
   field(:maxValueColor, as: GoogleApi.Sheets.V4.Model.Color)

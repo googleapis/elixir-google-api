@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.ChartAxisViewWindowOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :viewWindowMax => float(),
-          :viewWindowMin => float(),
-          :viewWindowMode => String.t()
+          :viewWindowMax => float() | nil,
+          :viewWindowMin => float() | nil,
+          :viewWindowMode => String.t() | nil
         }
 
   field(:viewWindowMax)

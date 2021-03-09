@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeleteBandingRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bandedRangeId => integer()
+          :bandedRangeId => integer() | nil
         }
 
   field(:bandedRangeId)

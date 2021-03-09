@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartAxis do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :format => GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          :position => String.t(),
-          :title => String.t(),
-          :titleTextPosition => GoogleApi.Sheets.V4.Model.TextPosition.t(),
-          :viewWindowOptions => GoogleApi.Sheets.V4.Model.ChartAxisViewWindowOptions.t()
+          :format => GoogleApi.Sheets.V4.Model.TextFormat.t() | nil,
+          :position => String.t() | nil,
+          :title => String.t() | nil,
+          :titleTextPosition => GoogleApi.Sheets.V4.Model.TextPosition.t() | nil,
+          :viewWindowOptions => GoogleApi.Sheets.V4.Model.ChartAxisViewWindowOptions.t() | nil
         }
 
   field(:format, as: GoogleApi.Sheets.V4.Model.TextFormat)

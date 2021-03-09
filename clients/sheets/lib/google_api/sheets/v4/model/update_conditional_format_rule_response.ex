@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateConditionalFormatRuleResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newIndex => integer(),
-          :newRule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t(),
-          :oldIndex => integer(),
-          :oldRule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()
+          :newIndex => integer() | nil,
+          :newRule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t() | nil,
+          :oldIndex => integer() | nil,
+          :oldRule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t() | nil
         }
 
   field(:newIndex)

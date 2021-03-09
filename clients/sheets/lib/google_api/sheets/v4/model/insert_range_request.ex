@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.InsertRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :shiftDimension => String.t()
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :shiftDimension => String.t() | nil
         }
 
   field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)

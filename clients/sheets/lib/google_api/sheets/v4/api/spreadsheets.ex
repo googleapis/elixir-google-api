@@ -55,6 +55,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   @spec sheets_spreadsheets_batch_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_batch_update(
         connection,
@@ -122,6 +123,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   @spec sheets_spreadsheets_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -182,6 +184,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   @spec sheets_spreadsheets_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_get(connection, spreadsheet_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -249,6 +252,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_get_by_data_filter(
         connection,
@@ -321,6 +325,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_developer_metadata_get(
         connection,
@@ -393,6 +398,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_developer_metadata_search(
         connection,
@@ -468,6 +474,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.SheetProperties.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_sheets_copy_to(
         connection,
@@ -548,6 +555,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.AppendValuesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_values_append(
         connection,
@@ -626,6 +634,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchClearValuesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_values_batch_clear(
         connection,
@@ -697,6 +706,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_values_batch_clear_by_data_filter(
         connection,
@@ -768,6 +778,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   @spec sheets_spreadsheets_values_batch_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchGetValuesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_values_batch_get(
         connection,
@@ -842,6 +853,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_values_batch_get_by_data_filter(
         connection,
@@ -915,6 +927,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_values_batch_update(
         connection,
@@ -986,6 +999,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_values_batch_update_by_data_filter(
         connection,
@@ -1061,6 +1075,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.ClearValuesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_values_clear(
         connection,
@@ -1136,7 +1151,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Sheets.V4.Model.ValueRange.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.Sheets.V4.Model.ValueRange.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def sheets_spreadsheets_values_get(
         connection,
         spreadsheet_id,
@@ -1217,6 +1235,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.UpdateValuesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def sheets_spreadsheets_values_update(
         connection,

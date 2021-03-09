@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateSpreadsheetPropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :properties => GoogleApi.Sheets.V4.Model.SpreadsheetProperties.t()
+          :fields => String.t() | nil,
+          :properties => GoogleApi.Sheets.V4.Model.SpreadsheetProperties.t() | nil
         }
 
   field(:fields)

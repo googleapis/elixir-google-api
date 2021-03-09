@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectId => String.t(),
-          :querySpec => GoogleApi.Sheets.V4.Model.BigQueryQuerySpec.t(),
-          :tableSpec => GoogleApi.Sheets.V4.Model.BigQueryTableSpec.t()
+          :projectId => String.t() | nil,
+          :querySpec => GoogleApi.Sheets.V4.Model.BigQueryQuerySpec.t() | nil,
+          :tableSpec => GoogleApi.Sheets.V4.Model.BigQueryTableSpec.t() | nil
         }
 
   field(:projectId)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.InterpolationPoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Sheets.V4.Model.Color.t(),
-          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :type => String.t(),
-          :value => String.t()
+          :color => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.Color)

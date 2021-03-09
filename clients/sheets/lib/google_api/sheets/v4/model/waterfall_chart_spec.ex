@@ -33,13 +33,13 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connectorLineStyle => GoogleApi.Sheets.V4.Model.LineStyle.t(),
-          :domain => GoogleApi.Sheets.V4.Model.WaterfallChartDomain.t(),
-          :firstValueIsTotal => boolean(),
-          :hideConnectorLines => boolean(),
-          :series => list(GoogleApi.Sheets.V4.Model.WaterfallChartSeries.t()),
-          :stackedType => String.t(),
-          :totalDataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t()
+          :connectorLineStyle => GoogleApi.Sheets.V4.Model.LineStyle.t() | nil,
+          :domain => GoogleApi.Sheets.V4.Model.WaterfallChartDomain.t() | nil,
+          :firstValueIsTotal => boolean() | nil,
+          :hideConnectorLines => boolean() | nil,
+          :series => list(GoogleApi.Sheets.V4.Model.WaterfallChartSeries.t()) | nil,
+          :stackedType => String.t() | nil,
+          :totalDataLabel => GoogleApi.Sheets.V4.Model.DataLabel.t() | nil
         }
 
   field(:connectorLineStyle, as: GoogleApi.Sheets.V4.Model.LineStyle)

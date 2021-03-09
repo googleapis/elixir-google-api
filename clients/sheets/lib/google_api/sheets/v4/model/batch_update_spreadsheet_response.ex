@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :replies => list(GoogleApi.Sheets.V4.Model.Response.t()),
-          :spreadsheetId => String.t(),
-          :updatedSpreadsheet => GoogleApi.Sheets.V4.Model.Spreadsheet.t()
+          :replies => list(GoogleApi.Sheets.V4.Model.Response.t()) | nil,
+          :spreadsheetId => String.t() | nil,
+          :updatedSpreadsheet => GoogleApi.Sheets.V4.Model.Spreadsheet.t() | nil
         }
 
   field(:replies, as: GoogleApi.Sheets.V4.Model.Response, type: :list)

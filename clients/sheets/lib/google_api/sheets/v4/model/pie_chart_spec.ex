@@ -31,11 +31,11 @@ defmodule GoogleApi.Sheets.V4.Model.PieChartSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domain => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :legendPosition => String.t(),
-          :pieHole => float(),
-          :series => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :threeDimensional => boolean()
+          :domain => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :legendPosition => String.t() | nil,
+          :pieHole => float() | nil,
+          :series => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :threeDimensional => boolean() | nil
         }
 
   field(:domain, as: GoogleApi.Sheets.V4.Model.ChartData)

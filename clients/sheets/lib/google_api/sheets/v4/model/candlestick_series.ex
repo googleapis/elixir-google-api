@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.CandlestickSeries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => GoogleApi.Sheets.V4.Model.ChartData.t()
+          :data => GoogleApi.Sheets.V4.Model.ChartData.t() | nil
         }
 
   field(:data, as: GoogleApi.Sheets.V4.Model.ChartData)

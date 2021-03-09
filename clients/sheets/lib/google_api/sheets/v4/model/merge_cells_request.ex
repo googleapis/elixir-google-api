@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.MergeCellsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mergeType => String.t(),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t()
+          :mergeType => String.t() | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil
         }
 
   field(:mergeType)

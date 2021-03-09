@@ -31,11 +31,12 @@ defmodule GoogleApi.Sheets.V4.Model.DimensionProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceColumnReference => GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t(),
-          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()),
-          :hiddenByFilter => boolean(),
-          :hiddenByUser => boolean(),
-          :pixelSize => integer()
+          :dataSourceColumnReference =>
+            GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t() | nil,
+          :developerMetadata => list(GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()) | nil,
+          :hiddenByFilter => boolean() | nil,
+          :hiddenByUser => boolean() | nil,
+          :pixelSize => integer() | nil
         }
 
   field(:dataSourceColumnReference, as: GoogleApi.Sheets.V4.Model.DataSourceColumnReference)

@@ -28,8 +28,9 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceSheetDimensionRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnReferences => list(GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t()),
-          :sheetId => integer()
+          :columnReferences =>
+            list(GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t()) | nil,
+          :sheetId => integer() | nil
         }
 
   field(:columnReferences, as: GoogleApi.Sheets.V4.Model.DataSourceColumnReference, type: :list)

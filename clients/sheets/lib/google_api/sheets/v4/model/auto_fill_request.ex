@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.AutoFillRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :sourceAndDestination => GoogleApi.Sheets.V4.Model.SourceAndDestination.t(),
-          :useAlternateSeries => boolean()
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :sourceAndDestination => GoogleApi.Sheets.V4.Model.SourceAndDestination.t() | nil,
+          :useAlternateSeries => boolean() | nil
         }
 
   field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)

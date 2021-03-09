@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.AppendCellsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :rows => list(GoogleApi.Sheets.V4.Model.RowData.t()),
-          :sheetId => integer()
+          :fields => String.t() | nil,
+          :rows => list(GoogleApi.Sheets.V4.Model.RowData.t()) | nil,
+          :sheetId => integer() | nil
         }
 
   field(:fields)

@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimensionRange => GoogleApi.Sheets.V4.Model.DimensionRange.t(),
-          :locationType => String.t(),
-          :sheetId => integer(),
-          :spreadsheet => boolean()
+          :dimensionRange => GoogleApi.Sheets.V4.Model.DimensionRange.t() | nil,
+          :locationType => String.t() | nil,
+          :sheetId => integer() | nil,
+          :spreadsheet => boolean() | nil
         }
 
   field(:dimensionRange, as: GoogleApi.Sheets.V4.Model.DimensionRange)

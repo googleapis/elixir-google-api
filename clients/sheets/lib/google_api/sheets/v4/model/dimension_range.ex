@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.DimensionRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dimension => String.t(),
-          :endIndex => integer(),
-          :sheetId => integer(),
-          :startIndex => integer()
+          :dimension => String.t() | nil,
+          :endIndex => integer() | nil,
+          :sheetId => integer() | nil,
+          :startIndex => integer() | nil
         }
 
   field(:dimension)

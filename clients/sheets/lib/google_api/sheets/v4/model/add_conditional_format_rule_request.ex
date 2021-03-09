@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.AddConditionalFormatRuleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :index => integer(),
-          :rule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t()
+          :index => integer() | nil,
+          :rule => GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t() | nil
         }
 
   field(:index)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :newPosition => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t(),
-          :objectId => integer()
+          :fields => String.t() | nil,
+          :newPosition => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t() | nil,
+          :objectId => integer() | nil
         }
 
   field(:fields)

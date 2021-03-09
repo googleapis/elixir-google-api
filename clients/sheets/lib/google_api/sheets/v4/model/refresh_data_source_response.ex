@@ -27,7 +27,8 @@ defmodule GoogleApi.Sheets.V4.Model.RefreshDataSourceResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :statuses => list(GoogleApi.Sheets.V4.Model.RefreshDataSourceObjectExecutionStatus.t())
+          :statuses =>
+            list(GoogleApi.Sheets.V4.Model.RefreshDataSourceObjectExecutionStatus.t()) | nil
         }
 
   field(:statuses,

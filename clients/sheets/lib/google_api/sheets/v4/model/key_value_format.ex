@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.KeyValueFormat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :position => GoogleApi.Sheets.V4.Model.TextPosition.t(),
-          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t()
+          :position => GoogleApi.Sheets.V4.Model.TextPosition.t() | nil,
+          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t() | nil
         }
 
   field(:position, as: GoogleApi.Sheets.V4.Model.TextPosition)

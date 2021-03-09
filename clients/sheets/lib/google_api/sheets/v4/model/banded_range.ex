@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.BandedRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bandedRangeId => integer(),
-          :columnProperties => GoogleApi.Sheets.V4.Model.BandingProperties.t(),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :rowProperties => GoogleApi.Sheets.V4.Model.BandingProperties.t()
+          :bandedRangeId => integer() | nil,
+          :columnProperties => GoogleApi.Sheets.V4.Model.BandingProperties.t() | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :rowProperties => GoogleApi.Sheets.V4.Model.BandingProperties.t() | nil
         }
 
   field(:bandedRangeId)

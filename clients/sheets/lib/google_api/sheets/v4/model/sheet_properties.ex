@@ -36,16 +36,17 @@ defmodule GoogleApi.Sheets.V4.Model.SheetProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceSheetProperties => GoogleApi.Sheets.V4.Model.DataSourceSheetProperties.t(),
-          :gridProperties => GoogleApi.Sheets.V4.Model.GridProperties.t(),
-          :hidden => boolean(),
-          :index => integer(),
-          :rightToLeft => boolean(),
-          :sheetId => integer(),
-          :sheetType => String.t(),
-          :tabColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :tabColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :title => String.t()
+          :dataSourceSheetProperties =>
+            GoogleApi.Sheets.V4.Model.DataSourceSheetProperties.t() | nil,
+          :gridProperties => GoogleApi.Sheets.V4.Model.GridProperties.t() | nil,
+          :hidden => boolean() | nil,
+          :index => integer() | nil,
+          :rightToLeft => boolean() | nil,
+          :sheetId => integer() | nil,
+          :sheetType => String.t() | nil,
+          :tabColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :tabColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:dataSourceSheetProperties, as: GoogleApi.Sheets.V4.Model.DataSourceSheetProperties)

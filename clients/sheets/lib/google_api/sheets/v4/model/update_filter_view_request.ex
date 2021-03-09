@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateFilterViewRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :filter => GoogleApi.Sheets.V4.Model.FilterView.t()
+          :fields => String.t() | nil,
+          :filter => GoogleApi.Sheets.V4.Model.FilterView.t() | nil
         }
 
   field(:fields)

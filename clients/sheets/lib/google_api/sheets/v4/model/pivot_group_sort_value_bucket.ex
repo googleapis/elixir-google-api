@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buckets => list(GoogleApi.Sheets.V4.Model.ExtendedValue.t()),
-          :valuesIndex => integer()
+          :buckets => list(GoogleApi.Sheets.V4.Model.ExtendedValue.t()) | nil,
+          :valuesIndex => integer() | nil
         }
 
   field(:buckets, as: GoogleApi.Sheets.V4.Model.ExtendedValue, type: :list)

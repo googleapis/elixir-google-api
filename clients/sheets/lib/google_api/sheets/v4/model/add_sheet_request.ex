@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddSheetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :properties => GoogleApi.Sheets.V4.Model.SheetProperties.t()
+          :properties => GoogleApi.Sheets.V4.Model.SheetProperties.t() | nil
         }
 
   field(:properties, as: GoogleApi.Sheets.V4.Model.SheetProperties)

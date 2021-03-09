@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.CandlestickData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :closeSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t(),
-          :highSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t(),
-          :lowSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t(),
-          :openSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t()
+          :closeSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t() | nil,
+          :highSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t() | nil,
+          :lowSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t() | nil,
+          :openSeries => GoogleApi.Sheets.V4.Model.CandlestickSeries.t() | nil
         }
 
   field(:closeSeries, as: GoogleApi.Sheets.V4.Model.CandlestickSeries)

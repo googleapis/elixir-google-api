@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.DataFilterValueRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataFilter => GoogleApi.Sheets.V4.Model.DataFilter.t(),
-          :majorDimension => String.t(),
-          :values => list(list(any()))
+          :dataFilter => GoogleApi.Sheets.V4.Model.DataFilter.t() | nil,
+          :majorDimension => String.t() | nil,
+          :values => list(list(any())) | nil
         }
 
   field(:dataFilter, as: GoogleApi.Sheets.V4.Model.DataFilter)

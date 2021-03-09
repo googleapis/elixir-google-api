@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.DataExecutionStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorCode => String.t(),
-          :errorMessage => String.t(),
-          :lastRefreshTime => DateTime.t(),
-          :state => String.t()
+          :errorCode => String.t() | nil,
+          :errorMessage => String.t() | nil,
+          :lastRefreshTime => DateTime.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:errorCode)

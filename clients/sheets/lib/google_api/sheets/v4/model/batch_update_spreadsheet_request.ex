@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeSpreadsheetInResponse => boolean(),
-          :requests => list(GoogleApi.Sheets.V4.Model.Request.t()),
-          :responseIncludeGridData => boolean(),
-          :responseRanges => list(String.t())
+          :includeSpreadsheetInResponse => boolean() | nil,
+          :requests => list(GoogleApi.Sheets.V4.Model.Request.t()) | nil,
+          :responseIncludeGridData => boolean() | nil,
+          :responseRanges => list(String.t()) | nil
         }
 
   field(:includeSpreadsheetInResponse)

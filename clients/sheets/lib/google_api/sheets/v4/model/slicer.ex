@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.Slicer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :position => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t(),
-          :slicerId => integer(),
-          :spec => GoogleApi.Sheets.V4.Model.SlicerSpec.t()
+          :position => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t() | nil,
+          :slicerId => integer() | nil,
+          :spec => GoogleApi.Sheets.V4.Model.SlicerSpec.t() | nil
         }
 
   field(:position, as: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition)

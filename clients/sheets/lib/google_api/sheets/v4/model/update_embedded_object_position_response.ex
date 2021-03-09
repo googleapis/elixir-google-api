@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :position => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t()
+          :position => GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition.t() | nil
         }
 
   field(:position, as: GoogleApi.Sheets.V4.Model.EmbeddedObjectPosition)

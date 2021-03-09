@@ -34,14 +34,15 @@ defmodule GoogleApi.Sheets.V4.Model.ScorecardChartSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregateType => String.t(),
-          :baselineValueData => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :baselineValueFormat => GoogleApi.Sheets.V4.Model.BaselineValueFormat.t(),
-          :customFormatOptions => GoogleApi.Sheets.V4.Model.ChartCustomNumberFormatOptions.t(),
-          :keyValueData => GoogleApi.Sheets.V4.Model.ChartData.t(),
-          :keyValueFormat => GoogleApi.Sheets.V4.Model.KeyValueFormat.t(),
-          :numberFormatSource => String.t(),
-          :scaleFactor => float()
+          :aggregateType => String.t() | nil,
+          :baselineValueData => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :baselineValueFormat => GoogleApi.Sheets.V4.Model.BaselineValueFormat.t() | nil,
+          :customFormatOptions =>
+            GoogleApi.Sheets.V4.Model.ChartCustomNumberFormatOptions.t() | nil,
+          :keyValueData => GoogleApi.Sheets.V4.Model.ChartData.t() | nil,
+          :keyValueFormat => GoogleApi.Sheets.V4.Model.KeyValueFormat.t() | nil,
+          :numberFormatSource => String.t() | nil,
+          :scaleFactor => float() | nil
         }
 
   field(:aggregateType)

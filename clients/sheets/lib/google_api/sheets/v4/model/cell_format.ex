@@ -38,18 +38,18 @@ defmodule GoogleApi.Sheets.V4.Model.CellFormat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :backgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :borders => GoogleApi.Sheets.V4.Model.Borders.t(),
-          :horizontalAlignment => String.t(),
-          :hyperlinkDisplayType => String.t(),
-          :numberFormat => GoogleApi.Sheets.V4.Model.NumberFormat.t(),
-          :padding => GoogleApi.Sheets.V4.Model.Padding.t(),
-          :textDirection => String.t(),
-          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t(),
-          :textRotation => GoogleApi.Sheets.V4.Model.TextRotation.t(),
-          :verticalAlignment => String.t(),
-          :wrapStrategy => String.t()
+          :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :backgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :borders => GoogleApi.Sheets.V4.Model.Borders.t() | nil,
+          :horizontalAlignment => String.t() | nil,
+          :hyperlinkDisplayType => String.t() | nil,
+          :numberFormat => GoogleApi.Sheets.V4.Model.NumberFormat.t() | nil,
+          :padding => GoogleApi.Sheets.V4.Model.Padding.t() | nil,
+          :textDirection => String.t() | nil,
+          :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t() | nil,
+          :textRotation => GoogleApi.Sheets.V4.Model.TextRotation.t() | nil,
+          :verticalAlignment => String.t() | nil,
+          :wrapStrategy => String.t() | nil
         }
 
   field(:backgroundColor, as: GoogleApi.Sheets.V4.Model.Color)

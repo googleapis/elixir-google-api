@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshWeeklySchedule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :daysOfWeek => list(String.t()),
-          :startTime => GoogleApi.Sheets.V4.Model.TimeOfDay.t()
+          :daysOfWeek => list(String.t()) | nil,
+          :startTime => GoogleApi.Sheets.V4.Model.TimeOfDay.t() | nil
         }
 
   field(:daysOfWeek, type: :list)

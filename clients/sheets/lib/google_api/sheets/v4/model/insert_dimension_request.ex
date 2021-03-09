@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.InsertDimensionRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :inheritFromBefore => boolean(),
-          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t()
+          :inheritFromBefore => boolean() | nil,
+          :range => GoogleApi.Sheets.V4.Model.DimensionRange.t() | nil
         }
 
   field(:inheritFromBefore)

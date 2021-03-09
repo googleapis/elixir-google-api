@@ -30,10 +30,10 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateCellsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :range => GoogleApi.Sheets.V4.Model.GridRange.t(),
-          :rows => list(GoogleApi.Sheets.V4.Model.RowData.t()),
-          :start => GoogleApi.Sheets.V4.Model.GridCoordinate.t()
+          :fields => String.t() | nil,
+          :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
+          :rows => list(GoogleApi.Sheets.V4.Model.RowData.t()) | nil,
+          :start => GoogleApi.Sheets.V4.Model.GridCoordinate.t() | nil
         }
 
   field(:fields)

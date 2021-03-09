@@ -29,9 +29,9 @@ defmodule GoogleApi.Sheets.V4.Model.HistogramSeries do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :barColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :barColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
-          :data => GoogleApi.Sheets.V4.Model.ChartData.t()
+          :barColor => GoogleApi.Sheets.V4.Model.Color.t() | nil,
+          :barColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t() | nil,
+          :data => GoogleApi.Sheets.V4.Model.ChartData.t() | nil
         }
 
   field(:barColor, as: GoogleApi.Sheets.V4.Model.Color)

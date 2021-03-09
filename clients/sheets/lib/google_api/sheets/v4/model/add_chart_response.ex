@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.AddChartResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chart => GoogleApi.Sheets.V4.Model.EmbeddedChart.t()
+          :chart => GoogleApi.Sheets.V4.Model.EmbeddedChart.t() | nil
         }
 
   field(:chart, as: GoogleApi.Sheets.V4.Model.EmbeddedChart)

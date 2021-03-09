@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.IterativeCalculationSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :convergenceThreshold => float(),
-          :maxIterations => integer()
+          :convergenceThreshold => float() | nil,
+          :maxIterations => integer() | nil
         }
 
   field(:convergenceThreshold)

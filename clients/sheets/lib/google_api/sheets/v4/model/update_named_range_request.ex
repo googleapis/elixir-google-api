@@ -28,8 +28,8 @@ defmodule GoogleApi.Sheets.V4.Model.UpdateNamedRangeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :namedRange => GoogleApi.Sheets.V4.Model.NamedRange.t()
+          :fields => String.t() | nil,
+          :namedRange => GoogleApi.Sheets.V4.Model.NamedRange.t() | nil
         }
 
   field(:fields)
