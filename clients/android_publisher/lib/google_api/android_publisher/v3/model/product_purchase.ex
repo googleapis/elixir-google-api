@@ -40,20 +40,20 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acknowledgementState => integer(),
-          :consumptionState => integer(),
-          :developerPayload => String.t(),
-          :kind => String.t(),
-          :obfuscatedExternalAccountId => String.t(),
-          :obfuscatedExternalProfileId => String.t(),
-          :orderId => String.t(),
-          :productId => String.t(),
-          :purchaseState => integer(),
-          :purchaseTimeMillis => String.t(),
-          :purchaseToken => String.t(),
-          :purchaseType => integer(),
-          :quantity => integer(),
-          :regionCode => String.t()
+          :acknowledgementState => integer() | nil,
+          :consumptionState => integer() | nil,
+          :developerPayload => String.t() | nil,
+          :kind => String.t() | nil,
+          :obfuscatedExternalAccountId => String.t() | nil,
+          :obfuscatedExternalProfileId => String.t() | nil,
+          :orderId => String.t() | nil,
+          :productId => String.t() | nil,
+          :purchaseState => integer() | nil,
+          :purchaseTimeMillis => String.t() | nil,
+          :purchaseToken => String.t() | nil,
+          :purchaseType => integer() | nil,
+          :quantity => integer() | nil,
+          :regionCode => String.t() | nil
         }
 
   field(:acknowledgementState)

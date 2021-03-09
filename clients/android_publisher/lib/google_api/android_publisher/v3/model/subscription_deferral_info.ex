@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionDeferralInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :desiredExpiryTimeMillis => String.t(),
-          :expectedExpiryTimeMillis => String.t()
+          :desiredExpiryTimeMillis => String.t() | nil,
+          :expectedExpiryTimeMillis => String.t() | nil
         }
 
   field(:desiredExpiryTimeMillis)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExpansionFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fileSize => String.t(),
-          :referencesVersion => integer()
+          :fileSize => String.t() | nil,
+          :referencesVersion => integer() | nil
         }
 
   field(:fileSize)

@@ -38,18 +38,18 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.UserComment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidOsVersion => integer(),
-          :appVersionCode => integer(),
-          :appVersionName => String.t(),
-          :device => String.t(),
-          :deviceMetadata => GoogleApi.AndroidPublisher.V3.Model.DeviceMetadata.t(),
-          :lastModified => GoogleApi.AndroidPublisher.V3.Model.Timestamp.t(),
-          :originalText => String.t(),
-          :reviewerLanguage => String.t(),
-          :starRating => integer(),
-          :text => String.t(),
-          :thumbsDownCount => integer(),
-          :thumbsUpCount => integer()
+          :androidOsVersion => integer() | nil,
+          :appVersionCode => integer() | nil,
+          :appVersionName => String.t() | nil,
+          :device => String.t() | nil,
+          :deviceMetadata => GoogleApi.AndroidPublisher.V3.Model.DeviceMetadata.t() | nil,
+          :lastModified => GoogleApi.AndroidPublisher.V3.Model.Timestamp.t() | nil,
+          :originalText => String.t() | nil,
+          :reviewerLanguage => String.t() | nil,
+          :starRating => integer() | nil,
+          :text => String.t() | nil,
+          :thumbsDownCount => integer() | nil,
+          :thumbsUpCount => integer() | nil
         }
 
   field(:androidOsVersion)

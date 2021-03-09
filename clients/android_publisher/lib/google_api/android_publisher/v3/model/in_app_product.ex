@@ -37,19 +37,20 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultLanguage => String.t(),
-          :defaultPrice => GoogleApi.AndroidPublisher.V3.Model.Price.t(),
-          :gracePeriod => String.t(),
-          :listings => %{
-            optional(String.t()) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t()
-          },
-          :packageName => String.t(),
-          :prices => %{optional(String.t()) => GoogleApi.AndroidPublisher.V3.Model.Price.t()},
-          :purchaseType => String.t(),
-          :sku => String.t(),
-          :status => String.t(),
-          :subscriptionPeriod => String.t(),
-          :trialPeriod => String.t()
+          :defaultLanguage => String.t() | nil,
+          :defaultPrice => GoogleApi.AndroidPublisher.V3.Model.Price.t() | nil,
+          :gracePeriod => String.t() | nil,
+          :listings =>
+            %{optional(String.t()) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t()}
+            | nil,
+          :packageName => String.t() | nil,
+          :prices =>
+            %{optional(String.t()) => GoogleApi.AndroidPublisher.V3.Model.Price.t()} | nil,
+          :purchaseType => String.t() | nil,
+          :sku => String.t() | nil,
+          :status => String.t() | nil,
+          :subscriptionPeriod => String.t() | nil,
+          :trialPeriod => String.t() | nil
         }
 
   field(:defaultLanguage)

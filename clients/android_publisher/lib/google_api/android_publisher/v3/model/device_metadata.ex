@@ -37,17 +37,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpuMake => String.t(),
-          :cpuModel => String.t(),
-          :deviceClass => String.t(),
-          :glEsVersion => integer(),
-          :manufacturer => String.t(),
-          :nativePlatform => String.t(),
-          :productName => String.t(),
-          :ramMb => integer(),
-          :screenDensityDpi => integer(),
-          :screenHeightPx => integer(),
-          :screenWidthPx => integer()
+          :cpuMake => String.t() | nil,
+          :cpuModel => String.t() | nil,
+          :deviceClass => String.t() | nil,
+          :glEsVersion => integer() | nil,
+          :manufacturer => String.t() | nil,
+          :nativePlatform => String.t() | nil,
+          :productName => String.t() | nil,
+          :ramMb => integer() | nil,
+          :screenDensityDpi => integer() | nil,
+          :screenHeightPx => integer() | nil,
+          :screenWidthPx => integer() | nil
         }
 
   field(:cpuMake)

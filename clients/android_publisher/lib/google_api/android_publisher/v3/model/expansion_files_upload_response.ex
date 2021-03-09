@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :expansionFile => GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()
+          :expansionFile => GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t() | nil
         }
 
   field(:expansionFile, as: GoogleApi.AndroidPublisher.V3.Model.ExpansionFile)

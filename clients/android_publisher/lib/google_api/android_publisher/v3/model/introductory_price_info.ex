@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.IntroductoryPriceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :introductoryPriceAmountMicros => String.t(),
-          :introductoryPriceCurrencyCode => String.t(),
-          :introductoryPriceCycles => integer(),
-          :introductoryPricePeriod => String.t()
+          :introductoryPriceAmountMicros => String.t() | nil,
+          :introductoryPriceCurrencyCode => String.t() | nil,
+          :introductoryPriceCycles => integer() | nil,
+          :introductoryPricePeriod => String.t() | nil
         }
 
   field(:introductoryPriceAmountMicros)

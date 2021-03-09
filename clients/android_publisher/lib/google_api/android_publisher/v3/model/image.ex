@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Image do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :sha1 => String.t(),
-          :sha256 => String.t(),
-          :url => String.t()
+          :id => String.t() | nil,
+          :sha1 => String.t() | nil,
+          :sha256 => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:id)

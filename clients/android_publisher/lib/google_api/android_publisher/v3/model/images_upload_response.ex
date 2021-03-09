@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :image => GoogleApi.AndroidPublisher.V3.Model.Image.t()
+          :image => GoogleApi.AndroidPublisher.V3.Model.Image.t() | nil
         }
 
   field(:image, as: GoogleApi.AndroidPublisher.V3.Model.Image)

@@ -27,7 +27,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ApksAddExternallyHostedRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :externallyHostedApk => GoogleApi.AndroidPublisher.V3.Model.ExternallyHostedApk.t()
+          :externallyHostedApk =>
+            GoogleApi.AndroidPublisher.V3.Model.ExternallyHostedApk.t() | nil
         }
 
   field(:externallyHostedApk, as: GoogleApi.AndroidPublisher.V3.Model.ExternallyHostedApk)

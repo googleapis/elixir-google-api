@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deobfuscationFile => GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFile.t()
+          :deobfuscationFile => GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFile.t() | nil
         }
 
   field(:deobfuscationFile, as: GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFile)

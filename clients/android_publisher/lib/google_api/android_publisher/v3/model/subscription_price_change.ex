@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPriceChange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :newPrice => GoogleApi.AndroidPublisher.V3.Model.Price.t(),
-          :state => integer()
+          :newPrice => GoogleApi.AndroidPublisher.V3.Model.Price.t() | nil,
+          :state => integer() | nil
         }
 
   field(:newPrice, as: GoogleApi.AndroidPublisher.V3.Model.Price)

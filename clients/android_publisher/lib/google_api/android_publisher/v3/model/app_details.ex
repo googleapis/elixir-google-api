@@ -30,10 +30,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AppDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactEmail => String.t(),
-          :contactPhone => String.t(),
-          :contactWebsite => String.t(),
-          :defaultLanguage => String.t()
+          :contactEmail => String.t() | nil,
+          :contactPhone => String.t() | nil,
+          :contactWebsite => String.t() | nil,
+          :defaultLanguage => String.t() | nil
         }
 
   field(:contactEmail)

@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionCancelSurveyResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cancelSurveyReason => integer(),
-          :userInputCancelReason => String.t()
+          :cancelSurveyReason => integer() | nil,
+          :userInputCancelReason => String.t() | nil
         }
 
   field(:cancelSurveyReason)

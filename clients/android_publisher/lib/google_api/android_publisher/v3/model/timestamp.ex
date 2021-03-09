@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Timestamp do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nanos => integer(),
-          :seconds => String.t()
+          :nanos => integer() | nil,
+          :seconds => String.t() | nil
         }
 
   field(:nanos)

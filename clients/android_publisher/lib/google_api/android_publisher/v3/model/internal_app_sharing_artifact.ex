@@ -29,9 +29,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InternalAppSharingArtifact do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificateFingerprint => String.t(),
-          :downloadUrl => String.t(),
-          :sha256 => String.t()
+          :certificateFingerprint => String.t() | nil,
+          :downloadUrl => String.t() | nil,
+          :sha256 => String.t() | nil
         }
 
   field(:certificateFingerprint)

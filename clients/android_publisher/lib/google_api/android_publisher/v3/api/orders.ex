@@ -59,7 +59,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Orders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def androidpublisher_orders_refund(
         connection,
         package_name,

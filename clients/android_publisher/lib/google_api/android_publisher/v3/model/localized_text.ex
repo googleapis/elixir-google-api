@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.LocalizedText do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :language => String.t(),
-          :text => String.t()
+          :language => String.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:language)

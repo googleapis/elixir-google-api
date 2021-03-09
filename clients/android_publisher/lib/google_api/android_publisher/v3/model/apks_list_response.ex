@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ApksListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apks => list(GoogleApi.AndroidPublisher.V3.Model.Apk.t()),
-          :kind => String.t()
+          :apks => list(GoogleApi.AndroidPublisher.V3.Model.Apk.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:apks, as: GoogleApi.AndroidPublisher.V3.Model.Apk, type: :list)

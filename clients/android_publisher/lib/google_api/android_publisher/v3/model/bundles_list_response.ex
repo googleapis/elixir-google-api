@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.BundlesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bundles => list(GoogleApi.AndroidPublisher.V3.Model.Bundle.t()),
-          :kind => String.t()
+          :bundles => list(GoogleApi.AndroidPublisher.V3.Model.Bundle.t()) | nil,
+          :kind => String.t() | nil
         }
 
   field(:bundles, as: GoogleApi.AndroidPublisher.V3.Model.Bundle, type: :list)

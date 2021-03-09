@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :symbolType => String.t()
+          :symbolType => String.t() | nil
         }
 
   field(:symbolType)

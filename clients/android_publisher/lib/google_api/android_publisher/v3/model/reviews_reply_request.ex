@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ReviewsReplyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :replyText => String.t()
+          :replyText => String.t() | nil
         }
 
   field(:replyText)

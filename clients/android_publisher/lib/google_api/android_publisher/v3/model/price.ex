@@ -28,8 +28,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Price do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currency => String.t(),
-          :priceMicros => String.t()
+          :currency => String.t() | nil,
+          :priceMicros => String.t() | nil
         }
 
   field(:currency)

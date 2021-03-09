@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ImagesListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :images => list(GoogleApi.AndroidPublisher.V3.Model.Image.t())
+          :images => list(GoogleApi.AndroidPublisher.V3.Model.Image.t()) | nil
         }
 
   field(:images, as: GoogleApi.AndroidPublisher.V3.Model.Image, type: :list)
