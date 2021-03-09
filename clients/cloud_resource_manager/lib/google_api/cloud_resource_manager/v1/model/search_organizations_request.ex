@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.SearchOrganizationsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filter => String.t(),
-          :pageSize => integer(),
-          :pageToken => String.t()
+          :filter => String.t() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil
         }
 
   field(:filter)

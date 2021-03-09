@@ -33,13 +33,14 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Constraint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :booleanConstraint => GoogleApi.CloudResourceManager.V1.Model.BooleanConstraint.t(),
-          :constraintDefault => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :listConstraint => GoogleApi.CloudResourceManager.V1.Model.ListConstraint.t(),
-          :name => String.t(),
-          :version => integer()
+          :booleanConstraint =>
+            GoogleApi.CloudResourceManager.V1.Model.BooleanConstraint.t() | nil,
+          :constraintDefault => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :listConstraint => GoogleApi.CloudResourceManager.V1.Model.ListConstraint.t() | nil,
+          :name => String.t() | nil,
+          :version => integer() | nil
         }
 
   field(:booleanConstraint, as: GoogleApi.CloudResourceManager.V1.Model.BooleanConstraint)

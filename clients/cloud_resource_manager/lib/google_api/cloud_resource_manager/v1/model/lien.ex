@@ -32,12 +32,12 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Lien do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :name => String.t(),
-          :origin => String.t(),
-          :parent => String.t(),
-          :reason => String.t(),
-          :restrictions => list(String.t())
+          :createTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :origin => String.t() | nil,
+          :parent => String.t() | nil,
+          :reason => String.t() | nil,
+          :restrictions => list(String.t()) | nil
         }
 
   field(:createTime, as: DateTime)

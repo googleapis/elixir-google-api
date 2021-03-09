@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListProjectsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :projects => list(GoogleApi.CloudResourceManager.V1.Model.Project.t())
+          :nextPageToken => String.t() | nil,
+          :projects => list(GoogleApi.CloudResourceManager.V1.Model.Project.t()) | nil
         }
 
   field(:nextPageToken)

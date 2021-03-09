@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.OrgPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :booleanPolicy => GoogleApi.CloudResourceManager.V1.Model.BooleanPolicy.t(),
-          :constraint => String.t(),
-          :etag => String.t(),
-          :listPolicy => GoogleApi.CloudResourceManager.V1.Model.ListPolicy.t(),
-          :restoreDefault => GoogleApi.CloudResourceManager.V1.Model.RestoreDefault.t(),
-          :updateTime => DateTime.t(),
-          :version => integer()
+          :booleanPolicy => GoogleApi.CloudResourceManager.V1.Model.BooleanPolicy.t() | nil,
+          :constraint => String.t() | nil,
+          :etag => String.t() | nil,
+          :listPolicy => GoogleApi.CloudResourceManager.V1.Model.ListPolicy.t() | nil,
+          :restoreDefault => GoogleApi.CloudResourceManager.V1.Model.RestoreDefault.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :version => integer() | nil
         }
 
   field(:booleanPolicy, as: GoogleApi.CloudResourceManager.V1.Model.BooleanPolicy)

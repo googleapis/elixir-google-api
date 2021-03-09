@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.FolderOperationError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessageId => String.t()
+          :errorMessageId => String.t() | nil
         }
 
   field(:errorMessageId)

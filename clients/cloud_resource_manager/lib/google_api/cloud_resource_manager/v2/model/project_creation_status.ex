@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.ProjectCreationStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :gettable => boolean(),
-          :ready => boolean()
+          :createTime => DateTime.t() | nil,
+          :gettable => boolean() | nil,
+          :ready => boolean() | nil
         }
 
   field(:createTime, as: DateTime)

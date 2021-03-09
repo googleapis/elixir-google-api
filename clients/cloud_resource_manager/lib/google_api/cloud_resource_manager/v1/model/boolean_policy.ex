@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.BooleanPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enforced => boolean()
+          :enforced => boolean() | nil
         }
 
   field(:enforced)

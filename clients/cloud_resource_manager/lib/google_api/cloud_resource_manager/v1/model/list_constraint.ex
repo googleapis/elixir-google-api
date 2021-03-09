@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListConstraint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :suggestedValue => String.t(),
-          :supportsUnder => boolean()
+          :suggestedValue => String.t() | nil,
+          :supportsUnder => boolean() | nil
         }
 
   field(:suggestedValue)

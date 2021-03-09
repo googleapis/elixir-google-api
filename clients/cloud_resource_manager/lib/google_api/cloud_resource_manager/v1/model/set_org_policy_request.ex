@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.SetOrgPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()
+          :policy => GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t() | nil
         }
 
   field(:policy, as: GoogleApi.CloudResourceManager.V1.Model.OrgPolicy)

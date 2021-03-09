@@ -33,13 +33,13 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Project do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :labels => map(),
-          :lifecycleState => String.t(),
-          :name => String.t(),
-          :parent => GoogleApi.CloudResourceManager.V1.Model.ResourceId.t(),
-          :projectId => String.t(),
-          :projectNumber => String.t()
+          :createTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :lifecycleState => String.t() | nil,
+          :name => String.t() | nil,
+          :parent => GoogleApi.CloudResourceManager.V1.Model.ResourceId.t() | nil,
+          :projectId => String.t() | nil,
+          :projectNumber => String.t() | nil
         }
 
   field(:createTime, as: DateTime)

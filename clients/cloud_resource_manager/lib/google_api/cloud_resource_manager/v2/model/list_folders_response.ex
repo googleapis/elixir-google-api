@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.ListFoldersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :folders => list(GoogleApi.CloudResourceManager.V2.Model.Folder.t()),
-          :nextPageToken => String.t()
+          :folders => list(GoogleApi.CloudResourceManager.V2.Model.Folder.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:folders, as: GoogleApi.CloudResourceManager.V2.Model.Folder, type: :list)

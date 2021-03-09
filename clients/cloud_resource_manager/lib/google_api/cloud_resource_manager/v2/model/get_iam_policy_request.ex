@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.GetIamPolicyRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :options => GoogleApi.CloudResourceManager.V2.Model.GetPolicyOptions.t()
+          :options => GoogleApi.CloudResourceManager.V2.Model.GetPolicyOptions.t() | nil
         }
 
   field(:options, as: GoogleApi.CloudResourceManager.V2.Model.GetPolicyOptions)

@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allValues => String.t(),
-          :allowedValues => list(String.t()),
-          :deniedValues => list(String.t()),
-          :inheritFromParent => boolean(),
-          :suggestedValue => String.t()
+          :allValues => String.t() | nil,
+          :allowedValues => list(String.t()) | nil,
+          :deniedValues => list(String.t()) | nil,
+          :inheritFromParent => boolean() | nil,
+          :suggestedValue => String.t() | nil
         }
 
   field(:allValues)

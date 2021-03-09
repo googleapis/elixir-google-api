@@ -60,6 +60,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_clear_org_policy(
         connection,
@@ -125,6 +126,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   @spec cloudresourcemanager_projects_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -183,6 +185,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   @spec cloudresourcemanager_projects_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_delete(
         connection,
@@ -247,6 +250,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   @spec cloudresourcemanager_projects_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Project.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_get(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -312,6 +316,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.GetAncestryResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_get_ancestry(
         connection,
@@ -385,6 +390,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_get_effective_org_policy(
         connection,
@@ -456,6 +462,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_get_iam_policy(
         connection,
@@ -527,6 +534,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_get_org_policy(
         connection,
@@ -594,6 +602,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   @spec cloudresourcemanager_projects_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.ListProjectsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -663,6 +672,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
           {:ok,
            GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstraintsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_list_available_org_policy_constraints(
         connection,
@@ -740,6 +750,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_list_org_policies(
         connection,
@@ -813,6 +824,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_set_iam_policy(
         connection,
@@ -884,6 +896,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_set_org_policy(
         connection,
@@ -955,6 +968,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_test_iam_permissions(
         connection,
@@ -1028,6 +1042,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_undelete(
         connection,
@@ -1094,6 +1109,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   @spec cloudresourcemanager_projects_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Project.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def cloudresourcemanager_projects_update(
         connection,

@@ -28,8 +28,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.ListLiensResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :liens => list(GoogleApi.CloudResourceManager.V1.Model.Lien.t()),
-          :nextPageToken => String.t()
+          :liens => list(GoogleApi.CloudResourceManager.V1.Model.Lien.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:liens, as: GoogleApi.CloudResourceManager.V1.Model.Lien, type: :list)
