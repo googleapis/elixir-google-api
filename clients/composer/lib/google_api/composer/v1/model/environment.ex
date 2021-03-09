@@ -33,13 +33,13 @@ defmodule GoogleApi.Composer.V1.Model.Environment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.Composer.V1.Model.EnvironmentConfig.t(),
-          :createTime => DateTime.t(),
-          :labels => map(),
-          :name => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t(),
-          :uuid => String.t()
+          :config => GoogleApi.Composer.V1.Model.EnvironmentConfig.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :uuid => String.t() | nil
         }
 
   field(:config, as: GoogleApi.Composer.V1.Model.EnvironmentConfig)

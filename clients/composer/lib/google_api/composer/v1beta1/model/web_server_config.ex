@@ -27,7 +27,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.WebServerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :machineType => String.t()
+          :machineType => String.t() | nil
         }
 
   field(:machineType)

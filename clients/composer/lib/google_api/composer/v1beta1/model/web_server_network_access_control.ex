@@ -27,7 +27,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.WebServerNetworkAccessControl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedIpRanges => list(GoogleApi.Composer.V1beta1.Model.AllowedIpRange.t())
+          :allowedIpRanges => list(GoogleApi.Composer.V1beta1.Model.AllowedIpRange.t()) | nil
         }
 
   field(:allowedIpRanges, as: GoogleApi.Composer.V1beta1.Model.AllowedIpRange, type: :list)

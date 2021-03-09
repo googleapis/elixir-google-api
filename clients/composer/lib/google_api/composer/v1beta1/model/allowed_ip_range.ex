@@ -28,8 +28,8 @@ defmodule GoogleApi.Composer.V1beta1.Model.AllowedIpRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :value => String.t()
+          :description => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:description)

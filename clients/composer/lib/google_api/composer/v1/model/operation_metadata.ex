@@ -32,12 +32,12 @@ defmodule GoogleApi.Composer.V1.Model.OperationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :endTime => DateTime.t(),
-          :operationType => String.t(),
-          :resource => String.t(),
-          :resourceUuid => String.t(),
-          :state => String.t()
+          :createTime => DateTime.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :operationType => String.t() | nil,
+          :resource => String.t() | nil,
+          :resourceUuid => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
