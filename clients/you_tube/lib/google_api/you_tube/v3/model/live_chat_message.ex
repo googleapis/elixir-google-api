@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessage do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorDetails => GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet.t()
+          :authorDetails => GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet.t() | nil
         }
 
   field(:authorDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageAuthorDetails)

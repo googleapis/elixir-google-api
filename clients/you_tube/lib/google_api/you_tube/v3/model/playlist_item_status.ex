@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :privacyStatus => String.t()
+          :privacyStatus => String.t() | nil
         }
 
   field(:privacyStatus)

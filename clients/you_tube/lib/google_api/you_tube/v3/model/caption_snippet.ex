@@ -39,19 +39,19 @@ defmodule GoogleApi.YouTube.V3.Model.CaptionSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audioTrackType => String.t(),
-          :failureReason => String.t(),
-          :isAutoSynced => boolean(),
-          :isCC => boolean(),
-          :isDraft => boolean(),
-          :isEasyReader => boolean(),
-          :isLarge => boolean(),
-          :language => String.t(),
-          :lastUpdated => DateTime.t(),
-          :name => String.t(),
-          :status => String.t(),
-          :trackKind => String.t(),
-          :videoId => String.t()
+          :audioTrackType => String.t() | nil,
+          :failureReason => String.t() | nil,
+          :isAutoSynced => boolean() | nil,
+          :isCC => boolean() | nil,
+          :isDraft => boolean() | nil,
+          :isEasyReader => boolean() | nil,
+          :isLarge => boolean() | nil,
+          :language => String.t() | nil,
+          :lastUpdated => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :status => String.t() | nil,
+          :trackKind => String.t() | nil,
+          :videoId => String.t() | nil
         }
 
   field(:audioTrackType)

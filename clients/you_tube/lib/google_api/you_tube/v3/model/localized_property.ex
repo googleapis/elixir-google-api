@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.LocalizedProperty do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :default => String.t(),
-          :defaultLanguage => GoogleApi.YouTube.V3.Model.LanguageTag.t(),
-          :localized => list(GoogleApi.YouTube.V3.Model.LocalizedString.t())
+          :default => String.t() | nil,
+          :defaultLanguage => GoogleApi.YouTube.V3.Model.LanguageTag.t() | nil,
+          :localized => list(GoogleApi.YouTube.V3.Model.LocalizedString.t()) | nil
         }
 
   field(:default)

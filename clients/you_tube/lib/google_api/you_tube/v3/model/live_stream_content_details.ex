@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamContentDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :closedCaptionsIngestionUrl => String.t(),
-          :isReusable => boolean()
+          :closedCaptionsIngestionUrl => String.t() | nil,
+          :isReusable => boolean() | nil
         }
 
   field(:closedCaptionsIngestionUrl)

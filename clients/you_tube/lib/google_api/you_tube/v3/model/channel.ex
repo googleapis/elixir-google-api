@@ -39,21 +39,20 @@ defmodule GoogleApi.YouTube.V3.Model.Channel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditDetails => GoogleApi.YouTube.V3.Model.ChannelAuditDetails.t(),
-          :brandingSettings => GoogleApi.YouTube.V3.Model.ChannelBrandingSettings.t(),
-          :contentDetails => GoogleApi.YouTube.V3.Model.ChannelContentDetails.t(),
-          :contentOwnerDetails => GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails.t(),
-          :conversionPings => GoogleApi.YouTube.V3.Model.ChannelConversionPings.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :localizations => %{
-            optional(String.t()) => GoogleApi.YouTube.V3.Model.ChannelLocalization.t()
-          },
-          :snippet => GoogleApi.YouTube.V3.Model.ChannelSnippet.t(),
-          :statistics => GoogleApi.YouTube.V3.Model.ChannelStatistics.t(),
-          :status => GoogleApi.YouTube.V3.Model.ChannelStatus.t(),
-          :topicDetails => GoogleApi.YouTube.V3.Model.ChannelTopicDetails.t()
+          :auditDetails => GoogleApi.YouTube.V3.Model.ChannelAuditDetails.t() | nil,
+          :brandingSettings => GoogleApi.YouTube.V3.Model.ChannelBrandingSettings.t() | nil,
+          :contentDetails => GoogleApi.YouTube.V3.Model.ChannelContentDetails.t() | nil,
+          :contentOwnerDetails => GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails.t() | nil,
+          :conversionPings => GoogleApi.YouTube.V3.Model.ChannelConversionPings.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :localizations =>
+            %{optional(String.t()) => GoogleApi.YouTube.V3.Model.ChannelLocalization.t()} | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.ChannelSnippet.t() | nil,
+          :statistics => GoogleApi.YouTube.V3.Model.ChannelStatistics.t() | nil,
+          :status => GoogleApi.YouTube.V3.Model.ChannelStatus.t() | nil,
+          :topicDetails => GoogleApi.YouTube.V3.Model.ChannelTopicDetails.t() | nil
         }
 
   field(:auditDetails, as: GoogleApi.YouTube.V3.Model.ChannelAuditDetails)

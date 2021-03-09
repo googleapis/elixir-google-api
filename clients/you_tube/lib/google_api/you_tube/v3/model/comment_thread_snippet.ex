@@ -32,12 +32,12 @@ defmodule GoogleApi.YouTube.V3.Model.CommentThreadSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canReply => boolean(),
-          :channelId => String.t(),
-          :isPublic => boolean(),
-          :topLevelComment => GoogleApi.YouTube.V3.Model.Comment.t(),
-          :totalReplyCount => integer(),
-          :videoId => String.t()
+          :canReply => boolean() | nil,
+          :channelId => String.t() | nil,
+          :isPublic => boolean() | nil,
+          :topLevelComment => GoogleApi.YouTube.V3.Model.Comment.t() | nil,
+          :totalReplyCount => integer() | nil,
+          :videoId => String.t() | nil
         }
 
   field(:canReply)

@@ -59,7 +59,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_third_party_links_delete(
         connection,
         linking_token,
@@ -131,6 +131,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.ThirdPartyLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_third_party_links_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -192,6 +193,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
   @spec youtube_third_party_links_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.ThirdPartyLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_third_party_links_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -258,6 +260,7 @@ defmodule GoogleApi.YouTube.V3.Api.ThirdPartyLinks do
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.ThirdPartyLink.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_third_party_links_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

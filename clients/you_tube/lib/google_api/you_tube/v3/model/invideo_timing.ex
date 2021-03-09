@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.InvideoTiming do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :durationMs => String.t(),
-          :offsetMs => String.t(),
-          :type => String.t()
+          :durationMs => String.t() | nil,
+          :offsetMs => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:durationMs)

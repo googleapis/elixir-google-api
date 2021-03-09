@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.Activity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentDetails => GoogleApi.YouTube.V3.Model.ActivityContentDetails.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.ActivitySnippet.t()
+          :contentDetails => GoogleApi.YouTube.V3.Model.ActivityContentDetails.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.ActivitySnippet.t() | nil
         }
 
   field(:contentDetails, as: GoogleApi.YouTube.V3.Model.ActivityContentDetails)

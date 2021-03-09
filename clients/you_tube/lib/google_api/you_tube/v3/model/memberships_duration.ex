@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.MembershipsDuration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :memberSince => String.t(),
-          :memberTotalDurationMonths => integer()
+          :memberSince => String.t() | nil,
+          :memberTotalDurationMonths => integer() | nil
         }
 
   field(:memberSince)

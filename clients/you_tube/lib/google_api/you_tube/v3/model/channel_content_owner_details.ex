@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentOwner => String.t(),
-          :timeLinked => DateTime.t()
+          :contentOwner => String.t() | nil,
+          :timeLinked => DateTime.t() | nil
         }
 
   field(:contentOwner)

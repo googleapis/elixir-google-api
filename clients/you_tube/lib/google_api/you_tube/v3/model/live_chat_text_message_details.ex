@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messageText => String.t()
+          :messageText => String.t() | nil
         }
 
   field(:messageText)

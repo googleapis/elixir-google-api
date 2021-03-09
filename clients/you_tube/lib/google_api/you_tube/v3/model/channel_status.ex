@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isLinked => boolean(),
-          :longUploadsStatus => String.t(),
-          :madeForKids => boolean(),
-          :privacyStatus => String.t(),
-          :selfDeclaredMadeForKids => boolean()
+          :isLinked => boolean() | nil,
+          :longUploadsStatus => String.t() | nil,
+          :madeForKids => boolean() | nil,
+          :privacyStatus => String.t() | nil,
+          :selfDeclaredMadeForKids => boolean() | nil
         }
 
   field(:isLinked)

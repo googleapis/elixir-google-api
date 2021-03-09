@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :reason => String.t(),
-          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t(),
-          :seedResourceId => GoogleApi.YouTube.V3.Model.ResourceId.t()
+          :reason => String.t() | nil,
+          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t() | nil,
+          :seedResourceId => GoogleApi.YouTube.V3.Model.ResourceId.t() | nil
         }
 
   field(:reason)

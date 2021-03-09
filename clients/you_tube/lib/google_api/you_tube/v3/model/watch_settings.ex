@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.WatchSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backgroundColor => String.t(),
-          :featuredPlaylistId => String.t(),
-          :textColor => String.t()
+          :backgroundColor => String.t() | nil,
+          :featuredPlaylistId => String.t() | nil,
+          :textColor => String.t() | nil
         }
 
   field(:backgroundColor)

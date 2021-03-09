@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.InvideoPosition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cornerPosition => String.t(),
-          :type => String.t()
+          :cornerPosition => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:cornerPosition)

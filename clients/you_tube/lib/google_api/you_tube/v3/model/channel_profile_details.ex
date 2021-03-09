@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelProfileDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelId => String.t(),
-          :channelUrl => String.t(),
-          :displayName => String.t(),
-          :profileImageUrl => String.t()
+          :channelId => String.t() | nil,
+          :channelUrl => String.t() | nil,
+          :displayName => String.t() | nil,
+          :profileImageUrl => String.t() | nil
         }
 
   field(:channelId)

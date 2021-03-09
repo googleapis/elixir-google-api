@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAgeGating do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alcoholContent => boolean(),
-          :restricted => boolean(),
-          :videoGameRating => String.t()
+          :alcoholContent => boolean() | nil,
+          :restricted => boolean() | nil,
+          :videoGameRating => String.t() | nil
         }
 
   field(:alcoholContent)

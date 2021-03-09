@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :categoryRestricts => list(String.t()),
-          :tag => String.t()
+          :categoryRestricts => list(String.t()) | nil,
+          :tag => String.t() | nil
         }
 
   field(:categoryRestricts, type: :list)

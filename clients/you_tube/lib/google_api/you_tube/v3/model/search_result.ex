@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.SearchResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :id => GoogleApi.YouTube.V3.Model.ResourceId.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.SearchResultSnippet.t()
+          :etag => String.t() | nil,
+          :id => GoogleApi.YouTube.V3.Model.ResourceId.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.SearchResultSnippet.t() | nil
         }
 
   field(:etag)

@@ -32,12 +32,12 @@ defmodule GoogleApi.YouTube.V3.Model.Subscription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentDetails => GoogleApi.YouTube.V3.Model.SubscriptionContentDetails.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.SubscriptionSnippet.t(),
-          :subscriberSnippet => GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet.t()
+          :contentDetails => GoogleApi.YouTube.V3.Model.SubscriptionContentDetails.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.SubscriptionSnippet.t() | nil,
+          :subscriberSnippet => GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet.t() | nil
         }
 
   field(:contentDetails, as: GoogleApi.YouTube.V3.Model.SubscriptionContentDetails)

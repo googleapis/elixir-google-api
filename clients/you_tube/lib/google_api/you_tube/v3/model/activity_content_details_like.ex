@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsLike do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t()
+          :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t() | nil
         }
 
   field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)

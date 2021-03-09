@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelId => String.t(),
-          :description => String.t(),
-          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
-          :title => String.t()
+          :channelId => String.t() | nil,
+          :description => String.t() | nil,
+          :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:channelId)

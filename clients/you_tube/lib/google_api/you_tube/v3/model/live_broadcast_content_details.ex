@@ -43,23 +43,23 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :boundStreamId => String.t(),
-          :boundStreamLastUpdateTimeMs => DateTime.t(),
-          :closedCaptionsType => String.t(),
-          :enableAutoStart => boolean(),
-          :enableAutoStop => boolean(),
-          :enableClosedCaptions => boolean(),
-          :enableContentEncryption => boolean(),
-          :enableDvr => boolean(),
-          :enableEmbed => boolean(),
-          :enableLowLatency => boolean(),
-          :latencyPreference => String.t(),
-          :mesh => String.t(),
-          :monitorStream => GoogleApi.YouTube.V3.Model.MonitorStreamInfo.t(),
-          :projection => String.t(),
-          :recordFromStart => boolean(),
-          :startWithSlate => boolean(),
-          :stereoLayout => String.t()
+          :boundStreamId => String.t() | nil,
+          :boundStreamLastUpdateTimeMs => DateTime.t() | nil,
+          :closedCaptionsType => String.t() | nil,
+          :enableAutoStart => boolean() | nil,
+          :enableAutoStop => boolean() | nil,
+          :enableClosedCaptions => boolean() | nil,
+          :enableContentEncryption => boolean() | nil,
+          :enableDvr => boolean() | nil,
+          :enableEmbed => boolean() | nil,
+          :enableLowLatency => boolean() | nil,
+          :latencyPreference => String.t() | nil,
+          :mesh => String.t() | nil,
+          :monitorStream => GoogleApi.YouTube.V3.Model.MonitorStreamInfo.t() | nil,
+          :projection => String.t() | nil,
+          :recordFromStart => boolean() | nil,
+          :startWithSlate => boolean() | nil,
+          :stereoLayout => String.t() | nil
         }
 
   field(:boundStreamId)

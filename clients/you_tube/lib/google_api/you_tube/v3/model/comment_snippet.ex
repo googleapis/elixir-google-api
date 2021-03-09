@@ -41,21 +41,21 @@ defmodule GoogleApi.YouTube.V3.Model.CommentSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorChannelId => GoogleApi.YouTube.V3.Model.CommentSnippetAuthorChannelId.t(),
-          :authorChannelUrl => String.t(),
-          :authorDisplayName => String.t(),
-          :authorProfileImageUrl => String.t(),
-          :canRate => boolean(),
-          :channelId => String.t(),
-          :likeCount => integer(),
-          :moderationStatus => String.t(),
-          :parentId => String.t(),
-          :publishedAt => DateTime.t(),
-          :textDisplay => String.t(),
-          :textOriginal => String.t(),
-          :updatedAt => DateTime.t(),
-          :videoId => String.t(),
-          :viewerRating => String.t()
+          :authorChannelId => GoogleApi.YouTube.V3.Model.CommentSnippetAuthorChannelId.t() | nil,
+          :authorChannelUrl => String.t() | nil,
+          :authorDisplayName => String.t() | nil,
+          :authorProfileImageUrl => String.t() | nil,
+          :canRate => boolean() | nil,
+          :channelId => String.t() | nil,
+          :likeCount => integer() | nil,
+          :moderationStatus => String.t() | nil,
+          :parentId => String.t() | nil,
+          :publishedAt => DateTime.t() | nil,
+          :textDisplay => String.t() | nil,
+          :textOriginal => String.t() | nil,
+          :updatedAt => DateTime.t() | nil,
+          :videoId => String.t() | nil,
+          :viewerRating => String.t() | nil
         }
 
   field(:authorChannelId, as: GoogleApi.YouTube.V3.Model.CommentSnippetAuthorChannelId)

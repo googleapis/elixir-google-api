@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.ThirdPartyLink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :linkingToken => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.ThirdPartyLinkSnippet.t(),
-          :status => GoogleApi.YouTube.V3.Model.ThirdPartyLinkStatus.t()
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :linkingToken => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.ThirdPartyLinkSnippet.t() | nil,
+          :status => GoogleApi.YouTube.V3.Model.ThirdPartyLinkStatus.t() | nil
         }
 
   field(:etag)

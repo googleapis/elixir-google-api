@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :retractedMessageId => String.t()
+          :retractedMessageId => String.t() | nil
         }
 
   field(:retractedMessageId)

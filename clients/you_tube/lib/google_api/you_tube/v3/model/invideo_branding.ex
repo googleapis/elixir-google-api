@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.InvideoBranding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :imageBytes => String.t(),
-          :imageUrl => String.t(),
-          :position => GoogleApi.YouTube.V3.Model.InvideoPosition.t(),
-          :targetChannelId => String.t(),
-          :timing => GoogleApi.YouTube.V3.Model.InvideoTiming.t()
+          :imageBytes => String.t() | nil,
+          :imageUrl => String.t() | nil,
+          :position => GoogleApi.YouTube.V3.Model.InvideoPosition.t() | nil,
+          :targetChannelId => String.t() | nil,
+          :timing => GoogleApi.YouTube.V3.Model.InvideoTiming.t() | nil
         }
 
   field(:imageBytes)

@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatModeratorSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :liveChatId => String.t(),
-          :moderatorDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t()
+          :liveChatId => String.t() | nil,
+          :moderatorDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t() | nil
         }
 
   field(:liveChatId)

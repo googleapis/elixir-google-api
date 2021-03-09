@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.VideoProcessingDetailsProcessingProgress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :partsProcessed => String.t(),
-          :partsTotal => String.t(),
-          :timeLeftMs => String.t()
+          :partsProcessed => String.t() | nil,
+          :partsTotal => String.t() | nil,
+          :timeLeftMs => String.t() | nil
         }
 
   field(:partsProcessed)

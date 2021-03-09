@@ -32,12 +32,12 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lifeCycleStatus => String.t(),
-          :liveBroadcastPriority => String.t(),
-          :madeForKids => boolean(),
-          :privacyStatus => String.t(),
-          :recordingStatus => String.t(),
-          :selfDeclaredMadeForKids => boolean()
+          :lifeCycleStatus => String.t() | nil,
+          :liveBroadcastPriority => String.t() | nil,
+          :madeForKids => boolean() | nil,
+          :privacyStatus => String.t() | nil,
+          :recordingStatus => String.t() | nil,
+          :selfDeclaredMadeForKids => boolean() | nil
         }
 
   field(:lifeCycleStatus)

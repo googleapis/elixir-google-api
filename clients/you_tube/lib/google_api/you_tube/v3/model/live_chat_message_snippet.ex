@@ -39,21 +39,24 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorChannelId => String.t(),
-          :displayMessage => String.t(),
+          :authorChannelId => String.t() | nil,
+          :displayMessage => String.t() | nil,
           :fanFundingEventDetails =>
-            GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t(),
-          :hasDisplayContent => boolean(),
-          :liveChatId => String.t(),
-          :messageDeletedDetails => GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t(),
+            GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t() | nil,
+          :hasDisplayContent => boolean() | nil,
+          :liveChatId => String.t() | nil,
+          :messageDeletedDetails =>
+            GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t() | nil,
           :messageRetractedDetails =>
-            GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t(),
-          :publishedAt => DateTime.t(),
-          :superChatDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t(),
-          :superStickerDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t(),
-          :textMessageDetails => GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t(),
-          :type => String.t(),
-          :userBannedDetails => GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails.t()
+            GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t() | nil,
+          :publishedAt => DateTime.t() | nil,
+          :superChatDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t() | nil,
+          :superStickerDetails =>
+            GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t() | nil,
+          :textMessageDetails => GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t() | nil,
+          :type => String.t() | nil,
+          :userBannedDetails =>
+            GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails.t() | nil
         }
 
   field(:authorChannelId)

@@ -32,12 +32,12 @@ defmodule GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activeLiveChatId => String.t(),
-          :actualEndTime => DateTime.t(),
-          :actualStartTime => DateTime.t(),
-          :concurrentViewers => String.t(),
-          :scheduledEndTime => DateTime.t(),
-          :scheduledStartTime => DateTime.t()
+          :activeLiveChatId => String.t() | nil,
+          :actualEndTime => DateTime.t() | nil,
+          :actualStartTime => DateTime.t() | nil,
+          :concurrentViewers => String.t() | nil,
+          :scheduledEndTime => DateTime.t() | nil,
+          :scheduledStartTime => DateTime.t() | nil
         }
 
   field(:activeLiveChatId)

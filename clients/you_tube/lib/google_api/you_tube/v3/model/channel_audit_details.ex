@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :communityGuidelinesGoodStanding => boolean(),
-          :contentIdClaimsGoodStanding => boolean(),
-          :copyrightStrikesGoodStanding => boolean()
+          :communityGuidelinesGoodStanding => boolean() | nil,
+          :contentIdClaimsGoodStanding => boolean() | nil,
+          :copyrightStrikesGoodStanding => boolean() | nil
         }
 
   field(:communityGuidelinesGoodStanding)

@@ -34,16 +34,15 @@ defmodule GoogleApi.YouTube.V3.Model.Playlist do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentDetails => GoogleApi.YouTube.V3.Model.PlaylistContentDetails.t(),
-          :etag => String.t(),
-          :id => String.t(),
-          :kind => String.t(),
-          :localizations => %{
-            optional(String.t()) => GoogleApi.YouTube.V3.Model.PlaylistLocalization.t()
-          },
-          :player => GoogleApi.YouTube.V3.Model.PlaylistPlayer.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.PlaylistSnippet.t(),
-          :status => GoogleApi.YouTube.V3.Model.PlaylistStatus.t()
+          :contentDetails => GoogleApi.YouTube.V3.Model.PlaylistContentDetails.t() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :kind => String.t() | nil,
+          :localizations =>
+            %{optional(String.t()) => GoogleApi.YouTube.V3.Model.PlaylistLocalization.t()} | nil,
+          :player => GoogleApi.YouTube.V3.Model.PlaylistPlayer.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.PlaylistSnippet.t() | nil,
+          :status => GoogleApi.YouTube.V3.Model.PlaylistStatus.t() | nil
         }
 
   field(:contentDetails, as: GoogleApi.YouTube.V3.Model.PlaylistContentDetails)

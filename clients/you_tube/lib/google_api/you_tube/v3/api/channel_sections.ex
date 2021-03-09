@@ -53,7 +53,7 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelSections do
   *   `{:error, info}` on failure
   """
   @spec youtube_channel_sections_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def youtube_channel_sections_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -120,6 +120,7 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelSections do
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.ChannelSection.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_channel_sections_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -186,6 +187,7 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelSections do
   @spec youtube_channel_sections_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.ChannelSectionListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_channel_sections_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -256,6 +258,7 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelSections do
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.ChannelSection.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_channel_sections_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

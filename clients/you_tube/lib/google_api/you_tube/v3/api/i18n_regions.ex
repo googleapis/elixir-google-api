@@ -55,6 +55,7 @@ defmodule GoogleApi.YouTube.V3.Api.I18nRegions do
   @spec youtube_i18n_regions_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.I18nRegionListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_i18n_regions_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.Entity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :typeId => String.t(),
-          :url => String.t()
+          :id => String.t() | nil,
+          :typeId => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:id)

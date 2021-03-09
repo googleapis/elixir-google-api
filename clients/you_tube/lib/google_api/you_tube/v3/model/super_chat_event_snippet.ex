@@ -36,16 +36,16 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :amountMicros => String.t(),
-          :channelId => String.t(),
-          :commentText => String.t(),
-          :createdAt => DateTime.t(),
-          :currency => String.t(),
-          :displayString => String.t(),
-          :isSuperStickerEvent => boolean(),
-          :messageType => integer(),
-          :superStickerMetadata => GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t(),
-          :supporterDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t()
+          :amountMicros => String.t() | nil,
+          :channelId => String.t() | nil,
+          :commentText => String.t() | nil,
+          :createdAt => DateTime.t() | nil,
+          :currency => String.t() | nil,
+          :displayString => String.t() | nil,
+          :isSuperStickerEvent => boolean() | nil,
+          :messageType => integer() | nil,
+          :superStickerMetadata => GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t() | nil,
+          :supporterDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t() | nil
         }
 
   field(:amountMicros)

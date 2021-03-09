@@ -59,6 +59,7 @@ defmodule GoogleApi.YouTube.V3.Api.Members do
   @spec youtube_members_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.MemberListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_members_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

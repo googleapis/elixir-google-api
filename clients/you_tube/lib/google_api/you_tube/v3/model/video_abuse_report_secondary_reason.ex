@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :label => String.t()
+          :id => String.t() | nil,
+          :label => String.t() | nil
         }
 
   field(:id)

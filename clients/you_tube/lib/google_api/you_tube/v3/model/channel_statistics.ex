@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatistics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commentCount => String.t(),
-          :hiddenSubscriberCount => boolean(),
-          :subscriberCount => String.t(),
-          :videoCount => String.t(),
-          :viewCount => String.t()
+          :commentCount => String.t() | nil,
+          :hiddenSubscriberCount => boolean() | nil,
+          :subscriberCount => String.t() | nil,
+          :videoCount => String.t() | nil,
+          :viewCount => String.t() | nil
         }
 
   field(:commentCount)

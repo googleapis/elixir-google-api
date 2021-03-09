@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.ResourceId do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channelId => String.t(),
-          :kind => String.t(),
-          :playlistId => String.t(),
-          :videoId => String.t()
+          :channelId => String.t() | nil,
+          :kind => String.t() | nil,
+          :playlistId => String.t() | nil,
+          :videoId => String.t() | nil
         }
 
   field(:channelId)

@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channels => list(String.t()),
-          :playlists => list(String.t())
+          :channels => list(String.t()) | nil,
+          :playlists => list(String.t()) | nil
         }
 
   field(:channels, type: :list)

@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.MembershipsDurationAtLevel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :level => String.t(),
-          :memberSince => String.t(),
-          :memberTotalDurationMonths => integer()
+          :level => String.t() | nil,
+          :memberSince => String.t() | nil,
+          :memberTotalDurationMonths => integer() | nil
         }
 
   field(:level)

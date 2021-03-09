@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.IngestionInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backupIngestionAddress => String.t(),
-          :ingestionAddress => String.t(),
-          :rtmpsBackupIngestionAddress => String.t(),
-          :rtmpsIngestionAddress => String.t(),
-          :streamName => String.t()
+          :backupIngestionAddress => String.t() | nil,
+          :ingestionAddress => String.t() | nil,
+          :rtmpsBackupIngestionAddress => String.t() | nil,
+          :rtmpsIngestionAddress => String.t() | nil,
+          :streamName => String.t() | nil
         }
 
   field(:backupIngestionAddress)

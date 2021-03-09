@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.RelatedEntity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entity => GoogleApi.YouTube.V3.Model.Entity.t()
+          :entity => GoogleApi.YouTube.V3.Model.Entity.t() | nil
         }
 
   field(:entity, as: GoogleApi.YouTube.V3.Model.Entity)

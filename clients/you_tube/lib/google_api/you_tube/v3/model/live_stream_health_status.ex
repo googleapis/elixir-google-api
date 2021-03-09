@@ -30,9 +30,9 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus do
 
   @type t :: %__MODULE__{
           :configurationIssues =>
-            list(GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue.t()),
-          :lastUpdateTimeSeconds => String.t(),
-          :status => String.t()
+            list(GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue.t()) | nil,
+          :lastUpdateTimeSeconds => String.t() | nil,
+          :status => String.t() | nil
         }
 
   field(:configurationIssues,

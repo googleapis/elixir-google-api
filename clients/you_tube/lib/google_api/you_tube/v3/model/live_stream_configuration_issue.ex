@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :reason => String.t(),
-          :severity => String.t(),
-          :type => String.t()
+          :description => String.t() | nil,
+          :reason => String.t() | nil,
+          :severity => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:description)

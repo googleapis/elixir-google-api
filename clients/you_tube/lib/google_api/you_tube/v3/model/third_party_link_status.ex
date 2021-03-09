@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.ThirdPartyLinkStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :linkStatus => String.t()
+          :linkStatus => String.t() | nil
         }
 
   field(:linkStatus)

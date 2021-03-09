@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.TestItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gaia => String.t(),
-          :id => String.t(),
-          :snippet => GoogleApi.YouTube.V3.Model.TestItemTestItemSnippet.t()
+          :gaia => String.t() | nil,
+          :id => String.t() | nil,
+          :snippet => GoogleApi.YouTube.V3.Model.TestItemTestItemSnippet.t() | nil
         }
 
   field(:gaia)

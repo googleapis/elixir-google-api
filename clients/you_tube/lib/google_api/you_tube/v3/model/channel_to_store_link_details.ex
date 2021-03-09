@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :storeName => String.t(),
-          :storeUrl => String.t()
+          :storeName => String.t() | nil,
+          :storeUrl => String.t() | nil
         }
 
   field(:storeName)

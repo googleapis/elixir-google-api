@@ -64,6 +64,7 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
   @spec youtube_channels_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.ChannelListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_channels_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -132,7 +133,10 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
   *   `{:error, info}` on failure
   """
   @spec youtube_channels_update(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.YouTube.V3.Model.Channel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def youtube_channels_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -59,6 +59,7 @@ defmodule GoogleApi.YouTube.V3.Api.MembershipsLevels do
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.MembershipsLevelListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_memberships_levels_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

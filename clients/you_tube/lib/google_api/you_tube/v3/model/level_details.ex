@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.LevelDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t()
+          :displayName => String.t() | nil
         }
 
   field(:displayName)

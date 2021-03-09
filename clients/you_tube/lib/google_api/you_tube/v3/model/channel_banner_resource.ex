@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelBannerResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :etag => String.t(),
-          :kind => String.t(),
-          :url => String.t()
+          :etag => String.t() | nil,
+          :kind => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:etag)

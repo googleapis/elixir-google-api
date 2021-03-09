@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :videoId => String.t()
+          :videoId => String.t() | nil
         }
 
   field(:videoId)

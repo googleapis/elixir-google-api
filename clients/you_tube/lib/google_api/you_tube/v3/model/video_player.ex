@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.VideoPlayer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :embedHeight => String.t(),
-          :embedHtml => String.t(),
-          :embedWidth => String.t()
+          :embedHeight => String.t() | nil,
+          :embedHtml => String.t() | nil,
+          :embedWidth => String.t() | nil
         }
 
   field(:embedHeight)

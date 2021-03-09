@@ -27,7 +27,7 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelConversionPings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :pings => list(GoogleApi.YouTube.V3.Model.ChannelConversionPing.t())
+          :pings => list(GoogleApi.YouTube.V3.Model.ChannelConversionPing.t()) | nil
         }
 
   field(:pings, as: GoogleApi.YouTube.V3.Model.ChannelConversionPing, type: :list)

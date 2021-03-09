@@ -29,9 +29,9 @@ defmodule GoogleApi.YouTube.V3.Model.VideoTopicDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :relevantTopicIds => list(String.t()),
-          :topicCategories => list(String.t()),
-          :topicIds => list(String.t())
+          :relevantTopicIds => list(String.t()) | nil,
+          :topicCategories => list(String.t()) | nil,
+          :topicIds => list(String.t()) | nil
         }
 
   field(:relevantTopicIds, type: :list)

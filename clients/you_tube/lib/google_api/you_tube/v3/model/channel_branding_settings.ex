@@ -30,10 +30,10 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelBrandingSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :channel => GoogleApi.YouTube.V3.Model.ChannelSettings.t(),
-          :hints => list(GoogleApi.YouTube.V3.Model.PropertyValue.t()),
-          :image => GoogleApi.YouTube.V3.Model.ImageSettings.t(),
-          :watch => GoogleApi.YouTube.V3.Model.WatchSettings.t()
+          :channel => GoogleApi.YouTube.V3.Model.ChannelSettings.t() | nil,
+          :hints => list(GoogleApi.YouTube.V3.Model.PropertyValue.t()) | nil,
+          :image => GoogleApi.YouTube.V3.Model.ImageSettings.t() | nil,
+          :watch => GoogleApi.YouTube.V3.Model.WatchSettings.t() | nil
         }
 
   field(:channel, as: GoogleApi.YouTube.V3.Model.ChannelSettings)

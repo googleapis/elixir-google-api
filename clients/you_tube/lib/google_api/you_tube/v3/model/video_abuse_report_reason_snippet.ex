@@ -28,9 +28,9 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :label => String.t(),
+          :label => String.t() | nil,
           :secondaryReasons =>
-            list(GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason.t())
+            list(GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason.t()) | nil
         }
 
   field(:label)

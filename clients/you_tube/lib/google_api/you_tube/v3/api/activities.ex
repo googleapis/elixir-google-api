@@ -62,6 +62,7 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
   @spec youtube_activities_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.ActivityListResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def youtube_activities_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

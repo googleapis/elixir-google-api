@@ -31,11 +31,11 @@ defmodule GoogleApi.YouTube.V3.Model.ThumbnailDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :default => GoogleApi.YouTube.V3.Model.Thumbnail.t(),
-          :high => GoogleApi.YouTube.V3.Model.Thumbnail.t(),
-          :maxres => GoogleApi.YouTube.V3.Model.Thumbnail.t(),
-          :medium => GoogleApi.YouTube.V3.Model.Thumbnail.t(),
-          :standard => GoogleApi.YouTube.V3.Model.Thumbnail.t()
+          :default => GoogleApi.YouTube.V3.Model.Thumbnail.t() | nil,
+          :high => GoogleApi.YouTube.V3.Model.Thumbnail.t() | nil,
+          :maxres => GoogleApi.YouTube.V3.Model.Thumbnail.t() | nil,
+          :medium => GoogleApi.YouTube.V3.Model.Thumbnail.t() | nil,
+          :standard => GoogleApi.YouTube.V3.Model.Thumbnail.t() | nil
         }
 
   field(:default, as: GoogleApi.YouTube.V3.Model.Thumbnail)

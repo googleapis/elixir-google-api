@@ -28,8 +28,8 @@ defmodule GoogleApi.YouTube.V3.Model.PropertyValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :property => String.t(),
-          :value => String.t()
+          :property => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:property)
