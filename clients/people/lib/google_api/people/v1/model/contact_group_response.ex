@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.ContactGroupResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactGroup => GoogleApi.People.V1.Model.ContactGroup.t(),
-          :requestedResourceName => String.t(),
-          :status => GoogleApi.People.V1.Model.Status.t()
+          :contactGroup => GoogleApi.People.V1.Model.ContactGroup.t() | nil,
+          :requestedResourceName => String.t() | nil,
+          :status => GoogleApi.People.V1.Model.Status.t() | nil
         }
 
   field(:contactGroup, as: GoogleApi.People.V1.Model.ContactGroup)

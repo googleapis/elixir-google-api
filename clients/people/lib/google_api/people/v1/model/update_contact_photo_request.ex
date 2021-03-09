@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.UpdateContactPhotoRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :personFields => String.t(),
-          :photoBytes => String.t(),
-          :sources => list(String.t())
+          :personFields => String.t() | nil,
+          :photoBytes => String.t() | nil,
+          :sources => list(String.t()) | nil
         }
 
   field(:personFields)

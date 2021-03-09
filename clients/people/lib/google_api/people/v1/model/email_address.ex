@@ -31,11 +31,11 @@ defmodule GoogleApi.People.V1.Model.EmailAddress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t(),
-          :formattedType => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :type => String.t(),
-          :value => String.t()
+          :displayName => String.t() | nil,
+          :formattedType => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:displayName)

@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.Residence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :current => boolean(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :value => String.t()
+          :current => boolean() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:current)

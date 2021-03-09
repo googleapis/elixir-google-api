@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.CopyOtherContactToMyContactsGroupRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :copyMask => String.t(),
-          :readMask => String.t(),
-          :sources => list(String.t())
+          :copyMask => String.t() | nil,
+          :readMask => String.t() | nil,
+          :sources => list(String.t()) | nil
         }
 
   field(:copyMask)

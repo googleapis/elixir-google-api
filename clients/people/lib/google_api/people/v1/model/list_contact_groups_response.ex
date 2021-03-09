@@ -30,10 +30,10 @@ defmodule GoogleApi.People.V1.Model.ListContactGroupsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactGroups => list(GoogleApi.People.V1.Model.ContactGroup.t()),
-          :nextPageToken => String.t(),
-          :nextSyncToken => String.t(),
-          :totalItems => integer()
+          :contactGroups => list(GoogleApi.People.V1.Model.ContactGroup.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :nextSyncToken => String.t() | nil,
+          :totalItems => integer() | nil
         }
 
   field(:contactGroups, as: GoogleApi.People.V1.Model.ContactGroup, type: :list)

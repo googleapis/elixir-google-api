@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.CoverPhoto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :default => boolean(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :url => String.t()
+          :default => boolean() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:default)

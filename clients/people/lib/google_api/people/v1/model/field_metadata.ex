@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.FieldMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :primary => boolean(),
-          :source => GoogleApi.People.V1.Model.Source.t(),
-          :verified => boolean()
+          :primary => boolean() | nil,
+          :source => GoogleApi.People.V1.Model.Source.t() | nil,
+          :verified => boolean() | nil
         }
 
   field(:primary)

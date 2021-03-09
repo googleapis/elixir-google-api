@@ -27,7 +27,7 @@ defmodule GoogleApi.People.V1.Model.SearchResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :results => list(GoogleApi.People.V1.Model.SearchResult.t())
+          :results => list(GoogleApi.People.V1.Model.SearchResult.t()) | nil
         }
 
   field(:results, as: GoogleApi.People.V1.Model.SearchResult, type: :list)

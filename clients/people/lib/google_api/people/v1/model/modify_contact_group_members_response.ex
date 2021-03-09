@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.ModifyContactGroupMembersResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canNotRemoveLastContactGroupResourceNames => list(String.t()),
-          :notFoundResourceNames => list(String.t())
+          :canNotRemoveLastContactGroupResourceNames => list(String.t()) | nil,
+          :notFoundResourceNames => list(String.t()) | nil
         }
 
   field(:canNotRemoveLastContactGroupResourceNames, type: :list)

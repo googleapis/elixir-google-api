@@ -38,18 +38,18 @@ defmodule GoogleApi.People.V1.Model.Address do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :city => String.t(),
-          :country => String.t(),
-          :countryCode => String.t(),
-          :extendedAddress => String.t(),
-          :formattedType => String.t(),
-          :formattedValue => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :poBox => String.t(),
-          :postalCode => String.t(),
-          :region => String.t(),
-          :streetAddress => String.t(),
-          :type => String.t()
+          :city => String.t() | nil,
+          :country => String.t() | nil,
+          :countryCode => String.t() | nil,
+          :extendedAddress => String.t() | nil,
+          :formattedType => String.t() | nil,
+          :formattedValue => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :poBox => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :region => String.t() | nil,
+          :streetAddress => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:city)

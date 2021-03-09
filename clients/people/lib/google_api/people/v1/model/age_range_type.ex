@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.AgeRangeType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ageRange => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t()
+          :ageRange => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil
         }
 
   field(:ageRange)

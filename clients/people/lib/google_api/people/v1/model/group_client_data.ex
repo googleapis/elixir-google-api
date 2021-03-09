@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.GroupClientData do
   @moduledoc """
-  Arbitrary client data that is populated by clients. Duplicate keys and values are allowed. LINT.IfChange(GroupClientData)
+  Arbitrary client data that is populated by clients. Duplicate keys and values are allowed.
 
   ## Attributes
 
@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.GroupClientData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :value => String.t()
+          :key => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:key)

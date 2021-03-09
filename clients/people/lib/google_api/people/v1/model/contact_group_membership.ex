@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.ContactGroupMembership do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contactGroupId => String.t(),
-          :contactGroupResourceName => String.t()
+          :contactGroupId => String.t() | nil,
+          :contactGroupResourceName => String.t() | nil
         }
 
   field(:contactGroupId)

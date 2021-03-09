@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.ClientData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :key => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :value => String.t()
+          :key => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:key)

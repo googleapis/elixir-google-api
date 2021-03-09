@@ -57,7 +57,11 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.People.V1.Model.Person.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+        ) ::
+          {:ok, GoogleApi.People.V1.Model.Person.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def people_other_contacts_copy_other_contact_to_my_contacts_group(
         connection,
         other_contacts_id,
@@ -126,6 +130,7 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
   @spec people_other_contacts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.ListOtherContactsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def people_other_contacts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -190,6 +195,7 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
   @spec people_other_contacts_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.SearchResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def people_other_contacts_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

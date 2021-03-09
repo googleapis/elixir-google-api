@@ -34,14 +34,14 @@ defmodule GoogleApi.People.V1.Model.Location do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :buildingId => String.t(),
-          :current => boolean(),
-          :deskCode => String.t(),
-          :floor => String.t(),
-          :floorSection => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :type => String.t(),
-          :value => String.t()
+          :buildingId => String.t() | nil,
+          :current => boolean() | nil,
+          :deskCode => String.t() | nil,
+          :floor => String.t() | nil,
+          :floorSection => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :type => String.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:buildingId)

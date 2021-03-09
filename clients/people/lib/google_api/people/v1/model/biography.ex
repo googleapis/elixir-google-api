@@ -29,9 +29,9 @@ defmodule GoogleApi.People.V1.Model.Biography do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentType => String.t(),
-          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
-          :value => String.t()
+          :contentType => String.t() | nil,
+          :metadata => GoogleApi.People.V1.Model.FieldMetadata.t() | nil,
+          :value => String.t() | nil
         }
 
   field(:contentType)

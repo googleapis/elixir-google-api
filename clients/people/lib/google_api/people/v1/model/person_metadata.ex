@@ -31,11 +31,11 @@ defmodule GoogleApi.People.V1.Model.PersonMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleted => boolean(),
-          :linkedPeopleResourceNames => list(String.t()),
-          :objectType => String.t(),
-          :previousResourceNames => list(String.t()),
-          :sources => list(GoogleApi.People.V1.Model.Source.t())
+          :deleted => boolean() | nil,
+          :linkedPeopleResourceNames => list(String.t()) | nil,
+          :objectType => String.t() | nil,
+          :previousResourceNames => list(String.t()) | nil,
+          :sources => list(GoogleApi.People.V1.Model.Source.t()) | nil
         }
 
   field(:deleted)

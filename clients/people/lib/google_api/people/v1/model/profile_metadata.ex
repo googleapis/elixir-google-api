@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.ProfileMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectType => String.t(),
-          :userTypes => list(String.t())
+          :objectType => String.t() | nil,
+          :userTypes => list(String.t()) | nil
         }
 
   field(:objectType)
