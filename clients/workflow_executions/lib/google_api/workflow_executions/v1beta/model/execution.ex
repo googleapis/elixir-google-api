@@ -34,14 +34,14 @@ defmodule GoogleApi.WorkflowExecutions.V1beta.Model.Execution do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :argument => String.t(),
-          :endTime => DateTime.t(),
-          :error => GoogleApi.WorkflowExecutions.V1beta.Model.Error.t(),
-          :name => String.t(),
-          :result => String.t(),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :workflowRevisionId => String.t()
+          :argument => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :error => GoogleApi.WorkflowExecutions.V1beta.Model.Error.t() | nil,
+          :name => String.t() | nil,
+          :result => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :workflowRevisionId => String.t() | nil
         }
 
   field(:argument)
