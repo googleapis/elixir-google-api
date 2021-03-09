@@ -31,6 +31,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2BatchPr
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2ProcessDocumentResponse.t()
             )
+            | nil
         }
 
   field(:responses,

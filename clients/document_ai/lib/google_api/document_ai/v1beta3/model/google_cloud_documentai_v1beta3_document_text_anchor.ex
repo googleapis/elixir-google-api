@@ -28,11 +28,12 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
+          :content => String.t() | nil,
           :textSegments =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentTextAnchorTextSegment.t()
             )
+            | nil
         }
 
   field(:content)

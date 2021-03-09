@@ -27,7 +27,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Train
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :processorVersion => String.t()
+          :processorVersion => String.t() | nil
         }
 
   field(:processorVersion)

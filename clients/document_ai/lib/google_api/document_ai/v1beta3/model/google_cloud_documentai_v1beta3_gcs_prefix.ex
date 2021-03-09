@@ -27,7 +27,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsPref
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsUriPrefix => String.t()
+          :gcsUriPrefix => String.t() | nil
         }
 
   field(:gcsUriPrefix)

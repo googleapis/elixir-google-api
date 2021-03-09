@@ -28,8 +28,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gcsSource => String.t(),
-          :mimeType => String.t()
+          :gcsSource => String.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:gcsSource)

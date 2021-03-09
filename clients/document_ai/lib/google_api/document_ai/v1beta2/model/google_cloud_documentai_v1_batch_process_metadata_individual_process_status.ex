@@ -31,10 +31,10 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1BatchProcess
 
   @type t :: %__MODULE__{
           :humanReviewStatus =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1HumanReviewStatus.t(),
-          :inputGcsSource => String.t(),
-          :outputGcsDestination => String.t(),
-          :status => GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t()
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1HumanReviewStatus.t() | nil,
+          :inputGcsSource => String.t() | nil,
+          :outputGcsDestination => String.t() | nil,
+          :status => GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t() | nil
         }
 
   field(:humanReviewStatus,

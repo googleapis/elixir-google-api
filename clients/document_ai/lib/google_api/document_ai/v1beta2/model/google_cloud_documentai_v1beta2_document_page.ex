@@ -42,46 +42,58 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
           :blocks =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageBlock.t()
-            ),
+            )
+            | nil,
           :detectedLanguages =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage.t()
-            ),
+            )
+            | nil,
           :dimension =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageDimension.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageDimension.t()
+            | nil,
           :formFields =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageFormField.t()
-            ),
+            )
+            | nil,
           :image =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageImage.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageImage.t()
+            | nil,
           :layout =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t()
+            | nil,
           :lines =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLine.t()
-            ),
-          :pageNumber => integer(),
+            )
+            | nil,
+          :pageNumber => integer() | nil,
           :paragraphs =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageParagraph.t()
-            ),
+            )
+            | nil,
           :tables =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageTable.t()
-            ),
+            )
+            | nil,
           :tokens =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageToken.t()
-            ),
+            )
+            | nil,
           :transforms =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageMatrix.t()
-            ),
+            )
+            | nil,
           :visualElements =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageVisualElement.t()
             )
+            | nil
         }
 
   field(:blocks,

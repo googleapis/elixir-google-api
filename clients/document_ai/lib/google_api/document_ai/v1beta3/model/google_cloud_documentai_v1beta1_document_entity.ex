@@ -37,24 +37,29 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidence => number(),
-          :id => String.t(),
-          :mentionId => String.t(),
-          :mentionText => String.t(),
+          :confidence => number() | nil,
+          :id => String.t() | nil,
+          :mentionId => String.t() | nil,
+          :mentionText => String.t() | nil,
           :normalizedValue =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentEntityNormalizedValue.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentEntityNormalizedValue.t()
+            | nil,
           :pageAnchor =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentPageAnchor.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentPageAnchor.t()
+            | nil,
           :properties =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentEntity.t()
-            ),
+            )
+            | nil,
           :provenance =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentProvenance.t(),
-          :redacted => boolean(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentProvenance.t()
+            | nil,
+          :redacted => boolean() | nil,
           :textAnchor =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentTextAnchor.t(),
-          :type => String.t()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentTextAnchor.t()
+            | nil,
+          :type => String.t() | nil
         }
 
   field(:confidence)

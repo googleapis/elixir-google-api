@@ -29,6 +29,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1ReviewDocume
   @type t :: %__MODULE__{
           :commonMetadata =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1CommonOperationMetadata.t()
+            | nil
         }
 
   field(:commonMetadata,

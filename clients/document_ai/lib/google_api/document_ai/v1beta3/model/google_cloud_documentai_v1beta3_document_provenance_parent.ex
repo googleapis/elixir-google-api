@@ -28,8 +28,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => integer(),
-          :revision => integer()
+          :id => integer() | nil,
+          :revision => integer() | nil
         }
 
   field(:id)

@@ -29,9 +29,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchDo
 
   @type t :: %__MODULE__{
           :gcsDocuments =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsDocuments.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsDocuments.t() | nil,
           :gcsPrefix =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsPrefix.t()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsPrefix.t() | nil
         }
 
   field(:gcsDocuments,

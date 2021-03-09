@@ -31,6 +31,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Documen
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageTableTableCell.t()
             )
+            | nil
         }
 
   field(:cells,

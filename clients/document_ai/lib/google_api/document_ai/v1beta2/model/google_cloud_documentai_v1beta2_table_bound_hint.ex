@@ -29,8 +29,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableBo
 
   @type t :: %__MODULE__{
           :boundingBox =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2BoundingPoly.t(),
-          :pageNumber => integer()
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2BoundingPoly.t() | nil,
+          :pageNumber => integer() | nil
         }
 
   field(:boundingBox,

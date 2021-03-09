@@ -30,10 +30,11 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
 
   @type t :: %__MODULE__{
           :document =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t(),
-          :humanReviewOperation => String.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
+          :humanReviewOperation => String.t() | nil,
           :humanReviewStatus =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewStatus.t()
+            | nil
         }
 
   field(:document, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document)

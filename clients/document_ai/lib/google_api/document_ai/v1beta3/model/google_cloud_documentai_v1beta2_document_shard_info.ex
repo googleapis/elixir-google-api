@@ -29,9 +29,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :shardCount => String.t(),
-          :shardIndex => String.t(),
-          :textOffset => String.t()
+          :shardCount => String.t() | nil,
+          :shardIndex => String.t() | nil,
+          :textOffset => String.t() | nil
         }
 
   field(:shardCount)

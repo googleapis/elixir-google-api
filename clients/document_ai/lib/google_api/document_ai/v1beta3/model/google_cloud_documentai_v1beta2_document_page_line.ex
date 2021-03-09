@@ -32,11 +32,14 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
           :detectedLanguages =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage.t()
-            ),
+            )
+            | nil,
           :layout =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t()
+            | nil,
           :provenance =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentProvenance.t()
+            | nil
         }
 
   field(:detectedLanguages,

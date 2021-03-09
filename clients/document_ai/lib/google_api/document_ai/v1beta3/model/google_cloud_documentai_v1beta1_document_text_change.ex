@@ -29,13 +29,15 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changedText => String.t(),
+          :changedText => String.t() | nil,
           :provenance =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentProvenance.t()
-            ),
+            )
+            | nil,
           :textAnchor =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentTextAnchor.t()
+            | nil
         }
 
   field(:changedText)

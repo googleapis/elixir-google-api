@@ -32,13 +32,14 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agent => String.t(),
-          :createTime => DateTime.t(),
+          :agent => String.t() | nil,
+          :createTime => DateTime.t() | nil,
           :humanReview =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentRevisionHumanReview.t(),
-          :id => String.t(),
-          :parent => list(integer()),
-          :processor => String.t()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1DocumentRevisionHumanReview.t()
+            | nil,
+          :id => String.t() | nil,
+          :parent => list(integer()) | nil,
+          :processor => String.t() | nil
         }
 
   field(:agent)

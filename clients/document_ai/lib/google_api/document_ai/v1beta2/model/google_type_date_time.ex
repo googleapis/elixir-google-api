@@ -35,15 +35,15 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeDateTime do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :day => integer(),
-          :hours => integer(),
-          :minutes => integer(),
-          :month => integer(),
-          :nanos => integer(),
-          :seconds => integer(),
-          :timeZone => GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeTimeZone.t(),
-          :utcOffset => String.t(),
-          :year => integer()
+          :day => integer() | nil,
+          :hours => integer() | nil,
+          :minutes => integer() | nil,
+          :month => integer() | nil,
+          :nanos => integer() | nil,
+          :seconds => integer() | nil,
+          :timeZone => GoogleApi.DocumentAI.V1beta2.Model.GoogleTypeTimeZone.t() | nil,
+          :utcOffset => String.t() | nil,
+          :year => integer() | nil
         }
 
   field(:day)

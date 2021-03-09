@@ -29,8 +29,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1InputCo
 
   @type t :: %__MODULE__{
           :gcsSource =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1GcsSource.t(),
-          :mimeType => String.t()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1GcsSource.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:gcsSource, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1GcsSource)

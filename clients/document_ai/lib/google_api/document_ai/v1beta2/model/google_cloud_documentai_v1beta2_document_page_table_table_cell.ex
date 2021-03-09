@@ -30,14 +30,16 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :colSpan => integer(),
+          :colSpan => integer() | nil,
           :detectedLanguages =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage.t()
-            ),
+            )
+            | nil,
           :layout =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t(),
-          :rowSpan => integer()
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t()
+            | nil,
+          :rowSpan => integer() | nil
         }
 
   field(:colSpan)

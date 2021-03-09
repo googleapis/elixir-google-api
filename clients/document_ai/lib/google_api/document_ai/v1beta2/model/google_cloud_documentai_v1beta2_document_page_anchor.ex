@@ -31,6 +31,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageAnchorPageRef.t()
             )
+            | nil
         }
 
   field(:pageRefs,

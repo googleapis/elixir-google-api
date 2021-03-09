@@ -31,15 +31,19 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   @type t :: %__MODULE__{
           :detectedBreak =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentPageTokenDetectedBreak.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentPageTokenDetectedBreak.t()
+            | nil,
           :detectedLanguages =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentPageDetectedLanguage.t()
-            ),
+            )
+            | nil,
           :layout =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentPageLayout.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentPageLayout.t()
+            | nil,
           :provenance =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentProvenance.t()
+            | nil
         }
 
   field(:detectedBreak,

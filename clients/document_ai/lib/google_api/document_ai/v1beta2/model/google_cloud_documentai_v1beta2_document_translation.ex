@@ -30,14 +30,16 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageCode => String.t(),
+          :languageCode => String.t() | nil,
           :provenance =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentProvenance.t()
-            ),
+            )
+            | nil,
           :textAnchor =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t(),
-          :translatedText => String.t()
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t()
+            | nil,
+          :translatedText => String.t() | nil
         }
 
   field(:languageCode)

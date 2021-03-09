@@ -28,8 +28,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Train
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datasetErrors => list(GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t()),
-          :documentErrors => list(GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t())
+          :datasetErrors => list(GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t()) | nil,
+          :documentErrors => list(GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t()) | nil
         }
 
   field(:datasetErrors, as: GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus, type: :list)

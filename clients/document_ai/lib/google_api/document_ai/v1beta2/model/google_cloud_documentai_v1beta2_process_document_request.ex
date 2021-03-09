@@ -36,21 +36,24 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Process
 
   @type t :: %__MODULE__{
           :automlParams =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2AutoMlParams.t(),
-          :documentType => String.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2AutoMlParams.t() | nil,
+          :documentType => String.t() | nil,
           :entityExtractionParams =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2EntityExtractionParams.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2EntityExtractionParams.t()
+            | nil,
           :formExtractionParams =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2FormExtractionParams.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2FormExtractionParams.t()
+            | nil,
           :inputConfig =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2InputConfig.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2InputConfig.t() | nil,
           :ocrParams =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OcrParams.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OcrParams.t() | nil,
           :outputConfig =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OutputConfig.t(),
-          :parent => String.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OutputConfig.t() | nil,
+          :parent => String.t() | nil,
           :tableExtractionParams =>
             GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2TableExtractionParams.t()
+            | nil
         }
 
   field(:automlParams,

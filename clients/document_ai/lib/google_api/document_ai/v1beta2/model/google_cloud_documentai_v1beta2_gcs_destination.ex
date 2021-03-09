@@ -27,7 +27,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2GcsDest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :uri => String.t()
+          :uri => String.t() | nil
         }
 
   field(:uri)

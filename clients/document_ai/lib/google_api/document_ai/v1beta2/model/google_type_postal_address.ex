@@ -37,17 +37,17 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleTypePostalAddress do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addressLines => list(String.t()),
-          :administrativeArea => String.t(),
-          :languageCode => String.t(),
-          :locality => String.t(),
-          :organization => String.t(),
-          :postalCode => String.t(),
-          :recipients => list(String.t()),
-          :regionCode => String.t(),
-          :revision => integer(),
-          :sortingCode => String.t(),
-          :sublocality => String.t()
+          :addressLines => list(String.t()) | nil,
+          :administrativeArea => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :locality => String.t() | nil,
+          :organization => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :recipients => list(String.t()) | nil,
+          :regionCode => String.t() | nil,
+          :revision => integer() | nil,
+          :sortingCode => String.t() | nil,
+          :sublocality => String.t() | nil
         }
 
   field(:addressLines, type: :list)

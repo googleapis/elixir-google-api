@@ -28,8 +28,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3RawDocu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :mimeType => String.t()
+          :content => String.t() | nil,
+          :mimeType => String.t() | nil
         }
 
   field(:content)

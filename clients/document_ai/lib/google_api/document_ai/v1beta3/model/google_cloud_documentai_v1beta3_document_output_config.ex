@@ -29,6 +29,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   @type t :: %__MODULE__{
           :gcsOutputConfig =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentOutputConfigGcsOutputConfig.t()
+            | nil
         }
 
   field(:gcsOutputConfig,

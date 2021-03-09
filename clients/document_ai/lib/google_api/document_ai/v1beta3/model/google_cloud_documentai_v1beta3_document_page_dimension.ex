@@ -29,9 +29,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => number(),
-          :unit => String.t(),
-          :width => number()
+          :height => number() | nil,
+          :unit => String.t() | nil,
+          :width => number() | nil
         }
 
   field(:height)

@@ -32,18 +32,22 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
 
   @type t :: %__MODULE__{
           :fieldName =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t()
+            | nil,
           :fieldValue =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageLayout.t()
+            | nil,
           :nameDetectedLanguages =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage.t()
-            ),
+            )
+            | nil,
           :valueDetectedLanguages =>
             list(
               GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage.t()
-            ),
-          :valueType => String.t()
+            )
+            | nil,
+          :valueType => String.t() | nil
         }
 
   field(:fieldName,

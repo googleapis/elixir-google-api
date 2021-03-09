@@ -30,10 +30,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1CommonOperat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :state => String.t(),
-          :stateMessage => String.t(),
-          :updateTime => DateTime.t()
+          :createTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :stateMessage => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)

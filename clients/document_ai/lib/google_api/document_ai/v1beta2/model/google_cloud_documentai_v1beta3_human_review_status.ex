@@ -29,9 +29,9 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3HumanRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :humanReviewOperation => String.t(),
-          :state => String.t(),
-          :stateMessage => String.t()
+          :humanReviewOperation => String.t() | nil,
+          :state => String.t() | nil,
+          :stateMessage => String.t() | nil
         }
 
   field(:humanReviewOperation)

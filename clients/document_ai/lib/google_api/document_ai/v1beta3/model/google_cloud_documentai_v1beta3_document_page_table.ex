@@ -33,17 +33,21 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
           :bodyRows =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentPageTableTableRow.t()
-            ),
+            )
+            | nil,
           :detectedLanguages =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentPageDetectedLanguage.t()
-            ),
+            )
+            | nil,
           :headerRows =>
             list(
               GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentPageTableTableRow.t()
-            ),
+            )
+            | nil,
           :layout =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentPageLayout.t()
+            | nil
         }
 
   field(:bodyRows,

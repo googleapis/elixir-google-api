@@ -29,9 +29,9 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1Process
 
   @type t :: %__MODULE__{
           :inputConfig =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1InputConfig.t(),
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1InputConfig.t() | nil,
           :outputConfig =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1OutputConfig.t()
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1OutputConfig.t() | nil
         }
 
   field(:inputConfig,

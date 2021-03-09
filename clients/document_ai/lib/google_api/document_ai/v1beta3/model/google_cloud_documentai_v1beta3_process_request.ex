@@ -31,12 +31,12 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
 
   @type t :: %__MODULE__{
           :document =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
           :inlineDocument =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t(),
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
           :rawDocument =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3RawDocument.t(),
-          :skipHumanReview => boolean()
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3RawDocument.t() | nil,
+          :skipHumanReview => boolean() | nil
         }
 
   field(:document, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document)

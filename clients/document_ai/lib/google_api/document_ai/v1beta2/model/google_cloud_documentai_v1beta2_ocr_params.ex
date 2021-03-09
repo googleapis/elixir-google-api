@@ -27,7 +27,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2OcrPara
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :languageHints => list(String.t())
+          :languageHints => list(String.t()) | nil
         }
 
   field(:languageHints, type: :list)

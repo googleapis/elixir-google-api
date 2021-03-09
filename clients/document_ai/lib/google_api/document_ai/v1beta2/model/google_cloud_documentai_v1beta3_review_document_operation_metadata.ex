@@ -32,11 +32,12 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3ReviewD
 
   @type t :: %__MODULE__{
           :commonMetadata =>
-            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3CommonOperationMetadata.t(),
-          :createTime => DateTime.t(),
-          :state => String.t(),
-          :stateMessage => String.t(),
-          :updateTime => DateTime.t()
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3CommonOperationMetadata.t()
+            | nil,
+          :createTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :stateMessage => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:commonMetadata,

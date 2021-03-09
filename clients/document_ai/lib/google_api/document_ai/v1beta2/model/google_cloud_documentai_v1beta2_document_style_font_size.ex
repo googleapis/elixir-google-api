@@ -28,8 +28,8 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta2Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :size => number(),
-          :unit => String.t()
+          :size => number() | nil,
+          :unit => String.t() | nil
         }
 
   field(:size)
