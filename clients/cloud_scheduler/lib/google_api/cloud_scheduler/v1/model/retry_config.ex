@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudScheduler.V1.Model.RetryConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxBackoffDuration => String.t(),
-          :maxDoublings => integer(),
-          :maxRetryDuration => String.t(),
-          :minBackoffDuration => String.t(),
-          :retryCount => integer()
+          :maxBackoffDuration => String.t() | nil,
+          :maxDoublings => integer() | nil,
+          :maxRetryDuration => String.t() | nil,
+          :minBackoffDuration => String.t() | nil,
+          :retryCount => integer() | nil
         }
 
   field(:maxBackoffDuration)

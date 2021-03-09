@@ -29,9 +29,9 @@ defmodule GoogleApi.CloudScheduler.V1.Model.PubsubTarget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => map(),
-          :data => String.t(),
-          :topicName => String.t()
+          :attributes => map() | nil,
+          :data => String.t() | nil,
+          :topicName => String.t() | nil
         }
 
   field(:attributes, type: :map)

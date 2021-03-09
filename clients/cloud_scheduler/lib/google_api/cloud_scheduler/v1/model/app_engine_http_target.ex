@@ -31,11 +31,11 @@ defmodule GoogleApi.CloudScheduler.V1.Model.AppEngineHttpTarget do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngineRouting => GoogleApi.CloudScheduler.V1.Model.AppEngineRouting.t(),
-          :body => String.t(),
-          :headers => map(),
-          :httpMethod => String.t(),
-          :relativeUri => String.t()
+          :appEngineRouting => GoogleApi.CloudScheduler.V1.Model.AppEngineRouting.t() | nil,
+          :body => String.t() | nil,
+          :headers => map() | nil,
+          :httpMethod => String.t() | nil,
+          :relativeUri => String.t() | nil
         }
 
   field(:appEngineRouting, as: GoogleApi.CloudScheduler.V1.Model.AppEngineRouting)
