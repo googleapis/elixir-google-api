@@ -35,15 +35,15 @@ defmodule GoogleApi.Slides.V1.Model.Presentation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :layouts => list(GoogleApi.Slides.V1.Model.Page.t()),
-          :locale => String.t(),
-          :masters => list(GoogleApi.Slides.V1.Model.Page.t()),
-          :notesMaster => GoogleApi.Slides.V1.Model.Page.t(),
-          :pageSize => GoogleApi.Slides.V1.Model.Size.t(),
-          :presentationId => String.t(),
-          :revisionId => String.t(),
-          :slides => list(GoogleApi.Slides.V1.Model.Page.t()),
-          :title => String.t()
+          :layouts => list(GoogleApi.Slides.V1.Model.Page.t()) | nil,
+          :locale => String.t() | nil,
+          :masters => list(GoogleApi.Slides.V1.Model.Page.t()) | nil,
+          :notesMaster => GoogleApi.Slides.V1.Model.Page.t() | nil,
+          :pageSize => GoogleApi.Slides.V1.Model.Size.t() | nil,
+          :presentationId => String.t() | nil,
+          :revisionId => String.t() | nil,
+          :slides => list(GoogleApi.Slides.V1.Model.Page.t()) | nil,
+          :title => String.t() | nil
         }
 
   field(:layouts, as: GoogleApi.Slides.V1.Model.Page, type: :list)

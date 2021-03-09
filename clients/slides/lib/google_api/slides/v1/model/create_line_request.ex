@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.CreateLineRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :category => String.t(),
-          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t(),
-          :lineCategory => String.t(),
-          :objectId => String.t()
+          :category => String.t() | nil,
+          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t() | nil,
+          :lineCategory => String.t() | nil,
+          :objectId => String.t() | nil
         }
 
   field(:category)

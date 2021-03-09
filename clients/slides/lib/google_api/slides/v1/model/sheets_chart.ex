@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.SheetsChart do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chartId => integer(),
-          :contentUrl => String.t(),
-          :sheetsChartProperties => GoogleApi.Slides.V1.Model.SheetsChartProperties.t(),
-          :spreadsheetId => String.t()
+          :chartId => integer() | nil,
+          :contentUrl => String.t() | nil,
+          :sheetsChartProperties => GoogleApi.Slides.V1.Model.SheetsChartProperties.t() | nil,
+          :spreadsheetId => String.t() | nil
         }
 
   field(:chartId)

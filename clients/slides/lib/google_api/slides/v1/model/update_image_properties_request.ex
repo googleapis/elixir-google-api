@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :imageProperties => GoogleApi.Slides.V1.Model.ImageProperties.t(),
-          :objectId => String.t()
+          :fields => String.t() | nil,
+          :imageProperties => GoogleApi.Slides.V1.Model.ImageProperties.t() | nil,
+          :objectId => String.t() | nil
         }
 
   field(:fields)

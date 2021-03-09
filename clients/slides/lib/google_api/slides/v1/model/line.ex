@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.Line do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineCategory => String.t(),
-          :lineProperties => GoogleApi.Slides.V1.Model.LineProperties.t(),
-          :lineType => String.t()
+          :lineCategory => String.t() | nil,
+          :lineProperties => GoogleApi.Slides.V1.Model.LineProperties.t() | nil,
+          :lineType => String.t() | nil
         }
 
   field(:lineCategory)

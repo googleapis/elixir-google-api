@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t(),
-          :objectId => String.t(),
-          :textRange => GoogleApi.Slides.V1.Model.Range.t()
+          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t() | nil,
+          :objectId => String.t() | nil,
+          :textRange => GoogleApi.Slides.V1.Model.Range.t() | nil
         }
 
   field(:cellLocation, as: GoogleApi.Slides.V1.Model.TableCellLocation)

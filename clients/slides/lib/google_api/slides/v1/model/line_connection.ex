@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.LineConnection do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :connectedObjectId => String.t(),
-          :connectionSiteIndex => integer()
+          :connectedObjectId => String.t() | nil,
+          :connectionSiteIndex => integer() | nil
         }
 
   field(:connectedObjectId)

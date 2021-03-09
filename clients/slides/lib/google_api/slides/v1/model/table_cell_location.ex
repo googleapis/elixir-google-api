@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.TableCellLocation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnIndex => integer(),
-          :rowIndex => integer()
+          :columnIndex => integer() | nil,
+          :rowIndex => integer() | nil
         }
 
   field(:columnIndex)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.MasterProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :displayName => String.t()
+          :displayName => String.t() | nil
         }
 
   field(:displayName)

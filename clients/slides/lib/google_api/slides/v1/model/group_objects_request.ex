@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.GroupObjectsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :childrenObjectIds => list(String.t()),
-          :groupObjectId => String.t()
+          :childrenObjectIds => list(String.t()) | nil,
+          :groupObjectId => String.t() | nil
         }
 
   field(:childrenObjectIds, type: :list)

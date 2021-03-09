@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.ShapeBackgroundFill do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :propertyState => String.t(),
-          :solidFill => GoogleApi.Slides.V1.Model.SolidFill.t()
+          :propertyState => String.t() | nil,
+          :solidFill => GoogleApi.Slides.V1.Model.SolidFill.t() | nil
         }
 
   field(:propertyState)

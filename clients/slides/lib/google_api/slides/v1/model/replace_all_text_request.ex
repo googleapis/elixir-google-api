@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.ReplaceAllTextRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containsText => GoogleApi.Slides.V1.Model.SubstringMatchCriteria.t(),
-          :pageObjectIds => list(String.t()),
-          :replaceText => String.t()
+          :containsText => GoogleApi.Slides.V1.Model.SubstringMatchCriteria.t() | nil,
+          :pageObjectIds => list(String.t()) | nil,
+          :replaceText => String.t() | nil
         }
 
   field(:containsText, as: GoogleApi.Slides.V1.Model.SubstringMatchCriteria)

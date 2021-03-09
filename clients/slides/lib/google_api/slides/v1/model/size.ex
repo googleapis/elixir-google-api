@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.Size do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :height => GoogleApi.Slides.V1.Model.Dimension.t(),
-          :width => GoogleApi.Slides.V1.Model.Dimension.t()
+          :height => GoogleApi.Slides.V1.Model.Dimension.t() | nil,
+          :width => GoogleApi.Slides.V1.Model.Dimension.t() | nil
         }
 
   field(:height, as: GoogleApi.Slides.V1.Model.Dimension)

@@ -30,11 +30,11 @@ defmodule GoogleApi.Slides.V1.Model.CreateSlideRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :insertionIndex => integer(),
-          :objectId => String.t(),
+          :insertionIndex => integer() | nil,
+          :objectId => String.t() | nil,
           :placeholderIdMappings =>
-            list(GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMapping.t()),
-          :slideLayoutReference => GoogleApi.Slides.V1.Model.LayoutReference.t()
+            list(GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMapping.t()) | nil,
+          :slideLayoutReference => GoogleApi.Slides.V1.Model.LayoutReference.t() | nil
         }
 
   field(:insertionIndex)

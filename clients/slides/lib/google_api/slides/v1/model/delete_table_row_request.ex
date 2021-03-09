@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.DeleteTableRowRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t(),
-          :tableObjectId => String.t()
+          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t() | nil,
+          :tableObjectId => String.t() | nil
         }
 
   field(:cellLocation, as: GoogleApi.Slides.V1.Model.TableCellLocation)

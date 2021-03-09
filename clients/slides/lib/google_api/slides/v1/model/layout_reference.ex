@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.LayoutReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :layoutId => String.t(),
-          :predefinedLayout => String.t()
+          :layoutId => String.t() | nil,
+          :predefinedLayout => String.t() | nil
         }
 
   field(:layoutId)

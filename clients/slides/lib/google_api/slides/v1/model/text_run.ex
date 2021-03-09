@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.TextRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :content => String.t(),
-          :style => GoogleApi.Slides.V1.Model.TextStyle.t()
+          :content => String.t() | nil,
+          :style => GoogleApi.Slides.V1.Model.TextStyle.t() | nil
         }
 
   field(:content)

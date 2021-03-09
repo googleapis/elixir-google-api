@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.TableCellProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentAlignment => String.t(),
-          :tableCellBackgroundFill => GoogleApi.Slides.V1.Model.TableCellBackgroundFill.t()
+          :contentAlignment => String.t() | nil,
+          :tableCellBackgroundFill => GoogleApi.Slides.V1.Model.TableCellBackgroundFill.t() | nil
         }
 
   field(:contentAlignment)

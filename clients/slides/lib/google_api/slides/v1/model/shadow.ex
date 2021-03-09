@@ -34,14 +34,14 @@ defmodule GoogleApi.Slides.V1.Model.Shadow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alignment => String.t(),
-          :alpha => number(),
-          :blurRadius => GoogleApi.Slides.V1.Model.Dimension.t(),
-          :color => GoogleApi.Slides.V1.Model.OpaqueColor.t(),
-          :propertyState => String.t(),
-          :rotateWithShape => boolean(),
-          :transform => GoogleApi.Slides.V1.Model.AffineTransform.t(),
-          :type => String.t()
+          :alignment => String.t() | nil,
+          :alpha => number() | nil,
+          :blurRadius => GoogleApi.Slides.V1.Model.Dimension.t() | nil,
+          :color => GoogleApi.Slides.V1.Model.OpaqueColor.t() | nil,
+          :propertyState => String.t() | nil,
+          :rotateWithShape => boolean() | nil,
+          :transform => GoogleApi.Slides.V1.Model.AffineTransform.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:alignment)

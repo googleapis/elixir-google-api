@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.CreateShapeRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t(),
-          :objectId => String.t(),
-          :shapeType => String.t()
+          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t() | nil,
+          :objectId => String.t() | nil,
+          :shapeType => String.t() | nil
         }
 
   field(:elementProperties, as: GoogleApi.Slides.V1.Model.PageElementProperties)

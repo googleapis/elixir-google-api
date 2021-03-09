@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.WriteControl do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requiredRevisionId => String.t()
+          :requiredRevisionId => String.t() | nil
         }
 
   field(:requiredRevisionId)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :objectId => String.t(),
-          :pageProperties => GoogleApi.Slides.V1.Model.PageProperties.t()
+          :fields => String.t() | nil,
+          :objectId => String.t() | nil,
+          :pageProperties => GoogleApi.Slides.V1.Model.PageProperties.t() | nil
         }
 
   field(:fields)

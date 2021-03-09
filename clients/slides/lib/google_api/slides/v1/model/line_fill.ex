@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.LineFill do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :solidFill => GoogleApi.Slides.V1.Model.SolidFill.t()
+          :solidFill => GoogleApi.Slides.V1.Model.SolidFill.t() | nil
         }
 
   field(:solidFill, as: GoogleApi.Slides.V1.Model.SolidFill)

@@ -28,8 +28,9 @@ defmodule GoogleApi.Slides.V1.Model.List do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :listId => String.t(),
-          :nestingLevel => %{optional(String.t()) => GoogleApi.Slides.V1.Model.NestingLevel.t()}
+          :listId => String.t() | nil,
+          :nestingLevel =>
+            %{optional(String.t()) => GoogleApi.Slides.V1.Model.NestingLevel.t()} | nil
         }
 
   field(:listId)

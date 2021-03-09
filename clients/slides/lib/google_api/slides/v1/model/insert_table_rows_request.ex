@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.InsertTableRowsRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t(),
-          :insertBelow => boolean(),
-          :number => integer(),
-          :tableObjectId => String.t()
+          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t() | nil,
+          :insertBelow => boolean() | nil,
+          :number => integer() | nil,
+          :tableObjectId => String.t() | nil
         }
 
   field(:cellLocation, as: GoogleApi.Slides.V1.Model.TableCellLocation)

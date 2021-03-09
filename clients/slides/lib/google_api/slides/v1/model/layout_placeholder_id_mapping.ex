@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.LayoutPlaceholderIdMapping do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :layoutPlaceholder => GoogleApi.Slides.V1.Model.Placeholder.t(),
-          :layoutPlaceholderObjectId => String.t(),
-          :objectId => String.t()
+          :layoutPlaceholder => GoogleApi.Slides.V1.Model.Placeholder.t() | nil,
+          :layoutPlaceholderObjectId => String.t() | nil,
+          :objectId => String.t() | nil
         }
 
   field(:layoutPlaceholder, as: GoogleApi.Slides.V1.Model.Placeholder)

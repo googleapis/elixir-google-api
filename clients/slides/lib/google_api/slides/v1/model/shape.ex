@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.Shape do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :placeholder => GoogleApi.Slides.V1.Model.Placeholder.t(),
-          :shapeProperties => GoogleApi.Slides.V1.Model.ShapeProperties.t(),
-          :shapeType => String.t(),
-          :text => GoogleApi.Slides.V1.Model.TextContent.t()
+          :placeholder => GoogleApi.Slides.V1.Model.Placeholder.t() | nil,
+          :shapeProperties => GoogleApi.Slides.V1.Model.ShapeProperties.t() | nil,
+          :shapeType => String.t() | nil,
+          :text => GoogleApi.Slides.V1.Model.TextContent.t() | nil
         }
 
   field(:placeholder, as: GoogleApi.Slides.V1.Model.Placeholder)

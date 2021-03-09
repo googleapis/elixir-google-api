@@ -31,11 +31,11 @@ defmodule GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chartId => integer(),
-          :containsText => GoogleApi.Slides.V1.Model.SubstringMatchCriteria.t(),
-          :linkingMode => String.t(),
-          :pageObjectIds => list(String.t()),
-          :spreadsheetId => String.t()
+          :chartId => integer() | nil,
+          :containsText => GoogleApi.Slides.V1.Model.SubstringMatchCriteria.t() | nil,
+          :linkingMode => String.t() | nil,
+          :pageObjectIds => list(String.t()) | nil,
+          :spreadsheetId => String.t() | nil
         }
 
   field(:chartId)

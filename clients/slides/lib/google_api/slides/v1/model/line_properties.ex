@@ -34,14 +34,14 @@ defmodule GoogleApi.Slides.V1.Model.LineProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dashStyle => String.t(),
-          :endArrow => String.t(),
-          :endConnection => GoogleApi.Slides.V1.Model.LineConnection.t(),
-          :lineFill => GoogleApi.Slides.V1.Model.LineFill.t(),
-          :link => GoogleApi.Slides.V1.Model.Link.t(),
-          :startArrow => String.t(),
-          :startConnection => GoogleApi.Slides.V1.Model.LineConnection.t(),
-          :weight => GoogleApi.Slides.V1.Model.Dimension.t()
+          :dashStyle => String.t() | nil,
+          :endArrow => String.t() | nil,
+          :endConnection => GoogleApi.Slides.V1.Model.LineConnection.t() | nil,
+          :lineFill => GoogleApi.Slides.V1.Model.LineFill.t() | nil,
+          :link => GoogleApi.Slides.V1.Model.Link.t() | nil,
+          :startArrow => String.t() | nil,
+          :startConnection => GoogleApi.Slides.V1.Model.LineConnection.t() | nil,
+          :weight => GoogleApi.Slides.V1.Model.Dimension.t() | nil
         }
 
   field(:dashStyle)

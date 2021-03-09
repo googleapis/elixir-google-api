@@ -31,11 +31,11 @@ defmodule GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :borderPosition => String.t(),
-          :fields => String.t(),
-          :objectId => String.t(),
-          :tableBorderProperties => GoogleApi.Slides.V1.Model.TableBorderProperties.t(),
-          :tableRange => GoogleApi.Slides.V1.Model.TableRange.t()
+          :borderPosition => String.t() | nil,
+          :fields => String.t() | nil,
+          :objectId => String.t() | nil,
+          :tableBorderProperties => GoogleApi.Slides.V1.Model.TableBorderProperties.t() | nil,
+          :tableRange => GoogleApi.Slides.V1.Model.TableRange.t() | nil
         }
 
   field(:borderPosition)

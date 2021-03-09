@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.CreateTableRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columns => integer(),
-          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t(),
-          :objectId => String.t(),
-          :rows => integer()
+          :columns => integer() | nil,
+          :elementProperties => GoogleApi.Slides.V1.Model.PageElementProperties.t() | nil,
+          :objectId => String.t() | nil,
+          :rows => integer() | nil
         }
 
   field(:columns)

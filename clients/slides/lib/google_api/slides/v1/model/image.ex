@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.Image do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentUrl => String.t(),
-          :imageProperties => GoogleApi.Slides.V1.Model.ImageProperties.t(),
-          :sourceUrl => String.t()
+          :contentUrl => String.t() | nil,
+          :imageProperties => GoogleApi.Slides.V1.Model.ImageProperties.t() | nil,
+          :sourceUrl => String.t() | nil
         }
 
   field(:contentUrl)

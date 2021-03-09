@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.Video do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :id => String.t(),
-          :source => String.t(),
-          :url => String.t(),
-          :videoProperties => GoogleApi.Slides.V1.Model.VideoProperties.t()
+          :id => String.t() | nil,
+          :source => String.t() | nil,
+          :url => String.t() | nil,
+          :videoProperties => GoogleApi.Slides.V1.Model.VideoProperties.t() | nil
         }
 
   field(:id)

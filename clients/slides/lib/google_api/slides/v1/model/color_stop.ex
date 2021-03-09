@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.ColorStop do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alpha => number(),
-          :color => GoogleApi.Slides.V1.Model.OpaqueColor.t(),
-          :position => number()
+          :alpha => number() | nil,
+          :color => GoogleApi.Slides.V1.Model.OpaqueColor.t() | nil,
+          :position => number() | nil
         }
 
   field(:alpha)

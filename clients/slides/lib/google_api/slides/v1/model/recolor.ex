@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.Recolor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :recolorStops => list(GoogleApi.Slides.V1.Model.ColorStop.t())
+          :name => String.t() | nil,
+          :recolorStops => list(GoogleApi.Slides.V1.Model.ColorStop.t()) | nil
         }
 
   field(:name)

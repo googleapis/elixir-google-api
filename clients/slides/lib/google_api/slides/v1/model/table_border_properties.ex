@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.TableBorderProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dashStyle => String.t(),
-          :tableBorderFill => GoogleApi.Slides.V1.Model.TableBorderFill.t(),
-          :weight => GoogleApi.Slides.V1.Model.Dimension.t()
+          :dashStyle => String.t() | nil,
+          :tableBorderFill => GoogleApi.Slides.V1.Model.TableBorderFill.t() | nil,
+          :weight => GoogleApi.Slides.V1.Model.Dimension.t() | nil
         }
 
   field(:dashStyle)

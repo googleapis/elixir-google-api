@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :objectId => String.t(),
-          :videoProperties => GoogleApi.Slides.V1.Model.VideoProperties.t()
+          :fields => String.t() | nil,
+          :objectId => String.t() | nil,
+          :videoProperties => GoogleApi.Slides.V1.Model.VideoProperties.t() | nil
         }
 
   field(:fields)

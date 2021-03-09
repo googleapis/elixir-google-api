@@ -31,11 +31,11 @@ defmodule GoogleApi.Slides.V1.Model.CropProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :angle => number(),
-          :bottomOffset => number(),
-          :leftOffset => number(),
-          :rightOffset => number(),
-          :topOffset => number()
+          :angle => number() | nil,
+          :bottomOffset => number() | nil,
+          :leftOffset => number() | nil,
+          :rightOffset => number() | nil,
+          :topOffset => number() | nil
         }
 
   field(:angle)

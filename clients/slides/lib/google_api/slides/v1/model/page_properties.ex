@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.PageProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :colorScheme => GoogleApi.Slides.V1.Model.ColorScheme.t(),
-          :pageBackgroundFill => GoogleApi.Slides.V1.Model.PageBackgroundFill.t()
+          :colorScheme => GoogleApi.Slides.V1.Model.ColorScheme.t() | nil,
+          :pageBackgroundFill => GoogleApi.Slides.V1.Model.PageBackgroundFill.t() | nil
         }
 
   field(:colorScheme, as: GoogleApi.Slides.V1.Model.ColorScheme)

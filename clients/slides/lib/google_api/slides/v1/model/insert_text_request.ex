@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.InsertTextRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t(),
-          :insertionIndex => integer(),
-          :objectId => String.t(),
-          :text => String.t()
+          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t() | nil,
+          :insertionIndex => integer() | nil,
+          :objectId => String.t() | nil,
+          :text => String.t() | nil
         }
 
   field(:cellLocation, as: GoogleApi.Slides.V1.Model.TableCellLocation)

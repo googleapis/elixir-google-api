@@ -31,11 +31,11 @@ defmodule GoogleApi.Slides.V1.Model.UpdateTextStyleRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t(),
-          :fields => String.t(),
-          :objectId => String.t(),
-          :style => GoogleApi.Slides.V1.Model.TextStyle.t(),
-          :textRange => GoogleApi.Slides.V1.Model.Range.t()
+          :cellLocation => GoogleApi.Slides.V1.Model.TableCellLocation.t() | nil,
+          :fields => String.t() | nil,
+          :objectId => String.t() | nil,
+          :style => GoogleApi.Slides.V1.Model.TextStyle.t() | nil,
+          :textRange => GoogleApi.Slides.V1.Model.Range.t() | nil
         }
 
   field(:cellLocation, as: GoogleApi.Slides.V1.Model.TableCellLocation)

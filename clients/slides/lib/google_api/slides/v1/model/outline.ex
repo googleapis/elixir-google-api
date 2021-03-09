@@ -30,10 +30,10 @@ defmodule GoogleApi.Slides.V1.Model.Outline do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dashStyle => String.t(),
-          :outlineFill => GoogleApi.Slides.V1.Model.OutlineFill.t(),
-          :propertyState => String.t(),
-          :weight => GoogleApi.Slides.V1.Model.Dimension.t()
+          :dashStyle => String.t() | nil,
+          :outlineFill => GoogleApi.Slides.V1.Model.OutlineFill.t() | nil,
+          :propertyState => String.t() | nil,
+          :weight => GoogleApi.Slides.V1.Model.Dimension.t() | nil
         }
 
   field(:dashStyle)

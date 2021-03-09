@@ -35,15 +35,15 @@ defmodule GoogleApi.Slides.V1.Model.ParagraphStyle do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alignment => String.t(),
-          :direction => String.t(),
-          :indentEnd => GoogleApi.Slides.V1.Model.Dimension.t(),
-          :indentFirstLine => GoogleApi.Slides.V1.Model.Dimension.t(),
-          :indentStart => GoogleApi.Slides.V1.Model.Dimension.t(),
-          :lineSpacing => number(),
-          :spaceAbove => GoogleApi.Slides.V1.Model.Dimension.t(),
-          :spaceBelow => GoogleApi.Slides.V1.Model.Dimension.t(),
-          :spacingMode => String.t()
+          :alignment => String.t() | nil,
+          :direction => String.t() | nil,
+          :indentEnd => GoogleApi.Slides.V1.Model.Dimension.t() | nil,
+          :indentFirstLine => GoogleApi.Slides.V1.Model.Dimension.t() | nil,
+          :indentStart => GoogleApi.Slides.V1.Model.Dimension.t() | nil,
+          :lineSpacing => number() | nil,
+          :spaceAbove => GoogleApi.Slides.V1.Model.Dimension.t() | nil,
+          :spaceBelow => GoogleApi.Slides.V1.Model.Dimension.t() | nil,
+          :spacingMode => String.t() | nil
         }
 
   field(:alignment)

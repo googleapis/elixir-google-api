@@ -31,11 +31,11 @@ defmodule GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :containsText => GoogleApi.Slides.V1.Model.SubstringMatchCriteria.t(),
-          :imageReplaceMethod => String.t(),
-          :imageUrl => String.t(),
-          :pageObjectIds => list(String.t()),
-          :replaceMethod => String.t()
+          :containsText => GoogleApi.Slides.V1.Model.SubstringMatchCriteria.t() | nil,
+          :imageReplaceMethod => String.t() | nil,
+          :imageUrl => String.t() | nil,
+          :pageObjectIds => list(String.t()) | nil,
+          :replaceMethod => String.t() | nil
         }
 
   field(:containsText, as: GoogleApi.Slides.V1.Model.SubstringMatchCriteria)

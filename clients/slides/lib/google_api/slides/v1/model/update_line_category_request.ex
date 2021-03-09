@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lineCategory => String.t(),
-          :objectId => String.t()
+          :lineCategory => String.t() | nil,
+          :objectId => String.t() | nil
         }
 
   field(:lineCategory)

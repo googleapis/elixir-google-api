@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.Range do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :endIndex => integer(),
-          :startIndex => integer(),
-          :type => String.t()
+          :endIndex => integer() | nil,
+          :startIndex => integer() | nil,
+          :type => String.t() | nil
         }
 
   field(:endIndex)

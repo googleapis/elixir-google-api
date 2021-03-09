@@ -69,58 +69,66 @@ defmodule GoogleApi.Slides.V1.Model.Request do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleteObject => GoogleApi.Slides.V1.Model.DeleteObjectRequest.t(),
-          :insertTableColumns => GoogleApi.Slides.V1.Model.InsertTableColumnsRequest.t(),
-          :deleteParagraphBullets => GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest.t(),
-          :deleteTableColumn => GoogleApi.Slides.V1.Model.DeleteTableColumnRequest.t(),
+          :deleteObject => GoogleApi.Slides.V1.Model.DeleteObjectRequest.t() | nil,
+          :insertTableColumns => GoogleApi.Slides.V1.Model.InsertTableColumnsRequest.t() | nil,
+          :deleteParagraphBullets =>
+            GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest.t() | nil,
+          :deleteTableColumn => GoogleApi.Slides.V1.Model.DeleteTableColumnRequest.t() | nil,
           :updateTableBorderProperties =>
-            GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest.t(),
-          :updatePageProperties => GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest.t(),
-          :groupObjects => GoogleApi.Slides.V1.Model.GroupObjectsRequest.t(),
+            GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest.t() | nil,
+          :updatePageProperties =>
+            GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest.t() | nil,
+          :groupObjects => GoogleApi.Slides.V1.Model.GroupObjectsRequest.t() | nil,
           :updateTableCellProperties =>
-            GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest.t(),
-          :updateShapeProperties => GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest.t(),
-          :deleteText => GoogleApi.Slides.V1.Model.DeleteTextRequest.t(),
-          :createSheetsChart => GoogleApi.Slides.V1.Model.CreateSheetsChartRequest.t(),
-          :replaceImage => GoogleApi.Slides.V1.Model.ReplaceImageRequest.t(),
-          :createSlide => GoogleApi.Slides.V1.Model.CreateSlideRequest.t(),
-          :createTable => GoogleApi.Slides.V1.Model.CreateTableRequest.t(),
+            GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest.t() | nil,
+          :updateShapeProperties =>
+            GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest.t() | nil,
+          :deleteText => GoogleApi.Slides.V1.Model.DeleteTextRequest.t() | nil,
+          :createSheetsChart => GoogleApi.Slides.V1.Model.CreateSheetsChartRequest.t() | nil,
+          :replaceImage => GoogleApi.Slides.V1.Model.ReplaceImageRequest.t() | nil,
+          :createSlide => GoogleApi.Slides.V1.Model.CreateSlideRequest.t() | nil,
+          :createTable => GoogleApi.Slides.V1.Model.CreateTableRequest.t() | nil,
           :updateTableColumnProperties =>
-            GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest.t(),
-          :createVideo => GoogleApi.Slides.V1.Model.CreateVideoRequest.t(),
-          :createLine => GoogleApi.Slides.V1.Model.CreateLineRequest.t(),
-          :deleteTableRow => GoogleApi.Slides.V1.Model.DeleteTableRowRequest.t(),
-          :ungroupObjects => GoogleApi.Slides.V1.Model.UngroupObjectsRequest.t(),
-          :rerouteLine => GoogleApi.Slides.V1.Model.RerouteLineRequest.t(),
+            GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest.t() | nil,
+          :createVideo => GoogleApi.Slides.V1.Model.CreateVideoRequest.t() | nil,
+          :createLine => GoogleApi.Slides.V1.Model.CreateLineRequest.t() | nil,
+          :deleteTableRow => GoogleApi.Slides.V1.Model.DeleteTableRowRequest.t() | nil,
+          :ungroupObjects => GoogleApi.Slides.V1.Model.UngroupObjectsRequest.t() | nil,
+          :rerouteLine => GoogleApi.Slides.V1.Model.RerouteLineRequest.t() | nil,
           :updateTableRowProperties =>
-            GoogleApi.Slides.V1.Model.UpdateTableRowPropertiesRequest.t(),
-          :updateTextStyle => GoogleApi.Slides.V1.Model.UpdateTextStyleRequest.t(),
-          :updateImageProperties => GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest.t(),
-          :insertTableRows => GoogleApi.Slides.V1.Model.InsertTableRowsRequest.t(),
-          :createImage => GoogleApi.Slides.V1.Model.CreateImageRequest.t(),
+            GoogleApi.Slides.V1.Model.UpdateTableRowPropertiesRequest.t() | nil,
+          :updateTextStyle => GoogleApi.Slides.V1.Model.UpdateTextStyleRequest.t() | nil,
+          :updateImageProperties =>
+            GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest.t() | nil,
+          :insertTableRows => GoogleApi.Slides.V1.Model.InsertTableRowsRequest.t() | nil,
+          :createImage => GoogleApi.Slides.V1.Model.CreateImageRequest.t() | nil,
           :replaceAllShapesWithImage =>
-            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest.t(),
+            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest.t() | nil,
           :updatePageElementAltText =>
-            GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest.t(),
-          :duplicateObject => GoogleApi.Slides.V1.Model.DuplicateObjectRequest.t(),
-          :replaceAllText => GoogleApi.Slides.V1.Model.ReplaceAllTextRequest.t(),
-          :updateVideoProperties => GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest.t(),
+            GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest.t() | nil,
+          :duplicateObject => GoogleApi.Slides.V1.Model.DuplicateObjectRequest.t() | nil,
+          :replaceAllText => GoogleApi.Slides.V1.Model.ReplaceAllTextRequest.t() | nil,
+          :updateVideoProperties =>
+            GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest.t() | nil,
           :replaceAllShapesWithSheetsChart =>
-            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest.t(),
+            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest.t() | nil,
           :updatePageElementsZOrder =>
-            GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest.t(),
+            GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest.t() | nil,
           :updatePageElementTransform =>
-            GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest.t(),
-          :updateSlidesPosition => GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest.t(),
-          :insertText => GoogleApi.Slides.V1.Model.InsertTextRequest.t(),
-          :createShape => GoogleApi.Slides.V1.Model.CreateShapeRequest.t(),
-          :createParagraphBullets => GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest.t(),
-          :updateLineProperties => GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest.t(),
-          :mergeTableCells => GoogleApi.Slides.V1.Model.MergeTableCellsRequest.t(),
-          :unmergeTableCells => GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest.t(),
-          :refreshSheetsChart => GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest.t(),
-          :updateLineCategory => GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest.t(),
-          :updateParagraphStyle => GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest.t()
+            GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest.t() | nil,
+          :updateSlidesPosition =>
+            GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest.t() | nil,
+          :insertText => GoogleApi.Slides.V1.Model.InsertTextRequest.t() | nil,
+          :createShape => GoogleApi.Slides.V1.Model.CreateShapeRequest.t() | nil,
+          :createParagraphBullets =>
+            GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest.t() | nil,
+          :updateLineProperties =>
+            GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest.t() | nil,
+          :mergeTableCells => GoogleApi.Slides.V1.Model.MergeTableCellsRequest.t() | nil,
+          :unmergeTableCells => GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest.t() | nil,
+          :refreshSheetsChart => GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest.t() | nil,
+          :updateLineCategory => GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest.t() | nil,
+          :updateParagraphStyle => GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest.t() | nil
         }
 
   field(:deleteObject, as: GoogleApi.Slides.V1.Model.DeleteObjectRequest)

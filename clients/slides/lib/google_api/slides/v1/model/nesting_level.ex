@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.NestingLevel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bulletStyle => GoogleApi.Slides.V1.Model.TextStyle.t()
+          :bulletStyle => GoogleApi.Slides.V1.Model.TextStyle.t() | nil
         }
 
   field(:bulletStyle, as: GoogleApi.Slides.V1.Model.TextStyle)

@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :objectId => String.t(),
-          :shapeProperties => GoogleApi.Slides.V1.Model.ShapeProperties.t()
+          :fields => String.t() | nil,
+          :objectId => String.t() | nil,
+          :shapeProperties => GoogleApi.Slides.V1.Model.ShapeProperties.t() | nil
         }
 
   field(:fields)

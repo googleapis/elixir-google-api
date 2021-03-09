@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.SheetsChartProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chartImageProperties => GoogleApi.Slides.V1.Model.ImageProperties.t()
+          :chartImageProperties => GoogleApi.Slides.V1.Model.ImageProperties.t() | nil
         }
 
   field(:chartImageProperties, as: GoogleApi.Slides.V1.Model.ImageProperties)

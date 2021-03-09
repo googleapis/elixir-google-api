@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.TableRowProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minRowHeight => GoogleApi.Slides.V1.Model.Dimension.t()
+          :minRowHeight => GoogleApi.Slides.V1.Model.Dimension.t() | nil
         }
 
   field(:minRowHeight, as: GoogleApi.Slides.V1.Model.Dimension)

@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.ThemeColorPair do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :color => GoogleApi.Slides.V1.Model.RgbColor.t(),
-          :type => String.t()
+          :color => GoogleApi.Slides.V1.Model.RgbColor.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:color, as: GoogleApi.Slides.V1.Model.RgbColor)

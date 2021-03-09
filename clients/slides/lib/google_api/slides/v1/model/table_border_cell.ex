@@ -28,8 +28,8 @@ defmodule GoogleApi.Slides.V1.Model.TableBorderCell do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :location => GoogleApi.Slides.V1.Model.TableCellLocation.t(),
-          :tableBorderProperties => GoogleApi.Slides.V1.Model.TableBorderProperties.t()
+          :location => GoogleApi.Slides.V1.Model.TableCellLocation.t() | nil,
+          :tableBorderProperties => GoogleApi.Slides.V1.Model.TableBorderProperties.t() | nil
         }
 
   field(:location, as: GoogleApi.Slides.V1.Model.TableCellLocation)

@@ -31,11 +31,11 @@ defmodule GoogleApi.Slides.V1.Model.TableCell do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :columnSpan => integer(),
-          :location => GoogleApi.Slides.V1.Model.TableCellLocation.t(),
-          :rowSpan => integer(),
-          :tableCellProperties => GoogleApi.Slides.V1.Model.TableCellProperties.t(),
-          :text => GoogleApi.Slides.V1.Model.TextContent.t()
+          :columnSpan => integer() | nil,
+          :location => GoogleApi.Slides.V1.Model.TableCellLocation.t() | nil,
+          :rowSpan => integer() | nil,
+          :tableCellProperties => GoogleApi.Slides.V1.Model.TableCellProperties.t() | nil,
+          :text => GoogleApi.Slides.V1.Model.TextContent.t() | nil
         }
 
   field(:columnSpan)

@@ -27,7 +27,7 @@ defmodule GoogleApi.Slides.V1.Model.ColorScheme do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :colors => list(GoogleApi.Slides.V1.Model.ThemeColorPair.t())
+          :colors => list(GoogleApi.Slides.V1.Model.ThemeColorPair.t()) | nil
         }
 
   field(:colors, as: GoogleApi.Slides.V1.Model.ThemeColorPair, type: :list)

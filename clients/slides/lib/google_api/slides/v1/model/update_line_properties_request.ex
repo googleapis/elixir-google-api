@@ -29,9 +29,9 @@ defmodule GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => String.t(),
-          :lineProperties => GoogleApi.Slides.V1.Model.LineProperties.t(),
-          :objectId => String.t()
+          :fields => String.t() | nil,
+          :lineProperties => GoogleApi.Slides.V1.Model.LineProperties.t() | nil,
+          :objectId => String.t() | nil
         }
 
   field(:fields)
