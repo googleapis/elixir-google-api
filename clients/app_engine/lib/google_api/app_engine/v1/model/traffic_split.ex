@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.TrafficSplit do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allocations => map(),
-          :shardBy => String.t()
+          :allocations => map() | nil,
+          :shardBy => String.t() | nil
         }
 
   field(:allocations, type: :map)

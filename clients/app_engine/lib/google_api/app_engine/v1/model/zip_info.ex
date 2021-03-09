@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ZipInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filesCount => integer(),
-          :sourceUrl => String.t()
+          :filesCount => integer() | nil,
+          :sourceUrl => String.t() | nil
         }
 
   field(:filesCount)

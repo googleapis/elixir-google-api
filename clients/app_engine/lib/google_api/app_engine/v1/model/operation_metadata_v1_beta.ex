@@ -34,14 +34,15 @@ defmodule GoogleApi.AppEngine.V1.Model.OperationMetadataV1Beta do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createVersionMetadata => GoogleApi.AppEngine.V1.Model.CreateVersionMetadataV1Beta.t(),
-          :endTime => DateTime.t(),
-          :ephemeralMessage => String.t(),
-          :insertTime => DateTime.t(),
-          :method => String.t(),
-          :target => String.t(),
-          :user => String.t(),
-          :warning => list(String.t())
+          :createVersionMetadata =>
+            GoogleApi.AppEngine.V1.Model.CreateVersionMetadataV1Beta.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :ephemeralMessage => String.t() | nil,
+          :insertTime => DateTime.t() | nil,
+          :method => String.t() | nil,
+          :target => String.t() | nil,
+          :user => String.t() | nil,
+          :warning => list(String.t()) | nil
         }
 
   field(:createVersionMetadata, as: GoogleApi.AppEngine.V1.Model.CreateVersionMetadataV1Beta)

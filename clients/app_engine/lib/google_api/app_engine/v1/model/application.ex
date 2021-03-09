@@ -40,20 +40,20 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authDomain => String.t(),
-          :codeBucket => String.t(),
-          :databaseType => String.t(),
-          :defaultBucket => String.t(),
-          :defaultCookieExpiration => String.t(),
-          :defaultHostname => String.t(),
-          :dispatchRules => list(GoogleApi.AppEngine.V1.Model.UrlDispatchRule.t()),
-          :featureSettings => GoogleApi.AppEngine.V1.Model.FeatureSettings.t(),
-          :gcrDomain => String.t(),
-          :iap => GoogleApi.AppEngine.V1.Model.IdentityAwareProxy.t(),
-          :id => String.t(),
-          :locationId => String.t(),
-          :name => String.t(),
-          :servingStatus => String.t()
+          :authDomain => String.t() | nil,
+          :codeBucket => String.t() | nil,
+          :databaseType => String.t() | nil,
+          :defaultBucket => String.t() | nil,
+          :defaultCookieExpiration => String.t() | nil,
+          :defaultHostname => String.t() | nil,
+          :dispatchRules => list(GoogleApi.AppEngine.V1.Model.UrlDispatchRule.t()) | nil,
+          :featureSettings => GoogleApi.AppEngine.V1.Model.FeatureSettings.t() | nil,
+          :gcrDomain => String.t() | nil,
+          :iap => GoogleApi.AppEngine.V1.Model.IdentityAwareProxy.t() | nil,
+          :id => String.t() | nil,
+          :locationId => String.t() | nil,
+          :name => String.t() | nil,
+          :servingStatus => String.t() | nil
         }
 
   field(:authDomain)

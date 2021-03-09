@@ -30,10 +30,10 @@ defmodule GoogleApi.AppEngine.V1.Model.FirewallRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :action => String.t(),
-          :description => String.t(),
-          :priority => integer(),
-          :sourceRange => String.t()
+          :action => String.t() | nil,
+          :description => String.t() | nil,
+          :priority => integer() | nil,
+          :sourceRange => String.t() | nil
         }
 
   field(:action)

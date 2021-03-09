@@ -29,9 +29,9 @@ defmodule GoogleApi.AppEngine.V1.Model.FileInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mimeType => String.t(),
-          :sha1Sum => String.t(),
-          :sourceUrl => String.t()
+          :mimeType => String.t() | nil,
+          :sha1Sum => String.t() | nil,
+          :sourceUrl => String.t() | nil
         }
 
   field(:mimeType)

@@ -30,10 +30,10 @@ defmodule GoogleApi.AppEngine.V1.Model.DiskUtilization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :targetReadBytesPerSecond => integer(),
-          :targetReadOpsPerSecond => integer(),
-          :targetWriteBytesPerSecond => integer(),
-          :targetWriteOpsPerSecond => integer()
+          :targetReadBytesPerSecond => integer() | nil,
+          :targetReadOpsPerSecond => integer() | nil,
+          :targetWriteBytesPerSecond => integer() | nil,
+          :targetWriteOpsPerSecond => integer() | nil
         }
 
   field(:targetReadBytesPerSecond)

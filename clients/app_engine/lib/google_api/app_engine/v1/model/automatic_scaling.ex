@@ -39,19 +39,20 @@ defmodule GoogleApi.AppEngine.V1.Model.AutomaticScaling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :coolDownPeriod => String.t(),
-          :cpuUtilization => GoogleApi.AppEngine.V1.Model.CpuUtilization.t(),
-          :diskUtilization => GoogleApi.AppEngine.V1.Model.DiskUtilization.t(),
-          :maxConcurrentRequests => integer(),
-          :maxIdleInstances => integer(),
-          :maxPendingLatency => String.t(),
-          :maxTotalInstances => integer(),
-          :minIdleInstances => integer(),
-          :minPendingLatency => String.t(),
-          :minTotalInstances => integer(),
-          :networkUtilization => GoogleApi.AppEngine.V1.Model.NetworkUtilization.t(),
-          :requestUtilization => GoogleApi.AppEngine.V1.Model.RequestUtilization.t(),
-          :standardSchedulerSettings => GoogleApi.AppEngine.V1.Model.StandardSchedulerSettings.t()
+          :coolDownPeriod => String.t() | nil,
+          :cpuUtilization => GoogleApi.AppEngine.V1.Model.CpuUtilization.t() | nil,
+          :diskUtilization => GoogleApi.AppEngine.V1.Model.DiskUtilization.t() | nil,
+          :maxConcurrentRequests => integer() | nil,
+          :maxIdleInstances => integer() | nil,
+          :maxPendingLatency => String.t() | nil,
+          :maxTotalInstances => integer() | nil,
+          :minIdleInstances => integer() | nil,
+          :minPendingLatency => String.t() | nil,
+          :minTotalInstances => integer() | nil,
+          :networkUtilization => GoogleApi.AppEngine.V1.Model.NetworkUtilization.t() | nil,
+          :requestUtilization => GoogleApi.AppEngine.V1.Model.RequestUtilization.t() | nil,
+          :standardSchedulerSettings =>
+            GoogleApi.AppEngine.V1.Model.StandardSchedulerSettings.t() | nil
         }
 
   field(:coolDownPeriod)

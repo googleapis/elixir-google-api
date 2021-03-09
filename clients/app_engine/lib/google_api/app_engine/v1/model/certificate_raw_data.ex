@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.CertificateRawData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :privateKey => String.t(),
-          :publicCertificate => String.t()
+          :privateKey => String.t() | nil,
+          :publicCertificate => String.t() | nil
         }
 
   field(:privateKey)

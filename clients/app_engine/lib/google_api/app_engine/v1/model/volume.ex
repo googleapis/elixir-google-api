@@ -29,9 +29,9 @@ defmodule GoogleApi.AppEngine.V1.Model.Volume do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t(),
-          :sizeGb => float(),
-          :volumeType => String.t()
+          :name => String.t() | nil,
+          :sizeGb => float() | nil,
+          :volumeType => String.t() | nil
         }
 
   field(:name)

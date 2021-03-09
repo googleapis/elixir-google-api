@@ -31,11 +31,11 @@ defmodule GoogleApi.AppEngine.V1.Model.Network do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :forwardedPorts => list(String.t()),
-          :instanceTag => String.t(),
-          :name => String.t(),
-          :sessionAffinity => boolean(),
-          :subnetworkName => String.t()
+          :forwardedPorts => list(String.t()) | nil,
+          :instanceTag => String.t() | nil,
+          :name => String.t() | nil,
+          :sessionAffinity => boolean() | nil,
+          :subnetworkName => String.t() | nil
         }
 
   field(:forwardedPorts, type: :list)

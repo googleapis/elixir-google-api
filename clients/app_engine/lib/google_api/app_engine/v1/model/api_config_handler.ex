@@ -31,11 +31,11 @@ defmodule GoogleApi.AppEngine.V1.Model.ApiConfigHandler do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authFailAction => String.t(),
-          :login => String.t(),
-          :script => String.t(),
-          :securityLevel => String.t(),
-          :url => String.t()
+          :authFailAction => String.t() | nil,
+          :login => String.t() | nil,
+          :script => String.t() | nil,
+          :securityLevel => String.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:authFailAction)

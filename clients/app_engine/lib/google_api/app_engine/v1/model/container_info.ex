@@ -27,7 +27,7 @@ defmodule GoogleApi.AppEngine.V1.Model.ContainerInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :image => String.t()
+          :image => String.t() | nil
         }
 
   field(:image)

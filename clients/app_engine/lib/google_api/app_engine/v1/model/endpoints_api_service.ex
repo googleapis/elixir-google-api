@@ -30,10 +30,10 @@ defmodule GoogleApi.AppEngine.V1.Model.EndpointsApiService do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :configId => String.t(),
-          :disableTraceSampling => boolean(),
-          :name => String.t(),
-          :rolloutStrategy => String.t()
+          :configId => String.t() | nil,
+          :disableTraceSampling => boolean() | nil,
+          :name => String.t() | nil,
+          :rolloutStrategy => String.t() | nil
         }
 
   field(:configId)

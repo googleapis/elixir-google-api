@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.CpuUtilization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :aggregationWindowLength => String.t(),
-          :targetUtilization => float()
+          :aggregationWindowLength => String.t() | nil,
+          :targetUtilization => float() | nil
         }
 
   field(:aggregationWindowLength)

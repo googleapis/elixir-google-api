@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.CloudBuildOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appYamlPath => String.t(),
-          :cloudBuildTimeout => String.t()
+          :appYamlPath => String.t() | nil,
+          :cloudBuildTimeout => String.t() | nil
         }
 
   field(:appYamlPath)

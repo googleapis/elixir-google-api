@@ -27,7 +27,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Entrypoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :shell => String.t()
+          :shell => String.t() | nil
         }
 
   field(:shell)

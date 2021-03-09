@@ -28,8 +28,8 @@ defmodule GoogleApi.AppEngine.V1.Model.ListAuthorizedCertificatesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :certificates => list(GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t()),
-          :nextPageToken => String.t()
+          :certificates => list(GoogleApi.AppEngine.V1.Model.AuthorizedCertificate.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:certificates, as: GoogleApi.AppEngine.V1.Model.AuthorizedCertificate, type: :list)

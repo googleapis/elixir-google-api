@@ -43,23 +43,23 @@ defmodule GoogleApi.AppEngine.V1.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appEngineRelease => String.t(),
-          :availability => String.t(),
-          :averageLatency => integer(),
-          :errors => integer(),
-          :id => String.t(),
-          :memoryUsage => String.t(),
-          :name => String.t(),
-          :qps => number(),
-          :requests => integer(),
-          :startTime => DateTime.t(),
-          :vmDebugEnabled => boolean(),
-          :vmId => String.t(),
-          :vmIp => String.t(),
-          :vmLiveness => String.t(),
-          :vmName => String.t(),
-          :vmStatus => String.t(),
-          :vmZoneName => String.t()
+          :appEngineRelease => String.t() | nil,
+          :availability => String.t() | nil,
+          :averageLatency => integer() | nil,
+          :errors => integer() | nil,
+          :id => String.t() | nil,
+          :memoryUsage => String.t() | nil,
+          :name => String.t() | nil,
+          :qps => number() | nil,
+          :requests => integer() | nil,
+          :startTime => DateTime.t() | nil,
+          :vmDebugEnabled => boolean() | nil,
+          :vmId => String.t() | nil,
+          :vmIp => String.t() | nil,
+          :vmLiveness => String.t() | nil,
+          :vmName => String.t() | nil,
+          :vmStatus => String.t() | nil,
+          :vmZoneName => String.t() | nil
         }
 
   field(:appEngineRelease)
