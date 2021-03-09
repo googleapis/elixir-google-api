@@ -30,10 +30,10 @@ defmodule GoogleApi.AdMob.V1.Model.PublisherAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :currencyCode => String.t(),
-          :name => String.t(),
-          :publisherId => String.t(),
-          :reportingTimeZone => String.t()
+          :currencyCode => String.t() | nil,
+          :name => String.t() | nil,
+          :publisherId => String.t() | nil,
+          :reportingTimeZone => String.t() | nil
         }
 
   field(:currencyCode)

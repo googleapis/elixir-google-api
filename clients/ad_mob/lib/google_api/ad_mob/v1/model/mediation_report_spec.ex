@@ -34,15 +34,16 @@ defmodule GoogleApi.AdMob.V1.Model.MediationReportSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dateRange => GoogleApi.AdMob.V1.Model.DateRange.t(),
+          :dateRange => GoogleApi.AdMob.V1.Model.DateRange.t() | nil,
           :dimensionFilters =>
-            list(GoogleApi.AdMob.V1.Model.MediationReportSpecDimensionFilter.t()),
-          :dimensions => list(String.t()),
-          :localizationSettings => GoogleApi.AdMob.V1.Model.LocalizationSettings.t(),
-          :maxReportRows => integer(),
-          :metrics => list(String.t()),
-          :sortConditions => list(GoogleApi.AdMob.V1.Model.MediationReportSpecSortCondition.t()),
-          :timeZone => String.t()
+            list(GoogleApi.AdMob.V1.Model.MediationReportSpecDimensionFilter.t()) | nil,
+          :dimensions => list(String.t()) | nil,
+          :localizationSettings => GoogleApi.AdMob.V1.Model.LocalizationSettings.t() | nil,
+          :maxReportRows => integer() | nil,
+          :metrics => list(String.t()) | nil,
+          :sortConditions =>
+            list(GoogleApi.AdMob.V1.Model.MediationReportSpecSortCondition.t()) | nil,
+          :timeZone => String.t() | nil
         }
 
   field(:dateRange, as: GoogleApi.AdMob.V1.Model.DateRange)

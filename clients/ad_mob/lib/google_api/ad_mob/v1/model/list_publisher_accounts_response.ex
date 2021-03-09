@@ -28,8 +28,8 @@ defmodule GoogleApi.AdMob.V1.Model.ListPublisherAccountsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :account => list(GoogleApi.AdMob.V1.Model.PublisherAccount.t()),
-          :nextPageToken => String.t()
+          :account => list(GoogleApi.AdMob.V1.Model.PublisherAccount.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:account, as: GoogleApi.AdMob.V1.Model.PublisherAccount, type: :list)

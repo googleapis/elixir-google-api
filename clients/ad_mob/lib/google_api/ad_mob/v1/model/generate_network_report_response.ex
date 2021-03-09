@@ -29,9 +29,9 @@ defmodule GoogleApi.AdMob.V1.Model.GenerateNetworkReportResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :footer => GoogleApi.AdMob.V1.Model.ReportFooter.t(),
-          :header => GoogleApi.AdMob.V1.Model.ReportHeader.t(),
-          :row => GoogleApi.AdMob.V1.Model.ReportRow.t()
+          :footer => GoogleApi.AdMob.V1.Model.ReportFooter.t() | nil,
+          :header => GoogleApi.AdMob.V1.Model.ReportHeader.t() | nil,
+          :row => GoogleApi.AdMob.V1.Model.ReportRow.t() | nil
         }
 
   field(:footer, as: GoogleApi.AdMob.V1.Model.ReportFooter)

@@ -29,9 +29,9 @@ defmodule GoogleApi.AdMob.V1.Model.ReportRowMetricValue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :doubleValue => float(),
-          :integerValue => String.t(),
-          :microsValue => String.t()
+          :doubleValue => float() | nil,
+          :integerValue => String.t() | nil,
+          :microsValue => String.t() | nil
         }
 
   field(:doubleValue)

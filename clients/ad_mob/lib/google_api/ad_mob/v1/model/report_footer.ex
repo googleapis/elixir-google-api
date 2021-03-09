@@ -28,8 +28,8 @@ defmodule GoogleApi.AdMob.V1.Model.ReportFooter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :matchingRowCount => String.t(),
-          :warnings => list(GoogleApi.AdMob.V1.Model.ReportWarning.t())
+          :matchingRowCount => String.t() | nil,
+          :warnings => list(GoogleApi.AdMob.V1.Model.ReportWarning.t()) | nil
         }
 
   field(:matchingRowCount)
