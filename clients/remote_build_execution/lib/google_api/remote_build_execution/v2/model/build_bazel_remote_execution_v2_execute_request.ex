@@ -31,12 +31,14 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
 
   @type t :: %__MODULE__{
           :actionDigest =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t() | nil,
           :executionPolicy =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ExecutionPolicy.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ExecutionPolicy.t()
+            | nil,
           :resultsCachePolicy =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ResultsCachePolicy.t(),
-          :skipCacheLookup => boolean()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ResultsCachePolicy.t()
+            | nil,
+          :skipCacheLookup => boolean() | nil
         }
 
   field(:actionDigest,

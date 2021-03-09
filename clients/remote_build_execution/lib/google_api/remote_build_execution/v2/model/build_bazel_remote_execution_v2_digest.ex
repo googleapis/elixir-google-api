@@ -28,8 +28,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dig
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hash => String.t(),
-          :sizeBytes => String.t()
+          :hash => String.t() | nil,
+          :sizeBytes => String.t() | nil
         }
 
   field(:hash)

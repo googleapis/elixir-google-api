@@ -37,17 +37,17 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auxiliaryMetadata => list(map()),
-          :executionCompletedTimestamp => DateTime.t(),
-          :executionStartTimestamp => DateTime.t(),
-          :inputFetchCompletedTimestamp => DateTime.t(),
-          :inputFetchStartTimestamp => DateTime.t(),
-          :outputUploadCompletedTimestamp => DateTime.t(),
-          :outputUploadStartTimestamp => DateTime.t(),
-          :queuedTimestamp => DateTime.t(),
-          :worker => String.t(),
-          :workerCompletedTimestamp => DateTime.t(),
-          :workerStartTimestamp => DateTime.t()
+          :auxiliaryMetadata => list(map()) | nil,
+          :executionCompletedTimestamp => DateTime.t() | nil,
+          :executionStartTimestamp => DateTime.t() | nil,
+          :inputFetchCompletedTimestamp => DateTime.t() | nil,
+          :inputFetchStartTimestamp => DateTime.t() | nil,
+          :outputUploadCompletedTimestamp => DateTime.t() | nil,
+          :outputUploadStartTimestamp => DateTime.t() | nil,
+          :queuedTimestamp => DateTime.t() | nil,
+          :worker => String.t() | nil,
+          :workerCompletedTimestamp => DateTime.t() | nil,
+          :workerStartTimestamp => DateTime.t() | nil
         }
 
   field(:auxiliaryMetadata, type: :list)

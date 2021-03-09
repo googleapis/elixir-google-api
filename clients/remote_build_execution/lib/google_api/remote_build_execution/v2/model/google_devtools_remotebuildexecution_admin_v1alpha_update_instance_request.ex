@@ -31,10 +31,11 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   @type t :: %__MODULE__{
           :instance =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance.t(),
-          :loggingEnabled => boolean(),
-          :name => String.t(),
-          :updateMask => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance.t()
+            | nil,
+          :loggingEnabled => boolean() | nil,
+          :name => String.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:instance,

@@ -27,7 +27,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parent => String.t()
+          :parent => String.t() | nil
         }
 
   field(:parent)

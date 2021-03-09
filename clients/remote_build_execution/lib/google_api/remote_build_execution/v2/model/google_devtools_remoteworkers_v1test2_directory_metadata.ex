@@ -29,8 +29,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1t
 
   @type t :: %__MODULE__{
           :digest =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Digest.t(),
-          :path => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Digest.t()
+            | nil,
+          :path => String.t() | nil
         }
 
   field(:digest,

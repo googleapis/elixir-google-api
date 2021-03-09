@@ -28,9 +28,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :updateMask => String.t(),
+          :updateMask => String.t() | nil,
           :workerPool =>
             GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPool.t()
+            | nil
         }
 
   field(:updateMask)

@@ -28,8 +28,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1t
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :overhead => String.t()
+          :duration => String.t() | nil,
+          :overhead => String.t() | nil
         }
 
   field(:duration)

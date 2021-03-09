@@ -27,19 +27,21 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   *   `inputCacheMiss` (*type:* `number()`, *default:* `nil`) - The input cache miss ratio.
   *   `numErrors` (*type:* `String.t`, *default:* `nil`) - The number of errors reported.
   *   `numWarnings` (*type:* `String.t`, *default:* `nil`) - The number of warnings reported.
+  *   `outputLocation` (*type:* `String.t`, *default:* `nil`) - Indicates whether output files and/or output directories were found relative to the execution root or to the user provided work directory or both or none.
   *   `usedAsyncContainer` (*type:* `boolean()`, *default:* `nil`) - Indicates whether an asynchronous container was used for execution.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cmUsage => String.t(),
-          :dockerCacheHit => boolean(),
-          :dockerImageName => String.t(),
-          :inputCacheMiss => number(),
-          :numErrors => String.t(),
-          :numWarnings => String.t(),
-          :usedAsyncContainer => boolean()
+          :cmUsage => String.t() | nil,
+          :dockerCacheHit => boolean() | nil,
+          :dockerImageName => String.t() | nil,
+          :inputCacheMiss => number() | nil,
+          :numErrors => String.t() | nil,
+          :numWarnings => String.t() | nil,
+          :outputLocation => String.t() | nil,
+          :usedAsyncContainer => boolean() | nil
         }
 
   field(:cmUsage)
@@ -48,6 +50,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
   field(:inputCacheMiss)
   field(:numErrors)
   field(:numWarnings)
+  field(:outputLocation)
   field(:usedAsyncContainer)
 end
 

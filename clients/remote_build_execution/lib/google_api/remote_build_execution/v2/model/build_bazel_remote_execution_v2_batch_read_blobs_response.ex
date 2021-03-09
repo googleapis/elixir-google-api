@@ -31,6 +31,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Bat
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2BatchReadBlobsResponseResponse.t()
             )
+            | nil
         }
 
   field(:responses,

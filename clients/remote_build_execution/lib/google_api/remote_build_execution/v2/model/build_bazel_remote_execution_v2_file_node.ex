@@ -31,11 +31,12 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Fil
 
   @type t :: %__MODULE__{
           :digest =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
-          :isExecutable => boolean(),
-          :name => String.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t() | nil,
+          :isExecutable => boolean() | nil,
+          :name => String.t() | nil,
           :nodeProperties =>
             GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t()
+            | nil
         }
 
   field(:digest, as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest)

@@ -31,6 +31,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Pla
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PlatformProperty.t()
             )
+            | nil
         }
 
   field(:properties,

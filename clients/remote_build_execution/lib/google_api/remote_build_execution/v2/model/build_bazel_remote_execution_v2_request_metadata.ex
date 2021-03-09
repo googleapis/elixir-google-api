@@ -30,11 +30,12 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Req
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actionId => String.t(),
-          :correlatedInvocationsId => String.t(),
+          :actionId => String.t() | nil,
+          :correlatedInvocationsId => String.t() | nil,
           :toolDetails =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ToolDetails.t(),
-          :toolInvocationId => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ToolDetails.t()
+            | nil,
+          :toolInvocationId => String.t() | nil
         }
 
   field(:actionId)

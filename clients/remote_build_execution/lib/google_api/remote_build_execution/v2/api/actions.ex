@@ -55,6 +55,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Actions do
   @spec remotebuildexecution_actions_execute(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.RemoteBuildExecution.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def remotebuildexecution_actions_execute(
         connection,

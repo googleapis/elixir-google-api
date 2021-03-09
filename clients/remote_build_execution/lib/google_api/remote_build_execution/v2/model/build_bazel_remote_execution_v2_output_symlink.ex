@@ -30,9 +30,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Out
 
   @type t :: %__MODULE__{
           :nodeProperties =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t(),
-          :path => String.t(),
-          :target => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperties.t()
+            | nil,
+          :path => String.t() | nil,
+          :target => String.t() | nil
         }
 
   field(:nodeProperties,

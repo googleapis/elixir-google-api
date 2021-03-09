@@ -38,17 +38,18 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   @type t :: %__MODULE__{
           :accelerator =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAcceleratorConfig.t(),
-          :diskSizeGb => String.t(),
-          :diskType => String.t(),
-          :labels => map(),
-          :machineType => String.t(),
-          :maxConcurrentActions => String.t(),
-          :minCpuPlatform => String.t(),
-          :networkAccess => String.t(),
-          :reserved => boolean(),
-          :soleTenantNodeType => String.t(),
-          :vmImage => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAcceleratorConfig.t()
+            | nil,
+          :diskSizeGb => String.t() | nil,
+          :diskType => String.t() | nil,
+          :labels => map() | nil,
+          :machineType => String.t() | nil,
+          :maxConcurrentActions => String.t() | nil,
+          :minCpuPlatform => String.t() | nil,
+          :networkAccess => String.t() | nil,
+          :reserved => boolean() | nil,
+          :soleTenantNodeType => String.t() | nil,
+          :vmImage => String.t() | nil
         }
 
   field(:accelerator,

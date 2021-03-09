@@ -31,10 +31,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
 
   @type t :: %__MODULE__{
           :actionDigest =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
-          :stage => String.t(),
-          :stderrStreamName => String.t(),
-          :stdoutStreamName => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t() | nil,
+          :stage => String.t() | nil,
+          :stderrStreamName => String.t() | nil,
+          :stdoutStreamName => String.t() | nil
         }
 
   field(:actionDigest,

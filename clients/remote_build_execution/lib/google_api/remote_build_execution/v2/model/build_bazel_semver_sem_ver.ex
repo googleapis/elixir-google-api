@@ -30,10 +30,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelSemverSemVer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :major => integer(),
-          :minor => integer(),
-          :patch => integer(),
-          :prerelease => String.t()
+          :major => integer() | nil,
+          :minor => integer() | nil,
+          :patch => integer() | nil,
+          :prerelease => String.t() | nil
         }
 
   field(:major)

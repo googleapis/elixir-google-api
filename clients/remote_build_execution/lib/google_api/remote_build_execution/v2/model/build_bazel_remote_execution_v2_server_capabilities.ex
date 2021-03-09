@@ -32,13 +32,17 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Ser
 
   @type t :: %__MODULE__{
           :cacheCapabilities =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2CacheCapabilities.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2CacheCapabilities.t()
+            | nil,
           :deprecatedApiVersion =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelSemverSemVer.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelSemverSemVer.t() | nil,
           :executionCapabilities =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ExecutionCapabilities.t(),
-          :highApiVersion => GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelSemverSemVer.t(),
-          :lowApiVersion => GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelSemverSemVer.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ExecutionCapabilities.t()
+            | nil,
+          :highApiVersion =>
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelSemverSemVer.t() | nil,
+          :lowApiVersion =>
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelSemverSemVer.t() | nil
         }
 
   field(:cacheCapabilities,

@@ -60,6 +60,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.V2 do
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ServerCapabilities.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def remotebuildexecution_get_capabilities(
         connection,

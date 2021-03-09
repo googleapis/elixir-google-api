@@ -28,8 +28,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :total => String.t(),
-          :used => String.t()
+          :total => String.t() | nil,
+          :used => String.t() | nil
         }
 
   field(:total)

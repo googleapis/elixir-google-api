@@ -32,11 +32,12 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   @type t :: %__MODULE__{
           :featurePolicy =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicy.t(),
-          :location => String.t(),
-          :loggingEnabled => boolean(),
-          :name => String.t(),
-          :state => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicy.t()
+            | nil,
+          :location => String.t() | nil,
+          :loggingEnabled => boolean() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:featurePolicy,

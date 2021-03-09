@@ -32,13 +32,14 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1t
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :duration => String.t(),
-          :exitCode => integer(),
-          :metadata => list(map()),
+          :duration => String.t() | nil,
+          :exitCode => integer() | nil,
+          :metadata => list(map()) | nil,
           :outputs =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Digest.t(),
-          :overhead => String.t(),
-          :status => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2Digest.t()
+            | nil,
+          :overhead => String.t() | nil,
+          :status => GoogleApi.RemoteBuildExecution.V2.Model.GoogleRpcStatus.t() | nil
         }
 
   field(:duration)

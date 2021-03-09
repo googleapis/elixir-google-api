@@ -34,18 +34,19 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Com
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :arguments => list(String.t()),
+          :arguments => list(String.t()) | nil,
           :environmentVariables =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2CommandEnvironmentVariable.t()
-            ),
-          :outputDirectories => list(String.t()),
-          :outputFiles => list(String.t()),
-          :outputNodeProperties => list(String.t()),
-          :outputPaths => list(String.t()),
+            )
+            | nil,
+          :outputDirectories => list(String.t()) | nil,
+          :outputFiles => list(String.t()) | nil,
+          :outputNodeProperties => list(String.t()) | nil,
+          :outputPaths => list(String.t()) | nil,
           :platform =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Platform.t(),
-          :workingDirectory => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Platform.t() | nil,
+          :workingDirectory => String.t() | nil
         }
 
   field(:arguments, type: :list)

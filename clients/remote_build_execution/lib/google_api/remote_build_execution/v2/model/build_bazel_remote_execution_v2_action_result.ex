@@ -38,34 +38,40 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Act
 
   @type t :: %__MODULE__{
           :executionMetadata =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ExecutedActionMetadata.t(),
-          :exitCode => integer(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ExecutedActionMetadata.t()
+            | nil,
+          :exitCode => integer() | nil,
           :outputDirectories =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2OutputDirectory.t()
-            ),
+            )
+            | nil,
           :outputDirectorySymlinks =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2OutputSymlink.t()
-            ),
+            )
+            | nil,
           :outputFileSymlinks =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2OutputSymlink.t()
-            ),
+            )
+            | nil,
           :outputFiles =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2OutputFile.t()
-            ),
+            )
+            | nil,
           :outputSymlinks =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2OutputSymlink.t()
-            ),
+            )
+            | nil,
           :stderrDigest =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
-          :stderrRaw => String.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t() | nil,
+          :stderrRaw => String.t() | nil,
           :stdoutDigest =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
-          :stdoutRaw => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t() | nil,
+          :stdoutRaw => String.t() | nil
         }
 
   field(:executionMetadata,

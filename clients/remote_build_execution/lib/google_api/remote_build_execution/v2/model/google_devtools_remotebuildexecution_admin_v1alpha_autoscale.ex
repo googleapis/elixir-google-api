@@ -28,8 +28,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxSize => String.t(),
-          :minSize => String.t()
+          :maxSize => String.t() | nil,
+          :minSize => String.t() | nil
         }
 
   field(:maxSize)

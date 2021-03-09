@@ -29,9 +29,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Tre
 
   @type t :: %__MODULE__{
           :children =>
-            list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t()),
+            list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t())
+            | nil,
           :root =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Directory.t() | nil
         }
 
   field(:children,

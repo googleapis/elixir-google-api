@@ -36,22 +36,30 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   @type t :: %__MODULE__{
           :containerImageSources =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t()
+            | nil,
           :dockerAddCapabilities =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t()
+            | nil,
           :dockerChrootPath =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t()
+            | nil,
           :dockerNetwork =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t()
+            | nil,
           :dockerPrivileged =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t()
+            | nil,
           :dockerRunAsRoot =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t()
+            | nil,
           :dockerRuntime =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t()
+            | nil,
           :dockerSiblingContainers =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t(),
-          :linuxIsolation => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaFeaturePolicyFeature.t()
+            | nil,
+          :linuxIsolation => String.t() | nil
         }
 
   field(:containerImageSources,

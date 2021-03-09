@@ -29,10 +29,11 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parent => String.t(),
-          :poolId => String.t(),
+          :parent => String.t() | nil,
+          :poolId => String.t() | nil,
           :workerPool =>
             GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPool.t()
+            | nil
         }
 
   field(:parent)

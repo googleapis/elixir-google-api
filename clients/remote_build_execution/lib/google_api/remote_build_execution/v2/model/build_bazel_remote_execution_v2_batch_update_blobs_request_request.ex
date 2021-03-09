@@ -28,8 +28,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Bat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => String.t(),
-          :digest => GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t()
+          :data => String.t() | nil,
+          :digest =>
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t() | nil
         }
 
   field(:data)

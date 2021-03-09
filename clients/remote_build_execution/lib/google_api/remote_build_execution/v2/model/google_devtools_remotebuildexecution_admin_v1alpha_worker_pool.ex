@@ -33,13 +33,15 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   @type t :: %__MODULE__{
           :autoscale =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale.t(),
-          :channel => String.t(),
-          :name => String.t(),
-          :state => String.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale.t()
+            | nil,
+          :channel => String.t() | nil,
+          :name => String.t() | nil,
+          :state => String.t() | nil,
           :workerConfig =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig.t(),
-          :workerCount => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig.t()
+            | nil,
+          :workerCount => String.t() | nil
         }
 
   field(:autoscale,

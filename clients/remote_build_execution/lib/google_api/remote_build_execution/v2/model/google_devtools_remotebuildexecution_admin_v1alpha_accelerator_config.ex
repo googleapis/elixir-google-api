@@ -28,8 +28,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acceleratorCount => String.t(),
-          :acceleratorType => String.t()
+          :acceleratorCount => String.t() | nil,
+          :acceleratorType => String.t() | nil
         }
 
   field(:acceleratorCount)

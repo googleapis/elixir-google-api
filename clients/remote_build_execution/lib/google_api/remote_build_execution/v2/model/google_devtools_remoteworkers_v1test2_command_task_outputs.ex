@@ -30,10 +30,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1t
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :directories => list(String.t()),
-          :files => list(String.t()),
-          :stderrDestination => String.t(),
-          :stdoutDestination => String.t()
+          :directories => list(String.t()) | nil,
+          :files => list(String.t()) | nil,
+          :stderrDestination => String.t() | nil,
+          :stdoutDestination => String.t() | nil
         }
 
   field(:directories, type: :list)

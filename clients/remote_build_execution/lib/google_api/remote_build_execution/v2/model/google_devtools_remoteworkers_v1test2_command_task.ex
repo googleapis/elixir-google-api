@@ -30,11 +30,14 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1t
 
   @type t :: %__MODULE__{
           :expectedOutputs =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2CommandTaskOutputs.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2CommandTaskOutputs.t()
+            | nil,
           :inputs =>
-            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2CommandTaskInputs.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2CommandTaskInputs.t()
+            | nil,
           :timeouts =>
             GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemoteworkersV1test2CommandTaskTimeouts.t()
+            | nil
         }
 
   field(:expectedOutputs,

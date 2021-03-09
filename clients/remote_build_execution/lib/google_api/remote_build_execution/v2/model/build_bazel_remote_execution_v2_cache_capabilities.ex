@@ -32,12 +32,14 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Cac
 
   @type t :: %__MODULE__{
           :actionCacheUpdateCapabilities =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ActionCacheUpdateCapabilities.t(),
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ActionCacheUpdateCapabilities.t()
+            | nil,
           :cachePriorityCapabilities =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities.t(),
-          :digestFunction => list(String.t()),
-          :maxBatchTotalSizeBytes => String.t(),
-          :symlinkAbsolutePathStrategy => String.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities.t()
+            | nil,
+          :digestFunction => list(String.t()) | nil,
+          :maxBatchTotalSizeBytes => String.t() | nil,
+          :symlinkAbsolutePathStrategy => String.t() | nil
         }
 
   field(:actionCacheUpdateCapabilities,
