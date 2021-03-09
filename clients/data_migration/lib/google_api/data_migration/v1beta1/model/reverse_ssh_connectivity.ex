@@ -30,10 +30,10 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.ReverseSshConnectivity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :vm => String.t(),
-          :vmIp => String.t(),
-          :vmPort => integer(),
-          :vpc => String.t()
+          :vm => String.t() | nil,
+          :vmIp => String.t() | nil,
+          :vmPort => integer() | nil,
+          :vpc => String.t() | nil
         }
 
   field(:vm)

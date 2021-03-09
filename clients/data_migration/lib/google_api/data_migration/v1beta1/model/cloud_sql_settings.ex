@@ -40,20 +40,20 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.CloudSqlSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :activationPolicy => String.t(),
-          :autoStorageIncrease => boolean(),
-          :dataDiskSizeGb => String.t(),
-          :dataDiskType => String.t(),
-          :databaseFlags => map(),
-          :databaseVersion => String.t(),
-          :ipConfig => GoogleApi.DataMigration.V1beta1.Model.SqlIpConfig.t(),
-          :rootPassword => String.t(),
-          :rootPasswordSet => boolean(),
-          :sourceId => String.t(),
-          :storageAutoResizeLimit => String.t(),
-          :tier => String.t(),
-          :userLabels => map(),
-          :zone => String.t()
+          :activationPolicy => String.t() | nil,
+          :autoStorageIncrease => boolean() | nil,
+          :dataDiskSizeGb => String.t() | nil,
+          :dataDiskType => String.t() | nil,
+          :databaseFlags => map() | nil,
+          :databaseVersion => String.t() | nil,
+          :ipConfig => GoogleApi.DataMigration.V1beta1.Model.SqlIpConfig.t() | nil,
+          :rootPassword => String.t() | nil,
+          :rootPasswordSet => boolean() | nil,
+          :sourceId => String.t() | nil,
+          :storageAutoResizeLimit => String.t() | nil,
+          :tier => String.t() | nil,
+          :userLabels => map() | nil,
+          :zone => String.t() | nil
         }
 
   field(:activationPolicy)

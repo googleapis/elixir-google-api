@@ -30,9 +30,9 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.ListConnectionProfilesResponse d
 
   @type t :: %__MODULE__{
           :connectionProfiles =>
-            list(GoogleApi.DataMigration.V1beta1.Model.ConnectionProfile.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+            list(GoogleApi.DataMigration.V1beta1.Model.ConnectionProfile.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:connectionProfiles,

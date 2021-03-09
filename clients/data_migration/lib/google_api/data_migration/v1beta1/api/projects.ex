@@ -54,6 +54,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
   @spec datamigration_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -121,6 +122,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -193,6 +195,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_connection_profiles_create(
         connection,
@@ -267,6 +270,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_connection_profiles_delete(
         connection,
@@ -338,6 +342,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.ConnectionProfile.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_connection_profiles_get(
         connection,
@@ -410,6 +415,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_connection_profiles_get_iam_policy(
         connection,
@@ -484,6 +490,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.ListConnectionProfilesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_connection_profiles_list(
         connection,
@@ -562,6 +569,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_connection_profiles_patch(
         connection,
@@ -635,6 +643,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_connection_profiles_set_iam_policy(
         connection,
@@ -706,6 +715,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_connection_profiles_test_iam_permissions(
         connection,
@@ -781,6 +791,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_create(
         connection,
@@ -855,6 +866,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_delete(
         connection,
@@ -927,6 +939,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.SshScript.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_generate_ssh_script(
         connection,
@@ -997,6 +1010,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.MigrationJob.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_get(
         connection,
@@ -1067,6 +1081,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_get_iam_policy(
         connection,
@@ -1141,6 +1156,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.ListMigrationJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_list(
         connection,
@@ -1219,6 +1235,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_patch(
         connection,
@@ -1292,6 +1309,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_promote(
         connection,
@@ -1363,6 +1381,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_restart(
         connection,
@@ -1434,6 +1453,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_resume(
         connection,
@@ -1505,6 +1525,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_set_iam_policy(
         connection,
@@ -1576,6 +1597,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_start(
         connection,
@@ -1647,6 +1669,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_stop(
         connection,
@@ -1718,6 +1741,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_test_iam_permissions(
         connection,
@@ -1791,6 +1815,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_migration_jobs_verify(
         connection,
@@ -1862,6 +1887,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_operations_cancel(
         connection,
@@ -1932,6 +1958,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_operations_delete(
         connection,
@@ -2001,6 +2028,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_operations_get(
         connection,
@@ -2073,6 +2101,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.DataMigration.V1beta1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def datamigration_projects_locations_operations_list(
         connection,

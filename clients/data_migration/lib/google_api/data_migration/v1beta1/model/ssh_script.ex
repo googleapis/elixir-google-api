@@ -27,7 +27,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.SshScript do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :script => String.t()
+          :script => String.t() | nil
         }
 
   field(:script)

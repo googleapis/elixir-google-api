@@ -27,7 +27,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.VmSelectionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :vmZone => String.t()
+          :vmZone => String.t() | nil
         }
 
   field(:vmZone)

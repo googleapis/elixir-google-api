@@ -29,9 +29,9 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.VmCreationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :subnet => String.t(),
-          :vmMachineType => String.t(),
-          :vmZone => String.t()
+          :subnet => String.t() | nil,
+          :vmMachineType => String.t() | nil,
+          :vmZone => String.t() | nil
         }
 
   field(:subnet)

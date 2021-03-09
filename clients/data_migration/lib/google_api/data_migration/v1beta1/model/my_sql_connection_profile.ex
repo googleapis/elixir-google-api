@@ -33,13 +33,13 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.MySqlConnectionProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudSqlId => String.t(),
-          :host => String.t(),
-          :password => String.t(),
-          :passwordSet => boolean(),
-          :port => integer(),
-          :ssl => GoogleApi.DataMigration.V1beta1.Model.SslConfig.t(),
-          :username => String.t()
+          :cloudSqlId => String.t() | nil,
+          :host => String.t() | nil,
+          :password => String.t() | nil,
+          :passwordSet => boolean() | nil,
+          :port => integer() | nil,
+          :ssl => GoogleApi.DataMigration.V1beta1.Model.SslConfig.t() | nil,
+          :username => String.t() | nil
         }
 
   field(:cloudSqlId)

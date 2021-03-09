@@ -28,8 +28,8 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.DatabaseType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :engine => String.t(),
-          :provider => String.t()
+          :engine => String.t() | nil,
+          :provider => String.t() | nil
         }
 
   field(:engine)

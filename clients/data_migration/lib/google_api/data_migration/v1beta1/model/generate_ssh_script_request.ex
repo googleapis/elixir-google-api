@@ -30,10 +30,10 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.GenerateSshScriptRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :vm => String.t(),
-          :vmCreationConfig => GoogleApi.DataMigration.V1beta1.Model.VmCreationConfig.t(),
-          :vmPort => integer(),
-          :vmSelectionConfig => GoogleApi.DataMigration.V1beta1.Model.VmSelectionConfig.t()
+          :vm => String.t() | nil,
+          :vmCreationConfig => GoogleApi.DataMigration.V1beta1.Model.VmCreationConfig.t() | nil,
+          :vmPort => integer() | nil,
+          :vmSelectionConfig => GoogleApi.DataMigration.V1beta1.Model.VmSelectionConfig.t() | nil
         }
 
   field(:vm)

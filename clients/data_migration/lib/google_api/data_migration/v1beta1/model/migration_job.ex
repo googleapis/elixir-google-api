@@ -45,27 +45,28 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.MigrationJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
-          :destination => String.t(),
-          :destinationDatabase => GoogleApi.DataMigration.V1beta1.Model.DatabaseType.t(),
-          :displayName => String.t(),
-          :dumpPath => String.t(),
-          :duration => String.t(),
-          :endTime => DateTime.t(),
-          :error => GoogleApi.DataMigration.V1beta1.Model.Status.t(),
-          :labels => map(),
-          :name => String.t(),
-          :phase => String.t(),
+          :createTime => DateTime.t() | nil,
+          :destination => String.t() | nil,
+          :destinationDatabase => GoogleApi.DataMigration.V1beta1.Model.DatabaseType.t() | nil,
+          :displayName => String.t() | nil,
+          :dumpPath => String.t() | nil,
+          :duration => String.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :error => GoogleApi.DataMigration.V1beta1.Model.Status.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :phase => String.t() | nil,
           :reverseSshConnectivity =>
-            GoogleApi.DataMigration.V1beta1.Model.ReverseSshConnectivity.t(),
-          :source => String.t(),
-          :sourceDatabase => GoogleApi.DataMigration.V1beta1.Model.DatabaseType.t(),
-          :state => String.t(),
-          :staticIpConnectivity => GoogleApi.DataMigration.V1beta1.Model.StaticIpConnectivity.t(),
-          :type => String.t(),
-          :updateTime => DateTime.t(),
+            GoogleApi.DataMigration.V1beta1.Model.ReverseSshConnectivity.t() | nil,
+          :source => String.t() | nil,
+          :sourceDatabase => GoogleApi.DataMigration.V1beta1.Model.DatabaseType.t() | nil,
+          :state => String.t() | nil,
+          :staticIpConnectivity =>
+            GoogleApi.DataMigration.V1beta1.Model.StaticIpConnectivity.t() | nil,
+          :type => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
           :vpcPeeringConnectivity =>
-            GoogleApi.DataMigration.V1beta1.Model.VpcPeeringConnectivity.t()
+            GoogleApi.DataMigration.V1beta1.Model.VpcPeeringConnectivity.t() | nil
         }
 
   field(:createTime, as: DateTime)
