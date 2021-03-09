@@ -29,9 +29,9 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.ListMigrationJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :migrationJobs => list(GoogleApi.DataMigration.V1beta1.Model.MigrationJob.t()),
-          :nextPageToken => String.t(),
-          :unreachable => list(String.t())
+          :migrationJobs => list(GoogleApi.DataMigration.V1beta1.Model.MigrationJob.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:migrationJobs, as: GoogleApi.DataMigration.V1beta1.Model.MigrationJob, type: :list)

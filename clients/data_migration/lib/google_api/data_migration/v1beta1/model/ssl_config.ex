@@ -30,10 +30,10 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.SslConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caCertificate => String.t(),
-          :clientCertificate => String.t(),
-          :clientKey => String.t(),
-          :type => String.t()
+          :caCertificate => String.t() | nil,
+          :clientCertificate => String.t() | nil,
+          :clientKey => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:caCertificate)

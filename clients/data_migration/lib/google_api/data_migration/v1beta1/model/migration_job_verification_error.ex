@@ -29,9 +29,9 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.MigrationJobVerificationError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorCode => String.t(),
-          :errorDetailMessage => String.t(),
-          :errorMessage => String.t()
+          :errorCode => String.t() | nil,
+          :errorDetailMessage => String.t() | nil,
+          :errorMessage => String.t() | nil
         }
 
   field(:errorCode)

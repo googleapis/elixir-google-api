@@ -30,10 +30,11 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.SqlIpConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorizedNetworks => list(GoogleApi.DataMigration.V1beta1.Model.SqlAclEntry.t()),
-          :enableIpv4 => boolean(),
-          :privateNetwork => String.t(),
-          :requireSsl => boolean()
+          :authorizedNetworks =>
+            list(GoogleApi.DataMigration.V1beta1.Model.SqlAclEntry.t()) | nil,
+          :enableIpv4 => boolean() | nil,
+          :privateNetwork => String.t() | nil,
+          :requireSsl => boolean() | nil
         }
 
   field(:authorizedNetworks, as: GoogleApi.DataMigration.V1beta1.Model.SqlAclEntry, type: :list)

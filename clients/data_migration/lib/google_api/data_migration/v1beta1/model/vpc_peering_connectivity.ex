@@ -27,7 +27,7 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.VpcPeeringConnectivity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :vpc => String.t()
+          :vpc => String.t() | nil
         }
 
   field(:vpc)

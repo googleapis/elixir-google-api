@@ -36,16 +36,16 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.ConnectionProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudsql => GoogleApi.DataMigration.V1beta1.Model.CloudSqlConnectionProfile.t(),
-          :createTime => DateTime.t(),
-          :displayName => String.t(),
-          :error => GoogleApi.DataMigration.V1beta1.Model.Status.t(),
-          :labels => map(),
-          :mysql => GoogleApi.DataMigration.V1beta1.Model.MySqlConnectionProfile.t(),
-          :name => String.t(),
-          :provider => String.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t()
+          :cloudsql => GoogleApi.DataMigration.V1beta1.Model.CloudSqlConnectionProfile.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :error => GoogleApi.DataMigration.V1beta1.Model.Status.t() | nil,
+          :labels => map() | nil,
+          :mysql => GoogleApi.DataMigration.V1beta1.Model.MySqlConnectionProfile.t() | nil,
+          :name => String.t() | nil,
+          :provider => String.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:cloudsql, as: GoogleApi.DataMigration.V1beta1.Model.CloudSqlConnectionProfile)

@@ -30,10 +30,10 @@ defmodule GoogleApi.DataMigration.V1beta1.Model.CloudSqlConnectionProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudSqlId => String.t(),
-          :privateIp => String.t(),
-          :publicIp => String.t(),
-          :settings => GoogleApi.DataMigration.V1beta1.Model.CloudSqlSettings.t()
+          :cloudSqlId => String.t() | nil,
+          :privateIp => String.t() | nil,
+          :publicIp => String.t() | nil,
+          :settings => GoogleApi.DataMigration.V1beta1.Model.CloudSqlSettings.t() | nil
         }
 
   field(:cloudSqlId)
