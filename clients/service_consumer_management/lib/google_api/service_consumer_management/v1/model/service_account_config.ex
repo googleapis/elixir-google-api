@@ -28,8 +28,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.ServiceAccountConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t(),
-          :tenantProjectRoles => list(String.t())
+          :accountId => String.t() | nil,
+          :tenantProjectRoles => list(String.t()) | nil
         }
 
   field(:accountId)

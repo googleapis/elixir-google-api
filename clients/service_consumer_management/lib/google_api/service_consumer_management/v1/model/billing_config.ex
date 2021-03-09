@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.BillingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billingAccount => String.t()
+          :billingAccount => String.t() | nil
         }
 
   field(:billingAccount)

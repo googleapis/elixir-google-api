@@ -32,12 +32,12 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1ProducerQuotaPolic
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :container => String.t(),
-          :dimensions => map(),
-          :metric => String.t(),
-          :name => String.t(),
-          :policyValue => String.t(),
-          :unit => String.t()
+          :container => String.t() | nil,
+          :dimensions => map() | nil,
+          :metric => String.t() | nil,
+          :name => String.t() | nil,
+          :policyValue => String.t() | nil,
+          :unit => String.t() | nil
         }
 
   field(:container)

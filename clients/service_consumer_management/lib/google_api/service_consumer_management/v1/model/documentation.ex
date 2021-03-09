@@ -32,12 +32,13 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Documentation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :documentationRootUrl => String.t(),
-          :overview => String.t(),
-          :pages => list(GoogleApi.ServiceConsumerManagement.V1.Model.Page.t()),
-          :rules => list(GoogleApi.ServiceConsumerManagement.V1.Model.DocumentationRule.t()),
-          :serviceRootUrl => String.t(),
-          :summary => String.t()
+          :documentationRootUrl => String.t() | nil,
+          :overview => String.t() | nil,
+          :pages => list(GoogleApi.ServiceConsumerManagement.V1.Model.Page.t()) | nil,
+          :rules =>
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.DocumentationRule.t()) | nil,
+          :serviceRootUrl => String.t() | nil,
+          :summary => String.t() | nil
         }
 
   field(:documentationRootUrl)

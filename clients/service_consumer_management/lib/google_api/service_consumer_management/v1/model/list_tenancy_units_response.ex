@@ -28,8 +28,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.ListTenancyUnitsResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :tenancyUnits => list(GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit.t())
+          :nextPageToken => String.t() | nil,
+          :tenancyUnits =>
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit.t()) | nil
         }
 
   field(:nextPageToken)

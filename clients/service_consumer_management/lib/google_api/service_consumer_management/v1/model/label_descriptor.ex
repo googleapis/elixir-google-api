@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.LabelDescriptor do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :description => String.t(),
-          :key => String.t(),
-          :valueType => String.t()
+          :description => String.t() | nil,
+          :key => String.t() | nil,
+          :valueType => String.t() | nil
         }
 
   field(:description)

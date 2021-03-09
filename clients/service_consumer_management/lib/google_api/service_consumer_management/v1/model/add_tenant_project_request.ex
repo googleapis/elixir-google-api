@@ -28,8 +28,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.AddTenantProjectRequest d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :projectConfig => GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig.t(),
-          :tag => String.t()
+          :projectConfig =>
+            GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig.t() | nil,
+          :tag => String.t() | nil
         }
 
   field(:projectConfig, as: GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig)

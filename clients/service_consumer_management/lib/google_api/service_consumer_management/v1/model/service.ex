@@ -53,34 +53,38 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Service do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apis => list(GoogleApi.ServiceConsumerManagement.V1.Model.Api.t()),
-          :authentication => GoogleApi.ServiceConsumerManagement.V1.Model.Authentication.t(),
-          :backend => GoogleApi.ServiceConsumerManagement.V1.Model.Backend.t(),
-          :billing => GoogleApi.ServiceConsumerManagement.V1.Model.Billing.t(),
-          :configVersion => integer(),
-          :context => GoogleApi.ServiceConsumerManagement.V1.Model.Context.t(),
-          :control => GoogleApi.ServiceConsumerManagement.V1.Model.Control.t(),
-          :customError => GoogleApi.ServiceConsumerManagement.V1.Model.CustomError.t(),
-          :documentation => GoogleApi.ServiceConsumerManagement.V1.Model.Documentation.t(),
-          :endpoints => list(GoogleApi.ServiceConsumerManagement.V1.Model.Endpoint.t()),
-          :enums => list(GoogleApi.ServiceConsumerManagement.V1.Model.Enum.t()),
-          :http => GoogleApi.ServiceConsumerManagement.V1.Model.Http.t(),
-          :id => String.t(),
-          :logging => GoogleApi.ServiceConsumerManagement.V1.Model.Logging.t(),
-          :logs => list(GoogleApi.ServiceConsumerManagement.V1.Model.LogDescriptor.t()),
-          :metrics => list(GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptor.t()),
+          :apis => list(GoogleApi.ServiceConsumerManagement.V1.Model.Api.t()) | nil,
+          :authentication =>
+            GoogleApi.ServiceConsumerManagement.V1.Model.Authentication.t() | nil,
+          :backend => GoogleApi.ServiceConsumerManagement.V1.Model.Backend.t() | nil,
+          :billing => GoogleApi.ServiceConsumerManagement.V1.Model.Billing.t() | nil,
+          :configVersion => integer() | nil,
+          :context => GoogleApi.ServiceConsumerManagement.V1.Model.Context.t() | nil,
+          :control => GoogleApi.ServiceConsumerManagement.V1.Model.Control.t() | nil,
+          :customError => GoogleApi.ServiceConsumerManagement.V1.Model.CustomError.t() | nil,
+          :documentation => GoogleApi.ServiceConsumerManagement.V1.Model.Documentation.t() | nil,
+          :endpoints => list(GoogleApi.ServiceConsumerManagement.V1.Model.Endpoint.t()) | nil,
+          :enums => list(GoogleApi.ServiceConsumerManagement.V1.Model.Enum.t()) | nil,
+          :http => GoogleApi.ServiceConsumerManagement.V1.Model.Http.t() | nil,
+          :id => String.t() | nil,
+          :logging => GoogleApi.ServiceConsumerManagement.V1.Model.Logging.t() | nil,
+          :logs => list(GoogleApi.ServiceConsumerManagement.V1.Model.LogDescriptor.t()) | nil,
+          :metrics =>
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptor.t()) | nil,
           :monitoredResources =>
-            list(GoogleApi.ServiceConsumerManagement.V1.Model.MonitoredResourceDescriptor.t()),
-          :monitoring => GoogleApi.ServiceConsumerManagement.V1.Model.Monitoring.t(),
-          :name => String.t(),
-          :producerProjectId => String.t(),
-          :quota => GoogleApi.ServiceConsumerManagement.V1.Model.Quota.t(),
-          :sourceInfo => GoogleApi.ServiceConsumerManagement.V1.Model.SourceInfo.t(),
-          :systemParameters => GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameters.t(),
-          :systemTypes => list(GoogleApi.ServiceConsumerManagement.V1.Model.Type.t()),
-          :title => String.t(),
-          :types => list(GoogleApi.ServiceConsumerManagement.V1.Model.Type.t()),
-          :usage => GoogleApi.ServiceConsumerManagement.V1.Model.Usage.t()
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.MonitoredResourceDescriptor.t())
+            | nil,
+          :monitoring => GoogleApi.ServiceConsumerManagement.V1.Model.Monitoring.t() | nil,
+          :name => String.t() | nil,
+          :producerProjectId => String.t() | nil,
+          :quota => GoogleApi.ServiceConsumerManagement.V1.Model.Quota.t() | nil,
+          :sourceInfo => GoogleApi.ServiceConsumerManagement.V1.Model.SourceInfo.t() | nil,
+          :systemParameters =>
+            GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameters.t() | nil,
+          :systemTypes => list(GoogleApi.ServiceConsumerManagement.V1.Model.Type.t()) | nil,
+          :title => String.t() | nil,
+          :types => list(GoogleApi.ServiceConsumerManagement.V1.Model.Type.t()) | nil,
+          :usage => GoogleApi.ServiceConsumerManagement.V1.Model.Usage.t() | nil
         }
 
   field(:apis, as: GoogleApi.ServiceConsumerManagement.V1.Model.Api, type: :list)

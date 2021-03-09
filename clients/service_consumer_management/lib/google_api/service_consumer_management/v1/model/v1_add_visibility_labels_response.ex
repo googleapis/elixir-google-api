@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1AddVisibilityLabelsResp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => list(String.t())
+          :labels => list(String.t()) | nil
         }
 
   field(:labels, type: :list)

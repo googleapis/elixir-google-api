@@ -32,14 +32,14 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :billingConfig => GoogleApi.ServiceConsumerManagement.V1.Model.BillingConfig.t(),
-          :folder => String.t(),
-          :labels => map(),
+          :billingConfig => GoogleApi.ServiceConsumerManagement.V1.Model.BillingConfig.t() | nil,
+          :folder => String.t() | nil,
+          :labels => map() | nil,
           :serviceAccountConfig =>
-            GoogleApi.ServiceConsumerManagement.V1.Model.ServiceAccountConfig.t(),
-          :services => list(String.t()),
+            GoogleApi.ServiceConsumerManagement.V1.Model.ServiceAccountConfig.t() | nil,
+          :services => list(String.t()) | nil,
           :tenantProjectPolicy =>
-            GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy.t()
+            GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy.t() | nil
         }
 
   field(:billingConfig, as: GoogleApi.ServiceConsumerManagement.V1.Model.BillingConfig)

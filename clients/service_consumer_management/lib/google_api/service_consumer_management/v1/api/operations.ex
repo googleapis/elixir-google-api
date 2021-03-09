@@ -60,6 +60,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def serviceconsumermanagement_operations_cancel(
         connection,
@@ -130,6 +131,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def serviceconsumermanagement_operations_delete(
         connection,
@@ -199,6 +201,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def serviceconsumermanagement_operations_get(
         connection,
@@ -273,6 +276,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Operations do
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def serviceconsumermanagement_operations_list(
         connection,

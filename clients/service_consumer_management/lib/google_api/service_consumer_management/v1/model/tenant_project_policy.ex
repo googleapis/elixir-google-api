@@ -27,7 +27,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.TenantProjectPolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policyBindings => list(GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding.t())
+          :policyBindings =>
+            list(GoogleApi.ServiceConsumerManagement.V1.Model.PolicyBinding.t()) | nil
         }
 
   field(:policyBindings,

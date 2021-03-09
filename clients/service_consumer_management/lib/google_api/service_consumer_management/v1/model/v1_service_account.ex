@@ -31,11 +31,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1ServiceAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :iamAccountName => String.t(),
-          :name => String.t(),
-          :tag => String.t(),
-          :uniqueId => String.t()
+          :email => String.t() | nil,
+          :iamAccountName => String.t() | nil,
+          :name => String.t() | nil,
+          :tag => String.t() | nil,
+          :uniqueId => String.t() | nil
         }
 
   field(:email)

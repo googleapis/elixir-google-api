@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.CreateTenancyUnitRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tenancyUnitId => String.t()
+          :tenancyUnitId => String.t() | nil
         }
 
   field(:tenancyUnitId)

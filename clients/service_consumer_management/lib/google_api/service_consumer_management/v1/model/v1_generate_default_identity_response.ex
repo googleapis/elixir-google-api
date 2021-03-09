@@ -29,9 +29,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1GenerateDefaultIdentity
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attachStatus => String.t(),
-          :identity => GoogleApi.ServiceConsumerManagement.V1.Model.V1DefaultIdentity.t(),
-          :role => String.t()
+          :attachStatus => String.t() | nil,
+          :identity => GoogleApi.ServiceConsumerManagement.V1.Model.V1DefaultIdentity.t() | nil,
+          :role => String.t() | nil
         }
 
   field(:attachStatus)
