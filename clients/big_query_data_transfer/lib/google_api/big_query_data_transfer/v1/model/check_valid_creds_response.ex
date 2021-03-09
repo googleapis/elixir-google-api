@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hasValidCreds => boolean()
+          :hasValidCreds => boolean() | nil
         }
 
   field(:hasValidCreds)

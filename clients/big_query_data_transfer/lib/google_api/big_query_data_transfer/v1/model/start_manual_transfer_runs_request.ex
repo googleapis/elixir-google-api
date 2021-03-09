@@ -28,8 +28,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestedRunTime => DateTime.t(),
-          :requestedTimeRange => GoogleApi.BigQueryDataTransfer.V1.Model.TimeRange.t()
+          :requestedRunTime => DateTime.t() | nil,
+          :requestedTimeRange => GoogleApi.BigQueryDataTransfer.V1.Model.TimeRange.t() | nil
         }
 
   field(:requestedRunTime, as: DateTime)

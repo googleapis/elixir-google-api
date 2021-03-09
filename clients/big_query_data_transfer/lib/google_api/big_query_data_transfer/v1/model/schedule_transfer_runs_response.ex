@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :runs => list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t())
+          :runs => list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t()) | nil
         }
 
   field(:runs, as: GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun, type: :list)

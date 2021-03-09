@@ -42,22 +42,22 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedValues => list(String.t()),
-          :deprecated => boolean(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :fields => list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t()),
-          :immutable => boolean(),
-          :maxValue => float(),
-          :minValue => float(),
-          :paramId => String.t(),
-          :recurse => boolean(),
-          :repeated => boolean(),
-          :required => boolean(),
-          :type => String.t(),
-          :validationDescription => String.t(),
-          :validationHelpUrl => String.t(),
-          :validationRegex => String.t()
+          :allowedValues => list(String.t()) | nil,
+          :deprecated => boolean() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :fields => list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t()) | nil,
+          :immutable => boolean() | nil,
+          :maxValue => float() | nil,
+          :minValue => float() | nil,
+          :paramId => String.t() | nil,
+          :recurse => boolean() | nil,
+          :repeated => boolean() | nil,
+          :required => boolean() | nil,
+          :type => String.t() | nil,
+          :validationDescription => String.t() | nil,
+          :validationHelpUrl => String.t() | nil,
+          :validationRegex => String.t() | nil
         }
 
   field(:allowedValues, type: :list)

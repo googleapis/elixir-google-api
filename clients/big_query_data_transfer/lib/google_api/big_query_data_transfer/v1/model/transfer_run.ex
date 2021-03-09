@@ -28,7 +28,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
   *   `errorStatus` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.Status.t`, *default:* `nil`) - Status of the transfer run.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the transfer run. Transfer run names have the form `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`. The name is ignored when creating a transfer run.
   *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Output only. Pub/Sub topic where a notification will be sent after this transfer run finishes
-  *   `params` (*type:* `map()`, *default:* `nil`) - Output only. Data transfer specific parameters.
+  *   `params` (*type:* `map()`, *default:* `nil`) - Output only. Parameters specific to each data source. For more information see the bq tab in the 'Setting up a data transfer' section for each data source. For example the parameters for Cloud Storage transfers are listed here: https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
   *   `runTime` (*type:* `DateTime.t`, *default:* `nil`) - For batch transfer runs, specifies the date and time of the data should be ingested.
   *   `schedule` (*type:* `String.t`, *default:* `nil`) - Output only. Describes the schedule of this transfer run if it was created as part of a regular schedule. For batch transfer runs that are scheduled manually, this is empty. NOTE: the system might choose to delay the schedule depending on the current load, so `schedule_time` doesn't always match this.
   *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Minimum time after which a transfer run can be started.
@@ -41,21 +41,21 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSourceId => String.t(),
-          :destinationDatasetId => String.t(),
-          :emailPreferences => GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t(),
-          :endTime => DateTime.t(),
-          :errorStatus => GoogleApi.BigQueryDataTransfer.V1.Model.Status.t(),
-          :name => String.t(),
-          :notificationPubsubTopic => String.t(),
-          :params => map(),
-          :runTime => DateTime.t(),
-          :schedule => String.t(),
-          :scheduleTime => DateTime.t(),
-          :startTime => DateTime.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t(),
-          :userId => String.t()
+          :dataSourceId => String.t() | nil,
+          :destinationDatasetId => String.t() | nil,
+          :emailPreferences => GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t() | nil,
+          :endTime => DateTime.t() | nil,
+          :errorStatus => GoogleApi.BigQueryDataTransfer.V1.Model.Status.t() | nil,
+          :name => String.t() | nil,
+          :notificationPubsubTopic => String.t() | nil,
+          :params => map() | nil,
+          :runTime => DateTime.t() | nil,
+          :schedule => String.t() | nil,
+          :scheduleTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:dataSourceId)

@@ -44,24 +44,25 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.DataSource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorizationType => String.t(),
-          :clientId => String.t(),
-          :dataRefreshType => String.t(),
-          :dataSourceId => String.t(),
-          :defaultDataRefreshWindowDays => integer(),
-          :defaultSchedule => String.t(),
-          :description => String.t(),
-          :displayName => String.t(),
-          :helpUrl => String.t(),
-          :manualRunsDisabled => boolean(),
-          :minimumScheduleInterval => String.t(),
-          :name => String.t(),
-          :parameters => list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t()),
-          :scopes => list(String.t()),
-          :supportsCustomSchedule => boolean(),
-          :supportsMultipleTransfers => boolean(),
-          :transferType => String.t(),
-          :updateDeadlineSeconds => integer()
+          :authorizationType => String.t() | nil,
+          :clientId => String.t() | nil,
+          :dataRefreshType => String.t() | nil,
+          :dataSourceId => String.t() | nil,
+          :defaultDataRefreshWindowDays => integer() | nil,
+          :defaultSchedule => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :helpUrl => String.t() | nil,
+          :manualRunsDisabled => boolean() | nil,
+          :minimumScheduleInterval => String.t() | nil,
+          :name => String.t() | nil,
+          :parameters =>
+            list(GoogleApi.BigQueryDataTransfer.V1.Model.DataSourceParameter.t()) | nil,
+          :scopes => list(String.t()) | nil,
+          :supportsCustomSchedule => boolean() | nil,
+          :supportsMultipleTransfers => boolean() | nil,
+          :transferType => String.t() | nil,
+          :updateDeadlineSeconds => integer() | nil
         }
 
   field(:authorizationType)

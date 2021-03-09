@@ -28,8 +28,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t(),
-          :transferConfigs => list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t())
+          :nextPageToken => String.t() | nil,
+          :transferConfigs =>
+            list(GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()) | nil
         }
 
   field(:nextPageToken)

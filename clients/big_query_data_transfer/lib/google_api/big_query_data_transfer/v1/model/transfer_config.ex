@@ -31,7 +31,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the transfer config. Transfer config names have the form `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`. Where `config_id` is usually a uuid, even though it is not guaranteed or required. The name is ignored when creating a transfer config.
   *   `nextRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Next time when data transfer will run.
   *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic where notifications will be sent after transfer runs associated with this transfer config finish.
-  *   `params` (*type:* `map()`, *default:* `nil`) - Data transfer specific parameters.
+  *   `params` (*type:* `map()`, *default:* `nil`) - Parameters specific to each data source. For more information see the bq tab in the 'Setting up a data transfer' section for each data source. For example the parameters for Cloud Storage transfers are listed here: https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
   *   `schedule` (*type:* `String.t`, *default:* `nil`) - Data transfer schedule. If the data source does not support a custom schedule, this should be empty. If it is empty, the default value for the data source will be used. The specified times are in UTC. Examples of valid format: `1st,3rd monday of month 15:30`, `every wed,fri of jan,jun 13:15`, and `first sunday of quarter 00:00`. See more explanation about the format here: https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format NOTE: the granularity should be at least 8 hours, or less frequent.
   *   `scheduleOptions` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t`, *default:* `nil`) - Options customizing the data transfer schedule.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the most recently updated transfer run.
@@ -42,22 +42,22 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataRefreshWindowDays => integer(),
-          :dataSourceId => String.t(),
-          :datasetRegion => String.t(),
-          :destinationDatasetId => String.t(),
-          :disabled => boolean(),
-          :displayName => String.t(),
-          :emailPreferences => GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t(),
-          :name => String.t(),
-          :nextRunTime => DateTime.t(),
-          :notificationPubsubTopic => String.t(),
-          :params => map(),
-          :schedule => String.t(),
-          :scheduleOptions => GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t(),
-          :state => String.t(),
-          :updateTime => DateTime.t(),
-          :userId => String.t()
+          :dataRefreshWindowDays => integer() | nil,
+          :dataSourceId => String.t() | nil,
+          :datasetRegion => String.t() | nil,
+          :destinationDatasetId => String.t() | nil,
+          :disabled => boolean() | nil,
+          :displayName => String.t() | nil,
+          :emailPreferences => GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t() | nil,
+          :name => String.t() | nil,
+          :nextRunTime => DateTime.t() | nil,
+          :notificationPubsubTopic => String.t() | nil,
+          :params => map() | nil,
+          :schedule => String.t() | nil,
+          :scheduleOptions => GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t() | nil,
+          :state => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :userId => String.t() | nil
         }
 
   field(:dataRefreshWindowDays)

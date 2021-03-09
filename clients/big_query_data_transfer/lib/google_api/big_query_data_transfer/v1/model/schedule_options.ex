@@ -29,9 +29,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :disableAutoScheduling => boolean(),
-          :endTime => DateTime.t(),
-          :startTime => DateTime.t()
+          :disableAutoScheduling => boolean() | nil,
+          :endTime => DateTime.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:disableAutoScheduling)

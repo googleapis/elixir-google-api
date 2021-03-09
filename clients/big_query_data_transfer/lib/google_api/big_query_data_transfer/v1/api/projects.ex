@@ -60,6 +60,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_data_sources_check_valid_creds(
         connection,
@@ -132,6 +133,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.DataSource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_data_sources_get(
         connection,
@@ -203,6 +205,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_data_sources_list(
         connection,
@@ -276,6 +279,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_get(
         connection,
@@ -348,6 +352,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_list(
         connection,
@@ -423,6 +428,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.CheckValidCredsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_data_sources_check_valid_creds(
         connection,
@@ -495,6 +501,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.DataSource.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_data_sources_get(
         connection,
@@ -566,6 +573,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListDataSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_data_sources_list(
         connection,
@@ -643,6 +651,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_create(
         connection,
@@ -718,6 +727,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_delete(
         connection,
@@ -787,6 +797,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_get(
         connection,
@@ -861,6 +872,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_list(
         connection,
@@ -940,6 +952,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_patch(
         connection,
@@ -1017,6 +1030,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_schedule_runs(
         connection,
@@ -1090,6 +1104,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_start_manual_runs(
         connection,
@@ -1162,6 +1177,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_runs_delete(
         connection,
@@ -1231,6 +1247,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_runs_get(
         connection,
@@ -1304,6 +1321,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_runs_list(
         connection,
@@ -1382,6 +1400,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_locations_transfer_configs_runs_transfer_logs_list(
         connection,
@@ -1460,6 +1479,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_create(
         connection,
@@ -1535,6 +1555,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_delete(
         connection,
@@ -1604,6 +1625,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_get(
         connection,
@@ -1678,6 +1700,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_list(
         connection,
@@ -1757,6 +1780,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_patch(
         connection,
@@ -1834,6 +1858,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_schedule_runs(
         connection,
@@ -1907,6 +1932,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.StartManualTransferRunsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_start_manual_runs(
         connection,
@@ -1979,6 +2005,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_runs_delete(
         connection,
@@ -2048,6 +2075,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_runs_get(
         connection,
@@ -2121,6 +2149,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferRunsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_runs_list(
         connection,
@@ -2199,6 +2228,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryDataTransfer.V1.Model.ListTransferLogsResponse.t()}
           | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
           | {:error, any()}
   def bigquerydatatransfer_projects_transfer_configs_runs_transfer_logs_list(
         connection,
